@@ -1,0 +1,90 @@
+2011 DataONE & VDC Student Internship Ideas
+
+Idea Template:
+
+----
+Title: 
+Primary mentors: 
+Secondary mentor: 
+Description:  
+Qualifications: 
+Skills to be learned: 
+----
+
+~~
+
+Title: Adapt Python Django project to run on Google App Engine
+Primary mentors: ? (I don't know much about GAE)
+Secondary mentor: Roger Dahl (since I do know GMN, Python and Django)
+Description:
+* Adapt the DataONE Generic Member Node to run on Google App Engine by making modifications such as removing filesystem dependencies and migrating the database from SQLite3 to the GAE datastore.
+* Deploy the new version of GMN on GAE.
+* Set up tests.
+* Implement any required performance optimizations that relate to restrictions of the GAE platform.
+Qualifications: Python, Django.
+Skills to be learned: Creating a service for GAE and deploying it there.
+
+~~
+
+Project title: Subsetting and Publishing “Dynamic” Scientific Datasets
+Primary mentor: Paul Allen
+Secondary mentor(s): Kevin Webb
+Description: The Avian Knowledge Network (AKN) is a federation of bird monitoring datasets, the largest and most dynamic of which is eBird. Datasets such as these, that are constantly being edited and expanded, are challenging to incorporate into the DataONE framework because of the way they are currently published. This project involves researching issues around dataset subsetting and duplication to recommend a publishing approach that works for “dynamic” datasets. Implement that strategy by migrating the AKN repository to a DataONE–integrated Metcat deployment, making AKN into a DataONE Member Node. Produce a case-study article that captures the implementation process that could act as a guide to future Member Nodes making similar efforts.
+Qualifications/skills needed: metadata mapping; high level programming language (e.g., Perl, Java); SQL; shell scripting
+Skills to be learned: data repository implementation; scientific data organization and publishing
+
+NOTE:  Another example of the above would be dynamic time series of environmental variables collected by in-situ sensors (e.g., stream gages, weather stations, etc.).  I was going to suggest this as a separate idea, but it could just be another use case for the above.
+
+
+
+Background
+
+We are inviting project ideas for the 2011 DataONE summer internship program.  We need to advertise for students soon in order to attract good ones, and so have set Friday, March 11th as the deadline to receive project ideas from potential mentors. 
+
+Interns will work one-on-one with a primary mentor, and there will ideally be one or more secondary mentors as backup.  They may work either locally or remotely; in either case, regular and close interaction between interns and the primary mentor is expected, including a face-to-face meeting at the beginning of the summer.  The program is open to all undergrads, grads and postdocs who are eligible to work in the U.S., including previous interns and individuals already mentored by DataONE participants.  This year, we can support up to 8 students with combined funding from the INTEROP Virtual Data Center award and from DataONE.   
+
+Mentors should be closely affiliated with a DataONE Working Group and/or Coordinating Node or Member Node, and must be both qualified and available to work closely with the intern during the program period (generally, between May 23rd and July 29th, although this can be shifted to accommodate intern/mentor calendars).
+
+Project ideas should be directly relevant to either the cyberinfrastructure or community engagement aspects of DataONE.  They need not be limited to programming projects.  For instance, projects may involve data collection, development of outreach or training materials, providing support for integration of new member nodes, etc.   Research and implementation oriented projects should have strong potential to lead to conference presentations and/or papers.
+
+Since only a limited number of interns can be supported, we are asking for at most one project idea from each working group or node.  Some ideas may not be included in the final announcement if they are judged not to meet the requirements, and there is no guarantee at this point that the program will be able to recruit and support an intern for any individual project.
+
+Please send your project ideas to internship@dataone.org, including the following information:
+
+- Project title
+- Primary mentor (1 only)
+- Secondary mentor(s)
+- Description: 3-5 sentences, including motivation and approach
+- Qualifications/skills needed
+- Skills to be learned
+
+
+An example (modified from a successful 2009 project idea):
+
+Title: Refactoring the EarthGrid SOAP API to REST style and implementation for Metacat
+Primary mentors: Matt Jones
+Secondary mentor: Mark Servilla
+Description: EarthGrid (aka EcoGrid) is a lightweight API which provides SOAP based communication of several types of client software with the data server applications. This project involves refactoring current SOAP based EarthGrid API to REST style that has certain benefits over SOAP. This REST API will be implemented within the Metacat data management system. It will be a prototype for client software using the EarthGrid API such as Morpho and Kepler.
+Qualifications: Applicants should have strong Java skills and preferably some web service programming experience.
+Skills to be learned: Collaborative open source software development, web service architecture.
+
+
+Advertising. We also need your ideas for reaching your target population of students!  Please send your ideas of mailing lists, electronic bulletin boards, etc. to interns@dataone.org.  Current advertising outlets on our radar include mailing lists for ESIP, AGU, ASIST, LTER, and ECOLOG-L.
+
+Application process. Project ideas will be posted on the web, and students will apply for the internship by emailing a cover letter and resume to internship@dataone.org. There are specific instructions for what the cover letter must contain.  Applicants will also solicit one letter of reference. The application packages will be posted to the DataONE docs site for review by potential mentors between April 8 and 14th.  
+
+Program schedule (draft, subject to change)
+     • March 11 - Deadline for project ideas
+     • March 14 - Announcements distributed
+     • April 8 - Deadline for applications (may be extended if needed)
+     • April 15 - Notify students of outcome.  Scheduling of face-to-face kickoff meetings.
+     • May 23 - Internships begin
+     • June 27 - Midterm evaluations
+     • July 29 - Internships conclude
+     • October 18-20 - DataONE All Hands Meeting.  Interns are invited to present results.
+
+We will keep the summer internship program announcement updated with more information at:
+https://docs.google.com/document/d/1JZoGrZLjKXCjzju_sm5CH5ddwP__ZqOQXGck2SP6Otg/edit?hl=en&authkey=CJ3siOoP&pli=1#
+
+If you have any questions, please contact us at internship@dataone.org. We look forward to seeing your project ideas!  
+

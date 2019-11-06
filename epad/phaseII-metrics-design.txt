@@ -1,0 +1,37 @@
+#persist
+
+Metrics for DataONE PhaseII (Years 5-10)
+
+
+Content and Service Oriented
+
+ * Uptime of DataONE service availability to target audience. [MBJ: we need to start logging this in a database, indexed by subsystem]
+ * Number of current version data objects (i.e. entities of type "DATA" in the object formatType that are not obsoleted)
+ * Number of current version data packages (i.e. entities of type "RESOURCE" in the object formatType that are not obsoleted). [[This metric provides an indication of the number of aggregated data products available through the system]]
+ * Total size of stored content.
+ * Number [BEW: and Volume] of data downloads with DataONE tools as determined by the User Agent string in the HTTP request header to GET requests. [BEW: Plus downloaded via the search interface, which probably requires getting the referrer for calls at the MN]
+ * Number of searches run against the DataONE search GUI and API
+ * Total number of authenticated users accessing DataONE services (on MNs or CNs) (creating, consuming, manipulating content) [MBJ: note that many Tier 1 MNs upload all of their content via sync rather than via authenticated users, so I'm not sure how meaningful this will be for assessing # of true users) [DV - It shows the number of authenticated users. If the number is very small then difficult to justify expense.]
+ * Number of distinct original data contributors as determined by the subject of the user adding content to the Member Node (i.e. the "submitter" in system metadata) [MBJ: submitter is unlikely to be the best field; many groups use a single submitter even when there are many data contributors; a better index of contributors would be the list of 'Creator' elements from the metadata, which are the people who should be attributed for the contribution][DV - as long as there is a consistent, reliable mechanism that works across MNs and metadata formats]
+ * Number of distinct data consumers as determined by the subject of the authenticated user accessing DataONE content resolution and retrieval services.[MBJ: combine with next one based on IP; also, I propose we should be tracking individually numbers of metadata views, data downloads, and package downloads][DV - Separate metric from total users. views, data, package distinction can be done through logs (now) for services, but not UI (without significant log processing)]
+ * Number of distinct data consumers as determined by the IPAddress of the device accessing DataONE content resolution and retrieval services. [[Note - this is a very sloppy metric and does not reliably indicate distinct users]]
+ * Search precision and recall as determined by repeat evaluation of a corpus of test queries executed against the search system and evaluated by a group of domain experts.
+ * Number of visitors and questions on ask.dataone.org. [MBJ: maybe, but this will remain low until we prominently feature it in our site; let's avoid using metrics for systems we don't plan to invest in heavily]
+ * Number of visitors on our IRC channel. [MBJ: unlikely to ever be very high]
+ * Number of hits for "DataONE" in web search engines.
+ * Integrity of content as determined by the number of "404 - Not Found" responses to get(PID) [MBJ: we should be tracking down and resolving all of these; maybe a splunk alert sent to someone responsible for tracking them down?][DV - add for resolve service as well]
+
+
+Size of the DataONE Federation
+
+ * Number of Member Nodes participating in the production environment
+ * Number of software solutions implementing the Member Node software stack and proportion of those Member Node software stack installations that have DataONE services enabled and are participating in DataONE
+ * Number of organizations participating in DataONE as Member Nodes, collaborating projects, and resource contributions.
+
+
+Community Impact
+
+ * Number of publications that cite content accessible through DataONE [[Can be supported by future capability and agreements with publishers]][MBJ: I would rephrase this to number of citations to content available through DataONE, so its not just publications that can do the citing; citing on blog posts and in published analyses may be just or more important over time]
+ * Geographic distribution of users that request searches and downloads.
+
+

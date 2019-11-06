@@ -1,0 +1,143 @@
+DataNet Meeting
+Minnesota Population Center
+University of Minnesota
+July 26 –27, 2012
+
+Participants
+TerraPop: Steve Ruggles, Tracy Kugler, and Cathy Fitch
+DFC: Reagan Moore and Mary Whitton
+SEAD: Margaret Hedstrom
+DataOne: Bill Michener and Rebecca Koskela
+NSF: Bob Chadduck 
+
+Thursday, July 26
+MPC Seminar Room – 75 Willey Hall (unless otherwise noted)
+
+Project overview presentations
+TerraPop staff will join us for this part of the meeting. Others can participate by webcast:
+https://umconnect.umn.edu/datanet/
+8:45 – 9:15 DataONE
+
+9:15 – 9:45 DFC (Reagan Moore)
+DataNet Federation Consortium - Data Driven Science (3 goals)
+ * Implement national data structure
+ * Enable collaborative infrastructure
+ * (missed this one)
+
+OOI, National Climatic Data Center
+CUAHSI, UNC Institute for the Environment, National Climatic Data Center
+CIBER-U (Drexel University - Engineering digital library)
+
+Community-based Collection Life Cycle rather than the Data Life Cycle
+
+Suggesting re-use of architecture components for EarthCube
+
+Tools:
+ * iRODS data grid (policy-based data management; brokering technology; 50 different clients; operations based on name spaces (users,objects,collections,state information, resources,policies,procedures))
+ * Soft links - register data from external data management system, access it
+ * Federated data grids
+ * Workflow integration
+
+9:45 – 10:00 Break
+
+10:00 – 10:30 SEAD (Margaret Hedstrom)
+
+Sustainability Science/Research - multi-discipline
+ * Actionable Data
+ * Active and Social Curation
+
+Next steps:
+ * Bulk ingest of NCED data (1.5TB) to Active Content Repository (ACR) (Jul-Aug)
+ * Add profiles to SEAD VIVO for all NCED researchers (Jul-Aug)
+ * Build out ACR with new data types
+   * IRBO, Mississippi River flooding survey, ACRR repository
+   * Engage early in new project (WCS-MRBO)
+ * ACR User interface and testing
+ * Pass selected data sets/collections from ACR to Institutional Repositories/ICPRS, other DataNets
+
+SEAD Interoperability with OAIS-Compliant Repositories
+ * synchronization interface (at input)
+ * publication interface (before moving into institutional repositories)
+
+10:30 – 11:00 TerraPop (Steve Ruggles)
+
+Terra Populus (Integrated Data on Population and Environment)
+Focus is on integration - data with different formats from different scientific domains easily interoperable
+ * Archival Development - starting with population microdata (Brazil and Malawi - IPUMS)
+   * Microdata started in 1964 in the US; started adding international data in 2000
+   * Combining with environmental data - Global Land Cover 2000, Global Landscapes Initiative, WorldClim -> Microdata + Area-level data + Raster data
+   * Importance of Metadata and Preservation
+ * Dissemination and Analysis
+   * High-speed microdata aggregation
+   * Visualization: maps and graphs
+   * API will allow others to develop additional analysis capabilities
+
+ * Education and Outreach
+   * Fathom (educational s/w), Science on a Sphere (museum program)
+ * Organization Development including Sustainability
+
+
+11:00 – 11:30 Q & A
+
+TerraPop - allows users to create datasets and download them
+DFC - providing infrastructure so setup own environment
+SEAD - wide set of ambitions/capabilities - letting community drive this; researcher has data that wants preserved - puts in drop box and is geo-referenced and shows up on map (not clear how this will happen once deposited in dropbox)
+DataONE- through individual MNs; discover data from other MNS; also discover data through search portal; educational resources from web site; interaction with other tools, such as DMPTool; DataUP, also point to other DataNets
+
+Decision on when to publish datasets?
+Up to the indvidual rearchers - DM plan now encourages researchers to think about preservation and access to data
+Observatory networks making decisions on when to make data available - continuous streams of data from OOI and NEON
+Also curation problem if extremely large dataset
+To SEAD there is not an obvious publication point - publication may be triggered by an event (publication of a paper), process (community decides)
+
+Are community practices changing?
+Dryad accepts data same time as article submitted for publication - reviewers can see the data and metadata as well as the submitted paper - 60 journals on board now with more in the queue
+SEAD: Publishing of data along with paper raises some issues - data doesn't necessarily have long term value (technology changing so fast; may be only a slice of larger amount of data) - advantages reproducibility of science but only addresses a small part of the "data" problem
+
+Data with privacy implications?
+Yes
+
+11:30 – 12:30 Lunch, Background on RCN (Bill Michener)
+12:30 – 1:15 Develop RCN proposal outline, writing assignments
+
+Round-Robin Pairwise Collaborations (conference phone available)
+Session A [75 Willey] Session B [29 Willey]
+
+1:15 – 2:15 DataONE – DFC            ||         SEAD – TerraPop
+http://epad.dataone.org/DataNet-PI-DFC-D1-Breakout-26Jul2012
+2:15 – 2:30 Break
+2:30 – 3:30 DataONE – SEAD         ||          DFC – TerraPop
+http://epad.dataone.org/DataNet-PI-SEAD-D1-Breakout-26Jul2012
+3:30 – 4:30 DataONE – TerraPop    ||           DFC - SEAD
+http://epad.dataone.org/DataNet-PI-TerraPop-D1-Breakout-26Jul2012
+
+4:30 – 4:45 Break
+4:45 – 5:30 Report out on pairwise discussions
+
+
+Friday, July 27
+MPC Meeting Room – 29 Willey Hall
+
+8:45 – 10:30 Large Group Discussion - DataNet Program: The Big Picture
+Brief characterizations of each project, especially as they relate to overall program
+ * Report out on pairwise discussions
+ * How projects complement each other
+ * Projects’ roles within overall program
+ * Potential for DataNet-wide collaborations
+Goal: Draft extended outline & introduction to DataNet vision document/RCN proposal
+
+Link to the google doc: http://bit.ly/N1J17J on items to include in RCN proposal
+
+10:30 – 11:00 Break
+11:00 – 12:00 Wrap-up, next steps
+
+Questions for Bob Chadduck
+
+ * DN relationship with other NSF Initiatives
+ * News on DWF/DAITF/etc
+ * Collaboration/vision document for DNs (e.g. individual, coordinated)
+   * format
+   * content
+ * Interoperability requirements for DNs (meetings, plans, RCN, etc)
+
+

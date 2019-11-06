@@ -1,0 +1,127 @@
+Attendees: Rebecca, Carol, Amber, Bob C., Todd, John Cobb, John Kunze
+
+Regrets: Mike Frame,
+
+Conference Call Number: (866) 804-6831
+This brings you to our conference call line - next press 1
+The conference number is: 95088#
+50275 <-- NEW Number
+I get the same non-valid message with the new--shall we try Bob's?
+
+Please use this:   866-703-9626  Pass Code:  767574 
+
+
+Will also use the epad: http://epad.dataone.org/20110624-LT-VTC
+
+ 
+Agenda for 2011-06-24
+
+1. Cyberinfrastructure update (Vieglais)
+2. Status of webinars from NSF Review demos (Wilson)
+3. Status of Member Node group (Frame)
+
+So, below is a quick status of the MN Group:
+
+We've had 2 calls, but the last one was about a month ago.
+Below is the latest Draft of what we have come up so far.  Most likely we will not be able to meet again until July.
+Let me know if this is what you need.
+
+Mike
+
+___________
+
+Proposed Rubric for Determining Member Node Candidate Priority
+
+Assumption
+D1 engagement with MN candidates needs to be prioritized since leadership, administrative, and technical resources will be required to engage each MN, especially for the first set of member nodes beyond the original three. Each candidate MN needs to meet minimum requirements.
+
+Mechanism
+A very simple zero-one evaluation of desired dimensions could provide a numerical evaluation of MN characteristics which could then be used to rank candidate MNs against each other. That evaluation could be performed collaboratively by a committee, or it could be done by the individuals on a committee and then averaged. Such an evaluation mechanism could also be used to provide feedback about the strong or weak points of a MNs candidacy without necessarily exposing the actual priority rank of the candidate.
+
+Minimum Requirements
+These are the absolute minimum requirements of any candidate MN. A MN cannot be considered a candidate without meeting ALL of these criteria.
+
+        •        The metadata format used by the candidate MN is supported by D1, or D1 agrees to begin supporting the metadata format in question.
+        •        At least some data in the collection is public or can be shared upon request.
+        •        A basic level of physical and cyber-security is in place.
+        •        The candidate MN intends to implement at least the Tier 1 D1 MN API.
+
+Priority Evaluation Dimensions
+These dimensions assume a a candidate MN already meets the minimal, required criteria. These dimensions serve to prioritize engagement of a candidate MN.
+
+Data
+
+  ✓   Quality assurance. Does the candidate MN have clear, effective quality assurance standards for both data and metadata?
+
+  ✓   Data sharing. Is a large proportion of the data in the collection public or available to researchers upon request?
+
+  ✓   Scientific value. Is the data in the collection unique in the broader community? Does it fill gaps in the content already available through D1? In combination with existing/or near-term D1 collections, does it enable new science?
+
+  ✓   Extent of collection. Is the collection exceptionally strong in breadth, depth, or both?
+
+  ✓   Risk. Is the collection at risk?
+
+Strategic
+
+  ✓   Community. Is the size or visibility of the community represented by the candidate MN particularly important? Does the community support the candidate MN?
+
+  ✓   Partnership. Would admitting the candidate as a MN help form a strategic partnership beneficial to D1?
+
+  ✓   Funding. Would admitting the candidate as a MN help make new streams of funding available to D1? Is the candidate MNs funding source different from other MNs in D1?
+
+  ✓    Technical expertise. Does the candidate MN bring a high level of technical expertise, allowing it to contribute to broader D1  technical efforts?
+
+  ✓     Data management expertise. Does the candidate MN bring a high level of data management expertise, allowing it to contribute to broader D1   efforts?
+
+  ✓     Synergy. Does the candidate MN bring a high potential for synergy (technical, administrative, scientific) with D1?
+
+Diversity
+
+  ✓   Geographic. Would admitting the candidate as a MN add a new state, region, country, or continent to the D1 network?
+
+  ✓   Underrepresented groups. Is the candidate MN run by an underrepresented group or does it primarily serve an underrepresented group?
+
+  ✓   Linguistic or cultural diversity. Would admitting the candidate as a MN increase the linguistic or cultural diversity of the D1 network?
+
+  ✓   Institution type. Would admitting the candidate as a MN increase the institutional diversity of the D1 network?
+
+Leadership/Management
+
+  ✓   Administrative. Is the candidate MN an effectively managed and stable organization? Is there an institutional commitment to the D1 relationship?
+
+Technical
+
+  ✓    Human resources. Does the candidate MN have the necessary technical skills to minimize demands on CCIT technical support?
+
+  ✓    Technical resources. Does the candidate MN offer technical resources (e.g., storage) BEYOND those it needs to support its own D1 deployment?
+
+  ✓    Technical compatibility. Is the existing technical infrastructure of the candidate MN largely compatible with the D1 infrastructure, minimizing complexity of deployment? Is the data model relatively compatible?
+
+  ✓    Technical stability. Does the candidate MN have a history of satisfactory availability?
+      Does this make it more or less of a priority to include it in the network?
+
+  ✓    Tier 2 implementation. The candidate MN intends to implement the Tier 2 MN APIs.
+
+  ✓    Tier 3 implementation. The candidate MN intends to implement the Tier 3 MN APIs.
+
+  ✓    Tier 4 implementation. The candidate MN intends to implement the Tier 4 MN APIs.
+
+  ✓    Tier 5 implementation. The candidate MN intends to implement the Tier 5 MN APIs.
+
+Commentary
+The downside of this method for determining prioritization is that each item counts equally. If desired, larger weights could be given to some items providing a weighted score. An alternative would be to focus on the 5 headings: data, strategic, technical, administrative, and diversity, using the individual items under each heading to simply to determine a 0/1 for the heading as a whole. Then the overall numerical evaluation would range from 0 to 5 instead of 0 to twenty something.
+
+Cobb comment: I would advocate an important criteria being the "resource drain" (better wording needed) that adding a new MN represents to D1. If a candidate MN is important, can bring their own resources to play for implementation
+
+4. Around the Room 
+
+Todd:
+1. In case folks have not seen it yet, NSF BIO released more specific DMP guidance
+http://www.nsf.gov/bio/pubs/BIODMP061511.pdf
+The highlight is that the DMP implementation outcome needs to be reported in annual/final reports and in prior results on future proposals (thus exposing it to a modicum of enforcement thru peer review)
+
+
+
+ 
+
+

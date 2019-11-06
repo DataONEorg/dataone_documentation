@@ -1,0 +1,152 @@
+DataTOL meeting notes, 2010-06-16
+Participants: Bertram, Anand, Biva, Paolo, Manish
+
+Hi this is Bertram. Please enter your name in the upper right corner (I think), as you join the call.
+Also, please log into MarraTech and goto the Silver Room (and Skype for backup).
+
+Anand's report: http://groups.google.com/group/datatol/web/pc1-mockup-split-and-capture-opm
+Biva's report: 
+ * Activities completed:
+     * conversion of RDF file to XML. Attached here is the output xml file
+ * Activities coming up
+     * Conceptual schema of provenance store.  
+
+Are we off by one week, or OK? 
+(here: http://groups.google.com/group/datatol/web/weekly-reports?_done=%2Fgroup%2Fdatatol%3F) 
+
+Anand:
+split FPC-RWS wf in two parts, worked ok
+captured as OPM (with Dan's help)
+captured native provenence
+connection string problem re-solved
+trying to get to the actual data; not just the refs!?
+-> conceptual
+
+Biva:
+use case 
+converting OPM.RDF to OPM.XML 
+trying to see whether Kepler and Taverna OPM.XML are compatible
+working on conceptual model
+
+Manish: when looking at different formats, check whether anything is missing
+OPM has 'was-derived-from', etc. ==> check whether somethings have been dropped
+
+Bertram: contact mentors and DToL group right away with question
+
+Manish: OPM specification, share Dan's (Kepler) schema with others
+
+Paolo: OPM spec is "rich", don't get stuck there; baseline 3-4 types of nodes and similarly edges:
+(don't loose sleep on inference rules ;-)
+
+Need to tackle the conceptual model (type of information we want to capture)
+different from architecture/implementation 
+
+Let's focus on D3: graph given
+in Taverna, rendering of processors and execution
+
+Graphviz/dotfiles will result in different renderings of graphs 
+==> Paolo to provide slides that shows /explains dot-graph
+OPM to dot
+get the OPM toolbox (again!) from http://www.openprovenance.org
+the the binary
+unzip
+go to bin/
+you will find a number of utils including
+opmconvert (rdf <-> xml)
+opm2dot  <-- this is what will give you a .dot as well as a .pdf file from an OPM graph
+
+opm toolbox to convert opm to dot file or equivalently a pdf file to produce a graph. create the graph for both the  splitted workflow and the whole workflow. convert all the 3 opm files to dot files.  create an artifact conceptually the schema , ER diagram?  conceptual schema for the shared provenance, processes and artifacts(links to data)   
+
+PC3, Paolo's graph:
+http://twiki.ipaw.info/bin/view/Challenge/UoM report page from PC3 / myGrid team (Paolo)
+and here is a link to the presentation I gave at the PC3 meeting
+http://groups.google.co.uk/group/datatol/web/PC3-report.pdf
+
+UC Davis "import" into Taverna :
+algorithm that looks at OPM graph; 
+translated to internal Taverna graph;
+need to "guess" a Taverna wf that may have produced the graph
+(why does one need this?)
+
+native OPM <=> other OPM 
+failed (different naming schemes)
+Problems:
+1. Conceptual model mapping
+2. identifiers mapping
+
+Difference to PC3:
+Then (PC3): Kepler <==using OPM===> Taverna
+Now: Kepler <==OPM==> Shared Provence Space (SPS)  <==OPM==> Taverna
+
+Overall story: 
+A user U1 runs a Taverna wf W1 and deposits her data D1 in SDS (Shared Data Space)
+and puts the trace T1 in SPS
+
+A user U2 runs a Kepler wf W2  that happens to use some parts of D1,
+creating a new data product D2 in SDS, and a new trace T2 in SPS.
+
+Now when browsing or querying the provenance (T2) of D2, we need to be able to "unravel" the processing history of not only U2's run, but also go back "through" D1/T1 all the way to the inputs of U1's run of W1.
+
+Biva: SPS for Kepler, Taverna? 
+Should one be able to discern whose wf-run this was? (Kepler, Taverna, etc)
+
+Paolo: look at two examples  (OPM graphs from Taverna and Kepler, dotfiles, PDF files)
+OPM++  ("Profile" late) 
+
+Processes (Invocations), Artifacts (Refs-to-Data)
+mapping of internal identifiers to 
+
+
+
+
+OPM 1.1: 
+Deﬁnition 1 (Artifact). Immutable piece of state, which may have a physi- 
+cal embodiment in a physical object, or a digital representation in a computer 
+system. 
+
+Deﬁnition 2 (Process). Action or series of actions performed on or caused 
+by artifacts, and resulting in new artifacts. 
+
+Deﬁnition 3 (Agent). Contextual entity acting as a catalyst of a process, en- 
+abling, facilitating, control ling, or affecting its execution. 
+
+
+we do make distiction b/w data and  traces in the general store, but sometimes the distinction is not very strong because when the data is a constant, we can directly refer to the data itself rather than accessing it via a reference.
+
+http://taverna.opm.org/converter?it=2-0
+http://taverna.opm.org/t2:ref//3123868a-40ad-42c8-9f3c-7fb3112651e7?b97d1bae-67d4-45d6-94cb-20983b913ef3
+
+Glossary 
+lists the DToL terms and their (informal) definitons
+
+NEXT GOAL/Deliverable
+- develop, finish conceptual model for SPS 
+
+NEXT ACTIONS
+==> Anand, Biva (and Saumen when available)  to create and link graphical versions of the three wf runs/traces
+(OPM graphs)
+==> summarize what you see / what's different in the 2 (or 3 with COMAD) versions
+These findings will inform the SPS-CM
+
+==> Anand, Biva: create google  spreadsheet with "Dictionary" of maybe this form:
+DToL| Kepler |  Taverna | OPM |   Is part of SPS-CM??   
+ proc-actor   | actor |  processor | process | .yes
+ data-item|   data-token |  ?data | ~artifact |  yes 
+ run
+ trace
+ workflow
+ user
+ date-time started
+ data-time finished..
+^^^ above goes the beginning of the SPS-CM  
+Please include all OPM entities (A, P, AG) and all OPM relations (5 or so of them)
+in the OPM column!
+
+==> create Glossary with (informal) definitions key terms from the DToL column of the above table
+==> also check provenance vocabulary by Jun Zhao (Paolo's ref)
+==> also check glossary of Tim at UC Davis
+
+
+
+
+

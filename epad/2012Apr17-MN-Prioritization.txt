@@ -1,0 +1,53 @@
+17 April 2012
+Attendees: Bill, Rebecca, Amber, Steph, Suzie, Trisha
+
+Motivation:
+Many inquiries about becoming a Member Node
+2 dozen are Metacat
+Mercury MNs (how many?) other NASA facilities? --BEW: no other NASA EOSDIS data centers are using Mercury, for what that's worth, although Mercury has harvested the Land Processes DAAC metadata / links to the LP DAAC's holdings (RC).
+Generic Member Nodes (GMN) - how many?
+
+EAB has strongly suggested that DataONE get as many MNs online ASAP  for purposes of longevity
+
+First Principle:
+Select MNs for joining DataONE based on number of instantiations
+
+Second Principle
+Select MNs based on quantity and quality of data
+
+Third Principle
+Select high-profile MNs
+
+Fourth Principle
+Select pragmatically  - knowing that there are resources and enthusiasm to complete the tasks
+
+Fifth Principle
+Select MNs based on their abilitty to contribute to long-term sustainability
+
+Sixth Principle
+Select MNs that are diverse and geographically distributed so that we cover a range of MN types and globally distributed nodes (has implications for need for global CNs)
+
+Seventh Principle
+Select based on showing exemplars for what we want DataONE to be.
+
+Winners:
+
+Metacat (24+/-)
+Mercury instantiations (?) -- BEW: could look to IABIN, possibly CDIAC, possibly wind energy data @ORNL
+Merritt (4) {includes Excel node}
+DuraSpace/Fedora - check with MacKenzie Smith (?)
+USGS MNs (?)   - where can we look to stay up to date with USGS Member Node candidates?  (deborah at RPI is interested in keeping up as a result of her work on water quality monitoring and general semantically enabled monitoring)
+Dataverse out of Harvard for social science data (?) http://thedata.org/
+US Global Change Research Program and National Climate Data Centers 
+NASA/NOAA/USDA
+Smithsonian (Fedora instance with Drupal on top) 
+i-Rods
+OKFN (Open Knowledge Foundation)
+Open DAP
+PANGAEA
+TERN
+
+http://mule1.dataone.org/OperationDocs/membernodes.html
+
+Also: be sure to maintain differentiation between SW technology (Fedora, iRODS, ...) and projects/repositories.
+

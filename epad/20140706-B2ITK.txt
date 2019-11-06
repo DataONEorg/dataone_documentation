@@ -1,0 +1,26 @@
+This etherpad is for note gathering during Break Out 2 during the 2014 DUG held at Copper Mountain, CO
+
+This session will be on searching for content in DataONE, and will be focussed on three aspects in particular:
+
+1. How search works in DataONE, including programmatic access
+2. The ONEMercury search interface, which is the current default web based user interface for searching DataONE
+3. Evaluation of a new search interface (shipped with the Metacat repository software) that may provide an alternative to ONEMercury.
+
+
+Feedback:
+
+Session 1
+ * Easier method for minimizing search and result set windows (e.g., click on respective window anywhere).
+ * Have either search field and or result set window be mapped to a pop-up that is outside of the map window.
+ * Have map tiles toggle on/off.
+ * Have main window tabbed, where each tab shows a different theme (e.g., geospatial (done), taxonomic, temporal, etc...).
+
+Session 2
+ * Reproducible bug: narrow date range to early (e.g., 1900-1922) time frame; map interface resolves only a few tiles; select tile with value of 5 (over California); map now displays all time ranges - seems like date ranges are not sticky.    
+
+Check out this article for info on why best practices (including metadata) matter:
+
+Kervin, Karina E.; Michener, William K.; and Cook, Robert B..  (2013).  "Common Errors in Ecological Data Sharing." Journal of eScience Librarianship  2(2): Article 1.  http://dx.doi.org/10.7191/jeslib.2013.1024
+
+
+

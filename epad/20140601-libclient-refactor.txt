@@ -1,0 +1,223 @@
+Preface
+
+Libclient is being refactored to accomodate the new org.apache.HttpClient 4.3.x behavior.
+v4.3 incorporates new connection manager behavior, and handles idleConnections differently than even v4.2.  (Previous releases of libclient_java used v4.1.3)
+
+At the same time, the probable source of the resource leak (file handles) was found serrendipitously (in d1_common_java) and some of the workarounds in libclient to make sure libclient wasn't contributing to the resource leak can be undone.  
+
+The first goal of the refactor is to adapt to HttpClient v4.3 (replace deprecated object usage) and invert the dependency by passing in an HttpClient to MNodes and CNodes, instead of creating and destroying the httpclient and connection manager with each call - thus reducing overhead.
+
+The second goal is to allow the creation of Mock objects that avoid http calls, to allow for better unit testing.
+
+The third goal is to support Mock environments such that complicated business logic can be tested, maybe even in memory.  Limiting the use of singletons and monostate classes can help here.  Current singletons are CertificateManager, ObjectFormatCache, ObjectFormatInfo.  D1Client is a monostate class.
+
+
+New Abstractions / points of flexibility
+1. MNode, CNode and D1Node - converted from implementations to interfaces.  Implementations classes contain pre-existing logic.
+2. MultipartRestClient - an extracted interface from D1RestClient to allow the use of mock objects for unit testing.  It de-couples the business logic of converting Java methods into REST calls from the connection logic of sending requests and receiving responses.  
+3. NodeLocator - a new abstract class that defines an interface for registering and using MNodes and CNodes.
+
+
+1. MNode, CNode, D1Node interface extraction
+interface MNode extends D1Node, MNCore, MNRead, etc.
+interface CNode extends D1Node, CNCore, CNRead, etc.
+interface D1Node methods:
+    get/setNodeId
+    get/setNodeType
+    getNodeBaseServiceUrl
+    getLatestRequestUrl
+    
+org.dataone.client.impl.rest implementations:
+ 
+(containing the java-method to REST/multipart message logic)
+
+MultipartD1Node  implements  D1Node
+MultipartMNode  extends  MultipartD1Node implements MNode
+MultipartCNode  extends  MultipartD1Node implements CNode
+
+(containing the HttpClient-specific logic, mostly time-out setting)
+
+HttpMNode extends MultipartMNode
+HttpCNode extends MultipartCNode
+
+
+2. MultipartRestClient interface
+
+MultipartRestClient
+    doGetRequest
+    doHeadRequest
+    doDeleteRequest
+    doPostRequest
+    doPutRequest
+    getLatestRequestUrl
+    
+    
+public class HttpMultipartRestClient  implements MultipartRestClient
+{    
+    public HttpMultipartRestClient(HttpClient apacheHC, Session session, RequestConfig rc) 
+    ...  
+}        
+
+ * HttpClient configuration can be specified by the application because it is passed into constructors.
+ * other messaging libraries can be used via creation of other MultipartRestClient implementations.
+
+3. NodeLocator as a ServiceLocator
+
+interface NodeLocator
+    put/getMNode
+    put/getCNode
+    Set<NodeReference> listD1Nodes
+
+implementations:
+class NodeListNodeLocator extends NodeLocator {
+    public NodeListNodeLocator(NodeList nl) {...}
+    ...
+}
+
+class SystemContextNodeLocator extends NodeListNodeLocator {
+    public SystemContextNodeLocator() {...}
+    ...
+}
+
+D1Client is a monostate service locator tightly coupled to the system properties used to bootstrap clients
+to the default DataONE environment via the node.properties file packaged with d1_libclient_java
+
+Refactoring Summary
+
+1. move the high-level ITK-specific classes DataPackage, D1Object, and D1Client from
+org.dataone.client  to org.dataone.client.itk
+
+2. convert D1Node, MNode, and CNode into interfaces and create implementation classes, so instead of:
+
+    String nodeBaseUrl = ...;
+    MNode mn = new MNode(nodeBaseUrl);
+    
+direct instantion would be: 
+
+    String nodeBaseUrl = ...;
+    MNode mn = new HttpMNode(nodeBaseUrl);
+
+
+    where in production:
+        NodeReference nodeRef = ...;
+        Node node = NodeList.findNode(nodeRef);
+        nodeBaseUrl = node.getBaseUrl;
+
+    and in d1_integration
+        nodeBaseUrl = Settings.getConfiguration.getProperty("context.mn.baseurl");
+
+one can directly instantiate the implementation
+    String nodeBaseUrl = ...;
+    MNode mn = new HttpMNode(nodeBaseUrl);
+
+or as above, but using a shared http connection manager (via MultipartRestClient)
+    String nodeBaseUrl = ...;
+    MultipartRestClient = ...;
+    MNode mn2 = new HttpMNode(multipartRestClient, nodeBaseUrl);
+
+or using 
+
+    // application config.
+    NodeList nodeList = ...;
+    NodeLocator nodeLoc = new NodeListNodeLocator(nodeList);
+
+    ...
+
+    NodeReference nodeRef = ...;
+    MNode mn = nodeList.getMNode(nodeRef);
+
+
+
+3. defines a new abstraction 'MultipartRestClient'  that decouples the business logic of converting a java method into  REST calls from org.apache.http.HttpClient.
+
+4. refactors the client-side node registry behavior out of CNode implementations into a new NodeLocator interface and implementation (NodeListNodeLocator).
+   (this part needs review)
+
+
+
+org.dataone.client.itk - new package for the high-level objects
+    DataPackage
+    D1Object
+    D1Client
+    
+org.dataone.client  -  API for the service implementations, modeling composite service APIs 
+    NodeLocator        a client-side registry for MNodes and CNodes.  Contains maps that hold    
+                                references to MNodes and CNodes  (as in Map<NodeReference, MNode)
+    MNode                converted to interface
+    CNode                converted to interface
+                              *previously, CNode had extra methods to support getting a baseUrl from
+                              a cached CN NodeList, in order to support new MNode(baseUrl) 
+                              I hope to support these by interposing a ServiceLocator / NodeRegistry
+
+org.dataone.client.rest - API for adapting Java methods to our defined REST / multipart API
+    MultipartRestClient
+    
+    
+org.dataone.client.impl
+    NodeListNodeLocator      - a NodeLocator implementation that uses a NodeList to navigate
+                                            from NodeReference to MNode / CNode via the baseServiceUrl property
+                                            
+org.dataone.client.impl.rest  - implementations of the MNode, CNode, andMultipartRestClient
+    MultipartD1Node              (non-public?)
+    RestClient (non-public)     (has-an HttpClient)
+    MultipartMNode               extends BaseD1Node implements MNode
+    MultipartCNode               extends BaseD1Node implements CNode
+    HttpMultipartMNode         extends MultipartMNode
+    HttpMultipartCNode          extends MultipartCNode
+    HttpMultipartRestClient    implements MultipartRestClient;  (has-a RestClient)
+
+
+Factories and maybe a ServiceLocator (since the registry behind cn.listNodes is akin to a ServiceLocator)  need to be written to allow dependency injection, but for now, implementation would be:
+
+/* set up the http elements that will be used by  multiple MNodes / CNodes */
+
+HttpClient apacheHttpClient = HttpClients.createDefault();
+
+int millisecs = 30000;
+RequestConfig defaultTimeouts = RequestConfig.custom()
+            .setConnectTimeout(millisecs)
+            .setConnectionRequestTimeout(millisecs)
+            .setSocketTimeout(millisecs).
+            .build(); 
+
+
+MultipartRestClient httpMrc = new HttpMultipartRestClient(apacheHttpClient, defaultTimeouts);
+
+MNode mn1 = new HttpMultipartMNode(httpMrc, baseUrl1);
+MNode mn2 = new HttpMultipartMNode(httpMrc, baseUrl2);
+CNode cn = new HttpMultipartCNode(httpMrc, cnBaseUrl);
+
+Settings.getConfiguration().setProperty("D1Client.D1Node.get.timeout",60000);
+mn1.get(...) // get data object, waiting up to 60 seconds
+cn.get(...) // get data object, waiting up to 60 seconds
+
+mn1.getSystemMetadata(...)  // get a systemMetadata, waiting up to 30 seconds
+mn2.getSystemMetadata(...)  // get a systemMetadata, waiting up to 30 seconds
+
+
+MNode mn3 = new MultipartMNode(httpMrc, baseUrl3);
+mn3.get(...)  // get some data, no timeouts, same HttpClient (and ConnectionManager);
+
+**** I'm not completely satisfied with the timeout handling, but it preserves existing behavior
+
+
+
+Versioning
+
+
+org.dataone.service.types.DataoneVersions public enumeration { "v1", "v2" }
+
+org.dataone.client.types.SystemMetadata  extends org.dataone.service.types.v2.SystemMetadata implements DataONEVersion
+org.dataone.client.types.Node                   extends org.dataone.service.types.v2.Node implements DataONEVersion
+org.dataone.client.types.LogEntry             extends org.dataone.service.types.v2.LogEntry implements DataONEVersion
+org.dataone.client.types.ObjectFormat      extends org.dataone.service.types.v2.ObjectFormat implements DataONEVersion
+
+
+
+
+
+
+
+
+
+

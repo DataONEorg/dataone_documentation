@@ -1,0 +1,418 @@
+System metadata
+
+change from this:
+<xs:schema  targetNamespace="http://ns.dataone.org/service/types/v1"
+    xmlns:d1="http://ns.dataone.org/service/types/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    version="v1"
+    elementFormDefault="unqualified" attributeFormDefault="unqualified">
+
+To this:
+<xs:schema  targetNamespace="http://ns.dataone.org/service/types/v1"
+    xmlns:d1="http://ns.dataone.org/service/types/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    version="1.0.0"
+    elementFormDefault="unqualified" attributeFormDefault="unqualified">
+
+
+Question for Group:
+  Identifier is accepted by constructors in all the service Exceptions.  Accepting this Identifier would make all the exceptions versionable.  We originally decided not to version exceptions (seeing that they do not have a namespace associated with them anyhow). Should we revise the constructor to receive a String instead?
+  
+
+Ryan working on qt gui for mounting the drive under windows. Need to update d1_common_python to match the schema changes.
+
+Rob - web test up, but hudson offline. (back online)
+
+Nick - replication. Need better description of tasks.
+- Add to admin for 
+
+orc VM host = host-orc-1.dataone.org
+
+List of additional methods for supporting access to / modification of system metadata
+
+
+See http://epad.dataone.org/20110510-sprint-notes
+
+- also an issue with the node list for updating.
+  Currently, we have only one method for updating of the entire nodeList, updateNodeCapabilities. This one method covers a lot of ground which could only be supported by analyzing diffs. Seems that we should call descrete methods for the various areas of the nodelist that we need to maintain.
+  
+Need to generate a document to describe the inter-jvm method calls
+
+d1_common_java Modifications
+  0.6.2-SNAPSHOT is deprecated
+  0.6.3-SNAPSHOT is current working POM
+
+Original and previously deprecated Service APIs are deleted
+
+Refactoring establishes two new packages:
+1)org.dataone.service.util
+  -all non-versionable helper classes
+    Constants (may need to reconsider:  is this versionable?)
+    D1Url
+    EncodingUtilities
+    TypeMarshaller     (wins over ServiceTypeUtil method)
+        removing serializeServiceType 
+            replaced with marshalTypeToOutputStream
+        removing deserializeServiceType
+            replaced with unmarshalTypeFromStream
+    DateTimeMashaller  (replaces ServiceTypeUtil methods)
+    
+2)org.dataone.service.types.v1.util
+  - all versionable helper classes
+    ChecksumUtil (replaces ServiceTypeUtil methods)
+    NodelistUtil (replaces NodeListParser.parseNodeListFile with NodeListUtil.mapNodeList)
+    ObjectFormatServiceImpl
+  
+Deprecated Classes and Packages
+ * org.dataone.service.types.util
+   * ServiceTypeUtil goes away
+   * TypeMarshaller is moved to org.dataone.service.util
+ * org.dataone.service.stream.util
+   * StreamUtil goes away
+ * org.dataone.service.impl
+   * ObjectFormatServiceImpl is moved to org.dataone.service.types.v1.util
+ * org.dataone.service.NodeListParser is replaced by org.dataone.service.util.types.v1.NodelistUtil
+    
+DeprecatedMethods
+ * org.dataone.mimemultipart.SimpleMultipartEntity.addFilePart(String name, Object serializableD1Object, Class type) 
+  ==> The Class parameter 'type' is no longer needed (using TypeMarshaller under the hood)
+  ==> use this new method instead:
+      addFilePart(String name, Object serializableD1Object) 
+
+Impacts: 
+    update client code to new unmarshalling method - replaces deserialize...()
+    update Metacat to include new marshalling methods
+
+ StreamUtil deprecation:
+ * metacat 
+   * edu.ucsb.nceas.metacat.restservice.ResourceHandler should be refactored (I only see an import statement and no actual use)
+
+ NodeListParser deprecation:
+ * metacat 
+   * edu.ucsb.nceas.metacat.restservice.ResourceHandler uses NodeListParser.It will have to call NodeListUtil.mapNodelist
+ * d1_libclient_java 
+   * java/org/dataone/client/CNode calls NodeListParser. (rnahf)
+
+ ServiceTypeUtil deprecation:
+ * metacat
+   * edu.ucsb.nceas.metacat.MetacatHandler (use ChecksumUtil)
+   * edu.ucsb.nceas.metacat.replication.ReplicationService (use TypeMarshaller, no need for casting)
+   * edu.ucsb.nceas.metacat.replication.ReplicationHandler (use TypeMarshaller, no need for casting)
+   * edu.ucsb.nceas.metacat.restservice.ResourceHandler (use ChecksumUtil & TypeMarshaller)
+   * edu.ucsb.nceas.metacat.restservice.D1ResourceHandler (use TypeMarshaller)
+   * edu.ucsb.nceas.metacat.dataone.MNodeService (use ChecksumUtil)
+   * edu.ucsb.nceas.metacat.dataone.D1NodeServiceTest (use TypeMarshaller)
+ * d1_mn_generic (not applicable)
+   * java.org.dataone.integration.ContextAwareTestCaseDataone
+   * java.org.dataone.integration.MNodeIT
+   * java.org.dataone.integration.ExampleUtilities
+   * org.dataone.integration.DataReplicationIT
+ * d1_libclient_java (rnahf)
+   * org.dataone.client.D1Object
+   * org.dataone.client.D1Node
+ * d1_integration (rnahf)
+   * org.dataone.integration.ContextAwareTestCaseDataone
+   * org.dataone.integration.MNodeIT
+   * org.dataone.integration.ExampleUtilities
+   * org.dataone.integration.DataReplicationIT
+ * d1_cn_noderegistry (rpw)
+   * org.dataone.cn.service.ldap.impl.CNCoreLDAPImpl
+
+ ObjectFormatServiceImpl (path changes)
+ * metacat
+   * edu/ucsb/nceas/metacat/dataone/D1NodeServiceTest
+
+ TypeMarshaller (path changes)
+ * metacat
+   * edu.ucsb.nceas.metacat.dataone.ObjectFormatService
+ * d1_libclient_java (rnahf)
+   * org.dataone.client.CNode
+ * d1_cn_rest (rpw)
+   * org.dataone.cn.rest.web.node.NodeController
+   * org.dataone.cn.rest.web.identity.IdentityController
+   * org.dataone.cn.rest.web.identifier.ReserveIdentifierController
+   * org.dataone.cn.web.identity.IdentityTestCase
+   * org.dataone.cn.web.identifier.ReserveIdentifierTestCase
+ * d1_cn_noderegistry (rpw)
+   * org.dataone.cn.service.ldap.tests.CNRegistryLDAPImplTest
+
+Constants (path changes)
+ * metacat
+   * edu.ucsb.nceas.metacat.dataone.MNodeService
+   * edu.ucsb.nceas.metacat.dataone.D1NodeService
+   * edu.ucsb.nceas.metacat.dataone.CNodeServiceTest
+   * edu.ucsb.nceas.metacat.dataone.MNodeServiceTest
+   * edu.ucsb.nceas.metacat.dataone.D1NodeServiceTest
+ * d1_libclient_java (rnahf)
+   * java/org/dataone/client/CNode
+   * java/org/dataone/client/RestClient
+   * java/org/dataone/client/MNode
+   * java/org/dataone/client/D1Node
+ * d1_integration (rnahf)
+   * org/dataone/configuration/TestSettingsTest
+   * org/dataone/client/D1ClientTestProtected
+   * org/dataone/client/CNRestURLTest
+   * org/dataone/integration/MNodeIT
+   * org/dataone/integration/DataReplicationIT
+ * d1_cn_rest_proxy (rpw)
+   * org/dataone/cn/rest/proxy/controller/CNCoreController
+   * org/dataone/cn/rest/proxy/controller/CNReadController
+   * org/dataone/cn/rest/proxy/controller/SearchController
+ * d1_cn_rest (rpw)
+   * org/dataone/cn/rest/web/node/NodeController
+   * org/dataone/cn/rest/web/identity/IdentityController
+   * org/dataone/cn/rest/web/identifier/ReserveIdentifierController
+
+D1Url (path Changes)
+ * d1_libclient_java (rnahf)
+   * org/dataone/client/CNode
+   * org/dataone/client/MNode
+   * org/dataone/client/D1Node
+   * org/dataone/client/EchoTestD1RestClientIT
+   * org/dataone/client/EchoTestRestClientIT
+ * d1_integration (rnahf)
+   * org/dataone/client/D1ClientTestProtected
+   * org/dataone/client/CNRestURLTest
+   * org/dataone/integration/MNodeIT
+
+EncodingUtilities (path Changes)
+ * d1_libclient_java (rnahf)
+   * org.dataone.client.RestClient
+   * org.dataone.client.MNode
+ * d1_integration (rnahf)
+   * org.dataone.client.CNRestURLTest
+   * org.dataone.integration.CNodeIT
+   * org.dataone.integration.SynchronizationIT
+ * d1_cn_rest (rpw)
+   * org.dataone.cn.rest.filter.ResolveFilter
+   * 
+ CN Service V1 versioning:
+ * metacat 
+   * edu.ucsb.nceas.metacat.dataone.CNodeService
+ * d1_cn_noderegistry (rpw)
+ * d1_cn_service
+ * d1_identity_manager (rpw)
+ * d1_libclient_java (rnahf)
+   * org.dataone.client.CNode
+
+ MN Service V1 versioning:
+ * metacat 
+   * edu.ucsb.nceas.metacat.dataone.MNodeService
+ * d1_libclient_java (rnahf)
+   * org.dataone.client.MNode
+
+DataONE Types V1 versioning:
+ * metacat
+   * edu.ucsb.nceas.metacat.IdentifierManager
+   * edu.ucsb.nceas.metacat.MetacatHandler
+   * edu.ucsb.nceas.metacat.util.MetacatPopulator
+   * edu.ucsb.nceas.metacat.replication.ReplicationService
+   * edu.ucsb.nceas.metacat.replication.ReplicationHandler
+   * edu.ucsb.nceas.metacat.restservice.ResourceHandler
+   * edu.ucsb.nceas.metacat.restservice.CNResourceHandler
+   * edu.ucsb.nceas.metacat.restservice.D1ResourceHandler
+   * edu.ucsb.nceas.metacat.restservice.MNResourceHandler
+   * edu.ucsb.nceas.metacat.admin.upgrade.GenerateSystemMetadata
+   * edu.ucsb.nceas.metacat.dataone.ObjectFormatService
+   * edu.ucsb.nceas.metacat.dataone.MNodeService
+   * edu.ucsb.nceas.metacat.dataone.CNodeService
+   * edu.ucsb.nceas.metacat.dataone.MetadataTypeRegister
+   * edu.ucsb.nceas.metacat.dataone.SystemMetadataManager
+   * edu.ucsb.nceas.metacat.dataone.HealthService
+   * edu.ucsb.nceas.metacat.dataone.D1NodeService
+   * edu.ucsb.nceas.metacat.restservice.ResourceHandlerTest
+   * edu.ucsb.nceas.metacat.dataone.MetadataTypeRegisterTest
+   * edu.ucsb.nceas.metacat.dataone.MockCNode
+   * edu.ucsb.nceas.metacat.dataone.CNodeServiceTest
+   * edu.ucsb.nceas.metacat.dataone.MNodeServiceTest
+   * edu.ucsb.nceas.metacat.dataone.D1NodeServiceTest
+ * d1_libclient_java (rnahf)
+   * org.dataone.client.D1Client
+   * org.dataone.client.CNode
+   * org.dataone.client.ObjectFormatCache
+   * org.dataone.client.auth.CertificateManager
+   * org.dataone.client.D1Object
+   * org.dataone.client.DataPackage
+   * org.dataone.client.MNode
+   * org.dataone.client.D1Node
+   * org.dataone.client.D1RestClient
+   * org.dataone.eml.EMLDocument
+   * org.dataone.eml.DataoneEMLParser
+   * org.dataone.client.ObjectFormatCacheTest
+   * org.dataone.client.D1ClientUnitTest
+ * d1_identity_manager (rpw)
+   * org.dataone.service.cn.ReserveIdentifierService
+   * org.dataone.service.cn.impl.CNIdentityLDAPImpl
+   * org.dataone.service.cn.impl.CNIdentityLDAPImplTest
+   * org.dataone.service.cn.ReserveIdentifierServiceTest
+ * d1_integration (rnahf)
+   * org.dataone.integration.PackageIT
+   * org.dataone.integration.ChecksumAnalysis
+   * org.dataone.integration.ContextAwareTestCaseDataone
+   * org.dataone.integration.MNodeTier3IT
+   * org.dataone.integration.MNodeTier1IT
+   * org.dataone.integration.CNodeIT
+   * org.dataone.integration.MNodeIT
+   * org.dataone.integration.MNodeObjectLifecycleIT
+   * org.dataone.integration.ExampleUtilities
+   * org.dataone.integration.SynchronizationIT
+   * org.dataone.integration.MNodeTier2IT
+   * org.dataone.integration.DataReplicationIT
+ * d1_cn_rest (rpw)
+   * org.dataone.cn.rest.web.node.NodeController
+   * org.dataone.cn.rest.web.identity.IdentityController
+   * org.dataone.cn.rest.web.identifier.ReserveIdentifierController
+   * org.dataone.cn.rest.filter.ResolveFilter
+   * org.dataone.cn.web.identity.IdentityTestCase
+   * org.dataone.cn.web.NodeRegistryTestCase
+   * org.dataone.cn.web.identifier.ReserveIdentifierTestCase
+   * org.dataone.cn.ldap.LdapPopulation
+ * d1_cn_noderegistry (rpw)
+   * org.dataone.cn.service.ldap.impl.CNCoreLDAPImpl
+   * org.dataone.cn.service.ldap.impl.CNRegisterLDAPImpl
+   * org.dataone.cn.service.ldap.tests.CNRegistryLDAPImplTest
+
+
+JibX Upgrade:
+All enumerations have new method for accessing the behaviour of an enum.  Originally toString method was used to return the behaviour associated with an enum constant, but now, xmlValue is used.   The reason for the change from JibX maintainers is that the Java community wished to be able to change in certain circumstances the functionality of toString for an Enum.  The upshot is that, we will  need to change code that calls the DataOneType.toString to DataONEType.xmlValue.
+
+Impacts:
+DataONE Enum Types:
+ChecksumAlgorithm:
+  metacat
+    edu.ucsb.nceas.metacat.IdentifierManager (use of valueOf is not recommended, convert is proper call)
+    edu.ucsb.nceas.metacat.MetacatHandler
+    edu.ucsb.nceas.metacat.util.MetacatPopulator
+    edu.ucsb.nceas.metacat.restservice.ResourceHandler
+    edu.ucsb.nceas.metacat.restservice.MNResourceHandler
+    edu.ucsb.nceas.metacat.dataone.MNodeService
+    edu.ucsb.nceas.metacat.dataone.D1NodeServiceTest
+  d1_libclient_java (rnahf) - checked that they use convert()
+    org.dataone.client.D1Object
+    org.dataone.client.MNode
+  d1_integration (rnahf)
+    org.dataone.integration.ChecksumAnalysis
+    org.dataone.integration.MNodeTier1IT
+    org.dataone.integration.MNodeIT
+    org.dataone.integration.ExampleUtilities
+    org.dataone.integration.MNodeTier2IT
+Event:
+  metacat
+   edu.ucsb.nceas.metacat.restservice.ResourceHandler
+   edu.ucsb.nceas.metacat.restservice.CNResourceHandler
+   edu.ucsb.nceas.metacat.restservice.MNResourceHandler
+   edu.ucsb.nceas.metacat.dataone.MNodeService
+   edu.ucsb.nceas.metacat.dataone.CNodeServiceTest
+   edu.ucsb.nceas.metacat.dataone.MNodeServiceTest
+  d1_libclient_java (rnahf)  toString() replaced by xmlValue()
+    java.org.dataone.client.CNode
+    java.org.dataone.client.MNode
+  d1_integration (rnahf)    toString() replaced by xmlValue()
+    org.dataone.integration.MNodeTier1IT
+    org.dataone.integration.MNodeIT
+    org.dataone.integration.MNodeTier2IT
+  d1_cn_noderegistry (rpw)
+    org.dataone.cn.service.ldap.impl.CNCoreLDAPImpl
+    
+NodeState:
+  metacat
+    edu.ucsb.nceas.metacat.dataone.MNodeService
+  d1_cn_noderegistry (rpw)
+    org.dataone.cn.service.ldap.impl.CNCoreLDAPImpl
+    org.dataone.cn.service.ldap.impl.CNRegisterLDAPImpl
+    
+NodeType:
+  metacat
+    edu.ucsb.nceas.metacat.restservice.ResourceHandler
+    edu.ucsb.nceas.metacat.dataone.MNodeService
+  d1_integration (rnahf) simply using NodeType.READ, etc.
+    org.dataone.integration.ContextAwareTestCaseDataone
+  d1_cn_rest (rpw)
+    java.org.dataone.cn.ldap.LdapPopulation
+  d1_cn_noderegistry (rpw)
+    org.dataone.cn.service.ldap.impl.CNCoreLDAPImpl
+    org.dataone.cn.service.ldap.impl.CNRegisterLDAPImpl
+    org.dataone.cn.service.ldap.tests.CNRegistryLDAPImplTest
+    
+Permission:
+  metacat:
+    edu.ucsb.nceas.metacat.IdentifierManager
+    edu.ucsb.nceas.metacat.util.MetacatPopulator
+    edu.ucsb.nceas.metacat.restservice.CNResourceHandler
+    edu.ucsb.nceas.metacat.restservice.MNResourceHandler
+    edu.ucsb.nceas.metacat.dataone.MNodeService
+    edu.ucsb.nceas.metacat.dataone.CNodeService
+    edu.ucsb.nceas.metacat.dataone.D1NodeService
+    edu.ucsb.nceas.metacat.dataone.CNodeServiceTest
+    edu.ucsb.nceas.metacat.dataone.MNodeServiceTest
+    edu.ucsb.nceas.metacat.dataone.D1NodeServiceTest
+  d1_libclient_java (rnahf) changed toString() to xmlValue()
+    org.dataone.client.CNode
+    org.dataone.client.D1Object
+    org.dataone.client.MNode
+  d1_integration (rnahf)
+    org.dataone.integration.ContextAwareTestCaseDataone
+    org.dataone.integration.MNodeTier1IT
+    org.dataone.integration.MNodeTier2IT
+    
+ReplicationStatus
+  metacat:
+    edu.ucsb.nceas.metacat.IdentifierManager
+    edu.ucsb.nceas.metacat.dataone.CNodeService
+    edu.ucsb.nceas.metacat.dataone.CNodeServiceTest
+  d1_libclient_java (rnahf)
+    org.dataone.client.CNode
+  d1_integration (rnahf)
+    org.dataone.integration.ExampleUtilities
+
+ QueryType & IdentifierFormat are not related to any other types and are not root elements
+
+org.dataone.service.exceptions versioning...do we need to version off them? 
+ * refactored exceptions to not work with the Identifier object anymore, just the String representation.  This sidesteps the dependency of Exceptions on versionable objects.
+
+2011-07-26
+
+- change system metadata obsoletes and obsoletedBy to be single relationships.(completed -rpw)
+- objectFormat should be min 1, max 1 (defaults work -rpw)
+- size should be min 1, max 1 (defaults work -rpw)
+
+Now there's a third object type (resource map) being managed by the infrastructure in addition to Science Metadata and Data. Operations that distinguish between data and metadata should probably now be updated to reflect a distinction between objects that are maintained by the CNs (Science metadata and resource maps) versus those which are maintained only by the MNs (data).
+
+ORE map considerations
+There are some potentially complex "business rules" when dealing with the ORE maps and the objects that they describe. A few scenarios outlined below.
+
+What happens during update?:
+----------------------------
+Initial create
+ * Science Metadata (scimeta.1.1)
+   * ORE map (ore.1.1)
+     * "scimeta.1.1 describes scidata.1.1"
+ * Science Data (scidata.1.1)
+   * ORE map (ore.2.1)
+     * "scidata.1.1 describedBy scimeta.1.1"
+
+Data update (scidata.1.2)
+ * Science Data (scidata.1.2)
+   * ORE map (ore.2.2) (changed)
+     * "scidata.1.2 describedBy scimeta.1.1" (changed)
+Does scimeta.1.1 get updated so that it can "point" to the new scidata.1.2 object which would be done using an updated ORE map (ore.1.2)?
+
+Permissions
+-----------
+ * If the ORE map indicates that scimeta.1.1 describes scidata.1.1, is write access to scidata.1.1 required to make this assertion?
+ * If I update an ORE map, do I need to have permissions to update the objects it references?
+
+Revision follow-through
+------------------------
+ * scimeta.1.1
+   * ore.1.1
+     * "scimeta.1.1 describes scidata.1.1"
+I update ore.1.1 (it is obsoletedBy ore.1.2).
+I leave scimeta.1.1 as is
+Do we follow the revision chain when looking up relations for scimeta.1.1 (it would resolve to ore.1.2)?
+
+Why does SystemMetadata have resourceMap{0...n}?
+
+
+
+

@@ -1,0 +1,64 @@
+    Follow-on to meeting 2/6/14.  See http://epad.dataone.org/2014-02-06-IDCC-Workshop for previous notes.
+
+Laura, Bruce, Rebecca, Chris, Dave, Amber
+
+Results from survey:
+
+Current working agenda:
+
+Program (revised) (incl time for Qs during each slot so presentation time about 2/3 of listed)
+8:30 am (Bruce)     * Welcome and Introductions (20 mins)
+8:50 am (Bruce)     * Introduction to DataONE (40 min) -- much of this from RSV slides
+   * some of the MN value proposition and ITK user value proposition
+9:30 am (Amber)    * Data and Data Management (30 min); lead into  - much of this from education workshops
+   * variations in practices
+   * reuse
+   * data lifecycle
+10:00 am BREAK (15 min)
+10:15 am (Chris) * Identifiers and metadata (30 min)
+   * best practices (including immutability)
+  * Better the metadata, better the searching
+10:45 am (Dave) * DataONE infrastructure (75 min)
+    * MN, CN, ITK
+    * Service interface
+    * how does it all work (synchronization, harvesting, replication)
+    * role of certificates (server, client)
+12:00-1:15 pm LUNCH
+1:15 pm (Chris & Dave) hands on with DataONE
+    * Searching DataONE through ONEMercury
+    * Search via API
+    * ITK concept overivew
+    * Example of using Morpho/Metacat
+    * R tool (really geeky example); mention can be done with Python
+    * Zotero
+2:15 pm (Bruce)  * More on Member node value proposition (also in intro) (15 min) maybe hit this here: http://www.dataone.org/benefits-becoming-member-node
+2:30 pm (Bruce)  * Process of becoming a Member Node (* consider sub groups based on survey?)
+    * Use the info from the web site
+    * types of stacks, selecting a stack
+    * integration with existing stacks
+    * examples or demo work
+    * MN Forum and other means of communication
+3:00 pm BREAK
+3:15 pm  (resume MN process discussion)
+4:00 (Amber) * Ongoing participation in DataONE
+    * MN Forum
+    * DUG
+    * Other community activities
+    * ITK Development
+    * Ask.dataone.org
+4:30 * (Amber) Questions and discussion (encouraged throughout)
+
+Action Items:
+* Rebecca bringing extra laptop to RSV; will give to Dave or Amber to bring to IDCC
+* Amber -- put latest RSV template in source materials for Dropbox - DONE
+* All -- put source materials as needed and draft presentations in Dropbox
+
+Dropbox folder for IDCC: https://www.dropbox.com/sh/0o7m3448b05m8h7/uLrxcxM5ZI
+Folders in Dropbox:  Source Materials, Draft presentations, Final presentations
+
+Arrival times:
+Chris -- For all of IDCC
+Dave -- Tuesday late
+Amber -- With Dave
+Bruce -- SFO arrive at about 1:35
+

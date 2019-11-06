@@ -1,0 +1,293 @@
+Notes for Sprints in 2013-26-Block-4-1
+======================================
+
+
+Ben
+---
+ * 20130703
+   * Stage has CCI 1.2.0 packages installed
+     * ready to deploy to production today
+ * 20130701
+   * Testing 1.2 release on sandbox with Skye
+     * Some solr-extensions changes
+     * May need to re-index sandbox CNs to ensure indices are the same
+   * CLOAKN: formatId changed?
+     * big CSV compressed with gzip (formatId=text/csv, but really .gz)
+ * 20130628
+   * Working on the portal release.
+     * Deployed in sandbox, since cn-stage is on stable channel now
+     * Working with Skye on different parts
+     * version mismatches of libs: indexing and process daemon will be using older libs
+     * upshot: will allow the mismatch until the next release (about a month)
+     * dataone-portal, dataone-cn-rest-service,dataone-mercury deb packages
+ * 20130626
+   * Waiting on jibx changes for common and libclient
+     * Blocks portal tagging
+     * Will prep release when this is done
+   * Need to restrict identity verification to CN admins
+     * ServiceMethodRestriction
+     * CN property
+     * Will write up a ticket for the 1.2 release
+ * 20130624
+   * Working on Metacat bugs that cropped up this week
+   * CLOAKN is now sync'ing
+   * Will be working on portal roll out
+
+Chris B.
+--------
+ * 20130703
+   * Working on the ORE parsing
+ * 20130701
+   * Finished re-LUN over the weekend
+   * Updated vdisks in vCenter - maintenance is done
+   * David is focusing on grad work, some time off
+   * Working on ORE indexing work again
+   * Will test ONEDrive locally once Dave/Roger check in the most recent changes
+ * 20130628
+   * Finished VM migrations except cn-orc-1. Soon.
+     * Add back to the RR after
+   * dataone-cn-os-core: Robert: in development
+   * Working on resource map parsing
+ * 20130624
+   * Installing hazelcast locally
+     * showing up on 5701
+   * Worked on SANs over the weekend
+     * still need to resize cn-dev-orc-1
+     * ready for the production orc CN
+     * will take it out of the RR
+
+David
+-----
+ * 20130701
+   * Worked with Chris on LUN stuff
+   * out this week 
+ * 20130626
+   * Continued work on LUN resizing with Chris
+   * Grad school work, plus some down time - so not terribly available this week
+ * 20130624
+   * Same as Chris
+     * ran into some trouble resizing LUNs
+
+
+Dave V
+------
+ * 20130703
+   * More ONEDrive cleanup, features, compiled distro for Mary Beth and Mike Frame
+   * Prep for DUG
+ * 20130701
+   * More ONEDrive work - lots of cleanup
+   * Now working with cache refresh so that workspace changes are shown and rendering of science metadata etc within packages.
+   * Buildin a SOLR query cook book
+ * 20130628
+   * Working on ONEDrive
+   * Preparations for DUG meeting
+ * 20130626
+   * Will work with Roger re: ONEDrive
+   * Added script to repo view to enable txt2html
+   * Working on ONEDrive
+ * 20130624
+   * At provenance meeting in NY
+   * Working on onedrive presentation layer
+   * Listen only mode today
+
+Robert
+------
+ * 20130703
+   * Will be running the delete script on stage
+     * ready for production
+     * targeting USGACSAS & ORNLDAAC
+ * 20130701
+   * Working on delete() code and updating Metacat tables
+     * Will test on dev todayish
+   * 
+ * 20130628
+   * Working on the delete() functionality in dev
+     * cn dev got a bit hosed: ldap logs filled up disk space
+     * Single machine CN.delete() works
+     * In a cluster: replication deletes() are partial
+       * file remains on disk
+       * gone from xml_documents
+       * gone from systemmetadata?
+   * Wrote up tickets for jibx changes for CCI 1.3
+ * 20130624
+   * Testing the delete scripts this morning on local VMs
+     * will move to dev CN testing
+   * Also working on jibx changes for handling pid validation
+   * Will work on post remove removal
+
+Rob
+---
+ * 20130703
+   * Rewrote registration documentation
+   * EDAC Ready to join stage
+     * ESRI metadata will be okay
+   * Will be in touch with Ryan today
+   * Request for guides for operational procedures
+     * 
+ * 20130701
+   * Dryad emails to Ryan
+     * need a data format registration process (new format ids)
+   * In contact with Soren Friday re: resource maps
+     * What triple statements are required in an ORE? Will work with Skye to be sure
+   * Sent out MN high level document to introduce them to joining D1
+     * Working through this top level documentation
+   * Doctor appt in the pm
+ * 20130628
+   * Working with Ryan @ Dryad
+     * Chris: write up tickets for troubleshooting work
+   * Soren @ EDAC
+     * working on resource map template that parses
+     * Tier 1: syncFailed() passes in MMP payload. Requires an external lib for parsing.
+   * Documentation based on feedback
+ * 20130626
+   * Working on Dryad with Ryan
+   * base URL is https:
+     * Web tester fails
+     * So, move to http for now. Don't redirect from https
+   * Ampersand issue in resource maps
+   * Ryan gave feedback on the checklist
+     * Will add a ticket and address his feedback
+ * 20130624
+   * Getting source code links into d1_integration
+     * may need to copy source into resources branch
+   * Added extra help into the MN checklist
+   * Will be focusing on EDAC with Rebecca
+     * shooting for end of month to be in production
+     * reluctant to use foresite (orphaned?)
+
+Skye
+----
+ * 20130703
+   * Working on the 1.2.1 CN release issues
+     * author hierarchy for ONEDrive: new fields for that
+     * FGBC and Dryad uses concatenated first, name surname
+   * Working on 1.2 release
+   * Back to auditing
+ * 20130701
+   * In sandbox testing 1.2 release
+     * problem with RR in sandbox - 
+     * ready to tag mercury and solr-extension
+   * Working on other mercury issues
+   * UNM holiday Thu.
+ * 20130628
+   * trsting portal in sandbox
+   * testing onemerc in sandbox
+     * old apache commons codec issue: old version jar
+     * commons-codec in Solr 1.4, apache HTTP: now just net.oauth.core version
+     * ucsb sandbox cn VM timing out
+       * 9 apt-get processes, huge load. tomcat, huge load
+       * automatic updates for non-production VMs?
+       * todo: take it out of the RR (Chris)
+   * Getting Merc on sandbox
+ * 20130626
+   * 1.2 release: needs organization
+     * do we include attribute search?
+     * EML XSL bug fix
+     * Object format change affects indexing
+     * Should meet on this
+   * Cleared out USGSCSAS tickets with Chris
+   * Working on EML XSL in ONEMercury
+   * Working on Dryad - indexing science metadata
+ * 20130624
+   * Looking into USGS CSAS
+     * pids not in the index
+     * looks like it wasn't comprehensive (some starting with nrdata, www, etc.)
+     * looked at resource maps: look broken. Naming changed?
+     * eg: doi:10.5066/F7WW7FN6, http://mercury-ops2.ornl.gov/clearinghouse/mn/v1/meta/doi_10.5066_F71J97RM
+     * identifiers in the resource map doesn't match the actual DOIs in the system
+   * PISCO member node is down
+   * ONEShare: EML doesn't have <section> or <para> sub elements
+     * our XSLT isn't rendering some <abstract> text
+     * will work on XSLT and will compare against the EML schema for correctness
+     * will check the original EML svn versions
+   * Will add these mercury changes into CN 1.2 release
+   * Morpho issue: data file names are mapped to old docids, not to new pids.
+     * Is this an issue?
+   * Continued work on Zookeeper config
+
+Roger
+-----
+ * 20130703
+   * some trouble deploying the reverse geocoding service (region resolver)
+     * went to nginx + uwsgi, but now back to apache + mod_wsgi
+     * see example http://stress-1-unm.test.dataone.org/region_tree/-83.100585937505/28.149503211544/-79.969482421879/29.017748018495
+ * 20130701
+   * Continued work on region hierarchies
+     * Will try to get it working for tomorrow
+ * 20130628
+   * Working with Dave on ONEDrive packaging
+   * Reverse geocoding service is running locally
+     * single REST call: input: upper left, lower right lat lon
+     * returns json document
+ * 20130626
+   * GDAL library looks great
+     * hierarchichal structures
+     * searching is consistent
+     * issue: top level is country, not the continent
+   * Will continue on region-based display in ONEDrive using GDAL
+ * 20130624
+   * Installed GDAL library: provides some nice abstraction for geo data
+     * experimenting with this now
+
+Chris
+-----
+ * 20130703
+   * working with EDAC instance document of ESRI metadata
+     * tough to validate and transform all parts
+   * 
+ * 20130701
+   * Working on Dryad namespace issues
+   * redmine work to line out 1.2.1 and 1.3 releases
+     * Q: USGSCSAS issue
+     * Note to Mike Frame
+ * 20130626
+ * 20130624
+   * Write ticket for Ranjeet re: incorrect resource maps. See Skye's notes above
+   * Note to Mike F. re: PISCO MN down
+   * USGSCSAS: archived pids in the CN system metadata for pids that were removed from the MN
+     * https://redmine.dataone.org/issues/3595
+   * ORNLDAAC: archived pids in the CN system metadata for pids that were removed from the MN
+     * https://redmine.dataone.org/issues/3500
+   * Will continue to work on PISCO content sync'ing for replication
+
+
+CN Release 1.2 notes
+--------------------
+ * Change to d1_portal API will induce a change in ONEMercury CCI 1.2
+ * Changes to using Ansible would go into CCI 1.2.1
+ * d1_jibx_extensions CCI 1.3
+ * Change to Dryad formatId will induce a change to d1_index config file CCI 1.2.1
+   * can be changed in the production config file
+ * Dryad Indexing Support: CCI 1.2.1
+   * Resource maps for Dryad: CCI 1.2.1
+     * Multiple science metadata describe a single data file
+     * Dryad XSL is new, needs testing
+ * d1_index improvements to attribute fields being indexed  CCI 1.2.1
+   * ONEMercury could then search on those attributes CCI 1.2.1
+   * attributeText is now attribute
+     * not removing dups at the moment for attribute fields
+ * d1_index support for esri FGDC....probably not used by MN yet - its ready anytime  CCI 1.3
+ * d1_indexing upporting ONEDrive hierarchy browsing CCI 1.2.x
+   * Name support isn't quite ready yet CCI 1.2.1
+   * Taxanomic is good to go - raw metadata, not referencing a taxon service CCI 1.2.1
+   * Region hierarchy is being worked on CCI 1.2.x (1.3?)
+     * Due to the complexity of the Dryad schema, d1_indexing may have redundant information
+ * Identity verification on the CNs, (d1_identity)  CCI 1.2
+   * will limit to CN admins at the moment
+   * requires code change in d1_identity to consult CN config files and ServiceMethodRestriction
+ * Metacat 2.0.8 bug fix for pid validation CCI 1.2
+
+OUT OF SCOPE
+ * Series identifier support??
+   * At least include schema changes necessary to include a series identifier
+ * Spatial hierarchy
+ * Author Name hierarchy
+
+Schedule:
+
+1.2   - Deploy in Block 26 (By end of first week of July)
+1.2.1 - Deploy in Block 28 (By end of 3rd week of July)
+1.3   - Deploy in Block 30 (by end of first week of Aug)
+
+
+

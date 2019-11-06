@@ -1,0 +1,50 @@
+
+#Below is R code for a PCA. The way I do it relies on the package "vegan", which is designed for analyzing ecological data, though it will work fine for any kind of data, at least with the PCA (and a number of other functions)
+library(vegan)
+
+#rda is the command for doing a PCA in vegan. I was working with a dataset called "birds" and columns 3-7 were the ones with the data I was interested in. The rows were individual birds, while the columns were the variables.
+pca.birds<-rda(birds[,3:7])
+pca.birds
+summary(pca.birds)
+
+
+plot(pca.birds)
+
+#The following lines are to plot the results. "choices" are the axes that you want to show; "type" is listed as "n", meaning it won't show anything... the following lines, beginning with "points" tell it to diaplay specific points, denoted by the rows, indicated in the "select" part of the code. Most other things are just formatting ("pch" denotes teh symbol type). Also, in general, "sites" refers to the rows (observations) of data, and "species" refers to columns (or variables).
+#Also, the command "ordispider" has shows the centroid of the data in those axes
+plot((pca.birds), choices=c(1,2), type="n",  xlab="PCA 1 (85.34%)", ylab="PCA 2 (8.36%)",cex.axis=1.6, cex.lab=1.6, display="sites")
+points(pca.birds, select=c(1:22), pch=10, col="black", cex=2) #With the "select" argument you specify which rows to plot
+points(pca.birds, select=c(23:62), pch=3, col="black",  cex=2)
+ordispider(pca.birds, choices=c(1,2),subsp$Subsp,show.groups=1,col="black",lwd=1)
+ordispider(pca.birds, choices=c(1,2),subsp$Subsp,show.groups=2, col="black", lwd=1, lty=2) 
+legend(-3,-2, c("Alethe poliophrys poliophrys","Alethe poliophrys kaboboensis"), cex=1.2, pch=c(10,3), col="black")
+
+#This is basically the same thing as above, but plotting axes 1 and 3, rather than 1 and 2. 
+plot((pca.birds), choices=c(1,3), type="n",  xlab="PCA 1 (85.34%)", ylab="PCA 3 (4.6%)",cex.axis=1.6, cex.lab=1.6, display="sites")
+points(pca.birds, choices=c(1,3),select=c(1:22), pch=10, col="black", cex=2)
+points(pca.birds, choices=c(1,3),select=c(23:62), pch=3, col="black",  cex=2)
+ordispider(pca.birds, choices=c(1,3),subsp$Subsp,show.groups=1,col="black",lwd=1)
+ordispider(pca.birds, choices=c(1,3),subsp$Subsp,show.groups=2, col="black", lwd=1, lty=2)
+legend(-2.25,-1.8, c("Alethe poliophrys poliophrys","Alethe poliophrys kaboboensis"), cex=1.2, pch=c(10,3), col="black")
+
+
+
+
+
+###########################
+library(vegan)
+
+subsp<-birds.tr$Subsp
+
+pca.resid<-rda(res2, scale=TRUE)
+plot(pca.resid)
+summary(pca.resid)
+
+plot((pca.resid), choices=c(1,2), type="n",  xlab="PC 1 (54.77%)", ylab="PC 2 (25.7%)",cex.axis=1.3, cex.lab=1.2, display=c("sites","species"))
+points(pca.resid, select=c(21:60), pch=17, col="grey",  cex=2)
+points(pca.resid, select=c(1:20), pch=16, col="black", cex=2) #APK
+text(pca.resid, display="species")
+
+
+
+

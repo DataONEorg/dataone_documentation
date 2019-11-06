@@ -1,0 +1,87 @@
+Attendees: Rebecca, Matt, Mike, Dave, John Kunze,Suzie, Bertram(briefly), Amber, Steph, Deborah, Bill, John Cobb (late)
+
+Regrets:  Bob Cook, Viv, Carol Tenopir, Hilmar, Trisha, Bruce (maybe)
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+Information for the call:
+
+1.  Please join my meeting, Jan 20, 2012 at 10:55 AM MST.
+https://www1.gotomeeting.com/join/913970569
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (773) 945-1030
+Access Code: 913-970-569
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 913-970-569
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Will also use the epad: http://epad.dataone.org/2012Jan20-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-01-20
+ 
+1.     CI Status (Vieglais)
+Setting up release candidates for the release software and verifying the code content - then will be moved into the released state. Should happen quickly because are passing the integration tests; Process from here: setting up sandbox environment to test production-scale system. Expect sandbox to be fully functional early next week and then can evaluate the services that will be released. Many interactions among components but this will be tested in the sandbox environment. 
+MN: metacat in very good position - close to release ready; GMN passing tests; Mercury and Dryad unchanged
+Status of MercuryONE: dependent on SOLR index and it's pretty complete; final testing of interface still needs some attention; this is one of the things that will be tested in the sandbox
+
+2.   Website (Budden)
+Nearing completion with the exception of the Data tab - no content there yet.
+Find and Contribute are intended to link to MercuryONE
+No material from CI Working Groups either
+
+Will need to do a public release planning meeting
+
+3.  Summer Internships  (Budden/Koskela)
+     - Team: Amber, Rebecca, Bruce, and Todd
+     - Projects
+     - Projects requested by interns?
+ Funding for 8 internships this summer 
+ Concern with opening up process to interns suggesting projects may result in too many applications and time involved to review would be too much
+ Have projects that need to move forward so perhaps this is something we can evaluate again in the future
+ Not much support for this at this point;
+ CCIT will submit some; Mike thinking of one and Suzie & Carol don't think they will have
+ one    
+     
+4.  Opportunities to use end of INTEROP funds (Michener/Koskela)
+Bill has approximately $50K  left in Participant Costs that could easily support a couple workshops  (e.g., education best practices and/or learning modules; a follow-up data governance workshop; etc.).  The problem is we need to spend by June 30th.  Any ideas or priorities from you all?  To spend $, we can include stipends as appropriate.
+
+2 Options proposed so far:
+ * follow-up data governance workshop
+ * follow-up to education modules for the web (Steph: Stacy may be interested in helping to organize)
+ * summer internships
+ * interaction with tribal college / workshop on data management
+
+5.  Quarterly Report Time - need papers/presentations/workshops/etc by January 27th
+
+6. Updated charters/ members of Working Groups (will be sent by email)/  (Koskela)
+Instead of email:
+Changes to U&A WG charter were approved by Executive Team; new charter can be
+found here:
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/charter/DataONE%20U-A%20Charter%2010.2011.docx/
+Two new members of WG:
+ * Carol Hoover (https://docs.dataone.org/member-area/working-groups/usability-and-assessment/bios/Carol Hoover - cv.docx )
+ * Rachel Hu (https://docs.dataone.org/member-area/working-groups/usability-and-assessment/bios/California%20Digital%20Library.pdf )
+
+7. Around the Room
+
+Mike: If anyone has any comments on the DataONE USGS Workshop Agenda I sent around a few weeks ago, please send them to me in the next few weeks.  
+how can we search for this email?  or find the agenda? Mike will resend
+
+Steph: Frontiers in Ecology and Environment editor is holding March editorial spot for me and Josh Tewksbury (CEE WG) to write about data sharing
+
+Suzie: Presented  a paper at the Association of Library and Information Science Educators about the undergraduate Environmental Information Class we designed and taught Spring 2011, 2012.  Our post doc, Miriam Davis, was part of team that designed and was my co-author.
+
+John Kunze: Cost model for "pay once, preserve forever" under development at CDL (Stephen Abrams).  Should be very interesting and high profile.  Please let us know if you're interested in early internal review round.
+
+Deborah McGuinness:  I will be at Data2012 next week and will be co-presenting work on related interops of SONET - Scientific Observations Network and SSIII - Semantic Sea Ice.  Hope to connect with DataOne people on Wed aft.  (i get in wed late morning)
+
+John Cobb:
+XSEDE partnering update
+March 1 CTSI Symposuim invited presentation 
+

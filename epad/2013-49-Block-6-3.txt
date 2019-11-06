@@ -1,0 +1,386 @@
+Development Block 6.3
+=====================
+
+Last Block Etherpad: http://epad.dataone.org/2013-46-Block-6-2
+
+G+: https://plus.google.com/hangouts/_/event/cb76pav4nbripd606928j9pjiao?authuser=0&hl=en
+
+
+Sprint Planning
+---------------
+
+ * CCI 1.2.4 Release
+   * Changes include: 
+     * d1_cn_rest_proxy read only mode
+     * d1_synchronization
+     * dataone-cn-metacat fixes to CN API methods
+     * OneMercury updates exposed by dryad ORE modeling
+       * https://redmine.dataone.org/issues/4135 (tested/tagged)
+       * https://redmine.dataone.org/issues/4137 (tested/tagged)
+       * https://redmine.dataone.org/issues/4103 (tested/tagged)
+ * CN Consistency Implementation
+   * Will talk with Robert soon
+ * Dashboard
+   * For this release, drop the downloads in the view
+   * http://129.24.63.92/backbone#nodes
+ * Schema inconsistency (exceptions and dataoneErrors.xsd)
+   * https://repository.dataone.org/software/cicore/trunk/d1_schemas/dataoneErrors.xsd
+   * problem is that schema is different to documentation
+   * java follows documentation
+   * python follows schema
+   * Do others use schema or documentation? (e.g. mercury, sead, ...)
+     * Chris will check with Kavitha
+     * Dave will check with Giri, Ryan
+     * Rob will check with Soren
+   * if only python, then we can do a patch revision to schema and not change namespace
+   * otherwise, will be necessary to push a 1.2.0 schema out...
+
+Holiday Scheduling    Dec                                 Jan
+Name                  M   T   W   Th  F   Sa  Su  M   T   W   Th  F   Sa  Su  M   T   W   Th   F
+                      23  24  25  26  27  28  29  30  31  01  02  03  04  05  06  07  08  09   10
+Chris J.              v   v   v   v   v           v   v   v   v   v           W
+Rob N.                v   v   v   v   v           v   v   v   v   v           W
+Robert W.             v   v   v   v   v           W   W   v   W   W           W   W    W   W    W
+Skye                  v   v   v   v   v           v   v   v   v   v           v
+David Doyle           W   v   v   W   W   W   W   W   W   W   W   W   W   W   W
+Chris Brumgard        G   G   G   G   G   G   G   G   G   G   G   G   G   G   G
+Roger                 v   v   v   v   v   v   v   v   v   v   v   v   v   v   v   v   v   v   v
+Dave V.               W   W   ?   W   W           W   W   v   v   W           W   W   W   W   W 
+Jing T                V   V   V   V   V   V   V   V   V   V   V   V   V   V   W  
+v = vacation
+W = working
+*G = gone
+
+Skye
+----
+ * 20131220
+   * CN DB Audit Impl
+     * MergeSystemMetadata and MergeSystemMetadataTest
+   * Out this afternoon after 12.
+ * 20131218
+   * CN DB Audit impl
+     * AuditController and unit test
+ * 20131216
+   * CN DB audit impl
+     * configuration object (and test)
+     * hazelcast unit test
+       * audit job controller
+   * Schedule stuff:
+     * Wednesday 11am mtn - dashboard meeting
+     * Thursday 3:30-5pm mtn - Out
+     * Friday 1-?pm mtn - Out
+ * 20131213
+   * Dashboard sent to Amber, Rebecca, Dave for review
+     * Some initial feedback, waiting for more.
+   * Initial impl work on cn-db-audit
+     * Configuration parsing
+     * Initial unit testing
+   * Request for another devDryad test run
+     * Blocked until access to cn machines is resolved.
+ * 20131211
+   * MN Dashboard - http://129.24.63.92/backbone#nodes
+     * Drupal/CSS cleanup.
+     * Map view
+       * hardcoded image paths
+       * Page title needs reformatted for drupal
+   * DB Audit
+     * Discussion on design, organization.
+   * CCIT 1.2.4 release
+     * Need to test mercury in stage-2 across browsers (IE, FF, Safari) and OS (osX, windows, linux)
+     * Tag for release, update control file.
+ * 20131206
+   * Finishing dashboard updates for first release.
+     * Mostly css and formatting at this point.
+     * Meeting Chris Allen after lunch today to go over some drupal/bootstrap issues (css)
+ * 20131204
+   * Drupal/MN Dashboard
+     * Created 1.0 release branch
+       * Removed 'download' graph, requests, buttons.
+     * CSS integration in drupal.
+     * Working on graph cleanup
+       * Cumulative graphs (done)
+       * Stacking data file and metadata line graph
+       * Graph label cleanup - overlapping labels on some time frames.
+       * Performance refactor.
+   * Mercury ready for cci 1.2.4 tagging.
+     * Need to breifly test on stage-2
+ * 20131202
+   * Prepare 3 OneMercury issues for release
+     * Merge to release branch
+     * Test, tag, update control files
+     * Update trunk snapshot versions
+
+
+
+Rob
+---
+ * 20131211
+   * deployed new CCI version to stage-2
+ * 20131209
+   * to provide testing status to Soren at EDAC
+   * build-deployment of new CCI verison
+ * 20131204-6
+   * knee-surgery / recovery
+ * 20131202
+   * will work on branching and releasing CN in a testing environment.
+
+Chris B
+-------
+
+ * 20131202
+   * Committed changes for dashboard to fix markcluster. 
+   * Committed macification of onedrive.
+   * Working on sending gzipped data to dashboard.
+   * Profiled high cpu usage with dashboard
+     * MarkerCluster is the issue. 
+   * Assisted David with Splunk. 
+   * Network tests.
+     * Have a week's worth of results to analyze.
+     * Augmented the script to report to splunk.
+
+ * 20131204
+   * Dashboard google map
+     * Added the ability to transfer the object marker data with gzip compression
+       * Caveat: Currently sent over the wire in base64 and not straight binary
+     * Added a progressbar for the marker loading.
+       * Problem:  Not very accurate.  Markers being added to google map are done asynchronously of the addMarker call. Looking into some other options.
+
+ * 20131206
+   * Assisting David with the latency errors with the ORC luns
+     * Currently checking the individual disk logs 
+   * Not much progress on Dashboard.
+
+ * 20131209
+   * Examining latency errors with LUN
+     * Doesn't look like disks or controllers
+     * Installed MDSS on a linux VM
+       * Working on scripts to monitor performance
+   * Dashboard google map
+     * Working on sending binary data instead of base64 encoding
+     * Progress bar
+   * Ansible testing and notes.
+
+ * 20131211
+   * Wrote a MDSS monitoring script that feeds into splunk
+   * Worked on Dashboard 
+     * Played with binary data some but couldn't get a general solution to work across browsers.
+     * Discovered an event for marker cluster and I have a basic progress bar for skye done.
+
+ * 20131213
+   * Waiting to do commits.
+
+Roger
+-----
+ * 20131218
+   * Working on #3969: Remove any unusued dependencies. Also cleaning up issues found by PyChecker.
+ * 20131211
+   * We updated KUBI yesterday and I triggered a new sync. That sync completed without any issues, so I think we're ready to move them into production.
+   * Before that, I spent a fair amount of time doing a thorough test of the entire Python stack on a fresh VM, to make sure that the error schema changes and the new subversion based deployment method didn't break anything.
+   * I've been doing work on various documentation issues and I have some tickets open for that. I'm going to go through those next.
+ * 20131209
+   * Worked on automatic synchronization between SVN and PyPI deployments.
+ * 20131204
+   * Closed #4023: Add Windows install instructions for d1_common.
+   * KUBI EML parses as valid in the KNB EML validator but sync complains.
+   * Working on the changes in the DataONE Exceptions.
+     * Q: AnyType?
+     * Java exception class uses:
+        /** Additional trace-level debugging information, as name-value pairs. */
+        private TreeMap<String, String> trace_information;
+        
+        serialization:
+            sb.append("  <traceInformation>\n");
+            for (String key : this.getTraceKeySet()) {
+                sb.append("    <value key='").append(key).append("'>");
+                sb.append(trace_information.get(key)).append("</value>\n");
+            }
+            sb.append("  </traceInformation>\n");
+
+   * Q: Mark Servilla wants to switch over to PASTA-GMN. Status on sync of LTER objects?
+ * 20131202
+   * Worked on DataONEErrors schema mismatch.
+   * Looking at new KUBI sync error that looks like it's caused by an error in their EML documents.
+
+
+David D
+-------
+
+ * 20131202
+   * Working on building Splunk searches for Bruce
+     * Meeting with Bruce and Chris today
+   * Working with UT OIT to track down vm errors encountered 11/27 and 12/01
+   * Helped Chris B. with onedrive mac app
+ * 20131204
+   * Blocker: A delivery truck took out my Internet access at home by tearing the cable wire off my house.  Comcast's ETA on a fix after five customer service calls and visits to their office is roughly "whenever we get around to it"
+   * Worked w/Chris on onedrive Mac app
+   * Worked w/Bruce on Splunk searches and field extracts
+   * Worked/working w/OIT on tracking down VM errors
+ * 20131206
+   * I/O latency warnings on cn-orc-1
+     * last series of events occurred 12/05/13, 1:58 AM Eastern
+     * checked event logs on SANs, VCenter, cn-orc-1, but found nothing that corresponds with the times when the warnings show up
+       * will continue to observe
+     * Chris B. disabled his network tests to see if that was causing latency, but events continued to show up after that
+     * NEXT STEPS:
+       * UTK OIT says that associating more physical disks with the cn-orc-1 LUN might help improve disk I/O latency.  Once unm and/or ucsb are back in round robin, we want to pull orc out of round robin and begin working on that.
+         * not entirely comfortable putting any undue stress on the infrastructure supporting the one online prod box
+       * will be building inputs into Splunk for data from SANs and hosts (as allowed by SANs and VCenter, respectively)
+       * Most of our VCenter alarms are currently monitored by OIT.  That's all well and good, but I want to be informed when alarm conditions are triggered too, so I'm going to be building my own alarms into VCenter to monitor several hardware and system components and their states.
+   * Bruce wants to look into building dashboards into Splunk next and has given me a little light holiday reading on that front
+ * 12092013
+   * Building alarm triggers into VCenter for vm/host/datastore monitoring
+   * Building snmp monitoring into Splunk to monitor host/SAN activity
+ * 12112013
+   * Requested OIT to migrate existing alarms to DataONE ORC
+     * done yesterday evening, will begin customizing today
+   * Chris B. and I worked on getting data from SANs into Splunk
+     * test script in place, harvesting data, more tweaking to come
+   * Found a Splunk app that should be able to harvest as much VMware data as we need.  Pricing might be an issue - will discuss with Bruce today
+ * 12132013
+   * OIT VM alarm customization almost done
+     * pretty confident that they're free of false positives, just need to add bwilson to notifications
+ * 12182013
+   * Rolling out my ssh public key to non-ORC servers as needed
+   * Troubleshooting other users' key issues at ORC
+   * Need to swap out partition mount points for mn-orc-1
+     * Want to snapshot first, but need to get VMware snapshot sent to a non-default directory, so need to bring VM down to do that
+   * Chris B. should be in today to work on Ansible and get Robert and myself up to speed
+   * Looking into solutions for monitoring HW/filesystem health via Splunk
+   * Monitoring vCenter for latency issues and VM/datastore/network health
+
+Dave V
+------
+
+ * 20131209
+   * Proposal/budget work. 
+   * Preparations for AGU this week.
+ * 20131206
+   * NSF emphasizing security, we need assure NSF and users (client and MNs) that we are in good shape
+ * 20131204
+   * Proposal / newsletter and scheduling
+   * Draft of dataoneErrors schema
+   * Starting draft of dublin core terms recommendation for science metadata
+ * 20131202
+   * Proposal work
+   * Meeting with NSF later in week
+
+
+Chris J.
+--------
+ * 20131220
+   * Turned off password-based ssh on:
+     * cn-ucsb-1.dataone.org
+     * cn-unm-1.dataone.org
+     * cn-stage-ucsb-1.test.dataone.org
+     * cn-sandbox-ucsb-1.test.dataone.org
+     * cn-dev-ucsb-1.test.dataone.org
+     * cn-stage-unm-1.test.dataone.org
+     * cn-stage-unm-2.test.dataone.org
+     * cn-sandbox-unm-1.test.dataone.org
+     * cn-dev-unm-1.test.dataone.org
+     * mn-unm-1.dataone.org
+     * mn-unm-2.dataone.org
+     * mn-ucsb-1.dataone.org
+     * mn-ucsb-2.dataone.org
+     * mn-ucsb-3.dataone.org
+   * Will get to other ucsb and unm hosts later today
+   * Patched Metacat's archive() and delete() methods
+     * tested in stage-2
+     * seeing a new issue WRT system metadata (serialVersion isn't incremented)
+     * will try to patch/test/upgrade today
+   * Dashboard discussion went well - shooting for mid January release
+ * 20131218
+   * Working on CCI 1.2.4 upgrade release
+     * Rob found another Metacat bug, working on that
+     * will plan a release with Ben for Metacat
+     * TODO: update the CCI 1.2.4 ticket
+ * 20131211
+   * CCI 1.2.4 testing in stage-2, prepping for production release
+   * working with Robert/Skye on CN audit impl
+   * TODO: production certs for KUBI
+ * 20131209
+   * testing sandbox machines with CCI 1.2.4 upgrades
+   * updating cn-upgrade documentation
+   * worked with Robert and Skye on CN consistency impl
+ * 20131206
+   * Upgrading sandbox machines
+     * have some questions re: os-core
+ * 20131204
+   * CN upgrades in stage-2/sandbox with Rob
+ * 20131202
+   * TODO: GZip backup /var/metacat on CNs
+   * TODO: 1.2.4 release ticket
+   * TODO: dashboard tickets
+
+
+Jing T.
+--------
+ * 20131209
+   * Still working with the file base authentication mechanism
+   * Contact with FRIM
+   * Get information from CILogon. Jim said the InCommon had lots of flexibilitis regard the liability insurance.
+ * 20131206
+   * create a branch for the metacat identity service and deployed to identity.nceas.ucsb.edu. If there is issue, we will create a tag.
+   * Contact with Jim in CILogon to dicuss if it is possible to be identity service without join the CICommon (with ben)
+   * Working a file base authentication mechanism on Metacat
+ * 20131204
+   * Tested the replicate method which can handle the ssl exception in the dev environment.
+   * Fixed some bug in the identity service
+   * Working on a release of metacat patch release
+
+Robert W.
+---------
+ * 20131209
+   * Documentation
+ * 20131206
+   * Documentation
+ * 20131204
+   * Documentation
+
+
+Disscussion Topics
+------------------
+
+CNORC1 VM I/O issues
+ * latency is spiking 2000 microseconds - 50000 microseconds
+ * I/O errors, not known if it's read or write
+
+
+Discuss any type in the error schema
+
+
+CCI release scheduling
+----------------------
+want to finish testing today (Wed)
+should we address ORC hardware issues during this time? (latency spikes on the SANs attached to ORC node).
+  - should have an hour or so to diagnose.
+  - increased risk of data loss?  
+      - No, using raid 6.  
+      - the errors probably not a disk or disk-controller issue, because hitting both SANs.  
+      - using I-SCSI over ethernet
+  - NO.
+
+Determine the procedure on how to rollout this particular release - don't want a Hazelcast cluster to accidentally overwrite information.
+  
+Today:
+deploy to stage-1 (this is effectively stage testing)
+tag if we can.
+
+Thursday:
+deploy to production
+
+
+Disabling SSH access to VMs
+---------------------------
+Remove ldap-auth on prod
+Use ssh key auth, starting in stage, sudo access will be password-based over LDAP
+ * best practices
+   * no ssh keys without passphrase
+   * 5 random word passphrase minimum
+   * look into lastpass, 1Password (Mac), etc for password management
+   * passphrase should be different from your LDAP password
+   * ssh keygen info: http://epad.dataone.org/Ansible-CN-Usage-Notes
+
+Re-enabling SSH access to VMs
+-----------------------------
+

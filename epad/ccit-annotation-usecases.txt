@@ -1,0 +1,44 @@
+
+Goal - Identify a few key user oriented use cases for the general topic of annotation and subscription and how it applies to DataONE.
+
+We have a few technical / functional use cases, but these are not related back to user requirements. Having a few of these in place will help with ensuring that the infrastructure matches the needs of the community we are supporting, and will also be very helpful for determining how we can work with other projects that may be addressing these issues as well.
+
+Relevant Functional Use Cases:
+
+* http://mule1.dataone.org/ArchitectureDocs/UseCases/21_uc.html  - Data owners can subscribe to notification service for CRUD operations for objects they own.
+
+* http://mule1.dataone.org/ArchitectureDocs/UseCases/22_uc.html - User can get report of links/cites my data (also can view this as a referrer log).
+
+* http://mule1.dataone.org/ArchitectureDocs/UseCases/28_uc.html - Derived products should be linked to source objects so that notifications can be made to users of derived products when source products change.
+
+
+New Use Cases (User Oriented)
+
+1. A scientist would like to share with colleagues that a dataset is interesting. (either through a direct notification, or through a social media tool)
+
+2. A scientist would like to add notes to a data or metadata object and either limit the principals that can view the notes or share the notes with everybody. 
+
+3. A researcher indicates that two or more data sets are closely related when considered in a particular context.  The related data sets is part of the system metadata, but I don't think there's an attribute of the related concept, to express the context in which the objects are related.  It's a many-to-many, and I don't know that we have the abilty to have the resolving table, with attributes of the relationship.  
+
+4. A scientist notices an error in a dataset and wants to notify the original author and/or the curators of the relevant member node.  The curators then wish to comment on the assertion of an error, perhaps asserting that the responding scientist is actually the one in error.  What happens when people can't agree?  What happens when the comment is clearly a flame or irresponsible comment (like from the climate denialist community)?
+
+4. a) A data publisher corrects an issue with a data set (e.g. lat, long transposed) that was indentified by a 3rd party annotation. The publisher needs a mechanism to indicate the problem has been resolved. One approach is to revoke the annotation. Another approach is to version the dataset and attach an annotation to the new dataset indicating that the new version corrects the issue identified by the annotation on the proveious version.
+
+5. An investigator would like to be notified when new content is available for some query (i.e. notification of changed results for a standing query).  Mercury can do this now, with RSS, for what that's worth.  
+
+6. A scientist would like to call attention to a particular feature of a dataset (e.g., one field in metadata, one column in a tabular file, a region in an image).  Some capability to do this now using Fusion Tables.  Useful to look at this as an example.  
+
+7. Many data centers have a user services function that answers questions on data sets, as a layer in front of the originator of the data set.  This relates to a couple of the above cases, such as when the comment is a question or where the person observes a supposed error or inconsistency in the data.  In some cases, this should go back to the originator of the data (PI); in other cases this should go to a proxy (e.g. ORNL DAAC).  
+
+8. It's a provenance question, but a user would like to compare a model with an observational data set.  The user would like to know that all of the observational data is independent (was not used for calibration of the model).  
+
+9. Given a metadata record, a scientist wants to annotate that record with semantic information about the details of the observation to clarify what entities were measured, which properties were recorded, the protocols and measurement standards used, and the context of the measurement.
+
+10. Given annotations from (9), a scientist can search for and discover all of the data that measure certain properties of certain entities within particular contexts and using particular standards.
+
+11. Given results from (10), a scientist can integrate the compatible data from the search into a meaningful derived data product and can subset observations from that set based on data value criteria.
+
+
+
+
+

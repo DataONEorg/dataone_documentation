@@ -1,0 +1,64 @@
+Provide action items below for each of the recommendations in "The Role of Publishers in Access to Data" by April 24, 2014 for inclusion in the meeting report: https://docs.google.com/document/d/1i6TGe0IU1LYyd_klfGuvnBplPzc1TEP9XH8i9L4RMe0/edit#
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+1. Establish and enforce a mandatory data availability policy.
+ * Work with publishers and other stakeholders on the establishment of a registry of journal data policies.
+ * Promote the use of standardized data availability statements within articles and as part of the production checklist.
+ * add your item here
+
+
+
+2.  Contribute to establishing community standards for data sharing. Enact and enforce them as journal policies.
+ * Develop and promote common guidelines through the Committee on Publication Ethics and similar bodies.
+ * Have an efficient and effective process for imposing penalties on data policy noncompliance when it is brought to light post-publication.
+ * Work with publishers and other stakeholders (e.g., scholarly societies and funders) on the establishment of a registry of journal data policies around data sharing.
+ * add your item here
+
+
+
+3. Contribute to establishing community standards for data preservation. Enact and enforce them as journal policies.
+ * Provide input into repository certification standards and encourage use of certified repositories.
+ * add your item here
+
+
+
+4. Provide formal channels to share data.
+ * Collaborate with cross-organizational projects like SHARE (Shared Access Research Ecosystem), which is a cross-institutional coordination framework to ensure access to, preservation and reuse of, and policy compliance for funded research.
+ * Allow the publication of papers that describe high-value data sets as a regular stream within existing disciplinary journals, rather than segregating such papers into specialized data journals.
+ * Work with repositories on streamlining the payment of open access charges for articles and data by authors and institutions.
+ * Develop guidelines (e.g. through COPE) for the operation of enclaves for sensitive data, and promote their use for data that could not otherwise not be made available for reuse.
+ * Work with institutional repository groups like in the UK COAR or Open Research Data Forum (UK) as well as services like Re3, etc.
+ * add your item here
+
+
+
+5. Work with repositories to streamline data submission.
+ * Publishers can work with repositories that are using APIs with standard protocols (e.g., SWORD), to create plugins (e.g., OJS Dataverse plugin) or add-ons to streamline the data publication process
+ * Encourage manuscript processing system vendors to streamline the availability of data in repositories for the peer review process.
+ * Neither of the above ideas recognize the factor that papers and data sets do not have a one-to-one relationship and that, if you force data sets to fit the size of a particular paper, you are actually hurting the entire scientific enterprise by fragmenting data into "smallest publishable units."  If someone collects data about a particular site for 20 years and over the course of that time publishes 15 papers, there should only be 1 data set and 15 papers... not 15 papers and 15 data sets (and likely some holes in the published data since not all the data collected was used in a paper).
+
+
+
+6. Require appropriate citation to all data associated with a publication - both produced and used. 
+ * Provide guidelines for data citation to authors based on Joint Declaration of Data Citation Principles, but customized to each journal 
+   * Upgrade data citation to references section.
+   * Use a generic citation format (note: may vary in style due to the nature of the data): Author(s), Year, Dataset Title, Data Repository or Archive, Version, Global Persistent Identifier.
+ * Improve metadata standards for references to external datasets within JATS, ideally distinguishing data produced from data used.
+ * Encourage CrossRef to coordinate with DataCite on recording symmetric links between publication DOIs and data DOIs in their metadata records.
+ * add your item here
+
+
+
+7. Develop and report indicators that will support data as a first-class scholarly output. 
+ * Develop conventions for combining altmetrics (e.g. views, downloads, bookmarks, citations) of articles with their associated datasets.
+ * add your item here
+
+
+
+8. Incentivize data sharing by promoting the value of data sharing. 
+ * Promote articles based on higher-than-average data reuse as well as higher-than-average article readership. <- This doesn't make any sense... Soo... modeler's always win?  They after all want to use lots and lots of data?
+ * Create a top 100 luminary list for data re-use to create an element of competition, profile, and also work out how to measure such things. <- not the role of a publisher
+ * add your item here
+

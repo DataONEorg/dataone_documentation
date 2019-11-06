@@ -1,0 +1,129 @@
+#persist
+
+April 17 – 18, 2012
+Location: Denver, CO, Building 810 Denver Federal Center, 
+ 
+Suggested Hotel: 
+(several options with similar prices, this one seems good value for the money)
+http://homewoodsuites1.hilton.com/en_US/hw/hotel/DENLDHW-Homewood-Suites-by-Hilton-Denver-West-Lakewood-Colorado/index.do
+
+
+Suggested Travel Dates:
+
+Arrive: early Tuesday 17th or evening of 16th. (Site access restricted, requires escort.)
+
+Depart: Late Wednesday 18th or 19th.
+
+ 
+ 
+ 
+Who: USGS National Data Centers, Scientists, Data Managers, and Librarians.    
+ 
+Preparation: Each participant is requested to bring a sample dataset, laptop, or have remote access to potential data sources that could be served to the USGS DataONE network. Day 2 will include “hands-on” sessions to explore and configure the available DataONE tools.      
+ 
+Tuesday April 17, 2012:  DataONE & USGS Overviews
+
+Day 1: Web Ex will be available for remote participants.   
+ 
+8:30 – 9:00                Introductions
+ 
+9:00 – 10:30              DataONE Overview                           
+§  Cyberinfrastructure             (Dave Vieglais)
+§  Community Engagement     (Vivian Hutchison) 
+ 
+10:30 – 10:45                       Break
+ 
+10:45 – 12:00                       Detailed Discussion of What is a Member Node (Mike Frame) 
+§  Current MN
+§  Policies
+§  Responsibilities
+§  Potential USGS Member Nodes
+ 
+12:00 – 1:30              Lunch
+ 
+1:30 – 2:45                Member Node Cyberinfrastructure demonstration & discussion  
+§  Coordinating Nodes (Matt, Dave)
+§  Architecture review (Matt, Dave)
+§  API’s available (Matt, Dave)
+§  Metadata Requirements (Matt, Dave)
+§  MN Toolkits available & options (Matt, Dave)
+§  USGS DOI Service  (Mike, Giri) 
+§  Contributing data to existing USGS Member Node (Viv, Giri) 
+ 
+2:45 – 3:00                Break
+ 
+3:00 – 4:00                DataONE ITK Tools Demonstrations & Discussions   (Matt)
+ 
+Tools to DEMO:
+
+- Python CLI
+- R Client 
+- Fuse Client
+?
+ 
+ 
+4:00 – 4:30                Wrap of Day 1 
+ 
+Wednesday, April 18, 2012: Member Node Toolkits 
+ 
+Prerequisite: Development experience, local or remote access to data, Web Server access 
+ 
+Goal: Establish a minimum of 2 USGS pilot MNs by the completion of the workshop 
+ 
+8:30 – 9:00                Review of Day 1 and Day 2 Agenda (Mike)
+ 
+9:00 – 10:30              Install Member Node stack and Demonstrations (Matt, Dave)
+ 
+10:30 – 10:45                       Break
+ 
+10:45 – 12:00           Hands-on setup of the Member Node Toolkit with Participants data (Matt, Dave, Giri)
+                                     
+12:00 – 1:30              Lunch
+ 
+1:30 – 3:30                Hands-on setup continued
+ 
+3:30 – 4:30                Meeting Wrap-up 
+ 
+ 
+Basic Outline:
+
+Block 1
+- Get VMs up and accessible (Jeff at USGS)
+- Setup accounts (need verified accounts). Which service / identity provider? (Chris)
+- Setup certificates for MN operation (Matt)
+- Install Metacat (Chris and Matt)
+- Register nodes with Sandbox CNs (Chris)
+- Verify operations (Run MNWebTester)
+
+Block 2
+Use CLI & Bash scripts to: (Matt)
+- Add some data + metadata + resource maps
+  - What data, metadata? - Test data 
+- Verify sync, repl, search
+- Access control rules / changing object permissions?
+
+Lunch
+
+Block 3
+- R client (Matt)
+- Mess around with clients  - Add their own data and try interaction (Dave)
+
+Block 4
+- Mercury MN (overview), plus replication to demo MNs (Giri)
+
+
+ TODO:
+ 1) Determine VM config and set them up; 5 VMs for participants, one for trainer (6 total)
+ 2) Check with Mike on internet availability (bandwidth, firewalls, etc)
+ 3) Which MNs to install: 
+   - GMN: Lots of dependencies etc to install and configure
+   - Metacat: fairly streamlined, Java
+   - Mercury: Untested installation process, but relevant to USGS. Java
+ 4) Which environment to install to? Use sandbox, as it will be stable and identical to production
+ 5) Dave: contact Mike about which nodes to install and priority goals for the workshop. Profiles of workshop attendees (technical vs. ...). What formats of data and metadata wil folks be bringing along?
+ 
+ 6) Need sandbox equivalent of Mercury installations
+ 
+ 7) Logistics - flight times, ground transport, hotel
+
+

@@ -1,0 +1,355 @@
+Products
+--------
+Member Nodes
+    Metacat
+    GMN
+        NBII
+        ORNL DAAC (improve tie in to GMN)
+    Dryad
+    CUASHI-HIS
+    Merritt
+    Fedora
+
+ITK
+    libclient_java
+    libclient_python
+    Morpho
+    R
+    Commandline
+    FUSE
+    Excel
+    Workflow tools
+        VizTrails
+        Kepler (?)
+    DataONE Web Search (Mercury-based)
+    COINS-based bibliographic tools
+        Zotero
+        Mendeley
+
+Coordinating Node
+    Catalog service (object store - Metacat)
+    Synchronization service
+    Replication service
+    Logging and reporting
+    Search (query method)
+    Node registration
+    Identifier service (resolve/reserve)
+    Authentication
+    Authorization
+    Monitoring
+    Preservation
+    Object format registry
+
+Common Libraries
+  Types schema
+  Java
+  Python
+
+Architecture and SPI Specification
+
+Documentation
+    Reference Architecture
+    How to implement the GMN de novo
+    Implement Fedora MN de novo
+    Examples of data packaging
+    
+
+Schedule
+--------
+Block 2:
+  Feb 28 - April 22
+
+      Architecture 1.0.0beta1
+          Data packaging specification
+          Authentication specification
+              AuthToken structure and content
+          Authorization specification
+              ACL language
+
+      DataONE Types Schema 0.6
+          Remove ObjectFormat enum
+          Add authorization changes
+      
+      d1_common_java (0.6)
+      d1_common_python (0.6)
+      d1_libclient_java (0.6)
+      d1_libclient_python (0.6)
+
+      Metacat 1.10beta1
+          Authentication and Authorization
+          
+      GMN 1.0beta1
+          Authentication and Authorization
+          DAAC connection
+          
+      CN 1.0beta1
+          Authentication and Authorization
+          MN Replication support
+          Metacat (1.10beta1)
+          Mercury (version TBD)
+          Stub out object format registry to replace enumeration in schema
+        
+      Documentation
+          Reference architecture beta 1
+
+Block 3:
+  April 25 - June 17
+  
+  (Generally continue with Authn and Authz)
+  
+  GMN 1.0beta2
+  
+  Metacat 1.10
+
+  CN 1.0beta2
+      MN registration
+      Log aggregation
+      Search services
+      Object format registry (coordinate with UDFR)
+  
+  Morpho
+      Implement CRUD API
+      Authentication and Authorization
+      Identifier support for arbitrary IDs
+      Search/Open implementation
+      
+  FUSE
+     Mercury index performance and content
+     Evaluation of write support
+
+  VisTrails (Dave Koop?)
+  
+  Mercury Portal (release candidate)
+    Citation Manager Support (release candidate for COinS)
+    Proper linkages to resolve service for downloads
+    Formatting and display of metadata records
+
+Block 4:
+  June 20 - August 19
+
+  USGS ITK Components
+  Excel?
+  Kepler?
+
+Block 5:
+  August 25 - October 14
+  Release candidate on or before October 14, 2011
+
+Block 6:
+  October 24 - Dec 20 (short block)
+  Public release on or before Dec 15
+
+
+
+Core functional features
+------------------------
+    Support for PIDs
+        MN support for identifiers
+            Identifier syntax support
+            Encoding and decoding rules
+            Uniqueness testing and guarantee
+        Support PID reservation
+            CN support PID reservation
+            Client lib support
+                Python client lib
+                Java client lib
+        Support for PID verification
+            CN support for PID verification
+            client lib support
+                Python
+                Java
+    Monitoring
+        Monitoring framework evaluation and selection
+        Interface and service design
+            Cacti plugin for content statistics
+            Node monitoring support interfaces
+        Monitoring implementation
+            Cacti monitor system core stats
+            IM Bot support for notifications
+                log4j IRC extension
+                python logging extension
+            Node monitor apis implemented
+            Cacti web interface reporting
+        System level monitoring of nodes
+            Implement system level monitoring service
+            Document process for adding nodes to service
+            Add nodes to monitoring service
+        Service monitoring of nodes
+            Tests for MN services
+            Tests for CN services
+            Implement node service testing as part of monitoring service
+        Content monitoring of nodes
+            Define the monitoring service interfaces
+            Implement the monitor service interfaces
+            Implement the monitoring service for content monitoring
+            Support reporting of aggregated information
+    CN content and service replication
+        Data store replication specifications
+        Data store object replication
+        Replication configuration documentation
+        Replication service security
+        Replication event notification
+            Replication event log
+                Log file
+                Log bot
+            Replication event message queue
+        Service failover
+            DNS RR service availability check
+            Admin notification of outage
+            Metacat post downtime recovery
+    Support common serialization formats
+        XML Serialzation
+        Additional formats
+            JSON serialization
+            CSV serialization
+            HTML serialization
+    MN registration
+        MN service registry schema
+        MN service advertisement
+            Metacat 
+            GMN
+            Dryad
+            DAAC
+        MN test service
+            Check service availability
+            Resource availability
+            Check content type support
+            Admin task notification check
+        Implement node registry
+            Registration data store
+            Registration service interface
+            Registry entry update
+        Node heartbeat support
+            MN heartbeat service
+            Heartbeat monitoring service
+                Heartbeat client
+                Heartbeat check scheduler
+                Heartbeat status logging
+                Failure notification
+        Registry maintenance
+            Schedule registry entry check
+            Log registry entry status
+    Synchronization of data and metadata
+        MN generation of system metadata
+        Enumeration of MN content
+        CN retrieval of metadata and system metadata
+            Retrieve content from MN
+            Checksum verification
+            Content type detection
+        CN update of system metadata
+        CN storage of metadata and system metadata
+        CN update of node syncrhonization status
+        Synchronization control service
+            Coordination across MNs
+            Scheduling 
+            Check for content
+            Execute sync process
+            Notification for downstream processes
+    Operation logging
+        Define and document logging services
+        MN operations logging
+            Record operations in log
+            Support log request service
+        CN operations logging
+            Record operations in log
+            Support log request services
+        CN accumulation of logs from MNs
+            Design log accumulation mechanism
+            Define log replication policy (between CNs)
+            Client for retrieval of MN log information
+            Storage for aggregate logs
+            Controller for coordinating log retrieval
+            Services for retrieval of aggregate log information from CNs
+        Client retrieve logs
+            Client retrieve logs from MNs
+            Client retrieve CN operations logs
+            Client retrieve aggregate logs from CN
+    Core ITK functionality
+        Implement core functionality of Investigator toolkit libraries
+            Design the ITK methods and high level abstraction
+                ITK methods defined
+                ITK high level abstraction defined
+            Implement a Java ITK library
+            Implement a Python ITK library
+        Enable ITK Applications
+            Initial ITK support
+                Implement a web user interface
+                Implement a command line client
+                Enable DataONE support for R
+            Later ITK support
+                Implement a file system driver using FUSE
+                Excel plugin
+                Viztrails support
+                Kepler plugin
+    Integration testing
+        ITK - MN interactions
+        ITK - CN interactions
+        CN Replication
+        MN Synchronization
+        MN Replication
+        CN - MN interactions
+        MN - MN interactions
+        CN - CN interactions
+    Search holdings
+        Define the search and retrieval APIs
+        Implement the search service
+            Implement search engine
+            Implement content extraction for search indexes
+            Implement service interfaces for search engine
+            Implement controller for maintaining index currency
+        Populate the search service
+            Define the search service index schema
+            Define metadata mappings to search service index
+            Synchronize search index with CN content
+    Insert content to MN
+        Define the create() service interface
+        Define service access control policies
+        Implement content creation service
+    MN replication of data and metadata
+        MN replication specifications
+        MN replication service implementation
+            GMN implementation of replicate()
+            Metacat implementation of replicate()
+        CN method to trigger MN replication of object
+        Replication control service
+            Content replication rules
+            Content replication controller
+                Direct MN to replicate content
+                Update object replica status
+            Content replica status monitoring
+                Check for object replica count
+                Trigger operation based on count
+    Modify content
+        Define the mutation process for data and metadata
+        Define the service access control policies
+        Implement the update service 
+    Trusted connections between nodes
+        Define secure connection protocol
+        Implement trusted connections between CNs and MNs
+        Implement trusted connections between MNs
+    Authentication and access control
+        Support for authentication
+        Support for access control
+        Support for identity mapping
+    Object format registry
+        Identifiers for content types
+        Verification of content type
+        Detection of content type
+        Database of content types
+        Service interfaces for content type registry
+    Support for multiple service versions
+    Internationalization
+        Support for unicode content
+        Multi-lingual user interfaces 
+          (perhaps a lower priority, but quite useful to have international nodes / support)
+          (ensure that the implementations support a path to internationalization)
+    Event notification
+        Outline the set of events to be supported
+        Define protocols for event notification
+        Define service interfaces to support event notification
+        Implement mechanisms to send events
+
+    Packaging and examples
+    Updates to docs and include the mythical reference architecture
+
+

@@ -1,0 +1,28 @@
+Karthik and Richard Session
+===
+
+Next thing to do would be to cache the data
+
+Put all this in a file called load.r
+
+# read sql data into R.
+# if R data.frame is now named data, then
+# Delete that row with the really large # downloads
+
+data=subset(data,downloads<=300)
+
+save(data,file="myexperiment_data")
+
+# Next time you want to read the saved data, 
+
+# Then in another file called run.r, this line below would be up top and we only run this file.
+
+load('myexeriment_data")
+
+# so fit generalized linear models rather than linear regression
+# Do a cluster analysis on attritubes that Richard would list here
+
+
+
+
+

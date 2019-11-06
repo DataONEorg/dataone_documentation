@@ -1,0 +1,383 @@
+pdpaSpring 2013 UA/SC Joint WG Meeting:
+OneDrive and Other Tools – Usability Testing and Development Strategy Subgroup
+
+Twitter sharing during the meeting @DataONEorg #UASCwg
+
+Current Meeting Documents________________________________________________________________
+
+2013  Joint UA & SC WG Meeting Knoxville Apr 30 - May 2:
+ * - Plone Site Folder   https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-ua-sc-wg-meeting-2013
+ * Agenda https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-ua-sc-wg-meeting-2013/Joint%20SC_UA%20WG%20Agenda%204.26.13.doc/view
+
+Past Meeting Documents________________________________________________________________
+
+2012 Joint Meeting Knoxville:
+ *  - Plone Site Folder   https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg
+ * Summary Report https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/Summary%20Joint%20SC_UA%20WG%20May%201%20-%203%202012.doc/view
+ * Usability Testing Subgroup https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/usability-testing
+
+AHM Sept 2012:
+ * Plone Site Folder    https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm
+ * Executive Summary https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/ahm-2012-executive-summary-report-ua-and-sc-wgs
+ * Usability and Assessment Lightning Talk https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/DataONEAHMLightning9-11-2012.pptx/view
+ * Report Out https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/DataONE%20UA%20SOCIO%20Summary%20AHM%202012.pptx/view
+ * Breakout Session notes: UA and SC combined sometimes including CI and PPSR    http://epad.dataone.org/yOOvlIEvyn
+ * Usability Subgroup https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/usability-subgroup-ahm-2012
+ * UI Future Interface Subgroup https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/ui-future-interface-subgroup-ahm-2012
+
+AHM Oct 2011:
+ * Plone Site Folder    https://docs.dataone.org/member-area/working-groups/sociocultural-issues/meetings-sociocultural-working-group/ahm-oct-2011
+
+
+____________________________________________________________________________
+BEGIN CURRENT MEETING EPAD
+
+04.30.2013
+
+Present:
+Mike Frame, Priyanki Sinha, Rob Olendorf, Rachael Hu, Rob Christensen, Bruce Grant, Roger Dahl, Dave Vieglais, Mary Beth West
+
+Roger Dahl provided walk through of the ONEDrive
+-There are three different prototypes
+
+First prototyped system's layout --> Standalone application --> 
+@ to symbolize Filter, alphabetized filters; application of filters -- not hierarchically necessarily
+
+Advantages & Disadvantages - 
+https://repository.dataone.org/software/cicore/trunk/itk/d1_client_onedrive/doc/build/html/mockups/standalone/index.html
+
+Mike asked if when you access the mounted drive, could a dialogue box be provided to filter and access data
+
+Rachael asked if member nodes are aware of the filtering that the DataONE uses; might be helpful for there to be a feedback loop to let them know what types of fields DataONE uses to help with their findability within the DataONE systems (i.e., if you - the member node- don't use keywords in your records, users will not be able to see their records if they filter by keyword)
+
+Second prototyped system --> ONEMercury Integration --> 
+https://repository.dataone.org/software/cicore/trunk/itk/d1_client_onedrive/doc/build/html/mockups/onemercury-integration/index.html
+
+Bruce suggested a "Check" box next to each record to help with selection of records to open in ONEDrive
+
+Third prototyped system --> O.S. specific integration --> 
+https://repository.dataone.org/software/cicore/trunk/itk/d1_client_onedrive/doc/build/html/mockups/native-integration/index.html
+
+There may be a need to have an assessment to question what kinds of users would be using this tool (e.g., use cases):
+-What kinds of operating systems?
+-What kinds of data uses and needs?
+-Notification of new items: Read me on new items or like Dropbox pop up "X # of new items" - or some functionality similar to RSS or populating to RSS
+
+Technical question
+-Would spotlight search be an option? Unknown at present, OS specific
+-Hierarchies may not be as simple as it looks if there were many options for a hierarchical option (e.g., Author lists), if the list was long how would it work or simplify finding of the records
+
+Semantics working group is working on streamlining the metadata or discussing the best ways of doing so, this would greatly help with this system and other systems
+
+We should focus on what is possible now for this development and then look toward investing a lot of time in finding the best ways for determining adoption, clientele, etc.
+
+Questions on the potential of data citation and how to find/cite the data set and its found location
+
+Where to we go/paths to take?
+-What should Version 1 include as features or integration?
+-Look at the 3 major aspects - 
+1. Folder hierarchy and representation
+2. User entering restrictions
+3. How to present the content that's in the tree (data packages, meta documents, etc.) - representaitons of content
+-Look at both platforms, but Windows should probably be first priority
+-Do we want to design from the start to the web as a product, too (e.g., logging in - cross-pollinating to develop a tool) - Will people log in, what kinds of problems would that present for authenticating, etc.
+-Who is the type of audience for using this tool?
+-How often would they use this tool?
+-Use of the solar index?  Will that be changing in the foreseeable future? No, but should we continue to thinking about it, etc.
+-Will this be a developed in the 5 years?
+    -Need to consider resources and time for developing this; implementation effort into each of these; should be considered in Release 1 and not limit us down the road
+    
+-What features do we want to see in Release 1? Read-only, etc.
+-What would be attractive to the end-users?
+
+Sketch it out tomorrow
+____________________________________________________________________________
+
+Geographical search: Allow for polar coordinates.
+
+ONEMercury mockup:
+- add checkboxes for search results, to select which one to add to folders
+- 
+
+05.01.2013 Notes
+
+Reviewed previous ONEDriveFeedback document
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/ahm-oct-2011/ci-tools-evaluation-notes/AHM10182011ONEDriveFeedback-latest.txt/view?searchterm=onedrive
+
+
+Features:
+
+General Features/Concept of operations:
+
+
+0. DataONE Workspace will be created for logged in users
+
+Before Workspace create, potentially create an xml configuration file that can be downloaded from Search for ONEDrive "filtering/configuration"
+
+1. ONEDrive will be accessed via ONEMercury
+
+2. Go directly to ONEDrive from Desktop - ie. mounting network File Share
+   Configuration file for ONEDrive - pre-configured Searches/Filters - i.e ONEMercury 
+   Bookmarking feature. (feature of the online workspace rather than a feature of ONEDrive)
+
+3. Read only capability - will not be able to write back to DataONE
+4. ability to drag a folder (data package, all data associated with a keyword, etc.) into other investigator tools - tool/os dependant capability 
+5. Support user annotations on content - shared user space - quality, rating, comprehensioin, comments capability done at ONEMercury/DataONE Level - ONEDrive then inherit this "content".  Tied to online Workspace environment. Need for workflow back to the provider of the dataset - Community Engaging Activity (ACTION - Do an environmental scan of effective models (FUTURE)
+6. Login - online workspace will be accessed via Login method - Potentially just use E-mail address to keep up with users configurations (Will require TERMS of Service Disclaimer) 
+7. statistics should be segregated by the tool/interface that generated them -- this way we can sort out the stats for ONEDrive from other tools (via User Agent Header) 
+8. Ability to share work space and/or folder with other users (right click, properties, share) - property of Workspace
+9. Data USE/Privacy statements needs to be developed and added to ONEMercury/DataONE.org
+10. Maintain backward compatability
+11. Member nodes may also want to integrate their UIs with the workspace environment. So, workspace API needs to be defined 
+
+File System View - hierarchy presentation
+
+1. improve listing of keywords, using controlled vocabularies or separating into pages
+
+2. Use CDL Namaste tags for enhancing the directory listing? (generalize to support controlled vocabularies / hierarchies for categorizing content)
+https://confluence.ucop.edu/display/Curation/Namaste
+
+3. when opening a file, report the canonical path, rather than the path used to locate the item (this will allow applications to cache a path that should be stable)
+
+Package Structure - Data Packages
+
+1. generate more features like abstract.txt automatically from the metadata, investigate other output formats that people would want
+1b. take the metadata and format it for as a new data set, perhaps for only particular users.
+
+2. multi-language support -- generate multi-language abstracts
+
+User Subseting/Query to define content
+1. separate filtering from access -- use mercury as the recommended way to search, then allow the results to be opened in a filesystem view (e.g., a "smart folder") (+3)
+   * allow filtering on geography (+1)
+
+2. shopping cart for single/multiple replication to ONEDrive
+
+3. bookmark lists / persistence 
+
+4. ability to find data similar to existing data, or collaborative filtering
+
+5. allow the filter query to be updated on the fly (while the drive is mounted)
+
+Additional Features:
+
+
+
+
+Workflow for Browser Based UI Interaction
+
+Use Case 1.  A user is browsing for content related to some topic, and is cherry picking interesting content for more detailed local investigation.
+
+1. User queries Web Interface to find content
+
+2. User clicks on "Save" for a package
+
+   [[ Option to "Select All" content, or cherry pick, on search results page ]]
+   [[ Option to set page size to a much larger value, 200+ ]]
+
+3. Selected packages are saved to virtual workspace in "My Packages" or some user defined folder
+
+4. User select option to retrieve content from WS: zip, email, ONEDrive, ...
+
+5. ONEDrive option selected: 
+
+6. ONEDrive connection is made
+
+7. ONEDrive retrieves list of package identifiers of content in workspace
+
+8. Packages are available on the users ONEDrive mount point
+
+
+Use Case 2. A user has a specific query that defines content they'd like to see in ONEDrive. The search results should be dynamic and show new results as they are added to DataONE. 
+
+1. User queries Web interface to find content
+
+2. User clicks on "Save Query"
+
+3. Query is saved to user's workspace with optional user specified name for folder
+
+4. User selects option to download content
+
+5. ONEDRive selected
+
+6. ONEDrive connection is made
+
+7. ONEDrive creates a mount point using the query that the user saved.
+
+8. Content is available on ONEDrive and may be used locally
+
+- What is the notification for new content being available? RSS feed? Email?
+
+Data Package Representation
+
+Reviewed mockup
+
+Suggestions:
+
+-Distinguish between rendered version versus the raw/original version
+
+-Package level metadata (ex. ReadME file, owners, etc.)
+ - README should include a citation for the content (official representation, in a format that can be imported into other apps like mendeley, zotero, etc)
+
+-Show some level of detail in the WorkSpace
+    *File view/Directory view in the user interface
+
+-Name of folder is associated with the identifier with the files as file name (may not be attractive as file name) - may be useful to create folder names on the fly; the ability to click on the file name and rename, supporting renaming from lookup table (adjusting value)
+    *Rename button or "add your own" or annotation that could appear in a "readme file"
+    
+-Note, when someone drags a folder from ONEDrive to their local computer, all of the data will be downloaded, too, which could be fine, but the user should know that and make that choice
+
+Member Node issue: Generating Display Names/Choosing Display Names
+    *Add place holder in DataONE systems, prepopulate that field with some version of the identifier with the appropriate semantics for file system
+    
+Suggestion for Display Name: get it from the "citation" entry in the OneMercury search interface --> the First line in grey --> "Author, Start Date, Title". We noted some issues with some of this text (e.g. some citations begin with a "."), but this can be solved by a process of "Graceful Evolution" (AB) down the road.
+    
+Potential Question for UI Testing: Ask users about whether they care about "Display Name" --> what would be most meaningful (e.g., Author, YR, Institution)
+
+Package repesentation in OneDrive...for the presentation having a large number of files for the user --> Right now we don't have a lot of content in data packages, one of the member nodes that is coming online soon has run into this issue was overwhelming, our suggestion was to make it hierarchical  
+    *ORE would represent each package as it's own identifier and point to another data pacakage, so when you go to download the whole thing you have your options
+
+Issues: 
+1. Number of object in a package (e.g. 100k)
+- Create subfolders? (e.g. group by characters in name)
+- Don't deal with it? Give up. Provide feedback to user that there's more stuff
+- Use a hierarchy of packages (currently recommended procedure)
+- Display the first n entries
+
+2. Size of objects in a package
+- Depends a lot on the file system browser (e.g. preview in OSX Finder)
+- Content is not retrieved until opened (so generally not a problem)
+- ONEDrive should impose some practical limits to the size of objects that are retrieved automatically
+- Could perhaps create a link for very large files that provides a third party mechanism for download (e.g. open in browser)
+
+3. Standard representations of packages:
+- show an expanded bagit view in the file system for a package
+- other standard options for showing packages of data?
+
+4. File Names of objects
+- for packages, the author, date, title line looks useful
+- for other files, the identifier may work
+- Need to have something of a lookup table in ONEDrive that provides the mapping between local display name and the object identifier
+
+Recommendations for UI Testing
+-DUG Potential/Carry over into ESIP
+-Have users/potential users walk through screenshots and discuss the system (expectations, etc.)
+-Could add questions about "what they wanted in terms of managing files"
+ *  Potential Question for UI Testing: Ask users about whether they care about "Display Name" --> what would be most meaningful (e.g., Author, YR, Institution)
+
+File System Hierarchy
+
+Do we want to make it recursive, so once you've defined a facet (e.g., Keyword) it wouldn't have the addional facets repeating themselves (e.g., EndDate, MemberNode, etc.)?  --> Making the file flat and start listing all the results (i.e., Click "Keyword" filter and list all keywords)
+    -Is it useful? Is it behaving how you would expect or want it to?
+    -Could you group the filters? Make a "Further Refine" folder
+    
+-Looked at 5.1 Mockups again
+    Problem with the representation to be consistent with mapping -- guidance with metadata to these controlled terms
+    
+-This could be phased: Focus on author or high-level buckets of facets as first view then roll out taxa and regions
+
+-Initially show just "Authors" from index; grouping facets drawn from index fields
+
+-All could then later be facets in ONEMercury and could help with organization
+
+Reviewed all of the fields that are available of the records (e.g., metadata and perhaps picking for initial choices for indexing in the hierarchy)
+
+Field name: "topic" could be useful for mapping via standard ontology
+
+NEED TO LOOK/DISCUSS WITH OTHER GROUPS RE: NORMALIZATION (at least tackle for the short term -- truncation of plurals and capitalization, etc.)
+
+05.02.2013
+
+-Help Menu's/Documentation on ONEMercury (Mary Beth & Lisa)
+-Final ONEDrive Requirements Document (05/15) (Dave & Mike)
+        *Start from Etherpad and Mockups that have already been established
+-Final Story Boards/UI Mockups (05/15) (Rob, Rachael, others)
+    *Interaction points with search/results
+    *3 Major Features of ONEDrive
+    *Workflow interactions between results & workspace
+    *Google Document to allow for other input/evolution
+-Design Workspace Environment
+-Design Search Results -
+-Design ONEDrive Implementation in ONEMercury
+-Questionnaire/Interview Script for DUG/ESA (Finish by 06/28) (Rachael & Mary Beth)
+-Testing Methodology/Approaches/Timeframe (May - June)
+    *Alpha Release
+    *Beta Testers Identified
+    *Dug Approach
+    --> Feedback needed on these pieces 
+-ONEDrive Release Strategy
+
+Testing/Methodology/Timeframe
+For August Release/Protype:
+    -Matt Jones giving presentation at ESA about ONEDrive
+    -"Ideally" in a situation where he can give a presentation and interested users can download --> but realistically may be more of a testing environment as a mechanism to gain further feedback
+    *Mechanism for capturing feedback
+    ***Demonstrate something live***  --> Want feedback and here's a way to provide feedback, sheet to download with summary list of functions what OS it runs on
+    *Deliverables:
+        -Working in Test Environment
+        -Alpha version
+        -Summary Capabilities/OS Requirements Sheet
+        -Screen shot/cast - YouTube video - linked from DataONE.org of ONEDrive
+        -Feedback Questionnaire
+        -RedMine subproject
+        
+What are we going to do at DUG and ESIP?
+    -Opportunity to gather feedback
+    -Search dialogue interface least likely to be complete
+    -Demonstrate "mock-ups," "near-live" version
+    -Focused discussions, focused feedback on value statements
+        -Get value statements from users ("how they would use it")
+        -Hooking into existing workflows? What's the context of how they would be using?
+        -Actual behavior? Tools that they are using?
+        -Diagram workflow?
+        
+        Demo of lightning round
+        --> 5 or 6 people for in depth discussions
+        
+        -Prototype within the DataONE Open Search
+        
+Why do people retrieve data?
+    -Data Managers surveys
+    -Purdue use cases for Data Profiles
+    
+Timeline
+Complete "Mock-up" (mid-May) for implementation and use for script of question and help documentation
+--Do wireframes that just have the main representative workflow and UI elements and chunks of text that describes, capture those in a dynamic document so that there can be updates and annotations to the work flow of the document
+Next two weeks of May on Design (mid-May)
+Final Requirements Document (mid-May)
+Questionnaire/Interview Script for DUG/ESA -- start
+
+Workspace -- whole new tool that needs to be created (mock-up to start with)
+
+ONEMercury changes --
+-Check boxes (to select)
+
+Future discover portal
+-Looking at the index and how it can be revised ("under the hood" changes)
+-Development on interface decision hasn't been decided
+
+ONEDrive High-Level
+-Major Functionaility
+    -Search Dialogue
+    - Package 
+    -File View
+
+Concept of Operations
+-TIes to DataONE Workspace
+-Prototype in OpenSearch for Workspace/Results
+-"Read-only" mode
+-Multi-platform support
+-Behaves as expected Explorer/Finder
+-Relies on DataONE Index
+-Requires DataONE metadata/facet improvements* (issue)
+-Basic versions, ongoing development strategy
+
+-Will require DaatONE metadata/facet improvements
+-Establish DataONE Workspace
+-Interaction from DataONE Workspace to ONEDrive
+-Protoype in OpenSearch
+
+
+Timeframe -- DataONE All Hands (9/30-10/3)
+--Planning
+
+

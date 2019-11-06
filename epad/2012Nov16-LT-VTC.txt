@@ -1,0 +1,141 @@
+Attendees: Rebecca, Bob Cook, John Kunze, Amber, Bertram, Dave, Matt, John
+
+Regrets: Bill, Bruce, Stephanie, Viv, Deborah
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Nov 16, 2012 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/505860816
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (786) 358-5419
+Access Code: 505-860-816
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 505-860-816
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2012Nov16-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-11-16
+
+1) CI Update (Vieglais)
+Things in a bit of turmoil right now. There are a number of moving items that need to be nailed down.  Still trying to do the 1.1 update. Main issue is one of the core libraries (Hazelcast) is dropping messages from time to time (a known problem with the older version of hazelcast). Now have moved forward with the update and that has introduced a number of changes in the CN code. Have to do more testing iteration than normal. Approaching deadline for demonstrating Kepler & Morpho with the DataONE infrastructure. EVOS (Exxon Valdez Oil Spill) demo November 27th. There appears to be a path forward for the development environment for the demo. Should be in good shape for Thanksgiving break.
+Debugging secure connections between services is taking more time than would like. Now writing a document to describe how to debug these issues. Dave is doing a search interface for all the etherpads - should be ready next week.
+
+Continue to be resource constrained - ITK tools plus maintenance plus documentation. The schedule for some tools may be impacted.
+
+EDAC node status: clear path forward, but not on the top of the work queue at the moment.
+
+2) CE Update (Budden)
+
+ * Ok to invite Scott Chamberlain to the CEE WG?
+
+    We've (CEE WG) had recent interactions with Scott Chamberlain that made us feel very interested in inviting him (and pretty sure he'd say yes!). 
+    
+    Like Andrew, Scott is a postdoc who is active in 'open science' issues and social networking. He studies evolution of species interactions, and how species interactions influence evolution of species traits and influence communities. He maintains a blog about     using R in ecology and is data savvy.
+    
+    http://schamberlain.github.com/about.html
+    http://www.sfu.ca/biology/faculty/elle/Lab_members.html
+    
+    Organization: Simon Fraser University 
+      Organizational Diversity: university 
+      Ethnic Diversity: male, white 
+      Geographic diversity: Canada
+      Reason for invitation: Helps to replace postdoc Archer Batcheller
+
+3) Copyright document (Budden)
+
+
+Data conservancy is working on DCSLite. Targeted towards longtail of science. They are providing a dropbox and google drive interface. They are offering a service of checking metadata and checking it against standards. They have a mechanisms for collecting metadata from drop-like interface and then ingest the data and metadata into DCSlite.
+
+Sayeed said the two emphases were provenance tracking and metadata harvesting.
+
+They will continue to be on the calls and they will be on the calls and at 
+
+4) Planning for RSV (Koskela)
+
+Best tentative dates so far: 27 Feb - 1 Mar (~ 11 full weeks from now)
+
+11) Feb 19 - 23
+10) Feb 12 - 16
+9)   Feb 5 - 9 CCIT Meeting (planned)
+8)   Jan 29 - Feb 1
+7)   Jan 22 -  25 (EVA Working Group meeting)
+6)   Jan 15 - 18
+5)   Jan 8 - 11
+Dec 31 - Jan 4
+Dec 24 - 28
+4)   Dec 17 - 21 (2 days for EAB mtg) - should have ONEDrive, R client, minimal Kepler
+3)   Dec 10 - 14
+2)   Dec 3 - 7
+1)   Nov 26 - 30 (EVOS demo)
+Nov 19 - 23 (partial week Thanksgiving):  work on Policies promised for EAB.
+
+Priorities:
+get 1.1 out the door
+focus planning on RSV agend aand prep.
+Also keep EAB in mind
+
+We need to know the MN count
+
+Rough notes from CCIT meeting (August): http://epad.dataone.org/20120821-CCIT
+
+5) Around the room
+
+Bruce: We've started the process of moving the oldest ORC system over to the UTK campus, to add that capacity to the VMWare cluster there.  A few parts need to be ordered.  As discussed last week, we've had some problems getting a new VM brought on-line at ORC, due to a very frustrating constellation of factors with OIT.  That immediate problem appears to be resolved, but the larger set of issues still needs to be solved.  I think we have the steps in place to ensure we can bring new systems on-line quickly, which Chris and I are going to test on Monday.  We've also identified a few UT OIT things that should work from their VPN, but which don't :-(.  Those are in the process of being fixed.  
+
+John Cobb: 
+
+* XSEDE/DataONE interoperability supplement:
+        - Funded use case is shifting  from CMIP to Bird-vis 
+        - I have iterated with most of budgets and scope
+        - Expect to send out a revised ,tightened next v. Sunday Evening
+        - Consider re-approaching the CMIP idea through some other funding mechanism
+
+* MN coordination:
+        - UTK hire news (Carol - care to comment?)
+
+* ARN Conference (Advanced Regional Network)
+        - Kannapolis in Dec?
+        - How can regional networks contribute? exp. focus campus integration and  data (Sandy effects on network resilience an emerging topic)
+        - Developing nomincations for speakers and invited attendees
+        - Any input on ideas and persons welcome (perhaps discussion here)
+    
+* SC12 report:
+        - wireless network was suboptimal. DOE and DOD were mostly absent
+        - Discussions with XSEDE staff. There continues to be a need to educate XSEDE about DataONE 
+        - Dataway: maybe re-join process in Feb.
+        - NCAR has a new machine in Wyoming. AR5 processing is progressing. [Perhaps there is an opportunity to re-engage ESG for the next round]
+        - Heterogenous computing and GPGPU's - big idea this year
+        - More and more easier ways to program GPGPU's - OPenACC directives; PGI compilers; Numba Cude from Python, ...
+        - Personal discoveries:
+            - Fraunhofer has a production parallel files system
+            - Bill Harrod (in a keynote) publicly acknolwedged that the timeframe for DOE Exascale machine(s) has moved 20128->2020 and maybe -> 2022
+            - Open SHMEM released v 1d libraries
+            - IBP/Logistical netwroking have received a NSF Cambus bridging funded proposal for wide are data stores (UTK, Vandy, Indiana)
+            - 100G wide-area getting most and more common.
+            - Marlon Pierce, Suresh Marru et al - Good BoF on using Apache SW process for Scienctific SW, espfor portal tools. Also discussion on other similar processes.(Eclipse, open eGov)
+            - Data Capacitor at IU is re-upping to 5 PB (from 500 TB) and offering wide area Lustre and other services. They are always looking for collaborators. Perhaps DataONE should pursue this opportunity. (They might volunteer to be a no-cost MN - but need to define a science use case such as the IU library community and/or the IU-SEAD folk.)
+        -NICS?UTK took #1 on the Green 500 list iwth a local MIC/Xeon Phi cluster
+        - Oh and Titan took the #1 spot on the top500 (locally interesting) with a 27 Petaflop (PF) peak machine and a 17 PF HPL benchmark
+
+John Kunze:  Working with Ben Leinfelder to iron out some metadata issues, EZID has now registered over 130,000 DataONE DOIs with DataCite.  ONEShare-test "practice repository" now operational; the only things to do before turning on ONEShare for polling by CNs are cosmetic:  (a) clean out test data from production ONEShare and (b) for UNM to acquire a non-self-signed certificate.  Polling could probably happen after (a) is finished.
+
+Bob:  
+Working with the EarthCube Brokering Group on the DataONE Carbon Modeling Use Case.  Brokering services (lead:  Stefano Nativi, Italy) are accessing and processing model output data from the North American Carbon Program.
+ 
+Brokering Group is interested in linking up with DataONE Member Nodes to acquire / process data.  We have a phone call with Brokering Group and Dave in a couple of weeks to discuss.
+
+Amber: (in absence of Trisha). DMPTool2 received largely favorable reviews from the Sloan Foundation.  Items included outreach, metrics, open source community.  Comprehensive letter of responses was turned around in 2 days and we are hopeful..
+
+Deborah:   There will be an IGNITE talk (in the Wednesday evening session) at AGU on the Semantics Working group work given by our postdoc - Patrice Seyed.    It will show current results on our Hydro-Eco Use case.
+

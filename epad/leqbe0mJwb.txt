@@ -1,0 +1,77 @@
+DataOne Research Meeting 2: 05/25/2011
+ * BL: We should not just focus on Kepler, Taverna, but also other programs
+ * BM: Interests: 
+   * the what, how, and why of tools for scientists, and how we can develop tools. 
+   * For instance, ecological niche modelling - lots of QA/QC, just to do a single experiment, and it would be nice to understand how complex these are in order to develop them further. 
+   * Would like to analyse workflows by: 
+     * Data Input
+     * QA/QC steps
+     * external models
+     * iterative loops
+     * recursion
+     * subject matter (bioinformatics? ecology?)
+ * Karthik - Experienced with models in R. 
+   * Would like to develop a laundry list of workflow dimensions, to find weak points across systems. 
+ * BL: So, we’re going to look at the workflows out there (such as those on myExperiment). If so, we have to focus on a few aspects:
+   * Users: 
+     * What kind of users?
+     * What are they trying to do?
+     * Do they need hand-holding? How accessible are the systems?
+     * Do they include R, or other external programs? How do they do this?
+     * Are they using the same workflows, or constantly reinventing the wheel?
+   * Workflows:
+     * plumbing - data management, not the actual science workflows
+     * use of shims
+     * similar workflows, like the niche modelling types
+     * Are the ones which do the ‘real’  work different from the others?
+     * Is it 1-of-a-kind?
+     * software development (those in production mode at the moment)
+   * Depository systems:
+     * Kepler Depository has some example ones, especially in packages, which could be mined
+     * Find more examples
+     * library of the Kepler project, which has a limited user interface
+     * myExperiment is still the largest. 
+     * BL: “people might not want to share their workflows”
+     * Useful in identifying users: would be worth
+       * working with them directly
+       * using the kepler mailing list (and others) to contact people
+       * Some groups in Camera in San Diego, Davis which have in-house Workflows that we could ask for
+ * Documentation: myExperiment, Kepler site training
+   * Develop list of criteria (some above.) 
+   * BM has access to 1-2 page description of six work flows, and a summary article on workflow usage.
+   * Brainstorming workflow usage
+   * (Email the fellow interns with a status update, as per the mentor plan)
+   * Heather is making a lab notebook (wordpress)
+   * Make three excel sheets: 
+     * Users
+     * Workflow languages (share with Karthik)
+     * workflows themselves
+   * Do the relevant reading loaded onto Mendeley
+ * BL: What’s out there? What is the state of the art? R-scripts? Shell scripts? (Vistrails?)
+   * workflows without calling them? is that too out of scope? What’s the outcome predicted for this project?
+ * BM: Don’t want to start too broadly. Non-published work - how usable is that?
+ * KR: Identify weak points - some are better, waht gaps are there, examples of non-working ones might be relevant findings?
+ * Richard leads analysis:
+   * randomly chosen subset?
+   * x amount of environmental ones, as well (not just bioinformatics)
+     * This will be covered more in another call
+   * what ones are used (how complex they are)
+   * What would analysis entail?
+ * Karthik : 
+   * draft outline for short synthesis paper?
+   * higher levels, strengths + weaknesses of programs (…and then suggestions)
+     * goal of use, amount of use...
+   * Note: ‘less formal ones’, two weeks ago in U Tenn at Nimbus - workflow systems in R - can these be gotten?
+   * useful direction to take for next meeting
+ * Taverna papers - BL’s friend, PhD student (Pãolo?) measurable complexity? Could join us?
+   * complement the conceptual analysis
+ * BL: Provenance repository internship going on as well - on avergage, 30% of workflows are shims. 
+   * subsetting, translation, transformation - useful infromation.
+ * Ultimately, it would be useful to have an annoted bibliography. (Mendeley?)
+ * Write up synopsis for communications to the public
+ * Make a public drop-box folder
+ * Email out to everyone the hours for next week (16:00 GMT/ 11:00 EST, 31-05-2011)
+ * Fill out the mentor program for the next two weeks
+ * 29th-30th in UC Davis (Buy Flights - 28th evening). 
+ * End of call.
+

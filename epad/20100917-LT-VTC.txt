@@ -1,0 +1,182 @@
+Attendees: Rebecca Koskela, Bill Michener, Dave Vieglais, Bruce Wilson, Mike Frame, Suzie Allard, Trisha Cruse, Bob Cook, Steve Kelling, Viv Hutchison, Matt Jones, Carol Tenopir, Matt Jones
+
+
+Regrets: Todd Vision, Bertram Ludäscher, John Kunze
+
+
+Agenda  for  2010-09-17
+
+ * Working Group reporting for EAB and NSF (Michener/Koskela/Vieglais)
+   * https://dataone.org/member-area/working-groups/working-group-reporting-templates/
+NSF and EAB are interested in seeing the presentation version of these. Make sure that you try to be as concise as possible.  WGs should plan to report on a quarterly basis.
+EAB also wanted to see this for the CCIT as well
+
+ * 2-3 volunteers needed to attend January EAB meeting (Jan 17-18) in Santa Fe (Michener/Koskela)
+       1. Bob Cook
+       2. Carol Tenopir
+       
+       Bruce can go, but there are enough Tennessee people already.  
+       
+       Dates were chosen by the EAB. Would it be reasonable for people to participate remotely? Possibly have a couple of people attend remotely. Idea is to have the EAB meet the LT.
+       
+ * Preparation efforts for NSF mini-review on Sep 27 (Michener/Koskela/Vieglais)
+Bill is working on a presentation for NSF - even with constantly changing requirements from NSF. New requirements 1 hour for D1 and 1 hour for DC in the morning followed by Q&A and demos in the afternoon. Approach
+was:
+ * Context
+ * CI
+ * CE (need slide for each of the WG based on template)
+   * have slide from EVA
+   * cartoons from S&G
+   * need assessment slide from Mike & Carol
+     * Working on presentation & will be sending that this afternoon
+   * S-C slide from Suzie & Maribeth
+   * CE slide from Viv & Steph
+ * Sustainability
+ * Challenges & Future Directions
+   * Challenges
+   * security authenication/identification (1 slide needed)
+     * challenge with sustainability
+     * triple constraint
+     * engage community & meeting community expectations
+     * NSF - work with DC on this re: reporting & review requirements
+ * Future Directions
+May need slides with short notice this weekend and early next week
+
+ * State of The Birds work by EVA WG (Kelling)
+https://dataone.org/member-area/working-groups/scientific-exploration-visualization-and-analysis/STATE%20OF%20THE%20BIRDS%20Work%20Plan.pdf
+
+https://dataone.org/member-area/working-groups/scientific-exploration-visualization-and-analysis/State_of_the_birds_%20update%209.10.10.docx
+
+Slide presentation that Steve talked about:
+https://dataone.org/member-area/working-groups/scientific-exploration-visualization-and-analysis/STEM%20MODEL%20RESULTS%20State%20of%20the%20Birds.pptx
+
+TeraGrid allocation will be sufficient for the State of the Birds report but will probably need to request a larger allocation for further work.
+From the DataONE CI perspective would be great to have specific items to feedback to the developers. Have tried to provide lists of steps required to assemble the datasets back to CI (documents on the Plone site in the WG area). Goal is to put together a paper to describe the processes and steps needed to put this all together. Is there a small chunk of the EVA data that would be accessible to the R-client for the NSF demo? Daniel Fink and Kevin and others have developed some examples of using R through Vistrails - perhaps this would work? Paul Allen will be back next week and possibly able to help out.
+
+ * Outcomes from Federated Security Workshop (Vieglais)
+Two days in Chicago area 
+(notes below from developers call)
+
+Process
+
+Initial overviews of DataONE, candidate member node technologies, and the security landscape. Enumeration of requirements. Evaluation of specific
+functionalities that need to be supported for DataONE, and determination of
+   technology support for each feature. Final recommendation for consideration by CCIT.
+
+   Majority of effort was focused on authentication. Identity management and
+   access control need further discussion. Especially important is input from
+   the community on what are acceptable levels of security and access control,  suggesting the need for a fairly broad reaching survey of stakeholders on these topics.
+
+   Technology Selection
+
+   Selection of technology was generally limited to evaluating approaches for  authentication mechanisms. Four fundamentally different technologies were  examined: SAML as implemented by InCommon; Certificates as implemented by  CILogon; OpenID as implemented by Google and Yahoo; Username + Password as  implemented by existing LDAP infrastructure (e.g. LTER).
+
+   Of particular importance for technology selection was: a) the ability to
+   authenticate both through a web browser and from desktop / client
+   applications that do not support a web browser interface; b) support for
+   authentication of services or agents that represent systems and people.
+   Several other aspects such as ease of implementation and sustainability of  the approach were examined.
+
+   Final recommendation from the meeting is the use of the CILogon system
+   (which itself depends on InCommon).
+
+   Implementation Phases
+
+   The recommendation thus far is for an authentication mechanism. Still to be defined includes major subsystems to support identity mapping and access control (authorization). Using a phased implementation of capabilities allows time for additional technology recommendations to emerge and a natural progression of infrastructure features to be released over time.
+   
+   The suggested phases of implementation include:
+
+   A. Mostly public access. Only publicly readable content is replicated. Only
+      publicly readable content is indexed for search and retrieval. Access to
+      restricted content is through origin member node only. (January 2011)
+
+   B. Roles supported for search and retrieval. ACLs respected by coordinating nodes. Authenticated users can discover content that is restricted to them or their groups. Restricted access content is not replicated. (A + 3 months)
+
+   C. Roles supported for content replication. Restricted access content is
+      replicated to member nodes with compatible ACLs, technology, and
+      pre-arranged trust agreements. (C + 6 months)
+
+   D. Consistent semantic and functional interoperability for identity and
+      security. Restricted access content is replicated to any member node. (D + 12 months)
+
+Need survey of the community for the requirements needed for security, for example do people expect to have private data invisible to searches, etc
+
+So, with respect to policy it also is related to the Life Cycle of a project - in other words the tools we provide - are they as the project is ongoing - if so, then yes limited access by a few will be required and not showing within Search results (As data goes through QA, etc.)..
+
+DC also there and very interested in having a common agreement and approach to security. Main concerns from NASA and DOE was consistency in supporting existing security - not a clear statement from these agencies
+(authenicated read side not addition of content).
+We also discussed having DataONE join InCommon directly to provide another avenue for account creation. 
+ Mike:  USGS would probably be the same in terms of writing internally
+ "Interconnected Systems" is what you get into then....
+These are NIST supported Security Agreements that us Feds do actually create - there is a process, etc for these
+Bruce:  And there are security segmentation that can help. Theoretically, we can permit single factor writes in our Open Research security enclave from externally authenticated sources.
+ Mike:  Yep, I think we need to get a Fed group to "pilot" this, then potentially others would play, etc...
+
+Next workshop to fit within AHM in November - this would be led by Randy and Jim.  They need to get the WG together with membership before the November timeframe. Dave is following up with Randy and Jim.
+
+
+ * Outcomes from DataONE/Data Conservancy discussion re: integration (Vieglais)
+Met with Tim DiLauro, Mike Rippin, Mark Evans, and Elliot Metsger of the Data Conservancy on 2010-09-14 to discuss areas of interoperability between the projects.
+   
+   Summary (DRAFT)
+   
+   A number of topics addressed, with most emphasis on technical interoperability  between the two projects (a sponsor requirement). Three major categories of  interoperability and interaction need to be addressed:
+   
+   - Social agreements, such as focus on particular science domains, promotion of DataNet in general and specific features of each project as appropriate.
+   
+   - Shared infrastructure implementation and standards. Examples include uniform  object format registry (shared definitions between projects), identity and  authentication infrastructure, access control semantics (consistent  definitions of roles, such as a curator), and general search / query terms   and semantics.
+   
+   - Shared content and services. Data Conservancy filling the role of Member Node for DataONE and DataONE acting as an archival data store for the Data  Conservancy. Shared access to content would enable (or at least simplify)  access to services implemented by both projects, which would greatly benefit  the communities we are supporting and also offer some efficiency in   reducing duplicate service implementation.
+   
+   Given the degree of overlap between the projects, it is apparent that there  would be benefit in defining a "DataNet Core" that will address issues in  common between the two DataNet projects to minimize duplication of effort and  to ensure fundamental aspects of project interoperability are addressed. As  more DataNet projects are funded, this foundation or core would help engender ongoing interoperability between DataNet projects to ensure the overall goals of the NSF DataNet program are met.
+
+ * Round the room (All)
+
+Suzie: 
+ITEM 1: We had a SCWG meeting via Marratech on Tuesday.  All but one WG member attended.  Theresa Pardo also had one of her doc students sit in since he is interested in work that can be related to DataONE.  
+We reviewed deliverables and renewed assignments and dates for the 1st and 2nd quarter deliverables.  Rebecca was online with us; that was very helpful to answer questions of the team and to help hone our products for the DUG.  
+
+We talked about how to use the Nov meeting to meet our goals and what kind of crossover time we would like to see with other WGs. For example we identified value in meetings with S&G, U& A, Education & Outreach.  We would also like some input from citizen science folks, and if possible would like to have the opportunity to interface with CI, as we did last time with Bob Sandusky who attended large chunks of our discussions. 
+
+Heather Piwowar expressed an interest in being involved with SCWG, unfortunately  it didn’t work out for her to join the meeting. The team had me ask her if she would like to head up polishing the data citation white paper, but she declined because she is focusing on her primary research.  She did offer to read and add comments based on summer work.  At this point I am trying to find a strategy to get this done as a DUG timed deliverable. 
+
+ITEM 2: Our six IMLS funded ScienceLinks2 doc students are working with me and a post doc on developing an upper division, undergraduate environmental information course which is on the schedule for Spring 2011.  Bob Cook pointed us to the materials that were on the DataONEpedia and we will incorporate these as appropriate.  We are open to suggestions and input.  
+
+ITEM 3: As a result of DataONE connections there are two activities on-going with USA-NPN.  The ScienceLinks2 doc students are working with Carol and I to design and conduct a usability test for USA-NPN with current users  (within the area) and registered people who may not be using the site.  One of my masters students is working on a thesis exploring how college age web2.0 users interact with  the USA-NPN site. Bruce is on the committee and is guiding her work on the GIS aspects to help it be relevant and useful.   
+
+Trisha: 
+Presenting at Oracle OpenWorld next week and would include information on DataONE. Earlier this week our group released Merritt <merritt.cdlib.org>, EZID <n2t.net/ezid>, and JHOVE2 (bitbucket).  Some of these might be of use to the DataONE community.  We will be starting the digital format registry in about a month. 
+Next week presentating at Oracle Open World and will include D1.
+New services released last week.
+
+
+Bob: 
+Line Pouchard and a collaborator Mouna Kettani (Polytechnic University of Puerto Rico) mounted an "Open Ontology Repository" at ORNL.   Sponsored by ORNL DAAC, Department of Energy - Faculty and Student Team (FaST) ,and DataONE.
+
+Activity is described in a short presentation:
+https://dataone.org/member-area/projects/summer-internships/2010-intern-projects/earth-portal-ontology-repository/ORNL%20Ontology%20Reposity.pdf
+
+Demo Version of the Ontology is available on-line:
+http://d1sweb.dataone.utk.edu
+
+Bruce: Working with Dave, Matt, et al on hardware purchases.  Much time right now taken up with upcoming ORNL Climate Change Science Instutute Science Advisory Board meeting, and end of fiscal year fun and games.  Will be at USGS/NOAA/NSF Climate Knowledge Management workshop next week.  Other NASA and DOE activities taking up a lot of time. Had good discussion with Tianmu Zhang yesterday (UTK Grad Student, working on DataONE Grad Assistantship).  Could be useful to Federated Security group, as well as other more policy-related CI kinds of things.  See https://sites.google.com/a/usgcrp.gov/knowledge-management/ for more info on KM workshop.  
+
+Carol: The brief summary and slides from the baseline assessment of scientists are now in the U&A WG folder. We're working on a complete article from the data. Baseline assessment of librarians will go out this fall. Also working with Purdue to do versions of their indepth profiles/interviews and a lit review on assessments done by others.
+
+Mike: Nothing specific to report beyond the fact that Bill and I are planning for a USGS Breifing on September 28th in Reston.   I am hoping this will be a series to get additional participation by USGS In DataONE.    Planning a NBII metadata meeting at ORNL for probably October.  One topic is related to data access within our CH.   NBII MN will also be discussed.    
+
+Viv: In touch with Stephanie and organizing the first Education and Outreach WG meeting; also working on common applications within USGS,
+Council for Data Integration  (CDI) .  
+Mike: I provided Dave Access to our Data uploader tools that are under development through this effort.  I would love to see the USGS funds being provided for this type of tool, closer tied to the Investigator toolkit, potentially even co-development, etc...     
+
+Dave: Currently at a digitizitation hub planning workshop (natural history specimen collection digitization) in Boulder - lots of interest in leveraging DataONE infrastructure for data management.
+
+
+Matt: SONet/JWGODS meeting at TDWG on Sept 30 to discuss and plan observational data exchange syntax.  Will be a joint meeting of TDWG Observations Task Group and the Joint WOrking Group for Observational Data Semantics (ie, SONet, DataONE, DC) that we set up in Ithaca.  Agenda is here:
+   https://sonet.ecoinformatics.org/workshops/tdwg-2010-meeting/observational-data-models-tdwg-2010
+   
+
+Bill is attending the USGS Geoinformatics education workshop in Denver on September 23-24.  He also, along with Sayeed, will be part of the new OCI data task force workshop in Seattle on Sept 29-30.
+
+The start date for Amber Budden (AD for CE & O) has changed to October 11, 2010 from September 20 because of time requirements for obtaining her visa.
+

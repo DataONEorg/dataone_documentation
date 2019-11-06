@@ -1,0 +1,124 @@
+Member Node Wranglers 
+    Fridays at 10:00 am AK
+                    11:00 AM PDT
+                    12:00 MDT
+                    1:00pm CDT
+                    2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+
+18 October 2013  (No meeting 25 October)
+                                                                                   
+Attendees:  Laura, Rebecca, Amber, Bruce, 
+
+Regrets:  
+
+
+Agenda: 
+        1. High profile issues (or current items of interest)
+        
+        Things to discuss at AHM: (add to this as we go along)
+   * Laura to talk with Matt about the replication policy change; what are next steps since it has been sent out (internally) for comment?
+   * the redmine backlog, particularly those who contacted us first, need to sort through
+   * Bruce/Laura to meet lunchtime Tues to plan where Laura should go, to be adjusted as needed
+   * set aside MN block 
+
+        
+        Interest in another MN workshop - Bruce has drafted a proposal for a full-day MN workshop at the IDCC meeting in San Francisco in February 2014; Trisha Cruse says she thinks the submission deadline will be moved out a week (originally due 10/21) Now 10/28; Bruce wants to clarify some things; main question: who will be there? Amber - yes, Dave and/or Chris should be there, should Bruce plan to be there?  Rebecca: it would be good to have a couple CI folks there.  Bruce will talk with Dave about who would be best fit for attending.
+         
+        INPA (National Institute for Amazon Research) - https://redmine.dataone.org/issues/3691  <---hold off for now
+        Matt had initially responded to their "contact us".  Should we start a conversation with them now?  (related to the question of how many MNs can we support in plan/develop/test at one time)  May be able to leverage PPBio's participation.  -- for all of the backlog tickets, we need to sit down together next week and talk about these (Bruce, Rebecca, Dave, Amber, Laura) - go through the list
+        
+        We're looking at these MNs going online soon:  SEAD, KUBI, NPN look like within the next week; Gulf Watch needs a political decision
+        
+        We need to respond to FRIM today if possible - Bruce to contact (Jing probably best CCIT POC)
+        
+        Issues with test environment (webtester) - Is there a redmine ticket to address maintenance on the webtester?  Laura to talk to Dave.
+                
+        Documentation -  New landing page and drill-downs currently live at dataone.org.  (It's very nice. - LM)  I am missing links to files like Partnership Guidelines, the desc doc template, etc.  (these documents are being vetted to more accurately reflect the current process, they'll be put back out there when updated)
+
+        Immutability -  Next upgrade opportunity at AHM.  Immutability - nail down selected  solution and identify how to implement solution.  Content held by 3rd party resources - discuss and resolve.
+       
+       From Dave:    
+  https://docs.google.com/document/d/1z8Mr2w1w7LY31ts3di20T7frTbZjpYSSaqGCAHvfdm4/edit?usp=sharing
+  
+        OPeNDAP (Hyrax) member node:  Proposal in process (?) - how to identify potential MNs using OPeNDAP;  we have resources available in D1 to fund OPeNDAP compatible stack,  challenge is to frame the requirements so that it will be compatible  working outside the university funding process/structure.   Scope  potential targets, select a couple for initial release.  There is a lot  of diversity in the types of content/activity, so design decisions made  to work with OPeNDAP will impact which MNs will be selected/prioritized
+
+        DSpace MN stack - need initial design/scoping, leading to implementation details, can be worked on as well as OPeNDAP
+
+There will be 2 contracts created for designing the OPeNDAP MN and the DSpace MN - as soon as I get the information from Dave; we have money that needs to be spent in year 5 and this is the beginning of getting the work done
+        OPeNDAP and DSpace can operate at tier 1 (or higher)
+       
+        Slender Node  - (harvesting metadata from sites or links to data, i.e. a tier 0)  Working on identifying which "new" MNs are running what kind of  OAI-PMH as candidates for Slender Node implementation; requires  re-initiating contact with some of the Backlog MNs (Laura and Bruce to talk next week about looking at potential MNs and identifying OAI-PMH, etc.)
+       
+34 potential MNs in Backlog, current status “new”
+ * Oregon Explorer (3844) – they are very interested in working with DataONE; next step?
+   * need  feedback on Janine's questions (see email), depends on D1 resources  available to support, too.  (looks like custom development)  Any  contacts with ESRI?  
+   * Dave's  looking at some of the Oregon data, similar to the Kansas data, could  possibly use same technology/concepts to implement OE...  GMN connection  to ESRI portal..?
+(Rebecca & Dave discussing some contract work either with or by ESRI)
+ * GLEON (3422) – GLEON meeting in November; Chris current POC - Laura to talk with Chris after the meeting
+ *      recent NSF award with part of the SOW being to deploy a MN.  - When  fatlane comes back up, search for GLEON in current awards (under DIBBS  program I  think) - oh, right, these details are already in the notes in  the ticket stream.
+ * MPC (3708) – setting up a meeting week after AHM with MPC technical folks
+ * Clemson University (3692) – (“contact us”) email out to them inquiring of current interest
+ * Digital Library of Vertebrate Morphology, U Texas (3690) – (“contact us”) re-initiate contact
+ * University of South Carolina, Comp Sci Dept (3689) – (“contact us”) re-initiate contact - Line Pouchard has put us in contact with her contact there (the CSE head of dept; initial contact was someone else in dept)
+ * Montana State University (3687) – (“contact us”) re-initiate contact
+ * Movebank for Animal Tracking Data (3686) – (“contact us”) re-initiate contact
+ * National SocioEnvironmental Synthesis Center ( 3685) – (“contact us”) re-initiate contact
+ * Branner Earth Sciences Library – Stanford University (3684) – (“contact us”) re-initiate contact
+ * Purdue University Libraries (3683) – (“contact us”) re-initiate contact
+ 
+      
+        CLARIFICATION/DISCUSSION: iEcolab and EU BON and  Granada (redundancy of data - multiple MNs holding part/all of an  entity's data holdings)
+   * iEcolab "house[s] data from the Sierra Nevada LTER site in Spain" (redmine ticket 3219).  
+   * EU BON is "looking at the Sierra Nevada (Spain) Global Change site as a possible model for others to follow."  (from http://epad.dataone.org/MN-EUBON-2013-10-09)
+   * Sierra Nevada (Granada) could be an independent MN (still very much in conceptual stages with EU BON)
+   * Also  - what is the relationship between EU BON and GEO BON?  "The main  objective of EU BON is to build a substantial part of the Group  on  Earth Observation’s Biodiversity Observation Network (GEO BON)." (from  www.eubon.eu) 
+   * Hannu is connected with both EU BON and GEO BON.  Laura to email Hannu with questions.
+
+       Bruce:  issue of what to talk about on Monday (barriers to MN implementation) with Bill.  Just the facts, ma'am.  Technical barriers: documentation (easy to address), business process issue (mutable content, for example)  (more difficult to address)
+       Perhaps start discussion with the business process issue (the different business processes we have encountered, how we are working or can work with those to work toward the original goals of D1, etc.)
+           different ideas of what perfection is
+           (ideal) perfection versus reality ---- we need to decide where on the spectrum D1 can/wants to operate
+             
+        2. Status of MNs
+     * Y5Q1
+       * NKN (3238) - fallen off radar lately, need to reel them back in, Laura to email Luke and Greg
+       * EDAC (3221) - in progress, some data "in production" {actually in staging environment}  Laura to continue to talk with Soren (clarify where EDAC really is - have they done webtester yet? this happens before going to staging)
+       * Kansas (3188) - Roger helping with GMN s/w update (hasn't been deployed at KUBI yet as of 10/17)
+       * SEAD  (3521) - preparing to go to production (registration in progress)
+       * NPN (3186)  - preparing to go to production
+       * GULFWATCH (3531) - not synching yet, but is ever so close to going prod; policy/political issue to be resolved
+
+Would like to devote some attention to these in particular the next time we meet (11/1)
+     * Y5Q2
+       * LTER-Europe (3232)
+       * Dryad (3118) - some data didn't pass validation, email out to Ryan for current status
+       * DFC (3532) - Bruce has emailed Lisa - update?
+       * U Illinois Chicago (3213) - Bob/Chris to implement metacat this month - Laura to check in with them
+       * USGS Topo Maps (3525) - not a separate MN
+       * PPBio (3748) - meeting 10/8/13
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting
+       * SAEON (3205) -  moving metacat to more permanent server this month - Laura/Matt? to check in
+
+     * Y5Q3
+       * USGS ScienceBase (4002)
+
+     * Y5Q4
+       * EU BON (3964) - meeting 10/9/13
+       * USGS NWRC (3199)
+
+     * Potential MNs mentioned in previous meetings
+       * Embrapa's DSpace repository
+       * TUDelft (John Cobb spoke with Jeroen Rombouts at RDA Sept 2013
+
+
+        3. Old action items
+         - eBird/AKN - if we can support them, we need to talk with the AKN folks
+        
+        4. Not-high profile issues
+         
+        5. Around the room
+
+
+

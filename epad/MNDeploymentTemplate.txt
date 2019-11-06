@@ -1,0 +1,239 @@
+Meeting notes
+
+Overall structure needs to reflect the MN deployment checklist phases (Planning, developing, testing, operating)
+
+For example:  
+Task:  Planning
+    Determine feasibility = Establish contact with potential MN organization
+    Join DataONE = Create DataONE identity 
+
+In the tasks: SSL Certificates --> SSL Certificates for Development, rename 'urn:node:KUBI' to 'urn:node:mnTestKUBI' since this is the convention we're following now
+
+
+http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html
+http://www.dataone.org/member-node-deployment-process
+- "How to become a member node" is non-technical overview of the Member Node Deployment Checklist.
+- Each doc references the other.
+
+In the tickets, link back to the checklist.
+
+Would it make sense to have each MN deployment be its own project  in Redmine?
+
+
+- Anonymous accounts may not be a good idea.
+
+######################################
+
+created.
+Story:
+  Title: "MNDeployment: {{NodeID}}"
+  Description:
+    "This issue is to track deployment of member node:\n\n
+**Node ID**: {{NodeID}}\n
+**BaseURL**: {{BaseURL}}\n
+**Deployment Contacts**: {{DeploymentContacts}}\n
+**Software**: {{Software}}\n
+**Tier**: {{Tier}}\n
+**Content Volume**: {{Content.VolumeGB}} GB\n
+# ^^^^ what is content volume?? LM
+**Deployment Notes**:\n
+  {{DeploymentNotes}}
+"
+Tasks:
+  # Initial preparation.
+  - Title: Initial preparation
+    Description: When potential MN expresses interest, or when DataONE identifies a potential MN, evaluate suitability of the relationship (value to both parties).  Create top-level redmine ticket.  If a decision is made to move forward, create detailed redmine tickets, otherwise move top-level ticket to deferred or closed.
+
+    Tasks:
+
+    - Title: Establish contact with potential MN organization
+      Description: Establish contact with the developers and/or administrators who will be responsible for developing and/or deploying the new MN.
+
+    - Title: Integrate MN representatives with community
+      Description: Add MN representatives to MNF/developers/community, other lists as needed.
+
+    - Title: Create DataONE identity 
+      Description: Create DataONE identities for one or more of the MN contacts, to enable access to docs.dataone.org, Redmine, etc.
+
+    - Title: Create MN description document and logo
+      Description: Work with MN POC to create MN description document. Attach here when complete; store PDF in docs.dataone.org.  Identify/create MN logo; attach file to ticket.  
+
+    - Title: Scope and plan implementation
+      Description: Select the MN Tier, determine which software stack to use, etc.
+
+  # Development cycle (only for new MN implementation)
+
+  - Title: Design, code and test a new MN implementation.
+    Description: If a new MN is being developed from scratch, tickets in this section will track progress.
+
+  # Certificates.
+  - Title: SSL Certificates
+    Description: Set up and verify correct operation of SSL client and server side certificates
+
+    Tasks:
+
+      - Title: SSL Certificates for Development
+        Description: Client (and depending on Tier, server) certificates must be created and installed.
+
+        Tasks:
+
+        - Title: Generate {{NodeID}} client certificate for development.
+          Description: Create the test client certificate, and send it to {{DeploymentContacts}}. When the certificate has been installed on the MN, the MN contacts should notify DataONE.
+
+        - Title: Verify successful installation of client side certificate (development)
+          Description: After notification from the MN that the client side certificate has been installed, verify that it is working correctly.
+
+        - Title: Verify successful installation of server side certificate (development)
+          Description: After notification from the MN that the server side certificate has been installed, verify that it is working correctly.
+
+      - Title: SSL Certificates for Staging
+        Description: Client (and depending on Tier, server) certificates must be created and installed.
+
+        Tasks:
+
+        - Title: Generate {{NodeID}} client certificate for staging.
+          Description: Create the test client certificate, and send it to {{DeploymentContacts}}. When the certificate has been installed on the MN, the MN contacts should notify DataONE.
+
+        - Title: Verify successful installation of client side certificate (staging)
+          Description: After notification from the MN that the client side certificate has been installed, verify that it is working correctly.
+
+        - Title: Verify successful installation of server side certificate (staging)
+          Description: After notification from the MN that the server side certificate has been installed, verify that it is working correctly.
+
+      - Title: SSL Certificates for Production
+        Description: Client (and depending on Tier, server) certificates must be created and installed.
+
+        Tasks:
+
+        - Title: Generate {{NodeID}} client certificate for production.
+          Description: Create the test client certificate, and send it to {{DeploymentContacts}}. When the certificate has been installed on the MN, the MN contacts should notify DataONE.
+
+        - Title: Verify successful installation of client side certificate (production)
+          Description: After notification from the MN that the client side certificate has been installed, verify that it is working correctly.
+
+        - Title: Verify successful installation of server side certificate (production)
+          Description: After notification from the MN that the server side certificate has been installed, verify that it is working correctly.
+
+  # Node document.
+
+  - Title: Set up Node document
+    Description: Check that the Node document used during testing looks the same as it will in production.
+#   ^^^ what's a Node document?  Is it that thing that you see when you do this: https://cn.dataone.org/cn/v1/node ??
+
+  # Content Review
+
+  - Title: Content Review
+    Description: Verify that all content on the MN appears correctly.
+
+    Tasks:
+
+    # Science Data content.
+    - Title: Science Data
+      Description: Tasks related to ensuring that the Science Data is correctly represented on the MN.
+
+      Tasks:      
+
+        - Title: Verify that the Science Data is returned with the correct HTTP Content-Type
+          Description:
+            The HTTP Content-Type header should correctly represent the Science Data when downloaded.
+            For instance, EML , TIFF, and RDF documents should have Content-Type of text/xml, image/tiff, and application/rdf+xml respectively.
+
+    - Title: Science Metadata
+      Description: Tasks related to ensuring that the Science Metadata is correctly represented on the MN.
+
+      Tasks:      
+
+        - Title: Verify that the Science Metadata is returned with the correct HTTP Content-Type
+          Description:
+            The HTTP Content-Type header should correctly represent the Science Metadata when downloaded.
+            For instance, EML , TIFF, and RDF documents should have Content-Type of text/xml, image/tiff, and application/rdf+xml respectively.
+
+    - Title: Science Metadata is available in Solr index
+      Description: Verify that Science Metadata appears correct in the Solr index after synchronization.
+
+    - Title: Verify Science Metadata
+      Description: Review the MNs Science Metadata. This is to make sure that the metadata is complete, correctly formatted and is processed correctly by CNs.
+
+    - Title: Create Resource Maps for the data and metadata
+      Description:
+        DataONE uses Resource Maps to associate Science Data with Science Metadata.
+        Generate the required Resource Maps. There are DataONE libraries and commands that can help with this task.
+
+  # Authentication and Authorization
+
+  - Title: Authentication and Authorization
+    Description: Tasks related to ensuring that permissions are correct on Science Data, Science Metadata and log records and that the permissions are correctly enforced by the MN.
+
+    Tasks:
+
+      - Title: Science Data access
+        Description:
+          Verify that Science Data has the correct read, write and updatePermissions permissions.
+          
+          Verify that Science Data can be accessed only by users who have the required permissions.
+
+      - Title: Science Metadata access
+        Description:
+          Verify that Science Metadata has the correct read, write and updatePermissions permissions.
+        
+          Verify that Science Metadata can be accessed only by users who have the required permissions.
+
+      - Title: Log Record access
+        Description: Verify that Log Records can be accessed only as allowed by the MN policy.
+
+  # Synchronization
+
+  - Title: Synchronization
+    Description: TODO
+#   ^^^ do we do this in staging first to see if it works as expected, then do the same steps in production?
+
+    Tasks:
+
+      - Title: Register new Science Metadata formats
+        Description: All Science Objects on the MN should be of types that are known to the CN. Any unknown types should be registered.
+
+      - Title: Synchronization
+        Description: Setting the MN up for synchronization and verifying that it works correctly.
+
+      - Title: Set up synchronization of the MN
+        Description: Enable synchronization for the MN.
+
+      - Title: Review synchronization results
+        Description: After initial synchronization, review the representation of the data in DataONE and make sure that it accurately reflects that of the MN.
+
+      - Title: Resolve any synchronization related issues
+        Description: Resolve any issues found when reviewing the synchronization results.
+
+  # Transition to production
+
+  - Title: Transition to production.
+    Description: Tasks related to moving the new MN into production.
+
+    Tasks:
+
+      - Title: Update "Current MNs" webpage
+        Description: Update the Current MNs webpage with information about the new MN (logo and MN description document).
+
+      - Title: Mutual acceptance
+        Description: Change to "approved" in production.
+
+      - Title: Production verifications
+        Description: All the items that were verified when the MN was in development and/or staging should be verified again for production.
+
+  # Final steps to go live.
+
+  - Title: Final steps to go live
+    Description: The final steps required to bring the new Member Node online in the production environment.
+
+    Tasks:
+
+      - Title: Create legal documents
+        Description: Legal language (any partnership agreements, MOUs, etc.)
+
+      - Title: Create news item
+        Description: Draft news item for public release and coordinate with MN for any announcements they wish to do from their perspective
+#       ^^^^^ actual execution of this step probably should happen earlier in the process with the completed document ready to go here.  Not sure where to stick it, unless at MN desc doc???
+
+      - Title: Formal announcement
+        Description: Announce the new MN on DataONE website, press release, ListServ, Twitter, etc.
+

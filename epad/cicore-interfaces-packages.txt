@@ -1,0 +1,110 @@
+
+New CN Interfaces http://mule1.dataone.org/ArchitectureDocs-current/apis/CN_APIs.html
+--------------------------------------------------
+org.dataone.service.cn.tier1.CNCore
+org.dataone.service.cn.tier1.CNRead
+org.dataone.service.cn.tier2.CNIdentity
+org.dataone.service.cn.tier2.CNAuthorization
+org.dataone.service.cn.tier2.CNRegister
+org.dataone.service.cn.tier3.CNReplication (renamed from org.dataone.service.cn.tier4.Storage)
+
+
+New MN Interfaces http://mule1.dataone.org/ArchitectureDocs-current/apis/MN_APIs.html
+--------------------------------------------------
+org.dataone.service.mn.tier1.MNCore
+org.dataone.service.mn.tier1.MNRead
+org.dataone.service.mn.tier2.MNAuthorization
+org.dataone.service.mn.tier3.MNStorage
+org.dataone.service.mn.tier4.MNReplication
+
+
+Old Interfaces
+--------------------
+org.dataone.service.cn.CoordinatingNodeAuthentication
+org.dataone.service.cn.CoordinatingNodeAuthorization
+org.dataone.service.cn.CoordinatingNodeCrud
+org.dataone.service.cn.CoordinatingNodeDataReplication
+org.dataone.service.cn.CoordinatingNodeQuery
+org.dataone.service.cn.CoordinatingNodeRegister
+
+org.dataone.service.mn.MemberNodeAuthentication
+org.dataone.service.mn.MemberNodeAuthorization
+org.dataone.service.mn.MemberNodeCrud
+org.dataone.service.mn.MemberNodeHealth
+org.dataone.service.mn.MemberNodeReplication
+
+
+1) Common Library d1_common_java
+-----------------------
+types  (datatypes and exceptions)
+interface defs
+Jibx Extention Code
+no implementation code
+Constants
+ObjectFormatService* (remove bcse already defined in CNCore)
+
+2) Common Utility Library d1_util_java
+---------------------------------
+Helper Serializer/Deserializers  (currently ServiceTypeUtil ?)
+MimeMultipart implementations
+StreamingUtil
+EncodingUtilities
+ObjectFormatServiceImpl* (eliminate, use CNCore instead)
+
+
+3) Common CN Library  d1_cn_common
+-----------------------------
+NodeId Generation (place this in the CN implementation of node registration)
+MetadataPackageAccess
+
+Libclient library
+----------------------
+4) d1_libapi_java
+org.dataone.client.net
+D1Url
+RestClient
+D1RestClient
+org.dataone.client.serviceImpl
+D1Node / MNode / CNode - implementations of service API
+ObjectFormatServiceCache (implemented as part of CNode)
+-
+5) d1_libclient_java
+D1 LIB CLIENT  == BatchLibCLient
+(refactor MNnode to remove D1Client dependency, MNode will depend upon CNode)
+* Mnode dependency on CNode will be problematic for testing validity of a new member node
+  (the whole web-testing idea) - the CNode parameter passed in should be allowed to be null.
+ 
+DataPackage
+D1Object
+D1Client
+- 
+ITK Client Pkg
+???
+
+
+split libclient into two peices,  shared lowlevel functionality.
+
+Scenaros
+--------------
+* A. Products: 1, 2, 3, 4, 5
+
+B. Products: 3, 1, (2, 4, 5)
+
+C. Products: 3, 1, (2, 4), 5
+
+D. Products: 3, 1, 2, (4, 5) 
+
+2 depends on 1 (serializers)
+3 depends on (1,2), used by CN implementation only
+4 depends on (1,2), used by CN, MN, ITK
+5 depends on 4( depends on 1,2), used by ITK, MN, and perhaps CN
+
+n.b.:  method redundancy (serialization / deserialization) between TypeMarshaller and ServiceTypeUtils.
+
+elephant in the room: D1_schemas is one namespace
+  -- need to refactor to limit cascading impacts of versioning
+
+Type schemas were merged around 2010-11-18
+
+
+

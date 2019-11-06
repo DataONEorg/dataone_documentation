@@ -1,0 +1,144 @@
+Attendees: Bertram, Bill, Suzie, John, Rebecca, Bruce, Rebecca, Amber, Matt, John Kunze, Steph, Bob, Mike 
+
+Regrets:Todd, Carol
+
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Feb 15, 2013 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/570340920
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0606
+Access Code: 570-340-920
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 570-340-920
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2013Feb015-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-02-15 
+
+1) CI Update (Vieglais)
+Focused on preparations for the RSV - all demonstrations are going to be done with one of the staged environments (independent from the production environment) - interface changes have been done to ONEMercury - plus some changes for Mendeley
+
+Dave has emailed LT information on changes and needs feedback asap - there was discusion about expectations of people who did U&A of interface and what changes they thought were being made and declaration of end of life of ONEMercury
+Changes may be made to production interface next week
+Production demos are in good shape - still iterating on research demos
+John K sent metadata slides to Bill 
+
+2) CEE Update (Budden)
+Getting ready for RSV and DUG planning
+Summer Internship application will go live on Monday (delay due to RK getting updated visa information to Chris Allen (web person)
+Suzie's student has requested that he be able to use the notebook area for a project that he's working on (related to DataONE)
+
+3) MN Update (Cobb)
+
+First MN Forum call Th. Feb. 21 2:00-3:00 PM EST : "Office Hours" type of forum - this turned out to be the best time for the MN's that responded to the Doodle poll
+Update on project and then provide a chance for people to ask questions
+
+Amber Owens graduate student at UTK and is joining the MN Wrangler group
+
+Amanda Andrews  (PR masters student) and Paul Domingo (AD masters student): Suzie's STEM communications class members - will be using DataONE communications as their class project (1 semester) - developing a messaging plan for libraries; will be contacting Amber
+
+4) Reverse Site Visit Update (Michener)
+Bill sent around revised agenda to the LT - changes include AD for CISE (Farnam Jahanian)
+and Alan Blatecky would be there for some of the review - unclear whether could be there
+twice (in morning) or twice (morning and after lunch) - means that demos need to be done
+while they are there so have to be flexible
+Also there is an additional 10 minutes at end to sum up the day's information (Tell them what you're going to tell them and then at then tell them what you told them)
+Set up google doc for people in the room so we can track impressions of what's happening in the room
+8 panelists, some returning from previous panel, some people we know (not sure what that means), and some new people
+Bob and  Irene trying very hard to create a win-win situation during this review
+
+Intro
+Demos
+CI or CEE?
+
+Will be another call with Bob next Friday - can present what we think would be a logical agenda -
+
+Our proposed agenda is still the plan but need to be flexible re: demos so that Farnam and Alan can see both the Overview and the Demos
+Are hoping that both would be available in the morning and afternoon
+
+Will effect those who need to join remotely 
+Need a number for people to call in
+Also need to remind NSF about the demo equipment
+
+How live will the research demos be? Screencasts for the most (safer)
+
+Agenda:
+Overview -
+waiting on couple of slides from Bob (will provide over the weekend)
+Amber - nearly finished on overview (this afternoon) and then the sustainability
+NSF asked Bill to focus on the CI first and then do the building community, etc
+Msg from NSF: All the pieces focus on and are in support of CI
+Building Community Part 1: Suzie and Amber - hope to be done tomorrow
+BRAD & those interested - review on Thursday (2/21) afternoon review materials
+Building Community Part 2 - MN - John Cobb - hopes to have something this weekend
+Enabling Research Part 1 - coming along - Kepler is working; waiting on changes for ONEMercury, Morpho working and would like to start doing screencasts early next week
+Would like to have key highlights from Semantics, Provenance, Metadata for the Overview presentation (1-2 slides) to indicate research directly feeding into the development  infrastructure
+Matt is planning a couple slides of intro to the demos to give context
+Enabling Research Part 2
+Project Management - RK ready this weekend
+Sustainability - Bill working on this with input from Amber and Bob
+Bill needs to work out who presents what with Mike
+Future Plans & DataONE activities - BRAD needs to work on this - after MN call on the 21st - and interested people please join to review all slides - 1pm MT (RK will send out info)
+Project & CI Developments Summary Recap
+
+Originally planned a dinner the evening of the 28th however, will need to be responding to the panel's questions that evening - will be sending out questions to other DataONE team members so please watch your email!
+
+
+5) New Members for PPSR WG (Koskela)
+
+ Megan Hines:
+-Megan is a technical manager for the Wildlife Data Integration Network,  affiliated with the University of Wisconsin Madison, and the USGS  Community for Data Integration in Citizen Science. She has broad  knowledge of citizen science in federal organizations, tech skills, and  also links us to new opportunities for cross-WG collaboration with the  USGS CDI.
+
+Arfon Smith:
+-Arfon is a key player in the Zooniverse projects as Director of Citizen  Science at the Adler Museum in Chicago. He brings knowledge of  entirely-online models of participation, citizen science managed in a  museum environment, and of course, astronomy.
+
+Julian Turner:
+-Julian is a web developer for CoCoRaHS out of Colorado State  University, and as you may have guessed, brings additional technical  chops to the group. He's working in the context of meteorological  (precipitation) data, and is interested in issues related to managing a  constantly growing data set and supporting data use and integration.
+
+On another note: PPSR got a nod on Joe Palco's piece this AM including a nice NCEAS showcase: <http://www.npr.org/blogs/health/2013/02/13/171920261/scientists-pass-the-hat-for-research-funding>  Adding  funding angle to public participation.
+
+
+6) Around the room
+
+John Cobb:
+Suzie Allard's STEM communications class has two students Amanda Andrews (arusse21@utk.edu) and Paul Domingo (pdom321@gmail.com) who have chosen  
+
+Bruce: Nothing particular to report.  Been distracted this week with ORNL stuff.  Some work on the slides for reverse site.  ORC node was network isolated last night for planned maintenance.  Most things back working, but some LDAP pieces still not right.  Chris B is troubleshooting with OIT.  
+
+Suzie: invited to speak sbout  DataONE discovery strategies at the National Research Council's Board on Research Data and Information workshop "Finding the Needle in the Haystack: Strategies for Discovering Research Data Online" on February 26 in Washington, DC.
+
+We have placed several SciData students in DataONE related groups as interns: two are working with Bob Cook's team at the DAAC, one is working with John Cobb's MN wrangling team, and one is working with Mike Frame's group with USGS.  Provided that the situations are working out, each student will stay with their assigned team until Spring 2014. One student is working directly with me on network analysis for DataONE
+
+Bob:
+Want to report on a couple of things:
+1.     Had a successful Data Management Workshop with Bill and Viv on SuperBowl Sunday in ABQ (23 participants)
+2.     Preparing general slides for the RSV (MN / CN Maps)
+3.     Finalizing a 4 minute “video” (screencast) of the EVA visualizations for RSV
+4.    Arranging a meeting with Dave Vieglais and Elsevier to discuss linking papers with data products cited in the paper 
+
+Steph: Human subjects approval received for 'data stories' project - first interviews this afternoon at NCEAS. Blog has started for that project. https://notebooks.dataone.org/data-stories/category/project-updates/. CEE WG paper offering guidelines for authorship on data re-use project accepted for BioScience (Cliff Duke and John Porter), proofs received for 'big data' Frontiers paper.
+
+Matt: ESA schedules for workshops are out.  The R Analysis workshop is Sunday afternoon, Morpho and DataUp workshop is Monday at lunch, and the Ignite session on data tools is Tuesday.
+
+Deborah:  
+·        Draft of RSV slides delivered to Dave and Matt
+·        Reviewed an earlier draft of RSV slides on working group call last week that was joint with CCIT 
+·        McGuinness and Noy (and Amir) co-ran an NSF workshop on Challenges and Opportunities for Knowledge Representation last week in DC
+·        Line Pouchard made a presentation on DataONE to the Remote Visualization and Data Analysis Center (RDAV) at UTK as part of the RDAV AHM.  The title of the presentation is: Towards Automatic Annotation of Earth Science Metadata with Topic Modeling for DataONE.
+·        Pouchard and summer intern Suppawong submitted a paper to digital library conference on summer internship work.
+
+John Kunze:  nothing to report
+

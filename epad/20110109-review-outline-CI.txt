@@ -1,0 +1,395 @@
+EAB & February Review
+
+Bruce
+(2.3.1 Architecture overview)
+
+Dave
+(2.3.2 Building the infrastructure)
+
+Matt
+(2.3.3 Research and Technical Collaborations)
+
+All
+(2.3.4 Demonstrations)
+
+
+1. Document preparation
+
+1.1 Executive Summary
+
+1.1.1 Solicitation synopsis
+
+1.1.2 Major milestones and deliverables
+
+1.1.3 Progress to date 
+
+1.1.4 Vision for remainder of project
+
+1.2 Introduction
+
+1.2.1 DataONE objectives and vision
+
+1.2.2 science objectives
+
+1.3 Cyberinfrastructure
+
+1.3.1 Define cyberinfrastructure
+
+1.3.2 Design, reference architecture diagrams
+
+1.3.3 Software development and implementation timeline
+
+1.3.4 Goals of the DataNet program as implemented by DataONE infrastructure
+
+1.3.4.1 Curation and preservation
+
+1.3.4.1.1 LOCKSS
+
+1.3.4.1.2 Persistent identifier framework
+
+1.3.4.2 Search and discovery
+
+1.3.4.2.1 Improved access and discoverability of data / resources
+
+1.3.4.3 Security
+
+1.3.4.3.1 Privacy and access control
+
+1.3.4.3.2 System integrity
+
+1.3.4.4 Integration with investigator tools
+
+1.3.4.4.1 Supporting the full data life cycle
+
+1.3.5 Technical collaborations
+
+1.4 Community Engagement
+
+1.5 Sustainability
+
+1.6 Project Mangement
+
+1.7 supplemental Material
+
+2. Presentations
+
+2.1 Overview
+
+2.2 Introduction to DataONE
+
+2.3 DataONE cyberinfrastructure
+
+2.3.1 Architecture overview
+
+A high level introduction to the architecture of the DataONE infrastructure
+and why the federated design has been chosen.
+
+2.3.1.1 Design Development
+
+Development of the DataONE infrastructure design.
+
+2.3.1.1.1 Define cyberinfrastructure
+
+What is cyberinfrastructure and what are the features or requirements of
+DataNet that need to be supported by the cyberinfrastructure?
+
+"The term "cyberinfrastructure" describes the new research environments that
+support advanced data acquisition, data storage, data management, data
+integration, data mining, data visualization and other computing and
+information processing services over the Internet. In scientific usage,
+cyberinfrastructure is a technological solution to the problem of efficiently
+connecting data, computers, and people with the goal of enabling derivation of
+novel scientific theories and knowledge." -- Wikipedia
+
+Like the physical infrastructure of roads, bridges, power grids, telephone lines, and water systems that support modern society, "cyberinfrastructure" refers to the distributed computer, information and communication technologies  combined with the personnel and integrating components that provide a  long-term platform to empower the modern scientific research endeavor.  Report of the National Science Foundation Blue-Ribbon Advisory Panel on Cyberinfrastructure (http://www.nsf.gov/od/oci/reports/toc.jsp -- Atkins Report).  BEW: I prefer this definition, because it includes people.  I dislike referring to CI as a purely technological solution.  
+
+
+
+2.3.1.1.2 Goals
+
+2.3.1.1.2.1 Address requirements of DataNet
+
+The major goal of NSFs DataNet program [1] is to catalyze development of a
+system addressing the vision outlined in Chapter 3 (Data, Data Analysis, and
+Visualization) of NSF’s Cyberinfrastructure Vision for 21st Century Discovery
+[2] in which “science and engineering digital data are routinely deposited in
+well-documented form, are regularly and easily consulted and analyzed by
+specialists and non-specialists alike, are openly accessible while suitably
+protected, and are reliably preserved.” Towards this end, two awards have thus
+far been made to establish the DataONE [3] and DataConservancy [4] projects.
+The two projects differ in their approach and target science domains, though
+expect to provide interoperable services aiming to improve storage,
+preservation, access, discovery, and integration of science data both within
+and between their representative science communities.
+
+DataONE is a federated data network built to improve access to Earth science
+data, and to support science by: (1) engaging the relevant science, data, and
+policy communities; (2) facilitating easy, secure, and persistent storage of
+data; and (3) disseminating integrated and user-friendly tools for data
+discovery, analysis, visualization, and decision-making.
+
+
+2.3.1.1.2.2 Support data life cycle
+
+2.3.1.1.3 Design influences
+
+2.3.1.1.3.1 SEEK
+
+2.3.1.1.3.2 VDC Project
+
+2.3.1.1.3.3 Other influential projects
+
+Such as:
+  - KNB
+  - DAACs/EOSDIS
+  - Mercury
+  - Dryad
+  - DiGIR / TAPIR / Darwin Core
+  - Semtools
+ ...
+
+
+2.3.1.2 Federated Structure
+
+2.3.1.2.1 Major Components
+
+2.3.1.2.1.1 Member Nodes
+
+2.3.1.2.1.2 Coordinating Nodes
+
+2.3.1.2.1.3 Investigator Tookit
+
+2.3.1.2.2 Features
+
+2.3.1.2.2.1 No single point of failure
+
+2.3.1.2.2.2 Heterogeneous composition
+
+2.3.1.2.2.3 Scalable
+
+2.3.1.2.2.4 Robust to technology and institutional change
+
+2.3.1.2.2.5 Support greenfield and existing data operations
+
+2.3.1.3 Day in the life of...
+
+2.3.1.3.1 Member Node
+
+Animation or diagram showing typical interactions.
+
+- New content added to a Member Node
+- Content synchronized with CNs
+- Content replicated to other MNs
+- Requests for content
+- Any other topics? administration, configuration, installation, monitoring, notification?
+
+2.3.1.3.2 User
+
+Animation
+
+2.3.2 Building the infrastructure
+
+What is the process for implementing the infrastructure?
+What are some of the the key technical details of the infrastructure?
+General development timeline (2month, 12 month, end of project views)
+
+
+2.3.2.1 Project setup
+
+(1 slide) Project support infrastructure.
+
+
+2.3.2.1.1 Document management
+
+2.3.2.1.2 Communications
+
+2.3.2.1.3 Revision control
+
+2.3.2.1.4 Issue tracking
+
+2.3.2.1.5 Testing
+
+2.3.2.1.6 Monitoring
+
+2.3.2.1.7 Administration
+
+2.3.2.1.8 Web site
+
+2.3.2.2 Development Approach
+
+2.3.2.2.1 Guiding Principles
+
+Some general principles that we are (should be) following. Strongly influenced
+by descriptions of the linux kernel development process.
+
+
+2.3.2.2.1.1 Open Source
+
+Everything is open source.
+
+2.3.2.2.1.1.1 External code is expensive
+
+2.3.2.2.1.1.2 External code is lower quality code
+
+2.3.2.2.1.1.3 In-tree code can be improved by others
+
+"Well, this is open source... you don't get to request new features, you get
+to implement them" -- James Bottomley
+
+2.3.2.2.1.2 Technical Quality
+
+Code quality outweighs:
+  Project plans
+  User desires
+  Existing practice
+  Developer status
+
+
+2.3.2.2.1.3 Support community needs
+
+2.3.2.2.2 Agile process
+
+2.3.2.2.2.1 Ongoing research, design, evaluation
+
+There are planned deliverables for the project which require considerable
+research and design before handing off to developers for implementation.
+
+2.3.2.2.2.1.1 Working groups tackle significant research challenges
+
+2.3.2.2.2.1.2 CCIT Specifies and prioritizes features
+
+2.3.2.2.2.1.3 CE provides community input and feedback to CCIT
+
+2.3.2.2.2.2 Eight week feature release cycle
+
+52 weeks in a year.
+Subtract two for meetings, two for vacation time
+48 weeks remain, providing six blocks of feature release cycles
+
+- Target features identified and prioritized before start (CCIT)
+- Broken down to stories and tasks (scrum master and developers)
+- Features provisional until bug squishing time, anything not making it into
+  the cycle is pushed to the next cycle or re-evaluated
+
+
+
+2.3.2.2.2.2.1 6 Weeks development
+
+2.3.2.2.2.2.2 2 weeks squishing
+
+2.3.2.2.2.2.3 Release
+
+2.3.2.2.2.3 Weekly scrums
+
+2.3.2.2.2.4 Daily standups
+
+2.3.2.3 Detailed architecture
+
+2.3.2.3.1 Major functional features
+
+2.3.2.3.1.1 Identifiers
+
+2.3.2.3.1.2 Preservation
+
+2.3.2.3.1.3 Discovery and Retrieval
+
+2.3.2.3.1.4 Federated Identity
+
+2.3.2.3.2 Data Model assumptions
+
+2.3.2.3.3 Communications and protocols
+
+2.3.2.3.4 Major Products
+
+2.3.2.3.4.1 Coordinating Node
+
+2.3.2.3.4.2 Member Node
+
+2.3.2.3.4.3 Investigator Toolkit
+
+2.3.2.3.4.4 Monitoring and testing
+
+2.3.2.4 Development and Implementation Schedule
+
+2.3.2.4.1 Long View
+
+2.3.2.4.2 18 month detail
+
+2.3.2.4.3 2 month detail
+
+2.3.3 Research and Technical Collaborations
+
+Completing the design of core and planned infrastructure. Leveraging the
+capabilities of other projects, and ensuring other projects are able to
+utilize the infrastructure being developed by DataONE.
+
+2.3.3.1 Working Groups
+
+2.3.3.1.1 Federated Security
+
+2.3.3.1.2 Preservation and Metadata
+
+2.3.3.1.3 Provenance and Workflows
+
+2.3.3.1.4 Semantics and Integration
+
+2.3.3.1.5 Distributed Storage
+
+2.3.3.1.6 Exploratory Analysis and Visualization
+
+2.3.3.2 DataNet Projects
+
+2.3.3.2.1 Data Conservancy
+
+2.3.3.2.2 Approach for interaction with new DataNets
+
+2.3.3.3 Other Projects
+
+2.3.3.3.1 UDFR
+
+2.3.3.3.2 TeraGrid collaboration
+
+2.3.3.3.3 SONET
+
+2.3.3.3.4 Filtered Push
+
+2.3.3.3.5 Others...
+
+2.3.3.4 General schedule for research and collaboration
+
+General schedule showing approximately when outcomes from the different
+working groups and technical collaboration efforts might be incorporated into
+the infrastructure.
+
+At a low resolution - showing the entire project duration.
+
+
+2.3.4 Demonstrations
+
+2.3.4.1 Core Operations
+
+2.3.4.1.1 Monitor
+
+2.3.4.1.2 Simple interaction, messaging
+
+2.3.4.2 Round trip
+
+2.3.4.2.1 Add content with Morpho
+
+2.3.4.2.2 Content shows up in Mercury
+
+2.3.4.2.3 Resolve provides n targets
+
+2.3.4.3 Preservation
+
+2.3.4.3.1 Turn off authoritative node
+
+2.3.4.3.2 Retrieve from another node
+
+2.3.4.4 Analysis - the EVA workflow
+
+
+2.4 Community engagement
+
+2.5 Close
+

@@ -1,0 +1,109 @@
+Member Node Wranglers (Fridays at 10:00 am AK/11:00 AM PST/noon MST/1pm CST/2pm EST)
+https://www1.gotomeeting.com/join/113672793
+
+7 June 2013 
+
+Attendees:  Laura, John, Rebecca, Amber, Dave, Bruce (for a little while), Bill
+
+Regrets:  Amber (will have to leave early)
+
+Agenda: 
+        1. High profile issues
+            - SEAD - conference call with NCED next week (12 June 14:00 EDT) (RSVP regrets  JWC)
+            - From Dave's comment last time: how can we better advertise the availability of these data repositories, promote MNs so that users and other MNs are educated as to the availability of the MN and/or the owner(s) of the data that the MN points to (i.e. when data is not available via DataONE but user must go to another site (like eBird or maybe NCED) to download the data).  Concept of a landing page, where users may discover MN/metadata/data in one place.  
+(see http://www.re3data.org/ - recent repositories database)
+
+            - How can DataONE make MN's and data providers comfortable serving their data? (reporting, referencing, ....) Can we develop a DataONE playbook to handle this case? (we will see it multiple times)  Dave: Depends on mode of operation of MN which may be contrary to free and open access; need to focus on benefits of participation, services, capabilities (i.e. use reporting) that provide additional value for participating.  Gather list of features available or important to MNs (replication/discovery across MNs, centralized search mechanism, etc.)
+ 
+ ACTION ITEM: Poll MN's for what is of value to them in DataONE participation (how to accomplish this? - MN forum topic?)
+ 
+            - Does this create a (new?) issue w.r.t to ITK development? I.E. can we facilitate "searching through"  "shy MN's" that only want to publish metadata in order to enable data aceess  John: example of LTER (multiple sites and each site has multiple researchers) which has various LTER sites researchers' data, so is difficult/interesting going through D1 to get to the data at those sites.  Dave: this probably ties into previous item (MNs knowing more about D1 and their place in it, and other MNs' places.
+
+        2. Status of MNs 
+            "In Progress" and "Testing" MNs for Y4Q4 are:
+             Dryad - a/o 5/31/13: waiting  for Ryan Scherle to register in testing environment, do some integration  testing, if all goes smoothly should be able to move to production.  Dave: give it a little more time.
+            SEAD - a/o 5/31/13: on hold until outcome of conf call with NCED 12 June.
+            EDAC - a/o 5/31/13: Rebecca to check in with Karl/Soren (meeting scheduled for 6/12)
+                    Koskela 7 Nahf to meet on 6/12 (Wed.)
+            University of Kansas - a/o 5/31/13: Dave to check on status. Waiting on response from developers at KU.  They were in testing, awaiting update on status.
+            
+            "In Review" MNs for Y4Q4 and suggested priorities are:
+             PPBio - (John to follow-up w/David Dias)
+                 (PELD redmine ticket 3203 changed to In Review - Deferred target.)
+             USANPN - a/o 6/3/13: Laura email to Bruce; Bruce working with Alyssa Rosemartin on MN info document (MN description document?), Laura to follow up next week with Bruce and Alyssa. John mentioned to Bruce at OIT mtg. yesterday: Bruce re-confirmed.
+             TFRI - a/o 5/31/13: Matt hopes to have this done by July (end of Y4Q4). Ben Leinfelder working with them - some "minor" metadata issues to clean up, then will move to production (perhaps next week) <cork pops!>
+             USGS Topo maps - a/o 6/3/13: Laura email to Mike Frame; Mike says looks like it will be Fall sometime before they can proceed, currently working on DOIs for ~60K data objects. Moved out beyond Y4Q4 to Y5Q2
+             NKN - a/o 5/31/13: Rebecca to meet with someone (not Greg) mid June for more info ( Janine Salwasser - Oregon Explorer program at OSU).
+              John Cobb call to Greg on 6/7 (report out)
+                 currently Gollberg is NKN Ops Manager and Steve Vaily Larson (sp?) is interim NKN manager
+                    NKN is:
+                        moving toward drupal and other open source tools (also geoportal, LDAP, ...)
+                        staffing up (6 FTE's, Ph.d Stu/ 70% of a Lib. faculty, 50% metadata librarian and 50% cataloguer, and still hiring
+                        sent 4 folks to DrupleCon in Portland last month
+                        Much of the staff comes out of research
+                        Physcially co-located in Libraries
+                        NKN interacts with Idaho EPSCoR, USGS Cli. Science Center, FRAMES, USDA Reach project (similar to climate science center stuff)
+                        NKN has 3 legs
+                            A. Service center (incl HW, SW, net, tools, people)
+                                "suite of services to research commuity about data Management"
+                                focused not just internal to U.Idaho
+                                services {deposition; preservation; curation; collab. tools; other tools,; DB's, cataloguing infrastructure}
+                            B. Cyberinfrastructure Research
+                                    one hire alrady hope to hire a data-interop. research scientists. Goal to hire 5 in the next few years: vis. Dist. data storage; data intensive
+                            C. Data Sharing cooperative {OSU, Wash. U. UWash Boise State, Idaho, INL, UMN, U. Nevada} goals: 
+                                collaborate over many projects
+                                    High level of policy
+                                    what are he Stds.
+                                    How to break silos
+                        NKN is still focused on climate science primarilty (ot o muhc health science)
+                        MOU in place fr collaborative research info with IRON (the regional optical network)
+                        Moving to set up a guidance committe with 2/institution  + 2 INL + 2 IRON
+                            put together a DB of CI     
+                     
+                     NV, NM, ID EPSCoR - mutual agreement to replicate each other's data - would D1 be the replication vehicle?  
+             NKN - working to set up a call week of June 17-21 to move forward. who to attend?
+                Cobb; Moyers; Koskela, Vieglais, Budden, Jones, Michener, ???
+                Gollberg, Schenamen, Larson, …
+             
+             What is status? TERN, ILTER, AOOS, SAEON (should they still be Y4?)
+            AOOS - check w/Matt
+            TERN - check w/Ben, redmine ticket 3211
+                the Austrailian one is Terrestrial Ecosystem Research Network (also acronym'd (TERN) http://tern.org.au/
+            ILTER (International LTER) - check with Matt (on the potential Israel MN), also ask Matt about the ILTER-Europe  -- network office(LNO) is existing LTER MN 
+            SAEON - check with Ben/Matt, perhaps waiting on a political decision on their end
+
+ACTION ITEM: Rhetorical consistency. LTER node is really the LTER Network office Member node. Hmm. what needs changing? Well. the MN description fr mfor one. need to cooridnate with LTER Net . ofc. on what ot change.
+
+
+            PY4 goals: 20 MN. Current Order of Battle for y4 is 24 nodes. Will we make it?
+            (and we have 33 identified by Y5Q4 and 36 in deferred state)
+            High prob: SEAD, TFRI, Dryad, EDAC (maybe), UKansas (possible)
+
+        3. Old action items 
+            ALL: look at open redmine tickets for MNDeployment and ensure they are assigned to the right person
+            Letter and PPT template (suggestions) to current MNs, EDAC, Dryad, SEAD, and TerraPop(MPC) 5/31/13.  Pulled back from TerraPop since they aren't really in a position to present at DUG.  Have heard back from: SEAD (attend/present), eBird (not attend/present), USGS (attend/present),  Dryad (attend/present)
+            Laura: Need a MN description piece for USGS-CSAS for the next newsletter (by June 10th)  DRAFT to Mike Frame 6/6/13.
+            Added PPBIO to MN Forum mailing list: - Done by Laura Moyers, Matt
+            
+        4. not-high profile issues
+
+        Production MN's: known issue with deleted pId's MN/CN inconsistency USGS-CSAS
+        
+        iRODS? is it high? It is a pre-requisitie for DFC and iPlant BIEN
+        Dave: from technical POV, should be reasonably simple to implement, resource issues, but there are some social/political issues to be considered; initial impression from draft implementation plan indicated this would be relatively simple, need more detailed design analysis, perhaps time to revisit.
+        
+        yr5Q2 nodes: {NODC, eEcolab, ILTER Europe, DFC, iPLant BIEN, CDIAC, U Chi. MN, USGS Topo}
+ ACTION ITEM:  John: reach out to Bob Sandusky (U Illinois-Chicago), see where they are (they are DSpace)
+                new information?
+                        CDIAC and ARM inditcated strong preference for a slender-MN (tier  0 MN) based on sitemap
+                Are any candidates to pull forward to y4?
+        
+        5. around the room
+        John: see above
+        Laura: nothing new
+        Dave: nothing new
+        Rebecca: Dryad's desire to present at DUG may indicate that they will be a MN by then.  John to contact someone at Dryad to check status.
+        Bill: NSF wants an accomplishment-based renewal (which means we need to really show them some accomplishments, i.e. meet/exceed as many metrics as possible)
+        
+        ACTION ITEM: John Call/Contact Ryan at Dryad with "how's it going?"
+

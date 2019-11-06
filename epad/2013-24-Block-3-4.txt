@@ -1,0 +1,321 @@
+http://epad.dataone.org/2013-24-Block-3-4
+
+Notes for Sprints 2013-24-Block-3-4
+===================================
+
+(previous epad: http://epad.dataone.org/2013-22-Block-3-3 )
+
+Skye
+----
+ * 20130621
+   * Status of cn devs: all upgraded. should be functional
+   * Zookeeper is running stand alone on home network
+     * Keeps Solr cloud config in sync
+     * May want to create jetty user and open some ports
+       * in CAP, prioritizes C and P
+   * Indexing attributes:
+     * Duplicates: remove them? Will keep them for due to the 'metrics' use case
+ * 20130519
+   * Updated CN dev index attributes
+     * needs review - will send out an email
+   * Got Solr could set up on local machines
+     * Looking at zookeeper (runs embedded in Solr, but may want to run it standalone)
+   * Pushing minor release of Solr into buildouts
+   * Working on author hierarchy for ONEMercury
+ * 20130617
+   * Done with class
+   * Working on disclaimer text in ONEMerc, but blocked by NCEAS network issues
+   * A few minor tasks: proposal for ONEDrive on author field, etc.
+   * Getting back to Solr 4 cloud configuration
+ * 20130614
+   * EIM class
+   * Updated footer text in ONEMerc (diclaimer text)
+     * Need to tag, build, release
+     * will work with Ben to merge to branch
+     * Be careful to remove Robert's changes
+ * 20130612
+   * EIM class at UNM
+   * Working on FGDC stylesheets wrt attributes
+     * dealing with attribute alignment
+   * Worked with Chris B on ORE parsing unit tests
+   * Auditing: setting up a local env
+
+Dave
+----
+ * 20130621
+   * Meeting at Yale on biodiversity data design / access
+   * Concern about new invalid PIDs appearing in production
+   * Need to fix the problem with NS2 to reduce latency of DNS change 
+ * 20130617
+   * Reading about HA LDAP
+     * Response to NCEAS network issue
+     * Will deploy soon
+   * SVN commits to the docs section
+     * 1.1 branch
+     * new features in the trunk
+   * Traveling Wed
+ * 20130614
+   * Wrapping up on CTSC review
+   * Many minor issues to address, mostly documentation, policy definition, incident response
+   * Lengthy discussions on identity mapping and browser access to MN content after authenticating in portal
+   * Will be looking into OAuth portion of CILogon
+ * 20130610
+   * Annual report time, admin stuff
+   * Looking at ACL impl for Solr wrt security meeting this week
+   * Tagging documentation tree
+
+Roger
+-----
+ * 20130621
+   * Looked at radius search from lat/lon
+     * Not really an area search - still returns a point
+   * Looking at GADM shape files
+ * 20130619
+   * Looking into using geonames.org
+     * requirement of a bounding box area is problematic
+     * looked at OSS datasets: gadm.org (global administrative areas) for world coverage
+ * 20130517
+   * Trying to improve controlled hierarchies in ONEDrive
+     * Region - geo lat lon
+     * Found geonames.org REST API service
+       * input lat lon, returns XML doc of increasingly local description
+       * client side
+     * Similar to other gazateer services
+     * write up notes on the service - perhaps integrate into d1 indexing?
+ * 20130614
+   * Finished ONEDrive unit tests
+     * back to test-driven-dev
+   * working on a bug in libclient
+   * May have some cycles - could work on service API for workspace
+ * 20130612
+   * Still on ONEDrive unit tests
+     * more functionality to test than expected
+   * Working with Shawn Bowers on keyword lists and documentation
+   * Added Sphinx integration into project so docs can be hosted on PyPI
+ * 20130610
+   * ONEDrive unit tests - hopefully finishing up today
+     * ready for testing
+
+Robert
+------
+ * 20130621
+   * Working on spaces in identifiers problem
+     * New class in kibx-extensions to validate pids
+     * Will add constructors to simple types like Identifier, NodeReference, etc.
+   * delete() work for ORNLDAAC pids: local set up is looking good
+     * but working on client cert issues
+   * Dealing with Ansible and post-remove interaction: debconf db ends up getting cleared
+     * new config needs to remove old post-remove from the old package
+ * 20130619
+   * Working on release with Ben, Skye
+     * check out dependencies issues in logAggregation on identity manager.
+   * Working on Ansible rollout issues with Chris
+   * Also having Postgres connection troubles on local VMs - Metacat?
+     * Possible portal issue: are certs and keys installed correctly? perms?
+ * 20130617
+   * Reinstalling testing env
+     * Working on local debian script install for KNB software
+   * Working on delete test to purge content
+   * Guests in town - should be back on tomorrow pm
+ * 20130614
+   * Helping Skye yesterday
+   * Meetings
+   * Blocked by NCEAS network outage (LDAP auth)
+ * 20130612
+   * Troubleshooting TFRI synchronization
+     * may need to reset last harvest date
+   * Some problems with sync in production
+     * lost connection to ucsb
+     * perhaps a hazelcast shutdown bug fix in 2.5.1 will help
+   * Working with Chris B on Ansible
+   * Working on cn-repair tool for purging objects. In testing locally
+ * 20130610
+   * Working with Chris B. on automated testing of Ansible installations
+   * Will work on consolidating delete scripts
+     * ORNLDAAC pids will be purged
+     * check out and verify my logic conforms to edu.ucsb.nceas.metacat.admin.upgrade.RemoveInvalidReplicas
+   * Will be working through the backlog tasks - log reporting
+   * write up document of how to run the approvenode script
+   * confirm that the approve node script has been modified to work with hazelcast 2.x, schedule it for release or mark it for migration into the new cn tools debian package
+
+Rob
+----
+ * 20130621
+   * Personal day yesterday
+   * Expanding MN tester docs in the MN checklist
+     * trying to get links directly to unit tests as feedback in the tester results
+   * Dryad: needs to register his identity in dev envs
+     * Shoot for production by DUG ...
+   * EDAC: trying to bump it up on their priority list
+ * 20130519
+   * Finished up Javadocs for libclient + common. committed to trunk
+   * Looking at the site plugin in maven for deploying javadocs. Will discuss with Dave.
+     * may help to deploy to releases.dataone.org
+   * Worked on ask.dataone.org question re: getting to Javadocs
+   * Working with EDAC re: resource maps
+     * Will meet tomorrow with Rebecca
+   * Will be working on MN checklist re: web tester documentation
+ * 20130617
+   * Working through EDAC issues
+     * Re-emphasizing getReplica() and syncFailed() impl - use <LIMIT GET> 
+   * Working on better Web tester documentation
+     * Feedback from Kavitha - viewing souce code helps - link to svn?
+   * ask.dataone.org
+     * comment on incomplete question re: getting jars
+   * Email from ask.dataone.org? Dave will be setting it up.
+ * 20130614
+   * Meeting w/ Rebecca on Wed
+     * EDAC MN: Soren and Karl
+     * will be main focus at the moment
+     * feedback on testing documentation - needs clarification
+     * Fix resource map format, impl a couple methods
+   * Will add Soren and Kavitha's feedback re: checklist
+   * Worked with Eva G. in Germany re: R client use w/o being an official MN
+   * Will have to leave standup @ 11 next two weeks
+ * 20130610
+   * Working on Java docs online
+     * currently split out bu packages
+     * Using a maven goal to bundle d1_common and d1_libclient into same HTML directory
+   * Rebecca will meet with Carl and Soren re: EDAC
+     * will be involved in this
+     * need to invite Soren to the MN meeting
+   * Will work on overview documentation for MNs
+
+Ben
+----
+ * 20130621
+   * Haven't heard back on CLOAKN node yet
+     * Can set it to sync on the CN if need be
+   * Helping with the training institute at NCEAS
+ * 20130619
+   * Working on portal deployment, but what's the goal?
+     * Will postpone the release until we get all portal fixes stable
+     * Will plan for a 1.1.5 CN release, with:
+       * New portal code --> 1.2
+       * cn rest service changes --> 1.1.1
+       * processing daemon update --> 1.1.?
+       * Ansible buildout system
+ * 20130617
+   * Looking into TFRI SSL config with Meei-ru
+   * Security meeting last week
+   * CN deployment: should we release the portal?
+     * trunk is in a state of flux
+     * Will merge trunk changes into the branch for release
+ * 20130612
+   * Sent email to Meei-ru re: SSL problem
+   * TW CA not in the Java keystore
+     * Didn't restart processing
+ * 20130610
+   * Ready to sync TFRI in production
+     * Inform LT team + MN wranglers
+     * Chris will /usr/local/bin/dataone-approve-node
+   * Providing tech support for Kevin Webb
+
+
+David
+-----
+ * 20130621
+   * Met with Chris/Bruce re: moving VMs around. will keep priorities low
+   * Will continue with LUN migrations
+ * 20130619
+   * same as Chris: LUN migrations
+     * removing workarounds put in during VSphere 4 install, since VSphere 5 issues are fixed
+ * 20130617
+   * Working on documentation
+     * RST markup: write manually
+   * Working on VM LUN naming conventions with Chris
+   * Working on short term backups
+   * Vacation June 30th - July 6th
+ * 20130614
+   * worked with Chris on LUN defrag. finished.
+   * Looking into VMWare cli for installations
+   * Will work on xmlstarlet Ansible playbook
+ * 20130610
+   * Rebuilding storage array management box
+     * will work on 'defragging' VM disk space
+   * Continued work on docs, plus german hw
+
+Chris B.
+-----
+ * 20130621
+   * Will wait till CN upgrades are done to resume LUN work
+   * Spoke with Joe Agrippa on DSpace - Joe will be installing soon
+   * Will work ORE parsing tests
+     * Will chat with Ben or Rob re: unit tests in ResourceMapFactory
+     * Still concerned about Metacat installation on cn-dev-orc-1
+       * Robert will look at hz client connections via hz_peek to confirm any issues
+   * Staying on for 1 more semester - defending PhD in Fall
+ * 20130619
+   * Working with Metacat yesterday in cn-dev-orc-1
+   * Reformatting LUNs with David
+   * Dave reported trouble with cn-orc-1. Busy LUN?
+     * Will change i/o priority to low to mitigate the issue
+ * 20130617
+   * Blocked by NCEAS network issue on updating dev updates with Ansible
+   * Added XML starlet
+   * Will work on ORE parsing unit tests
+   * Upgraded to Ansible 1.2
+ * 20130614
+   * Running expect script since Wed.
+     * Looks good. dataone-cn-os-core
+     * Controlled via tags in SVN per env
+   * Working on indexing tests for ORE parsing integration
+ * 20130612
+   * Wrote an expect script that builds os-core package
+     * bumps version
+     * launches Ansible
+     * will run tests on these deployments
+   * Worked with Skye on indexing unit tests
+   * Set Bruce up with VM running octopussy (OSS splunk)
+ * 20130610
+   * Met with OIT re: communication and planning
+     * Discussed network and hardware upgrades
+     * switch to 40G/s upload link
+   * Bruce is getting quotes for servers for VMs to increase capacity
+   * Finished up indexing code last week, need to meet with Skye
+   * Ansible: will continuously test in an automated system
+
+Chris
+-----
+ * 20130621
+   * LTER MN objects: worked with Mark S. on NotAuth'd issues
+     * 13K Baltimore Ecosystem Study science metadata docs are intentionally not publicly readable - strangely enough
+     * To note: Mark S. said the LTER MN plans to delete() all current content from DataONE and start fresh with their GMN implementation. Needs discussion because of the implications on D1, the DOI system, etc.
+   * Since LTER content is ntent is potentially changing, verifying replicas at KNB/PISCO is moot. Will be focusing on PISCO content now.
+   * Will turn replication on after the upgrade since we control the KNB content, and are in touch with Mike F. about PISCO replicas
+   * Wrote up 1.2 release story - Robert, Skye will add sub tasks that i may have missed
+   * Metacat-specific work
+ * 20130619
+   * Create a release story for 1.1.4
+   * Also plan in releases with Dave for minor releases
+     * 1.1.5
+       * Ansible buildout 1.0
+       * New portal 1.2
+       * cn rest service 1.1.1
+   * LTER sync discrepancies work - 13K NotAuthorized exceptions - will work with Mark S. to figure these out
+   * Troubleshooting with Chris on Metacat cn-dev-orc-1
+ * 20130617
+   * Write ask.dataone.org question on SSL exceptions using clients that currently don't accept some CA certs (TFRI)
+   * Working on LTER sync discrepancies
+     * 
+ * 20130614
+   * TODO: Matt: ticket for LDAP repl
+   * Meeting withe SEAD MN folks - good discussion on moving into production
+     * they need to get the go ahead from the NCED group WRT data distribution, branding, etc.
+     * Likely metadata only at first
+   * MN forum meeting
+     * GLEON will start installing Metacat to become a member node
+     * Corinna Gries and Aaron Stephenson are the ops
+   * Sensor Networks meeting
+     * continued review of the best practices document with the group
+   * Metacat meeting with Matt, Jin - Ben is traveling
+   * Troubleshooting LTER sync discrepancies
+     * We have 37K sync'd, but should be 56K
+     * After sync troubles that Robert pointed out, I've reset the last harvest date and sync is chugging through the list
+     * all 3 CNs are processing tasks
+   * LTER move to GMN: need to discuss nodeid: urn:node:LTER, urn:node:LTER_PASTA
+   * Will be getting back to Matlab code issues with Mike Frenock
+ * 20130612
+ * 20130610
+
+

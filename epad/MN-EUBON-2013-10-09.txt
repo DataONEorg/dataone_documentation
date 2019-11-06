@@ -1,0 +1,45 @@
+Notes regarding potential EU BON MN
+
+Teleconference on 2013-10-09 /12:30 UTC/8:30 AM US EDT/15:30 EEDT
+
+Attendees: Bruce Wilson, Dave Vieglais, Hannu Saarenmaa,
+
+Note: Hannu, Matt J, Mark S, and Dave V will be at TDWG meeting (Florence, Italy; right after AHM).  Good opportunity for followup.  http://www.tdwg.org/conference-2013
+
+Agenda:
+* Introductions
+* EU BON background and goals for becoming a DataONE MN
+* Discuss options for becoming a DataONE MN
+* Determine next steps
+
+MN Stack issues:
+The observation sites in EU BON have variable solutions.  We are looking at the Sierra Nevada (Spain) Global Change site as a possible model for others to follow.
+http://asm2012.lternet.edu/content/sierra-nevada-spain-lter-platform-towards-adaptive-management-mediterranean-ecosystems
+
+This poster is portarying what they use
+http://asm2012.lternet.edu/sites/default/files/poster_linaria_01092012.pdf
+
+Many EU BON partners are GBIF nodes. Hence use of GBIF IPT for data sharing is widespread.  We are looking forward to enchance the IPT so that it can better handle ecological data.  New terms are being added to the Darwin Core standard for that purpose.  In the next 6 months EU BON will need to work intensively in determining how much Darwin Core and the IPT can be extended, and preparing a roadmap for EU BON partners and sites.
+
+
+EU BON goals: set a goal provide a common platform for biodiversity observations across Europe.  Data sharing.  Not clear how many project want to join.  Expecting <unclear> sites to install software.  Have one model site to start with.  Networks have heterogeneous solutions, desire for DataONE to be the core of a common platform for sharing and exchange of biodiversity data.  Don't want to have to develop this platform from scratch.  
+
+Multiple biodiversity networks.  Need to take existing data sharing agreements into account; duplicate content possible.  
+
+Primary biodiversity data is mappable to Darwin Core.  Lots of monitoring data which is not well expressed in Darwin Core.  Can't express coverage in Darwin Core, same with strata, forest inventory plots.  Want to extend Darwin Core to be able to handle this other data.  Occurrence data on Darwin Core is both a metadata and a data file.  
+
+Discussion of plots (as part of the question for how data are aligned with DataONE models) -- how dynamic are the data?  Many kinds of plots, some are one time visits, some others are decadal scale for temporal coverage with multiple persistent observations.  
+
+DataONE tends to view things as having a file as an object.  Each object has a unique identifier.  If have a data repository which is a relational database system, how to define the addressable units within the data model.  Mutability of data is also a possible issue.  Note EU BON is using a star schema.
+
+One concept is to use the Darwin Core archive as basis for exposing the data.  
+
+Some interation likely, as the area of biodiversity data is likely to require some extension to how this is represented and exposed in DataONE.  Follow-up discussion at TDWG is likely to be very useful, as there will be several different people in one place from multiple organizations working in biodiversity.  
+
+EU BON is basically using GBIF infrastructure (working as GBIF nodes using IPT, http://ipt.gbif.org/  dev site: https://code.google.com/p/gbif-providertoolkit/ ).  Granada model site is using Metacat.  Using both software going forward.  Turning Metacat on for DataONE should be straightforward (mostly a matter of installing certificates and configuration).  Modifying/adapting to IPT is desirable, given the broad use of this within the biodiversity domain.  Might make sense to have multiple MN's, for example with Granda being a MN in it's own right.  Different sites have differing needs, so that multiple MN's may make sense.  This is an item to explore.  A central installation for EU BON may also make sense, as could a hybrid where some sites are MNs in their own right and some sites are distributing data through an EU BON central MN site.  Depends on what best meets the needs and capabilities of the site(s).  
+
+Next steps:
+* Informal meeting at TDWG.  Adapt the meeting(s) to the people on-site and the schedule for the conference.  
+* Granada site and metacat.  Hannu to be there in first week of December with others from EU BON.  Hannu to discuss that.  
+* Bruce to forward info on becoming a MN from a process perspective and the instructions for becoming a MN if running a current version of Metacat.   
+

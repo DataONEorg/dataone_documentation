@@ -1,0 +1,434 @@
+CCIT meeting 2010-05-25,26,27  Minutes
+------------------------------------------------
+
+Vieglais, Jones, Wilson, Palanisamy, Berkley, Horsbourgh, Scherle, Waltz, Allen, Cobb, Chris Jenkins (Boulder), Dahl, Servilla, Nahf, Sandusky, Lapp
+
+
+Around the room
+-----------------------
+Introductions from all CCIT participants
+Jenkins -- dbSEABED -- data framework for seafloor soils data 
+http://instaar.colorado.edu/~jenkinsc/dbseabed/
+        
+
+Parking Lot
+-----------------
+See http://epad.dataone.org/20100525-ci-parking-lot
+
+Review of Prototype status
+------------------------------------
+Current components:
+    - Design docs
+    - 3 CNs
+    - 3 MNs
+      -- Dryad MN -- uses Python stack
+      -- DAAC MN -- uses Python stack
+      -- Metacat MN -- implemented directly in Metacat
+      
+    - web UI 
+    - ITK libraries
+    
+    See overview diagrams: https://repository.dataone.org/documents/Projects/cicore/architecture/components.pdf
+    
+Implementation matrix for Service APIs
+----------------------------------------------------
+
+Method                                      |  Python GMN   | Metacat MN
+-----------------------------------------    ------------------    -----------------
+MN.get()                                    | x                       | x
+MN.getSystemMetadata()         | x                       | x
+MN.create()                               | x                       | x
+MN.listObjects()                        | x                       | x
+MN.describe()                           | x                       | x
+MN.getLog()                              | x                       | x
+MN.create()                               | x                       | x
+MN.update()                              | x                       | x
+
+Coordinating Node overview
+  -- Object store, search index, search are working
+  -- metadata packager and parser are functional
+  -- harvester ?
+  -- replicate queue & replicator are to be built
+  -- working to refactor to use Spring batch processing to streamline number of JVms running and give a standard processing framework
+  -- Do we need to include MN replication?  Probably not required, but good if we can
+  -- Issue: harvester isn't the only place where objects get inserted into CN Object store
+     -- need to be sure to queue indexing and replication after CN-CN replication
+     
+Reviewed the overall Version/API matrix: http://mule1.dataone.org/ArchitectureDocs/versions.html
+
+Main tasks remaining are associated with:
+  -- CN development
+  -- Deployment on various virtual machines
+  -- Integration testing
+  -- further development of client libraries + ITK components
+  -- need to plug the authentication/access control holes in current metacat MN implementation
+
+listObjects() == search()
+search() /object/
+get()   /object/<guid>
+getsysmeta()  /meta/<guid>
+
+/resolve/<guid>
+
+&&&&& Task: how is search syntax passed into REST interface
+
+&&&&& Task (Chad): agree on and implement authn & authz for short term deployment
+
+&&&&& Task: (Giri) determine how we can take advantage of the science metadata that Mercury can return now to enable clients to specify what fields they want to come back from the search and then return back that information in the search results.  
+
+&&&&& Task: (Roger) update Python MN to match new REST API interface.  
+
+Breakout groups
+----------------------
+CN stack completion
+Integration testing
+
+Member node implementation issues
+Deployment issues
+
+Security -- IP based only
+
+
+
+
+
+CN Stack Completion
+
+http://mule1.dataone.org/ArchitectureDocs/REST_interface.html#object
+
+- Index updating.  The Mercury index needs to be kept up to date as content is added to the Metacat object store.  This requires triggering a work flow that involes:
+  1. package system and science metadata when new science metadata is stored in metacat and store the package in a temporary location
+  2. parse the package to extract the necessary values for populating the SOLR index and perform an incremental update to the index
+
+Metacat logs create events, so a simple mechanism for triggering the index update workflow maybe to monitor log output from metacat.  The log should be modified to write out the identifier of the science metadata, and the local identifiers of the science metadata and the associated system metadata.  The process that reads the log messages and invokes the packager will need to track state so that it does not re-process existing entries (though technically duplication should not affect the indexing accuracy, just efficiency)
+
+- Story: modify metacat log to contain necessary information - identifier, local ids
+
+- MN Synchronization API 
+
+  - Story #592 complete / review process description in the archtiecture docs (use case 06)
+  - Story #595 build the harvester component that will retrieve content from a member node given an identifier and member node information
+  - Story #608 Task #629  define the messages that are used to control harvester 
+  - Story #608 implement the message queue
+  - Story #610 define the mechanisms for populating the message queue
+  - Story #609 initiate processing by cron signalling 
+  - Story: Wrap the packager into a  synchronization job
+        - on Major CN packaging is executed by signal from completion of Create
+  - Story: On minor CN's disable most MN syncronization API excepting the packaging queue
+  - Story: On minor CN's enable inotifier to signal execution of packaging job
+  - Story: Modify Metacat to insert a message into the packaging queue whenevera a CRUD or replicate event has completed
+
+
+- CN Replication API
+  - mostly integration testing with perhaps some iteration
+
+- Rest API
+    (New Story) As the System Architect , I should define the mechanism outside of Mercury and Metacat in which CN tracking information should be persisted. (Mysql/Postgre/??)
+    
+    CN Query
+        CN_query.getLogRecords() (review project backlog and match up those stories / tasks with entries here, and add new stories / tasks as necessary)
+            Story: As a developer, I need to design a   LogRecord  schema
+            Story: As a developer, I need to know what events should be returned in the logs (for metacat and mercury and cn stack)
+             Story: As a developer, I need design integratation of Metacat and Mercury in order to implement getLogRecords()
+            Story: As a developer, I need to implement the integration of Metacat, Mercury and CN proxy layer
+             Story: As a developer, I need to maintain uniform time stamps from the CN system components
+             Story: As a developer, I need to create a servlet that exposes the LogRecord result set to a query
+        
+    - Sequentially call MN.getLogRecords() with same parameters used to call CN.getLogRecords() and return the combined list of log records.
+
+             
+    CN CRUD
+        Story:  As a developer, I need to modifey the rest proxy controllers and Rest Service Webapp to conform to the new REST interface specs
+        CN_crud.resolve() -> list of identifiers
+           Story: As a developer, I need to design and implement the resolve method.  This requires querying metacat for replication locations in the system metadata associated with an identifier.
+          
+        CN_crud.reserveIdentifier()  ** Not for Prototype **
+           Story: As a developer, I need to design and implement the reserveIdentifier method. This includes determining where  state information about the reservation will be stored, and implementing  the method in cn-service.
+
+- MN Replication
+  probably not for July?
+
+- Metrics recording / reporting
+ -  Story: determine which metrics should be recorded (this will be a superset of the metrics that need to be reported to NSF).  Should include low level system information useful to administrators / operators. 
+ 
+
+- Monitoring (nagios)
+    Story: As a developer, I need to design a monitoring system that can be used centrally monitor and report on MN service availability, and monitor CN system and service metrics (disk space, cpu, etc.)  This includes providing deployment details, communication mechanisms across public network, security mechanisms, and notifications to system admins of MN and CN.
+    Task: Define the metrics that need to be monitored and recorded
+    Task: Select the monitoring framework and design the deployment of the selected framework, including gathering the necessary information for configuration
+    Task: Deploy the monitoring system central monitoring service
+    Task: Add the necessary packages to the CN deployment packages
+    Task: Create a plugin for the MNs that can report on availability of the MN - this could probably be implemented as a HTTP method call on a MN, e.g. MN_health.ping()
+
+
+    
+
+
+Integration Testing
+See http://epad.dataone.org/20100525-ci-integration-testing
+
+
+Wednesday, May 26 -- Block 5
+------------------------------------------
+
+Planning for Year 1 Milestone
+
+REST URI patterns: 
+ * Updated by Dave.  Back to a more REST style, with a unique keyword as the first token in the URL.  All calls have a specific token, so that the issue of differences in how "/" is encoded in URL's and processed by different servers.  For the coordinating nodes, this is less of an issue, because we control how these are configured.  For MN's, however, there will be differences in web servers and how those servers are configured for processing.
+ * The discussion/decision was that applications should pass GUID's (for example) through URL encoding as part of the call and that the receiving stack should do a URL decode.  This needs to be put into the API documentation/diagrams to show exactly where the encoding and decoding happen, to ensure that the encode and decode happen exactly once.  There may be GUID's (such as particular UUID methods) which include percent characters, which would make double URL decoding a destructive process.  
+
+Discussion of the integration testing (see http://mule1.dataone.org/ArchitectureDocs/integration-testing.html for Matt's summary of the results of the discussion on Tuesday and http://epad.dataone.org/20100525-ci-integration-testing for the raw notes).  Not all of the high priority tests need to be done for July 31st, since some of them represent features that won't be implemented for the year 1 release, but the high priorities will need to be accomplished for the initial public release).  
+
+Harvesting:  Metacat assumes that the harvester is provided URI's.  Need to populate a sitemap.xml with the URL's, which the harvester will go get.  Note that the get function is a REST URL.  May need to call the create() mechanism to make the appropriate objects.  ???Further discussion suggests that leveraging the harvester in Metacat or Mercury would be more work than creating a simple harvesting application.  Create method, when it completes, either writes out a log message or a JMS entry.  Sentiment seems to be that JMS is better, to guard against things like changing the log level to null.  JMS message "done creating, here's the GUID".  Problem with coordinating nodes replicating.  They create content in Metacat, which may not go through the create().  But JMS isn't in Metacat, at this point.  Metacat logs the initial CRUD operations, but doen't differentiate a replication event as separate.  
+
+Story: Metacat, on completion of CRUD operation, will send a message to a package queue to indicate a change in content that needs to be processed.  Message needs to contain the two local identifiers plus the external identifier.  ??Will system metadata be treated differently from science metadata?? Chad is passing the system metadata identifier in the replication message.  
+
+Story: The CN needs to maintain a list of registered Member Nodes and their service endpoints and minimal additional metadata that can be used by the harvester to iterate over Member Nodes to initiate MN synchronization
+
+Story: Need to implement the mn.ping() as part of the health monitoring (may be part of nagios monitoring)
+
+Story: Need to design and implement a log aggregation facility at the CN to be sure we have all logs (even if MN goes offline) and can respond to log requests without a distributed query
+
+Story: Need to design and implement a statistical counter on the downloads for data sets and metadata objects that can aggregate at daily, weekly, monthly, and annual time scales.
+- also for blocks 1&2 in the performance metrics spreadsheet using System Metadata at CNs.
+
+ (Usage Statistics) &&&&Task: Cobb and Jenkins to provide suggestions about existing systems that handle distributed log aggregation and log statistical summarization
+
+Story: Need to design and implement a system for accumulating uptime and other metrics fromt he nagios monitoring system for use in reporting at daily, weekly, monthly, and annual scales
+
+Investigator Toolkit: will have client linbraries fleshed out for integration testing, so take advantage of these to implement reference ITK tools:
+1. (highest priority, start with python client lib) command line clients based on client libraries
+2. R add on for search and retrieval of content from D1 infrastructure.  Even implementing get() would be a valuable addition (given D1 identifier, retrieve data and store in R workspace).  (Note that it would be very beneficial to ensure local caching is used to avoid multiple retrieval of objects)
+3. Investigate how much work would be required to implement in Kepler (search and retrieve)
+
+
+Usage metrics
+ * Commonly used: NumberDownloads, NumberViews, DataEdits, DataUploads, PageBounces, UniqueHostVisits, VisitTime
+ * Classify by: gov/edu/com/org/etc 
+ * Option: Use Google Analyst or MediaWiki on web pages; a log file registers traffic to every server; downloads are counted from that with a script on the server side; HPC run jobs are monitored through Torque; GA has 1 day delay; others are real-time
+
+Examples (Multiple servers, Data serving, US gov/NSF):
+ * https://www.ngdc.noaa.gov/wiki/index.php?title=Metadata_Usage_Statistics
+ * http://gos2.geodata.gov/wps/portal/gos/kcxml/04_Sj9SPykssy0xPLMnMz0vM0Y_QjzKL9443cnIFSYGYfpb6kehCFgghb31fj_zcVP0A_YLc0IhyR0VFABDAZM0!/delta/base64xml/L3dJdyEvUUd3QndNQSEvNElVRS82X01fMUVU
+ * http://csdms.colorado.edu/wiki/Model_download_Page#Number_of_successful_downloads_per_model_version
+ * Earth Systems Grid (ESG) www.earthsystemgrid.org : Cobb sent out a query note. ESG's new implementation has multiple gateways with multiple data nodes. In this snese ESG and DataONE share much architecturally if one maps gateay node to CN and data node to MN. I spoke with Ross Miller. He mentioned that ESG currently assumed that each data node has a single home gateway so aggregating metrics may be easier since the union of metrics will not require merging data from mulitple gateways. The previous ESG implementation for the last IPCC had a single gatway and thus was a little simpler. Ross Miller of ESG sent the following link as a pointer to ESG metrics collection design documents: https://wiki.ucar.edu/display/esgcet/Metrics  other related ESG design documents can be found under the child pages listed at the bottom including Performance  Use Cases, Usability  Use Cases, Usage Use  Cases 
+ * Nanohub: (www.earthsystemgrid.org) has a long history of heavy usage. It started over a decade ago as a perl built web server (pre Apache days) It has also faced the question of how to report to NSF on the growth of its usage and has been judged to have "good metrics" by NSF and a good record of usage growth. . Nanohub's metrics are shown at  http://nanohub.org/usage Data management has traditionally  been secondary In general, they do not have the distributed logging issues of DataONE and Nanohub is more focused on efficient computational deployment and rapid application development/deployment. Nanohub also has a large education integration compoenent including archived lectures and learning tools. They also measure usage and effectiveness of those tools. That said, the set of metrics that Nanohub uses would be good for us to consider when developing DataONE metrics suite.
+ * TeraGrid user distribution. A lot of projects have google maps integration now. TeraGrid's is at <> and it shows the set of users  location (as determined by IP address's geographical address of record) --hmm no way to paste a .png into epad so -- just imaginge for now or see Cobb for an example.
+
+
+Tools for Project + Task Management
+
+- Agilo has many issues - performance, reporting capabilities
+- Generally difficult to get a high level view of development status
+- For next stages of project, attempt to fully specify WBS
+
+- Features
+  - easily divide tasks into sub-tasks
+  - Code review functionality
+  - efficient user interface (easy for devs to work with, fast)
+  - High level overview for managers, reporting
+  - Drill down from high level view to tasks remaining
+  - Time estimation
+  - integration with subversion
+  - integration with development environment (e.g. eclipse)
+  - integration with LDAP for account management
+  - dependency management (between tasks)
+  - comparing snapshots from differnet stages of sprints / between sprints
+  - tracking bugs as part of release cycles and milestones
+
+- Review task management tools
+  - Version One
+  - FogBugz
+  - Jira
+  - PivotalTracker
+  - Redmine
+  - Basecamp
+  -Serena Agile (subscription model: $35/person/month, volume discounts)
+  
+  
+  NESCENT review of tools at http://spreadsheets.google.com/pub?key=p6ikV0To6fXrzsm1de1W4Hg&output=html (from an E-mail by Ryan)
+  
+  (lists of tools at http://www.dmoz.org/Computers/Software/Configuration_Management/Bug_Tracking//  and http://en.wikipedia.org/wiki/Bug_tracking_system at the bottom)
+- Try removing agilo plugin as first effort towards improving Trac performance.
+
+
+Discussion: Year 2/18 months Goals and Priorities
+
+Dave overviewed 5 focal areas for Year 2
+Matt overviewed potential goals
+    * Building production infrastructure
+    * Focus on client side tools that enable data reuse and new types of science
+
+Rob Nahf: metadata is key, could have focus on metadata production
+    -- Chris Jenkins: have D1 operatives help with metadata collection eg via phone - this works !
+
+Giri: also be able to enable advanced services (and multiple data representations)
+    -- e.g., data subsetting (opendap, wms, modis subsetter, etc) and visualization services
+    -- handling datasets that are in databases, rather than separate files.  
+    -- handle metadata records that are not pointing to any specific dataset resource, e.g. metadata records that are pointing to a dataset directory, project pages, maps
+
+Ryan: High level goal of starting on high-level problems we've identified
+   -- streaming data
+   -- data packaging
+   -- Matt: also see semantics wg goals
+   
+Hilmar: willing to engage with leaders of WGs that are pending
+
+Bob: could employ the CE model of bring in in leaders to draft the charters
+
+Matt: no reason working groups can't be somewhat overlapping topically
+
+Chris: Is there a place in the architecture for computational services that might be needed for advanced features (e.g., semantic indexing across whole D1)
+
+Paul: EVA absolutely want ability to bring the computation to the data
+  -- we should focus on things that will really benefit EVA and that type of activities
+  -- Matt, Dave, and Paul will try to get list of issues from EVA in July
+
+John: TeraGrid nodes could provide some of these computational services
+
+Bob: Also could ask CE groups to help solicit these issues
+
+Bruce: How do we utilize science metadata to describe services that are available for datasets, and deal with the different ways each metadata standard represent these?
+
+Dave: How to deal with the transient nature of these services?  Can we help preserve services as well?  Could we monitor service availability?
+
+Giri: Wind energy informatics based on GIS services; very successful with that community
+
+Paul: What do OGC standards say about persistence, changes, etc?
+
+Giri: There are some very reliable services too; national atlas; blast; maybe we could identify these so that they are much more obvious; can we catalog and monitor useful services?
+
+Dave: leverage presistent IDs and ID resolution to help with automatically redirecting service requests
+
+Paul: does this type of service redirection actually fall into the DataONE mission?
+
+Matt: maybe only focus on the mainstream data subsetting services (WMS, WCS, opendap, etc) and facilitate locating those services
+
+Bruce: could help clarify best practices of how to identify services in science metadata standards
+
+Summary statements:
+------------------------------
+Bob: be sure to articulate with CE to have them provide direction
+Rob: need for editing tools for metadata and data provision
+Paul: starting work on the hard problems (data interoperability, semantics, dealing with web services, bringing computation to the data)
+Robert: refactor the codebase to be production ready
+Giri: handling metadata that are not directly pointing to a single data set (data packaging); handling the web services for continuous data streams or large data collections
+John: Engaging new potential member nodes as friendly implementors
+Chris: Data interoperability, it's the whole reason for doing this, as it enables widescale computing on the data (the working groups are key in this)
+Jeff: avoid an identity crisis (people won't get it unless they have something they can use); must have impact on community practices sooner than later
+Ryan: the world will be watching, so must have a production system that they need, so must connect with CE group to identify needs that have to be met
+Hilmar: data findability will be critical, so semantic search and data integration should be emphasized; know our early adopters
+Mark: authentication + authz; need to simplify and streamline it
+Roger: deep provenance because its important for contributers to get credit when their data is used; we can facilitate that
+Bruce: Robust production infrastructure that delivers useful data in a useful way to solve science problems
+Matt:  Focussing on utility of the infrastructure to solve science problems in analysis in modeling; produces new science that would have otherwise not been possible or would have taken much longer.  
+Dave: Making sure we have a robust system that bullet-proof within the timeframe and meets the anticipation of the community.
+
+2010-05-27
+
+Semantics discussion
+
+- How to improve accuracy and precision of searches that can be conducted through the portal and also through the APIs
+
+Helping with data integration (small steps)
+- Resources for semantic analysis across the data collection include: Units of measurement, parameter names / labels, parameter roles in "text book" equations, manual annotations
+- How much manual work is required / possible for annotating incoming data sets?
+- Ontologies - prefer something that provides some emergent behaviour rather than relying on complete/tight definitions of existing ontologies
+- Semantic routines are possible to indicate which parameters are "closer" to each other. This assists users in identifying which might be appropriate for a particular application (e.g. data aggregation, data visualization, model setup/validations)
+- What is meant by an "ontology" these days (XML:RDF:SKOS:OWL) - range from simple lists/trees through to large graphs with different levels of expressiveness
+- Building ontologies is a very time consuming, resource intensive process.  
+- Need to take advantage of ontology development activities outside of data one, but relevant to project
+- D1 needs to determine what use ontologies will have in the project
+
+Search:
+- support mapping variable names / parameters to higher level concepts.  e.g. search on "air temperature"
+- searching/finding and interrelating datasets = will be key attractors for new data/users to D1
+
+- How can these annotations be pushed back to the data sources / member nodes?  D1 needs to provide mechanisms that enable this.
+- WG topic- how to manage the flow of annotation information throughout the infrastructure?  Ensure that annotations are appropriately associated with original data + metadata
+- Jeff - HIS model may be appropriate for evaluation in D1
+    The HIS model includes a domain ontology for variables that is centrally hosted.  data  publishers are responsible for ensuring their variables are mapped to the ontology
+    http://hiscentral.cuahsi.org - maintains a data service registry, a metadata catalog, semantic annotations between variables and the ontology, and search services that operate on the central metadata catalog, which contains the semantic annotations.  Search services are at http://hiscentral.cuahsi.org/webservices/hiscentral.asmx.  Documentation is not great yet.
+- also:  VSTO, SERONTO (data system - MORIS)
+
+- How to integrate existing activities / products into D1 infrastructure without repeating the effort?
+
+- SONET work is quite relevant - July meeting is a good starting point for more interaction with D1 - also DC will be at meeting
+
+- Earth system grid also working on similar problems (note: ORNL is an ESG node; Giri is involved with this); heavy emphasis in FY11 on model-data integration.  Major DOE proposal being developed across labs.  
+- http://www.vivoweb.org/ - a cross-university project aimed at connecting researcher identity, published work, research interests. Goal is to make identification of potential collaborators easier. This and other similar efforts may be path to linking research identity / published output to datasets in DataONE.
+
+- Biomedical ontologies also relevant 
+- PATO Phenotype and trait ontology
+- Open Ontology Repository may be relevant
+    -- MMI OOR repository has a particularly relevant collection of ontologies
+
+Important for D1 to leverage existing activities - through services is one mechanism - how to make service interaction efficient and scalable? 
+ e.g: - HIS web service: http://hiscentral.cuahsi.org/webservices/hiscentral.asmx
+       -  NBII thesaurus web service http://nbii.ornl.gov/thesaurus/
+
+NBII Clearinghouse is currently working on enabling thesaurus in search refinement (broaden or narrow the search results using the thesaurus keywords)
+
+Streams:
+
+- Search
+- Integration
+- Interactions with existing and emerging related activities
+- Formulate proposals for expanded work on related topics
+- Driving exploratory data visualization
+- Storing annotations (e.g., the open annotation project; http://www.openannotation.org/theOpenAnnotationCollaboration.html)
+- Data format registries - helping to  drive the types of processing 
+
+Actions:
+- Jeff and Bruce will draft an outline of topics for semantics groups as input for the July 19-20 (approx) Semtools meeting in Ithaca
+- Merge notes from previous meetings to help identify major topics / streams
+- Incorporate overview in the architecture docs
+
+
+Block 10
+
+Interactions between groups
+
+- Try and attend other meetings - e.g. EVA
+- Ensure the calendar of meetings (f2f and vid conf) is available to all members of the project
+- Be opportunistic about attending meetings where possible - even if not for the whole meeting
+- liasons for leading interactions
+
+
+Dave - the working groups as noted on the DataONE website indicates that "education and outreach" are split and bound with "community engagement and education" and " citizen science and outreach", respectively; should the list below be refactored to reflect the working groups that are outlined on the website or have there been changes in the list of which I am not aware? - thanks, Mark Servilla
+
+sociocultural (Bruce + Robert)
+usability and assessment ( Bob Sandusky, Giri)
+sustainability and governance (John)
+education and outreach (Mark, Ryan)
+EVA (Matt, Dave, Paul)
+citizen science (Bruce, Paul)
+LT + Sponsor (Dave)
+
+Actions:
+- Ensure calendar is kept up to date
+- Suggest a weekly summary from all groups (CCIT + CE&O + ED)
+- Issue register (for both CE and CI)
+
+Meetings 2010 - 2011
+
+- EVA       July 14-16 (Ithaca)
+- SONET July 19-20 (Ithaca)
+- CCIT     October 4-8, TDWG = 26-  (Woods Hole)
+  - Matt may have a contact at MBL for assistance with logistics
+  - Possible locations include NCEAS, Nescent, ABQ, Denver (USGS), Knoxville
+- D1 AHM Nov 1-5?  Albuquerque, Tamaya
+- Federated Identity Early Sept 2010 Sept 7,8,9 (two days)
+- DUG Dec 9-10
+
+Next CCIT meeting:
+March, April, w5 May, June
+(week of july 11 or 18: ESIP in ABQ)
+
+Actions:
+- Determine possibility of merging CCIT + AHM meeting for Nov 1-5
+- Contact Randy and lock down dates for FS meeting (Mark will take lead on this)
+- Doodle poll for next CCIT meeting in the March - June time frame)
+
+
+

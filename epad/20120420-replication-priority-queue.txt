@@ -1,0 +1,61 @@
+How to prioritize nodes for replication
+
+Factors to be considered:
+
+    Replication Requests Factor R
+    -----------------------------
+    The goal here is to be sure not to overload nodes by only issuing a fixed number of requests for replication to a given member node.  If the request limit is reached, don't submit more requests.
+    Max request limit (rl)
+    Number of pending replication tasks on target (rt)
+    
+    R = 1 if rt < rl, 0 otherwise
+
+    Also want to deal eith the number of requests pending against a source node, but defer until later:
+    Number of pending replication tasks on source (rs)
+        To be determined -- refactor R including rs
+
+    Failure factor F
+    ----------------
+    The goal here is to avoid nodes that are failing a lot, and for those that are failing less than an arbitrary threshold, prioritize them proportionally to their success rate.
+    Number of replication or ping successes over last 3 days (ps)
+    Number of replication or ping failures over last 3 days (pf)
+    days)
+    Success threshold (st) = default 0.80
+    Replication Attempts (a) (the number of replication requests made to a node)
+
+    F = 1 if a < 5, else 0 if ps/(ps+pf) <= st, else ps/(ps+pf)
+    
+    Bandwith Factor B
+    -----------------
+    The goal here is to utilize high bandwidth nodes more than low by skewing the rank in favor of high bandwidth nodes.  We do this by calculating B from 0 to 2 and multiplying the other metrics by B, which will proportionally reduce or enhance the rank based on B.  The metric following uses the range of bandwidths available across all nodes to determine B such that the lowest bandwidth nodes will be near zero and the highest near 2, but a lot of the nodes will cluster around 1 due to the log functions.
+    B = 2*(log(b/bmin) / log(bmax/bmin))
+       will range from 0 to 2
+    Node Bandwidth b
+    MaxNodeBandwith bmax
+    MinNodeBandwidth bmin
+    Note that its not clear how we actually estimate node bandwidth -- is it a node reported metadata value, or something we measure during normal operations?  The latter would be possible by recording the time to replicate data between two nodes and dividing by the replica size, and assign the resultant value to both nodes -- over time an average would build up indicating the effective throughput that considers not just network bandwidth but also storage I/O rates and admin overhead.
+
+Calculating the score:
+
+    Implementation is hanndled by calculating a rank score s for each node, and using that to order the nodes. Higher scores are better, and nodes should be chosen from the highest ranked nodes, but randomly from within any group of nodes with equal scores.
+    
+    Initial rank score s
+    --------------------------------
+    We'll implement this initially for simplicity, knowing that later we can implement a more sophisticated score s algorithm and the rest of the machinery will continue to work without change.
+    
+    s = R
+
+    Only choose from nodes with s > 0.
+    
+    More sophisticated rank score s
+    --------------------------------
+    s = R * F * B
+    
+    
+    For dealing with preferred nodes:
+    if preferred nodes are present then:
+        Calculate s for preferred nodes, then assign target nodes based on that rank score
+    
+    if more replicas are needed, then
+        Calculate s for remaining nodes, then assign target nodes based on that rank score
+

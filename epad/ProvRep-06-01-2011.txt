@@ -1,0 +1,37 @@
+Mentor call, http://epad.dataone.org/ProvRep-06-01-2011
+Present: Bertram, Paolo, Shawn
+
+* Telecon schedule ==> Wed 9-10:30am, skype
+* Mailing List  ==> Bertram to set up google-mail list and google-site
+* Note taking: Etherpad 
+* Code repository: code.google.com  
+* DataONE Blog: for "news stream"!? 
+* Project site: Google site ==> Google docs for additional shared docs 
+* move over to DataONE as needed 
+* Document for "top 20 questions" the repository might have to answer
+https://picasaweb.google.com/lh/photo/uj8TV5RELoKE8XbM-HCgn0ATFu-yQ1k_TPIGstLHcTc?feat=directlink
+* Tentative, high-level split between Michael, Saumen?
+--> defer to when we have more details about architecture
+(might be: ProvRep (Saumen), Query & Viz (Michael))
+
+
+
+Questions, Steps, & TODOs: 
+-- Define OPM++/DOPM (start next week @ ProvWG mtg)
+-- Implement (some form of) "Save as DOPM" within wf systems
+-- Implement Repository
+-- Implement "Load DOPM" 
+-- Define types of queries we want to support via toolkit
+-- Define types of visualizations we want to support via toolkit
+-- What other features do we want to support via the toolkit?
+-- Define a roadmap of tasks/deliverables
+-- Name contest! 
+-- Provenance Query Language! 
+(can we get away with a Datalog engine? Or start from QLP? Or from... ?)
+
+==> ProvWG meeting 
+need to send around agenda, logistics
+also questionnaire: 
+==> What's missing from OPM to capture your system X provenance, use case Y, etc.
+
+

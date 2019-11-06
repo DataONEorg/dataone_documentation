@@ -1,0 +1,114 @@
+Attendees: Amber, Bill Michener, Bob Cook, Matt, Dave Vieglais,Steph, Bruce , John Cobb
+
+Regrets: Steve Kelling, Mike Frame, John Kunze, Todd Vision, Suzie (sent update by email)
+
+ http://epad.dataone.org/20110520-LT-VTC
+
+
+If you have items to add, let me know
+
+  Agenda for 2011-05-20
+
+1. Status on Plans for DUG Meeting (Budden)
+Status of Travel Awards: Approx 25 awards of up to $1000 will be available to reimburse travel / accommodation costs.  DataONE Leaders engaged in moderation / presentation at the meeting will have costs covered by DataONE.  Invitees have until Tuesday to indicate their need for an award, decisions will be communicated by Friday (27th).
+Accommodations: We have 25 rooms at the ESIP hotel (La Fonda) and have put another 25 on hold at the nearby El Dorado.  Reservations have to be made (and extra rooms dropped) by June 13th so that we don't get charged.
+Invitees: Three sets of invites went out.  1) Current DUG members 2) Individually identified future members 3) Generic email to all of ESIP.  Category 2 included primarily data librarians, domain scientists and ITK developers suggested by the DUG chairs, Bill, Rebecca and CCIT.  Additional USGS invitees suggested by Mike Frame.
+'Registration' status: We have 29 people attending so far, some conditional on travel support.
+
+Agenda:  
+Monday July 11th
+DataONE information meeting: Open to all (by registration)
+07.30 – 08.30   Breakfast
+08.30 - 10.00    Session 1
+·      Welcome and Introductions: Robert Sandusky, Richard Huffine
+·      Meeting Objectives: Amber Budden
+·      Introduction to DataONE: Bill Michener
+·      Status of DataONE CI: Matt Jones
+10.00 - 10.20    Coffee
+10.20 - 12.00    Session 2: Breakout
+·      Breakout 1: DataONE Investigator Toolkit: What is it, how it will be used, proposed future developments, community feedback (prioritization of tools)
+Bruce Wilson, Bob Cook
+·      Breakout 2: DataONE Education Resources: Current and future materials, mechanisms for training, community feedback
+Viv Hutchison, Amber Budden
+·      Breakout 3: Citation and Preservation within the DataONE framework:
+Matt Jones, John Kunze
+12.00 - 13.30    Lunch
+13.30 - 15.00    Session 3: Breakout
+·      Breakout 1: DataONE Investigator Toolkit: What is it, how it will be used, proposed future developments, community feedback
+Bruce Wilson, Bob Cook
+·      Breakout 2: DataONE Education Resources: Current and future materials, mechanisms for training, community feedback
+Viv Hutchison, Amber Budden
+·      Breakout 3: Citation and Preservation within the DataONE framework:
+Matt Jones, John Kunze
+15.00 - 15.20    Coffee
+15.20 – 16.30   Session 4: Report Back from Breakouts
+16.30 – 17.30   Session 5: Process of becoming / adding a Member Node
+Mike Frame, Bob Cook
+Tuesday July 12th
+DataONE DUG Meeting: Open to DUG members
+07.00 – 08.00   Breakfast
+08.00 – 08.30   Session 1
+·      Objectives and Logistics: Amber Budden
+08.30 – 09.45   Session 2
+·      Member feedback on DataONE marketing materials: Trisha Cruse
+09.45 – 10.15   Coffee
+10.15 – 11.30   Session 3
+·      Member feedback on proposed mechanism for community input following public release: Mike Frame, Suzie Allard
+11.30 – 13.00   DUG Business Meeting: Bob Sandusky, Richard Huffine
+·      Report from the Chairs
+·      Review of Charter?
+·      Chair nominations and voting
+·      Calendaring next meeting
+
+
+2.Report on meetings with USGS (Michener) 
+USGS briefing went exceptionally well 16 high-level managers 
+Collaboration opportunities
+6 MNs?
+2-3 tools for the ToolKit plus outreach activities
+Collaboration efforts key for both USGS & DataONE
+August for next meeting to finalize details
+
+Met with Irene Lombardo yesterday (OCI) - reverse site visit went extremely well and there 
+were no suggestions on how to do things better
+OCI will be taking some significant budget cuts - long term support for DataONE is secure
+new programs will probably take the cuts
+Geosciences program officer - get DataONE listed as a EU/US collaboration project that will interact with LifeWatch
+(Wouter on DUG) 6 names; WM,DV,RK,MJ,BW,
+For a meeting to fleshout opportunities - a couple of years ahead of Life Watch
+
+Met with Smithsonian - Eric Mata, Bob Corrigan, Cyndy Parr
+Encyclopedia of Life (EOL)
+Opportunities for collaboration; core level is at species level - pages containing objects
+Stable name index 
+Expect a letter from them soon expressing interest in becoming a MN and member of DUG
+Willingness to share their name service with DataONE - be used to check for species name spellings, data related to species, etc Will be valuable for biodiversity and ecological researchers 
+EoL is experimenting with "virtual communities" as a mechanism of grouping content depending on the context of the user. The hierarchies and ontologies being developed *may* be useful for DataONE to assist with grouping / categorization of results in the Mercury interface.
+EoL target new release of web system August 2011 - unlikely to integrate anything from DataONE prior to then.
+
+Question: is EOL working with other name services of related projects?
+Aggregating content from other name services - or at least were; something we can check on
+
+
+
+3. Around the Room 
+
+Suzie: I was a participant in the Cyberinfrastructure for Collaborative  Science Workshop organized by Hilmar, Mark S, and Ann Zimmerman  (Michigan) at NESCent.   Attendees included technologists, domain  scientists and social scientists.  Multiple synthesis  centers/projects were represented – NIMBioS, NESCent, NSEAS,  BioSynC,  EnSynC, iPlant, ACEAS, Data Conservancy,  and DataONE.  Four NSF  officers attended/participated Susan Winter, Mimi McClure, Peter  McCartney, and Anne Maglia.  The purpose of the workshop  was to explore challenges facing CI development and strategies for  moving forward on CI development such as building better ties between  synthesis centers in a form of federation etc.   Topics were identified  by the group and included— fitting CI to the science,  sustainability, products and processes of science, workforce  development, mechanisms for encouraging/sustaining collaborations, etc.   Most of what we discussed mirrored discussions we have had in DataONE —  which suggests that we have done a good job identifying  issues and building strategies.  I'm happy to share more details with  anyone who is interested.  
+
+Bruce: Back to being able to spend some time on DataONE issues.  I don't have numbers yet, but I'm working to get quotes on the ORC hardware and looking at the budgets for getting some additional systems administration help here.  
+
+
+Amber: Nothing to add.
+
+Steph: meeting with Shan Huang, DataONE intern, today.  She is visiting from U Georgia - several of her Georgia colleagues are here for a working group, and I am hopeful that her project will benefit from that complementarity
+
+Dave: nothing to add.
+
+John:Nothing to add
+
+Matt: nuttin'
+
+
+
+
+

@@ -1,0 +1,115 @@
+Member Node Wranglers 
+    Fridays at 10:00 am AK
+                    11:00 AM PDT
+                    12:00 MDT
+                    1:00pm CDT
+                    2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+
+24 January 2014
+                                                                                                                                        
+Attending:  Bruce, John, Rebecca, Laura, Amber
+
+Regrets:  Dave
+
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+        Dashboard:   Tentative  plan is to push out the simple dashboard mid-January and  then add map  functionality prior to NSF review end of February.   Delayed because of CN synch, but it's in pretty good shape.  Can the dashboard be turned on very quickly after the CN fix?  How can we take a look at how it currently exists?  Ask Dave (Laura).
+        
+        CN synch issue - (from 1/23/14 MNF) Chris said a new design was approved and that development is proceeding; when asked for a possible completion date, he said hopefully two weeks.    But it doesn't look good.
+      
+        New MNs announcements? -  holding off until after CN issues resolved
+            Status of MN desc doc / press release for upcoming MNs: (will ensure most recent version of DD is in plone)
+            NPN,KU and GOA will  be announced VERY SOON before the synch
+       * NPN (16) - have DD, PR in google docs (DD in plone)  -- in prod, harvesting, 1st to release
+       * GOA (17) - have DD, PR in google docs (DD in plone) -- in prod, harvesting, 2nd to release
+       * KUBI - have DD, no PR (DD in plone)  need PR NOW
+
+            Dryad will go immediately after the synch
+       * Dryad - have DD, no PR (getting updates from Dryad)
+            Need to get EDAC ASAP after Dryad
+       * EDAC - have DD, no PR (getting updates from EDAC)
+
+       * NKN - have DD, no PR (DD in plone - will request updates closer to implementation)
+           Ensure  that we have technical and project reps involved in review of PRs.
+
+ACTION:  Laura to get Dave/Matt for meeting - done
+ACTION:  Laura to list everything we need prior to official release, needed immediately, before meeting with Dave/Matt
+            also look at what we need for dashboard before release
+ACTION:  Laura to talk with Dave re: dashboard review and ability to go to prod asap after CN fix - done
+
+        IDCC workshop 2/27/14 -  workshop announced http://www.dataone.org/news/register-now-dataone-mn-implementation-workshop  
+             Bruce set up a collaboration area in Dropbox for us to work together on this. 
+             https://www.dropbox.com/sh/0o7m3448b05m8h7/uLrxcxM5ZI
+             We've  offered support to Luke Sheneman (NKN), Nicole Kaplan (Colorado State)  from CitSci, someone from DFC (but we think they're paying their own  way), and I think Rebecca was going to email Hannu (EU BON).  Is there  anyone else we need to especially ask?  Perhaps Amber/Rebecca have made  some contacts at their meeting this (last) week...  Yes!  Amber to follow up with Michael Zentner, looks like a great possibility.  Rebecca: Dave Bloom (VertNet?) (invitiation to workshop and DUG)  http://vertnet.org/about/team.php
+             
+Michael Zenter bio:           
+Michael Zentner
+Senior Research Scientist & Entrepreneur in Residence, Network for Computational Nanotechnology & The Foundry, Purdue University
+nanoHUB.org
+For 17 years I have spent my career in startup businesses as founder or senior team member. Three years ago I joined Purdue and the NCN. Today I am the assessment team lead for nanoHUB.org. Our project attracts a large number of users each year, and uniquely offers online simulation and high performance computing cluster access through a simple web browser interface. In spite of our success in attracting members and users, we still struggle with ways in which our project can become self-sustaining. As nanotechnology will still be relevant at the end of our project period, we would like our project to continue to serve this community in new ways we may not have conceived today and potentially monetize those services. 
+
+David Bloom bio:
+David Bloom
+VertNet Project Coordinator, University of California Berkeley
+VertNet
+As the Project Coordinator for the VertNet project I have had the opportunity to indulge my long-standing interests in biodiversity, data access, and museums.  My propensity for cat-herding has led me to work as a facilitator for teams of researchers, academics, programmers, and the public to develop a wide-range of products.  VertNet brings together four historic biodiversity data-sharing networks (MaNIS, FishNet, ORNIS, HerpNET) under a single umbrella with the goals to make data quality as high, and data discoverability as easy, as possible.  
+           
+        Dryad ready to come online after CN synch.  From 1/23/14 MNF: see status update below - Chris to help Ryan.  Pushing to get this live before RSV.
+
+        1.5    Current MNs
+                LTER - at MNF 1/23/14, Mark said that they are holding off on making the transition from current system to PASTA GMN until after the CN issue is resolved.
+                     
+        2. Status of upcoming MNs
+        
+        Future
+       * Australia:  NEXT MEETING:  29 January.  Think about how DataONE can serve TERN's needs but allow  the contributing partners be MNs??  
+       * Multiple ORNL potentials (reference meeting with Giri et al. http://epad.dataone.org/2013-10-10-ORNL-MN ).depending on technical, communications, and social issues to be resolved.  Meet again week of 27 Jan; have we gotten them a sandbox yet?  :)
+       * Center for Open Science Framework (VA) Andrew Sallans- more info after call next week (week of 6 January) - Rebecca says we will be moving forward   with this.  Laura talking with Andrew.  
+       * TRY Plant Traits Database - Bill met Jans Kattge at meeting week of 13 Jan.  See website:  http://www.try-db.org/TryWeb/Home.php
+
+
+     * Y5Q2
+       * Gulf of Alaska DP (3531) -
+         * Matt writing press release.
+       * Dryad (3118) - 
+         * at MNW 1/23/14, Ryan said he is ready to link Dryad's production system to DataONE's staging environment to do some testing; if that goes well, should be ready to go fully to production.  Chris will help Ryan get production certificates, etc.
+       * EDAC (3221) - just a few more tickets to address; Rob and Soren working these. Holding off for CN issue resolution.
+       * Kansas (3188) - Holding off for CN issue resolution. 
+
+
+     * Y5Q3
+       * FRIM  (4083) - Jing Tao D1 contact, Omar Ali is tech MN POC, currently installing latest version of Metacat, Jing sent an email to Omar.  No response yet (1/17/14)
+       * USGS  ScienceBase (4002) - Per Mike Frame, planning a meeting in January to    discuss broader issues of how/where this data will fit into the overall  USGS DataONE involvement.   There have been other discussions where we  touched upon whether these  (ScienceBase, NWRC, others) will be   independent MNs or if their data  will be rolled into the CSC.  Nothing  resolved as yet.
+       * LTER-Europe (3232) -  Per email from Ben 1/23/14, "LTER_EUROPE is registered and just waiting to be "flipped on"."
+       * U  Illinois Chicago (3213) - At MNF 1/23/14, Chris said he and Bob will be able to pick this up again after CN but that UIC isn't likely to be ready to go prior to the RSV.
+       * PPBio (3748) - At MNF 1/23/14, Matt said that he and Ben have been working with PPBio and making progress.  Laura working on setting up a meeting with Debora et al. to catch up and status.
+       * Taiwan TERN (3211) - 
+         * Matt: I haven't been in contact with them.  (12/20/13) 
+       * SAEON (3205) -  At MNF 1/23/14, Matt said they've gotten new h/w for their systems and hope they're ready to move forward
+       * NKN  (3238) - To resume development after the holidays per Luke.  Luke will be at the IDCC workshop.
+
+     * Y5Q4
+       * EU BON (3964) - Their December meeting has been pushed out to 29-31 January.
+       * DFC (3532) - Bruce has emailed Lisa - update?  RK will email Reagan &   Lisa to invite to IDCC workshop today  (1/3/14)  In Reagan's reply to   Rebecca, he seemed willing to check into  sending someone.  No one from   DFC registered as yet. (1/10/14)
+       * MPC (3708) - a/o 12/20/13: decided to go with GMN with Dublin Core for  metadata; they think they will  pursue OAI-PMH in the future for other   purposes.  All DC terms are contained in EML, Dave recommends create  simple EML documents, so D1 doesn't have to do anything special to use;  allows richer metadata if they choose.  Wendy in conversation with Chris  et al. re: DC.
+
+        3. Old action items
+             
+        4. Not-high profile issues
+        
+        From 1/17/14 MNW: we need to look at the process of  communicating important  changes/completions/etc. to our users.  Perhaps  have a "milestone"  ticket to indicate when important things are moved  to production.  On a related note, Laura was "interested" to learn of some pending MNs' statuses by accident yesterday (1/23/14).  Hopefully a defined (and used) process of communicating statuses would help (or maybe I just need to be on another list where these things are discussed).  argh.
+        
+        Dashboard: http://129.24.63.92/backbone
+        
+         
+        5. Around the room
+            Amber: IDCC MN workshop, was invitation only at the beginning, need to announce widely - or NOT if we are inviting two more people.  It looks like we only have two spots left.  Amber to follow up and see if we have spots before we widen the invitation.
+            Rebecca: nothing else
+            John: nope
+            
+

@@ -1,0 +1,120 @@
+20 June Workflow Minutes
+Bertram Ludäscher, Karthik Ram, RIchard Littauer
+
+----
+
+<hellos etc>
+
+Betram: Apologies, going to miss the talk tomorrow. 
+
+BL: I've sent emails to people asking them to send us workflows, but also publications relevant
+    Matt and Ilkay, __ & claudio (VisTrails people), Galaxy people, Carol & David de Roure
+
+RL: As far as contacting people, it might be better just to use myExp. Makes a better study than people who just happen to respond. I've emailed LTER, Ecolog, etc. Got a few responses, but it woudl be better to take a random sampling. 
+
+What's useful about the email contacts is seeing what is happening outside of mE.
+
+BL: mE Is the most widely known and populated, but we might undersample. Systems like Galaxy - what repository do they use?
+
+RL: Also, consider that mE may just be bioinf/proj. dev. Is it representative? I don't know. 
+
+RL: I've tried for the last week to get to grips with SPARQL, and failed. 
+
+BL: Well, that's understandable. Do you have experience with SQL?
+
+RL: No, I don't. But what we can do is write up the intro/methods/research questions - then we send off to David. If we can't mind it efficiently, we can ask him to. Or we could ask for a data dump - he says that is an option as long as it is anonymised. 
+
+BL: What sort of data is there?
+
+RL: It's all meta information. We can't query, for isntance, how many links/boxes are in the workflow. 
+
+KR: I can help with that - I know SQL a lot, so we can go over SPARQL, because it looks pretty similr.
+
+RL: Stay on from 9-10am your time tomorrow? KR: Yes. 
+
+BL: It seems like you're interested in the social aspects as well as the actual workflows themselves.
+
+RL: Description of the three-teired system. 
+    - 1: author, made, how many downloads, etc.
+    - 2: type of nodes, point of the thing, sources, etc.
+    - 3: sufficiency of metadata, how much this is reused, how well it works.
+    First two can be mined, third might need help.
+
+BL: Great idea to get David in, as he might know about other efforts. 
+    What about that Cui Lin paper? 30% shims? How did they mine it? Have other people mined it?
+
+RL: There are a few other papers that are entirely about the mining of it. 
+
+BL: Part of your homework is to digest what these papers say, and then position yourself in respect of the others. How is this project different from what they've done?
+
+RL: This is different because we're taking for granted that mE works. We're not approaching it, we're trying to figure out what has happened on it. We can also do a diachrnoic study on the new workflows - are they getting better? Or is it still all shims and the like? Approaching different hypothesis, and approaching them. This isn't a review paper - this is an experimental paper. 
+
+Karthik, I think that your part of the paper is similar. Does the language that you write it in end up being part of its reuse? Are there more shims in one than the other? Etc. 
+
+RL: All of the other papers approach it as a new thing, or they're talking about a specific workflow. 
+
+BL: Right now I'm depending on your assesment, but I can read when I'm locked in with my inlaws for the next month. 
+
+KR: We can't make private folders yet in Mendeley, but you can tag papers.
+
+RL: In the next few weeks, I'll go through and tag the different papers depending on where I see they fit, and then write up notes for each paper, and that'll be included is well. I'll start seriously going through those papers and actually digesting them. 
+
+KR: I've recently spoken to the editor of Methods in Ecology and Evolution, and I gave them a picture of what I'd like to write as a review article, and they seem interested, so I'm going to start putting together a proposal on how to write the review paper, and then see if it can get through. 
+
+RL: I'd like to help with that. Sounds good. 
+
+RL: On Friday I'm giving my first talk on workflows - with a small group of linguists in Oxford - hopefully that'll help prepare me for what I'm going to be saying in Berlin. Only two slides, and only directed at linguistics, but I'll send them around before then.
+
+BL: Would be nice to have the same time for each talk each week. 
+
+RL: Will ask tomorrow if we can formalise the time for each talk.  
+
+BL: I'm going to be locked in with my inlaws for the next month, but I wrote the 2005/6 paper that's the most cited of mine (836 citations on google) - Kepler system - default cite for Kepler. So, should be a productive time.
+
+RL: Karthik, I haven't mined the citations for that paper - that might be interesting. I'll do that tomorrow morning. I'll try and get all of them. 
+
+BL: I'm thinking of a project for a reference chaser tool that undergrads could create in python using google scholar and chase all fo the citations forward in time.  Might violate Google's terms of use, which doesn't allow you to crawl, but should be good.
+
+RL: I'm interested in that - keep me updated, if you could. There's three people in my field, and one paper, on workflows, so I'd like to be in front of that movement bringing these to the social sciences. 
+
+RL: Another thing we're doing that other people haven't done is just doing a mass lit review.
+
+BL: Would be interesting to find out to what extent workflows are being referenced in general. These aren't workflow papers, but maybe users of workflows in the wild. Would be good to get these themselves. 
+
+KR: Would be a good idea to make a quick scan first. Make a folder in your own account, put them in there first, see if they're relevant, then copy them over. 
+
+RL: I've already put a few in our group that are just random papers that cite workflows. I'll try and look and differentiate those two. 
+
+<confirmation of july meeting>
+
+RL: I come in at 10pm, could you pick me up? KR: yes. 
+
+RL: I'm writing up - basically, trying to make a draft of the actual paper. What would be best for this? GoogleDoc? epad? It's in LaTeX code...
+
+BL: We could use a DataONE svn or cvs repository. We'd have to ask Bill about that. 
+
+KR: Github might work, as well.
+
+<mendeley questions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,337 @@
+DataONE Users Group
+Jul 7th - 8th 2013
+Chapel Hill, NC
+
+Breakout 2: Software Tools
+
+Session 3 1300 - 1420
+
+Presentation: ITK (Investigator ToolKit) Overview
+ITK provides direct link for people that want to use the data, to access the data.  Some tools enable you to write data to DataONE. 
+Basic concept: adapt a tool using one of the libraries to work with DataONE. 
+Tools developed thus far have been through an iterative process. Has also been a process of prioritization (there are many tools out there used within the community, cannot adapt them all).
+
+Which 3 tools do you most like to use for analysis / visualization?
+
+DUG Surveys - 86 tools identified for data analysis
+
+Audience response on 3 most desired tools:
+ArcGIS (2) - arcpy
+Excel (4)
+Matlab (3)
+OpenDAP (which has IQL client, Matlab, netdf, and other clients)
+GeoNetwork
+Morpho
+one tool for metadata/data quality assure
+a tool to convert metadata to different standards (2)
+Google Refine (2)
+Electronic Lab Notebooks
+Sci2
+SAS/JMP
+R (2)
+python libraries (3)
+scala libraries
+postgres
+DMPTool
+Zotero/bib mgmt softwares (2)
+Google Fusion
+Tables
+SPSS
+iChart
+Stata
+OpenModeller
+JPT
+TAPIR
+ONEDrive
+DataUp
+Geoserver/Geoportal
+Integration w/ DB technology like SQL server
+Topic modeling tools
+
+
+DMPTool  http://dmptool.org
+Comes in 2 parts - DMPTool1 and DMPTool2.  First iteration around for a couple of years.  2nd iteration under development on a new grant.
+Designed to meet NSF and other requirements.  Supplies questions to walk people through a DMP as they are creating one.
+Value add - integration with an institutional framework;  local guidance, resources etc.
+https://dmp.cdlib.org/
+
+>Brief step-by-step explanation of using the tool.
+ 
+Careful not to say that the DMPTool does it for you.  Designed to make writing a DMP easier.
+Focus of DMPTool is on simplifying and scaling the common parts.
+DMPTool2 - funding from Sloan Foundation for tool development and one from IMLS for library educaiton and outreach.
+2 advisory boards - researcher and administrative user.
+
+New functionality within DMPTool2
+For researchers ...
+ * Include collaborators in plans
+ * Share plans with specific group or with the public
+ * Send plans to be reviewed
+For admin users ...
+ * Brand the tool
+ * Create own requirements template
+ * Add and edit resources through the interface
+ * Require plans to be reviewed
+ * Review plans - approve / request edits
+ * Export all DMPs for data mining purposes
+
+Timeline - functional development august 2013, api implementation september 2013, production release with documentation october 2013.
+
+Questions for audience:
+1) How often are you reusing a DMP that you created for a previous grant?
+I used it only once to see how it works
+Ditto, I used it once to explore, but have also demonstrated to students in ILS. (btw, not that it matters, bu tthis is jane g, i should be blue on the etherpad, but i'm showing yellow.)
+Not grant writing right now so have used it only for demo / education purposes
+
+2) How often would you use the tool in a year?
+I used it only once to see how it works
+couple of times - but not for its intended purpose
+
+3) How important are guidance and local resources to your DMP creation process?
+It helped a lot. I also used existing examples to see how people are doing it.
+My sense is it's a good, grounded tool. I like the questions, and that it is general.  I see tremendous value in this, across multiple disciplines.
+Very important
+
+4) How often are you collaborating on the creation of a DMP?
+I did not collaborate with it.
+Not yet.
+Would be nice to have some collaboration with national project that management data project in Biodiversity in Brazil (SISBIO - Ministry of Environment). 
+
+5) How can we demonstrate benefit to the researcher from using the DMPTool?
+Show that DMPTool DMPS are well received by funding agencies - stats, quotes, usecases (would be great if you could show that this is why the researcher got funding! :)).  Highlight the simplicity of the process vs interpreting funding guidelines. Highlight the multitude of support resources available.  Highlight the multiple funder requirements covered (although a researcher will likely only use a couple).
+The general benfits of having a data management plan apply.  Have testimonials of folks confirming the benefits.
+
+
+6) Should we put more emphasis on quality (i.e. guidance, workflow, templates etc) or quantity (i.e. number of institutions, user, plans etc)?
+Former.
+Quality is obviously important, but not to the point of perfection, where progress is stopped.  Is there an example hub?  A place where people can share examples?
+
+Questions from audience...
+Q: repository recommendations to users - what kinds of plans do you have for that?
+A: bc the DMPTool covers a wide domain, the scope is quite large in doing that, but would like to.  
+Q: maybe incorporate existing directories - e.g. databib?
+A: yes, that would be something for a later development.  one of the team is affiliated with databib
+Q: need to be mindful of a possible tension with institutions recommending their own repository.
+Q: in brazil, although no push to have DMPs (from funding agency) thinking about using bitbucket code to develop the tool for brazil (in portugese)
+A: have considered international versions
+
+
+DataUp presentation (http://dataup.cdlib.org/)
+DataUp an extension for MS Excel
+MS Excel widely used.  65% of data in DataONE is in a form readable by Excel.
+
+> Brief step-by-step explanation of the DataUp add-in
+
+Questions from audience...
+Q: Can you change the target repository from ONEShare to an institutional repository, for example.  Is this on the dev plan?
+A: Can see the value in that but resources are limited.  The priority is in getting excel users to apply good management practices and upload / share the data.  As an open source project, people could go in and do that themselves.
+Q: have you given thought to controlled vocab?
+A: there is a little bit in there, pulling from EML.  Huge opportunity for more to be done.  on the list.
+Q: do you have feedback on people that are using it and the quality of the metadata in there.
+A: this analysis has not been done.
+Comment: we have the potential for additional funds (NSF supplement, private foundation) to continue some of this work.
+
+consider looking @  HIVE for DataUp (from jane)
+
+ONEDrive
+ONEDrive makes the download part of data acquisition trivial.  Can save queries into a workspace environment and can then retrieve that workspace description in ONEDrive which connects to DataONE as a drive mount, creating content that matches the query.
+
+>Step-by-step explanation
+
+Next Steps:
+Three main focus areas.
+ * Refine the content views
+   * improve client side rendering of results
+ * Enable online workspace management
+   * integrate with ONEMercury
+   * integrate with identity management
+   * integrate with content use reporting
+ * Augment search index (taxonomics, spatial etc)
+   * utilize external services for lookups
+   * improve feedback to other systems
+
+Should be solid by next AHM (October 2013)
+
+Questions from audience...
+Q: Is it an online only working environment
+A: At present it is but can be developed to 'download all'
+
+
+ITK Next Steps
+Need to get production versions of the tool
+DMPTool out for a while
+DataUp freshly out there with potential funds for new work
+ONEDrive nearly out there.
+
+
+***************************************************************************
+
+Session 4 1440 - 1600
+
+Notes from 2nd group (Group 1)
+
+ITK - Investigator Toolkit
+
+
+ITK - enable client tools to interact with a service interface to Member Nodes (MN) and Coordinating Nodes (CN) sits on top all repositories.
+
+ITK - Gateway for researchers to get access to the content
+category of services of ITK
+ * data discovery
+ * analysis, visualization
+ * data management
+
+Also includes java library, python library, CLI tools adn REST URLs
+
+Lots of tools out there, but w/ limited resources have to prioritize. External assessments and DUG surveys helped shape which ones that were picked.
+
+Audience gets to pick 3 tools that would like to work with DataONE. Exercise @ gets to write down on "sticky-do's".
+
+These tools work across the datalife cycle. 
+
+Today will talk about DMPTool, DATAup & ONEDrive
+
+DMPTool
+Start with current version DMPTool 1:
+    free, workflow for creating a DMP help meets funder requirements, institutional integration via shibboleth and institutional context (pointing to local guidance, point to resources & staff)
+    
+Go to http://dmptool.org
+Andrew giving a not-live demo
+
+Sloan Funding for DMPTool2
+to enhance current version
+W/ DMPTool2 - There are 2 advisory groups: researcher advisory board & administrative user advisory board
+
+New functionality:
+for researchers: 
+ * to include collaborators, 
+ * share plans with specific groups or with public, 
+ * send plans to be reviewed
+
+for institutions:
+ * branding the tool, 
+ * create own requirements template (e.g. locally required DMP), 
+ * add and edit resources through the interface, 
+ * require plans to be reviewed, 
+ * review plans - approve and request edits, 
+ * export all DMPs for data mining purposes
+
+Wireframes for DMPTool2
+
+looking for use cases for API w/ DMPTool2
+
+Questions:
+1) How often are you reusing a DMP that you created for a previous grant?
+I used it only once to see how it works
+
+
+
+2) How often would you use the tool in a year?
+I used it only once to see how it works
+couple of times - but not for its intended purpose
+
+3) How important are guidance and local resources to your DMP creation process?
+It helped a lot. I also used existing examples to see how people are doing it.
+
+
+4) How often are you collaborating on the creation of a DMP?
+
+
+
+5) How can we demonstrate benefit to the researcher from using the DMPTool?
+ 
+
+
+6)  Should we put more emphasis on quality (i.e. guidance, workflow,  templates etc) or quantity (i.e. number of institutions, user, plans  etc)?
+
+
+quality more important that quantity
+
+
+Q. Can you somehow capture institutional information to help capture local success rates, etc.? Asking some relevant questions to allow at least manual follow-up on funding success.
+
+Use mining capability as a potential Graduate student project to compare plans and success rate. Is this from Mike Frame?  If yes, it'd be great to try and get a grad student project lined up to do this for this fall.  Could you help?
+
+Q. Could some of the data generated by DMPTool be used to bootstrap MD for data collected by the project.
+
+Q. Develop a utility to help develop a more detailed post-award DMP rather than the 2-pager requested by the funder.
+A. DMPTool doesn't limit size. Smithsonian has an internal DMP requirement with ~ 79 questions. SI plans to add their own as one of the selectable templates.Data entry is more constrained to be macine actionable.
+
+Q. Routing of a phased DMP within an organization is an emerging need with review and approval workflows.
+
+Q. Taking advantage of DataBib and other services?
+A. Potentially, we have an open call for use cases.
+
+DataUp
+Created because most  researchers use excel. Why not create a tool that will help researchers where they work.
+
+DataUP Solution:
+ * guide user to clean up spreadsheet
+ * gather metadata describing spreadsheet
+ * apply a unique id to spreaadsheet
+ * upload to DataONE - ONEShare
+
+2 versions of DataUp:
+MS Excel (windows only) addon
+Web interface
+
+web version not as robust as MS Excel. Next version of DataUo will make the two comparable.
+
+upload as either CSV or XLSX format. Each uploaded file gets a unique ID.
+
+Current state - open source https://bitbucket.org/dataup
+
+Recently awarded NSF suppliement
+    correct & refine
+    improve the web version (cross platform support)
+    actively investigating further opportunities
+    
+Question from audience: will the next version support export into XML format?
+Q: can I get a download of the file and not put it in a repo?
+
+DataUP min. metadata are those EML fields that are required by EML
+
+
+ONEDrive
+
+ONEMercury is a seach portal.
+has index of all memeber nodes
+
+workspace defines network drive contents, queries and selected specific objects 
+
+ONEDrive is connected as a network drive.
+
+Next Steps:
+Three main focus areas.
+ * Refine the content views
+   * improve client side rendering of results
+ * Enable online workspace management
+   * integrate with ONEMercury
+   * integrate with identity management
+   * integrate with content use reporting
+ * Augment search index (taxonomics, spatial etc)
+   * utilize external services for lookups
+   * improve feedback to other systems
+
+Should be ready by DataONE all-hands-meeting in October
+
+
+Q: what is included in the ONEDrive "network drive"?
+A: its the result (data & metadata)  of the query. the actual data is downloaded when "opened".
+
+Q: what taxinomic name service will be used?
+A: lots to choose from, but have not selected a specific one. should be easy to do, just haven't done it. Want to have just one to use in DataONE index, but which one to use is question.
+
+Usability testing of ONEDrive - see Mary Beth West to get a quick Demo and feedback.
+
+Q: is there an issue tracking system?
+A: Using Redmine for member nodes and other question
+Dave has a simple page. http://redmine.dataone.org
+
+
+
+
+
+
+
+

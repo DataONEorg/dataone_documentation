@@ -1,0 +1,167 @@
+..meta::
+  :keywords: DataONE, CCIT, 20110119, VTC
+
+DataONE Developer Call - 2011-01-19
+===================================
+
+:Attendees:
+
+
+Agenda and Notes
+----------------
+
+
+1. Summary of EAB Meeting
+
+Held Monday 17 - Tuesday 18 January
+
+In summary: DataONE is well poised to address the general topics of data management at the NSF. The overall development approach seems good.
+
+The presentations need significant refactoring. The entire presentation should be based on 2-4 user stories, walking the reviewers through how the functionality implemented by DataONE addresses problems or provides opportunity for users. Minimize technical details, but have technical slides prepared for specific topics if requested. 
+
+Plan is to base the presentations on the science data lifecycle. The user stories cover portions of the lifecycle. 
+
+- The audience will be a general mix - technical details in appendices
+
+2. Review of Demonstration Targets for February Review
+
+Science data lifecycle:
+- Discovery, access, use and dissemination
+- Interoperability, standards, and integration
+- Explorations, visualization, and analysis
+- Collection (acquisition)
+- Deposition and ingest
+- Curation and metadata management
+- Protection (publish)
+
+
+Demo 1. Search for interesting data (i.e. stuff that will be used in Demo 2).
+- The search UI (i.e. mercury) needs to be working
+
+
+Demo 2. The EVA demo. This involves an investigator downloading data from  DataONE into R and executing the scripts to generate a distribution map  (animation?). Bonus is to publish that back to a Member Node
+- about 20sec to run
+- single distribution generated
+- need to science metadata describing the output
+
+Demo 3. Basic process of a researcher adding content to a Member Node with some discovery 
+
+- Add content to DataONE using client. Ideal = Morpho, minimum = CLI
+(- Verify content available on Member Node)
+- Content available on > 1 Member Node
+- Content available in search index
+- Add discovered content to Zotero
+
+- emphasize that content is being pulled from multiple sources and metadata formats
+
+Demo 4. 
+- Perhaps turn off a member node and show that the content is still retrievable
+
+
+3. Timeline
+
+Jan 16-22
+
+- Close core functionality bugs
+- CN-CN replication
+- Synchronization operational
+- ITK CLI and R plugin
+
+Jan 23-29
+
+- CN reserveID
+- Content indexing for search
+- MN-MN replication operational
+- COINS support for Mercury completed (Zotero)
+- Prepare initial versions of demonstrations
+
+- User scenarios story outlined
+- PPT presentations outlined
+
+Jan 30-Feb 05
+
+- Bug fixing for core services
+- Demo preparations and cleanup
+- Complete writing tasks
+
+Feb 06-12
+
+- Feb 07: Submit documentation to NSF including:
+  - five page overview
+  - fifteen page detail
+  - Project management plan
+  - Cooperative agreement
+  - Architecture documentation
+- Final versions of demos sorted out, with bug fixes
+- Prepare screen captures of demo activities
+- Final versions of powerpoints prepared
+
+Feb 13-19
+
+- No development activity on demo machines
+- Prepare final versions of screen captures of demonstrations (videos)
+- Practice presentations
+- Practice demonstrations
+
+Feb 20-26
+
+- Feb 22: Bill + Sayeed provide overview
+- Feb 23: DataONE review
+- Feb 24: Response to panel questions
+
+
+4. Some Writing Assignments
+(bullets and or text by Jan 28)
+
+- Curation and preservation
+  (John Kunze)
+  - Enabling bit-level preservation
+  - Steps towards supporting preservation
+
+- Search and discovery
+  - Search services and user interfaces
+  (Dave)
+
+  - Progression to semantic search
+  (Line and Jeff)
+
+- Security
+  - User and service authentication
+  (Mark)
+  - Identity management
+  (Mark)
+  - Privacy and access control
+  (Mark)
+  - System integrity
+  (existing)
+
+- Data Integration
+  (Line, Jeff, Matt)
+
+- Integration with investigator tools
+  - Morpho
+  - Excel extension ? (Trisha)
+  - R plugin (Matt)
+
+- Member Nodes
+  - Dave - work through existing notes from AHM and DUG
+  - Dryad (Ryan)
+  - Metacat (Matt)
+  - DAAC (Bruce)
+
+- Coordinating Nodes
+  - Dave
+
+- Technical Collaborations
+
+  - Data Conservancy (Dave)
+  - SONET, Semtools (Jeff, Matt)
+  - Filtered Push (Dave)
+  - AKN (Paul)
+  - TerraGrid (John Cobb)
+
+
+5. Any Other Business
+
+
+

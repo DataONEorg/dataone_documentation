@@ -1,0 +1,77 @@
+Member Node Forum - 20 March 2014
+                                                                                           
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+                                                                            
+   (Occurs every 2 weeks on Thursday 3pm BRT (Sao Paolo, etc.), 2pm AMT (Manaus, etc.), 2pm EDT, 1pm CDT, noon MDT, 11am Arizona and PDT, 10am AKDT or  Friday 2am Taiwan, 4am Brisbane AEST)
+  Upcoming meetings 3 April, 17 April, 1 May
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307    (note typo on year-sorry), -20130321, -20130404, -20130418,  -20130516,   -20130530, -20130613, -20130627, -20130711, -20130725,  -20130808,   -20130822, -20130905, -20130919, -20131003, -20131017,  -20131031,   -20131114, -20131212, -20140109, -20140123, -20140206,  -20140220, -20140306
+
+Attending:  Laura Moyers, Amber Budden, Rebecca Koskela, John Cobb, Mike Frenock, Bruce Wilson, Dave Vieglais, Mark Servilla
+
+Regrets: 
+
+Action items from last time:
+    Laura to ensure that there is an "ongoing operations" placeholder in DataONE documentation (example: what to do when a MN needs to be taken down for an upgrade, and how to do it)   --- I know it's there, but I haven't laid hands on it yet.
+    
+Agenda:
+
+0. Welcome new attendees - introductions: 
+
+1. Network-wide update and issues affecting MN's as a whole
+    CN issue - running now, a bit at a time.  
+    Upgrading coordinating nodes to metacat 2.4.1 in the next week or two;  when we do that upgrade, we'll temporarily go into read-only mode while  the upgrade is occurring.
+    CNs are being/have been upgraded to 2.4.1
+      
+2. Open issues:  MNs please add anything you would like to address here.
+    Mike (PISCO) - two issues: indexing and synchronization 
+    (GLEON) - had been having difficulties with certificates - current status?  Laura to check on (progressing)
+
+3. Feature requests/opportunities for collaboration:
+
+DIGITAL CURATION SURVEY from Inna Kouper (SEAD)
+If you are involved in taking care of digital materials of any type, form and purpose and are interested in the advancement of digital curation as a professional field, we invite you to participate in a study that looks at patterns of professional participation in digital curation. 
+ 
+The survey takes about 20 min to complete and can be found at http://bit.ly/1osgTQ7
+ 
+FEEDBACK REQUESTED FOR THE 2014 DUG MEETING ---
+        We would like feedback from MN Forum members regarding what they  would   like to see at the DUG and how they would like to be  involved.    Everyone seemed to like the MN Showcase last time.  What  else would be   important at the DUG?  DUG committee meets 1st Tues of  month, so  comments to Amber will be passed on then.
+        Have a MN Forum meeting in person (yay)
+        MN Showcase ideas - new MNs since the last DUG present, but have info from current MNs available on the website
+        
+ESIP SUMMER MEETING - JULY 8-11, 2014 IN COPPER MOUNTAIN, COLORADO  
+    DUG is Sunday 7/6 and Monday 7/7, co-located with the ESIP meeting, plans for lodging, etc. still in process.  Save the date notice going out next week with survey.
+
+Next PROPOSED MN workshop at Helsinki in June - current status?  Bruce, Dave, Chris and Rebecca presenting
+
+LITA meeting abstract submitted: http://bit.ly/1oABmBk
+     LITA 2014
+Transformation: From Node to Network
+November 5-8, 2014
+Albuquerque, New Mexico
+     
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+PISCO (Mike) - had their database server upgraded, metacat has been upgraded to 2.4.1; can pick up the indexing/synch issues again tomorrow
+
+LTER (Mark) - status quo; testing on PASTA GMN, have found a few errors which Roger says aren't too big a deal.  Upgraded current MN to metacat 2.4.0 (no need to do the incremental upgrade to 2.4.1).
+
+
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't forget irc.ecoinformatics.org, channel=dataone if you have an urgent issue.  CCIT folks are always there and can assist you.
+

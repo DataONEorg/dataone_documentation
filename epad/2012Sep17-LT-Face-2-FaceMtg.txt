@@ -1,0 +1,648 @@
+Attendees: Bill Michener, Dave Vieglais, Stephanie Hampton, Viv Hutchison, Carol Tenopir, Bob Cook, Bruce Wilson, John Cobb, Hilmar Lapp, Deborah McGuinness, Mike Frame, Amber Budden, John Kunze, John Cobb, Trish Cruse, Bertram
+
+Regrets: Matt Jones, Steve Kelling, Todd Vision (represented by Hilmar), Suzie Allard (on epad only) 
+
+
+
+1.     Reverse Site Visit (RSV) – to take place between mid-February and mid-April, 2013.  Bill is tasked with determining a set of suitable dates for the DataONE team and presenting those to Bob, Dane, and Irene. DataONE may:  recommend possible reviewers, topics, and team participants, and must provide a detailed list of COIs. The RSV will be 1.5 days in length with a possible verbal report back to DataONE at the end of day 2.
+2.      Proposal – The proposal will be submitted as an unsolicited renewal proposal with a due date of November 10-15, 2013 (exact date to be determined).  
+3.     Cooperative Agreement (CA), Project Management Plan (PMP) and Project Execution Plan (PEP) – February to March 2014 is the time frame for initiating discussions with NSF DGA to reach agreement on content and format of the CA, PMP, and PEP.  
+4.     Package processing by DGA must be initiated by early to mid-May, 2014.
+5.     Renewal would be scheduled for an August 1, 2014 start date to avoid any lapse in funding.
+
+NSF Update: Other DataNets are undergoing yet another review (last one was in April)
+NSF DataONE Site Review at University of Tennessee Knoxville last week - Bob Chadduck from NSF was attentive and there was a great turnout by colleagues from ORNL and UTK.
+
+Bill and Bob Chadduck signed the racks.
+
+White House Office of Science Technology and Policy has requested that DataONE serve
+as a pointer to up to 8 repositories that stored data related to hazards. Press release was issued on Friday (14 Sep).  (OSTP  safety.data.gov “Datapalooza” )
+http://fedscoop.com/white-house-to-host-safety-datapalooza/
+ 
+Interpretation of the NSF re-org: statement from OCI & CISE says there would be no impact to the data side. Part of this was precipitated by the number of programs issued & managed through the Director's office and not spread out to the divisions.
+
+The Cooperative Agreement calls for site visits and Bob Chadduck is the first program officer to see this in the CA.  Knoxville was an easy trip given the other DataNet reviews happening right now.
+Bob has also requested to visit NM and UCSB.
+
+EAB Meeting in December
+
+Questions on the agenda are from the EAB -
+New agenda will be created (adding Stephanie to S&G session and Andrew Sallans to the
+DUG session)
+
+Will be the last meeting before the RSV - so won't have an opportunity for the tyype of feedback as last time
+
+RSV
+
+Mid-February and mid- April
+
+Windows proposed for the review:  (Please continue to hold these dates)
+Feb 11-12
+Feb 19-22
+Feb 27-March 7
+March 25-27
+April 3-4
+April 15-19
+
+**Action Item: COI - RK will send out existing list
+We need to provide a list of conflicts
+Formats, Last name, first name, institution
+
+Have not heard back from NSF yet so no definite dates.
+
+Last RSV:
+Time     Subject
+       
+40      DataONE Project Overview (40 minutes – presentation,   0 minutes - Q&A)
+            
+60      Cyberinfrastructure I: design, R&D, and   implementation (60 minutes – presentation)
+            
+15       Break
+            
+120     Cyberinfrastructure II: prototype demos and plans for   years 3-5 (60 minutes for presentation; 60 minutes for Q&A)
+            
+60    Lunch
+            
+5      Cyberinfrastructure questions presented to DataONE
+            
+60    Community Engagement (40 minutes – presentation; 20   minutes Q&A)
+            
+            
+60     Sustainability (40 minutes - presentation; 20 minutes   - Q&A)
+            
+15     Break
+            
+45     Responses to Cyberinfrastructure questions presented   by DataONE
+            
+40      Challenges and Mitigation (20 minutes for   presentation; 20 minutes for Q&A)
+            
+40      Future Plans and DataONE Activities (20 minutes for   presentation; 20 minutes for Q&A)
+            
+30     Concluding statements from Michener and Choudhury on   collective vision and active and planned collaborations for DataNet   Federation (20 minutes – presentation, 10 minutes Q&A)
+
+CE (DUG), DMPTool, DataUP, etc) 70/30
+
+OVERALL MESSAGE:
+- Changing Community, have made some changes, but work still to be DONE!
+  - DataUP, Involvement with DataONE brought these partners togethers
+-  Lay of the land, Building communitites, Meeting community needs
+
+-Tell the story (reminder of EAB's advice to not be boring - have a common theme throughout) Show how each helps our personas
+
+- Make sure we've anticipated what questions will get asked (like why were we late on the public release, and what are we going to do to prevent this sort of problem in the future).
+
+- Talking points to think about.  NSF added data policy pieces and we were able to respond to this.  The era of big data and data intensive science has really come to the forefront since we submitted the proposal. We were big data before big data was cool.  What was the role of the economic meltdown in DataONE's evolution.  
+
+Overview and highlights  - 25 Minutes in Total 
+ - Social Media, Org. Diagram, Web site, Booth, Publications, Newsletter
+Introduction of WGs - Purpose ONLY,  present holistically not siloed by organization/WG, lay of the land, meeting community needs
+ * CEE  -  1 minute each)
+ * U&A - 1
+ * Socioculture - 1 min
+ * PPSR - 1 min
+ * EVA -1
+ * Sustainability & Governance - 1 minute 
+DUG 
+
+CE Highlights (dependent on who is present at RSV)  :: Total = 20 min
+Highlights from all CEE WG:
+- Data Management Workshop - May 2012 
+- Training Modules 
+- ESA - Workshop, Culture Data Sharing, Growing Pains, Papers (Big Data & Future of Ecology - Frontiers) 
+
+U&A:
+- UA Testing on DataONE.org and ONEMercury
+- Assessments - Data Managers, Libraries and Librarians, follow-up on Scientists from U&A  
+
+PPSR:
+- International PPSR Meeting
+- Paper - Special Issue in Frontiers of Ecology 
+
+Socio Cultural:
+- Stakeholder Matrix
+- Persona's 
+- User Friendly Documentation (MN, Data Use, Architecture Documentation)
+
+EVA:
+EVA eBird, State of the Bird
+EVA Land Model analysis and benchmarking
+Mention EVA Leveraging existing DataONE Partners, Helping to drive future capabilities, etc
+
+General CE: (40 minutes in this section)
+ * Collaborations: DataUp, ONEShare   , DMPTool (demos of each) 30 minutes
+ * Assessments:  U&A assessments presented as cohesive  package including Carley's survey of ecology professors, Big data and  the future of ecology paper survey, "desk" research, analysis of ESA data papers and data repositories (ongoing summer intern project); Stacy's assessment of data management training); here is what has been done, but also key findings that inform DataONE (10 minutes)
+
+Reviewer Questions & Issues that they will be looking for in our talks? 
+- Do we need all of these Working Groups - Have to show the differnce they are making, etc.
+
+- Think about DISCUSSION and How we'd like for it to go...
+
+Sustainability (40/20)
+Story line: 
+ * leveraged the work of the assessments - strategy built on stakeholder matrix
+ * initial focus - marketing plan
+ * estimate and understand costs to sustain DataONE for the long-term
+ * diversify funding stream
+   * align DataONE offerings with potential funders
+ * Success stories of "in-kind" & dollars: USGS, IMLS, Microsoft, Gordon & Betty Moore, eBird supporters (map of DataONE people and partners - using social mapping tools), institutions of DataONE participants
+ * Thanos report (timeline: for EAB meeting/ end of November for internal review)
+ * Policies/copyright
+
+
+Project Management/Challenges/Mitigation (20/20)
+
+- Overview of project management plan
+DataONE Metrics & Risks (Revisions) & Mitigation
+- (think of a better way to visualize risks)
+- - High Level Review of Project Plan 
+ Challenges:
+ - Changing NSF Program Manager
+ - Issue of Being Late upon Delivery - ?
+ - Show tasks ahead of schedule - ? 
+ - 
+Flexibility of infrastructure
+NBII vs USGS Clearinghouse (impact of the economy - more with less) 
+Leveraging of Partner Priorities, time, products is key and a challenge 
+Story about how we would prevent delays again - "lessons learned"
+"We were big data before big data was cool"
+Changing Enviroment: - - Predicted 
+- At beginning of BIG Data, NSF Data Sharing/Curation 
+
+Future Plans (70/30)
+
+New Proposal (where does the $10M cut come from) for years 6-10
+ * CI
+ * New MN
+ * Toolkit additions
+ * CE
+   * Which WGs for next round and what deliverables
+ * Sustainability & Governance
+ * DataNet collaboration
+ * International initiatives (Research Data Alliance (aka DWF), DAITF- EuDat, CreativB, LifeWatch, COOPEUS, DELSA)
+ * Other collaborations: EarthCube (Dataway?)
+
+
+
+
+
+
+
+One thought to consider, which is how to structure:
+
+* Example 1:
+    * Overview
+    * Project Accomplishments
+        * CE
+        * CI
+        * Others
+    * Project plans for next 18 months
+        * CE
+        * CI
+        * Other elements
+    * Renewal proposal concepts
+        * CE
+        * CI
+        * Others
+
+* Example 2:
+    * Overview
+    * CI
+        * Design background
+        * Accomplishments
+        * Plans for rest of project
+        * Plans for renewal (light, maybe hit this harder later)
+    * CE
+        * Design background
+        * Accomplishments
+        * Plans for rest of project
+        * Plans for renewal
+    * Other elements (Sustainability, etc)
+    * * Future plans
+
+We don't have the charge for this panel.  Expect three key sets of questions.  What have we done in the first 3.5 years of the project, what are we planning for the remaining 1.5 years of the project, what are the plans for the renewal.  
+
+Add in sections for Member Nodes (both from a CI and a CE perspective)?  Or add in separate block for MN work.  
+
+??? Where should the portfolio (project management sense) be in this agenda?  
+
+
+??? What is the key story for this review?  Is it the same story for CI and CE?
+    * Idea: We saw a need, this is how we've gone about addressing it, here are our successes so far, and here's what we're working on as next steps
+
+
+Future Build RSV: - Add subheadins in LT breakout after break
+Time     Subject
+       
+ 40      DataONE Project Overview (40 minutes – presentation,   0 minutes - Q&A)
+            
+CI 60      Cyberinfrastructure I: design, R&D, and   implementation (60 minutes – presentation)
+- perhaps overview or history of assessed architectural need that formed development plan
+    -- interoperability
+    -- distributed data repositories
+    -- federation of data repos
+    -- Support aspects of the data lifecycle
+    --- all the other desired "qualities" that we included in the development.
+- architecture overview (perhaps indicating which proposed sections were not implemented and why)
+- Touch CE side with where we're leveraging from other projects and standards (weave throughout).  Also anything about how we're working with our partner/host institutions (UNM, UCSB, UTK, ORNL) - perhaps this is a "interoperability" discussion.
+- Design philosophy and underlying assumptions (include open source)
+    -Tie this back to design goals, personas.  What were our underlying goals here and how well have we addressed those?  Make sure to frame this in the "what's the problem to be solved?" paradigm.  
+- DataONE datamodel and identifier & versioning policies
+- Development experience, scrum'ing, feature management, dev. team management
+- CI operations
+    -- CN's (Prod/testing/dev), different VM infrastructure, ...
+    -- MN's
+    -- trouble ticket handling, notification trees, 
+    -- operations and health logging
+- Infrastructure and recommendations promoting data citation
+
+The Personas: http://bit.ly/QjP5xf   (google doc)
+
+
+            
+CI 120     Cyberinfrastructure II: prototype demos and plans for years 3-5 (60 minutes for presentation; 60 minutes for Q&A)
+- planned new member nodes to bring online
+- MN/CN transaction operations (add a new record, ...)
+- ITK components (Python, ONE-R, ONEDrive, ONEshare, DataUP (if not somewhere else in review), Morpho, ONEMercury,  citation tools (Can we get them more functional, particularly in terms of going all the way from grabbing a citation from a search, putting it into a tool (e.g. Zotero or Mendeley), writing a report, and inserting the citation into that report?  
+- (Hilmar) We need to make sure that the ONEMercury interface does not conflict with the DataONE goal of not rebranding MN data. 
+    -- try to make sure that ONEMercury presents this better by the review time
+    -- Also try to suggest to new data depositors which MN might be best to host
+- Identifier services
+- Science use case Nugget(s) 
+-possibly add an EVA demo ??
+- Focus on data life cycle and how the components fit
+- Reporting examples from different stakeholder perspectives - member node operator, data contributor, project sponsor
+- Note that it is *really* important that the differnet tools present a consistent message especially with regards to advertising member nodes
+
+CE 120    Community Engagement (75 minutes – presentation; 45   minutes Q&A)
+            ??? CI breakout team thinks PPSR should be highlighted in the reivew, but we are not sure where in the agenda it should be. First thought was somewhere in CE presentation stacks.
+            
+CE 60     Sustainability (40 minutes - presentation; 20 minutes   - Q&A)
+            
+CE 40      Challenges and Mitigation (20 minutes for   presentation; 20 minutes for Q&A)
+            
+CE 100    Future Plans and DataONE Activities (40 minutes for   presentation; 60 minutes for Q&A)
+                Data Quality services - annotations, ... 
+
+CI 60    Member Node discussion (40 minute presentation, 20 minute questions)
+- Member node software stacks available
+- Project Governance for MN
+    -- MN Management
+    -- Identification of candidate MN's
+    -- Processes to move candidates from idea to operations
+    -- Elucidation of resources needed for MN developmeny/deployment.operations
+    -- Identification of processes for recruited needed resources for MN management
+- Workflow for becoming a member node, estimates of time and effort
+- Schedule for adding more member nodes
+- What member nodes get from joining DataONE
+- Support for member node branding and reporting
+? do we want to mention the datapalooza support?  (i think this could be interesting in the discussion section especially if this round goes well??
+- Sharpened the value-add justification of MN's - how does it benefit MN, how does it benefit science, how does it benefit DataONE
+- Consider prototypes or examples of member nodes.  One idea is the process by which USA-NPN became a member node and what that took.  What of the initial MN's makes sense to use as a different pilot?  What are the learnings, for example, from bringing Dryad, ORNL DAAC, USGS Core Sciences, or KNB into the MN fold? 
+- What are the visible examples of Member Nodes
+- Benefits to MN's 
+
+- Technical expectations and responsibilities of MNs wrt DataONE network integrity and preservation
+
+-Communicate MN activties outside of DataONE
+
+- Identify, perhaps, a future highlight from Member Node engagement. ???
+
+- MN value argument
+    --What is the value to the MN (ie, for a data center to become a D1 MN)?
+            ----data center keeps its identity for all user-facing services while reaping the benefit of discoverability and preservation from becoming a MN
+            --- Helps data discovery
+            --- attracting users to the member node - both contributors and consumers
+                    testimonials?
+                        UC Davis depositors might talk about the carrot of preservation and visibility (John K.)
+                    possibly a MN sees new users from synthesis/analytics
+                        examples: 
+                        EVA1 ebirds, Hydro-eco use case in the Semantics WG.
+                        What about first 3 member nodes? (are they good examples?)
+                                Maybe more people know about Dryad b/c of MN? How much? 1%, 15%?
+                        There was a discussion about NCAR high altitude.
+            --- helps meet NSF data management requirement
+            --- content replication
+            --- Includes MN's in a larger collective that promotes better data practice throughout  data lifecycle (user education, processes, and collective resiliency)
+            --- DataONE integration does not assume MN's are subsumed/consumed by DataONE. MN's continue to retain identity.
+    -- What is the value to users? (i.e. scientists, scholars, policymakers, ...)
+            --- Example Deborah McGuuinness needed to FOIA EPA for water quality data.  It was a time consuming and tedious process.  If she could have gotten this information from a DataOne member node instead, it could have saved a lot of time for her as a user.  Similarly the agency (in this case EPA) had to spend time servicing the request.  If they could offload the FOIA request, they could also save resources.  I.e. DataONE could help scientists find data and dataone could help agencies service FOIA requests more nimbly and at lower cost.
+            --- DataONE helps increase discovery since more searches wil include their data
+            --- DataONE helps users data retention security (via MN replication)
+    -- What is the value to DataONE?
+
+CI 60    CI Research Semantics/Provenance/Metadata management ( 3X 15 min pres. 5 min Q)
+        *Semantics
+            - semantically-enabled Hydro-Eco use case (and demo)
+            - automatic annotation of environmental metadata (using topic similarity)
+            - CCIT connections  - data discovery, search
+            - facilitation of opportunistic connections 
+            - semantically-enabled future 
+        *Provenance 
+            - relation to W3C proposed recommendation for a provenance language (PROV)
+            - provenance for workflow
+        *Metadata
+            - where metadata meets semantics and provenance:  semantics WG and provenance WG as end users of the framework that the metadata WG is building?
+            - how does richness of metadata impact discoverability and data re-use / integration (a quantitative view?)
+        * Note: haven't done much on the federated data and high performance distributed filesystems that was envisaged as one of the WG's.  comment on what has been done.  
+       ? interesting - do we need to address other working groups that might be added?
+
+============
+LUNCH BREAK
+===========
+
+risk management
+
+5 top risks to DataONE project-wide for the current project
+
+Wrie-up of flip-chart
+
+1. Loss of Key Staff votes=2
+2. Not enough "help" for MN D1 side
+3. Stakeholder adoption is poor votes=1
+4. People turned away by search interface  votes=1
+5. Lose of sight of MN incentives  votes=1
+6. Inarticulate or lack of value proposition to attract users or MN  votes=4
+7. Mismatch between resrouces and deliverables  votes=2
+8. Nugget Shortage -scientific uses  votes=2
+9. Major CI security problem 
+10. High barriers to better MN inclusion  votes=4
+11. Insufficient resources for scope (in general)  votes=2
+12. Sustained funding model not achieved in time  votes=2
+13. No perceived beneftis for involvement (by MN's, librariesn, data contributers, ...)  votes=5
+14. Burn-out of DataONE team  votes=2
+15. Non-strategic implementation of CI  votes=1
+16. Federal budgets impacts funding
+17. Unsatisfacotry mechanisms for including new people
+18. Development too slow  votes=1
+19. Open source community scoops us.  (alt. someone claims to have scooped us)
+20. Lack of API users  votes=1
+21. Failure to obtain enough funding to support strategic connections  votes=1
+22. WG and CCIT disconnect.  votes=1
+23. inability to create collaboration mechanisms for closely and loosely coupled DataONE teams  votes=1
+24.Not enough easy to use data for typcial users  votes=2
+25. Not meeting users needs for data & tools  votes=4
+26. Unresolved technical issues
+27. Competing projects create confusion.  votes=1
+28. Lack of funding - foundations, etc
+29. Expectations higher than experience
+30. Community engagement model through WG and DUG unsustainable
+31. Influx of too many member nodes. (MN population crash)  votes=1
+32. Inability to design quality UI's that attracts users  votes=3
+33. "Left Behind" failure to achieve critical management fast enough
+34. User disengagement from clunky ID solution
+35. CI isn't flexible and doesn't scale for more MN's and big data.  votes=1
+36. Policy transactional friction on data sharing for multiple data sources from multiple entities each with their own policies  votes=1
+37. Communications disconnects across project.
+
+Then we voted on "top" ones highest probability and impact.
+All dots are equal. Blue Yellow Green
+
+==========
+
+Prioritization and Status of Additional Member Nodes
+https://redmine.dataone.org/attachments/145/MemberNodeWorkflow.png
+Slide on MN road map: (Dave's Deck)
+ * Review
+   * Review MN materials
+   * Request to Join
+   * Collate node information
+   * Evaluate proposal (iterate with prior as needed)
+   * Decision point: Accept/Reject) Reject is an endpoint
+   * Agreement
+ * Development
+   * Join Users Group
+   * Implementaiton Planning
+   * Establish test environment
+   * Development iteration
+   * staging test (iterate with above until converged
+ * Operations
+   * Production Registration
+   * Operational Acceptance
+   * Announcement
+   * Ongoing production operations
+   * 
+Questions/ Omissions?
+
+Q: Kunze: Can we shoot for a "Member Node in a box" function.
+A: We can try. The closeest thing today is a metacat node. But we need ot be careful becuase once we add a MN, it is really hard to remove them as a MN. But we need to be careful 
+BEW: This is close to what we're plan planning to do for USA-NPN -- install Metacat.  Managing identity is one key issue.  
+
+Do we need to develop a  tiered quality approach.
+
+Bob: This process discussion is a project internal discussion.  We should present a shorter discussion for prospective MN's
+
+Cobb: Do we have quality tiers?
+
+Rebecca: Do we sit and wait for customers to cross the threshold or do we pursue them.  Who are the strategic MN's we want to seek after?  
+
+Mike: We also need ot qualify resources and time needed for MN recruitment/entrainment
+
+Dave: Development was 10-100X the effort of the CCIT than Review (and operations) 
+
+Rebecca: Who is responsible for what?
+Dave: This is a process. Once we firm that, then we can talk about who works on each stage
+
+Tracking progress
+
+
+https://redmine.dataone.org/projects/mns/wiki
+
+New type of ticket for this workflow (shown on wiki)
+One issue for a MN then have multiple tasks for that issue
+
+Registration Information is too imposing - would be better to have a streamlined version
+http://bit.ly/Qm8d9T
+
+Q: Can MN's be deleted/deprecated?
+A: not simple.
+
+MN materials:
+MN Fact sheet: https://dataone.org/become-member-node
+Partner Quidelines: http://bit.ly/Mrkydt
+MN registration information ( very imposing - perhaps streamline):
+Architectural documentaiton:  http://mule1.dataone.org/ArchitectureDocs-current/
+Member node list: http://mule1.dataone.org/OperationDocs/membernodes.html
+
+Trish: Also there was a small group that had a phone call about MN prioritization
+http://epad.dataone.org/2012Apr17-MN-Prioritization
+
+
+Note there are consistency issues between different lists of candidate member nodes.
+
+Q:CAUHSI has fallen from 
+A: CUAHSI refuses to assign data identifiers to snapshots of the respository 
+No mechanism within CUAHSI for snapshotting data (a possible solution for unique IDs for
+a "dataset")
+
+Bob: This will be a recurring them for sensor generating projects.
+
+Hilmar: As DataONE adds MN's it will be more and more common for the MN data model to have issues integrating with DataONE.
+
+The issue of immutability of metadata - Dryad is another example of the mismatch in data models/ not just metadata but content (required for checksums)
+Will be discussed at this week's CCIT/developer meeting plus some WGs
+
+Alignment of data models between MNs and DataONE is a critical issue
+
+Fundamental features:
+Identifier always points to the same content
+
+Deborah: does tiered support relate to this?  Bruce: right now, tiers mean something else
+so would probably need different terminology
+
+MN topics:
+
+Metrics 
+                              Year 3            Year 4         Year 5
+
+MN                         10(8)                  20                40
+MN countries           3(2)                    5                10
+
+Projected(actual)
+
+Link to notes on MN Prioritization: http://epad.dataone.org/2012Apr17-MN-Prioritization
+
+Recommendation from Dave: 1 person to oversee the whole MN process (especially given the metrics above)
+
+MN Topics
+Selection and prioritization
+Streamlining process to deploy
+Collation of deployment experiences
+Issues of privacy of concern to MNs - logging, identity, authentication, identity
+Balancing DataONE resource allocation
+Operational issues:
+ * Malicious content
+ * Replication (technical and legal compatibility)
+ * Improving metadata quallty
+ * Maintenance
+ * Communications
+
+Future feature development
+ * Advertising and utilizing MN services (eg, WFS, WCS, ..)
+ * Additional software stacks (eg. Fedora)
+ * Improving metadata quality
+
+Comment: Trish: We also need to list the need for policy documents and MOU executions.
+
+Q: Hilmar: Is protected content replicated?
+A: Protected content can be replicated but tehre is a requirement that MN's that run at a tier that supports replication have bona fides that they can protect the data.
+
+Hilmar: are the metrics feasible or should they be changed? Also quantity vs qualtiy?
+Definition of quality
+
+Mike: The numbers give us a diversity of MNs - need more contributions to show value
+
+Frame: There needs to be diversity of content and there needs to be a value to using DataONE instead of querying different data source independently
+
+How are we going to do this?
+Bill: a liaison to work with potential MNs along with a supporting committee to work with them
+
+Trisha: is there a way to tap into the WGs for this activity?
+
+1. One person to oversee (paid Coordinator) the whole process of bringing on a MN
+2. Grad student to do the emailing, tracking, etc
+3. Advisory committee: BRAD plus (perhaps coming from members of existing working groups) (small group easier to get together, monthly?, 6-7?
+
+Deborah: emphasizes the need for paid support 
+
+Bob: Thinks BRAD is super busy and should be involved at some level - advisory but not
+necessarily day to day
+
+John Cobb as MN Wrangler
+Propose members of the advisory committee
+28 September LT Meeting will review this item
+
+=====
+Get Amber's slide deck
+current WG's and WG structure 12-14 and beyond
+ 
+Question from the EAB:
+Originally there was some skepticism that DataONE needed so many WGs, but the current success suggests that the approach was correct. Going forward, do you see a refinement  of the domains of WGs and perhaps some consolidation or streamlining?
+
+WGs that were not officially stood up:
+ * Federated Security (one workshop was held)  -- I thought this was Federated Identity?
+ * Distributed Storage
+
+Security is so tightly integrated with every aspect of the infrastructure that it would be difficult for a WG to stay in touch as much as would be necessary.
+
+Distributed storage another candidate for a workshop rather than a WG - had been waiting for the first release of the infrastructure.  Need to think about more in the way of workshops, witih fewer ongoing wg's, as a means to deal with the downspend in overall funding.
+
+Thought on the Member Node group -- what can we do to take down the level 
+
+What's missing?
+Scientific engagement
+
+Sustainability - and governance, should it move to advisory committee rather than WG?
+- More of an expert subset of the Leadership.  S&G is populated by LT with a couple of experts, while the other WG's have mostly community with a couple of LT members.
+
+Discussion of the User interface design group.  General view seems to be that this should be part of of the U&A group.  Might make that group too large.  
+
+Feedback from WGs next month - would like to get feedback from LT also. 
+
+============
+Break
+============
+
+Sustainability DIscussion
+
+REview of Thanose planing ning and discussion
+
+=============
+
+EVA Update
+ 
+Phase 1 eBird
+            
+            Contributions to State of the Bird 2011 (but not 2012)
+ 
+            BirdVis—http://www.birdvis.org/
+                    on hold for lack of funding
+                        Collaboration with Claudio Silva
+ 
+Phase 2 Land Model
+            
+Post doc:   Aritra Dasgupta from UNC-Charlotte
+ 
+            Summer student:  funded by a NASA project, working on UV-CDAT tool 
+                        Poster and demo tomorrow
+Presentation on 16 August 2012, "UV-CDAT: Exploring and Analyzing MsTMIP data sets"
+ 
+            UV-CDAT (http://uv-cdat.llnl.gov/ )
+                        Open community tool based on 10 years of development          
+                        Funded by DOE, with contributions from NASA and DataONE
+ 
+            Visualization functionality (build on Jorge’s work)
+            
+            Benchmarking functionality
+ 
+            Time frame:    finish by summer / fall 2013
+ 
+Phase 3  
+            A year 4 to 5 activity
+ 
+                        Possibly:  Genetics / phylogeny
+
+                    List of interested contacts points (Dave V. gave list of names, but I missed writing them down)
+                    
+                    Q: Kunze: Is there an opportunity for the Metdata group to help given prior discussions about Darwin core missing features that make provenance tracking more difficult?
+
+Bob: Consider the possibility of a science advisory committee
+    Alt approach: within current WG's and perhaps prioritized as a higher priority
+    
+==================
+Calendaring
+    Avoid first week of November
+    conflict for international semantic web conference - From 21/10/2013 to 25/10/2013                             
+    Avoid Halloween
+==================
+
+Next steps:
+
+What are our products? Keep this in mind during AHM
+between now and december and now and the end of of project 1
+
+We need publications, prototypes to show at the reverse site visit, esp. w.r.t. to CI
+
+At NSF issues that are popping up include reproducibility and data quality issues.
+
+#ahm2012 for twitter
+

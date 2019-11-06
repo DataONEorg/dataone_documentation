@@ -1,0 +1,134 @@
+Member Node Forum - 25 July 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 8 August, 22 August, 5 September
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516, -20130530, -20130613, -20130627, -20130711
+
+Attending: Laura Moyers, Debora Drucker, John Cobb, Mike Frenock, Dave Vieglais, Ryan Scherle, Andrew Sallans
+
+Regrets: Amber Budden, Bruce Wilson, Mark Servilla, Matt Jones, Inna Kouper, 
+
+Action items from last time:
+
+Documentation - 
+    taking MNs' feedback into account, improve/expand documentation for becoming a MN process; 
+    Laura to forward Soren's comments to Rob Nahf.  
+    Create space in repo for joint documentation effort. - awaiting direction for best "place" to put this space.
+    Feedback at DUG reinforced the need for detailed documentation to help MNs in their implementation process
+    
+Laura to identify MNs to be added to MNForum distribution, based on email/redmine traffic and D1 communication - ONGOING
+
+Re: Mike Frenock at PISCO - how do we know when metacat upgrades are available?  and
+Re: Mike Frenock at PISCO - is there a way to check we're on the correct dev list (i.e. metacat, etc.) so we know we're getting the right communications?  
+ * Per Matt:  Metacat upgrades are announced on metacat-dev@ecoinformatics.org, as well as developers@dataone.org.  Mike is subscribed to both.  We occasionally have patch releases to fix some specific issues that may not apply to most installations, and so those may not be announced, as there would be no benefit to install it.  The current patch release is like that -- it only had fixes for issues on the CN installation, and doesn't provide anything new for the MNs. 
+ * For a listing of public mailing lists available at lists.dataone.org, go to http://lists.dataone.org/mailman/listinfo/
+ 
+Re: Mike Freonck at PISCO - Thomson Reuters SOLR query acting wonky - I think this was resolved via email.  I can summarize the email conversation and post in a MNF epad (here, perhaps?) if that would be useful.-LM
+
+Agenda:
+
+0.  Welcome new attendees - introductions
+    Andrew Sallans - UVa, chair of DUG, here to learn about starting up a MN
+    Dave Vieglais - director of development and operations for DataONE
+    Debora Drucker - EMBRAPA, geospatial data managment, hope to become a MN someday soon, also involved with other entities who are interested in DataONE: PPBio, Biota-Fapesp, Peld (Brazilian ILTER network)
+    John Cobb - DataONE MN coordination
+    Mike Frenock - PISCO MN
+    Ryan Scherle - NESC working with Dryad MN
+
+1. Network-wide update and issues affecting MN's as a whole
+    Nothing DataONE affected, UNM is having issues affecting the UNM Coordinating Node
+   Does not affect DataONE (because of resilience of CNs) but may affect access to NM hosted entities like the public website
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+DUG content available if you were unable to attend: http://www.dataone.org/dataone-users-group
+
+3. Feature requests/opportunities for collaboration:
+Mike: Metacat question:  although 2.0.6 and 2.0.7 releases don't affect Metacat MN are the associated DataONE jar fileset updated to newer verions?
+Mike uses 2.0.5 and associated jar files
+Dave: Ben or Chris can best answer this one, recent changes to metacat related to coordinating node stack, not MNs
+
+Andrew: two projects involved in right now: 
+ * SERNEC - biologists/herbarium data repositories working together to do a mass digitization effort in a coordinated way to capture images/data/metadata to permit analysis; proposals submitted have been viewed favorably but no awards as yet; looking for a place/means to coordinate all data generated from SERNEC and allow use of ITK tools for analysis.  
+   * Question:  should we find a MN to attach to, create a new MN, what does it cost?  
+   * ANOTHER QUESTION:  How have other MNs funded their creation of a MN.
+   * Dave: most current MNs have already been a data repository but we are seeing some new MNs who aren't already data repositories. For example GLEON was recently awarded Award Abstract #1255849 where part of the scope was to stand-up a MN. <http://www.nsf.gov/awardsearch/showAward?AWD_ID=1255849&HistoricalAwards=false>. Corinna Gries would be the person to contact for more details / questions on the budget etc.
+ * 270TB image data - biologists studying beetle behavior, qualitative coding, looking for a place to store this data and allow others access to it, preservation; this is also dependent upon grant funding (90TB per year (incremental))
+ * ACTION ITEM: Laura to Doodle poll for everyone's availability and schedule meeting
+ * QUESTION: has anyone else dealt with this volume of data? (270TB)
+   * John: not in DataONE; 
+   * Dave: say a MN has funding and has data being replicated, when funding goes away or project is complete, there should be other storage available in DataONE to store/maintain the data
+   * Andrew: then the new MNs would bear the cost of maintaining that data
+   * Dave: yes, but the size of what we are talking about is not unusual
+
+Debora:  MN description document question - can we have more than one person as the technical POC?
+Laura: yes!
+
+Mike:  Resource map work has brought up lots of questions. Some summary metadata files do not have data associated with them.  How to handle this situation?
+Dave:  a resource map binds together components of a data package;
+Mike:  what about the situation with SOLR queries (Thomson Reuters) when if you query something that doesn't have data, they get a blank?
+Dave:  will follow up
+Mike:  has this come up before and has anyone dealt with it
+Dave:  TR should be able to deal with this by reviewing metadata, etc. 
+John:  surely TR has run into this before
+Dave:  LTER is similar (lots of metadata, little/no data via DataONE)
+
+Debora: does this have anything to do with the TR data citation index
+Mike: yes
+Debora: TR is evaluating PPBio's data now and so will potentially have the same issues Mike has been having
+
+Mike:  when I was working through the resource map issues, ran a SOLR query to find the files that don't have a resource map, had one file that sometimes had a map and sometimes not (eep!), how to troubleshoot?  
+Dave:  
+Object Reuse and Embedding document (ORE) 
+mike: id: doi:10.6085/AA/SWC001_022MXTI005R00_20070720.50.1  <--- Mike rpeorts that this PID intermittantly fails
+mike: here's the query I'm using: https://cn.dataone.org/cn/v1/query/solr/?fl=id,resourceMap&q=formatType:METADATA+-%20obsoletedBy:*+datasource:*PISCO+-%20resourceMap:*+-id:*sbclter*+-id:*parc.1.2+-id:*cdonahue.37.1+-id:*will*&rows=1000&start=0
+mike: and the resource map query: https://data.piscoweb.org/catalog/d1/mn/v1/object/resourceMap_SWC001_022MXTI005R00_20070720.50.1
+mike: just ran the SOLR query twice by copying from here to make sure it worked; one time the file was there the second time it wasn't.
+
+Mike:  when PISCO metacat instance started, sharing with SBC LTER node, then they went "away", but Mike still sees stuff leftover from early on.  Is there a way to get rid of the extraneous stuff?
+Dave:  yes, there is a delete operation
+Mike:  is it ok to do that or will it mess something up
+Dave:  will have Ben/Chris help Mike.
+
+
+
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+At the last meeting:
+ * Dryad was in final stages of implementing.
+   * a/o 7/25/13, have one issue outstanding, Rob and Chris are working with Ryan on this
+   * Ryan found and fixed another part of this today; see https://redmine.dataone.org/issues/3855
+ * LTER was in shakedown phase between GMN and PASTA, hoped to be live by end of July.
+ * PISCO had upgraded server SSL certificates, working on MatLab, SOLR query issues
+   * a/o 7/25/13, have a bunch of data soon to be loaded into metacat and DataONE
+    PPBio - server transferred to another institution (see email), using Metacat 2.0.5. Hope to be Tier 4 MN. Hope to have server transfer by Mid-August
+    ACTION ITEM: Laura to work with Debora to set up a meeting with everyone involved.
+
+OTHER INTERESTING THINGS: 
+
+If you attended the DUG meeting in Chapel Hill, tell us what you thought!  Were you able to find answers to your questions?  What  did you like about the DUG?  What would you change?  
+
+contact points: 
+NEW EMAIL contact: mninfo.dataone@gmail.com  - This email monitored by DataONE staff.  I think we might migrate to this being the primary point of contact for MN questions so we can keep a better handle on issues/resolutions.
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+John - cobbjw@ornl.gov ph 865.576.5439
+
+Upcoming deadlines:
+
+
+
+

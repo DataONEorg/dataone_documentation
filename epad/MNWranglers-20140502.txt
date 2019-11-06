@@ -1,0 +1,65 @@
+Member Node Wranglers 
+    Fridays at 10:00 am Alaska
+                    11:00 am Pacific
+                    12:00 noon Mountain
+                    1:00 pm Central
+                    2:00 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+2 May 2014
+                                                                           
+Attending:  John, Laura, Bruce, Amber
+
+Regrets:  Rebecca, Dave
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+                CN fix (tidy process)?  Dave said yesterday in MNF that phase 2 is winding down;
+                
+                MN Dashboard - Holding off until 2nd phase of tidy is complete so that CNs can resume synchronization and hopefully catch some of the fixes that Dryad and ORNL DAAC have made (Dryad - metadata updates, hope to harvest more of their data; DAAC - "newest content" was Jan/2013, Jim working this) 
+                MN information (description) displayed on dashboard comes from the MN Node Doc; eBird, LTER, and TFRI needed work, Laura assisting
+                
+                Status on OPeNDAP / DSpace subcontracts - DSpace moving ahead with implementation; OPeNDAP just provided SOW for their implementation (a little more complicated than DSpace with incompatibilities between DAP and DataONE), won't be able to complete full implementation this PY but will be able to prototype
+                DSpace users group meeting at Open Repositories (Helsinki meeting) - question - is Ryan Scherle attending this UG mtg??  He will be there...
+                
+(Hold off on this until everyone present)
+                Purpose of MN Description Document (past and future) - past: identify data holdings (type, volume, etc.), operations, to aid in MN development.  future: ???  
+        
+        1.5   Current MNs
+                Need MN desc doc for ESA.   
+       * Complete
+                
+        2. Status of upcoming MNs
+    
+     * Y5Q4
+       * LTER-Europe  (3232) - News item approved; hold off until CN fix completed.
+       * EDAC (3221) -  Soren says EDAC is ready to go; hold off until CN fix completed.  
+       * DFC (3532) -  Chris has been working with Lisa Stillwell and Mary Whitton answering questions
+       * MPC (3708) - registering in sandbox
+       * ORNL "slender nodes" (RGD (4248) and EDORA (4247)) - moved to "testing", awaiting MNDDs/logos from Bob
+       * GLEON (3422) - per Corinna at MNF yesterday; Morpho updated and she was able to get a couple datasets out there in their sandbox MN; next steps: convince folks to contribute their data
+       * PPBio  (3748) - At MNF 4/17/14, Debora said Ben and Matt are helping them with some issues related to the server move
+       * NKN (3238) - Ed says they are up and running in sandbox. He had some questions we addressed at the MNF yesterday.
+       * SAEON (3205) - We are planning to work with Alex to upgrade their metacat.
+
+    Future
+       * TERN Australia (4286): Hope to meet with Nikki Thurgate when she's in the states, perhaps around DUG; working on scope items A and B in particular, meeting again in June.
+       * IARC  (International Arctic Research Center) (4700) - met with Jim Long  4/10/14.  They currently run GeoNetwork, would like to be a fully  functional MN, can start small (expose metadata only) and work from there.  Jim is working on a proposal (with Bruce) to get some additional funding for a more general GeoNetwork-based Member Node  
+       * EU BON -- Looking to deploy a test MN in the next 6-9 months.  Bruce to get back with Hannu to revisit this plan. 
+
+        3. Old action items
+             MN Documentation - MN Deployment and MN Ongoing Operations - holding
+             
+        4. Not-high profile issues
+     * Redmine ticket generator - we think we've got a comprehensive list (Laura to check in with Roger prior to MNW)
+       
+        5. Around the room
+              Bruce - Bob Cook - interest in NSIDC (sister org to ORNL DAAC) becoming a MN, Laura to talk with Bob.  Also, owe Hannu a call re: EU BON.
+              Amber - nothing today
+              John - incipient discussions with NICS and GABBS- DIBBS award
+              
+               
+

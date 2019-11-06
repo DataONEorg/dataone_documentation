@@ -1,0 +1,111 @@
+
+DataONE Architecture and How to Become a Member Node
+
+Room: Pyle Center 335 Expertise Level: Beginner 
+Collaboration Area: Information Technology and Interoperability 
+Teaser: Overview of the @DataONEorg architecture for info mgrs, grad students, post-docs, faculty, research techs who manage env data
+
+Agenda
+
+Tue, 07/17/2012 - 13:30 to 15:00
+
+Overview of DataONE  (Rebecca Koskela, UNM) (20 mins, 10 mins questions)
+ - terminology (CN, MN, ITK)
+ - current MNs (chart)
+Becoming a Member Node (Matt Jones, UCSB) (40 minutes, 20 minutes discussion)
+
+Tue, 07/17/2012 - 15:30 to 17:00
+Identifiers and Packaging in DataONE (Matt Jones) (15/15)
+
+Investigator Toolkit
+    DataUp Excel plugin (Carly Strasser) (15/15)
+    [Tools Overview (Matt Jones) (15/15)]
+
+Notes
+
+Questions:
+What are the criteria for becoming a Member Node?
+
+Is there a difference between EarthCube and DataONE?
+There are some overlaps with DataONE - but definitely should be interoperability between the two. D1 playing a technical role in EarthCube. 
+
+How long is D1 funded? 5 years, then reapply for another 5 years
+
+What cyberinfrastructure has D1 built?
+The overlay for the MNs to become MNs; CN software; and tools in the ITK
+
+Skipping to "How To:" section
+
+What type of data?  We define environmental data fairly broadly - reference to tag line
+Doesn't have to be geo-located
+
+Participants:
+UAF- GI & ASF plus the ALISON data (ice data collected by school children)
+Arizona 
+NGDS - Alabama
+
+Are you collecting information about who is accessing the data? 
+Log data about access to datasets - although some MNs allow anonymous access so would just know that someone accessed the dataset - otherwise would know who accesssed it
+
+How is Merritt different that DSpace or Fedora?
+
+How many people are using system? 
+
+How scalable will the system be?  Could it handle a 4 PT dataset?
+
+Identifiers
+
+ESIP did a survey and reccomend:
+DUI for datasets
+UIDs for granules
+
+If a replication target, then need to be able to accept other MNs identifier system
+
+Why not URL or URI? URI can typically be broken - change of server name will break the
+URL or URI.  Is the resolution service reliable? 
+Social process of persistence not a technical process
+
+Does D1 count the citations that a dataset receives? Don't track citations ourselves but 
+groups like Total Impact are  trying to mainstream dataset citation
+
+Packing
+Lack of agreement of what is a dataset
+Challenging when talking about data citation
+Package is the means for someone to describe what they mean by dataset
+
+In EZID, establishing similar idea of packaging
+DataCite has created a new metadata standard with new namespace
+
+Similar to decisions made by NOAA - archive around a packaging concept but have a catalog file describe what's in a package
+
+Sensor streams can cause a problem for some groups because don't want to partition the data
+
+USGS - Water: many projects that generate data that need to go into a institutional repository
+Data coming into a database in real time - how should this work?  Discrete snapshots seem
+to work - then can assign a unique identifier
+
+D1 might use DOIs - are investigating this now - looking at assigning identifiers to smaller granules. Advice to read the ESIP summary
+
+Actually talking about fine-grained provenance - do you need to have an identifier to define the provenance or is there sufficient information available to identify the granularity?
+How to follow data derivations is being worked on by the D1 Provenance & Workflow WG
+
+Implementation is sticking with the coarse grain identification for right now.
+
+Annotation process is closely related to this. 
+
+At what level can data be self-describable? Depends of the metadata that accompanies the data
+
+Will the results of Carly's survey on spreadsheets be shared?  Yes, going to publish and some results already on blog
+
+Model of maximum scientist involvement - what likes best about DataUp
+
+Browse image is important part of the package - especially for educators - Figshare has
+a preview of the data
+Powerful for discovery
+
+Question about choice of C# for programming language of DataUp - was created by Microsoft - hoping to find a summer student to translate to another programming language
+
+First thing is to get DataUp to communicate with D1 API so then would be able to use any Tier 3 Member Node
+
+
+

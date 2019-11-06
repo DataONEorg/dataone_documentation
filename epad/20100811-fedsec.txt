@@ -1,0 +1,269 @@
+Notes from 2010-08-26
+
+Pre-workshop discussion for FedSec workshop schedueld for Sep 8-9, 2010
+
+1. Actions from last discussion
+
+- (Dave) check with Rebecca on total attendees
+- (Dave) Check with John Kunze on availability
+- (Dave) Engage CCIT to capture addtional requirements: 
+  https://trac.dataone.org/report/554
+- (Mark) Send out invitations with travel logistics
+- (Matt) Add contact and technology to MN list
+- (Randy) Check on Ken's availability - Ken will be comming
+- (Randy & Jim) Preworkshop questionaire 
+- (Bruce) Compile existing requirements documents, e.g. ESDIS
+- (Dave) Look back through CCIT notes and compile previous discussion items on security (ABQ VDC 2009, May?)
+  - https://repository.dataone.org/documents/Projects/VDC/docs/20090602_04_ABQ_Meeting/20090604MeetingReport.pdf (page 7)
+- (Mark) Clean up agenda (for invitations)
+
+
+2. Questionnaire
+Source available at:
+
+Entry at:  
+https://spreadsheets.google.com/ccc?key=0Au-oThVeU4I-dFZYelJNbFNPek5IMWg2SDBIZXZhNmc&hl=en&authkey=CI6p9dcK#gid=0
+
+The link for completing the survey:
+http://workshops.cilogon.org/d1
+
+- D: data granularity - single blob or mor granular / record level
+- is data / metadata treated differently (Authz)
+- data sharing policies
+- Offline authentication / editing
+
+- Who to distribute the list?
+  - MN managers
+    - Large variability in the MN policies and infrastructure/admin support
+  - Many metacat instances, but TEAM is a good example of someone else
+
+  - ITK app developers / users
+
+
+- data policies in place at various institutions
+
+  LTER: http://www.lternet.edu/data/netpolicy.html
+  NCEAS: http://www.nceas.ucsb.edu/datapolicy
+  ORNL: (Governed by the NASA EOS data policy) abstracted at
+    http://www.ciesin.columbia.edu/docs/005-089/005-089art8.html
+    and also on page 19 in 
+    http://eospso.gsfc.nasa.gov/ftp_docs/data_products_1.pdf and in
+    http://eospso.gsfc.nasa.gov/eos_homepage/for_scientists/data_products/refbook2006.php 
+  PISCO: http://piscoweb.org/data/data-sharing-policy
+  TEAM: http://www.teamnetwork.org/en/data/policy
+    
+
+- Send out Monday, responses by Thursday
+
+
+3. Agenda and supporting documentation
+
+MN list at: https://repository.dataone.org/documents/Projects/cicore/operations/membernodes.csv
+(rendered at http://mule1.dataone.org/OperationDocs/membernodes.html)
+
+
+Outcomes:
+   * Overview of existing systems at MNs, CNs, other fedsec projects
+   * (critical) short term technology recommendations, over next year, that we can implement
+   * requirements discussion and vetting to get general consensus
+   * strategy for long-term
+   * Any recommendations for research or work NSF and/or other agencies should fund to address unmet needs.
+
+Topics
+   * Problem statement  (Dave)
+     * What aspects of security need to be considered?
+     * Include some of the expected outcomes 
+
+   * The security landscape 
+     - questionaire response - Randy & Jim
+     - what's going on in the open fedsec world (e.g. google, openid, oauth, pam, ldap, ...) Randy & Jim
+     - Some examples of federated systems, with their pros and cons
+     - Campus level overview (Ken)
+
+   * Generate a matrix of specific requirements (Dave, Matt)
+      -- Provider nodes
+      -- Consumer applications
+
+   * Align requirements matrix with technologies
+   
+   * Short list technologies
+   
+   * Outline critical features and prioritize implementation for next couple of years
+   * Discuss phased implementation strategy
+
+
+(provide requirements before meeting for review)
+Wednesday
+Morning (task - record requirements, capabilities during the session)
+- Problem statement (Dave)
+  - DataONE overview
+  - Usecases (general) (Matt)
+- Security landscape (Randy, Jim)
+  - Federa
+  - Campus level perspective as well (Ken)
+- Member node perspectives (10 mins each: current authz + authn, desired future)
+  - Metacat (Matt)
+  - Dryad (John Auman)
+  - DAAC (Giri?)
+  - CUAHSI (Jeff)
+  - CDL perspective? (Perhaps John)
+  - UNM library perspective (Dale)
+  - DC (Tim)
+  - EOSDIS Kevin Murphy?
+- Questionnaire responses (Jim, Randy)
+
+Afternoon
+- (Dave) formalize and prioritize requirements generated before meeting and captured during the morning session.
+- (Need to document the scenarios, use cases)  Much of this might be available in the arch docs
+  - e.g. access data from a web portal vs a desktop tool like R
+  - provders: closed contribution systems vs completely open
+  - perhaps 6 or so generic scenarios
+  
+- (Randy) Document a set of key capabilities and try and match with technology / systems available
+  - Technology options
+  - need to identify sort / long term aspects of capabilities + technology options
+
+
+Thursday
+Morning
+- (Dave, Randy) develop specific recommendations for short and long term implementations
+   -- Identity provision
+   -- Authentication
+   -- Authorization
+   -- Service APIs for above three
+   -- Accounting / logging interaction
+
+Afternoon
+- (Matt) Discuss phased implementation strategy 
+  - migration of existing systems - what is the path for a MN to adopt the recommended technology?
+- (Dave) Closeout (formalize documents, assign tasks / actions) / summary
+
+
+4. Summary of invitations and attendees
+5. Other
+
+
+New Actions 2010-08-26
+
+- Questionnaire out (Randy, Jim)
+  - Draft for comment by CCIT tomorrow (2010-08-27)
+  - Send out survey on Monday (2010-08-30)
+  - Responses by Thursady COB (2010-09-02)
+- Agenda fleshed out (Dave)
+- Is Kevin Murphy attending? (Mark)
+- Two projectors + screens (Mark)
+- Get requirements in document form (Dave)
+- Capture a few (6 or so) scenarios / high level use cases (Matt)
+- Compile a list of "security technologies / systems" that may be relevant and characterize major functionality provided (e.g. authentication, authorization, trusted identity transfer, ...)
+- Clarify expected implementation timeline (Dave)
+
+
+============================================
+
+Notes From 2010-08-11
+
+The four main topics for this call are listed below along with some bullets
+(for guidance only)
+
+1. Meeting logistics
+
+   * Preparations of the facilities
+      - Meeting room
+        - 2 meeting rooms available
+      - Equipment 
+        - check with facilities
+      - Communications
+      - Food
+        - Check with Bob S. about local restaurants
+      - Local transportation
+        - block of rooms at Marriot
+
+  * Travel logistics notification for attendees
+    - need to send invite and logistics info
+
+2. Attendees
+
+
+   * Should ideally have representation from operators of repositories
+     targeted for participation in DataONE (Member Nodes)
+
+   * Also need input from experts in the field to provide guidance for
+     technology and implementation decisions
+
+   * Sufficient CCIT attendance to ensure technical participation
+
+* Randy Butler
+* Jim Basney
+* Jon Auman (Ryan Scherle proxy)
+* John Cobb
+* Jeff Horsbourgh
+* Matt Jones
+* John Kunze
+* Mark Servilla
+* Dave Vieglais
+* Bruce Wilson (cannot attend) or Giri Palanisamy
+* Ken Klingenstein
+* NASA EOSDIS Rep (Kevin Murphy)?
+* Tim DiLauro
+* Mark Evans
+* Eve Maler (?)
+* Tina Heath (ORNL cybersecurity lead, familiar with many FIPS and FISMA issues; pronounced Ti-na (long i) )
+* Ed Bishop (ORNL)
+* David Kennedy (Data Conservancy)
+* Dale Hendrickson (UNM Libraries)
+
+- pre-workshop questionaire 
+Tianmu Zhang (UTK grad student supported on DataONE) can assist with processing the questionaire and collating the results, as well as pre- and post-meeting tasks.  Attending the meeting itself is a problem, due to missing classes.  But he could use remote participation technology for some parts of the meeting, if useful.  
+
+Here are the member nodes in consideration:
+http://dev-testing.dataone.org:8080/hudson/job/DataONE-Operations-Manual/javadoc/membernodes.html
+
+3. Outline of the workshop agenda
+FedSec Requirements list:
+  https://trac.dataone.org/report/554
+
+Outcomes:
+   * Overview of existing systems at MNs, CNs, other fedsec projects
+   * (critical) short term technology recommendations, over next year, that we can implement
+   * requirements discussion and vetting to get general consensus
+   * strategy for long-term
+   * Any recommendations for research or work NSF and/or other agencies should fund to address unmet needs.
+
+Topics
+   * Problem statement  (Dave)
+     * What aspects of security need to be considered?
+     * Include some of the expected outcomes 
+
+   * The security landscape 
+     - questionaire response - Randy & Jim
+     - what's going on in the open fedsec world (e.g. google, openid, oauth, pam, ldap, ...) Randy & Jim
+     - Some examples of federated systems, with their pros and cons
+     - Campus level overview (Ken)
+
+   * Generate a matrix of specific requirements (Dave, Matt)
+      -- Provider nodes
+      -- Consumer applications
+
+   * Align requirements matrix with technologies
+   
+   * Short list technologies
+   
+   * Outline critical features and prioritize implementation for next couple of years
+   * Discuss phased implementation strategy
+
+4. Formalize the working group and outline ongoing activities
+
+---
+Actions:
+- (Dave) check with Rebecca on total attendees
+- (Dave) Check with John Kunze on availability
+- (Dave) Engage CCIT to capture addtional requirements
+- (Mark) Send out invitations with travel logistics
+- (Matt) Add contact and technology to MN list
+- (Randy) Check on Ken's availability
+- (Randy & Jim) Preworkshop questionaire
+- (Bruce) Compile existing requirements documents, e.g. ESDIS
+- (Dave) Look back through CCIT notes and compile previous discussion items on security (ABQ VDC 2009, May?)
+- (Mark) Clean up agenda
+
+

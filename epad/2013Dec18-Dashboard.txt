@@ -1,0 +1,121 @@
+Attendees:  Rebecca, Bruce, Amber, Laura, Chris, Dave, Chris A., Isis, Skye, 
+
+ACTIONS taken from text below:
+
+1.  Chris suggests showing data as of July 2012 forward right now, then later, when all MNs do their date consistently, we can add the pre-D1 info.  Remove legacy timeframes for now.
+    https://redmine.dataone.org/issues/4315
+    Also see: https://redmine.dataone.org/issues/4330, https://redmine.dataone.org/issues/4371
+
+
+2. In MN list below chart, we need to better indicate that you should/can click on a MN row for more information.  Roll-over color is already there in pale gray, perhaps it should be a different color? 
+Resolution to this:  use plum + roll-over = teal for the MN name text, keep the gray highlighting
+https://redmine.dataone.org/issues/4316
+
+3.  On summary page, in MN table, remove the description column, keep the full description in the detail MN page.
+https://redmine.dataone.org/issues/4317
+
+4.  Add MN logo to MN table, and replace "home" icon on detail MN page with each MN's logo as link to their home page.
+https://redmine.dataone.org/issues/4318
+
+5.  Under "Node Document" - currently we have a generic document icon.  Change column header to "MN Document" (when you mouse-over, it would show "Member Node Document"), change icon to a free PDF-specific icon.   See this for various "PDF document" icons:
+https://www.google.com/search?q=pdf+icon&espv=210&es_sm=119&tbm=isch&tbo=u&source=univ&sa=X&ei=tumxUv_IOuPUsASg1IDABA&ved=0CC4QsAQ&biw=1176&bih=552
+https://redmine.dataone.org/issues/4319
+
+6.  On MN specific page, don't use the gray for text.  Use black (or teal) and reduce font size for the MN short description. 
+https://redmine.dataone.org/issues/4320
+
+7.  Repository status: up is a green checkbox, down is an exclamation point (is it red?), unknown is a question mark (what color?).  Add a legend to the hover-over the Status header.
+https://redmine.dataone.org/issues/4321
+
+8. Prefer not to use D1 as an abbreviation for DataONE.
+https://redmine.dataone.org/issues/4322
+
+9. High y-axis value should be higher than largest data point.
+https://redmine.dataone.org/issues/4464
+
+10.  How about rather than previous/next, show the name of the previous/next MN, under the current MN detail page title, in a smaller font on left show previous MN and on right show next MN.  Some MN names are long, some shorter, Skye to look at how to handle.
+https://redmine.dataone.org/issues/4323
+
+11.  The "Summary" button functions as  "back" button on the individual MN page.  It should be shown here but temporarily removed from the main summary page until we can flip to the map page.
+https://redmine.dataone.org/issues/4324
+
+12.  We need to add a field to redmine for date-online for operational MNs.  (Laura/Bruce)  12/31/13 - DONE.  Field populated for operational MNs.
+https://redmine.dataone.org/issues/4325
+
+-----
+
+From Skye's message dated 12/12/2013
+We have installed a 'release candidate' version of the member node dashboard  into the dev dryad server and would like to get some feedback on this  candidate.  This is just an initial release of the member node dashboard with improvements scheduled down the road (spatial map, download statistics/graphs).  
+
+The location is: http://129.24.63.92/backbone.   This should provide a good indication of what the screens will look  like in production.   I am still working on a couple small styling  issues: spacing issue in the header area (for the input controls) and  some font issue in the menu and breadcrumbs.   In production, the left  hand navigation would also display the 'member node' left hand nav menu.   Also the url of 'backbone' should be something more appropriate.
+
+We  would appreciate any feedback - particularly label and text  improvements, aesthetic enhancements, corrections, or any other  feedback. 
+
+We're looking at the above link, Skye is talking about it.  This is a first version of the dashboard with the intent to add desired data services as time goes on.  
+
+Chris: currently there are two boxes at top of page (data files and metadata files) the last one will be data downloads (in plum)
+
+Rebecca: question about how do we know which MNs are contributing to these stats, and showing data prior to July 2012
+
+Current timescale tabs are 1yr, D1, 5yrs, 10yrs, 20yrs.  If we decide to show DataONE forward, we would eliminate all those prior years (and D1) and build a history moving forward.  
+
+Perhaps we should hold off on releasing this until geographic information is available??  Or maybe not...
+
+Two main ideas of the dashboard: highlight content available via DataONE and the MNs contributing to that data.
+
+We have different ideas of what the dashboard should show/be used for.  There is some value in recognizing that some MNs had data out there a LONG time before D1 and indicating that now that data is available via D1.  In some ways, though, it is confusing to see all this data pre-D1.
+
+Isis suggests that there be some more explanatory pop-over information for the data/metadata boxes to better explain what these really are.
+
+There is inconsistency among MNs re: date uploaded (LTER shows when the data was uploaded to LTER while ORNL DAAC shows when the data was "uploaded" to D1).
+
+>>>>  Chris suggests showing data as of July 2012 forward right now, then later, when all MNs do their date consistently, we can add the pre-D1 info.  Remove legacy timeframes for now.
+
+In MN list below chart, we need to better indicate that you should/can click on a MN row for more information.  Roll-over color is already there in pale gray, perhaps it should be a different color?  Or what about just making the links look like links??  (no)  Even better: use established D1 styles for link/link visited.  
+
+See http://129.24.63.65/content/styles-html-elements for style info.  Currently on dataone.org, links are plum and when you hover they turn teal.  We don't use underlining on dataone.org because we got feedback that it was way too busy with all the links/underlining.
+
+>>>>>  resolution to this:  use plum + roll-over = teal for the MN name text, keep the gray highlighting
+
+>>>>>  On summary page, in MN table, remove the description column, keep the full description in the detail MN page.
+
+>>>>>  Add MN logo to MN table, and replace "home" icon on detail MN page with each MN's logo as link to their home page.
+
+>>>>>  Under "Node Document" - currently we have a generic document icon.  Change column header to "MN Document" (when you mouse-over, it would show "Member Node Document"), change icon to a free PDF-specific icon.  
+
+See this for various "PDF document" icons:
+https://www.google.com/search?q=pdf+icon&espv=210&es_sm=119&tbm=isch&tbo=u&source=univ&sa=X&ei=tumxUv_IOuPUsASg1IDABA&ved=0CC4QsAQ&biw=1176&bih=552
+
+And here is info on permissions to use logos:
+http://www.adobe.com/legal/permissions/icons-web-logos.html
+
+For long MN descriptions in the table, perhaps break on a whole word.  Also, should we limit the number of characters in the MN Description column??  What about adding the logo to the summary table?  Definitely add the logo to the MN specific page.
+
+>>>>>  On MN specific page, don't use the gray for text.  Use black (or teal) and reduce font size for the MN short description. 
+
+On the data/metadata chart, data comes from CNs, charts are "drawn" in one's browser.
+
+It would be nice to know when a MN became a MN; we are discovering other attributes of MN that would be helpful to know and have available.
+
+>>>>>  Repository status: up is a green checkbox, down is an exclamation point (is it red?), unknown is a question mark (what color?).  Add a legend to the hover-over the Status header.
+
+Prefer not to use D1 as an abbreviation for DataONE.
+
+High y-axis value should be higher than largest data point.
+
+Would it be nice to have a next/previous function when user is looking at a given MN to page through (alphabetically as shown in table?)?  
+
+ * >>>>>  How about rather than previous/next, show the name of the previous/next MN, under the current MN detail page title, in a smaller font on left show previous MN and on right show next MN.  Some MN names are long, some shorter, Skye to look at how to handle.
+
+>>>>>  The "Summary" button functions as  "back" button on the individual MN page.  It should be shown here but temporarily removed from the main summary page until we can flip to the map page.
+
+>>>>>  We need to add a field to redmine for date-online for operational MNs.  (Laura/Bruce)  12/31/13 - DONE.  Field populated for most operational MNs; awaiting response for two.
+
+Geographic info (where's the MN) is running pretty slowly, holding off until that performance is improved.  
+
+If we can remove legacy data (for the time being), we can go ahead and put this in production (not wait for the geo info).
+
+Highlight color on the MN table??  We will need to play with that so that whatever highlight color we use, the text colors (teal, plum) will show up nicely.
+
+Schedule?  Projected release date?  Review after the first of the year.  Suggest pushing out the simple version of the dashboard earlier in January (2nd week?) and then work on the map functionality prior to review end of February.
+

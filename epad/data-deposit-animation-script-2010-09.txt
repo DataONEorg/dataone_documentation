@@ -1,0 +1,288 @@
+Draft Script for D1 Animation
+ "What DataONE does when a dataset is deposited at a Member Node?"
+ 
+https://docs.google.com/drawings/pub?id=1iUNHt_SyXiPJhcZBJMuWn76w6Xl20mhkPvq4mSWBs9I&w=1181&h=1070
+ 
+Title Ideas:
+ * Depositing Data with DataONE
+ * Publishing Data with DataONE
+ * Where's my data? Depositing Data with DataONE
+ * A Data Producers View of DataONE
+ * A Scientists View of DataONE
+ 
+0. 
+ 
+Many scientific data repositories exist that hold the published data of particular domains. DataONE partners with those repositories to create a network providing many services to both science data publishers and consumers.
+ 
+The DataONE network is made of these existing repositories, which we call member nodes, and a central core made up of coordinating nodes.
+ 
+Here we look at what happens to data when a scientist uses a member node to publish data. 
+ 
+1.
+ 
+The scientist starts the whole process by collecting data. This data might come from many different types of place - a laboratory instrument, a field observation, or a satellite. It doesn't matter to DataONE.
+ 
+2. 
+ 
+Typically, a scientist would then organize the data, checking for errors, and make sure it is complete. This readies it for analysis.
+ 
+3.
+ 
+In order to help others make sense of the data, the scientist will then create metadata for her dataset. The metadata describes the dataset. For example, the metadata might say what kind of instruments and protocols were used to collect the data, the units used for measurements, and the geographic location where the data was collected.
+ 
+Typically, the metadata is itself a document stored in association with the dataset.
+ 
+4.
+ 
+Once the metadata is prepared, the scientist uses a software tool to connect to a DataONE member node. This node might be a repository dedicated to the hold the data for a specific field of study (e.g., GenBank or VegBank) or an institutional repository.
+ 
+[More about tools that might be used to connect…]
+ 
+5.
+ 
+It is important that DataONE and the member nodes know the identity of the people managing data in the repositories. This allows others to trust the data published from DataONE and member nodes.
+ 
+Our scientist who wants to deposit data in the member node must authenticate herself to the member node.
+
+6.
+ 
+The scientist then uploads the dataset and its metadata to the member node and tells what sort of access and management policies should be applied to the dataset.
+ 
+7.
+ 
+The member node will assign a globally unique identifier to the dataset so that it can be uniquely identified in the sea of data that has been and will be published throughout the world.
+ 
+The member node confirms with the scientist that it had stored her data.
+ 
+ 
+8.
+ 
+It is at this point that DataONE coordinating nodes come into play. Coordinating nodes periodically ask member nodes whether they have new datasets that have been deposited. Our member node indicates that yes indeed there is a new dataset and metadata ready for incorporation into the DataONE system.
+ 
+9.
+ 
+The coordinating node then retrieves the metadata for the new dataset from the member node. Relative to the size of the dataset itself, metadata information is often fairly small.
+ 
+10.
+ 
+The coordinating nodes can be thought of as offering a single, public point of access to DataONE services, but internally there are multiple physical nodes cooperatively servicing requests. The metadata from the member node is replicated to all the coordinating nodes.
+ 
+11.
+ 
+If a member node or scientist requests, datasets can be replicated to other member nodes using a mediated peer-to-peer approach. A coordinating node selects another member node and asks it to replicate the data. Upon agreement, the second member node requests the dataset directly from the member node holding the original copy of dataset. Once it has confirmed having an exact copy of the dataset, the second member node notifies the coordinating node that replication is complete.
+ 
+Datasets can be replicated more than once, implementing a LOCKSS strategy – Lots of Copies Keep Stuff Safe. Even if the original member node temporarily fails or is permanently shut down due to funding problems, the dataset and metadata remain in the DataONE system.
+ 
+12.
+ 
+When a new dataset is deposited in the DataONE system, its metadata is digested and indexed so that it can be searched. When a citizen or scientist does a search at the DataONE portal, the search results provide a link to access the data at one of the member nodes that holds the relevant data.
+ 
+13.
+
+Although not available in the current prototype, DataONE soon will track access and usage statistics of the datasets it holds. A scientist that deposited data will be able to get metrics on the number of times her dataset has been downloaded, returned in search results, or referenced.
+ 
+14.
+
+The coordidating nodes in the DataONE system regularly monitor the health and availability of member nodes. The status of each replicate of each dataset is also confirmed periodically to ensure the validity of data.
+ 
+15.
+ 
+Scientists depositing data in DataONE will want to point others to his data in DataONE since persistence, stability, and availability is ensured.
+ 
+ ==========================================
+ 
+1021 word version, 2010-11-17
+
+00:00 - 00:03 [0. Depositing Data with DataONE]
+
+How does a scientist use DataONE to preserve research data, and how does DataONE help other people find and reuse that data? What are some of the benefits for scientists who deposit their data into a DataONE Member Node?
+
+00:03 - 00:09 [1. Scientist collects data]
+
+Scientists collect data by making observations, conducting experiments, or through the use of other collection methods, like sensors or satellites. The collected scientific data is often referred to as a dataset.
+
+00:09 -  00:13 [2. Scientist stores data in a spreadsheet or database]
+
+Spreadsheets or database software are used to store the collected data and to enable...
+
+00:14 - 00:17 [3. Organizes data for analysis and DataONE]
+
+... analysis, cleaning, or transformation of the collected data. A scientist often creates several versions of the dataset as cleaning and analysis proceed.
+
+00:17 - 00:22 [4. Adds metadata]
+
+Metadata - the data that describes the dataset, its fields and what the fields mean - are added to describe and contextualize the scientific data. Metadata helps people find, understand, and reuse a dataset. Metadata may be held in a separate file or integrated with the scientific data.
+
+00:22 - 00:26 [5. Scientist visits DataONE]
+
+When the dataset is cleaned and the metadata is prepared, a scientist can deposit the dataset by visiting a data repository that participates in DataONE as a Member Node.
+
+Member Nodes are usually existing scientific data repositories that have agreed to participate in DataONE, forming a geographically distributed network of respositories and services. Participating repositories include the National Biological Information Infrastructure, the Oak Ridge National Laboratory's Distributed Active Archive Center, and Dryad and many more planned for the future.
+
+00:26 - 00:32 [6. Scientists connects to Member Node]
+
+The scientist connects to a Member Node repository they are associated with, using a familiar software tool. The scientist logs in so that she is acknowledged as the creator of this dataset. Future users of the data will use the identity of the data creator as one of the means to assess the quality and reliability of the dataset.
+
+00:33 - 00: 38 [7. Uploads data and metadata to Member Node]
+
+Using any one of a variety of familiar tools, including secure file transfer programs or direct connection from popular scientific analysis tools, the scientist uploads the dataset and metadata to her Member Node repository. Access and data management policies can be applied to the dataset to help control how and when it can be accessed and used.
+
+00:38 - 00:42 [8. Member Node confirms upload success]
+
+The DataONE Member Node repository confirms to the scientist that the dataset and metadata have been received without error. Her dataset has been successfully deposited into DataONE.
+
+00:43 - 00:46 [9. Coordinating Nodes ask Member Node if it has anything new ]
+
+DataONE provides value through important central data preservation and data access services. DataONE's central services are performed by specially designed Coordinating Nodes. The Coordinating Nodes contact each Member Node to find out if any new datasets have been deposited there.
+
+00:47 - 00:53 [10. Member Node replies that it has new data]
+
+The Member Node responds to the Coordinating Node with information about new datasets that have been deposited there.
+
+00:54 - 00:59 [11. Metadata is copied to a Coordinating Node]
+
+The metadata for a new dataset is copied to one of the Coordinating Nodes. The metadata is used by DataONE to support discovery and retrieval of datasets and to help DataONE ensure the preservation of the dataset for the long-term / many decades. DataONE can accept metadata expressed in virtually any standard.
+
+1:00 - 1:05 [12. Metadata is copied to all Coordinating Nodes]
+
+The dataset's metadata is copied to all DataONE Coordinating Nodes to ensure that an exact copy of the metadata is safely stored in multiple geographically distinct places.
+
+1:06 - 1:11 [13. Coordinating Nodes tell other Member Nodes to get a copy of the new data]
+
+After the metadata is safely copied, Coordinating Nodes ask some of the other DataONE Member Nodes to get a copy of the scientific dataset. DataONE stores copies of datasets at multiple geographically dispersed Member Nodes to protect against the many ways data can be accidentally - or maliciously - lost. This process is referred to as replication of scientific data. The Coordinating Nodes keep track of where the dataset was originally deposited and the locations of all replicated copies. 
+
+1:12 - 1:15 [14. Member Nodes request a copy of the new data]
+
+Each Member Node tasked to get a copy of the dataset asks the source Member Node to send a copy of the dataset. This approach helps prevent overloading the Coordinating Nodes with moving copies of datasets around DataONE.
+
+1:16 - 1:20 [15. Member Node sends copies to other Member Nodes]
+
+The source Member Node sends a copy of the dataset to each DataONE Member Node that has requested a copy. DataONE will support flexible policies about what kinds of data and how much replicated - or copied - data a Member Node will accept. Each Member Node lets the Coordinating Nodes know when it has successfully - and accurately - stored a replica of a new dataset.
+
+1:21 - 1:30  [16. Central index guides searchers to data location]
+
+Centralized metadata at the Coordinating Nodes lets searchers locate datasets through search, browse, and - in the future - more advanced search and discovery systems. When a new dataset is deposited in DataONE, its metadata is ingested and indexed to support search and retrieval. When a citizen or scientist searches DataONE, the search results provide a link to a copy of dataset held at a DataONE Member Node.
+
+1:31 - 1:39  [17. Searcher gets data directly from Member Node]
+
+Datasets are sent directly from a DataONE Member Node to the searcher, again avoiding passing datasets through the DataONE Coordinating Nodes. Member Nodes will soon begin collecting statistics on dataset reuse, which are organized and stored by the Coordinating Nodes.  
+
+1:39 - 1:45 [18. Scientist receives usage tracking statistics]
+
+DataONE will add value to participating scientists. After contributing data to DataONE, for example, scientists will be able to find out how many times their datasets have been downloaded and potentially reused. This helps scientists quantify the positive impact of sharing their data.
+
+1:45 - 1:55 [19. Coordinating Nodes make sure Member Nodes are working correctly]
+
+DataONE is designed to be a reliable, comprehensive, and robust system for sharing and preserving scientific data for future generations of scientists and citizens. The Coordinating Nodes and Member Nodes use a well-defined set of rules for coordinating responsibilities and actions and ensuring DataONE's reliability. The Coordinating Nodes, for example, poll every DataONE Member Node to verify its health and stability. Other Coordinating Node services ensure that the data - including all copies of each dataset - held by DataONE Member Nodes are accurate.
+
+1:57 - 2:03 [20. Scientist can refer to DataONE for data requests...]
+
+When contacted by other scientists for their data, scientists who deposit their data in DataONE can refer those requests to DataONE, and be confident that they are providing accurate and definitive data without having to search their computers or other records.
+
+2:04 - 2:08 [21. Or through direct references in papers]
+
+When scientists provide citations to their DataONE datasets in the papers they write, their readers can go directly to DataONE to retrieve the data. All of these kinds of activity in DataONE will be captured and added to the scientists' own DataONE usage statistics.
+
+2:09 - [22. DataONE]
+
+DataONE.... [tag line]
+
+==============================================
+
+ 442 word version, 2010-11-18
+
+00:00 - 00:03 [0. Depositing Data with DataONE]
+
+How does a scientist use DataONE to preserve research data? 
+
+00:03 - 00:09 [1. Scientist collects data]
+
+Scientists collect data using many different methods. The collected data is often referred to as a dataset.
+
+00:09 -  00:13 [2. Scientist stores data in a spreadsheet or database]
+
+Spreadsheets or database software are used to store the collected data and enable...
+
+00:14 - 00:17 [3. Organizes data for analysis and DataONE]
+
+... analysis or transformation of data.
+
+00:17 - 00:22 [4. Adds metadata]
+
+Metadata helps people find, understand, and reuse a dataset by describing the data and providing context.
+
+00:22 - 00:26 [5. Scientist visits DataONE]
+
+A scientist deposits data by visiting a data repository that participates in DataONE as a Member Node.
+
+00:26 - 00:32 [6. Scientists connects to Member Node]
+
+The scientist connects to a Member Node repository, using one of several familiar software tools. The scientist logs in so that she is acknowledged as the creator of this dataset.
+
+00:33 - 00: 38 [7. Uploads data and metadata to Member Node]
+
+The scientist uploads the dataset and metadata to her Member Node repository.
+
+00:38 - 00:42 [8. Member Node confirms upload success]
+
+The DataONE Member Node repository confirms to the scientist that the dataset and metadata have been successfully deposited into DataONE.
+
+00:43 - 00:46 [9. Coordinating Nodes ask Member Node if it has anything new ]
+
+DataONE's central services, including preservation and access control, are performed by Coordinating Nodes. The Coordinating Nodes contact each Member Node to find out if any new datasets have been deposited there.
+
+00:47 - 00:53 [10. Member Node replies that it has new data]
+
+The Member Node responds to the Coordinating Node, indicating that a new dataset has been deposited there.
+
+00:54 - 00:59 [11. Metadata is copied to a Coordinating Node]
+
+The metadata for a new dataset is copied to one of the Coordinating Nodes. The metadata is used by DataONE to support discovery and retrieval of datasets, preservation, and so on.
+
+1:00 - 1:05 [12. Metadata is copied to all Coordinating Nodes]
+
+The dataset's metadata is copied to all DataONE Coordinating Nodes, ensuring the metadata is safely stored in multiple places.
+
+1:06 - 1:11 [13. Coordinating Nodes tell other Member Nodes to get a copy of the new data]
+
+Coordinating Nodes then ask some of the other DataONE Member Nodes to get a copy of the scientific dataset. DataONE stores replicas at multiple Member Nodes to protect against data loss.
+
+1:12 - 1:15 [14. Member Nodes request a copy of the new data]
+
+Member Nodes replicate datasets by interacting directly with each other.
+
+1:16 - 1:20 [15. Member Node sends copies to other Member Nodes]
+
+The source Member Node sends a copy of the dataset to each DataONE Member Node that has requested it. Coordinating Nodes are told when dataset replicas are created.
+
+1:21 - 1:30  [16. Central index guides searchers to data location]
+
+Centralized metadata lets searchers locate data by searching. Citizens and scientists can access a copy of a dataset held at a DataONE Member Node....
+
+1:31 - 1:39  [17. Searcher gets data directly from Member Node]
+
+.... Member Nodes will soon begin collecting statistics on dataset use, which are organized and stored by the Coordinating Nodes.  
+
+1:39 - 1:45 [18. Scientist receives usage tracking statistics]
+
+Scientists will be able to find out how many times their datasets have been downloaded and reused, quantifying the impact of sharing data.
+
+1:45 - 1:55 [19. Coordinating Nodes make sure Member Nodes are working correctly]
+
+DataONE is designed to be a reliable system for sharing and preserving scientific data. The Coordinating Nodes poll every DataONE Member Node to verify its health and stability. 
+
+1:57 - 2:03 [20. Scientist can refer to DataONE for data requests...]
+
+Scientists who deposit their data in DataONE can refer requestors to DataONE without having to search their own computers or labs.
+
+2:04 - 2:08 [21. Or through direct references in papers]
+
+By citing DataONE in the papers they write, readers can get data directly from DataONE.
+
+2:09 - [22. DataONE]
+
+DataONE.... [tag line]
+
+
+
+

@@ -1,0 +1,123 @@
+Sprint 2012-14 Block 2.4 Standup Notes
+
+Dave's travel is delayed and won't be on standup today
+
+Short Term Prioritites
+----------------------
+
+1. Stage environment
+ * Looks good, though it could use a few examples of data packages (resource maps) (Ben)
+ * Forward Dave a list of PIDs for the resource maps? He will coordinate the LT evaluation of the Mercury interface, and will have folks add tickets to redmine for any issues they encounter (Ben)
+
+2. USGS workshop preparations
+ * Chris will create a story on these tasks
+ * See http://epad.dataone.org/20120327-USGS-Workshop
+ * VMs for running the demos (Dave/Matt)
+   * Matt is in contact with Jeff re: VMs
+   * Asked for stock Ubuntu VMs, root access. Will contact Jeff today
+ * Metacat ready to install (Ben/Chris)
+   * Create a dist'd version of the current code
+   * Use Matt's script from the Fall demo workshop
+ * R client ready to install (Matt)
+   * Ready.
+   * Installed on VMs? via R installer
+   * R demo will be short
+ * CLI ready to install (Andy/Roger)
+   * Will be installed on the VMs rather than laptops
+   * Use easy_install, 3 eggs, pyxb code, google code pre-req's
+ * Content available to add in (Viv/Mike)
+   * export binary formats to text or csv
+   * use CLI to create system metadata
+
+3. Backlogs (moving to the next block)
+
+4. Environment status
+ * DEV: 3CNs, 5 MNs (4 Metacat DEMOS + GMN, ORNL DAAC, ORNL CH), minimal real content
+ * STAGE: 1 CN, 2 Metacat MNs, 1 GMN MN (316 records, adding many more now)
+ * SANDBOX: 3 CNS, 3 Metacat MNs, 1 GMN MN
+
+
+Matt
+----
+ * Working on R client, plus documentation
+   * Can be demoed as it stands
+   * Contemplating leaving it as is
+
+
+Ben
+---
+ * Identified a few problems with sync'ing EML to the CNs due to permissions in EML
+   * CN Metacat implementation may
+ * Will talk with Matt re: access control decisions
+ * Created tickets for these Metacat issues
+ * Will generate more content in the stage env
+
+
+Robert
+------
+ * Worked on getting the stage env together. Should be good for now with 1 CN
+ * Will be working on bug fixes today from the backlog
+ * Discuss apache acceptance of self-signed certs, researching this
+ * Changed the spec for nodeid length to 64 (vs 25)
+   * urn:node:MercuryORNLDAAC1 was too long
+   * urn:node:MercuryClearinghouse was too long
+   * Matt: Do they want to encode the software stack into the nodeid? It may change down the road
+   * TODO: Matt will write up an email about this
+
+
+Skye
+----
+ * Summer intern has accepted position on data citation/reuse project
+   * (From Matt): Heather will be moving on (or half time); Matt may help mentor if need be
+ * Addressed a few UI issues in Mercury
+ * Be aware that generation of content may include previous versions (obsoleted) so they won't show up in the search index
+ * Created HazelcastclientInstanceFactory
+ * Working on replication auditing
+ * Discuss splitting d1_replication out of d1_process_daemon for finer control
+   * Would like to have a discussion today on that
+
+
+Rob
+---
+ * Working on Mercury MN nodes with Gir/Jim
+   * Jim was out on holiday
+   * Assigning a meaningful rights_holder was an outstanding issue, Rob suggested a group DN
+   * ORNL DAAC system metadata don't have access policies, worked with Jim on changing system metadata to include public access
+     * Will need to blow away all records on the dev CNs so they can re-submit system metadata
+ * Added some tests to the Tier tests from issues coming up in registering Mercury
+   * Subjects are usable
+   * Node id is a urn etc.
+ * Will ensure web tester is passing all tests for Metacat/GMN
+
+Roger
+-----
+ * Working on GMN issues in the staging env
+   * GMN rejects some valid system metadata, working on this now
+ * Getting current code checked in
+ * Ready to start on something new after these tasks (say Tues/Wed)
+
+
+Andy
+----
+ * Package manipulation (create, delete, add/remove (1) scimeta and (n) scidata).
+ * Able to upload packages to PyPI - still two problem libraries (XML & ORE-IDA code).
+ * Still need to do Java copyright audit.
+ * Packaging documention.
+
+
+Chris
+-----
+ * Worked with Skye on replication audit design
+   * discussed how to retrieve replica dateLastVerified information best (postgresql, solr, hazelcast)
+   * decided to go with direct access to the Metacat system metadata tables
+ * Updated Use Case 09 sequence diagram to reflect current implementation, Skye will add audit section changes
+ * Started getting mn-stage-ucsb-2 installed after wipe and move to the UCSB main campus from NCEAS
+ * Will prep for USGS meeting next week and work with Ben and Matt on metacat issues
+ * No specific tasks left to do, but will look at redmine issues
+   * Other than continued testing of the sandbox env with Ben after Metacat EML access control storage issues are resolved
+
+
+
+
+
+

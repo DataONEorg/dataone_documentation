@@ -1,0 +1,91 @@
+Attendees:Rebecca, Bruce, Suzie, John K,Mike, Amber, Viv, Bob, Dave, Bertram
+
+
+Regrets: Deborah  (but see you in alb next week), Steph, Matt
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, May 10, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/492620288
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (312) 878-3081
+Access Code: 492-620-288
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 492-620-288
+
+ We will also use the epad: http://epad.dataone.org/2013May10-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-05-10
+
+1) CI Update (Vieglais)
+Pushed out a new version of the infrastructure earlier this week. This was to correct a bug causing an inconsistency among the CNs. Will push out another change this afternoon that will include some ONEMercury updates, including being able to handle Chinese characters.
+From last week's joint U&A and Sociocultural WG meeting - review of ONEDrive. Identified 2 user scenarios -
+ * Use ONEMercury to cherry pick datasets (essentially bookmarking datasets)
+ * Define a query that returns a list of datasets that you want to access
+Propose to extend the ONEMercury interface to allow users to bookmark datasets and then make those bookmarked datasets available to the tools in the ITK - thus providing seamless integration between the web interface and the ITK tools. Question of where bookmarks will be stored - have users login and certificate is stored on server. All the pieces needed to do this are done but not tied together in nice package.
+Dave has received lots of comments about the public web site. In particular, hard to find the Developer Resources (under Participate now (?)) and documents that the user knows exist
+
+Amber would like to see systematic process for getting this feedback. There has been a U&A test on the web site - but how often does this need to be done and how to determine the audience.
+
+Also - need to consider that the project is evolving and we are in a different state than maybe when the taxonomy is designed.. Good to relook at it periodically - part of active management. 
+
+Think about tagging as a way for users to find what they are looking for -
+
+Lots of interesting projects at the PPSR WG meeting this week. Ideas for pushing content into DataONE - Greg Newman has been using DataUp to push content into ONEShare. He's been working on common infrastructure for citizen science projects.
+
+(Note: Greg Newman was funded by USGS and NBII related to Invasive Species for several years) - so ties there also.
+
+2) CEE Update  (Budden)
+At WG meetings the last 2 weeks - 
+Need to start pushing the DUG meeting. If DataONE people are going, please register.
+Andrew Sallans is interested in continuing in chair capacity so will be standing for reelection.
+More content in ask.dataone.org from joint U&A and Sociocultural WG meeting.
+
+Two new members on the CEE WG. The summer intern also attended the meeting.
+Would like to create a tutorial portion on the web site.  
+Changing success stories to lessons learned from bad data management.
+Strategy for marketing the video contest - video applicants will be voted on at the AHM
+Aggregator concept for the Notebook site
+May have 2 open slots on this WG - working a replacement co-chair and getting the open
+slots filled by July
+
+3) Member Node Update (Cobb)
+Quick recap: MN discussion at the Joint U&A and Sociocultural WG meeting - 
+How can we encourage more MNs to join?
+Listed barriers and ways to alleviate these barriers
+Major obstacle: Failure to make compelling case to MNs 
+Discussed the policy in process for new MNs
+
+Received confirmation from SEAD that they want to go into production with a subset of their data
+Challenges of Exascale - plus regional network providers - white papers to address ideas in solicitations 
+
+Feedback on the presentation of the MN content on the public web site - text heavy and too much jargon 
+Present the content to engage people outside of DataONE
+Amber also receiving this feedback on entire web site
+
+ask.dataone.org was well received at the joint meeting
+
+Remember the key messages!
+
+4) Around the Room
+
+Bruce: David Doyle has joined the UTK DataONE team.  He's working as a (part-time) student assistant this summer, particulary on knowledge transfer from Chris Brumgard, who will be graduating. David will then be a Graduate Assistant, helping with cyberinfrastructure efforts for project year 5.  I'll be at the proposal workshop next week, and I participated in the CTSI (Center for Trustworthy Scientific Cyberinfrastructure) kickoff discussion regarding the review of DataONE CI that they're doing.  Looks like there will be a F2F meeting in Indy in mid-ish June.  I was at the SC/UA WG meetings last week, working particularly on the FAQ entries.  
+
+Bob: Moving Office Furniture and Packing this week.... Last week held a Data Management 101 workshop in conjunction with the NASA Terrestrial Ecology Team meeting (10 participants).  Will work on adding some metadata exercises for these workshops ...with input from Viv (Thanks!!).
+
+Suzie: We had the SC/UA Joint Working Group meeting last week at UT.  It was well attended by group members and of particular usefulness was having several CI members who could work directly with us on activities which allowed us to better align our work with CI needs.  We worked on the following items: (1) assessment design and scheduling; (2) member node recruiting materials; (3) populating the askDataONE site & discussion of policies, (4) usability review of ONEDrive; (5) evaluation strategies for the future (this is program eval); (6) follow up on the working group survey conducted last fall. Interfacing with CEE on training materials for librarians.
+
+John K: nothing to report
+
+Viv: Nothing from me today, either
+
+Mike: Nothing to report. 
+
+Bertram: invitations for ProvWG meeting June 24&25 at NYU/Poly sent; reminded people to make reservations soon (=> airfares) and that the Hotel deadline is May 24.
+

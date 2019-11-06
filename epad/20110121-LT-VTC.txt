@@ -1,0 +1,190 @@
+Attendees: Rebecca, Bob, Amber, Carol, John Cobb, Trisha, Suzie, Bruce, Mike, Dave,
+Todd,Steve
+
+Regrets: Viv Hutchison
+
+
+http://epad.dataone.org/20110121-LT-VTC
+  
+
+  Agenda for 2011-01-21
+
+
+1.  Preliminary Feedback from DataONE EAB meeting (Rebecca,Dave,Amber)
+
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/eab-feedback-posters/Feedback%20from%20DataONE%20EAB%20Meeting.docx
+
+    1.    Create cross-organizational tiger teams 
+    2.    Presentations
+    3.    Key elements to emphasize
+    4.    Areas for clarity 
+    5.    Blatecky – opportunity
+    
+    New DataONE call expected on or after Feb. 7
+
+Tiger teams:
+Overview: Amber, Bruce, Bob, Bill
+CI: Bob, Rebecca, Dave, Bruce, Bill
+CE: Amber, Carol, Bill, Bruce (tenative)
+Sustainability/Challenges/Future: Rebecca, Amber, Bill, Trisha
+
+Integrated scenario/persona: https://docs.dataone.org/member-area/committees/external-advisory-board/2011jan17_eab_meeting_santa_fe_nm/eab-slides/SunPersona.docx/view
+
+Other scenarios: https://docs.dataone.org/member-area/committees/external-advisory-board/2011jan17_eab_meeting_santa_fe_nm/eab-slides/DataONEScenarios4.doc/view
+
+Jan 16-22
+
+
+Jan 23-29
+
+- User scenarios story outlined
+- PPT presentations outlined
+
+- Pre-award scenarios
+https://docs.dataone.org/member-area/committees/external-advisory-board/2011jan17_eab_meeting_santa_fe_nm/eab-slides/20110117_ScenariosCombined_v2.0.pptx/view
+
+
+
+Jan 30-Feb 05
+
+- Demo preparations and cleanup
+- Complete writing tasks
+
+Feb 06-12
+
+- Feb 07: Submit documentation to NSF including:
+  - five page overview
+  - fifteen page detail
+  - Project management plan
+  - Cooperative agreement
+  - Architecture documentation
+- Final versions of demos sorted out, with bug fixes
+- Prepare screen captures of demo activities
+- Final versions of powerpoints prepared
+
+Feb 13-19
+
+- No development activity on demo machines
+- Prepare final versions of screen captures of demonstrations (videos)
+- Practice presentations
+- Practice demonstrations
+
+Feb 20-26
+
+- Feb 22: Bill + Sayeed provide overview
+- Feb 23: DataONE review
+- Feb 24: Response to panel questions
+
+General plans for DEMOs:
+
+Demo 1. Search for interesting data (i.e. stuff that will be used in Demo 2).
+- The search UI (i.e. mercury) needs to be working
+
+
+Demo  2. The EVA demo. This involves an investigator downloading data from   DataONE into R and executing the scripts to generate a distribution map   (animation?). Bonus is to publish that back to a Member Node
+- about 20sec to run
+- single distribution generated
+- need to science metadata describing the output
+
+Demo 3. Basic process of a researcher adding content to a Member Node with some discovery 
+
+- Add content to DataONE using client. Ideal = Morpho, minimum = CLI
+(- Verify content available on Member Node)
+- Content available on > 1 Member Node
+- Content available in search index
+- Add discovered content to Zotero
+
+- emphasize that content is being pulled from multiple sources and metadata formats
+
+Demo 4. 
+- Perhaps turn off a member node and show that the content is still retrievable
+
+
+
+ 2.  Status of  DataONE NSF Review documents (Rebecca,Amber,Dave)
+
+Table of Contents
+
+I.     Executive Summary (Lead:WM – input from ET & LT) {5 pages, including attractive figure}
+II.    Introduction (Lead: WM – input from ET & LT) {1 page}
+III.   Cyberinfrastructure (Lead: DV with BW,MJ & CCIT) {8-9 pages}
+IV.   Community Engagement (Lead: AB with CT,SA, Viv or Steph) {2 pages}
+V.    Sustainability (Lead: TC with WM, DV, JC) {1 page} ***Need input here
+VII.  Supplemental Material (Lead: RK)
+        A.    Cooperative Agreement
+        B.     Proposal – no budget (check with Mike R)
+        C.    PMP
+        D.    Architecture Document (CI) (DV & MJ)
+        E.     Community Needs Assessment Document (CE)  (AE & CT) – would include   submitted manuscript
+
+ 3.  Round the room (All)
+
+Cobb:
+A. A TeraGrid TRAC allocation request was submitted on Saturday by Daniel Fink  5_ M SU for bird atlas, PIlot TraGrid MN including a few hundred K SU's, 2 VM's and 1 TB and 5TB of storage on two different  storage substracts (Albedo and DC WAN) Now we have to dedicate some staff to delpoy MN stack on this infrastructure. (TG request -review in April; award in May)
+B. Sci Hi for eBird was written up and submitted via TG quarterly report. We should also submit this to NSF nugget system as a DataONE nugget
+
+- Another good example for how a campus manages the DMP requirement <http://data.research.cornell.edu/>
+- Another thing I noticed this week was that I could not find "Science stories" on the public DataONE web site
+
+Mike:
+I will be in the DC area for the next 2 weeks, if there are some things I can do, let me know.
+
+Carol: UT has hired Liz Whitson to help out until our new post-doc begins the end of May.  This week Carol, Suzie, and Kimberly are submitting a grant proposal to IMLS (at their request) to do a literature review, analysis, and database of literature re: science data management.MIKE: Hey I know CDL has done something like this also - I'd talk with Trisha.... 
+
+Todd
+Upcoming workshop on Data Citations Principles, May 16-17 @ Harvard: http://www.iq.harvard.edu/events/node/2462
+
+Data will be the theme of this year's Society for Scholarly Publishing Meeting (I will be giving a talk and participating in a panel)
+
+I will be giving a presentation to life scientists at UNC on "writing your 1st NSF data management plan" on 1/31.  Using materials from DataONE and elsewhere.  Handy to have.  Many institutions seem to be pointing to MIT's resource page, so it would be important to be listed there is we have materials we want disseminated widely.
+
+Student internship program:
+ad hoc committee: Bruce, Todd, Rebecca, Amber, others ?
+ UT grad student can provide some logistical support
+ We have INTEROP money again, but do we have any DataONE contribution this year?
+
+
+Just to reiterate: SI2 program has a solicitation this year LOI due May http://www.nsf.gov/pubs/2010/nsf10551/nsf10551.htm. Manish siad that they hope to have some funding and might have more pending resolution of continuing resolution and budget cut issues. Theidea is to have alrge team, modeerate teams and small projects. Perhaps a data oriented institute is something we should think about trying to incubate
+
+Two workshops acepted for ESA 2011 (Data Management and data Management Plans)
+Citizen Science WG looks set to start up with a 1-day workshop colocated with Kevin Crowston's (D1 SC WG) workshop in Syracuse this May.
+
+Marratech Notes:
+[11:01 AM] Rebecca: 
+http://epad.dataone.org/20110121-LT-VTC
+[11:02 AM] Mike:  yep
+[11:05 AM] Todd Vision joined.
+[11:07 AM] John:  Do we have to compete in that new call round or is that call in addition to D1 and DC?
+[11:07 AM] aebudden:  We don't have to but he suggested we might like to
+[11:07 AM] aebudden:  Addition to D1 DC
+[11:08 AM] Mike:  Related to the Data Management Plans - Bill is involved in a grant that Viv is leading related to drafting data management plans, framework, etc. in USGS
+[11:08 AM] Mike:  Unfortunately, it won't exist for another few months
+[11:10 AM] John:  There was some discussion (in side conversations) here at the TeraGrid Science Adv. board about also adding large data storage solicitations somewhere in the OCI ecosystem. It is not clear that this is part of DataNET or antoher possible program.
+[11:10 AM] Carol:  Re: the new DataNet call, is that in addition to the 3 new ones, or instead of those 3? So in this year will there be 2 or 5 DataNets?
+[11:10 AM] Mike:  I also forgot that Bob is on the grant also...
+[11:10 AM] John:  We have ome Data Man plan start at https://www.dataone.org/plans right?
+[11:11 AM] Dave Vieglais joined.
+[11:11 AM] John:  Also I got a link about another good example for how a campus manages the DMP requirement <http://data.research.cornell.edu/>
+[11:14 AM] Suzie:  I'm having trouble hearing
+[11:14 AM] Dave:  can barely hear you Bob - lots of background
+[11:14 AM] Mike:  Bob I think you're in the wind tunnel
+[11:14 AM] Bob Cook:  whoops, I'll enter here
+[11:15 AM] John:  Another thing I noticed this week was that I could not find "Science stories" on the public DataONE web site
+[11:16 AM] Bob Cook:  The EAB was highly positive about our efforts.  They said the presenations were a rehersal, which was needed!!
+[11:17 AM] John W. Cobb left.
+[11:21 AM] Steve:  I had heard from Irene at the Data Conservancy AHM that the review group was selected and will be kept confidential
+[11:25 AM] John W. Cobb joined.
+[11:25 AM] Steve:  do you want papers? If so we've put together a chapter on the EVA for a book on data intensive science
+[11:25 AM] aebudden:  @Steve: That is not consistent with what Blateky said - he indicated that we would know the panel
+[11:26 AM] aebudden:  @Steve: Yes, any materials would be useful
+[11:26 AM] Steve:  that is interesting since Irene was quite adament about confidentiality
+[11:27 AM] John:  I have ~ 30 minutes after this call before I go to airport, woudl it help if I wandered downstairs to OCI and asked again?
+[11:28 AM] John:  in the "reviewer protection program?
+[11:29 AM] Bob Cook:  we also discussed the idea of having the presentations broadcast to the "Green room" where the rest of the team would be seated.
+[11:30 AM] Bob Cook:  good deal
+[11:30 AM] John:  Do we know the physical location of the review? is it Stafford II or someone else?
+[11:33 AM] John:  Any top questions to pursue, aside from list of reviewers?
+[11:35 AM] Steve:  why don't we wait until the release of the state of the birds?
+
+
+

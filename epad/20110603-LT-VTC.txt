@@ -1,0 +1,99 @@
+Attendees: Carol, Dave, Bruce, Bertram, John K., John Cobb, Trisha Cruse, Suzie, Matt
+
+Regrets: Rebecca, Todd Vision, Amber, Stephanie, Mike Frame
+
+Agenda for 2011-06-03
+
+1. Update on Semantics Working Group (Michener/Vieglais)
+- Need to make sure that Mark hears from Bill on this change.
+
+2. Report from PPSR WG (Budden)
+- Need to wait on report from Amber or Bill
+
+3. Funding opportunities (Jones)
+   
+GBIF  has issued a call for proposals to build a tools database (albeit  for a  very small amount of money).  Yet, the initiative seems quite  close in  intent to ebmtools and the DataONE tools databases, and so I  think we  should address that overlap even if we don't submit a proposal.
+
+From GBIF:
+
+'Development of a catalogue of biodiversity informatics tools'
+The   GBIF Secretariat is requesting proposals from potential   author(s)/research groups for the development of a ‘Catalogue of tools   and services for capture, digitisation, quality assessment &   enhancement, and publishing of primary biodiversity data’.
+
+See http://www.gbif.org/communications/news-and-events/showsingle/article/development-of-a-catalogue-of-biodiversity-informatics-tools/
+
+Note also that TDWG has a related pair of databases that might be of relevance:
+
+http://www.tdwg.org/biodiv-networks/
+http://www.tdwg.org/biodiv-projects/
+
+- need to at least contact GBIF to make sure they are aware of the DataONE database
+- person responsible from D1 tools database needs to get in touch (Amber)
+
+
+4.  In response to several comments from outside the project about the apparent "openness" of the project resources. There are currently no links to the system documentation, the subversion repository, mailing lists, or other useful resources from the DataONE public web site (www.dataone.org), which gives the false impression that these resources are somehow restricted access. Such a perception could be readily alleviated by adding a few links or a new page on the public web site. 
+
+A. Is adding such cross references a good thing for the public web site?
+
+B. If so, then which is the best location? 
+
+- http://www.dataone.org/participate
+- http://www.dataone.org/about
+- As an entry under the "Participate" menu
+- http://www.dataone.org/resources
+- As an entry under the "Resources" menu
+
+C. What project resources should be cross referenced?
+
+- subversion
+- architecture docs
+- operations docs
+- mailing lists
+- synopses of (all) working group results (news)
+- could feed into 1/4 reports, (and also pull information from those reports)
+
+Matt - crux of problem may be related to the technologies being used (e.g. Git vs Subversion)
+
+John C.: There is a need for an enhanced "Get the word out" effort in addition to current CCIT and CE efforts.
+- presentations
+- screen casts
+- etc for general sharing 
+
+For searching archives - can register list with a mailing list service
+
+- Keep a current list of news items - need more frequent updates. e.g. from when a working group meeting
+- Need to identify someone responsible for this 
+  - e.g. Amber could take lead, perhaps delegate to WG leads. 
+  - Undergrad could also take lead to coordinate
+
+Trish - S&G WG discussed this
+
+- Need to streamline or better define the process for adding new content to the web site
+
+- Review notes from the S&G meeting which mentions the web site and the content that should be added
+
+- Dave will pass on notes to ET for prep for next LT call.
+
+5. Around the Room 
+
+John Cobb: Still working on NSF Nugget for eBird. I just got a local public affairs person write-up for posting on ORNL "story tips" site. I will forward to LT mailing list and I invite comments and improvements.
+- feedback ASAP
+
+Bertram: Summer internships started: Provenance-Repository (w/ Paolo) this week and Workflow-Analysis (w/ Bill) the week before. 
+For ProvRep: 2-day meeting next week at UC Davis (ProvWG + ProvRep summer project).
+For WF-Analysis: sample workflows sought (==> Matt)
+
+John Kunze: Gave presentations on DataCite and EZID (mentioning DataONE) at two meetings in the last couple weeks:  Data Citation Principles in Cambridge and the American Astrophysical Society meeting.
+
+Trisha: DataCite is holding its annual meeting in Berkeley on August 24th and 25th.  Last year Bill, Ryan Scherle (sp?), and Greg Janee (CDL) presented and included information on DataONE's use of DataCite.  It would be great to have DataONE represented at the meeting so let me know if anyone would like to present. 
+Bertram: Trisha -- if the provenance/data lineage work is of interest to DataCite, I might be able to participate (and Berkeley isn't that far :)
+Great!  I will talk with you offline. 
+
+Matt: 1) http://notebooks.dataone.org set up for blogging the interns projects.  Probably could be used by others as well.  It's a wordpress site, and isn't integrated in with the web site or plone site, but content from here could also go on the main web site. 2) EIM papers due Sunday June 5.  Bill asked Carly to submit a DataONE paper.  My impression is that she could use assistance if anyone is willing.
+- can / should we tie a feed from the blogs to the main web site? (talk to Laura for RSS subscription)
+  -- additionally, the blogs could be linked in from the main web site, indicating that the blogs represent views of individuals and not necessarily the project.
+
+
+Carol: Nothing to add today.
+
+Suzie: No news this week. 
+

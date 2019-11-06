@@ -1,0 +1,181 @@
+Fedora Discussion
+
+There is code that may be re-used or analyzed to help with the implementation
+
+DataONE-ServiceApi-Java
+There may be cause to re-use this existing code base for serialization of objects and exception handling
+https://repository.dataone.org/software/cicore/trunk/service-api-java/
+
+other sources 
+Metacat
+look at Metacat as an example, though maybe not code re-use. Metacat was branched in order to integrate DataONE functionality.  
+
+We do not wish to branch Fedora to integrate DataONE functionality directly into Fedora (at least not yet).  We should createa a Fedora Plugin, much in the same way that FedoraGSearch or OAIProvider is a service provider plugin for Fedora.
+
+Dryad
+maybe look at what Roger has done with Dryad MN service.  The pattern is that Roger maintains a cache of SystemMetadata that is crossreferenced to data objects and metadata objects in Dryad. The data and metadata objects are directly proxied through Roger's implementation, but the cached SystemMetadata objects are served through his cache.
+
+CN Proxy
+This project will demonstrate how to proxy crosscontext servlet calls on the same instance of tomcat
+https://repository.dataone.org/software/cicore/trunk/cn-service/cn-prototype/DataONE-CnRestService/
+
+https://repository.dataone.org/software/cicore/trunk/cn-service/cn-prototype/DataONE-CnRestProxy/
+
+This is a simple approach that could be used for the three primary REST interface definitions we should first focus upon. (get, listObjects, getSystemMetadata)
+
+Assumption:
+
+The Fedora Object Identifier or the PID is not equivalent to the DataONE Globally Unique Identifier (pid != guid)
+
+Rather, a guid should point to a resource that can be streamed to a client in a format that is immediately useable and does not need any further 'unpackaging' or transformation in order to be used in a client program designed for that resource. A guid will also need to be unique in DataONE.  A DataONE guid for a fedora object will follow the conventions outlined for a Dissemination URI in the document: http://www.fedora-commons.org/confluence/display/FCR30/Fedora+Identifiers. The "fedora" namespace of the "info" URI scheme will provide uniqueness for the set of objects coming from Fedora instances.  A fedora PID is broken in to two parts, 
+namespace-id and object-id.  It will be the responsibility of fedora implementations participating in dataone to assure the uniqueness of their namespace in the fedora info schema.
+
+
+guid == 'info:fedora/' + FedoraPID + '/' + Datastream (http://localhost/fedora/get/xxx:123/DC)
+
+example of retrieveing URL of sci meta referenced by DataONE guid "info:fedora/xxx:123/DC"
+http://localhost/fedora/get/xxx:123/DC
+
+example of returning sci data referenced by DataONE guid "info:fedora/xxx:123/IMAGE1"
+http://localhost/fedora/get/xxx:123/IMAGE_1
+
+We wish to maintain a Fedora object structure as much as possible as Fedora-Commons has defined what a Digital Object is. Thus an object in Fedora that represents a collection of related scientific data and metadata will follow the Fedora Digital Object Model.
+http://fedora-commons.org/confluence/display/FCR30/Fedora+Digital+Object+Model
+
+A Digital Science Object in Fedora will contain a Persistant PID, Object Properties, Rdf Relations (RELS-EXT or RELS-INT), Dublin Core(DC), Audit Information(AUDIT) and Datastreams. For the first iteration of this prototype, we assume:
+
+ * DC is the Metadata standard that will contain Science Metadata. 
+ * Datastreams that are not DC, RELS-EXT or AUDIT contain Science Data described by the Science Metadata. 
+
+In DC, there is an Identifier field. This field should be set to an url through which anyone examining the Objects stored in fedora may resolve the identifier to a location that contains a Fedora representation of the Object.  Currently, we will assume that the Identifier field will contain an URL similar to the following: http://mn-server-name/fedora/get/PID?xml=true .  It is not required that the field contain this string, but for our purposes for now, we assume that it does.(upon thinking on this assumption further, it is not a priority to implement this now.  The identifier field in DC is used for a variety of purposes by Fedora implementations.  This identifier should be a member of the DC instead of a translation of the DC.  There may be multiple dc:identifier elements in DC. In Fedora 3, a JMS provider has been integrated such that a topic may be listened to for certain events.  I suggest that a possible solution would be implement a listener that would analyze any DC object upon create (or add) and verify that it contains an identifier in a format that is configurable by the project running the client. If it does not contain the formatted Identifier, then an update statement should add it. http://www.fedora-commons.org/confluence/display/FCR30/Messaging.)
+
+Requirements
+
+The first iteration should implement three endpoints of the DataONE REST API.
+
+http://mule1.dataone.org/ArchitectureDocs/REST_interface.html
+
+
+1) Implement GET /object/<guid>
+
+MN_crud.get()  -> GET /object/<guid>
+
+Operates on individual items of the /object collection identified by the identifier <guid>. Member node Crud operation is called by the Rest /object/<guid> endpoint.
+
+This should be a fairly simple crosscontext proxy.  It could easily be done as an Apache URL rewrite, but we need to write this in Java. Luckily, the CN Service already implements this pattern. The only concern is the need to alter Tomcat Configuration files in order to allow Crosscontext forwards of servlet requests and responses.
+
+
+The MN_crud.get() method should proxy the Fedora API-A getDatastreamDissemination() method.
+
+http://fedora-commons.org/confluence/display/FCR30/API-A#API-A-getDatastreamDissemination
+
+Such that
+
+((MN_crud.get()  -> REST  /object/${GUID} )== 
+(API_A.getDatastreamDissemination()  -> REST fedora/get/PID/DSPID) )
+
+
+2) Implement GET /object
+
+MN_replication.listObjects() -> GET /object
+List of objects that are present on the node, ordered with newest first.
+
+This is a more complex crosscontext proxy.  Instead of hitting Fedora proper, we will be proxying against fedoragsearch (gsearch).  Gsearch will need to be configured to maintain at least 2 indices.  Please see the gsearch 2.2 source for examples of the multiple index pattern. One index will be a simple default search that can be accessed against the gsearch web interface.  The other index will be structured such that DataONE may return an ObjectList from a listObjects call.
+
+The MN_replication.listObjects() method should proxy the FedoraGSearch Operations.gfindObjects method.
+
+Such that
+
+( (MN_replication.listObjects() -> REST /object + query string + parameters) ==
+(Operations.gfindObjects() -> REST /fedoragsearch/rest?operation=gfindObjects + query string + parameters) )
+
+Xslt  will be used to convert FoxML for each Science and Metadata Datastream in the FoxML to be represenated as a separate indexed document in the Lucene index.  Instead of using gsearch's LuceneDemo for the DataONE index, please review the SolrDemo implementation.  Solr will allow for multiple documents to be ingested by parsing a single FoxML file.  The XSLT example ( FgsConfig/configDemoOnSolr/index/DemoOnSolr/demoFoxmlToSolr.xslt) will need to be changed to handle creating a doc element for each valid Datastream in FoxML. 
+
+(Note: If you were to use the LuceneDemo project as a bases for a DataONE index, then we find that DataONE requires a bit more complex relationship between the FoxML file and the index than Gsearch has originally conceived. There is no notion that a single FoxML document will need to contain multiple rows in an index. Luckily GSearch is flexible enough to allow for a independent implementation of its Operations Interface.)
+
+
+3) Implement GET /meta/<guid>
+
+
+MN_crud.getSystemMetadata() -> GET /meta/<guid>
+
+Requests the Types.SystemMetadata for the specified object. Although this access point is supported by both Member and Coordinating Nodes, only the responses from Coordinating Nodes should be considered authoritative, especially with respect to the SystemMetadata.replica entries.
+The /meta response format defaults to text/xml and is the only format currently supported. Other formats such as JSON may be supported in the future.
+
+NEED TO PROVIDE MORE DETAILS ON HOW TO IMPLEMENT THIS
+
+mn.getSystemMetadata -> rest /meta/${guid}
+FoXML  -> SystemMetadata  (through xslt via fedoragsearch)
+
+NOTES
+
+pretty trivial to assume that a single datastream = d1 data object
+more difficult part is to determine how scimeta is represented.
+
+Scimeta = DC
+
+system metadata for sci Metadata, contains a describes field, there will be multiple entries in describe, each one pointing to a datastream in the fedora object.
+
+datastream is to be an entry in describes.
+
+pid
+FO = {
+    PID
+    DC
+    DS1
+    DS2
+}
+
+(guid)
+PID/DC  D1scimeta == FO.DC
+D1sysmeta(PID/DC).describes = 
+  <describes> PID/DS1 </describes>
+  <describes>  PID/DS2 </describes>
+(guid)
+PID/DS1 = blob
+D1sysmeta(PID/DS1).<describedBy> PID/DC </describedBy>
+
+PID/DS2 = blob
+D2sysmeta(PID/DS2).<describedBy> PID/DC </describedBy>
+
+
+======
+Jerry Pan:
+Now I see the details of the document, some  questions come to mind:
+ 1) what  would be the consequence to have GUID=PID
+ 2) if your GUID contains the dissimenation  point of  a DC data stream, how changes to the server (for example,  fedora context change from fedora to something else) affect the usage of  the GUID?
+ 3) Will DataONE GUID always retains semantic  meaning across different types of memeber nodes (i.e., fedora mn and  non-fedora mn)?
+ 
+======
+Robert Waltz:
+1) We wish to allow for a fedora repository implementing a simple Fedora Digital Object Model. So we assume that an object will have:
+ 
+PID
+Object Properties
+Reserved DataStreams
+Datastreams
+
+We will assume for this simple implementation that any datastream that is not reserved represents science data and that our science metadata is stored in DC.  I do not want to exclude an implementation in which another datastream contains the definitive science metadata or that RELS-EXT relationships may include other fedora-objects as parts of a greater collection that may also have science metadata describing it. I believe most sophisticated fedora repositories will utilize those abstractions. But, for now, let's assume the simplest case and not consider the Digital Object Relationships or the Content Model Architecture aspects of Fedora since a project can have a successful Fedora implementation only using the essential characteristics of a digital object.
+
+In this case, the PID in Fedora simply describes a compound of properties and datastreams.  From a DataONE perspective, a datastream (either science metadata or science data) is an object. In order to support the simplest of Fedora implementations, we have decided that the DataONE GUID must refer to the Fedora PID + DS. If the GUID=PID, then any client accessing the object would have to further discover what the real data is inside the fedora object. So, our clients would have to translate Fedora implementations differently than from other repositories.
+
+We will consider the dataONE GUID for fedora implementations to be what is described in the Fedora 3 documenation as Dissemination URIs.  Please see the document:
+ 
+http://www.fedora-commons.org/confluence/display/FCR30/Fedora+Identifiers
+ 
+The last section URIs for Disseminations describes the syntax 
+dissemination-uri
+dissemination-uri = "info:fedora/" pid "/" ( method-call / datastream-id )
+method-call       = sDef-pid "/" method-name [ "?" param *( "&" param ) ]
+param             = paramName "=" paramValue
+
+For our purposes now a GUID would for a science metadata object look like
+"info:fedora/xxx:123/DC"
+this would crossreference to a fedora rest URL of 
+http://localhost/fedora/get/xxx:123/DC
+
+2) I am afraid I do not follow. Do you mean what if we use another dissemination other than GET as a means to stream the contents of a datastream?  It would implementation dependent. We should be able to create any number of proxy implementations of the rest proxy object controller to point to a different dissemination if that is needed by a particular fedora repository. But, other non-fedora repositories will be storing the results of that dissemination as the definitive science data or science metadata object.
+
+3) This is a good question. If we do not allow for the dissemination of a particular datastream to be described by the SystemMetadata then we may have two different Fedora instances with two different representation of the same GUID. So, we may want to rethink what the GUID is. It may have to be the entire HTTP URL.
+
+

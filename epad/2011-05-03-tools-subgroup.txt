@@ -1,0 +1,483 @@
+Group Members: Mike, Bob C, Bob S., Lei, John
+
+Develop our Summary Output Template
+Use Life Cycle as Guide for Evaluating Assessments 
+-Potentially categorize tool findings & needs
+-Look at Suzie talk
+
+Identify additional Assessments to consider 
+Look at the Assessments as Group or Sub Group
+-If break up, work for maybe 1 hour
+-Come back as group (1 hour)
+-Produce Summary Report (1 hour)
+-End of day 
+
+Categories of tools (from DataONEpedia exercise):
+http://www.dataone.org/dataonepedia
+  1. Discovery Tools
+  2. Developer Tools
+  3. Data and Metadata Management
+  4. Exploration, Visualization, and Analysis
+  5. Scientific Workflows
+  6. Data Citation
+  7.  Analysis
+
+
+Parse Insight:
+http://www.parse-insight.eu/downloads/PARSE-Insight_D3-4_SurveyReport_final_hq.pdf
+Science: 
+http://www.sciencemag.org/content/331/6018.toc
+http://www.sciencemag.org/content/331/6018/692.full
+
+Purdue Data Curation Profiles:
+http://wiki.lib.purdue.edu/display/dcp/Data+Curation+Profiles
+http://www4.lib.purdue.edu/dcp/completed 
+
+DataONE Baseline Assessment of Scientist
+
+Deliverable:
+
+so, we are looking at trying to help CCIT prioritize tools. At least that was a discussion item last week with MAtt and Dave at USGS.
+
+ONe thing to look at the is DataONEPedia http://www.dataone.org/dataonepedia which was generated last year and will be revisited in the near future
+
+We want to look and try to identify user groups that say
+A) Here is a tool we are really using
+B) Here is a capability that we need.
+
+DataONE needs to interview teams and then try to give summaries that could lead to prioritization
+
+Potentially use the list of Tools to prioritize 
+
+Specific Tools
+
+Name:
+In Use by What type of Researcher: 
+Description:
+url:
+Functionality:
+
+How to find a universe of tools?
+- analyze known documents (e.g., Purdue DC profiles)
+- look for other documents / tool assessments
+- talk to / survey the scientists
+
+
+**********
+NASA Assessment related to Data Management (Source: Cook):
+Community: ORNL DAAC Users/ NASA Terrestrial Ecology Program Scientists
+
+Tool relevant answers to the question asked of scientists:  How could the NASA's terrestrial ecology program make data sets easier to prepare, access, manipulate, and combine with other sources of information and/or models?
+
+•Data coordinator to act as a liaison between investigator and data center; make it easier for investigator to compile and submit data to a data repository.  Responsible for seeing that data from PI gets into the archive in a suitable form and well documented.
+•NASA could facilitating the expeditious preparation of data and metadata for sharing, including preparing data products in a standard formats with standard variables.
+•Single portal that enables exploration and access to Earth Science data including visualization; data are readily integrated.
+•Methods to access data in time centric methods.
+•Extract and integrate multiple remote sensing products for a small area over time (AVHRR, MODIS, LEDAPS (reflectance and disturbance), LandSat, etc.).
+***************
+
+How to measure the tools impact?
+
+
+The guidance form this exercise will have implications for sustainabilty WG on how we engage commercial ISV's
+
+AI: request Scientist FU survey to include an open-ended question asking respondants to identify tools.
+
+We should  review the baseline Scientist survey for input to this process.
+
+Mike: It seems that DataONE has been focusing on the later stages data lifecycle isues such as analysis and synthesis and less on the earlier depostion and metadata generation.
+
+Baseline Assessment of Scientists Findings:
+- 32% are satisified with the "tools for preparing metadata"
+- 44% are satisified with the "tools for preparing my documentation"
+- 80% are Satisified with "process for Collecting"
+- 70% are Satisified with "process for Searching"
+- 60% are Satisified with "process for Cataloging/Describing" (EDUCATION ISSUE)
+- 73% are Satisified for "storing data during the life of the project"
+- 45% are Satisified for "storing data beyond the life of the project"
+- 76% are Satisified for "process for analyzing my data"
+- 39% agree that "Organization has a formal established process for storing data beyond the life of the project" 
+- 44% "Organization provides necessary tools and technical support during the project"
+- 35% "Organization provides necessary tools and technical support BEYOND the project"
+
+- 21% "Organization provides training on Best Practices for Data Management" 
+
+Parse Survey Results:
+
+Number of respondents per category:
+Physical Sciences                        33%             (Astronomy & Astrophysics, Chemistry, Computer Sciences, Mathematics and Physics)
+Technology                                    14%            (Engineering and Technology)
+Life Sciences                                    13%
+Social Sciences                         11%
+Humanities                                    7%
+Medicine                                    6%            (Medicine and Life Sciences)
+Socio-Cultural Sciences            6%
+Ag & Nutrition                        5%
+Behavioral Sciences                        5%
+
+Results: Threats to Digital Preservation
+(Very important, important, slightly important, not important)
+% of those answering very important or important
+§  (80%) Lack of sustainable hardware, software or support of computer environment may make the…
+§  (78%) The current custodian of the data, whether an organization or project, may cease to exist at some…
+§  (76%)  Users may be unable to understand or use the data e.g. the semantics, format, or algorithms involved.
+§  (77%) Evidence may be lost because the origin and authenticity of the data may be uncertain.
+§  (69%) Loss of ability to identify the location of data
+§  (57%) The ones we trust to look after the digital holders may let us down
+§  (56%) Access and use restrictions (e.g., Digital Rights Management) may not be respected in the future
+N=1209
+ 
+Do the tools and infrastructure available to you suffice for the digital preservation objectives you have to achieve? 
+(59%) No
+(27%) Yes
+(14%) Don't know
+ 
+Question #25: Do you think that an international infrastructure for data preservation and access should be built to help guard against some of these threats?
+ 
+Results: Need for Infrastructure by Category
+% who said yes
+§  (56%) Physical sciences
+§  (60%) Life sciences
+§  (60%) Social sciences
+§  (41%) Technology
+§  (75%) Humanities
+§  (57%) Medicine
+§  (71%) Socio-cultural sciences
+§  (51%) Agriculture
+§  (49%) Behavioral sciences
+N=1207
+
+Question #7: Please indicate which of the following digital research data you use (multiple answers possible).
+ 
+Results: Data Types by Researchers
+§  (94%) Office docs
+§  (79%) Network-based data
+§  (79%) Images
+§  (55%) Plain text
+§  (53%) Archived data
+§  (47%) Scientific/statistical data formats
+§  (46%) Databases
+§  (46%) Source code
+§  (46%) Software apps
+§  (45%) Raw data
+§  (32%) Multimedia data
+§  (23%) Structured text
+§  (21%) Configuration data
+§  (17%) Structured graphics
+§  (5%)   Other
+N=1366
+
+Question #29: How do you presently store your digital research data for future access and use, if at all (multiple answers possible)?
+ 
+Results: Where Do You as a Researcher Store Your Data for Future Use?
+§  (81%) Computer at work
+§  (66%) Portable storage carrier
+§  (59%) Organizational server
+§  (51%) Computer at home
+§  (15%) Submitted with journal (at publisher)
+§  (14%) Digital archive of organization
+§  (6%) Digital archive of discipline
+§  (3%) Other
+§  (3%) Don’t store digital research data
+§  (2%) External web service
+N=1202
+
+Question #73: Please provide us with an estimate of the volume of stored digital data (excluding backups) as well as an estimate of its volume in 2 and 5 years.
+ 
+Results: Estimated Amount of Data Stored per Research Project
+(Current, in 2 years, in 5 years)
+§  0MB (1%, 1%, 2%)
+§  1-100MB (17%, 8%, 5%)
+§  100MB-1GB (25%, 19%, 13%)
+§  1GB-1TB (40%, 41%, 36%)
+§  1TB-1PB (6%, 13%, 20%)
+§  1PB-10PB (1%, 3%, 5%)
+§  >10PB (0%, 0%, 2%)
+§  Don’t know (11%, 14%, 17%)
+N=1296
+
+Purdue Data Curation Profiles:
+
+Atmospheric Modeling
+Tools
+- Vis5D+ http://vis5d.sourceforge.net/ (OpenGL-based volumetric visualization program for scientific datasets in 3+ dimensions)
+- VAPOR http://www.vapor.ucar.edu/ ( VAPOR provides an interactive 3D visualization environment that runs on most UNIX and Windows systems equipped with modern 3D graphics cards.)
+- Excel (used for statistical summaries)
+- Adobe Illustrator (used to create publication-quality images)
+- QuickTime (used to assemble images into animations)
+
+Data formats
+- NetCDF (raw data)
+- Raw binary .dat
+- Vis5D.v5d (intermediate compressed form most suitable for sharing)
+- .xls
+- .txt
+
+Tool needs:
+"an automated process for submission to the repository is a high priority for this kind of data, particularly as ingest might become a component of the java workflow system, and the upstream processes need to be part of what is captured and deposited. The ingest process must be “as painless and comprehensive as possible.”"
+Citability of generated datasets (implying reliable persistant IDs)
+
+"connecting data to visualization and analytical tools would be a high priority for this kind of data."
+
+Carobonate Sendimentology
+Brief summary:
+The data set for deposit would be a package consisting of two-three Excel spreadsheets,
+annotated photos and microscopy images, and possibly additional files of contextual information. The files in this data set package would need to be linked together, and these links would need to be maintained over time.
+
+Tools
+- MS Excel or a csv reader
+- image reviewer for jpg or tiff formats
+- any visualization and analytical tools
+
+Preservation high priority:
+- the ability to migrate these data sets into new formats
+- Documentation of any and all changes made over time to the data or data submission package
+- The ability to audit the dataset
+- Format migration will be necessary as needed for maintaining accessibility of spreadsheet (or csv), image and photo files
+
+Human Cell Defense System
+Brief summary:
+The scientist views his summarized data as having the most value to others, although there may be some potential value in sharing his raw data (to enable “meta-analysis” of similar data). The data, both summarized and raw, consists of a series of Excel spreadsheets.
+
+Metadata:
+The application of standardized metadata to the dataset is a high priority for the scientist. 
+Discovery:
+the ability for researchers in his discipline to easily find his dataset was a high priority
+Tools:
+- MS Excel or a csv reader
+- any visualization and analytical tools
+Data Management:
+Having a secondary storage site for the data is rated as a high priority by the scientist
+Preservation:
+- Documentation of any and all changes made to his data over time is a high priority
+- The ability to audit the dataset is a high priority
+- Version control is a high priority
+- The ability to migrate the dataset into new formats over time is a high priority
+
+Human Genomics
+Brief Summary:
+The data set consists of a mySQL database and several text files containing data used for
+reference purposes. The scientist believes that there is a need for archiving her data and in providing resources and mechanisms to enable data archiving to researchers at her institution.
+Data Source:
+- obtained from the National Center of Biotechnology’s (NCBI) nucleotide database and UCSC’s genomic browser
+Data Kinds:
+Data collection, access, retrieval, management, and analysis were done using Perl scripts and modules obtained from Bioperl (http://www.bioperl.org). Data placed into a mySQL database
+Tools:
+- Perl script for data analysis
+- MySQL database in storing data
+- There are tools available through genomic browsers at NCBI, UCSC and others, to process and analyze this type of data. The ability to connect the data to these tools is a high priority for the scientist.
+Data Management:
+- A secondary data storage site is a high priority
+Preservation:
+- The ability to audit the dataset
+- The ability of the repository to provide version control for this data set is a high priority
+- The ability to migrate the dataset into new formats over time is a high priority
+
+Plant Nutrition and Growth
+Brief Summary:
+The data consist of multiple spreadsheets in MS Excel format, some SAS and Minitab files, and a small number of Power Point files containing images and some descriptive text.
+Data Kinds:
+- The field data are initially gathered in the field by hand and recorded on printed data sheets. This data is later entered into an Excel spreadsheet.
+- Once the data are ready for analysis they are imported into a statistical software package (usually Minitab or SAS) for data reduction or statistical analysis.
+Tools:
+- Master spreadsheet contains data
+- SAS, MiniTab and other statistical analysis programs have been used to analyze these data
+- The images of gels and blots are inserted into Powerpoint slides to enable their annotation
+Data Management:
+- Both a secondary storage site and a secondary storage site at a different geographic location are high priorities
+Preservation:
+- Documentation of any and all changes made to the data over time is a high priority
+- The ability to audit the data within the repository is a high priority
+- Version control for data within the repository is a high priority
+- The scientist is agreeable to the migration of the data out of their current proprietary formats and into open source equivalents such as .csv, provided that the integrity of the data and annotations are maintained.
+
+Soil Ecologist:
+
+Brief summary of data curation needs
+This high-value data set identified for deposit combines observational parameters and calculated data (including means and variance of ), and has been error-checked and cleaned. This tabular form data is held in a Microsoft Excel spreadsheet. Since this data could be represented both in the spreadsheet format and in the more generic comma separated value (csv) format, the scientist believes that the data should be made available in multiple formats to support re-use. The deposited data set is seen to have significant re-use value, and should be preserved indefinitely.
+An embargo period of two (2) years is required. The scientist would like attribution when these data are reused by others, requiring a readily available citation for the data set as part of any related metadata or repository record. Access to analytical and visualization tools, as well as web APIs, would be useful for this kind of data. The scientist stated that this type of data carries privacy and confidentiality concerns, as it can include content (such as GIS data) that would identify land owners or other individuals who have responsibility for the soil in specific land areas.
+The scientist also noted that there is a general uncertainty in her field about which data to keep, and to prepare and submit for public access.
+
+Tools: 
+- Collection is by Hand, in notebooks
+- The “raw” data are entered into a table (most often MS Excel; sometimes directly into SAS statistical software);
+- Instrument data is transferred into an Excel spreadsheet,
+- 1- 5 mb dataset file size is typical
+- SAS is used for statistical Modeling
+- MS Word is used for important excerts of analysis
+Format: EML mentioned, but not used
+
+
+Water Flow and Quality Scientist:
+
+Brief summary of data curation needs
+The primary data sets for deposit are a series of spreadsheets of water flow data over set
+intervals of time in a tile drainage system and spreadsheets summarizing water flow rates and water quality information on an annual basis. This data has been collected over a 25 year period.
+
+Tools: 
+
+The raw data are collected both from data logger equipment (Cambell Scientific software) and manually at the site.
+
+The data are manipulated using Excel and SAS programs in the “analyzed” stage. While the scientist generally performs data calculations in Excel, she has enlisted the help of statisticians and others to run more sophisticated analyses. The finalized data are typically saved in Excel spreadsheets which are used to generate charts/graphs for use in publications or presentations. Data are backed up at all stages of the data cycle in many formats including lab notebooks, CDs, zip drives, an external hard drive, and the scientist’s departmental server.
+
+The primary means of description used by the scientist has been detailed annotations within the spreadsheets themselves. She also has Microsoft Word files containing dataset descriptions that are referred to in some of the spreadsheets.
+
+Data Formats: .xls is referenced.  Even mentioned the fact that had the migrate from Lotus 123 to Excel at one point.  Not all data was migrated.
+
+Backups, Storage: Tend to be on external Drives, or Network Server.   Other backups tend to be in Paper or in the initiall Collection Logs.
+
+Plant Genomics
+Tools
+Institutionally-managed information management system; holds .csv files being analyzed
+postgresSQL; publicly accessible after 6 months
+
+Data Formats
+Spectrometer data, .csv
+.pdf, for "summaries and graphs" for public release.
+jpg, "Photographs of the plant trays", for "verification or explanatory purposes"
+
+Tool Needs
+Embargos: after six months, the Information Management System prompts humans to end the embargo
+Analysis: The information management system generates z score values & graphs; % difference graphs; weight normalized values
+Citability of generated datasets (implying reliable persistant IDs) "The scientist would like to be able to connect readers of their articles directly to the relevant data sets in information management system. Presumably this would require the assignment of a persistent URL, DOI or other enabling another means of persistence."
+Metadata creation: "The application of standardized metadata to the dataset is a high priority for the scientist." The information management system "forces" entry of metadata when plant samples are submitted for analysis (pretty far upstream). Mix of community-supported (gene names) and "locally developed" metadata are used.
+Annotation service: "The scientist expressed a strong desire for others looking at or using the data to be able to annotate the data with notes or information as to how the data is/was being used and/or resulting discoveries or questions."
+Semantic interoperability: "...strong interest in integrating his data sets with others through the use of shared, community-supported ontologies. However, he also stated that the types of ontologies needed for his specific purposes do not exist yet. 
+A standardized, community-supported controlled vocabulary is used for gene names."
+Server mirroring: a high priority.
+Capability to "remove data from public view" is desired (e.g., experiments that were not completed)
+Discovery: a high priority; library catalog; Internet search engines; information management system search / browse.
+Linking: link data in the Information Management System to publications written by others who re-use the data.
+Usage data: medium priority.
+Interoperability with other relevant, publicly accessible datasets.
+Geographic redundancy: doesn't care
+Provenance: high priority
+Data audits: high priority
+Version control: medium priority
+Format migration: medium priority
+
+
+Science Magazine: 11 February 2011 vol 331, issue 6018, pages 639-806
+
+Polled all Peer Reviewers of Science
+n=1700
+
+Data Size:
+
+About 20% of the respondents regularly use or analyze data sets exceeding 100 gigabytes,
+and 7% use data sets exceeding 1 terabyte. About half of those
+polled store their data only in their laboratories—not an ideal longterm
+solution.
+
+
+
+
+Note: DataONE needs to not only assist preservation of data but also preservation of tools/methods that are (were) historically used and developed.
+
+How to Prioritize Tools:
+1. Do more focused analysis of current and potential MNs for Tool Use, Feedback, Issue
+2. Unit of Analysis: Scientists
+3. Audience: Potential Scientists (Should we include Libraries)
+
+Focus on communities using current and planned Member Nodes:
+- what tools are used for each stage in the lifecycle in that community?
+- what are their strengths, weaknesses; what are the gaps where adequate tools don't exist?
+- develop other questions based on NASA Assessment, above
+
+Focus on audiences / roles and differences in tool needs
+- scientists
+- librarians
+- data managers
+
+Can we use the R implementation as a first case study?
+
+Deliverable:
+
+Potentially set of Requirements that is desireable based on Survey/Assessment findings. 
+
+then cross-ref with a list of tools, say the DataONEPedia
+
+Provide Summary to Bob for Best Practices
+
+Summary Effort to Report Out:
+
+1. Developing a Draft of our Summary Output Template
+
+2. Used Life Cycle as Guide for Evaluating Assessments 
+
+3. Looked at Scientist Baseline Assessment, Parse Insight, Science Magazine Article on Data, Purdue, 
+
+4. Focus: Tools referenced in Assessments 
+Categorized tool by Life Cycle & Usage 
+
+5. Timing: Another couple of hours
+
+6. Next Tasks: Potential Tools Assessment within existing & potential MNs     "and"
+
+7. Developing a Feedback Mechanism for the Major Deliverables by December 
+
+Summary Document Outline:
+
+Working Group: Usability & Assessment
+Subgroup: Tools Analysis within Assessments
+ 
+Background:
+ 
+Our Approach:
+ 
+Major Findings:
+
+Mention some of the tools that appeared in the Purdue data curation profiles: SAS, Minitab, Illustrator, version control.
+
+Recommendations & Actions: 
+ 
+
+Come to closure on policy issues affecting ITK development (unsure if all of the following apply)
+1. Privacy
+2. Logging
+3. Registration, authentication, and authorization
+4. copyright
+5. terms of use
+
+Develop and communicate roadmaps for all tools currently under development
+1. R
+2. command line
+3. libraries
+4. Zotero
+5. Morpho
+6. Mendeley
+7. DataONE search
+
+Identify existing literature or reports that evaluate use of, strengths, weaknesses of tools of interest to the DataONE community.
+
+Confirm the "fitness for purpose" of ITK tools as they are developed
+1. perform usability assessments, in situ and in usabiltiy lab settings; feed results back to developers; coordinate with U&A and SC working groups and CCIT. In situ assessments should include effects of contextual factors on tool use (e.g., need for human support, like a data liaison; organizational needs, barriers, limitations; user education).
+
+Develop prioritized ITK tool development
+1. write questions for upcoming assessment surveys to gather information about tool use in specific communities and disciplines; gather data about entire tool chains that cover the entire data lifecycle
+2. starting with existing Member Nodes, gather data from those communities about tool use in those communities. For Member Nodes on the implementation schedule, gather data from their user communities about tool use prior to implementation; make this a routine part of the process of standing up new Member Nodes. Rationale is that users affiliated with Member Nodes should be given priority in terms of improved tools support. Address questions such as "Here is a tool we are really using" and "We really need capability X". Coordinate this activity with U&A and SC working groups and CCIT.
+
+Identify external resources for ITK tool development
+1. contact commercial software providers (e.g., SAS, ESRI) to make the argument that they develop features compliant with the DataONE API
+2. partner with free / open source projects to develop features compliant with the DataONE API
+3. look at supplemental grant possibilities for tool development
+4. set up Summer of Code projects to address tool needs
+
+Identify tools useful for DataONE audiences other than researchers / scientists
+1. Identify tools needed by the library community to support "generally useful services" (e.g., facilitate identification of appropriate repositories for specific researchers / users)
+
+Develop and organize materials to guide ITK development and lower barriers for external entities interested in developing to DataONE APIs.
+1. point to or develop relevant policy documents (e.g., user privacy; authentication; authorization; etc.)
+2. create a guide to the ITK-relevant API documentation and use cases for external development entities
+3. invite tool development partners to the DataONE Users Group
+
+
+
+Attachment:
+Detailed Notes from epad.
+
+SUMMARY REPORT UPLOADED DATAONE DOCS:
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/joint-ua-socio-working-group-mtg-knoxville-may-3-5-2011/tools/Sub%20Group%20Summary%20-%20Tools%20-%20Assessments.docx/at_download/file 
+
+
+

@@ -1,0 +1,22 @@
+Data Citation BOF at Data 2012      7 people
+
+Prioritized list of what we want:
+
+1. concise packet of assertions that form a precise reference to a data set, that is retrievable from offline or online sources, where data means anything (observations, simulations, ...) under discussion at Data2012
+
+1.1 ability to convey credit to creator/contributors
+1.1.1 stable reference
+1.2 ability to identify that a referenced data set is a subset of another data set
+1.3 ability to identify that a referenced data set is a version (time, language, format, etc) of another data set
+1.4 if actionable, a globally unique string embeddable in a URL, with a service protocol specifier (http, ftp, etc)
+1.5 ability to convey reputation information
+1.6 ability to reference both mutable and immutable data
+
+- ability to link to other versions
+
+
+Holding Pen
+
+- peer review - fitness of use for some purpose
+- discovery was traditionally a use of the card catalog, there is some overlap of discovery process with the form of the citation
+

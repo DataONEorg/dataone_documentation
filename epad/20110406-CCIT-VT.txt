@@ -1,0 +1,166 @@
+.. meta::
+  :keywords: DataONE, CCIT, 20110406, VTC
+
+
+2011-04-06 - DataONE Developer Call
+===================================
+
+:Attendees: Matt Jones, Bob Sandusky, Mark Servilla, Ryan Scherle, Bruce Wilson, Paul Allen, Roger Dahl, Rebecca Koskela, Nicholas Dexter, Rob Nahf, John Kunze
+
+
+Agenda and Notes
+----------------
+
+
+**1. Interactions with CEE (Community Engagement and Education) WG** 
+
+- Also perhaps applies to other portions of the project. 
+- Stephanie: "how the CEE working group can best interface with CI"
+
+Goal from the CEE charter
+(https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/charters)
+as a major objective:
+
+  "Provide feedback to the CI team on CI products"
+
+  "Provide feedback to the CI team on design and usability of CI products and the extent to which they meet community needs"
+
+Bob:  perhaps monitoring research reported by other projects - broadly speaking e.g., what's being reported at ACM CHI (computer human interaction conference
+ - lots of experimental interfaces, reports, including evals of specific efforts from which more general lessons / ideas can be drawn
+... but this takes effort on level of writing a good lit review)
+ 
+the CE groups could synthesize what they find
+it might help for the CCIT to try to indicate the form in which feedback would be most useful to the CCIT
+Not for a charter, but the CE WGs might find some specific research questions helpful to focus their efforts on our behalf
+
+- A basic problem is that many CI products will be very low level, that is, a high level of technical detail (e.g. design of the authentication and authorization infrastructure) that will require significant technical expertise to provide useful levels of feedback (i.e. technical review).
+  
+  - Authentication and authorization
+  - Search, discovery support, attributes
+  - Effective facets for assisting with browsing (e.g. FUSE client)
+  - Tools and effective UIs for metadata collection; how to entice entry of metadata
+  - Logging and privacy issues. e.g. What log information is useful to end users?
+  - Annotation, notification infrastructure; what message medium must be supported? frequency, ...
+
+- A perhaps tractable approach would be to evaluate, develop, and further elaborate on user scenarios, higher level use cases, and requirements to help fully circumscribe the functionality of DataONE expected by the community.
+
+- Alternative is to focus evaluation and feedback on the user interaction aspects of the infrastructure from different user perspectives (scientist, data curator, system administrator, security auditor, ...).
+
+- Examine the existing user scenarios, requirements, use cases and compare with the demo screen casts. Are we implementing stuff that matches the requirements? Do the user scenarios and other high level specifications appropriately circumscribe what needs to be done?
+
+- Modes of interaction? 
+
+  - Joint meetings
+  - "guest appearances" at WG meetings
+  - Conference call participation?
+  - WG could produce brief documents providing synopsis on each topic (1-2 pages)?
+
+Important to obtain feedback on the potential functiaonlity that can be implemented versus the existing functionality and the UI arrangement
+
+Many ITK elements will not be amenable to UI changes - it is not the role of D1 to update the UI of Excel.
+
+Bob - Follow the ACM CHI (computer human interaction) to provide suggestions for D1 UI changes
+
+Perhaps do a survey of the community for big topics like the level of assurance for authentication, level of access control, privacy.
+
+How to market the whole concept of DataONE? Needs to be a cohesive set of documents / UIs / suggestions for how to participate in the infrastructure.
+    -- Data management and contributions options section
+    -- Accessing and downloading data options section
+
+- Specific documents for different tools (e.g. ITK products - how does Morpho interact with DataONE?)
+
+- Documentation should be developed in the same time frame as the CI activities.
+
+- Target for the October AHM for "release candidate"
+
+- General overlap of CCIT members with various WG meetings
+
+- Webinars can be quite helpful for commuicating to other groups
+
+- Prioritization is *really* important - we have too much to do, so need to be very specific about the important parts. Laundry lists are not particularly helpful.
+
+
+**2. General update on development progress and challenges**
+
+- Nearing end of the second block for the year (each block = about 2 months).
+
+- Projections indicate significant resource challenges
+
+- Block 1 was consumed by the review and associated preparations. 
+
+- Bock 2 (Feb 28 - April 22):
+
+  - Spent basically fixing stuff that was rushed for the review
+
+   - Refactoring, designing various pieces that were identified as requiring change (e.g. object format registry, Member Node tiering, Authn & Authz design).
+
+- Block 3 (April 25 - June 17): Implementing authentication and authorization
+
+  - Refactoring of APIs and integrations tests
+  - Implementing authentication, authorization
+  - MN-MN replication
+
+- Block 4 (June 20 - August 19): 
+
+  - Working on additional Member Nodes.
+  - Investigator toolkit components, further development and cleanup
+  - Enabling search (access control, performance, scalability) 
+
+- Block 5 (August 25 - October 14):
+
+  - All hands meeting
+  - Deploying additional Member Nodes. ITK components. Performance tuning.
+  - Infrastructure release candidate evaluation
+
+- Block 6 (October 24 - December 20): 
+
+  - The public release. Focus on remaining details, documentation, final bug fixes, UI cleanup
+
+
+**3. Around the room**
+
+
+Chat dialog notes
+
+[4:00 PM] Bob:  no mic for me today
+[4:00 PM] Bruce Wilson joined.
+[4:00 PM] Paul Allen joined.
+[4:01 PM] Roger Dahl joined.
+[4:01 PM] Dave: http://epad.dataone.org/20110406-CCIT-VT
+[4:02 PM] Rebecca Koskela joined.
+[4:03 PM] Rob joined.
+[4:03 PM] Nicholas Dexter joined.
+[4:03 PM] Dave: http://epad.dataone.org/20110406-CCIT-VT
+[4:04 PM] Christopher Jones joined.
+[4:05 PM] John Kunze joined.
+[4:06 PM] Nick:  http://epad.dataone.org/20110406-CCIT-VT
+[4:10 PM] Bob:  perhaps monitoring reseach reported by other projects - broadly speaking
+[4:11 PM] Bob:  e.g., what's being reported at ACM CHI
+[4:11 PM] Bob:  the CE groups could synthesize what they find
+[4:11 PM] Bob:  computer human interaction conference
+[4:12 PM] Bob:  lots of experimental interfaces
+[4:12 PM] Bob:  reports, including evals of specific efforts
+[4:12 PM] Bob:  from which more general lessons / ideas can be drawn
+[4:12 PM] Bob:  ... but this takes effort on level of writing a good lit review
+[4:17 PM] Bob:  it might help to try to indicate the form in which feedback would be most useful
+[4:19 PM] Bob:  not for a charter, but the CE WGs might find some specific research questions helpful to focus their efforts on our behalf
+[4:25 PM] Bob:  i've been doing some of that, and can continue to do so
+[4:25 PM] Matt:  awesome
+[4:25 PM] Bob:  planning on being in Knoxville in May
+[4:25 PM] Bob:  for Usability and sociocultural WG meetings
+[4:27 PM] Paul:  The other WG that I try to connect with is EVA. It is difficult to get invited and maintain contact with those groups.
+[4:39 PM] Marco:  business as usual for me  
+[4:40 PM] Bob:  matt, could you repeat?
+[4:40 PM] Bob:  ok, never mind
+[4:40 PM] Matt:  sorry
+[4:40 PM] Matt:  did you get what I said?
+[4:40 PM] Bob:  yes
+[4:41 PM] Matt:  k
+[4:42 PM] John Kunze left.
+[4:42 PM] Rebecca Koskela left.
+[4:42 PM] Roger Dahl left.
+[4:42 PM] Paul Allen left.
+[4:42 PM] Ryan Scherle left.
+[4:42 PM] Mark Servilla left.
+
+

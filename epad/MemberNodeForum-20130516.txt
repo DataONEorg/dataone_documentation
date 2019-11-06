@@ -1,0 +1,123 @@
+Member Node Forum - 16 May 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/318278809
+  (Occurs every 2 weeks on Thursday 2pm EST, 1pm CST, noon MST, 11am PST, 10am AK)
+  Upcoming meetings 30 May, 13 June, 27 June
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (213) 289-0010
+Access Code: 318-278-809
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 318-278-809
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry)
+epad.dataone.org/MemberNodeForum-20130321
+epad.dataone.org/MemberNodeForum-20130404
+epad.dataone.org/MemberNodeForum-20130418
+
+Attending: John Cobb, Rebecca Koskela, Mike Frenock (PISCO), Skye Roseboom, Kavitha Chandrasekar (SEAD), Tracy Kugler (TerraPop), Laura Moyers
+
+Regrets:   Dave Vieglais, Amber Budden
+
+Action items from last time:
+
+1. Report back from SEAD on their NSF demo 22 April.
+     Kavitha says primarily the PIs attended, went very well, waiting for  feedback from NSF, coordinating details among the 3 subgroups at SEAD.
+    Working on becoming a fully-fledged production MN in DataONE (yay!) 
+    Inna and Kavitha attending DUG, hope to have issues resolved by then.
+    Some data (NCED -National Center for Earth Surface Dynamics), while publicly available, may need to be reconsidered before becoming publicly available via DataONE
+    
+2. MN implementation checklist status (action taken offline)
+    Matt's MN Deployment Checklist is here: 
+    http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html 
+     This is (IMO) a lovely overview of the steps involved in becoming a  DataONE Member Node.  I think it will be helpful to organizations  considering becoming a MN or in the middle of the process (what comes  next?).  What do you all think??
+    I am working on a nastily-detailed expansion of this for internal use, based upon Matt's outline.
+
+3. Status of match s/w and documentation versions (action taken offline)
+     Skye: some effort into making versions of documentation to correspond  to the versions of the software.  Not sure of current status.
+    
+Agenda:
+1. Network-wide update and issues affecting MN's as a whole (none that I'm aware of at this time - LM)
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+If you are so inclined, please participate in Chelcie Rowell's controlled vocabulary survey: 
+
+    The following survey examines controlled vocabulary use and challenges.  
+    The survey is for data contributors, curators, administrators, and/or repository developers. 
+
+     Completing the survey takes approximately 10 minutes (or less) to  complete.  To complete the survey, please click the following link:  https://unc.qualtrics.com/SE/?SID=SV_3fU0xOeRbH6jntb.
+
+    The survey is supported by a US DataNet/DataONE supplement to explore controlled vocabulary use within and across a broad spectrum of data repositories, including but not limited to the U.S. DataNet initiatives.
+
+Mike and Kavitha had questions about the survey (i.e. wording, am I an appropriate respondent, etc.)
+Laura  suggested when they look at the survey again to call/email and we can  look at it together, perhaps get Chelcie in on the conversation
+Rebecca:  Chelcie would really appreciate our feedback on the survey itself, as well as survey participation
+John: Had some of the same questions, put a lot of comments in the free-text boxes
+
+SAVE THE DATE:  The DataONE Users' Group meeting is July 7-8, 2013 at  Chapel  Hill, NC.  
+    We expect to have two slots of special interest to Member Nodes:
+        - A MN showcase speed session where each MN can present a short (~3 slide) summary of the MN and interesting activities
+        - A poster session one evening where longer, informal discussions can occur.   
+Agenda and registration are available on the DataONE website:  http://www.dataone.org/dataone-users-group
+
+Poster session is during the reception starting at 16:30 on Sunday, July 7.
+
+(reminder: DUG just precedes the Summer ESIP Partners meeting <http://wiki.esipfed.org/index.php/Summer_2013_Meeting> ) However, attending ESIP is not a requirement for attending the DataONE Users Group meeting.
+
+3. Feature requests/opportunities for collaboration:  MNs please add items here.
+
+    Mike: what versions of Java are being used to compile this stuff?
+    Skye: targeting Java 1.6 exclusively at the moment for all our builds
+    Mike: working with Matlab and having issues with Matlab using an older version of Java
+    Skye: can try compiling with an older version of Java with Matlab and see if it all works together
+    Mike: changed Java version for Matlab and it (kind of) works
+    
+    The errors had to to with SSL handshake. It was brittle w.r.t. to java builds.
+    Skye:  may be useful to document different versions of Java with Matlab for  folks who want to use Matlab.  Perhaps an ask.dataone.org question...  (who would like to put that out there?? - LM)
+
+ACTION ITEM: capture this in an Ask.dataone.org question  Maybe Mike could ask the question, and Skye could answer it (initally).  
+https://ask.dataone.org/questions/
+
+    Mike: what do we (CI) know about JAR files and which are needed with LIB client? Is there anywhere that this info is listed?
+    Skye: not a lot of overlap w/LIB client
+    Mike: has made it work, but some documentation somewhere would be nice (it's hard to find documentation sometimes)
+   ACTION ITEM:  Skye: looks like another good candidate for ask.dataone.org, too.  
+     Mike: PISCO does a lot of batch loading of oceanographic, etc. data,  trying to get the D1 API working to make these sorts of tasks easier
+
+4. MN showcase:  If you would like to share what your MN is about, please add here.
+
+Also,  if you are planning to attend the DUG and you want to participate in  the MN showcase there, please let us know so we can help you prepare  your slides, etc.  Even if you're NOT attending the DUG, if you'd like  for your MN to be showcased, let us know and we can present for you.
+
+If present, please discuss your status:
+SEAD - kavitha presented above
+Dryad - not here today
+LTER - not here today
+iDigBio - not here today
+TerraPop - (Tracy) 18 month review finished. It seems to go well. We are starting to look ath the next steps.
+Rebecca: Matt is in NM today and I will sit down with him and try to get some firmer plans.
+
+PISCO  (Mike) - another organization (Data Citation Index) wanting to get  PISCO data in their stuff, Mike is trying to get  them to use D1 to do  it themselves, 
+Data Citation index from Thompson Reuters  
+ACTION ITEM for Laura: Learn more about Data Citation Index
+
+OTHER INTERESTING THINGS: 
+
+Rebecca:  a lot of people who normally come to this meeting are in Albequerque  planning meeting; maintaining CI is a high priority
+John: maintaining a healthy list of MNs to demonstrate collaborative efforts
+
+contact point: 
+lmoyers1@utk.edu 865.974-7931 and/or 
+cobbjw@ornl.gov ph 865.576.5439
+
+Upcoming deadlines:
+ASIST annual meeting
+Beyond the Cloud: Rethinking Information Boundaries
+November 1-6, 2013, Centre Sheraton, Montreal, Quebec, Canada
+https://www.asis.org/asist2013/am13cfp.html  
+Deadline for posters, demos, video is July 1.
+

@@ -1,0 +1,153 @@
+Attendees:Rebecca, Carol, John Kunze, Matt Jones, Viv, Trisha, Bruce, Amber, Bertram, Todd, Bill Michener, Deborah, John Cobb
+
+
+Regrets: Dave Vieglais, Bob Cook, Mike Frame
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Oct 26, 2012 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/371450472
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (510) 201-0301
+Access Code: 371-450-472
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 371-450-472
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2012Oct26-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-10-26
+
+1) CI Update (Koskela/Vieglais)
+
+CI Status update, 2012-10-26
+
+Code freeze for infrastructure version 1.1 is scheduled for Tuesday,  after which testing will proceed in the staging environment prior to  deployment in the production environment which should occur by the end  of the week unless there are any flaws identified in testing. In  summary, the 1.1 release adds:
+
+- improved search API capabilities to support richer client interactions such as required by ONEDrive and Morpho
+- log aggregation, so the CNs can reliably retrieve and aggregate logs from the member nodes
+- replication, so CNs can direct replication of content between tier 4 member nodes that choose to participate in replication
+- greatly improved support for mime-type mapping of content, enabling  for example, ONEMercury users to have more information about the type of  content being downloaded
+- numerous minor fixes to internal components, minor updates to ONEMercury style
+
+Servers running at Oak Ridge Campus will be offline for a network change and host upgrades to occur next week, likely Wednesday Thursday (BEW: The timing is flexible and we'll adjust to meet the DataONE developer needs).
+
+Started planning for physical move of UCSB hardware to more permanent,  conditioned location. Likely timeframe for move is after the EAB meeting  and before the new year. There is likely to be a prolonged downtime for  the UCSB servers during this time, though both UNM and ORC should be  online to take the load (BEW -- particularly given that the above network changes will upgrade the network available from 1 Gbit/s to 10 Gbit/s).
+
+Initial testing of the new EDAC (Earth Data Analysis Center) member node has started, and indications  are that a fair amount of iteration will be required. This is being  treated as a great opportunity to develop clearer documentation about  the process for developing and testing member nodes and to help clarify  some points of the architecture documentation.
+
+
+2) CE Update (Budden)
+Planning for 2012 / 2013 conferences.
+ * Booths: AGU (with NEON), ESA, Intecol?
+ * Workshops: Intecol.  ESA proposals due at the end of next month: Data Management Wksp, DM Planning Session.  Coordinating with CEE / PPSR on additional offerings to manage calendaring and to ensure we have the instructors.  Any other wksps / sessions planned?
+ * Collaborating with the DataNets on a panel session at AAG in April (9-13) in Los Angeles (abstract below). Does not currenlty conflict with RSV dates though may immediately preceede or follow. Panelist must be identified by mid Nov.  Given the Geographical focus, any interest among the LT in representing DataONE?  Otherwise, I will.
+
+Request from PPSR / CEE to explore slideshare as a medium for exposing our materials.  Potential challenge is the inability to track downloads for our metric reporting without significant cost.  Exploring our current web metrics and google analytics.
+Preparing for December issue of Newsletter (to be published in advance of AGU and EAB meetings).  Content to be pulled largely from annual report.  Need a WG focus piece and a featured tool.  WG should be a CI WG.  Offers?  See http://www.dataone.org/sites/all/documents/DataONENews_Fall2012.pdf for example.
+
+Finally, call for high resolution photos that can be used alongside the DataONE article in International Innovation.  These should be CC0 or CCBy and do not need to be ours necesarily - just appropriate images for depicting the scope of DataONE activities.
+
+AAG (American Association of Geograhpers) Abstract: Data volumes are growing at increasing rates across all disciplines due to advances in digital technology and instrumentation. Yet, our tools and infrastructure for managing, preserving, accessing, and re-using those data have not kept pace. The National Science Foundation initiated the DataNet program in 2008 with the goal of addressing these challenges. The DataNet initiative seeks to build a sustainable network of partners that will create infrastructure and tools for long-term digital data preservation, access, and re-use. DataNet will allow scholars to discover and access data applicable to their research question, analyze the data in new and novel ways, and accelerate the pace of scientific discovery. NSF is currently funding four projects under this initiative: DataONE (http://www.dataone.org), Sustainable Environment - Actionable Data (SEAD) (http://www.sead-data.net), the Datanet Federation Consortium (DFC) (http://www.datafed.org), and Terra Populus (http://www.terrapop.org). DataONE creates infrastructure for data discovery and management. SEAD creates tools that will help curate and preserve datasets produced by individual scientists and small teams. DFC creates infrastructure for collaboration environments in science and engineering. Terra Populus creates tools for harmonizing and transforming data.
+
+In this session, panelists from all four projects will provide overviews and plans for future
+development, including plans for collaboration among DataNet and non-DataNet partners.
+Panelists will also highlight potential avenues for user participation. We will then open the
+discussion to solicit ideas from the audience and identify the most pressing data management, preservation, and access needs for geographers.
+
+3) Supplement with XSEDE (Cobb)
+
+* Draft White paper to be available at (or before) 5:00 PM EDT today. Let me know if you want to be added to distribution.
+
+* Content still (mostly) mirrors discussion captured at <http://epad.dataone.org/20121016-XSEDE-suppl-disc>
+
+* Working on XSEDE Science Gateway request
+
+* Loop not closed with XSEDE at large, but RDAV group is amenable. 
+
+* We probably should submit White paper without that at this time.
+
+* Additional input still welcome
+
+Rebecca: LEt's pull Nacny inthe loop, probably,
+
+4) New members for CEE WG (Hampton/Hutchison) -- APPROVED by LT
+
+The CEE WG has a couple of slots to fill, and would like to propose the following two individuals for consideration in our group. We feel each of them will bring additional energy, new perspectives, and new ideas into the Working Group. Attached is our Diversity Member Matrix, so that you can see where these two would provide balance to the group. If approved, we would like to invite these nominees to join our CEEWG meeting in Santa Barbara in May. :) 
+
+Andrew Thaler: 
+Organization: Duke University 
+Organizational Diversity: university 
+Ethnic Diversity: male, white 
+Geographic diversity: East 
+Reason for invitation: Helps to replace Archer Bachellor
+
+BIO/Expertise: 
+Andrew is a post-doctoral researcher in North Carolina focused on population and conservation genetics in hydrothermal vent communities. He is very active in the Scientific blogging and Twitter communities (part of the Southern Fried Science blog since 2008). 
+More info: 
+http://www.southernfriedscience.com/
+http://scienceblogs.com/clock/2010/03/02/scienceonline2010-interview-12/
+
+
+Stephanie Wright   
+Organization: University of Washington 
+Organizational Diversity: university 
+Ethnic Diversity: female, white 
+Geographic diversity: West 
+Reason for invitation: Helps to replace Corinna and also brings a library perspective that will help to bridge with the other CEE groups.
+
+BIO/Expertise: 
+
+Stephanie Wright is a librarian at the University of Washington Libraries with a background in science librarianship and library assessment.  She has served as Atmospheric Sciences Liaison for the UW Seattle Campus, wherein she provided reference and research support to students, faculty, and researchers. She also provided individual consultations to faculty and students as well as classroom instruction on research methods and resources.
+
+In her current role as Data Services Coordinator she works with the ResearchWorks Data Services Team to develop a program to support the research data management needs of faculty and students at the University of Washington.  She is working to develop a comprehensive research data services suite for UW researchers.
+
+More info:
+http://www.lib.washington.edu/subject/librarians/swright.html
+
+
+
+5) Around the room
+
+Bruce -- some planning work on the USA-NPN MN, which we see as moving forward in January.  A position description for someone to work with John Cobb (research assistant) on Member Node Wrangling has gone out and we're moving forward with that.  The year 4 mod to the DataONE award has been received at UTK and is being processed.  
+
+John Kunze: ONEShare (at UNM) update: backups and logging have been regularized; the stage instance is in progress, starting with a small clone of the "production" Merritt storage node.  More bugs fixed in DataUp with one more code merge on bitbucket.
+
+Carol and Suzie have had posters accepted for both AGU12 and IDCC13 conferences about our educational grant project with NCAR and University of Illinois. Folks from NCAR will present at AGU, Suzie will join them at IDCC (as will 3 of our students). Topic at IDCC is Model Development for Scientific Data Curation Education. 
+
+john Cobb: Nothing more
+
+Amber - Nothing to add.
+
+Bertram: Prov-Explorer work has started (Saumen taken lead to coordinate undergrads),
+D-OPM to PROV mapping work continues.
+
+Viv: Working on getting new members into CEEWG; also - developing a proposal in the USGS Community for Data Integration to put on 2-3 data management training workshops in the Spring/Summer of 2013 --- asked a couple of DataONE folks to help teach, for cross-collaboration. 
+
+Deborah:  (not on the phone - only virtual).  Our postdoc has an ignite talk at agu on tuesday evening.  Work is progressing on the hydro-eco use case.  Deborah's semantic escience class is also extending a piece.  Deborah and a few others in our group will be at the international semantic web conference (ISWC) in Boston and co-located workshops (Line Pouchard is also co-organizing linked science there).  Poster session on Tuesday night will include some working group presentations
+
+Trisha -- we just submitted a proposal to Sloan to build out the DMPTool.  Amber will represent DataONE on the project.  Fingers crossed. 
+Any clues about what build-out features? (JWC) : A: more granular modelling of the plan templates. Now adding info to the tools is hand-crafted, but we would like to streamline with role-based features for adding tool-types; more reporting tools; more browsing tools; additional collaobration tools ; an open API;  --- many "double-Whammies-of-Goodness"
+
+Matt: Nothing more.
+
+Todd
+1. check out Elementa, a new journal of relevance: http://elementascience.org/
+Anhtropocene: much discipline overlap with DataONE
+2. Data Citation Index launched by Thomson-Reuters: http://thomsonreuters.com/content/press_room/science/730914
+We can report back on this...
+  not seeing any DataONE members nodes indexed yet with a cursory search
+3. Launch of ORCID last week, and a new European Commission funded project called ODIN (ORCID & DataCite Interoperability Network): http://odin-project.eu/
+4. Looking for a researcher interested in serving on the ORCID board!
+
+
+

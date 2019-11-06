@@ -1,0 +1,96 @@
+Member Node Forum - 27 June 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/318278809
+  (Occurs every 2 weeks on Thursday 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT)
+  Upcoming meetings 25 July, 8 August, 22 August (11 July cancelled)
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (213) 289-0010
+Access Code: 318-278-809
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 318-278-809
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516, -20130530, -20130613
+
+Attending:  Laura Moyers, Amber Budden, Mike Frenock, Mark Servilla, Ryan Scherle, 
+
+Regrets: Matt Jones
+
+Action items from last time:
+
+1.  Documentation - taking MNs' feedback into account, improve/expand documentation for becoming a MN process; Laura to forward Soren's comments to Rob Nahf.  Create space in repo for joint documentation effort. - awaiting direction for best "place" to put this space.
+    
+2.  Laura to identify MNs to be added to MNForum distribution, based on email/redmine traffic and D1 communication
+
+Agenda:
+1. Network-wide update and issues affecting MN's as a whole
+        DataONE's newest Member Node - Taiwan Forestry Research Institute (TFRI)
+   
+2. Open issues:  MNs please add anything you would like to address here.
+
+If you're planning to present at the MN Showcase/Update at the DUG July 7-8, 2013 at Chapel Hill, NC, please have your slides in to me (Laura) or Amber Budden (aebudden@dataone.unm.edu) by 1 July.
+Activites of interest especially for Member Nodes
+        - A MN showcase speed session where each MN can present a short (~3 slide) summary of the MN and interesting activities
+        - A poster session during the reception starting at 18:00 on Sunday,  July 7, where longer, informal discussions can occur.  
+        
+who's committed to present, who has turned in slides
+
+   * USGS  (Mike Frame)
+   * eBird (Steve Kelling/Kevin Webb)
+   * SEAD (Kavitha Chandrasekar)
+   * NKN (Greg Gollberg)
+   * EDAC (Karl Benedict) - slides submitted
+
+Mike:  will any of the DUG content be available after the meeting for those unable to attend?
+Amber:  epads will be available, don't know about recording of sessions (probably not) 
+Twitter: #DUG2013, hope to have people in different sessions tweeting for full coverage.
+
+3. Feature requests/opportunities for collaboration:
+
+Mike: upgrades to metacat 2.0.7, some people have upgraded but it isn't on "that page" - see metacatdev.
+Mark: most of the time hear it through the grapevine, but most often go to the ecoinformatics source repository
+Laura: ask Dave/Matt/Ben about this, copy Mike and Mark
+
+Mike: is there a way to check that we're on the correct dev list (i.e. metacat, etc.)
+Laura: ask Dave/Matt about this
+
+This is the mail list, not sure if this is the one we need to be looking at:
+http://lists.nceas.ucsb.edu/ecoinformatics/mailman/listinfo
+
+Mike: Thomson Reuters SOLR query  to get PISCO data, TR says "we're getting blank stuff", Mike says they seem to be getting different results from the same query, ... is there good documentation for how to use SOLR query somewhere?  How do we format a query to get reliable results?
+Laura:  ask around re: documentation for SOLR query, get back w/Mike and document here
+
+4. MN showcase:  If you would like to share what your MN is about, please add here.
+
+Member Nodes who are present, please discuss your status:
+
+Dryad (Ryan):  we are in the final stages of getting integrated, registered test node, documented/sent to developers issues with registration process, couple of minor issues to be investigated (& encoding, indexing), bigger issue: which parts of API need to be using SSL; ~1 year ago, request from Matt Jones (?) to use SSL for everything, Ryan proceeding thusly, but Tier 1 doesn't require SSL, so implementing without SSL.
+
+Mike: experienced same thing with PISCO's implementation
+
+Ryan: Dryad data being harvested as we speak (we think).  
+Ryan: at DUG on Sunday, then at Open Repositories conference (selling DataONE - Laura to get info to Ryan), also looking at ... Dspace...
+
+LTER (Mark): shakedown phase between generic MN and PASTA, coming to end, hope to be live/in production by end of July; may still need to talk to Dave/Matt about transition from metacat to a GMN.
+
+PISCO (Mike): upgraded server SSL certificates, went well; still working on MatLab and running LibClient API from there; working with Chris Jones; working with SOLR queries last few days, will be useful.
+
+Amber:  we have a MN breakout session (led by John Cobb, Laura Moyers, and Matt Jones) as well as the MN showcase at the DUG.
+
+OTHER INTERESTING THINGS: 
+
+contact points: 
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+John - cobbjw@ornl.gov ph 865.576.5439
+
+Upcoming deadlines:
+ASIST annual meeting
+Beyond the Cloud: Rethinking Information Boundaries
+November 1-6, 2013, Centre Sheraton, Montreal, Quebec, Canada
+https://www.asis.org/asist2013/am13cfp.html  
+Deadline for posters, demos, video is July 1.
+

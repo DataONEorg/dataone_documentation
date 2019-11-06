@@ -1,0 +1,93 @@
+CIT Call - 2011-05-04
+======================
+
+Attendees: Ben Leinfelder, Nick Dexter, Bob Sandusky, Mark Servilla, Rob Nahf, Paul Allen, Matt Jones, Chris Jones, Ryan Scherle, Rebecca Koskela, Roger Dahl, Line Pouchard, Giri Palanisamy (epad only)
+
+
+Agenda
+------
+
+1. General update on CI development activities
+
+- Fixing many sticky bugs in various pieces of infrastructure, several issues related to the addition of DataONE services to Metacat seem to be resolved now
+
+- Refactoring APIs for MN tiers
+
+- Working through Authn, Authz, IdP issues, starting implementation
+
+http://mule1.dataone.org/ArchitectureDocs-current/design/Authentication.html
+
+
+
+2. Outcomes from USGS ITK workshop held April 26-27 in Denver
+
+- Lots of interest and enthusiasm for collaborating with DataONE
+
+- Key activities:
+
+  - Enable reserveIdentifier() in DataONE CNs with EzID integration
+
+  - Integrate metadata dev tools with sciencebase.gov uploader
+
+  - Enable Windows support for the DataONE drive concept (currently linux / OS X FUSE only)
+
+  - Establish BIP member node (USGS NBII)
+
+  - Evaluate DataONE authn/authz infrastructure
+
+  - Develop an ArcGIS plugin for exporting data + metadata to DataONE
+
+Bob S wrking with Mike and others to further refine the outcomes form USGS meeting.
+How to proritize tool development?
+Survey focused on users of MNs that are targeted in the near future to evaluate the tools that are currently in use.
+- Which tools and also what needs to change in the tools?
+- Survey to focus on which tools and what is good/bad
+- Main issue is that DatONE does not have resources to alter functionality of tools other than to enable support of DataONE services.
+- Commercial tools - ArcGIS, SAS, [Metavist (.net)]
+
+
+3. Progress and plans for MN implementations
+
+- TeraGrid
+  - Good progres smade to date with installation of Metacat and GMN to initiate the evaluation of information flow in and out of the TG.
+
+- Dryad
+
+  - Basic node up and running, ready to tie in with a CN
+  - http://datadryad.org/mn/
+  - Quick member node tester  https://github.com/NESCent/dataone-ws-tester (Ryan will move into the DataONE svn)
+
+- USGS NBII (targeted by USGS activities, Giri to lead, target of Dec 2011)
+
+- CUAHSI-HIS
+  - Dave to contact Jeff for progress update
+
+- AKN
+  - D1 intern focused on this project (Vivek)
+  - Should start about May 23
+  - Start off using Metacat for this implementation
+  - Main activities will be on pushing data into metacat
+
+- Merritt
+  - John indicated Merritt is ingesting about 17,000 machine-readable water quality reports from UC Davis.
+  - Dave to contact John and get update on plans for MN API implementation
+
+
+4. CCIT meeting agenda and overlap with the working group on Integration and Semantic
+
+- Mostly focus on the public release progress of the infrastructure
+- General goal to have alpha / pre-alpha versions of all major pieces of infrastructure to fully evaluate the realistic targets for the years end.
+- Good opportunity to also plan for the ongoing interactions with the various wroking groups especially for the period immedately after the public release
+- Goal for interaction with WG-IS is primarily to bring WG participants up to speed on the details of architecture and infrastructure being developed in DataONE.
+
+5. Select a new technology to trial for developer calls.
+
+- Review of technologies done by NCEAS: http://help.nceas.ucsb.edu/Video_Conferencing_Software_Comparison
+
+- Next meeting will be held using EVO ( http://evo.caltech.edu/evoGate/ ). Dave will book meeting and forward details for CCIT / Developers for next dev call.
+
+
+6. Any other business
+
+None.
+

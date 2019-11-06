@@ -1,0 +1,241 @@
+
+DataONE Usage Statistics Service
+==========================
+
+Overview
+
+This document proposes updates to the CN event log aggregation functionality and the event log Solr index. The currently implemented log aggregation is described at http://mule1.dataone.org/ArchitectureDocs-current/design/LogAggregator.html.
+
+Proposed updates
+
+1. The log aggregation task should be updated to combine fields from the systemmetadata table to support user level usage reporting client apps, such as the user oriented dashboard currently being developed at NCEAS so that the additional fields will be added to the event log Solr index (maybe call this the "usage statistics Solr index"?). The currently available fields in the Solr index are:
+
+ * entryId
+ * pid
+ * dateLogged
+ * event
+ * subject
+ * userAgent
+ * nodeId
+
+The updated Solr index will contain the fields:
+
+ * entryId
+ * pid
+ * dateLogged
+ * event
+ * subject
+ * userAgent
+ * nodeId
+ * rightsHolder
+   * MBJ: rightsHolder is a good start, but we also need other indicators of a user's data set; often the rightsHolder is a student or tech who uploaded, while the Creator list from metadata will be different; ultimately, it is this Creator list that is most important to index here; starting with rightsHolder is fine, but ultimately insufficient; also, this should be cross-indexed by ORCID to deal with name variations (Matt Jones, M. B. Jones, Matthew B. Jones) and related issues
+ * size
+ * formatId
+ * formatType (not in SystemMetadata, so won't be included)
+ * country
+ * region
+ * city
+
+2. Exposed the usage statistics Solr index as a versioned DataONE service
+
+The aggregated event log data are currently available via a Solr index accessed from https://cn.dataone.org/solr/d1-cn-log/select?<solr-params>
+
+The event log Solr index would be exposed as a DataONE versioned service, i.e. https://cn.dataone.org/cn/v1/query/log/<solr-params>
+
+
+https://CN-NAME/cn/v1/query/log
+
+
+
+
+
+The remainder of this document details some of the capabilities and usage scenarios of the updated Solr index. Note that some of the capabilities detailed below are available from the current Solr index.
+
+Provided Statistics
+
+The service will include the following statistics: 
+
+ * Dataset views
+ * Package downloads
+ * Size in bytes of package downloads
+ * Citations (implemented later?)
+
+Results Filtering
+
+Reports returned by the service must be able to be filtered by the following fields:
+
+ * A PID or list of PIDs
+ * Creator or list of creators (DN, or ORCID, or some amalgam -- to be discussed)
+ * A time range of access event (upload, download, etc.)
+ * Spatial location of access event (upload, download, etc.)
+ * IP Address
+ * Accessor or list of accessors (DN, or ORCID, or some amalgam, needs ACL -- to be discussed)
+
+Results Aggregation
+
+Reports must be able to be aggregated by the following fields:
+ * User (DN, or ORCID, or some amalgam )
+ * Time range, aggregated to requested unit (day, week, month, year)
+ * Spatial range, aggregated to requested unit
+ * {MBJ: Add nodeid as aggregation axis}
+
+
+Usage Statistics Queries
+
+The following sections show some of the queries that will be available through the statistics service.
+
+Usage of pids provided by a specified rights holder
+
+The following example shows a query for download volume for pids created by rightsHolder=williams with download size statistics aggregated by pid:
+
+https://cn.dataone.org/cn/v1/query/stats?q=*:*&fq=rightsHolder:uid=williams*&fq=event:read&stats=true&stats.field=size&rows=0&stats.facet=pid
+
+The following result is returned:
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <response>
+          ...
+          <result name="response" numFound="8" start="0"/>
+          <lst name="stats">
+            <lst name="stats_fields">
+              <lst name="size">
+                <double name="min">30.0</double>
+                <double name="max">1000.0</double>
+                <double name="sum">3150.0</double>
+                <long name="count">8</long>
+                <long name="missing">0</long>
+                <double name="sumOfSquares">3004500.0</double>
+                <double name="mean">393.75</double>
+                <double name="stddev">502.0226944215627</double>
+                <lst name="facets">
+                  <lst name="pid">
+                    <lst name="sla.3.1">
+                      <double name="min">1000.0</double>
+                      <double name="max">1000.0</double>
+                      <double name="sum">3000.0</double>
+                      <long name="count">3</long>
+                      <long name="missing">0</long>
+                      <double name="sumOfSquares">3000000.0</double>
+                      <double name="mean">1000.0</double>
+                      <double name="stddev">0.0</double>
+                    </lst>
+                    <lst name="sla.2.1">
+                      <double name="min">30.0</double>
+                      <double name="max">30.0</double>
+                      <double name="sum">150.0</double>
+                      <long name="count">5</long>
+                      <long name="missing">0</long>
+                      <double name="sumOfSquares">4500.0</double>
+                      <double name="mean">30.0</double>
+                      <double name="stddev">0.0</double>
+                    </lst>
+                  </lst>
+                </lst>
+              </lst>
+            </lst>
+          </lst>
+        </response>
+        
+The previous query can be constrained to a specific time by adding a time range, i.e.
+
+     &fq=datetime:%[2013-01-01T23:59:59Z TO 2013-04-31T23:59:59Z]
+
+Data uploads 
+
+The following query shows counts of data uploads by format type by a specified user:
+
+https://cn.dataone.org/cn/v1/query/stats?q=*:*&fq=rightsHolder:uid=williams*&fq=event:create&facet=true&facet.field=formatId&rows=0
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <response>
+          ...
+          <result name="response" numFound="3" start="0"/>
+          <lst name="facet_counts">
+            <lst name="facet_queries"/>
+            <lst name="facet_fields">
+              <lst name="formatId">
+                <int name="BIN">2</int>
+                <int name="eml://ecoinformatics.org/eml-2.1.1">1</int>
+                <int name="text/csv">0</int>
+              </lst>
+            </lst>
+            <lst name="facet_dates"/>
+            <lst name="facet_ranges"/>
+          </lst>
+        </response>
+
+Data downloads
+
+The following query shows data download counts by a specific user for each month in 2013:
+
+https://cn.dataone.org/cn/v1/query/stats?q=*:*&fq=principal:williams&fq=event:read&fq=formatId:BIN&facet=true&facet.field=event&facet.range=datetime&facet.range.start=2013-01-01T01:01:01Z&facet.range.end=2013-12-31T24:59:59Z&facet.range.gap=%2B1MONTH
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <response>
+            ...
+            <lst name="facet_ranges">
+              <lst name="datetime">
+                <lst name="counts">
+                  <int name="2013-01-01T01:01:01Z">0</int>
+                  <int name="2013-02-01T01:01:01Z">0</int>
+                  <int name="2013-03-01T01:01:01Z">0</int>
+                  <int name="2013-04-01T01:01:01Z">0</int>
+                  <int name="2013-05-01T01:01:01Z">0</int>
+                  <int name="2013-06-01T01:01:01Z">2</int>
+                  <int name="2013-07-01T01:01:01Z">1</int>
+                  <int name="2013-08-01T01:01:01Z">0</int>
+                  <int name="2013-09-01T01:01:01Z">0</int>
+                  <int name="2013-10-01T01:01:01Z">0</int>
+                  <int name="2013-11-01T01:01:01Z">0</int>
+                  <int name="2013-12-01T01:01:01Z">0</int>
+                </lst>
+                <str name="gap">+1MONTH</str>
+                <date name="start">2013-01-01T01:01:01Z</date>
+                <date name="end">2014-01-01T01:01:01Z</date>
+              </lst>
+            </lst>
+          </lst>
+        </response>
+
+The following query shows EML metadata downloads by a specific user for each month in 2013.
+
+https://cn.dataone.org/cn/v1/query/stats?q=*:*&fq=principal:*williams*&fq=event:read&fq=formatId:*eml*&facet=true&facet.field=event&facet.range=datetime&facet.range.start=2013-01-01T01:01:01Z&facet.range.end=2013-12-31T24:59:59Z&facet.range.gap=%2B1MONTH
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <response>
+                ...
+            <lst name="facet_ranges">
+              <lst name="datetime">
+                <lst name="counts">
+                  <int name="2013-01-01T01:01:01Z">0</int>
+                  <int name="2013-02-01T01:01:01Z">0</int>
+                  <int name="2013-03-01T01:01:01Z">0</int>
+                  <int name="2013-04-01T01:01:01Z">1</int>
+                  <int name="2013-05-01T01:01:01Z">1</int>
+                  <int name="2013-06-01T01:01:01Z">0</int>
+                  <int name="2013-07-01T01:01:01Z">2</int>
+                  <int name="2013-08-01T01:01:01Z">0</int>
+                  <int name="2013-09-01T01:01:01Z">0</int>
+                  <int name="2013-10-01T01:01:01Z">0</int>
+                  <int name="2013-11-01T01:01:01Z">0</int>
+                  <int name="2013-12-01T01:01:01Z">0</int>
+                </lst>
+                <str name="gap">+1MONTH</str>
+                <date name="start">2013-01-01T01:01:01Z</date>
+                <date name="end">2014-01-01T01:01:01Z</date>
+              </lst>
+            </lst>
+          </lst>
+        </response>
+
+Unresolved Issues/Questions
+
+        1. How is the location of an event determined? What do we mean by location?
+            -- MBJ: location from which a request (e.g., download) was made; probably requires geolocating IP addresses
+        2. Currently Solr (3.x and 4.x) doesn’t allow faceting by date/time interval, so it isn't possible to use the stats component to calculate total download volume for a time interval over a time range, such as every month for the last 10 years. Therefor for  calculated amounts, a query for each time interval is required. 
+        3. Where will citation info come from? Do we import this into the Solr index?
+            -- MBJ: Probably by querying ImpactStory API; I have discussed a relationship with them whereby we provide them with an API for our download and other stats indexed by PID, and they provide us with citations by PID
+        4. Are there other text fields (from systemmetadata or other table) that the statistics service should include, i.e. do we want to provide statistics for queries such as "how many pids were downloaded that mention kelp?"?
+            -- MBJ: probably not subject based at this time
+        5. The current query mechanism for the Solr index (embedded) allows for authenticated access and public access with result filtering of certain fields (ip address, subject...). What other access restrictions need to be imposed?
+

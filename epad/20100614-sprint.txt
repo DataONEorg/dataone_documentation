@@ -1,0 +1,124 @@
+Sprint 7 close, Start 8
+
+Notes for the 2010-06-14 close of sprint 7 and startup of sprint 8.
+
+Major goals for Sprint 8:
+
+ * MN synchronization functional (CN pulls content from MNs, stores the sys + sci metadata, indexes the metadata, enables search and retrieval of the content)
+ * Monitoring framework using Cacti operational for low level monitoring of hardware
+ * Health APIs defined and implemented for CN and MN (to enable Cacti statistics collection)
+ * Integration testing framework operational for exercising MN and CN APIs
+
+Perhaps: get Metacat KNB node up and running
+ * Setup VM
+ * Install metacat
+ * Harvest content (can be kind of slow) - use a sub-sample of about 1000 records or so
+ * Generate system metadata (tool available for this)
+
+CN replication
+
+
+New Tasks
+
+Story: (5, sprint 9, Dave) Need a nightly / continuous build system to ensure that all code (CN, MN, client) builds as expected. There are plenty of automated frameworks for this.  Select one and get it operational.
+
+BUG: (Chad, sprint 8) Metacat Identifier issue. Does not want to create new Objects with .\d+ suffix.  This is an issue related to the internal versioning implemented by Metacat.  Need a unit test created (Robert)
+
+BUG: (Chad, sprint 8) Some problems with Metacat - associated with authentication. D1 client is failing on create() because of some auth changes.
+
+BUG: (Low Priority, sprint 10, Robert)X Some service types not fully serializable - need to have schemas associated with them. A couple classes need to have schemas associated with them - the log messages will be blown away.
+- Need to check exactly which classes need to have schemas
+
+
+Story(5): (Robert, sprint 8)X The CN needs to  maintain a  list of registered Member Nodes and their service endpoints and  additional metadata that can be used by the harvester to iterate over  Member Nodes to initiate MN synchronization
+- create  schema for the registry
+- enable serialization of the  registry document against metacat
+
+Outline of registry document:
+<registry>
+   <node type="member">
+    <name>Human readable name  of member node</name>
+     <lastHarvested>2010-06-07T23:55:10Z</lastHarvested>
+     <lastCompleteHarvest>2010-06-07T23:55:10Z</lastCompleteHarvest>
+     <baseURL>http://some.mn.com/mn/</baseURL>  
+     <services>
+      <service name="mn_crud.get" rest="object/${GUID}" available="true"    datechecked="2010-06-07T23:55:10Z" />
+       <service name="mn_replicate.listObjects" rest="object" available="true"    datechecked="2010-06-07T23:55:10Z" />
+       <service name="mn_crud.getSystemMetadata" rest="meta/${GUID}" available="true"     datechecked="2010-06-07T23:55:10Z" />
+      ...
+     </services>
+  </node>
+  ...
+</registry>
+
+
+Story(3): (Robert) Modify the harvester to read and update the registry information
+  - harvester  needs to read content from the registry document
+  -  harvester needs to update registry doc when harvest has completed.
+
+
+Story: (13) (Sprint 9) (Robert)Utilize a simple objectFormat registry to determine which  configuration to feed the Mercury indexer 
+  - Task: Define how to handle science metadata formats that are not handled by Mercury.
+    - Keep in metacat, but it won't be indexed
+    - Need to define log messages to report on what's not being processed by the indexer
+  - Task: create an enumeration for mercury index formats that are supported by Mercury.  This will be part of the packager functionality.
+  
+  - how portable are the mercury indexer config files?
+  - Task: List the types of metadata that are being used in the prototype
+  - Task: List the metadata types that are supported by the indexer
+  - Task: Create configurations for indexer to parse all metadata types in the prototype
+    - Jim: Working on the KNB parsing
+      - About 3 versions of EML that are being used in KNB
+      - Version in doctype of EML - not directly queryable but can specify the version to retrieve through metacat api
+    - Robert: working with Dryad sci meta
+
+
+#262 - Tools for exercising APIS (Roger and Dave)
+ - New task: Dave: review the integration testing implemented by Roger so far.
+ - New task: Implement tests that adhere specifically to the MN APIs only without regard for the type of node
+ - Blocking 269 - need to add mechanism for searching the CN
+
+
+New story: (3) (Robert, Sprint 9) Implement CN_crud.resolve (cn_api_crud.html#CN_crud.resolve) 
+Query metacat for objects of type systemmetadata where identifier = ID, then parse system metadata to extract object location (which MNs), construct response object and return to client
+
+
+#351 - (Chad) Implement Metacat MN
+  #426 - (sprint 8) move forward to next sprint (likely to be closed early)
+
+
+New Story: (Rob, Roger, Dave, lower priority that the log output for packager notification) Create a test harness for exercising the MN + CN APIs using the Java client
+
+New story: #667 (Dave, sprint 8) Implement a VM and install the test harnesses to perform automated testing of the CN and MN services.
+
+
+#633 Monitoring framework
+#635- Move to next sprint
+#636- Move to next sprint. Setup accounts and test, config remaining hosts etc
+#637- Need to ensure that appropriate commands are part of the base install
+
+#638 - Dupe of tasks under #640 
+
+#640 - Need to add same functionality to Metacat MN health API
+
+ * Implement MN and CN health
+   * Define MN and CN health API
+   * Implement CN health API
+   * #641 Implement MN health API
+ * Create an account for monitor ssh  access to machines being monitored
+   * setup LDAP user for monitoring  service: "dataone_monitor"
+   * restrict the scripts that can be  executed by the account
+   * setup passwordless keys for access to  the account from the monitor machine
+ * Fix authentication bugs in D1Client
+ * Remove old service type classes and  switch metacat to use the new ones
+
+#648 - static test VM, low priority (move to an enhancement / separate task).  This could be part of hte VM setup for #667.
+
+#650, #651 - harvesting process.  Need to complete testing
+
+
+Story: (5, Sprint 8, Chad) Metacat notification of downstream services that content has changed.
+- metacat will generate log messages.  (task-chad)Create a separate log file using Log4J ('RollingFileAppender' for ResourceHandler...add log statements with localIds of SM and metadata doc.)  Create separate logs for replication and create().
+- task: (Robert) implement a watcher for the log that will trigger the packager to generate packages for new content and store the state of operations against the log file (time, offset)
+
+

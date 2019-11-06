@@ -1,0 +1,69 @@
+
+EVA WG:  Subgroup on Visualization Techniques
+August 27, 2013
+
+Participants:  Aritra Dasgupta, Steve Aulenbach, Yaxing Wei, Dan Ricciuto,  Christopher Schwalm, Enrico Boldrini, Anna Michalak, Bill Hargrove, 
+
+ Debbie  Huntzinger, Claudio SIlva
+
+not able to participate:  Forrest Hoffman
+
+Agenda
+
+1. Updates
+2.  Vis techniques
+3.  Next teleconference
+4.  Other Topics
+
+Notes from August 2, 2013 Teleconference
+http://epad.dataone.org/2013-08-02-EVA-Telecon
+
+
+Notes
+1.  Updates -- Bob
+
+ * Next EVA Working Group Meeting is October 22 - 24, 2013, Tamaya Hyatt Hotel, Santa Ana Pueblo, NM
+   * Part of the DataONE All-Hands Meeting
+     * EVA will  meet for 2 to 2.5 days
+     * DataONE will have plenary sessions and poster / session reception
+   * Logistics will be announced in next few weeks
+   * Air and hotel reservations will be made by DataONE (RioGrande travel)
+   * Travel expenses will be covered by DataONE 
+
+
+ * DataONE EVA pbWiki: http://dataoneeva.pbworks.com
+
+
+2.  Vis Techniques -- Aritra 
+
+
+   * One  part of this activity was to collect figures (maps, scatter plots, bar  charts, line plots) from the literature, critique the effectiveness of these plots, and develop a set of categories for the effectiveness. 
+     * Maps
+       * matrix of 17 North American images of model outputs
+         * show spatial extent of the models and show the many ways the models are different
+         * not just range or mean, but the spatial patterns of lows and highs
+         * other figures in the paper show slices of these images
+         * aesthetics:  thick lines, outline of continent, background (green and purple (too close to the color bar)
+           * lots of room for improvement in aesthetics
+       * color choices (get rid of rainbow); different scales is a hindrance;  move units next to color bar, 
+       * Maps have their own advantages, hard to replace
+     * Scatter Plots
+       * for Figure from Debbie's figure, use lines and give each "outlier" model a symbol to indicate which model 
+         * need to define what an "outlier"
+         * within a paper, it would be good to use a common format for each figure (always have GPP on top).  Having one different (cf. slide 7) then it may be hard to carry information from one slide to the next.
+       * Ozone figure:  remove individual model points and retain just the line to remove clutter
+         * but keep each individual observations
+         * 
+     * Line Charts
+
+   * The  other part of this activity is to pick representative visualizations and develop alternative methods for visualizing the data.  
+   * Ultimately the group will develop a set of best practices for visualizing complex data.
+
+    Examples
+        Scatterplots
+        Maps
+
+
+3.  Next Teleconference
+    will do a Doodle Poll
+

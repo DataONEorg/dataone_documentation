@@ -1,0 +1,89 @@
+Attending: John Cobb, Steph, Bill, Carol, John Kunze, Bob Cook, Bertram, Dave, Trisha, Hilmar, Bruce, Steve
+
+Regrets: Rebecca, Deborah, Matt, Mike, Suzie (?), Viv
+
+1.  Please join my meeting, May 4, 2012 at 12:55 AM EDT.
+https://www1.gotomeeting.com/join/657181160
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 289-0015
+Access Code: 657-181-160
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 657-181-160
+
+
+Agenda for 2012-05-04
+
+1) CI Update (Dave)
+Closer to moving into a production environment.  
+Week of ups and downs in terms of infrastructure development.  Some issues related to installing updates on coordinating nodes.  Basically - writing the installation packages is complicated, some interactions not well documented so some time has been spent figuring this out and rebuilding some of the development coordinating node elements.  Seems to be under controll right now - will be reinstalling sandbox environment this afteroon with lastest version allowing updates to the stage environment next week.  All changes should be incorporated into the stage environment early next week (including updates to ONEMercury).
+One odd issue - unable to access ONEMercury website using safari browser on a mac.  Conflict btn authentication mechanism and a bug in safari.  Might need to alter system to account for bug.  Short term - write note not to use safari.
+Mid may production release still feasible (subject to no hiccups).
+
+2) EVA WG update (Bob)
+Different composition from last meeting in November arising from better definition of problem - analysing large volume of data from climate models, benchmarking products of models.  Meeting spent defining problem and next steps.  Became apparent that additional resources needed.  Will be brining on a summer intern on Bob's funds and also a postdoc working with Claudio, on DataONE funds.  Was good to have involvement of Matt representing CI perspective.  Also having Bertram from a workflow standpoint and for thinking about specific use cases.  Provenance WG postdoc (arrived yesterday) might start looking at this more closely.
+
+3) CI representation (Dave substitute) at S&G (Trisha)
+S&G meeting May 14th - 17th at Marconi in CA.  Dave unable to attend.  Agenda includes Member Nodes, launch and publicity and so it would be helpful to have someone with a CI perspective would be important.  Dave will be able to call in for parts.  John Cobb also attending.  CI to meet and update John.
+
+3a (Bill) Beth Plale is organizing a panel at XSEDE on long tail ditribution of data. The small data that often gets orphaned. Bill was not part of the discussions about this panel, but Rebecca was. It was suggested that Carly might be good on the panel. John Cobb cannot attend (probably). John Kunze can attend. bill will respond positively to Beth Plale 
+
+3b (Bill) Dane SKow (one of our new program officers) is doing two things to throw additional money to the data nets. The first is that they want to supplement each award with 25K$ for travel costs related to inter-partner travel costs. Bill will see him in a few weeks. We could use the additional cost to invite other datanet partner team members to DataONE user group meetings. Steve Ruggles has mentioned interest in attending DUG. One of the performance metrics of the three of Datanets is their interaction with the datanets. Another possible use of the funds is to bring in new member nodes and help shepard them in the process of becoming MN/s. Other ideas are also welcome. If we have all other datanets join as MN's that would be a boon for us. Reagan Moore has already spoken with us and is moving in that direction.
+
+The second supplement was an additional 25K$ for a student (or a staff member I guess) to fund one month in the next 6 months to work at another datanet's site. I.E. embeeded local support across datanets.
+Maybe sociocultural. Maybe have someone from UTK spend a month at UNC with Jane Greenberg, etc. If you have any ideas on whether or not or how to use that potential student suppoty, let Bill know. The boundary conditions are to have someone spend one month at the other site. 
+Carol: we could do that, but we would need a good student who coould interact with the local mentors at the "from" and "to" sites. There needs to be a specific tasks.
+Q: (Hilmar) coule we use it even if staff was already co-located? A: (Bill) yes, but it might be hard to use 25K$ since some of this is liekly designed tobe part of a travel budget. Also there are details of fastlane/grants.gov 
+Bill, we could also consider a "sabbatical" for staff, possible, depending on Dane's concurrance.
+
+
+
+
+
+4) Around the room
+
+Bob Cook:  Report from the European Geosciences Union conference last week
+Attended EGU (European Geoscience Union Meeting) last week and gave a presentation on DataONE and the data life cycle:
+https://docs.dataone.org/member-area/documents/presentations/2012-european-geoscience-union-meeting
+ 
+Data archival / publications received a lot of interest and two publishers attended and gave talks (Fiona Murphy (Wiley) and Bethan Keall (Elsevier)).  They were interested in citations / DOIs and adding data publications to “citation indices.”  On a related note Wiley is releasing an open Geoscience Data Journal that publishes papers describing a data sets deposited at an archive.
+John C. : This was also a topic at the SC Wg meeting this week - in general wondering how to regain DataONE momenutm in this area.
+Carol: Last week I meet with Sage publishers in the UK--we talked about data deposit in addition to other things--they would love to have someone else do it, like Dryad model.
+  
+Ecological Monographs is now requiring that data be deposited before a paper, analyzing that original data set, can be published.   Colleague’s paper was held up until he received confirmation of archival at ORNL DAAC.
+ 
+Cliff Jacobs (NSF GEO Program Manager) held a town hall meeting on EarthCube, to inform Europeans of status and plans.  Brokering Group was well represented and discussed their plans leading up to the June Charrette.  DataONE is a member of the Brokering Group. 
+
+
+Carol (for Suzie and Mike as well): We had a successful joint Sociocultural and Usability & Assessment WG meeting this week in Knoxville. Also had reps from CCIT at ORNL and elsewhere, Amber, and assorted doc students. Preliminary notes/reports on docs site.
+
+
+Bertram [leaving for class 10:40-ish]:
+ProvWG Post Doc arrived yesterday (Victor Cuevas). Initially focus is on consolidating
+D-OPM (DataONE Open Provenance Model), mappings from Kepler, Taverna, Vistrails models to D-OPM, and then tooling (provenance query support, provenance repository, etc). 
+Also: connecting with the EVA WG, working on relevant use case.
+
+Steve: nothing from me
+
+Suzie (via Amber): SC met in TN and discussed many elements associated with internal communication, including DataONE principles.  They will contnue work on Terms and Conditions via email.  These documents (communication, principles and t&c) will be part of the agenda at S&G for consideration.
+
+Bruce: Able to attend parts of the SC/UA WG meeting this week.  I need to work with Carol, Suzie, etc in how to pull this information into CCIT planning and make sure that there's feedback to the groups on what they're asking for. 
+
+Amber: Caught the end of CEE meeting last week and attended U&A/SC this week.  Spent most time working with SC on above communication materials.  Working with DMPTool group on planning for governance meeting in July, after ESIP.  Finished planning for DM short course.  15 students attending, 6 instructors (Viv, Heather Henkel, Carly, Mark Schildhauer, Nancy Hoebelheinrich, me)
+
+John K:  The DCXL (Excel add-in) developers in Bangalore succeeded yesterday for the first time in using the new generateIdentifier API method and depositing Excel files into Merritt's Member Node.  Parameter (column) metadata still being worked out, but we're back to using EML in the way it was intended, but with a little lobotomy to keep the user interface simple.
+
+Trisha -- not much new here.  We did send a proposal to BRAD about establishing a storage node for the Excel project at one of the coordinating nodes (using CN storage capacity).  We are anxious to hear back :)
+
+John Cobb: nothing additional (I think others will have covered all of my items in their around the room)
+
+Steph: Cliff Duke willing to represent D1 at World Bank Data meeting in DC if no one else is doing so. 
+http://www.data.gov/communities/conference (Bill will get together presentations...)
+Test drove One Mercury last night with no complaints! :-) CEE WG met last week. Video contest is off to amazing start - exceed fundraising goal by $100 within the first two days on SciFund Challenge, lots of positive feedback. 
+http://www.rockethub.com/projects/7472-7-toed-terrestrial-dolphins-bored-to-death
+CEE WG starting a blog space to support the video contest and positive stories of data sharing, plus more general blog space - not quite the help desk or forum, but at least a place to be more interactive online till we figure out a forum for more technical issues. Data management modules will be deployed 23-24 May in short course.
+
+Himar: Nothing to add.
+

@@ -1,0 +1,623 @@
+SONet Meeting, Santa Barbara, 2011-04-18 - 2011-04-20
+=====================================================
+
+
+Introduction from Mark Schildhauer
+----------------------------------
+
+ * Participants (see slides)
+   * M Schildhauer, M Jones, D McGuinness, R Duerr, S Bowers, A Maffei, S Zednik, J Horsburgh, C Gries, D Vieglais, C Jones, B Leinfelder, M O'Brien, Hilmar Lapp, P Dibner, C Lagoze
+    
+Agenda: https://sonet.ecoinformatics.org/workshops/jwg-meeting-2011-04
+    
+ * Expanded particants now include Phenoscape/EQ, DataONE, Data Conservancy, Semantic Web Darwin Core 
+
+ * Objectives for JWG-ODMS:
+   * Use Case identification
+   * Core data model
+     * Shawn: progress on the model involved the informal comparison of existing models. Postdoc at NCEAS worked on formal data model comparison; received faculty position and was unable to complete the comparison, but was able to at least begin
+   * Hilmar: TDWG report: also worked on comparing observational data models, workshop was cut short due to time. Interested in continuing the conversation at this meeting.
+   * Mark: Many groups in Europe are using the observational data models and products coming from groups involved in SONet
+
+   * Application prototyping
+   * Develop a data exchange specification (facilitate interoperability among observational data models), differentiate the conceptual model and the representation format.
+
+ * Working Groups
+   * Note: Main barrier is how we construct domain ontologies (sub 2 below), and how coordinated strategies may help those efforts.
+   * Subgroup 1 (Core Data Model for Observations)
+   * Subgroup 2 (see slides)
+
+ * Meeting Themes and Goals
+   * Review Progress of participating projects
+   * Comparative ontology review (Many ontologies are emerging. Decisions may be idiosyncratic and may benefit from coordination and best practices) 
+   * Create and exchange annotations of observational data
+   * Other important topics
+     * What types of semantically facilitated queries may be possible.
+        Deborah votes for trying to do this!
+     * Observational model design patterns
+     * How to enable and expose semantic annotations and querying in a user friendly way. 
+     * Deborah: Develop examples of using semantic annotations.
+     * Matt: Specify detailed queries for case studies
+     * Deborah: Analysis of those queries as well
+
+ * Discussion:
+   * Hilmar: Discussing the collated results of the survey would be fruitful.
+   * TDWG-content discussion involving the importance of instance data in conjunction with developing models.  Do we have instance data? (Meaning: data that instantiates the model).
+   * Shawn: It is possible to query against the model without needing instance data.
+   * Deborah: VSTO enables this.
+   * Matt: some people are putting RDF instance data (linked data) on the web and then looking at applying a meta model on the data later.
+
+
+I. Work to Date: Demonstrations
+===============================
+
+ * Ben Leinfelder
+-----------------
+   * Semtools Project screencast
+   * Semantic enhancements to Morpho, a desktop data management client
+     * Semantic enhancements to Metacat, an XML-based data and metadata server
+
+   * Discussion of annotations screen in Morpho: 
+   * Deborah: defined protocols may be important in some data collection efforts, others may be tied more to an 'instrument', which may implement one or more protocols
+   * UI issues: it is difficult to enable end users to intuitively search entities and characteristics within ontological structures.  The information space to representin the UI is very large, and much work is needed from a presentation optimization standpoint (i.e. helping users to navigate an ontology hierarchy).
+   * Mark: being able to communicate (in the annotation) that a measurement of a particular instance of a specimen (as opposed to separate instances) can be important in an analysis.
+   * Andrew: being able to represent (in an annotation) whether or not a value is 'raw' or a 'derived' result of a process workflow.
+   * Ben: term expansion - the annotation uses the term 'macrocystis', and a search on 'organism' will provide a hit, and a search for 'kelp' will also provide a hit. 
+   * Dave: Scaling ontology creation is difficult because all of the terms must be pre-defined in every domain of interest.
+   * Ben: Data inspection: the UI can return data subsets based on records that have been annotated and filtered based on data value (i.e water temperature > 15 degrees Celsius)
+   * Hilmar: does the subsetted result include the annotations and links to the ontology classes?
+   * Ben: Yes, the information can be returned based on the merged subset. The column header is tied to the semantic class in the ontology.
+     * Hilmar: Adding semantically rich annotations is useful, but very expensive (does not scale).  Decisions on granularity affect feasibility. what strategy should be used to scale the process?
+   * Shawn: KNB has 10s of thousands of data sets, but there are only 100s of data types being represented.
+     * Matt: Annotations are much more concise than natural language metadata descriptions, so the scaling issue may decrease.
+     * Hilmar: In Phenoscape, it hasn't worked to put the onus on the data producers to provide annotations.
+
+
+Andy Maffei
+-----------
+ * Observational Data Semantics at WHOI
+   * Cyndy Chandler wasn't able to make the workshop
+   * Has had semantic workshops with other orgs in WH: MBL, NOAA NMFS, USGS, etc.
+   * Ocean-based observations from vessels include science and engineering projects
+   * Ocean Informatics Working Group at WHOI works to establish policies, practices, and technologies needed for stewardship of WHOI data
+     * Science is changing, becoming more interdisciplinary: shared vocabularies, data, semantics, file formats, etc.
+     * Focus on RPI/TWC iterative design and development of technology as it is applied to science (Deborah: This procedure is used for producing semantically enabled applications is  leveragable by the SONet JWG)
+   * Examples
+   * BCO-DMO (Biological and Chemical Oceanography Database)
+       * Building an informatics toolbox for scientists
+       * Developed use cases, created concept map based on the use cases
+       * Leverage VSTO, FOAF, TIME, XSD, BCODMO in the ontology
+   * S2S Seafloor to Surface Data Finder
+       * (S2S blog at: http://erozell.wordpress.com/ )
+       * Allows scientist to construct a query UI
+       * tool for creating a semantically enabled query interfaces
+       * Drag facets from the BCO-DMO ontology into the UI (i.e drill down to instrument being used (general ADCP, or  specific CTD via serial number)
+       * Can choose what widget to based on the selected facet (i.e. open layers map, keyword cloud, etc.)
+       * Specification describes how one builds the drivers
+       * D2RQ inspired scripts are used to annotate relational database records to the ontological facets (Deborah: We're using triple stores to hold data, using Franz AllegroGraph, Jena TDB, etc.)
+       * Matt: How much work is done at the parameter level?
+         * Instruments are mapped to Sea Datanet vocabularies, and parameters are next (British Oceanographic Data Center houses vocabularies)
+       * Deborah: Modularization is key to developing ontologies such that they are useful across the breadth of use cases
+       * http://tw.rpi.edu/web/project/SeSF/workinggroups/ApplicationIntegration has information about S2S and also about our Semantic eScience Framework at RPI
+       * ontology engineering patterns task force that Deborah co-chaired.  it was - part of the best practices working group after the OWL working group http://www.w3.org/2001/sw/BestPractices/OEP/
+   * Ocean Imaging Instrument Project
+       * machine learning of image informatics coupled with the BCO-DMO ontology
+     * Event Ontology for R2R EventLogger (see http://rvdata.us/
+       * It would be interesting to look at OBOE as a candidate
+
+
+Deborah McGuinness
+------------------
+ * Virtual Solar Terrestial Observatory (VSTO) Semantics
+   * Thinking started in early 2000s for a knowledge environment for the geosciences
+   * 2004 started interdisciplinary virtual observatory
+   * Use case driven, with an emphasis on instrument-based measurements;
+   * Initial content came from CEDARWeb and the Mauna Loa Observatory
+   * Example: Data query constraints
+   * Developed methodology in the VSTO setting (Semantic Web Methodology and Technology Developemnt Process)
+   * Benefits: 
+            - reduced queries from 8 to 3 steps on average
+            - expose data that wasn't available prior
+            - validate and augment data
+        - Challenges:
+            - Expose provenance (SPCDIS, PML)
+            - encourage reusability, what is needed?
+            - support for modularity (Semantic eScience Framework
+        - VSTO ontology
+            - areas for reuse: DataProduct, Parameter, Instrument 
+            classes
+        - VSTO infrastructure revolves around queries based on 
+        Instrument, Dates, and Parameters supported by 
+        ontology classes and semantic filters, metadata 
+        services, and data services; now has triple store-based 
+        implementation
+            - Ben: How do you select class names? 
+            - Deborah: Domain scientists provide them, and they 
+            are accurate to greater and lesser degrees. Create 
+            class labels based on what the scientists use in the 
+            domain.
+                -  Our work in shipboard
+                eventlogging has shown
+                us that it is VERY important to record both
+                the local name for an instrument and the
+                mapping to a controlled vocabulary for
+                instruments. (Maffei)
+        - VSTO needed to capture provenance information better
+        in order to be truly useful to the researchers. 
+        Follow-on project (SPCDIS) is addressing this. 
+        - VSTO Web portal: how to present information. Starts with 
+        an inferred plot type initially, based on options and 
+        suggestions encoded into the ontology
+        - Ongoing work: 
+            - Semantic eScience framework (SeSF)
+            - Semantic Provenance Capture in data Ingest Systems 
+            (SPCDIS)
+            - Proof Markup Language is now Provenance Markup 
+            Language
+            Inference Web - Provenance Infrastructure effort:  
+            http://inference-web.org/
+            One can get to the PML documentation and ontologies from this  - documentation page at http://inference-web.org/wiki/Documentation
+            has previous and current versions.  PML 2 is the modularized version
+            - W3C Working Group has started and work will likely 
+            focus on a solution based on concepts found in both 
+            PML and Open Provenance Model (OPM), see OPMV also.
+            - InferenceWeb toolkit: testing the accuracy of 
+            results using 
+            inferencing, evaluating the rules used to come to a 
+            particular outcome. Highlighting inconsistencies 
+            provides information on the trustworthiness of 
+            sources (instruments, informants, etc.)
+            - AOWG: Annotation Ontology Working Group has 
+            recently started at the W3C from an incubator
+            - Semantically-enhanced Linked Data
+            - Data Quality Screening System ??
+        - Discussion of other work
+            - Ontolog - upper level, foundationally oriented 
+            ontology work, Peter Yim, working on continued funding
+            - BioPortal, bio-medical ontologies
+            - Challenge for DataNET type projects only includes 
+            small budgets for semantic work. Shawn: SONet is here 
+            to facilitate integration across knowledge 
+            representation efforts.
+            
+            Provenance working group http://www.w3.org/2011/prov/wiki/Main_Page
+            
+
+Hilmar Lapp
+-----------
+ * Integrating and Reasoning over complex descriptive biological data
+   * Descriptive biology data includes a large body of literature
+   * Uniformly recorded in natural language
+     * Phenotypes
+     * Traits
+     * Function
+     * Behavior
+     * Habitiat
+     * Life cycle
+     * Reproduction
+     * Conservation Threats
+   * All from many biological domains
+   * Focusing on phenotypes:
+     * There is a large body of evolutionary phenotype documentation that play an important role in forming or knowledge and understanding of evolution
+     * Used to document gene mutation, etc.
+     * Used to document disease phenotypes
+     * Some document phenotypes in an unstructured, free text manner which are resistant to machine processing
+     * Integrating across studies requires years of carefully annotating works to subsequently integrate data
+   * Overcoming these problems involves formal ontologies to capture domain knowledge (e.g. Teleost Anatomy Ontology)
+     * Enables 'Search by Similarity' - how phenotypes of gene expressions can be searched based on semantic similarity
+     * EQs are 'Entity Quality' descriptions
+     * Need to capture concepts from Model Organism and Non-model Organism bodies of knowledge
+   * Phenoscape:
+     * Goals: create prototype database of machine interoperable phenotypes
+     * integrate these with mutant phenotypes
+     * (third goal, needs adding here)
+     * Uses the EQ model:
+       * Character(Entity, Attribute)
+       * State(Value)
+       * which now transforms to:
+       * Entity(TAO) and Quality (PATO) [from the Model Organism approach] where atributes are implied within the PATO ontological classes
+     * Uses taxon phenotype assertions and gene phenotype assertions where a phenotype is an instance of an attribute (e.g. rectangular)
+     * Knowledge Base is based on OBD (Ontology Based Database, a triple store implemented in a relational db)
+
+   * Resources:
+     * web-interface to our integrated Knowledgebase: http://kb.phenoscape.org
+     * manuscript on OBD (technology underlying the KB): http://db.tt/czwTvgs
+
+Ruth Duerr
+----------
+
+Semantic Sea Ice Interoperability Initiative
+ * The National Snow and Ice Data Center - SSIII tries to make artic data useful to more people
+ * Objectives
+   * strengthen interoperability of data from the IPY Data and Information Service and Polar Information Commons
+   * Develop a Sea Ice Ontology, link it to other ontology efforts
+   * Incorporate traditional and cultural knowledge
+   * Just started to use semantically-enabled search and discovery, SSIII workshop Feb 2011
+ * Use cases:
+   * When can a ship get from the US West coast to the North Slope of AK via the Bering Straight?
+   * Improved parameterization of model factors affecting the spectral albedo of the Arctic Ocean
+ * Next Steps:
+   * Initial analysis of use cases, concept maps
+
+Libre: Freeing your data: free to share, discover and use
+ * Goal: Great if you could tailor your news reader to show only update data feeds of interest
+   * Requires mechanisms for syndication
+   * Casting, ATOM, RSS
+   * So far, some UIs are live (like MODIS data feeds, data catalog feeds)
+   * Dificult to convince scientists to 'cast' data
+ * Data Preservation and Stewardship Cluster
+ * Discovery Cluster
+   * http://wiki.esipfed.org/index.php/Discovery_Cluster
+   * Why is finding Earth Science data so difficult?
+   * Looking at OpenSearch Description Documents to help with discovery, see ESIP federation (link from Ruth _____)
+ * Semantic Web Cluster
+   * http://wiki.esipfed.org/index.php/SWEET_Governance
+   * ESIP will be taking over SWEET to provide community-based direction
+   * summer meeting - http://wiki.esipfed.org/index.php/Summer_2011_Meeting
+ * Quality Cluster
+ * Resources:
+   * Libre - http://nsidc.org/libre/
+     * badging data: http://nsidc.org/libre/apps/picbadge/
+     * collection caster: http://nsidc.org/libre/apps/cast/dataset/
+   * ESIP Discovery Cluster
+     * howtoguide for implementing ESIP Federated Search Servers: http://wiki.esipfed.org/index.php/How-To_Guide_for_Implementing_ESIP_Federated_Search_Servers
+
+Deborah: add Technology Infusion link from NASA
+http://www.esdswg.org/techinfusion/about/
+
+
+Jeff Horsburgh
+--------------
+ * Observations and Semantics in CUAHSI HIS
+   * building an SOA, using one or more catalog services for discovery
+     * follows publish, find, bind paradigm
+     * started with a relational database schema (ODM: for the information model)
+     * semantics are captured in the information model, includes some provenance information
+     * encourage hydrologists to use the data model, along with ODM controlled vocabularies within the model.  Has a moderation facility (website) for adding terms to the controlled vocabularies.
+   * WaterOneFlow (set of query functions) transmits WaterML as a n XML serialization. WaterML 2.0 is now an OGC profile, and WaterOneFlow will be replaced by OGC Sensor Observation Services
+   * largest hydrologic data network to date
+   * HIS central search services are provided via an API.  Searches are semantically enabled, can search by space, time, and ontology concept.  Search results contain metadata for any data for which their variable has been mapped to the ontology concept. See: http://hiscentral.cuahsi.org/webservices/hiscentral.asmx for search service API.  See http://hiscentral.cuahsi.org/startree.aspx for the star tree visualization of the variable ontology.
+   * HydroDesktop: includes tree view of ontology concepts in the CUAHSI hydrologic ontology in the search UI, time window, along with geographic bounding box or search are (polygon on the map), etc.  Search results contain metadata describing time series of observations that meet the search criteria.
+   * data providers use a web UI to map collected variables to classes in the CUAHSI hydrologic ontology.  Each variable has a 'sample medium' context which comes from a controlled vocabulary in the HIS to ensure that variables get mapped to the right ontology concept
+   * ODM 2.0: 
+     * community wanted more extensibility of the model
+     * also wanted better handling of physical sample collections
+     * wanted more pervasive annotations
+     * wanted a better provenance model
+     * ODM 2.0 will be more modular with a core along with multiple extensions
+   * WaterML 2.0 isfocused on in situ water monitoring, geochemical sample support will follow later
+     * WaterML 2.0 will be an O&M profile for water observations data
+   * Participated in a concept development study with OGC looking at a standard SOA for water data
+     * Publish, Find, Bind paradigm
+     * encourage broad uptake by software providers
+
+ * Resources:
+   * Hydrologic Ontology for Discovery: http://his.cuahsi.org/ontologyfiles.html
+   * 
+
+ * DataONE - improve long term access to data through archives (repositories) throughout the entire data life cycle
+   * http://dataone.org
+   * http://mule1.dataone.org/Architecture-docs-current/
+   * Member Nodes (MNs) - existing data repositories, implement the D1 MN API (service interface)
+   * Coordinating Nodes (CNs), indices of all member node content,
+   * Invetigator Toolkit: desktop tools, etc. that have been modified to implement the D1 client API for interacting with MNs
+   * Member node data are replicated for fault tolerance and data longevity
+   * Search capabilities aren't fully fleshed out, but a Lucene index backs the search. Common elements are extracted out from the various metadata standards and added to the index
+   * Can also be accessed as a'Tagged File System' - using a FUSE library driver
+   * Semantics will help in the discovery phase, as well as the integration phase of data content
+
+Carl Lagoze
+-----------
+ * Data Conservancy Data Model
+   * Data Curation is a research issue
+   * Johns Hopkins, Cornell, DuraSpace, NSIDC, etc., many social scientists
+   * Permit grand challenge science via via curation
+   * There is no unified model that can satisfy all disciplines, therefore design for diversity
+   * Preservation is the underlying foundation of curation
+   * Data Model:
+     * Based on PLANETS model, digital object model
+     * Accomodates diferent domains (Astronomy, Earth Science, Life Science
+   * Data Practices across domains are vastly different. Units of value are different (time series, rock profile, etc.)
+   * DC studies the potential for reuse of data within domains
+   * DC data curation framework:
+     * Dataset has: Content, Relatedness, Grouping, Purpose
+     * Developed a formal logic-based framework for fundamental dataset concepts
+   * DC is stream-oriented, but can store and deliver data objects
+   * Includes levels of abstraction
+   * DC Data model involves using verifiable snapshots (i.e. versions), active area of research from distributed versioning area
+     * Aaron Berkland is behind the verifiable snapshots and the portion that breaks up the pieces to cite.  (deborah would like to compare this to source usage in PML).
+ * Provenance
+   * Having provenance built into a model is important, with prospective and retrospective views
+   * The Planning and Enactment Ontology captures the plans, plans stages, and runs (enactment)
+   * Three classes: Object, Stage, Run
+   * Demo is at: http://ecrystals.chem.soton.ac.uk
+ * Discussion on observational vs other data models:
+   * DC data model doesn't focus on observational data models, there is no uber-model for all domains
+   * Ruth: What is the boundary of an observation? Streams of MODIS data are different than spreadsheets of data. What are the semantics of an 'observation'?
+   * Mark: Observation could possibly philosophically trump other intellectual constructs. Viewing and categorizing, etc. 
+   * Matt: O&M group has focused on stream-based data
+   * Carl: Observational data models are a view on reality, but is not an all-encompassing model for all data
+   * Matt: Data provenance systems often track at too coarse a gran of data objects (e.g. file) since many people subset files in order to synthesize data
+   * Carl: Observational data models are a key component to 'curation systems' but not 'preservation systems' since they do not accomodate all data from research efforts
+
+   * Resources
+     * Data Conservancy - http://dataconservancy.org/
+     * Planets Data Model (is this it?) - http://www.planets-project.eu/docs/reports/Planets_PP2_D3_ReportOnPolicyAndStrategyModelsM36_Ext.pdf
+     * Illinois work on Data Concepts used by DC (Allen H. Renear) - http://cirss.lis.illinois.edu/SciCom/DCRS/Presentations/Renear_ResSummitDataConcepts43.pdf
+
+II. Session on a Comparative Ontology Review
+==============================================
+
+Shawn: It would be useful to coordinate efforts on using domain extensions to ontologies (units being one of the more important areas). OBO Foundry provides a central place for ontologies, but also for units, promoting adoption and not reinventing components.
+
+Hilmar: O&M is a 'common model' that is now a standard. 
+Others disagree that it is 'common' because it may be deficient in certain use cases.
+Matt: O&M is a small part of the model, i.e. GML dependencies, sensorML serialization, etc.
+Jeff: O&M 2.0 is reducing those dependencies.
+
+O&M Model - Philip Dibner
+-------------------------
+ * O&M Ontology, precisely reflects the UML model
+ * O&M has an OWL implementation (some work remains to be done)
+ * Observation UML
+   * Feature of Interest is the core class, which can be any type of feature
+   * Observations are on a 'feature', employ a 'procedure', has related 'Observations' (ObservationContext)
+
+Discussion: Mark: Temporal Period and Instant are explicit in the O&M model: what about spatial context? Features may have a location. Units are in the Value class. (Flip will confirm this ...)
+
+O&M Feature maps to OBOE Entity
+O&M Process maps to OBOE Protocol
+
+Deborah: Wolfram Alpha is a commercial, semantically-enabled search offering. It would be worth comparing it with other efforts. See Units, Measures, and Physical Quantities on the Wolfram site.
+http://www.wolframalpha.com/examples/PhysicalQuantities.html
+also a talk on this will happen next week
+http://cirss.lis.illinois.edu/Rtable/errt.html
+Deborah and/or one or more of her team will attend virtually
+
+Matt: Capturing complex units of measure is fundamental, especially for units that end up being dimensionless due to the ratio nature of certain observations. e.g ppm (parts per million of what?) Knowing the units of the medium is critical.  Ratio units must not lose the context of both the enumerator and the denominator.
+
+What units are being used? 
+Shawn: OBOE has unit classes, some of which come from the LTER unit dictionary, which derives from the EML unit dictionary.
+Mark: Highly composited indices are being calculated in the ecology community that have complex units hidden behind the index value.
+Andy: BCO-DMO uses units described here -- http://physics.nist.gov/cuu/Units/
+   * SI Units preferred and suggested to PIs, but we take what PIs give us.  These days it is unusual to get something not in SI units (common exceptions are optics: microeinsteins, angstroms, others!) 
+
+VSTO (Virtual Solar Terrestrial Ontology)
+----
+ * Described by Deborah McGuinness
+   * Models how scientists access data from instruments
+   * Instrument is a core class
+     * Instruments have InstrumentOperatingMode(s)
+     * Models DataProduct(s), which represent the return object
+     * are operated by an Observatory (class)
+   * Instruments may be deployed on a Platform (e.g. vessel)
+   * Parameter(s) are measured by Instrument(s)
+     * each Parameter has a PhysicalDomain
+   * Instrument(s) produce Dataset(s)
+     * Dataset(s) have DateTimeInterval(s)
+   * Dataset(s) have DataProduct(s) - i.e DataPlot, DataImage, DataFile - each a diferent representation of the Dataset (some visual/informative)
+
+Matt: Note on raster image use case - pulling pixel values from all MODIS data scenes for analysis of bird and habitat correlation (a DataONE use case) overwhelmed the MODIS data service, which highlights the fact that the underlying data model may affect the usability of the data (or lack thereof) in repurposed application that differ from the original intent of the service.
+
+A VSTO Parameter 
+  equates to 
+an OBOE Characteristic 
+  equates to 
+an ODM Variable
+  equates to
+an O&M Property
+  equates to
+an EQ Quality
+
+ODM Model (CUAHSI Object Data Model)
+---------
+ * Described by Jeff Horsburgh
+ * Core classes
+   * Who (Organizations and People)
+   * What (Variables)
+     * has units
+     * has time support (spacing and extent)
+   * DataSeries (a collection class) is a view of a time series for a collection method at a site with a quality control level. This is a convenience for the Hydro community, but is not a core class, although many have expressed a desire to make it a core class
+   * Units (part of a Variable) are a controlled vocabulary, but not in a hierarchy or ontology
+   * How (Methods, QualityControlLevels)
+     * how are sensors deployed
+     * how are samples prepared
+     * etc
+   * Where (Sites)
+     * currently it is a single point location, but work is being done to expand the definition
+
+Note: There is a tradition of focusing on time series information in the community using the ODM, and the model reflects that currently
+
+Note: CUAHSI HIS is being enhanced to implement the DataONE Member Node interface, and the main barrier is deciding how to partition stream data into distinct data objects with byte lengths and checksum values. Further complications occur when researchers change data values in the underlying relational database implementing the HIS. USGS water data at times exhibits this problem (same query at two different dates gives different results). This points to tracking provenance information, and Ruth suggests that these issues be broght up at ESIP meetings, since they are grappling with the issues currently.
+
+OBOE (Extensible Observation Ontology)
+----
+ * Described by Shawn Bowers
+ * Implemented as an OWL-DL ontology
+ * Here is the core: http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl
+ * Core concepts (classes and properties)
+   * Observation (observation event instance)
+     * of an Entity
+     * has a Measurement (tied to one observation instance)
+     * Measurement
+       * of a Characterisitic (e.g. scientific name is a characteristic with a value)
+   * uses a Standard (units)
+       * uses a Protocol
+     * has a context that is another Observation (instance)
+   * observations can also be seen as an ordered collection of measurements (a common serialization being a row of values in a spreadsheet: each column (variable) is a measurement of a characteristic for the entity being observed [of course, it could also be of multiple entitites])
+   * note that hasContext is directed
+   * note that context may have a relationship (e.g. within)
+
+Shawn: in comparing O&M and OBOE, O&M doesn't have an Observation class as it is defined in OBOE. An O&M Observation equates to an OBOE Measurement.  In OBOE, Observations have one or more measurements, and may be seen as a collection of Measurements
+
+
+Mark made the point that it would be useful to document the 3 use-cases that were mentioned in the mornings discussions:
+   * Here is the current set of OBOE use cases: https://sonet.ecoinformatics.org/observational-data-use-cases
+     * Matt: there are a couple describe science, there are a couple that have queries, but only 1 has data currently.
+   * Ruth's use-case for identifing ice from satellite imagery by working back from "white pixels" in an image to sea ice to the geographic bounds of an ice field.
+   * Stephan's use-case of taking a water sample from a stream at one point of time and then analyzing it's nutrients in the laboratory 2 weeks later
+     * Stephan mentioned that this scenario was used as a justification for an extension to O&M (see http://www.opengeospatial.org/standards/om, document  07-002r3)
+     * Andy mentioned that from an OBOE perspective this would be 2 sets of observations: The first set would measure location and time of the sample and fact that the sample tube was full of water (for example). Second set of observations (separated by 2 weeks of time) would be nutrient measurements.
+   * Stephan was also asked to provide a VSTO use case.
+   * Andy also has a 4th (unspoken) use-case which is observations generated by a shipboard eventlogger his team has been funded to develop and deploy.
+
+
+III. Discussion on Next Steps
+=============================
+Shawn: One of the commonalities among models is the concept of 'Property' (in O&M parlance) and we should leverage these types of linkages toward integrating data
+
+One thing we might do is take a look at the models and see if we can see if we can agree on descriptions for concepts that seem to be "same-as" in the ontologies we have looked at.
+
+        Huiping Cao (former NCEAS postdoc) has already written a report that compares O&M, OBOE, and EQ ontologies. Mark will see if he can make it available to us.
+
+A 2nd step following onto this could  be to verify the "same-as" relationships by trying to apply the concepts in all of the reconciled ontologies to instances from the various projects that have  employed those ontologies in their ongoing work.
+
+DataONE perspective:
+ * Dave - a common ontology would be useful
+ * Jeff - to enable data integration, certain classes of data could be made more interoperable (e.g. time series data)
+ * In the absence of a common ontology, D1 will map metadata to core concepts in a simple, probably flat semantic map for pragmatic reasons
+
+Data Conservancy perspective:
+(need summary here)
+
+NEED A URL FOR THE SURVEY RESULTS AVAILABLE PLEASE
+
+The survey (https://spreadsheets.google.com/viewform?formkey=dEQ4YWZxdmtHSF9OSHRrcUVkUUVoamc6MQ#gid=0) should enumerate the most current URLs for each of the observation models being used in SONet participant domains.  This will be a useful resource for comparisons into the future. i.e:
+   * OBOE canonical URL _______________
+   * EQ canonical URL _________________
+   * VSTO canonical URL _______________
+   * O&M canonical URL ________________
+   * ODM canonical URL http://his.cuahsi.org/odmdatabases.html
+   * BCO-DMO canonical URL http://bcodmo.org/sites/default/files/event/bcodmo_classes_110328.cmap.pdf
+   * etc...
+
+Mark will be hiring a postdoc that will act on the priorities of the JWG. The postdoc may have more of a CS background, or perhaps an Earth Scientist eager to delve into the KR field.
+
+Deborah would like to see an implementation come out of the SONet work, perhaps in the form of a demo that will provide the basis of a SONet paper.
+
+Shawn: An implementation would need to be grounded in a use case.
+
+Hilmar: A bridging ontology to cross domain ontologies may be a reasonable path
+
+SUMMARY OF A POTENTIAL GROUP EFFORT:
+
+Task: Semantically match OBOE --> O&M in || to VSTO --> O&M at a defined detail level TBD
+                                      to DwC  --> O&M
+                                      to EQ   --> O&M
+                       
+Outputs: (a) O+M instance data from participating projects, and (b) a determination as to whether O&M is adequate to the task, and (c) the possibility of putting up SOS service instances for projects that succeed at mapping to O&M
+
+Limiting Focus: The specific concepts that the effort would focus on would be limited by focusing on one or more use cases that include concepts that are required across a common axis of concepts (cross-discipline reearch scenarios).
+
+Candidate Use Cases:
+   * " Find me the population of jumping catfish ...sunspots, .... mutations, ....lakes in wisconsin, ....geo-magnetic activity, ... sea ice, ... " (NEED HELP FROM OTHERS TO COME UP WITH THIS, THANK -- ANDY)
+
+Andy: It's interesting to note that if the OBOE-to-O&M matching is successful: VSTO, DwC, and EQ mapping efforts could opt to map to OBOE instead of directly to O&M.
+
+Mark: The work Huiping has done comparing EQ, O&M, and OBOE may be a starting point, including the conversion among models. 
+
+Deborah: This is a critical component in order to implement a working demo with an output of:
+a) O&M instance data
+b) determine when O&M might be inadequate
+
+Hilmar: EQ mapping to OWL 2 is in process
+
+Dave: Mapping core Darwin Core fields to ontology concepts would provide a reasonable pathway for crosswalking
+
+An illuminating (albeit contrived) use case may involve a cross-domain data search for catfish occurence in ice-covered lakes with a specific phenotypic characteristic correlated with solar flare activity.
+
+Cross-discipline research scenarios:
+Space Weather! http://www.exploratorium.edu/spaceweather/sway.html
+
+Excerpt:
+
+Climate
+
+It is already known that changes in the energy output of the sun can affect the climate here on earth. For example, the sun undergoes an 11-year cycle of activity, also known as the solar cycle. During solar maximum, the peak of the 11-year cycle, the sun shines a tiny bit brighter (up to one half of a percent). Studies of tree-ring thickness show that plant growth follows the ups and downs of the solar cycle. Another example is a historical event called the Maunder Minimum, a 65-year dip in solar activity that caused a period of global cooling on earth in the late seventeenth century. During this time, known as the Little Ice Age, temperatures plunged and the Baltic Sea froze over regularly.
+
+Scientists are speculating that galactic cosmic rays (high-energy particles from outside our solar system) may also affect the earth’s climate. Some think that cosmic rays are involved with cloud formation in our atmosphere because they create ions (charged particles) in our atmosphere; ions act as “seeds” (or nucleation centers) for clouds.
+
+Solar Variation affects on Carbon-14 production in the upper Atmo
+http://en.wikipedia.org/wiki/Solar_variation#Carbon-14_production
+
+Catfish have been observed to change behaviours - they jump for example - when there is high geomagnetic activity before earthquakes.  (not sure if they might do the same with the high geomagnetic activity associated with solar flares)
+http://books.google.com/books?id=xBGffKNfsq8C&pg=PA138&lpg=PA138&dq=catfish+and+high+geomagnetic+activity&source=bl&ots=5IpH3gLQHV&sig=auciEUBWtg6iejU76VwGaIquQrI&hl=en&ei=DyCuTZfxDorUtQOh_pGSAw&sa=X&oi=book_result&ct=result&resnum=1&ved=0CBQQ6AEwAA#v=onepage&q=catfish%20and%20high%20geomagnetic%20activity&f=false
+
+http://en.wikipedia.org/wiki/Solar_variation#Geomagnetic_effects
+
+The Earth's polar aurorae are visual displays created by interactions between the solar wind, the solar magnetosphere, the Earth's magnetic field, and the Earth's atmosphere. Variations in any of these affect aurora displays.
+Sudden changes can cause the intense disturbances in the Earth's magnetic fields which are called geomagnetic storms.
+
+...geomagnetic storms could theoretically disturb catfish, causing them to jump.
+
+more on unusual animal behaviour and solar flares and geomagnetic activity.
+http://hubpages.com/hub/Can-we-predict-Earthquakes-Unusual-Animal-and-Ocean-life-Clouds
+
+DAY 3 - Wednesday April 20
+
+Discussion on How Best to Collaborate as a group on Ontology Development
+ * One proposal is that the group create an ontology repository
+ * How to find funding to build ontology repository?
+   * Could base repository off of bioportal (http://bioportal.bioontology.org/)
+   * Leadership team will followup with identifying people to take the lead on this
+ * Having OGC involved might be of benefit to making progress on this (Luis, Simon)
+   * Philip offered to take the action to talk w Luis about brining semantics into OGC
+ * Suggestion was made that SONET JWG create a subcommitte to define a draft collaboration process informed by OOR and BIOPORTAL for use in working with ontologies (Co-ontology Development)
+   * Carl suggested that the proposal that he and Luis worked on might be helpful in this effort.
+
+Resources:
+ * OBO FOundry -- http://www.obofoundry.org/ (a library of ontologies that go through a review process)a paper on this (from 2007) http://www.nature.com/nbt/journal/v25/n11/full/nbt1346.html  
+ * library http://obolibrary.org/
+
+Serialization Approaches for transfer formats
+---------------------------------------------
+ * Serialization in OBOE, O&M, 
+   * O&M: XML serialization in a single document using namespaces to point to external concepts
+     * Data and some metadata are in the representation
+     * ObservationCollection gets returned
+     * Note that the syntax is compatible with OGC GML, is a flexible encoding, but has a quite complex structure, and full reference implementations may not be available (need to confirm this)
+     * Although a serialized result expressed in O&M enumerates the semantic concept of a feature of interest, along with the physical data result, it does not provide a mapping between the two in the resultset, which means there is a level of ambiguity.
+   * OBOE: xml serialization
+     * returns the observation container, each entity observed, and each measurement with the characteristic being measured
+     * uses a map to link attributes within an external data source to measurements in the observation
+     * doesn't serialize the physical syntax constructs of the external data item
+     * OBOE: Uses annotation layer that is separate from the ontology
+     * Andy: looke like OBOE would work quite nicely for BCO-DMO data model so that we can then link the structure of a data record with semantic annotations used for discovery
+   * VSTO - xml serialization?
+     * used to use semantically enabled web service calls to the back end database
+     * now using a triple store, and the serialization syntax needs to be confirmed
+ * To enable cross domain interoperability and reuse of data, serialization syntaxes need to be limited so clients can be built
+   * RDF? highly verbose
+   * N3? more concise
+   * Philip: For high volume data, O&M provides multiple serialization approaches, and a 'best practices' recommendation is needed.
+
+Philip: A discussion needs to happen with OGC to make then aware of the issues described here.
+
+Ruth: HDF-Mapping (an XML constrct) is being used to annotate HDF4 (and HDF5 in the future) to be able to read the internal physical data structure of the binary files without needing a library. NASA is in the process of using XML-Mapping to describe their entire data archive.
+
+Stephan's three options for OBOE serialization targets:
+    Serialization of observational Model
+    Serialization of Semantic Data Model (how to map a variable to a semantic concept, eg. CF)
+    Serializations the data themselves
+    
+ * Resources:
+   * O & M documentation (http://www.opengeospatial.org/standards/om)
+   * Notation3 documentation (http://www.w3.org/DesignIssues/Notation3)
+
+Activity: Corinna will coordinate with others in the group to pull together the data for the combined use case described above (Catfish/Sun/Ice/Phenotypes/Lakes) ...
+
+Deborah sent out a message to the group on the W3C provenance working group announcement.  Contact her if you have questions and/or interest.
+
+THU:  Deborah, Margaret, Ben, Mark discuss SBC Use Cases
+
+Don't know when both phosphorus and nitrogen collected in same sample.  But cannot legitimately calculate a ratio of these, unless, in same sample, and even then may be further restrictions on validity.  Can use OBOE Context to determine whether same instance...and thus if candidate for creating a ratio.
+
+Also have allometric data set.  Use MathML for expressing necessary processing of result-set.
+
+Pulling items out of SWEET-- which super and sub-classes useful.
+
+on https://sonet.ecoinformatics.org/observational-data-use-cases/use-case-1b-nitrogen-use
+
+Ben: materialize some annotated packages, test use case queries, identify gaps/successes with respect to OBOE model and its ability to answer query conditions. Special focus on "same instance as" feature of the observaitonal model.
+
+

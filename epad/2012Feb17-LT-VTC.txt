@@ -1,0 +1,128 @@
+Attendees: Rebecca, Bertram, Carol, Amber, Matt, Bob Cook, Bill, Suzie,  Viv, Stephanie,John Cobb, Mike Frame, John Kunze, Trisha Cruse, Bruce Wilson, Hilmar
+
+Regrets: Steve Kelling, 
+
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+1.  Please join my meeting, Feb 17, 2012 at 10:55 AM MST.
+https://www1.gotomeeting.com/join/972515961
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (630) 869-1011
+Access Code: 972-515-961
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 972-515-961
+
+Will also use the epad: http://epad.dataone.org/2012Feb17-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-02-17
+ 
+1.  CI Status (Vieglais)
+Progressing through the minor tasks.  There are a couple of issues: interaction between CILogon and DataONE CNs (in the process of implementing the solution)
+CNs: in good shape; sandbox environment has the 3 CNs with a couple of MNs tied in - had some configuration issues so close to having the sandbox environment ready by early next week. Finalizing the strategy for releasing all the components - have almost completed automating the process (automated distribution environment)
+MNs: no significant changes; a couple of bugs have been identified in the GMN stack
+Confident that will have something for people to test soon.
+New developer at NCEAS (Andy Pippin)
+
+
+2.  Summer Internship Program Update (Budden)
+Clarification of 'Mentor Requirements': 
+* Mentors need to have a DataONE affiliation.  If a WG member, then the WG lead should be listed as a secondary / co Mentor
+* It is not recommended that Mentors supervise more than one project.
+Deadline: Wednesday 22nd for announcement Friday 24th.  Have already begun tweeting - coming soon..
+Link for propsals: http://bit.ly/ws92tQ
+
+3.  Ideas of workshops before June 30 (Michener)
+
+a)  Summit on Fundamental Concepts in Data Training, to be held on June 12-14, 2012 in Albuquerque, New Mexico. The Summit is chaired by William Michener, Professor at the University of New Mexico; UNM) and Principal Investigator of DataONE and Carol Tenopir, University of Tennessee Chancellor’s Professor.  
+
+The purpose of the Summit is to bring together data management experts to design curriculum for short courses that libraries and data managers can offer to scientists and science students. These courses will help scientists across domains learn best practices of data depositing, using, and sharing. 
+
+b) Data Management Workshop/Data Mgmt Planning Tool Meeting
+Location: ABQ
+Date: Week of May 21
+Schedule: Day 1: DMP Tool Meeting; Day 2/3: DM Workshop
+Presenters to ask: (Overlap with attendees of the DMP Tool Meeting) – Trisha, Viv, Amber, Lisa Zolly, Ruth D, Bob Cook, Kristin Vanderbilt
+Attendees: Target tribal communities in ABQ and Davis (graduate level)
+Content: Test-drive the DM Modules in combo with ESIP DM modules; get feedback for each module from participants using Survey Monkey to use to improve the modules in live workshops and/or webinars.
+Funding: Offer scholarships for travel to workshop  + fund presenters
+
+c) Software tools for Sensor Networks
+Location: ABQ
+Dates: April 30-May4
+Sponsored by NCEAS, LTER, and some DataONE
+Presenters: From NCEAS, LTER, SDSC
+
+Training on the use of software for managing data from sensor networks, spanning from initial acquisition of data through documentation, archiving, and analysis. Target participants will be students, postdocs, and data managers who are deploying sensors in environmental field research.
+
+4.  Public Release Activities (Budden/Michener/Koskela/Vieglais)
+
+Release the web site February 24th (without ONEMercury) - ONEMercury will be available when the infrastructure is released
+Amber working on press release and will share it with LT next week
+Need group of people to work with ONEMercury when it becomes available - would be good to get post-docs involved. UT U&A team (Miriam and GRAs) are ready to help, just let them know when and what.)
+
+Current ONEMercury help page example: http://mercury.ornl.gov/pilotcatalog2/help.html
+
+From CI: Skye could be liaison from CI
+
+Notes from AHM on feedback of ONEMercury and other tools that were demo'd at the AHM
+need to be available
+
+What is the feedback mechanism for issues? (great would be a link to redmine, perhaps Chris could experiment with this a little)
+
+Request feedback from Bob Sandusky on accessibility issues for public web site
+
+website: http://129.24.63.65/  Please send comments to Rebecca and Amber
+
+5. Around the Room
+
+
+Bertram: ProvWG decided to meet just prior to IPAW, June 18th at UCSB.
+Details of agenda, etc. will be in our ad-hoc meeting at Dagstuhl (provenance seminar).
+ProvWG postdoc hire in progress.
+Summer Internship proposal in the works.
+
+Bill and Bob: attending CREATIVE B workshop in Rio Feb 27-29  which is designed to identify international interoperability approaches and standards.  This will be the first of a series of meetings over the next few years.
+
+Suzie: Article published in the inaugural issue of the peer-reviewed e-journal Journal of eScience Librarianship. Title: “DataONE: Facillitating eScience through collaboration”   
+Link:  http://escholarship.umassmed.edu/jeslib/vol1/iss1/3/  
+Info about the journal is here http://escholarship.umassmed.edu/jeslib/ 
+Congratulations Suzie
+
+John Cobb: XSEDE interaction.
+working with XSEDE leadership to define a DataONE - XSEDE interoperability interaction. The expected process is that an ad-doc group composed of DataONE and XSEDE staff will work on this for a limited/finite duration. The goals are to define, pilot, and implement services as appropriate. The initial thoughts are that a set of services would be defined such that XSEDE service providers  could implement the MN software stack and act as MN's. It is thought that this will be most useful as a facilitating adjunct for computationally intensive data workflows, but there may be other opportunities as well. from XSEDE's perspective, they are also interesting in facilitating science workflows (in the broad sense) and seem genuinely interested in more than just HPC. Ideally, it would be good that DataONE would be seen as so important and the DataONE architecture as so flexible that XSEDE adopted it as a "level 1 Service Provider" set of services and that XSEDE replicated the architecture in other science areas outside of DataONE's focus.
+
+One item that need LT input is that this should be pursued in the context of a science use case. Suggestions for a list of useful cases would be appreciated.
+
+Anyone interested, please contact me cobbjw@ornl.gov
+
+Trisha and John -- at the CDL we have been working on analyzing the total cost of digital preservation and out of that analysis we are developing to cost models 1) pay as you go for services and 2) pay once and preserve for X amount of years. We think that this latter model will help preserve data that is produced as part of a grant funded initiative.  We think that this model will be of use to the broader community and to DataONE specifically.  At this point we are looking for reviewers so if you are interested in seeing our work please get in touch and we will share the analysis and model. 
+I'm intetested - jwc Yea!
+I also am interested--Bill.
+Me too!!! -- Viv
+Me too--Carol
+Me too -- Matt
+Ditto--BobC.
+Also Rebecca
+
+John and Trisha -- In the next few months, the DataCite consortium and EZID will be adopting some new DOI policies:
+- agreement that data are stored and managed for persistent access
+- if data access is restricted, a landing page is required
+- metadata will be required upon registration
+- CC0 license assumed for metadata
+-- I think this is a big change; Matt
+
+Amber: In prep for public release, just a reminder that if you are on the LT and have 'liked' DataONE on facebook you have admin privilges and can post as DataONE.  This feeds directly to twitter.
+
+Bruce: Miriam Blake (Los Alamos National Lab) and I are preparing a paper to submit to the National Laboratories IT Conference (NLIT), to be held in Idaho in late May.  The idea is to talk about the role of national laboratory libraries and IT organizations in data management/data preservation (particularly for open science) and the work DataONE has done to enable this.  Also, worked some with Carol, Suzie, & Bill regarding the June workshop listed above.  
+
+Matt: Dave and I are meeting with NEON to discuss DataONE/NEON collaboration on technical interoperability at the end of February.  Please let me know if there are specific technical issues to be raised.  This meeting is a precursor to a meeting between NEON and DataONE on broader issues in early march.
+
+
+
+

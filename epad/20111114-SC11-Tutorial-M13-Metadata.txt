@@ -1,0 +1,143 @@
+
+Welcome to EtherPad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text.  This allows you to collaborate seamlessly on documents!
+
+
+
+SC11 Tutorial M13: MetaData : "Big Data Means Your Metadata Must Work"  <http://sc11.supercomputing.org/schedule/event_detail.php?evid=tut128>
+given at SC11: http://sc11.supercomputing.org/ 
+
+http://epad.dataone.org/20111114-SC11-Tutorial-M13-Metadata
+
+Science Metdata Interest Group: Volunteer Self-Assembled - openly shared list
+cobbjw@ornl.gov
+<your contact info here >
+
+
+Audience Questions:
+
+Primary Role:
+    a) Domain scientist                     3
+    b)  CS Researcher                      7
+    c)  Manager                             ~15
+    d) Systeams Administrator     ~ 30
+    
+   Q: Level of Familiariety with Metadata
+    none some moderate expert
+   none                                              3
+   some                                         ~ 12
+   moderate                                      6
+   expert                                           0 (Perhaps some shyness)
+  
+       Q Level of Familiarity with Metadata  
+       none some moderate expert
+       none                                         2
+       some                                         ~2/3
+       moderate                                 ~ 10
+       expert                                      0 Perhaps some shyness)
+       
+       Q;  Current  Metadata projects
+       Y: 1/2 to 2/3
+       N: ~ 1/3
+       
+       Q: Familiariety with workflow systems: ~ 7
+
+Audience counts
+1:40 PST: 60
+1:50 PST: 61
+2:50 PST 50
+3:40 PST 30
+
+Audience: Questions/Comments - requesting action in Tutorial
+
+
+Comments/Discussion
+
+Jim Gray: Scientists spend 80% of their time getting the data together and 20% of the time doing science. We want to flip that.
+
+So what's the easiest way to capture metadata from already existing workflows (aka stubborn scientists?)
+It is hard. The lesson is that the cost of metadata preservation increases with increasing time since data creation. After the fact metadata capture is tough but has been undertaken. For example, NARA does this all the time since it is often the receptacle of projects that have not planned well. Another examples is the NEES project <http://nees.org/>. The NEw NEES operatins team has dedicated a full-time curator to help with metadata issues for ongoing and past projects. They ahve also defined a data file hierarchy rubrid within which to place data files from earthquake engineering project. 
+
+I mean how to integrate the capture into software they use that may/may not be in house (commercial software).  For example...if the workflow involves opening up Excel, doing something, how can I capture that?  It's difficult when scientists all use different tools to manipulate data.
+
+My (peraonl) advice is "be thoughtful" beforehand. The usual adage is:
+Good Judgment comes from Experience but experience is often obtained from bad judgment.
+The best way to address this problem is with a team that has felt the pain of not doing it well.
+
+w.r.t. to Excel, it is a good example. Excel is used by many, many scientists as a legitimate part of their science workflow. The California Digital Lbirary is working with Microsoft to try to bring some better data practices to Excel. see: <http://dcxl.cdlib.org/>. WE hope to have this available sometime in 2012 - with some error bars on the time here. <<Thanks 
+
+
+Metadata helps publicize and support the data you or your organization have produced.       
+
+There are keystroke and mouse movement capture tools, however those are generally used for benchmarking or baselining the process.
+That also has an unappealing "creepy factor" :)
+I think if we could develop a digital notebook that accesses data, and helps them open tools from said digital platform we could capture it better...but the development costs go up.
+I agree. - but sometimes the cost can be justified. Mileage differes by discpline and project team
+Can you capture the changes to the xlsx file rather than the keystrokes that got there?
+Maybe using the tool access wrapper to identify the tool and resulting data file.
+hmmm, but then I can think of a gazillion other commercial tools they use... SAS, JMP, R (well not commercial), other Stat packages (sigh) each with their own preference
+... and how to differentiate what-if fiddling versus real data capture  <<exactly.  The digital notebook idea fixes this... cause it's a DIFF...file goes into black hole (SAS/Excel) comes out different...diff is captured by Digital notebook.
+Yes a real big issue! Also, data repositories that have incremental updates. Suppose I have a 1 TB archive that has 5 GB updates/per day, but there is not way to archive the increment. Do I need to version 1 TB every day? What if it continously updates? The CVS/SVN model of versioning gets stretched in the case.
+
+Another opion is to have explict "commits" This is the idea behind the CDL Excel project and that DataONE R plugin package. Explicit calls to deposit and retireve from repositories are avaiabile and the workflow (or interacdtive use) can decide when to create a data set and metadata record.
+
+Some of the problems also can be solved by a good LIMS system(which has metadata components).  It's strange to me that so many colleges and universities are still resistant to a LIMS system.  I read somewhere today that LIMS systems presently dominate in all corporate environments, but lag heavily in govt and academic environments.  As someone who tried to bring about a LIMS licensing plan in their current institution, teaching administration about this need can be a significant component. 
+
+A good point that, unfortunately, we did not explore in today's prepared materials to some extent.
+For DataONE we tried to assess our target user communities and tried to create integration tools for them (This explains the Excel and R thursts) <http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0021101>
+
+It's very surprising how many profs don't care about succession of datasets.  The amount of work/time grad students spend trying to figure out what old datasets are.... perhaps the biggest thing funders (like NSF) could do is enforce/require LIMS.
+
+This varies program officer by program officer. The curation progress that NES is making is a direct result of the emphasis that the NEES program officer places on deposition of project data. She will not approve NSF fastlane reports, project renewals, or even no cost extensions wiyhtout satisfactorry progress on curation. And that is an anecdotal answer to the question above about "how" - the answer is not a technical SW issue, it is a social issue.
+
+Researchers will care more when their incentives are phrased as such. I have never heard of anone being denied tenure becuase of inadequate data curation ,.... yet  <<because enforcement will increase cost for the uni's (as in having the means to help researchers store it) (see % below)
+
+On the positive side of that statement I do know of one postdoc applying for a tenure track position where the number of despositions, use and citations of work at Nanohub was noted in the decision to hire.
+
+% also an interesting discussion.
+As you may know, the NSF now requires a data management plan for all awards. They have had enough time that they are evaluating how this is being done and if it is being done well. Many univerisities have responded differently. On an anecdotal (positive) side, I have seen a few universities who are using this opportunity to create institutional data repositories and digital data libraries. There have also been a cople of efforts to help researchers develop plans to meet this requirement and need https://dmp.cdlib.org/. I have a few other links ot other projects as well.
+
+Rebecca is reminding me that she brought a handful of postcards on the DMP tool and It's now on the table that the front of the room. Please take one if you are so inclined.
+
+
+**** BREAK ****
+
+Some "in the break" entertainment: (In case cookies and coffer run short)
+
+A video brochure for the ORNL DAAC: <http://www.youtube.com/watch?v=1fOqmW71m3U >
+A DataONE overview video: <oops I can't find the link yet>
+A DataONE overview lecture: <http://vimeo.com/7965857>
+
+And on the more humorous side:
+
+A video on sharing Unicorn data: - A humorous Xtranormal view of data sharing/data hoarding << unicorns are real after all!!
+<http://www.xtranormal.com/watch/12583781/unicorn-data-sharing>
+
+A personal Geek out: A Video prepared for the ORNL staff awards program
+<http://www.youtube.com/watch?v=yULRU3lFeRA&feature=youtu.be>
+(With only minor apologies to Bob Dylan)
+
+
+**** BREAK ****
+
+metadata gnomes and ren and stimpy made it today!
+
+Responding to kris: do you actually get scientists to do this?
+
+Actually yes, but it also helps if the project they belong to makes it a requirement to
+supply metadata for their datasets.  The demo shows alot of typing but in reality
+you can upload from other documents - the demo is to show you one edi
+I see how you input metadata into the GUI 
+metadata tools .. but where do you actually 'relate' the actual datasets to the metadata?   (maybe I missed this step) 
+No - you didn't - John skipped over that because he didn't want to fill out the 15 pages -
+at the end, you can upload the dataset - Morpho works for just data files - EML will support databases but Morpho is intended for individual datasets
+
+ok cool..  
+
+"social" is key here, until it's as easy as Facebook people will see it as a burden.  And scientists aren't really the social type :P
+
+Maybe not Facebook social but more and more scientists are members of larger collaborations that have received funding so working together or finding someone to collaborate with is becoming more important - if another researcher needs data and finds your data, the collaboration can begin - in order to enable that discovery, quality metadata is very important
+
+Even that type of social isn't very...well... social anymore :P
+

@@ -1,0 +1,62 @@
+What needs to be tested
+
+- public website
+- ITK (suite of tools)
+- documentation for the tools (to assess ease of understanding). Some tools, such as ONE-R and ONEDrive can't be tested without some kind of documentation or tutorial for the user to look at first to understand the purpose, function, and installation/launch of the tool.
+- FAQs. These will be really important for the Authentication tool. They need to be written as "I can't do X" or "I am having problem Y" in order to provide specific help for problems.
+- authentication: issue of testing it separate from a tool. It will need to work in order to test ONE-R (and maybe ONEDrive?), but it could add another level of complexity to testing those tools if it has not previously been tested on its own.
+
+How the testing could be done
+
+- working group feedback
+- heuristic evaluations
+- formal usability testing
+- testing and evaluation may be done with assistance of U&A team members, or with usability consultants local to the development team. The U&A team can assist CCIT in determining a strategy for a particular tool or service. Some options for testing assistance include:
+    - University of Tennessee
+    - CDL
+    - University of New Mexico
+
+
+Communicating to CCIT and other product developers
+
+- collaboration with CCIT and web site developers is critical. Evaluation and testing needs to be worked into the development lifecycle/project plan
+- CCIT works on 8-week project blocks. Work evaluation and testing into this schedule.
+
+Timeline for testing/when testing needs to happen
+
+Dec. release: authentication, ONE Mecury, maybe no time for formal usability testing, but can use WG feedback and heuristic eval from U&A team members
+First quarter of 2012: ONEDrive, ONE R Client
+- in general, heuristic review and formal testing needs to be built into the product development lifecycle. CCIT needs to includes in their workflow adequate time for evaluation and testing, which can then inform further development/modifications prior to launch.
+- Feedback from the working groups at all-hands meetings seems to be really valuable, but it has to be challenging for the CCIT to address concerns when it's coming in so late in the product lifecycle. But having the demonstrations and the context provided by the developers at these meetings is extremely helpful in the evaluation process. Perhaps we should consider bi-monthly (?) WebExs for the all-hands community that allow the CCIT to demo tools in development, and to receive live feedback from the group. This might allow useful feedback to be provided earlier in the development lifecycle, rather than near release deadlines (which places more pressure on CCIT), and will also inhibit our ability to do formal usability testing on these new tools and services. Work this into the 8-week development block cycle.
+
+Potential testing strategies for current tools
+
+Public DataONE web site
+- it would probably be a good idea to do some formal usability testing on the new site, because there have been many changes from the current site with respect to layout, navigation, labels, and functionality. However, we need to determine whether this is feasible given the presumed release date of December 2011. Should we instead do one more round of heuristic evaluation instead, once the All-Hands meeting feedback is addressed/incorporated?
+- talk to Amber and Rebecca about the best approach, given time constraints
+
+ONEMercury
+- conduct formal usability testing once All-Hands evaluation/feedback is addressed
+- consider using EyeTracker to determine how users are processing/evaluating/using the features on the Results page
+- should be relatively easy to recruit testers from different user segments
+
+Authentication
+- two-phase testing:
+ (1) testing Authentication as a seperate tool: using cognitive walkthrough to test it internally within D1 all-hands community before testing it in conjunction with other tools; the purpose is to identify problems and users' thoughts during the authentication process
+ (2) embedded within the testing of ONE-R and ONEDrive
+
+- formal usability testing + think-aloud can be used to capture users' interactions and thoughts about the whole process, which can help identify hidden problems
+- having FAQ or HELP file beforehand will be important to lead user through the whole process; a slideshow/flash demo will also be helpful; this documentation may also need evaluation
+
+Authentication + ONE-R
+- recruiting testers will be more difficult; they will already need to be R users. We would need to begin recruiting soon, given the deployment timeline.
+- at least one of the usability analysts would probably need to be very familiar with R; perhaps  one of the CCIT developers should be a part of the testing team
+- having completed documentation prior to the testing will be important, since part of the test would include launch/integration of the tool.
+
+Authentication + ONEDrive
+- formal usability testing will be useful, because potential users include both tech-savvy researchers and those who desire the ONEDrive functionality but who are not necessarily as comfortable figuring out how to install the drive
+- cross-platform testing will be especially important (Mac, Windows, Linux)
+- completion of documentation prior to testing will be important, and the documentation should itself be part of the test
+- how this tool is initially presented to the user is important. What will be on the DataONE site that will lead them to discover the tool and why it might be useful to them? Will there be a product page? A 60-second Flash demo/quick tour of the tool might be a useful intro for people to understand what ONEDrive is, and what capabilities it provides. The user could watch the demo/read the description, and then use the documentation to try to mount the drive on their local machine. Testing could include this process, as well as their ability to browse and/or search/filter for data of interest, and download data packages into specific tools. (Note: will testers need their own machines with their own tools loaded?)
+- will recruiting require us to identify people who already use specific types of data management/manipulation tools, in order to determine how successfully they can download specific file types/formats?
+

@@ -1,0 +1,167 @@
+CoreDev Sprint 2012.37-Block.5.3
+================================
+
+
+
+Roger
+-----
+
+ * Finished support for configuring GMN to be in specific tier.
+ * Finished automatic handling of Node document and Node Registry.
+ * Finished NodeReplicationPolicy document generation.
+ * Finished enforcing replication policies (rejects replication requests that don't comply with the NodeReplicationPolicy)
+ * May be necessary to do a bit of refactoring of the create interface - specifically to reduce the overload of the interface
+ * ONEDrive ok for Linux on Dev
+ * Generally best for a MN to be cautious of incomming operations / content
+ * Default policy is open to all request
+ * Will tag this, work on installation docs
+
+
+chris B.
+--------
+- local admin work at UT
+- Test puppet nodes, 
+    - remove the need to use apt-get. everything controlled by puppet
+    - Requirement: need to be able to roll updates from one CN to the next (offset)
+    - cn-buildout scripts will need to be refactored
+
+Chris
+-----
+ * d1_replication: running well with a single CN with a low request factor + preference factor (no failure or bandwidth factors)
+ * getting more replicas than requested, so I'm troubleshooting that
+ * will be scaling up object numbers in sandbox again today
+ * Touched based with iLTER groups at LTER ASM, will set up a meeting this week
+
+ * Working on replication in sandbox - tracked down bug on creating too many replicas
+ * Presented at LTER ASM
+ * Issues about authoritative MN being set during sync
+   * Nodes can indicate which content should be synced
+ * Big issue outstanding is the whole authentication thing, and mapping of legacy accounts to some provider service that can be used to authenticate through InCommon
+
+
+Ben
+---
+
+- Stage setup for 1.0.4
+- Documents not yet fully replicated  (about half since early Satuday morning)
+    -- still only 86k/113k on ORC
+- Working with SAEON getting metcat issues sorted
+    --Metacat-Metacat data replication, only about 20 objects in question. Not a high priority and would rather see them become a MN.
+- Working on some Morpho bugs
+        --Released v1.10.0 on 9/10/2012
+- Morpho work involves a fair bit of libclient refactoring work
+    -- refine design proposal for Thurs, meet with Matt at NCEAS to hash out plan forward. Likely less libclient refactoring than we have been discussing  so that we can actually move forward.
+    --identify concrete goals and discrete components to develop in Morpho.
+- new tag of Metacat to fix a minor bug
+- will work on the Morpho design/code
+- Working in stage, found the reason we're missing the /portal connection on certain CNs
+- Worked with Matt on Morpho impl
+- Working on cn-buildout currently
+
+
+Rob
+---
+
+- Working on libclient design issues that are being driven by Morpho (e.g. datastore)
+    - rewrite of D1Object looks inevitable, may need to deprecate this particular class
+    - need to push libclient to releases.dataone.org, and then make changes from that point on
+    - may need td to continue support of D1Object until other MN admins can make the transition
+    - for instance, MNode is tied to the v1 params, etc
+- Continuing to work with Ryan on Dryad MN
+  -- Some issues  with mutability of content that need to be sorted out (metadata only)
+  -- Friday: hasn't heard back from Ryan yet, sent him a few more bugs,, dealing with malformed system metadata
+  -- still having issues with system metadata, trying to manually understand the issues since the tester wasn't clear on the issue
+- Incorporating ideas for libclient based on Jing's work
+ - What about the scenario where systemmetadata needs to be changed after it's uploaded to an MN and sync'd to CNs.  There's no MN.updateSystemMetadata()
+
+
+Robert
+------
+
+- stage update running on 1.0.4
+- SSL did stop at one point.
+- replication between CNs proceeding, but still slow
+    - ended but is missing 27K documents
+- indexing is producing lots of logging, will reduce that in the code
+- no exceptions apparent so far
+- some discrepancy between UCSB and (UNM, ORC) for listObjects
+  -- fixed by restarting tc
+- Discrepancy on UNM between identifierList and objectCount
+    - seem to be related to integration test pids, will remove these for now to emulate the production environment more closely
+- will upgrade java on production, will require reboots on CNs
+    - we'll need sysadmin support for this
+    - upgrade UNM and ORC first, then alter RR, then upgrade UCSB
+- Log aggregation testing went well
+- Ensuring that sync is working corrently in stage - will turn sync on in stage now that replication is working
+- If there's no new content, will update the last harvest time on one instance to exercise the sync tasks to be sure d1_sync is working as advertised
+- 115807 objects in stage in the identifier tables
+    - Ben is seeing some discrepancies on the order of 125 pids
+    - May be test docs?
+    - ben will add an ORE to the CN, to make sure it replicates
+
+
+
+
+Skye
+----
+
+- Testing 1.0.4 issues, 
+- Need to finalize testing the index back-off strategy
+-- New mockup of member node list: https://cn-dev-unm-1.test.dataone.org/d1Search/nodeTable.html
+- Requires support on the Drupal side for implementation
+- Will require a few data services to be implemented on the CNs for support -> likely to be part of 1.1 release
+- Dashboard notes at: http://epad.dataone.org/DashboardNodes
+- Discussion on issue of OpenLayers use within ONEMercury.
+  - Update OpenLayers vs. remove OpenLayers
+- Can be available for usability groups during AHM
+- Will work on CN indexing acting as an admin to get around security issues
+- working on serving up the .deb files for SOLR since the launchpad PPA location has been wiped
+    - could also use the tools at launchpad to generate the debs
+    - put them into ubuntu-extras at first
+- Testing the backoff strategy for indexing in stage - working well so far
+- Will work on minor CSS change
+- Fixed the map initialization problem in ONEMerc - could be pushed into 1.0.4
+- Looked at upgrading openlayers, would only be a minor upgrade
+- working on deb packaging
+- securing the search index, currently connecting as the public user, and can't index private data
+  - parser API doesn't use any libclient, changing this
+  - looking at an admin ssolr endpoint, wouldn't go through security servlet, would only be exposed locally
+  - best is to migrate to using libclient
+
+Matt
+----
+
+- Starting to get cranked up on R work next week
+
+
+Dave
+----
+
+- Preparations for AHM
+    - difficult process of organizing AHM schedule
+    - re-aquianting with othe working group efforts
+    - looking at next prioritites for future development
+
+
+1.0.4 Deploy
+------------
+
+Need to test:
+- Startup log aggregation
+- Index back-off
+- Make sure that UCSB and UNM consistent (use the replicate button)
+
+- Discussion on the release
+- Backups are a time issue
+    - need to create SQL backups, /var/metacat backups
+    - If /var dies, these do no good, bututif individual .db files are corrupt, this may help
+    - can push the backup scripts
+Jing
+----
+ * has moved to a new project, but is working with Rob/Ben on Morpho design
+ * installed GMN at NCEAS on nibbler.nceas.ucsb.edu
+ * Will be joining standup periodically since the new project is related
+
+
+
+

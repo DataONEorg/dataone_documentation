@@ -1,0 +1,137 @@
+Attendees:  Skye, Laura, Dave, Amber, Chris Jones, Chris Allen, Rebecca, Isis
+
+Google Hangout
+https://plus.google.com/hangouts/_/event/D1DashboardReviewHangout
+
+Review of: http://129.24.63.92/current-mem-nodes DataONE Dashboard testing site
+
+Redmine tracker: https://redmine.dataone.org/issues/3875
+
+MN Wrangler Meeting
+                    Remove table hover row highlighting
+                    Add Replication node text in tooltip popup on 'name' hover
+                    Remove logo column/link from Replication table
+                    Add member node document column for 'upcoming' nodes table
+                    Tooltips in new tables. (the on hover tooltips for columns in new tables)
+                    Update 'Status' legend with 'upcoming/in progress' status
+
+
+OUTSTANDING ISSUES:
+============================
+
+align bottom row of the node detail - mn doc, status
+
+- Check each MN for correct 'dateUploaded' dates - should be when the object was uploaded to the MN repository
+    - This is a task outside of the UI work. Assign to Chris J.
+- We need to get transparent backgrounds for MN images (Amber)
+- Logos need to be the same height, and UC3 Merrit should be cropped to logo dimensions (less white space)
+    - Amber is on it.
+- Preferred MN breadcrumb abbreviation text values.
+- 'Upcoming Member Nodes' section - do we keep this?  
+    --- Add this to the bottom of the new page based on current layout
+            -- possibly add new table style for 'upcoming' table
+            -- add as a drupal 'node'?  or just raw html at bottom of the dashboard main html page
+- Three replication nodes listing - do we keep this?
+    - Add to bottom of the new page
+        - prose text or table
+
+
+Summary Page
+============
+
+- Fix page header
+    - Search box is misaligned - DONE
+    - Check font size / link behavior in LHN, breadcrumb areas - DONE
+- Fix alignment of data/metadata upload legend boxes - DONE
+
+- On hover over a MN row, there's no visual feedback on the different links in the row because the whole row is clickable
+    - remove row hover click behavior, make each 'action' seperate hover areas to indicate seperate actions.
+    - DONE
+
+- Dates for "last harvested" are really the date of the newest content that was retrieved from the MN, i.e. the youngest content.
+    - change label to 'last updated'
+    - DONE
+
+- On smaller viewports, Top summary boxes collapse to be unviewable
+    - DONE - set display to inline-block
+    
+- Under the status: capitalize OK =)
+    -DONE
+
+- For the main summary page boxes, remove 'at the listed Repository', but keep it on the Detail pages
+    -DONE
+
+GRAPH ISSUES:
+==================
+    - For the graph, put the years under the months, or Jan 13, Feb 13, etc
+        - DONE
+    - Graph: horizontal lines should line up with a tick mark
+        - axis label tick marks should align with dashed value lines
+        - DONE
+- KU and cornell node graphs have lines directly on top of each other
+        - make one dashed ?
+        - small offset of orange line to show both...    
+     - DONE, added offset to second line of 2 pixels in x,y directions        
+
+MN Detail page:
+============
+- Online with DataONe on: change to 'Online with DataONE' or 'Newest Content' and summary page
+    -DONE
+
+- Use consistent time formatting for dates on these pages
+    - Drop the time portion from 'last harvest'
+    - DONE
+
+- Change 'Last Harvested' to 'Last Updated' 'Newest Content'
+    -DONE
+
+- Use 'Detail of <MN Name>' in the MN Detail page title
+    -DONE
+
+- Add MN document links for SEAD and USNPN
+    -DONE
+    
+- Page transitions from summary to detail view sometimes leaves user at bottom of detail view
+    - on transition to summary, scroll to top
+    - on transition to detail, scroll to top if nav from summary (not when moving between nodes)
+    - DONE
+
+Releasing to the public website
+========================
+
+- Left hand navigation integration
+  - Menus will match. Skye and Chris A. will work on this
+  - DONE
+  
+- Breadcrumb
+    - Needs to be updated with the navigation:
+    -- Home >> Participate >> Member Nodes >> Current Member Nodes >> Member Node Detail (abbreviated name)
+    -- Change window.location on navigation to node detail.......invokes page load but may help breadcrumbing?
+     -- text should be black, no link    
+    - DONE  (need to confirm, define abbreviations)
+
+
+- Update Redmine with:
+  - Abbreviated Member Node Name
+  - MN document location
+  - Logo location
+  - MN URL
+  - MN full name (actually, in the Node Registry)
+  - lat/lon
+  - official description (also in the Node Registry)
+
+V2 notes:
+=======
+Storage refactoring:
+- We want to centralize storage of a number of MN attributes. Some are in redmine, some in the CN Node Registry, etc.
+- Currently, Skye is storing cached text files in the Drupal filesystem.  these need to be updated programmatically in V2
+'Upcoming Member Nodes' section location may not be best suited at the bottom.
+
+Final Review:
+==========
+Wednesday, 4pm MT, Skye will send out a GoToMeeting email
+    
+
+
+
+

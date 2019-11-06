@@ -1,0 +1,92 @@
+May 30, 2013
+
+EVA Subgroup on Evaluating Vis Techniques
+Participants:  
+ Aritra Dasgupta,  Anna Michalak, Debbie Huntzinger, Steve Aulenbach, Yaxing Wei, Dan Ricciuto, Forrest Hoffman, Christopher Schwalm, Claudio Silva, Bob Cook, Bill Hargrove
+
+Agenda
+
+1. Introduction and Background (based on January meeting)
+
+Notes from January EVA meeting (http://epad.dataone.org/2013-01-22-EVA-Wkshp)
+
+2. Aritra's paper, currently in review:  An Exploratory Study of Visualization Usage For Climate Data Analysis 
+ * exploratory qualitative study for investigating the synergistic capabilities between the visualization community and the climate science community.
+ * analyzed usage patterns of visualizations by climate scientists and systematically categorized the common design problems from vis perspective.
+
+Next steps
+    Bill:  go broad and include other disciplines within Climate Science
+           test and improve the Figure 3 taxonomy using a broader suite of disciplines, include dynamic visualizations
+           add an ease / difficulty assessment to the taxonomy (see Figure 10 and Table 4), hints on how to do well. dos/don't dos, recommendations for alternatives
+           relationship between taxonomy objects
+           frequency count and how well it fits into the taxonomy
+           do test/assessment of visualizations in a blind-way (not talk with authors at first)
+           
+          have experts compare original and improved versions of the same information
+    Steve: Visualizations in 2013 DRAFT National Climate Assessment Report, heterogeneous visualization ways to address specific knowledge goals (2013 DRAFT is available at http://ncadac.globalchange.gov) and 2009 Synthesis and Assessment Products (http://www.gcrio.org/library/sap-final-reports.htm)
+    
+    Anna: IPCC report
+        
+    Yaxing: take a few visualizations, think about some ideas, make changes, then bring them back to the group to discuss        
+
+3. Discussion of new activity (text below is rough, to generate discussion)
+
+    Evaluation/Review (usability assessment) of visualization techniques for climate community experts
+
+    Goal:      Use of static and exploratory visualizations to facilitate / improve analysis and display of results
+                  Evaluate and suggest improvements in visualization approaches used by Terrestrial Biosphere and Climate Modeling communities
+    
+    Approach:
+        identify common visualizations used (collaborate with IPCC WG II Technical Support Unit)
+        develop survey targeted for experts 
+
+
+    Outcome:
+    
+    Next steps
+    
+4.  next telecon
+
+Adjourn
+
+
+
+
+
+
+
+
+Plan for the TVCG Paper   
+1.  Taxonomy of design problems developed from 100 to 200 images from TBM community
+        have evaluated 106, need another 100 or so images 
+            who:  Aritra and Jorge with Claudio and Enrico
+            methododolgy: partially described in Sect 2.1 ??? 
+                using general design principles to evaluate the images
+                expand Sect 2.1 to fully describe the method for applying general vis design principles and how they were used to evaluate the images
+                
+                Talk with Anna and Forrest to get more images
+                A database of images with: intent, problem description, recommendations, communications between us and scientists
+                
+2.  Need to have 5 or so figures of a diversity of types derived from the Taxonomy of Design Problems (Step #1 above)
+            include complexity of the image as a contributor to the diversity
+
+3.  Identify the problems and redo the images with our solutions 
+    already have re-done two images (from March Vis paper)
+
+4.  Discuss the problems and the re-done figures 
+                    with the EVA group
+                    
+5.   survey the community to see if those improvements are suitable
+                how do we plan to present this in the manuscript? make a plan, which will guide our discussion with scientists and usability survey         
+
+6.  develop guidelines / conclusions 
+            state general visualization design principles
+            present best practices originating from this paper
+            include some info about good images found during the initial steps (Step 1 above)
+
+The InfoVis paper plus reviews will be a good starting point for the TVCG paper.
+
+The schedule that we discussed for completing this paper was basically a couple of months to do the main work and a month to do a careful internal review of the material.
+
+
+

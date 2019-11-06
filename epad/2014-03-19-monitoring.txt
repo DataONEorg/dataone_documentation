@@ -1,0 +1,79 @@
+Monitoring discussion
+=====================
+
+Participants: Chris, Dave, Matt, Nick, Robert, Skye, David, Bruce (late)
+
+Notes
+-----
+
+1) Nagios is running on monitor.dataone.org (kansas IP)
+ * Status: running
+ * check_mk interface: https://monitor.dataone.org/check_mk/
+ * all machines in test and production montored
+ * low frequency checks (per minute)
+ * role: good for service availabilty, ports
+   * Nick: email alerts are super important
+ * pulls at a default once per minute
+ * setup is easy
+
+2) Statsd
+ * Running on statsd.dataone.org
+ * https://statsd.dataone.org/
+ * Status: running
+ * Listens on UDP port
+ * currently streaming events for development CN hazelcast
+ * role: realtime watch, troubleshooting
+ * conclusion: it could be turned off for most normal monitoring, but is useful for development, high frequency testing
+
+3) Splunk
+ * realtime monitoring: tie an event to a log message
+ * log forwarding running over TCP, sent to the splunk box at ORC
+ * https://splunk.dataone.org:8000
+ * messages get to splunk within a second or two
+ * alerts can be set up at any frequency, can be dialed back
+ * if logging stops: write an alert to look at rate of log content drop
+ * Accounts are separate from DataONE LDAP.  See Bruce, David Doyle, Dave Vieglais to get an account set up on this.
+
+4) Amazon AWS monitoring
+ * can monitor both internal AWS services and external services
+ * Alerting
+ * Can configure HA and load-balancing to respond to these events
+
+DECISION: We can hold off on installing splunk on monitor.dataone.org
+
+Monitoring levels:
+ * harware monitoring
+ * service monitoring
+ * In phase II of DataONE:
+   * named responsibility for monitoring
+   * passed baton
+
+Do we want a publicly visible monitoring synopsis?
+   * e.g., https://status.github.com/graphs/past_month
+   * e.g., http://www.google.com/appsstatus#hl=en&v=status
+   * The DataONE dashboard should serve this function
+
+
+ACTION: Chris will write up tickets for hazelcast cluster monitoring
+ACTION: David will work with Bruce to create alerts for Hazelcast cluster membership BEW -- can someone clarify what kinds of log event we're looking for to generate the alert? Will be in the tickets
+ACTION: Dave will configure Nagios email alerts
+ACTION: Define a monitoring responsibility plan (Dave)
+ACTION: Robert, Bruce, and David D. will put together a cross training session on splunk monitoring
+ACTION: David Doyle to set up accounts in Splunk for Chris Jones, Matt Jones, Dave Vieglais, Skye Roseboom, Nick Brand, Robert Waltz  + others on coredev (See below)
+Current coredev group is:
+ * uniqueMember: uid=vieglais,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=jones,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=cjones,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=waltz,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=dahl,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=rnahf,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=leinfelder,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=sroseboo,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=palanisamy,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=tao,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=cbrumgard,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=brand,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=bwilson,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=ddoyle,ou=Account,dc=ecoinformatics,dc=org
+ * uniqueMember: uid=slaughter,ou=Account,dc=ecoinformatics,dc=org
+

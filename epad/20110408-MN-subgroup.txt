@@ -1,0 +1,222 @@
+Members: 
+
+Bruce  Wilson 
+Paul Allen 
+Suzie Allard 
+Mike Frame
+
+
+Web-ex Information:
+
+Topic: (5) DataONE MN Discussion
+Date: Friday, April 8, 2011
+Time: 10:00 am, Eastern Daylight Time (New York, GMT-04:00)
+Meeting number: 717 718 290 
+ Click the following link to view your meeting.
+
+https://usgs.webex.com/usgs/j.php?ED=152946352&UID=481293682
+
+Agenda/Topics for Discussion:
+
+Group Charge and Goals
+
+Group Charge: " best way to handle designing and documenting the process for adding new Member Nodes "
+
+Scheduling for Next MNs 
+
+Need to establish balence between CI and CE for staging the next MNs
+
+CI:
+- Technology stack (how hard is it to bring the MN into DataONE, what are the next technologies that enable multiple different MN's.  For example, MetaCat is strategic because enabling MetaCat as a MN enables a whole range of other organizations)
+- Resources to support MN (what does the MN bring to the table)
+- What level of participation is the prospective MN expecting to do (read only, replication, full read/write).   &&&&& need to update this to match the current CI version of the tiers.  
+- How is the MN expecting to integrate (stand-alone mn (e.g. ORNL DAAC), proxy mn (e.g. Dryad), full integegration (e.g. MetaCat) )
+
+CE:
+- Strategic Partners
+- Community Drivers/Leaders
+- Particular Data/Science
+
+Define a Process for MNs selection, scheduling, etc.
+
+Also potentially populate the next set of MNs
+
+Process that is transparent - Feedback back to them if they are denied.  
+
+Balence between CI/CE requirements - has to be a people process. Need flexibility to be able to bring on strategic partners even if they are "out of queue"
+
+Basic premises - Long term DataONE really won't provide support for getting MN's on-line (basic registration services, Technical Support (Help Desk).  How quickly can we get to this point from a CI perspective?  How does the process help with getting DataONE to the point where minimial CI help is needed to bring a MN on-line?  
+
+International Participation - had some Brazil interest, but during review SAEON, Tawian are running MetaCat - so had them listed.
+
+Challenge - PR Challenge and Technical Challenges need to be balenced - no favorites, system makes sense.  
+
+Summary of Existing MN related Documents
+
+docs.dataone.org
+\Documents\Member Node Summary Docs
+
+https://docs.dataone.org/member-area/documents/member-node 
+
+So you want to be a member node:
+https://repository.dataone.org/documents/Meetings/20101209_DUG_Chicago/you-want-to-be-a-member-node.txt
+
+Notes from Knoxville CCIT meeting on member nodes:
+https://repository.dataone.org/documents/Committees/CCIT/20091117_C
+CIT_Knoxville/
+
+
+?? Where are the docs of information that CE has been collecting about prospective MN's?  
+
+General Discussions:
+
+Current CI Limitations & basic Requirements
+- Pull into 1 Document, to help identify what we are trying to accomplish
+- Document related to 3 Tiers of Participation
+
+Tiers of Participation in DataONE:  Read-only; does replication; does full read-write including data submission.
+
+Modes of participation: standalone member node, proxy member node, fully integrated member node.
+
+Some aspects of this assessment are private, and need to be kept private to (probably) the Leadership Team.  Discussion of the strategic value to DataONE, for example, would be something that prospective member nodes should not see.  
+
+
+Potential Assessment 
+Identification of Required Document Components - Outline
+
+Basic Assumptions:
+
+
+
+Strategic Partners
+- from S&G WG
+
+
+
+
+Steps and Process
+- Potential separate paths based on technical capabilities, participation (Tiered)
+- Set of established criteria 
+- 
+ 
+
+Reviewed by/Approval by:
+
+Queue
+
+Prioritiy for MN
+- brining MN on in "this Quarter"   
+
+Gathering Information ahead of time
+- What's needed
+- Technical environment - Technical Readiness
+- 
+
+Establishing Implementation Schedule 
+
+Proposed Rubric for Determining Member Node Candidate Priority
+
+Assumption
+D1 engagement with MN candidates needs to be prioritized since leadership, administrative, and technical resources will be required to engage each MN, especially for the first set of member nodes beyond the original three. Each candidate MN needs to meet minimum requirements.
+
+Mechanism
+A very simple zero-one evaluation of desired dimensions could provide a numerical evaluation of MN characteristics which could then be used to rank candidate MNs against each other. That evaluation could be performed collaboratively by a committee, or it could be done by the individuals on a committee and then averaged. Such an evaluation mechanism could also be used to provide feedback about the strong or weak points of a MNs candidacy without necessarily exposing the actual priority rank of the candidate.
+
+Minimum Requirements
+
+These are the absolute minimum requirements of any candidate MN. A MN cannot be considered a candidate without meeting ALL of these criteria.
+
+ * The metadata format used by the candidate MN is supported by D1, or D1 agrees to begin supporting the metadata format in question.
+ * At least some data in the collection is public or can be shared upon request.
+ * A basic level of physical and cyber-security is in place.
+ * The candidate MN intends to implement at least the Tier 1 D1 MN API.
+
+Priority Evaluation Dimensions
+
+These dimensions assume a a candidate MN already meets the minimal, required criteria. These dimensions serve to prioritize engagement of a candidate MN.
+
+Data
+
+  ✓   Quality assurance. Does the candidate MN have clear, effective quality assurance standards for both data and metadata?
+
+  ✓   Data sharing. Is a large proportion of the data in the collection public or available to researchers upon request?
+
+  ✓   Scientific value. Is the data in the collection unique in the broader community? Does it fill gaps in the content already available through D1? In combination with existing/or near-term D1 collections, does it enable new science?
+
+  ✓   Extent of collection. Is the collection exceptionally strong in breadth, depth, or both?
+
+  ✓   Risk. Is the collection at risk?
+
+Strategic
+
+  ✓   Community. Is the size or visibility of the community represented by the candidate MN particularly important? Does the community support the candidate MN?
+
+  ✓   Partnership. Would admitting the candidate as a MN help form a strategic partnership beneficial to D1?
+
+  ✓   Funding. Would admitting the candidate as a MN help make new streams of funding available to D1? Is the candidate MNs funding source different from other MNs in D1?
+
+  ✓    Technical expertise. Does the candidate MN bring a high level of technical expertise, allowing it to contribute to broader D1  technical efforts?
+
+  ✓     Data management expertise. Does the candidate MN bring a high level of data management expertise, allowing it to contribute to broader D1   efforts?
+
+  ✓     Synergy. Does the candidate MN bring a high potential for synergy (technical, administrative, scientific) with D1?
+
+Diversity
+
+  ✓   Geographic. Would admitting the candidate as a MN add a new state, region, country, or continent to the D1 network?
+
+  ✓   Underrepresented groups. Is the candidate MN run by an underrepresented group or does it primarily serve an underrepresented group?
+
+  ✓   Linguistic or cultural diversity. Would admitting the candidate as a MN increase the linguistic or cultural diversity of the D1 network?
+
+  ✓   Institution type. Would admitting the candidate as a MN increase the institutional diversity of the D1 network?
+
+Leadership/Management
+
+  ✓   Administrative. Is the candidate MN an effectively managed and stable organization? Is there an institutional commitment to the D1 relationship?
+
+Technical
+
+  ✓    Human resources. Does the candidate MN have the necessary technical skills to minimize demands on CCIT technical support?
+
+  ✓    Technical resources. Does the candidate MN offer technical resources (e.g., storage) BEYOND those it needs to support its own D1 deployment?
+
+  ✓    Technical compatibility. Is the existing technical infrastructure of the candidate MN largely compatible with the D1 infrastructure, minimizing complexity of deployment? Is the data model relatively compatible?
+
+  ✓    Technical stability. Does the candidate MN have a history of satisfactory availability?
+
+  ✓    Tier 2 implementation. The candidate MN intends to implement the Tier 2 MN APIs.
+
+  ✓    Tier 3 implementation. The candidate MN intends to implement the Tier 3 MN APIs.
+
+  ✓    Tier 4 implementation. The candidate MN intends to implement the Tier 4 MN APIs.
+
+  ✓    Tier 5 implementation. The candidate MN intends to implement the Tier 5 MN APIs.
+
+Commentary
+The downside of this method for determining prioritization is that each item counts equally. If desired, larger weights could be given to some items providing a weighted score. An alternative would be to focus on the 5 headings: data, strategic, technical, adminstrative, and diversity, using the individual items under each heading to simply to determine a 0/1 for the heading as a whole. Then the overall numerical evaluation would range from 0 to 5 instead of 0 to twentysomething.
+
+Actions & Next Steps
+
+Bruce/Suzie - could one of you please mention our Discussions at today LT.  I'm not going to be able to attend.  BEW -- might not be there, depending on what's happening with a high priority project.  SA - I have another meeting at that time, but can send a note to Rebecca
+
+
+Next Meeting: 10:00 am April 19th..   
+Invite - Epad
+
+Actions before next Meeting;
+- Dig through MN documents - CI (Bruce & Paul)
+- Dig through MN documents - CE (Mike & Suzie)
+Update MN Folder under documents (https://docs.dataone.org/member-area/documents/member-node)
+
+Mike will start a document - Outline for discussion at next meeting.
+
+Paul - Think about matrix/box concept - 5 Criteria Document
+
+Bruce - ask LT members to add documents to our Folder area.   
+
+John Cobb: In the "beating the dead horse" category: I do not see in the documents clearly where it is pointed out that a criteria for MN selection is scope/effort impact on DataONE and CCIT in particular. I think we understand this to be the case, but I'm not seeing it in the candidate documents that we have now.
+
+
+
+

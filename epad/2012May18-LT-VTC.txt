@@ -1,0 +1,92 @@
+Attendees: Rebecca, Amber, Trisha, Bertram, John Cobb, Bob Cook, Deborah McGuinness, Dave V, Matt Jones, Viv
+
+Regrets: Bill, Bruce, Mike, Hilmar, Stephanie, John Kunze
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, May 18, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/969404985
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (510) 443-0605
+Access Code: 969-404-985
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 969-404-985
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012May18-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-05-18
+
+1) CI Update (Dave)
+
+On the road to public release:
+Started code freeze on some of the low-level components - hoping to get this done by next week
+Services are working fine, with the exception of replication in certain cases.  Have decided not to hold up release for this. This means it may not be replicating content at public release.  Will continue to debug this problem and it may be resolved by release time.
+Timeline:
+Freezing various libraries and will make a release version  of each
+Testing deployment of the various Metacat MNs - Ben is working on Pisco; staging environment will be up and down during this process
+
+Matt has updated the MN list and updated the priority order:
+http://mule1.dataone.org/OperationDocs/membernodes.html
+Q: in what sense is this (first 12 MN's) an "ordering" isn't it a 12-way parallel process that is gated by labor availability and punctuated with various MN staff windows (e.g. LTER blackout period, ...) A: kind of - for those nodes with an existing replication strategy, 4 nodes will be done as a unit (exception for LTER) Order is based on D1 personnel are responsible for the first set of nodes. Each will bring up their own content first, then the replicated content from other KNB nodes, then ?
+Estimate of 140 hours to load the KNB network (based on synchronization process not replication) - is there an estimate for loading the DAAC content? 
+
+May be testing the Mercury MNs next week.  Question of whether there is a separate staging environment for these - Dave will check on this.  From Bob:  Giri is setting up the staging area based on Dave's request today; should be up in a few days (need a firewall exception).
+
+Absolute last date to start this process would be the first of June (Dave)
+Things that are slowing down the project are the configuration issues (certificate configuration as an example - Pisco using self-signed certificates that wouldn't be trusted)
+
+A new certificate needs to get installed because the prior one is expiring. This includes the main Drupal site. Action Item: Matt send e-mail to Laura who will contact people in EDAC who will install the cert.
+
+2) Release Checklist (John Cobb/Bob Cook)
+see for example: https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/2012may_marconi_center/Release_Checklist.xlsx/at_download/file
+
+Perhaps revisit documentatoin needs for release for various types. Documentation to appear on public web-site needs "a looking at".
+Matt: we need a high level description of "how to be a new MN" somewhere on the pub. website at release.
+
+Architecture document needs revisting to reflect "as is" vs. as planned. We want a little time to consider posibly changing the API. So v1.0 of the API's is really a future issue. Current V. 
+
+Question about how effective a UA run through at d+7 would be? It may be too late to incorporate all but the most egregious, simple fixes. Otherwise UA feedback might end up in a 1.X release.
+Comment: Maybe have a UA assess a staging area version in order to give more time to feed into post release candidate releases.
+Matt: As each week passes the set of changes that can be accomodated goes down.
+Dave to go through UA recommendations with team and identify which have been met.  Amber to enter remaining and items that need further consideration into Redmine.
+
+3) Project Wide Communication (Rebecca)
+Postpone to next call
+
+4) Update from the S&G WG (Bill/Trisha) postpone to next call as well
+
+The S&G working group held a 3-day meeting at the Marconi Center.  We worked on the following items: 
+ * MN process and documents -- small task group was formed (Bob, Mike, Amber, Trisha, John Cobb) to pull together documentation and develop an initial partnership agreement for first round Member Nodes. 
+ * Release Checklist -- see above
+ * Business Planning -- S&G have completed work that supports business planning (marketing, costing, landscape analysis) and the next step is to hire a consultant in order to better understand potential sustainability strategies. 
+ * Policies -- S&G revisited some of the policies that need to be put in place to support DataONE.  We developed a strategy to deploy the policies. We developed a process to create, discuss, and finalize policies.
+ * Science Use Case -- S&G recognizes that we need to build science use cases that demonstrate the potential of DataONE to our core community of stakeholders (scientists and researchers).  Amber will work with CEE to develop use cases.
+ * Communications -- some of the WGs have requested more information about DataONE.  We will revisit our communication plan and modify and implement as necessary. 
+ * Upcoming meetings and conferences
+
+5) Around the room
+
+Trisha: nothing to report.
+
+Amber: Nothing to report beyond S&G feedback above.  Will be working on implementing action items from that WG.
+
+Bertram: Nothing to report (and heading to give an exam now.. )
+
+Deborah McGuinness
+·        Semantics and interoperability working group postdoc offer has been accepted!!!!  We plan a start date of June 1.
+·        Summer intern (Suppawong Tuarob from Penn State) will be starting near the end of May with Line Pouchard being the primary mentor – regular calls are happening on Monday afternoons to define tasks.   I know where the first meeting notes are on the planning - https://docs.dataone.org/member-area/working-groups/integration-and-semantics/2012-summer-internship/teleconferences/20120427_Teleconference.txt/view  although I do not know where follow on meeting notes are but I have pinged line to see if there are notes on these somewhere and will post in the next notes.  
+·        Deborah will be at SemTech – is there any DataOne presence there?
+
+Viv: 
+Preparing for Data Management Workshop next week in Santa Barbara - ~20 PhD students attending.  
+
+John Cobb: nothing additional to add
+

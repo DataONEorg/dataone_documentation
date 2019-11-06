@@ -1,0 +1,64 @@
+Goals for 2.2 release
+
+Overall release goal: improvements in Kepler for specific science users
+
+Who are we targeting:
+1) Pedagogical: target core curriculum in some specific domain
+2) People who would benefit from 'choose and wire' paradigm
+3) Java programmer: who wants to extend and specialize Kepler
+
+Potential feature improvements
+A. Improve workflow publishing system for scientists
+   -- populate with workflows from our projects
+   -- evaluate myExperiment workflows for inclusion in Kepler
+   -- what improvements are needed?
+   
+B. Finishing and polishing the provenance framework
+  -- integrate comad-style prov with other prov
+  -- add in provenance browser support -- data dependency browser
+  -- integrate with run manager
+  
+C. Publish standard models or analyses as workflows that act as exemplars
+  -- pedagogical tool
+  -- follow one or more textbooks, becomes tool for instruction
+  -- our development team isn't the right group to pick these, need domain advice
+  -- important to decide how to position Kepler (e.g., dataflow workflows, versus analytical modeling, etc)
+  
+D. Make R a first-class component in Kepler
+
+E. Improvements to UI of displaying hierarchical models
+    -- e.g., easy way to expand composites
+    
+F. Build component library that is needed to satisfy particular community needs
+    -- e.g., full suite of stats analysis actors
+
+G. Make it easier to transform and shim data to pass to external tools wrapped in Kepler
+
+Assessment of top priority
+Top choice
+Ilkay - A, then B
+Mark - C
+Tim - A, then B
+Matt - F
+Christopher - A, then C
+Shawn - A, but need C to populate, need F for C
+
+TODO
+* Schedule K/C developers telecon for 2.1 release for Fri 16th (Ilkay will arrange)
+* Matt will integrate this list onto plone page for K/C priorities
+* Matt send synopsis of call to Bertram
+* Aug 4 call -- develop ideas for 2.2 further
+
+Davis: 
+          Sean (50% KC, 50% Reap) until Dec 2010, then 100% through  March 31, 2011
+          David (100%) through March 31 2011
+          Lei Dou (100%) July 2010 through March 31, 2011
+          Daniel Zinn (100%) July 2010 through March 31, 2011
+          
+Santa Barbara:
+          Aaron (3 months, 100%)
+ 
+San Diego:
+          Madhu (50% May 2010 to March 2011)
+          Jianwu (50% September 2010 to March 2011) 
+

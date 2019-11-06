@@ -1,0 +1,43 @@
+JWG Conf Call on Use Cases
+--------------------------------------
+
+Jones, Lagoze, Lapp, Schildhauer
+
+Agenda issues
+--------------------
+1. Background
+    -- SONet willing to fund meetings
+        -- Schildhauer, Bowers, McGuiness, Bermudez, Dibner, Gries
+        -- initial goals, then work on major integration with OGC O+M
+        -- lots of similarity between OBOE and O+M
+        -- O+M added mods to O+M to make it closer to OBOE -- specifically "context"
+        
+    -- Data Conservancy -- Carl plus about 0.5 FTE
+    
+    -- Semtools
+        -- Jones, Schildhauer, Bowers, O'Brien
+        -- http://semtools.ecoinformatics.org
+        -- discovery, annotation, data integration tools that extend morpho/metacat/eml, will try to fold into DataONE
+
+    -- Hilmar -- goals of core model should be very pragmatic, not necessarily a theoretically complete/pure model
+    
+2. Potential meetings
+    -- Focus of potential meetings
+        -- use cases?
+            -- see https://sonet.ecoinformatics.org/workshops/data-interoperability-challenge
+        -- exchange syntax and model?
+            -- Goal articulated from TDWG: by next TDWG have an exchange specification available for analysis
+            -- plan a meeting for the spring
+            -- open hackathon: invitees, plus certain # of slots for open participation, applications accepted
+            -- product: define one or more specifications for a concrete syntax for exchanging observational data
+        -- meeting should not be a show-and-tell on existing projects and capabilities
+        
+3. Action items
+    -- Mark: accounts for SONET site ASAP
+    -- Matt: organize use case page structure on site ASAP
+    -- use case articulation: use cases for each domain by end of November
+    -- spring meeting time: April 2011
+    -- call for participation by end of Dec
+    
+        IVOA Model: http://ivoa.net/Documents/latest/DMObs.html
+

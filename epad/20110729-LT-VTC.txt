@@ -1,0 +1,141 @@
+Attendees: Rebecca, Carol, Steph, John Cobb, Bill,Amber, Dave, Bruce, Suzie, Hilmar, Trisha
+
+Regrets: Mike Frame, Bob Cook, Matt Jones, Viv,
+
+Call Information:
+
+Conference Call Number: (866) 804-6831
+This brings you to our conference call line - next press 1
+The conference number is: 91559#
+
+Will also use the epad: http://epad.dataone.org/20110729-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2011-07-29
+
+1. Update on CI (Vieglais)
+
+CCIT meeting last week in Santa Barbara - main topic was detailed schedule and work plan through end of 2011 and public release. Also wanted to look at out years but didn't get to that
+part of the agenda at this meeting.  One change required to support data packaging like that
+used at ORNL DAAC. This means a third type of object, resource maps.  
+Changes to the internal functionality to ensure permissions, etc are consistent. 
+Also decided that needed support concurrent versions of infrastructure so that everyone doesn't have to update at the same time. Identified what will be released through out 
+the rest of the year. Assigned managers for each deployable component. Total of 61 different "things" that will be need to be managed for the release. Have some tenative release schedules - towards the end of 2011. Aiming for a functional release before the AHM even
+if the interfaces are not complete yet.  Would like for this to be the focus of the AHM.
+If Merritt MN or CUAHSI MNs are not ready, then the new Metacat release would allow for alternative MNs to be online. Equipment orders proceeding rapidly.  Equipment has been received at ORNL/UT and hope to have it racked soon. Equipment situation also moving ahead at UNM. 
+Next 4-6 weeks will be critical for meeting the public release milestone.
+
+Spreadsheet was developed during the meeting of all the components that will be released.
+Meeting notes are in subversion. Dave is currently working through these materials to make them more accessible to other members of the project.
+
+Meeting notes for CCIT meeting located at: 
+https://repository.dataone.org/documents/Committees/CCIT/20110719_CCIT_SantaBarbara/
+
+Raw notes: 
+https://repository.dataone.org/documents/Committees/CCIT/20110719_CCIT_SantaBarbara/raw_notes_from_etherpad.pdf
+
+Components + rough schedule spreadsheet: 
+https://repository.dataone.org/documents/Committees/CCIT/20110719_CCIT_SantaBarbara/docs/DataONE%20CI%20Components.xls
+
+
+Connection between Community Engagement and Cyberinfrastructure will be very important to the successful release of the public version of the infrastructure.
+
+2. Latest from NSF and reporting requirements for subawards (Michener)
+
+Bill had call with NSF last week.  The CISE portion of the DataNet programs (was intended to be jointly funded by OCI and CISE) is undetermined at this time. So it is not clear what the funding for the DataNets will be for the upcoming year. We may have to take some cuts this year. ORNL is the exception of this because DOE had negotiated a contract that has to be paid at the beginning of each year. DataONE operates differently than a standard grant - we have a Cooperative Agreement. This means that NSF can mandate changes to the project. 
+We need to be ready with feedback should we be asked to cut.  A red flag for NSF is unspent funds - funds can be reclaimed if they have not been spent. We are putting plans in place to spend funds at subawards that are now underspent.
+The other side of this, if we spend as promised and the program is cut, then there would need to be layoffs.  The Leadership Team would consulted on any of these decisions.
+NSF wants more detail on what students and post-docs are doing. It is important that Amber, as Director of Community Engagement, know what the students and post-docs are doing and how it fits with the goals of DataONE.  Likewise for Dave, and any students and post-docs that are working on the CI side of the project.  The Executive Team needs to be able to explain to NSF (on a weekly basis) what all members of the DataONE team are doing. 
+The initial proposal places post-docs at the two synthesis centers to support outreach of DataONE.
+This is also why an update on CI will be included in each Leadership Team call. It is intended that all members of the LT will be able to give the "elevator speech" on DataONE - what it is, what services, education modules, etc will be available.
+
+Proposed: monthly phone call of the CEE post-docs with Amber - would also be important for the post-docs to understand what each other is doing. More mentors, as long as they are coordinated, is a good idea (UTK) Carol and Suzie have had really good experience co-mentoring students and doesn't have an objection to have it written into the agreements.
+What about the CI post-docs? Important for all post-docs to be involved in the monthly call but need to have someone from CI also involved in the call.
+
+Question: isn't that going to complicate the subaward? Not really - this would be included in the statement of work
+
+Dave has a concern about not having sufficient time to take on more work (mentoring).  However, it would be good for the CI post-doc and students to be included on the developer calls. This is the best mechanism for keeping in touch and up todate on the CI side.
+
+Committed to having post-docs be part of the DataONE network of post-docs -
+Amber, Suzie, Carol, Steph develop a statement that would be included in the Scope of Work for any subaward that has post-docs; Hilmar or Todd would also be included
+Steph will draft a statement and send it to the LT; wants feedback from those with post-docs
+
+Are there areas that we should be emphasizing about DataONE so that we would be less susceptible to cuts.
+ * Concrete plan for release of tools & services
+ * Committment of next MNs
+ * Additional support receiving from other agencies
+ * Number of people reaching at synthesis centers, meetings, tools, etc
+
+Most are embedded in our performance metrics
+Testamonials for our web page - perhaps all of the above could be addressed at the next S&G meeting
+
+Coordination between TeraGrid & DataONE; USGS adding tools to ITK; letters of support to various NSF proposals
+
+3. PPSR Working Group (Budden)
+http://bit.ly/oqxCEB
+
+4. Volunteers needed for booth duty at ESA (Budden)
+http://bit.ly/oTZadu
+
+5. Around the Room
+
+Carol: Our new post-doc, Miriam Davis, starts Monday. We'll get her hooked up with Amber. This week we had a good meeting with outgoing students and incoming students and post-doc.
+
+The left over item from last week's call, the LT charter, will be on next week's (August 5) call.
+ 
+Trisha: We have done some internal analysis on resources needed to make Merritt a MN and we have designated two developers to work on that task. We have a few more questions, but we are pretty confident that we can meet the release deadline. Related -- we are working with DuraSpace to use DuraCloud as a Merritt storage node. The DMP Tool team has been working hard to have the tool (beta) available for the ESA meeting - we are almost there.  The production version of the DMP Tool <http://dmp.cdlib.org/> will be released in Sept.  
+
+John: some itmes from last week's around the room <http://epad.dataone.org/20110722-LT-VTC>, that we did not cover.
+
+Suzie: nothing this week.
+Steph: NCEAS new Director Frank Davis started at NCEAS in July
+
+=================================================================
+
+Bill, Steph, Carly, Amber {on call}
+Bob, Viv {not on call}
+{Viv will not be at ESA}
+
+Post call discussion of ESA special session on Monday:
+
+10 am (15min)-- Welcome, agenda, intro to data management and the data management
+life cycle - Bill
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:15 am (15min)-- DMP Tool - Amber
+
+10:30 am (15min)-- Example of a completed DM Plan - Steph
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:45 am (15min)-- Metadata and intro to relevant tools (e.g., Metavist, Morpho)
+- Viv  - Bill
+powerpoint presentation plus demo?
+
+11:00 am  (15min)-- Data centers and how to use them (e.g., DAAC, KNB, ESA Data
+papers, Dryad) - Bob
+
+11:15  (15min)-- Primer and best practices - Carly
+
+11:30 -- The end
+
+Standard slide template needed
+Share slides by email in advance but working on them also - make a folder on the Plone
+site so don't need to do attachments; avoid redundancy by sharing slides ahead of time
+
+Primer on Data Management
+Bill and Trisha reviewed it and also looked at feedback from reviewers
+
+Major suggestion: why is Plan not part of the Data Life Cycle?
+Deposit and Preserve - why the distinction? 
+Suggestion: have Plan before Collect - drop Deposit and keep Preserve
+Possibility of having dashed line after Preserve to Publish Data (ex, through Dryad)
+Could also be dashed line after Analyze to Publish Data
+
+Likes the restructured new version of document
+
+Current Data Life Cycle discussed at LT plus basis of educational modules, personnas -
+Need to distribute proposed changes to wider group because it impacts the work of many other people
+
+
+
+
+

@@ -1,0 +1,32 @@
+
+1. Title / question: What does it take for my repository to become a DataONE Member Node?
+
+Description:
+Describes what additional services and benefits a repository can offer after it becomes a Member Node. What a repository must implement in the DataONE API to participate as a Member Node. How DataONE accommodates a repository's current identifier scheme. The degree to which MNs are assimilated into DataONE. Types of Member Nodes: repository, high-capacity, other? Where to go for more information.
+
+Primary audience: Potential Member Node managers
+
+2. Title / question: What is the Investigator Toolkit?
+This same question could be asked form the perspective of hte individual scientist.  E.g. "What is the investigator toolkit, how does it work, what types of things will it enable me to do, how is this more efficient than my current method of data integration / analysis / visualization?"
+
+Description:
+Describes how a tool creator / provider benefits from participating in DataONE. What a tool provider must implement in the DataONE API to participate as part of the ITK. Two examples of specific use cases with specific tools: e.g., using R for <task X>; using a workflow system for <task Y>. Where to go for more information.
+
+Primary audience: Potential ITK contributors
+
+3. Title / question: What services do DataONE Coordinating Nodes provide?
+
+Description: Describes, in non-technical terms, the value that is provided to scientists by the services provided by the CNs. [Describe service 1; describe service 2; describe service N]. Where to go for more information.
+
+Primary audience: Community members seeking a better understanding of the DataONE architecture and its services.
+
+4. Title / question: What value do scientists gain from contributing data to DataONE?
+This is the question I was primarily referring to on the call this morning (perhaps this was added during the call?).  Although I think the question might be better framed as "What can I gain from using DataONE?"  I think (and I believe the SC WG survey speaks to this) most individuals are more interested in accessing other people's data as opposed to making theirs readily available. By showing people what they can do in DataONE (and that it's utility is greatly enhanced by increased data contribution) then the answer to "why contribute" becomes more self evident?
+
+Description: 
+
+Primary audience: an individual scientist
+
+5. Title / question: What can I as a scientist gain from using DataONE?
+
+

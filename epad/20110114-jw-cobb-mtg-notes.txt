@@ -1,0 +1,179 @@
+Action Items:
+
+Attendees:
+John W. Cobb
+Stehpen Miller
+Bridgitte Mase
+Mark Hagen
+
+Agenda:
+
+Discussion:
+
+* Where are the opportunities to Leverage SNS science with computing?
+**
+** Using large scale simulation as an adjunct of SNS user operations (Instrument simulation, Quantum chemistry Simulation, large scale materials simulation) an "SNS value add" computer access along with beam allocation
+** Use large scale data analysis during or after experiment, especially for large data experiments.
+*** During experiment we are facing challenges of real time data workflow and reduction, but these are addressable.
+** Large scale visualization during experiment or as post processing
+** Use large scale data and computation to accelerate or improve quality of data reduction
+** Technology transfer of advanced computing to SNS (One of the big successes currently)
+** Restate these in SNS science terms (not computational terms)
+*** Generate Reduced data views during experiment
+*** Generate large scale visualizations and analyses during experiments, and refine afterward
+*** More sophisticated model comparison with experimental data during and after experimental period
+*** Facilitate multiple facility data fusion projects such as combining data from neutron sources and light sources
+
+*Inventory of SNS strategic computing componentes
+** DAS
+** SDM
+** Sci Comp
+** Facilities construction
+** IT
+** ASD
+** Networking
+** IM/Doc man
+** Asset management systems
+** User facing systems (proposals, visitor status)
+
+*Scientific computing
+** SW
+** Infrastructure
+
+* SDM
+** Data management and transport
+*** SW and methods to support this activity
+*** Infrastructure to support is
+
+* Infrastructure Modes
+** Instrument local
+** Desktop/laptop (for users and staff)
+*** Client based
+*** web-based
+*** portal-based
+*** Web services based (i.e. web-standard client)
+*** GUI experience
+** Data repo
+** Data transport/placement
+** Computational engine
+
+* TeraGrid's capabilities
+** Computing
+** Data
+** Transport
+** Expertise
+** Gateway services (provision for large number of more casual or focused uses)
+** Other services (federated identity, 
+
+
+* Intersection of TeraGrid's capabilities with SNS needs
+** Availability of large scale computation
+** Availability of large scale data
+** Availability of large bandwidth network to transfer date effectively (This is a BIG issue for SNS given larger data sets and modest compute needs!)
+
+* Note on exclusivity: Use/non-use of TeraGrid resources and services do not preclude, imply, or require use of other opportunities available to SNS
+    In hutch
+    SNS - local
+    ORNL local
+    Incite allocation
+    other LCF resources
+    other resources (OSG, TechX Orbiter, cloud copout and data services, ..)
+    Recommendation: A Cafeteria approach: Use each and all that contribute to SNS strategic objectives
+
+* Note: Timing: In some cases there are significant lags between engagement and utility. The OIC is a good example here. Preparation for its use was not well prepared prior to start of operations.
+
+
+* What have been SNS's challenges in taking advantage of TeraGrid in the past?
+** Temporal ordering: TeraGrid was available before SNS operations. SNS did not have data or compute needs early on.
+** SNS computing strategy was in development, and was undergoing churn
+** NSTG staff levels were low, particularly on outreach and user/app support
+** Some NSTG user/app staff were less effective than hoped (and some were more effective)
+** Frankly, inability of SNS management to focus on these opportunities to leverage SNS science because of other "distractions" such as prime DOE mission and time critical important deadlines. (Moving forward, SNS will need to be able to prove credibility here)
+
+
+
+
+* Laptop/desktop is becoming increasingly unsuitable for large scale (often high science impact) data analysis needs
+* How is s SNS SW planning to provision  computational needs? in each area and for each infrastructure mode?
+    Is there a coherent strategy?
+    Is SW development concreting in an artificially low ceiling that prevent achievement of SNS science needs?
+* This is a change in how operation of neutron facilities will occur and SNS *MUST* lead the neutron community here, or risk criticism/failure. Examples:
+    Scalability of Mantid to large data sets, large analyses
+    staging large data sets to different computational platforms
+    >> Otherwise we risk imposing an artificially low ceiling of what can be done in the hutch and on user's laptops.
+
+*Description of TeraGrid
+** Collection of resources 
+*** Computational: Kraken, Ranger, Gordon, Blacklight, …
+*** Allocatable Storage (rotating) : Albedo, Replicated Data Storage, site local storage
+*** Allocable Archive storage
+*** Well connected private network (>+10gbs per site)
+*** Large knowledgeable consulting staff
+*** Science Gateway effort: 
+    
+
+* TeraGrid value to SNS
+** Availability of large scale computational resources (https://www.teragrid.org/web/user-support/compute_resources)
+** Availability of large scale viz resources
+** Availability of replicate storage archive
+** Availability to SNS users of TeraGrid resources (an additional service to SNS users)
+** 
+
+* Results of current TG effort
+** 
+** 
+** Technology transfer to SNS
+
+*Current TeraGrid status
+** Program is transferring to XD (XSEDE) ~ June 2011
+** Status of NSTG as an RP up for consideration. Closeout or continuation as a contributory SP (a la NCAR)
+
+* Options:
+** A. Do nothing. closeout. stand pat with successes to date
+** B. SNS take ownership of the project Continue to be a TeraGrid Service provider
+** C. Close out SNS TeraGrid node. Continue to use TeraGrid as a allocated resource - i.e. SNS reduces roll to a user group instead of a provider
+** D. Other middle ground approached
+
+
+* Option cost analysis
+** A. No cost. There may be some NSF repercussions
+** B. Continuation costs
+*** Staff: 2.5 FTE/yr (most at >50% FTE/person)
+    1.0 Syds admin
+    1.0 user and app support
+    0.5 Management, outreach, SNS and NSF interface
+*** Operations
+    Space, power, cooling for ~ 3 racks of equipment in CLO-IT
+    Travel to support required TG/XD and NSF integration: ~30K$/yr
+*** Equipment : Tech refresh on the order of ~230K$/ 2.5yrs
+** C. Interface and outreach coordinator needed. ~ 0.5-1.0 FTE/yr + 20K$ travel. Can scale up or down with increasing and decreasing effectiveness. Staff tasking should  be >33% in order to not dilute to ineffctiveness
+** D. Depends on scope
+
+
+* Information summary request (Ian's points)
+
+** Is the Teragrid being effectively used at the moment and what for
+*** It is not being used effectively at this time. SNS focus is not 
+
+** What will the new XD version bring us and at what cost. Do we need it. 
+
+
+** Are there more cost effective alternatives.
+SNS has an emerging need to support larger data and computing requirements. This can be done in house or  in partnership with other organizations (TG, LCF, ORNL, …)
+
+
+Next steps
+
+Develop straw man plan (our recommendation)
+SNS concurrence
+NSF concurrence (NSF will need to be convinced that SNS is reliable partner and that there is continued value to NSF mission for continuing this effort
+Identify and dedicate required staff
+    Lead
+    Sys Admin
+    app support
+    Outreach
+    education
+close out NSF project
+Transition to SNS effort
+
+

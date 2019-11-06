@@ -1,0 +1,259 @@
+Standup call notes  2013 Block 2-3
+==========================
+
+Skye
+ * 20130412
+   * Noticed marshalling exceptions in dev due to null contact subjects - for Rob
+   * Replication auditing meeeting
+     * Generating reports for bad replicas on MNs and CNs
+   * Fixes to the stage indexing noticed from SEAD
+ * 20130410
+   * Replication auditing meeting
+     * need to discuss delete() or archive() usage
+   * Adding in activity logging into auditing
+   * Troubleshooting SEAD indexing
+     * ORE processing is asynchronous
+     * indexing tries to make sure referenced objects are present
+     * big OREs are troublesome, but Solr URLs can be chunked
+     * however, we allow packages of unbounded size
+       * meltdown imminent
+     * need to discuss hierarchical organization of packages
+ * 20130408
+   * Planning on meeting for dealing with invalid replicas
+   * In touch with Kavitha (SEAD) and Ryan (Dryad) on a DSpace stack
+ * 20130405
+   * #3514 - installed in dev now
+   * Assigned a metacat patch to matt - #3699
+   * Need a meeting on auditing for dealing with CN bad replicas. will send out an email
+   * DSpace is installed, running locally
+     * Mutability will be a big factor
+     * Saving past versions isn't currently supported
+ * 20130403
+   * Auditing testing in dev.  
+     * Found bug in CNodeService preventing audit from updating verification date.
+       * TODO: send patch to Matt
+     * Found invalid original copies of objects, interesting - on demo5.  same pids/different checksums
+   * DSpace - coming up to speed on it before planning D1 MN implementation
+   * Redmine 3514
+ * 20130401
+   * Oddities in replication being investigated 
+     * side effect of not using failure factor
+       * saw serial version of in system metadata being increased when no replication occured
+   * Auditing testing, going to test the whole process in dev
+   * Started looking at DSpace tasks
+     * Need to get the story entered into Redmine and get tasks de-composed.
+     * What parts can we re-use from Dryad, SEAD DSpace implementations
+
+Roger
+ * 20130412
+   * Continued ONEDrive mockups
+
+ * 20130410
+   * Working on mockups for ONEDrive
+     * Using Fuse - sets up a directory structure, using screenshots
+     * Two basic types of functionality in mockups
+       * object discovery
+       * presentation of objects
+     * Usability group is meeting Apr/May shoulder
+ * 20130408
+   * Finished up suggested changes to MN checklist
+     * fairly extensive changes
+     * simplified upper levels
+     * added details into linked documents
+     * Re-wrote text, worked on logical order
+ * 20130405
+   * Working on MN deployment guide
+   * Will be creating mockups for ONEDrive soon
+ * 20130403
+   * checking MN deployment checklist wrt GMN notes
+     * has many edits and restructures - 
+     * TODO: commit as a subdirectory of mn deployment directory
+   * ONEdrive - finished phase 1 is complete, but not user friendly 
+     * looking for input from Usability Group before moving forward
+     * plan to meet with them at the end of the month
+     * Dave's interface shown to scientists is probably close, but rough.
+       * multiple browse hierarchies
+       * what to do at the leaf nodes - how to present
+     * discovery through the interface
+     * TODO: mockups for next week to discuss
+ * 20130401
+   * Start to focus on redmine story for ONEDrive work breakdown
+   * Will discuss with Chris B.
+
+Rob
+ * 20130412
+   * Finished mutability proposal document
+   * Working with Soren/EDAC - trouble with ORE format
+   * Will work on server side API calls for version history access
+   * Ryan will work on Dryad node next
+ * 20130410
+   * writing up the mutability proposal
+ * 20130408
+   * Updating d1_integrations tests
+   * Working with Soren on syncFailed() and getReplica() calls
+   * They aren't currently using ORE serialization for resource maps, will work with them on this
+   * Working on mutability document
+   * Dryad: had sent some bug fix requests to Ryan
+     * some character encodings are incorrect for getLog()
+     * he'll get to them after they deploy their new web UI
+     * how are they going to deal with old versions?
+ * 20130405
+   * Webtester work - getReplica() test
+     * Uses a public doc, isNodeAuthorized() isn't called, so the env dependency isn't as complex in testing
+   * Working with Soren - EDAC
+     * need a test certificate
+     * synchronizationFailed() implementation - is throwing not implemented, but should be implemented
+       * can do an IP check on it to stop spam if they're not using https + certs
+     * identifiers - do we recommend that they use reserveIdentifier()?
+ * 20130401
+   * Working with Soren on EDAC
+     * How they are formatting exceptions and response types
+   * Discussed mutability and series ID with Dave
+     * Incorporating in mutability epad:  http://epad.dataone.org/201301-mutability
+     * Added a redmine feature: 3698
+     * Issues with what is returned from different nodes can vary based on where they are on the sync and replication cycles
+
+Chris B.
+ * 20130412
+   * ONEDrive and Ansible development: waiting on schema changes from Robert
+   * Documentation work for when Chris leaves in August
+ * 20130408
+   * Network outage today - 10pm
+   * DNS entry for splunk-orc.test.dataone.org
+ * 20130408
+   * Chris Jones and I will be handling outage at UT.
+     * Scheduled for 4/10 10pm EDT to the morning of 4/11
+     * Stopping the dataone services and taking the cn out of round robin.
+     * Operations email waiting approval
+   * Splunk
+     * Feeding syslog data of cn-dev-orc-1 to splunk.
+     * Need a DNS entry and a cert for the splunk server.
+   * Ansible development stuck
+     * Waiting on schema from Robert.
+
+ * 20130403
+   * OIT has rescheduled the network shutdown for April 10th
+     * impacts everything at ORC - all VM's unaccessible for several hours.
+       * UT campus, not Oak Ridge campus
+     * TODO: get timing info, and send notification to operations mailing list
+     * find the plan that was going to be used in the fall
+
+ * 20130401
+   * Put Splunk behind SSL
+   * Need to see about obtaining an "official" SSL cert.
+   * Completed move to Knoxville (no more going back to Nashville)
+   * Waiting on Robert Waltz for XML schema to finish Ansible playbooks
+   * Need to Sync with Roger on OneDrive work
+
+Ben L.
+ * 20130412
+   * Morpho update: replace "Owner" wording with "Creator" to prevent negative connotation of "data ownership" and also to align with EML field name that stores it.
+   * TFRI approved in cn-stage, but there is an SSL peer unverified exception (surprise surprise). I believe it has to do with them using a DataONE Test CA issued server certificate. Have instructed Meei-ru to include the CA chain file in their Apache directives.
+   * Morpho/Kepler (TFRI commiunication):
+     * I've instructed Chau Chin Lin how to change the language used in both Morpho and Kepler (uses the OS/system locale). He wants the ability to run those programs in English even if the rest of his computer is running Chinese. I believe his team even modified their version of Morpho to allow this. It is certainly possible to set the locale for Morpho on start-up to a pre-configured locale. Perhaps add this to the advanced configuration screen.
+   * cn-dev environment upgraded to use Metacat 2.0.6 on all three CNs. Awaiting test results before tagging release from the 2.0.6 branch.
+   * Will be meeting with semantics WG next week as they are in town at NCEAS (mon-wed)
+ * 20130410
+   * TFRI MN is back, working with Meei-ru
+     * Will work in stage
+     * Unicode: language issues were with Morpho/Kepler and the translations we have, not any technological issue. 
+ * 20130408
+   * Identity Service and /portal issues WRT UTF-7, escaping, LDAP storage, etc.
+     * working on cn-dev
+ * 20130405
+   * Working on releasing Metacat 2.0.6
+   * Working with TFRI
+   * DataUp meeting in SB - soliciting ideas on writing a proposal to further the work
+ * 20130403 not present
+ * 20130401
+   * Replication Policy in Morpho wizard
+   * Preparing for metacat release, might be issue with deployment on CN that needs to be further tested (regarding updateSystemMetadata() not always being called)
+
+Matt
+ * 20130410
+   * Reviewing the MN Checklist document
+   * Helping Kavitha with SEAD questions
+   * Mostly focusing on other projects
+   * Plone sites going down every 24 hours or so
+     * Nick's working on it
+ * 20130408
+   * MN checklist work needs consolidation
+     * concensus is to keep it in subversion for now
+     * Laura will focus on Coordination sections
+     * some feedback - still confusing
+ * 20130403 nothing to report
+ * 20130401
+   * Checklist for MN Deployment coming along, still needs some details, but its probably useful now
+     * http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html
+   * http://ask.dataone.org is going live
+
+Robert
+ * 20130412
+   * Working on CN buildout scripts, will meet with Chris B today
+   * CNs are 8 pids out of sync on cn-orc-1 - will try to resync
+   * Shibboleth will be deployed at UT in May (rumor?)
+ * 20130405
+   * DataUp meeting in SB
+ * 20130403 not present
+ * 20130401 not present
+
+Chris J.
+ * 20130412
+   * Reviewing mutability proposal
+   * Working on broadcast of system metadata change in CNodeService in Metacat (dev env)
+   * SEAD work with Kavitha
+   * MN Wranglers discussion with Laura, John, Rebecca, etc.
+ * 20130410
+   * working on the SEAD MN deployment in stage
+     * CN-CN replication issues: look at Metacat timed replication config
+     * formatid issues
+     * count=0 bug
+     * 217 of 218 objects indexed so far, but indices are out of sync
+     * ORC not indexing
+   * TODO: DNS entry for splunk-orc.test.dataone.org
+ * 20130408
+   * troubleshooting metacat CNodeService changes
+   * Working with Kavitha on SEAD
+   * TODO: change formats to only allow OREs as RESOURCE
+   * TODO: EDAC test certs
+   * TODO: Dryad ticket for checksum() uniqueness
+ * 20130403 not present
+ * 20130401 - (not present) (in ABQ for Sensor Net meeting) 
+
+Dave V.
+ * 20130412
+   * Looking into RSS feeds in the sphinx documentaion
+   * Mutability doc review
+   * Semantics
+   * Documentation: allocate a week to bring it up to date - week after next
+     * also need to create versioned documentation
+ * 20130410
+   * Backlog
+   * Worked on the DataPackaging documentation
+ * 20130408
+   * Writing a proposal for DataUp
+   * Working through ticket backlog
+   * TODO: fix documentation to only support ORE serialization for now
+ * 20130405
+   * Just getting back in
+   * Usability of ONEDrive
+   * Questions on ONEDrive use of foresite?
+     * Roger - finished that work up
+ * 20130403 not present
+ * 20130401 not present
+
+Discussion on MN checklist
+ * Diagram suggested changes: generate via Sphinx and graphviz
+   * Dave: Powerpoint is easier for other users, should stick with it
+ * Selecting a Tier should be part of planning
+ * Factored out common pages (like registration) and pointed to it from multiple higher pages (prod registration, test registration)
+ * 
+ * Simplifying the "Development" or "Build" section
+   * Plan
+   * Test?
+   * Deploy
+   * Operate
+
+XHDY6THAKK
+
+

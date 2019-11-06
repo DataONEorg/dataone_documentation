@@ -1,0 +1,323 @@
+DataONE Working Group:
+Exploration, Visualization, and Analysis (EVA)
+Tuesday – Thursday
+October 22 – 24, 2013
+ 
+Tamaya Hotel
+Santa Ana Pueblo, NM
+ 
+ Participants:  Enrico Bertini, Bob Cook, Aritra Dasgupta, Bill Hargrove, Debbie Huntzinger, Nicolas Molen, Christopher Schwalm, Yaxing Wei, John Cobb, Katherine Chastain (guest), Soren Scott
+ 
+Meeting Goals:
+1.     Provide updates on EVA and MsTMIP
+2.     Solicit feedback on quantitative tools for evaluating similarity
+3.     Continue discussions on critical evaluation of visualization methods for climate models
+4.     Discuss how provenance can benefit carbon modelers and solicit their needs for capturing and using provenance 
+5.     Develop plans for IMIF, adding model benchmarking functionality into VisTrails and UV-CDAT for use in MsTMIP, ILAMB, and other modeling activities
+6.     Develop plans for EVA paper(s), Proposals, activities, and next meeting
+ 
+
+Tuesday, October 22
+
+Block 2
+            
+12:30   – 3:00 pm
+        
+Introductions, Meeting Goals, Agenda, and EVA Update (15   minutes) — Bob Cook  
+
+DataONE support will end but we should look for additional proposal opportunities to support continuing this effort.
+
+What are some key activities that we could do that could be useful to to community?
+How can we get those funded?
+It would be good to be able to work within the DataONE umbrella for some of these efforts.
+    possible sponsors:  NSF, DOE, NASA -- all have calls for the kinds of cyberinfrastructure that EVA does
+
+Next face-to-face meeting (dates /places)
+
+Would like to meet in the Spring.
+Suggestion May.(or April) timeframe, Second half of May (preferred by Enrico), 
+Landscape ecology meeting is in Alaska in May. May 18-22 in Anchorage.
+Need to avoid dates late in the Summer in order to complete billing before the end of DataONE Phase I
+
+Venues: 
+Flagstaff (via Phoenix)
+Oak Ridge (Knoxville)
+Asheville, NC
+New York (may be expensive, have had it there once before)
+
+Integrated Model Intercomparison Framework (IMIF) —Yaxing   Wei and Fei Du (Intern) (75 minutes)
+
+A conceptual framwork that links all EVA activities together
+Throw out some thoughts on what to do next
+Discussions
+
+Broker concept 
+
+Climate Explorer
+    sever side analysis 
+        http://climexp.knmi.nl/start.cgi?id=someone@somewhere
+        
+Integration with 3rd party tools: GDAL
+
+
+
+Quantitative tools to evaluate similarity of data (models   and observations) — Enrico Bertini and Aritra Dasgupta (60 minutes)
+
+Bill:
+- Change data from 20 Junes to all months of selected years, we expect to see orbits/circles patterns
+- We can then look at the tracks of "mass centers" of those orbits/circles
+
+Christopher:
+- Looking at 20 Junes still makes sense, since that's similar to looking at annual data
+
+Debbie:
+- Enable choice of multiple reference data / multiple model output variables / input v.s. output 
+
+Artria is targeting on a aproach study paper for a conference in the first week of December
+
+DMESS 2014: http://www.climatemodeling.org/workshops/dmess2014/
+
+Comments from Dan Ricciuto
+I really like the idea of making the similarity tool interactive and letting the user set the variables, weighting, models, timescales, etc.  I think it will be very useful in helping to identify outliers, model clusters, and/or trends, and interactivity will help us hone in on the causes of those by looking at specific variables, models and times.  Especially if it can recompute the similarities rapidly.  A useful addition might be to add the model ensemble mean as another “model” and use that as the center point.  Then we can easily see which models differ from the mean, and knowing when, where and which variables can help modelers pinpoint the cause.  If there is a way to connect this dissimilarity from the ensemble mean back to the model survey somehow, this would even be more useful.
+
+Block 3  3:30 - 5:30
+            
+Carbon Flux Visualization Project — Nicolas Molen (20   minutes)
+
+MongoDB for backend data management
+GeoJSON for facet data access
+D3 for client visualization
+
+WebGL
+
+forecast.io
+
+Demo: spatial.mtri.org/flux
+
+
+
+Quantitative tools to evaluate similarity of data   (continued) — Enrico Bertini and Aritra Dasgupta 
+·        Status and next steps for development
+·        Ideas for papers and proposals
+
+Flexibility v.s. Speed
+Balance between pre-processing data and on-the-fly data processing
+  
+Ideally, people shall apply their own cookie-cutter (region) to the data
+Shall be able to select different temporal periods
+
+Apply RMSD/RMSE besides Correlation
+
+Prioritize: Exploration > Benchmarking
+
+Target-based Exploration or Free-style Exploration
+Suggestions on Exploration:
+need to focus on a series of questions that are relevant for a 20 model ensemble
+- Each time, we only look at one variable
+- Do these models spatially agree with each other and where?
+- Do these models temporally agree with each other and when?
+- Compare models with emsemble mean
+- Then ask why, need to be able to look to a series of variables (GPP, NPP, NEP, respiration), then regions, then over time
+-freestyle exploration, rule-based 
+-use the tool to perform a series of experiments, e.g. I observe some weird things in year 2004, which is a El Nino year, is this the difference because of that reason?
+
+Targets at AGU visualization
+Within 2 weeks, we can have a non-interactive tool ready for review. We shall have a tool ready by AGU.
+
+Name for the tool:
+- ModelSimVis?
+- Need beer
+
+
+Plans for Wednesday
+
+  
+Poster Session and Reception
+
+
+Wednesday, October 23
+            
+Block 4
+            
+8:30 -10:00 am
+Critical analysis of climate visualization methods and   Best Practices for complex visualization (Aritra Dasgupta)
+·        Examples of maps, line charts and scatter   plots
+·        Paper
+
+Color Advice for Maps: http://colorbrewer2.org/
+
+Visualization usage scenario:
+Analysis --> Exploratory Analysis
+
+Design Consequences
+Misinterpretation -> Interpretation
+
+
+
+10:00 – 10:30 am  Break
+
+Block 5  10:30 - noon
+
+Critical analysis of climate visualization methods and   Best Practices for complex visualization—Aritra Dasgupta (continued) 
+
+colorbrewer2.org
+  
+
+MsTMIP Benchmarking Approach and Methods
+— Christopher Schwalm (NAU) (60 minutes)
+  
+
+Block 6 1:00- 3:00 pm
+            
+Joint with Provenance Working Group 
+·        Update on Provenance WG’s status and plans —   Bertram, Paolo, David (30 minutes)
+Bertram: collaborative provenance use case, facilited through DataONE and D-PROV
+Paolo: PBase (provenance repository, querying, prov analysis), provarchitecture
+David: iPython Notebook demo, RCloud
+
+Bill: 
+- what data is tainted b/c of an earlier error
+- what do I need to re-run, or create a "corrected" version
+- geneaology (lineage) rather than provenance
+- can we go towards antecedents vs descendents 
+- borrow ideas, tools, from geneaology software 
+- comparing multiple branches
+- named relationships
+
+John:
+- reproducibility is hard. Big problems can't be easily repeated
+- instead of identity, rather homomorphism (issue of mutable/immutable object)
+
+Debbie:
+- How to capture provenance in Matlab
+- also interest in both Notebook framework and "rerun", as it is difficult to remember where to "resume" after a few months of break on the study.
+
+·        EVA Introduction — Bob Cook (15 minutes)
+- MsTMIP overview
+- inputs: weather, soil, phenology, land-cover, use, nitrogen, disturbance (all in one "model" / format)
+- fairly homogenous data 
+- run through 20+ models 
+- MsTMIP defined a protocol to tell modelers how to run simulations. But models are different (in structure and implementation) and they are run on different machines
+- Different people are using different tools to perform model evaluation activities, it's hard to switch from one tool to another
+- 
+
+
+Provenance Representation for the National Climate Assessment in the Global Change Information System
+http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6558476#!
+http://tw.rpi.edu/web/doc/tgrsgcis2013 
+
+Yaxing:
+- Model runs go into a Local Data Repository
+- Broker from EarthCube, then into ..
+.. UV-CDAT, VT (Analysis Module Library, Visualization Library)
+- To the side: PBase/DataONE and ESGF
+
+Discussion   (60 minutes)
+·        Carbon Cycle modelers needs on capturing and   using provenance
+·        Integration of EVA and Provenance tools to better meet user community’s needs
+  
+
+example of a data tracing effort for data publication: Bob mentiones a new Nature Journal Scientific Data. www.nature.com/scientificdata/
+
+
+From Steve Aulenbach
+http://www.slideshare.net/pskomoroch/distilling-data-exhaust
+
+Action Items:
+- Share provenance query use cases
+- Arrange a joint telecon
+            
+Block 7  3:30 -5:30 pm
+  
+MsTMIP Benchmarking Approach and Methods
+— Christopher Schwalm (NAU) (continued)
+  
+Quantitative tools for benchmarking models — Aritra   Dasgupta (30 minutes)
+
+Critical analysis of climate visualization methods and   Best Practices for complex visualization (Aritra Dasgupta)
+·        Examples of maps, line charts and scatter   plots
+·        Paper
+
+example: www.highcharts.com/demo/area-stacked
+
+Discussion
+            
+5:30 pm  Meeting Adjourns for the day
+            
+Thursday, October 24
+
+Block 8
+            
+8:30- 10:00 am
+
+Advanced Visualizations of Model-Model Intercomparisons, using MsTMIP data — Debbie (30 minutes)
+ 
+Discussion
+·        Static Visualization for papers
+·        Dynamic Visualizations for exploration and oral presentations
+
+ANOVA
+http://en.wikipedia.org/wiki/Analysis_of_variance
+  
+Access to MsTMIP Driver Data: 
+ftp://nacp.ornl.gov/synthesis/2009/frescati/
+  
+  Debbie (NEE analysis)
+ * anova using Transcom regions
+      
+ * factor space-- changes in NEE due to each factor (incrementally and plot in phase space
+    
+Aritra 
+ *     will try changes in NEE (factor space) in parallel coorinates
+    
+Block 9
+            
+10:30 - noon
+        
+Discussion and Next Steps:
+·        Development of Proposals and Papers
+    papers
+        1.  visualization critique
+            finalize taxonomy / review (15 figures):  next week
+            first draft paper:  15 November or earlier
+           targeted  for TVCG
+
+           2.  Design Study--EuroVis
+               time/space similarity analysis tool
+               due:  6 December
+               prototype:  
+                       mockup teleconference-- 30 October 
+                       functioning prototype - 8 November telecon
+               feedback from scientists: iterations  beginning on 8 November
+            
+            3.  DMESS paper                
+                DMESS 2014: http://www.climatemodeling.org/workshops/dmess2014/
+                on tool 1:  multi-projection
+                telecon to view the prototype:  early November
+                draft November 22
+                final December 15
+                
+         4. Aritra to India
+                7 December
+                
+  MsTMIP visualizations
+      have bi-weekly phone calls
+
+Sources for solicitation
+
+    DOE, NASA, NSF (cyber and vis(???))
+    
+solicitations for Vis science (check with Enrico)
+        Google
+        maybe NSF
+·       others
+
+     Prepare for final reporting during AHM closing session
+·        Adjourn
+            
+Block 10
+            
+1:00 – 3:00 pm  Continued Informal Discussions as needed
+  
+
+

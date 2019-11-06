@@ -1,0 +1,44 @@
+Member Node Wranglers (Fridays at 10:00 am AK/11:00 AM PST/12:00 MST/1:00pm CST/2:00pm EST) 
+
+https://www1.gotomeeting.com/join/157288264
+
+9 August 2013                              
+
+Attendees:  Laura, Bruce
+
+Regrets:  Rebecca
+
+Agenda: 
+        1. High profile issues
+     * Documentation: working with Rob to flesh out MN deployment checklist - high priority - Laura working on the Plan phase, Rob on Develop.
+     * QUESTION:  WHEN in the process does MN "approval" occur?  I think it should probably be the tail end of "determine feasibility", but currently it seems to be in "join the D1 federation".  You can't join if you haven't been approved, right?  Help!  (Bruce and Laura conversation: "approval" happens at the end of "determine feasibility"
+                  
+        2. Status of MNs 
+     * Y5Q1
+       * NKN (3238) - meeting 6 August: Luke Sheneman has what he needs to be moving forward (install GMN s/w stack, work with Chris Jones to get certificate, work with Ed about assigning identifiers to individual files
+       * EDAC (3221) - 
+       * Kansas (3188) - 
+       * SEAD  (3521) - a/o 8/8/13, NCED verifying their metadata; Inna says as soon as NCED has verified all their metadata, they  will be ready to move to production.
+       * NPN (3186)
+     * Y5Q2
+       * ILTER-Europe (3232) -
+       * Dryad (3118) - 
+       * iEcolab (3219)
+       * DFC (3532)
+       * iPlant BIEN (3234)
+       * U Illinois Chicago (3213)
+       * USGS Topo Maps (3525)
+       * PPBio  (3748) - a/o 8/8/13, working with Debora to identify everyone on their end who needs to be involved, plan to set up a GTM to begin process
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting
+       * AOOS  (3531) - From  Matt:  This is for a project I have working with AOOS,  and we have deployed a Metacat instance that is in testing.  The node is  located here for now:  https://evos.nceas.ucsb.edu/evos.   Several things need to happen before this node goes production,  including: 1) rebrand the site as AOOS;  2) move the node to a stable  AOOS address; and 3) get signoff from the AOOS folks that they are ready  to have it go live.  Ben and I have managed this server thus far, so it  should be straightforward to bring this node up once the ducks are in a  row.  revisit when Matt is available
+       * SAEON  (3205) -  From Matt: Ben has worked with these folks consistently, and  helped establish a Metacat node there in Cape Town, but we need to  follow up with them to get it done.  They seemed amenable when we have  spoken in the past.  revisit when Matt is available
+
+
+        3. Old action items
+
+        4. Not-high profile issues
+     * MN Personas - talk about mtg w/AmberO 8/7/13 - we don't know if AmberO will be changing her GA activities from DataONE to the usability lab, so in the meantime we are working on getting the existing MN persona drafts in a good state for "storage" until it is appropriate to up the priority on this activity
+   
+        5. Around the room
+
+

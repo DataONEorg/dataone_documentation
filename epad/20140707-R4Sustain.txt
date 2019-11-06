@@ -1,0 +1,58 @@
+DUG 2014
+July 7th 
+Roundtable 4: Sustaining Digital Repositories
+
+Community lead: Lynn Yarmey
+Facilitation: Trisha Cruse
+Attendees: Soren Scott, Andrew Sallans, Lynn Yarmey,Greg Golberg, Bruce Wilson, Steve Aulenbach, Debora Drucker, Spencer, Bob Downs, Bob Sandusky, Mike Frame
+
+Challanges and Opportunities
+
+ * Elephant in the room and the thing that noone is talking about is sustianing the repostiory
+ * Open source your code and let others maintain it
+ * Does maintain equal sustain
+ * What are we talking about sustaining? 
+   * infrastructure
+   * organizational infrastructure
+   * community 
+ * What community do we want to talk about today?  The technical community or the people that are the users of DataONE. 
+ * Let's not get too conceptual and hand wavey.  Let's put the community stuff on the back burner for now.
+
+ * Questions: 
+   * who should be paying for data curation?  Huge funding questions, competing funding models, etc.but these models are different and have consequences for how we work. What are the funding challenges: 
+     * projects have a specifc endpoint, but data need to be accessible over time and must be paid for so there is a discrepency.  
+     * If you look at the model around journals... we have put millions of dollars into publishing papers, but not into publishing data. The unversitities need to pay for data publishing (or whatever you want to call it?)
+     * Already paying for ICPSR, DPN so is DataONE going to be another bill that is going to show up. 
+     * Who owns the data question mixes into this as well. 
+   * Open access publishers are now limiting where you can publish your data... they are mandating where data are published. This is not good if the publisher is recommending a repository that is not favored by the institution.
+   * Orphan datasets -- there are few repositories that are a good fit.  
+   * Scope question -- if there are limited resources how do we limit scope. We will need to limit scope since the amount of data being generated is beyond our storage means. 
+   * Providing access to and supporting data services is complicated and costly. 
+   * Institutions need to take responsibility for funding data output.
+   * Are institutional respositories setup to take data?  Not so much?
+   * One of the keys to sustainability is that the respository needs to have use: need to lower the barrier for data deposity and data access.
+   * What about the non-unversity experience: USGS the libraries don't have any role in data. 
+   * Data needs to be peer review to assist with deselection. 
+   * if you equate use with value it is a slippery slope and we can throw out data that has future valley and is valuable to others.
+   * Quality and use -- tension between useful and useable. 
+   * invest n a technical review
+   * tension between data publication and the role of the repository.  Repositories are not in the business of evaluating the data.  We are not packaging what we do as a service. 
+   * How much are tools going to help us and or hurt us?
+   * Conflicting projects
+   * Progress in take some of the things that software developers particulary the use of github -- this seems to be successful.  When data is treated as a publication then it  harder to get people to participate.  
+   * Caution us all to miss the fact that things have changes since five years ago.  When we build huge repositories that might not be appropriate. 
+   * Sustainability -- look at how we use these resources. 
+   * How can we align services / portals?  
+   * We are trying to meet expectations for funding agencies.  Is this a problem? Can we as a community try and be more proactive
+   * Careful comparison of the sustainability of different repositories -- Bob Downs has published a couple of papers. 
+   * Scope -- quality data, reviewed data, software as a model, 
+   * Why are the institutions not stepping up to the plate?
+   * Not seeing enforcement from NSF -- until there is teeth institutions won't stepup 
+
+http://academiccommons.columbia.edu/catalog/ac:157132 Paper on sustainability of data repositories
+perhaps also: http://smartech.gatech.edu/handle/1853/28456 and http://journals.tdl.org/jodi/index.php/jodi/article/viewArticle/753 
+
+
+
+
+

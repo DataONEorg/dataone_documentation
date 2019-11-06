@@ -1,0 +1,76 @@
+CCIT Call - 2011-06-08
+======================
+
+Attendees: Dave Vieglais, Bob Sandusky, John Kunze,
+Roger Dahl, Rob Nahf, Nick Dexter, Robert Waltz, Mark Servilla, Ben Leinfelder
+
+Agenda
+------
+
+1. General update on CI development
+
+  - Completing the refactoring to tiers
+  - General cleanup in Metacat for dependencies on DataONE functionality
+  - Stubbed out methods for authentication and access control
+  - Refactoring test environment to support different modes of operation (e.g. as full integration suite, for development testing, and for exercising MN implementations)
+  - Progressing on TeraGrid integration, stalled by DataONE buildout
+  - State of different MN implementations
+  
+  - Giri: mercury code change - enables mercury instances as member nodes.
+    - basic methods implemented, Jim has a few questions
+    
+  - John K - planning to start impl after DUG
+  
+
+2. Implementation of Identity Management infrastructure
+
+- How to deploy CN identity service for a mix of development/integration/production environments
+  - including CILogon
+  - who has accounts in what environments? Need some sort of bootstrapping mechanism for setting up test accounts.
+  - possible automatic conversion of accounts, such as from the NCEAS LDAP service. Works for the affiliated trees.
+  - Mark: InCommon setup for LTER
+  - Issues with web browser requirement for authentication against CILogon
+  - Potential issue with DNs being stored in DataONE LDAP service, since DataONE does not represent the original LDAP trees. Potential for namespace collisions.
+  
+
+- How to deploy and configure LDAP replication nodes
+  - includes sensitive (username/password) configuration
+  - flexibly redefine the topology as servers come and go
+
+- How closely to tie the CN identity service to the LDAP store on the same node
+  - assumption is that each CN has an LDAP server on it
+  - each LDAP replicates with others (independently of other CN replication tasks)
+  - CN certainly could interact with other LDAP servers on different nodes, but when would that be needed?
+
+3. Preparations for CCIT meeting in July
+- Travel arrangements?
+- Hotel confirmations?
+- Draft agenda
+
+  Day 1: Review of architecture, infrastructure, services in place
+  Day 2: Recomendations for changes, prioritization, scheduling for release
+  Day 3: Post release development, milestones, targets. Overlap with semantics group.
+
+4. New file sharing tool to evaluate (experimental dropbox style based on Git)
+
+   http://mule1.dataone.org/OperationDocs/tools/sparkleshare.html
+
+  - Pluggable architecture offers some potential to act as an interface to DataONE, e.g. subscribe to a facet / query
+
+
+5. Around the room
+
+
+EVO Comments:
+
+Mark Servilla: we've used EVO to record sessions and post them after the fact, which many users like the ability to view the session at a later date.  Echo tolerable compared to other technologies.
+
+Bob S: echo when speakers other than Dave had the mic. People are still understandable.
+
+John K: I hear my own voice echoing (I have a headset), as well as Roger and Rob and Mark, but not Dave
+
+Roger: I'm hearing echo when people other than Dave are talking...
+
+Robert: usually works well, but very buggy for me today.
+
+

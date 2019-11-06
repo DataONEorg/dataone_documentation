@@ -1,0 +1,96 @@
+Morpho Refactoring Discussion
+---------------------------------------------
+Participants: Matt Jones, Ben Leinfelder, Jing Tao, Dave Vieglais
+
+Design diagrams
+http://chico1.dyndns.org/morpho/
+
+Goal: Users should be able to use Morpho with Metacat repositories that are not registered DataONE nodes
+
+
+Here is a proposal for implementing Morpho in the different phases:
+
+Phase 1:  Work with multiple MNs, but choose one as active MN for create(). Morpho still uses Metacat API to search
+               User selects 'Active' Member node from dropdown list in settings; list generated from Node service; or enter baseurl
+                 If MN is metacat, use metacat API to search
+                        ** Metacat search API only returns metacat docids (scope.docid.rev) not the DataONE PIDs
+                        ** Issue: how to get ahold of the PID rather than the localID so get()/create()/update() can be called
+                 If MN is not metacat, disable network search, only allow local open
+                 For create
+                       Create on the active MN, set authMN to the active node id
+                 For update/delete                        
+                    If a user has rights to call update()/delete() on the AUthoritative node, and a write permission on an object, they can update/delete on the AuthNode
+                          -- 3 checks have to pass: userHasWrite on object, user has execute on service, and authMN is available for object
+                           If authMN is not available, don't do update()
+
+Phase 2: Use dataone API to search
+             Some issues need to be addressed:
+                 Will Morpho search CN, MN or both? If search MN, we need an optional search API for MN.
+                 If we only search CN, we need to deal with the variable sync lag times on CNs
+                 Need a search mechanism to include metadata fields in CN/MN
+                 
+Issues to be addressed:
+-----------------------------------
+ * restructure identifiers in Morpho to be opaque, support multiple formats (DOI, UUID, etc)
+   * Can use MN.generateIdentifier and MN.reserveIdentifier
+   * Need to implement these methods on Metacat
+ * Need to restructure local storage to not depend on  the identifier format for directory layout
+   * Need upgrade mechanism to transform current storage structure to new structure
+ * Need mechanism to track revision history based on obsoletes/obsoleted by
+ * Need mechanism to track package membership
+ * Need ability to generate ORE packages
+ * Local vs. Network versioning (new identifiers for local objects?)
+   * 'Offline' mode -- how to generate IDs
+ * Need to choose 1 (or more) MNs to use for CRUD ops, etc
+   * Present list to user from results of listNodes() call
+     * Once user chooses 'Active' or 'Working' node, all create() ops go there
+     * In first iteration, all update() ops go there too
+     * In later passes, potentially allow update() ops to go to other nodes too
+       * Need to consider that the Authoritative node may not want other nodes to obsolete theiir content
+   * Decide how to choose a CN
+ * Given a CN search result, which MN is used to 'open' an object, and where is updated
+ * Morpho should check service access control lists to see if user has service access before attempting a create() or update(), etc.
+   * This is in addition to the per-object ACLs
+ * MN terminology from the user's perspective
+   * 'Working' Member Node (Maybe 'Active' Member node)
+   * 'Authoritative' Member Node
+ * Need to be able to turn on MN services on Metacat without registering with DataONE (standalone mode)
+ * File storage issues
+   * How can we let user's choose where their data are stored?
+   * How can we let users have more than one directory for data storage?
+   * How should files be named on disk?  Don't use PID because can have illegal characters
+     * Need file naming convention
+     * So need mapping between PID and filename
+     * simple delimited text file at root of the data dir?  ignored by hashing scripts, used to map ID/filename
+   * Consider using JCS to control file storage
+
+* {filename (Morpho creates it), PID/DOCID}
+
+Query stuff
+-----------------
+ * Need search mechanism to include metadata fields in CN
+   * CN search should include user-defined list of fields
+     * Need to determine how to express that as a result set structure
+       * SOLR syntax for resultset?
+       * opensearch syntax for resultset?
+ * What should Morpho search?
+   * Production CNs?  Configurable to other CNs?
+   * Member nodes?  Like metacat servers?  Need a MN.search API...
+   * both? if MN search is not implemented, only give search CN option
+   * give user choice which objects search
+ * How do we deal with variable sync lag times on CNs?
+
+
+09 Aug 2012 Additional discussion
+-------------------------------------------------
+
+ * Data Packaging in Morpho
+
+
+
+
+
+
+
+
+

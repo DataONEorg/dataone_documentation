@@ -1,0 +1,101 @@
+.. meta::
+   :keywords: DataONE, Weekly, Developers, 20101110
+
+Developers Call Agenda - 2010-11-10
+===================================
+
+:Attendees: 
+  Mark Servilla, Bob Sandusky, Roger Dahl, John Kunze, Paul Allen, Chad Berkley, Matt Jones, Rob Nahf, Dave Vieglais
+
+0. General business
+
+  - Reminder to commit notes, presentations from AHM to SVN::
+  
+      https://repository.dataone.org/documents/Meetings/20101102-ABQ-AHM/CCIT/
+
+
+  - Doodle poll for 2011 CCIT meeting: http://doodle.com/ixmstmrxaf6gbedh
+
+
+1. Target deliverables for the February review
+
+  i. Infrastructure functionality
+
+    - Add content to a member node
+    - Synchronize coordinating node catalog with member node content
+    - Discover newly added content
+    - Retrieve new content from original member node
+    - Replicate content to another member node
+    - Resolve the location of the content
+    - Retrieve content with original member node offline
+    - Authenticate using CILogon
+
+  ii. infrastructure deployment
+  
+    - Three coordinating nodes (UNM, UCSB, ORC)
+    - KNB member node (Chad)
+    - DAAC member node (Bruce, Roger)
+    - Dryad member node (Ryan)
+    - Generic member node (as replication target)
+    - Monitoring (Rob)
+    - CILogon branding (Mark, Jeff)
+
+  iii. Client tools
+
+    - ITK libraries in python and java
+    - Command line client (Roger, Dave)
+    - R client (Matt)
+    - Zotero (Bruce, Ryan) 
+    - Morpho (Chad)
+    - EVA (Paul and Matt)
+      - Met with Daniel and Kevin - putting together R scripts to generate a couple of frames of the animation output (end of Nov)
+      - Matt will modify to use the R client
+      - Moving scripts into VisTrails (Kevin Webb), and Kepler (Matt)?
+      - Demo is to do live demo, getting live, toy data set, doing analysis. Also show time-compressed canned animation of actual EVA dataset download, analysis, and visualization.
+    - (other clients as resources permit)
+
+  iv. Documentation
+
+    - Architecture documentation (cleaned up, html, pdf, epub formats)
+    - Member node participation documentations
+    - Investigator toolkit (tools documented, new tool construction document)
+    - Implementation plan for PASTA
+
+2. DataONE Preservation workshop
+
+   Starting midday Sunday Dec 5 through 18:00 Monday 6 Dec. Anticipated deliverables include:
+
+   i.  an assessment of the DataONE fixity checking strategy,
+
+   ii.  a set of preservation guidelines for DataONE member nodes (MNs) and coordinating nodes (CNs)
+
+   iii.  a distillation of those guidelines down to 2-3 pages of mostly non-technical narrative.
+
+Rebecca, Trisha, Dave, John, Tim DiLaruo, LoC (Leslie Johnson), Ryan, Mackenzie Smith, David Minor, Stphen Abrams, Kevin Ashley
+
+Bob Sandusky
+
+- Need to make sure that we have good remote participation facilities
+
+3. Around the room
+
+Mark Servilla
+
+Bob Sandusky
+
+Roger Dahl
+
+John Kunze
+
+Paul Allen
+
+Chad Berkley
+
+Matt Jones
+- usability interactions. Mike Frame will be writing up a doc for focus.
+
+Rob Nahf
+- might be good for CCIT to meet with the usability team at some point, perhaps for the authorization component
+
+
+

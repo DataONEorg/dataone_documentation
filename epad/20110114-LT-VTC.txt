@@ -1,0 +1,183 @@
+Attendees: Rebecca Koskela, Bruce Wilson, Carol Tenopir, Dave Vieglais, Bob Cook,
+Mike Frame, Viv Hutchison, John Kunze, Amber Budden, Suzie Allard,Bill Michener, Todd Vision, John Cobb
+
+
+Regrets: Steve
+
+
+http://epad.dataone.org/20110114-LT-VTC
+ 
+
+  Agenda for 2011-01-14
+
+1.  DataONE Member Node Service Guidelines (attachment) (Amber)
+Edited by subgroup of DUG - this sent out for review and vote by DUG
+members; if vote is positive then LT could still review and make changes if
+necessary
+DUG makes recommendations but does not determine policy; would be better
+to have had the LT review it first
+JK: voted yes on document but also good to hear that LT could make changes
+May want to strengthen some of the data center practices/recommendations
+Continuum from handshake to more legal terminology -  both camps involved
+in the editing process; If approved today, will send to LT for their review and
+comments
+
+
+2.  Status of  DataONE NSF Review presentations (Rebecca,Amber,Dave,Bill)
+
+Will printing out the handout version of the slides in about an hour for the EAB 
+to comment on in their meeting Monday-Tuesday.
+
+DataONE Project Overview (40 minutes – presentation, 0 minutes - Q&A)
+Presenting: Bill 
+Who should review: all
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/most-current-versions/DataONE%20NSF_OVERVIEW_Michener_2011%20Feb_vs1-5.pptx/view
+Slide 22 - PRC study Publishing Research - Carol will email correct citation
+Make sure existing member nodes are represented in early context slides #13,#17
+Slide 46 - USGS
+
+Make sure updates to this section are replicated throughout
+
+Cyberinfrastructure I: design, R&D, and implementation (60 minutes – presentation (45 slides))
+This is Bruce's section and is uploaded
+Cyberinfrastructure II: prototype demos and plans for years 3-5 (60 minutes for presentation; 60 minutes for Q&A)
+Dave will upload a newer version of this section - is there & now has outline for section
+(https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/most-current-versions/20110222-DataONE-NSF-CYBERINFRASTRUCTURE-Vieglais_et_al.-vs1.4.pptx/view)
+III
+Core functionality (slide 6) - bit-level preservation (replication) Key Functionality from Requirements
+not using LOCKSS infrastructure, just the concept
+
+CI-III: will have one slide on preservation here
+
+Presenting: Dave, Matt, and Bruce
+Who should review: Dave, Matt, and Bruce
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/most-current-versions/DataONE%20NSF_CYBERINFRASTRUCTURE_Vieglais%20et%20al._2011%20Feb_vs1.1_BEW-2.pptx
+ 
+
+Community Engagement (40 minutes – presentation; 20 minutes Q&A)
+Amber will put together slides for review (1-2 slides per WG) – 
+Presenting: Amber, Steve presenting on EVA, and Carol
+Who should review: Amber, Steve, Carol
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/most-current-versions/CE-O_AllParts.pptx/view
+ 
+ Background: Approach and DUG, Assessments, EVA, roundup of how meeting performance metrics
+ Viv: when need workshop information? end of day if can't do it in next hour
+ 
+ Bill: general feedback on CI and CE - density of material - each one hour presentation and
+ existing slides may be hard to get through in one hour (CE is 40 minutes not 60)
+ Challenge is to refine without losing the message
+ Bruce: right at 19 minutes for his portion
+
+Sustainability (40 minutes - presentation; 20 minutes - Q&A)
+Bill and Trisha putting together slides with Bob Cook, Mike Frame, Steve Kelling, John Cobb
+Presenting: Trisha, Bob, John 
+Who should review: Trisha, Bob, John Cobb
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/most-current-versions/DataONE%20Sustainability_vs2.1.pptx
+ 
+#24 needs subtitle Sustainabilty and Governance stakeholder matrix
+Would like feedback on technical sustainability - key point is the importance of user
+acceptance & involvement for sustainability
+
+JK: might reword some of the technical sustainability - will sink up with Trisha
+Question for Dave and CI: slide #23 - phases of development
+Phase 1 focus on data
+Phase 2 focus on tools
+Four phases in schedule diagram (in CI talk that includes performance metrics)
+CI schedule shows 4 phases (of Federated Security) so need to be consistent across all slides
+
+Mike:  Trisha, general comment - Slides 21 - 28 - It is basically building a Business plan.   I'm not sure you should spend so much time on these because they need to hear what are "WE" doing, not so much a "what is in a general business plan"...  See what I mean
+
+Need to layout the plan for creating a business plan for NSF - will check to see if order
+should be before or after WG
+
+Mike:  So, there are DUG Slides in the CEO Presentation and in S&G.   Probably only need it in CEO talk in my opinion 
+[11:34 AM] Mike:  For instance S&G Slide 36, CEO Slide 13-15 
+
+Appendix at end of this section: this is where more detailed items could go in anticipation of 
+questions
+
+Challenges and Mitigation (20 minutes for presentation; 20 minutes for Q&A)
+Bill putting together with Dave and Rebecca 
+Presenting: Bill 
+Who should review: all
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/most-current-versions/DataONE%20challenges%20and%20mitigation_vs1.1.pptx/view
+ 
+Qualify as major but there are others - use appendix here also
+#6 NSF
+WG model - add this 
+#3 not as same level as others - WG could be folded into a broader #3
+
+#4 - Need to have participation beyond MN, CN - may need to broaden this beyond
+MN and CN
+
+Get parallelism in bullet points
+
+#6 - is this beyond DC
+Broaden beyond DC to other DataNets
+May drop #6 for the review - Carol's suggestion is to mention verbally but not put in
+writing
+Project Governance:
+managing communications & include NSF as part of this umbrella 
+
+Future Plans and DataONE Activities (20 minutes for presentation; 20 minutes for Q&A)
+Rebecca putting together slides with Executive Team
+Presenting: Rebecca, Amber, Dave 
+Who should review: all
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/most-current-versions/DataONE%20FuturePlansandDataNet_vs1.0.pptx
+
+Make clear year 2 activities for CI then years 3-5
+Show integration of CI and CE rather than breaking them apart
+
+DataNets in the broader landscape
+
+Bruce: Regarding the service agreement -- there's a related effort in DataCite to look at characteristics of reliable/trusted repositories.  I'm representing DataONE on that.  
+
+
+3.  Around the Room
+
+Bruce: Made progress on the ORC equipment purchases today.  The rest of my DataONE time has been spent on the slides and prep for next week.  
+
+Suzie: THe undergraduate environmental information course we designed started yesterday and earned a front page story in the campus news http://utdailybeacon.com/issues/2011/jan/13/  
+
+
+ESA Special Session on "Creating effective data management plans for
+ecological research" has been approved.
+
+Marratech notes:
+
+
+[11:09 AM] Bob Cook:  On the overview Ihave an update to slide 9...I'll send soon.
+[11:10 AM] Todd:  Make sure existing member nodes are represented in the early context slides - yes
+[11:10 AM] Todd:  like #13
+[11:11 AM] Suzie:  looks okay on my PC
+[11:11 AM] Todd:  And $17
+[11:11 AM] Todd:  That's #17
+[11:12 AM] Todd:  #19 - Dryad now has >1000 "data products" measured as individual data files
+[11:15 AM] Todd:  #24 could use a subtitle
+[11:16 AM] Todd:  sustainability and governance stakeholder martrix
+[11:23 AM] Mike:  Amber - Not sure about slide 56 at the end - should it be included or maybe titled SUMMARY....
+[11:24 AM] Suzie:  I am sending comments via email
+[11:24 AM] aebudden:  Thx
+[11:25 AM] aebudden:  @mike - Bill likes his ticklists! I'll check in with him  
+[11:26 AM] Mike:  Maybe just call it then "In Summary".... It seems to be hanging out there 
+[11:26 AM] aebudden:  Changed the title already.  Thanks.
+[11:30 AM] Mike:  Trisha, general comment - Slides 21 - 28 - It is basically building a Business plan.   I'm not sure you should spend so much time on these because they need to hear what are "WE" doing, not so much a "what is in a general business plan"...  See what I mean
+[11:32 AM] Trisha:  OK
+[11:33 AM] Mike:  So, there are DUG Slides in the CEO Presentation and in S&G.   Probably only need it in CEO talk in my opinion 
+[11:34 AM] Mike:  For instance S&G Slide 36, CEO Slide 13-15 
+[11:37 AM] Mike:  How about Goverance - ie. WG lead, communcations
+[11:39 AM] Mike:  exactly
+[11:40 AM] Mike:  Working Group Participation could go under 4
+[11:42 AM] Mike:  probably not...  
+[11:43 AM] Bruce:  Even if we've had a bit of food poisoning  .
+[11:44 AM] Mike:  call it Project Governance
+[11:50 AM] Todd:  I need to take off early (sorry).  Bye all.  
+[11:50 AM] Todd Vision left.
+[11:56 AM] John:  Are we first name doppleganers?
+[11:57 AM] John:  John C and John K are pretty close too!
+[11:57 AM] Mike:  John K - we thought you were going to give money to DataONE to make it sustainable...  That's why your name was down there.....
+[11:57 AM] John:   
+[11:58 AM] Trisha:  good luck with the EAB.  The slides look great.
+[11:58 AM] aebudden:  EAB slide locations: https://docs.dataone.org/member-area/committees/external-advisory-board/2011jan17_eab_meeting_santa_fe_nm/eab-slides
+
+

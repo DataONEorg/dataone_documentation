@@ -1,0 +1,299 @@
+#persist
+
+Preparations for the CCIT Meeting, August 21-23 2012
+====================================================
+
+Dates: 21-23 August, 2012 with travel on 20 and 24
+Location: NCEAS, 735 State Street, , Suite 300, Santa Barbara, CA
+
+High Level Goals of Meeting:
+(Add topic suggestions)
+
+- review progress on the production environment / infrastructure
+- detail the schedule for the remaining time on the project
+- work on design as necessary for incorporation of already identified features, outputs from working group activities and other suggestions such as from DUG
+
+
+Planning to Attend:
+(Add your name, with indication of "maybe" if attendence is not certain)
+
+
+Confirmed participants
+----------------------
+- Dave Vieglais (KU)
+- Roger Dahl (UNM)
+- Ryan Scherle (NESCent)
+- Bruce Wilson (UTK)
+- Matt Jones (UCSB)
+- Skye Roseboom (UNM)
+- Ranjeet Devarakonda (ORNL)
+- Bob Sandusky (Univ of Chicago)
+- Chris Jones (UCSB)
+- John Kunze (CDL)
+- Jeff Horsburgh (Utah State U)
+- Robert Waltz (UTK)
+- Chris Brumgard (UTK)
+- Mark Servilla (UNM)
+- Ben Leinfelder (UCSB) (local)
+- Mark Schildhauer (UCSB) (local)
+- Bertram Ludaescher (UC Davis) (arrives Wed night, leaves Thursday night; teaching conflicts)
+- Mike Wan (UCSD, iRODS) (arrives Wed night, departs Thursday afternoon ~ 16:00)
+
+
+Not attending
+-------------
+- Tim Robertson
+- Rob Nahf
+
+
+Logistics
+---------
+
+Arrange a group dinner (Tuesday 21st)
+
+  - Posible locations that can accomodate ~ 20
+    - The Blue Agave http://goo.gl/maps/gFbxt 
+      (Mexican fusion. Top choice, upstairs can be reserved for large groups)
+    - The Palace Grill http://goo.gl/maps/0yzMRhttp://goo.gl/maps/0yzMR 
+      (Cajun/Creole.  Great atmosphere.)
+    - Zaytoon http://goo.gl/maps/SFuYA 
+      (Lebanese Cuisine with nice outdoor seating)
+    - The Brewhouse http://goo.gl/maps/38tZ6 (American Grill, excellent beers)
+    - The Taj Cafe http://goo.gl/maps/W3fQj  (out of business)
+    - Carlitos Cafe Y Cantina http://goo.gl/maps/cJXmt (Mexican Cuisine, margaritas, outside seating)
+
+Maps to location:  http://www.nceas.ucsb.edu/contact
+
+Space needs
+------------
+
+2nd floor conference room, plus breakout room for up to 8?
+
+
+Goals for year
+--------------
+
+- increase MNs
+- diversify ITK tools
+- get integration across DataNets
+
+
+Agenda Topics
+-------------
+
+Next year's goals and projects
+  -- improving discovery (e.g. semantics)
+  -- data resuse and integration
+    -- workflows, provenance, semantics
+  -- supporting annotation
+  -- supporting subscription/notification of change/new content
+  -- design work on authorization, UIs for identity management
+  -- content subsetting
+  
+  -- MN software stacks
+  -- ITK work planning
+    -- (e.g., Morpho, R, Kepler/VisTrails, MyExperiment)
+    -- citation -- consistent representation, revise search results to show citation and contributors
+    -- discuss other discovery mechanisms
+        -- e.g., triplestore for all science metadata
+  -- log reporting/usage statistics
+  -- CN feature expansion
+    -- replication!
+    -- expanding search API (selecting fields, enumerating field values)
+    -- split OneMercury onto different virtual machines
+    -- access control on search
+    -- auditing (process for content fixity checking)
+    -- log aggregation and access control
+        -- need verified email address for DAAC content access
+    -- scalability -- sync is 2s/transaction
+        -- profiling
+  -- Discussion of change in policy re: immutability of identifiers requested by CDL
+
+
+Agenda Outline
+--------------
+
+12 blocks (3 days, 4 blocks per day)
+
+1. Review of progress, project schedule, feature prioritization,  API review, content change policy
+2. Authentication, authorization
+3. Log reporting, monitoring, metrics for sponsor reports
+4. Discovery
+
+5. Replication
+6. Scalability, performance
+7. MN software deployments, prioritization, support, software, MN services
+8. MN software deployments, prioritization, support, software, MN services
+
+9. DataNet integration
+10. ITK work planning
+11. Provenance tracing, annotation
+12. Scheduling
+
+----
+
+
+Missing:
+- Content auditing (perhaps part of the MN discussions, also part of replication)
+
+Schedule
+--------
+
+Day 1 - Tuesday 21 August
+.........................
+
+:08\:30: (1) Introductions, agenda review, progress report
+
+ - Review the current state of the DataONE infrastructure, including detail on
+   the Coordinating and Member Node implementations, and the various 
+   Investigator Toolkit pieces.  (~ 30 min, Dave)
+
+    - CN components
+       - CN to CN replication
+       - MN to CN synchronization
+       - MN to MN replication
+       - Identity Management
+       - Indexing
+       - Log aggregation
+       - Mercury UI
+    - MN implementations
+       - GMN MN stack
+       - Metacat MN stack
+    - ITK implementations
+       - CLI client
+       - R client
+       - Morpho client
+       - FUSE/Dokan client
+
+ - Discussion about content immutability (~ 40 min, John)
+
+     - What are the consequences (technical) of allowing any content change?
+     - In what situations is some change OK?
+     - Can DataONE infrastructure support mutable content?
+
+:10\:00: `Break`
+
+:10\:30: (2) Authentication, Authorization, Identity, Security (Ben, Bruce)
+
+  - The authentication workflow, identity management, and the challenges therein
+      - DataONE Portal
+      - Distributed identity tracking, mapping
+      - Distributed certificate management
+      - Distributed session management
+      - Possible Cilogon API interactions?
+  - System integrity and security (might be too much to fit in one session?)
+
+:12\:00: `Lunch`
+
+:13\:00: (3) Reporting and monitoring (Robert, Dave)
+
+- Log aggregation, reporting
+    - Results of Alice's work (Skye)?
+  
+- Infrastructure monitoring
+    - continuous TCP port access (& UNM network reliability)
+    - Hazelcast cluster integrity
+    - CN service endpoint availability
+    - DNS round robin issues, maintaining CN synchronization
+- Sponsor required metrics
+
+:15\:00: `Break`
+
+:15\:30: (4) Content discovery (Skye, Dave, Jeff, Mark Schildhauer)
+
+- Search service APIs
+- Index generation
+
+  - Alignment / determination of controlled terms (e.g. GCMD keywords)
+  - Interaction with external services (e.g. taxonomic name services, geolocators)
+
+- User interface
+
+  - Different types of tools / interfaces that can be leveraged
+  - Ease of content discovery is a very high priority
+  - Search use cases / scenarios to address
+
+:17\:30: `Close`
+
+
+.. raw:: pdf
+
+   PageBreak
+
+
+Day 2 - Wednesday 22 August
+...........................
+
+:08\:30: (5) MN to MN Replication (Chris, Skye)
+
+- Event-based Replication policy evaluation
+- Replication task creation, execution
+- MN prioritization, performance issues
+- Scheduled replica auditing
+
+:10\:00: `Break`
+
+:10\:30: (6) Infrastructure Performance and Scalability
+
+- Transaction rates
+- Number of simultaneous clients
+- How to improve performance?
+
+
+:12\:00: `Lunch`
+
+:13\:00: (7) MN software deployments, prioritization, support, software, MN services (Matt, Ryan, Mark)
+
+- Member node deployment experiences, and where to improve
+- Review list of candidate MNs, and suggest prioritization
+- Define a process for determining how much resource DataONE should allocate to brining MNs online
+- Identify additional software stacks that should be built by DataONE
+- Issues of privacy of concern to MNs
+  - logging, identity, authentication, identity
+- Replica transfers (technical and legal compatibility)
+- Dealing with malicious content
+- How to improve metadata (e.g. automated quality checks at ingest?)
+- Advertising and utilizing services running on member nodes (e.g. WFS, WCS)
+- Replication target nodes that do not allow users to add content
+
+:15\:00: `Break`
+
+:15\:30: (8) MN software deployments, prioritization, support, software, MN services
+
+:17\:30: `Close`
+
+
+
+Day 3 - Thursday 23 August
+..........................
+
+
+:08\:30: (9) DataNet Integration and Interoperability (Dave, Mike Wan)
+
+- Addressing the requirement for interoperability between DataNet implementations
+- High level architecture comparison, determine initial goals for interoperability
+- Schedule activities and assign responsibilities
+
+:10\:00: `Break`
+
+:10\:30: (10) Investigator Toolkit component prioritization (Matt)
+
+- Select a small number of ITK tools that will be focussed on for dev by DataONE
+- Define specifications for each
+- Schedule and responsibilities
+
+:12\:00: `Lunch`
+
+:13\:00: (11) Provenance tracing, annotation, (Bertram)
+
+:15\:00: `Break`
+
+:15\:30: (12) Scheduling review and adjustment (Dave)
+
+:17\:30: `Close`
+
+
+
+
+
+

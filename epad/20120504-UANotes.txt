@@ -1,0 +1,193 @@
+ummary of issues identified from the UA+SC WG Meeting May, 2012
+================================================================
+
+
+Documents: https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg
+
+
+From: https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/usability-testing/UA%20and%20Socio%20WG%20-%20Usability%20Subgroup%20report%20out.pptx/view
+
+
+Major Activities:
+1.Heuristic Analysis of DataONE.org & ONEMercury
+2.Usability Analysis Strategy for coming year
+3.Usability test/script questions, approach, possible venues
+
+
+Heuristic Evaluation: ONEMercury
+--------------------------------
+
+Issue: Branding changes from dataone.org to ONEMercury 
+
+  - Retain DataONE identity in upper left logo
+
+Need to add a DataONE logo in the top left corner. This will consume a bunch of space so will need to be considered carefully.
+  - We discussed in the meeting that both logos at the top of the page would be too 'busy' and that we should have a DataONE logo to the left of the FaceBook link that would transfer a  user back to the DataONE home page. In the heuristics doc, we had added " Add next to the social media links a small DataONE Icon that links back to the DataONE Home."  I will clarify with Mike Frame and Lisa Zolly.
+  
+Effort to correct: Low
+Required for release: Yes
+Who: Skye
+
+
+Issue: ONEMercury needs a tagline to state explicitly that it’s a science data search (as do other DataONE products)
+
+"Search the DataONE federated network"
+-- “ONEMercury: A DataONE Search Tool for Scientific Data”. Confirm with Mike and Lisa
+This could be added in the space to the right of the ONEMercury logo, there's a vast expanse of open space there.
+Effort to correct: Low
+Required for release: Yes
+Who: Skye
+
+
+Issue: Nav from dataone.org site at top is confusing (appears to user to be ONEMercury nav), should be removed
+    - Hyperlink DataONE logo to go to dataone.org home
+    - Consider adding “back to DataONE Web site” link
+
+This seems to imply removing the "About", "Participate", ... menu items. Amusing since this was a matter of contention
+Effort to correct: Low
+Required for release: Yes
+Who: Skye
+Remove menu completely.
+
+
+Issue: SEARCH button needs to be added at bottom of page as well as top
+Effort to correct: Low
+Required for release: yes
+Who: Skye
+
+
+Issue: Results page filters push results lower on page.
+  - Toggle filters visible/hide (like simple/advanced search) to increase default real estate? or cutting in half the length of the box that displays the filter options, allowing the scrollbar to be used to show the options. --Clarify with Mike Frame and Lisa Zolly
+Effort to correct: low-ish
+Required for release: if not too much work
+Who: Skye
+
+
+Issue: Move Return to Search to upper left justified across from the Email Query Button (maybe solved via breadcrumbs)
+Effort to correct: Low
+Required for release: Yes
+Who: Skye
+
+Issue: Viewing documents & pagination should be right justified  while Sort By: … should be left justified on the same line to be flush with the search results listings box
+Effort correct: Low
+Required for release: Yes
+Who: Skye
+
+Issue: Results content needs to be left-justified
+Effort to correct: Low
+Required for release: Yes
+Who: Skye
+
+
+Issue: Clarity of filter labels Originator, Author, Member Nodes, Data Providers for non-DataONE users.  May be alleviated with hover help / tool-tips.
+Effort to correct: Medium
+Required for release: Perhaps
+Who:?
+
+Issue: Sort by Source – is that = member node/Data Providers? To institution that owns data? Clarify and/or standardize language used.  Need consistency of terminology - use 'Member Node' to replace data source, data provider, etc.
+
+Issue: Sort operations are ambiguous
+    - Are they being used/useful?
+    - Date Range: isn’t it really start date?
+    - Source: organization? Member node?
+    - Add hover tags to explain labels - This is important
+
+Effort to correct: Low
+Required for release: Not clear
+Who: Skye
+
+
+Issue: Help file is from last iteration of ONEMercury
+Effort to correct: Medium
+Required for release: Perhaps, priority would be to remove conflicting content
+Who:Skye
+
+
+Issue:  For consistency with DataONE, use breadcrumb navigation to accomplish User control and freedom.
+
+===================
+
+Comments from Jeff H. :
+
+
+General Comments on the main search page:
+ 
+On the map in the Geographic Search it would be helpful to have tooltip text on the buttons that indicates what they do.  The zoom buttons are pretty obvious, but the polygon tools may not be.
+---Tool tips have been suggested elsewhere. We should consider this as part of the ongoing improvements of Mercury (rpw)
+---I did add some tooltip help for the sort options on search results and in general it is easy to add more tooltips.  However the map control is a third party widget, so the generation of the button markup is controlled by the widget.  The button elements have ids so it should be possible to attach tooltips assuming the generated ids do not change.
+
+Within the Geographic search it might be nice to have some additional options besides states and countries.  Useful additions might be U.S. counties, USGS 8-digit hydrologic unit watersheds, eco-regions, etc.
+
+Under “Content Type” the list is pretty limited.  Do you anticipate that there will eventually be more categories?
+
+Under “Member Nodes,” I realize the list that is there now is probably developmental member nodes.  The names are entirely unhelpful.   I like the option of being able to limit my query to specific member nodes, but we need to display enough information that you actually know what they are.  It might also be helpful if you could click on one and get a very brief description.
+    -- From Matt: this should be the NodeName field from the node registry, hopefully with a tooltip showing the Node description
+    -- This list is driven from node list - name field.  The name field content is just not very descriptive right now.
+    --- Upon review of a node registration, we will need to make certain that the name field is "label worthy"(rpw)
+
+The help boxes that pop up should describe how the tools work.  For example – does the geographic search tool find content that intersects the chosen geographic area or that are fully contained within it?
+---In general, all the help text needs work.
+
+The help pop-up unde the “Date Search” group has nothing to do with the date range. It should describe how to use the date range to restrict the query, how to use the date picker tools, and how the time window is actually evaluated – e.g., does the query return data that intersect the chosen time range or that fall fully within the time range?
+-- Fixed link to 'temporalHelp.htm' so proper help is displayed however language may still need refinement.
+
+The window that pops up when you click on the big “Help” button at the top is a little bit ghetto.  The diagram is helpful, but it isn’t clear that there is text below the diagram, and the links above the diagram aren’t that helpful since everything is on one page.  One ideas is to have only the links in the pop-up window when you click the “Help” button and then open a new page when each of the links are clicked on.
+---Help is being updated.(rpw)
+---This description is about the help on the search input page, which wasn't included as part of the usability review suggestions.  So this help screen is yet to be updated.
+
+At the top of the page, should the general DataONE links be featured?  Each of these launch you out of the ONEMercury application.  I think you should at least open them as new tabs/pages rather than opening in the same tab/page.
+---tabs have been removed (rpw)
+
+If you show the advanced search options, the main “Search For:” text box remains.  So, how does ONEMercury evaluate the search if there is text in the main “Search For:” box and then they start putting things in the Fielded Search?  Should the main “Search For:” box go away when you click on the “Show/Hide Advanced Options” button?
+    -- From Matt: Similarly, its always been frustrating to me that it seems you (usually?) have to put a search string in the "Search For:" text box, when I might not desire a text search -- maybe I just want spatial and temporal bounds, or all data from a particular node, etc.
+---The advanced search features apply additional filters to a main query term.  So, yes, you are not required to add in a term to the text search box, but you can should you need to (rpw)
+
+The button that controls the base maps and layers is small, hard to find, and oddly placed.  Can it be moved to the main toolbar for the map?
+
+When you search for a place name on the map, it might be nice to place a marker on the resulting location.  If I search for “Logan, Utah, it zooms to the right place, but the zoom level still shows most of the state of Utah. A marker wouldhelp.
+
+Should the extents of the map be constrained?  If I use the pan tool and start panning to the right or left and keep going, I keep seeing North America, then Africa, then Asia, then, hey wait a minute, there’s North America again!!! (I had the Google map turned on as the base map)
+
+Should there be a DataONE logo on the page separate from the ONEMercury logo that links to the main DataONE page?
+---DataONE logo has been included(rpw)
+ 
+General Comments about the Search Results Page
+ 
+On the filters at the top, is it possible to include multiple items in a filter selection – for example, can I include multiple authors in the “Filter by author” box?  Right now I think I can only do one.
+
+The text that pops up when you click on the relevance stars could use some grammatical work.
+
+---We have had discussion about the relevance stars in past meetings, need a better way to represent them or maybe just remove them. But I think this was considered a low priority item.(rpw)
+
+Why is “Filter by Data Providers” down below on the left when the rest of the filters are at the top of the page?
+
+---Good question and raised by the usability group as well. From what I remember, Giri told me that they found their users preferred the filters at the top of the page.  while the side bar allows for easier filtering of 'static' modifiers (MNs are always known while the facets may not be).  Personally, i find this a great usability question, given that left nav bars are currently the position used for filters will users prefer them or find them easier to use because of familiarity from other sites, or, for some reason, does the persona of the scientists like having those filters up and center?  but my science project of comparing personas across usability of familiar/unfamiliar features may need to be scrapped because we are having so many complaints about the placement right now.(rpw)
+
+When I click the “View Full Metadata” button on a search result I get a view of the metadata for the resource.  It isn’t particularly pretty, and for some of the text, the metadata field names get squished up on the values in the fields.  Plus, it isn’t always clear which text goes with which name and there are inconsistent fonts.  I think a more aesthetic view could be created.  The resources I looked at were all EML views.
+    -- From Matt: Totally agreed.  There are much nicer base styles to work from for formatting this stuff.
+
+When I click the “View full metadata” button and look at the resulting page, I see that there is a link at the very bottom to “Science Metadata File.” I think this should just be a button at the top that says “Download Metadata,” and next to it (which is nowhere to be found right now) should there be a button called “Download Data.”
+    -- From Matt: Didn't Skye already add data download links?  Are you looking at data sets with ORE packages so the links show up?
+    -- The version of one-mercury on staging is old and does not contain the data package download panel although the metadata view page should have the links at bottom. ok.
+
+In some of the metadata descriptions it looks like there are special characters that are not displaying correctly.  For example in a dataset called “POD! Water-Quality_Daily WaterTemp (1984-06) and EMP water quality” the following text is in the abstract:  Daily Water Temp 1984-2006 %26#226;%26#128;%26#147; average daily water temperature at three locations.EMP water quality parameters:EMP continuous %26#226;%26#128;%26#147; continuous sampling data available since 1998EMP discrete %26#226;%26#128;%26#147;
+    -- these are well-known issues with character encoding on input -- its actually the EML document that is incorrect, and it renders incorrectly in all contexts; in this case, its really the metadata document that needs to be fixed
+
+The buttons and curved headers of the filter boxes look like they could use some help from a good graphics designer.  The search results page looks a bit outdated.  This is purely aesthetic, but I’m throwing it out there anyway.
+---Visual identity of all the dataone products needs a good analysis.  Who is responsible for providing a Visual Identity Guidelines document for D1? (rpw)
+ 
+Specific issues using Firefox 12.0 on Windows 7 64 bit.
+ 
+In the help boxes that pop up when you click “Help” in Fielded Search and Date Search there are some weird diamond characters (I assume these are supposed to be quotation marks?)
+- unprintable characters in source html file.  Removed.  this is fixed.
+ 
+Specific issues using Internet Explorer 9.0.8112.16421 on Windows 7 64 bit.
+ 
+On the page load, IE displays a message saying that only secure content is displayed.  The map doesn’t display until I click the button to “Show all content.”  Apparently my security settings are such that the map doesn’t show unless I click the button.
+This is fixed on trunk.
+
+In IE, the map tool buttons are centered over the map, but in Firefox they are left justified.  No biggie, but inconsistent.
+
+In the help boxes that pop up when you click “Help” in the Fielded Search and Date Search there are some weird square characters (I assume they should be quotation marks) – see issue for Firefox above.
+- fixed.
+

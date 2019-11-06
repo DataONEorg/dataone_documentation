@@ -1,0 +1,39 @@
+Backup strategies 17 October 2012
+---------------------------------
+
+The desire is to:
+backup persisted data structures and software (filesystem) on all 3 CNs such that we can roll back to a previous state
+ * stage
+ * production
+
+ * VM Snapshots
+   * KVM feature at UCSB - needs configuration under CentOS 6.3
+   * LVM snapshots within the OS - https://wiki.ubuntu.com/Lvm <-- common denominator across CNs
+     * backup happens at the Volume Group level
+     * space is needed in the Volume Group for multiple snapshots
+       *  snapshots can be removed once the upgrade is successful, so not a huge space issue
+       * cn-stage-ucsb-1.test.dataone.org
+       * cn-stage-orc-1.test.dataone.org
+       * cn-stage-unm-1.test.dataone.org
+       * cn-ucsb-1.dataone.org
+       * cn-orc-1.dataone.org
+       * cn-unm-1.dataone.org
+   * SAN-based hardware snapshot
+ * Other mechanisms
+
+Need a CN "read only" mode
+- shut down processing and indexing
+- shut down postgres
+- isolate LDAP maybe through firewall modifications?
+
+- Logs? log aggregation is run through processing daemon, similarly search indexing has daemons controlling it
+
+But need to maintain a running Tomcat to provide access to services. 
+
+
+Bring down all services on a CN so that they can be shutdown and brought back up in a consistent state, and also restore from a backup so that we have the option to role back to a state prior to an upgrade.
+
+TODO: Robert will add the step by step upgrade routine to the CN operations docs (ProductionRolloutProcedure)
+TODO: Nick will add a ticket (#3340) and write a wrapper script for the LVM snapshot command that takes parameters for the VG name, partitions to snap, etc. Document when the snapshot was made.  Keep the naming scheme of the snapshots consistent.
+TODO: Chris B. and Dave will try script on ORC and UNM
+

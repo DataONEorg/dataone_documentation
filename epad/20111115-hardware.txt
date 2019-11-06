@@ -1,0 +1,132 @@
+ORC
+===
+
+- 130TB with RAID6 installed
+- mounted drives only showing 500GB
+
+VMWare limitations: file size limitation of 2TB
+
+- one physical adapter connected to iSCSI (2 ports through switch to drive arrays)
+
+- (perhaps) Need to reconfigure to see the full partition
+
+- Need responsive admin support at ORC.
+
+Action: DAVE - check with Bruce to try and get admin support a little more responsive
+
+Aaron Lesch <alesch@utk.edu>
+Leslie Ault <aultl@utk.edu>
+Larry Jennings <ljenning@utk.edu>
+
+According to the documentation, here is the PCI slot configuration:
+
+1 - PCIe slot 1 PCI Express (Generation 2) x8 link expansion slot (24.13 cm [9.5"] length).
+2 - PCIe slot 2 PCI Express (Generation 2) x4 link expansion slot  (low-profile 24.13 cm [9.5"] maximum length, with a standard height  bracket).
+3 - PCIe slot 3 PCI Express (Generation 2) x8 link expansion slot (low-profile 24.13 cm [9.5"] length).
+4 - PCIe slot 4 PCI Express (Generation 2) x8 link expansion slot (low-profile 24.13 cm [9.5"] length).
+5 - PCIe slot 5 PCI Express (Generation 2) x8 link expansion slot (24.13 cm [9.5"] length).
+6 - PCIe slot 6 PCI Express (Generation 2) x8 link expansion slot (24.13 cm [9.5"] length).
+
+The current dual-port iSCSI controller cards occupy slots 5 and 6.   Slots 1-4 are available, however they are all low profile except for  slot 1. Also, slot 2 is x4 where all the others are x8.
+
+I don't know what form factor the 10G network cards are, but it looks  like slots 1, 5, and 6 are the only ones with x8 speed that will accept a  full height card.  It looks like slots 3 and 4 will be your only option  to keep the existing iSCSI cards and have 2 "like" 10G network cards (assuming they are available in low profile  versions).  If you want 4 connections to the iSCSI controllers as exist  now, then each card will need 2 10G ports.
+
+
+- 3 hosts
+- each host 2 processors, each with 12 cores, 2.5GHz (24 cores / host)
+- 131GB RAM per host
+- 140GB drive per host (130 formatted)
+- 4 x 1GB NICs
+  - 1 connected to VMware kernel management network
+  - 1 vmware traffic
+  - 1 iSCSI-1
+  - 1 iSCSI-2
+- 10GB NICs on order (4 ports per adapter)??
+
+- 2 x storage arrays. Each array consists of:
+  - 1 x MD3600i
+  - 7 x MD1200i
+  - 96 2TB drives per array
+
+- 16disk groups
+
+- 4 hot spares per "rack"
+
+- VMWare high availability license
+
+- 3 x powerconnect 8024
+
+- 
+
+
+UCSB
+====
+- Hardware powered up, continuing installation
+
+- hardware configuration pretty much done
+
+- install host OSs
+
+- setup storage
+
+
+4 10GB NIC ports per server
+4 1GB ports per server
+
+- 4 switches configured to operate as two (one redundant)
+
+HOST 1
+
+10 GB nic 1 - switch 1 - iSCSI 1
+10 GB nic 2 - switch 2 - iSCSI 1
+10 GB nic 3 - switch 1 - WAN (1GB)
+10 GB nic 4 - switch 2 - WAN (1GB)
+
+ilo to management switch (1GB) 
+
+four separate drive arrays
+
+120 TB raw storage / array. Four arrays
+
+Hardware List
+==At NCEAS==
+    
+1x Dell Server (PowerEdge R815):
+- 16 AMD Opteron Cores
+- 64 GB memory
+- 2.4 TB local storage (18 free 2.5" drive bays for expansion)
+-- 4x 600 GB 15K RAID10 internal drives
+-- 4x 600 GB 10K RAID10 external SAS array (Dell PowerVault MD3220, 20 empty bays)
+    
+==On Campus==
+    
+4x HP Servers (DL385 G7), each with:
+- 24 AMD Opteron Cores (6180SE, 2.5GHz)
+- 128 GB memory
+- 146 GB local storage (2x 146GB 10K SAS in RAID1)
+- 4x 10-GbE SFP+ ports (2x Dual-port PCIe NICs)
+- 4x gigabit ports (internal) 
+- iLO 3 Advanced management port
+    
+4x 10-GbE iSCSI Storage Arrays (P2000), each with
+- 60 2TB drives per array
+- 1 P2000 controller, 4 P2000 enclosures (12 drives each)
+- expected 100 TB expected usable space 
+- 120 TB raw
+- mountable on any/all servers
+     
+4x 10-GbE Switches (HP Procurve A5820)
+- configured as two virtual switches with failover
+- two dedicated to networking
+- two dedicated to iSCSI
+    
+1x Gigabit Switch (HP 
+- for the server/array management network
+
+
+Need to know:
+
+- number of hosts
+- cores per host
+- NICs per host
+

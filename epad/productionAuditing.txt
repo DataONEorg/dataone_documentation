@@ -1,0 +1,92 @@
+Content Auditing
+=============
+ToDos: 
+1. draft a user case for CN consistency auditing
+2. draft a use case for synchronization auditing
+
+3. implement checksum recalculating tool
+4. 
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Content Auditing includes:
+CN consistency auditing - do all of the CNs have a common view of the collection?
+replication auditing - (use case 9) do all of the objects contain the 'right' number of replicas, (in theory and practice)?
+synchronization auditing - have all of the objects on the MNs been synchronized?
+data integrity auditing - (use case 25) - periodic recalculation of checksums on objects.
+
+and maybe:
+collection inventory - do 'extra' copies of data objects on MNs not listed as replicas exist?
+duplicate detection - do identical but unrelated documents exist?
+
+
+CN Consistency
+------------------------
+Dataone needs to perform periodic content auditing to check that system metadata is consistent between all of the Coordinating Nodes.
+
+From Dave's email:
+"The issues recently encountered with the CN inconsistencies suggest
+fairly strongly that we need to address the auditing capabilities on
+the CNs much sooner than anticipated. "
+
+"So I think you, Chris B, and Robert and Ben will need to work together to
+outline a set of tools and capabilities that are needed for the
+auditing work."
+
+"These tools will need to report in a way that can be viewed by people
+but also can be used to drive other tools that need to be written,
+that will correct issues identified in the verification process."
+
+
+Set of tools needed for auditing
+---------------------------------------------
+1. verify sysmeta is consistent across CNs - 
+2. verify sysmeta is consistent with the source (authoritative MN) - new tool compareSysmetaToSource created
+3. verify content:
+    - retrievable from all replicas
+    - the "checksum etc." is correct
+    
+4. ??
+
+
+
+
+
+
+
+
+Set of capabilities needed for auditing
+-------------------------------------------------------
+1. read-only client?  (to make sure we aren't adding anything other than log READ events to the system) - done
+2. faster https client - for multiple requests to the same node
+3 consistent slicing from the CN.
+
+
+
+
+Notes:
+=======
+
+CN api methods that are relevant:
+listObjects - creates ObjectList from systemMetadata table in metacat database
+getSystemMetadata - gets the smd from Hazelcast SystemMetadataMap
+describe - derives the DescribeResponse from Hazelcast SystemMetadataMap
+resolve - calls metacat getSystemMetadata 
+getLogRecords - EventLog
+get - returns the inputStream from MetacatHandlers.read method:
+    /** 
+    * Read a document from metacat and return the InputStream.  The XML or
+    * data document should be on disk, but if not, read from the metacat database.
+    */
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+Attendees: Rebecca, Bertram, Amber, Bill, Carol, Mike, Suzie,Steph, Trisha, John Kunze, Matt Jones, John Cobb
+
+Regrets: Bob Cook
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, May 25, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/992334912
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0621
+Access Code: 992-334-912
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 992-334-912
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012May25-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-05-25
+
+1) CI Update (Dave)
+
+Another interesting week - all the different MN implementations currently plan to be involved in the initial public release (June 25) 
+Implementation and testing is proceeding - have found a couple of issues and are working on those. Some with Pisco - are testing fixes. There are still a couple of issues with Pisco and not sure if they are related to D1 or not. 
+Core services for CN appear to be in good shape - want to make sure synchronization scales with the larger content. Replication appears unlikely to be included in the initial public release. Will not affect the end-user - will just be fewer copies of some datasets. Continuing to work on the replication issues.
+Updates to the ONEMercury interface based on U&A and Sociocultural WGs and Amber and Rebecca - current version here but on a development server so may be up and down
+https://cn-dev-2.dataone.org/onemercury/
+
+Links back to the DataONE website are missing right now - key issue is that the links back to the web site is confusing. However, similarity to main website ties together the two websites.
+Needs to be resolved sooner rather than later.
+Testing was done on an incomplete system so somethings would be resolved by a complete system.
+Mike suggested that another round of testing be done at ESA in July as scheduled when the whole system is more complete.
+
+Change control and decision making process needs clarity - especially in areas where there is overlap between purely CI and user interface/usability issues. 
+
+Metacat MN and GMN software stacks will be available as packages at public release.
+
+2) Update from the S&G WG (Bill/Trisha)
+Busy and productive meeting - first meeting with newest member of the group, MacKenzie Smith. We reviewed DataONE progress and services.  Completed a review of the competitive landscape document which is currently being revised by Grace Lerner (grad student from UNM Anderson School of Business).  There  was much discussion about policy needs for DataONE and identification of next steps.  We heard from Abby Smith Rumsey about DPN.  We reviewed and revised the KRDS benefit analysis table.  We looked at and prioritized cost models and cost recovery models, hearing a talk by Stephen Abrams about Total Cost of Preservation.  We identifed issues related to rights and licenses related to DataONE.  A major first step was the recognition that we needed to bring in a strategic business consultant and identifed Kim Thanos as the first individual to contact.  We are in the process of establishing a SOW and PO with her company; the next step will be a face-to-face mtg in Portland during the ESA meeting with Kim.
+
+Specific items: 
+ * MN process and documents -- small task group was formed (Bob, Mike, Amber, Trisha, John Cobb) to pull together documentation and develop an initial partnership agreement for first round Member Nodes. 
+ * Release Checklist -- discussed last week
+ * Business Planning -- S&G have completed work that supports business planning (marketing, costing, landscape analysis) and the next step is to hire a consultant in order to better understand potential sustainability strategies. 
+ * Policies -- S&G revisited some of the policies that need to be put in place to support DataONE.  We developed a strategy to deploy the policies. We developed a process to create, discuss, and finalize policies.
+ * Science Use Case -- S&G recognizes that we need to build science use cases that demonstrate the potential of DataONE to our core community of stakeholders (scientists and researchers).  Amber will work with CEE to develop use cases.
+ * Communications -- some of the WGs have requested more information about DataONE.  We will revisit our communication plan and modify and implement as necessary. 
+ * Upcoming meetings and conferences
+
+Suggestion that we come up with a common case of a machine readable license (perhaps CC0 or CC-by) for the open datasets 
+Member Nodes are not homogeneous - individual datasets have access provided by the individual researchers
+
+3) Project Wide Communication (Rebecca)
+Document  created at the May 2012 joint meeting of the U&A and Sociocultural WGs by the Sociocultural WG based on identification of communication challenges that DataONE is facing. PURPOSE: to provide SGWG/Executive team with some ideas to facilitate and enhance internal communication. WG members recognize (1) that DataONE communication is already on the right track but would benefit from improvement; and (2) any organization experiencing this kind of change and growth will be in the position to review and improve organizational communication. Amber will carry this forward
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/communications/Communication%20Rec%205.2.12.docx/
+
+Recommendations: These recommendations are focused on providing additional communication support to best utilize the talented people who have chosen to be part of the DataONE team as full-time DataONE employees, or as members of the leadership team, working groups, or member nodes.
+
+1. Implement a task management system to track questions and action items from the WGs for further review/action (and vice versa).
+   * Creates a knowledge-base for future use, captures emerging ideas, and allows for      action items to be shared and acted on by WG members when identified.
+   * Enables delegation of tasks for working groups to tackle; for example, can identify people to help with FAQs within the realm of their expertise.
+   * Have the “contact us” form go directly into the task management system and be delivered to the executive director, director of CE and director of CI for triage.  Include option for ‘type of enquiry’ for filtration and management purposes.
+   * This instance of the task-management system should be separate from the      bug-tracker for the software development, but must become important to the CI and leadership teams. Implementing this instance should include training materials to make it easy to adopt and use (maybe introduced at the AHM).
+{This might be accomplished by simplifying the user interface for non-CI users. }
+
+
+2. Designate one or more liaisons to facilitate internal communications.
+   * May be able to provide clear expectations around which to rally.
+   * Helps to update DataONE and WGs on development & rollout of specific items and can set context for expectations and current communications workflow.
+   * Provides feedback about why work is relevant and next steps.
+   * The liaison should have strong technical expertise to be able to serve as filter in both directions.
+   * Consider extending the mission of S&G to include identification of appropriate      actionsfor other WGs for fulfilment of sustainability needs and to communicate these needs across the organization (‘charge’ (?) WGs with activities).
+   * Consider creating designated liaisons within each WG who will be specifically      tasked with attending other WG meetings and facilitating WG-to-WG      communications.
+{Relates to cross-over communications among various members of the DataONE project}
+
+3. Increase access/participation to LT meetings.
+   * Increases transparency and awareness among project members.
+   * Can help WGs to set priorities.
+   * Opportunities to listen to LT meetings should occur at least quarterly or once a month.
+
+4. Task WGs to help support new member (individual and member node) participation.
+   * Broadens capacity and relieves pressure on CI team and other components of DataONE.
+   * Create a staged process for new WG member orientation that involves each working    group in different stages as appropriate.
+   * Create a staged process to handle communications with potential (new) member      nodes, again involving each working group in different stages as appropriate.
+
+The document was reviewed at the Sustainability & Governance WG meeting last week.
+First item to be implemented with be #3. The first Friday of each month, the LT call will be lengthened by 30 minutes so that the Working Group co-leads can join.  The first 30 minutes will be for LT business and the remaining hour will be for Working Group co-leads to update the LT and other WGs on their activities. This will begin next week, June 1st, with WG co-leads providing or giving their status reports that will be included in the annual report that will be submitted at the end of June.
+
+4) MN Partnership Agreement (Amber/Bob/Mike) - postponed to next week
+
+
+
+5) Update from NSF Meeting held 5/23 (Bill)
+Updated NSF on CI and CE progress and challenges. We proposed several dates for informal site visits to DC or TN; awaiting word from our PDs as to their availability although they will be at the DUG and AHM. We proposed a RSV in DC at or near the 48 month mark in August 2013 plus or minus 3 months. Bill will be presenting talks before the NSB and NSF at large during July 18/19; the PDs are setting these up.  The steps to move forward with the Cook, Cruse, et al , EAGER proposal were resolved and we await word from the PDs.  We resolved steps necesssary for Jane Greenberg to bring on a student to work collaboratively among DataONE and I-RODS using HIVE.  Travel supplement application process was discussed.  Both DWF and IETF activities are moving forward; we can expect a major announcement from NSF within 2-3 weeks. The $1.5M cut remains in effect, but they would like to see a memo from us documenting the impact on DataONE; BRAD will work on this.
+Bob Chadduck is now the senior DataNet program director.
+
+
+6) Around the room
+Amber: Held a 2 day DM Wksp at NCEAS this week with Viv, Carly, Mark S, Heather H (CEE WG) and Nancy H (ESIP).  Worked through the CEE education modules and got some excellent feedback.  Course generally well received, could have been longer to go into more detail / more time for hands on.  Made revisions to DUG planning following feedback from S&G and have initiated work on the public website / ONEMercury site following feedback form U&A an S&G. Will collate and send around ONEMercury tagline suggestions for a vote later today.  If you have any to add do so now ....
+
+John K: Working with DataCite and KNB on expedited DOI registration (batch registering 165,000 DOIs) in preparation for the DataONE rollout.  A special process is needed in order not to slow down (normally it would take 14 days) initial deposit for going live with DataONE content.  For DCXL, more work with DCXL developers to try to get them to switch to ONEShare node for deposit without requiring a login and password.
+
+Carol: Nothing to add this week, but Summit on Fundamental Concepts in Data Training is coming up in Albuquerque June 12-14.
+
+John Cobb: nothing to add
+
+Deborah McGuinness:  working to get semantics and interoperability working group postdoc here at RPI starting june 1.
+
+Dave: Initial contact from Felimon Gayanilo who is the System Architect for the Gulf of Mexico Research Initiative (500M, http://gomri.org) interested in how DataONE might be able to assist with their "multi-terabyte" data management challenges.
+
+
+Steph: nothing to add
+
+

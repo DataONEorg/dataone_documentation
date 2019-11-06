@@ -1,0 +1,547 @@
+Agenda:
+
+* Wednesday
+-- Introductions & around the room:
+---- What are your interests in provenance? Where can you contribute? (use cases, technology, ...)
+
+- Duncan Temple Lang (statistics faculty, R core developer)
+- Paolo 
+- Ilkay Altintas - Kepler Provenance Recorder and Collaborative Provenance. Wants to be part of the bigger picture. 
+-  James Cheney - provenance in DBs, other models, security; flogging latest project (http://code.google.com/p/database-wiki/)
+- Karthik Ram - postdoctoral fellow in ecology & evolution at UC Berkeley. I have a strong interest in reproducible research in R and am involved in developing a few tools.
+- Barbara Lerner - working on Little-JIL software process language with Lee and Lori and collecting provenance data as processes execute, have been working with ecologists at Harvard Forest on supporting their provenance needs
+Lee Osterweil:  Focus in how to represent very complex processes (such as scientific data management), and how to use definitions of these processes to generate provenance information.  It seems inevitable that different process and workflow languages will be useful in supporting different data management activities and so interoperability seems critical.  We are interested in how to interoperate our Little-JIL language and its provenance data (in the form of our Data Derivation Graph) with other analogous languages and provenance data.
+- Michael Agun - 2011 Provenance Repository Summer Intern
+- Saumen Dey -  PhD student from UC Davis. Worked in 2010 DToL and this year's Golden-Trail project. Primary focus is how to publish privacy aware provenance. 
+- David Koop - VisTrails Developer, interested in provenance re-use, also workflow evolution
+- Yogesh Simmhan - Research Associate at Univ of Southern California, interested in provenance for workflow and stream processing systems, applying to smart power grids, compact provenance storage and synthesizing "important" parts of provenance
+- Tim McPhillips - UC Davis researcher, software developer for Stanford.  Implementing provenance recording and reporting for RestFlow workflow system. Hoping to align with a standard model of provenance.  Can provide detailed use cases.
+
+-- Agenda CHECK
+-- Short update (10min) on GoldenTrail Summer Project (Saumen)
+
+
+* Paolo: ProvWG expectations, opportunities
+-- DataONE gives an opportunity to influence the design of a common model, infrastructure, and services for provenance management
+-- DataONE acts as incubator
+-- allows us to "aim higher" than we could individually
+
+-- DataONE can benefit from our collective experience:
+--- key players sitting around the table
+--- we can complement the existing DataONE infrastructure with metadata mgmt
+
+-- Harnessing our collective expertise
+--- Focus: sci-wf, R, well-defined, tractable process models; reproducible, verifiable science
+-- INPUTS:
+--- Use cases (types: provenance capture, provenance analysis)
+-- OUTPUTS:
+--- D-OPM model
+--- provenance toolkit -- including repository
+--- software 
+
+* Use cases / high-level review:
+-- "Tainted data / processes": what parts of my analysis need to be redone now?
+-- Debugging
+-- Gap Filling models (Lee, Harvard Forrest), interpolation
+-- Interactive workflows (Duncan), capturing the decision process
+-- Karthik: need to be able to look e.g. into Kepler wf / trace to be able to redo in R
+-- Lee: users are not external, but "agents" that are part of the wf
+-- Replacing, extension, refinement (David), process refinement
+-- Duncan: does classifier X
+-- Tim: deeply branched parameter sweeps, "blessed path" 
+decision at step X leads to n branches, only downstream do you want to commit to specific paths
+-- reflect on past choices
+-- James: relation to filtering 
+-- Vistrails use: allow only relevant part to be published
+-- James: stop wf in the middle, resume later
+-- "checkpoint dump"
+-- smart re-run
+-- external provenance (for others to consume / review)
+-- internal provenance (e.g. for debugging, smart re-run, etc)
+
+-- Reasoning vs Engineering types of provenance
+-- Paolo: using provenace to inform/optimize future runs
+-- introspection vs retrospection 
+
+-- Duncan: Find data, using provenance; experimental design, sample scheme,
+experimental design, sampling scheme, often done outside of the s/w
+-- Meta-analysis, look through all the studies, find experimental designs based on properties
+-- using annotations 
+-- units, sampling schemes
+-- actor/module can write its own provenance 
+-- Getting rid of meta-analysis: if the data is available; doing "proper" meta-analysis
+-- How to connect wf provenance to other types of provenance
+- Rightfield: http://www.sysmo-db.org/rightfield
+- quality of provenance
+- what level of provenance should we capture or display
+-- does this depend on queries?
+-- should we try to filter provenance when capturing
+
+
+-- D-OPM introduction, relation to standards
+-- R and provenance: what ideas are there already
+-- How do we get R and other systems into the picture?
+
+===============================
+Golden Trail -- Sauman's presentation 
+
+Leon: challenge is to find the minimal amount of info needed to capture multiple MoC. Group needs to decide on the "just enough" workflow land modelling
+Leon: what when workflows contain loops?
+   - data is immutable.  copies are created when data flows through the processes
+   - versioning.  D-OPM does not currently capture version dependencies
+
+===============================
+The big picture
+
+1. Opportunity
+
+DataONE gives us an opportunity to influence the design of a common model, infrastructure, and services for provenance management
+
+•It allows us to “aim higher” than we could on our own
+•DataONE acts as an incubator
+
+DataONE benefits from our collective expertise
+•Key players sitting around the table
+•We can complement the existing DataONE infrastructure with metadata management
+
+2. Harnessing the group expertise
+
+Focus: 
+•scientific workflows, R – well-defined, tractable process models. Reproducible, verifiable science. 
+In: 
+•Use cases:
+•Capturing 
+•Exploitation
+•Requirements for a common provenance infrastructure
+•model: why it is important to capture process structure
+•infrastructure / Provenance API
+•Common services
+
+Out:
+•Model -- publication
+•Provenance toolkit -- including repository
+•SW?
+•Specs?
+
+Right Field: http://www.sysmo-db.org/rightfield
+
+
+Use Cases:
+(1) Debugging
+(2) Gap Filling
+(3) Not only the linear path “how we came here”. But, also all the attempts we made. Scientists may not agree to share all of them as it shows “some” limitations of the him. Also, the “thrown-out” attempts may have something “golden” -- may not want to share. -- This might change the way we do science. 
+(4) Reasoning past, can prov predict which all parameter settings are not useful?
+(5) Stop a run and come back in future and being able to use that (??)
+(6) Finding data 
+(7) Adding annotation (how to ensure the quality and completeness of annotation) with the raw data so that it can be better used later: reasoning the results
+(8) A model where layer-based provenance should be considered: a user should be able to choose at which level provenance would be used, which can help drive what provenance to capture
+(9) what is the critical part of the prov that should be shown to the user
+(10) what view of provenance should be shown to the user
+
+
+Little-jil presentation
+more of a control flow than a dataflow
+model describes structural nesting of tasks
+emphasis on exception handling: exceptions travel up the tasks tree and alternative actions may be taken. or retry. Programmable exception handling
+derivation graps can be collapsed to appropriate levels of abstraction
+analysis of DDG reveals various types of errors and thus whether a data derivation is legitimate
+
+-->> interesting challenge for the model is exception handling. This is new
+
+
+Provenance Data Model: http://www.w3.org/TR/2011/WD-prov-dm-20111018/
+
+
+W3C PROV ~ OPM
+entity ~ assertion about provenance!? ~? data artifact
+process execution ~ process
+events implicit?
+everything is an assertion (entity, agent, process execution)
+accounts are scoping mechanism
+
+W3C Comments:
+TMP: scientists that he's interacting with won't be able to relate to this/understand the terminology
+DK: how does the wf-specific stuff get into this, addtl. attributes (e.g. file = "..", content = "..")
+extension points: attributes, annotations, qualifiers;
+PM: 
+SD: what wf systems have been used by D1, how/why use provenance repository?
+What are the kinds of queries to be asked of the repository?
+Depending on question, different levels of provenance might be needed
+Non-functional requirements: performance, etc.
+Confused about "account" 
+Wf-land, data-land, context-land (config details = system-level metadata?), where do they go?
+MA: general enough, might be applicable, wf specific things to be added (filter example)
+
+SB: Looking at PROV, I see OPM, just a core model, does not constrain enough,
+nested collections are missing; what is a dependency: not there
+w/o commiting to these specific details
+unclear: what inferences can be made about provenance 
+"used", "generated_by" what do the mean
+LC: terms have to be well-defined, e.g. "read passed thru" vs "read & modified"
+user's view: what are users getting? 
+Do the same for this ProvWG?
+Extensibility: clearly define existing terms, have extensions also semantically embedded
+configurations
+hierarchy is important 
+notion of "view" is important (maybe more so than account!?)
+BL: this is entity focused, little about the processes, "was scheduled after", not even "causal relationship" 
+agent ISA entity (so an agent can be generated!?)
+why not also "process execution" ISA entity?
+YS: lots of similarity to OPM, adds depth, and bells-and-whistles,
+PROV-LITE, but also add wf-land, PROV-LITE++
+JC: ambivalent, carve out easy to digest part, market that part well, have extensions
+IA: strategically: hard enough to figure stuff out within ProvWG,
+map later
+
+DTL: question of scope, many people use R and only R,
+there is no "workflow", there is just R
+function composition, should we think of this a workflow,
+calling into Python (black-box)
+PM: no expectation to map R to wf
+dynamic documents:
+code is in the paper, run through latex,
+lab notebook,
+putting thinks from R interactions into "lab notebook"
+doing code-analysis
+file has an R function,
+sequence of expressions,
+everything is a fn-call
+in R everything is an object,
+allows to attach attributes
+JC: adaptive functional programming
+LC: partial evaluation
+DTL: grab command line arguments, put arguments back into DataONE repository,
+opportunity to capture provenance,
+construct prov. back, making it like wf provenance
+
+
+
+W3C Model Comments:
+ * Basic pieces seem ok (entity, process execution)
+ * Some of the extra pieces (complements, events, agents probably are not necessary for DataONE)
+ * Are attributes enough for workflow information?
+ * Can an attribute have a schema, or do we only have key-value pairs
+ * What attributes need to exist for workflows and DataONE?
+   * process identifiers
+   * parameters
+   * nesting
+   * how to deal with exceptions/errors?
+
+
+ * Process execution nodes are related to each other only via "was scheduled after" relationsihps.  This seems to preclude other types of relationships, like causal relationships, or decomposition relationships.  [James: This terminology has been discussed - "was scheduled after" has a connotation that may not match the intention - the idea is that it's clear when one thing was scheduled after another, not as clear when one thing caused another.]
+ * Agent is shown as a subtype of entity.  Does this mean that agents are generated by processes, derived from other entities, etc.?
+ * I find accounts to be very confusing.  I think extracting views from underlying provenance data is very different from unifying multiple provenance data into a larger one.  In the latter case, there seems to be lots of opportunities for inconsistency and incompleteness in the merging, both leading to uncertainty in the result produced.  On the other hand an account that represents a view on underlying data would be expected to be correct and consistent, to the extent that the underlying data is.
+
+formal semantics strawman (very very out of date): http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman
+
+
+Feedback frrom W3C  PROV overview
+
+Tim - still important to have our own model -- and it may map to the more general model that W3C is producing. "we map to it" stance
+
+David - extra pieces like complement-of we can simply ignore. But how do we extend it for workflow-land?  to the extent that extensions can be done in an orderly way
+
+Saumen - expecting an answer to the question: why/how would the DataONE community use one/our provenance repo?  and what queries need to be supported?  what are the functional requirements?
+  Still confused by the notion of account (it's more like mapping to the "incident/execution") -- may be too limited for us.  
+  Need to introduce WF-land, data-land, context-land.
+  
+  - Michael:  "wasComplementOf" may become "same as" because we know the PE was a filter. Some of the language used in the model may not resonate wiith the workflow community -- but it ay be extended
+  
+  - Shawn: same problems as with OPM -- minimal model, things that are not included may lead to non-interoperable extensions. Ex. data model (data structures). Also the core is a bit semantically underspecified. for example: when can I legitimately assert a "usedBy" relation? What kind of tools can be built on top of this?  what kind of inferences?
+  
+  - Lori: one needs to be able to make a semantic distinction between "X was read and passed through" and "X was read and produced some new Y".
+  - extensibility: for example how do you capture exception behaviour (see Little-jil).
+  - issues with nesting/hierarchy
+  - issue of views over provenance very important: one provenance, multiple views over it -- rather than independent account?
+  
+  - Barbara: very entity-focused, but little opportunities to say anything about processes. (wasScheduledAfter is weak). 
+  - why is a PE not an entity?  and why is anactor an entity?
+  
+  - Yogesh: we need a PROV-lite version of this, augmented with workflow-land:  PROV-lite++
+  
+  - James: original W3C scope initially more minimal -- tension with SW community. comments suggest that it would be useful to carve out the "easy to digest" parts and that's well defined, then extend
+  
+  - Ilkay:  strategically: this is an evolving std, a mobile target. we should be doing our thing for the time being. Keep an eye on mapping to this later.
+
+
+====
+if you only use R, you don't have a workflow at all.   Functions are defined and then scripted together.
+R is functional, no side effect.
+R script is a sequence of expression, and everything is a function call. No explicit typing, but type inference.
+Provenance is essentially a trace.
+How do you make R provenance-aware? Code analysis: need to detect I/O points in the script. 
+
+Why would you make  R provenance-aware? --> automatically produce a document from provenance, like a lab notebook.  
+Partial rerun
+(see other use cases above)
+
+Comments on control connectors:
+ * only task-to-task connections in original model
+ * what about control ports? (e.g. have a task that doesn't start until some data is output even if the data is not used by the actor
+ * how does BPM fit into this?  
+
+============================
+THURSDAY
+
+Logistics:
+-- doodle:
+ * Please fill out the Doodle poll for your availability on these dates for the next DataONE All Hands Meeting.  Please use "No" for absolute unavailability.  If there is a possibility you could attend on a date but you're not certain, use the "Maybe" option.
+ * http://www.doodle.com/hswnrwq6np9kq7ni
+ * Thanks, Rebecca Koskela and Bill Michener
+
+-- survey:
+ * Please do this survey and pass this URL on to your Working Group members so that they can fill out this short survey today.
+ * http://www.surveymonkey.com/s/dataone_web
+ * The URL for the beta version of the new DataONE website is: http://dataone-beta.nmepscor.net/
+
+-- your vote on bookmarks
+
+ACTION:
+* Deliverables & Milestones
+--- Technical Report & Research Paper (outline today)
+--- Standard & tools development
+* Collaborative Workspace (dropbox, google docs,..)
+-- space to put use cases!
+(later: categorize them, e.g. for the paper)
+* WG membership
+
+NOTES:
+- What are the different ROLES of people vs. D-OPM model?
+
+- What are users vs technology developers vs researchers getting out of this?
+-- users: ...
+-- tech developers: ...
+-- researchers: ... 
+
+==> towards provenance tools (repository, querying, visualization)
+
+- Who already knows what specifically they want to DO with (and therefore see in) the model?
+
+Questions:
+(a) Where might you be able to contribute? 
+ * use case development, 
+ * maybe also add: distill/flesh-out use cases to inform model development as a task?
+ * model development, 
+ * prototype (or components of the larger architecture) development
+
+(b) What would you like to get from the WG / model / ... ?
+
+Timelines?
+
+IA: three case studies, "user stories" (from which concrete use cases will be derived):
+ * collaborative provenance; (user information in wf/data publish and wf run actions)
+ * bioinformatics CAMERA/bioKepler; 
+ * sensors / drifters drouges use case
+ * 
+ * additional use case: distributed workflows
+ * 
+ * possibly adding a student (little developer time) 
+
+Additional metadata needed: 
+data acquisition (e.g. sensor ids; reference to the instrument used to acquire the data);
+spatiotemporal information? ... 
+
+DK: 
+ * interested in Model, some tools
+ * in Vistrails: workflow evolution: system tracks wf editing, design actions (adding modules, modifying params, ...)
+ * similar to version control
+ * have already some query tools (for the wf specification; could be extended to execution information)
+ * what about "traditional" data lineage? data represented as modules, edges ~ data flow
+ * have persistent data storage for data products so users can get back to exactly the data that was used in an execution (uses git)
+ * newer version of vistrails has execution provenance viewer (cf. run manager in Kepler)
+
+BL: 
+- Harvard forest case studies (gap filling), have been working for several years w/ this group
+- model, amount of info going into the wf, too low-level?, features in Little-Jil model (e.g. exceptions, abstraction levels, ability to zoom in/out) how could they be represented
+- "Little-Jil/wf-land", how is this visible in D-OPM?
+- undergraduate students, REU, for smaller, focused projects
+
+SD: 
+- be part of model development, prototype development, 
+- also would be interested to know if we want to share only "relevant" (after removing too much technical details or after removing sensitive parts) provenance data.
+- looking for use cases for "relevant views" and "secure views" of provenance 
+
+KR: 
+- use cases that relate to provenance specific to R, work with Duncan on that
+- has elements of both: wf evolution provenance and dataflow execution provenance
+- David: default assumption of R users might be that saving scripts is enough: 
+    - can do trace of what happens in R, this is retrospective, captures changes/interaction
+-- get all inputs, globals etc + R script and the outputs are determined (no trace needed!?)
+-- interactive provenance (shell interactions)
+-- executable paper?
+
+LC:
+- interested in services and tools, interoperability, library of wfs, provenance, component-based development at the process level
+- architecture of the system, tools, querying support 
+- provenance understanding, low-level trace vs higher-level process model, abstraction concepts
+- translation into D-OPM: then what can they do with it -- tools etc.
+
+[[ ZOOM, Shawn et al, ... ]]
+
+YS: Model, Use cases, Prototype (in that order)
+
+SB: 
+(a) model, possibly scenario/use-case development, some prototyping; 
+(b) I would like to be able to prototype and develop different domain-specific tools over a standard model and api 
+... and really over an implementation that wouldn't require me to reimplement various access/reasoning/optimization/storage. 
+I'd also like to see a common repository of workflow provenance traces (a corpus) to help advance provenance research/implementation/adoption. 
+- param sweeps, method sweeps, mining provenance, provenance difference (but not necessarily general-purpose)
+- opportunities / leverage w.r.t. teaching
+- common repository for traces to do experiments
+
+- Tim: need to be careful with positioning -- is this a hot / bleeding-edge research topic
+vs what can be done right now with provenance
+
+- have something like myExperiment for provenance
+--> opportunity for proposals w/ DataONE ?
+
+Ilkay: provenance is project specific
+Shawn: idea similar to publishing a paper
+Paolo: publishers moving towards Executable Papers, 
+Yogesh: MS Word + Trident wfs
+
+JC: (a). Use cases/specifications, then prototyping, less interested in DM design (but think this should come last anyway)
+(b). Motivation for research/outlets for work already done or in progress on:
+  - Provenance tracking/querying for general purpose languages (eg R)
+  - Provenance/archiving/annotation for fine-grained curated data (database wiki project)
+
+TM:  (a) Can contribute user stories, example traces, specific queries, and expected results.  Examples of some very fundamenial user stories:
+
+User story 1:  User develops many versions of a number of different workflows, and runs them on her data.  Later wants to know how particular results were computed without reference to the particular workflow (version).
+
+User story 2: User runs a workflow with many alternative paths (e.g., deeply branching parameter sweeps).  Then wants to know which path was taken in yielding the final data product.
+  --. show the reduced (essential?) trace
+
+User story 3:  User provides as input to a workflow metadata about 96 samples of a number of different types, workflow mounts samples on an instrument, screens the samples for quality, collects data sets on the best representatives of particular sample types, reduces the data sets, and performs additional computations on the reduced data sets.  The user wants to know what samples, data sets, and computations contributed to a particular final result, and the parameter settings that were used on particular steps in the analysis.
+-- workflow inputs may include unrelated data sets, however the information delivered to the user should "cut through" the history of each of these datasets separately
+
+1,2,3 are variations of essentially the same scenario
+
+User story 4:  User does any of the above (user stories 1-3) but includes in data input to a workflow results yielded by an earlier workflow run.  Then wants to see how the output of the current workflow was derived, all the way back through the first workflow run that yielded data on which the current result depends.
+-- see "provenance stitching"
+
+User story 5:  User is depositing a scientific result in a public repository and needs to provide a report, in the format required by the repository, of how that result was arrived at.  The information to be deposited is the result of many workflow runs (relevant to the , of an even larger number of workflow runs that were carried out during the project.
+-- example: PDB. You deposit your final result according to a PDB-defined template.
+
+User story 6:  User finds the result of User Story 5 deposited in a public repository along   with its detailed provenance.  User evaluates the result in light of whether the process was carried out in a manner that seems acceptable--the programs used, the parameters applied, criteria for data rejection, etc.
+
+(b) Interested most in using a provenance inference system or library sponsored by the working group so that I don't have to do much logic programming when supporting the user stories.  Hoping to minimize assumptions in the model about how particular workflow systems actually work to leave as much room for future innovation in workflow systems (e.g., the assumption that there is a static workflow specification would be suspect, and would limit future progress).
+-- decouple the inference/query system from the specific implementation of the model on a DBMS
+
+*** ProvWG meeting ~ half-way to next AHM
+
+"Deliverables"
+- Use case collection
+audience: 
+- outwardly: to users. 
+- inwardly: to modellers. spec level
+
+T: Look for 3 (?)  key user groups that help us drive the effort
+for example:
+- Tim's users
+- Ilkay's users
+- Little-Jil's users
+- DataONE/ EVA --> Bob Cook contact
+- R use cases (Karthik, Duncan) 
+
+what should they contain:
+- "20 questions" (or so): what are the key questions that users want answered?
+
+Action: connect with the DatAONE user community, specifically hunt to use cases in the EVA group
+
+Framework to capture the use cases (??):
+(1) what is the science
+(2) what is the workflow used? what is the workflow "system" used?
+(3) what provenance is being (or needs to be) captured. Is there an existing provenance "system" or "model" being used?
+(4) how is the provenance being used (or will be used for)
+(5) what is the need to interoperate with other metadata, models
+(6) what are some of the scalability needs (e.g. rate of collection, queries, # of users, workflows)
+
+(7) What are the (provenance+workflow) queries we can synthesize from above?
+(8) What are the gaps we identify with OPM/W3C Prov?
+
+- D-OPM tech report
+- Paper (SIGMOD Record?)
+- API, architecture
+- Formats
+- Tools
+
+
+---- funding avenues to explore
+- Earthcube
+-- EAGER proposals (would have to be broader than DataONE, all of earth science)
+-- prototype / pri
+
+- EU/USA joint infra calls
+
+Plan for Thursday afternoon ... 
+(a). Spend 15 minutes to flesh out what is expected (possibly a template) for use cases
+   -- or more generally, what are the use cases of, and what are they for
+   -- Bertram: benchmarks for the model itself
+   -- Bertram: use cases should capture the specific, detailed queries folks want to express
+(b). Explore the model more: 
+   -- focus on workflow land
+   -- write a concrete question that can be answered (or not) against the model
+   -- determine if question can or cannot be answered
+
+End game plan:
+-- Commitment and timelines:
+JC  (+ Duncan, Karthik) : provenance for R (and other programming languages?)
+
+Lori, Barbara: gap filling example along with a generated English description. RDF serialization. Outline of example queries
+
+Shawn: provenance query models: explore use of QLP wrt provenance data model
+
+David: see etherpad above
+
+Yogesh: contribute with use case from Smart PowerGrid
+
+Saumen, Bertram, Paolo:  datalog version of the DOPM
+
+Ilkay: use cases from CAMERA. Introduce social angle wrt use of repository. May get student resources for Kepler implementation of model.
+
+-- Test the model on paper for 30 minutes
+
+MODEL DISCUSSION:
+1. Questions on the data derivation in the data model:
+-- Connection to the run, is it unique?
+-- Who asserts/puts in the derivation information?
+-- Derivation information should be directional, many-many with role information in from and to.
+-- What if  have a pass through actor.
+2. Is an entity for Kepler-style parameters needed?
+3. What is the association between data items and runs.
+4. Do we assume that the id's are changed for the pass through actors?
+5. Do we distinguish between data value and references? We assume all data items are references or not? Shawn suggests that we shouldn't name it data item if it is a reference If it is just data reference, do we refer to everything, e.g., integer values?
+6. Are the versioning of data items in scope?, e.g., if the data is a gene sequence and it gets updated over time.
+7. Data edges: 
+    -- used implies a dependency and read doesn't imply a dependency  
+    -- Receive and emit implies the dataflow view where the tasks see the data, but they don't know if they really used it. (Read and Write events)
+    -- Bertram likes to think of the world as things and relations.
+
+
+Model issues (thu afternoon)
+
+-- Don't have parameter in the current model (Taverna does not distingush data and parameter)
+-- What does dataID means?
+-- Should we create a new dataID in case of a pass-through
+-- Is the dataID stateful or stateless? 
+-- versioning of dataID, is it needed?
+-- Data Reference: all values to be kept? atom, blobs?
+-- read/write, receive/emit, used/genBy????
+-- do we need to introduce "participate" to specify they were read but not used to produce the output?
+-- control flow/dataflow dep? what does mean when we say "X depends on Y"
+-- invocation dependency is missing
+-- asserted (used, genBy)/inferred(ddep, idep): should we keep both in the model?
+-- Port: same port being used by a task, workflow: a data ref is genBy by two ports? should we introduce some inheritance model?
+-- Data Dependency is optional as it can be inferred from the model
+-- how to distingush two data ids with data refs and same values? are they same or different? If same, how to stitch?
+-- DC metadata needed for the WF-land
+-- Do we need to use external dataID? 
+-- how to handle when a data is generated and only a internal id kept but the data is not remembered (LJ)
+-- keeping both internal and external dataID and allow queries on both. When answering queries based on one other should be inferred as well.
+
+
+GoldelTrail URL: http://kelor.genomecenter.ucdavis.edu:8080/GoldenApp/GoldenApp.html
+
+
+

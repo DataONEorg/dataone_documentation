@@ -1,0 +1,126 @@
+Workflows Meeting - July 5th, 2011
+7am PST, 8am MT, 3pm GMT, Tuesday, July 5th.
+
+Present: Richard, Bill, Bertram, Rebecca, Karthik
+
+Tasks for the coming week:
+   * Finish mining myExperiment for Tier 1/2
+   * Put up a summary of the OKFC on the blog.
+   * Write up draft post about RDF/SPARQL issues.
+   * Go over the data and see if anything is interesting. Blog about it.
+   * Appraise whether its worth going over the other tiers, and what to do for the next two weeks. 
+   * Continue sorting papers on Mendeley
+   * Work on the draft for Understanding Workflows.
+
+Report from previous week:
+   * Open Knowledge Foundation Conference (Berlin)
+   * Karthik/Richard R code discussion
+   * Update on mining process
+   * 'Understanding Workflows' document thoughts
+
+Minutes
+Richard: Basically, I've been doing the code by hand, and copied and pasted 50 workflows into an excel sheet. However, using Beautiful Soup, it should be able to rip everything off of the source code of the website and put it into an excel sheet without taking the time to sit there and copy it. This means that we don't need to mess around with SPARQL and RDF at all, and can just use the website. Sorry that I didn't realise this earlier, but this should streamline it. 
+
+Richard: Was a good conference, not really sure how much detail you like about that.
+
+Rebecca: A summary would be great - a one pager would be fine. 
+
+Richard: Ok, I'll put that up on the blog. That took up most of the week, being there, which was excellent. I spent a lot of the week working with/waiting for Karthik to make an R script to deal with the RDF of myExperiment.I've recorded the minutes of that conversation (they're in the main thing.)
+
+Karthik: The way RDFs are structured, it's very free form compared to a standard SQL database. RDF is designed to query unknown relationships, so you can do all of these complex joins you can't do in a normal database, and so it's very hard to wrap your mind about what the fields are before you can query them. At some point, SPARQL is just taking too much time. I have an R script that takes all of the RDF data into a file, so we can do stats on it, but as I don't know how it is structured, we can only pull it down as it is. I spoke to someone who works on RDF, and asked if there was a way to put that into a .csv, which would let me push that into a database. And their impression was yet it's possible, but it's really not recommended, because of the way an RDF is structured. So I pulled off a lot of RDF and sent that to richard, but I'm glad that richard is able to scrape. Hopefully in the next few days I'll be able to give Richard something he can work with.
+
+Bertram: I'm not surprised about the toubles with SPARQL. I myself am a bit skeptic about this stuff. I am willing to go along with new stuff. I'm aware that there is one table, withthe columns, everything is a triple in RDF. You can just as well do SQL. But it's too hard. It's an unstructured mess, from which you try to unerstand the schema, and then write queries. I sympathise - this confusion isn't your fault. It might be worth documenting your travails for later. It confirms what I'm expecting about the hype for these languages - they're not as easy to query, and there are issues with the structure. 
+
+Richard: I've noticed this, as well, at the OKF Conference. Right, if you guys are in the main workflow analysis group epad, I've shared a link to the excel sheet with 50 workflows I've done by hand. It's not very pretty, but it's what I'll end up having from the html. This runs views, downloads, beanshells, etc. I'll have to look at the svgs for some things (like the embedded), but this will seriously help. As soon as I have the database, which should happen by tonight, should be really helpful. 
+
+Bertram: So, you're screen scraping. 
+
+Richard: Right. I'm just taking it out from the front end. 
+
+Bill: Some of these don't have titles, don't have updates, aren't tagged. Some of these might be reasonable, but say some don't have descriptions. 
+
+Richard: Yes. Some don't have these, and a lot haven't been updated. Also, #30 is Alan williams - all of his seem to be very basic, like convert string to list. What he's doing is not making demonstratable ones, but making ones which can be embedded. but the average downloads for his is only 80. This is going to be good stuff to mine.
+
+Bill: yes, this is quite useful. 
+
+Richard: I should have this stuff by tonight. I'm sorry I don't have any data to really go over right now. I could go over this, see what I can find - any correlations, anything like that - and blog about it. 
+
+Bill: Yeah, that would be interesting to look at for next week. This is great progress, especially if you can automate the screen scraping. That would work across all of the workflows. 
+
+Richard: Yes, that would work across every workflow.
+
+Bill: well, at that point, we should have enough data to do exploratory analysis. We can decide then what we can do for the higher tiers, whether it's worth going over a subset of those.
+
+Richard: Some of that stuff, like sufficiency of metadata, is minable. Others aren't, like the type. We should have four weeks to work this out.
+
+Bertram: I don't know how many rows you can load into that. You have a couple of thousand workflows at the moment. Are you thinking of loading it into a sqllite database? 
+
+Richard: I'll load it into either that or a .csv. 
+
+Bertram: It's powerful to use a spreadsheet, as it enables this sort of thing. But sqllite might be good, as well - if you have a question, I might be able to help, as well. Also, the groupby(?) has some errors, which I'll go over offline if you need it. 
+
+Richard: I'll put it into sqlite and talk to you guys about what I can do about that. There's some stuff I can't get offline this way, but I should be able to follow that up manually. 500 papers on Mendeley. So, really, it's just sort of analysis at this point. I'll start getting into that, as well. I should have more time to get into this over the next two weeks, as I'm not doing anything else, really. 
+
+Bill: action items for next week?
+
+Richard: Get this database down tonight, run some things on that, keep in touch if I find anything, do a blog about the conference, review the mendeley more. As far as the understanding workflows paper, do we want to make that a draft?
+
+Bill: I would suspect so. We might as well follow the format for the IECC anyway.
+
+Richard: That's due on the 25th of July, right?
+
+Bill: Yes. Might be good to think about what should go into that paper, as opposed to a paper down the road. You and Karthik might be able to help there. 
+
+Richard: What about the ASIST conference?
+
+Bill: That's not peer-reviewed. IECC is, so that should be good. There's a new journal which is looking for submissions, as well. Let me dig through (and Bertram to, as well), looking for possibilities. 
+
+Richard: I don't know what listserv this will be good to work under. Ecolog?
+
+Bill: There isn't a great one for this. Some of the ones - in this case - as most of the workflows aren't ecology. IECC, dlib is another one (they publish) - open source, good peer review, a fair amount of readership - they might be interested in this.
+
+Richard: PLoS Computational Biology?
+
+Bill: Yes, this might be a good one, sometimes it's harder to get some stuff into that. With this, PLoS might be a good one. 
+
+Richard: We missed the proceedings for OKC, because we were a late submission. It happens. Great. I'll do those things this week, and try to work to work on the Understanding Workflows paper. We don't need to ask David for help anymore, I think, now that we can scrape. Anything else?
+
+Karthik: At this point, I'm still gathering ideas on how to pitch this to an ecological audience. It's harder to get into the meat of any proposal until you ahve some actual data to look at. My goal is to have a fully fleshed proposal/outline when we meet. While we meet, we can flesh it out some more, and get down to writing it up.
+
+Richard: Sounds good to me, I don't think that'll be a problem. Let's keep working, and keep us updated on that. 
+
+Bertram: On that note - any logistics information I should start collecting?
+
+Rebecca: I have requested that we get hotel reservations. Sounded like i changed that to hotel plus meeting room. I don't think there'll be much in the way of logistics. Bill, Richard have plane reservations, I still need mine. 
+
+Bertram: All day Friday and Saturday - two full days.
+
+Rebecca: As soon as I get rsv. numbers, I'll pass them on. 
+
+Bill: Wireless is at the hotel. 
+
+Bertram: I'll drive west - haven't decided which way I'll go (might take Amtrak.) I'll let you know as we get closer. 
+
+Bill: Great. Sounds good, looks like we're making good progress. This is good to see.
+
+Richard: Yeah, and we still have another week or so until we have the data collection cut off. Now, when are we meeting next week?
+
+Tuesday 12th - 1PCT, 2MT, 9GMT 
+
+Bill: Sounds good. 
+
+Richard: I'll be in contact/blogging over the week. 
+
+Bill: We can shadow over the weekend/during the week. I'll be on PCT all this week, and should have time to help.
+
+Rebecca: I have the password for your UNM account, Richard.
+
+Richard: Great. If you could send that, I'd appreciate it. 
+
+<goodbyes>
+
+
+
+
+
+

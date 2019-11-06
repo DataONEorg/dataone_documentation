@@ -1,0 +1,286 @@
+1 DECA -> identify datasets (and ecological concepts) 
+2 PAUL+DECA -> mini-design phase - analyses (and break down the analyses/activity into smaller parts)
+3 PAUL -> program or create documents
+4 DECA -> review documents or try the new SP components
+5 repeat until done
+
+
+===========================================
+
+TAKE HOME FOR PAUL:
+
+ * must be able to see the real data somehow (as a visualization output--just a sample)
+ * be able to export pipe data (not as a visualization output)
+ * Look at LIMPETS web site
+ * include uncertainty visualization (variance)
+ * 
+ * 
+ * Feature Requests
+   * save-as option
+   * larger file saving capacity
+   * Multiple-selection (such as hold-shift selection)
+   * Options for number of plug-ins.  Instead of a set number like 4 'In"s, An ability to make it larger (This would make it easier to create graphs with greater than 4 series)
+   * Ability to change axis units to values other than numeric data (f.e. months as units, days as units. etc).
+   * Analysis Options
+     * sampling options - a tool for drawing subsets of the data (bootstrapping). 
+
+
+Sure-fire dataset/concept for DECA mtg Day 1
+--------------------------------------------------------------
+
+DEMOGRAPHY
+
+Data: name/code, gender, birth, death, age
+QC: 
+- data is bad if age is > 115
+- data is bad if age is < 0
+- look for duplicate records
+
+Analysis:
+-- create histogram by age
+-- survivorship curve
+-- separate male vs female
+-- separate into eras by date of birth < 1850, 1850-1900, 1900-1950, > 1950
+-- other categorical fields
+
+How to look at epidemics? Diseases? wars? vaccines?
+
+--------------------------------------------------------------
+Day 2 Discussion
+--------------------------------------------------------------
+ 
+ Denny
+ Forest Inventory Dataset
+
+
+===========================================
+
+I wasn't at the Ecology Education Summit that Teresa and others organized this fall, but I see that the proceedings are now online. These appear to touch on some crowd-sourced ideas about what makes environmentally literate students and citizens:
+http://www.esa.org/eesummit/content/proceedings
+
+Ecological Concepts:
+ * Latitudinal gradients
+ * Demography
+ * Population size estimation
+ * Species-Area 
+ * Diversity:Ecosystem Function
+ * range shifts and climate change
+ * Sucession-Restoration
+ * Ecological Services
+
+Educational Outcomes:
+ * Understanding and interpreting visualizations (Bibit or Barb?)
+ * What datasets are available, what can you do with data? (Ken)
+ * Process of science (Sam)
+ * Computational reasoning (Sam)
+ * Hypothesis generation (Bibit)
+
+Driving Questions:
+
+Datasets/Analyses:
+ * Graveyard demography (Ken)
+ * VegBank (Ken)
+ * LTER datasets (Ken)
+ * 
+ * 
+===================
+DAY 2 MEETING NOTES
+===================
+
+Day 2 - Denny
+ * Forest Service - Forest Inventory and Analysis dataset from NEON/ESA collaboration (Ken, Denny, Bibit)
+   * http://apps.fs.fed.us/fido/    http://fia.fs.fed.us/tools-data/
+   * The Forest Inventory and Analysis Database Version 4.0: Database Description and
+            Users Manual for Phase 3: http://www.fs.fed.us/nrs/pubs/gtr/gtr_nrs61.pdf: Describes the structure of the Forest Inventory and Analysis Database (FIADB)
+4.0 for phase 3 indicators. The FIADB structure provides a consistent framework
+for storing forest health monitoring data across all ownerships for the entire United
+States. These data are available to the public.
+   * Analyses: diversity indexes, size-age histograms
+   * Concepts/questions: succession, biodiversity
+   * Issues: Are data standardized? by area, I think
+   * Plot tree inventory, DBH, species, age
+   * Denny to delve into this after April
+
+Day 2 - Bibit
+ * http://www.piscoweb.org/data (Partnership for Interdisciplinary Studies of Coastal Oceans )
+   * Also contain LIMPETS datasets
+   * Community ecology: location, depth, functional groups, species data, seasonal, competition, predator, prey, fisheries data, reserve networks, pathogens,
+   * Diversity: indices, biogeography
+   * range shifts & climate change
+   * population viability (size distribution, fecundity, productivity)
+   * predator/prey 
+   * recruitment
+   * using species data as indicator of marine impact
+   * invasive species
+   * succession and community ecology
+   * functional 
+   * Population Connectivity
+     * Barnacle Fecundity Monitoring
+     * Recruitment Monitoring
+   * Issues: Comparable Atlantic and gulf coast datasets? http://ccma.nos.noaa.gov/ecosystems/estuaries/elmr.html, http://oaspub.epa.gov/coastal/coast.search
+   * Strategy
+     * Maybe look for educational materials already created and add SciencePipes data anlysis tool capability
+     * Try to engage PISCO/LIMPETS project principals for suggestions/help/support for accomplishing DECA tasks (Bibit to followup)
+     * Important to use this data to bring in represenation of marine ecology
+     * 
+
+Day 2 - Colleen
+ * USGS Breeding Bird Surveys https://www.pwrc.usgs.gov/BBS/
+   * status and trends of North American bird species
+   * estimate relative abundance at different geographic scales
+     * I know a community college faculty member from New York who first had her Ecology students look at the NYS Breeding Bird Atlas to look for examples of species whose numbers had dramatically increased or decreased over the 20-year interval between surveys. However, the BBA data has nice visualizations/maps, but doesn't make it obvious how to see the raw data, and doesn't give actual population estimates.
+     * So, to adapt the lesson, she then had students select a species that had increased in numbers, and use the numbers from multiple years as datapoints to plot a growth curve for the species, looking for evidence of logistic growth patterns.
+   * Concepts/questions: 
+     * Population trends, logistic growth models
+     * Could also be used to teach about management/monitoring of bird populations, and identifying conservation priorities
+ * Or possibly Breeding Bird Atlas project data (more diffuse, collected state- and province-wide). Overall summary of projects, linking to different sites with their data and maps: http://www.pwrc.usgs.gov/bba/
+   * Issues: BBA data not standardized across states?
+
+Day 2 - Sam
+To provide a contrast I'm focusing on a couple of data resources that deal with data at the population level. These are also different because they are relatively small datasets and they are in hand. 
+ * Project BIRDD - Darwin Finch
+   * http://www.bioquest.org/BQLibrary/library_details.php?product_id=177
+   * http://seamap.env.duke.edu/species
+   * Variability, descriptive statistics, measurements of individuals, correlations with song characters, character displacement?
+   * 
+   * morphology, DNA sequence data, vocalization data, weather/climate, skeletal data
+   * least common denominator of measurements taken (~6700 specimens) wing length, beak height, upper beak length, nostril to upper beak length, sex, island, genus
+   * island data: area, max elevation, number of species: ferns, flowering plants, land birds, finches
+   * can generate finch occurrence matrix
+   * find and bring in land cover data
+   * Analyses:
+     * descriptive stats of measurements
+     * Visualization
+       * bar charts w/error bars 
+       * scatter plots -- plotting individual specimen, colorize by species, genus, island
+       * histogram (morphological measurement on X, number of individuals on Y access)
+       * 3D scatter plots
+     * geospatial relationships
+       * presence/absence 
+       * patterns of distribution amongst the islands
+         * correlate diversity with 
+           * islands characteristics (area or elevation of island against total bird/plant/finch diverity and/or description stats of spp)
+           * correlated with other island characteristics (height, plant species, habitat diversity)
+           * isloation/nearest neighbor
+           * habitat 
+         * Visuaization
+           * gospatial heat map of a particular index (e.g., number of species)
+     * characteristics of beak correlated to characteristcs of song
+
+ * Rocky Mountain Biological Lab 
+   * plant phenology since 1970s
+   * weather station data
+   * marmot phenology
+   * 
+
+Day 2 - Barbara
+ * Climate (NCEAS/Neon/ESA collaboration) Actually the US Historical Climatology Network http://cdiac.ornl.gov/epubs/ndp/ushcn/ushcn.html
+ * NationalAtlas.gov
+
+Day 2 - Beverly
+ * algae and algal blooms
+ * http://nyglrc.info/
+
+Votes for Day 2 PM focus
+
+ * 2) Forest Service Inventory  ++++
+ * 2) Pisco ++++
+ * Breeding Bird Survey+
+ * 1) Darwin Finches +++++
+ * 3)Rocky Mountan Biological Lab +++
+ * Climate Data++
+ * 3) National Atlas+++
+ * Algae & blooms
+
+
+
+ORIGINAL WEBINAR BRAINSTORM
+----------------------------------------------------
+ * Slightly tangential, but a possible example of combining hands-on research on virtual museum specimens with database research: http://csip.cornell.edu/Curriculum_Resources/CSIP/Ardia/default.html
+ * Mark-recapture population estimates
+ * Species occurrence in ecological regions (WWF WildFinder)
+ * Species observations (bird observations, Avian Knowledge Network)
+ * VegBank  - if interested, contact Bob Peet  peet@unc.edu  Point taken!
+ * USGS Breeding Bird Surveys https://www.pwrc.usgs.gov/BBS/
+ * LTER 
+   * Hubbard Brook, Mirror Lake LTER data
+   * http://metacat.lternet.edu/das/lter/index.jsp
+ * microbiological data (soil community ecology--contact Mary Firestone, Elaine Ingham; about this--Bibit)
+ * macroinvertebrates (aquatic?)  EPA?  Need to investigate this.
+   * Catawba Watershed - http://cfpub.epa.gov/surf/huc.cfm?huc_code=03050101
+ * (Discover Life -- bees?)
+ * diatoms-contact Gene Stoermer
+ * water quality - EPA has data. Check out A National Program for Monitoring Stream Condition in the Western United States  http://www.epa.gov/nerlesd1/land-sci/water/streams.htm
+ * cyanobacteria blooms and environmental data (generalize to all HABs)
+ * http://limpetsmonitoring.org/ - LiMPETS (Long-term Monitoring Program and Experiential Training for  Students) is an environmental monitoring and education program for  students, educators, and volunteer groups. 
+   * This data seems to also be available via the PISCO system
+ * CO2 versus temperature (Muana Loa HI)
+ * paleo climate data: http://www.ncdc.noaa.gov/paleo/globalwarming/paleodata.html
+ * Check out EcoTrends project data  http://www.ecotrends.info/EcoTrends/  PI wrote letter of commitment to help this project.
+ * Centre for Population Biology http://www3.imperial.ac.uk/cpb (Denny)
+ * Herbaria (NYBG http://sciweb.nybg.org/science2/summary.html ).  Generalize all collection data.
+ * EOL
+   * ecological interactions - trophic webs, etc.- Jeff Holmes is working on this
+   * bioblitzes - http://education.eol.org/bioblitz/
+ * NBII data (birds and other systems): 
+   * http://www.nbii.gov/portal/server.pt/community/ecological_topics/215
+   * http://www.nbii.gov/portal/server.pt/community/bird_conservation/460
+
+Effective Models for Teaching with Data (links):
+
+Questions for the Project Leaders:
+ * What process did the Crossing Boundaries project use to determine which components they wanted developed?
+ * What is the evaluation plan for this project? Or, more simply, how will you determine if you've succeeded in your original goals? Just wondering so we can shoot for this with our discussions.
+ * I think you also mentioned high school teachers as an audience. How/when will their needs be included in the project?
+
+Parking lot
+
+examples of data summaries
+ * This is an example of a handout used to get students engaged in thinking about a big dataset (about 700 sequences).
+   * http://bioquest.org/bedrock/problem_spaces/hiv/hiv_data/Markham_dataset_sum¸mary_and_refs.pdf
+   * http://bioquest.org/bedrock/problem_spaces/hiv/index.php - the home of the unit.
+ * This is an example set of handouts to help students orient to Galapagos system and the types of questions students can approach. I usually do this as a 4 page handout that they look over to look for patterns. 
+   * http://bioquest.org/birdd/island.php
+
+
+
+   * Barb second day - new sites
+http://nationalatlas.gov/
+
+The national atlas site has both data downloads and mapping tools.
+
+http://www.nass.usda.gov/index.asp
+
+This site has geospatial data on land use practices.
+
+http://landcover.usgs.gov/landcoverdata.php#na
+
+lots of links USGS land cover institute
+
+
+Next steps:
+Paul 
+    - work with Demography and BIRDD to storyboard
+    - publish ppt on sciencepipes.org for general consumption DONE
+Bibit - follow up on PISCO
+Denny - follow up on FIAS
+Barbara - follow up with Discover life & USGS Bee lab
+
+Next Meetings:
+Do a doodle
+
+What do we have in hand in early May? Written documents about 2 datasets.
+Alpha pipe for demography in June. Alpha pipe for BIRDD in mid summer.
+Early summer start 3rd and 4th examples - because it will require some lead time.
+
+August ESA in Austin - as a target. Abstract has been submitted.
+Maybe do a late-breaking poster from this group.
+
+April - skip
+May - 
+June meeting - focus on next dataset
+ * Bibit not available last two weeks of June
+ * Barbara best mid-May to mid June
+July - 
+Aug - 
+

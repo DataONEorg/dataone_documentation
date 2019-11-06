@@ -1,0 +1,200 @@
+New Website Feedback
+
+Please use this page to document feedback on the dataone.org website redesign (http://dataone-beta.nmepscor.net/ ).
+
+Note: the functionality is essentially there although many new pages still lack content, others need editing (they were migrated from the old site) and others have latin text placeholders.  We are aware of these and they generally do not need to be commented on, unless you have a specific edit that is recommended.
+
+Below is a list of the primary pages for you to provide feedback.  When giving feedback on other pages, please set the URL as the section header and then use bullets to list comments beneath. 
+
+Pages available in hardcopy poster format are indicated with  ***
+
+
+General comments about the site:  Most importantly, the design looks dated. 
+The mobile version is unreadble and could benefit from a sepeate mobile-css (any designer can handle this). Fonts and headings are inconsistent. On one page alone, I saw 6 different font sizes that make heading hierarchies hard to distinguish.
+Bread crumbs need to be more visible and markers on the top menu would help users keep track of their navigation.
+Go button looks very unprofessional and dates the site to 1999. Make it a css styled button that will flow appropriately based on the device (desktop, ipad, phone etc).Heck, the search box doesn't even need a go button. See this gorgeous example at the top here: http://www.kickstarter.com/
+We're in 2011 and it would be great to use webkit fonts that would make the site pop.(e.g. http://stiern.com/articles/usability/usability-in-icons/ )
+
+
+General Comments (applies to multiple pages)
+ * I think the plum dominates the color scheme too much.  Maybe should key the complements off not the darkest teal, but a middle tone that's in the logo (agree with others that it comes close to black for me - just the tabs and news feed bar.  It's good for text color).
+ * White space around search box and social icons a strange shape.  Search box not aligned with anything.
+ * RSS icon not working - would rather see all icons on the footer of home page instead of the top.  (that's where people generally look for it).
+ * The pop-up submenu for the plum-colored section tabs are slow to react, specificly, slow to go away after  "mouse-over" is done.  It slows down navigation and is likely to annoy.
+ * I would prefer the link lists at the bottom of the home page and left bar (items under About, Participate, Products, etc.) to be in gray (with mouseover highlight in one of the color-scheme colors) because the switch between teal and plum is a little too much in terms of hue contrast.
+ * Overall I think it would be good to use more variation in color value to create visual hierarchy, and strategic substitution of grayscale text to allow the colored items to stand out more.  Too much use of color means that you lose some of the potential visual hierarchy.
+ * "Go" button is a bit ambiguous.  "Search" might be better.
+ * Perhaps put "Search DataONE" as text in the search box to make it clear that it is a search box. 
+ * I confess - Plum is non-plussed by me. For some reason it just seems too close to black that my old tired eyes (and mind)  get distracted wondering if my monitor is losing is color calibration.
+ * Are you testing the page templates for universal design / accessibility for people with disabilities? Best to do this early in the design process. I can help if needed (sandusky@uic.edu)
+   * Good point.
+ * I like the overall navigation scheme and design.  Very public friendly.  
+ * Really are going to have to have content managers refreshing the main scrolling images at least monthly.   
+ * Would be nice to see what the RSS feed is for... is there one feed for edits for the whole site?  One separate ones for news, info from each working group, etc?  or ???  I think having different RSS feeds i <-- I agree with this confusion.
+ * [BEW] from a usability perspective, I don't like overriding the visited link color.  Admittedly, this is something that is less commonly followed than before, but it is useful at times to be able to see what links on a page have been visited.
+ * Seems to work well on an iPad.  
+ * General observation: Clean design.  Intuitive.  Overall information architecture makes sense.  
+ * Some inconsistency that the "Products" heading on the home page is not a link, but it is a link for the menus on the content pages. 
+ * Clicking on the products menu on a content page takes you to the ONEMercury page, instead of a product page.  This is generally an issue for the navigation menus on the content pages -- clicking on the top level menu takes you to the first menu item on that list.  For the About menu, this leads to a page that makes sense, for the Participate, Products, Education, and Data menus, the resulting pages don't make sense in context.  We need pages (I think) for each of these four top level menus.  We could disable them as links, but it makes more sense to me to have content for these top levels.  
+ * When a search results in no results, there are several problems on the "no results" page: 
+   * too little space between the search box and the text "Your search yielded..."
+   * search button is below the search box instead of online with it.
+   * there are two search boxes! (one with a "go" button, and one with a "search" button
+   * the examples of how to search include the words "bike shed". how about something more scientific?
+   * the links to social networking sites show up as broken images (this also happens when a search is successful)
+ * On an iPhone in portrait orientation, the main page needs to be zoomed in order to read any text.
+ * On Safari (OSX), clicking on one of the plum-colored top-level menu items brings me to the first page in the list.  For example, clicking on "Education" brings me to "Training Activities".  There does seem to be a main "Education" page, however; If I go to "Education Modules", I can click on the "Home -> Education" link at the top of the page.
+ * It seems the Find it Fast menu should be at a consistent place on all the pages.  Currently, if the other menus get long, it can get pushed down and no longer visible.
+   * Agreed.  There is no distinction between the different left-side submenus so it is difficult to know which will be there across all pages and which are specific to the current page.
+
+***Home Page (http://dataone-beta.nmepscor.net/ )***
+ * Too busy. Background unnecessarily dark. Needs wider margins for the left and right sides. Social media icons too black - maybe a different set (maybe use the standard colors for these icons). Curve the corners for the content section - use HTML5 with an IE plugin, will allow for people to look this up on their smartphones/iPads. Currently looks a bit like it came out of a wordpress/drupal template. The rolling feed is nice. The search 'Go' button needs updating, somewhat pixelated. Not large enough to justify the scroll down - make the headers larger, and the lists fonts bigger, for the main section of links - otherwise most people are going to be squinting a lot, and rolling down needlessly. Again, too crowded. Back banner is invisible given the current setup - make the white background 95% opaque, or make the back banner smaller, or lose it. Unclear what the RSS is doing - is it for the whole site? Put shadow effects on the outside border, otherwise it looks a bit static. Coming soon ribbon could be in a content box, which would allow for rotating images for different products, and negate the need to edit the picture file. More orange on this page! It's the natural complement of teal. Center the bottom information. it's unclear what ONEMercury is from this site - looks like that is our only product. More margins between center images. Needs to be clearer Login information ---  where is it? Load time is slow. Div tags mean that some parts disconnect on scaling down or up - make an overall content div with a white background to fix this. Picture text for the scrolling part loads after everything else, then gets positioned - might be worth looking into. 
+ * Does not scale at all for smartphones.
+ * Search hard to see against white background
+ * Having the navigation change from home page to subpages makes navigation through site difficult compared with consistent primary navigation on all pages in same location
+ * May want to consider emphasizing data portal for data consumers by having a obvious entry point (button) to ONE Mercury... and do we know users will know what one mercury is? Maybe rephrase as data portal or Get data or access data...
+ * Agree with this comment; it would be nice to emphasize the ability to get data and get this from the home page.
+ * Add tag line to logo to explain what DataONE is quickly
+ * What's a product? Product names not self evident
+ * Avoid acronyms on home page... what is a DUG? DUG acronym in home slider image not self explanatory.
+ * Our subgroup disliked the moving crawler
+ * Top headings on home page for products etc. should be links to landing for each category
+ * News ticker -- it adds an unneeded sense of urgency -- I have to click on something before it scrolls away (in contrast, it's great that I can mouseover the circles below the featured image, and see what all of the images are). It would be better to have the 5 latest headlines listed on the page, with a link to the full news page.
+ * the words "Latest News" should be clickable
+ * Is the search box going to search over *data*? Or just the website content? It is important for people to have access to data directly from the home page. (Perhaps add a radio button that would allow users to switch between data and website searches, or even include both types of information on the results page)
+ * Name for the search field (context) and instead of "Go" use "Search". Also, align the input field and the button
+ * The About menu -- the options listed here don't make much sense to someone unfamiliar with the project. What is the difference between Working Groups and Partners? Why would I use the Communication link (actually, as a project member, I don't understand this one...)? Is Communication different than Contact Us?
+ * The One Mercury Graphic does not 
+ * Clicking on the title of the picture goes to the Latest News page, which seems surprising.  Clicking on the picture itself goes to a 404.  They should probably both go to the same place.
+
+
+About>What is DataONE ( http://dataone-beta.nmepscor.net/what-is-data-one )
+ * Too long... provide a shorter summary a top first.
+ * A wall of words. Break up with some headings and graphics
+ * the graphic under the 3rd paragraph shows as a broken image
+ * "Data Observation Network for Earth (DataONE) is poised to be the foundation..." Uhhh, I thought this page was going to tell me *what it is*, not give me a bunch of marketing drivel! Why not adopt wikipedia-like language? (e.g., "DataONE is a federation of data repositories....") As far as I can tell, there's nothing on the page that tells me What Is DataONE? +1
+
+***About>DataONE Organization ( http://dataone-beta.nmepscor.net/organization )***
+ * Too much detail for most audiences... however, the schematic is good approach. This org chart may or not be helpful to certain audiences... 
+ * Why is the NSF box the same color as the menus? It's not clickable...
+ * ".... foundation for excellence is the expertise and established partnerships...." Sounds like a used-car salesman.
+
+About>Working Groups ( http://dataone-beta.nmepscor.net/working_groups )
+ * Provide short bullet for each working group as desciption of what each group is about in addition to the link to each subpage. Images take up too much space and the list duplicates what is provided in the left navigation.
+ * Where the titles of working groups spill over to the next line, indent so it's clear that the second line is not a different group
+ * Working groups are composed of, not comprised of.
+
+About>Partners ( http://dataone-beta.nmepscor.net/partners )
+ * The dataone-network image may contain the only pictoral overview of participating organization (might not ;-).  Would be nice if clicking on SAEON would provide more information, for example.  Not everyone will understand the acronyms.  
+ * The text in the map images is too small for most to read, and a higher res image is not available with a click.  How about an honest-to-goodness google map, replete with markers and whatnot, instead?
+ * Spell out MN, CN abbreviations in the title
+
+About>Communication ( http://dataone-beta.nmepscor.net/communication )
+ * How does this differ from public relations?
+ * the left-hand menu has a link to the nonexistant page http://dataone-beta.nmepscor.net/data-one-graphics
+
+About>Contact Us (http://dataone-beta.nmepscor.net/contact )
+ * The catagory popup list is a jumble of unrelated items.  Consider a non-alphabetical order, and grouping the working groups together  (Working Group X, instead of X Working Group)?
+ * Mailing address should contain DataONE somewhere in it.  (We don't have the entire building :-)
+ * The "send message" button is wierdly placed on the page,
+ * The text "Message" appears at the upper-right corner of the box for typing a message (when viewed with Chrome on OSX).
+   * Same issue on Safari on OSX
+ * Why should I choose a category for my request? I don't know which one to choose. Can't someone on the other end do the routing for me?
+
+Participate>DataONE Users Group (http://dataone-beta.nmepscor.net/dataone-users-group )
+ * 
+
+Participate>Member Nodes (http://dataone-beta.nmepscor.net/member-nodes )
+ * 
+
+Participate>Internships (http://dataone-beta.nmepscor.net/internships )
+ * Should link to the interns notebooks. 
+
+Participate>Developer's Resources (http://dataone-beta.nmepscor.net/developer-resources )
+ * Would be good to see a link to the design and architecture documents on this page.
+
+Participate>Open Positions (http://dataone-beta.nmepscor.net/open-positions )
+ * "Open Positions" for some reason does immediately spell "employment" to me. Consider "Employment" or "Work for DataONE" as alternatives
+
+Participate>Events Calendar (http://dataone-beta.nmepscor.net/events-calendar )
+ * 
+
+Products
+ * Links from left-side panel are not working.
+
+Products>OneMercury (http://dataone-beta.nmepscor.net/content/one-mercury )
+ * The navigation to this page is "OneMercury" but the icons I have seen are "ONEMercury."  Consistency in branding is important.
+
+Products>Investigator Toolkit (http://dataone-beta.nmepscor.net/investigator-toolkit )
+ * 
+
+Products>Data Management Planning (http://dataone-beta.nmepscor.net/data-management-planning )
+ * 
+
+***Products>Best Practices (http://dataone-beta.nmepscor.net/best-practices )***
+ * Is the search supposed to work here?  I tried searching for a tag and didn't get any results.
+ * The "Go" button is placed in an odd location (off to the right and disconnected from both the search box and the tag list).  It also has a white box outline around it which doesn't look good.
+ * What is the point of the tag list on this page (search area)?  Could this be implemented as a completion list instead (e.g. if you start typing "a", it shows a drop-down list with all tags that start with "a")? Implmenting search-assist would be better. Also, is there any reason why we would need to have many search input boxes? With only one search input box, search assist, and conext-based search the same can be achieved.
+
+Products>Software Tools Catalog (http://dataone-beta.nmepscor.net/software_tools_catalog )
+ * 
+
+Products>Repository Directory (http://dataone-beta.nmepscor.net/repository-directory )
+ * 
+
+Products>Publications (http://dataone-beta.nmepscor.net/publications )
+ * Recommend this be embedded from a Mendeley group (or similar) so that people can easily add the papers to their libraries, follow as new publications are added, find others who are interested in similar publications, etc.
+ * Subsection for a) Publications by DataONE and b) Additional Publications about DataONE
+ * Will we include slidedecks as publications as well?  Preprints?  Datasets about DataONE?  Would definitely advocate for an inclusive approach, with tags to differentiate if necessary.
+
+***Education>Training Activities (http://dataone-beta.nmepscor.net/training-activities )***
+ * Has the relevant information in an uncluttered format.
+ * I like the upcoming event structure better than the past (three lines, one with the location/conference, one with the name and link, and one with the date and time).  Everything is rolled into one line for the past events.
+ * Color change on hover on the "Upcoming Trainings" heading makes me think it is a link, but it doesn't seem to be.  Same for "November 2011", "2011", and "2010".
+ * It seems like the "Upcoming Trainings" heading should be larger than "November 2011" since it contains it.
+ * Could there be a calendar on this page?
+ * "Trainings" sounds strange to me.  Would "Workshops" be a better term?
+
+Education>Education Modules (http://dataone-beta.nmepscor.net/education-modules )
+ * 
+
+Education>Graduate Courses (http://dataone-beta.nmepscor.net/graduate-courses )
+ * 
+
+Data>Find (http://dataone-beta.nmepscor.net/find-data )
+ * 
+
+Data>Contribute (http://dataone-beta.nmepscor.net/contribute-data )
+ * 
+
+Data>Cite (http://dataone-beta.nmepscor.net/citing-dataone )
+ * Page describes how to cite DataONE, but needs to at least reference information about how to cite data in DataONE (which is a matter largely under the control of the data orginators and/or the source member node).  N.B. Bruce Wilson is working on this page.
+
+Data>Use (http://dataone-beta.nmepscor.net/use-data )
+ * It is unclear that the data and the tools are links to each other. Content in child pages are a bit isolated and could be better cross linked.
+ *  
+
+Search Results
+ * social media icons do not have the pics attached. (BEW: Concur.  I see this as well).  The problem is that the links were inserted as relative links (src="../images/rss-icon.jpg") rather than as src="/images/rss-icon.jpg").  This works for all top level pages (e.g /content/onemercury, but not for pages that are two levels down, like /search/node/onemercury)
+ * After clicking one from the list, lost my search criteria. can we carry forward the search criteria if i am still the search/search result pages?
+
+Left-side Panel
+ * Is it possible to have tree instead of just a set of links. I was getting lost (trace..) and was hard to go back to the page where I started.
+   * Some pages have a hierarchy listing at the top of the page, though others seem to be missing this (e.g. Training Activities).
+
+Home Page
+·         Will you have “Coming Soon” label all the time as the image behind it replaced by the next coming thing?
+·         For “Coming Soon” item, it would be good to include a live link to a brief introduction
+·         Search window at top of page – will it search both site information and data? Would be good to provide option to users and clearly indicate what is to be searched for.
+·         The word Products is a little confusing. I think of Data Products when I see that word. The items listed under it are all outputs (or deliverables) of DataONE. I suggest a different word (if I knew what it were I would have said it here!)
+·         Products - In addition to ONEMercury, we should add ONEDrive and ONE R (if they are capabilities at the same “level”)
+·         Products – Also add “more…” at the bottom of the list and make it clickable to lead to a full list. 
+·         Data – should include “Data and Services” (web services that can operate on data)
+·         Not sure about definitions of Find and Use. These could be changed to Discovery and Access, respectively (if that is what is meant)
+·         Under the Latest News scroll bar, suggest including another scroll bar with high level “sales pitchy” metrics “DataONE Metrics”
+·         Provide portal for member nodes to view their metrics and product usage.
+·         On Member Nodes page, ensure that members nodes’ list is linkable. How will listing of member nodes be handled when DataONE grows to 1,000 nodes or more?
+
+Executive Team page
+ * These photos need to be replaced! Need much higher quality.
+

@@ -1,0 +1,101 @@
+
+EVA WG:  Subgroup on Visualization Techniques
+August 2, 2013
+
+Participants: Aritra Dasgupta, Steve Aulenbach, Yaxing Wei, Dan Ricciuto, Claudio Silva,  Forrest Hoffman, Bill Hargrove, and Anna Michalak, Debbie Huntzinger, 
+
+not able to participate:   Chrisopher Schwalm,
+
+Teleconference:  
+Toll Free Number:  866-703-9626 
+Pass Code:  767574 
+
+WebEx:  
+https://edss.webex.com/edss/j.php?ED=228797252&UID=1629826952&PW=NM2YzMDQzMDgx&RT=MiMxMQ%3D%3D 
+Password:  20130802
+
+
+Agenda
+
+1.  Update on EVA activities
+2.  Visualization Techniques
+3.  other topics
+4.  next teleconference
+
+
+Notes
+1.  Update on EVA Activities
+
+ * Next EVA Working Group Meeting is October 22 - 24, 2013, Albuquerque, NM
+   * Travel will be covered by DataONE 
+   * Logistics will be announced in next few weeks
+
+ * Integrated Model Intercomparison  Framework - Yaxing
+    Download VisTrails Package: https://github.com/yaxingwei/imif
+    Download VisTrails Package Help Docs: https://github.com/yaxingwei/imif-doc
+   * VisTrails Modules Development 
+     * DataONE Summer Intern, Fei Du, Univ. of Wisconsin
+     * 4 groups, 24 modules, including modules developed this year and last year (by Jorge Poco)
+   * UV-CDAT Development 
+     * Aritra Dasgupta,  DataONE Post-Doc
+     * Building functionality of visualizing complex multidimensional data within UV-CDAT.  Multidimensional data includes multiple variables (primary production, biomass, nitrogen sources) on maps (lat, long), over time.  The functionality includes parallel coordinates, multi-projection plots, stacked bar charts, heat maps, and bubble plots etc.  
+
+ * Similarity - Aritra
+   * for those who can attend, we will have a call on Tuesday, August 6 at 2 pm EDT
+     * visualization-enabled analysis of climate model similarity, addressing the question are results from different models (or models and observations) similar.  The approach in this activity is to use multidimensional projections / dimensionality reduction algorithms to understand similarity and investigate in detail, why, where, and when models are similar.
+
+2.  Visualization Techniques
+   * One part of this activity was to collect figures (maps, scatter plots, bar charts, line plots) from the literature and critique the effectiveness of these plots. See  URLs:
+     * Maps:
+       * https://docs.google.com/forms/d/128_rxkhsVsF2C3n1osZKrHuMxls62J55ek4BzF6cn4o/viewform
+       * https://docs.google.com/forms/d/128_rxkhsVsF2C3n1osZKrHuMxls62J55ek4BzF6cn4o/viewanalytics
+
+     * Scatter Plots
+       * https://docs.google.com/forms/d/1Uu0as_-VqpwqUnyIrAhxM93lvmdCTx6Bz1uldXDvJ9g/viewform
+       * https://docs.google.com/forms/d/1Uu0as_-VqpwqUnyIrAhxM93lvmdCTx6Bz1uldXDvJ9g/viewanalytics
+
+     * Line Charts
+       * https://docs.google.com/forms/d/1Z0FQB4OYt4QchTB0BKFTr9paw0DegA3CMbkp2_4muEM/viewform
+       * https://docs.google.com/forms/d/1Z0FQB4OYt4QchTB0BKFTr9paw0DegA3CMbkp2_4muEM/viewanalytics
+
+   * The other part of this activity is to have the EVA WG (researchers and visualization experts) pick representative visualizations and develop alternative methods for visualizing the data.  
+   * Ultimately the group will develop a set of best practices for visualizing complex data.
+   * 
+
+Some notes on map reviews
+MapD2: 
+- spatial distribution of model GPP mean and spread
+- links between magnitude of GPP and its spread
+
+MapU3:
+- one model two different variables
+- 
+
+MapMorton2
+- compare temporal correlation betwee BA with different climate drivers
+- link different maps together
+
+
+alternative structure of this survey
+    blind survey
+    ask the originator to describe their intent and the specific set of conclusions
+    ask a group of researchers the same thing:  general and specific intent of the visualization
+    compare originator's and the group's responses
+    need to have the originators provide the general and specific and then compare the group of researchers 
+
+The responses to the current survey is helpful to create a category/taxonomy of visuliazation intents (or usages). Combined this survey with some "blind survey", we will be able to achieve the purpose of "taxonomy of design problems"
+
+
+4.  next teleconference
+ 
+options:
+ 
+Tuesday, August 27, 2013
+ 
+Wednesday, August 28
+ 
+Thursday, August 29
+
+
+DataONE EVA pbWiki: http://dataoneeva.pbworks.com
+

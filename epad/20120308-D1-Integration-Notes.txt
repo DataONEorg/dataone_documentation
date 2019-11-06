@@ -1,0 +1,43 @@
+details on authorization test design:   
+  - http://epad.dataone.org/20120130-AuthorizationTestingDesign
+details on how to run d1_integration &
+ deploying a new MNWebTester: 
+  - https://repository.dataone.org/software/cicore/trunk/d1_integration/README.txt
+
+The current status with integration testing:
+1. MNTier tests have been run many times, and bugs shaken out of the tests.
+
+2. the MNWebTester has been fine-tuned with regards to better formatting of multi-line output from the tests, and given an option of which level to test up to (this should save time for Tier1 Member Nodes being implemented)
+
+3. I am currently running and shaking out bugs in the CNTier tests, which can be run in solo CN mode.  Tier1 is pretty solid, Tier2 authorization is mostly complete.  Tier2 Identity is minimal, because we can't exercise account creation and updating in a continuous manner.
+
+
+Managing Test Context
+----------------------------------
+
+
+MemberNode requirements for MNWebTester
+-------------------------------------------------------------------
+
+
+IT test Structure
+------------------------
+ContextAwareTestCaseDataone - base class for context aware tests
+APITestUtils
+ExampleUtilties
+
+Example Commands:
+-----------------------------
+mvn -Dit.test=*Core* verify (runs only it tests with Core in the name)
+mvn -Dcontext.label=DEV (sets the context to DEV, base url will point to cn-dev)
+
+mvn -Dit.test=*Tier* -Dcontext.label=DEV verify
+
+
+
+
+
+Notes
+----------
+*building d1_integration and web tester from trunk
+

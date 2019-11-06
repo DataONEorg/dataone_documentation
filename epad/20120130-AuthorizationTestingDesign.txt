@@ -1,0 +1,180 @@
+ #persist
+
+====DRAFT====
+
+Introduction
+=========
+Authorization is a critical function for DataONE nodes.  Improper protection of data can lead to for example, premature publication (leaks) of datasets, data corruption, data inconsistency, and if common enough, eventual lowered trust of the system.  Detecting access problems for a given objects would be very difficult to detect after the fact, so rigorous up-front testing of a node's authorization sub-system is important.
+
+For testing purposes, Member node implementation of client authorization can only be considered a black-box, so the design of authorization testing cannot make many, if  any, inferences to simplify the testing process.  However, the number of authorization scenarios while not small, is tractable, and a systematic test setup, in terms of test objects and subjects, will minimize the overhead in testing and possibly provide a way to spot check existing nodes in production (regression testing).
+
+Also, not all nodes allow creation of test data at test time, so the testing strategy relies on pre-population of appropriately configured test objects prior to testing by the node deployers / admins to test those nodes.
+
+
+Dimensions of testing
+--------------------------------
+Clients are authorized for a given permission based on 6 interrelated concepts/mechanisms:
+1) the accessPolicy of the object
+2) the rightsHolder field of the object
+3) use of symbolic principles
+4) the identity of the user
+5) use of a subject's subjectInfo (its mapped-identities & groups)
+6). hierarchical permissions: CHANGE_PERMISSION implies WRITE implies READ.
+
+Authorization testing needs to ensure member node implementation properly brings together these concepts to determine whether a client is authorized for a particular action (READ, WRITE, CHANGE_PERMISSION).
+
+Testing strategy
+-----------------------
+1. While AccessPolicies allow for multiple AccessRules containing multiple Subjects given multiple Permissions, testing will be done against objects containing a single AccessRule containing a single Subject authorized for a single Permission.  This allows direct attibution of authorization to a particular AccessRule and Subject.
+Testing of multiple Subjects and Permissions and AccessRules is currently out of scope.
+
+2. Only 2 types of nodes can create test objects at test time, Tier 3 and 4 Member Nodes.  Coordinating Nodes do not publicly expose the create() method, so authorization testing is better accomplished with pre-populated test objects.  Similarly Tier 1 and 2 Member Nodes by definition do not implement the create() method, and similarly need to prepopulate themselves with test objects.
+
+Requirements
+ * Tier 1 Member Nodes - need at least one publicly readable object, in order to test the MNRead interface.  This would be an object with READ permission assigned to the symbolic PUBLIC subject.
+ * Tier 2 Member Nodes - need 11 test objects with varying permissions assigned to various Subjects (Persons, Groups, symbolic principals)
+ * Tier 3 & 4 Member Nodes - no data required.
+ * Coordinating Nodes - need the same 11 test objects as Tier 2 Member Nodes, and also setup a few test Subjects (Persons and Groups) and map identities and group membership.
+ * All nodes under test will need to accept certificates signed by the DataONE CA.
+
+3. It is expected that Member Nodes will interrogate the subjectInfo passed to it in the client certificate, and Coordinating Nodes will instead refer to their internal IdentityManager to look up the subjectInfo.  The tests will be the same, but the starting requirements will be different.  In particular, tests of authoriation involving groups and mapped identities will not work if the CN's IdentityManager does not contain the expected relationships between the test subjects.
+
+
+Testing Design
+==============
+
+Test Objects for Coordinating Nodes and Tier 2 Member Nodes
+==============================================
+Within the "single-access-rule-single-subject-single-permission" AccessPolices, there are 11 useful* combinations to test:
+
+    +---AccessRule---+  
+SubjectLabel     Permission   RightsHolder       TestObjectPid  
+------------------------------------------------------------------
+null             null         testPerson         TierTesting:testObject:RightsHolder_testPerson
+null             null         testGroup          TierTesting:testObject:RightsHolder_testGroup
+
+testPerson       READ         testRightsHolder   TierTesting:testObject:testPerson_READ
+testPerson       WRITE        testRightsHolder   TierTesting:testObject:testPerson_WRITE
+testPerson       CHANGE_PERM  testRightsHolder   TierTesting:testObject:testPerson_CHANGE
+
+testGroup        READ         testRightsHolder   TierTesting:testObject:testGroup_READ
+testGroup        WRITE        testRightsHolder   TierTesting:testObject:testGroup_WRITE
+testGroup        CHANGE_PERM  testRightsHolder   TierTesting:testObject:testGroup_CHANGE
+
+public           READ         testRightsHolder   TierTesting:testObject:Public_READ
+authenticatedUser READ        testRightsHolder   TierTesting:testObject:Authenticated_READ
+verifiedUser     READ         testRightsHolder   TierTesting:testObject:Verified_READ
+
+
+*This is not a full enumeration of scenarios, but it is assumed that symbolic principals will not be assigned WRITE or CHANGE_PERMISSION permissions in access policies or placed in the rightsHolder property, and would be derivative tests at that point.
+
+Test Subjects used by the integration tests
+===============================
+Object Subjects
+------------------------
+testSubmitter
+testRightsHolder
+testPerson
+testGroup
+
+
+Client Subjects                    MappedIdentites                  Groups              Verified?
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+testSubmitter                        none                                  none                   No
+testRightsHolder                    none                                 none                    No
+testPerson                            testMappedPerson             testGroup            Yes
+testMappedPerson                 testPerson                        none                    No
+testGroupie                            none                                testGroup             No
+
+test_Person variants
+- - - - - - - - - - - - - - - -
+testPerson_ExpiredCert          testMappedPerson            testGroup            Yes
+testPerson_UntrustedCert       testMappedPerson            testGroup            Yes
+"null" user                              n/a                                   n/a                     n/a
+
+
+
+Tests
+=====
+Tier 1 MemberNodes will not test isAuthorized() directly, but will be exercising the MNRead api, and will need to have object identifiers passed in for testing.  MNCore.listObjects() will be used to get these identifiers, and so listObjects() needs to return at least one object.
+
+All others: will run a battery of tests against each of the 11 test Objects, testing either for proper success or failure from isAuthorized().
+
+Each test object will be run against:
+
+ClientSubject             testing Permission
+================================
+NoRights                    READ
+                                 WRITE
+                                 CHANGE_PERMISSION
+testPerson                 READ
+                                 WRITE
+                                 CHANGE_PERMISSION
+testMappedPerson      READ
+                                 WRITE
+                                 CHANGE_PERMISSION
+**alternate client subjects will probably be needed for testing the symbolic principals.  We need to test the VALIDATED_USER object a bit more extensively with regards to groups and mappedIdentities.
+
+
+The full enumeration (3 subjects x 3 tested permissions x 11 testObjects) allows for testing of:
+1. proper permission level handling (WRITE implying READ)
+2. testing access via rightsHolder 
+3. testing access via accessPolicies
+4. testing access via group membership
+5. testing access via mappedIdentities
+6. testing access via symbolic principals
+
+
+It is unclear at this point how extensively to test anonymous clients and the "testPerson_Expired" certificate against the test objects.  The validation of certificates is a separate mechanism in all cases, so the full enumeration of situations is probably not be needed.
+
+Procuring test objects
+================
+Procuring test objects involves knowing the tier level of a member node, and if using pre-populated test objects, requires knowing how to pick them out amongst other data on the machine.  Interrogating the system metadata of each item returned from listObjects is expensive and doesn't scale.  Use of isAuthorized() to filter the list doesn't work because it obviates the test.  That means that the tester should be able to either use pre-known object identifiers (pids), or choose from a small subset of pids from the returned ObjectList.  The easiest means to accomplish the latter is by using a common prefix for testObject identifiers.  Use of a prefix adds flexibility at runtime, but would introduce overhead in getting the identifiers.
+
+The general procurement algorithm using a prefix:
+------------------------------------------------------------------------
+if (node.isServiceAvailable("MNStorage"))
+     createTestObject(accessRule,rightsHolderSubject);     
+else
+    getTestObject(pidPrefix, accessRule, rightsHolderSubject);
+
+getTestObject
+
+
+
+
+Using a predetermined pid:
+---------------------------------------
+sysmeta = node.getSystemMetadata(pid);
+if (sysmeta == null && node.isServiceAvailable("MNStorage"))
+    pid = createTestObject(pid, accessRule, rightsHolderSubject);
+    
+return pid
+
+
+
+Questions
+---------------
+1. Does the VERIFIED_USER principal intersect or union with other accessRule subjects?  (can an object be available to subject "Joe Smith" only if "Joe Smith" is verified?)
+2. What's the expected behavior when the subject used to connect is not verified, but is mapped to an identity that is verified?
+3. What's the difference between "equivalent identity" and "mapped identity"? 
+    - under http://mule1.dataone.org/ArchitectureDocs-current/apis/CN_APIs.html?highlight=subject#CNIdentity.getSubjectInfo:  "get the information about a Person (their equivalent identities, and the group to which they belong"
+   
+
+
+Testing of valid and invalid certificates
+
+Invalid certs:
+- SubjectInfo that does not validate against the schema.
+- SubjectInfo that does not have a Person record which matches that of the certificate Subject DN.
+- SubjectInfo that has equivalent identity records which do not themselves have matching Person records.
+
+Valid certs:
+- "Missing" SubjectInfo.
+
+More Questions  (Feb 21)
+---------------------------------------
+1. what exception is thrown when a certificate is not trusted?  NotAuthorized or InvalidToken?
+2. 
+
+

@@ -1,0 +1,268 @@
+Notes for Sprint-2011.11-Block.2
+
+Roger - Misc questions
+
+
+-   Should we define the DataONEException type in the D1 schema? We have the schema in the Exceptions page in the API docs so maybe there is a  reason it is being kept out of the schema?
+Any estimates on how expensive it is to generate exceptions based on pyxb / jaxb? Perhaps keeping them separate provides a level of independence which may be desirable?
+We went that way to begin with because it was easy and quick.  It seems to have served us well because we wish to manipulate the serialization of objects more flexible than JibX affords.
+-  We have an inconsistency in how we name lists. We use both "List" as in  NodeList and appending an "s" as in "Services". Should we settle on  one? My preference is appending an "s".
+I think  the root elemens have "List" attached to them while inner elements may be plural.
+
+I think the term list is really meant to apply to things that are only Lists while other elements that are a mix of simple and complex elements end up more like Hashes.
+
+-   We seem to have some inconsistencies in when we use attributes and  when we use subelements. For instance, in the NodeList, we have:
+
+<service version="0.5" available="true">
+  <name>mn_crud</name>
+  ..
+</service>
+
+Is there any reason version is an attribute and name is an element?
+no, that was messed up. we need a uniform convention, but attributes are nice when you have a TOKEN that can be assigned to it or an enumeration.  Strings should go to elements.
+
+I looked into when to use attributes and when to use subelements, and found this:
+http://www.ibm.com/developerworks/xml/library/x-tipsub.html
+
+
+Robert  has a task: "add the HTTP_METHOD as attribute on the method element in  nodeList". I'm wondering if we should do that. The reasoning is that  we're getting into describing how to use the methods, and I don't think  we should try to do that in the schema. Developers will have to refer to  the API docs on how to use the methods. Methods are already  distinguished by their names, so we won't have two methods with the same  name but different verbs.
+
+
+- Removed documentation from schema:
+
+    <!-- Service -->
+    <xs:complexType  name="Service">
+        <xs:annotation>
+            <xs:documentation>Name and version of a DataONE software stack component are
+                equivalent to the statusresponselist.xsd name and version.
+                (-rpw notes from meeting 9/25/2010, but Component Name and Version is different than
+                Service API name and version!)
+                A process should check  MN_health.getStatus()  periodically and  
+                update the version, availability and dateChecked for each API.
+                May need to update method definitions at same time
+            </xs:documentation>
+        </xs:annotation>
+
+Though should some of this be left in?
+
+- Instead of having a list of service names with versions, should we have a parent service name with (potentially) multiple children each of which is a service version? That would restrict the usage of multiple services to a single service with multiple versions (as opposed to now where there would be multiple service names as well).
+
+
+Thinking about this- the node information can be rearranged a bit to something like:
+
+    Network (1..n, replaces "environment", represents a functional group of CNs and MNs)
+      networkid (1, identifier for the network)
+      description (1, Further details describing the network)
+      adminGroup (1, A group of users that has admin access control of the network)
+      notifyGroup (1, A group of users that should be notified of changes to the network)
+  
+    Node (1..n, A node describes a Member or Coordinating Node)
+      nodeid (1, unique identifier for the node)
+      name (1, Human readable name for the node)
+      description (1, Description of the node, approximately 1 paragraph)
+      location (1, physical location of the node - longitude, latitude in decimal degrees, WGS84)
+      adminGroup (1, group of users who have administrative access to the node)
+      notifyGroup (1, group of users that should be notified of changes or alerts related to the node)
+      created (1, time that the node was first registered)
+      modified (1, time when the registry information was last upated)
+      objectFormatsSupported (list of object formats known to support) (-- needs wildcard support)
+      
+      Service (1..n, MN)
+        version (1, schema version supported, MN)
+        baseURL (1, MN)
+        name (1, human readable name for service, e.g. "DataONE-0.6.1", MN)
+        activeNetwork (1, id of network this interface is active for, MN)
+        lastSynchronization (1, time stamp for when sycnrhonization was last performed, CN)
+        isAlive (1, result of a ping() against the service baseURL, CN)
+        lastChecked (1, last time service was examined, i.e. evaluatation of the methods, CN)
+        synchronize (1, True if content available from this service should be synchronized with activeNetwork, MN)
+        replicate (1, True if content should be replicated to other nodes on activeNetwork, MN)
+        replicationTarget (1, True if this service is a replication target, MN, CN)
+        method (1..n, MN)
+          name (1, MN)
+          isactive (1, set by CN)
+
+General requirement to support versioning on groups of methods, such as the APIs currently described. 
+
+Node tiers
+---------------
+Tier 1: Public read, no Authn/Authz
+- logging operations may need to refer to individuals identified by authentication
+- but does offer lowest entry to infrastructure
+- can only request that other nodes report on same level of detail that this node supports
+- must support replication policy information in system metadata (if content is to be replicated)
+- methods: get, listObjects, getSystemMetadata, describe, getChecksum, ping, getCapabilities, [ log ?]
+
+Tier 2: Read/Resolve with Authn/Authz
+Tier 3: Write (create, update, delete), possibly limited support for data types
+Tier 4: Limited Replication target (specified data types)
+Tier 5: Replication target, any data types
+
+Logging requires broader discussion due to privacy concerns. The "aggregateLogs" functionality should be indicated at the Node level as it applies to all operations.
+
+
+Core: Functionality common to all nodes, including optional methods
+Old API: MN_health, MN_crud
+New API: MN_core
+Methods: ping, getCapabilities, getStatus, [getObjectStatistics], [getOperationStatistics], [getLogRecords]
+
+Tier 1: Public read, no Authn/Authz
+Old APIs: MN_crud, MN_replication, MN_health
+New APIs:  MN_core, MN_read
+Methods:  MN_core: ping, getCapabilities, getStatus, [getObjectStatistics], [getOperationStatistics], [getLogRecords] 
+MN_read: get, getSystemMetadata, listObjects, describe, getChecksum, synchronizationFailed
+
+Tier 2: Read/Resolve with Authn/Authz
+Old API: MN_authorization, MN_authentication
+New API: MN_auth
+Methods: MN_read + login(*), logout(*), isAuthorized(*), setAccess(*)
+
+Tier 3: Write (create, update, delete), possibly limited support for data types
+Old API: MN_crud
+New API: MN_storage
+Methods: MN_auth + create, update, delete, 
+
+- Need to expose a list of supported ObjectFormats supported by a MN (support for writing)
+- Support wild cards
+- Also limiting attributes? e.g. size constraints by type? - part of the authorization spec?
+
+Tier 4: Limited Replication target (specified data types)
+Old API: MN_replication
+New API: MN_replication
+Methods: MN_storage + replicate
+
+Tier 5: Replication target, any data types
+Old API: 
+New API:  
+Methods: MN_replication (no additional methods)
+
+~~
+
+-  How about the include a location for an automatically generated  identifier in the DataONEException so that the exception can be matched  up with corresponding entries in the log?
+Seems unnecessary. Use time stamps.
+
+- There is a bug in the repository browser. http://repository.dataone.org When clicking "view history", it shows the index.php file instead of running it.
+Yep. Use the redmine browser instead.
+
+~~
+
+@@@@@@@@@@@@@@
+
+Migration strategy discussion
+
+We need to find out how to best support migration to newer versions of the DataONE APIs as they are introduced.
+
+At  any given time, there will be MNs and clients supporting different  versions of the DataONE APIs. When DataONE releases a new API, adoption  will happen gradually (maybe like the technology adoption bell curve).  The spec should make it as easy as possible to gradually implement  support for new APIs in MNs and clients while the versions of calls  remain unambiguous. The spec should also place as few restrictions as  possible on how support for APIs must be implemented. For instance, one  MN may want to support several versions of one call with the same call  while another MN may want to use multiple calls and both should be  allowed.
+
+~~
+
+Q:  Multiple versions of methods is currently supported by allowing  multiple APIs, each with a set of methods in the NodeList. Is this the  best way?
+
+After mulling over it a bit more, it seems that just using a different baseURL for different service versions is the simplest way to go.
+
+~~
+
+Q:  What kind of granularity in version differences do we want to support  and how do we support it? For instance, should an update of a method  require a new version of the API the method is in.
+
+Yes, if the method signature changes.
+
+~~
+
+Q: How do we handle cross dependencies between APIs?
+
+Version the service, not the individual APIs
+
+~~
+
+Q:  Which enumerations should be in the schema? Should API and Method names  be enumerated. If so, should they be generated directly from the  MethodCrossReference.xls spreadsheet.
+
+As few as possible. They could be generated from the spreadsheet, but there's so few it doesn't seem woth the hassle really.
+
+~~
+
+Q:  Is it appropriate to have API and Method versions be enumerations?  Advantage: We can verify that the stated version of an API or Method is  one that exists. Disadvantage: It adds an enumeration to the schema. See  "Enumerations in the DataONE schema" below.
+
+Nope. IMO we should version the service.
+
+~~
+
+Enumerations in the DataONE schema: The issue with enumerations in the schema is that when an enumeration is expanded, the following chain of updates is triggered:
+
+The schema namespace -> autogenerated serialization code (PyXB and JAXB) -> DataONE libraries -> CNs, MNs and Clients.
+
+If  this forces MNs and Clients to update any of their code, it is  desirable to have the schema be as stable as possible, which means  including as few enumerations as possible. But I think that the most  important part of the migration strategy will be to support multiple  schemas, so that updating the schema does not require any code that is  already implemented and running to change. That way, only new code will  be using new schemas and will get access to the additional functionality  in the new schema. In that scenario, updating the schema does not carry  a "penalty" in dependencies that must be updated and so we are free to  set up as many enumerations as we like in the schema.
+
+That is what we do. A schema version is released, then the cascade of libraries and tools is similarly released. A change in the schema or any dependencies cascades a new release of the libs etc.
+
+~~
+
+- http://stackoverflow.com/questions/3319707/xml-schema-compatibility-strategy
+
+~~
+
+CN Object Format Service
+----------------------------------------
+
+CN service will implement:
+
+listObjectFormats()    GET /formats
+
+getFormat()               GET /formats/{fmtid}
+
+updateFormatList()     POST /formats
+     getSerializedFormatIdentifier()
+     if (id exists) {
+          // Generate a new id
+          // update(formatList, id, oldId)
+          // setAccess(adminGroup)
+     } else {
+          // Generate a new id
+          //  create(formatList, id)
+          // setAccess(adminGroup)
+    }
+
+createFormat(AuthToken, ObjectFormat)  PUT /formats/{fmtid}
+     getSerializedFormatIdentifier()
+     if (id exists) {
+          // *get formatlist from metacat
+          // *add new format to formatlist
+          // Generate a new id
+          // serialize formatlist with new id
+          // update(formatList, id, oldId)
+          // setAccess(adminGroup)
+          // record newid in CN config properties
+     } else {
+          // Generate a new id
+          // create formatlist object
+          // add new format to formatlist
+          // serialize formatlist
+          // create(formatList, id)
+          // setAccess(adminGroup)
+          // record newid in CN config properties
+    }
+
+
+LDAP Group:  cn=dataone-cn-admins,o=DataONE,dc=ecoinformatics,dc=org
+
+MemberNode Object Format Service:
+-------------------------------------------------------
+new ObjectFormatService()
+
+    ObjectFormatList fmtlist = CN.listFormats() (from d1_lib_client)
+    if (fail)
+       read from local cache
+
+throughout MN code needing to compare object formats:
+
+ObjectFormat ObjectFormatService.getFormat()
+    getNodeType() // are we on a MN or CN?
+    try fmtlist.getFormat()
+    catch fail
+      if nodeType == MN {
+        call CN.listFormats
+        *cache copy of fmtlist (see lines 249-253 above)
+        try fmtlist.getFormat()
+    }
+        catch fail -- throw failure
+
+

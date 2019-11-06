@@ -1,0 +1,26 @@
+Version support - enabling nodes (ITK clients, Member Nodes, Coordinating Nodes) to interoperate although they are different versions of the architecture.
+
+Status:
+All service types are rolled under one schema (dataTypes.xsd).  All have a common version.
+In Java-land, the objects that represent these  service types are tightly coupled to the version of the schema.
+The serialized xml service types do not include a url to the schema location.
+The schema location varies by version.  (different versions at different URL).
+NodeListParser implementations use DOM and
+
+
+Client instantiation:
+----------------------------
+The NodeList is a complex type that serves at least two roles:
+1. "node locator" - tells one node instance the address of the other nodes -
+2. "node information" - used in synchronization and data replication
+
+Scenario:
+-------------
+1. ITK client running at v0.6.1 is instantiated and for normal operation with contact the default CN (v0.6.2) to get the nodelist.
+2. the CN returns a NodeList (v0.6.2)
+3. the ITK client attempts to parse it.
+** if successful it is "online" and can get more information
+   else it must rely on any locally saved url mapping information.
+
+
+

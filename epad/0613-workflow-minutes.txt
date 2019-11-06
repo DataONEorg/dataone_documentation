@@ -1,0 +1,58 @@
+Meeting  for 06-13 Workflows
+Present: Bill, Rebecca, Richard
+
+Richard - going over the excel sheet  from before
+    - would be useful to go over the  differences between knowledge retrieval WF
+- Kepler seems  to be much more used in the literature for things that wouldn't be in  myExp, as that is populated by developers and bioinformatics alone
+
+Bill:
+Hypotheses:
+1)    Workflows are becoming more complex and powerful over time:
+a.      as demonstrated by increases in numbers of components and dataflow  links
+b.     as demonstrated by increased  branching
+c.      as demonstrated by increased  numbers of sub-workflows (embedded workflows)
+d.      proportion of workflows that perform simple data acquisition vs those  that perform numerous processing steps 
+2)   Most  workflows perform simple, but repetitive data acquisition tasks as  opposed to complex operations
+3)   Workflows  become more complex as one gains more experience (i.e., number of  previous workflows created by that individual)
+4)   Workflow  re-use (downloads) is proportional to the complexity of tasks performed  by the workflow.
+5)   Workfow re-use is proportional to  the sufficiency (comprehensiveness) of the documentation (i.e.,  metadata) 
+6)    
+
+Understanding workflows:
+1)    numbers of data sources within a workflow
+2)    incorporation of QA/QC
+3)   number of components
+4)    number of workflow links
+5)   date created
+6)    number of downloads
+7)   number of sub-workflows
+8)    use of specific data sources
+9)   use of  specific models embedded in workflow
+10)  number of  workflows created by an individual
+11)   discipline covered by workflow
+12)  number of  workflows  created by individual users (what is the shape of the  curve?  Long tail?) 
+13)                   
+ 
+ Richard:
+
+   Organise in terms of 2,3 tiers of information 
+      1: high level - author,  when, how many, nodes, workflow links, goal
+        2: of nodes, % of data  aquisition, % of data sources, type of nodes, models?
+            3: sufficiency of  the metadata (semantic and natural language description), plays into  workflow reuse
+  Time ten random workflows
+  
+  The goal is to verify/ look  into the hypothesis above. (and then go on to more)
+  
+  additional hypotheses?
+   - ways to automate? (for  the email to David)
+      - also, suggestions for  other ways to analyse these
+      
+      1. revise spreadsheet to  be organised by tiers
+       2. Get to grips with  SPARQL as much as possible
+      3. write up for the  approach (methods, teir 1/2/3, selection processes, null hypothesis,  etc...)
+      4. use for a basis to  contact David, and as a mini-proposal for what to do for the summer.  Send out when done. Significant time restraints in what we can do -  justification for myExperiment, using tiered approach to do that. (2-5  pages probably) 
+      5. Keep track of a list  of bioinformatics/ confusing ones
+      
+      London time 1600,  Mountain Time 900, Pacific Time 800, Tuesday 
+      
+

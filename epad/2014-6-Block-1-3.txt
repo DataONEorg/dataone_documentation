@@ -1,0 +1,215 @@
+Notes for development Block 1.3
+-------------------------------
+
+Previous epad notes at: http://epad.dataone.org/2014-4-Block-1-2
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+
+Skye
+ * 20140217
+   * Fixed error in SystemMetadataDaoMetacatImpl preventing tidy from functioning properly when system metadata is missing from one or more source CN
+   * Further Tidy testing
+     * SANPARKS errors:
+       * SSLPeerUnverifiedException
+       * SocketTimeoutException
+ * 20140214
+   * Small tidy testing for logging, prep for prod merge.
+   * Small support for soren at edac regarding oneMercury
+   * Upgrade/installed new ubuntu 12.04 image for FF testing.
+ * 20140212
+   * D1-Tidy testing
+     * resolved db deadlocks
+     * inspecting merged system metadata for correctness.
+ * 20140210
+   * Debugging MergeJob processing...
+     * Certificate errors
+     * Saving 62k ChangeRecords per pid times out merge job. 
+ * 20140207
+   * Wrapping up unit testing for saveSystemMetadata
+     * Small blocker testing AccessPolicy persistence - questions at end of SU.
+ * 20140205
+   * Finished getSystemMetadata unit test in both metacat and tidy impl tests.
+   * Ready to start a saveSystemMetadata unit test method - if needed.
+   * Prepped for annual review (self evaluation)
+     * Review at 2pm today.
+ * 20140203
+   * SystemMetadataDao impl testing.
+     * Corrected errors in date mapping, table name declarations in property file
+   * Will need to spend majority of Tuesday on annual review
+
+
+Robert
+ * 20140214
+   * Changed logging for Tidy to allow for log files to be written to finally.
+   * Upgraded Sandbox environment
+   * We need to complete acceptance testing
+ * 20140212
+   * Fixed certificate error issue. Stupid properties file.
+     * need to figure out where that d1 client how to is located in ops docs and edit
+   * Its starting to snow
+     * end of life as we know it in Knoxville
+   * Discussed the future of archive in D1
+     * We came to one conclusion: DataONE is infact an archive
+ * 20140210
+   * Forgot about the certificate error issue, will work on it today
+   * Rewrote how errors are handled, moved out from try/catch logic and added under 'false' boolean
+     * fixed a race condition error 
+     * added a couple more test cases
+   * Add in the Settings properties for MergeExecutorService
+ * 20140207
+   * Changed how timeouts are handled
+   * Added in data/metadata to D1 Test Resources Package along with classes to access them
+   * need MergeResult testing for collection math
+ * 20140205
+   * Contintuing to unit test MergeExecutorService
+     * passes tests of 7 straight success/failure/timeouts
+     * Needs more varied tests including load
+     * need more realistic timeout test
+   * Will start on integration tests
+ * 20140203
+   * Testing MergeExecutorService
+     * problems with use of CompletionService, re-implementing ExecutorCompletionService for use with Tidy concurrent package classes
+   * Using D1 Testing project to supply list of string pids, and InputStreams for SystemMetadata and EML files.
+     * Created class to get Input Streams from resources
+     * Created resources and packages in D1 Testing  with systemMetadata and EML files
+
+
+Roger
+ * 20140217
+   * Checked in Python products. See svn logs.
+ * 20140212
+   * Have finished up GMN testing. I'm adding my notes to the docs and plan on checking in today.
+ * 20140210
+   * Still testing new replication code.
+ * 20140207
+   * As part of moving GMN to use database based locking (ticket 2437), rewrote the processing of replication requests and system metadata updates. I am now testing this functionality by running two instances of GMN (as replication source and target).
+ * 20140205
+   * Done with GMN stress testing. Did not find any issues, but improved the stress testing documentation and added a new test. Moved a GMN specific section of the stress tests over to GMN. I think the stress tests may be completely MN agnostic now.
+   * Worked a little bit with Rebecca on GMN documentation issues.
+   * The PyXB developer contacted me to get feedback on our experience with PyXB, suggestions for the future, etc. It's my chance to write up some suggestions and thoughts I have, so I started that yesterday. I've written some small test scripts to test if the suggestions are still relevant and have found that some things have been improved. Will be adding tickets to take advantage of these.
+   * Will be offline for a while today because I'm cloning the disk on the work computer over to another disk because it has made some clicking sounds lately.
+ * 20140203
+   * Still working on stress testing of GMN. Taking a small detour into the stress tester to improve diagnostics and documentation.
+
+Chris
+ * 20140214
+   * MN support - continuing to troubleshoot Dryad sync. ~500 of 36K objects. Will be cycling tomcat to get Dryad schemas registered correctly in Metacat
+   * MN support - helping Aaron @ GLEON with installation/certs
+   * d1-tidy work: tables are now crreated on cn-unm-1, ready for merging
+   * Metacat release work with Ben. Testing Ben's repair SQL on LTER data
+   * IDCC prep with Dave/Laura/Bruce/Amber
+   * MN support - Met with Bob, Ranjeet, Jim re: EDORA, RGD MNs. Registering in sandbox.
+ * 20140212
+   * MN support - looking at Dryad sync results in Stage
+   * MN support - Generating certs for EDORA, RGD
+   * 
+ * 20140210
+   * MN support - Dryad testing in stage
+     * dealing with object format naming differences
+   * MN support - troubleshooting GLEON register problems with Java
+   * d1-tidy testing with Skye, Rob, Robert
+   * Dave: DNS changeover? Seems fine to me
+ * 20140207
+   * TODO: Send Dave a DNS zone dump
+   * TODO: Metacat needs to support the full D1 AccessRule syntax (lists)
+   * IDCC workshop planning
+   * MN support - LTER found Metacat bug symptoms
+   * MN support - GLEON SSL issues
+   * MN support - Dryad registration in stage
+   * Building SQL tables on cn-dev-ucsb-1 for the tidy project
+ * 20140205
+   * GLEON MN support with certs
+   * Finished up SystemMetadataDao impl - testing saveSystemMetadata() now
+   * LTER MN support - issue with archived object by the CN subject, may be a Metacat bug
+ * 20140203
+   * Implementing saveSystemMetadata()
+   * Questions for Skye re: SystemMetadataDao interface changes
+
+Jing
+ * 20140212
+   * Fixed a bug https://redmine.dataone.org/issues/3492
+   * Do we have a hudson test node?
+   * Debug an issue that users can't log in through the perl script in my local metacat.
+ * 20140210
+   * Installed the production identity service with the DataONE, Kepler, GOA logos
+   * Completed the documentation of the authentication
+   * Changed the log level of the ldap server at nceas
+ * 20140205
+   * Fixed some bugs in the authentication
+   * Working on the documentation of the authentication
+   * Will install the production identity service
+ * 20140203
+   * Deployed the production nceas' identity service.
+   * Looked at the bug that the hashed password can't be passed to the password file correctly.
+   * Worked on the style of the default-user-management page
+   * Worked on the documenation of metacat file-based mechanism.
+
+Rob
+ * 20140203
+   * finished implementing the back-up merge strategy for when mn sysmeta retrieval returns "NotFound"
+   * unit tested mergeStrategy implementations vis a vis correct changes and exception handling.
+   * UNM performance review
+ * 20140205
+   * UNM performance review
+   * EDAC
+     * have decisions about node ID, name, and description from Karl
+     * trying to get timeline for a blocking bug (listObjects not listing obsoleted / archived objects
+   * MemberNode documenation
+     * uncovered problem with GMN profile page on the website
+       * wasn't showing the description or link out to the python-hosted implementation documentation
+       * worked with Amber, Chris, Isis to resolve.
+ * 20140207
+   * finishing MergeJob tests for tidy project
+   * EDAC - getting 
+ * 20140210
+   * finished MergeJob unit tests, began end-to-end testing
+     * troubleshot and reconfigured exception handling between MergeJob and MergeJobExecutionService.
+     * too many change records are being saved per pid.  Need to write unit test against some of the real sysmeta in DEV environment.
+
+David D
+ * 20140219
+   * Talked w/Bruce re: stage syncrepl issue - he's not convinced that database corruption is the (only) problem
+     * wants Chris B. and I to figure out which cipher suites the stage boxes are using to talk to one another and run some more tests on slapd activity
+ * 20140217
+   * stage CN syncrepl:
+     * Ran tcpdumps on cn-stage-orc-1 and cn-stage-ucsb-1, then induced a failed ldap sync replication, looked at results w/Wireshark
+       * Wireshark packet analysis shows multiple connections made, tls handshakes completed, minimal amount of application traffic, then connections shutting down with tls error code 21 - "TLS1_ALERT_DECRYPTION_FAILED"
+     * running slapcat on stage CNs gives three .ldif files that are highly different from one another
+       * Also, some values in the .ldifs created by slapcat appear to be corrupted, e.g. "cn=benjam\2BaO0-n leinfelder" instead of "cn=benjamin leinfelder"
+         * Seeing this on orc too, not just ucsb
+     * Found this in slapd.log on cn-stage-ucsb-1:
+       * hdb_db_open: database "dc=org": unclean shutdown detected; attempting recovery.
+       * hdb_db_open: database "dc=org": recovery skipped in read-only mode. Run manual recovery if errors are encountered.
+ * 20140214
+   * Fixed network misconfiguration on cn-stage-orc-1, but this did not fix stage syncrepl issues
+     * Next, planning to induce syncrepl and watch activity over the weekend via tcpdump
+     * Also going to work w/push vs. pull and changing max concurrent connections
+     * Bringing another environment slapd logs into Splunk to get an idea of log traffic from a good configuration
+ * 20140212
+   * Stage syncrepl:
+     * We're up to three different error/warning message types, with correlation of at least two of those showing up in forum chatter as potentially related to misconfigurations on multi-master replication boxes
+     * Found a potential configuration issue with /etc/hosts on cn-stage-orc-1: no entry for that box's IP address, just 127.0.0.1 and 127.0.1.1
+       * Can't find that configuration pattern on /etc/hosts on any of our other CNs
+     * Waiting for confirmation that changing this won't break anything else down the line, then will change and test
+     * See https://redmine.dataone.org/issues/4246 for more details
+   * Found a bug in one of the logrotate config files I implemented for d1 processing logs.  Fix is in place, but need to go through the log directories and clean out redundant/empty log files this bug created.
+ * 20140207
+   * Working with slapd log data
+     * seeing several "transaction lost" events (2000+ over a sample four-hour period), bwilson suspects configuration issue w/max slapd connections, but rwaltz says that might just be a false positive due to slapd log conventions - will research further
+ * 20140205
+ * Splunk web certs working on both test boxes now
+   * TODO: Data inputs into test environment from sandbox CNs
+ * Slapd events now running into prod Splunk
+   * TODO: Assess slapd logging via Splunk to:
+       * see if syncrepl issue can be diagnosed w/current logged data
+       * if not, see what else we can get slapd to log to diagnose
+
+Topics to discuss:
+======
+Archived flag
+
+Jing: deb package testing
+
+
+

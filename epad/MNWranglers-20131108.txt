@@ -1,0 +1,86 @@
+Member Node Wranglers 
+    Fridays at 10:00 am AK
+                    11:00 AM PDT
+                    12:00 MDT
+                    1:00pm CDT
+                    2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+
+8 November 2013  
+
+Attending: Laura, Rebecca, Bruce, Amber, John
+
+Regrets:  Matt, Dave 
+
+
+Agenda: 
+        1. High profile issues (or current items of interest)
+        
+        OPeNDAP and DSpace contracts - current status?  Waiting on Dave for input; consider if we can include Slender Node in this activity.  Other ORNL data repositories and MPC-TerraPop could really benefit from SN (perhaps even this is the only/best way to get these guys online)
+
+        Slender Node - (harvesting metadata from sites or links to data, i.e. a tier 0)    (Laura and Bruce to talk about looking at potential MNs and identifying   OAI-PMH, etc.)   
+        
+        Replication policy change - we think we need to get together with CCIT and MNs and discuss - I understand there were some concerns??  We need Matt for this one.  
+        Question: is there any replication going on through D1 right now?  
+        Bruce is 60% sure that there is some replication going on.
+            KNB, TFRI, PISCO, ESA, eBird: currently tier 4
+            USANPN (currently tier 1 looking to move to tier 4)
+            LTER's replication to KNB is not through D1
+        >>>>>>  Look at the flag that says (something like) I can take/give replication - what does that really mean - need Matt/Dave
+        
+        Barriers to MN implementation discussion?  was this a separate conversation at LT?  No, but we need to get back to this soon.  There are technical issues (like "need DSpace" as a blocker for UTK, etc.), documentation issues (certificates, etc.), policy issues at the MN, and other blockers.
+
+        Bruce has submitted a proposal for a full-day MN workshop at the IDCC meeting in San Francisco in February 2014.  Proposal accepted, workshop scheduled for Monday, 24 February.  Names on proposal (so far): Amber, Bruce, Dave, +CCIT.  Need to discuss who are the invitees:  Ideas:  Hannu, maybe a slot or two from USGS, Australian folks, DFC, USCarolina, 
+        Need to know when registration opens ASAP.
+         
+        Redmine backlog - those who contacted us -  I'm contacting the originators of the requests and not hearing back  from some of them.  Perhaps I need to check into other contact people  (original requestor has moved on?).  Send a list to Rebecca of contacts.
+        
+        Issues with test environment (webtester) - Is there a redmine ticket to address maintenance on the webtester?  Need Dave for this one maybe.(maybe outsource?)
+                
+        Documentation
+            MN landing page - good to go for now
+            Details under landing page - Laura/Rob working on previously
+            MN dashboard - want to share with members of the MN Forum, need to have Chris present; need to clean it up re: comments/suggestions from AHM and get go-ahead from LT before sharing.  Especially need to clean up the data (doesn't change before your eyes)
+
+        Immutability -  plan to prototype the series ID approach prior to RSV in February - need Dave
+
+        2. Status of MNs
+     * Y5Q1
+       * EDAC (3221) - getting there   >>>> Laura to check on broader CN synch issue
+       * Kansas (3188) - email out to CJ
+       * SEAD  (3521) - live News item: http://bit.ly/HjlIJF (no input from SEAD yet)  Need current # data packages when ready for PR.
+       * NPN (3186) - live, announce Tue next week <insert fireworks here> News item: http://bit.ly/1dOox1h. Edits provided by NPN.  Need current # data packages.  Ask Skye to get this info.   
+
+     * Y5Q2
+       * Gulf of Alaska DP (3531) - I updated GOA tickets with current status, and replied to Bruce's inquiry about that.  GOA is live in production, but awaiting our PI meeting next week for the announcement to drafted and reviewed.  -  We need info for press release.  I started a blurb in Google docs: https://docs.google.com/document/d/15XFY6ORJdzirHL1aYdonF5LJjBEbzjD5X0y_IWKCSHw/edit
+       * FRIM (4083) - Jing Tao D1 contact, Omar Ali is tech MN POC, currently installing latest version of Metacat, Bruce to confirm status of this install
+       * LTER-Europe (3232) - Laura to check with Matt
+       * Dryad (3118) - some data didn't pass validation, email out to Ryan for current status: Todd Vision said the metadata issues have been resolved and he has requested a timeline from Ryan - I'll share with team when I get it (RK)
+       * U Illinois Chicago (3213) - Bob/Chris to implement metacat this month - Laura to check in with them
+       * PPBio (3748) - meeting 10/8/13 -- more updates in redmine tickets; LLNC server migration is complete. May need support now for further configuration.  >>> Laura to check with Debora re: current status, needs
+       * SAEON (3205) -  moving metacat to more permanent server this month - Laura/Matt? to check in
+       * NKN (3238) - fallen off radar lately, need to reel them back in, still "plugging away"
+
+     * Y5Q3
+       * USGS ScienceBase (4002)
+       * DFC (3532) - Bruce has emailed Lisa - update? (also invite to IDCC workshop)
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting
+
+     * Y5Q4
+       * EU BON (3964) - meeting 10/9/13 (invite Hannu to IDCC workshop)
+       * MPC (3708) - dependent on new MN stacks that aren't implemented yet
+
+        3. Old action items
+        
+        4. Not-high profile issues
+         
+        5. Around the room
+            Rebecca: nothing today
+            Amber: start printing materials for AGU, rehashed MN fact sheet (go with what we have, but there are other changes that can be made later)
+            Bruce: nothing today
+            John: nada
+            Laura: nothing today
+
+
+

@@ -1,0 +1,113 @@
+Attendees: Amber, Mike, John Cobb, Bill, Bertram, Dave, Bruce, Suzie, Steph, Steve, Hilmar, Carol
+
+
+Regrets: Rebecca, Bob Cook, Matt Jones
+
+Call Information:
+
+Conference Call Number: (866) 804-6831
+This brings you to our conference call line - next press 1
+The conference number is: 21437#
+
+Will also use the epad: http://epad.dataone.org/20110805-LT-VTC if participants can get to it
+ 
+Agenda for 2011-08-05
+
+1. Update on CI (Vieglais)
+Scheduled vacation and jury duty has resulted in reduced manpower this week. Implemented a MN stress testing tool. CN work progressing well.  Metacat almost completely in terms of functionality.  Synchronization component closer to completion. Indexing of content on CN progressing well. Support of access control on Mercury being worked on by Ben while on jury duty. Hardware has shipped to UCSB, some delayed.  Expects everything to be operational by late September. Oak Ridge hardware being installed, couple of issues encountered with power but will be sorted out this week and they can start racking equipment next week.  UNM - credentials sorted out of VPN access and next step is to spec out virtual machine requirements.  Need to finalise network topology. LTER have adopted InCommon.  Commited to adding LTER PASTA framework to the DataONE network.  NEON data will be part of this framework.  
+
+2. Leadership Team Charter (Frame)
+
+Please review the Word Document below with suggested Changes and Comments via Track Changes:
+
+https://docs.dataone.org/member-area/committees/management-team/documents/leadership-team/lt-charters/DataONE_Leadership_Team_Charter_v9.docx/at_download/file
+
+Major Changes/Suggestions/Issues that were raised:
+
+ [MF1]LT is really a support (Does not Monitor or Review performance) Rebecca and DataONE Office in this.   
+ 
+
+ [MF2]I honestly do not think we should add members.   Leave the current members on the LT as is.  
+ 
+I think to involve WG Chairs, there needs to be a periodic meeting (Monthly or every 2 or 3 months) with all of the WG Chairs by the D&O and CE&O and/or Leadership Team.   
+ 
+In LT: 
+Perhaps we Include Monthly Summary of CCIT and Monthly Summary of CE&O.   Do this at one of our Friday meetings – just devote ½ the meeting or entire meeting to it.  
+ 
+Comments:
+Already greater than 12 on LT?  Extend the limit to 16 and take advantage of the suggested mechanisms to engage WG leads / members?
+Likely to be an increase in collaboration, need to account for that type of coordination / communication?
+Spelling check - principle and principal :)
+***Any additional comments should be sent to Mike by Monday for incorporation - Mike will send out a link.  We can then vote on it via email next Tues / Weds.***
+
+
+3. ESA Status (Budden)
+ * Still time to sign up for booth duty - and you get chocolate :) (https://spreadsheets.google.com/spreadsheet/ccc?key=0Ave2x_fMh6VbdFp1cG5RU1g4YXFVOGQtZmhBTk9JTUE&hl=en_US#gid=0)
+ * Banners, banner stands, tables, table runner, display monitor, extra computer, flyers, post-it note giveaways, electrical outlet, internet connectivity all organized and on their way to TX.  
+ * DataONE flyers printed, DMPTool flyers to be completed today.
+ * DataONE promo slide show / movie created (demos embedded; awaiting DMP movie)
+ * Flyers / banners / promo slide show uploaded to plone (located here: http://bit.ly/nlLQwt and here: http://bit.ly/pFjRsO ).
+ * Ppt templates created for workshop / special session.
+ * Carly / Bill set agendas for workshop / special session.  Presentations still to be completed.  Carly's workshop will pull from a lot of the work done by CEE in module development.
+ * Working with DMP group on getting final editing pieces done for beta release - DataONE best practices create DMPs as examples, DMP blog entries etc.  Development going well, will not be full user authentication functionality, instead test accounts have been set up.  If interested you can view the status of the tool at: http://dmp.cdlib.org/ and the blog at: http://blogs.library.ucla.edu/dmptool/.
+ * Please let me know of any presentations you will be giving so that I can highlight these.
+
+4. CI Working Groups (Michener)
+    In the proposal there were 6 CI Working Groups:
+ *      Federated Security (Von Welch, Butler)
+ *      Distributed Storage (Cobb, Honeyman)
+ *      Data Preservation, Metadata, and Interoperability (Kunze,Hobern)
+ *      Scientific Workflows (Goble,Deelman)
+ *      Data Integration and Semantics (Ludaescher, Pouchard)
+ *      Usability and Assessment (Frame, Normore)
+
+ This was changed at some point to the existing CI Working Groups:
+ *      Federated Security (Butler) also added Jim Basney in place of Von. Also changed status a bit since a strategy has been articulated
+ *      Distributed Storage (Cobb, Honeyman) gearing up!
+ *      Data Preservation, Metadata, and Interoperability (Kunze) who is co-chair with John K.
+ *      Scientific Workflows (Goble,Deelman) <----------------------------- is this WG still a WG? BL: This was never officially started AFAIK, instead however, a ProvenanceWG was started (which overlaps somewhat in scope)
+
+   * Prov WG create (Bertram and Paulo).  Eva a member on Prov WG due to overlap.
+   * Workflow WG is still needed but may be stalled.
+   * Q: If Prov was expanded in size to be able to address some of the Workflow issues, EVA would be a strong leader in that respect, could there be 3 co-leads to reengage Eva? A: Bertram would not have a problem but questions wether Eva would feel this appropriate replacement for a Workflow WG.
+   * Q: Having a seperate WG might result in a lot of redundancy with other WGs. Is that a fair statement? A: Bertram in favor of expanding the charge to the Prov WG to include Workflows. 
+   * Feedback: Minimum amount of overlap a good thing. 
+   * Suggestion: Rebecca to coordinate a call with Paolo, Betram and Eva to discuss proposed changes.
+   * Q: Is three co-leads acceptible?  Some recollection of Rebecca objecting to this concept.  Suggestion: Check in with Rebecca on this.
+   * Q: The charter for Provence (Ludaescher,Missier) was approved by the LT - but was the WG?
+
+ *      Data Integration and Semantics (Ludaescher, Pouchard Now led by Deborah and Jeff
+   *      Was the change in leadership of this group officially changed from Ludaescher,Pouchard ?
+   * It was discussed in a LT meeting at one point...  Maybe the Charter needs updating..
+
+ *      Usability and Assessment (Frame, Tenopir)
+ *      Exploration, Visualization, and Analysis (Cook,Kelling)
+ * 
+     
+Current working groups are listed here: https://docs.dataone.org/member-area/working-groups     
+
+- Federated Security (Butler and Basney)
+- Preservation and Metadata 
+- Integration and Semantics
+- Distributed Storage
+- Provenance and Workflows
+- Exploration, Visualization and Analysis
+
+     
+5. Around the Room
+
+Mike:
+
+UA WG: We are looking at a distribution strategy for the Data Managers Assessment.  Most likely it will be distributed at the Sept EIM Meeting and also to the USGS Data Integration Community at the same time.   The WG would like to relook at the questions before final announcement.   Lisa Zolly, USGS, is taking the lead for the WG.  
+Carol: Lisa is also helping us distribute the library and librarian surveys to federal libraries.
+
+Phase 2 of the DataONE Public Web site Usability assestment report was sent into the "BRAD".  Many suggestions are being incorporated in the new site.   
+
+Bertram: summer project (Provenance Repository) wrapping up. Simple prototype 95% ready, need another week. To be demoed at AHM. Interested in opportunities on ProvWG for a "larger" provenance repository project. Connection with DataONE R&D / CCIT would be beneficial.
+
+John:
+1. Had call this week with Rebecca, Scott Jensen(IU), and Beth PLale(IU) on pulling together SC11 metadata tutorial. Good progress. One item was to weave a demo (depostiion, archive, search, retrieval, workflow integration) in with the material. We are looking for candidates.
+
+2. With Nick Dexter and Bruce Wilson, moving forward on ORC CN deployment. Proposed rack layout developed along with weight, power, and cabling  rqmts. Bruce may amplify
+
+

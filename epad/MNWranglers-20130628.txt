@@ -1,0 +1,120 @@
+////Member Node Wranglers (Fridays at 10:00 am AK/11:00 AM PST/noon MST/1pm CST/2pm EST)
+
+https://www1.gotomeeting.com/join/459586681
+
+28 June 2013                              
+
+Attendees: Rebecca, Laura, Amber, Dave, John, Suzie
+
+Regrets:  
+
+Agenda: 
+        1. High profile issues
+            - SEAD - Action Items:  Date to reconfirm with SEAD? Pulse SEAD on or around June 27
+            emailed, awaiting response
+                  
+        2. Status of MNs (MNs like this are high probability for making Y4Q4)
+            "In Progress" and "Testing" MNs for Y4Q4 are:
+             Dryad (3118) - a/o 6/27/13  MNF meeting: Ryan says "we are in the final stages  of getting integrated, registered test node, documented/sent to developers issues with registration process, couple of minor issues to  be investigated ("&" encoding, indexing), bigger issue: which parts of  API need to be using SSL; ~1 year ago, request from Matt Jones (?) to use SSL for everything, Ryan proceeding thusly, but Tier 1 doesn't  require SSL, so implementing without SSL."
+             Dave: testing in dev environment, have run into some issues with metadata (Dryad accessing ontology in building their metadata which is conceptually fine, but causes some difficulties with D1; after this is sorted out, should be able to move forward in test environment, then staging, then move to production.  Don't expect to be live by the DUG but it shouldn't be much after that.  
+             Amber: is Dryad in a position that they can present at DUG?
+             Dave: they're looking pretty solid
+             Rebecca: after talking with ToddV, they really do seem very close.  Something that might help the project as a whole is a post mortem.  Issues we seem to be having with Dryad and EDAC are communications issues.
+             Dave: we need to continue to work on documentation such as MN checklist to make the information that is available more "digestible" and helpful to MNs
+             Laura has also worked a lot to develop a very long/detailed list of items/steps
+             Rebecca: we all need to be involved in the post mortem
+             MN Showcase who? 
+   * Dryad: Ryan (Laura to send template, etc. to Ryan)
+   * USGS  (Mike Frame)
+   * eBird (Steve Kelling/Kevin Webb) - DataONE presenting by proxy
+   * SEAD (Kavitha Chandrasekar)
+   * NKN (Greg Gollberg)
+   * EDAC (Karl Benedict) - slides submitted
+   * 
+Order for DUG:  (see below)
+USGS, SEAD, Dryad, EDAC, NKN, eBird.  Intro by John / Laura.  Summary and QA by John / Laura.
+
+slides now missing for 4 
+
+Action Items: 
+
+Amber:
+        session suggestion
+            - talk about the overall network (briefly)
+            - Talk about MN's: Order:
+                - USGS CSAS
+                - SEAD
+                - Dryad
+                - EDAC
+                - NKN
+                - eBird last (since via proxy)
+            - QA
+
+            SEAD (3521) - a/o 6/17/13:  see above.
+            EDAC (3221) - 
+                There are issues. WE have missed the June Window of opportunity. Rob has been working with them. Documentation is an issue. Pointer to most current documentation. We may have missed their window. Karl and Soren are occupied for July. They might not resurface until August.
+                Laura: Q: Do we have a document versioning system?
+                A (Dave): yes 
+                        see: http://mule1.dataone.org/ArchitectureDocs-current/
+                        should be updated, but it is a manual process.
+ Action Item: Make this a topic for the MNF - here's a quick guide to our documentation, then do an assessment of where we are/where we'd like to be, get feedback to move forward.
+            University of Kansas (3188) - a/o 6/28/13: ran into a software issue that Roger is addressing.  
+            6/18: Some question about augmenting science metadata. Suggest to handle incrementally RM#3550 (Dave?) see if is resolved.
+            
+            "In Review" MNs for Y4Q4 and suggested priorities are:
+             PPBio (3748) - a/o 6/21/13: need to move PPBio up the priority list, 
+Action Item: John to follow-up w/David Dias {John, can you give me a date for doing this?  We're in danger of them losing interest by our lack of follow-up e-mail out today.
+             USANPN (3186) - a/o 6/27/13: Waiting on NPN: need word back from Bruce (Laura to email again and not be nice)
+             
+             NKN (3688) - meeting 6/18/13, everyone seemed eager to more forward, another meeting to be scheduled in the near future to state specific goals/plans
+suggest week after Knoxville mtg.
+
+             Oregon Explorer program at OSU: Rebecca to meet with Janine Salwasser mid June for more info. OE might be better when we  have MN in a box, call them a new prospective MN (create redmine ticket).  Rebecca: met with Janine in Alb, early in process, potential MN if we do a "slender MN", looking at after PY5.  
+             
+             Rebecca: spoke to Steve Ruggles @ Minnesota Population Center.  They WILL need logins (user authentication before download of data).  Looking at later in PY5. (Laura note in redmine.)  Rebecca to find out what kind of authentication they are using now.
+          
+             Follow-up on remaining Y4Q4 prospective MNs:
+            
+             AOOS (Alaska Ocean Observing System) (3531) - From  Matt:  This is for a project I have working with AOOS, and we have  deployed a Metacat instance that is in testing.  The node is located  here for now:  https://evos.nceas.ucsb.edu/evos.   Several things need to happen before this node goes production,  including: 1) rebrand the site as AOOS;  2) move the node to a stable  AOOS address; and 3) get signoff from the AOOS folks that they are ready  to have it go live.  Ben and I have managed this server thus far, and  so it should be straightforward to bring this node up once the ducks are  in a row.
+             Action Item: Needs follow-up and reconfirmation of status and prospect.
+             
+             TERN (Taiwan Ecological Research Network) (3211) - From Ben (redmine): From Dr Chau Chin Lin:  In terms of TERN Metacat to  join DataOne, we are planning to have TERN as the service of ILTER data  portal and still discussing. As you know ILTER has an IM Committee,  David Blankman is serving as the Chair currently. We will discuss this  in ILTER annual meeting in the coming Oct in Korea. Yes, I will let you  know and work with you if there is a final result.
+             
+             ILTER (International LTER - Israel) (3233) - Matt noted in redmine, David says that "LTER-Europe would definitely be interested in becoming part of DataOne. There is also an Asia-Pacific metacat that TERN/Taiwan is managing that should be a DataOne node as  well."  
+              POINT OF CONFUSION (for me, anyway) - OK, are we implementing Israel  and Europe separately, even though Israel is considered part of the  Europe region?
+             
+             SAEON (South African Environmental Observation Network) - From  Matt: Ben has worked with these folks consistently, and helped  establish a Metacat node there in Cape Town, but we need to follow up  with them to get it done.  They seemed amenable when we have spoken in  the past.
+        
+            Operational Nodes:
+                PISCO: Thomson Reuters experiencing strange issues when using a SOLR query to access PISCO data
+                    Dave: hard to understand what TR is trying to do, could just be a misunderstanding of what they want vs how to get it.
+                SANParks: went offline. server DNS resolution failure RM#3814 - is this resolved? we're not sure; node is ok but supporting infrastructure has disappeared
+                LTER:  13K+ objects report "not authorized" on synchronization even though marked public read RM#3815 (really not a problem because these records are legitimately not for public consumption)
+                PASTA update from MNF call
+                USGS CSAS: (from Mike Frame)
+                 "Mike: For later discussion - Won't be on the full MN call (can stay  for first 15 minutes), but would like to get an update on the CSAS MN  reindexing, and error issues. Record below is still showing errors:
+https://cn.dataone.org/onemercury/send/xsltText2?pid=nrdata.nps.gov_gos_2166812.xml&fileURL=https://cn.dataone.org/cn/v1/resolve/nrdata.nps.gov_gos_2166812.xml&full_datasource=USGS%20Core%20Sciences%20Clearinghouse&full_queryString=%20*%20AND%20has%20data%20AND%20%28%20datasource%20:%28%20urn:node:USGSCSAS%20%20%29%20%29%20&ds_id="
+(RM#3724)
+                Dave: going to manually go in and correct the issue; potentially this problem can happen again, due the the way USGS and DAAC handle mutability (or not) of data
+                John: do we have any open tickets on USGS?  
+                Action Item: Dave to check this out. Issue was corrected, then reappeared due to misunderstanding by node operators. Problem is being corrected.
+
+        3. Old action items
+            Action Item:  Date to reconfirm with SEAD? Pulse SEAD on or around June 27
+            Action Item:  JWC and LM contact Matt to better coordinate realistic implementation dates for SAEON, TERN (Taiwan), ILTER-Israel, and AOOS. (maybe at planning meeting in Knoxville mid July)  email sent 6/21/13
+            ACTION ITEM:  Laura: We need to advertise - on website, etc. - that TFRI is our newest MN, develop press release, "welcome", nugget for NSF - announcement drafted, MN desc doc on website, mention in Summer newsletter, Amber working on NSF nugget (requires a certain format with graphic content)
+ Action Item: Invite TFRI DUG MN showcase slide-set (and may re-purpose)
+            ACTION ITEM:  Poll MN's for what is of value to them in DataONE  participation (how to accomplish this? - MN forum topic?) prepare for DUG time-frame, we need to identify 1) what we need to know, 2) questions to ask to  find that out, 3) format for asking those questions (survey monkey?,  other?) - maybe get with Suzie et. al. for guidance?  Ideally, we should do this sooner rather than later.  Maybe conversations at DUG could provide some info along these lines.
+            ACTION ITEM:  John Call/Contact Ryan at Dryad with "how's it going?" OBE?
+            ACTION  ITEM:  Rhetorical consistency with LTER - node is really the LTER  Network Office  (LNO) Member node. We think this will be ok if members of the LTER network want to individually become D1 MNs, as they might call themselves SEV-LTER (Sevilleta LTER) for example.
+            Action item:  Laura talk to Suzie re TERN(AUS) and TERN(Taiwan) - email 6/24/13; response: as their node identifier, indicate source country, i.e. TERN-TAI or TERN-AUS, maybe.  This convention could apply to the LTER nodes, too (see above).
+   
+        4. not-high profile issues
+            Nothing at this time
+           
+        5. around the room
+        Dave: USGS issue was corrected manually by us (ccit) recreated by misunderstanding, will be corrected again and then make any revisions necessary on our end.  See also above.
+        John: how do we know this won't happen again?
+        dave: it shouldn't due to corrections/revisions
+
+

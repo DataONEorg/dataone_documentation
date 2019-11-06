@@ -1,0 +1,132 @@
+Notes for DataONE Security Infrastructure discussion - 2011-06-20
+=================================================================
+
+Actions:
+- Evaluate number of accounts that would not be able to use CILogon (international, restricted access, etc) and the impact this might have on the DataONE user community.
+
+- Test logon to cilogon using a foreign google / other generic account
+
+- Set CILogon certificate TTL to 18hrs 
+
+- Set CILogon certificate type to PEM
+
+- Setup D1 identity service on cn-test and the staging CNs (cn.dataone.org)
+
+- Evaluate other MNs (outside of KNB) for the impact that using CILogon for subject identity will have on access control.
+  - Dryad - Ryan
+  - Mercury / DAAC - Giri
+  - CUAHSI - Jeff
+  - Merritt - John K.
+
+
+- Evaluate mechanisms to populate the identity mapping database with existing accounts from KNB etc and efficiently map them to CILogon subjects.
+
+
+
+Previous etherpads: 
+
+- http://epad.dataone.org/20110114-FedSec
+- http://epad.dataone.org/20100811-fedsec
+
+
+Notes from email 2011-06-16
+---------------------------
+
+- synopsis of project moonshot - non-web based login over shib
+  http://www.project-moonshot.org/
+  http://www.eduroamus.org/
+
+  - goal to enable federated authn without a web-browser
+  - based on radius infrastructure - common in Europe for campus to link auth system (AD / LDAP), moonshot to leverage LDAP auth
+
+  - cilogon looking at SAML ecp
+    - provides saml from the command line without browser
+    - requires that the client is trusted with password - client comms with IDP (e.g. http basic auth over ssl) -> cilogon would return a cert
+    https://wiki.shibboleth.net/confluence/display/SHIB2/ECP
+  - Still a significant time lag for campus support of ECP (can probably leverage LTER in the meantime)
+    - install latest version
+    - install addon
+    - configure
+
+  - Also investigating oAuth as a cmd line option
+
+
+1) Is it possible for the DataONE skin to generate .p12 certificates that are password-free but short-lived.
+
+In principal I don't object, but in practice I don't know how to create password-free PKCS12 objects. Currently the best I can do (with openssl) is set an empty-string password. Also, I thought DataONE decided on PEM rather than PKCS12 objects. I prefer PEM especially for short-lived certificates, because PEM doesn't force us to set a password. I can do more investigation about password-free PKCS12 objects if DataONE wants PKCS12 objects rather than PEM.
+
+Our policy (which we inherit from the International Grid Trust Federation) is that private keys with corresponding certificate lifetimes under 11.57 days do not require passwords. Changing this policy is possible but would be somewhat painful for us. Currently the DataONE skin supports downloading certificates in PEM format, and if the lifetime is under 11.57 days, the private key is not protected by a password.
+
+To convert to/from PEM/PKCS12, see:
+    http://security.ncsa.illinois.edu/research/grid-howtos/usefulopenssl.html
+
+a) Is there a mechanism for programmatically renewing the short-lived certificate before it expires? What we're trying to get away from is forcing users to continually enter their 12+ character certificate password whenever they want to access protected services/resources.
+
+While certificate renewal isn't something we currently support at cilogon.org, the underlying (MyProxy) software can do it, so it's possible for us to enable this functionality. However, before we decide on the technical solution, let's specify the user experience we want:
+
+When should the user log in at his or her identity provider (Google, ProtectNetwork, LTER, or InCommon campus)? Once per day/week/year?
+
+When should the user be prompted for a private key password? Every time he or she launches a DataONE application? Never?
+
+How frequently will the user need to run a DataONE application to keep credentials fresh? This is the renewal question.
+
+- CILogon prefer not to to renewals
+- Will make the dataONE skin fixed at 24hr certificate lifetime
+  - better to use less than 24hr to ensure user always generates new cert > use 18hours.
+
+
+Today the options are (without renewal):
+
+A) Log in at identity provider once per week (11.57 days) and never prompted for a private key password. (This is the option I've been expecting DataONE to use.)
+
+B) Log in at identity provider once per year and prompted for a private key password on each DataONE program launch.
+
+If we add in renewal, we could do:
+
+C) Log in at identity provider once per year and run a DataONE application at least once per week to keep credentials renewed. Any time the renewal chain is broken (i.e., for whatever reason the renewal doesn't happen before the certificate expires), the user needs to log in again at identity provider to get a fresh certificate from CILogon.
+
+Another option would be to use RFC 5280 proxy certificates:
+
+D) Log in at identity provider once per year and prompted for a private key password one per week to create a new proxy certificate.
+
+b) Are there negative security implications to this approach that we haven't thought of?
+
+Probably you've already thought of it, but the primary security implication of credential renewal is that, in the absence of other protections, it undoes any credential lifetime limitations in place, i.e., the attacker can renew stolen credentials to extend the window of vulnerability.
+
+
+2) We'd like to have CILogon start calling our "Identity Service" which provides additional user information for the subject being authenticated.
+  a) The additional information will be included in the generated certificate as an XML snippet
+  b) How best can we help implement this?
+
+Yes, we discussed this on our last call, and we're ready to support it at cilogon.org. We just need you to provide us the details of the REST call we should perform to obtain the XML to put in the certificate. I believe we discussed that this REST call would be over HTTPS, using a cilogon.org certificate on the client-side (i.e., on our side),
+providing the user's certificate subject (distinguished name) and IP address as parameters, and returning the XML in the body of the response. Is that right?
+
+Install session service on CNs to act as staging CNs (cn.dataone.org), and test CN
+
+- How to populate the session service? What is the DN in our records?
+- Need a canonical form of the subject information?
+
+3) Is there a development/testing environment we could be using for CILogon while we work to augment the details that are included in the generated certificate?
+
+  a) Our Identity Service will initially be deployed on a dev machine; the CILogon DataONE skin would need to be [re]configured to interact with the correct service deployment (dev/QA/prod) if we did not have a separate CILogon testing environment.
+
+Yes, we have a test.cilogon.org instance that we can use.
+
+Certificate subject
+-------------------
+uid=mservilla,o=LTER,dc=ecoinformatics,dc=org
+
+cn=Mark Servilla A432,dc=cilogon, dc=org
+
+/DC=org/DC=cilogon/C=US/O=University of Chicago/CN=Benjamin Leinfelder A458
+
+CILogon DNs: http://ca.cilogon.org/names
+
+/DC=org/DC=cilogon/C=US/O=University of Illinois at Urbana-Champaign/CN=Jim Basney A47983
+
+
+User account management for International partners is a major issue
+    -- very difficult to resolve, different IdPs in place, different federations, sometimes none
+    
+
+

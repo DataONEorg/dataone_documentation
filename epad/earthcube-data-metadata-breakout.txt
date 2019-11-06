@@ -1,0 +1,72 @@
+Need for Semantically Rich, Interoperable Data & Metadata Models
+
+    Merged two groups
+        Multiple Data and Metadata Models and Associated Formats
+        Semantically Enabled Crossdisciplinary Interoperable Data Exchange/Discovery
+    
+Why is this barrier important to overcome?
+--------------------------------------------------------------
+0) Modern science requires interdisciplinary data
+"Why is this barrier important to overcome?":  Modern  science is typically multidiscipilinary,  requiring access to diverse  information resources to answer many relevant questions.  While there is  a massive and growing amount of diverse data to inform research,  it is hard for scientists to locate and interpret comprehensive and  relevant data using conventional search/retrieval services, due to the  multiplicity and variable quality of current metadata/data frameworks.   In addition, the geoscience community must make their data available to a  broader audience, including potential policy makers and interested  citizens.  A semantically-rich framework will make these data more broadly accessible to a broad range of  non-expert  (as well as expert) audiences.
+
+1) Fundamental to understanding data (inside and outside disciplines)
+2) Fundamental to long-term preservation
+3) Discovery can be more comprehensive and have higher degree of precision with better efficiency and fitness for use
+4) Common and interoperable data and protocol enables retrieval
+    -- either common protocol or interoperable proptocols
+5) Improves ease of use / usability
+5) Enables efficient and scaleable integration
+
+Who is most affected by this challenge?
+-----------------------------------------------------------
+1) All researchers attempting to work with data inside and outside of their core domain and often, simply beyond their own individual data holdings;  also any researchers needing to keep track of novel, emerging, dynamic data resources; as well as researchers needing to locate distributed data. In addition, it is highly problematic for technologists and developers, who are developing new tools and services that may not have the broad scope and applicability that could be achieved if there were an interoperable standard in place.  Finally  other stakeholders (policy/decision makers, NGO's, interested public, industry/business, educators/students, etc.) will benefit by making these data generally far more accessible, by exposing the contents and provenance of scientific data in a unified, semantically-rich format.
+2) Developers of tools and services
+2) policy/decision makers
+3) teachers and students
+4) general public
+5) NGOs
+6) Industry
+
+Summary - anyone who is interested in reuse, sustainability, and impact
+
+Goal: refine the barriers to 3 subbarriers
+---------------------------------------------------------
+Subproblems:
+
+[alternate #1] The non-interoperable nature of current (domain-specific) data/metadata models (manifest in their formats, vocabularies, access methods, query forms, expressivity and internal logic) impedes the development of tools and services that enable widespread and effective search, discovery, retrieval and use of geoscience data.
+1) multiplicity of non-interoperable metadata-data information models
+ * Multiple formats exist that are not interoperable
+ * Multiple logical models ex
+ * Multiple protocols for accessing data exist that are not interoperable
+ * Multiple vocabularies exist that are domain specific
+
+2) Conventional search and retrieval mechanisms are unsatisfactory-- need greater expressivity and ease-of-use:
+        -- information models that are in use lack sufficient expressivity for  modeling information, queries, and provenance 
+        -- query languages that are in widespread use (SQL, SPARQL, idiosyncratic dialects in 4GL, etc.) -- features not fully exploited, and with varying semantics
+        --  provenance languages lacking
+        -- insufficient use of highly expressive features of languages
+    -- Different models define various predicates for operating on the models (protocols)
+    -- Natural language data dictionaries-- potentially inconsistent and un-structured key-words 
+    -- Lack of generalized abstraction that hides the query language/information model differences and generally makes the language/model easy to use for non-experts
+
+3) Lack of sufficient Quantity and quality of metadata CONTENT
+    --testability/verifiability
+    --insufficient time, good tools, and incentives for creating metadata
+    -- lack of social network-style annotation/evaluation/recommendation
+    
+-----Attendees-
+
+  Jeff Horsburgh - Utah State University (jeff.horsburgh@usu.edu)
+  Matt Jones - UC Santa Barbara (jones@nceas.ucsb.edu)
+  Nick Jarboe - UC San Diego
+  Ben Domenico - EEE / Unidata / UCAR
+  Yong Liu  - NCSA / U of Illinois
+  Deborah McGuinness - Rensselaer Polytechnic Insititute - dlm@cs.rpi.edu
+  Mark Schildhauer - UC Santa Barbara (schild@nceas.ucsb.edu)
+  Jian Qin - Syracuse U. - jqin@syr.edu
+  Chris MacDermaid - NOAA / ESRL 
+  Paul Koch - Water Resources Consultant - prkoch@gmail
+  Michael Piasecki - City College of NY mpiasecki@ccny.cuny.edu
+  Dave Fulker - OPENDAP - dfulker@opendap.org
+  
+

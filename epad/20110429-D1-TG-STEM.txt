@@ -1,0 +1,101 @@
+Coordination Meeting for DataONE, TeraGrid MN, STEM TeraGrid Analyses
+
+Agenda
+ * brief summary of successful TG computation allocation - Daniel F
+ * brief summary of planned/underway TG MN work - John C, Nicholas D
+ * DataONE linkages/objectives - Dave V, Matt J
+ * issues to solve?
+ * action items?
+
+Attendees: 
+Dave Vieglais, Matt Jones, Nick Dexter, John Cobb, Paul Allen, Kevin Webb, Steve Kelling, Daniel Fink
+
+Notes
+-------
+ * brief summary of successful TG computation allocation - Daniel F
+   * awarded time, produced spp distrubition models
+   * State of the Birds to come out on Tuesday
+   * in January submitted research track allocation; extend modeling for State of the Birds
+     * More species, more detail, a lot more computational resources
+     * Got the allocation in April
+   * part of request was request to put together a MN on TG as part of allocation
+     * results of modeling will include:
+       * for each species, produce distribution model, plus data products, and a series of predictions
+         * Keep models, visualizations of predicted distributions, and statistics that describe impact of predictors in the model, some results on predictive performance of the model
+         * Main result are species distribution estimates: 1) data files as rasters/matrices, and 2) visualizations as png files & animations
+         * Approximately 10-15TB final output size (2-4 TB/yr, and have about 7 years of data)
+         * Possibly some larger data sets at intermediate stages, but not all need to be kept
+ * brief summary of planned/underway TG MN work - John C, Nicholas D
+   * TG'11 same week as CCIT meting; Dan Fink invited to give invited talk; probably will go
+   * This allocation award is the only NSF Bio award for TG allocations
+   * Requested two VMs on Quarry; 5TB of shared file system; plus 5TB on data capacitor
+   * Discussions with TG to have all TG Nodes deploy MN at their site; this is a pilot for that
+   * Last year we said EVA could use more D1 infrastructure directly
+   * Plan is to write runs to Quarry, Albedo, and directly insert into DataONE, and replicate to storage at co-located MNs at CNs
+     * would show end-to-end from consumption to model to data products storage to sharing in full cycle
+   * Paul: Over the summer the AKN will bring up a MN; so might be options there for storage too
+   * need to discuss metadata generation for data insert into MNs
+   * Nick Dexter has brought up a MN at TG using Metacat
+   * Can request ASTA support from TG if needed
+   * What web service services are available?  The basic CRUD operations from DataONE.
+   * Matt can overview R-client for DataONE access with anyone who's interested
+   * Matt: biggest issue might be timing of EVA production runs with DataONE production status
+   * Daniel: initial production runs will start in the summer, producing about a TB of data initially
+     * Dave: probably reasonable to send the data to the MNs (TG, AKN); can trigger a manual replication to staging nodes, and manually push content back to AKN or other location
+     * Steve: AKN up to now focused on delivering un-analyzed data products (e.g., eBird data set); don't have way to organize and structure second generation data sets; have ideas on visualization tools, etc, not developed yet; could use feedback on ways in which they can optimize ease of transfer these second gen data sets (animations, images, and data behind the animation)
+   * also have time on Nautilus visualization machine at SDSC; want to support large R applications; we might want to create additional visualizations; could be good for John and Daniel to discuss these opportunities
+ * DataONE linkages/objectives - Dave V, Matt J
+   * Dave: main thing is need flow diagram to show how whole system will wokr for the EVA experiment
+     * will help nail down issues of timing of replication, etc., avoid blocking each other through the year
+   * Dave:Nick has good handle on getting MN up and operational; would be good to push data in; Metacat up and running, as is the GMN; Nick has detailed notes on what it took to do deployment; wants to extend implementation notes and OS install instructions on mule1
+   * http://gw59.quarry.iu.teragrid.org:8080/knb/ - Metacat
+   * http://gw59.quarry.iu.teragrid.org/mn - GMN (Python)
+   * Would be good to get feedback on MN deployment; positive that it worked well on other OSes; need testing on multiple OSes;
+   * Matt: how would a TG node be maintained over the longer term?
+     * John: TG to be replaced by XD
+     * John: TG has standard sw stack, which should include a MN component on every TG node; got some pushback from HPC centers that ask why 'these' services and not others; need to demonstrate use cases; unlikely to get TG fte's to support it; TG is mostly focused on storage management; exception is Reagan Moore's collaboration with iRODS for many users
+   * Matt: could really use input on design of R-client and what data formats, metadata formats, etc that it supports
+   * John: also need to examine the performance profile for all D1 components
+ * issues to solve
+   * Timing of production STEM analysis will begin in summer but D1 infrastructure may not yet be ready
+     * Matt: lets create staging system now to give EVA people more stable env to work against
+ * action items
+   * (Kevin - lead, Daniel, Matt, Paul, Vivek): [June 30] come up with real metadata template for STEM results; use Matt's first draft created for the Feb NSF demo
+   * (Daniel - lead, Dave, Nick, Kevin): [May 31] Draft a document describing information flow and major components, systems, services and protocols involved in the interactions
+   * (Matt - lead, Kevin, Dave?, Paul, Nick): [June 15; needs draft of document above] Review the R package design and refactor as necessary for supporting this experiment
+     * Evaluate whether STEM analysis would use R package at all; might be commandline instead
+     * Design packaging/ folder structures etc for pushing content back into D1. Relationships between content elements.
+   * (Dave):[June 15] Design and implement setup staging implementation of D1 infrastructure
+   * (Paul): schedule regular (monthly) checkin of this group
+     * June - first/second week
+     * July - during CCIT meeting
+     * August - TBD
+ * Targets:
+   * July 15 - STEM analysis products being deposited dynamically, as analyses are complete
+   * discuss and resolve any blockers at CCIT meeting in July; add check up call to CCIT agenda
+
+
+John Cobb's talking point reminders:
+- PR coordination with TG for May 2? Elizabeth Leake
+
+- Get Nick on TG Project # TG-DEB110008 (AI: Dan as TRAC PI)
+
+- TG'11 invited talk prospect (Dan may be contacted by Amit or Sudhakar)
+
+- MN implementation on Quarry (Nick update)
+
+- Can move from Lonestar Albedo to Quarry Albedoe to MN to Cornell as a workflow
+
+- what metadata to insert into runs
+
+- Do we store all data for all time or are there "short-term" collections
+
+- May need to get supplement Data request on DC-WAN or Albedo to support upcoming year of work
+
+- Nautilus help: we have alloc and consulting help. including R support 
+
+-Think about taking advantage of this effort to also instrument and measure performance of initial data implementation, load and perforamcne of meta-data management transaction traffic, ...
+
+140,830 files/species/yr: What is more effective at metadata maangement? LS or tagged FS interface?
+
+

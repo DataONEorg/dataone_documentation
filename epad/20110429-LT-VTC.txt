@@ -1,0 +1,200 @@
+Attendees: Carol, Suzie, Bob, Amber, Mike,Trisha, Bertram, Stephanie, John K.,Viv
+
+
+Regrets: Bill, Todd, Matt, John Cobb, Dave Vieglais
+
+http://epad.dataone.org/20110429-LT-VTC
+
+
+  Agenda for 2011-04-29
+
+
+1. Report from USGS/DataONE tools workshop (Vieglais/Jones/Frame)
+Couple day meeting in Denver this week Matt & Dave from CCIT and developers
+and technical leads from USGS side
+
+2. Update on Best Practices Workshop (Budden)
+3. Request for someone to attend Open Debate at XLDB-Europe 2011 (Koskela)
+
+Dear Bill,
+
+Martin Kersten, Alex Szalay and I are organising a pair of workshops in
+Edinburgh from 7th to 10th June this year.
+We are very pleased to have brought XLDB to Europe.  It is a meeting of
+the leaders in handling eXtremely Large Data(Bases)
+with a bias towards solutions for scientific applications.  We want to
+show those from outside Europe the major undertakings in
+Europe, particularly the ESFRI projects, and we want to steer the Database
+Researchers and Companies to deliver solutions relevant to these ESFRI
+projects.
+Their provisional programme outlines are described below.
+
+I would very much like you to be one of the people putting forward a
+position in the
+Open Debate: "What is really needed to share research data globally?"
+
+The idea of the three debates is that we persuade a representative and
+diverse mix of experts to make short but strong position statements.
+There is then a discussion.  From this we try to distill clarification of
+issues and sharp conclusions in the workshop report.
+We will work with those who participated in the debate to agree the
+conclusions.
+
+In the Second Open Debate I want to get representative positions from
+international projects that indicate what their real requirements are for
+global data sharing.
+I thought your experience in DataONE inter alia would equip you to be an
+outstanding protagonist.
+Donatella Castelli, Information Science and Technologies of the Italian
+National Research Council (ISTI-CNR), has agreed to chair this debate --
+she has both the experience and the independence needed.
+
+If you say "Yes", which I very much hope you will, we will book and pay
+for your local accommodation,
+waive the registration fee for the pair of workshops and (if you need it)
+contribute to your travel costs.
+If you have to say "no" for some reason, I would be very grateful if you
+could suggest an alternative speaker.
+
+Whoever comes, I hope it will prove profitable to DataONE, by persuading
+more data-intensive researchers and solution providers to help with the
+challenges.
+
+Hoping to enjoy listening to you at this workshop.
+With best wishes and hoping you're enjoying a relaxing weekend.
+
+Malcolm
+
+
+--------- Current state of Planning --------
+
+The final event in the e-Science Institute Data-Intensive Research theme
+is being juxtaposed with the XLDB-Europe workshop, see
+http://wiki.esi.ac.uk/Final_Outreach_Workshop and
+http://www.xldb.eu/xldb_europe_2011/index.html.  These will be held in the
+week,
+Monday 6th to Friday 10th June 2011.  They are deliberately timed to
+precede SIGMOD in Athens the following week.
+
+You are all invited to the DIR workshop and strongly encouraged to apply
+for an invitation to XLDB-Europe 2011.
+We intend that these be very exciting events demonstrating recent progress
+in Data-Intensive methods and their application.
+Only the final two days, XLDB-Europe has a preference for large-scale
+data; otherwise we want to encourage
+multi-scale thinking -- adapting the approach to the scale and
+sophistication that is needed on each occasion.
+
+Please consider contributing material to the workshops.  There are three
+invitations to contribute on the web site:
+1) DIR updates - substantial recent progress
+2) DIR Research Village - presenting your group's achievements, methods
+and technology
+3) DIR lightening talks - presenting the gist of important new ideas
+
+If you can think of other ways of contributing, please let us know
+DIR-leaders@inf.ed.ac.uk.
+
+The programmes for both workshops are well developed.
+You can view the DIR workshop programme here
+http://wiki.esi.ac.uk/Final_Outreach_Workshop#Outline_Programme
+as it develops.
+4. Around the Room 
+
+1. Report from USGS/DataONE tools workshop (Vieglais/Jones/Frame)
+
+Actions/Next Steps:
+
+*******Configure the Uploader to use metadata development tools (such as Drupal Metadata Tool and possibly Metavist).   Establish Workflow (Above) Lead: Giri and Viv Date: ______  Other participants: Tim Kern, Brad, Dave Rugg, Ranjeet
+Establish components for Data Uploader so that it can be a Plug-in
+
+***Evaluate  DataONE Auth.   DataONE will develop the initial prototype and let  people know for evaluation Lead: Matt DataONE  Date:  End of June a prototype  will be available. 
+Potential  collaboration on DataONE Auth. Method (Browser handling of certificate renewals).   Fort Collins will participate in this development activity.
+Membership in the INCommon network for USGS needs to be evaluated as a potential method for Authentication into DataONE. Propose alternative options for Org's that can't/won't join INCommon. Lead: Jeff, Mike
+
+******Establish of BIP Node. Begin with the NPS Veg Data.   Lead: Giri   Date: Dec 31, 2011 Other participants: Jeff F, Tim M. , Tim K stay involved
+BIP Metadata Clearinghouse  needs to address issue of Identifers.   Establish DOI, Ezid service, for  Clearinghouse.  Lead:  Giri   Date: 
+Become DataONE MN for Sciencebase.   Use Generic MN toolkit. Lead: Tim Kern; Giri, Jeff, Viv.  Date: Dec 31, 2011
+
+*******FUSE/Windows  Drive effort.  Supports required functionality for storing metadata  back.  Define a Layer, using pyton, shared high-level API  (Drag and  Drop, Identifiers already in use)  Semantics (Requirements from  Scientists and Metadata Editors) of the DataONE drive and how it will be  supported.    Creation of a UI for Mounting of the Drive.   Lead: Dave,  Ryan   Date:
+
+*ArcGIS Plug-in Catalog support for exporting data/metadata  to DataONE. Curtis, Collin, Chris (NPS), EGIS, Tim K, Mike M to mention  at USGS GIS Workshop.   use ArcGIS to upload to any MN.   Date:  Initial Briefings at May
+
+Development of a potential Repositories (MNs) within USGS.   General stats and potential sources that could contribute to DataONE.
+
+MetaVist : Resolve the bugs in 2.x MetaVist.   Action: Viv talk with Dave R. related to what version to build upon, what needs to be done to resolve 2.x bugs, etc.   Identify method for additional DataONE Features.   Need to generate Unique Identifers from Metavist.  
+
+VisTrails  Support.   Load and Save Data from DataONE from MN, plus metadata generation and saving for derived data products in VisTrails.
+
+R support for DataONE data loading and saving, and metadata generation and saving for derived data products in R.
+
+Common vocabularies for common terms - hydrology, ecosystems, etc.   (Potential use of NBII BCT Thesaurus, and USGS Thesaurus) 
+Develop broader characterizations for the DataONE keyword search from the multiple USGS Thesauri that are available.   Look at involving Peter, Lisa, Dave G, in this activity.  
+
+---- Below here must be done ----
+
+Implement reserveIdentifier() for CN service to delegate EZID service for ARKs and DOIs.
+
+Release data uploader as open source via SVN with OSI license, TIm Kern
+
+Draft a CDI funds proposal for continued collaborations between Fort, CBI, and CSI.  Mike, Tim, Viv, Tim M., Mulligan 
+
+Provide talking points related to areas of involvement for the May 18, DataONE Briefing at the CSS SLT.   Lead: Frame, Tim Kern   Date: May 15
+
+
+2. Update on Best Practices Workshop (Budden)
+Workshop runs week after next, May 9th - 11th, Santa Fe, NM.  3 day meeting.  Day 1 - DMP, Day 2 - Best Practices, Day 3 - Software Tools.  A large amount of preparation and revision of DataONEpedia done in advance by the BP Planning Team, in particular Carly Strasser and Laura Arguelles.  Participants are primarily environmental scientists with experience is large data management practices and librarians working with digital collections.
+An afternoon pre-meeting in advance (Monday afternoon) being held by the DMP Tool Group.
+Primary headache has been in coordinating accomodations in a mid/high season tourist area.  Most of our attendees failed to meet the room block deadline leaving us scrambling for rooms.  Lessons learned for me - you cannot remind people enough.  Currently chasing up the last couple of people however the hotel is fully booked for the last night.  May have to ask DataONE team to switch hotels on the last night to avoid transferring this headache to outside participants.
+
+3. Request for someone to attend Open Debate at XLDB-Europe 2011 (Koskela)
+At some point would be good to get DataONE Working Group members involved 
+in representing DataONE at various venues
+
+4. Around the room:
+
+Bertram: Looking for a scientific-workflow/provenance user from the DataONE community.
+Users using workflows already or getting ready to use workflows - who are these people
+and how does the WG contact them? Bob suggested Jeff Morrisett (sp?)
+Another comment & question re. online teaching materials:
+I found the materials here to be nicely presented (for tech folks):
+http://software-carpentry.org/
+Is there a link/group for the (planned? existing?) DataONE education materials (slides to online courses?) 
+
+Amber: Busy with BP and DUG planning.  DUG invites going out today.  
+Mentor information calls now complete so everyone should be on the same page wrt the initial process of working with their interns.
+Put in the application for a booth space to ESA (to be shared with Dryad).  Will start working on design activities next month.
+PPSR WG are satisified with the LT changes to the charter and will adopt these.  I spoke to Steve Kelling in person and he is not disappointed about the recommendaiton to be removed from the WG.
+One of our EIM instructuctors (workflows) may need to cancel his teaching commitment (June 2nd).  We don't currently have a back-up.  Recommendations appreciated.
+
+Steph: Viv and Carly have continued dialog among Best Practices side of CEE working group - Viv can update?... Nothing else to report, gotta leave in a few minutes for a dentist appt... :) 
+
+Suzie and Carol: The joint U&A/SC WGs meeting will be held next Tu-Th May 3-5 at UT Knoxville. We have finalized the agenda and confirmed participants.  The meeting includes the opportunity for a 1/2 tour at ORNL organized and hosted by Bob Cook.  The meeting is focused on five areas identified by the LT/CCIT as key areas to concentrate on.  Potential deliverables have been identified to build on these areas.  
+
+The SCWG has officially installed Kimberly Douglass as co-chair (per the LT last week) and Maribeth Manoff has moved back into being a full WG member.  
+
+An interesting article by one of the 2010 interns, Valerie Enriquez:
+
+http://futureready365.sla.org/04/25/beyond-books-what-does-research-mean-to-you/
+
+The Special Libraries Association (SLA)  has a year-long program to discuss how information professionals will interact with the future.  This blog is encouraging a different professional to post each day.
+
+Trisha: Nothing to report. 
+
+Mike: Nothing to Report beyond what's above.   
+
+Viv: 
+--This week was all about the USGS/DataONE meeting hosted in Denver. 
+--For CEEWG, we are making progress on the data management modules  - survey questions have been developed to gather feedback, and there is a looming deadline to complete the edits and annotations for each of the slides. 
+--Group identified places to make enhancements and improvements in Wikipedia - Carly is organizing the group to make those edits by a date in June. 
+--The DataONE intern is confirmed and work will begin with Melody Basham soon - working on making a face to face meeting plan in May. 
+--Also - working on redefining a proposal for a USGS data management, one part of which is data management education. Obvious overlap with DataONE CEEWG work being done. 
+
+John K.: Did panel on NSF data management requirements for grad student audience at UC Davis.  Lots of questions about incentives for sharing given effort and loss of competitive edge for sharing data that could still be exploited for further publication. Also, who "owns" (and what does that mean?) data generated by grad students?
+
+Bob: still off the Net at ORNL - chasing down the last of the malware - may be as early as
+next Monday; getting ready for Best Practices Workshop in Santa Fe
+Working on revised EVA charter - hope to have it ready for review shortly; arranged for
+NASA briefing in DC on Friday, May 20th with Woody Turner and Martha Maiden.
+
+

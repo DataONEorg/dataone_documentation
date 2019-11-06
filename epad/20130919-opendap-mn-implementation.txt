@@ -1,0 +1,108 @@
+OPeNDAP MN Implementation Notes
+===========================
+
+Conference call 9/19/2013
+--------------------------------------
+
+Participants: Matt Jones, Dave Vieglais, Jing Tao, Laura Moyers, James Gallagher, Bruce Wilson, Chris Jones, Dave Fulker
+
+James:
+ * Interesting because allows imposing a logical infrastructure on top of physical infrastructure
+ * This effort: build the logical layer
+   * Work has come before, may be of relevance
+     * Unidata Common Data Model (extend DAP Grid to be more like a Coverage)
+       * Can accomodate vector-type data (vs arrays only)
+       * Put some 'tabular' data in arrays
+
+Challenges:
+ * data set boundaries
+ * large number of granules
+ * lack of standardized metadata
+ * mutability of data and metadata
+ * management of identifiers
+ * user identity issues / mapping (if go beyond tier 2)
+ * What's the least addressible unit in larger data sets -- where do the identifiers point? (a single value but usually using array or table subsetting)
+   *   Current trend is to move to larger and larger aggregations of data
+
+What DataONE Tiers would we target?
+ * Certainly Tier 1
+ * Possibly Tiers 2 & 3
+ * Replication (Tier 4) less likely
+
+Which servers would we target?
+ * Hyrax (C++ for backend, Java for frontend)
+   * first cut on design work and prototype
+   * side-by-side servlet impl may be best
+ * THREDDS (note: Bob Cook interested in this) (Java)
+   * Implement after issues worked out with Hyrax
+     * data, configuration, NcML
+   * UCAR (separate organization)
+ * PyDAP (Python)
+ * ERDAP
+   * more of a portal, probably lower priority
+ * Could implement on top of DAP itself, so implementation could work with any of them
+
+Which nodes would we target?
+ * NODC? data exposed by a few implementations:
+   * Geoportal server
+   * DAP server
+ * JGOFS (individual ocean experiments, lots of tabular data)
+ * (AOOS?)
+
+Who would work on the project?
+ * Organization:
+   * 
+ * Development:
+   * 
+
+How much work is required?  When would we schedule it?
+
+What might we do? Two potential collaborations:
+    1) Modify the DAP engine to implement the DataONE API
+        - simple REST-based API
+        - identifiying a 'dataset' in an OPeNDAP server may be a challenge due to the hierarchy
+        - Four Potential Tiers to implement
+        - Tier 1 (read-only, public access)
+            production API docs: http://releases.dataone.org/online/api-documentation-v1.0.0/apis/MN_APIs.html
+            trunk / latest docs: http://mule1.dataone.org/ArchitectureDocs-current/apis/MN_APIs.html
+            Example calls to implement:
+            /object (listObjects())
+            /meta (getSystemMetadata())
+            /checksum (getChecksum())
+            etc.
+        - Tier 2 (authenticated access) - X509 certificate-based
+        - Tier 3 (CRUD write access)
+        - Tier 4 (Replication)
+    2) Use the DAP data model to be able to manipulate data within DataONE
+
+Advanced issues: Data subsetting and aggregation discussion
+
+Action items
+* Dave F: Contact NODC (specifically including Ken Casey) about interest in becoming MN
+* Dave F: Contact JGOFS about interest in becoming MN
+* Matt: Set up next call
+
+Next steps: decide who and how much investment
+Next meeting: Thursday October 3, 2013
+
+Discussion 2012-09-25
+================
+
+- Resources available for devloping a software stack to work with OPeNDAP
+- Need to develop a work plan that outlines the activity and specifies significant development milestones
+- First step should be the design.  Can this be done in such a way that it works with any DAP server, perhaps as a filter that sits on top of the server, accepting the output DAP information and translating that into DataONE speak.  In other words, does the DAP protocol provide all of the information that's needed?  If not, getting into the actual server itself (whichever ones) is a lot more difficult of a proposition.  
+- Work will be put out to bid by UNM, but we can select the awardee (within reason).
+- Who can do the work?
+  - Would be much more efficient to get the work done if participants at the management side are familiar with both DAP and DataONE, for example, by getting a month or so of time for someone at OPeNDAP to have time to work with people to implement this.  
+- Does a subsetting operation, where there is, for example, a computational result file, with some complex subsetting operation needed to get the data as a data set.  Dealing with identifiers for subsets is an issue.  URL with all of the parameters is a unique identifier.  Each different result is a different URL and a different URL.  Handling a potentially infinite number of datasets is a problem.  DataONE assumes that there are discrete datasets, each with their own identifier, and that each data set is then registered into DataONE.  Ties into the whole need for how does DataONE handle service endpoints, which is a question still under discussion.  
+  
+- Next Steps:
+ * James G. to review this discussion with Dave Fulker
+   * Dave Vieglais send out draft/template of the Statement of Work (likely a Google doc).  See Deliverables item below.
+ * Can we address the "can the DAP protocol do this" question sooner.  Answer to that question shapes the structure of the resulting bid.  How people configure their data sets and what they consider a data set to be has a huge effect on the answer to similar questions, so the answer may be that yes, it can work, but only if people configure their data sets and servers in a particular way (or don't do something).  Crawling a server configured with a large number of granules can be very time-prohibitive.  
+ * Sense is that yes, it is likely (but not certain) that this can be done building on the DAP protocol itself.  
+ * Target needs to be statement of work:  Dave V. to pull together a template for what this needs to look like this, based on some existing examples.  
+ * Deliverables: Software stack that implements the DataONE API, design document, bring at least one MN into production status using this tool.  There a couple of THREDDS servers at ORNL that might be candidate MN's.  Some discussion at NODC. WHOI would be another possible.  Peter Cornillion another idea.  Lots of possible options.  Bidder to specify who the candidate member node(s) would be.  Reasonable candidate MN and evidence of planned cooperation would be an eval criterion.  
+ * Note that dealing with dynamic subsetting is out of scope for the subcontract.  This needs to be dealing with discreet datasets, each of which have a persistent and unique identifier.  
+
+

@@ -1,0 +1,180 @@
+Attending: Amber, Mike, Carol, Bruce, Bob, Trisha, John Cobb, John Kunze, Dave, Bertram, Hilmar, Viv
+
+Regrets: Bill, Rebecca, Suzie
+
+1.  Please join my meeting, Mar 23, 2012 at 9:55 PM PDT.
+https://www1.gotomeeting.com/join/593657520
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (805) 309-0010
+Access Code: 593-657-520
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 593-657-520
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012Mar23-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-23-02
+
+1) CI Update (Dave)
+2) Internship update (Amber)
+3) DUG update (Amber)
+4) DataONE Workshop (Trisha)
+5) Around the room
+
+
+1) CI Update (Dave)
+Bug fixing etc during the week.  Sandbox environment using real data from KNB for testing. testing with chunks of 100 records at a time. Synch service working fine (process for discovery on MN, catalog on CN).  Indexing process is working fine but there is a recent bug discovery and not yet sure what is causing it.  Need to resolve / track asap.  Should not dramatically effect functionality (1% of records impacted). Replication between CNs working fine.  Replication btn MNs - encountered a lot of problem during the week.  One of the machines running the MN was causing the problem - machine disabled and will explore later when there is more time. In the process of installing latest release candidate in sandbox (done in next few hours).  More testing will be done and assuming all goes well, the sandbox will be 'done'.  Would like to advertise sandbox URLs but things are up and down a little and the user would be unaware whether an error is due to an error in the system or if it is due to developer activity.  Look and feel of ONEMercury interface consistent with public website.  In process of bringing in DAAC MN for testing.  Have to get in touch with Dryad to more fully test the Dryad MN environment.
+Overall, some frustrating bugs to resolve but really close.
+
+URL for sandbox: 
+https://cn-sandbox-ucsb-1.dataone.org/
+This directs to ONEMercury interface.  Top tabs take you back to the public website.  Dave will send out email we next iteration of sandbox is fully deployed. We are in the process of re-deploying the sandbox environment (Friday afternoon) so it is likely that the site will be inaccessible today and through the weekend. Notification of availability will be sent out when the sandbox deployment is completed and there is content available.
+
+Sandbox will go through a process of check followed by next version etc before a production release is exposed.  The production release will also go through a period of testing involving a broader audience (e.g. project participants) before full advertising.
+
+Redmine project will be available to capture issues tracking. Create tickets, notes, so the CI team can work through the issue. 
+
+Congrats to CI team and develpers!
+
+As DAAC MN testing happens, need to also test NBII metadata in advance of Apr 16th USGS workshop.
+
+2) Internship update (Amber)
+We had 18 candidates apply although in 5 cases, they were missing letters of reference.  This is far fewer than last year (~75) however the calibre of students that did apply was pretty high.  The process thus far has been much simpler to administer as a result of online application.  
+
+Bertram: What did we do different last year?
+Materials were emailed directly and we had to determine eligibility from cover letter.
+Great! Much better this year then! :)
+
+There were 10 projects listed and only 8 can be funded however it seems that, as in last year, the process of elimination will be relatively straight-forward.  There are a couple of wrinkles in that the same candidate was selected by multiple projects (interns could list 1st and 2nd choice) and in this situation, the interns preference determines placement.  Emails are going out to mentors today to explain next steps and we are requesting that mentors conduct phone interviews to ensure a good fit.  Interviews, deliberations and final decisions need to be complete by the end of next week and Rebecca will announce the outcome to applicants on April 2nd.
+
+3) DUG update (Amber)
+Jul 15-16, Madison, WI
+The DUG registration page is now live to coincide with the opening of ESIP registration (they are cross linked): http://www.dataone.org/dug-2012-meeting
+Our 'doubling' metrics require us to have 100 members.  We may achieve this but are unlikely to get 100 attendees.  At present, we have hotel accomodations reserved for 50 which we can extend.
+Confirmed speakers are Bill, Amber, Matt, Dave, Steve, Trisha, Andrew Sallans.  Registration has not yet been advertised - I will do this on my return - but people can begin to register.
+Funding only provided for speakers.
+Theme for meeting "The Data Life Cycle the DataONE Way"
+
+4) CNI Workshop (Trisha)
+
+CNI is hosting a workshop on scholarly identity.  Bill invited but cannot attend and so the invite has been passed along.  See text below for information about the meeting.
+
+ORCID - non profit that came out of publishing world interested in identity.  Is this system something that DataONE is thinking about - identifying individual researchers, persistent identifiers etc.  ORCID helps manage issue of change in institution etc but also deals with disambiguation.
+
+Dave: Did look at ORCID but it didn't seem to be open source.  Is that still the case?  Goals of ORCID well aligned and we should pay attention.
+
+DataONE will be working with constituents outside academia and other types of data users / providers.  
+
+DataONE needs to define its requirements. Items mentioned
+Open source
+Author central information colocation (CV like)
+DataONE will have data contributers some of which differ frmo traditional scholarly literature author lists.
+
+***********************
+Call For Participation
+The Management of Scholarly Identity
+A CNI Workshop
+April 4, 2012 (following the CNI Spring Member Meeting)
+Sheraton Inner Harbor Hotel
+Baltimore, Maryland
+
+10AM - 3PM
+
+The Coalition for Networked Information (CNI) is hosting an invitational workshop for organizations actively involved in developing systems, services, databases, standards or policy frameworks addressing author identity management within the academy and the scholarly communication systems.  The purpose of this workshop is to understand and coordinate developments in historically independent spheres that involve the management of authorial identity, publication histories, and other parts of academic biography (for example, grants awarded to faculty); in the new digital scholarly communications environment there is at least potential convergence among many of these activities. A particular focus of the workshop will be to identify work that can help information to move more effectively across the many different silos in this area. Here are some of the relevant threads:
+
+A number of proposals for author identifiers have now largely coalesced into the ORCID initiative, which remains very much a work in progress; there are also international standards efforts (which seem to have rather different objectives) under development. This work is not yet well connected to the increasingly widely deployed campus identity management efforts employing Shibboleth and organized under InCommon.
+
+It has become clear that authors need to take control of their personal bibliographic record, and that this record is increasingly important as input to tenure and promotion (through the use of both long-standing and new measures of scholarly impact); this record lives in a number of systems, including Web of Science, Google Scholar, and Microsoft Research Academic, to name only a few. The mechanisms to make authenticated corrections to this record are very poor, and such changes do not automatically propagate from one system to another.  A variety of other systems - research library institutional repositories, research management information systems, faculty social networking systems, and others - also need feeds of personal bibliographic records as they evolve.
+
+National and international library name authority has been almost entirely focused on authors of books; it is clearly going to have to expand its scope to other forms of creative expression. With the development of institutional repositories research libraries are re-inventing name authority control for their local authors; this trend is further accelerated by various funder or institutional open-access mandates. All of this work needs to be connected to the developing author ID systems.
+
+Universities and other organizations are starting wide scale deployment of a new generation of research management systems and faculty profile management systems (often migrating from ad-hoc, locally developed systems to the adoption of common platforms like Kuali Coeus and Vivo) that involve management of faculty biographies and bibliographies, and need to be able to cross institutional boundaries for a number of purposes.  As a byproduct, we also have emerging opportunities to create new kinds of dictionaries of national biography for research communities.
+
+
+CNI has been tracking developments in this area for some time, and held an earlier workshop on closely related issues in 2007. However, a great deal has changed over the past five years, and it is time for a fresh examination of the issues.
+
+In order to have a productive discussion, the size of the workshop is limited. Prospective participants should contact CNI Associate Director Joan Lippincott (Joan@cni.org) as soon as possible with a few paragraphs on their interests and relevant work that they are doing in this area; unless otherwise requested, these will be shared with other participants and become part of the public conference report that CNI will prepare. Selected attendees will be asked to give brief presentations based on these submissions.
+
+CNI will provide conference facilities, refreshments, and lunch; travel and lodging expenses are the responsibility of the participants. As we accept participants, we'll provide more detailed logistical information.
+**********************
+
+
+5) Around the room
+
+Mike:
+
+Planning for the USGS DataONE workshop is proceeding. Looks like over 25-30 people are registered for the Day 1 Webinar and around 10-12 people for the Day 2 Hands-on Configuration and installation.
+
+Day 1: 
+
+8:30 – 9:00                        Introductions
+ 
+9:00 – 10:30                        DataONE Overview                                    
+§  Cyberinfrastructure                        (Dave Vieglais)
+§  Community Engagement            (Vivian Hutchison) 
+ 
+10:30 – 10:45                        Break
+ 
+10:45 – 12:00                        Detailed Discussion of What is a Member Node (Mike Frame) 
+§  Current MN
+§  Policies
+§  Responsibilities
+§  Potential USGS Member Nodes
+ 
+12:00 – 1:30                        Lunch
+ 
+1:30 – 2:45                        Member Node Cyberinfrastructure demonstration & discussion  
+§  Coordinating Nodes (Matt, Dave)
+§  Architecture review (Matt, Dave)
+§  API’s available (Matt, Dave)
+§  Metadata Requirements (Matt, Dave)
+§  MN Toolkits available & options (Matt, Dave)
+§  USGS DOI Service  (Mike, Giri) 
+§  Contributing data to existing USGS Member Node (Viv, Giri) 
+ 
+2:45 – 3:00                        Break
+ 
+3:00 – 4:00                         DataONE ITK Tools Demonstrations & Discussions   (Matt)
+
+Day 2:
+
+8:30 – 9:00                        Review of Day 1 and Day 2 Agenda (Mike)
+ 
+9:00 – 10:30                        Install Member Node stack and Demonstrations (Matt, Dave)
+ 
+10:30 – 10:45                        Break
+ 
+10:45 – 12:00            Hands-on setup of the Member Node Toolkit with Participants data (Matt, Dave, Giri)
+                                     
+12:00 – 1:30                        Lunch
+ 
+1:30 – 3:30                        Hands-on setup continued
+ 
+3:30 – 4:30                        Meeting Wrap-up 
+
+Bob
+EVA working group meeting will be held in Boulder on April 3,4, and 5.  Finalizing participant list and the agenda; many who said they could attend have backed out.  Community is very busy.   We’re finding some additional and excellent participants to join this meeting.  Matt, Bertram, and I will attend from the LT. 
+
+John Kunze: Trisha and I were on a call with Jan Brase about DataCite's proposed requirement of CC0 for metadata when registering a DOI for a data set.  We are cautiously optimistic that "requirement" may be converted into "recommendation".  
+
+Attempting to articulate a DCXL (Excel add-in) requirement to ask for an identifier in exchange for metadata; considering a new MN API method to ask for an id in advance of deposit.
+
+John Cobb: Nothing today
+
+Suzie is traveling back from RDAP meeting today, but says the DataONE poster was well received and she made some good connections. More from her later. 
+
+Carol: Nothing more today.
+
+Viv: Working with Mike on upcoming workshop in April. Making progress on May DataONE workshop in SB on data management. Gave a metadata workshop yesterday for USGS Rocky Mountain Geographic Science Center --- lots of interest in the DataONE portion of the presentation resulting in some additional registration for the USGS-DataONE workshop. 
+
+Amber - started advertising for students to attend the DataONE / ESIP short course (http://www.dataone.org/data-management-short-course).  Not yet linked from our website but will be shortly.  12 spaces available, around 25% being held for students from tribal communities (collaboration through Jonathan Long USFS)
+
+Bruce: Nothing to report.
+

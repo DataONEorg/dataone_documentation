@@ -1,0 +1,198 @@
+#persist
+
+.. meta::
+   :keywords: DataONE, CCIT, 20120620, VTC
+
+
+Developers Call - 2012-06-20
+============================
+
+:attendees: Dave Vieglais, Chris Jones, Ryan Scherle, Mark Servilla, Matt Jones, Paul Allen, Chris Brumgard, Ranjeet Devarakonda, John Cobb, Bob Sandusky
+
+
+Agenda and Notes
+----------------
+
+
+1. Progress towards production infrastructure
+
+- Production status
+
+
+  - CNs up, running 1.0.1
+     https://cn.dataone.org
+  - KNB, ESA, SANParks MNs operational
+
+
+- Remaining MNs to be brought online ASAP (this week, early next)
+
+  - LTER 
+    - presently generating system metadata on test instance against cn-stage
+  - PISCO
+  - CDL
+  - Dryad 
+    - slicing needs work, log reporting still being worked on
+    - change in identifier format, more similar to DOIs that are being published
+    - new object formats need to be added
+    - alignment with UDFR would be a good goal. Need to obtain the full UDFR list and add to object format list
+        - For a list of the formats in the UDFR ontology, go to:
+            http://udfr.org/ontowiki/queries/editor/?m=http://udfr.org/udfr/
+          and use a query similar to:
+              PREFIX udfrs: <http://udfr.org/onto#>
+              SELECT ?formatId ?title ?description ?mimeType
+              WHERE { 
+                ?formatId rdf:type udfrs:FileFormat.
+                ?formatId rdfs:label ?title.
+                ?formatId dct:description ?description.
+                ?formatId udfrs:mimeType ?mimeType
+              } 
+              LIMIT 2000 
+              
+        PREFIX udfrs: <http://udfr.org/onto#>
+              SELECT ?formatId ?title ?description ?mimeType
+              WHERE { 
+                ?formatId rdf:type udfrs:FileFormat.
+                ?formatId rdfs:label ?title.
+                ?formatId dct:description ?description.
+                ?formatId udfrs:mimeType ?mimeId.
+                ?mimeId rdfs:label ?mimeType
+              } 
+              LIMIT 2000
+              
+              
+         PREFIX udfrs: <http://udfr.org/onto#>
+              SELECT ?formatId ?formatName ?mimeType ?title ?description 
+              WHERE { 
+                ?formatId rdf:type udfrs:FileFormat.
+                ?formatId rdfs:label ?title.
+                ?formatId dct:description ?description.
+                ?formatId udfrs:mimeType ?mimeId.
+                ?mimeId rdfs:label ?mimeType.
+                ?formatId udfrs:aliasIdentifier ?aliasIdentifier.
+                ?aliasIdentifier udfrs:identifierValue ?formatName
+              } 
+              LIMIT 2000​             
+​
+
+    - Dryad has new metadata namespace/format for science metadata, we need new parser rules for CNs to ingest that into the search index
+
+  - DAAC
+      -http://mercury-ops2.ornl.gov/ornldaac/mn/v1/object
+
+  - USGS-CSAS
+      -http://mercury-ops2.ornl.gov/clearinghouse/mn/v1/object
+      
+      www.nbii.gov_metadata_mdata_NPS_nps_d_metaapisfield.xml is an example of 404 error, sys meta is ok.
+      
+    - Is returning 307 status code for objects. Option to install node at Denver or implement a pass though mechanism
+
+
+- Client tools
+
+  - Java and Python libclient
+  - CLI
+  - ONEMercury
+
+  - (R plugin)
+    - Fairly complete
+    - Needs work on package handling
+    - Decision - ship light and early or heavy and later?
+
+  - (Morpho)
+    - CRUD operations feasible
+    - Needs extensions to the search API (1.1 feature)
+    - Access control and authentication
+
+  - (ONEDrive, requires API changes so not before 1.1)
+
+  - Model output comparison tool for EVA support
+      -- could be based on Kepler or VisTrails
+
+2. General development schedule through 2013
+
+Rough outline of targets through to start of 2013:
+
+v1.0.x patch releases as necessary
+
+
+v1.1
+~~~~
+
+Schedule:
+
+2012 Block 5 (20120812 - 20121006)
+
+Features:
+
+- MN-MN Replication
+- Basic log reporting capabilities
+- Search index introspection, output field selection
+- API support for adding Object Format entries
+- Content auditing
+- MN kill switch, emergency response to innappropriate content
+- Support for additional metadata formats (as dictated by MN content)
+- Initial support for Puppet controlled deployment
+
+
+v1.2
+~~~~
+
+Schedule:
+
+2012 Block 6 (2012107 - 20130105)
+
+Features:
+
+- Basic change notification / subscription mechanisms
+- UI for user authentication and group management
+- Basic subsetting capabilities
+- Core integration with other DataNet infrastructures
+  - includes IRods MN implementations
+or in general tmap out hte process to integrate contributed SW
+
+- Isolation / specialization of search services
+- Progressive improvements to index generation (e.g. controlled keywords)
+
+
+v1.3
+~~~~
+
+Schedule:
+
+2013 Block 1
+
+Features:
+
+- Push notification for MN content (MN notifies CN instead of polling)
+- Support for high performance data transfers (e.g. GridFTP)
+- Progressive improvements to index generation (e.g. taxonomic name resolution services)
+- Alternative discovery interface to ONEMercury
+- Design for > 3 CNs on possibly high latency connections
+- Support for efficent bulk loading of content
+- Other performance improvements as necessary
+
+
+- Lots of MN software stacks that need to be developed
+- Semantic search capabilities
+- ITK components
+
+
+----
+
+Call Info:
+
+1.  Please join my meeting, 20-Jun-2012 at 13:00 PDT.
+https://www1.gotomeeting.com/join/848635393
+
+2.  Use your microphone and speakers (VoIP) - a headset is
+recommended. Or, call in using your telephone.
+
+Dial  1 (805) 309-0012
+Access Code: 848-635-393
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 848-635-393
+
+
+
+

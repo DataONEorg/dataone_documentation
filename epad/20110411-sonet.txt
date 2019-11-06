@@ -1,0 +1,176 @@
+Joint Working Group on Observational Data Semantics:  SONet, DataONE, Data Conservancy
+
+(note: consider having lunch sent in?)
+(note: was trying to slot about 4 hrs to each session-- but ran out towards end)
+
+Participants
+-----------------
+Shawn Bowers     bowers@gonzaga.edu 
+Corinna Gries      cgries@wisc.edu 
+Philip Dibner        pdibner@ogcii.org 
+Deborah McGuinness      dlm@cs.rpi.edu 
+Matthew B. Jones     jones@nceas.ucsb.edu 
+Mark Schildhauer    schild@nceas.ucsb.edu 
+Dave Vieglais    dave.vieglais@gmail.com 
+Carl Lagoze        clagoze@gmail.com 
+Hilmar Lapp        hlapp@nescent.org 
+Jeff Horsburgh    jeff.horsburgh@usu.edu 
+Margaret O'Brien     mob@msi.ucsb.edu 
+Andrew Maffei    amaffei@whoi.edu
+Ruth Duerr    rduerr@nsidc.org
+Stephan Zednik    zednis@rpi.edu
+Ben Leinfelder  leinfelder@nceas.ucsb.edu
+Chris Jones    cjones@nceas.ucsb.edu
+
+Invited but unable to attend
+---------------------------------------
+Josh Madin          jmadin@bio.mq.edu.au - not attending
+Steve Kelling    stk2@cornell.edu  - not attending
+Luis Bermudez      lbermudez@opengeospatial.org   - not attending
+Chris Mungall      CJMungall@lbl.gov - not attending-- at European mtg
+Cam Webb      cwebb@oeb.harvard.edu - not attending-- in Indonesian forest
+Peter Fox      pfox@cs.rpi.edu - not attending
+David Tarboton      dtarb@usu.edu - not attending
+Simon Cox  simon.cox@csiro.au- not attending
+Peter McCartney    pmccartn@nsf.gov - not attending
+Cyndy Chandler  cchandler@whoi.edu- not attending
+Mark Parsons parsonsm@nsidc.org- not attending
+
+Goals:
+1. Can we do more integrated ontology development? Incorporate different ontologies together?
+
+Agenda
+-----------
+
+Mon, April 18
+
+9AM  Overview--- introduce Data Conservancy/DataONE and Joint Working Group; review original mission of SONet and JWG Ithaca meeting--"foster more data-sharing outside of silos";  and provide overview of this meeting's goals  (20 mins; Schildhauer)
+
+9:20-9:30 Introductions
+
+9:30-10:30   Demonstrations/descriptions of capabilities of  ongoing projects implementing observational data models 20 min. each (15 min + 5 min ques)
+
+        SONet-semtools (Bowers/Leinfelder)
+        Data Conservancy Semantics(Lagoze)
+        DataONE Semantics (Vieglais?)
+
+10:30-10:45 break
+
+10:45-12:05 20 minute presentations, continued
+
+        Phenoscape/EQ (Lapp)
+        OOI (Maffei-- working with RPI; images
+        NSIDC (Duerr)
+        VSTO  (Zednik/Fox; alignment of VSTO onts with O&M 2.0)
+        
+ 12:00-1:15 lunch
+
+1:15-2:00 20 minute presentations, continued
+          HIS (Horsburgh-- O&M?)
+        SW Darwin Core (Webb/Baskauf-- remote submission)
+        
+2:00-2:30 Discussion 
+        Where are there strong partnerships already in place among our projects?
+        Review proposed sessions for framing further discussion--
+            need for new/revised topics?
+
+2:30-3:30 Session 1: Observational data ontology co-development
+    * Product: 
+        -- Should we coordinate observational data ontology development across our projects?
+        -- If so, how should that be technically and procedurally facilitated?
+ 
+   Details:
+    * process for submissions; reviews; revisions & versioning; formats & standards; citation; 
+    * OBO curated model vs autonomous communities (simple repository model)
+    * mechanisms for sustained sharing of information regarding: implementation, capabilities/shortcomings of various models   
+    * need for "framework", process, and tools to enable collaboration--identify and discuss candidates for these?
+    * establish shared corpus of test data
+    * establish shared corpus of Use Cases-- already exist? need more refinement?
+    * establish shared corpus for semantic code?
+    * are there specific types of ontologies that should be co-developed and shared?
+    
+3:30-3:45  Break
+
+3:45-5:00 Session 1: Observational data ontology co-development (continued)
+
+6:30 Dinner together for those interested
+
+Tues, Apr. 19
+
+9:00-10:30  Continue and conclusions for Session 1
+
+10:30-10:45 Break
+
+10:45-12:00  Session 2: Comparative ontology review (better to name something like "Challenges in Domain Ontology alighment"?:
+    *What relevant ontologies should be included in co-development activities?
+    * Side-by-side comparisons of favored ontologies: broadstroke-- identify areas of overlap,  gaps and dependencies. Identify structural differences, types of constructs used-- e.g. equivalence classes, class vs. instance prevalence, natural language descriptions, partial/complete (some of these more sophistacted topics might better go in the 'semantic capabilities' session)
+    * Authority-- how are communities going to develop and adopt ontologies? Is there need for "sanctioning"
+    * How deal with integrating disparate and/or complementary ontologies-- feasibility of referencing multiple namespaces, or need for a fully integrated (monolithic) ontology.
+     Candidates to review: OBOE-SBC, VSTO, SWEET, ENVO, PATO, PlantOntology (PO), Trait Ontology (TO)
+     WaterML in O&M?
+     Semantic Darwin Core
+
+12:00-1:15 Lunch
+       
+1:15-3:30 Continue Session 2: Comparative ontology review (better to name something like "Challenges in Domain Ontology alighment"?:
+
+3:30-3:45 Break
+
+3:45-5:00 Continue and conclusions for Session 2
+
+6:30 Joint dinner?
+
+
+Wed, Apr. 20
+
+     
+Session 4:  Semantic capabilities-- Examples of semantic queries enabled by observational data model
+    * clarifying nesting constructs in data
+    * clarifying observations associated with same instance
+    * clarifying primary (direct) from inferred measurements
+
+Session 5: Mechanisms for binding ontologies to raw data (semantic annotation), and storing, retrieving and interpreting semantic annotations.
+    Data interchange format--v. W3C group on annotations--Annotation Ontology (AO)
+    LOD
+   resolving  ABox-TBox in scalable solutions
+
+
+Wed, Apr. 20  1:00-3:00P
+Session F: Leaders' meeting-- plan for next working groups; way forward; products; new partnerships and opportunities
+
+Session G: Managing complexity for scientists-users
+
+
+Session D: (too complex for this meeting-- hold off for more focused meeting) ODPs--  ontology design patterns (especially context; recursion of "entities";  best practice with OWL-- e.g. complete definitions, equivalence classes)  for modeling observational data
+*********************************************************************************
+Questionnaire:
+Shawn suggested we ask participants to fill out a questionnaire asking them about their work; below are some topics we could cover:
+
+Regarding observational data semantics, please concisely address the following questions.
+
+1. What is the main URL where you are reporting on your observational data semantic efforts?
+
+2. What are the 2-3 most useful publications where you are describing your observational data semantic efforts?
+
+3. What are the main informatics or analytical challenges and Use Cases driving your work on observational data and semantics?
+
+4. Do you have a specific corpus of data that you are using to focus your efforts with observational data?  If so, are these publicly accessible? 
+
+5. What are the primary data types/formats of concern?  Is your focus on: data discovery; data integration; analysis and modeling; linking data to publications; linking data to analyses?  (URL)
+
+6. What ontologies you are using in your work?  What format these are in, what is their stage of maturity,  and what are the intended uses for these? (URLs)
+Which of these ontologies are you developing in-house, and do they depend on other ontologies?
+
+7. Are you constructing an open Code base for your efforts in observational data semantics?  Are you developing and sharing API's, libraries, open-source, etc.?  Do you have an over-arching architectural diagram you can share that depicts your work on obserational data semantics?(URL)
+
+8. What standards/specifications, etc., if any, must you conform to in your semantic development on observational data?  E.g. compatible with OGC O&M  WATERML
+
+9. How much actual workforce is available to advance observational data efforts in your program?
+
+10. What specific semantics capabilities are you expecting will be enabled by adopting an Observational data model?
+
+11. What are the major impediments to progress in semantic tools development for your project?
+
+
+
+

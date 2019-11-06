@@ -1,0 +1,58 @@
+.
+
+Joint DataONE EVA & Provenance Teleconference
+
+Participants: Bertram, Steve, Dave V., Colin, Fei Du, Yaxing, Bob, Aritra, Paolo, Victor
+Regrets: Bill
+
+------------------------------------------------------- 
+To join the audio conference
+------------------------------------------------------- 
+1-866-703-9626 
+pass code: 767574 
+
+1. Introduce past and current DataONE Provenance WG activities (tools, technologies, …)
+    - Bertram, Paolo
+
+2. Introduce the DataONE EVA and Provenance summer intern projects
+    - Bertram, Yaxing
+
+3. Discuss challenges on data search, evaluation, analysis, etc. that climate scientists are currently facing
+
+Bill:
+ - Need to track how a "workflow" evolves and their different versions
+ - Get a family tree of a data product
+ - genealolgy of related data products
+
+
+4. Discuss how Provenance and EVA can help to address these challenges. Outcomes of this discussion will guide the development of use cases for DataONE Provenance & EVA summer intern projects.
+
+Steve:
+- OPeNDAP OPULS (see http://docs.opendap.org/index.php/OPULS:_UGrid_Subsetting and http://docs.opendap.org/index.php/OPULS:_UGrid_Subsetting)? at the OPeNDAP website. Also, Dave Fulker gave a BESSIG talk entitled "A (Very) Rough Idea: Raster Binning & Masking Services" at the 2012-09-19 meeting.Seeking feedback from the group, Dave summarized it as: "A new type of data query/response service built (perhaps for EarthCube) around a standardized space-time raster that has a dual function. Via Raster Binning & Masking Services (RBinMasks), users would gain a means to specify (irregular) space-time regions of interest and to gain space-time distributions of pertinent data, without--or before--retrieving actual values." I don't know the status of the RBinMask concept)
+- UDUNITS
+- Global Change .. (GCIS) activities (will 
+- Please also see Apache OODT (http://oodt.apache.org) for another workflow/management approach. Introductory reference: 
+Computing: A vision for data science
+   * Chris A. Mattmann
+Nature 493, 473–475 (24 January 2013) doi:10.1038/493473a
+Published online 23 January 2013
+
+Collin:
+- OPeNDAP Subset useful for Geo Data Portal
+- Summary calculation and visualization (box plots, line charts,)  i.e. I provide a polygon that outlines an area of interest (a park for example) and specify a climate dataset.  The tool would provide an image file or VisTrails spreadsheet cell that has visualizations of the climate in this area.  For example like the tools in:  http://regclim.coas.oregonstate.edu/visualization/gccv/cmip5-global-climate-change-viewer/index.html
+
+- Visualization of spatial data in spreadsheet.
+A custom VisTrails spreadsheet cell that was designed for climate data would be helpful.
+This item would maybe have a timeslider and sync between multiple cells.
+(uses matplotlib and basemap toolkit )
+
+Bertram:
+Solicit scientists' con
+
+Steve:
+- More more and people are using provenance recently. A few working groups.
+- Want to hear more about D-PROV. Both human-reable and machine-readable representations.
+- Look forward to talking more 
+
+5. Solicit new data visualization and analysis functionalities for the DataONE EVA summer intern project to add into UV-CDAT/VisTrails.
+

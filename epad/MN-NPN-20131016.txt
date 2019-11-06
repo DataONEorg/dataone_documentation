@@ -1,0 +1,45 @@
+USA-NPN (USA National Phenology Network) - DataONE Member Node follow-up meeting
+
+16 October 2013, 3pm EDT, 2pm CDT, 1pm MDT, noon AZ/PDT, 11am AK
+ - previous meeting epads:  http://epad.dataone.org/MN-NPN-20130724, http://epad.dataone.org/MN-NPN-20130801, http://epad.dataone.org/MN-NPN-20130828, http://epad.dataone.org/MN-NPN-20130911, http://epad.dataone.org/mn-npn-20131002
+
+Attending:  Bruce, Lee, Laura, Ben
+
+Regrets:  
+
+Redmine ticket: https://redmine.dataone.org/issues/3186
+
+Agenda:
+
+Lee update current status:  
+    Production MN is working, s/w installed on server, configured w/LDAP server, certificates there; added a data file a couple days ago but Lee hasn't had a chance to check that it is synching correctly with CN
+    DOIs - may be cost-prohibitive via some sources; USGS has a service that can generate DOIs for organizations that are associated with them
+
+Questions from NPN that DataONE can address?    
+    1 - how can we test/verify data synchronization?
+    2 - chicken-and-egg - need a DOI to put data in DataONE, but USGS needs a URL before it can issue a DOI; perhaps we can say "this WILL BE the URL when I get a DOI" or can we say that the URL is to be determined.
+    
+    NPN node is registered in production but it hasn't been "turned on" yet. 
+    
+    Need OREs.  Feature in metacat that will generate those for you.  
+    Lee has been adding data via metacat; he was having problems with morpho.  (this is the "old" metacat API)  With the "old" metacat, OREs are not automatically generated; with the "new" one, OREs are automatically generated.  Ben recommends upgrading to newest version of metacat (should be end of this week).  
+    
+    Lee: Is there any other approved mechanism for adding data (other than morpho and "old" metacat)?  
+    Ben: Yes.
+    Lee:  Perhaps some of the difficulties I had loading data earlier were related to security concerns.  Now that we have a legit cert, perhaps those problems wouldn't occur.
+    
+    Lee:  excel has a record limit that will not accommodate the number of records that NPN will have.  May have to split files up.
+    
+    Ben:  Lee can generate OREs and if he's happy with the content (Lee may add a few more files) we can "turn on" NPN and verify synchronization, etc.  Ben to check with CCIT (after checking OREs) and verify that we can officially move to production. 
+    
+    Will need press release information from Alyssa.
+
+DOI should point to ORE --- maybe?  or a landing page?  Lee was going to point it to the metadata file (also works).  
+
+    Recap:
+   * NPN wishes to operate at tier 1 and that they are in a position to establish a test system.
+   * Based  on NPN's "live" data status, we think we'll have one dataset that's historic wildlife data, others by year.  Alyssa said they'd work on PIDs/DOIs with Bruce.
+   * Alyssa indicated that the due date shown on the redmine ticket of 31 Oct 2013 is reasonable.
+
+
+

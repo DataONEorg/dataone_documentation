@@ -1,0 +1,401 @@
+DataONE Users Group
+Jul 7th - 8th 2013
+Chapel Hill, NC
+
+Breakout 1: Member Nodes
+
+A near final version of the presentation slides is available at 
+<https://repository.dataone.org/documents/Committees/MNcoord/Coordination_Work_Area/DUG_2013_prep/20130707_DUG_MN_breakouts.pptx> (But this is probably not the long-term archive location of these slides)
+
+13:00 EDT Notes (1440 session notes below at or around line 208)
+Matt - presenting on overview/issues with becoming a MN, DataONE design goals
+    embrace heterogeneity via Data Packaging
+    perservation
+    high availability
+    reproducability, immutability, versioning
+    logging
+    
+    some identifiers: doi, ark, uurl, lsid, http, etc.
+
+Web page for Member Node Deployment Checklist
+http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html
+
+
+   Packaging model:
+   resource map, data, metadata. Note some Member Nodes handling packaging issues different. DataONE exposes this model
+
+Metadata formats (EMl, BDP, ISO 19115, Dublin Core, Darwin Core, METS) - 
+
+See the road Map to a Member Node
+Phase 1 - Planning
+    includes selecting a tier
+        tier 1: public content
+        tier 2: access control (make private data available via "login")
+        tier 3: write services (users can write data/metadata to your node)
+        tier 4: act as a replication target
+
+Q: For a group that is considering being a basic MN (tier 1), is there any guidance on deciding to operate at a higher node?
+A: Think organizationally; do you think you'll be an archive for a long time? If not, consider joining another MN, but if are long-term, you might be a good candidate for a MN.
+Q: Is there a problem with too many nodes?
+A: We anticipate 100s or 1000s of MNs, but there are scalability issues we are considering.
+Q: Would you see all research/academic institutions becoming MNs?
+A: Yes, we are looking at institutional repositories.
+Q: Re: archiving and longevity, what is the relationship with a national archivial repository (seemed to imply long-term NARA approved repository) and DataONE? 
+A: link smaller repositories to larger (national?) repositories (i.e. NODC for oceanographic data),
+
+Phase 2 - Develop
+    can use existing repository software 
+        Metacat (tier 4)
+        Generic Member Node (tier 4)
+        Dryad (tier 1)
+        Mercury (tier 1)
+        Merritt (tier 1)
+        ... and more
+    If you use existing MN software, you can skip the development step; if not, there will be development time needed.
+    
+Phase 3 - Deploy
+    we go through 2 testing stages in deployment:
+        1 - staging, iterative cycle;
+        2 - deploy in production
+        
+Phase 4 - Operate
+    announce availability of MN
+    ongoing maintenance
+    
+Barriers in the implementation process:
+    during deployment - establishing secure SSL environments, providing package ORE maps (required to link data and metadata)
+    design issure - immutability and versioning, logging
+
+QUESTIONS/COMMENTS:
+
+Q: what is data citation policy of DataONE?
+A: DataONE doesn't have a uniform citation policy other than each dataset is required to have one.  Some MNs impose very strict data citation policies, others do not, and that's fine.
+Q: Data citation policies may help to mitigate the issue of appropriate attribution/recognition of source of dataset.
+A: This is also related to the "branding" issue discussed in the MN showcase.
+    CC0 copyright - you can do anything you want with this data (data provider waives all rights to data including citation)
+Q: What is benefit to using CC0?
+A: Open and unencumbered access to data for synthesis.  
+
+If you don't have citation, you don't have science - see concepts of provenance and risks of plagiarism, etc.  
+
+Matt: DataONE has tried to remain neutral with respect to data citation policies in order to be able to include more and more MN's. 
+
+Q: How do we address data provenance? through metadata?
+A: Yes.  Can also identify derived datasets (composed of more than 1 dataset) and superseded datasets. see the Package Model slide in the presentation - data has system metadata, the resource map has system metadata, and the science metadata has system metadata.  System metadata is maintained by the MN; there is some QA/QC at DataONE.
+
+Q: barriers/impediments specifically logging - say node X implements CILogon, where does the logging occur?
+A: CNs log metadata access, and we expect MNs to log access to their data/metadata (This is needed to report replica access for originating MNs)
+
+MN needs simpler implementation, data contributors need to know who's accessing their data - sometimes these conflict
+
+D1 supports CILogon on the back end.
+
+Laura: presenting on documentation and communications needs
+
+SEAD (Inna and Kavitha present at this DUG) may have been the first MN to implement directly from documentation without prior DataONE project interaction/experience.
+
+Missing parts of documentation: the middle part. A link between high-lelve overview and technical details
+
+Question: 
+1. What should be seen on the DataONE website regarding MN's
+
+currently we have
+what is invovled
+..
+Current MN's
+
+Other things to add:
+- What does it cost to implement a MN?  (answer will interest management)
+- What are the costs of maintaining a MN? (answer will interest management)
+- Suggestion - do this by scenario - The answers may vary by scenario - i.e. large remote observing program versus a museum
+- Considerations: ...
+- Will vary by choice of MN SW stack
+
+If do costs, then should also state the benefits
+- What are the benefits of deploying a MN? (answer will interest management)
+
+- provide some recommendations/guidance: Doen't just say you support ISO, but add things like if you use ISO, if you choose to put this data field into the schema it will help usability.
+    or for example, we suport 5 data formats but if you use these 2 you can have more bang for the buck.
+    Matt: we have best practices
+    Rebecca: but the best practices are for practiioners and this may or may not be
+    
+Provide a mentor relationship for new MNs
+
+Advertise the MNF on the ext. DataONE web-page
+
+Improve readability of web-pages
+
+Bob: is there a MN implementor Mailing list.
+
+Laura: means of communication
+
+Q: how to capture content
+
+Document etherpad searchability for the MN documentation.
+
+Redmine: https://redmine.dataone.org/projects/mns
+
+Laura: provisional strategy. link to documentation mid-level directly from the flowchart
+
+Laura: what problems that you experience could have been alleviated by clikcing through the flowchart.
+
+A: Proper links to the system metadata schema.
+( I found three pages and a link mentioned but it followed to a missing page)
+
+Comment: the economics is killing us. Can you help us to define funding opportunities that could help us in finding resources for implementation.
+
+Rephrase: after cost question: answer another question: how can I find the resources that will help me meet those costs:
+
+Steve: it may also help if the web pages help make the case of  "Why" this is a valuable activity. This is slightly different than the statement of benefits question, but there is some overlap.
+
+link ask.dataone.org better in external.
+
+Communications questions:
+    Questions about modes: how do you use/cna use?
+        IRC
+        Online doc
+        Dev mailing
+        CCIT calls
+        Redmine https://redmine.dataone.org/projects/mns
+
+Maximinze the MNF. What to do to make it more useful?
+    advertise better?
+    open more widely? Y
+    What to pulish about MNF?
+        epad are searchable
+        some questions
+        
+Link epads direclty into the forum. in a web-page
+    note: epads are undigested notes
+    
+provide a link to MN-related questions on ask.dataone.org
+
+Some organizations are open but participation lags. Maybe ask new MNs to comment
+
+More q's
+What skills are needed to implement a MN?
+
+
+
+John: presenting on DataONE and MN added value
+
+for science researchers, hoe can DATaONE help amplify the science impact of the data archives represented by the MNs?
+what can MNs and D1 do to augment synergistic opportunities?
+     -    I tried to use D1, was not easy to search for data - consider a  semantic search engine which would allow better discovery of data  (forward to MBW)
+     -    related to best practices, before going production, can we get  some guidance on best practices - high priority data, things we can do  now (still in dev/test) where changes are cheaper/easier
+what can MNs and D1 do to augment synergistic oppportunities? 
+other questions?
+
+How  does D1 help individual researchers deposit data?  ask.dataone.org -  how do I put my data into D1?  response: MNs open to anyone (i.e.  ONEShare), MNs open to anyone with qualifications, MNs that are project  specific (i.e. PISCO and others)
+
+Q:  challenge to create metadata for data - perhaps a template would be  useful, esp. to researchers so they'd have something to start from.  
+A: metadata tools to help relatively inexperienced users get started - see Morpho for one.
+These  are kind of community data standards/conventions (i.e. use meters vs  centimeters, etc.)  Perhaps D1 can help with pointers to these community  standards (i.e. see Kepler for data flow)
+
+Q: there are no standards - what if, say, units were changed prior to upload
+A: 
+
+could leverage some existing tools (i.e. DMPtool) web-based tool for developing a data management plan tool; Smithsonian wants to use DMP version 2 internally
+
+Q: do we see MNs of a like type use like metadata standards?
+A: yes
+
+Karl (EDAC) is multi domain, so they see many metadata standards.  What are some common denominators across domains?  
+
+***************************************************************************
+
+Session 4 1440 - 1600
+
+Matt: discussing overview/processes/barriers to implementing MNs
+
+MNs are authoritative, curate data holdings, log/report access to objects, control access to data/metadata, replicate holdings for other MNs, deploy a DataONE-compatible software system
+
+Design goals: embrace hetergeneity via data packaging, preservation, high availability, reproducibility, immutability and versioning, logging
+
+persistent identifiers: uniquely identify data or metadata objects
+some examples of identifiers: doi, ark, uuid, lsid, html, etc...
+
+Data Packaging - see architecture documentation
+MUST produce a resource map (OAI-ORE RDF) (with system metadata)
+data and the science metadata also have system metadata
+
+support many metadata formats, including EML, BDP, ISO 19115, Dublin Core, Darwin Core, METS
+
+See flowchart: Road Map to a Member Node
+
+Phase 1 - Plan
+    determine which tier
+        tier 1 - public content
+        tier 2 - access control 
+        tier 3 - write services 
+        tier 4 - act as a replication target
+
+Phase 2 - Develop
+    wrap your own - implement tier 1 MN APIs however you like or implement tiers 2-4 as you need  - very time consuming
+    use existing repository software
+        metacat (tier 4)
+        generic member node (tier 4) 
+        dryad (tier 1)
+        mercury (tier 1)
+        merritt (tier 1)
+        ... more to come
+        
+Phase 3 - Deploy
+    2 phases of testing
+        staging - series of automated and content tests, iterative process
+        issues to consider: hardware, infrastructure, maintenance, administration, etc.
+    
+Phase 4 - Operate
+    announce
+    ongoing operations
+    participate in MN forums
+
+Typical barriers
+    during development - establish secure SSL environment, and providing package ORE maps
+    design issues - immutability & versioning, logging (required at tier 1 (and up))
+    
+Explain logging issue: in order to become a MN, required to log all downloads of data/metadata.  The CNs provide an aggregated log, since a single MN may not have accurate usage stats (due to multiple copies of a dataset)
+
+Q: are there infrastructure requirements, for an institution, for example
+A: run a server publicly visible on the internet, organizationally support operating as a MN, for a significant period of time.
+
+Q: as a prospective MN, we don't usually provide our users. Everyone gets a customized view of their data.  (This is Tracy from MPC)
+A: some repositories can combine data and provide data subsetting tools to simplify the data access; difficulty with reproducibility with custom data delivery (i.e. very complex subsetting), investigating options to ensure reproducibility
+considering suppoting registration of advanced services that might provide subsetting service.
+
+Possible solution: set up a metadata front-end with a few fixed data sets and then a link pointing to active subsetting for our archive.
+
+Planning to do the MN as the enitre MPC. We provide identifiers for each extract that a person creates.
+
+We archive the census.
+We capture a dataset and a query and that would reproducibly define the customized-data set.
+
+Q: Would it solve the problem if it was "append-only".
+
+(to ask Tracy later - do they have a date/time stamp on your records)
+
+Laura: Documentation and Communications
+
+Communications channels
+    MNF
+    IRC
+    Redmine
+
+ask.dataone.org
+
+I asked a question on ask. It got answered, but the answer was wrong.
+
+Questions on Documentation: What would have helped you?
+
+- Put all the communication channels on the ext web page.
+
+-  A narea that provides guidance and commentary on which technology stacks to use. Tradeoffs on advantages and disadvantage
+
+- Need a link to the flowchart from the web-site
+
+- have a kit or pre-populated presentation on how to communicate issues and progress to your institution.
+
+- The Roadmap is useful. SEAD used checkmarks to show progress.
+
+What else in the packet?
+A: Definitions of various components
+
+It would be nice to have a primer.
+
+From a library perspective: I often used terminology that makes sense to me although it may not make snese to folks in other fields/disciplines.
+
+Searchable system of member nodes. How to find member-nodes that are most like me.
+similar in what ways?
+    content
+    SW implementation
+    
+Provide a template to help frame the discussion.
+
+-Identify the types of repositories and how they address the stumbling blocks might help categorize MNs 
+
+Q: New questions needed for ask.dataone.org
+<offline>
+
+Detailed questions
+
+link to development test services
+
+interpretation of tests in test services
+
+proper link to understand requirements
+
+Examples would have helped
+
+also work with science end-users
+
+Soren: We have comleted an implementation that passes integration tests, but our packaging did not maximize the value of the data for ITK tools.
+
+Ryan: I would like to have a "preview mode" where I could put in my site URL and then see how it would look in ONEMercury.
+
+J
+
+John: discussing DataONE and MN added value
+
+How can DAtaONE help amplify the science impact of the dta archives represented by the MNs?
+    known - resilient access, persistence, single interface (may or may not be preferred
+    other areas for discussion
+    
+What can MNs and DataONE do to augment synergistic opportunities?
+    areas of opportunity
+    identify ripe, low-hanging fruit
+    principal challenges
+    
+
+How to find and assist science users who want to use multiple MNs?
+    What is value to science users beyond direct access to individual archives
+    How to enable value w/in DataONE
+    What does DataONE need to do to make this happen?
+    
+Q: access control, what does DataONE require for access control for tier 2?  
+A: what does data owner want in terms of data access/authorization?
+A: current authentication system based on CILogon, don't support OpenID except for Google (i.e. we accept whatever CILogon accepts)
+There are other authentication systems that could work - need to discuss within the federation
+
+Q: is authentication mostly for logging?
+A: yes, sometimes the funder requires logging; some PIs need to know who is using their data
+
+How do we enable scientific use of more than one MNs datasets?
+
+Inna: Improve what search results look like, an abstract is ok for text, but need more (perhaps visualization) or more descriptive summary for data
+Data browsing at SNS (selected thumbnails of data visualization) - worked well, but is only one application
+
+NCEAS - featured dataset, maybe something like a featured workflow, or something
+MN description is currently a PDF file, maybe a more visually attractive format would be helpful 
+Currently working on dynamic system: list of current MNs, real-time statistics, map of where they are, straightforward way of knowing what data/services are available, pull out temporal/spatial extent of MN holdings (i.e. heat map), number of holdings, current status (is it down?), which tier it operates at, 
+
+*******************
+Monday summary report out:
+
+additional content to this epad is welcome, but please mail Matt, Laura, John so that we do not miss it.
+
+Q's from Monday summary
+
+Cost? - yes weheared that suggestion.
+
+Is Road Map online?
+Yes at <>
+
+Q: was there discussion about the tiers?
+A: it was described but the   questions did not focus on that.
+
+Q: What are the existing SW stack?
+A: this was answered. See slides. Summary:
+    Metacat
+    Generic MN
+    Dryad
+    Mercury
+    Merritt
+    --- more coming
+    
+    Metacat and GMN can support all nodes
+    others support D1
+    
+    A:  (inna) also, SEAD uses Data Conservancy code
+
+Q: But is there just a package that you just install. (Steve Richard) 
+

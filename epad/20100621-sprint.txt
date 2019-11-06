@@ -1,0 +1,123 @@
+Notes for end of Sprint 8,  Start of Sprint 9
+
+
+Member  node synchronization
+
+ * Harvest  from member nodes
+ * Store in metacat
+ * Retrieve via get()
+ * Package for mercury
+ * Index by Mercury
+
+
+#608 (ActiveMQ) - all tasks  defer  for now
+  not as important for next week,  how  to indicate which cn runs which mn?  place a properties file in   /etc/dataone
+  
+#609 Design and implement the  scheduler for   synchronization service component
+-  Automate havesting using java quartz to trigger the process
+
+#642 -  need to check on status -  dependent on MN functiaonlity being  implemented
+#643 - "
+#662 Modify the harvester to read   and  update the registry information
+
+#658 - create a watcher.. Move  to  sprint 9
+
+#666 - unit tests
+
+
+
+
+
+Coordinating node  replication
+
+New Story- (Dave, 13pts) Setup, implement and test replication across three CN instances hosted at UNM, ORC, NCEAS.
+
+Task: Prepare host hardware for KVM clients (check with oak ridge on status of host)
+
+Task: Define the specification for the CN VMs: CPU, RAM, DISK (use existing cn-dev specs, document)
+
+Task: Deploy three CN virtual machines.  Install VMs, setup DNS, install CN packages
+
+Task: Configure replication for each of the CNs to replicate with each other.  Document changes.
+
+Task: Verify replication is operational.  Insert and modify at a node should be replcated to the other nodes.  Need to test this operates as expected.  Using the Metacat MN API exposed by the CN service (hidden in production), use a DataONE client to create() content on a CN.  Poll the CN and the other CNs for the new object.  Track the time that it takes for the transfe rto complete.  Verify that the system metadata and the object (science metadata) are replicated as expeted.
+
+Task: Implement a mechanism to "clean" a metacata instance, to reset it to a blank state for testing purposes.
+
+Task: Verify that the metadata packaging (for feeding the Mercury index) operates as expected when triggered by Metacat insert, update, replicate messages.  This is blocked by #658
+
+
+
+Content indexing
+
+New Story:  As a CN developer, I need to ensure that the Mercury index is able to process all of the science metadata formats of interest to DataONE.
+
+Task: (Roger, 2 hr) Create a tool that will enumerate the objectFormats available from all the Member nodes.  Should output objectFormat, the number of entries for that objectFormat, the number of member nodes where that objectFormat is located.  Should run from the command line.  Should make use of the existing DataONE APIs.  Should utilize the DataONE client libraries.
+
+Task: Verify that the enumerations of objectFormat that are expressed in the system metadata schema match the values that appear in the prototype data sets.
+
+Task: For each objectFormat in use by DataONE, ensure that there is a corresponding set of xpath rules that can be used by the Mercury indexer to extract the necessary information from the metadata documents and output the information correctly.
+
+Task: Generate tests that verify correct extraction of metadata values with application of mercury xpath indexing rules for each objectFormat
+
+Task: Generate a test that verifies the Mercury indexer is applying the correct ruleset to a given objectFormat and if necessary modify the indexer to correctly utilize this information for parsing and indexing.
+
+
+
+Member node standup
+
+ * KNB Metacat instance?
+    Chad - should be complete  today
+ * ORNL  DAAC instance?
+   * Roger - contact Giri see what's   up with the Daac node
+ * Dryad
+   * Turn power on, make sure code is  current with subversion
+
+
+Client
+
+Story: (Matt - 13pts) We need to demonstrate some DataONE functionality to sponsors and other interested parties.  Part of this demonstration should include command line interactions (e.g. simple search, get from bash) and more importantly, some interaction from at least one tool that is widely known and utilized by researchers.  R is an excellent candidate for this.  The main purpose of this story is to design, implement, and deploy a client that can be used with R for interacting with DataONE services.
+
+Task: (Matt - 6hrs) Design the basic integration of a DataONE client library (either Java or Python) with R. Ensure that the necessary methods can be called from within R, and identify operations that should be contained in a higher level API (e.g. get = resolve + download + insert into R environment).  Also issues such as how to support viewing potentially large result sets from search.
+
+Task: (Chad - 8 hrs) Implement the initial R client and associated tests
+
+Task: (Matt - 1 hr) Identify data sets that may be useful for demonstrating the functionality and ensure they are available on the prototype member nodes
+
+
+
+Integration Testing
+(Dave) hudson for interation  testing
+- Java client exercising apis  properly
+- Mix n match python and java for  insert / retrieve
+- Binary compare of test data
+
+- Ensure  that hudson is able to execute client tests against the MN and CN test  services
+- When writing tests, split things  out between internal tests and testst that are dependend on some  operational services
+
+-Use maven to execute single test  cases. 
+   During development, you may run a  single test class repeatedly. To run this through Maven, set the test  property to a specific test case.
+
+    mvn -Dtest=TestCircle test
+http://maven.apache.org/plugins/maven-surefire-plugin/examples/single-test.html
+
+#277
+#291 - move to next sprint as part  of hudson story
+#429 
+
+
+#659 - done (Dave to close)
+
+
+
+#668 Done (Dave to close)
+
+
+Mercury Web Site
+
+(pending  discussion from Tuesday)
+
+- Need to test adding a new MN 
+- Several steps that are required  to update the UI for showing content from a new member node
+
+

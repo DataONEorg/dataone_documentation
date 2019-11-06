@@ -1,0 +1,120 @@
+Attendees: Rebecca, John Cobb, Amber, Carol, Mike Frame, Dave Vieglais, Matt Jones, John Kunze, Steph Hampton, Bertram, Bob Cook, Bruce Wilson, Viv Hutchison, Trisha Cruse, Hilmar (at 1.20pm) Suzie (at 1:30)
+
+Regrets: Steve Kelling
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+Information for the call:
+
+1.  Please join my meeting, Feb 3, 2012 at 10:55 AM MST.
+https://www1.gotomeeting.com/join/249645464
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (312) 878-3081
+Access Code: 249-645-464
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 249-645-464
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Will also use the epad: http://epad.dataone.org/2012Feb3-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-02-3
+ 
+1.     CI Status (Vieglais)
+
+Things are still moving forward with no significant steps backwards.  All the hardware is setup and VMs are setup and running for CNs for the test environment. Metacat MN implementation close to release.The delay for Metacat was reprocessing all the existing data. Moving into release candidate stage for all the MN software.  Services are working as expected. Still discovering a few inconsistencies but integration and unit testing are helping to uncover these. Making a copy of the MercuryONE (OneMercury??) code and storing in DataONE subversion so that other DataONE developers can update code (they can't write to the Mercury code repository). Disadvantage is that updates to Mercury won't be seamless with MercuryONE but will deal with this. Metacat has given write access to the Metacat repository to DataONE developers so is this possible for Mercury? Bruce thought this might be a possibly so Dave will check with Bruce on this.
+By the end of next week hope to have a full implementation talking to the MNs - there will still be some changes but users would be able to test it. Wouldn't advertise this as a production system, someone would have to know the correct URL. 
+There are still lots of loose ends to sort out so public release is still a ways away. 
+Major issue now is testing. Would like to be able to have some user testing in 2 weeks.
+Would be useful to aim for a public release at the end of February.
+Possibly release new web site next week but not have access to MercuryONE. Figure out a way to state on the web site what "soon" means. 
+Also need MN operators to help with usability testing and also data contributors - add content to MNs and retrieve content from MNs. U&A WG are eager to help with this testing.
+Discussion of scripts that could be distributed for testing.Trisha volunteered to share scripts that they use at CDL for this purpose.
+
+2.   DataNet/INTEROP Meeting (Michener)
+
+Saw posters about all DataNet and most INTEROP projects.  Poorly organized meeting with few outcomes.  IETF was discussed as the exemplar to follow for creating a partnership standards organization. There were short separate individual mtgs with DataNet PIs and INTEROP PIS. 5 minute presentations on most all projects.  
+
+IETF as a model for setting interoperability standards - but not really a replacement for the initial vision for the DataNet Federation. ESIP mentioned as a model but wasn't really supported by some at the meeting.
+
+Surprisingly, saw no urgent needs expressed to collaborate on infrastructure.
+
+Meeting website at: <http://cgi.cs.indiana.edu/~dsiweb/data2012/index.php/Main_Page>
+Link to concatenated Presentations: <http://cgi.cs.indiana.edu/~dsiweb/data2012/images/Data2012_25th-26thPublic.pdf>
+
+Unfortunately no real outcomes from the meeting.
+
+3.  Press Release for Public Release  (Cruse/Budden)
+    -  Press Release strategy
+    Generic language for template and then customized for each site that would issue
+    the press release; wouldn't do this until completely ready for outside users
+    Once soft release is underway, would have press release materials ready to go
+    but not issue until comfortable have a production system. 
+    As part of the release would want some comments from EAB that could be included
+    in the press release
+    Who is willing to help with the press release?
+    NCEAS office has experience with this (Nancy Baron) 
+    Who?
+ *     ORNL
+ *     UTK
+ *     USGS
+ *     UNM
+ *     UCSB
+ * CDL
+ *     (all the CNs)
+
+    
+     - Other Strategies
+     - Webinar
+     Work with post-docs to coordinate this effort - looking at 3 weeks post public release
+     Current documentation is intended for developers rather than users; Suzie has some
+     documentation that would be a place to start. Need to have a technical review first but
+     the documentation is intended for a non-developer audience. Does have links to the technical documentation.
+     First webinar is intended as a "meet and greet" - 
+     Issue of the FAQ (currently assigned to Mike and Rebecca)
+     Will check to see if web server supports streaming media (Rebecca)
+     
+     - Other social media
+     - Hosted reception at major meeting
+    
+    We will want to do one in USGS through our Press Release Office.   We will want to give them a draft.  This was what we did for the initial Press Release Trisha mentioned everyone did.  We could see about getting a quote from the USGS Director or at least a Deputy Director. (Mike)
+        ORNL will also like to join in this through our Communications Office (Bob, John, and Bruce).
+
+
+4.  Excel Add-in (Cruse/Kunze)
+
+MS Research would prefer to do a web-based application rather than an Excel Add-in. What does the community feel about this change in direction? Check Carly's blog (http://dcxl.cdlib.org/)
+
+
+5. Around the Room
+
+Matt: 
+I was contacted by a graduate student at Indiana who is trying to adapt Kepler to work with XMCCat. This led to a discussion of the possible mechanisms for that to happen, which included XMCCat picking up the DataONE API.  Given that Plale's involvement in DataNet work will probably have XMCCat in its solution, this might be a path to collaborate with the Indiana group.
+
+Also, Kepler 2.3 was released last week for those interested.
+
+
+From Bob Cook:
+John Cobb, Bruce Wilson, Giri Palanisamy, Line Pouchard, Mike Frame, and Bob Cook met with Peter Wittenburg from EUDAT on February 1.  EUDAT is a new and large European data management and cyberinfrastructure project funded by the European Union.  The range of disciplines covered by EUDAT is broad:  climate change, Earth Science, social science, biomedical, linguistics.  EUDAT has many CI activities in common with DataONE including:  data discovery, metadata, semantics, workflow generation, annotation, interoperability, persistent storage, replication, identification, and authentication.  EUDAT is forming a Data Access and Interoperability Taks Force, patterned after IETF.  They are interested in partnering with DataONE (Bill has visited them, and Rebecca will travel to the March 2012 Data and Access workshop in Copenhagen).  They were also interested in the ONEMercury Tool. Wittenburg was accompanied by Damien Lecarpentier and Daan Broeder of the EUDAT project.
+
+NASA released a story about the eBird activity:  http://earthdata.nasa.gov/featured-stories/featured-research/feather-followers
+
+Amber - Again, request for website information from CI working groups.  Also PLEASE enter any upcoming (or recently completed) public training activities into the form at http://bit.ly/ykP7AQ so that I can make sure all materials are on the new website and the S&G can plan future marketing accordingly.
+
+Steph - (need to leave today by 10:30 PST for meeting on campus...) Editorial for Frontiers on data sharing sent in - should appear in March issue - CEE Working Group product (Hampton, Tewksbury & Strasser) - will update on title, etc, when we have finished going back and forth with the editor
+
+Viv - Working with Michelle Chang on finishing up the first round of re-doing the data mgmt learning modules. All have been reviewed (8 modules) with the exception of two (data collection and data lifecycle), and 2 new ones being created (data citation and data preservation). Timeline goal is reviewed modules posted for release of website.
+**Rebecca - Could you give an update on the meeting you all had to partner with ESIP on these modules?** Thanks! Will do this at the next LT meeting - thanks for the reminder.
+
+John Cobb: Nothing of consequence to add :<
+
+John Kunze: nothing further than already mentioned.
+
+Suzie: conducting a data science panel at the iConference in Toronto next week. Was at IMLS this week and the are asking for metrics that illustrate outreach beyond traditional scholarly metrics (ie  How many
+

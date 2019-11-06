@@ -1,0 +1,262 @@
+DataONE Community Engagement and Education Working Group Meeting
+7-9th May 2013
+
+Attending: Carly, Amber, Stephanie H., Stephanie W., Cliff, Wendy, Scott, Stacy, Sarah
+Regrets: Lynda, Heather, Josh, John, Kristin
+Remote: Kristin, Heather
+
+E-Pad locations (please add the URL for breakout e-pads or other online resources here):
+Main notes page: http://epad.dataone.org/CEEWG-May2013
+Libraries outreach notes: http://epad.dataone.org/LibOut
+Social media notes: http://epad.dataone.org/CEEWG-SocMedia
+Video Links: http://epad.dataone.org/videolinks
+
+Other sources:
+Task list from AHM: https://docs.google.com/spreadsheet/ccc?key=0Agq_OgwoRF1AdHRIa3JJcV9RSVU1MlZENDlScDhVTEE#gid=0
+Live agenda: https://docs.google.com/document/d/1Q12Zijix7xx3gO_offffu13sXGT3X-bDYj5GMRlem8M/edit
+Blog decision: http://bit.ly/ZHZRyW
+Libraries outreach notes: http://epad.dataone.org/LibOut
+
+Notes
+
+Background and status overview:
+ * Viv has stepped down. We need a new co-lead. would be good to have someone with a different perspective from Stephanie H.
+ * Might want to take group in new directions. New media (e.g., twitter, blogging, videos, forums, etc.), for example. We can feel out where the interests lie in the group.
+
+DataONE overview by Amber
+ * principles of dataONE: data stewardship, data sharing, evidence-based development, ...
+ * structure: coordinating nodes, member nodes
+ * Investigator toolkit based on data life cycle
+ * structure of DataONE: most of work done by working groups. CEE is part of the Community Engagement and Outreach side of DataONE.
+ * Outputs from DataONE
+   * indirect education: education modules (http://www.dataone.org/education-modules), software tools catalog, best practices database, primer on data management, publications
+   * direct education: conferences and workshops
+ * Current dataONE communication presence:
+   * lots of media already: slideshare, twitter, facebook, vimeo, wordpress, etc etc. but could be used more effectively
+ * Feedback from RSV: what really stands out with DataONE is our integration with the commnuity
+   * bedrock of D1 - build community. Then design to enable science. CI does a lot of development, but feeding into the CI side is the community engagement.
+ * Existing programs similar to DataONE/DataNet projects
+   * Earthcube: http://earthcube.ning.com/
+
+Overview of current CEE projects
+ * Data stories: Stacy.
+   * we are collecting stories about how they work with their data. related to data management topics. during a short course on data management, many wanted specific examples of data management.
+   * will posting this project online: there's a data stories blog. plan is to incorporate this into modules and other dataONE materials. can be used by anyone.
+   * Notebook: https://notebooks.dataone.org/data-stories/. Questions: http://notebooks.dataone.org/data-stories/data-stories-questions/
+   * progress: 2 focus groups; 4 interviews. summer intern, Sarah, will be working on this.
+   * next steps: "workshop" a few stories during this CEE meeting. in the summer: additional interviews, integration of stories into education modules, preparation of manuscript. 
+ * Hands-on exercises: Carly. (viv was the original lead)
+   * Starting point: 2012 DME summit https://docs.google.com/document/d/1BlUEGUq3u-HxZ2_vaaA94GwzWTy0xAqw0LCurgsXLH0/edit
+   * Create exercises for different modules:
+     * Plan, Organize/Collect, QAQC, Preservation/Backup, Analysis/Workflows, Describe data
+ * Video contest: Steph/Stacy
+   * make short videos on data management topics. 
+   * raised money for a prize via scifund challenge.
+   * now need to recruit people to actually do this. Grad students? Others?
+   * Action item: brainstorm opportunities for promotion.
+     * Cliff: Theresa at the ESA is running a student workshop this summer in Baltimore. Will have a captive audience of 25 people for 1st week of June. Might be able to promote the video. 
+     * advertising
+       * ESA
+       * target I-schools
+         * ASIST/IASSIST: Stephanie
+       * Vimeo ad
+       * DataONE announcements (email, tweet)
+       * Casey Dunn at Brown
+       * LTER network
+     * create another type of video as an example (not animation) and links to tutorials
+       * Stephanie found video on cloud management
+       * Captivate as video creation platform
+     * link to Data Stories blog as source of inspiration for videos
+     * create announcement/slide/flyer that people can use to advertise
+     * 
+ * ESA workshops
+   * Carly/Steph et cetera doing lunch workshop on Creating metadata with Morpho and DataUp
+   * Wendy: DataONE CEE/PPSR workshop doesn't seem like a good fit. next steps: follow up with opportunities for 2014 
+   * 5 Other workshops from DataONE
+ * Metrics for DataONE success (Wendy). No progress made.
+   * Discussion of general need for less traditional metrics to measure success in community engagement, changing practices/attitudes, etc
+ * Data sharing and human rights (Cliff)
+   * goal: write a short essay/article linking data sharing and human rights
+   * Cliff to work on this this week
+ * Growing pains session at ESA (Steph)
+   * very popular session. published paper about it in bioscience (at NSF's behest)
+ * Big data and the future of ecology paper in Frontiers in April.
+ * Modules/short course assessment (Stacy)
+   * Short course given last summer. 2-3 day workshop for early career researchers (grad students mostly). Used the education modules on the website plus additional materials.
+   * Did assessment of participant perceptions of course. Report on materials assessment and course available on website: http://www.dataone.org/sites/all/documents/ShortCourseReport2012.pdf
+   * Summary poster: http://www.dataone.org/sites/all/documents/ShortCoursePoster2012.pdf
+ * PPSR Data Management Guide - PPSR developed and Heather reviewed (maybe Carly too?) - PPRS-CEE collab! :-)
+ * Cross-reference materials: Heather
+   * idea: we are creating lots of materials. Make sure things are all linked up and we aren't reinventing the wheel
+   * USGS has created a website with homogenized materials.  (http://www.usgs.gov/datamanagement) - website designed around USGS data lifecycle, which is very similar to D1's
+   * Looking into ways to supplement existing materials. Heather plans to work on this more since it helps with her "day job"
+
+Moving forward: projects in progress
+ * Higher priorities:
+   * Data sharing success stories
+   * Hands-on exercises
+   * Video contest
+   * ESA workshops
+ * Lower priorities:
+   * data sharing resources page
+   * metrics for D1 success 
+   * essay on human rights 
+   * cross reference materials
+ * Other:
+   * social and new media; communication strategy 
+
+New opportunities
+ * Cost of data management & modernization: After big data paper, Steph was contacted about costs of data management. Making all data public is very expensive. Who will pay those? Perhaps a peer-reviewed publication on this. (Steph)
+   * Heather: Office of Science and Technology Policy just came out with a new memo about Federal agencies needing to provide easy and free access to data: http://www.whitehouse.gov/blog/2013/02/22/expanding-public-access-results-federally-funded-research - there is language in the memo about including costs related to data management
+     * blog post on this OSTP memo by Carly:  http://datapub.cdlib.org/the-new-ostp-policy-what-it-means/) 
+     * Bill from D1: http://www.dataone.org/sites/all/documents/March-2013-DataONE_Newsletter.pdf
+ * Targeted out reach towards librarians. Educate the educators
+ * Ethnographic perspective paper (Stacy)
+ * Ontologies testing. crossover with Usability and Assessment group (Stacy)
+ * Software related traning activites
+   * ONE-R training materials around the package. Might get sloan money on that (Scott)
+ * Ecoinformatics + environmental protection: paper on whether datasharing matters to decision making. Case studies where decision making affected by data sharing. collaboration between dataone and esa. (Cliff)
+ * K12 education
+ * related to social/new media ideas...
+   * D1 CEE blog
+   * Wikipedia updates
+   * ask.dataone.org
+
+What's falling out:
+ * focus on...
+   * hand-on exercises
+   * new/social media
+   * targeted outreach to librarians
+ * already in progress
+   * success stories (Sarah/Stacy to interview wg members)
+   * video contest (1 hour of brainstorming as a group)
+ * leave time to think about
+   * cost of data management
+   * others...
+
+Feedback on Data Stories already posted:
+ * use names (made up, if necessary) to make stories easier to follow
+ * add some details like geographical context, etc. (made up, if necessary)
+ * remove some unnecessary details in places
+
+Discussion of what works, what doesn't for storytelling
+ * writing about technical topics in language for a general audience is useful but difficult
+
+Hands-on exercises - Steph initially scoping out to present to group
+ * Ideally :
+   * we would use data sets that are currently in DataONE so that this is a long-term solution for the hands-on exercises, repeatable and consistent over time; 
+   * at least one person working on them is an expert in the subject matter so that we can fill in metadata details, propose questions, anticipate problems (i.e. for steph H, this is plankton)
+   * we would have several related files that need to be merged, and some "issues" that would need to be solved, so that students are not working with Perfect data sets
+ * Obstacles:
+   * Data sets in DataONE currently are not very user-friendly - e.g. metadata are not being formatted in a way that is as readable as original repository view - even I find it confusing to try to understand the metadata relationship with the files for some that I am looking at
+   * Frequently the data uploaded under existing projects (i.e. they have been used in publications, and we know what the patterns are that we can explore) are well-formatted so they don't present much challenge
+   * Are these boring questions for the trainees? I wonder if we should seek something charismatic to use
+ * Options:
+   * Use North Temperate Lakes LTER data that are in the KNB:
+     * Advantage: nice to use LTER data, lots of pubs on them, well-documented and rich
+     * Disadvantage: metadata look weird in DataONE - easier to understand in KNB and look great in Morpho
+   * Steph could upload a couple of her dissertation data sets on which she has published
+     * Advantages: patterns are known and clear, published manuscripts, she has the details, could make reasonable exercises, and could split the data sheets into several with a few non-catastrophic "issues" that the trainees could solve
+     * Disadvantages: somewhat non-charismatic system - insects in ponds 
+   * Refine last year's ESA workshop materials and post them so that they are available to everyone, with simulated data sets
+ * Hands-on Exercises !!Decision!!: review last year's ESA materials and refine the exercises for immediate use. 
+   * As of end of day 8 May, Steph created one "data organization" and it seems that several more are possible to create by the end of the WG meeting, based on last year's materials.
+   * 3 exercises done: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management 
+   * emailing wg-cee to ask for edits
+   * will email Heather to ask her to think about doing a checksums exercise
+
+
+DataONE collaborative site where documents can be shared/archived - everyone in DataONE has access to this.
+https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+VIDEO CONTEST BRAINSTORM
+Slide: https://docs.google.com/presentation/d/1A9yNMvtNnX0QgYasdT051k84U4MCLA7Bkn4d4UzrENc/edit?usp=sharing
+Flyer: (PDF) https://www.dropbox.com/s/kiojuqp633m3q11/flyer.pdf
+
+ * Text for announcement:
+
+DataONE Video Contest Opens: Win $450
+Excited about scientific data? Working with data, sharing data, managing data, curating data? Want to enthuse others with your infectious commitment to metadata?
+
+The  DataONE Community Engagement and Education Working Group has established  a video contest to raise awareness about modernizing scientific data practices in a fun and engaging way. By entering a short video (3 minutes or less) you have the  potential to win $450.
+
+Videos should be relevant to environmental science, but need not be specific to it.
+
+Submissions are being accepted until 4 Oct 2013 and full details can be found at: https://notebooks.dataone.org/video-contest/
+See http://epad.dataone.org/videolinks
+ * Details
+   * $450 for 1st prize, $50 for other
+   * Deadline: Friday Oct 4 
+ * 2013 outreach and advertising
+   * ESA 2013 - All
+   * Vimeo Ad - SH
+   * Contact Casey / Brown - SH
+   * DGSS - distributed grad seminar (done)
+   * announcements - AB / SRH
+   * libraries listservs - SW
+   * more non-extranormal examples - SRH (others to help)
+   * link to tools for video making- SRH (others to help)
+   * target iSchools - SW
+   * slide for talks - CS (done)
+   * tweeting - advertise broadly
+   * flyer - CS (to be put on website)
+ * To do:
+   * flyer (CS) (done)
+   * revisions to blog page 
+   * finish blog instance so it's public
+   * vimeo ad (SH)
+   * link from D1 site (AB)
+   * announcements (All)
+     * email
+     * tweet 
+     * listservs 
+     * bla bla bla
+
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+STATUS UPDATES
+
+LIbrary outreach:
+Status: draft web product; primer draft; scheduled webinar for Nov; FAQ begun; 1 pager on DM begun; collaboration with UA/SC
+Next 6 months: primer complete; webinar written; website near complete; kit assembled; tutorial(s) done
+
+Hands-on modules:
+Status: plan of action, 3 draft module (data entry and manipulation, quality assurance, and writing metadata)
+Next 6 months: all 3 drafts complete, reviewed and posted. Additional drafts initiated (backup would be an easy one to initiate).
+
+Social media:
+Status: plan developed. aggregator site underway. notebook site constructed and being populated.
+Next 6 months: blog, aggregator complete
+
+Data stories:
+Status: 2 stories complete and online. 1 interview collected during this meeting. 2 more on the way.
+Next 6 months: project will be done for the most part. 10-15 stories posted online. draft of a manuscript about it. links with education modules and other D1 resources
+
+Communication strategy:
+Status: 95% done with outline. will finish on the plane and send to amber. will send neon's as a reference.
+Next 6 months: amber to work on completion of draft. review process. finalize 
+
+Video contest:
+Status: strategy finalized. page updated; flyer and slide made.
+Next 6 months: advertise. videos ready for voting at AHM.
+
+Data sharing and human rights essay:
+Status: outline in progress. 
+Next 6 months: circulate annotated outline to prospective co-authors (3 at the moment); feedback received.
+
+Cost of data management:
+Status: for next meeting.
+
+Amber will schedule a call for 2 months time.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+POTENTIAL NEW MEMBERS
+
+Russ White - cal poly - CS
+Gail Steinhart - Cornell - SW (potential co-lead)
+Susan Borda - UC Merced - CS
+Karen Cranston - CS
+Erin Dolan - U Georgia. SH
+Jennifer Davison - UW. SW (potential co-lead)
+Liz Neeley - COMPASS. SC
+

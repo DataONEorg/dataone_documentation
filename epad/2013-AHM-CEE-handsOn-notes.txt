@@ -1,0 +1,64 @@
+22 October 2013
+Tom, Steph H, Kristin
+CEE working group break-out
+
+ * Lesson 01: Why Data Management
+   * Module: http://www.dataone.org/sites/all/documents/L01_DataManagement.pptx
+   * Activity: 'Data Search' : Student comes up with a hypothesis of interest that requires aggregating data that already exists. Must find 5 papers (using standard search methods e.g. WoS, GoogleScholar. JStor) from distinct sources (not same author) that have used data that would be helpful for testing the student's hypothesis. For each, give citation, and how to access the data (if possible) e.g. data archive, published in the paper, contact the author. If contact the author, student must document how (current address affiliation). All class members report out for discussion. May want to include a note that some subfields do not share much data - instructors may want to consider that topics including some genetic data, climate data, geographical (e.g. LANDSAT) data are likely to have available data online, may help to provide some diversity rather than just all zeroes.
+   * Now posted in folder on DataONE sharing site https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management
+   * 
+ * Lesson 02: Data Sharing
+   * Module: http://www.dataone.org/sites/all/documents/L02_DataSharing.pptx
+   * Activity: Have students select a research question of interest to them (preferably the same topic they chose for Activity 1).  Provide them with a list of data repositories, and ask them to find five datasets that they would use to address their question.  The students should examine the metadata for these data to see if they are comprehensive enough to make the data reusable.  Are the data freely accessible, or does the author have to give permission for the data to be used?  How would the data be cited when reused?  Have students report to the class their findings. They could also discuss how easy/difficult it was to use the repository search interfaces.  
+   * Now posted in folder on DataONE sharing site https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management
+   *     
+
+
+ * Lesson 03: Data Management Planning
+   * Module: http://www.dataone.org/sites/all/documents/L03_DataManagementPlanning.pptx
+   * Activity: Students read NSF requirements / guidelines for DMP, then read over two DMPs (one is selected from a weak (early in program) DMP, one strong... students not informend OR select from the new DMP creator web site). In bullet point form, students write down strengths / weaknesses of each, using modulels and NSF guidelines as guide.  Then classroom (ro small group) share back and discuss. Also discuss value / rationale for DMP. 
+   * Activity: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management/HandsOnActivity3_DMP.docx/view
+
+ * Lesson 04: Data Entry and Manipulation
+   * Module http://www.dataone.org/sites/all/documents/L04_DataEntryManipulation.pptx
+   * Activity: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management/DataONE_Pond2010_dataMgmt_exercise.doc/view
+
+ * Lesson 05: Data Quality Control and Assurance 
+   * Module: http://www.dataone.org/sites/all/documents/L05_DataQualityControlAssurance.pptx
+   * Activity: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management/DataONE_Pond2010_dataMgmt_exercise_QAQC.doc/view 
+   * https://peerj.com/preprints/7/ - Nine simple ways to make it easier to (re)use your data
+
+ * Lesson 06: Data Protection and Backups Steph is working on this one because the docs.dataone site is not working!
+   * Module: http://www.dataone.org/sites/all/documents/L06_DataProtectionBackups.pptx
+   * Activity:  Community of Practice in data protection, backup, archive. Students interview a researcher (their research advisor, a committee member, other researcher). Ask a series of scripted questions - file naming practices and backup/versioning, backups on and off site, archiving practices. Students share what they find in small group or as class, discuss strengths & weaknesses of practices. In a workshop setting, could be set up as a paired activity, interviewing each other if everyone has some experience in research. If no one has a research background (e.g. computer scientists learning environmental data management), the workshop organizer may want to plan to bring in several researchers in person or by skype for small group interviews.
+
+ * Lesson 07: Metadata 
+   * Module: http://www.dataone.org/sites/all/documents/L07_Metadata.pptx
+   * Activity: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management/DataONE_Pond2010_dataMgmt_exercise_Metadata.doc/view
+
+ * Lesson 08: How to Write Good Quality Metadata 
+   * Module: http://www.dataone.org/sites/all/documents/L08_WriteQualityMetadata.pptx
+   * Activity: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management/DataONE_Pond2010_dataMgmt_exercise_Metadata.doc/view 
+
+ * Lesson 09: Data Citation
+   * Module: http://www.dataone.org/sites/all/documents/L09_DataCitation.pptx
+   * Activity: Have students go to www.doi.org and use the DOI resolver to go to a couple of datasets.   Have examples of persistent identifier in ARK and DOI form for students to try.  Maybe form  a discussion around the Duke and Porter paper on ethics of reusing data - public versions are legally available. The exercise could summarize some of the guidelines, pose some central questions for discussion, and provide a pointer to the paper's DOI and a URL where one of the free legal versions is currently availalbe (although URLs change over time).
+
+ * Lesson 10: Analysis and Workflows 
+   * Module: http://www.dataone.org/sites/all/documents/L10_AnalysisWorkflows.pptx
+   * Activity: Have students make a work flow plan from a scenario (get one of standard scenarios used) Have students use the hypothesis that was sketched in Modules 1 & 2, and draft a workflow model to complete an investigation to test the hypothesis using public  data or data provided by others. 
+
+TEMPLATE
+Hands-on Activity X: TITLE
+Authors: 
+Background Lecture: 
+Objectives: 
+Outcomes:.
+Time Needed: 
+URLs: 
+Additional Files Needed: 
+Key Reading: 
+Notes for Instructors: 
+Student Instructions:
+
+

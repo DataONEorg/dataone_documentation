@@ -1,0 +1,77 @@
+Participants:  Anand, Biva, Saumen, Paolo,  Ilkay, Manish, Bertram, Lei
+
+* Report from Anand
+1) Querying Kepler SDF native provenance information writing my own code  and using existent QueryAPI. Documentation to that soon coming up.
+2)My view of modified Kepler local provenance schema  which can be conveniently  mapped to the shared provenance schema. Right  now I have shown only the  traceland view. The workflowland view  remains the same.
+3)Reading paolo's explainations and documents  from last meeting(along with some other literature readings). 
+
+* Multiple runs? OK to keep;
+create unique id at time of "pushing run button"; can have multiple invocations (both in Kepler and Taverna)
+
+* Report from Biva
+- Paolo: please summarize :)
+
+* Report from Saumen:
+Sorted out issues with Kepler2.0/COMAD and Provenance Browser for FPC
+(previous report:
+ Developed the conceptual schema
+- Installed COMAD and ran FPC1, FPC2, and FPC3
+- Installed ProvenanceBrowser with MySQL and loaded the FPC1.trace  into the database.
+- Read opm1.01 paper
+- Read papers on comad )
+
+Conceptual Model: Workflows and Provenance: 
+[http://groups.google.com/group/datatol/web/wf-prov-model.pdf?_done=%2Fgroup%2Fdatatol%3F]
+
+* Manish:
+==> i-depends -- shouldn't it be "outsider provenance"
+==> associate data-item D with the unique run-id that generated D
+==> Saumen: or even finer-grained with invocation-id! 
+
+Saumen: What about parameters? 
+==> to be resolved
+
+* What about stitching multiple runs together?
+* Paolo: global schema creates unique name space 
+Linked Data Conventions,
+registration of local data is OK
+Would TinyURL do the trick?
+Paolo: there's more than the id-generation;
+instead there's <URI,content-type>
+also have "same-as"
+
+Alice, Bob, Charlie Use Case:
+http://groups.google.com/group/datatol/browse_thread/thread/35fdef54351c7d9f
+
+Synopsis: Bob uses Alice's data in his workflow. Charlie knows it after looking at Bob's provenance.
+
+Issue with mappings and going from global to local and maintaing continuity.
+
+Database Server Issue
+
+* NEXT ACTIONS
+
+==> Saumen (coordinator) to work with Anand and Biva to implement the relational schema of the SPS
+(Manish to consult)
+
+Some steps from Paolo's scenario (see there for details):
+> publish data 
+> get new refs
+> put into trace
+> publish trace
+
+==> Anand to develop "upload utility" for Kepler (based on Paolo's for Taverna)
+
+you are welcome to stare at this code for inspiration:
+http://mygrid-labs.googlecode.com/svn/provenance-client/trunk/src/main/java/net/sf/taverna/t2/provenance/api/client/OPMDataUploader.java
+
+Broader goals:
+
+1- translate your CM to a relational model
+2- implement the relational schema on some public server (mySQL)?
+3- write code logic to map local provenance traces (each of the three "lands") onto the common schema
+4- show ability to query "end-to-end" provenance across two traces seamlessly
+
+
+
+

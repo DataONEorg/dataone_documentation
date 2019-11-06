@@ -1,0 +1,131 @@
+ Authentication and authorization questions
+
+These are the questions I still had after reading through the "Identity Management and Authenticated Session Management" document several times. It has a high eye-glazing factor.
+
+Q: What exactly is a Session in D1? I think it is the information contained in the certificate -- a combination of the standard X.509 fields, like subject and valid not after, and the DataONE extension that contains the SubjectInfo. So, if a session is the information contained in the certificate, then the session IS the certificate.
+
+Yes, a Session is a certificate, or rather the information contained in the certificate that is transmitted to the server.
+The Session indicates the state of authentication:
+1. null Session means: no certificate or invalid certificate
+2. having a Session means: valid certificate
+They are not the same thing, but the presence of a session does represent that a valid certificate was presented to the server and accepted as proof of authentication.
+
+Q: Is token and session the same thing? If so, the token is also the certificate, and we should stop using the word, “token”. We should just use “session” and say that the session is a certificate with a D1 extension.
+
+Yes. Token is a hangover from earlier revisions. A token = session, equivalent to a certificate that MAY have a D1 extension.
+
+Q: What are the requirements for a certificate to represent a valid DataONE Session?
+- Not expired. Yes
+- Signed by CILogon OR DataONE. Signed by a DataONE trusted CA (currently DataONE and CILogon)
+- Does the cert have to contain a SubjectInfo? No.
+- Does the SubjectInfo have to contain a Person record that matches that of the Subject DN?
+    I (rob) believe yes, because that is how to know if the connecting subject is verified.
+    No, if we allow certificates with no SubjectInfo, then this cannot be a requirement. SubjectInfo should really only supplement the available information we have about the certificate's subject (say, to gain greater access  to objects than one could if they were only acting as themself).
+    Furthermore, MN-MN communication also uses the same authentication/authorization mechanism and these machines are not going to have Person entries within D1
+    
+
+Current algorithm for determining list of subjects for ACL matching:
+
+1. Start with empty list of subjects
+2. Add the symbolic subject, "public"
+3. Get the DN from the Subject and serialize it to a standardized string. This string is called Subject below.
+4. Add Subject
+5. If the connection was not made with a certificate, stop here.
+6. Add the symbolic subject, "authenticatedUser"
+7. If the certificate does not have a SubjectInfo extension, stop here.
+8. Find the Person that has a subject that matches the Subject.
+9. If the Person has the verified flag set, add the symbolic subject, "verifiedUser"
+10. Iterate over the Person's isMemberOf and add those subjects
+11. Iterate over the Person's equivalentIdentity and for each of them:
+  - Add its subject
+  - Find the corresponding Person
+  - Iterate over that Person's isMemberOf and add those subjects
+
+
+
+
+
+Yes, that is perfect
+Actually, I'm not sure its perfect in step 2.  not all Person entries that are present in SubjectInfo are necessarily equivalentIdentities.  Instead, one should find the Person object with the subject that matches the subject of the certificate.  For that Person, iterate all of the equivalentIdentity attributes and add those to the list of equivalent subjects.
+
+There is also a problem with step 4. A verified user is one whose real name and email address have been checked and match that person's entry in the registration database for that DN.  If we make that a transitive operation as described, then verifying one identity would inherently make all of my equivalentIdentity subjects verified, which might lead to the erroneous conclusion that all of the emails and names are verified, which is not the case.  Maybe the solution is to only mark a user as verified if their subject in the certificate is verfied, but that might be too limiting.  The effects of transitive relations on equivalence need to be discussed more before deciding on this.
+
+Use case motivating the creation of VerifiedUser:  a data provider can say in an AccessPolicy that only VerifiedUsers can access the data set, which guarantees a reachable email address and real name associated with the subject in the log event for an associated read transaction
+
+Three cases to consider:
+
+A. Verification is non-transitive
+  -- only the subject of a certificate is checked for isVerified during authorization
+  -- the cert subject is used for logging
+  -- some of a person's equivalent IDs may be unverified
+  -- logging in with otherwise equivalentIDs may result in different access if some are verified and some are not
+B. Verification is transitive
+  b1. when logged in, subject isVerified if ANY equivalent ID isVerfied
+  b2. to guarantee that we have a real email and name at access time, this means that effectively ALL equivalent IDs must be verified (a high bar)
+  b3. when access occurs, we can log ANY equivalentID subject, because they all are verified
+  b4. when mapping a new identity to a block of already verified ids, if the new ID is not verified, then all the other equivalent IDs have to be marked as unverified (a step backwards)
+C. Verification is transitive, but logging uses the verified subject
+  c1. when logged in, subject isVerified if ANY equivalent ID isVerfied
+  c2. when access occurs, MN MUST look up verified ID and log using that
+
+Problem with all 3 scenarios:  users can delete their verified info immmediately after accessing a resource, and the data provider will never get the verified email and name, because all we log is subject.  We'd have to log the name/email to get around this.  to handle the problem, we need to either: 1) log email/name for verified users at time of access, or 2) identity_manager keeps a history of name/email for subjects over time
+
+I don't know much about the the limitations of the LDAP backend of Identity Manager, but having it keep a history of Person Objects seems a logical couterpart to the principle that "objects are forever."  It would have to work a bit different, but wouldn't CNIdentity.getSubjectInfo(subject, date) be cool?!  (and useful).  It would keep private / sensitive data out of the log files, too. 
+
+For accuracy, my original idea was:
+D. Verification is transitive, and logging records the name/email of verified Persons from the subjectInfo
+  d1. when logged in, client isVerified if ANY equivalent IDs isVerified
+  d2. when access occurs, MN logs the client subject, along with name/email of verified Persons from the subjectInfo.
+
+~~
+
+Here are some comments and questions that arose while I was reading the docs:
+
+
+"DataONE will support authentication through three mechanisms: (1) an internal identity password challenge managed by DataONE, (2) an external identity password challenge managed by one or more trusted 3rd parties, or (3) the verification of a trusted CILogon X.509 certificate."
+
+Q: Are (1) and (2) still in the arch?
+
+Nope
+
+"TODO: Decide which of these are acceptable for Principal names in DataONE"
+
+I think we can remove the alternatives other than LDAP DN.
+
+Yes, I agree
+
+"If a token is found to be invalid*, the user’s privileges are immediately lowered to those of the symbolic ‘public’ user."
+
+Assuming token == certificate, this is hard to implement since Apache will not let someone through with an invalid certificate. I also think this implicit downgrade to public on an invalid cert is not the right way to go. We should explicitly require that someone connect without a certificate if they want only public rights. If they connect with a certificate, they get public + whatever is in the certificate.
+Since our mechanism for getting the token (Apache) implicitly checks for a valid certificate, there is no way the individual node implementation will have to "check" the certificate. I believe these are the scenarios currently possible:
+1. bad/invalid cert: rejected and an error thrown during SSL handshake, doesn't even get to D1 code
+2. no cert provided: treated as "public" request
+3. cerificate provided: has access rights of "public" and the certifcate's Subejct and equivalent IDs.
+
+*need to differentiate between "invalid" and "untrusted" certificates - they can be handled differently by apache / tomcat
+
+
+"CILogon acts as an intermediary broker of “short-lived” identity assertions that are made by users verifying their identity through their home institution or identity provider service. These assertions are converted by CILogon into a longer-lived and more commonly recognized X.509 identity certificate, which can then be reused a number of times when interacting with DataONE."
+
+I don’t understand what the short-lived identity assertions are?
+Entering your username+password at, e.g., Google would be that step
+
+"The DataONE Authentication Service provides a set of services for validating the identity of users and services and then establishing limited duration sessions that are represented by an X.509 cryptographically-signed certificate. A single session is always associated with a single user and a single request address."
+
+The limitation to a single request address is not implemented by GMN and I didn’t find a location for storing the IP address in the certificate. Are we still planing on including this functionality? I don’t know if it helps to try to protect the certificate in that way. The private key of the cert doesn’t go over the wire, except for when it is first downloaded from CILogon over an encrypted connection. If someone has broken into a machine locally, limiting the IP address to that machine doesn’t help. If they have broken in remotely, they can route the information through that machine.
+
+I think this is old information. If you have the cert and it has not expired, then you are golden!
+
+
+"Passed from DataONE system to DataONE system, such as making requests from a client application to a Member Node, the certificate is a reference to an authenticated session that contains all the necessary information identifying the user of the original service call and other attributes used to determine authorization in the DataONE system."
+
+Instead of saying that the certificate is a reference to the session, I think we should say that it is the container of the session.
+
+More aptly, "the certificate represents an authenticated session"
+
+"Session Management (Alternative Scenario)"
+
+I think we can remove this section.
+Yes
+
+

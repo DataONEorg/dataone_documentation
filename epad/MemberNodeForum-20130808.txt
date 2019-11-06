@@ -1,0 +1,109 @@
+Member Node Forum - 8 August 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 22 August, 5 September, 19 September
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516, -20130530, -20130613, -20130627, -20130711, -20130725
+
+Attending: Laura, John Cobb, Dave, Mark Servilla, Inna Kouper, Mike Frenock, Kavitha Chandrasekar
+
+Regrets: 
+
+Action items from last time:
+
+Documentation - Laura working with Rob Nahf to compile or create-as-needed the intermediate level of documentation.  This is a high priority in DataONE.
+
+Laura working with Debora Drucker (PPBio) to set up meeting with all affected personnel to make plans for implementing a D1 MN there.
+    
+Agenda:
+
+0. Welcome new attendees - introductions
+    
+1. Network-wide update and issues affecting MN's as a whole
+    Dave: only one minor thing
+    8/14/13, 6p-9p MDT UNM upgrade but should not affect normal operations (operations mailing list)
+    
+2. Open issues:  MNs please add anything you would like to address here.
+
+Follow-up:  Mike Frenock (PISCO) having problems with SOLR queries returning different results at different times... solved
+
+3. Feature requests/opportunities for collaboration:
+
+Follow-up:  Meeting with Andrew Sallans and Sherry Lake from UVa, Vince Formica from Swarthmore, John Cobb and Laura Moyers from DataONE to discuss Vince's "beetle project" and how DataONE can support their data management efforts.  DataONE provided some verbiage for Vince's proposal regarding making a plan for data management.  As the project progresses, DataONE can help Vince and his team decide how best to address long-term data storage/access.
+
+Mike:  SOLR issues on CNs - when Mike updated all the resource maps, it worked except for 25 or so which don't show any data but do have resource maps and metadata; question in to Chris/Ben
+https://cn.dataone.org/cn/v1/query/solr/?fl=id,datasource,documents&q=formatType:METADATA+-obsoletedBy:*+datasource:*PISCO+-documents:*&rows=1000&start=0
+Dave:  redmine ticket?
+Mike:  no, just an email so far
+Dave:  will check with Chris/Ben
+ -- Mike did this in batches (400+ files in small batches), all worked except these few. --
+John:  is this repeatable?
+Mike:  yes, this query shows same result
+
+Mike:  SBC LTER files, there are three here that didn't archive (system metadata archived = false)
+Mike:  (refer to +- obsoleted by in query above)  checking for files that don't have resource maps, shows one file remaining, it has something in "obsoleted by" so it shouldn't be here
+Dave:  it would be helpful to document things like this somewhere, including the query and what is the expected result, etc.
+Mike:  yes, put in email to Chris/Ben
+Dave:  can you cc me on that?
+Mike:  yes
+Dave:  ideally, when Chris/Ben see issues like this via email, they should be putting it in redmine
+
+John:  as Mike (and everyone else) goes through the 2.1 upgrade, it would be nice to document questions, problems, helpful hints, etc.  Maybe ask.dataone.org??
+Dave:  this is specifically a metacat issue, maybe ask, maybe not depending on what resources are available to "answer"
+
+Dave:  guys are working on index processor, may help with the resource map issue, update perhaps next week
+
+Dave:  conversation with Elsevier re: mechanisms for them to link with DataONE data which appears in publications (i.e. if author of article chooses to cite the data, say an author uses some PISCO data they may include citation/link indicating where it came from, direct viewer of article to D1 landing page), DataONE will produce a landing page for data, good opportunity to promote MNs as well, in next few weeks will be drafting up landing page content/design/etc.
+Mike:  re: PISCO, >=90% of data has been used in articles but hasn't necessarily been cited
+Dave:  helpful because it provides direct links back to D1 MNs, if everything goes according to plan, the landing page should be available by the end of the year
+John:  can we track how many requests come through the landing page
+Dave:  absolutely, know how many people are interested in the data, how many downloads, etc.
+
+John:  any progress on dashboard?
+Dave:  dashboard is a priority item for implementation, working on getting an alpha version out for initial review fairly soon (could be within a month or so); stats, a little about the MN, downloads, etc.
+
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+
+SEAD:  still in progress for production, going with metadata first since we are working with other centers who want to retain their branding (download from other centers); we are checking metadata for correctness/completeness right now;
+    Kavitha:  logs?  do we need to log everything or it it selectively done
+    Dave:  every request through the D1 service interface is logged, should be a distinction between requests from CNs and every other request, indicated in description of log records, when we aggregate logs for content can make distinction between internal/external requests
+    Dave:  for tier 1 is an issue - every other tier it goes through SSL which identifies "source"; for tier 1 have to check IP address to identify source.  Dave to write up more detailed description of how this should work for a tier 1 MN.
+    Bruce:  publish IP address ranges for CNs?
+    Dave:  yes
+    Mike:  I had to look those up myself
+    Kavitha:  what is recommendation for logging CN calls vs other calls?
+    Dave:  it will be logged as a read even for the CN calls
+    Mike:  is that documented somewhere?
+    Dave:  yes, is at low end of detailed info so have to dig for it a little
+    
+LTER:  final testing for GMN PASTA adapter; conf call next week with Dave and others to discuss transition between metacat and GMN; by mid September hope to migrated to GMN by then
+
+PISCO: working a lot with SOLR queries; close to putting out a public git repository for people to use; loaded first file for a new dataset last week (yay!); 
+
+Mike: documentation on connection between metacat fields and SOLR query fields was great and very helpful, passed on to Thompson Reuters to use, was in the architecture documentation
+
+OTHER INTERESTING THINGS: 
+
+
+contact points: 
+NEW EMAIL contact: mninfo.dataone@gmail.com  - This email monitored by DataONE staff.  I think we might migrate to this being the primary point of contact for MN questions so we can keep a better handle on issues/resolutions.
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Upcoming deadlines:
+
+
+

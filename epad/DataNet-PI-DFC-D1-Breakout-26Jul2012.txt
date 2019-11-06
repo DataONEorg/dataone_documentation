@@ -1,0 +1,62 @@
+Attendees: Reagan Moore, Mary Whitton, Bill Michener, Rebecca Koskela
+
+DataONE Architecture Documents: http://mule1.dataone.org/ArchitectureDocs-current/
+For generic MN: 
+•http://repository.dataone.org/software/cicore/trunk/mn/d1_mn_generic
+
+    DFC wants to be able to compare functionality
+    
+Interop opportunity: A tier 1 implementation of irods under DataOne
+    Also an opp to do the other way round:  A dataOne node under iRODS federation
+   Make an irods based grid a DataOne node using the generic member node (python based, InCommon authentication, LDAP server)
+   iPlant as a possibility(DataONE contact there is Damian Gessler, DFC contact is Nirav Merchant)
+   Provide a soft link from iRODS to DataONE resources through Tier 1 read interface
+
+Ken Casey at NOAA Oceanographics data center.
+CLASS in use now, its architect thinks it should just be storage.
+NCDC contact, alan hall, has presnted the inside-outside firewall architecture to other NOAA data centers.
+
+NASA contacts:  
+
+TO DO  MCW--send copy of DFC collaboration proposal to DataOne
+
+NASA - DataONE working with people in Washington, DC in addition to the ORNL DAAC
+
+Other issues related to collaboration:
+Jane Greenberg student - now sufficient money for 2 students (one sponsored by DFC and one by DataONE)
+
+TODO for Rebecca: Communicate with Jane Greenberg      re: student(s) copy everyone on email
+
+Original intent for DataNets - focus on all the communities/domains supported by NSF
+Not sure this has happened as proposals have been awarded; Sylvia Spengler had emphasized computer science research but now the emphasis has been on implementation
+
+iRODS is interested in the publication challenge - policy issues related to publication (by this means making data available to the public)
+
+A similar challenge is the issue of streaming data - how to deal with that
+DFC: for OOI does the packaging of discrete packages of streaming data
+DataONE working with their partners to have discrete snapshots of the streaming data to
+facilitate reproducibilty of science
+
+Parallel I/O streams for large datasets
+
+XSEDE - DFC: Chris Jordan - DataONE- John Cobb (ORNL)
+
+Community Engagement: 
+DFC: Engineering digital library - doesn't start until next year
+DataONE: museums, K12 education - providing datasets
+
+Integration of social media tools with the infrastructure (iPlant has done this)
+VIVO: http://vivoweb.org/
+This work  (VIVO)  is funded by the National Institutes of Health, U24 RR029822. 
+
+MetaCat and Mercury are in Java--MetaCat is tier 4 and Mercury is tier 1 implementation
+
+
+Link to SEAD discussion: http://epad.dataone.org/DataNet-PI-SEAD-D1-Breakout-26Jul2012
+Link to TerraPop discussion:http://epad.dataone.org/DataNet-PI-TerraPop-D1-Breakout-26Jul2012
+
+
+
+
+
+

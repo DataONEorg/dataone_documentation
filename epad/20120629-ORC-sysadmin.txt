@@ -1,0 +1,34 @@
+
+Discussion regarding sysadmin needs at ORC
+
+*Update the vmware guest OS
+*Update documentation
+
+
+* Original equipment for ORC node is in the JICS computer room.  Desireable to get this into the VMWare pool at ORC &&&&&  Bruce to check on licensing for this.  are there license needs for this to get moved and what other steps need to happen?  &&&&& check on where JICS computer room is relative to SMC network.  Could this be a VMWare node in JICS to provide some geographic diversity to ORC.
+
+* Engagement with developer team, particularly from sysadmin perspective.  Desire to streamline the deployment of updates.  Work on VPN infrastructure (for HazelCast?) Note that Oak Ridge and UNM are running VMWare.  Old ORC hardware and the system at UCSB are running KVM as the hypervisor.  
+
+* Interest in updating and stramlining the Nagios infrastructure
+
+* Puppet: currently doing manual approach to package management.  Want to move to a more centralized managment framework and deployment method. Work with UCSB (Andy Pippen?) at NCEAS.  Andy has some notes on Puppet started.  Could we get this framework set up over July to improve the control of CN deployment?  
+
+* Huge number of software development topics, if interested (see redmine.dataone.org).
+
+* Chris to join in on developer calls (MWF) 12:15 PM Eastern.  In EVO.  &&&&& Dave to send call info to Chris.
+
+* XSEDE (Teragrid) follow-on from work that Nick was doing.  (John Cobb to direct).  
+A Science use case is needed and we are stopped wating on that 
+
+* Security -- need to do a security audit of DataONE infrastructure.  Doing this from a relatively unbiased experience perspective is useful. Examining code.  Naive questions are useful.  
+
+Prioritization:
+* Get small details on sysadmin tasks sorted out.  
+  * &&&&& Dave to go check his list of tasks to accomplish
+  * Double check that Chris can get on all guest systems and check whether any updates need to be done
+   * Work with Andy on VPN to make sure that the ports are open.  Get up to speed on this and be prepared to take over this set-up and configuration.  
+* Security audit and examination (including documentation).  Might be worthwhile to understand where we sit relative to NIST 800-53 controls for FIPS 199 low,moderate,moderate confidentiality, integrity, availability.  Look first at overall server code and architecture.  Check servers for unneeded services (ask before shutting things off). Look for how ports are set up.  Work on documentation for what ports are restricted by UTK firewall.  Using IPTables on each of the guest systems?  How are IP tables set up on the hosts?  Work with OIT on double checking the security of the VMWare set-up for the hosts.
+* Start work on an ITK piece or on CN side (data auditing tools as one example)
+
+
+

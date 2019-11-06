@@ -1,0 +1,119 @@
+Attendees: Suzie Allard, Amber Budden, Carol, Bill, Mike Frame, Hilmar, Viv, Steve, John Cobb, Matt Jones, Dave Vieglais, Bertram Ludaescher, John Kunze
+
+Regrets:  Bruce Wilson, Bob Cook
+
+Reminder: the quarterly report is  due at the end of January so I would like all Working Group Leads to  prepare the one page quarterly report for their Working Group (WG) and  present it on next week's LT call (January 13).  I'll send a separate email to the Working Group Leads (not all are on this list).  The template for the WG Quarterly Report can be found here:
+https://docs.dataone.org/member-area/working-groups/working-group-reporting-templates/DataONE_WG%20reporting%20template_vers2.docx
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+
+1.  Please join my meeting, Jan 6, 2012 at 10:55 AM MST.
+https://www1.gotomeeting.com/join/418503704
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (773) 897-3003
+Access Code: 418-503-704
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 418-503-704
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Will also use the epad: http://epad.dataone.org/2012Jan06-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-01-06
+ 
+1.     CI Status (Vieglais)
+Not much change from email status sent prior to Christmas.  Still a significant race condition issue with the Coordinating Nodes that needs to be resolved before public release.  Library issue has been pinpointed but not fixed yet. Rest of software is moving ahead but still lots of loose ends to be wrapped up before public release. Dave needs to touch base with Ryan and
+John K for current status on those MNs. 
+
+2.     NBII Status (Frame/Hutchison)
+President's budget terminated program in 2011. Working with partners to take over applications.  Termination on  NBII website explains this.  Sunday, January 15th will be the turn-off date. In most cases, the NBII member nodes are not affected. About 260 applications or tools are listed in the termination area and a description of what will happen to them.
+
+No Longer Supported:
+
+http://www.nbii.gov/portal/server.pt/community/nbii_resource/2059/no_longer_supported/7653
+
+Partner Supported:
+http://www.nbii.gov/portal/server.pt/community/nbii_resources/2059/partner_supported/7652 
+
+If anyone receives questions, has concerns, or issues, just send Mike an email.   
+
+3.     DataONE web site (Budden)
+Website development largely complete from the design side.  Content still being added with a completion date of Jan 20th required (in time for public release).  The following areas need content / contribution from LT (see also http://bit.ly/mYN3Mo) ASAP:
+1) CCIT info - these are the pages under the 'Data' section (Find, Contribute, Cite, Use).  There are also other areas (Developer resources, ITK, MNs) that need attention from CCIT.  Bruce has volunteered but has been time limited and additional support is needed. 
+2) Updated Edu modules - these are under revision by Michelle Chang (summer intern and student employee at NCEAS).  It would be nice to open the website with the edited files as opposed to the current ones.  Viv - timeline?
+3) Info on other Graduate Courses - the graduate training page has information on the EIM UNM course.  I would also like to include information on the graduate courses offered at UT
+4) Member Node info and registration documents for current MNs - our current documents need revision / updating.  Editing these in time is unlikely.  In the interim we will be posting the MN FACT sheet.  However, I am still seeking MN description forms for all current MNs (except Dryad, KNB and ORNL DAAC)
+5) WG (CCIT) page reviews - CEO side of the house have sent me materials with the exception of S&G.  Need CI WG descriptions.
+6) Public relations materials - there are limited press releases on plone.  Under our 'public relations' section I would like to catalog press releases.  Does anyone have any?
+7) Publications by DataONE / Citing DataONE -  under 'products' we have two types of pubs.  1) those by DataONE authors (acknowledging DataONE support) and 2) articles citing  DataONE.  This is aligned with the requirements for quarterly reporting with the exception of type 2 pubs.  Ideally, this would be an ongoing communication stream so that I can keep the site updated.  Please send DOIs if you have them, if not, full ref.
+8) Conferences / Workshops you are attending - the new DataONE calendar has been split into 'internal' and 'public'.  I would like to get all our worshops / events up onto the public calendar so that people know where they might be able to run into us.  I also need to update the 'Trainings' page with workshop info.
+
+4.     ESIP Winter Meeting (Koskela)
+{skipped for next call}
+
+5.     Bill's travels in Europe (Michener)
+The Netherlands: group associated with Max Planck Institute that is interested in becoming a MN in the future (area is linguistic so may be more of a library MN)
+Group in Frankfurt - using Metacat; will send people to the DUG meeting 
+Also people from IDCC, held in Bristol, expressed interest in becoming MNs in the future
+Good connections, positive feedback and interest in DataONE
+
+6.     Paddy's name service workshop proposal (Michener/Vieglais) {see below**}
+Should we participate in this workshop?  Is the broader community represented? Is the the grant associated with the global names initiative?  Bill thinks so. The problem is an important problem but has been difficult to get taxonomic community to populate databases (lots of work). February is not a good time for DataONE developers. Need to find out more about Paddy's project and how he's interacting with the community.  After March would be a much better time for DataONE developers.
+
+7. Change in membership of External Advisory Board: Lost Rosio Alvarez as a member of the EAB.  She's been promoted and doesn't have the time to give to the EAB. Chris Greer
+was asked to join the board.  Both Liz and Berrien encouraged this. Chris has accepted.
+
+7.     Around the Room (see below, after Paddy's proposal)
+
+
+For item 6**
+Hi, Bill, Dave
+ 
+Last June, we discussed some areas of possible collaboration.  One  was  to address the challenges with biological names in the context of  biodiversity data management.  It is now a familiar concern that data sets use different names for the same species.  This  prevents complementary data from being drawn together,  Until we  overcome this 'many names for one species' problem, we can't make effective progress into the 'big new  biology' space. Since our phone call, we have received support from the NSF for  our work on names. We are assembling the infrastructure and content that will  overcome the 'many names for one taxon' problem. As we have shown in collaboration with the iPlant project, the process can be taken one  step further, which is to offer a preferred name to replace all of other  names.  
+
+The names problems are challenges to many projects, especially the digitization projects in which names are poorly written out in museum and herbarium records, and extend across long periods of time.  We have begun a dialog with the iDigBio team that is educating us as to how to build requirements that will guide the development of services that meet the needs of the research community, in this case, the ADBC projects.   
+
+So, I'd like to go back to where we left off our previous conversation - which was an intent to convene a workshop in February 2012 to explore best to address the names problem for DataOne.  Given our funding,  we are in a much stronger position to serve your needs. Do you still wish to convene a workshop?  It would create a very valuable opportunity for us to tweak to our Global Names work to serve your needs.
+
+Do let me know if this idea is still one that you wish to pursue, and if so, I'll call to explore it in more detail.
+
+Thanks
+ 
+Paddy
+
+
+Around the room
+
+Bob  Cook: Participated in a workshop "Data Management 101" at Fall AGU.   The Workshop was put on by the ESIP Federation and sponsored primarily  by NOAA.  DataONE was acknowledged as contributing to the workshop and  the best practices resources  were mentioned.  To view the Agenda and  talks visit the ESIP Wiki:  http://wiki.esipfed.org/index.php/2011AGUworkshop
+In  addition the ESIP Federation is developing a number of data management  modules (best practices, similar to the one that Viv's WG has put  together); the URL is http://wiki.esipfed.org/index.php/Data_Management_Course_Outline
+
+Suzie:  In December the SCWG held a virtual meeting (using DataONE support for GoToMeeting) to discuss nominees for the two open positions in the WG.  Nominations included those made at the AHM and additional ones made by members who were not at the AHM. The final list should be presented to the LT in the next two weeks.  The SCWG also made some minor changes in the charter which will also be forwarded to the LT later this month.  Future work was discussed.
+
+Carol: Joint meeting of U&A and SCWG is set for first week of May in Knoxville. U&A will forward soon to the LT 2 replacement names for membership. UT usability team is doing some usability testing for USA National Phenology Network (NPN).
+
+Matt: 
+Got request from David Arctur from OGC this week asking if NCEAS and DataONE want to participate in an OGC-led EarthCube initiative.  I haven't replied yet in either case; feedback would be appreciated.
+
+Working on release process for DataONE and Metacat, and deployment of the various MNs that we are responsible for (KNB, SANParks) or that are impacted by a Metacat upgrade (e.g., LTER).  The conversion process for existing content is going to be fairly complicated as we restructure the nodes of the KNB as nodes in DataONE.
+
+
+John Kunze: The DMPTool and JHOVE2 made the Library of Congress' Top 10 Digital Preservation Developments of 2011.  This week CDL with ORNL and NSIDC submitted an EAGER grant entitled "Making Data Count: Tapping the Hidden Potential of Data Citation".  DMP Tool meeting is in Berkeley in a couple of weeks.   
+
+MIke: USGS is working an MOU with NSF specifically related to EarthCube.   I will let you guys know as this evolves.   
+
+Bertram: finished screening ProvWG candidates (together with Paolo Missier). Phone interviews being scheduled for next week.
+
+Viv: Continued work editing the data management education lessons. Idea proposed by Bob to work with ESIP on a join effort for DM education. A call is being organized with Ruth Duerr, Carol Meyer, Erin Robinson, Amber and Rebecca to explore some possibilities. 
+
+Mike and Viv -- met last month and developed a draft for a USGS MN workshop to happen in April.   Mike will send this out to the Leadership team for comments.....
+
+Bill: Just got note from City University of NY that was funded - will be at Indianapolis meeting; he had just gotten MRI funding - maybe this is something that MNs may want to participate in; expecting some new program officers in the next months (Rob is still our program officer but is a rotater so needs to go and then come back)
+
+

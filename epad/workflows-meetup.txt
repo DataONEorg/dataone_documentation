@@ -1,0 +1,186 @@
+Friday Morning, Meeting in Berkeley (7/29/11, 930am)
+Present: Richard, Karthik, Bill, Bertram
+
+Main: http://epad.dataone.org/1UcA32AcSM
+R: http://epad.dataone.org/workflows-r
+
+Conferences &Venues:
+
+IDCC: Due August 3rd: http://www.dcc.ac.uk/events/idcc11/call-papers
+LISC: Due August 7th: http://data.linkedscience.org/events/lisc2011
+PLoS
+
+Hypothesis: 1
+
+Inputs,outputs + Beanshells & Processors; add the alpha transparency to the plot.
+Larger the wf, correspoding increase in inputs and outputs.Useful generic result. We don't know how large the inputs are. Sometimes many components are bundled in files; but other workflows may not (inflating the count).
+
+Graph 1: Inputs, outpus vs processors (IDCC?)
+
+Figures: shaded areas indicate 95% confidence interval..
+
+
+Bill: Results for outputs vs inputs seem counterintuitive. Lots of data sources -> One final result. But here it shows the opposite
+R: Sometimes folks search for x and gather multiple results.
+
+Karthik to scale points/add alpha.
+
+Figure: TAVERNAS: SHIMS VS EXTERNAL
+------------------------------------------------------
+define beanshells, local workers etc in the paper.
+
+x% shims. divide bean shells/processors.
+
+What is the nature of workflows that have large # vs small # of shims.Bertram will add a ref to work on models that make wfs shim free. Look at say tags, or some other attribute of a workflow that requires a large number of bean shells.
+
+Reference: 30% of actors are shims.
+
+[4] Cui Lin, Shiyong Lu, Xubo Fei, Darshan Pai, and Jing Hua. 2009. A Task Abstraction and Mapping Approach to the Shimming Problem in Scientific Workflows. In Proceedings of the 2009 IEEE International Conference on Services Computing (SCC '09). IEEE Computer Society, Washington, DC, USA, 284-291. DOI=10.1109/SCC.2009.77 
+
+------------------------------------------------------
+Richard: It would be good to see if these workflows were actually published. So it might take some searching to fill in the gaps.
+
+Karthik: We should set timelines for the papers. First priority, IDCC abstract. Next: PlosONE
+
+
+
+
+Issues to address in the paper:
+
+Is myExperiment representative of use of workflows in science
+
+
+More notes: FCA - Formal concept analysis (or say some sort of multivariate analysis). This will help us cluster workflows.
+
+
+HYPOTHESES:
+Hypothesis 1: Most workflows perform simple, but repetitive data acquisition tasks as opposed to complex operations.
+
+- distribution of wf size/complexity 
+    - histogram of wf size:
+Chart 1: just count all components
+Chart 2..n: count components by "type" / color
+might lead to follow-up questions.. (as always)
+
+Hypothesis 2: Workflows are becoming more complex over time.
+    Sub hypothesis: Individual workflows become complex over time. e.g. Library vs production workflow (where extraneous stuff has been cut down).
+
+Measures of complexity: # of processors (actors)
+- also available: # of processors per "type" (beanshell, external, local worker, string, embedded wfs,  ...)
+Messiness of graph is ratio of nodes to # of links 
+("messiness" (wiring complexity)  = #links / # nodes).
+Would be a good thing to have. ratio between edges to boxes as a measure of complexity. Linear ones could be 1. and messy ones ...
+
+Hypotheses 3. Workflows become more powerful/complex? over time. 
+Can we get data on workflow versions - i.e. do simpler workflows get complex over time.
+
+Paper: Network Analysis of Scientific Workflows: A Gateway to Reuse (explores some of these topics).
+
+Hypothesis 4: Workflows become more complex as one gains more experience. 
+
+Would be good to check user average download per workflow to see if this is true.
+As well as complexity
+
+Hypothesis 5:  Workflow re-use is proportional to the complexity of tasks performed by the workflow.
+
+
+Hypothesis 6:  Workflow re-use is proportional to the sufficiency of the documentation. 
+
+Hypothesis 7: Reuse is proportional to the age of the workflow. 
+
+Hypothesis 8: Workflow reuse is proportional to the proficiency of the creator. 
+len(desc), Downloads, over time, by user
+
+
+R TODOS
+# Correlate # of workflows cerated by a user to number of downloads.
+# More regexp stuff in R
+
+Saturday:
+############################################################
+Key Points:
+ * Most WFs perform relatively few operations (Need a histogram)
+ * Amount of coumentaito is not related to WFUSE
+ * Newer WFs more complex than older ones
+   * Tv1 yes, Tv2 no. New graph that removes plumbing? ratio of input/output to beanshells?
+ * WF Use is correlated with Overall Complexity (Number  of operations, inputs/outputs - user cluster analyses to tease out these details
+ * WF most downloads within 1st 30 days (reduce over time - graph into timeframes
+ * more versions relates to more downloads
+ * WF complexity type? relatationship between that and the number of workflows done by a single user
+ * Older WFs downloaded more
+ * 
+ * Most downlaods are via external applications
+ * more community is involved, the greater the number of downloads (creds, favsa, ratings, citations, reviews, comments, etc.)  on myExperiment
+ * more views = more downloads
+ * few authors submit most WFs, most authors only one
+ * member downloads > anonymous downloads
+ * tags are not correlated with downloads
+
+Bertram's notes (Saturday)
+
+Key Results
+
+1. Most wfs perform relatively few ops ==> Histogram showing how many wfs there are for a given size (bucket) ==> Histogram
+2. Most wf downloads during first month; reduces over time
+3. Newer wfs more complex than older ones?
+TV1: yes ?  TV2: no?
+==> seems that there is no significant change in wf complexity over time
+Note: myexperiment started in 2007; Taverna a number of years before, so this is not surprising!?
+People developed Taverna workflows, then only later shared via myExperiment
+
+Other ideas: How are groups used in myExperiment?
+-- maybe less so than one would expect?
+Here's an interesting recent group: 
+http://www.myexperiment.org/groups/303.html
+
+-- is there a "threat" to are people not just using Facebook or more likely Google+ for wf sharing
+
+Miscellaneous thoughts:
+Overall goals of the study: 
+--- find out what kinds of scientific workflows there are in the public (ie, myExperiment)
+--- find out about usage of workflows vs workflow characteristics
+
+- list of wf features studied: "complexity" (# of actors of different types, # inputs, # outputs, ...)
+
+- disclaimer about study constraints (limited time frame) and resulting data: 
+-- SPARQL end-point was hard to use to retrieve structured data needed for analysis
+-- instead, screenscrapping myExperiment was fairly easy to do via Python (Beautiful Soup,...) 
+put data in MySQL, analysis with R;
+
+
+- myExperiment is used for sharing workflows, but not for sharing data from workflow runs
+Without the availability of workflow run data, and no ability to track wf usage/downloads per user,
+we had to employ other observables, such as workflow views, downloads, and attribution meta-data as proxies.
+(caveat: screenscraping did also affect the view count, as does myExperiment itself, showing high-ranked first)
+
+- Thus, our findings only provide a very rough, first-level approximation.
+Further details have to be teased out in subsequent studies..
+
+
+References for IDCC Abstract:
+Dates: http://www.dcc.ac.uk/events/idcc11/dates
+
+* Goble, Carole A, Jiten Bhagat, Sergejs Aleksejevs, Don Cruickshank, Danius Michaelides, David Newman, Mark Borkum, et al. “myExperiment: a repository and social network for the sharing of bioinformatics workflows.” Nucleic acids research 38, no. Web Server issue (July 2010): W677-82. http://nar.oxfordjournals.org/cgi/content/abstract/38/suppl_2/W677.
+ 
+ - different kinds of myExp users:
+-- wf developers willing/eager to share their wfs
+-- scientists who want to discover and use, re-use, evolve wfs
+-- social network features also make myExp a collaborative environment that can be used for training, see
+ http://www.myexperiment.org/groups/303.html
+ 
+* Tan, Wei, Jia Zhang, and Ian Foster. “Network Analysis of Scientific Workflows: A Gateway to Reuse.” Computer 43, no. 9 (2010): 54-61. http://doi.ieeecomputersociety.org/10.1109/MC.2010.262.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

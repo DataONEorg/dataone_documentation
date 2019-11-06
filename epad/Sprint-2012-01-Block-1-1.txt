@@ -1,0 +1,82 @@
+
+Standup 2012-01-03
+-----------------------------
+
+Will plan on reviewing sprints tomorrow when Dave is back
+
+Matt
+~~~~
+-- will focus on Metacat release
+-- then come back to R client work after Metacat is done
+
+Robert
+~~~~~
+-- Log Aggregation last of the functional pieces to finish
+-- needs to work with Dexter to work out UTK firewall issues with the CNs
+-- document the CN set up process, or verify the CN setup is accurate
+-- discuss the DataONE certificate setup issues
+-- make certain d1_common_java and d1_libclient_java hitting against the 1.0.0 tags
+-- Document Node registration process.
+-- merge logging into /var/log/dataone/<subcomponent>
+
+Chris
+~~~~
+-- CN Replication; still problems with replication hanging when you scale up to larger numbers of objects being replicated; locking may be problematic in the HZ client at all
+-- sending a request into the cluster, no response
+-- possibly develop an isolated test case that replicates the problem outside of our code
+    -- will help determine if this is hazelcast, or our code
+
+Rob
+~~~
+-- focus will be working on setting up d1_integration tests for CN.
+    - adding appropriate certificates
+    - testing nodeUpdateCapabilities, and another 5 or 6 tests
+-- will remove assertRelation from arch docs and libclient code (done)
+-- finish up install of cn-dev-unm1.dataone.org.  waiting on certificate issue to be resolved.
+
+Roger
+~~~~~
+-- extensive refactoring of GMN before vacation; will continue on that
+    -- refactoring was for cleanup
+    -- working on getting the tests working again
+
+Skye
+~~~~
+-- working on the sync of index on cn-dev2, seems to be working
+-- checking in the new cn-index component in buildout
+-- removing mercury from the cn-buildout for now
+-- Checking for references to old common_java in indexer components.
+-- Further index component tasks.
+
+Ben
+~~~
+-- Metacat release will be the priority
+-- all tests passed except tier 4 (which are not valid)
+
+Nick
+~~~
+-- Resuming investigating port 389 issues on cn-dev-3.dataone.org (Resolved)
+-- playing with adapters on virtual hosts, looking for new tasks
+
+
+Replication/Synchronization issue-
+
+Proposal:
+no locking/direct edits to the shared sysMeta map in d1_synch/d1_repl - only Metacat can do that.
+
+Problems:
+Exclusive locking needs to occur before a get is performed to guarantee consistency
+
+Maybe the serialversion on additional CN api method calls would allay data consistency issues
+ 
+Need to investigate why the get in Synchronization causes an event entry to be triggered in Replication.  May have added in logic to metacat to create, as a placeholder, an entry in the sysmeta map when the get is performed(???) 
+
+
+CN Replication api questions:
+Replication.setReplicationStatus - how can VersionMismatch be thrown? (fr. Chris, it can't.  Is it ok to remove the exception from the API?)
+Replication.updateReplicateMetadata - description is confusing in arch docs - leads one to believe all replica entries would be replaced with the new singular replica.
+
+Register.updateNodeCapabilities allows update to all of the Node document, except identifier (and maybe NodeType?).  Should change the description and maybe method name to be simply updateNode - 
+        - keep the existing method name (see also mn.getCapabilities())  
+
+

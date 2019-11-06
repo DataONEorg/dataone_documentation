@@ -1,0 +1,341 @@
+Charge to sub-groups:
+1. goals for sub-group
+2. tasks for this meeting: description and timeline
+3. ongoing tasks
+4. deliverables by thursday
+5. who else needs to be involved
+6. id recorder / facilitator / reporter
+
+Ecosystem of Data in Institutions 
+
+Original comment came from the idea that we are "missing a large piece" of the ecosystem.
+ We think there are some missing circles. 
+ 
+Who are the actors? Picture concentric circles with libraries and IT organizations and researcher: Powerpoint: Actors in Data Management Ecosystem, presented in June 2012
+
+People need / want to understand their role / place / function in the "Data" ecosystem.
+
+What are the elements of the "Research Data Services" ecosystem?
+ * Technical Support
+ * Policy in the Research Office
+ * Legal 
+ * Strategic Decisions
+
+
+Research Area Group>
+Funding Agencies
+
+Research Support Group>
+
+Discipline
+External funding agency
+Federal & State Regulations 
+Institution
+Office of Research/Grants
+Librarians 
+IT 
+PIs/Co-PIs
+Research Collaborators 
+Students / Post-Docs
+Discipline repositories
+IRB=institutional review board
+
+The DataONE Stakeholder Network figure from DataONEnews Fall 2012 issue hints at the players in the ecosystem
+
+Policy Level - who is going to make the decision that this is something we should pay attention to, what kind of services are provided and by whom?
+
+What are the parts of an institution that have to be working together
+
+Problem: Is this a "Librarian Problem" only? 
+    
+ * Many? people are "doing the data management themselves" or renting from institutional computing.  
+ * No conception whatsoever of a long term plan for managing data once the project was done.
+ * Some institutions say, we have a records management policy while in reality, not institutionally ready.  (Some researchers are concerned we are losing a lot of data).
+ * NSF was requiring data management plans by December.  How do people get grants?
+ * Sometimes found "yeah we'll upload it to the publisher if they want it." 
+ * We are losing some servers that are not managed.  
+ * How do we get people to take data preservation seriously
+   * Changing the culture to value data preservation over "fires"
+   * Demonstrating the value of data preservation
+   * Showing consquences (financial, policy, threats, etc.)
+   * Mitigating misconceptions about data re-use
+   * Communicate cost of "non-action"
+ * No one has thought of cost, infrastructure, who in the institution should be doing it - a low barrier survey (but a survey may not be the answer).
+ * Long term data preservation is likely not on the radar of anyone except for libraries. 
+ * 
+
+
+Goal: Confirm the Audience; Identify the Concerns Around Data Management
+1. Qualitative Survey of what's going on at various institutions, different levels (government at multiple levels, academic) 
+ * Could come up with our own set of questions with a perspective that is different from the e-science institute
+ * From in the library looking out "SWAT" analysis - strengths and weaknesses within the institution (Based interviews on that without seeing what we thought was accurate or not)
+*current survey (baseline) from academic librarians can be expanded - key data missing about the results, got 79 responses (not statistically significant or actionable).  Not sure it has been targeted at the right institutions.  Hard to find the libraries.  
+   * Establish a set of questions to ask 
+     * who are the policy stakeholders
+     * what factors inhibit them from making data management a high priority (barriers, etc)
+
+2. Confirm the audience for our educational mission about data (people/policymakers within the organizations)
+ * There is a set of organizations within our institutions who need more information on what is required for Data Management. 
+3. Leverage diversity of people in DataONE (Assessments, Data Center, IT)
+
+We have personas of the stakeholders but not personas of the researchers and people who are in immediate contact with the researchers - as far as the research librarian. 
+
+If we are targeting our mission to librarians and researchers, what is the missing piece - DataONE should "influence the influencers."
+
+Group goal may be to look at the assessments, see what kind of descriptions of the "ecosystem" are in there, then figure out what strategies can further describe, look at all institutions. 
+
+What precedes all of those:
+
+Baseline for Federal Libraries and Librarians
+Agency instead of institution 
+
+Tasks for 2012 AHM Meeting
+1. Identify the quantitative data that is out there in the different surveys (DataONE, other resources; start to idenitfy other sources, e.g., UTK's IBIS).
+2. Anecdotally identify who we think the audience is - who are the administrators; institutional stakeholders, confirm in a couple of different ways, with survey questions
+3. harnessing the power of digital data - annex in the back has different stakeholders - review the variety of groups that might be important
+4. based on what we come up with, start thinking about the message
+
+Ongoing Tasks for "Data Ecosystem in Institutions"
+1.Thinking about the message could be an 2 task 
+ * what are their concerns
+2. pick a vendor and go out and contact them (ACRL research group is a possibility)
+
+
+Resources Needed:
+ * What is the existing surveys- if it's not happening in the library (for example), do we know from the surveys where it is happening?
+   * Survey Instruments: What did we ask?
+     * Scientists Survey
+     * Academic Libraries Survey (went to library director)
+       * URL for plone site: https://docs.dataone.org/member-area/working-groups/usability-and-assessment/baseline-assessments/survey-instruments
+       * Questions - Academic Libraries Survey
+         * How many FTE (full-time equivalent) students are enrolled in your academic institution? 
+         * How many tenure-track and tenured faculty are employed at the academic institution you are working for? 
+         * How many NSF grants are typically awarded on your campus each year? 
+         * Which of the following research data services (RDS) does your library currently offer or plan to offer in the future? 
+         * Which of the following research data services (RDS) does your library currently offer or plan to offer in the future? 
+         * Which of the following research data services (RDS) does your library currently offer or plan to offer in the future? 
+         * Who in the library provides research data reference/consultation/instruction services to researchers? 
+         * If your library is involved in any research data services (RDS), who in the library has primary leadership responsibility for plans and programs for research data services (RDS)? 
+         * Does your library have policies and/or procedures associated with research data services (RDS)? 
+         * Does your library manage, or participate in managing, technology infrastructure that supports research data services (RDS)? 
+         * You have indicated that your library manages, or participates in managing, technology infrastructure that supports research data services (RDS). Please check all of the technology infrastructure components that apply. 
+         * How has your library developed staff capacity for research data services (RDS)? (Check all that apply) 
+         * Has your library provided opportunities for staff to develop skills related to research data services (RDS)? 
+         * You have indicated that your library has developed opportunities for staff to develop skills related to research data services (RDS). Which of the following opportunities has your library provided? Please check all that apply. 
+         * Does your library collaborate with other units or offices in your college or university regarding research data services (RDS)? 
+         * You have indicated that your library collaborates with other units or offices regarding research data services (RDS). Please indicate the unit(s)/office(s) with which you have collaborated (check all that apply). 
+         * Does your library collaborate with other institutions regarding research data services (RDS)? 
+         * You have indicated that your library collaborates with other institution(s) regarding research data services (RDS). Please indicate the other type(s) of institution(s) with which your library collaborates (check all that apply). 
+     *   Academic Librarians Survey  
+     *   Federal Libraries Survey 
+     *   Federal Librarians Survey
+     *   Data Managers Survey - reference DataManagersMethodsLog12_12.docx from plone site.
+       * SubGroup Question: how were targets of the data managers survey figured out? - Went through channels - pockets and silos - can product records of this.
+       * Federal Data survey - some influence, question that asks "who else do you collaborate with" leaves it really open; if yes, survey requests to "fill in the blank"
+         * Went to the data managers working group of the USGS, and from there they sent it out. 
+           * Waiting on permission from USGS associate director to send out
+         * Bonnie Carrol (CENDI Secretariat) sent out to CENDI (confirm)
+         * Try to team up with NatureServe and TNC but no certainty
+         * OFWIM - october 16, 10 valid responses; October 25, 24.  
+         * PNW Aquatic Monitoring Program
+         * Supercomputer Sites
+         * Contracts and Grants
+
+   * Results
+     * ACRL Libraries RDS Report
+         * https://docs.dataone.org/member-area/working-groups/usability-and-assessment/baseline-assessments/Tenopir%20Birch%20Allard%202012%20ACRL%20Libraries%20RDS%20Report.pdf/view 
+       * Baseline Assessments for Usability and Assessments Working Group
+         * https://docs.dataone.org/member-area/working-groups/usability-and-assessment/baseline-assessments
+         * 
+ * Consultation with Assessment Sub-Group representative 
+   * What were the data points?
+   * How did we get to where we were with the assessments piece
+   * Who was targeted for the data managers' survey?
+   * How did they identify the groups, what were they looking for? (Practitioners vs. Policymakers)
+   * Help going through the different surveys to figure out which questions might help us get at institutional-level policies (there are likely questions in the surveys  / scien tists' baseline surveys).
+ * Qualitiative survey is a series of interviews to get more indepth information, unscripted follow-up to the quantitative survey. 
+   * Look for a professional organization of information offices or research offices - do they have a membership directory?
+ * Best Practices? 
+   * Institutional Repositories may be farther ahead
+     *  http://databib.org/ (at least 290 repositories)
+     * IRODs
+ * How do we prove this is a problem - we have evidence anecdotally
+   * 71% of librarians at Tier 1, say library hasn't developed research data services
+     * From Presentation - Carol did - first and only analysis of the librarians
+ * Understand the original question of who is the DataONE audience
+ * Key informant, snowball kind of thing - general idea of possibilities, then ASK who we are missing so THEY tell us.
+   * Conferences of professional associations, go and do a little focus group, ask who else might go.
+ * Targets interviews - phone, skype, etc.
+ * Developing a list of spreadsheet, chunking "super computers" etc - figure out who the groups are. Question is - is it not being done - wondering whether or not we need to get into the level of granularity in terms of identifying a lot of the subunits, go back to the original statement, ideas of the case studying method, try to identify "what does it look like." 
+   * We kind of know what we don't know - identified a gap in the knowledge
+     * information offices
+     * research offices
+ * If you find within specific disciplines it's being done in some way (data center, DataONE, but not institutionally recognized as a need or priority) lots of ad hoc stuff going on but not an institutional policy
+ * Find few cases where information office is involved - find out "how did that happen"
+   * Organizations have figured out what partnerships they need, success stories, these are people who will start to have over time idea of 
+     * costs
+     * resources needed
+
+Example ecosytem:
+
+Northwest Knowledge Network
+ * Vice-President for Research and Economic Development
+ * Library
+ * Chief Information Officer (CIO)
+ * Idaho National Lab
+
+
+Office of Research at UTK
+ * just put in your data management plan that "it will be handled here" 
+ * Given some boilerplate text that says the library will be helping, we have an institutional repository, can assist with metadata.
+ * Office of information tech has always been assumed to be responsible for the infrastructure.
+
+Information Technology is usually:
+ * Server Space
+ * Backups
+
+They do not necessarily prioritize:
+ * Metadata
+ * Preservation
+ * They also charge if you want to use a bunch of space
+
+
+15 servers under everyone's bed - risk management brings to attention.
+
+Maybe we should not try to describe the ecosystem, but figure out how to go about describing it.
+
+Do we have enough data in the current assessments?
+
+ARL/DLF/DuraSpace E-Science Institute
+http://www.arl.org/news/pr/duraspaceESI-05june12.shtml
+
+Deliverables
+ * If the assessment group has only demonstrated that 1/3 of the research libraries are engaged in data managment plans, where is this activity happening?
+     * What would be the barrier / what would reduce the barrier
+       * No time for work they don't get rewarded for
+       * Perception that it's "someone else's job"
+
+ * What would be the qualitiative research that would help us understand this culture, where is this happening.
+ * Confirm the audience for the (academic) institutional message about data. 
+ * The beginning of a group to focus on Federal Agencies.
+ * A strategy for going through current assessments and for designing future assessments for confirming who the audience is (make sure that people understand the term assessment to understand what it means in the dictionary, an assessment activity and not a survey).
+ * 
+
+
+
+
+Message - End Point
+
+DataONE mission: Enable new science and knowledge creation through universal access to data about life on earth and the environment that sustains it.
+
+DataONE vision: DataONE will be commonly used by researchers, educators, and the public to better understand and conserve life on earth and the environment that sustains it.
+
+DataONE Principles   v 5.3.12         Created by the SCWG 
+ 
+[DataONE purports that...]
+ 
+1. Data science is transforming environmental science.
+ 
+2. Data should be part of the permanent scholarly record and requires long-term stewardship.
+ 
+3. Sharing and reuse maximize the value of data to environmental science. 
+ 
+4. Environmental science is best served by an open and inclusive global community.
+ 
+5. The data environment is dynamic and requires evidence-based decision-making about practice and governance.
+ 
+
+
+Focused on the academic community ONLY
+
+
+Deliverable - A strategy to identify the audience for the academic institutional message about supporting data managment and to determine what their concerns are
+ A strategy to identify the audience for the academic institutional message about data and to determine what their concerns are
+
+1. To identify where data management is happening at universities
+
+- already assessed libraries, librarians, data managers, scientists.
+
+What do we know?
+ * Academic libraries are not the sole curators of data 
+ * Data is managed in a dispersed manner
+ * There is a lack of understanding about how research offices, information techology offices, legal, etc. work together to support data management.
+
+2. Identify success stories: what does working well look like? What are the factors that contribute to success? What are pitfalls to avoid? What is the penalty of failure?
+
+3. Strategy to disseminate success stories from #2 to audience identified in #1
+
+*** NOTE:  The above strategy should be adapted for Federal Governement environment by a sub-team looking specifically at fed gov ecosystem.
+
+Who comprises the academic ecosystem with regards to data management?
+
+How do we find out more?
+ * Cull information from existing assessments
+   * Academic Libraries survey question: You  have indicated that your library collaborates with other units or  offices regarding research data services (RDS). Please indicate the  unit(s)/office(s) with which you have collaborated (check all that  apply).
+   * Data  Managers survey (Academic slice): Maybe use for developing questions re: barriers/concerns with DM
+ * Case study method
+ * 
+ * 
+
+
+If the assessment group has demonstrated that 1/3 of research libraries are engaged in data management planning process, where is the rest of this activity happening? The academic libraries survey indicates two other major players: Office of Research and Office of Information Technology.
+
+What research would help DataONE reach out to this ecosystem, to identify other players, to understand the interactions, to target the message?
+
+goals, tasks, deliverables:
+
+Purpose: to identify actors in administration who influence data management in academic and federal programs in order for DataONE to effectively engage with these ecosystems of research
+
+Academic
+What do we know (based on U&A results)?
+1. Libraries are not the center of research data management
+2. Other major players: Office of Research; Information Technology
+What do we want to discover?
+1. How Office of Research and IT services envision data management?
+2. Extant other administrative players
+3. Collaborative structures for data management
+
+
+Federal:
+What do we know?
+ * We know less about federal agencies than about academic practices, and environments are different.
+ * Methodologies used to assess academic institutional concerns should be adapted to learn more about the federal landscape.
+
+What do we know?
+ * Academic libraries are not the sole stakeholders of data management
+ * Data is managed in a dispersed manner
+ * There is a lack of understanding about how research offices, information  techology offices, legal, etc. work together to support data management.
+ * 
+ *             
+Academic
+What We Know
+1. Libraries are not the center of  research data management
+2. Other major players: Office of  Research; Information Tech   
+What   do we want to discover?
+1. How Office of Research and IT services envision data management?
+2. Extant other administrative players
+3. Collaborative structures for data management
+Next Steps:        
+1. Develop a case study methodology
+ * Identify successful instances of  research data support
+2. Suggest question for Scientists follow up survey re their view of institutional ecosystem
+
+Federal
+What   We Know
+1.    We know less about federal agencies than about academic practices, and   environments are different.
+What   do we want to discover?
+1.    Who are the players and how are they involved?
+Next   Steps:
+1. Develop a case study methodology
+ *   Identify successful instances of research data support
+2. Look further into Q11 on Federal Libraries survey
+3. Suggest question for Scientists   follow up survey re their view of institutional ecosystem
+
+
+
+
+
+
+
+
+

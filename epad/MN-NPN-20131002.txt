@@ -1,0 +1,48 @@
+USA-NPN (USA National Phenology Network) - DataONE Member Node follow-up meeting
+
+2 October 2013, 3pm EDT, 2pm CDT, 1pm MDT, noon AZ/PDT, 11am AK
+ - previous meeting epads:  http://epad.dataone.org/MN-NPN-20130724, http://epad.dataone.org/MN-NPN-20130801, http://epad.dataone.org/MN-NPN-20130828, http://epad.dataone.org/MN-NPN-20130911
+
+1.  Please join my meeting, Wednesday, October 02, 2013 at 3:00 PM Eastern Daylight Time. 
+https://www1.gotomeeting.com/join/636816017
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (215) 383-1013 
+Access Code: 636-816-017 
+
+Audio PIN: Shown after joining the meeting 
+ 
+Meeting ID: 636-816-017 
+ 
+ 
+Attending:  Bruce, Ben, Lee, Laura  
+
+Regrets:  
+
+Redmine ticket: https://redmine.dataone.org/issues/3186
+
+Agenda:
+
+Lee update current status:  
+ * Got test member node set up and able to add documents to server and they propagate.
+   * https://mynpn-dev.usanpn.org/knb/metacat/USANPN4.5.0/default
+ * Plan to start with annual data sets, grabbed from the data download tool, sample is on the development server.  
+ * Need to generate test certificate.  Test MN is using a self-signed cert for authentication.  Ticket has been created for a certificate https://redmine.dataone.org/issues/3966.  
+ * Production server shouldn't be too much work.  Server is already up with most of the software stack.  Needs PostgreSQL and necessary WAR files.  Will need a production client certificate --&&&&& Need to create the ticket for this.  
+ * Metacat DataONE screen will generate the necessary manifest XML file for registering the production MN.  But needs the client certificate for this screen.  
+ * Lee working with Erin Posthumus to get the EML template updated to use the fields to describe the fields in the data file.  
+ * Lee needs to get the DOI's from EZID for the production datasets.  Basic plan is to get the data sets into production using Metacat-generated ID's.  Can update the production datasets later with the DOI's once the datasets are in production and stable.  DOI's do not need to be a critical path item for getting the USA-NPN MN operational.  Note that the account with EZ ID needs to be done by the institution (such as U AZ or OALS -- Office of Arid Land Studies).
+ * Next telecon 10/16 15:00 EDT, 12:00 PDT.  Bruce to set up GTM for this
+
+
+
+    Recap:
+   * NPN wishes to operate at tier 1 and that they are in a position to establish a test system.
+   * Based  on NPN's "live" data status, we think we'll have one dataset that's historic wildlife data, others by year.  Alyssa said they'd work on PIDs/DOIs with Bruce.
+   * Alyssa indicated that the due date shown on the redmine ticket of 31 Oct 2013 is reasonable.
+
+
+    Questions from NPN that DataONE can address?    
+
+

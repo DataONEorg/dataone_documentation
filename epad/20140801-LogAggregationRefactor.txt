@@ -1,0 +1,107 @@
+Identified Goals and Issues previous to CCI 1.4
+   * Separate LogAggregation from d1 processing to a separate VM and remove HZ from it without touching the rest of the CN
+     * Consider use SolrCloud for replication
+       * need to have a mockup of this and testit with large amount of documents to check throughput rate
+       * might be minor code changes
+       * already have zookeeper component that was initially used for cn auditing
+       * what is the strategy for indexing?
+         * update a solr core and swap?
+     * log agg needs to write to solrcloud endpoint, not local
+     * authentication may be an issue
+       * certificate manager is a singleton and may be an issue when running in Jetty
+     * have to separate Hazelcast internal usage from WAN functionality
+
+LogAggregation Definitions for Architectural consideration.
+-----------------------------------------------------------------------------------
+  Log Aggregation uses threads to accomplish its goals.
+
+  LogAggregation is a multithreaded application.
+
+  LogAggregation has Types of Threads that have different responsibilities.
+
+    ThreadManagers, Schedulers, Jobs and Tasks are types of threads.
+
+       ThreadManagers execute threads, wait for their execution to end, take corrective action if the thread execution ends prematurely.
+
+       Schedulers execute Jobs periodically based on a timed schedule.
+
+       Jobs run and manage individual Tasks, either serially or concurrently.
+
+       Tasks execute Business Logic Units.
+
+  ThreadManagers,Schedulers, Jobs or Tasks may not implement business logic.
+
+  Business Logic Unit implementation details are encapsulated behind interfaces.
+
+  Business Logic Units may interact with Services.
+
+  Services interact with software external to LogAggregation.
+
+  All Service implementation details are encapsulated behind interfaces.
+  
+
+
+Log Aggregation Requirements
+======================
+
+
+1. Creating and managing Harvest Job Schedules based on DataONE requirements that All Active D1 Nodes will have their logs aggregated by CNs.
+        Start harvest job scheduler for active D1 Nodes
+        Stop harvest job scheduler for inactive D1 Nodes
+        Remove harvest Jobs for deleted D1 Nodes
+        Add harvest Jobs for new D1 Nodes
+        
+        Harvest Jobs are not repeatable
+        
+
+2. Log Aggregation will run once a day per D1 Nodes
+
+3. Log Aggregation will harvest up to midnight of the current day.
+
+4. The schedule of a Job may need to change
+
+A. Harvest Job Scheduler Manager
+======================
+Definition:
+Harvest Job Schedule Manager manages the Jobs that will harvest logs from D1 Nodes. 
+
+Responsibilities:
+    Fulfills Requirement 1.
+
+B. Harvest Job Schedule
+================
+Definition
+Associate a D1 Nodes Harvest Job with a schedule
+
+Responsibilities:
+   Fulfills Requirements 2 and 3.
+  Creates and Returns a Harvest Job for a MemberNode based on a Schedule
+        Create/trigger harvest job for a MN 
+            (possible encapsulation of schedule here - currently once per day)
+
+
+
+HarvestJobSchedulerManager (replaces LogAggregationScheduleManager) (See A)
+-------------------------------------------
+  NodeRegistryService 
+  HarvestJobSchedule (See B)
+  JobScheduler
+  
+HarvestJobSchedule (See B)
+-----------------------------
+   HarvestJob
+   D1Node
+   ScheduleFactory
+   
+ScheduleFactory
+------------------------
+  Schedule
+
+HarvestJob
+---------------
+
+The Schedule manager use Quartz and Hazelcast to distribute schedulers.  Hazelcast has the notion that different partitions of data are owned by different nodes in  the cluster.  The schedulers will check for each entry in the node list and determine which node in the cluster owns that partition.  The owner of the node entry partition is responsible for scheduling the execution of the harvesting mechanism.  The use of hazelcast to determine scheduling allows for the dynamic re-apportionment of scheduling of log aggregation harvesting.
+
+The LogAggregationsScheduleManager will specifically execute the job that will query remote Membernodes for their log records as it will schedule harvesting of records from its own metacat instance.  The SchedulerManager upon initialization will schedule a recovery mechanism to run as well.
+
+

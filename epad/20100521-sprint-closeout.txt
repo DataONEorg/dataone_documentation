@@ -1,0 +1,64 @@
+Sprint Closeout and Startup - 2010-05-21
+========================================
+
+:Who: Dave, Chad, Roger, Robert
+
+
+
+Good,  Bad, Ugly
+----------------
+
+- burndown actually points down
+- Dave - very limited time to work on sprint
+- Metacat is in great shape - CRUD interface looking good
+- Roger - needs to close out tasks during the sprint
+  - tasks better aligned with actual work
+- Integration testing still needs to be done for 0.3!
+
+
+
+New tasks / stories
+-------------------
+
+Need to setup a "cn-service" account in LDAP for metacat administration
+
+#620 - next sprint (S6)
+
+#269 - move to S6
+
+#288 - move to S6
+
+#262 is a high priority for completion
+#268 - S6 ?
+#265 - assign to Roger ?
+
+#352, #429 - S6 (dependent on 262)
+
+#591, #420, #421 
+
+- New task to pull data from a KNB / metacat instance and generate sysmeta as part of the unit test process rather than generating fake metadata / data.
+
+#586, 587, 596, 588 - hopefully close out during meeting next week. Otherwise S6
+
+#593, #594 - need to have tasks assigned, perhaps 2hrs left (about 8hrs so far)
+
+#595 - S6
+
+#608 - may be completed, but otherwise high priority for S6
+
+#629, 639, 628, 627 (as for 608)
+
+#609 - S6
+
+#610 - S6
+
+Need to add a story for integration of the metadata packager into JMS (3)
+
+Roger 
+- fix the getSysmMetadata operation 
+- some refactoring for fields being returned and the structure
+
+
+
+
+

@@ -1,0 +1,159 @@
+New Website Feedback
+
+Please use this page to document feedback on the dataone.org website redesign (http://dataone-beta.nmepscor.net/).
+
+Note:  the functionality is essentially there although many new pages still  lack content, others need editing (they were migrated from the old site)  and others have latin text placeholders.  We are aware of these and  they generally do not need to be commented on, unless you have a  specific edit that is recommended.
+
+Below  is a list of the primary pages for you to provide feedback.  When  giving feedback on other pages, please set the URL as the section header  and then use bullets to list comments beneath. 
+
+Pages available in hardcopy poster format are indicated with  ***
+
+
+
+General Comments (applies to multiple pages)
+ * 
+ * I  confess - Plum is non-plussed by me. For some reason it just seems too  close to black that my old tired eyes (and mind)  get distracted  wondering if my monitor is losing is color calibration.
+ * Are  you testing the page templates for universal design / accessibility for  people with disabilities? Best to do this early in the design process. I  can help if needed (sandusky@uic.edu)
+ * I like the overall navigation scheme and design.  Very public friendly.  
+ * Really are going to have to have content managers refreshing the main scrolling images at least monthly.   
+ * Would  be nice to see what the RSS feed is for... is there one feed for edits  for the whole site?  One separate ones for news, info from each working  group, etc?  or ???  I think having different RSS feeds i <-- I agree  with this confusion.
+ * The co branding of ONE<component> may be troublesome. Fro example while ONEMercury des convey that DataONE is adopting Mercury as a search interface, the DataONE webspace does not help the user associate ONEMercury with data serch. So maybe replace "ONEMercury" with "ONEMErcury data search" on the webspace. Also the ONE<component> form may not owrk in some cases - for example ONER does flow well.
+ * Perhaps a "wide" version of the site would be useful for some content. The fixed-width blog style can limiting. For example, a map-based search interface migth want to use the full width of the screen.
+ * Develop and use clear icons (menu/navigation). (http://metalabdesign.com/zappos/)
+ * Thin line dividers in the left-hand navigation (horizontal and veritical) are out of proportion with the "thick" header menus that are blocked out in dark plum 
+ * Header menu seems: Stark. Dark. Sharp. And truncated (whitespace intended?).
+ * Torquise font highlight color is a little deco -- maybe a cooler [temperature] color? 
+ * Style the included photos so they aren't just slapped on a page (thin grey border, captions, etc)
+ * The DataONE header evokes a roundedness, as do the social networking logos -- but the rest of the site is very rectilinear. Perhaps rounded corners should play a larger role?
+ * Orange should be the action/highlight color and used sparingly.
+ * Breadcrumbs should show terminal page as different color/non-hyperlink.
+ * Should we have an acronym page (if we have acronyms)
+ * No- don't have acronyms, globally replace acronyms with full text on web content
+ * 
+***Home Page (http://dataone-beta.nmepscor.net/)***
+ * Too busy. Background unnecessarily dark. Needs wider margins for the left and right sides.
+ * Search 
+ * Navigation isn't obvious at the bottom since I expect it at the left or top
+ * Data search should dominate page
+ * If ONEMercury is the data search interface - new users will need a clue that ONEMercury = data search interface
+ * "Find Data" and "contribute data" should be prominent in the "search" area on the   home page
+ * "Go" button and search field should be modernized -- look a bit dated
+ * Social networking logos are too prominent
+ * Scrolling news ticker is distracting (CNN?)
+ * Bottom nav/menu is a tad stark -- perhaps a muted background to tone downthe white (see grey footer @ simplestation.com)
+ * Careful with the opacity/fade transition -- if not verically aligned properly the text appears unsettlingly blurry during transition (first slide caption is higher than the rest)
+ * 
+ * I like the news crawl (John Cobb)
+ * I don't like the News crawl. text too small (Matt Jones chenneled via John cobb typing)
+ * News crawl is links, but it is not clear that it is a link until one mouses over it.
+ * Plum and Teal do not seems pleasing to the eye, especially when a drop down menue with teal text within a plum field is unsettling
+
+
+
+About>What is DataONE (http://dataone-beta.nmepscor.net/what-is-data-one)
+ * Text is dense. I.e. it is a long page and I do not have visual markers like a top summary or bolded section hlighlights
+ * The currently bolded sentece should be inset in a box at the top
+ * The about page would benefit from some visual content.
+
+***About>DataONE Organization (http://dataone-beta.nmepscor.net/organization)***
+ * Org chart istoo busy. MAybe a embedded simpler graphic and a link to more detailed org chart.
+ * This graphic is a graphic of dataONE grant project organization but users would be more interested in the organization of the DataONE federation of MN's , CN's,
+   * This graphic minimizes the contributions of external participants, which really should be maximized by not emphasizing project organization
+   * DUG needs to be more prominent (or at the top)
+   * To rephrase: this graphic shows who is responsible for making sure activities occur, but perhaps we need a graphic that shows how the DataONE collaobration/ecosystem functions to support the data lifecycle
+   * Perhaps bifurcate this to two pages :DataONE as a project organization and DataONE as a functioning data federation
+
+About>Working Groups (http://dataone-beta.nmepscor.net/working_groups)
+ * Many working groups need more content
+ * EVA working group should move the visual content up, perhaps on the right side as an inset
+ * PPSR page looks well laid out
+ * Tiled photo layout (e.g. 1 portrait; 2 stacked landscapes adjacent to it) would be more modern looking than the current collage/overlapping
+ * The list of working groups appears duplicated -- probably doesn't need to be in the content of the page if it is in the left nav section.
+ * 
+
+About>Partners (http://dataone-beta.nmepscor.net/partners)
+ * The graphic from proposal was sepculative w.r.t. organizations. Needs updating, perhaps with existing animations that we have used in other materials
+ * This reads like proposal text, perhaps it needs revising.
+ * The partner list grahpic needs attention as to accuract and frequent update/reverification as partners emerge, and change state
+   * This should be linked to the generation process for the MN list which is stored in the repository, used to generate the graphics
+     * https://repository.dataone.org/documents/Projects/cicore/operations/source/membernodes.csv
+   * Change the maps to dynamic google map that plots data from the csv/excel file (+1)
+
+About>Communication (http://dataone-beta.nmepscor.net/communication)
+ * 
+
+About>Contact Us (http://dataone-beta.nmepscor.net/contact)
+ * Use a sleeker style for the form input fields that evokes the same spirit of the site
+
+Participate>DataONE Users Group (http://dataone-beta.nmepscor.net/dataone-users-group)
+ * 
+
+Participate>Member Nodes (http://dataone-beta.nmepscor.net/member-nodes)
+ * 
+
+Participate>Internships (http://dataone-beta.nmepscor.net/internships)
+ * 
+
+Participate>Developer's Resources (http://dataone-beta.nmepscor.net/developer-resources)
+ * 
+
+Participate>Open Positions (http://dataone-beta.nmepscor.net/open-positions)
+ * 
+
+Participate>Events Calendar (http://dataone-beta.nmepscor.net/events-calendar)
+ * Style the Google calendar using DataONE look and feel (there must be some CSS options and colors exposed by Google)
+
+Products>OneMercury (http://dataone-beta.nmepscor.net/content/one-mercury)
+ * Reconcile the difference between this menu option and Data>Find.
+ * 
+
+Products>Investigator Toolkit (http://dataone-beta.nmepscor.net/investigator-toolkit)
+ * 
+
+Products>Data Management Planning (http://dataone-beta.nmepscor.net/data-management-planning)
+ * 
+
+***Products>Best Practices (http://dataone-beta.nmepscor.net/best-practices)***
+ * Tag cloud -- very 2005
+ * Search interface background is quite dark and constrasts with the white background too much. Could also use rounded corners.
+ * See comment on judicious use of orange color (life cycle diagram links)
+
+Products>Software Tools Catalog (http://dataone-beta.nmepscor.net/software_tools_catalog)
+ * 
+
+Products>Repository Directory (http://dataone-beta.nmepscor.net/repository-directory)
+ * 
+
+Products>Publications (http://dataone-beta.nmepscor.net/publications)
+ * 
+
+***Education>Training Activities (http://dataone-beta.nmepscor.net/training-activities)***
+ * 
+
+Education>Education Modules (http://dataone-beta.nmepscor.net/education-modules)
+ * 
+
+Education>Graduate Courses (http://dataone-beta.nmepscor.net/graduate-courses)
+ * 
+
+Data (http://dataone-beta.nmepscor.net/)
+ * We like the simple 4 choices of this menu item.
+ * 
+Data>Find (http://dataone-beta.nmepscor.net/find-data)
+ * Is this intended to link to the ONE Mercury interface?
+ * This tool should maintain the same Look and Feel of DataONE.
+ * Reconcile the difference between Products>ONEMercury and this menu option.
+
+Data>Contribute (http://dataone-beta.nmepscor.net/contribute-data)
+ * 
+
+Data>Cite (http://dataone-beta.nmepscor.net/citing-dataone)
+ * 
+
+Data>Use (http://dataone-beta.nmepscor.net/use-data)
+ * 
+
+Welcome to EtherPad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text.  This allows you to collaborate seamlessly on documents!
+

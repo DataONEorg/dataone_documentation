@@ -1,0 +1,187 @@
+ 
+
+DATAONE ALL HANDS MEETING 2013:  SOCIOCULTURAL ISSUES WORKING GROUP
+
+---------------------------------------------ORGANIZATIONS---------------------------------------------
+
+
+
+http://epad.dataone.org/2013AHM-SCWG-Original-OrganizationsEpad
+
+
+> ESIP (Federation of Earth Sciences Information Partners)  http://esipfed.org/
+ * open networked community that brings together science, data and information techology practitioners. - not suffiently cyberinfrastructure intensive, mostly a portal to information
+
+>  AGU (American Geophysical Union) http://sites.agu.org/
+ * The purpose of the American Geophysical Union is to promote discovery in Earth and space science for the benefit of humanity
+ * AGU galvanizes a community of Earth and space scientists that collaboratively advances and communicates science and its power to ensure a sustainable future. 
+ * doesn't fit critiera
+
+> ESA (Ecological Society of America) http://www.esa.org/esa/
+ * professional society for ecology
+ * doesn't fit criteria
+
+> NCEAS (National Center for Ecological Analysis and Synthesis) http://www.nceas.ucsb.edu/
+ * Advancing ecology to improve lives and the environment by workign to make it more collaborative, open, integrated, relevant adn technologically informed.
+ * research center at UC Santa Barbara.  no longer receives NSF funding.  diversified funding.
+
+
+> Cornell Lab of Ornithology http://www.birds.cornell.edu/Page.aspx?pid=1478
+ * scientific excellence and technological innovation to advance the understanding of nature adn to engage people of all ages in learning about birds adn protecting the plant.
+ * doesn't fit criteria (core to Cornell's identity, won't be going anywhere)
+
+> NESCent (National Evolutionary Synthesis Center) http://www.nescent.org/
+ * Non-profit science center dedicated to cross-disciplinary research in evolution.  '
+ * Operated by Duke University, UNC Chapel Hill and sponsored by NSF
+ * promotes the synthesis of information, concepts and knowledge to address significant, emerging, or novel quesitons in evolutionary science adn its applications.
+ * haven't yet transitioned off NSF
+
+>Earth Science Data and Information System (ESDIS Project part of NASA's Earth Observing System):  https://earthdata.nasa.gov/esdis.  includes 12 data centers:
+
+ * 
+ * fully funded by NASA.  Called a project by NASA.  looks immensely complex to analyze.  not clear whether it's a project hosted by NASA or hosted by NASA.
+ * 
+ * ORNL DAAC (Distributed Active Archive Center) http://daac.ornl.gov/
+ * Global Hydrology and Resource Center DAAC (GHRC DAAC) http://ghrc.nsstc.nasa.gov
+ * LP DAAC (Land Processes Distributed Active Archive Center) https://lpdaac.usgs.gov
+ * NSIDC DAAC (National Snow and Ice Data Center DAAC) http://nsidc.org/daac/
+ * PO.DAAC (Physical Oceanography DAAC) http://podaac.jpl.nasa.gov/
+ * ASF SDC (Alaska Satellite Facility SAR Data Center DAAC) https://www.asf.alaska.edu/program/sdc
+ * CDDIS (Crustal Dynamics Data Information System) http://cddis.nasa.gov/
+ * GES DISC (Goddard Earth Sciences Data and Information Services Center) http://disc.sci.gsfc.nasa.gov
+ * LaRC ASDC (Langley Research Center Atmospheric Science Data Center) http://eosweb.larc.nasa.gov
+ * MODIS LAADS (MODIS Level 1 Atmosphere Archive and Distribution System) http://ladsweb.nascom.nasa.gov/
+ * OBPG (Ocean Biology Processing Group) https://earthdata.nasa.gov/data/data-centers/obpg
+ * SEDAC (Socioeconomic Data and Applications Center) http://sedac.ciesin.columbia.edu/ 
+
+
+> EarthCube (A Community Driven Data and Knowledge Enviornment for the Geosciences) 
+ * http://earthcube.ning.com/ 
+ * Collaboration between NSF Directorate of Geosciences and the Office of CyberInfrastructure.
+ * Official NSFwebsite is linked from EarthCube FAQs page on EarthCube website but is out (10/8/13) due to government shutdown.  
+ * See in particular the Groups tab
+ * bumping into DataONE, do they run services?  they haven't gotten there yet.  they are too nascent for our purposes.  they are too young.  
+
+
+> NOAA's NCDC (National Climatic Data Center) www.ncdc.noaa.gov
+tthis is an essential govt operation.  we can not try to be a .gov adn it interferes with internationalization.
+
+> NEON (National Ecological Observatory Network) http://www.neoninc.org/
+ * continental scale observatory measuring cause and effect of climate change, land use and invasive species on US ecosystems.  solely funded by the NSF  
+ * provide free data, educational resources and scientific infrastructure for research
+ * don't know where they are in terms of maturity, still solely funded by NSF, suzie thinks they are in the same situation as us.  fascinating to look at in terms of similarity and differences in terms of how they are handing this phase, but not next phase.
+
+
+Datanets removed because too close to home
+> DataNet Federation Consortium http://datafed.org/
+ * project of the NSF Office of CyberInfrastructure DataNet Initiative
+ * goal is to assemble natinal data infrastructure that enables collaborative research through federation of existing data management infrastructure
+ * Excellent list of national and international initiatives http://datafed.org/communities/dfc-collaborations/
+ * List of DataNets http://datafed.org/about/
+
+> Data Conservancy http://dataconservancy.org
+ * DataNet project at Johns Hopkins University
+ * "Leading the Movement to Build Data Management Tools and Services Across Institutions and Disciplines"
+
+> SEAD (Sustainabile Enviornment - Actionable Data)
+ * DataNet Project at University of Michigan
+ * Sustainability Science.  Developing a system for managing and sharing data.
+
+>TerraPopulus http://www.terrapop.org/
+ * DataNet project at University of Minnesota.  "Integrated Data on Population and Environment"
+
+> Ocean Observatories Initiative (OOI) http://oceanobservatories.org\
+ * NSF Funded.  Managed and Coordinated through the Consortium for Ocean Leadership
+ * Planned networked infrastructure of science-driven sensor systems to measure ocean and seafloor variables.  Will collect data on coastal, regional and global scales.  
+ * we looked at this a lot at first, contracts for development, suzie thought they had a few funding streams, in existence since 2004.  too similar to us.
+
+> AgINFRA -  A data infrastructure for agriculture http://aginfra.eu/ 
+ * Promoting data sharing and development of trust in agricultural sciences
+ * European, a project, ending 2014, 
+
+> CCIN (Canadian Cryospheric Information Network) http://www.ccin.ca/home/
+ * Includes the Polar Data Catalogue http://www.polardata.ca/
+ * seems like a .gov, 
+ * 
+
+> FigShare http://figshare.com 
+ * a repository where users can make all of their research outputs available in a citable, shareable and discoverable manner.
+ * commercial entity, started by looking like a community then went commercial, what happens if it's acquired, that could be an interesting thing to explore.  large and important trust issue.  difficult to get enough information on
+
+> DataPlanet - A universe of data http://homepage.data-planet.com/
+ * largest repository of standardized and structured statistical data
+ * removed as a commercial product
+
+>ICPSR (Inter-university Consortium for Political and Social Research) http://www.icpsr.umich.edu/icpsrweb/landing.jsp 
+ * "A partner in social science research"
+ *  Provides leadership and training in data access, curation, and analysis for social science research community.
+ * Maintains a data archive.
+
+> USA-NPN (The USA National Phenology Network) https://www.usanpn.org/ 
+ * Develop and host Nature's Notebook, a database of observations citizen scientists can contribute to
+ * Foster communities of practice
+ * Develop tools and techniques 
+ * not the best choice
+
+
+
+
+SD Supercomputing Center - interesting
+
+datacite - how they've organized existing archives is interesting.  very focused on one aspect, the identifier.  might not inform us much.  shoestring organization at best.
+
+
+> NISO - don't run infrastructure
+> ORCID - started off as a project, multi-stakeholders, unique identifier for researchers.
+  plurality of stakeholders
+  
+  
+  > JSTOR - interesting bc it charges publishers to make the stuff available, been around a long time, started as foundation funded project with open access bent, and then they needed to fina a way to self sustain, id'd their greatest value and capitalized on that via memberships.  there was an evolution there.  Ithaka is the parent organization.  had to alter the fundamental mission to become sustainabile.  more interested in ORCID.
+
+> Zotero - will think about this one.  but at this poinot it's in limbo, lost its funding, 
+> Wikipedia - donations, let's leave them, they've gotten money from some to update certain sections.  DataONE not likely to be this large.  It should come off.  
+> Dublin Core - standards organization.  no infrastructure.  
+> W3C - standards, membership org, pay to be a member.  get your voice heard. 
+
+
+
+> JISC - no, 
+
+
+EDINA - some JISC funding, no business model, money comes from UK gov
+
+DURA
+AHDS Arts and Humanities Data Service http://www.ahds.ac.uk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

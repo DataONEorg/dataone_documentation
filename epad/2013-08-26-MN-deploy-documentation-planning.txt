@@ -1,0 +1,95 @@
+Meeting 9/9/13: Dave, Amber, Bruce, Rob, Chris, Laura
+
+MN Checklist in subversion
+ *  (http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html )
+Laura's word docs (moved into subversion as the "working copy")
+ *  (https://repository.dataone.org/documents/Committees/MNcoord/MN_Approval_Procedure.docx ?)
+ * https://repository.dataone.org/documents/Committees/MNcoord/How%20to%20Become%20a%20Member%20Node.docx ?
+Rob's outline for high-level introduction (for public website -in Google Doc?)
+ * https://docs.google.com/a/nceas.ucsb.edu/document/d/1_mmkLij6BMCMqxQo2CdjP72N5q2offZp74D-ul1TG5g/edit?pli=1#
+Architecture docs
+www.dataone.org web site MN page(s)
+That big spreadsheet of MN references https://repository.dataone.org/documents/Committees/MNcoord/DataONE_MN_communication.xlsx
+D1 guides (Rob) - general info, data packaging, immutability, etc.  (maybe not relevant for this purpose)
+
+Contact points for info:
+ * IRC channel (real-time, detailed)
+ * Consider using MNInfo.DataONE@gmail.com as a contact point
+
+Main audiences:
+External:
+ * People interested in D1 and would like some high-level information, initial investigation/curiosity sort of thing (e.g. data center manager, data center systems engineer)
+   * Need to know high level of benefits of MN and costs/factors for implementing MN
+   * Key question is "Do I want to become a DataONE MN?  What does it get me, what business processes do I need to change/worry about?  What are the options to get there and what do those options cost?
+ * Users who are definitely going to implement a MN (High-level adminstrators, managers, institutional representatives; Implementers: sys admins, developers)
+   * Possiblly two different aspects (people implementing an existing stack {GMN, Metacat, Mecury) and people who would be integrating to their own stack
+   * More detail to develop an actual plan to do the implementation.
+ * People with a MN who are doing troubleshooting during testing or operations
+Internal:  
+ * not technical but need to know how MNs work, how they interact with rest of the system
+ * sys admins who keep track of MNs, need to know how to fix things that aren't right
+ * developers - need to know EVERYTHING
+ * MN Forum - how to set up accounts, update website (MN announcements, etc.)
+
+Amber: transitions (links) between different types of documentation should be as seamless as possible.  BEW -- include consistency of language and terms (people may start in one role and wind up in another, different roles may link to same info eventually)
+
+Main entry points:
+ * DataONE.org website
+   * http://www.dataone.org/member-nodes  (plan to have some system-wide stats here; see dashboard)
+   * http://www.dataone.org/become-member-node
+   * Need something with the BENEFITS of becoming a MN
+   * Rob's high level doc "expanded table of contents" (the one with the arrows - Planning/Developing/Testing/Operating)
+     * https://docs.google.com/document/d/1YVEyFrqZPclr_tzhLtzYdW8tdu-fVeVQ-8yeHYhH9xc/edit
+   * "Becoming a MN involves":  
+https://docs.google.com/a/nceas.ucsb.edu/document/d/1_mmkLij6BMCMqxQo2CdjP72N5q2offZp74D-ul1TG5g/edit?pli=1#
+ * Architecture docs: http://mule1.dataone.org/ArchitectureDocs-current/index.html
+ * Various presentations.  Ideally, a library of slides and figures should be available to enable consistent presentations -- these should link to the www.dataone.org site.  Thought is that this would be something to work on after getting www.dataone.org and other things updated.  Graphics in the web pages could be a good enough clip art library.
+ * Reference architecture? -- this is something we've discussed, which is an intermediate level of detail (5-15 pages) above the mule1 docs and below the DataONE.org glossies and one pagers.  This might warrant a link directly from the www.dataone.org site itself.
+
+
+Member-nodes Sidebar (http://www.dataone.org/member-nodes)
+    (the "landing page" currently shows What is a MN?  Benefits of participating as a D1 MN.  Characteristics of a potential D1 MN organization.)
+
+ * Current Member Nodes (system wide Dashboard)
+   * links to ind. MN pages and MN specific dashboards
+ * Become a Member Node (link to the Becoming a Member Node doc)
+   * links to implementers checklist
+ * Characteristics of a Member Node (high level requirements)
+ * Member Node Implementers Checklist 
+   * Links to reference architecture doc (which could be on mule1), which links to more detailed architecture info.
+
+
+ACTIONS
+ * Write reference architecture docs (high level, MN / outside view) - restructure the architecture docs layout to provide reference architecture docs
+   * Branch the architecture docs to provide a workspace for messing 
+   * Bruce to attempt to get a draft by CCIT meeting; goal to finalize by AHM
+ * Complete "Becoming a Member Node" doc, identify links to other docs (the arrow one)
+ * Complete "Becoming a Member Node involves" identify links to downsteam content
+ * Dashboard page complete and link from the member-nodes side bar
+ * Merge member node checklist docs from various sources (Sphinx, word, etherpads, etc)
+   * Registering formats document
+ * Review references to "Member Nodes" in all docs (use Laura's spreadsheet as starting point)
+ * Separate sphinx project to build the member node checklist docs (Dave) 
+
+
+
+MN Deployment documentation planning
+
+related to http://epad.dataone.org/2013-08-13-technical-documentation-design
+
+documentation breakdown
+--------------------------------------
+
+ * high-level:
+   * public-facing
+   * novice audience
+   * at dataone.org > Participate > Member Node
+ * mid-level
+   * under Operational documentation
+   * contains processes / workflows
+   * contains technical procedures
+ * low-level
+   * architecture documentation
+     * API reference
+     * 
+

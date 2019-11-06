@@ -1,0 +1,161 @@
+Notes for Development Block 2014 1.1
+------------------------------------
+
+G+: https://plus.google.com/hangouts/_/event/cb76pav4nbripd606928j9pjiao?authuser=0&hl=en
+
+Previous notes at: http://epad.dataone.org/2013-49-Block-6-3
+
+Priorities for this sprint:
+
+ * CN Sync issue resolution
+   * Audit design docs: http://mule1.dataone.org/OperationDocs/20131126_cn_audit_design/cn_systemmeta_audit_activity_diagrams.html
+ * Dashboard deployment 
+ * Operations documentation
+
+
+Deadlines coming up:
+
+- 2014-01-20 Materials made available to renewal reviewers
+- 2014-01-21 DataONE external advisory board meeting
+- 2014-01-31 Deadline for proposals for intern projects
+- 2014-02-24 DataONE review for renewal
+- 2014-05-09 Ubuntu 10.04 support terminates
+- 2014-07-31 End of first round of DataONE project
+
+
+Major Development Targets:
+
+- Update OS in all environments to 12.04
+- Update Java impl in all environemnts to Java 7
+- Version 2.0 schema
+- Mutable content support
+
+Skye
+ * 20140108
+   * Work on cn audit
+     * Audit topic message listener
+       * AuditMessage
+       * Audit message processor factory, stubbed a few processors
+       * WorkflowStateSignal
+ * 20140110
+   * Work on cn audit
+     * AuditMessage processing scheduling and future handling.
+   * Out this afternoon 2 - 4 (probably)
+ * 20140113
+   * Implementation for AuditMessageProcessorManager and AuditMessageProcessorExecutorService
+     * Encapsulation of message processing management
+     * initial impl complete, in testing
+ * 20140115
+   * Encapsulation of hazelcast in HazelcastService
+   * Spring dependencies for message processing wired up 
+     * beginning cluster unit test
+   * MessageProcessor impls - need some spec here to complete
+ * 20140117
+   * CN System metadata repair discussions
+
+
+David D
+-------
+
+ * 20140117
+   * Logrotate jsvc fixes live on all CNs
+   * Building Splunk sandbox environment
+   * Working on getting VM host data into Splunk
+   * Bash tutorials as time permits
+
+ * 20140115
+   * Logrotate fixes for jsvc are live on nonprod CNs, will roll out to prod today
+   * Building test environment for splunk
+     * will be used to test bulk changes to data (fixes to metadata as needed, Splunk updates before rolling out to prod, other issues as they happen
+   * Running through some bash tutorials
+   * Meeting w/Bruce later today
+   * Meeting w/Bruce and Splunk reps tomorrow afternoon to demo a Splunk for VMware app we're looking into getting
+
+ * 20140113
+   * See 20140110
+
+ * 20140110
+   * Built test environment for Bruce at ORC
+   * Met w/Robert Wednesday PM re: 3549/4129
+     * Have a roadmap for getting logrotate working on jsvc logs - will begin building out to non-prod after class this evening and this weekend
+     * Looked at setting up the postinst script to do ufw setup
+       * step one: learn bash scripting
+
+ * 20140108
+   * Bug 3549 - working on getting D1 logs set up in logrotate
+   * Bug 4129 - going to begin looking into getting ufw configuring via xml config script
+   * Splunk for Linux app rollout work as time permits
+
+
+Dave V
+------
+
+ * 20140108
+   * Preparation work for EAB and RSV
+ * 20140110
+   * Ditto
+ * 20140115
+   * DMPTool meeting, EAB preparations
+   * (Connectivity challenges)
+
+
+Rob N
+------
+ * 20140108
+   * ported the systemMetadata comparison utility to d1_common_java
+   * started in on test cases for MergeSystemMetadata
+ * 20140114
+   * working on the mergeSysmeta testing
+   * added special logger
+ * 20140116
+   * finished MergeSystemMetadata tests and bug fixing
+   * 
+
+Robert W
+--------
+ * 20140108
+   * Cn Audit Component
+     * Creating WorkflowState enum
+     * Creating WorkingState class
+     * Creating AuditJob class
+ * 2014011
+   * Cn Audit Component
+     * Creating AuditJob class
+     * Creating Persistent Queue layer for processing Pids
+ * 2014013
+   * Cn Audit Component
+ * 2014015
+   * Cn Audit Component
+
+Chris
+-----
+ * 20140115
+   * Continued impl work for the dao layer.  Some tests written
+   * TODO: move to saveSystemMetadata()
+ * 20140113
+   * finished DAO inteface classes, set up tests. Working on the Metacat impl now. almost done
+ * 20140110
+   * Continued work on CN auditing SQL code
+     * Eval'd using metacat.jar. Servlet context is needed in IdentifierManager through PropertyService. Complex.
+     * Plan is to write the DAO layer from scratch, using org.dataone.cn.dao in d1_cn_common
+     * Question on paging from listSystemMetadataStatus()
+ * 20140108
+   * readOnly mode for CNs seems to require TC restart
+   * Eval'd deleted pids on the CNs. Effectively zero. See https://redmine.dataone.org/issues/4213
+   * Working on d1_cn_audit DAO layer. https://redmine.dataone.org/issues/4223
+
+Roger
+-----
+ * 20140117
+   * Closed #4077 (move to Django StreamingHttpResponse).
+   * Removed workaround for Apache bug from GMN.
+   * Will start working on ONEDrive implementation.
+ * 20140115
+   * Working on #4077. Replacing HttpResponse with StreamingHttpResponse for streaming responses.
+   * 
+
+Jing
+---------
+ * 20140115
+   * Worked on a bug that the identity.nceas couldn't create a new account successfully. The bug was fixed and new version of the identity service was installed. 
+

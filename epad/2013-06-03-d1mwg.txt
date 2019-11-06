@@ -1,0 +1,146 @@
+        Draft Technical Workplan -- DataONE Metadata Working Group
+                                Schedule: June 2013 to July 2014
+
+// "Metadictionary" Prototype
+
+The goal is to build a proof-of-concept web-based software service that acts as an open registry of metadata terms from all domains and from all parts of "metadata speech".  With no login required, anyone can search for and link to registry term definitions.
+
+// Envisaged benefits
+
+A high-quality metadata vocabulary directly connected to the evolving community needs.  Change is rapid and affordable -- no need for panels of experts to convene and arbitrate.
+
+Vocabulary users can find most of the terms they need for most cases in one one namespace (place), minimizing the need for maintaining expensive crosswalks.  Although it is not our goal, the vocabulary is shovel-ready for those wishing to create linked data applications.
+
+// Basic Metadictionary structure
+
+Across the dictionary there are three disjoint classes of term:
+
+ * Vernacular: 
+   + anyone can propose new vernacular (with user registration)
+   + unstable, link to these terms as "work-in-progress"
+   + proposer(s) of a term "own" it initially; only they can make changes
+   + ownership can be transferred to other community members at any time
+   + communities of interest spring up around related term clusters
+   + vernacular terms expire in 6 months unless renewed (eg, changed)
+   + all similar to Internet-Draft process for Internet standards
+
+ * Canonical:
+   + stable, unchanging terms, safe for long-term reference
+   + terms move from vernacular to canonical by periodic approval
+   + approval is a lightweight process supervised by community elders
+   + terms still subject to voting or similar mechanisms
+ 
+ * Deprecated:
+   + stable terms, but deprecated for long-term reference
+   + terms move from canonical to archival by periodic approval
+   + archival terms have links such as "ObsoletedBy term X"
+
+* Expired:
+  + expired Vernacular
+
+// Basic Term structure
+
+The Metadictionary is a set of terms.  A Term is a data structure centered around a unique concept, with components that include
+
+ * concept identifier 
+ * term string
+ * definition
+ * examples
+ * community contact info
+ * community score
+ * flag indicating term type, eg, relationship vs non-relationship
+
+// Technical approach
+
+ * language base: Python, Python NLP tools
+ * demo web-server package: Flask (sooner)
+ * web hosting: Heroku (later)
+ * code hosting: Github
+ * open-source license: modified BSD license
+ * unique ids: EZID ?? (eg, http://n2t.net/ark:/99152/34567, or 34567 for short?)
+ * database: MySQL
+ * command-line user interface: Flask plain text
+ * API: Flask JSON
+
+// Priorities (1, 2, 3)
+1 add a term
+1 retrieve known term (by unique identifier)
+1 Flask UI (plain text, JSON, HTML)
+1 mysql db
+1 identifiers from a counter starting 1001
+1 aim for single-owner terms
+
+2 Web UI (Heroku)
+2 login via AuthN providers (gmail, facebook, myopenid, github) 
+2 term discovery
+
+2/3 enter related terms (and propose relations)
+2/3 commenting feature
+
+3 NLP-enhanced discovery (eg, stemming)
+3 flag redundancies (NLP) 
+
+For Chris (from Karthik) :http://twitter.github.io/typeahead.js/
+
+// Some basic use cases
+
+ * Alice wants to describe an aspect of her data, looks up "temperature"
+ * Alice browses list of Metadictionary terms related to "temperature"
+ * Not finding the term she wants, Alice adds a new term "warmth"
+   + UI minimally requires term string, definition, and contact info
+   + "warmth" immediately appears as a vernacular term, expiring in 6 months
+
+
+ * Carl using lab software X is asked to enter an open-source license name
+   + software X opens API to Metadictionary and populates a pick list
+   + not satisfied, Carl starts entering text and autocomplete suggests terms
+
+// Still to decide
+
+ * Relationships among terms
+   + list uses case that will generator our initial relation types, eg, "PDF" is a "oftenUsedWith" the "Format" term
+ * Where do comments go?
+ * Define: ranking (search relevance)
+ * Define: scoring (community buy-in)
+ * how/when do we do scoring? using stackoverflow vs community blessing vs explicit endorsement vs ...?
+   + can we start with simple spoofable likes/dislikes for demo?
+ * how to edit term
+
+// Group consensus (June 4)
+
+Terms rise or fall based on the voting. [am] Reputation points are awarded to  users who participate in the community (by up/downvoting, writing terms  and definitions etc.)  To  start, we will need to give domain experts more reputation points than   newbies, though as the community matures this will matter less. [sc]   Allow people to become moderators  after certain threshold of points; they can have powers to clear flags  (e.g. delete spam flagged by others), delete derailing comments, etc.  [kr]
+
+Domain experts are selected by nomination [jg], with N nominations given to each user [sc] who reaches a minimum status. [jk]
+
+Each  term begins in the vernacular with a score of 0. [cp]  A term is owned  by a single person; the  term string and definition can be edited  only  by that person.  However,  comments can be added by anybody, and the   owner may revise a term based on comments.  Terms can be voted on by   anybody in trinary  fashion: positive (like), negative (dislike), or   neutral/no opinion (no  vote).  A vote is intended to reflect an  opinion  on the entire term  (the term string and the definition).   There are 3 term statuses:  vernacular, canonical, deprecated. [gj]
+
+Vernacular terms are in a working or voting period.  During voting the term is frozen.  The owner can choose to return a term from voting into working in order to make changes, but the score reverts to 0 as soon as another version of the term is committed.  This cycle of working/voting can go on indefinitely (possibly with reputation side-effects). [kr]
+
+// Nassib questions
+
+1. One of the original aims of the project was to reduce fragmentation of terms by domain.  (This was, I think, a rationale for showing a single term together with multiple proposed definitions.)  How will the model now being proposed discourage fragmentation?
+
+    1(a). To take an example use case, suppose term "a" is a vernacular term proposed by members of domain "A", and members of another domain "B" want to propose a similar term "b"; if they read term "a" and don't wish to make the effort to harmonize the two terms, is there any other incentive to harmonize the terms at that time or in the future?
+
+    1(b). Consider the same use case but with term "a" as a canonical term.  Is there any incentive for members of domain "A" to consider harmonizing with term "b" and deprecating their canonical term "a"?
+
+
+// Schedule
+
+
+// Idea parking lot
+
+
+Metrics for term use in other standards
+
+
+
+Tech breakout notes: http://epad.dataone.org/2013-05-28-d1mwg
+
+
+----------------------------
+Tuesday am
+
+
+
+

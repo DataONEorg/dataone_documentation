@@ -1,0 +1,121 @@
+Member Node Wranglers
+    Fridays at 10:30 am Alaska
+                    11:30 am Pacific
+                    12:30 noon Mountain
+                    1:30 pm Central
+                    2:30 pm Eastern
+
+GTM info:
+   * https://www1.gotomeeting.com/join/698027049
+
+19 September 2014
+                                                        UPDATING IN PROGRESS
+Attending:  
+
+Regrets: 
+
+        1. Status of upcoming MNs
+        
+     * Y1Q1
+       * ORNL MNs (RGD (4248) and EDORA (4247)) - Meeting 9/18/14
+       * UTK Institutional Repository (4115) - DSpace
+       * MPC (3708) - 
+       * DFC (3532) - Chris has created certs for them for dev/sandbox/stage; haven't heard back from Lisa a/o 9/11
+       * UIC (3213) - pinged Bob again 9/11, no response as yet;  Rebecca to track down contacts at UIC to get the supplement money to them 
+       * PPBio (3748) - MNDD/logo submitted, Listed on public website as upcoming - awaiting feedback from Debora; Matt  contacted Debora on chat and got this response: "I´ve been drowned in  othar tasks the last few weeks and did not catch up with the group.  Received a document from Bill where he states PPBio already is a d1  node. I have several issues to catch up with the team and am willing to  contact them today or during the weekend. we´ll let you know, ok?"
+       * NKN (3238) - running in sandbox, loaded test data; Ed hopes to have more info to report at next week's MNF
+       * IARC (4700) - Jim has sent Chris some ISO 19139 and schema information
+
+     * Y1Q2
+       * Sierra  Nevada Global Change Observatory (4296) - Antonio (Antonio Jesús Pérez Luque) visited Mark 8/14; Antonio going home 9/7, will talk with his folks when he gets home.  They run an older version of metacat right now.
+       * GLEON (3422) -  Holding until after GLEON's meeting in October.  Laura to call Corinna re pre workshop
+       * USCarolina (3689) - Pat O'Keefe is no longer on this project.  Email out to Mike Huhns, no response a/o 9/12/14.  
+       * MsTMIP at ORNL (6162) - We are starting conversations about MsTMIP.  Funding from DataONE runs out 31 October; they're going to use a flavor of ISO, need to find out which, get examples, etc.
+
+     * Y1Q3
+       * SAEON (3205)   - new POC is Mike Metcalfe; email from Wim Hugo indicated they're   upgraded their metacat on a different VM and they have some questions   re: authentication, etc. - Jing would be a good POC for SAEON (talk with Dave)
+
+        1.5   Current MNs
+     * Dryad listObjects issue, see https://redmine.dataone.org/issues/6010 
+                     Ryan says they haven't been able to address this issue last 2 weeks <--Laura to ping Ryan Monday
+             
+     * LTER  - meeting Weds 9/10/14 (Mark) - ensure integrity of content on CNs;  Chris to run Roger's script (verification tool) to check things out;   also looking at the source of the inconsistencies (both white space  removed and things added); see the redmine ticket: 
+       * https://redmine.dataone.org/issues/6358
+     * likely just LTER metacat-related
+       * might be a good idea to run the verification tool against the KNB data (KNB and LTER are very similar re: metacat, etc.)
+       * if  isolated to LTER and everything looks ok on the CNs, we need to make  copies of these objects and move authoritative content to the GMN, this  older content would be archived anyway so it shouldn't cause problems  with differences in sysmeta/scimeta
+     * RELATED ISSUE: 
+       * CCI  1.4.0 turned on replication auditing (checking checksums) - has found a  few documents where checksum on CN does not match what's on the MN, all  are KNB:
+                    example from MN: 
+                        https://knb.ecoinformatics.org/knb/d1/mn/object/doi:10.5063/AA/knb.277.1
+                    example from CN:
+                        https://cn.dataone.org/cn/v1/object/doi:10.5063/AA/knb.277.1
+                    Ben can prob help with this as he wrote quite a bit of the encoding stuff for metacat
+                 See splunk for details: https://splunk-search-orc-1.dataone.org:8000
+
+        2. High profile issues (or current items of interest)
+            CCI 1.4.0 complete in production this morning (9/12/14)  
+             https://redmine.dataone.org/projects/d1/wiki/Cn_1_4_0_release
+
+        5. Around the room
+        Amber: nothing today
+        Dave: 
+   * UNM-related network outages, fixed by some emergency repairs (one router "blew up spectacularly"
+   * new epad (new version on a different VM) to be released with old epads transfered to new version this weekend
+   * DSpace  implementation is moving along well, anticipate UTK as the next DSpace  MN (Bruce involved, Laura to inquire with Holly Mercer and Bruce to see  what plans are)
+   * Rob/Dave  worked on making a more user-friendly, downloadable "version" of the  web tester to ease testing (the DSpace folks had experienced some  frustration with web testing)
+        Jing: nope
+        Mark: experiencing network probs all week, all fixed now (we hope)
+        Matt: notes added to PPBio node status above
+        Rachel: from usability perspective
+        Rebecca: nothing today
+        Robert: nope
+        Skye: nothing
+
+
+        Old action items
+          
+     * DataONE and XSEDE: latest info from Line:
+              1.  The draft letter to become a (level 3) SP has been circulated to relevant people within DataONE 
+              2.  The collaboration was discussed at the Leadership team teleconference – level 3 will be a starting point
+              3.  The letter is currently being reviewed by the DataONE leadership  team
+               Current status: the letter went to LT a couple weeks ago, Rebecca will  send on to Bill cy Amber/Dave) There is an appendix -  is this  information required as part of the SP agreement?  
+            In review with Dave.
+               What's the next step after we become an XSEDE SP?  We live as an XSEDE  SP for a while, then we look at the possibility of an XSEDE MN? (nothing  beyond us becoming a SP) before the AHM.
+            Dave has some questions to be resolved; to get with Bruce hopefully next week.
+            
+     * MN  Documentation - MN Deployment and MN Ongoing Operations - Laura to do   this  -- working on identifying needs and best methods to address those  needs, including ask.dataone.org, documentation in mule1 or on  dataone.org, etc.
+       * Laura to ask Rob about order of testing (when and where) - document this, also what does "good to go" mean?
+       * Rob  responded with an email that identified the various levels of  documentation we have (higher level on the DataONE website and more  detailed at mule1 (<--- thought we weren't going to point people to mule1??)
+       * see specifically links to "releases" rather than mule1 for the CURRENT documentation
+             
+        4. Not-high profile issues
+        
+                  Process for end-of-implemention (when/how to indicate a MN is   "upcoming" on the dashboard, etc.) - Laura and Amber - we had  previously  decided that when a MN goes into stage testing, it is  appropriate to  show them as an upcoming MN.  However, in redmine we     don't currenty  have  a status indicating what stage a MN is working  in.  We have a  "testing"  status, so we had thought we'd use that -  when a MN changes status to  "testing", we can show it as upcoming.  We  still need to  explicitly define the process and who does what  when,   and try it out  on the next MN(s) in the queue.
+                 Amber: maybe list them on web as "upcoming" when we go to staging --   but we need a redmine state to show that staging has started.  Dave to  look and see if can notify Amber and Laura (and Bruce?) when there are   changes to the stage and production node lists. Need a redmine  state  to  show that staging has started.
+            
+            (Was under Current MNs related to SANParks, CDL, etc.)
+                 LT  to address Memorandum of Understanding (re: operations and  service   expectations) between DataONE and MNs  -  is there anything I  (LM) can be doing to move this along, draft something up, pull out the  work previously done, etc.?? (Rebecca, Mark, & Laura have been   tasked with this and will begin work week of 8/11)  -- or maybe not.   Wait a bit until Phase 1-Phase 2 transition over?
+
+       
+Tickler (things to revisit periodically)
+
+DUG discussion re: increased MN involvement with DataONE - distribution list to Rebecca 8/1/14  - when is a good time to get this out to the field?    Action: document still needs to be cleaned, but not clear which  edits  are to be accepted.  Bruce to work with Laura to get a finalized version  of this document ready for Bill to send out. Target sending this out  after PEP is completed. Defer action on this  until end of  August and revisit  this in terms of available cycles. Put  this as an action at LT for AHM if it hasn't been dealt with before  then.  
+
+Purpose of MN Description Document (past and future) 
+           Intent is to describe the (potential) MN, identify the   types/quantity/formats of data they hold, - perhaps we need a   "friendlier" format, perhaps an interview process;
+           Workflow: should this information (MNDD) be collected at the beginning   of the process, or is the way we've been doing it lately (after the   fact) a new way of doing business??  Also consider if this information   gathering (form or interview) is the best use of resources for those   potential MNs who may or may not become a MN if implemented as a first  step.  Possibly change the workflow? Is a pdf the best way to view the  information?
+    Next steps:  Laura to come up with alternative(s) to current MNDD - content is good, but format/mechanism needs some work.  
+    Another thing: Laura and Amber to look at workflow for last stages of implementation, test with EDAC  too late for that, need to pick another one.
+    Also -- how does the MN DD relate to: 
+                    the node document:  https://cn.dataone.org/cn/v1/node  - developers have/create this information (node registration, see updateNodeCapabilities)
+                    and redmine??    <--- work with redmine as mostly-authoritative source
+           Could a spreadsheet be a viable solution?  Maybe.  A database would   work.  In any case, some information is appropriately "private" - how   would we handle that?
+                
+Revisit the default "only results with data"   checkbox to unchecked; plan is to move the checkbox from search page  to  results page but remain checked by default, initial draft in   development environment.
+               
+
+                
+
+
+

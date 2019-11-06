@@ -1,0 +1,116 @@
+
+Conference Call Number: (866) 804-6831  (if in NM, can use (505) 814-7600
+This brings you to our conference call line - next press 1 (if using 505 number then press 5 before the 1)
+The conference number is: 2949#
+
+As you know, we had a BP  workshop in May and received a lot of feedback in terms of the usability  of the resource.  Consequently, we have a number of ideas for change  that we will be looking to implement.  In advance of our meeting at the  end of this month, I wanted to run some of these by you to assess their  feasibility.  Some we would like to see implemented at or around the  time of our meeting, others may take longer, some may be better rolled  out with the new website and some may not be viable.  Hence your  perspective will be useful in determining the agenda for our meeting.  I  have tried to explain the meaning / motivation behind the requests but  please let mw know if you have any questions.
+
+ * 1)  We intend to create a new database of data repositories.  It contains  information on the name, 
+ * disciplinary scope, 
+ * contact info, 
+ * metadata  language requirements, 
+ * fee structure 
+ * etc.  
+ * Code of Status must be 2 (probably a couple of months) 
+ * Keeping the contact info - but not publishing
+ * Controlled vocabulary on searched items
+To be a useful resource this  needs to be searchable.  Would the current BP / ST database format be  best for this?  If so, how do you need the data - would a table suffice?  (we are currently error checking)
+
+List or Database? How many data repositories do you expect to have listed? Would you want this to be accessible for individuals to add their own (like BP’s)? Yes, please send the table, that will be fine.
+ 
+When you say searchable would a sortable table work? The site will have a search box.Keyword Search
+ 
+Concerns: Maintenance of items such as contact info
+
+Needs a controlled vocab for the items that you want to search (e.g. metadata formats, domain, cost basis etc)
+Columns A, D-G should not be public
+Needs more work in advance of passing over to web team
+
+
+
+2)  We have a database of metadata standards that we would like to publish.   Since people tend to have heard if the name (or standard) but don't  know the details, a searchable database like the above may not be the  best format for this.  Instead, we wondered whether it is possible to  have a page containing a list of standards that can be expanded (and  then collapsed) within the page.  The additional information within the  expansion would have subheadings and be standardized across the metadata  standards.
+
+List or database? How many data repositories do you expect to have listed? Would you want this to be accessible for individuals to ad their own (like BP’s)? Yes, please send the table, that will be fine
+
+Standardize domains served and use same common vocab as for the repository database.
+Remove acronyms
+Needs more work in advance of passing over to web team
+Can be set up as a sortable table or an expandable list
+
+Will probably receive in advance of repo.
+
+3)  Given some disagreement over categorization and the feeling that a BP /  ST can belong to multiple categories, there is a move to remove  categories and use a keyword system.  This would work well if the  following can be done.  
+
+a) keywords are searchable (see also below) 
+Doable/need to discuss
+b)  keywords can be hyperlinks that when clicked, provide a list of BPs /  STs that have those keywords (essentially a search on just that keyword  and not on the phrase within any section of the BP / ST) Doable/need to discuss
+c) The results  of the keyword search described in 2 can have an exclusive URL that we  can post into materials (e.g. a link to all BPs concerned with 'plans')
+Doable/need to discuss
+ 
+Chris and I have talked about this in detail and we can set this up but we would like to discuss getting rid of the categories completely and how you would like to see the keywords/tags setup. When they enter the information on form.
+ 
+We need to set a number of keywords/tags we want to use and refine the list.
+
+Broaden/Refine Keywords
+
+Remove Categories?
+
+Select Multiple and Listed Keywords
+
+4) Improve the general BP / ST search function.  At present, it searches the description but not the title or keywords.
+Doable.
+
+
+
+
+5) Include a "next" "previous" button below each BP / ST so that a user doesn't have to go back to the front page each time.
+What would next and previous go to? Alphabetical? What they just searched?
+Not critical
+There will be a return to search reults option?
+
+6)  There is a request for biblio links, tools links etc to be active.   They were previously removed bc of dead links and link management  however feedback was that these needed to be active.
+Will do.
+
+7)  Under STs there was a lot of variation in platform, therefore it would  be beneficial for this to be a drop down list on the form for future  use.  Since a tool can be for multiple platforms, you will need to be  able to click multiples.
+Can do. 
+
+8)  Can we add an "author" field to the BPs / STs?  I can populate this  from my records but it was felt that it would be useful for maintenance  and updates - we can ask people to go in and periodically review the BPs  / STs they created.
+What about multiple authors/contributed by? Need to get the info for the originals
+
+Add Contributors field 
+
+9)  Have a publicly available for for contributing BPs / STs and data  repository information.  A number of people have said that they would  like to contribute to the databases and a form seems like a viable way  to do this.  The content would not be published without review and it  would be best if an individual did not need to log in to be able to  contribute.
+Can do. 
+
+Possible offline form
+
+10)  There was a suggestion for the community to be able to rate the value  of a BP / ST or add comments.  The rating system could be starts (akin  to netflix or some such) with mean and count of number of votes  displayed.  Though, this has implications for duplicate voting if people  are not logging in.  A comments system would be akin to reviews of a  product.
+
+No to comments
+
+Trial run on ratings
+
+Would need to logins to manage appropriately? Who is responsible for these forms/readings/editing/publishing.
+
+11)  Suggestion for a extra field at the bottom of a BP / ST for 'related BP  / ST'.  This list of hyperlinked titles would be auto-populated based  on keyword similarity.  This idea might be redundant if the keywords can  be hyperlinked.
+Will research. 
+
+Can be accomplished with linked keywords
+
+Some items that I think are still remaining from last time:
+
+12) Laura to pull first sentence of each ST for the summary view within “All Software Tools”.  First 2 lines pulled although there is still some inconsistency, for example Mercury has bullets
+Will look at setting it up differently it is currently showing a specific number characters.
+
+13) Standardize the height of the logos – in progress, not complete.
+Student will finish images when semester resumes.
+
+Finally,  I have a somewhat related question.  Are you familiar with LaTeX?  We  have some materials in LaTeX (due to the auto contents, indexing,  hyperlinks generation etc). However, to generate as a pdf does not  result in the standard DataONE template structure.  Are you familiar  enough with LaTeX to be able to develop a DataONE theme that we could  apply form formatting LaTeX documents.  We would then be able to re-use  this for future documents too.
+This response from Rebecca: I really don't want to expend resources on old technology
+that can be replaced with more mainstream technologies
+
+Add link to pdf of all BP's or ST's 
+
+Sorry if this is information overload.  Again, please let me know if anything doesn't make sense.
+
+

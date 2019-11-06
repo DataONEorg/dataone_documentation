@@ -1,0 +1,147 @@
+Attendees: Rebecca, Carol, Bob Cook, Stephanie, Amber, Bruce, Dave, Matt, Mike, John K. John Cobb,
+
+
+Regrets: Todd, Trisha, Suzie, Bertram
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Dec 14, 2012 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/161535561
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0604
+Access Code: 161-535-561
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 161-535-561
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+We will also use the epad: http://epad.dataone.org/2012Dec14-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-12-14
+
+1) CI Update (Vieglais)
+Big things: 1.1 release is ready to go except seeing intermittment network disconnects among the CNs. Appears to be restrictions on network traffic at either UNM or Oak Ridge or both. This is blocking moving the release to production (because of replication and log aggregation). Two potential solutions - turn off replication and log aggregation and release improvements to ONEMercury or have a master CN strategy.
+
+Want to go with shorter release cycles in the new year rather than the large releases that have been occuring. Dave will encourage developers to do demos of new capabilities. Would be easier to see if something works or not.
+
+Significant outcome of network outage last week in DataONE office is that redmine stayed off longer than anticipated. Everything appears fine now.
+Dave was in Taiwan last week at a meeting on big data. DataONE is very well received by the group. Taiwan Forestry interested as well as GLEON. Corrina Gries put in a proposal to get funding to put up a MN. Packaging ideas for ITK. Multi-lingual metadata was also discussed but not obvious paths forward. Google translations not particular helpful with scientific terms. 7.3 earthquake!
+Stayed at Hotel 1 while there (aggressive branding strategy)
+A couple examples: http://goo.gl/svpO6
+
+
+(jwc) Idea: install perfsonar (http://www.perfsonar.net/) endpoints to identify emerging problems and diagnose in-progress problems. The intervening trunk metworks may have perfsonar as well so that specific hops can be identified as choked.
+
+
+2) CE Update (Budden)
+Last week at the AGU with post-doc, Stacy.  Shared booth with NEON and Amber did demonstration of DMPTool at ESIP workshop plus poster. In general, it was about as busy as the ESA booth space. Poster sessions are in a different space at AGU. Interest in MN process and also technical conversations. Need more materials on the MN process. Amber met with Ken Casey and Jeff delaBeaujardiere (NOAA) are interested in becoming a MN. Conversation continues. ESIP workshop was problematic since room had not been setup so start was delayed and limited the time available for the DMPTool demo. Kerstin Lehnart (I thought it was Vicki Ferrini doing the presentation) of Columbia University demonstrated iedadata.org a general DMP and metadata tool for geosciences. Program officer for NSF Geo reported that they are requesting that proposals use that tool.
+All the copyright forms have been returned and that info is on the web site. Education Modules have been posted to SlideShare but have to come to DataONE site for download (www.slideshare.net/DataONE).
+100 years of Ecology meeting in UK - Intecol 2013 now accepting submissions.  DataONE running DM workshop with DMPOnline (UK) and DataUp (US)
+
+
+3) Final Preparations for the EAB meeting 12/17-18 (Koskela)
+Current agenda: http://bit.ly/W3XTbb
+
+Monday, Dec 17
+9:00 am (90min) - DataONE demos (current and emerging capabilities) – Dave Vieglais and Bruce Wilson 
+Status: Plan was to demonstrate ONEMercury, R-plugin, ONEDrive and DataUp
+ONEMercury is ready, as is the R-plugin - ONEDrive not quite ready - it works but the response time is much slower than it used to be so doesn't demo very well. 
+Any idea why? Is it just becuase there are more metadata records?
+
+Will share power point later this afternoon - 
+
+10:45 am (30min) – Future CI plans (6-12 months, mechanisms for prioritization) – Dave Vieglais, Bruce Wilson, and Amber Budden 
+Status: Dave has power point for this - high-level time line (Dave will do this presentation)
+https://repository.dataone.org/documents/Meetings/20121217_EAB_DC/presentations/
+
+Other ITK work going on outside the DataONE project
+
+USGS has a proposal for ESRI ITK/MN work also
+
+11:15 am (45min) – Data and Member Node implementation plan – Dave Vieglais and Amber Budden 
+Status: Dave has made a presentation for this - including costs of becoming a MN
+Expected trajectory of MN deployment; emphasis is the cost for implementation is driven by the development costs of setting up a MN;
+Suggestions for improving efficiency - DSpace (see below) is one of the strategies
+
+Question from Rebecca: is Dryad a MN? Answer is not yet - don't have a definitive answer
+
+John K: from CNI - move afoot to rewrite Fedora - MJ: library community has focused on
+other interoperability protocols like SWORD -- need to determine how those integrate with DataONE.
+
+1:00 pm (1hr) – DataONE Users Group activities and status – Amber Budden, Andrew Sallans 
+Status: have some slides ready 
+EAB questions for this section are about communication
+Charter indicated that the DUG would become more independent of DataONE - to transistion to a more autonomous group, need a small, engaged group that have some momentum
+WM - would become an independent body but that it wouldn't have overnight; year or two away from having a large number of attendees; right now it needs the support of DataONE; autonomy would come with critical mass; the question from EAB is how we listen to the DUG
+
+jwc: Thought: The DUG is also crtiical to the sustainability strategy
+
+2:00 pm  (1hr) – CI and Community Engagement Working Group status – Amber Budden, Dave Vieglais, Bob Cook, Suzie Allard, Mike Frame
+Status: Amber took the slide deck presented to LT - Dave added CI WG info - 
+Current structure; accomplishments; communication across the organization (with network diagrams) - ideas on user interface design (we should refer to the great session we had at the All Hands between CI/UA for "future UI"; more social media people on CEE WG
+
+3:15 pm (15min) – Sustainability and Governance progress – Bill Michener 
+Status: Bill distributed the slides he will present ; send other questions ASAP if you have
+them
+
+3:30 pm – Kevin Guthrie moderates discussion with EAB
+4:30 pm – Review NSF discussion items
+
+Tuesday, Dec 18
+9:45 am (45min)  – Plans for Reverse Site Visit and discussion – Bill Michener and Leadership Team
+Status: Bill working on this presentation
+
+
+4)  D-Space collaboration - a "turnkey solution" (Michener)
+Michele Kimpton who runs this organization, interested in collaborating with DataONE.
+In the process of revising their s/w stack so would be an ideal time to discuss this
+(after the first of the year) D-Space is still the preferred choice of many libraries.
+Group of librarians, administrators, interested in getting repositories on their campuses and
+are interested in DataONE (EScience meeting in Washington, DC this week)
+
+++++++ Meeting adjourned so save rest of agenda for next call ++++++++
+
+
+5) Update from Bill (including attached consultant's report for S&G WG) (Michener)
+For document see: http://bit.ly/RxaW5K
+
+
+
+
+6) Around the room
+Suzie: Carol and I visited the NCDC at Asheville and met with Nancy Ritchie and MikeTanner as well as others. Tanner is the acting director of the NOAA Satellite & Information Service Office of Systems Development's Technology, Planning and Integration Program.  Currently we have one student interning there working primarily in the metadata area.  We made a presentation about our research center and the school but also highlighted DataONE.  We are in the process of building an ongoing relationship for students and for other research ventures particularly in the area of usability.  
+
+Bruce -- working to resolve a configuration issue with ORC node storage.  We have gotten the fourth (older) DataONE server set up and working at UTK.  Chris Brumgard was able to provision a couple of new VM's on this server in a few minutes, so it appears we've resolved the network registration problems that were getting in the way.  Most of my time has been spent working with the R client and getting ready to do a demo of that (and one for ONEMercury) for the EAB.  I heard from Holly Mercer at UTK library that UTK is finally in InCommon (as of about 6 weeks ago), and I believe she's doing some work towards the DMPTool.  
+
+Mike: Carol and I had a UA WG meeting this morning. Topics include: DataONE Update, Assessment Update, Discussed UA Work (To date with ONE Search - need status update from CI?) and future UA Work with ONE Drive. Most working group members were on the call. Our next f2f meeting is in May in Knoxville; next call will be in March.
+
+Carol: The paper I presented at IFLA on the librarians baseline assessment was selected for publication in the IFLA Journal in 2013. Authors Tenopir, Sandusky, Allard, and Birch, ‘Academic librarians and research data services: preparation and attitudes’.
+
+Steph: Stacy spent several days with Amber at D1 booth at AGU, learned a lot about materials that might be useful for dissemination to those new to D1 - she and Bob Cook have started discussion with Amber and others about how these materials might be developed, with possible role for CEE group. Interviewing undergrad interns today to help with data success stories project.
+
+Matt: Brazil ISEI workshop went well.  Met with many groups, and gave a 4 hour DataONE workshop at ISEI.  Many groups are interested in becoming DataONE MNs, possibly 6 or more.  I am writing up a summary of the various groups for the MN wranglers, but haven't finished it yet.  Bottom line: we may have one node (PPBio) online in time for February, but the others are longer term.
+MATT - Did you Meet Pedro from USP? Yes -- he is one of the people who helped me organize the workshop for the Brazilian Ministry of the Environment.  I've known Perdro since 2008 or so from a previous ISEI conference.
+
+John Kunze: Small bug found in turning on ONEShare for harvesting, with fix now in place. Spoke at CNI (Coalition for Networked Information) this week on panel with Bill and Carly; one hour to cover DataONE, DMPTool, and DataUp, with good questions from the audience.  At AGU met with Jeff de la Beaujardiere from NOAA about DOIs/ARKs for data.  Also at AGU, the PREPARDE project (Peer REview Publication & Accreditation of Research data in the Earth sciences) held a Town Hall meeting on the data publication process; CDL is on this grant (unfunded) representing a "cheap" variant of data publication. 
+
+Bob:  
+At AGU last week, and had side meetings with the EarthCube Brokering Group.  
+Led a session on Interoperability -- Deborah M. gave a great talk.  
+Participated in the DataONE booth and had a number of interactions with Earth Scientists, especially about Member Nodes.  A group from Sacramento, CA is very interested in becoming a MN (they are 34north).  Also talked with a Penn State modeler who wanted to know what our cost model was for archiving large volumes (100 TB) of model output. 
+Observations about the material at the DataONE booth were passed along to CEE and Amber.
+
+Organized a telecon this week to discuss future collaborations between EarthCube Brokering and DataONE (Dave V. and Chris Jones particpated).
+
+Posted on the plone Web site a recent article on the approach that the EVA working group is using for visualizing output from terrestrial biosphere modeling:  http://bit.ly/SZbjG3
+
+Deborah:  Great meeting at AGU.  Patrice Seyed - the semantics and interoperability working group postdoc gave an IGNITE talk on tuesday.  Deborah gave an invited presentation on next generation data environments and also an invited paper on Community Science - the Next Frontier, and also was a co-author on numerous other papers and co-convened two sessions.  Line Pouchard and summer student Suppawong Tuarob presented the working group's summer project (and beyond).  At least one other working group member was there presenting relevant DataOne work (Pinheiro da Silva from PNNL).
+Patrice, Mark, Jeff, Margaret, and Deborah are also making progress on the Hydro-Eco Use case demonstration
+
+

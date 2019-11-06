@@ -1,0 +1,252 @@
+sshCreate an ansible host vm
+----------------------------------
+installed ubuntu-12.04.2-server-amd64.iso to a 5 G virtual drive
+
+checked openssh server as an install option
+
+logged in, ran apt-get update, apt-get dist-upgrade
+apt-get install acpi
+apt-get install python-software-properties
+
+add-apt-repository ppa:rquillo/ansible
+
+apt-get update
+
+apt-get install ansible
+
+apt-get install subversion
+
+Create SSH keys
+-------------------------
+
+All the below is cut and paste from various online resources:
+
+If you have SSH installed, you should be able to run..
+
+ * create .ssh directory in home directory
+$ mkdir .ssh
+$ chmod 700 .ssh
+
+$ ssh-keygen -t rsa -b 4096
+
+ * After following the procedure of ssh-keygen, you'll have two files, id_rsa and id_rsa.pub (the first is your private key, the second is your public key - the one you copy to remote machines)
+
+ * chmod 600 all the id_rsa* files, so no other users can read them:
+
+$ chmod 600 ~/.ssh/id_rsa*
+
+ * On Ubuntu, you can use ssh-agent to hold the decrypted keys in memory - this means you don't have to type your keypair's password every single time. To launch the agent, you run (including the back-tick quotes, which eval the output of the ssh-agent command)
+ * 
+
+ssh-agent
+---------------
+
+ * On some distros, ssh-agent is started automatically. If you run echo $SSH_AUTH_SOCK and it shows a path (probably in /tmp/) it's already setup, so you can skip the previous command. Then to add your key, you do
+
+$ ssh-add ~/.ssh/id_rsa
+
+and enter your passphrase. It's stored until you remove it (using the ssh-add -D command, which removes all keys from the agent)
+
+
+ * Since Robert beat me to the punch, couple of quick additions.
+
+* When ssh-keygen asks for the name give ~/.ssh/dataone_ansible  otherwise it will wipe out your original ssh keys for other systems. 
+* Be sure to give a passphrase, don't use an empty one.  Even with rsa version 2, passphase-less keys are "easy" to break. 
+
+* If you have a mac (which most of you do), you don't need to worry about ssh-agent and ssh-add.  These are running already so you won't need to interact with those tools directly.  The first time you use ssh, you'll get a pop-up window asking for the passphrase.  After that ssh-agent will remember through os x's keychains.  
+
+* The first time you use ssh to login into the system, you'll need to ssh -i ~/.ssh/dataone_ansible username@ansible-host after that ssh-agent will remember so you'll only need to do ssh  username@ansible-host .
+
+* Send me your requested account name and the ~/.ssh/dataone_ansible.pub file, not the ~/.ssh/dataone_ansible (That's your private key that you should protect.)  Preferably encrypt the email with my pgp pub key for greater security.
+
+Ansible Host Machine
+================
+
+The current dataone ansible host is ansible.dataone.org
+
+The default host file for ansible is /etc/ansible/hosts
+The default configuration file for ansible is /etc/ansible/ansible.cfg
+
+Setup Ansible for your user (assuming waltz is the username below)
+---------------------------------
+waltz@dataone:~$ cd .ssh
+waltz@dataone:~/.ssh$ ls
+id_rsa  id_rsa.pub  known_hosts
+waltz@utk-dataone:~/.ssh$ sftp ansible.dataone.org
+Connecting to ansible.dataone.utk.edu...
+sftp> cd .ssh
+sftp> put id_rsa
+Uploading id_rsa to /home/waltz/.ssh/id_rsa
+dataone_ansible                               100% 3311     3.2KB/s   00:00    
+sftp> put id_rsa.pub
+Uploading id_rsa.pub to /home/waltz/.ssh/id_rsa.pub
+
+(or scp  id_rsa* HOST:~/.ssh )
+
+ssh ansible.dataone.org
+
+waltz@ansible:~$ cd .ssh
+waltz@ansible:~/.ssh$ chmod 600 id_rsa
+waltz@ansible:~/.ssh$ chmod 600 id_rsa.pub
+
+waltz@ansible:~$ ssh cn-dev-orc-1.test.dataone.org
+waltz@cn-dev-orc-1:~$ ls .ssh
+(If .ssh has never been created, then create .ssh!, if it has been created, note if authorized_keys exists)
+    waltz@cn-dev-orc-1:~$ mkdir .ssh
+    waltz@cn-dev-orc-1:~$ chmod 700 .ssh
+    
+(open another term, or exit the one you are currently in to return to ansible.dataone.org)
+
+waltz@ansible:~$ cd .ssh
+waltz@ansible:~$ sftp cn-dev-orc-1.test.dataone.org
+Connecting to cn-dev-orc-1.test.dataone.org...
+sftp> cd .ssh 
+sftp> put.pub
+Uploading id_rsa.pub to /home/waltz/.ssh/id_rsa.pub
+
+( you have now uploaded your public key to the remote machine cn-dev-orc-1.test.dataone.org, return to cn-dev-orc-1.test.dataone.org via ssh or an open terminal)
+
+waltz@cn-dev-orc-1:~$ cd .ssh
+
+(before issuing the next command, if you have an authorized_keys file, then you should check there is a newline at the end of the last public key entry)
+
+waltz@cn-dev-orc-1:~$ cat id_rsa.pub >> authorized_keys
+waltz@cn-dev-orc-1:~$ chmod 600 authorized_keys
+
+From the ansible machine, test ssh cn-dev-orc-1.test.dataone.org date command
+
+waltz@ansible:~$ ssh -i .ssh/id_rsa cn-dev-orc-1.test.dataone.org date
+
+cp /etc/ansible/ansible.cfg .ansible.cfg
+
+vi .ansible.cfg
+changed:
+transport=smart|paramiko
+to:
+transport=ssh
+
+changed:
+hostfile = /etc/ansible/hosts
+to:
+hostfile = /home/waltz/ansible/hosts
+
+mkdir ansible
+cd ansible
+cp /home/waltz/ansible/hosts .
+
+or create one yourself
+pico hosts
+added:
+[dev]
+cn-dev-orc-1.test.dataone.org
+cn-dev-unm-1.test.dataone.org
+cn-dev-ucsb-1.test.dataone.org
+
+[sandbox]
+cn-sandbox-orc-1.test.dataone.org
+cn-sandbox-unm-1.test.dataone.org
+cn-sandbox-ucsb-1.test.dataone.org
+
+[stage]
+cn-stage-orc-1.test.dataone.org
+cn-stage-unm-1.test.dataone.org
+cn-stage-ucsb-1.test.dataone.org
+
+[stage2]
+cn-stage-orc-2.test.dataone.org
+cn-stage-unm-2.test.dataone.org
+
+[prod]
+cn-orc-1.dataone.org
+cn-unm-1.dataone.org
+cn-ucsb-1.dataone.org
+
+Test Ansible
+----------------
+to determine if you have ssh access on the development environment
+ssh-agent bash
+ssh-add ~/.ssh/id_rsa
+ansible dev -i /home/waltz/ansible/hosts -m ping
+
+success should look like:
+cn-dev-orc-1.test.dataone.org | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+cn-dev-ucsb-1.test.dataone.org | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+cn-dev-unm-1.test.dataone.org | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+or failure:
+-----
+cn-dev-ucsb-1.test.dataone.org | FAILED => failed to transfer file to /ping:
+
+Permission denied (publickey,password).
+Couldn't read packet: Connection reset by peer
+----
+
+to determine if you can execute as root on the development environment
+ansible dev -i /home/waltz/ansible/hosts -a "touch /home/(username)/helloAnsible.txt" -u waltz --sudo --ask-sudo-pass
+
+success should look like:
+cn-dev-orc-1.test.dataone.org | success | rc=0 >>
+
+
+cn-dev-ucsb-1.test.dataone.org | success | rc=0 >>
+
+
+cn-dev-unm-1.test.dataone.org | success | rc=0 >>
+
+the above command should restult in a file (helloAnsibles.txt) owned by root in your home directory
+
+cd ansible
+
+rm -rf trunk
+svn export https://repository.dataone.org/software/cicore/trunk/cn-buildout/dataone-cn-ansible/src trunk
+cd trunk
+ansible-playbook -i /home/waltz/ansible/hosts --limit=cn-dev-orc-1.test.dataone.org -v --u waltz -c ssh  --sudo --ask-sudo-pass --module-path=modules  playbooks/dev/dataone-cn-os-core.yml
+
+The below instructions are already outdated, I am writing a shell script that will help manage ansible deployments.
+
+Assuming your username is waltz (if not make the appropriate substitutions)
+(goto your home directory)
+cd
+
+mkdir ansible
+cd ansible
+ svn export https://repository.dataone.org/software/cicore/trunk/cn-buildout/dataone-cn-ansible/src trunk
+cd trunk
+
+ansible-playbook -i /home/waltz/ansible/hosts --limit=cn-sandbox-ucsb-1.test.dataone.org -v --u waltz -c ssh  --sudo --ask-sudo-pass --module-path=modules  playbooks/sandbox/dataone-cn-os-core.yml
+
+ansible-playbook -i /home/waltz/ansible/hosts --limit=cn-sandbox-ucsb-1.test.dataone.org -v --u waltz --sudo --ask-sudo-pass --module-path=modules  playbooks/sandbox/dataone-cn-metacat.yml
+
+ansible-playbook -i /home/waltz/ansible/hosts --limit=cn-sandbox-ucsb-1.test.dataone.org -v --u waltz --sudo --ask-sudo-pass --module-path=modules  playbooks/sandbox/dataone-cn-portal.yml
+
+
+execute ansible-playbook -i /home/waltz/ansible/hosts -v  --u waltz --sudo --ask-sudo-pass --module-path=modules  playbooks/dev/dataone-cn-os-core.yml
+
+Production examples
+ansible-playbook -i /home/waltz/ansible/hosts --limit=cn-orc-1.dataone.org -v --u waltz --sudo --ask-sudo-pass --module-path=modules  playbooks/prod/dataone-cn-portal.yml
+
+ansible-playbook -i /home/waltz/ansible/hosts --limit=cn-orc-1.dataone.org -v --u waltz --sudo --ask-sudo-pass --module-path=modules  playbooks/prod/dataone-cn-metacat.yml
+
+ansible-playbook -i /home/waltz/ansible/hosts --limit=cn-orc-1.dataone.org -v --u waltz --sudo --ask-sudo-pass --module-path=modules  playbooks/prod/dataone-cn-dataone.yml
+
+
+New Note:
+
+this command works to build out a basic build on a new machine
+
+remember to take out the ssh arguments in /etc/ansible/ansible.cfg
+
+ansible-playbook --ask-pass --ask-sudo-pass -i /home/waltz/ansible/hosts --limit=cn-dev-orc-1.test.dataone.org -vvvv --user=localadmin --sudo --module-path=/home/waltz/ansible/trunk/src/modules  /home/waltz/ansible/trunk/src/playbooks/dev/initial-setup.yml
+
+

@@ -1,0 +1,423 @@
+#persist
+
+
+2014 CCIT meeting at AHM
+====================
+
+
+Participants
+-----------------
+Mark, Dave D., Matt, Jeff, Chris, Laura, Roger, Skye, Peter, Bruce, Bob, Steve, Dave, Kathy, Ryan, Robert W.
+
+
+CCIT Agenda for 2014-05 AHM
+===========================
+
+Status: Draft
+
+Location: Park City, Utah
+
+Date: 2014.05.13 - 2014.05.16
+
+
+Objectives
+----------
+
+
+Schedule
+
+Day 1, Tuesday, 2014.05.13
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+09:00 Block 1
+
+  Plenary session
+
+11:30 *Lunch*
+
+12:30 Block 2
+
+  - Review and revise agenda as necessary
+  - Overview of project goals and schedule for remainder of Phase I and Phase II.
+      - The CCIT in Phase II
+          - Semantics work: scope and approach
+          - Provenance work: scope and approach
+      - * CN consistency refactor 
+      - Product release for all started products (e.g., ONEDrive)
+      - * Mutability/ SID implementation
+          - Review impact and develop implementation plan
+          - http://mule1.dataone.org/ArchitectureDocs-current/design/ContentMutability.html
+      - * System metadata ownership to MNs implementation
+          - Review impact and develop implementation plan
+      - * New APIs: MNView, CNView, MNPackage
+      - Usage stats UI and implementation
+          - Metrics: what do we measure, do we measure what we need already?
+          - Design: all new features should consider measuring impact
+      - Release replication auditing (needs review and schedule)
+      - Solr4 upgrade
+          - SolrCloud could provide log aggregation, search index replication automagically
+              - Single shard cloud that fully replicates entries across cluster.
+                  - Less code to maintain in indexing/log aggregation.
+                  - Slightly less processing footprint in indexing
+                      - Just index each new doc on one CN - solr record copied across the cloud.
+              - Potential scalability path - creating shards when a single index is too large
+          - Pivot faceting
+              - useful for querying event log index, i.e. retrieve downloads by user by month in a single query
+          - Better geo coding support?
+          - supports searching for spatial fields (lat, long) with multiple values - i.e. could index all geographic coverages for an eml document in one spatial field and search all coverages
+      - Other upgrades
+      -
+  
+15:00 *Break*
+
+15:30 Block 3
+
+  - Mutability and SID Implementation
+     - Our most recent discussion was http://goo.gl/OgbTrT
+        - We decided to go with option 1, but we're revisiting our use cases to ensure everyone agrees on the requirements
+     - Use cases
+          - Replica copies made for all content unless a specific ReplicationPolicy sets it to 0 replicas
+              - involves change to documentation of http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html#Types.ReplicationPolicy.replicationAllowed
+          - Poll MNs to determine if they want existing content to be replicated, and set repPolicy=0 for those who don't want it
+          - Support "non-intent" changes to metadata
+          - Enable MNs to hold solely mutable content
+          - Do we have a use case to try to minimize 404 errors for nodes that have mutable content but do? Yes.
+              - A) By default replicate content for MNs unless they request otherwise via a ReplicationPolicy
+              - B) If they don't replicate, when a 404 occurs:
+                  - should optionally return error info pointing at the newer PID associated with the SID; we encourage this implementation at MNs to improve user experience
+              - C) Should MNs have ability to specify that the SID is the primary ID for use in all advertising and references; decision: no, instead provide UI to present both PID and SID as citable
+                  - Our UI should provide forward links from old versions to new, and from PIDs to SIDs (e.g., https://knb.ecoinformatics.org/#view/knb.434.3)
+          - Citation: users should be able to cite both the 'concept' of a data set via the SID and the specific version via the PID, with the goal of allowing Force-11 style cites
+    - Plan to roll out mutability support with changes to system metadata management
+    - ACTION ITEMS
+        - Develop implementation plan (extending current google doc)
+        - Identify 2-3 people to take this to completion
+          
+        
+          
+      
+  - Development and deployment efficiency for CNs, MNs, and ITK
+
+17:00 Poster Session
+
+
+Day 2, Wednesday, 2014.05.14
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                           
+08:30 Block 4
+
+  - Measuring system use, logging, monitoring, tracking searches and other user interactions
+      - http://mule1.dataone.org/ArchitectureDocs-current/design/UsageStatistics.html
+
+---- 
+Specific request for metrics in the Project Terms and Conditions
+
+(2) A description of the project deliverables including a detailed plan for collecting information on the following: 
+     (A) A metric on usage of the Member Nodes that shows how participation  in DataONE has increased access or event interest in member holdings
+    
+    (B) Metrics on the number of “unique users’ needs” that present precise indications of user activities:
+    - The number of users that enter queries only.
+    - The number of users that access the data repositories.
+    - The proportion of successful searches through traditional vs enhanced search capabilities (semantics or provenance).
+     - The number of users who access and use DataONE Investigator Toolkit  software to support Data Life Cycle functions such as analysis and  deposition of data.
+     - The number of users who access data that also produce derived data  products that are deposited in Member Node repositories.
+    
+     (C) All the normal evaluation metrics must be reconsidered due to the  unique mission of DataONE.  A metric or an approach must be developed  for determining the interconnections made and the potential for new  types of science that may be only now emerging and largely unrealized
+
+----
+      
+      
+  - Reporting of use information (e.g. log reporting, user interactions)
+      - Table of desired metrics from Heather Piwowar and Bruce Grant:
+        https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/metrics-and-statistics-subgroup-ahm-2012/metrics-table-from-PMP-ver-05May2012.docx
+        
+        - https://knb.ecoinformatics.org/#view/doi:10.5063/F1RB72JC
+        
+      - Reduced table from the above table  used to inform the D1 Dashboard:
+        https://repository.dataone.org/software/cicore/trunk/itk/d1_dashboard/doc/design/evaluation-metrics.csv
+        Google sheet version: https://docs.google.com/spreadsheets/d/1OlmUR9KHlqVrbxDtkiTRJcjP_atBif7N3cWV6ag6mjU/edit#gid=0
+
+Apache logs need to be made available for future analysis of user queries
+  - Ensure that log format is suitable for query analysis
+  - Ensure that logs are being appropriately preserved
+  - Ensure that logs can be merged across the CNs - can we use Splunk to aggregate the CN.query() search logs
+  - Archive logs from each of the CNs (from July 1, 2012)
+  - ISSUE: ensure that IP address from client is recorded in log 
+      - currently, mercury gets the client IP, and proxies the query to CN.query, which masks the client IP
+
+10:00 *Break*
+
+10:30 Block 5
+
+    - Leveraging search, view and other services provided by Metacat
+        - Overview of Usage pages provided by Metacat, potential use in DataONE
+          Examples: 
+            per-object: https://knb.ecoinformatics.org/#view/doi:10.5053/AA/chadden.48.2
+            per-mn: https://knb.ecoinformatics.org/#profile
+            per-user: mockup only
+        
+        - Using OR
+12:00 *Lunch*
+
+13:00 Block 6
+
+    - Joint Semantics + Provenance + CI
+    - Overview by Bruce of discussions from EVA/Prov on goals for secondary 
+        - NCA climate-change.gov has minimal metadata for modeling outputs
+        
+    - Overview of new project structure
+        - Organizing among the CCIT/Prov/Semantics group
+        - 18 month Phase II time frame
+        - Resource allocation is broken into 5 main categories
+            - Direction: Dave Vieglais and Matt Jones
+            - Maintenance and Operations
+                * Sysadmins x 3
+                * Robert Waltz
+                * Rob Nahf
+                * Mark Servilla
+                * Laura Moyers
+                * Bruce Wilson
+                * Jing Tao
+                * UTK FTE TBD
+            - Data Services
+                * Skye Roseboom (first 6-8 month allocation)
+            - Provenance
+                * Paolo Missier
+                * Bertram Ludascher
+                * Chris Jones
+                * Postdoc
+            - Semantics
+                * Deborah McGuinness
+                * Mark Schildhauer
+                * Ben Leinfelder
+                * Margaret O'Brien
+                * Postdoc
+                * UCSB Student
+                * UCSB Student
+            - MN Software development
+                * Roger Dahl
+            - UI Developer spanning above activities
+                * Lauren Walker
+    - Text of proposal pertaining to Prov and Semantics 
+    (1) Measurement Search
+   * Goals. Semantic search on measurements will enable precise data discovery by helping users identify relevant content from the massive and heterogeneous catalog in DataONE, thereby improving efficiency and opportunities for researchers and other data consumers. 
+                        
+   * Key Activities. Searching in DataONE currently focuses on fielded and full-text metadata. It does not allow precise queries of measurement types primarily because the metadata corpus contains uncontrolled descriptions of measurements (e.g., variable names, descriptions, units, etc.), making it impossible to find all datasets that use a particular measurement type. DataONE will extend its search system using scalable semantic annotation12 and inferencing. To enhance the interoperability of DataONE annotated objects, this extension will link community-based standard vocabularies (ontologies)13 during data ingestion and processing using inference based on concept hierarchies and property relationships. Key activities include: (a) Defining the scope of prototypes and the production framework; (b) Selecting contributing ontologies and terminologies (e.g., CF,14 CUAHSI,15 ENVO,16 SWEET17) and extending these as needed to provide coverage of measurement types; (c) Defining the annotation representation framework, e.g., by extending PROV-O18 or AO19 to enable measurement type association with attributes of entities within a data package; (d) Implementing annotation storage framework and user interfaces to facilitate ease of manual annotation by DataONE users through investigator tools; (e) Developing data mining algorithms to infer from data and metadata the measurement types aligned with the ontology, and incorporating automated annotation capabilities into Investigator Tools; and (f) Developing extensions to the DataONE content indexing, programmatic query services, and user interfaces to enable discovery through controlled definitions of measurement types. 
+
+    (2) Provenance Support
+   * Goals. DataONE CI will expand to fully support the capture, storage, and query of provenance metadata (i.e. data about the origin, context, derivation, ownership, and history of datasets20) and to facilitate understanding, reproduction, and attribution of scientific results. Enhancements to Investigator Tools will help with provision and utilization of provenance information. 
+                        
+   * Key Activities. Supporting provenance requires that we: 1) define mechanisms for Member Nodes to serve as repositories for provenance data, 2) enhance Coordinating Nodes to support sophisticated provenance-based searching, and 3) provide access to, and support for, the relevant tools in the Investigator Toolkit. Figure 1 provides a view of the requisite linkages among Member Nodes, Coordinating Nodes, and the Investigator Toolkit. The CI Working Group will build provenance support by: (a) Developing a model for provenance-based search including data representation, linkage, ranking, and query languages; (b) Prototyping techniques and algorithms appropriate to effective and efficient implementation of the provenance model; (c) Developing the architecture incorporating the aforementioned techniques and technologies identified as suitable for production implementation of the approach; (d) Finalizing production implementation that supports the provenance extensions and deploys to DataONE CI; and (e) Implementing provenance capture and use in Investigator Tools commonly used by scientists including the R statistical environment and Python-based systems.
+
+
+(D1 SemWG-- Xixi adds pointers to RPI code/work --Seyed,McGuinness et al.on semantic annotation using observational data model OBOÉ, on csv data without EML metadata:)
+
+SemantEco Annotator:
+
+project homepage: http://tw.rpi.edu/web/project/SemantEcoAnnotator
+
+live demo: http://aquarius.tw.rpi.edu/projects/annotator/
+
+video: https://www.youtube.com/watch?v=pKO5NwgWnyc
+
+github: https://github.com/ewpatton/SemantEco/wiki/Semantic-Annotator-front-end
+
+(D1 ProvWG-- Paolo/Bertam specs for PROV-ONE:)
+ProvONE document: http://vcvcomputing.com/provone/provone.html
+
+Xixi say DLM's group has tool, PRISM, for PROV
+
+
+15:00 *Break*
+
+15:30 Block 7
+
+- Joint Semantics + Provenance + CI
+17:30 Close
+
+
+Day 3, Thursday, 2014.05.15
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+08:30 Block 8
+
+Reviewed current status of OneDrive.
+
+8:30 Block 8 Alternate Prov/Semantics/CI discussion
+
+    - Driver data on ORNL DAAC
+    - Multiple releases of model output to be archived on DAAC
+        - http://nacp.ornl.gov/mstmipdata/
+        - Want usage stats for download
+        - Initially data restricted access
+        - netcdf4
+        
+    - Matlab for data analysis and comparison of model outputs
+        - instrument matlab for D1 access
+        - instrument matlab for provenance generation
+    - invite to CCIT June meeting: Debbie, Steve, Bob, Yixing, Christopher, Brian (w/ Steve)
+        - possibly morning and afternoon
+        
+    - semantics
+        - discovery not as relevant
+        - want to clarify semantics of output, e.g., how was NEE calculated in a given model output
+        - queries: show me only those model outputs that have a certain use/definition of NEE
+        - Article in EOS by Dan Hayes; focus on differences in calculating NEE
+
+10:00 *Break*
+
+10:30 Block 9 Tidy process subgroup
+
+Brief review of the problem: 
+  - In October, Network failures led to inconsistent system metadata between CNs. 
+  - During the failures, there were some long-term processes that we did not want to interrupt, which made the problem more complex.
+  - Tidy process was created to make make everything consistent.
+  - Recovery process was interrupted by the Heartbleed bug.
+  - CNs are now consistent again, but a few of the MNs are not aware of the most recent changes.
+  - Currently, CNs are running with a single master to prevent the problem from recurring.  
+
+    
+Tidy Process Current Status
+    - Now that the CNs are consistent, we're calling MN.systemMetadataChanged() for all Tier 3 MNs.
+    - There's some trouble with:
+        - CDL - authentication issues
+        - Two Replica nodes (SSL certificate problems)
+        - 130 objects with incorrect system metadata (due CN to system errors) which will be cleaned up manually
+    - Integrating the tidy code into Metacat is  the suggested way forward to deal with future split brain scenarios
+    - By detecting a split brain scenario, we'd then start recording a journal of needed pid updates
+    - Moving to MN-based authoritative sysmeta will help in future scenarios
+    - CDL is the only blocker keeping us from enabling full operations with synchronization: 
+        - ACTION: need to coordinate with Steven on getting their system metadata in sync with the CNs
+        - Turn off 'synchronization' in CDL node registration and turn on synchronization w/o CDL participating.
+
+    - Once Full operations are restored, only the Master will run d1-processing daemon. However, for the short term, log aggregation will need to be updated. Log Aggregation must maintain a consistent index across the cluster but do so with minimal use of Hazelcast.
+    - ACTION: Update log aggregation to support single master operation mode.
+    - ACTION: Update synchronization to support single master operation mode.
+    - ACTION: Need to review the replication code to ensure that there's no consequence of being in single master RR DNS mode
+    - ACTION: Short term - replace NodeList in hazelcast with JMS based messaging data source
+    - Medium/long term goal - replace hazelcast map event based processing with JMS based messaging (durable messaging queues/topics)
+
+(Brief discussion of: Next steps for OS, Java upgrades)
+
+10:30 Block 9 MN Wranglers subgroup
+
+    - 
+
+12:00 *Lunch*
+
+13:00 Block 10
+
+Work plan through July 31, 2014
+
+Work schedule for remainder of Phase I. Things that need to be addressed in the remaining 2 months:
+  - Redmine Upgrade
+  - Java/OS upgrades
+      - Fairly straight forward, requires testing through the various environments
+      - Story for CCI 1.2.7 (Chris)
+      - Jenkins deployment (Rob, Dave, 3 days)
+            - merge Jing branch into trunk
+      - Deploy to dev (Jing, Robert, Skye) (3 Weeks)
+          - Installation verification
+            - need to verify ldap upgrade process
+          - integration tests for services
+          - test portal
+              - JSP2.2 in Tomcat 7 issues. Some code in the portal seems to have a version dependency
+          - test onemercury interface
+              - JSP2.2 in Tomcat 7 issues
+      - Create branch for 1.2.7
+        - Build outs for 1.2.7 branch and Ubuntu 12.04, Java 7
+      - Deploy to Sandbox, test (2 Weeks, Jing, Robert)
+      - Deploy to Stage2, test (3 days, Jing, Robert)
+      - Tag 1.2.7 release
+      - Deploy to Stage, test (3 day, Jing, Robert)
+      - Deploy to production (1 week)
+  - Documentation, Tool updates / release
+      - Architecture Docs
+      - Operations Docs
+          - Certificate management
+          - OS Upgrade related issues
+      - Tools:
+          - Morpho - still waiting on access control integration (dependent on InCommon)
+            - Login is a huge issue here
+            - OAuth provides a viable alternative?
+            - Search needs to be updated to use the MN and CN query APIs
+          - R-Plugin
+            - In good shape
+          - ONEDrive (Roger)
+            - Alpha release target for DUG for review, feedback
+            - Beta by end of July
+          - CLI
+            - Review and identify any issues / updates required
+            - Some bugs with set url to be sorted
+            - Push out new release of CLI
+          - DMPTool
+            - Verify no action required
+          - DataUp
+            - Being worked on indepedently by CDL, migrating core from C# to Python, on GitHub
+          - ONEMercury
+            - No action
+          - Dashboard
+            - Expose through public web site (menu change)
+
+  - Review and release replication auditing service (Skye, 1 week testing, 1 week review)
+    - Setup log forwarding to send logs to Splunk
+    - target 1.3.0
+    for later revisions:
+      - SOLR4 / Zookeeper new infrastructure that requires some review and evaluation
+      - In deployable condition from  funcationality from a funcationality PoV
+  - Release log aggregation and search index schema enhancements (Peter, 1 week for 1.3.0 preparation)
+    - in good shape 
+    - target 1.3.0 release
+  - Generate reports from current log aggregation SOLR index (Matt, Lauren, Peter, Dave 1 week)
+    - Use the something to pull stats from SOLR index
+    - Add to python script generating the daily production history report
+  - Generate reports from 1.3.0 current log aggregation SOLR index (Matt, Lauren, Peter, 1 week)
+    - Use the Metacat reporting Javascript app
+    - Needs to be modified to report on downloads
+  - Refactor replication, Log Aggregation, Synchronization, D1 Rest webapp for Single Master operations
+    Add in a property indicating the NodeId of the MasterNode - cn.master.nodeId- in the node.properties file
+    Log Aggregation:
+      1. Log aggregation, remove dependency on hazelcast cluster
+      2. Convert code for recovery to journal read
+      3. Create an apache pass through to enable retrieval of log records from the CN metacat instances. IP of other CNs only allowed to access
+    Synchronization
+      1. Remove dependency upon hzNodes
+      2. Replace listeners on hzNodes with JMS
+      2. Only allow scheduling and tasks to run on Master
+    Replication
+      1. Review code to determine what changes may need to be made to support d1processing running on multiple machines with reduced hazelcast operations.
+    CN Rest Service
+      1. Remove dependency upon hzNodes for updateNodeCapabilities
+      2. Replace hzNodes with JMS topic for coordinating node changes to synchronization process.
+  - Metrics
+      - Improved query/search/oneMercury logging
+      - Session tracking?
+
+Things that require schema + API changes
+  - view service API addition (KNB / Metacat search interface)
+  - view service schema change
+  - Mutability and System metadata
+
+
+  - Display name in system metadata (e.g. for ONEDrive file names) This is an item for discussion
+
+Still to discuss, moved from earlier blocks:
+
+  - MN deployment process, especially SSL certificates
+  - MN testing
+  - General MN support, efficiency improvements
+  - Content mutability and system metadata management
+  
+
+
+
+15:00 *Break*
+
+15:30 Block 11
+
+  Plenary Session
+
+17:00 Close
+
+
+

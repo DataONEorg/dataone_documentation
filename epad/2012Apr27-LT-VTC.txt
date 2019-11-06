@@ -1,0 +1,131 @@
+Attendees: Rebecca, John Cobb, Suzie, Bruce, Matt, John Kunze, Bertram, Amber, Deborah, Bruce
+
+
+Regrets: Bob Cook, Hilmar, Bill Michener, Carol Tenopir
+
+1.  Please join my meeting, Apr 27, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/239834313
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (805) 309-0033
+Access Code: 239-834-313
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 239-834-313
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+
+We will also use the epad: http://epad.dataone.org/2012Apr27-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-04-27
+
+1) CI Update (Dave)
+
+Not many differences to report from last week. Incorporating bug fixes and other items (security fix)  this week. Getting another release candidate ready. 
+Changes to Mercury user interface have been made. These address Bruce's issues. 
+Will be running 3 CNs at release - is working so far in the development environment. Have something in place to check that MNs have sufficient resources in place.
+There is still an outstanding issue with the Mercury MN software. Have been working with Giri and Jim Green on this.  Other MNs are fine - KNB, Merritt, but haven't heard back from Ryan about the Dryad MN (Dave will call him after call).
+Command-line client is being improved.
+
+Update on tester? John K asked if tester had been updated because of issues they are seeing with Merritt. 
+
+Staged Environment: open to DataONE project should happen by Monday - if can't get done by Monday then will go with existing staged environment
+Dave will send out email to DataONE project on Monday letting people know which environment will be available
+
+Suzie: Letting CI know that there is help available with documentation (U&A and Sociocultural WG)
+
+Descriptions of service endpoints and messaging is up to date in the documentation. All the use case documentation needs updating. Authentication and access control documentation is in draft state. Tentatively will wait for 2 weeks after public release to update the documentation. 
+
+Still need a plain language document in addition to the technical documents.  Also need terms & conditions on the web site for content. This should not be too long after public release. The document was written by Sociocultural WG and may have been reviewed by CCIT (or members of CCIT). The WGs (UA & SC) will review this at their meeting next week
+and distribute to LT for email approval after the WG meeting. This 
+
+2) EVA WG update (Bob) - postponed to May 5th 
+
+3) Summer Intern Update (Rebecca)
+Six of the 10 proposed projects have interns. Eight projects could be funded but one had the applicant decline the offer and second choice has accepted another project and the mentors on the other project did not agree on the choice of best applicant. The projects that will go forward this summer are:
+ * Publish (data) or Perish: Best Practices for Creating, Reviewing, and Publishing Data Products (Michener,Cook)
+ * Enriching the Content of the DMPTool for the DataONE Community (Sallans, Strasser, Lake)
+ * Querying Scientific Workflow Provenance (Ludaescher, Missier, Bowers)
+ * Data Usage and Citation Visualization (Roseboom,Piwowar)
+ * Enhancing Semantic Search in ONEMercury (Pouchard, Noy, Horsburgh, Palanisamy)
+ * Components of Successful Metadata Registry Frameworks (Greenberg, Kunze, Boone)
+
+
+4) XSEDE/DataONE Collaboration Update (John Cobb)
+Issue: Interoperability of DataONE and XSEDE
+(also encouraged by EAB)
+
+Opportunity:
+        1) enable researchers to use DataONE and XSEDE resources (HPC et al) seamlessly
+        2) Expand reach and impact of DataONE
+        3) Expand reach, impacted, and use cases for XSEDE
+        4) Distribute resource requirements more broadly
+        5) Do NEAT things!
+        
+Likely use case: Projects that are both data intensive and computationally intensive.
+
+XSEDE SP's as MN's
+DataONE as an XSEDE gateway
+re-use of DataONE data architecture on XSEDE made possible for non-DatONE science areas 
+
+How it would work?
+1) Deploy MN SW stack on one or more XSEDE SP's
+2) Understand data flow requirements/functions between MN's and across XSEDE
+3) Science Gateway idiom from XSEDE's viewpoint
+4) XSEDE's wide are file-system architecture is not yet set. There is a "bake-off" set for veal at end of project yr 1 - Summer 2012. [ (Lustre, GPFS) (Albedo, Data Capacitor) ] {side note see Internet2 spring meeting talk about Lustre over Wide are  100Gbs. Also see news/rumor article of 125 Petabyte GPFS installation at IBM}
+
+Need use cases: science driven personas to use DataONE as a data resources and XSEDE as a computational (and other resource)
+
+Action item: identify DataONE MN dataset users who are also allocated XSEDE users
+        i) EVA1 eBrid was a quite good case but I think we are out of cycle - Cornell feedback
+        ii) EVA2 seems less suitable - less NSF overlap, more NASA/DOE footprint. Less computationally intensive
+        iii) Computationally intensive visualization problems
+        iv) Computationally intensive interactive analyses
+
+IDEAS/PROSPECTS NEEDED!! View this as a request to the Leadership TeamG
+
+5) Around the room
+Mike Frame (by email):
+I won't be able to attend today. An update that I am sure Carol and Suzie will provide is that next week is our Joint Usability & Assessment/Socio Cultural Working Group Meeting.  
+
+At the UA piece, we have some time devoted to do Usability Testing of the DataONE site and hopefully the CI will be available to also create some questions related to the Search/Discovery of DataONE data. I would really like to be able to do this just so we can ask a series of "integrated" and different types of questions about DataONE overall. The Working Group Agenda will let us develop whatever questions we intend to test on Tuesday, then actual testing will be on Wednesday/Thursday of next week. So, we have some flexibility. 
+ 
+Amber: Planning for Data Management Short Course moving forward.  Offered places to all 19 applicants.  5 are local and 1 will self fund so only covering expenses for 13.  Currently attending CEE meeting and travelling to UA/SC on Monday.
+
+Matt: 1) Software Systems for Sensor Networks training next week. 24 participants, 7 trainers.  Will cover Kepler, Data Turbine, GCE Toolbox, CUASHI ODM & tools, OGC SWE, and NEON approaches. 2) I've been discussing metadata issues with CDL for both the DCXL project and EZID/DataCite -- interesting discussions about the role of standards and whether Microsoft/DataCite really needs to be creating more metadata standards.
+
+8 pieces of info are:  column name; column definition; unit; number type; and optionally: precision, storage type, missing value code & missing value code definition
+
+Bertram: Not much new, other than Victor joining us as a postdoc next week! (or so we hope..:) Will email list of invitees for pre-IPAW meeting to Rebecca this weekend.
+Slowly starting up on summer project already. 
+Rebecca: I missed the part re. internships (skype dropout).
+Do we need to schedule a face-to-face? Our intern is local, and the best face to face would coincide with the WG meeting June 18th at UCSB. OK.. Need to leave now..
+
+
+John Cobb:
+ORC CN staffing progress (perhpas Bruce will update with more detail - if it is available)
+XSEDE2012 conference deadline: tutorial proposal in process Scott Jensen (SEAD) spearheading. Similar to SC11 tutorial
+
+Deborah
+- Offer made to a Semantics and Interoperability postdoc.  Hoping for acceptance.  Deadline for acceptance was given as May 14.
+- Deborah will be in DC next week for 3 meetings – is anyone else going to Data-Enabled Life Sciences Alliance - Supporting Ecosystem for the Life Sciences in the Beginning of the 21st Century May 3-4 in Bethesda?
+-  Is anyone else going to the NSF workshop on Drawing the Roadmap for Creating the Semantic infrastructure for EarthCube Community ?  (I will only be there Monday night but am keeping up.  This meeting came out of a number of semantics statements of interest that went in after the NSF earthcube meeting)
+
+John K: Working hard with MS developers on the Excel add-in on very tight deadlines (with help from Dave, Matt, and Ben).  Using an EML subset for the metadata, not exactly in the way EML was intended to describe columns.  Developing against the Merritt API initially, because it's easier for CDL to build/test the necessary generateId method there than to fork the MetaCat stack and build it there (the DataONE API is next API on the list).
+
+Trisha -- not much new here.  We did send a proposal to BRAD about establishing a storage node for the Excel project at one of the coordinating nodes (using CN storage capacity).  We are anxious to hear back :)
+
+Bruce: We've selected a grad student (Chris Sellers) to take on more CI-related efforts.  He will definitely be available August 1st, and we're looking for options to get him on-board earlier.  I will be at the UA/SC meeting next week Tuesday morning and Thursday morning.
+
+Suzie: We are in final preparations for the UA/SC WG next week. Tu-Th meeting (travel M,F). PLan to do onsite usability testing. We are working on the next string of surveys on U&A nad re-issue scientists survey. SC side working on related documentation and personas for governemt users. There may be other things that bubble up the first day.
+
+Named to the Advisory Board for the Data Curation Fellowship Program of the Council on Library and Information Resources and the Digital Library Foundation
+Background on the  program is at http://www.clir.org/fellowships/datacuration/background 
+
+
+

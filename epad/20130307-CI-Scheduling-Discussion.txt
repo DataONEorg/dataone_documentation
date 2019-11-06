@@ -1,0 +1,104 @@
+
+Notes from discussion, 2013-03-07 on high level scheduling for CI activities through July 2014
+==============================================================================================
+
+Participating: Chris, Matt, Dave
+
+
+General Info
+------------
+
+Development Blocks
+~~~~~~~~~~~~~~~~~~
+
+2013
+Block 2, 03-03 - 04-27
+Block 3, 04-28 - 06-22
+Block 4, 06-23 - 08-24
+Block 5, 08-25 - 10-26
+Block 6, 10-27 - 12-31
+
+2014
+Block 1, 01-05 - 03-01
+Block 2, 03-02 - 04-26
+Block 3, 04-27 - 06-21
+Block 4, 06-22 - 07-31
+
+
+Software Components, Prioritization (From last CCIT Meeting)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+( From Feb 2013 CCIT meeting in SBA, http://epad.dataone.org/20130205-07-CCIT-SBA )
+
+1.2:
+- Usability feedback
+- Provenance tracing
+- Alternate identifiers (series ID or concept ID) [*]
+- MN Service advertisement
+- Log report generation[*]
+  - Log statistics API
+  - UI design
+  - Member Node statistics page
+- Identity management [**]
+- Member node software stacks [***]
+  - iRods [***]
+  - DSpace
+  - Fedora
+  - OPeNDAP (could we do something that was DAP generic?)
+  - "Slender Node" (sitemap-based harvesting method) (John K) [***]
+      - OGC CSW and OAI-PMH.  Might need to do something to follow links to data to validate that it's really there.
+  - GEOPortal Server (NODC, USGS)
+- Member node usability work [*
+  - Make it easier for MN's to work with DataONE software
+- ITK developments?
+  - Kepler 
+  - R client
+  - VisTrails
+  - Matlab
+  - Robust ONEDrive [****]
+  - DataUP (multi-platform)
+  - ONEMercury/Search (including usability improvements/replacement) [*******]
+    - Includes improvements to biblio tools
+- “Semantic” search
+
+Auditing services for content consistency
+  - How many 404's are we getting?
+  - Are checksums valid? 
+  - ...
+
+1.3:
+Data slicing, subsetting
+Content annotation
+CN refactoring? (better scale out within a CN site)
+WG input
+
+
+Software Products, System Capabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CN Stack
+
+Synchronization
+Indexing
+Identifier Management
+Identity Management
+Replication
+Auditing
+Monitoring
+
+MN Software
+
+Metacat
+GMN
+
+ITK Software
+
+
+LibClient Java
+LibClient Python
+R
+Morpho
+DataUp
+Mendeley, Zotero
+ONEDrive
+

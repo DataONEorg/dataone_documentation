@@ -1,0 +1,168 @@
+#persist rst
+
+.. meta::
+   :keywords: DataONE, CCIT, 20111209, VTC
+
+
+DataONE Developers Call - 2011-12-09
+====================================
+
+:Attendees:
+  Dave Vieglais, John Cobb, Matt Jones, Bob Sandusky, Chris Jones, Nick Dexter, Skye Roseboom, John Kunze, Rob Nahf, Robert Waltz, Ryan Scherle, Bruce Wilson, Ben Leinfelder, Roger Dahl, Jim Green, 
+
+
+Agenda and Notes
+----------------
+
+
+1. General update on CI 
+
+Would like to set up Sandbox next week. (Dec. 12-16)
+We wuld like 3 VM infrastructure up at that time.
+UNM is up
+- Still sorting out connectivity for 16TB replication target MN partitions
+
+UCSB is in the final testing stages. Testing migration
+HW has been et up. Nick has been testing VM's, VM migration, VM failure testing 
+
+
+ORC is a signifciant delay in HW setup b/c of a missing network driver. This seems to be resolved now. Things are mounted and seen correctly. Mounts and HBA's are seen correctly.
+
+Q: can you seee a 16 TB partition?
+A: from the Guests. (VM doesn't see > 2 TB)
+
+CN Stack
+- synchronization working OK
+- Replication working (tested for 5000 or so objects)
+- Indexing close to up-to-date
+
+
+
+2. Review of dataonetypes.xsd for freeze
+
+Schema: https://redmine.dataone.org/projects/d1/repository/entry/software/cicore/branches/D1_SCHEMA_1_0_0/dataoneTypes.xsd
+
+Documents: http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html
+
+Change log: http://mule1.dataone.org/ArchitectureDocs-current/changelog.html
+
+Current suggested changes: https://redmine.dataone.org/issues/1764
+
+
+- checksum algorithm type (http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html#Types.ChecksumAlgorithm)
+    -- propose to change to a string
+    -- ChecksumAlgorithm is a string now
+    -- need a  ChecksumAlgorithmList type
+    -- DONE conclusion: add ChecksumAlgorithmList type to the schema to support response from getChecksumAlgorithms
+
+- Should white space be allowed within an identifier string?  No.
+    - Should we enforce that decision with a regex pattern: as best as possible
+    - http://compsoc.dur.ac.uk/whitespace/
+    - DONE conclusion: enforced by using NonEmptyNoWhitespaceString800 Type
+
+- Permissions type, has "replicate" permission - does this conflict with replciation policy. No
+  - only used currently by isNodeAuthorized()
+
+  - Conclusion: DONE. Removed from Permission. replicate should be expressed as a service + object level permission.
+
+Replication issues:
+
+- Lack of mechanism to report error on replication failure? Need a mechanism for a MN to provide a traceInfo message that can be logged and forwarded to an operator (who?). This should not be just a plain text string, needs to be structured in a way that a CN can act on the problem.
+
+- should be a mechanism for a MN to respond to a CN that the object already exists (MN should check if the checksum matches, and if so indicate that the replication is complete. If not, then indicate that replciation failed and provide infomration about hte error)
+
+
+- Issue with content contributor being able to lock themselves out of access to an object.
+
+  - Issue occurs when rights holder does not match submitter
+
+  - perhaps this is a helpdesk issue? An admin could mkae the change, but there are significant security and scalability issues.
+  
+  - Programmatically constrained / checked by MN, CN, and client code
+
+  - Perhaps have a timelock on objects, so submitter can access for a period of time - complicated to implement
+  
+  - Perhaps push this issue back to the curators of the collection - the member node operators
+  
+  - Should add a warning to client to inform users that there may be an access issue for the object
+
+- DONE. monitor info and monitor list need to be removed: yes
+
+- No change. add last failure timestamp to ping? Conclusion: No - it's the responsibility of monitoring systems to track this
+
+- Remove enumerations from schema? 
+
+  - Event
+  - NodeState
+  - NodeType
+  - ReplicationStatus
+  - Permission
+
+  - No change. Conclusion: keep all of these as chenges will significantly impact business logic of infrastructure implementation.
+
+
+- Rightsholder change to Owner? No change. Conclusion no - we do need to clarify language in documentation.
+
+  - change setOwner() to setRightsHolder() ?  Yes
+
+- Removing some fields from system metadata that MN should be providing?
+
+  - See table 1 in http://mule1.dataone.org/ArchitectureDocs-current/design/SystemMetadata.html
+  
+  - submitter (MN should set)
+  - dateUploaded (MN should set)
+  - dateSysmetaModified (MN should set)
+  - serialVersion (CN should set)
+
+  - DONE. Generally OK to make these optional, but must be very clearly documented that they are required to be set by the responsible party.
+
+- Also pending tickets (sync stuff) 
+
+  Optional elements of d1:Synchronization
+  DONE. lastCompleteHarvest (CN should set)
+  DONE.lastHarvested (CN should set)
+
+  DONE. Bug 1879: sec attribute of d1:Schedule should be further restricted to digits 0-60(possibly just \d{1,2}). Currently of type d1:CrontabEntry, create new restricting type d1:CrontabEntrySeconds.
+
+(note: libclient has v1 hard coded, this needs to be corrected)
+
+
+3. Status of Member Nodes
+
+(web tester is located at: http://mncheck.test.dataone.org:8080/d1_web_test_site-v1/list )
+
+a. KNB
+
+- Services are running
+- Issues with content migration
+- Significant change to replication model - this needs to be discussed as there are significant ongoing operational implications
+  
+  - if content is replicated to the KNB member node, should that be added to DataONE?
+  - if duplicate content has conflicting access rules, what happens? (first wins)
+
+- automatic generation of ORE resource maps - initial population and ongoing creation
+
+b. Dryad
+
+- last piece to finish off before roll out of Dryad
+- Likely to be immediately before Christmas
+- Some schema changes need to be included
+- Version info needs to be supported in URLs
+
+c. Merritt
+
+- Tweaks to data loading, testing. Likely to be reloaded with real data week of 19th Dec
+- URLs may not be publicly exposed, but content will be accessible through the DataONE APIs
+- Still some dependency on 2.0.0 release of Metacat - but when is that to be releaed?
+
+d. ORNL DAAC
+
+e. USGS
+
+f. SAN-Parks
+
+
+4. What remains for starting public release
+
+
+

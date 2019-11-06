@@ -1,0 +1,567 @@
+#persist
+
+.. meta::
+   :keywords: 2013, 201302, CCIT, Agenda, Developers, Santa Barbara
+
+Agenda for CCIT / Developers Meeting, 20130205-07
+=================================================
+
+:Document Status: DRAFT
+
+:Location: 
+
+  NCEAS_, 735 State Street, Santa Barbara
+  Third floor conference room
+  hangout: https://plus.google.com/hangouts/_/fa23c92c907b02456a155dfd8b2ebaeaf8649a7a 
+
+:Date: 04 - 08 February, 2013
+
+
+Objectives
+----------
+
+Major goals for ongoing development work in DataONE include:
+
+- Review progress and current state of infrastructure
+
+- Preparations for project review scheduled for Feb 27 - Mar 1, including 
+  demonstrations and presentations
+
+- Support for new and emerging capabilities
+  - Mutability
+  - Provenance
+  - Semantics in search
+
+- Plans for infrastructure development through remainder of project
+
+
+
+Schedule
+--------
+
+Day 1 - Tuesday 05 February
+...........................
+
+Emphasis on current status, overview of plans for the RSV and renewal proposal,
+reality check on the story board for demos. High level outline of future
+development plans.
+
+:08\:30: *Block 1.* Introductions, agenda review, progress report
+
+ - Review the current state of the DataONE infrastructure, including detail on
+   the Coordinating and Member Node implementations, and the various 
+   Investigator Toolkit pieces. High level outline of future development plans.
+
+:10\:00: `Break`
+
+:10\:30: *Block 2.*  
+
+- RSV outline and initial concepts for renewal proposal.
+- Initial draft storyboard for demonstrations
+- Possible questions from panel and our responses
+- Notes from previous CCIT meeting:
+
+  Things that we will be measured on:
+  
+  - Depth of deployment
+    - number of MNs
+    - amount of data, type of data
+
+  - Ability to access data
+    - Easy to do a search that retrieves data
+
+  - The WOW factor of the UIs and infrastructure
+    - Is this fundamentally new?
+    - Is this really helpful to users?
+
+  - Promote the functionality of the overall system
+
+  - How do we demonstrate the backup functionality?
+    - Perhaps the dashboard can be used to show object distribution across multiple nodes?
+
+  - Preservation attributes of the design
+    - illustrate how institutional diversity etc provides a level of preservation
+
+  - User oriented demonstrations / use cases
+    - e.g. basic case of researcher adding content to the system, later retrieving it and demonstrating how the system supports those operations
+
+  - Can we demonstrate the data life cycle? e.g. follow what's done in the video.
+
+    - R
+    - Morpho
+    - DataUp
+    - ONEDrive
+
+    - Data citation tools
+    - possible resources for matlab development
+    - possible resources for kepler development
+
+  - Site review will want live demos.
+  - Site review will be expecting DataNet interoperabilities
+  - Retrieving secure / private content from member nodes
+
+
+:12\:00: `Lunch`
+
+:13\:00: *Block 3.* Reviewing products, their release and demo-worthiness
+
+Products include:
+
+- specifications, documentation
+- infrastructure and services
+- member node implementations
+- client libraries
+- investigator tools
+  - ONEMercury
+  - ONE-R
+  - Morpho 
+  - v2.0.0-RC installers available here: http://bespin.nceas.ucsb.edu/dataone/downloads/)
+  - DataUp
+  - ONEDrive
+  - CLI
+  - Kepler plugin
+  - VisTrails module(s)
+  - Provenance support
+
+:15\:00: `Break`
+
+
+:15\:30: *Block 4.*  Product review continued.
+
+
+:17\:30: `Close`
+
+
+
+Day 2 - Wednesday 06 February
+.............................
+
+Emphasis on presentations and demonstrations for the RSV. Goal is to reach draft
+versions of RSV presentations and document tasks remaining to prepare for the
+RSV. Morning emphasis on products at or very close to release worthiness.
+Afternoon to work through products in prototype stage that may be used to
+demonstrate future capabilities.
+
+:08\:30: *Block 5.* Storyboarding production ready components
+
+
+:10\:00: `Break`
+
+:10\:30: *Block 6.*  
+
+
+:12\:00: `Lunch`
+
+:13\:00: *Block 7.*  Storyboarding prototypes, emerging functionality
+
+
+:15\:00: `Break`
+
+:15\:30: *Block 8.* 
+
+
+:17\:30: `Close`
+
+
+
+Day 3 - Thursday 07 February
+............................
+
+Review and discussion of future development activities and prioritization.
+
+- Discussion on supporting mutable content
+- Discussion on making AuthMN authoritative for SystemMetadata
+   -- found to be critical for tools like Morpho
+- Member node deployment process and scheduling
+- Integration of working group outcomes:
+  - provenance
+  - semantics
+  - preservation
+- Discussion about the whole release and infrastructure update process
+- Sponsor required metrics, review, revise, and ensure we are able to report
+
+:08\:30: *Block 9.* 
+
+- Telecon with semantics group starting 09:00
+
+
+:10\:00: `Break`
+
+:10\:30: *Block 10.* 
+
+
+:12\:00: `Lunch`
+
+:13\:00: *Block 11.*  
+
+
+:15\:00: `Break`
+
+:15\:30: *Block 12.*  Wrap up, scheduling, task assignment
+
+:17\:30: `Close`
+
+
+
+.. _NCEAS: http://www.nceas.ucsb.edu/contact
+
+
+Meeting Notes
+=============
+
+Day 1, Block 1
+--------------
+ * Discussion on progress and use of DataONE
+   * WRT ONEMercury statistics, usage is fairly low
+   * Perhaps ask each MN to provide a link on their respective search interfaces with the same search against DataONE
+   * May also need a note that says that a broader search capability is available via DataONE - e.g., they can search other similar repositories through DataONE
+   * Indexing the content is taking longer than expected during the 1.1 migration, but a good part of the performance hit is due to changing some data types
+   * Currently 10 MNs online, counting CLO (1 record though)
+   * Upcoming:
+     * Dryad
+     * EDAC - new MN implementation as Tier 1, Python, but custom stack ooriented toward the EDAC data store
+     * KU Biodiversity Institute
+     * 5 production target replica nodes
+     * 9 future nodes planned in the next 6 months
+     * End of year 4 target is 20 member nodes
+   * There is a new "member node wrangler" group
+ * Discussion of Costs of MN Deployments (to DataONE)
+   * For existing software impls, perhaps 3 to 30 person days
+   * For new, 16 to 117 person days
+   * We may consider supporting other protocols, ie Google site maps, OAI-PMH, CSW
+     * May reduce the cost of deployments since the stack may already be supported
+     * "Slender Node" - JAK
+   * It may be worthwhile to consider a very stripped-down API (just leverage OAI-PMH?) to bring on not-quite-nodes without so much effort
+     * Maybe create virtual MNs that harvest via site map or OAI-PHM content on not-quite-nodes, maybe use GMN as a fascade again
+ * Discussion on ITK progress
+   * Mostly lower level clients are complete (libs, CLI). demoability is low!
+   * ONEMercury - Demoable, complete, partially documented, not packaged
+   * ONE R - Complete, Documented, needs to be packaged again via CRAN, Demoable.
+     * depends on RJava, which is OS dependent, makes packaging tough
+   * Morpho - Complete, Documented, Installers, Demoable
+     * Some 'features' were left out so we had to get an RC out
+   * TODO: Need to add DMP tool to the ITK list (since it's in the data lifecycle) (Dave)
+   * ONEDrive - Not complete yet, Some documentation, Packaged, Perhaps not demoable
+     * TODO: Review ONEDrive progress and demoability (group)
+     * May recruit USGS developer again to work on Dokan implementation (Matt, Mike Frame)
+   * DataUP - Complete, Some Documentation, Packaged, Demoable
+   * Kepler - Not fully complete, minimal docs, not packaged, demoable
+     * It's a prototype actor in the Kepler trunk used to retrieve datasets from DataONE
+     * Uses the Java library, but of course depends on the workflow for data handling (depnends on CSV at the moment)
+   * VisTrails - Complete, Not Documented, Packaged, Demoable (will review later today)
+ * Discussion on milestones
+   * CCI 1.2
+     * provenance tracing - has been prototyped, more on this later
+       * Needs discussion on what really goes into 1.2
+     * Alternative identifiers (to support mutability of objects)
+     * MN Service advertisements (ie OGC web services. Extends the Node type?)
+       * may only be available on a per object basis
+     * Semantic search - more on this Thursday morning. Prototype to be demoed at the site review
+     * Log report generation, CN, MN, or user levels
+     * Identity management needs work. Legacy accounts, id mapping. etc.
+     * Each of these features should be released as they become available
+     * TODO: Discuss MN control of System Metadata and other data lifecycle points
+   * CCI 1.3
+     * Data slicing, subsetting. Difficult to generalize across data types
+     * Content annotation - users may tag content based on usefulness, etc. Could feed back into discovery.
+     * CN refactoring?
+       * We see that network availability greatly affects CN consistency, especially with Hazelcast
+     * WG input
+ * Prioritization
+   * Reliability of resolvable and retrievable
+   * Coverage and Participation
+     * Obviously, success will be measured in use of the services. Usability needs to be a focus
+   * Feature expansion
+
+
+Day 1, Block 2
+--------------
+ * Reverse Site Visit discussion
+   * Feb 28 - March 1
+   * Materials are due Feb 14
+   * Agenda
+     * Focus on community building, member nodes, and CI
+ * Provenance demo and discussion
+   * Victor Cuevas
+     * Vistrails demonstration
+   * Discussion on interoperability of workflows
+     * PROV
+       * D-PROV, extensions to PROV specific to scientific workflow systems
+         * Taverna, Kepler, VisTrails 'have interoperable provenance representations
+   * For the RSV demo:
+     * TODO: simplify the provenance tracing story given an audience unfamiliar with provenance (Paolo, Victor)
+     * TODO: focus on highlighting the differences between the executions, not the mechanics of them (Paolo, Victor)
+     * Demo will likely be live against the STAGE2 environment, with screenshot backups
+     * TODO: Use DataONE presentation theme (Dave to send these to Victor Done)
+
+Day 1, Block 3
+---------------
+ * Product reviews
+   * ONEMercury notes: See https://redmine.dataone.org/issues/3318
+     * TODO: To improve ONEMercury search results appearance, get MNs to drop "MN" and "Repository" from the label, eg, "PISCO MN"->"PISCO" and "Merritt Repository"=>"UC3 Merritt"
+     * TODO: Check on any tweaks to response time
+     * TODO: Sorting should be removed for relevance, date should remain, member node should be fixed (alphabetical issue). Enable sort by Date, Title, Date Uploaded
+     * TODO: Confirm: Replica target nodes shouldn't show up in ONEMercury UI
+     * TODO: Populate the STAGE2 environment with real world data for the demos
+     * TODO: remove relevance stars: https://redmine.dataone.org/issues/3324
+     * TODO: Populate the COINS tags - needs author, identifier, URL, check the date that appears in the citation
+       * Record will have:
+         * Title, Start Date - End Date (only put dates in if available). Link this to the science metadata. Remove 
+         * First Author et al., PubDate, Identifier
+   * R Client
+     * TODO: Figure out why listMemberNodes() returned the prod CN nodelist, not the dev, when pointed to dev
+     * TODO: create a function similar to saveDataToDataONE(df) where df is a researcher's data frame.  It creates the sys meta, the ORE package, etc. and saves them to D1 in the order needed, hiding the low level details.
+     * TODO: Matt needs to review method names and provide Rob feedback on naming consistency
+     * TODO: branch d1_common|libclient_java to release a new version
+     * TODO: Finish documentation, release to CRAN
+   * Morpho demo
+     * https://cn-dev.test.dataone.org/cn/v1/meta/urn:uuid:6bdb98da-907f-4e8c-9480-a69c79fc4ba8
+     * TODO: remove CN URL from the preferences (advanced option?)
+     * TODO: ensure EML contributed by DataUP can be opened using Morpho.
+
+Day 2, Block 1
+--------------
+ * Product Reviews
+   * ONEDrive
+     * Discussion on usability of the folder view
+     * TODO: Change top level folder names to be more intuitive to scientists
+     * TODO: In faceted search, for a given facet, include an 'all' folder rather than listing all pids
+     * Discussion on presentation:
+       * See https://repository.dataone.org/documents/Committees/CCIT/20130205_CCIT_SantaBarbara/onedrive_package_view.jpg
+       * Browse Hierarchies
+         * Author
+         * Topic/Keywords (normalized)
+         * Date - Coverage
+         * Date - PubDate
+         * Category/Domain (Hydrology/Biology)
+         * Member Node - maybe not this. Somewhat of an infrastructure
+         * Organization
+         * Geospatial Placenames
+         * Project
+         * Obsolescence chain (show 'Earlier version')
+         * Measurement Parameter (eg temperature, dissolved oxygen, etc)
+           * May need to choose vocabulary: CF, HydroVocabs, EML units, GCMD parameter list
+NOTE: We are missing taxonomy from the hierarchy (an oversight)
+
+Day 2, Block 2
+--------------
+ * Product Review
+   * DataUp
+     * TODO: In creating 'Column Description' metadata from multiple shhets, column names that are the same don't get listed in the metadata sheet.  This shouldn't happen.  for instance, Sheet1, Column named 'sample' shows up, whereas Sheet 2, Column named 'sample' does not show up as a metadata row.
+     * There is a disconnect between the metadata decribing an entity and the unique identifier for that entity, in that the EML produced by DataUp (for a spreadsheet with multiple shhets), Morpho, or another client, would not be able to parse each entity because it won't know which <dataTable> description should be applied to which entity bytes.  Ultimately, instead of depending on a particular science-metadata schema field to store this mapping by convention (entity id field, physical/url, etc.), we should figure out a more global solution that is part of the ORE packaging.
+ * Story boarding the RSV demos
+ * Personas: https://docs.google.com/document/d/1dyjgN-sHzH2lIeTKtjzk8xYox1tdjV6VNdwmlGs5DBM/edit?hl=en&authkey=CKGEhd0M#
+   * Option 1 (50 min)
+     * 1) Discover something interesting (EVOS Data) in ONEMercury
+       * (e.g., student searching for data on their thesis topic; perhaps adapt 'Sun' persona for some context / language)
+       * TODO: Ben: upload ORE maps for EVOS data
+     * 2) Kepler download and show a graph or map
+     * 3) Use in an R script -> generate some output (graphical and synthetic data for description in Morpho) TODO? an R method to save data to local file system, or do we commit the objects without a package and pass on metadata generation to another persona?
+       * Use RStudio for demo environment
+       * Login to CILogon
+       * Retrieve the dataset from DataONE (PISCO sites data?, EVOS mussel data?)
+       * Process and Plot
+       * Upload derived data with skeletal metadata
+     * 4) Develop the metadata in Morpho, upload to stage-2
+     * 5) Do a DataUp screencast
+     * 6) Discover in ONEMercury - show that content uploaded in morpho is discoverable in mercury
+     * 7) If time, show more complex screencasted example (EVA/ILAMB)
+   * Map the steps to personas in DataONE to make the story more compelling
+   * Don't assume the same researcher performs all the steps in the data life cycle
+   * Use cn-stage-2 for the demos
+       * TODO: Generate OREs for mnTestGulfWatch data (Ben)
+       * TODO: register ONEShare 'Practice' Repository https://d1-merritt-stage.cdlib.org/knb/d1/mn in stage-2 (John/Mark) (Dave send an email)
+       * TODO: Get cn-stage-2.test.dataone.org out of the cn-stage env (why is it there?), and use it in stage-2 (does this mean cn-stage-orc-2 ??? cn-stage-orc-2.test.dataone.org is configured to be a part of cn-stage, but it really isn't. )
+
+
+R installation errors
+---------------------
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+*** arch - i386
+Error in loadNamespace(package, c(which.lib.loc, lib.loc)) : 
+  in package ‘dataone’ classes Foo were specified for export but not defined
+Error: loading failed
+Execution halted
+*** arch - x86_64
+Error in loadNamespace(package, c(which.lib.loc, lib.loc)) : 
+  in package ‘dataone’ classes Foo were specified for export but not defined
+Error: loading failed
+Execution halted
+ERROR: loading failed for ‘i386’, ‘x86_64’
+* removing ‘/Library/Frameworks/R.framework/Versions/2.15/Resources/library/dataone’
+* restoring previous ‘/Library/Frameworks/R.framework/Versions/2.15/Resources/library/dataone’
+
+
+Day 2, Block 3
+--------------
+
+Notes on Dryad deployment
+ * Dryad will produce ORE documents that look like:
+
+ORE1
+|
+|--DryadMetadata1 (aka DryadDataPackage)
+|    |
+|    |
+|----+---DryadDataFile1 (aka DryadDataFile)
+|    |     |
+|----|-----|----Data1 (aka bitstream)
+|    |
+|    |
+|--------DryadDataFile2
+|    |     |
+|----|-----|----Data2
+
+* each of the 6 objects have an associated system metadata document
+
+Relationships:
+
+ORE1 aggregates DryadMetadata1
+ORE1 aggregates DryadDataFile1
+ORE1 aggregates DryadDataFile2
+ORE1 aggregates Data1
+ORE1 aggregates Data2
+
+DryadMetadata1 documents DryadDataFile1
+DryadMetadata1 documents DryadDataFile2
+
+DryadDataFile1 documents Data1
+DryadDataFile2 documents Data2
+(and the reverse of all the above)
+
+
+
+Day 3, Block 1
+--------------
+
+Some discussion on Dryad identifiers and mutability
+
+Semantics presentation
+- SementEco hierarchical faceted search
+- Freebase as a kind of authority for terms - can perhaps generalize to a number of differnt sources for commonly used / adopted terms. This assists with the early process of term normalization / classification
+- Analyze as the content is added? Perhaps use manual annotation of content as it comes in to member nodes; can also try statistical evaluation of content
+
+Day 3, Blocks 1 & 2
+-------------------
+These were demos from the semantics WG on topic modeling and semantic search by Patrice Seyed, Stacy Rebich Hespanha, and Ben Adams
+
+Day 3, Block 3
+--------------
+Discussion on authoritiative control of SystemMetadata
+ * Member Nodes could potentially be the authority on system metadata for their clients if we provided methods such as MN.setAccessPolicy(), etc.
+ * The difficulty is that it also increases the implementation cost on the MN.  For instance, identity management may also need to shift to the MN.
+ * Tier 1 nodes are the sticking point
+   * They're a source for a replica
+   * They don't implement MN.systemMetadataChanged() (Tier 2)
+     * They can just ignore the call
+   * Which portions of system metadata should be controlled by the MN vs CN?
+     * everything except the replica list?
+     * and authoritative member node?
+   * TODO: Create a design proposal for transfer authority to the MN for system metadata (Chris)
+   * TODO: Need a transition plan to make this happen later (CCIT)
+
+Metrics
+ * We need metrics on the number of downloads of:
+   * libraries
+   * client software
+   * TODO: Provide Amber with a list of [software product, status, #downloads, link to software] (Dave)
+     * TODO: Collate d1_{common|libclient}_{java|python} (Nick, Chris) from SVN, dev-testing
+     * TODO: Collate Morpho, Kepler stats (Chris)
+   * TODO: Collate total storage per MN in GB (both capacity and used capacity) (Ben)
+   * TODO: Object stats per MN from log aggregation (Robert)
+
+Network Status
+--------------
+ * Mockups for a dynamic status dashboard:
+   * Current Member Nodes
+   * Member Node Page (individual to that MN)
+   * User Page (for an indivual participant)
+   * Create summarized stats service from raw aggregated logs to populate these UIs
+     * This also needs to be given to impact-story (Jason Priem, Heather Piwowar)
+
+Day 3, Block 4
+--------------
+
+Discussion on support of mutability of objects within DataONE
+
+ * For a given object, some changes may, and others may not, affect the interpretation of the content
+   * For instance, Dryad may make spelling corrections in a metadata document
+   * This can present a problem for MNs that don't maintain revisions at the byte level for objects
+ * Immutable objects are critical to reproducible science
+   * Enabling repeat analysis is a goal of DataONE
+   * We also need to support access to the 'latest version' of an object from a static identifier
+ * Potential solution:
+   * Support a new alternateIdentifier
+   * For citing data, researchers should cite the specific revision of data, but the altId for the overall concept.  BEW -- Persistent ID is best for science reproducability, but the concept ID is best for the issue of tracking the use (credit) of the data.  This is the dimorphism of citation.  On the one hand, citation (for data) is needed for scientific reproducibility.  But citation is also primarily an issue of credit.  This is less an issue for publications, because pubs don't change (often). Theoretically, the credit chain can be traced through all of the relevant persistent ID's.  
+   * Ryan -- at least once a month, an author comes back to Dryad to say that they uploaded the wrong file into Dryad, cited it in their paper, and then discovered that they sent in the wrong file.  Would Dryad please replace the data with the "correct" one.
+   * Issues ...
+     * resolve(altId) requires following the obselesence chain
+     * How do you assign an altId that is 1) only applied to content that is being obsoleted, 2) it is unique
+     * Theoretically, an identifier is unique, whether it's an altID or a persistent ID.  The problem comes that there are multiple objects with the same alternate identifier.  How do you know that when an altID is provided that there isn't a collision?  User A creates a series of things with a particular alternate identifier.  User B comes in and wants to use that same alternate identifier (concept ID).  How do we know when that's an ID collision and when user B is legitimately creating a new version of the same conceptual item.  Obsolescence is one approach
+
+
+Options:
+
+- Default replication policy = 2 (with practical size limit)
+- Resolve should always point to the recent revision of something if the requested version is not available. In this case it should be clear that the request verson is not available.
+- Alternate identifiers generally seem to be a useful concept, but:
+  - Which APIs support this AID ?
+  - Does a PID and an AID share the same namespace?
+  
+Use "Series Identifier" instead of "Alternate Identifier"
+
+SID is specified at some point in the life of an obsolesence chain, and is used to refer to that series of the object.
+
+A SID can not be applied to any object outside of the obsolesence chain for an object, i.e., it is unique for an object family.
+
+
+
+
+
+Future Development Topics
+
+1.2:
+- Usability feedback
+- Provenance tracing
+- Alternate identifiers (series ID or concept ID) [*]
+- MN Service advertisement
+- Log report generation[*]
+  - Log statistics API
+  - UI design
+  - Member Node statistics page
+- Identity management [**]
+- Member node software stacks [***]
+  - iRods [***]
+  - DSpace
+  - Fedora
+  - OPeNDAP (could we do something that was DAP generic?)
+  - "Slender Node" (sitemap-based harvesting method) (John K) [***]
+      - OGC CSW and OAI-PMH.  Might need to do something to follow links to data to validate that it's really there.
+  - GEOPortal Server (NODC, USGS)
+- Member node usability work [*
+  - Make it easier for MN's to work with DataONE software
+- ITK developments?
+  - Kepler 
+  - R client
+  - VisTrails
+  - Matlab
+  - Robust ONEDrive [****]
+  - DataUP (multi-platform)
+  - ONEMercury/Search (including usability improvements/replacement) [*******]
+    - Includes improvements to biblio tools
+- “Semantic” search
+
+Auditing services for content consistency
+  - How many 404's are we getting?
+  - Are checksums valid? 
+  - ...
+
+1.3:
+Data slicing, subsetting
+Content annotation
+CN refactoring? (better scale out within a CN site)
+WG input
+

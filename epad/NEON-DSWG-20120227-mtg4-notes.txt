@@ -1,0 +1,62 @@
+NEON Data Services Working Group (DSWG) Meeting 4
+
+Participants
+Matt Jones, Peter Griffith, Viv Hutchison, Steve Berukoff, Bob Peet, Giri Palanisamy, Ben Domenico, Dave Vieglais, Michael Burek, Tyler Erickson, Ted Habermann
+
+Unable to attend: David Greenlee, Robert Guralnick, Mark Parsons, Peter Ruhl, Inigo San Gil, Emery Boose, Carl Lagoze
+
+Documents
+1. NEON Data Products Catalog: http://wiki.neoninc.org:8080/download/attachments/3932183/neon_level_1_to_3_dswg.xlsx
+2. Recommendations Document Draft
+http://wiki.neoninc.org:8080/download/attachments/3932183/recommendations-report-v01.docx
+
+Agenda
+1) Introduction of Steve Berukoff
+2) Review of charge and current status
+3) Overview of data products, and open discussion on metadata, data format recommendations
+4) Schedule for completing recommendations and report
+5) Discussion of need for face-to-face meeting to complete activities
+
+Discussion Notes
+1) Introduction of Steve Berukoff
+    -- Manages Data Products Group at NEON
+    -- managing data is difficult, standards necessary for interoperability
+    -- always available for questions
+
+2) Review of charge and current status
+    -- see wiki for past meetings
+    
+3) Overview of data products, and open discussion on metadata, data format recommendations
+    -- matt gives overview of data catalog spreadsheet and issues
+    -- peet -- requests that the mroe detailed data models be made available for verification/review
+    -- peet -- requests document reviewing the rationale for variables chosen
+    -- also need metadata defining each of the measurements, instruments, etc.
+    -- Giri: It will be helpful if the measurements are named using some standards. For example, the climate related measurements can use CF convention and also confirms to the units that CF recommends
+    -- berukoff -- calibration information also stored in NEON dbs, can provide that information
+    -- LUAP -- these largely come from other providers, NEON will provide products for the NEON sites at a common grid resolution, etc.
+    -- add section on vocabularies and semantics/ontology
+    -- palanisamy: expand distribution
+    -- peet: add discovery services
+    -- domenico: data discovery scattered throughout sections; consolidate
+        -- also shoud addres sboth human & machie readable discovery services
+    -- Haberman: Address Conformance and validation testing of both data and metadata in the recs
+    -- are data embargoes/access control an issue beyond sample processing time? None beyond processing/QA
+    -- is there PI data from PIs wokring at NEON sites?  And what is the policy for those data releases?  is NEON to be serving data from PI-proposed data?
+        -- unofficially, in future there will be process for PIs to propose additional projects, still be determined how much they are tied into the NEON DM process
+        -- should be a section discussing treatment & distribution of PI-driven data collection
+    -- Steve -- provide thorough rationale
+
+4) Schedule for completing recommendations and report
+    -- first draft of sections in a month
+    -- time series data, first sites online middle 2012, data out the door late 2012
+    -- Aim for recommendations in mid May
+    
+5) Discussion of need for face-to-face meeting to complete activities
+    -- not anxious for other meetings, useful if it corresponds to existing travel
+    -- scheduling is difficult
+    -- 5 people on the phone are already in Denver area
+    -- probably postpone, assess again if we're not making progress
+    -- Steve -- can work on funding if that is limiting
+    
+6) Matt: schedule Doodle for 5 weeks
+

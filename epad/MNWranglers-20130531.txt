@@ -1,0 +1,65 @@
+Member Node Wranglers (Fridays at 10:00 am AK/11:00 AM PST/noon MST/1pm CST/2pm EST)
+https://www1.gotomeeting.com/join/113672793
+
+31  May 2013 
+
+Attendees:  Laura, Rebecca, Amber, Dave, Matt
+
+Regrets:  John Cobb, Suzie
+
+Agenda: 
+        1. High profile issues
+         SEAD - they are very close to production, they are vetting information to decide what information to make public.  Laura sent email to Kavitha/Inna inquiring about status and asking if we could help in any way. They are having a conference call with NCED 12 July to discuss.
+             Issue: This is facing, in production, the issue of a MN who provides/publishes data from someone else. Issues:
+                Proper permissions
+                Proper credit: data provider; MN; DataONE
+                DataONE workflow on how to handle this set of discussions. (i.e. what is our playbook on this?) Options are (as we see it):
+                    1 - DataONE has metadata only, data owner solely provides data (like eBird)
+                     if multiple records, multiple metadata records
+                     eBird technically provides metadata for one huge data object annually; if all NCED is looking for is access control, eBird is a good model, if they're wanting hits, maybe option 3 is better
+                    2 - DataONE and MN provide data
+                    3 - MN provides data and DataONE CI or MN provide hit list (queries, etc.), ACL check, whatever else
+                    Meta: How best to approach discussion with MN and data provider to meet all needs.  
+                    Rebecca: a potential checklist should include the question is a MN serving up their own data or another entity's data.  Is it up to D1 to ensure proper citations?  Maybe/maybe not.  Maybe make sure data depositors are aware of what happens to their data before they become a MN (like NCED/SEAD are doing).
+                    
+            Dave: how can we better advertise the availability of these data repositories, promote MNs so that users and other MNs are educated... 
+            Matt: some sites want a click-through license to access their data (d1 does not provide this), other sites want an intended use (d1 doesn't provide this)
+            
+        2. Status of MNs 
+        QUESTION: When I update redmine tickets (as in reflecting what we talked about last week), should I make notes in a new comment, or add it to the description area, or??? - LM
+           
+            We decided to NOT focus on "stale" MNs (see notes from 24 May mtg).  Instead, we will focus on those MNs in the Deploy by Y4Q4 category (Deploy by RSV has been folded into Y4Q4).  "In Progress" and "Testing" MNs for Y4Q4 are:
+            Dryad - in MNF 5/30/13, Dave said they are moving closer to implementation, in testing found a minor issue related to passing metadata correctly to resolve.  Got an update from Rob Naif - waiting for Ryan Scherle to register in testing environment, do some integration testing, if all goes smoothly should be able to move to production.
+            SEAD (coming to DUG)
+                See above
+            EDAC (coming to DUG) - still in wait mode; Rebecca to check in with Karl/Soren next week, figure out a plan to move forward, meet f2f.  
+            University of Kansas - Back from vacation - Dave will check on status.
+            
+            "In Review" MNs for Y4Q4 are:
+            PELD - based on comment from Matt in 5/30/13 MNF, PELD likely will NOT be a MN of its own, since its data is in PPBio and PPBio WILL be a MN.  
+            PPBio -- David Dias contacted John Cobb, hasn't gotten a response; contacted Chris and I over IRC, we've been working on their technical issues, but they are looking for the official response to their inquiry from John.  I'm not quite sure what they need or want there, but its clearly bothering them that there was no response.  ACTION: John/Laura to respond to David ASAP.  Main (technical) issue here is they've requested a set of features we don't support yet - they want to sync some metacat data to D1, metacat does not support selective data selection for sync.  Want to replicate all content between MNs, but does NOT want all content to go to DataONE.  (i.e. all PPBio and part of PELD data)  Access controls are the only thing we can provide at this point.  
+            NPN see USANPN below (official)
+            TFRI - Matt hopes to have this done by July (end of Y4Q4), they are in stage testing now, Ben L is our POC, we think we're waiting for some fixes to be pushed to CN (fixes deployed last week)
+                Note: Carol Tenopir mentioned that she is giving a talk in Taiwan in November. Is it realistic that TFRI production by Nov? CAn we set this as a goal.
+            
+            Also, Matt suggested last time that we pay particular attention to the following:
+                USANPN - Bruce (is this different than NPN above?)  (Laura to email Bruce)
+                USGS NGP Topo maps - Mike Frame- status moving forward. We might be able to get it updated.  Will be a separate MN since it's different technology.  Would be a nice one to move up.  (Laura contact Mike and see where it is, what his goals are for implementation.)
+                NKN (get a schedule - what is their SW stack?) - conversation w/Greg when he was in NM for some EPSCOR stuff, looks like NKN won't be going anywhere any time soon. Rebecca to meet with another person in mid June for more info. 
+    
+        3. Old action items 
+            ALL: look at open redmine tickets for MNDeployment and ensure they are assigned to the right person
+             Amber and Laura:  template for MNs who are presenting at DUG to deliver  to participating MNs so  they will have a starting point.  IN PROGRESS Complete / near complete
+             Laura: contact MN POCs from Amber's list to see if they want to participate in showcase  IN PROGRESS. Complete - sent out 5/31 Suggest contacting all MN reps in one email: offer the opportunity to participate in showcase and say if not registered, please go to ...(DUG page url).  List should include contacts for all current MNs and those that are listed as in 'testing' or 'in progress' for end of year 4.  Also terrapop if the above criteria does not include them?  Do not want to contact the full list of MNs as some have only submitted an expression of interest and nothing further.  Matt may update priorites for all before end of Y4 so use most up-to-date classifications.
+             Letter to current MNs, EDAC, Dryad, SEAD, and TerraPop (TerraPop is the most remote from implementation - oops, maybe it shouldn't have gone to TerraPop)
+             
+             Laura/John: Need a MN description piece for the next newsletter (by June 7th)  (ask LTER, or USGS-CSAS ?)  Doesn't need to be time consuming.  Laura can write from description doc and then just send to MN contact for edits?
+         
+        4. not-high profile issues
+        
+        5. around the room
+        Dave: nope
+        Matt: nope
+        Amber: nothing fascinating
+        Laura: nothing fascinating either, just day-to-day goings on.
+

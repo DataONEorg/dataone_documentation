@@ -1,0 +1,74 @@
+CCIT Call - 2011-06-29
+======================
+
+Attendees: Roger Dahl, Bob Sandusky, Mark Servilla, Ryan Kroiss, Paul Allen, Ben Leinfelder, Bruce Wilson, Rob Nahf, John Kunze, Nick Dexter, John Cobb
+
+
+Agenda
+------
+
+
+1. Preparations for the CCIT meeting coming up July 19-21
+
+- Hotel reservations, travel
+
+- Agenda for meeting
+
+Tuesday
+
+ * Review of current cyber infrastructure design, goals, implementation status.
+
+- preservation angle - difference between checksums that apply to landing pages vs data sets
+  - citation for an ORNL DAAC data product -> page with a bunch of links -> follow through to actual data
+- Bruce - computing checksum of something that is actually the data, but DOI reslves to a page about the data - dataone identifiers could resolve to the actual files that make up the data
+- need to clarify what the identifiers actually refer to
+- at a citation level - do we care about the files or the ogc web service exposing those files
+
+- A lot of citation practices are actually citing landing pages
+- is a landing page more equivalent to a sciencemetadata document or some sort of packaging document providing reference to other pieces of a data set
+
+- How to deal with time series data - what are the best practices for archiving this type of content, and how should DataONE deal with it.
+
+- How do deal with changes in member node participation (e.g. some going offline or having reduced resources)?
+
+
+Wednesday
+
+ * Detailed scheduling and prioritization for the remainder of 2011. Identifying milestones and activities that need to include collaboration with other groups.
+
+
+Thursday
+
+ * Scheduling for beyond the public release. Defining the work plan for 2012 in some detail, with an outline through 2014.
+ * Morning joint session with the Semantics Integration working group
+
+
+
+2. Hardware purchase and general CN location preparations
+
+- Hardware specs
+
+- VM hosting
+
+- Network configuration
+
+- Administrator coordination
+
+
+- ORC 
+  - location of hardware affects the order (PDUs)
+  - Dell likely target for the purchse
+  - Need to check on VMWare license cost
+
+
+3. Update on CI status
+
+- Completing implementation of 0.6.2
+- Working through authn / authz implementations
+- Internal restructuring of CNs (e.g. OpenLDAP for low latency mm replication)
+
+
+4. Any other business
+
+
+

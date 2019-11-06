@@ -1,0 +1,75 @@
+Notes for Sprint of Week 31, 2011
+
+System Metadata properties that can be changed by client / MN after a object has been registered:
+- replicationPolicy
+- rightsHolder
+- authoritativeMemberNode
+- obsoletes, obsoletedBy (used by DataONE for content versioning)
+- accessPolicy
+
+
+Methods Needed Internally to a CN
+BEN WILL ADD
+DONE boolean identity.isPublic(Session, Subject)
+returns True if subject is the public user
+
+DONE boolean identity.isGroup(Session, Subject)
+returns True if the subject is a group (as opposed to an individual)
+
+
+Subject[] identity.getSubjectGroups(Subject)
+DONE SubjectList getSubjectInfo(Session session, Subject subject)
+Returns a list of groups that a subject belongs to
+
+
+DONE XML objectStore.getSystemMetadata(Session, Identifier)
+Returns the utf-8 encoded XML of the system metadata
+
+DONE OctetStream objectStore.get(Session, Identifier)
+Returns the bytes of the specified object - used by indexer for retrieving science metadata for further processing.
+
+DONE boolean objectStore.registerSystemMetadata(Session, Identifier, SystemMetadata)
+Used to add system metadata to Metacat for data objects (i.e. a create with a NULL object)
+
+DONE boolean objectStore.updateSystemMetadata(Session, Identifier, SystemMetadata)
+implemented as a PUT on /meta
+Should retrieve  copy of the system metadat from the CN, update the necessary elements, then call updateSystemMetadata to overwrite the existing copy with this provided copy.
+
+
+CN_crud.updateReplicaMetadata(token, pid, Types.ReplicaMetadata) -> Types.Identifier
+full replacement of ReplicaMetadata, changes date sysmeta modified
+
+
+DONE CN_crud.setAccessPolicy(token, pid, AccessPolicy) -> boolean
+
+RE /access/pid (body containing token, AccessPolicy) -> boolean
+changes date sysmeta modified too
+
+DONE  CN_crud.setReplicationPolicy(token, pid, ReplicationPolicy) -> boolean
+  REST API: PUT /replication/pid (body containing token, ReplicationPolicy) -> boolean
+     - changes date sysmeta modified too
+
+
+ObjectList getDescribes(Identifier)
+
+ObjectList getDescribedBy(Identifier)
+
+
+ObjectList getRelatedObjects(Identifier, RelationshipEnum)
+
+Metacat must support a query that returns resourceMaps given an Identifier to a science metadata object or science data object
+
+8/2/2011 Notes
+Robert, Roger, Ryan, Nick
+
+Roger: worked on Ryan's dataone drive. setup d1 libraries and environment in windows and got the code running under Windows. Was able to reproduce a bug that may be the same as the one he has noticed. May with to setup a second environment with debug settings.
+
+Robert: struggling getting the d1_cn_rest component to compile.  Finding various problem with how maven interprets a dependencies and scope. Also forgot to include new JibX Runtime in d1_cn_rest.
+
+Ryan: During CCIT meeting, researching issues with certificates from CIlogon and incorporating  GUI interface for the drive. Working on embedding an (embeddable) webbrowser in GUI. May not be too difficult to have embedded webbrowser in GUI. using QTDesigner
+
+Nick: Hoping to see Chris or Dave today.  Not much on development effort, blocking on conversations needed with Dave and Chris. Wishes to speak with Dave about ORC Node, hardware specs, diagram for server rack. Installation has not been installed yet. OIT needs to run power, provide physical access, Bruce needs to get keys for login/admin keys.  So, we are waiting on Hardware which will be another couple of weeks.
+Wishes to speak with Chris regarding tasks related to replication. Needs outline of what to work on. Maybe install metacat on terragrid node? 
+
+Roger and Ryan stayed on the call to discuss some bugs in the drive.  We discussed a number of potential causes ranging from concurrency to struct packing.  Another major possibility might stem from garbage collection issues.  We'll spend some time debugging this.
+

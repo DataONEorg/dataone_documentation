@@ -1,0 +1,94 @@
+NEON DSWG Meeting 3
+
+April 13, 2011
+1 pm Eastern
+
+Participants: M Jones, DJ Spiess, P Griffith, T Erickson, D Tarboton, L Gardiner, B Kao, C Lagoze, E Boose, I San Gil, B Peet, M Parsons, M Burek, B Domenico, Brian Wee, D Greenlee
+
+Connection details
+   * Dial-in number: 866.212.0875
+   * Attendee password: 504782#
+
+Agenda and Notes:
+
+1) Becky Kao: overview of NEON data activities in biology areas
+   -- see outline http://wiki.neoninc.org:8080/download/attachments/5079065/DSWG_FSU20110412.docx
+  -- Types of data on their team
+  -- Sampling modules (FSU) for terrestrial field sampling
+    -- person on ground collecting data on plants, animals, microbes, etc
+    -- above and below ground biomass, LAI, ..., (disease components)
+    -- field component and lab component for each
+    -- plus many samples shipped to external facilities for: genetics, chemical, disease, etc.
+    -- bioarchive (collections): samples in one or more museum collections
+    -- want compatibility with other communities that want the data
+      -- taxonomic and phylogenetic; compatible with Darwin Core and Specify and museum collections; trying
+      -- microbial diversity and function; GSC MIMARKS; compare Darwin Core with MIMARKS
+    Questions --
+      -- Peet: Taxonomic concepts versus latin binomials; specify not really there yet; what thought in NEON to these standards?
+        -- Becky -- three sources for a name for a thing, often don't agree; need to decide on what to push out there to the community
+          -- field crews
+          -- some sent for morphological expert ID
+          -- DNA barcoding (often disagrees with expert)
+        -- Peet: anything that is determined should have ability to have multiple determinations
+          -- one of these might be tagged as preferred for reports, etc
+          -- anytime a latin name is used, recommend that the Name plus reference be cited
+        -- Matt: is there an authoritative list of concepts (versus names)?
+        -- Peet: NEON sites would be covered in standard places; could get ITIS to link to concept references; MoBot making run at comprehensive list of concepts
+        -- doesn't GBIF have a naming authority
+          -- yes, Global Names Architecture (GNA), but it is name not concept based
+        -- MIMARKS already selected as important for microbial work; are there others?
+        -- Becky: would like clarification on recommendation for what the minimal fields are (beyond the required fields from the standards)
+            -- NEON additional constraints/required fields for each metadata standards
+            -- short name: want a profile for NEON
+        
+2) Review of survey results
+     See http://wiki.neoninc.org:8080/display/DSWG/Metadata+standards
+     
+     See http://wiki.neoninc.org:8080/display/DSWG/Data+standards
+     
+3) Open discussion on data format standards
+    -- Parsons: ASCII common, but need to make recommendations about how to format it
+    -- Best practices: ORNL DAAC has best practices preparation
+    -- Parsons: Consistently describe how your ascii is formatted; could be covered in the metadata standards selected; how are lat/lon developed; would need to look a lot more closely to the data in question; 
+    -- Is there a link for the DataONE best practices work? Matt will find and send a link.
+    -- Parsons: NEON should provide data in multiple formats (as appropriate)
+        -- e.g., ASCII, NetCDF, HDF
+    -- Brian: if downloaded in pure ascii, how do you get schema information (e.g., metadata)
+        -- for data mashups and repurposing, want to expose schema to end user
+    -- good idea;
+    -- Matt: existing metadata standards provide schema details
+    -- use OAIS 'distributed information package' to distribute metadata and data together
+    -- Matt: Nobody listed RDF/LOD as a format;
+        -- Carl: LOD/RDF makes a lot of sense, but imposes a lot
+    -- Carl: OData also provides schema
+    -- LOD: we should be on top of it, but probably too early to define detailed standards
+    -- Lagoze: OPeNDAP, Google's new data markup language
+        -- Matt: Dataset Publishing Language (DSPL) [http://code.google.com/apis/publicdata/]
+    -- Parsons:Starting to make more use of OpenSearch; ESIP is making more use of this
+    -- Domenico: not sure the OGC protocols were mentioned; WCS/WFS/SOS, plus CSW (Catalog Services for the Web); need to also list these access protocols, in addition to the metadata standards and data standards;
+    http://wiki.neoninc.org:8080/display/DSWG/DSWG+Deliverables 
+    -- Matt: don't forget about genetics data formats
+    -- Brian:  raw data from sequencers is in proprietary formats that are vendor specific; analyzed data peaks into ACTG would be represented in standard for GenBank etc -- can't remember name of the Center
+    -- Inigo: community databases accept Genbank format; FASTA format (formatted ASCII); also recently accept MIMARKS and BCOL extensions; is NEON going to upload sequences to central repositories?  
+      -- Brian: not sure, but he thinks they are planning on doing so
+      -- Brian: in addition to sequence data, have chip-based genetic screening data (microarray?); raw data may be in different format;  
+      -- Matt: is there a need to store and publish the raw data from the sequencers/sensors?
+      -- Brian: for sequencing data, should keep the calibration data also
+      -- Inigo: MIMARKS is a concept list, can be represented in GCDML (Genomics Contextual Data Markup Language)
+      
+4) Discussion of metadata and data standards assessment for NEON Data products
+    See http://wiki.neoninc.org:8080/download/attachments/4653063/DataProducts.L1thru4.2010.06.pdf
+    -- Matt: will want to make specific recommendations about the individual data products
+    -- Brian: will provide another level of categorization of products soon (in about two weeks, four-level hierarchy)
+    -- Inigo: great to stay at individual basis of measurement; 
+    -- Matt: will work with Steve to segment data products into related groups that can be treated fairly uniformly from a publication/documentation/representation perspective; next call to be focused on making specific recommendations for these product groups
+    
+Action items:
+  -- Matt: Provide link to DataONE best practices work
+  -- Matt: provide URL for Google's data markup language
+      -- Matt: Dataset Publishing Language (DSPL) [http://code.google.com/apis/publicdata/]
+  -- Brian: Send link to new data product classification when available
+  -- Matt and Steve: break products into functional groups for recommendations
+  -- Matt: Doodle for next meeting in about 3 weeks
+  -- All: review data products document for detailed discussion of publishing for products group
+

@@ -1,0 +1,63 @@
+Spring 2014 DataONE All Hands Meeting:
+Usability and Assessments Working Group Etherpad
+
+Twitter sharing:
+@DataONEorg #UAwg
+
+Search previous e-pads:
+http://epad.dataone.org/_index/search.html
+
+Current Meeting Documents________________________________________________________________
+
+
+Past Meeting Documents________________________________________________________________
+http://epad.dataone.org/Sp13-SCUAwg-user-interface
+http://epad.dataone.org/Sp13-SCUAwg-faq
+http://epad.dataone.org/Sp13-SCUAwg-metrics
+http://epad.dataone.org/Sp13-SCUAwg-usability
+http://epad.dataone.org/Sp13-SCUAwg-assessment
+http://epad.dataone.org/Sp13-SCUAwg-data-ecosystem
+http://epad.dataone.org/Sp13-SCUAwg-communications
+
+____________________________________________________________________________
+BEGIN CURRENT MEETING EPAD
+_____________________________________________________________
+Usability WG – report out for CCIT discussion Metrics, Performance Measures
+Outcomes measure options – will consider opportunities (scientist conferences, DUG, etc.)
+Remaining issues: 
+ * output measures  -- plenty of data points from CCIT group
+   * NSF requirements (primary focus):
+     * Unique users
+     * Queries only
+     * Advanced search
+     * Investigator Tool kit software use
+     * Number of users who access data that also produce derived data products that are deposited in MN repositories (perception that Provenance group will address)
+   * Concept of successful searches discussed – requires surveying the user – Dave/Matt and CCIT group will investigate options to satisfy this request
+   *  
+ * performance measures 
+   * recommend restricting to network performance and site / tool usability
+   * network performance metrics can be derived from the CCIT work
+   * site and tool usability requires user assessment
+     * eye tracking, etc
+     * level of confidence with tools (pre/post training (in person or webinars); pre/post education tool use (online or in person))?
+     * Use/reuse of site; data deposit – levels of engagement (requires user interview/survey because data mining doesn’t get at specific IP ranges)
+ 
+###
+
+
+To:  Carol Tenopir
+From:  Denise Davis
+Re: State Library Survey 
+ 
+Preliminary review of the response file indicates multiple responses from a few state libraries. This may be a result of timing out, or providing the survey link to multiple staff resulting in multiple responses. After closer inspection of the responses, it appears the result may have been going in and out of the survey. Recommend that the most complete response is retained. 
+Known state libraries with collections or services to government agencies total approximately 36 in all. There are survey responses from 12 unique states:
+MT, KS, UT, SC, CO, OH, WI, VT, ME, MD, DE, IL.
+Those that did not respond that are estimated to have some depository relationship with state departments/agencies include:
+AK, IA, PA, RI, NY, CT, VA, NC, FL, TN, TX, AR, AL, LA, AZ, CA, OR, WA, ID, WY, IN, KY, NH, NJ, ND
+I recommend focusing contact to each state librarian from the list above, speak with them directly, and request a contact in their organization to respond to this survey. It may be easiest for the state librarian to respond directly while on the phone given the small size of the questionnaire.
+Other states have records/archive centers that may be providing data repository support, but they are not administered by state library agencies per se.
+ 
+ 
+ 
+ Metrics
+

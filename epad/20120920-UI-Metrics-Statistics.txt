@@ -1,0 +1,66 @@
+
+UI Subgroup - Metrics & Statistics
+
+Bruce and Heather P. extracted metrics/stats aspects of DataONE PMP at May UA/SC WG meeting, and then aligned them with types of metrics/stats in a table
+
+(their slides from last year are on Plone site)
+
+Summary of their slides:
+
+1) individual metrics about data use
+2) interaction metrics
+3) instrastructure metrics
+
+X-mapped to data object use, data object use correlation, user metrics, user interaction metrics
+
+DataONE logs userid activities through system. Anonymyzing this will be a separate operation
+
+How do you know which user group/persona they're from?
+We know if they're from NCEAS, but not yet what type of user they are and what/how they're using the data. That's a desired metric (social map of usage among objects)
+
+Identifying emergent user profiles among user social network attributes (do people we think are the primary personas align with the usage we're seeing across the site?)
+
+What's the goal?
+- meet reqs in PMP (in DataONE assessment, clear we have to have transparent process to demonstrate value back to participants. Metrics are key to this)
+- provide metrics back to MNs
+
+If someone downloads a dataset, we know about the download. We know:
+- IP of the user via the MN log (if they are collecting it properly)
+- user agent (ONEMercury, ONEDrive...)
+- subject (query?)
+- event (create/read/updated/deleted/replicated...would like to add search)
+- date log
+- node identifier
+
+ONEDrive, ONEMercury, R accesses all hit SOLR index and trigger log event
+
+Getting at 'role' of user is harder. We don't require DataONE users to provide this kind of information when they register/log in.
+We track common name, public email affiliation/account (e.g. Google acct, university or org acct), organizational affiliation, access point.
+
+We could ask users to fill out simple profile that would report type of researcher/field they represent, but what % of registered users would fill it out? Users don't have to log in to use system. What's the value-added for them? What benefit/service do they get? Social networking services/linkages?
+
+Periodic pop-up surveys w/1-3 questions?
+
+Should DataONE be investing in building these capabilities, since other portals exist out there? We have multiple stakeholder audiences we're tasked with serving.
+
+Does focus need to be on user level, or is it really the object level of use that we should focus on?
+
+How do we intend to provide metrics/stats back to MNs?
+- on agenda of CCIT to deliver in Feb.
+
+What are minimal stats we'd want to expose to MNs on portal?
+ *  data object use at MN and aggregate levels (reads of files during given interval)
+ * user provided keywords used to access record? (but this would be a huge list...we don't have a way now to aggregate these into broader categories such as zoology, climate, oceanography, etc)
+ * titles of Top 10 records accessed from the MN (would be a start to inform scope popularity); run queries for presence of major topic keywords in title/keyword fields and correllate which were accessed. (Possibly map to NEON's 7 grand challenges to see to what extent DataONE data might be applicable to the challenges)
+ * do we differentiate between read and download/potentially use? Yes, this is a PMP req. at aggegate and MN levels. Won't be able to track this for data accessed via Data Linkage URL versus direct data download. We can know whether they visited linkage (if we proxy it, don't have that now), but not any action taken from that URL. There is value in knowing where DataONE generated traffic to another provider.
+ * is there value in tracking how users get to DataONE services like ONEMercury? Google Analytics can provide this; not a priority metric under PMP, but should probably provide.
+ * capturing user feedback from logged users to MNs at download point?
+ * PMP wants metrics on downloads of other DataONE assets such as ITK tools, ed modules and BPs. This should be captured in Google Analytics, but log file has to be run...not currently providing real-time stats via a dashboard-like capability. Short-term we could plug in periodic snapshots through the dashboard.
+   * some tools are outside of DataONE's control and can't be tracked beyond the click from the dataone.org site to the tool; we can't track download.
+ * for February deadline, only provide via dashboard those things that need to be tracked constantly
+ * health stats - uptime
+ * capacity at MNs - system metadata
+ * total metadata, datasets, aggegate by MN
+
+DataONE may need to do some SEO work w/Google to get ONEMercury and dataone.org more prominently featured
+

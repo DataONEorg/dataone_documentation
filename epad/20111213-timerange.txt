@@ -1,0 +1,87 @@
+Mechanisms for Identifying New Content via MNRead.listObjects
+=============================================================
+
+
+Problem:
+
+The property dateSysMetadataModified is used to determine if new content is available on a MN for synchronization. 
+
+The current mechanism utilizes the oldest value of dateSysMetadataModified from the previous request plus 1 millisecond to determine the new oldest time to search for objects.
+
+Some systems support millisecond precision, others do not.
+
+For systems that do not support millisecond precision, the request time is truncated
+
+
+ID = record ID
+TA = actual time of record generation
+TR = timestamp recorded in record metadata (limited by system precision)
+
+Records A
+ID   TA    TR
+1  0.00  0.00
+2  0.25  0.00
+3  0.50  0.00
+4  0.75  0.00
+5  1.00  1.00
+6  1.25  1.00
+7  1.50  1.00
+
+Records B
+1  0.00  0.00
+2  0.25  0.00
+3  0.50  0.00
+4  0.75  0.00
+5  1.00  1.00
+6  1.25  1.00
+7  1.50  1.00
+8  1.75  1.00
+9  2.00  2.00
+10 2.25  2.00
+11 2.50  2.00
+
+
+Approach 1:  fromDate <= TR
+
+A:
+fromDate = 0 
+result = {1..7}
+
+B:
+fromDate = 1.0 (max of {1..7})
+result = {5..11}
+
+conclusion: 5,6,7 duplicated
+
+
+Approach 2: fromDate <= TR < toDate
+
+A:
+fromDate = 0
+toDate = 1.0
+result = {1..4}
+
+A1:
+fromDate = 1.0
+toDate = 2.0
+result = {5..7}
+
+A2:
+fromDate = 2.0
+toDate = 3.0
+result = {}
+
+B:
+fromDate = 2.0
+toDate = 3.0
+result = {9,10,11}
+
+B2:
+fromDate = 3.0
+toDate = 4.0
+result = {}
+
+Conclusion: 8 skipped.
+
+
+

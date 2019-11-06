@@ -1,0 +1,167 @@
+Attendees: Carol, Bruce, John Cobb, Amber,Trisha, Mike, Bill, Steve, Steph, John Kunze, Matt, Dave
+
+
+Regrets: Suzie - in India,  Bob Cook
+
+http://epad.dataone.org/20110211-LT-VTC
+ 
+
+  Agenda for 2011-02-11
+
+1. Presentations for the NSF Review
+(https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/)
+
+Overview: about 95% done
+Sustainability: nearing completion
+Challenges & Mitigations: Bill finishing up a draft today addressing Question #3 and part of
+Question #2 in the Charge to the Panel
+Future Events: working on this now; revising future vision
+Community Engagement: Near completion; content is there just needs some cleaning up; should be ready by the end of the day for review
+CI:Dave pulling together the parts of presentation - hoping to meet with Matt & Bruce this afternoon 
+Question: 2 chunks: (1) run through of infrastructure; (2) demos and future developments
+Question is about the second hour - coordination of that 
+Future development part?  should it be tied into the first part is does it follow the demos as to
+what comes next
+Do bulk of demos and provide slides at end of demo to say what is coming next - Year 2
+and Years 3-5 - should be a refresher to the panel
+Demo Status: 
+R-client status - working and should stay stable; don't know if will get R writing part done
+Morpho status - wasn't planning on doing this; Morpho handles tabular data and the output
+from demo is not tabular
+Will upload another dataset from Morpho
+Should be able to do screen captures Monday or Tuesday
+
+Two things:
+(1) Morpho and Mercury listed under data management
+(2) Metavista?  It's on the list of metadata tools but haven't discussed adding it in the short term 
+Mike: USDA is big supporter of it - Viv having a meeting in March with the developers -
+meant to be a standalone tool - need to figure out where it belongs
+
+2.  Status of CI demos for Review (Vieglais/Jones)
+
+Panel:
+Peter Fox's article: http://www.sciencemag.org/content/331/6018/705.short
+Make sure we mention CUAHSI in presentations
+
+
+3.  Honorariums for meetings  (Koskela)
+Goal to offset time & effort put into the working group
+
+Twenty Working Group meetings annually (semi-annual meetings of the 10 Working Groups, each consisting of 10 members) for a total of $548,000 per year.  Costs include airfare ($600/person), lodging (four nights at $125/night for each Working Group meeting), per diem (5 days at $60/day for each meeting), and honoraria ($600/day/Co-leader for five days for each of the two meetings; $200/day/member for five days for each of the two meetings)
+
+4. Around the Room
+
+
+Amber: Website evaluation document available at: https://docs.dataone.org/member-area/projects/datanetone-public-website/DataONE%20Public%20Website%20Usability%20Issues%20-%20Internal%20Report.pdf/view
+DMP group invited to upcoming Best Practices workshop and conducting a half day pre-meeting the day before.
+
+Mike will follow-up with Viv related to potential of MetaVist interactions within the DataONE Metadata suite or Investigator Toolkit.   I do think more realistically, the USGS Data Integration tools, built in J2E, are a stronger potential for integration and complementing the Inv. Toolkit.   I'm hoping this will begin to occur with the Joint Developers meeting I've been polling for Spring.  Based on those who've responded, it looks like this meeting will be in the April timeframe in CO.  
+
+Matt: 
+1) Paper on open data in ecology came out in Science today, highlights DataONE in main figure: http://dx.doi.org/10.1126/science.1197962
+2) NCEAS is collaborating with iPlant on observational vegetation data -- IPlant is funding dev at NCEAS on this; and they are evaluating Kepler as a component of their backend computational infrastructure, trying to link Kepler and Pegasus/DagMan
+
+Mike: So, Peter Fox is somewhat active in the USGS Data Integration activities - been to a couple of meetings and planning sessions.  Good to mention the interactions with USGS during the Review.      
+
+
+Cobb: I (and Mssr. Kunze) attended the NEES data curation workshop on Monday. John Orcutt was there and mentioned that OOI is part of Reagan Moore's new Datanet. Also an interesting note was that OOI has made a good deal (brokered via CENIC) with Amazon. They are depending on  amazon EC2 for a large part of the OOI infrastructure and they have negotiated a co-lo agreement that allows them to obviate the Amazon network transfer fees on the EC2 cost model. I.E. OOI pays for sotrage and CPU's but not network. This is a big win for a cloud deployment. interesting.  FWIW--a conversation recently with Gartner on cloud highlighted that most of the cloud providers are willing to waive the upload fees (particularly) if the size of the rest of the contract is significant.  There are several cases of this for people using cloud for DR.  
+
+Cruse: I am working on getting a press release out on the Data Management Tool (a bit of cat herding).  One other thing... I met with MacKenzie Smith this week to plan a workshop on open data and sharing. 
+
+Wilson: Got caught up on several non-DataONE fires this week.  Getting back to CI presentations this weekend.  
+
+Tenopir: I presented at the iSchools conference this week about DataONE and role of iSchools. Session also included Data Conservancy's Chris Borgman and Carole Palmer. Susan Winter of NSF was in the audience.
+"Internal" report by U&A WG on public website usability is on the docs site. We are now proceeding with a more extensive usability experiment.
+
+Mike: I did some slides for one of my staff members to present at an International Scientific data meeting held at Microsoft last week.  I included some slides from Steve on State of the Birds and notiations about DataONE.
+
+Mike: USGS Proposal on Data Management Plans, that some of you are involved in, is still moving through the review process.   Decisions will come out in February is what we are being told.
+
+The State of the Birds report is now being written. There will be a sidebox that will feature the efforts of DataONE and the TerraGrid and ORNL and Institute of Computational Sustainability to enable the foundation for the habitat/occurrence analysis on public lands. I expect that this will be a paragraph.
+I'm also adding this to the "hopper" for TeraGrid science highlights.
+
+
+Bill: Planning for the EIM Training Institute is ongoing and we have most all insructors. Still need a workflows person.
+
+Met Michael McLennan at NEES CIS workshop, who is chief developer for Nanohub and may be interested in working in micro-services into the evolving software base.  Possible tie-in to DataONE.
+
+The "Hub" (http://hubzero.org/) concept grew out of the Punch project 10-15 years ago (a portal written in PERL in the mid-90's) I has grown much since then. It is the core of the nanhub project (a large portal gatway) as well as many NSF/ENG projects and the centerpiece of the new NEEScomm effort (http://hubzero.org/) including a project warehouse for data sotrage and rapid application deployment tools like Rappture. The reason for this workshop was to further enhance the hub approah to include long term data archinving and curation.
+
+
+Steph: Carly is making good progress with a project examining undergraduate preparation for data stewardship, re-use, sharing
+
+Dave:
+- Erick Mata new ED for EOL, interested in exploring interactions with DataONE (near future)
+- Meeting coming up March 20-22 with John Wooley UCSD exploring standards for genomic biodiversity data to be supported by GBIF and possible DataONE
+
+Notes from Marratech:
+[10:59 AM] Trisha Cruse joined.
+[10:59 AM] Bill Michener joined.
+[10:59 AM] John W. Cobb joined.
+[11:00 AM] Rebecca: http://epad.dataone.org/20110211-LT-VTC
+[11:00 AM] John:  Hola Amoebas
+[11:00 AM] Rebecca: hola!
+[11:00 AM] Steve joined.
+[11:01 AM] Trisha:  morgen
+[11:02 AM] Rebecca: http://epad.dataone.org/20110211-LT-VTC
+[11:02 AM] Steph joined.
+[11:03 AM] John Kunze joined.
+[11:04 AM] Matt Jones joined.
+[11:04 AM] Dave Vieglais joined.
+[11:06 AM] Matt:  what time zone?
+[11:08 AM] Dave:  3 ET
+[11:11 AM] Bruce:  @matt,Dave: I won't be open until 3:15 or 3:30
+[11:12 AM] Dave:  3:30 is ok for me
+[11:18 AM] Bruce:  @rebecca -- I arrive at DCA at 11:30 AM on Tuesday.
+[11:18 AM] aebudden:  I'm there all day Tues (arrive late Mon)
+[11:20 AM] John:  I agree. Maybe one run through split across 2 different sessions.
+[11:20 AM] John:  so everyone can attend their part
+[11:20 AM] Carol:  I am available Sunday, Monday, and Wednesday and Friday
+[11:21 AM] Steve:  I arrive on WED DCA at 3:30 PM
+[11:23 AM] Steve:  I arrive on TUE DCA at 3:30 PM sorry
+[11:24 AM] Matt:  I arrive at 4:44 pm Tue, Feb 22
+[11:25 AM] Trisha:  did you hear my yes
+[11:25 AM] Dave:  I can be there anytime Tue.
+[11:26 AM] Bruce:  Any time 10:00 Eastern or later is fine.
+[11:26 AM] John:  So that means Matt has no conflicts at that time?
+[11:27 AM] John:  So we have runthtoughs CE 5:00 PM EST 2/14 and 1:00 PM EST on 2/17? right?
+[11:27 AM] John:  What time on Tues?
+[11:27 AM] Trisha:  I can make it work
+[11:27 AM] Trisha:  i can do early too
+[11:29 AM] John:  Kasel does not ring a bell. spelling?
+[11:30 AM] John:  Peter Fox's article: http://www.sciencemag.org/content/331/6018/705.short
+[11:32 AM] John:  So we expecdt about 6 reviewers?
+[11:33 AM] Carol:  yes
+[11:36 AM] Rebecca: $200 per day
+[11:38 AM] John:  That said, I agree with Bill that physical presence adds much to the interaction
+[11:43 AM] John:  A sustainable growth pattern would dictate that the project cost/working group participant should decrease over time and as DataONE participation grows.
+[11:44 AM] John:  Given that we have one occurance, we should deal with these on a case by case basis unilt a clear pattern occurs.
+[11:51 AM] Trisha:  we always steered away from Amazon for "preservation" services since there is no service agreement, but maybe that has changed
+[11:52 AM] John:  So Amazon sounds as reliable as any Member Node :> (but maybe not up to the high standards of the CDL preservation teams.
+[11:52 AM] Bill:  Trisha, Amber, RK, ad  I were going to stay on for a minute.
+[11:53 AM] Bruce:  While I can't post the Gartner report, they commented that Amazon was much less flexible on the reimbursements for outages. They're reliable, but they won't commit to it in the same way that other cloud providers do. 
+[11:53 AM] Trisha:  hah!
+[11:55 AM] Steph:  something just happened to my sound...
+[11:55 AM] Steph:  fixed
+[11:58 AM] Steph:  gotta run, friends!
+[11:59 AM] Steph left.
+[12:01 PM] Carol left.
+[12:01 PM] Matt:  wow
+[12:01 PM] Rebecca: I'll put it on the Plone site
+[12:02 PM] John:  another conf. call -- see you
+[12:02 PM] John Kunze left.
+[12:02 PM] Steve left.
+[12:03 PM] Trisha:  We have been plotting / planning for that too
+[12:03 PM] John:  And the process for picking new nodes and the list of "go/no-go" steps in the process
+[12:04 PM] John:  WE would also do well to defien and measure "metrics" for new node integration. Things like length of time for concept to operation: number of data sets: amount of service by user, by bye, by transaction, ...
+[12:04 PM] Bruce:  Tx.  Gotta go.
+[12:04 PM] Bruce Wilson left.
+[12:06 PM] Mike:  have another call to connect to
+[12:06 PM] Mike left.
+[12:12 PM] Matt:  bye!
+[12:12 PM] Trisha:  bye
+[12:12 PM] Matt Jones left.
+[12:12 PM] Trisha:  No I am staying I was saying bye to Matt
+[12:12 PM] Dave Vieglais left.
+[12:12 PM] John W. Cobb left.
+

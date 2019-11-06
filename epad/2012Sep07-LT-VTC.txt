@@ -1,0 +1,174 @@
+Attendees: Rebecca, Amber, Carol, Matt, Mike , Bertram (Epad only), John Cobb, Bruce, Dave, , Todd, Steph
+
+Regrets: Bob Cook, Bill Michener, Suzie
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Sep 7, 2012 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/506717208
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0601
+Access Code: 506-717-208
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 506-717-208
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+
+We will also use the epad: http://epad.dataone.org/2012Sep07-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-09-07
+
+1) CI Update (Vieglais/Jones)
+In the process of pushing out an update to the CN. Annoying h/w issue at Oak Ridge that didn't affect production but did affect testing so delayed the testing of the patch release.
+The patch will contain some changes to the ONEMercury, including the option to show those with data to download. More data packages now available under Pisco - so searches should find the whole data package now.
+Working on ONEDrive now and should be functional for AHM. Right now ONEDrive is being brought back to its functional state (back into alignment with the APIs). Now working on how to present information.
+Work continues on Morpho.
+No progress on ONE R so far (Chris working on replications)
+Skye is making some changes to ONEMercury interface
+Also working on a dashboard
+Continuing to work on replication
+
+Big topic that needs to be resolved at AHM - how mutable is content - can content be changed at all? 
+   -- the key is what are our commitments to preservation and citability of data objects
+   -- right now our policy is that all objects are immutable, and any changes require a new version to be updated, which allows any object to be cited
+   -- some MNs want to be able to change content behind the scenes to correct metadata entries (e.g. spelling mistakes and so forth).
+   - Some changes to metadata though can impact data use - for example, a column definition in the metadata influences how the data is interpreted, and so an edit to that portion of the metadata may impact the interpretation of the data.
+
+Logging of downloads - information should be accessible next week so could graph these
+in addition to the number of data packages
+
+2) CE Update (Budden)
+S& G WG last week
+Working on newsletter - will be ready for NSF site visit in Knoxville
+Don't know if it will be quarterly or every six months - depends on volume of content.  Company: Research Media Ltd.  Publication: International Innovation (open access).
+
+
+
+3) Sustainability & Governance Update (Cruse, John Cobb)
+Meeting in Berkeley last week, facilitated by Kim Thanos (consultant) - main focus was financial sustainability
+Initiatives  of DataONE: discovery, 
+From a sustainability perspective, DataONE is more than one project
+Started out with a discussion of stakeholders, who would be willing to pay, what would they pay for
+3-tiers of service: just keeping lights on; keeping service + some add-ons; "John Cobb pie in the sky service" 
+Consultant will run some Focus groups to identifiy some the issues discussed during the meeting - don't have specifics on this 
+Concern about scaring off potential MNs
+
+Partial notes from some of the meeting sessions were captured on epad at <http://epad.dataone.org/2012Aug28-S-GWG>
+
+
+4) Member Node Progress and Priorities (all) 
+ *        History
+   * spreadsheet http://mule1.dataone.org/OperationDocs/membernodes.html
+     * Order column is implementation details and may not be needed at this time.
+       * But may be needed again in the future as wewe progress with development.
+       * 
+       * Order is s reflection of priority and "Low-hanging fruit" opportunities.
+   * S & G WG mtg 2010: http://bit.ly/Q4f4bL
+   * MN subgroup 2011: http://bit.ly/TrvL37
+   * 
+   * http://epad.dataone.org/2012Apr17-MN-Prioritization
+   * S & G WG mtg 2012 (see Block 2 notes): http://bit.ly/U0xLve
+
+Documents: 
+MN Guidelines   http://bit.ly/SqmVUi
+MN Description http://bit.ly/Qm8d9T
+Information on becoming a MN on website  http://www.dataone.org/become-member-node
+Draft Flow Chart on how to become a MN  http://bit.ly/RjMdBM
+
+ *        Milestones
+ *        Who's responsible for what
+   * Committee(s) for MNs
+       * 
+Time required to contact MNs -
+Workflow - 
+ * initial communication; 
+ * implementation phase; 
+ * operational phase
+
+Diversity of people involved with the strategy of MN prioritization
+Dave would like to have tickets submitted to Redmine to add potential MN to the mule document (http://mule1.dataone.org/OperationDocs/membernodes.html)
+Spreadsheet is in subversion and can be checked out to see the extra columns that are not displayed on the web
+
+MN Decision cycle:
+
+https://redmine.dataone.org/projects/mns/wiki
+
+Review stage of above diagram: where the prioritization should take place
+
+Conversations are documented to some extent in REdmine
+
+We need a MN description document
+
+MN description document may be "off-putting" as an initial contact. Perhaps we need a starter document on the way to this.
+
+DataONE Sub Team (?)
+
+DataONE Ops Group(?)
+
+Dave: MN recruitment has phases
+1. development
+2. deployment
+3. operations
+
+each phase has unique features and impact across different DataONE WG's and project staff
+
+Dave: issues in evaluating new MN's
+ * value of content
+ * member node durability/maintainability/sustainability
+ * Technical issues (these can bog us down a lot) (estiamte effort needed w/in and ousdie of DataONE)
+
+Q: Who puts entries onto the list?
+A: As needed.
+
+ *        Next steps
+   * Need 2 people assigned to this 
+ * 
+ * 
+ * Conclude the "next steps" and document the outcome
+ * Communicate that result project-wide
+
+
+
+
+?? Personnal comment: I think we are weak on clear governance on the "how" process.
+
+?? Which MN planning documents are under configuration management?
+
+Mike: Related to 
+IABIN 3195 Inter American Biodiversity Information Network Panama 
+- Project is closed and I think we should drop this group
+- We could work with University of San Palo who is continuing to provide some IABIN (Pollinators) continued support. 
+
+
+
+5) AHM Status (Koskela)
+
+
+
+6) Around the room
+
+Bertram: ProvWG is getting ready for AHM! (readying demos etc) Also: we suggested to have a "WG-leads summit" during one of the slots, early during the AHM, for those WWGs that need to talk. In our case (ProvWG) this is probably Data-Integration&Semantics WG (Deborah et al) and the Metadata WG (JohnK et al). We also have some EVA folks join our WG meeting, and we're scheduled to develop a ProvWG<=>CCIT use case during ong one of the slots.. OK.. gotta run.. 
+
+
+Mike - I would go with USGS Core Science Metadata Clearinghouse as USGS MN Name. CSAS is really our organization and the MN is based on Metadata CH and will serve more data than just CSAS data...
+
+      
+John Cobb: Nothing to add
+
+Matt: Submitted a DIBBs implementation proposal focused on provenance tools supporting the linkage between data, analysis code, and publications.  DataONE is a partner on this, with me, Dave, Bertram, and Todd among the 8 co-PIs.  DataONE is proposed as the archive for the initiative, with the focus being on tools development. Bill wrote a letter of collaboration.
+
+Steph: nothing new to add
+
+Carol: Here at UT/ORNL we are getting ready for Bob Chadduck's site visit on Monday. We think everything is ready (and just hope his flight isn't late!) UT Graphic Arts just delivered 20 copies of UT "Quest" September 2012 magazine, which features an article on DataONE and Monday morning will make copies of the newsletter.
+Also getting ready for AHM. Today ACRL told me th that the Academic Libraries assessment white paper will be published by them "mid-September".
+
+
+Nothing to add
+

@@ -1,0 +1,242 @@
+TERN and DataONE - conversations
+
+Next virtual meeting in June.  Hope to meet face-to-face with Alison at AHM (2nd week of May) and Nikki (June/July).
+
+=================================================================
+Monday 14 April 2014, 9am (Brisbane), Sunday 13 April 2014, 7pm (Knoxville)
+Nikki, Alison, Guru, Bruce, Laura attending
+Brad Evans (TERN eMAST) attending as well  
+
+Nikki and Alison have taken the draft MOU to the "legal person" at U Queensland.
+
+Nikki thinks she may not be able to make the AHM but hopes to meet with Bruce and Laura (and maybe other DataONE folks) when she's in the states, late June/early July.  
+
+Brad:  TERN eMAST distributed network,  
+ * Designed to share tools and not replicate
+ * Allows for more powerful models. Interested in changing the way that  institutions store and share data
+ * As an example, weather data, geoscience data, universities etc. are creating  a common system and a protocol for exchange
+ * Allow researchers to develop and share tools.
+ * Mixture of goverment and university groups
+ * working on provenance
+ * National Computing Infrastructure working to standardise data for  interoperability. Provenance work going on
+
+Provenance is a particular area of focus in phase 2 of DataONE; see also WC3 provenance recommendation; also an RDA working group working on provenance
+
+
+    
+See draft MOU, Article II - Scope.  We had talked about working on the first two areas:
+
+ * A.     Enable discovery of TERN metadata and data holdings via DataONE discovery interfaces.  The TERN Data Discovery Portal provides users with access to data and metadata from the various organizations that collaborate in TERN.  The objective of this element is to implement procedures and tools which enable the discovery of that metadata and data via the DataONE discovery interfaces. 
+
+ * B.     Enable the discovery of DataONE metadata and data holdings via the TERN Data Discovery Portal.  The DataONE discovery interfaces enable access to data and metadata held by DataONE Member Nodes.  The objective of this element is to implement procedures and tools which enable relevant data and metadata not otherwise available through the TERN Data Discovery Portal to be made discoverable and usable for TERN users via that portal.
+
+Area C (educational resources) can be worked independently of A and B.  (Alison and Amber can address at AHM.)
+
+Guru talked about an RDA working group addressing interoperability, etc.:  https://rd-alliance.org/working-groups/data-description-registry-interoperability.html
+
+Brad, looking at areas D, E, F; 
+D.     Collaborate on the development and distribution of tools and best practices 
+E.     Develop and refine analysis and synthesis capabilities related to transdisciplinary collaboration, 
+F.     Explore the broad interoperability of data between DataONE and TERN 
+ * eMAST developing tools in R (ONE-R Plug-in), Python (DataONE python bindings), website for benchmarking and modeling, focused on land-surface models currently BEW -- ties closely to current EVA-II WG.  Connect up with Bob Cook;  exposing raster data, can be used for tabular data
+ * OPeNDAP, web-based interface to create simplified map-based point of access.  Using ERDDAP.   
+        http://speddexes.tern.org.au 
+ 
+ 
+PROGRESS AND NEXT STEPS:    
+    Alison at AHM
+    Nikki to get dates to us when she will be in the States; Brad will be in the States at/around the same time
+    Bruce has sent Guru an email with details (Laura will compile and put in Nikki's Dropbox folder, for reference)
+    Nikki/Alison working the MOU with U Queensland legal
+    Bruce to take MOU to Rebecca (Bill not available) for UNM review
+    Nikki shared her Dropbox folder with us re: how things worked with NEON -- https://www.dropbox.com/home/TERN_DataOne
+    Meet again in June? (not first week)  Laura to send out Doodle poll for availability
+
+====================================================================================
+Friday 28 March 2014, 7am (Brisbane), Thursday 27 March 2014, 5pm (Knoxville)
+
+Draft MOU went out last week, Alison and Nikki reviewed (changed some TERN text to tidy it up, also Explore vs Enable here: 
+F.     Explore the broad interoperability of data between DataONE and TERN so that users of either system are able to enhance discovery and data usability by achieving direct access to data, such as access to data via the DataONE Investigator Toolkit elements.  
+
+We're happy with MOU, now need signoff from UQ (Tim) and UNM (Bill/Rebecca).  
+
+What next: is there anything we can do in this meeting until MOU is approved?  Look at how Scope item A can be achieved (expose TERN data via DataONE).  
+
+Nikki has a template that can be used (work with NEON f2f at AGU).  Nikki can create a Dropbox folder for us to work in.  Also  will be helpful to create a timeline for efforts.  
+
+Guru can't come to AHM but Nikki may be able to.  Would like to get Amber involved in conversations re: Scope item C in particular (while we're at AHM).
+
+Might be helpful to have an online meeting during AHM so everyone can participate (timing will be better as Utah's 5p is Brisbane's 9a).
+
+Bruce will provide information to Guru re: high-level and detailed MN implementation
+
+Next meeting early week of 14 April (Laura to set up poll for times).
+
+========================================================
+Wednesday 5 March 2014 8:30am (Brisbane), Tuesday 4 March 2014 5:30pm (Knoxville)
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/619646321
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (213) 289-0012
+Access Code: 619-646-321
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 619-646-321
+
+Attending:   Laura, Bruce, Alison, Guru
+Regrets:  Nikki
+
+Goals:  
+
+Look at MOU (NEON example).  We think what we're looking at is making TERN data visible via DataONE and relevant DataONE data visible at TERN.  
+    Mutual discoverability is the goal: a DataONE user can discover data via the TERN MN which will point the user to the data where it resides with its "owner", and the TERN MN can search/harvest appropriate DataONE discoverable data and replicate that data's metadata on the MN
+    MOU is the "broad intention" - can be general at the beginning, with more detailed discussions and development after the MOU has been signed.  (This was the case with NEON at least.)
+    
+TIMING OF ACTIVITIES:  TERN anticipates engagement with DataONE the latter half of this year.  They plan to focus on Australian issues first half of year.  
+
+Rationale ---->  Define/identify these value-added areas with this collaboration:
+ * shared expertise
+ * discovery of data (some Australian data resides at DataONE MNs)
+ * benchmarking
+ * Note in the MOU how the cooperation between DataONE and TERN will improve operations at both parties.
+
+We (TERN) want one entry point to DataONE (the TERN Data Discovery Portal). 
+ * Focus area 1: Enable discovery of TERN's metadata holdings through DataONE discovery interfaces. 
+ * Focus area 2: Enable the discovery of DataONE data holdings via the TERN Data Discovery Portal
+ * Focus area 3: Collaborate on the development and distribution of educational resources relevant to data management, preservation, curation, and usage
+ * Focus area 4: Collaborate on the development and distribution of tools and best practices for cyberinfrastructure (including cybersecurity), project management, project operation, governance, sustainability, benchmarking, international collaborations, education, and community engagment related to the execution of collaborative projects such as TERN and DataONE.  
+ * Focus area 5: Develop and refine analysis and synthesis capabilities related to transdisciplinary collaboration, including the reduction to practice of ways that multiple different forms and sources of data can be combined to achieve transdisciplinary scientific objectives
+ * Focus area 6: Enable the interoperability of data between DataONE and TERN so that users of either system are able to enhance discovery by achieving direct access to data, such as access to data via the DataONE Investigator Toolkit elements.  
+
+IMPORTANT: need to maintain usage statistics and source attribution; see log aggregation 
+
+Nikki-and-Bill question:  we might call the MOU a "letter of collaboration" (MOU has pretty specific legal ramifications)  
+
+Frame the MOU in terms of the deliverables above.  See the "Scope" section in the MOU.
+
+TERN's "legal entity" is University of Queensland
+What is DataONE's "legal entity"?  University of New Mexico?
+
+Guru asks that we point them to any useful documentation re: APIs, etc.
+Bruce suggests looking at a Generic Member Node implementation for both pulling DataONE data down and pushing TERN data up.
+
+Plan a meeting in 2-3 weeks, 7am Brisbane time
+===============================================
+Thursday 30 January 2014 8:30am (Brisbane), Wednesday 29 January 2014 5:30pm (Knoxville)
+
+        1.  Please join my meeting.
+        https://www1.gotomeeting.com/join/347614209
+
+        2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+
+        Dial +1 (213) 493-0602
+        Access Code: 347-614-209
+        Audio PIN: Shown after joining the meeting
+
+        Meeting ID: 347-614-209
+
+Attending:  Laura, Guru, Alison, Bruce, Nikki
+
+Bruce:  We've been looking at where we want to be ultimately and how we can get there (perhaps incremental steps?).  How can we take advantage of what TERN has done (very much of a Coordinating Node) without having to rework much/anything?  
+
+See the info that Guru sent after the last meeting:
+ * TERN Data Infrastructure 
+ * Data collections published by TERN can be classified into ecological and biogeophysical data. Ecological data mainly focus on Flora and Fauna in a geographical area. Biogeophysical data deal with interaction of biological, geological and physical processes.  Due to the complexity and diversity of data collected and published by TERN, it operates as a network of facilities each contributing data from specific domain.
+ * The diversity in the datasets acquired and managed by TERN facilities mandates that each facility uses different formats, structures and delivery mechanisms to store and disseminate datasets. In certain facilities, user communities will have preferences about the data and metadata formats, and delivery mechanisms based on community standards. Therefore, facilities have developed their own data management framework that will give access to data and related metadata for scientists, policy makers and public. For example, the AusCover facility stores data in a Climate and Forecast (CF) compliant NetCDF (Network Common Data Form) format and publishes via THREDDS/OPeNDAP server, and the GeoNetwork metadata catalogue is used to harvest and publish metadata based on ISO 19115 standards. 
+ * Among the facilities, there is an overlap in the technology used for their data management. Majority of biogeophysical data will be described using ISO 19115 standards (Metadata standard) (sample record from AusCover Facility http://data.auscover.org.au/geonetwork/srv/en/metadata.show?uuid=8b0074d7-8c2c-441a-ba7e-93c4fa45ea20) and catalogued using GeoNetwork (http://geonetwork-opensource.org/). The ecological data is described using Ecological Metadata Language (EML) (http://knb.ecoinformatics.org/software/eml/) (sample record from Australian Supersite network http://www.tern-supersites.net.au/knb/metacat/fahmi.24/asn) and catalogued using Metacat (http://knb.ecoinformatics.org). The federal and state government agencies plot-based ecological data is described in an in-house developed metadata standard, which provide very rich contextual information about the data. These datasets are catalogued and published using TERN Eco-informatics developed system Australian Ecological Knowledge and Observation System (AEKOS) (http://portal.aekos.org.au). 
+ * The TERN Data Discovery Portal (TDDP) (http://portal.tern.org.au) provides an aggregated view of data and makes all TERN related datasets discoverable under a single platform. The TDDP is a metadata catalogue of research data built by regularly harvesting metadata records from all the TERN facility data infrastructure using Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH), a lightweight  harvesting protocol for sharing metadata between services. The metadata information available in the TERN portal  consists of descriptive information about the datasets, information about data custodians, data access and licensing information and links to respective facility metadata catalogue to view detail metadata and access to corresponding data.
+
+ TERN is essentially a network of networks (similar to LTER and KNB current MNs).  
+
+Central (philosophical) question:  how much does TERN/DataONE want data activities to occur through TERN and how much would be appropriate to go to the entity directly.  For example, at least one of TERN's components runs metacat and they could be a DataONE MN individually.  
+
+This structure isn't mutually exclusive (either all through TERN or all through individual repositories).  It is possible to have a repository be a MN (exposing metadata) and TERN exposing metadata for the same object(s).  
+
+Short term goal: find a way to replicate metadata from the Data Discovery Portal into DataONE.  With this, a user couldn't use the DataONE GET operation to access data.  User would go to the individual repository for data acquisition.
+
+The TERN Data Discovery Portal is the aggregator; each repository supports domain-specific metadata standards but TDDP uses RIF-CS to manage across repositories.
+
+Data Portal using rif-cs:  http://globalregistries.org/rifcs.html
+
+Research data australia:  http://researchdata.ands.org.au
+
+Could possibly harvest via open search (exists).  Could provide OAI-PMH as a server, but that isn't currently enabled.  Metadata are shredded into a database, do not currently exist as direct files on disk.  
+
+Science metadata has internal identifiers in some places.  If have a metacat repo, the science metadata has an identifier, but that identifier isn't exposed through the TERN Data Portal.  TERN practice is to point the DOI to the page describing the data (per DOI policy), which in this case is the science metadata object.  
+
+The data package envelope  OAI-ORE has a DOI which refers to the overall concept of the data.  Within the "envelope" are data sets, files, etc. which have identifiers which look more like GUIDs.  
+
+As an example, ORNL DAAC maintains multiple metadata files in different formats (Dublin Core because you have to for OAI-PMH, etc.).  
+
+Primary goal is to have DataONE and TERN working together to provide increased visibility of TERN data and to open DataONE-discoverable data to Australian researchers.  It's a mutually beneficial relationship.  To achieve this goal, we need to figure out the "how" to make it happen, both in the short-term and for long-term growth.  A MOU can identify and clarify the nature of our collaboration.  Alison has a template based on the NEON MOU, which she forwarded to Bill and Rebecca.  We need to agree on goals/expectations.
+
+Key question: what's the desired end state?  Make US data more accessible to Australians and make Australian data more accessible/discoverable to the world.  Discussion of eBird that has a significant amount of Australian bird data.  How do we enable people to find that.  ??? Can TERN harvest relevant DataONE data into their discovery portal.  Bill M has a copy of the MOU with NEON.
+
+Next steps:  set up a meeting in ~4 weeks and in the meantime DataONE and TERN will work on defining the techncial possibilities.  Alison and Nikki can look at the conceptual nature of the TERN/DataONE relationship.  Guru says that TERN will be very busy harvesting data in the next couple months.  We also need to pay attention to NOT duplicating data (see the OzFlux project, with some data at ORNL).  
+
+===========================================
+Friday 10 January 2014 8am (Brisbane), Thursday 9 January 2014 5pm (Knoxville/Oak Ridge)
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/603270601
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (805) 309-0012
+Access Code: 603-270-601
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 603-270-601
+
+Attending:  Laura Moyers (DataONE), Alison Specht (ACEAS), Bruce Wilson (DataONE), Siddeswara Guru (ACEAS)
+
+ACEAS-TERN: http://www.aceas.org.au/ 
+
+The Australian Centre for Ecological Analysis and Synthesis (ACEAS) is a virtual and physical Facility within the Terrestrial Ecosystem Research Network  (TERN) for both disciplinary and inter-disciplinary integration, synthesis and modelling of ecosystem data to aid in the development of  evidenced-based environmental management strategies and policy at regional, state and continental scales.
+
+TERN website:  http://www.tern.org.au/
+
+TERN is comprised of several different data repositories, whose data are discoverable via the TERN Discovery Portal:
+ * AUSCover (may be visible through NASA data)
+ * AUSPlots
+ * ACEAS (some data already discoverable via DataONE (KNB) - runs Metacat)
+ * Australian Coastal Ecosystems
+ * Australian SuperSite Network - similar to NEON
+ * Australian Transect Network
+ * TERN Discovery Portal 
+ * Eco-informatics
+ * e-MAST
+ * LTERN
+ * OzFlux network (may be visible through ORNL - see FLUXNET)
+ * Soil and Landscape Grid of Australia
+
+
+TERN uses an OpenSearch API for being able to harvest the metadata.   Previous discussions about TERN operating a CN, but DataONE wasn't (and probably still isn't) ready for a CN operating outside of the direct DataONE infrastructure.  
+
+Metadata available through open search API
+
+OzTrack oztrack.org/
+
+NeCTAR - cloud computing - www.nectar.org.au/research-cloud
+
+Idea of operating a Coordinating Node in Australia?  Original DataONE proposal indicated a desire for widely distributed CNs, but we have underestimated the challenges in implementing CNs, especially the distributed nature of CN operations.  This is still a highly desired outcome, but we need to hold off on any development of and Australian CN while we further explore how best to do it.
+
+Ecological data - EML
+Biogeophysical data - ISO 19115
+See also ISO 12110
+
+TERN uses OAI-PMH to harvest data from collaborating projects for the Data Portal.
+
+If DataONE harvests from TERN, it can happen:
+    from the individual collaborating sites/projects
+    from the TERN Data Portal
+    
+Desirable to harvest from the original sources
+
+ORE (Object Reuse and Embedding) allows for access to the data itself
+
+Next Steps:  meet again late in the week of 20 January
+

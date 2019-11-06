@@ -1,0 +1,50 @@
+Collaboration Client (possibly as command line input):-
+1. Registration
+2. Load Trace (Publish)
+3. Retrieve
+4. Update Retrieve
+
+1. Registration Process:- 
+- It would ask for user_id and user_name
+- User would use this process to register himself
+- System would store this data into the "user" table
+
+2. Load Trace (Publish) Process :-
+- It would ask for file_name, user_id and user_name
+- The system would check if the user_id and user_name is there in the user table. If it is there, systen would continue the process of loading the trace. If it is not, system would show a message "You are not registered yet, please register first and come back" and stop the process.
+- If the user is registered, system would start loading the trace from the trace file to the SPS schema (local). The first step would be to create a run in the "run" table. Both "creator_id" and "publisher_id" would be populated by input "user_id".   
+- While loading the trace it would look for "data artifact" tags. For each such tag it would create a file with the value that tag has and transfer the file into the Shared area (SDS) and get the global url. This global url would be used to load the data into the "data_artifact" table.
+
+3. Retrieve Process:- 
+- User would be asked to provide the local path where the file(s) should be saved.
+- User would be shown the list of the files those are available with global_url in "data_artifact" table. The format would be {<1, "file_1">, <2, "file_2">, ..., <n, "file_n">}. Here "file_i" would capture the essential details for the i-th data artifact that should be presented to the user.
+- User would mention the files he wants to retrieve in form of {i, j, k, .... }. 
+- System would copy the selected files into the local directory as mentioned and create one retrieve_id and create one record for each file selected in the retrieve table keeping the local path. 
+- Incase user wants to change the local path for a file then he needs update the retrieve table accordingly using the "Update Retrieve" process. 
+
+4.Update Retrieve Process :- 
+- User should be able to select a record from the retrieve table based on the retrieve_id and update it as needed.  THIS IS A MANUAL ACTIVITY.
+
+----- 2010/07/23 ------
+
+BIVA:
+
+1) type attribute of data_artifact should be null for me
+
+
+ANAND
+Points to note:
+In the same invocation of  an  actor   2 or more data items are used, all of them having same values, but different roles.
+Do we ignore the multiple occurences of same data value for each invocation of an actor.
+
+or do we  create a composite primary key invocation_id+data_artifact_id+data_role in invocation_input??
+
+SAUMEN:
+1. parser: to copy data from trace to the local db -- All
+1a. create a global copy of the file and get the global url -- Anand, Biva(Paolo)
+2. Collaboration Interface : comand-line or GUI : Saumen(by tomorrow)
+3. Utility (java/sql) to transfer data from local to global --- Saumen to analyze the changes he needs to go global directly.
+4.  
+
+
+

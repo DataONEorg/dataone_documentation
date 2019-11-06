@@ -1,0 +1,115 @@
+New Room: DataONE Upgrade Process in the EVO list
+
+http://evo.caltech.edu/evoNext/koala.jnlp?meeting=vsvivIese9IlIuanaMItas
+
+(take a 5 minutes break) 
+
+
+High Level goals:
+1. ONEMercury always up
+    - read access w/ authorization:  'GET' calls
+2. CNCore & CNRead always up
+
+
+Goals
+
+1) one goal was to always have two CNs up and running
+   a) not certain the benefits with the way we have RR running right now.  It is not a fail over solution, but a load balancing solution.
+   
+   
+2) Always have a single CN up and running (No down time)
+   a)  Always have read + write services up (?).  When we say 'No down time', do we always need a fully writable system? For non interference with MemberNodes, at a minimal we should be able to call 'reserveIdentifiers' as a write function.  
+
+3) Do not have different versions of products running on CNs communicating with one another
+ * incompatible data structures (schema changes)
+   * Note that we never will remove existing data structures now -- only add new ones -- to support existing content
+ * incompatible software stacks (e.g. HZ 1.x --> 2.x)
+ * password changes in service deployments, etc. (broken comms)
+ * Changing UI (see #4)
+
+
+4) Do not allow a situation in which a user experiences data retrieval inconsistency
+ *    user should not see different UI if two CNs are running and RR DNS switch between them
+ * If a user discovers a PID on a CN, then it should not 'disappear' for hours because of an upgrade process
+
+Issues
+ * The institution of a cn_rest_service read only + reserveIdentifier operation will cause #4 to break.  If LDAP needs upgrading in a manner that causes incompatibility between different version of the CN, then the CNs will need to be isolated from one another until all upgrades are complete. Thus a production CN that is exposed to the DataONE community while other CNs are upgraded may receive reservations that, when the the upgraded CNs go live and take the place of the previous production CN, will have reservations the newly upgraded CNs will not have.  It seems impractical to state that LDAP will always be backwards compatible and able to maintain replication during upgrades to ensure all CNs have all written data at the time of a switchover.  We may wish to consider that we keep a journalling system of posted reservations (independent of LDAP) on a pubic facing CN during upgrades that will create a replayable log of reserveIdentifier actions.
+
+Proposed Upgrade Procedure starting 1.0.4
+
+0. turn off d1-processing and indexing
+1. Point DNS only to CN1
+2. Turn off metacat replication on three 3 CNs ( toggle cn_rest read only switch - not available for 1.0.4! - reserveIdentifier must stay up)
+3. Keep CN1 up
+4. Shutdown CN2 and CN3
+5. Upgrade CN2 and CN3
+   5.1 Upgrade procedure on a CN
+      a) back up database and metacat filesystem subdirectories /var/metacat/data /var/metacat/documents (copy with preserve permissions)
+         1) turn off d1-processing/d1-indexing/tomcat/slapd/postgres daemons
+         2) nohup  lvm-snapshot.sh > lvm-snapshot.out 2> lvm-snapshot.err < /dev/null &
+         3) back up the /boot filesystem, do not believe it is under lvm
+         1) create back up directories, and change directories into them
+         2) nohup  tar -C /var/metacat  -zcpf metacat-bak.tgz . > /tmp/metacatArchive.out 2> /tmp/metacatArchive.err < /dev/null &
+         3) root@cn-orc-1:/var# mkdir postgres-bak 
+         4) root@cn-orc-1:/var# cd postgres-bak
+         5) nohup su postgres -c "/usr/bin/pg_dump -Fc metacat" > metacatDB.dump 2> metacatDB.err < /dev/null &
+         6) sftp metacatDB.metacatDB.dump and  metacat-bak.tgz  to remote FS
+     b) move old catalina.out files
+         1) mv /var/log/tomcat6/catalina.out  /var/log/tomcat6/catalina.yyyy-mm-dd.out 
+     c) stop/restart ldap service?
+     d) run apt-get update/apt-get upgrade
+     e) remember to configure metacat if metacat has been upgraded
+       1) set any web app log files to debug or other setting
+       1) restart tomcat to activate changes to metacat
+6. Start CN2 (maybe rename hz groups and change ldap password)
+7. Point DNS to CN2 (only)
+8. Shutdown CN1
+9. Start CN3 (will take a long time, but no clients will be using it yet)
+10. Upgrade CN1
+11. Start CN1 (wait for long start up)
+12. Add CN3 and CN1 to DNS RR when they are back online.
+13. turn on d1-processing and indexing
+
+This script will re-index a CN.  place it in a directory, name it reIndexCn.sh and call it with nohup reIndexCn.sh >reIndexCn.out 2> reIndexCn.err < /dev/null &
+------------------------------------------------------
+#!/bin/bash
+
+/etc/init.d/d1-index-task-generator stop
+/etc/init.d/d1-index-task-generator start
+/etc/init.d/d1-index-task-processor stop
+java -jar /usr/share/dataone-cn-index/d1_index_build_tool.jar -a
+/etc/init.d/d1-index-task-processor start
+------------------------------------------------------
+
+To restart d1-processing
+/etc/init.d/d1-processing start
+
+1.0.2 process 
+0. Turn off processing and indexing daemons (and log aggregation-- not running now)
+1. Take out CN1 from DNS, and shutdown CN1
+2. Upgrade CN1 (which turns on tomcat)
+3. wait
+4. Point DNS only to CN1
+5. Turn off tomcat on CN2 and CN3
+6. Upgrade CN2 and CN3 (which restarts them)
+7. wait
+8. Point DNS  to all CNs
+
+
+   
+Stories for 1.0.3
+    1) toggle switch in node.properties that will set the CN Rest service to Read ONLY
+    2) Pull out HZ client configuration into the /etc/dataone for d1_processing, cn-rest-service, indexing
+    3) modify debian post inst script to change group names in HZ configuration files in /etc/dataone, maybe append the version # to a hazelcast group base string
+    4) create manual process to communicate new LDAP passwords
+    5) research methods to migrate from one datastructure to another in hazelcast and LDAP (switch a 1.0.x compliant systemMetadata structure to a 1.1.x structure without shutting down services) 
+
+
+Stories for 1.1.0
+    1.) Migrate the solr index.
+        a. Install should detect a migration upgrade and echo to console that a migration is needed.
+        b. Start index task generator daemon.
+        c. Migrate solr search index schema: /usr/share/dataone-cn-index/scripts/migrate-search-index.sh.
+            i.)  Requires sudo permission.
+            ii.) Handles creating new solr core, running index tool, and starting the index processor when complete.
+

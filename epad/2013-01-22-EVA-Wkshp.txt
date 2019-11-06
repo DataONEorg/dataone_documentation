@@ -1,0 +1,462 @@
+#persist
+
+EVA Working Group Meeting
+January 22-23, 2013
+
+Conference Room 10.099
+2 MetroTech Center
+
+Participants
+Steve Aulenbach 
+Ben Burnett
+Fernando Seabra Chirigati
+Bob Cook
+Aritra Dasgupta
+Harish Doraiswamy
+Arthur Endsley
+Juliana Freire
+Sasha Harauk
+Bill Hargrove
+Forrest Hoffman
+Debbie Huntzinger
+Bertram Ludaescher
+Anna Michalak 
+Jorge Poco 
+Rémi Rampin
+Dan Ricciuto
+Christopher Schwalm
+Claudio Silva 
+Colin Talbert
+Dave Vieglais
+Yaxing Wei
+Vineet Yadav
+
+*************************************
+List of ideas to come back to at the end of this EVA Workshop
+
+Idea: 1) implementing data assimilation algortihm into ILAMB; 
+
+Idea 2) Data assimilation models produce ensembles of model results. Having the capability to process, visualize, calculate statistics on, and evaluate that ensemble of results would be helpful.
+
+Idea 3) Multidimensional scaling (both metric and non-metric)
+***********************************
+
+NACP:  Regional Synthesis
+Matrix of model results (4 x 3 matrix of model maps):
+    hard to distinguish differences
+    may want to plot clusters with distances indicating degree of similarity
+
+mean flux by biome (land cover designations)
+    for a collection of different models
+    
+Model structure:
+    how to display similarities and differences in how models represent ecosystem processes and driver data (input data)
+        debbie showed tables
+        
+        
+MsTMIP results:     
+Latitudenal means (aggregating 9 model results)
+
+hot spots of interannual variability
+    pixels where the standard deviation of annual totals exceed  the 75th, 90th, and 95th percentiles
+    use coefficient of variablity instead of percentiles?
+    be nice to drill down to look at when, which models, size of the parameter (GPP, NPP, respiration, etc.)
+    
+Debbie's "Visualization Help"
+ *     idea for how to visualize and track model structural differences
+ *     visualize changes in model output (multi-model spread / agreement) with time (spatially)
+ *     visualize how sensitivitiy to different drivers differs among models
+ *     link differences in ouput back to model structural differences
+  
+  
+    
+    From Anna Michalak:
+    Three broad types of visualization needs:
+    - Scientific exploration / brainstorming, that typically require, at least at the outset, a dynamic and flexible interface (typical use: scientific discussions within group/labs/workshops)
+    - Summary visualizations that can convey scientific information / conclusions in the most effective way (typical use: presentations, publications, project websites)
+    - Simple (but not simplistic!) representations of broad summary information used for education, outreach, decision-support, etc. (typical use: stakeholder briefings, interdisciplinary collaborations, project websites, outreach workshops, teaching)
+Additional question:
+- Web-based visualization that does not require a local copy of the day, which will enable the continued use of data beyond the nominal end date of a project / funding cycle.
+
+Jorge's Demo of UV-CDAT
+Utility ideas:
+-be able to load different vegetation masks, or select a specific region, that fluxes can be aggregated to...then plot time series. 
+-
+
+Jorge's talk:  http://uv-cdat.llnl.gov/presentations/PDF/UVCDAT-Seminar-08.16.2012.pdf
+
+
+Aritra:
+toggling model structure:  
+keying model structure (via colors or mouse-over highlights) to the model output (2-d projection plot & clustering)
+Matrix View as a way to analyze 2 or more 2-d projection plots.
+  - which models are totally/somehow similar in structure/model output
+
+
+Bertram and Yaxing's talks
+what could provenance do for Forrest?  System level provenance tracking to ensure that the provenance of library objects used are known and can be used in the future.  Now the provenance of these system objects are not tracked.
+
+Note - Make API call for determining obsolescence chain available in libclient for DataONE - this is a commonly requested feature.
+
+Note - Ensure that workflow can be stored as an object that has an identifier so that  usr may retrieve the workflow and re-use it , perhaps with different data input, and cite a workflow in publications.
+
+Dan's Talk:
+- parallelization of model analysis/visualization
+- ParCAT, developed by Brian Smith at ORNL, for parallel processing netcdf-based datasets, writtern in C, uses pnetCDF and MPI
+
+Dan's Needs:  parallel easy-to-use framework for interactive, reproducible visualizaiton and diagnostics, scalable to big data
+
+Dan's Demo: EDEN
+
+Forrest's presentation, Data Mining for Climate Change Model Intercomparison, is available here: http://www.climatemodeling.org/~forrest/presentations/Hoffman_DataONE-EVA_20130122/
+
+EVA:  Ideas for collaboration (Claudio)
+1.  machine learning and visualization interactions
+     Forrest Hoffman and Bill Hargrove
+     Jorge, Harish, Claudio, Vineet, Arthur
+     
+     build on President's big data initiative
+    
+    
+    
+2.  Evaluation/Review of visualization techniques for climate community experts
+     Aritra leads, with volunteers
+         Anna, Debbie, Steve, Yaxing, Dan Ricciuto, Forrest, Claudio
+         
+         need to bring in Rosie and Dave Lawrence Via Steve Aulenbachj
+         
+     usability assessment for various visualization techniques, pros & cons for them
+        pull together wide range of figures / maps / etc and get expert community input on utility
+        
+    contribution to show how visualization maps / figures have improved through interaction and collaboration with vis group
+    
+    need to have collaborations between modelers and visualization experts throughout the activity, for different types of audience/purposes (3 different types needs mentioned in Anna's notes)
+    
+        history of how climate data have been presented
+            based on IPCC reports 
+    
+    IPCC Working Group II (Impacts, Adaptation, and Vulnerability) technical support unit (TSU) :  Located at Carnegie and Anna can coodinate with them if there is interest in learning from their experience.
+    Anna: How broad is the evaluation/review scope defined? Scientifc audience only? We may need the contribution from social science people by doing surveys.
+    
+    
+    
+3. (Maybe) another paper focusing on the visualization needs of policy makers.
+    need to engage resource managers / social scientists to identify types of analysis and visualizations
+
+    Anna, Arthur, Debbie, Bill, Steve Aulenbach, Jeff Morisette (??), 
+
+    may be of use for farmers and commerical fisheries (those who use natural resources)
+
+    involve Molly Brown, Molly McCoy
+    Jeff Morrisete:  USGS 
+    National Climate Assessment  GCIS
+    NOAA Socio-Economic Climate Group (Boulder) 
+    
+    
+4. A working group/focus group/proposal on the visualization needs for multiple-dimensional  Scaling
+    metric and non-metric
+
+place a group of (1) models or  (2) models and observations in the same phase space for intercomparison
+
+    potential method for looking at ILAMB processes
+    
+    Vineet, Debbie, Bill Hargrove, Anna?, Jorge, Claudio
+
+Anna: I am potentially interested in topics 2, 3, and 4, but in the interest of not spreading myself too thin, feel free to down-select me to one or two topics depending on the needs / interests of others in the room.    
+    
+5. (Day 2) Expand on the DataONE Provenance-Workflow (VisTrails) demo (Yaxing et al) to show DataONE tool & infrastructure integration
+
+lead by Prov / Workflow Working Group, tie in to the EVA WG
+Bertram and Yaxing and Colin
+link to Brokering approach (Stefano Nativi, Italian National Research Counsil)
+prehaps prepare for demo-ing at the NSF reverse site visit on February 
+
+Build a common infrastructure  with Vistrails/UV-CDAT as the fundamental engine that can integrate difference components together: DataONE, broker, scientific workflow, provenance
+
+Summer internships:
+    use for EVA activities (above)
+
+
+Key Future Issues that need to be addressed
+1.  Common problem with large data sets:
+    move the data to where the model is (and vice versa)
+    a concept that needs to be included as we work through the above five identified issues
+
+2.  Model compositing:  averaging across models
+    figure out how to composite models that are similar, especially for resource managers / policy makers / decision makers
+    too many projects are averaging models
+    
+    need to come up with some best practices (because there are some that aren't good at all)
+    is there a weighting method, that could weight bad less than good
+    tools / methods that are a better approach for looking at ensembles
+    
+
+*** DAY 2 ***
+=========
+- Presentation by Colin (?) on use of VisTrails
+- Bertram: This might make a nice example for an "executable paper"; suggest to  check with Juliana
+- Q (Arthur): I have a bunch of Python-based workflows, how can I get them easily into VisTrails (at least some of them)
+ - A: ... 
+ 
+ Benchmarking
+ 
+ ILAMB Talk -- Forrest
+ 
+ exploratory vis to determine scoring profiles / algorithms
+ 
+ also after the fact exploratory viz to change weightings to adjust for where model works well or doesn't work well.
+ 
+Forrest's presentation, The International Land Model Benchmarking Project (ILAMB), is available here: http://www.climatemodeling.org/~forrest/presentations/Hoffman_DataONE-EVA_20130123.pdf
+ 
+ MsTMIP Talk on Benchmarking -- Christopher
+ 
+Yaxing: overview on larger, integrated framework
+* Top level:
+-- Analysis/Vis Tools
+-- Model-Data Comparison
+-- Benchmarks (ILAMB, MsTMIP)
+
+* Central piece: 
+-- WF library (Analysis Modules, Vis Modules)
+-- on top of VisTrails, UV-CDAT
+-- on top of model outputs, observations, ... 
+-- ... mediated by "brokers" (?)
+
+* Vertical (left)
+- ESGF, DataONE (again, via brokers)
+
+* Vertical (right)
+- Provenance tools (ProvEx, others)  
+
+* Access Broker (Access & Mediation Gap Analysis & WF, .. )
+Nativi's talk at AGU 2013:
+http://www.agu.org/focus_group/essi/union.php
+
+
+* Colin: working with Dave Meier (? which one), connecting THREDDS, VisTrails
+Vision aligns well with species distribution modeling interest.
+
+* Yaxing: Model-Data Intercomparison (EVA) Example
+(workflow diagram)
+- output of wizard will be a WF, executed on a server, close to the data
+
+- Fire Varpor Visualization (VisTrails wf running on server backend);
+lightweight UI: just modify WF parameters
+
+- Expanding on existing tools (UV-CDAT, VisTrails) 
+
+
+Discussion of MMIF
+    adding functionality to UV-CDAT for exploratory analysis visualization
+    evaluation  of different approaches for benchmarking (spatial, temporal, weighting, parameters, data sets, etc.)
+
+Vineet Yadav:  SI2 Talk
+too much time spent processing data :  roughly 50% of the time
+
+
+
+*************************************************** 
+End of EVA Workshop Discussion
+
+Five groups to look at model-model intercomparisons (first day)
+
+1.  machine learning and visualization interactions
+     Forrest Hoffman, Bill Hargrove, Jorge, Harish, Claudio, Vineet, Arthur, Christopher
+
+    new visualization methods for model evalutations (CMIP5)
+    based on Forrrest's and Bill's past work
+    agnostic as far as tools to be used
+    
+    machine learning approach:  
+            for different models, use small number of clusters
+            for models that are different may want to use a large number of clusters
+            
+       Harish as the coordinator
+       use a series of teleconferences to develop a plan built on Forrests' and Bill's efforts
+       Doodle poll to optimize time for telecon
+                
+2.  Evaluation/Review (usability assessment) of visualization techniques for climate community experts
+     Aritra leads, with  Anna, Debbie, Steve, Yaxing, Dan Ricciuto, Forrest, Christopher, Claudio, Bob
+
+    develop talk for NACP meeting during week of February 4, based on Aritra's talk yesterday
+    model intercomparison:  same output from multiple models and multiple outputs from a single model
+    
+    identify visualizations used by climate scientists and develop a method for evaluating the visualizations
+    
+Are we talking just about visualizations in publications, or also animations / visualizations on websites etc.?  In other words, are we just talking about static material, or also dynamic material?  Both static and dynamic
+    
+    need to identify types of assessment tools used for dynamic and static visualizaitons
+    
+    how to use exploratory / interactive visualizaitons to facilitate / improve analysis 
+   
+    history of how climate data have been presented
+            based on IPCC reports 
+    
+    IPCC Working Group II (Impacts, Adaptation, and Vulnerability) technical support unit (TSU) :  Located at Carnegie and Anna can coodinate with them if there is interest in learning from their experience.
+
+
+    develop survey questions appropriate for climate modeling experts (e.g., top 3 / worst 3)   
+    link to DataONE Usability and Assessment Working Group
+
+
+teleconferences to develop a plan for the paper
+    target date of September 2013
+
+
+
+3. (Maybe) another paper focusing on the visualization needs of policy makers.
+ * need to engage resource managers / social scientists to identify types of analysis and visualizations
+
+    Anna, Arthur, Debbie, Bill, Steve Aulenbach, Jeff Morisette (??), 
+
+    idea to defer to a later time
+    
+    narrow the scope to be manageable
+    perhaps through a series of case studies
+        1.  fire visualization case study (Nancy French, Tyler Erickson, and Arthur Endsley)
+            focus on lessons learned
+        
+Web-based visualization of fire data, work done by a project of Nancy French, provides some visualization  scenarios for resource managemers / decision-makers / policy makers..
+
+Development of decision products for spatial quantification of carbon emissions from wildfires for North America: http://mtri.org/fire.html
+        
+Wildland Fire Emissions Information System: http://wfeis.mtri.org/
+ 
+        2. Climate model output for resource managers / decision makers -- Case Studies
+                Jeff Morisette
+                consensus of scientific results needs to be conveyed
+                coherence of results
+            this topic is broad, but could be focussed by looking at specific resources being managed
+            resource users:  commercial fisheries, forestry, public lands, agriculture
+        
+        <<Taccimo --USFS tool to help foresters bring climate change results into their plans / decisions
+                decisions can be controversial and sometimes are debated in legal system>>
+        
+        
+4. A working group/focus group/proposal on the visualization needs for multiple-dimensional  scaling
+    metric and non-metric
+
+ * place a group of (1) models or  (2) models and observations in the same phase space for intercomparison
+ * potential method for looking at ILAMB processes
+    
+    Vineet, Debbie, Bill Hargrove, Anna, Jorge, Yaxing, Forrest, Christopher
+
+    Vineet:  will examine the model structural binary data 
+        
+    not sure what will become of this one
+    this is a pilot study that may build into a larger activity, perhaps even a proposal
+    
+    comparison studies
+    chocolate chip example: 
+        use a variety of recipes to produce cookies, then have tasters evaluate the cookies
+        use multi-dimensional analysis to show the mix of ingredients that this group would most like, even
+      though that one cookie was not baked
+    
+    congressional voting records as another example
+    
+    low probably of success, but huge payoff if successful
+    
+5.  (Day 2) Pilot Prototyping of "Provenance-aware Model Exploration, Evaluation, and Benchmarking Cyber-infrastructure"
+     expand on the DataONE Provenance-Workflow (VisTrails) demo (Yaxing et al) to show DataONE tool & infrastructure integration
+lead by EVA Working Group, tie in to the Prov / Workflow Working Group and UV-CDAT group
+Bertram, Yaxing, Colin, Jorge, Aritra, Christopher,  Steve, ProvWG members (Victor, ... ), Dave Vieglais
+
+demo for the reverse site visit in February
+Prov Post Doc to present the demo in two weeks
+
+Lead:  Yaxing and Victor
+
+Yaxing would like to lead some follow-on activities to go beyond the coming DataONE-EVA-ProvWG demonstration to do some prototyping based on the "Provenance-aware Model Exploration, Evaluation, and Benchmarking Cyber-infrastructure" concept. He treats this prototype as a pilot that may leads to a future Model Benchmarking Framework proposal, as listed in "Benchmarking activities" bullet below.
+Plans:
+Stage 1: 
+   1) Extract several components from the MsTMIP benchmarking profile and implement VisTrails modules and workflows
+   2) Identify and implement core analysis modules to support the pilot benchmarking prototype in 1)
+   3) Based on the visualization needs evaluation results from group 2 and 4, choose and implement several visualization techniques as VisTrails modules and put them on top of workflows implemented in 1).
+   4) Build prototype web-based user interface
+Stage 2:
+   1) Integrate the prototype with DataONE infrastructure
+   2) Bring in provenance-aware tools developed by DataONE ProvWG into this big picture.
+
+    protyping and testing by Yaxing, Jorge, Aritra, Steve, Christopher, and/or summer interns
+    using the MsTMIP profile
+
+link to expert evaluation of model visualizations (item 2) and multidimensional scaling (item 4)
+
+evaluate management aspects and values of provenance querying
+value added 
+
+Products:  
+1) paper based on the coming DataONE_CI-EVA-ProvWG demo (end of spring: March?)
+2) prototype implementation, as described above (may leverage resources from DataONE summer project)
+3) proposal on Multi-model intercomparison Framework (Fall? to flesh out the prototype tools)
+
+
+Benchmarking activity
+1.  Multi-model intercomparison Framework (MMIF)
+
+Yaxing, Aritra, Jorge, Christopher, Anna, Debbie, Forrest, Bob, Ben Burnett....Bertram (to add provenance)
+Christopher:  lead
+
+    pilot activity UV-CDAT
+        connection to group 4's activity (pilot protyping)
+        
+        need to develop a list of features for the pilot and the proposal
+              
+    proposal writing
+        tied to functionality and specific solicitation
+            DOE BER
+            NSF SI2:  released, should check timing / dates
+            
+        close collaboration with ILAMB, MsTMIP, CMIP5
+        
+
+
+
+Using DataONE Summer Intern Program
+
+Also Claudio may have summer interns
+
+
+Web-based Visualization Solutions:
+- WebGL: http://cscheid.github.com/facet/demos/index.html
+- http://openclimategis.org
+
+*****************************
+DataONE Summer Intern Program
+
+We are beginning to plan for the 2013 Summer Internship program and would like to solicit project proposals from you / your working groups.  For those of you not familiar with the program, DataONE funds approximately 8 student interns to work on specified projects for 10 weeks over the course of the summer (see http://www.dataone.org/internships). Interns receive a stipend of $4500 and have their expenses paid to attend the DataONE All Hands meeting. Proposals need to be received by February 4th 2013 for consideration as the internship program will be announced on February 15th (see below for approximate timeline of activities).  
+
+If you are interested in working with a student this year and have an appropriate project in mind, please subject a project description by adding to the shared google documents found here: http://bit.ly/W0RMUE.  Be sure to include the following information:
+Project Title
+Project Description
+Primary Mentor
+Secondary Mentor (who must be willing and able to take an active role)
+Additional Mentors (if any)
+Necessary Prerequisites
+Desirable skills / qualifications
+Expected Outcomes
+The project description should be approximately one paragraph and detail the scope of the project, the relevance to DataONE and the expected contribution of the student to the project.
+
+Potential mentors must have a DataONE affiliation and members of the Leadership Team, Working Groups co-chairs, DUG chairs, Working Group members and CyberInfrastructure Team can all participate as mentors.  Therefore please forward this email to your Working Group.
+
+By submitting a project proposal you are agreeing to mentor a student for the duration of the internship period and to meeting the neccesary dates in the schedule below.  Proposals need to be added to the Googledoc by February 4th 1200 MT.
+
+
+
+(Provisional) Internship Timeline
+Feb 4th - project proposal deadline
+Feb 13th - projects identified
+Feb 15th – application period opens
+March 10th – deadline for applications
+March 11th - Materials made available to mentors for evaluation
+Mar 20th -  Evaluation / review period closes
+Mar 22nd - Mentors informed if their project will be funded (in the case of more than 8 project proposals)
+Mar 25th - 29th: Phone interviews may be conducted for top interviews at Mentor's discretion (more information to follow)
+Apr 1st - Deadline for final decisions on student interns by Mentors
+April 3 – notification of acceptance
+May 27 – program begins
+June 24th - Jul 5th - Mid-term evaluations
+Aug 2nd - program concludes
+Oct 1-3rd – DataONE All-Hand Meeting
+********************************************
+

@@ -1,0 +1,163 @@
+#persist
+
+
+EVA Planning Teleconference
+
+Please use the following numbers:
+Toll Free Number:  866-703-9626 
+Pass Code:  767574 
+
+Participants:  Steve Kelling, Claudio Silva, Debbie Huntzinger, Forrest Hoffman, Aritra Dasgupta, Jorge Poco, Dave Vieglais, Matt Jones, John Cobb, Yaxing Wei, Bob Cook
+
+Agenda
+1.  EVA ILAMB activity
+
+2.  EVA eBird activity
+
+3.  Supplemental Grant for DataONE (Xsede)
+
+4.  Other Topics
+
+
+Agenda
+ 
+Goals of this meeting are to discuss and seek your input on the next 6 to 12 months of EVA and ILAMB activities.
+ 
+Have a new post-doc – Aritra Dasgupta (UNC-Charlotte) now working with Claudio’s team in NYC
+ 
+1.   EVA Carbon Model  activity
+ 
+Model analysis - visualization
+Use UV-CDAT tool and add in new functions to analyze model output (multiple models), building on work that Jorge did this past summer 
+ 
+Activities
+North American Carbon Program, Regional Synthesis
+Data:  ftp://nacp.ornl.gov/synthesis/2008/firenze/continental/ARCHIVAL/standardized-gridded/
+ for this study, data / parameters are well defined and harmonized
+ 
+           Multi-scale Synthesis and Terrestrial Model Intercomparison Project (MsTMIP)                
+            Data:  ftp://nacp.ornl.gov/synthesis/2009/frescati/model_output/global/
+ 
+MsTMIP Science Goals (overview):Protocol/experimental design manuscript in prep with goal of submitting to JMD before AGU. Manuscript outlines goals and protocol for MsTMIP activity.
+Fullly capture the definitions of model output variables to make sure apple-apple comparision. E.g. Net Ecosystem Exchange may have diffierent definitions in different models.
+ 
+  What are the most dominant controls on land-atmosphere carbon exchange (globally, regionally)? 
+  to isolate, interpret, and help inform understanding of how differences in process representation and parameterizations among current TBMs impact estimates of carbon uptake and release.
+  Evaluate whether models with similar structural attributes produce similar land-atmosphere carbon exchange estimates
+ 
+            
+            DataONE Provenance Working Group:
+            Yaxing is a member; WG is using the MsTMIP / EVA provenance example
+ 
+            Earthcube Brokering Activity (NSF):  using the Regional synthesis and MsTMIP as use case
+            
+ 
+Model-observation intercomparison
+o   build on the Model analysis and visualization
+ 
+o   use ILAMB analysis and scoring methods in UV-CDAT Framework
+     add in MsTMIP methods as they become available
+ 
+ 
+Near term schedule:
+November 27 (3pm EST)?/28, 2012 EVA WG Teleconference 
+--> use gotomeeting? or webex?
+December 18-19  External Advisory Board Meeting 
+January EVA WG Teleconference
+January 22-23, EVA WG meeting (NYU-Poly, Brooklyn)
+February 7-8, MsTMIP Workshop (Albuquerque)
+Spring Major NSF Review:  DataONE Reverse Site Visit (Washington, DC)
+ 
+ 
+ 
+ 
+2.  EVA eBird activity
+    - opportunity to analyze / visualize new model output
+    - << perhaps develop a vis/analysis service for eBird Member Node???>>
+ 
+ Steve:
+ TG activity from 2010-2011 has been repeated/expanded for 2012
+ Using Lonestar at TACC
+ used 1..5-2 MSu's
+ Like to explore ways that DataONE or XSEDE could take advantage of what has been done.
+ The cool thing is that now we are collecting sufficiently larger volumes of data from eBird. We have +~80% in data. So our estimates of occurance prob. can resolve to 3 KM for lower 48 US areas.
+ We are also exploring doing entire Western Hemisphere modelling.
+ Example: Barn swallow. 
+ Some breed in Alaska and winter in Argentina
+From prio conversation with Cook and Cobb, this might be relevant.
+
+Bob:
+So maybe we could think about a visualization / analysis service for the eBird or AKN MN within DataONE
+
+Claudio:
+We are considering a re-write of vis. tool
+We would need someone with knowledge of WebGL
+The main thing is to try to figure out how to provide a service that we can accomplish andthat is useful.
+Going from the exsiting prototype to one that can be used over the web may be a challenge. We may wnat ot be more simplified.
+My other concern is that with such a alrge increase in data from the 2012 runs, how can we handle the larger sets of data and how can we focus on what is the interesting parts of the data.
+
+Steve: We talked about a web-client before for Bird-Vis. That seemed like a challenge a couple of years ago. It may be a greater challenge now since there is so much more data schlepping behind the vis presentation.
+
+Claudio: Although we may have more experience now. But it is defnitely a challenge
+
+John: Who would use the successful outcome?
+
+Claudio: If we succeed, it would make people's life easier. Instead of haveing to downlod to desktop and install much SW, they could point their browsers to a web-app and use it there.
+Also a service is nice because it can cnetrally coordinate SW updates and deployments.
+"I think all Vis is going web" [JWC: I agree]
+
+Steve: The other way to answer that question (e.g. the Nature Conservancy in CA) is really interested in using Bird-vis as a cartographic tool because you can change a sclae so easily w/in Brid Vis. We have had a lot of requests by land managers who would like to examine results of our species distribution models.
+For example using Brid-vis to identify/qualify land purchase for preservatio or for federal land-managers to plan for land management.
+
+Bob: Perhaps we have two vibrant and parallel EVA activities. Maybe the way to proceed is two EVA activities working independently. Maybe let's plan on a follow-on Telcon.
+Perhaps there is some possiblity to support via NASA?
+
+Steve: that opportunity was really more on modeling than vis.
+
+AI: schedule a follow-on Telcon
+
+
+3.  Supplemental Grant for DataONE (Xsede)
+    John Cobb
+    
+    Finalizing White Paper for a Supplement.
+    Core idea: Interoperability between DataONE and XSEDE (https://www.xsede.org/)
+    to show how to couple data repositories with larger scale HPC and other XSEDE services.
+    Means: 
+        Create an XSEDE "gateway" for DataONE data interoperability
+        Deploy DataONE MN on Nautilus/RDAV within XSEDE
+        As needed modify DataONE API implementations (GMN) to include content triggered replication and other mods
+        Science cases:
+            Similar to MsTMIP above
+                Deposit to DatatONE MN (DAAC?)
+                replicate to LENS
+                Deploy MN on RDAV front-end
+                Run workflow's on nautilus
+                Deposit output to DataONE MN (DAAC? , or other MN)
+                New insight"
+            eBird interactive data publication
+                Deposit and publish latest eBrid results in a DataONE MN
+                Provide interactive analysis tools operating on that data-set (including new functionality)
+                Deploy analysis capability on XSEDE (RDAV) and make available to larger community
+                
+    Needs form this group:
+        1. Validation of above concept
+        2. More in depth discussion of the science user cases. 
+                What to do?
+                Science impact of that work?
+                How to accomplish it?
+                
+Yaxing: currently we are using UVCdat. Jorge (and maybe Aritra) will be developed  WF's to do some comparison analysis on LENS.
+Another topic: improve UVCdat to use parallel computing on LENS. Currently UVCdat cannot be easily paralleized.
+
+Bob: Also a reason to use XSEDE is that having a local data store is attractive in that it obviates the need for data staging as part of the workflow.
+
+Yaxing: currently we copied all MsTMIP model output data onto LENS storage system (HPSS?). 
+ 
+Claudio: Doing both sicence cases is probably too much. WE should pick one - althogh both are intersting.
+
+
+4.  Other Topics
+
+
+

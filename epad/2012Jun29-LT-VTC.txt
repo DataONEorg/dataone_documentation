@@ -1,0 +1,155 @@
+Attendees: Rebecca, Carol, Suzie, Bruce, Hilmar, John Cobb, Amber, Matt, John Kunze, Bill, Dave, Bertram, Steph
+
+Regrets: Bob Cook, Mike Frame
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Jun 29, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/816211272
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (773) 897-3015
+Access Code: 816-211-272
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 816-211-272
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012Jun29-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-06-29
+
+1) CI Update (Dave)
+LTER MN is now online (sooner than expected).  Pisco is ready to go - they are ironing out some issues. Had first significant issue to deal with the ORNL DAAC. The identifiers that were created for the DAAC need to be removed and new ones created.  DataONE team had assumed identifiers were immutable so this conflicts with that assumption.  New patch is being pushed out to the CN - mostly look and feel of ONEMercury.  Dryad not quite ready. Merritt MN has a few issues related to access control that need to be dealt with before it is ready to go. Next MN will be AKN , then ONEShare.
+ITK: main focus will be to get R-plug-in back to functional state. Followed by Morpho. Need to clarify whether or not the Excel tool (DataUp) uses the DataONE API. Also working on getting the documentation in shape for the DUG. Overall things are looking good.
+DataUp will only use one API now (Merritt API) - next to be implemented will be the DataONE API. August 30th will be more public release - not clear how much time the MS developers will have to work on this code or if other developers can contribute. No DataONE MN can respond to the "generate identifier" request.  The code is open source and will be in respository, oversight by Over??? All is .net code. The plug-in works only with Windows but there is a web app that can be used on other architectures
+
+2) Web site licensing(Budden)
+
+DataONE Copyright Licensing
+ 
+This document summarizes the discussion of a conversation by the Leadership team on June 22nd and proposes a course of action for consideration.
+ 
+The licensing in question refers to DataONE created resources currently published on the dataone.org website.  It does not refer to data, metadata or other material held within DataONE Member Nodes nor to material published in journals or other contexts (e.g. conference proceedings).  In these instances, the copyright license is applied by the publisher or Member Node directly.
+ 
+Additionally, the licensing under discussion does not currently pertain to software or materials in progress by WGs that are not published online.
+ 
+License Type
+The Leadership Team felt that a more open license was desirable and that it would be beneficial to have a simple license policy applied to all works.  They also felt it appropriate that DataONE and/or individual authors be given attribution for the work created.  Two license types were discussed.
+ 
+No Rights Reserved - CC0
+CC0 enables scientists, educators, artists and other creators and owners of copyright- or database-protected content to waive those interests in their works and thereby place them as completely as possible in the public domain, so that others may freely build upon, enhance and reuse the works for any purposes without restriction under copyright or database law.
+In contrast to CC’s licenses that allow copyright holders to choose from a range of permissions while retaining their copyright, CC0 empowers yet another choice altogether – the choice to opt out of copyright and database protection, and the exclusive rights automatically granted to creators – the “no rights reserved” alternative to our licenses.
+ 
+Attribution - CC BY
+This license lets others distribute, remix, tweak, and build upon your work, even commercially, as long as they credit you for the original creation. This is the most accommodating of licenses offered. Recommended for maximum dissemination and use of licensed materials.
+ 
+The crux of the discussion concerned copyright.  Essentially, we should not use licensing to enforce ethical codes of practice (e.g. attribution).  CC BY implies copyright and DataONE as an entity does not have rights to hold copyright (?).  If we anticipate wanting to hold copyright in the future then CC BY might be a consideration but if not, CC0 may be more appropriate with an explicit statement about requested attribution.
+ 
+Also, we need to communicate this clearly to all WG members and others (e.g. interns) working on DataONE projects.
+ 
+Course of action
+1)     Leadership team should make a recommendation for CCBY or CC0 (at the next LT meeting – June 29th)
+Executive Team recommends CC0
+
+2)     The following language would be used to communicate the outcome to WG members etc (open to revision)
+“The Leadership Team recommends that all material published on the DataONE.org website be licensed as CC0/CCBY (delete as appropriate).  If Working Groups feel a more restrictive license is required for a product, WG leads should submit a license recommendation and rationale to the Leadership Team for review.”
+3)   All published materials will be checked for author attribution information (credits).
+4)   Authors of web published projects (Best Practices, Software Tools, Primer, Education Modules) will be contacted and informed that the material is being listed as CC0/CCBY (delete as appropriate) and be given the opportunity to comment.
+?5? Could/should DataONE add appropriate CC* icons various templates (ppt's, ...) [jwc]
+Hilmar will send edits of document to Amber. Bruce has also commented on the document so Amber will also send to him for review. Question about how permission will be obtained from the Working Group members and workshop attendees who have previously created content for the web.
+
+BEW -- there are some additional complications on copyright from individuals where those individuals are US Federal Civil Servants and when they are employed by things like an FFRDC or a company.  In those cases, the individual often does not have the authority to transfer copyright.  "All your thoughts belong to us".
+SLA: This could also be a problem at some academic institutions which have more restrictive policies regarding IP.
+
+Clearing the copyright on the contents of the public web site may be a long, involved activity.
+
+Another approach would be to add terms to the sub awards - wouldn't cover Working Groups but would apply to the development work.
+
+Amber & Rebecca will put a document together and send out to LT for review and approval.
+
+
+
+3) Planning for Reverse Site Visit (Koskela)
+
+
+
+Last Review:
+ Attendees:      Bill Michener, Rebecca Koskela, Dave Vieglais, Amber Budden, Carol Tenopir, Bruce Wilson, Bob Cook, Matt Jones, John Cobb, Steve Kelling
+Agenda for February DataONE Review
+Day 2 – Wednesday, 23 Feb 2011
+Stafford II Room 595
+7:30 – 8:00 Coffee and Technology Checks and Set-up
+(40 min) 8:30 am - DataONE Project Overview (40 minutes – presentation, 0 minutes - Q&A)
+(60 min) 9:10 am - Cyberinfrastructure I: design, R&D, and implementation (60 minutes – presentation)
+10:10 am – break
+(120 min) 10:25 am - Cyberinfrastructure II: prototype demos and plans for years 3-5 (60 minutes for presentation; 60 minutes for Q&A)
+1:25 pm – Cyberinfrastructure questions presented to DataONE
+(60 min) 1:30 pm - Community Engagement (40 minutes – presentation; 20 minutes Q&A)
+(60 min) 2:30 pm - Sustainability (40 minutes - presentation; 20 minutes - Q&A)
+3:30 pm – Break
+(45 min) 3:45 pm – Responses to Cyberinfrastructure questions presented by DataONE (45 minutes)
+(40 min) 4:30 pm - Challenges and Mitigation (20 minutes for presentation; 20 minutes for Q&A)
+(40 min) 5:10 pm - Future Plans and DataONE Activities (20 minutes for presentation; 20 minutes for Q&A)
+5:50 pm – Concluding statements from Michener and Choudhury on collective vision and active and planned collaborations for DatNet Federation (20 minutes – presentation, 10 minutes Q&A)
+6:20 pm – End of Presentations
+6:30 pm – Executive Session to Draft Questions to DataONE
+
+Bill will coordinate with NSF for the particualrs about the enxt site visit.
+
+Items for discussion:
+ * Additions to what was presented
+ * Amount of time of for subject matter
+ * Demos
+
+Matt will talk to the Semantics WG (Deborah & Mark)
+
+Bertram: suggesting to include "provenance in scientific workflows" (ProvWG): 
+fits very nicely with "reproducible science" theme. Also workflow technology itself is a form of data & tool integration technology... Also linkage with semantics would be useful (there's quite a bit of opportunity to link semantics with workflows and provenance!... for now the WGs are mostly working independently ... ==> use Fall AHM to link-up some more..!?)
+Back to the provenance side: our "D-OPM" model is coming along nicely (will be supporting Kepler, Taverna, and now also VisTrails .. and to some extent R provenance!)
+Exploring with W3C on linking this to the "official" standard: W3C PROV..
+
+Large issues:
+When/ Where? : ~April to August 2013 in Arlington
+Scope: show progress and set agenda for follow-on proposal/activity
+
+Review will probably be longer this time around - a day & a half - which topics could be lengthened?  Demos? 
+ * 1.5 -2 hr session to present research results of the WGs
+ * Extra time for Usability & Assessment (will have the librarian & data manager assessments and maybe scientist's follow-up and/or publishers),  best if can be tied to how results influence system design or impact of dataONE
+ * Personas & matching them with users & the tools that are being used
+ * Carly getting reviews back from instructors that could complement the assessment work
+ * Trainings and impact (# reached, etc)
+If U&A, personas and edu are all rolled into CE, then need +20
+ * Numbers of trainees reached through training, workshops, etc
+ * Sustainability? +15-30 minutes
+ * Maybe a discussion of operational experience/successes with V. 1.0(+) infrastructure.
+   * Demos
+   * Status of MN's
+   * ITK developments
+   * Highlight interoperability (perhaps Irods as well)
+   * Usage (We need an outreach campaign)
+ * Maybe also a session to highlight science highlights (or interleave throughout sessions)
+
+
+Bill suggested having some of the previous review panelists on this RSV also to give some continuity and context to new panelists
+
+Let Bill know if you're happy with the time allotted - then put a check mark if want more
+time, then specify how much.  Bill will meet with with NSF July 18 or 19 so would need feedback before then
+
+4) Around the room
+
+John Cobb: Nothing to add
+Steph: nothing new this week
+John Kunze: continuing to work on Merritt MN rollout, DataUp, and ONEShare.
+Amber: At an open publishing NCEAS wg meeting.
+Carol: I'm here at NCEAS with Amber.
+Suzie: SCWG will hold an online meeting July 3.  
+Bruce: Nothing to add
+Deborah: postdoc on board. Visited NCEAS last week.  Will give keynote at ESIP on July 18 - are there other dataOne events there?  i will be there July 18 and 19
+

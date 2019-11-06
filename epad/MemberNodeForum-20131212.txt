@@ -1,0 +1,85 @@
+Member Node Forum - 12 December 2013
+                                                                                           
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings9 January,  23 January, 6 February
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307   (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,   -20130530, -20130613, -20130627, -20130711, -20130725, -20130808,   -20130822, -20130905, -20130919, -20131003, -20131017, -20131031, -20131114
+
+Attending:  Laura, Mark Servilla, Rebecca Koskela, Bruce Wilson, Luke Sheneman, John Cobb
+
+Regrets:  Dave Vieglais, Amber Budden, Mike Frenock
+
+Action items from last time:
+
+LTER's older data has been replicated to KNB successfully - LTER should be able to change to the new PASTA-GMN node.
+
+Draft replication policy change - need to have a sit-down with all  affected parties and discuss - date/time TBD
+
+Agenda:
+
+0. Welcome new attendees - introductions
+
+1. Network-wide update and issues affecting MN's as a whole
+
+Coordinating Nodes issues - some issues with consistency between CNs; at MN Wranglers meeting last week, we expected to have issues resolved this week.  
+    Update?? - issue was that there were inconsistencies among CNs, have been working with one CN the past few weeks; resolution pushed out to next week
+    Q: what happened?
+    A: (Bruce) It was a partitioning of the network in a fashion that we did not anticipate.
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+To ask Mike Frenock (PISCO): are other people able to add data to PISCO now to help with the volume of data?  Mike checked 12/11/13 and it looks like it's good to go.  (bug #4113 completed)
+
+Bug  6183 - MN cant update system metada on the CNs.  Has been worked on by Jing on dev system but still a blocker to Mike.  Trying to switch from  metacat APIs to system SPIs. Chris indicated that is was a problem with  CNs and should be able to update, but Mike can't.
+https://projects.ecoinformatics.org/ecoinfo/issues/6183   Fixed in Metacat but haven't been able to move to production this week - looking at next week.  (This meant week of 18 November - update??)
+
+3. Feature requests/opportunities for collaboration:
+
+(From 11/14/13 MNF meeting - Kevin Webb):  Issue with "only results with data" checkbox in ONEMercury search - currently defaults to checked; see redmine ticket https://redmine.dataone.org/issues/4144; no progress to data as CCIT has been dealing with CN issues.
+
+IDCC MN workshop: Thursday Feb 27th, San Francisco, CA.  In conjunction with the International Digital Curation Conference (Tuesday and Wednesday of that week).  People at prospective MN's interested in getting involved with DataONE are encouraged to attend:  
+
+For details of the DataONE workshop and the other workshops, see http://www.dcc.ac.uk/events/idcc14/workshops%20
+
+For more information about the IDCC conference and registration, see: http://store.bath.ac.uk/browse/product.asp?compid=1&modid=2&catid=28
+
+Mark:  holding off on any suggestions until after PASTA/GMN is up and running
+
+Luke:  NKN would be interested in the MN workshop at IDCC; what does attendance look like?
+Bruce:  current cap at 12 but we could make 13 work; want the group to be small enough to be responsive to attendees
+
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+
+LTER (Mark): hold off on GMN until after the first of the year
+NKN (Luke):  have some questions about Apache configuration, will take it to IRC
+
+If you have any other comments/suggestions about anything discussed here,  please feel free to post to developers@dataone.org or mnforum@dataone.org.
+
+
+OTHER INTERESTING THINGS: 
+
+DataONE survey to build understanding of data needs. "You  are invited to participate in an NSF-sponsored research study, in which  the DataONE (Data Observation Network for Earth, www.dataone.org)  organization is investigating how scientists work. Your responses will  help us better understand how scientists manage their data, which will  then allow DataONE to better serve their data management needs. The  questionnaire should take about 20 minutes to complete" https://utk.co1.qualtrics.com/SE/?SID=SV_aWxuyT94cZBsBb7
+
+contact points: 
+
+NEW EMAIL contact: mninfo.dataone@gmail.com - This email monitored by DataONE staff.  I think we might migrate to this being the primary point of contact for MN questions so we can keep  a better handle on issues/resolutions. 
+
+This isn't being used currently - most of the time we (MNs) just email the person we know or who we're working with.  
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't  forget irc.ecoinformatics.org, channel=dataone if you have an urgent  issue.  CCIT folks are always there and can assist you.
+

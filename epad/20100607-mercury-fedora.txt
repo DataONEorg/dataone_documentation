@@ -1,0 +1,315 @@
+
+
+Mercury Priorities
+
+1) Integration of KNB documents into Mercury for indexing. (Friday target)
+
+Due to different EML versions supported by KNB, we have to extend the implementation.  
+
+Solr 1.4 is not backwards compatible. what is the status of any updates? How much work has been done on this effort?
+issue is that it does not scale. Need to do the 'index' side of things. the UI ?? ,
+updating the 1.3 trunk to be compliant with current needs.
+Most of the changes have been rolled in
+
+As part of debugging and testing , we want to print solr doc to stdout instead of to the solr instance. Use a command line option for the switch.  Use trace mode, allow to operate independent  of  a running solr instance. 
+
+
+2) Crosswalk of SOLR schema attributes to Dataone Search fields.
+  selecting of names for the  remapping of solr terms. use the same names used in architecture doc and  use a copy field to remap
+  -copy field is not an alias, but copies the entire content of a field.  
+  -Other option is change field names in Solr. more work on the UI is a problem
+  -create mapping in CN REST 
+  -change dataone field name definitions
+Decision: create a document to show mapping of DataONE fields to Solr search fields  -(Giri)-
+  see: http://mule1.dataone.org/ArchitectureDocs/SearchMetadata.html
+  
+  
+2010-06-29
+- searchable fields for dataone, right now using mercury field names, and Robert is mapping from mercury fields to expected fields
+options:
+1. use D1 field defs
+2. use copy fields in the schema
+3. map the field names in the cn-service 
+4. change the d1 field names to align with mercury (implement this option)
+
+3) Robert will lead on the Dryad SCI metadata, identify the searchable feilds, return to Jim and Giri for review, then Robert will make the xpath. Doesn't appear that Dryad has 'Abstract' field.  In DC, dc:description element is sometimes used for Abstracts. Need to check with Ryan to find out if Dryad provides abstract in the metadata.
+-Rob, Roger and Ryan will need help with determining the fields to index and the solr facets to use
+
+4)Robert check install on cn-dev. Seems like database is not configured correctly.  Need to address issue of open text username and passwords of databases in configuration files.
+DONE.
+
+5) Facets for the various metadata standards supported.  
+Jim has a done some work on this task but we need to determine best keywords
+
+6) Comment out the line(s) in the JSP that displays 'Project' in the UI search results list
+
+Indexing Notes
+  -- ask about other cross walks (configuration xml) for sci metadata impl.
+  -- address the dryad crosswalk. Format of Dryad sci meta, which fields match mercury index fields. (Roger and Ryan need to be contacted about Dryad xml crosswalk to mercury indexed fields) Maybe Robert takes care of xpath crossreferences. METS xml looks simple.
+  -- example of a dryad scimeta document: http://129.24.0.11/mn/object/hdl%3A10255/dryad.110/mets.xml/
+  
+
+
+Web Interface Notes
+1. -- stylesheet problem: get static copy of dataone.org stylesheets and modify to work with Mercury install (DONE)
+
+create and use static filenames for all the stylesheets (web developers can change the contensts of the stylesheets, and those who refer to the stylesheets will have access to the changes)
+
+-- intropection: list of index terms, list of unique values per term (with counts)
+  facets still an outstanding issue (facets mapping xml code). two levels of facets (top level is common fields that all metadata standards appear to have, the second level are schema specific ORNL DAAC has keywords of 'parameter', 'source' & 'sensor' that can be used as facets. EML has different variety of keywords. Facets have to be described in the facets mapping xml)
+  KNB push will have facets as a first pass
+  Dryad still needs to be described
+  
+-- expose the solr admin interface(done) Fix the Luke schema browser (maybe due to tokenizers of lucene and the fields that were being searched against, fields may not have been tokenized and so inexact search would not return any results)
+
+2. Comment the line out in the JSP  that displays the Project in the search results list.
+
+Public Access Notes
+This week,  we hope to mirror mercury subversion to edss subversion (two projects,  mercury-common and pilot catalogue) DONE
+
+Solr Fields Notes
+
+Provide a crosswalk between the SOLR schema attributes (index terms) and the entries in: Giri will provide
+
+Do we need to display the SearchMetadata for DataONE fields in the UI? There will need to be xml configuration file changes if the fields need to display in UI.
+http://mule1.dataone.org/ArchitectureDocs/SearchMetadata.html
+
+   <copyField source="id" dest="sku"/>
+   <copyField source="cat" dest="text"/>
+   <copyField source="name" dest="text"/>
+   <copyField source="manu" dest="text"/>
+   <copyField source="features" dest="text"/>
+   <copyField source="includes" dest="text"/>   
+   <copyField source="title" dest="text"/> 
+   <copyField source="title" dest="titlestr"/>
+   <copyField source="datasource" dest="text"/>
+   <copyField source="LTERSite" dest="text"/>
+   <copyField source="origin" dest="text"/>
+   <copyField source="title" dest="text"/>   
+   <copyField source="geoform" dest="text"/>
+   <copyField source="presentationCat" dest="text"/>
+   <copyField source="purpose" dest="text"/>
+   <copyField source="fullText" dest="text"/>
+   <copyField source="originator" dest="originatorText"/>
+   <copyField source="originatorText" dest="text"/>
+   <copyField source="contactOrganization" dest="text"/>
+   <copyField source="keywords" dest="text"/> 
+   <copyField source="placeKey" dest="text"/> 
+   <copyField source="decade" dest="text"/> 
+   <copyField source="gcmdKeyword" dest="text"/>
+  <copyField source="project" dest="text"/>
+  <copyField source="site" dest="text"/>
+  <copyField source="parameter" dest="text"/>
+  <copyField source="sensor" dest="text"/>
+  <copyField source="source" dest="text"/>
+  <copyField source="term" dest="text"/>
+  <copyField source="topic" dest="text"/>
+  <copyField source="investigator" dest="text"/>
+  <copyField source="fileID" dest="text"/>
+  <copyField source="manu" dest="manu_exact"/>
+
+
+Example query to list field values:
+In xml: http://cn-dev.dataone.org/datanet_solr/select/?q=water&rows=0&facet=true&face.limit=-1&facet.field=keywords&indent=true
+in json: http://cn-dev.dataone.org/datanet_solr/select/?q=water&rows=0&facet=true&face.limit=-1&facet.field=keywords&wt=json&indent=true
+
+(possible to replace the current fields in pilot catalogue with above field names?)
+-- what are the repurcusions of modifying the default fields that are already in the beanfield and solrservices field class 
+(modification to the codebase will be the repercussion)
+  -- what fields must be present in order for the common code (SolrTransactionServices.java class) to work properly (and are there fields required from the response map  for the web interface) N/A
+
+
+CN Service Notes
+-- cn_query.search() questions?  Right now it's just a slightly more sophisticated listObjects()
+
+Indexing and Harvesting Notes
+
+Feed is the process by which sci metadata is parsed to be indexed by mercury using xpaths
+
+datanet_schema_xpath2.xml contains the xpaths for a single source to be indexed by mercury assuming a single sci metadata standard is represented
+
+The    datanet_schema_xpath2.xml will contain xpath definitions which apply to  existing solr elements, broken out by standard (fgdc, eml, mets). Currently, these are applied based on a single command line parameter, but if we go with dynamically determining which standard is to be used, then that would change. 
+
+Feed is called
+
+#java -Xms512m -Xmx1024m -jar Solr_feed_R23.jar datanet ornldaac nodebug mercury3_harvests_datanet datanet.log datanet_schema_xpath2.xml
+
+#java -Xms512m -Xmx1024m -jar Solr_feed_R23.jar datanet "ornldaac/eml1" nodebug mercury3_harvests_datanet datanet.log datanet_schema_xpath2_eml1.xml
+
+
+#java -Xms512m -Xmx1024m -jar Solr_feed_R23.jar datanet "ornldaac/eml2" nodebug mercury3_harvests_datanet datanet.log datanet_schema_xpath2_em2.xml
+
+ornldaac fgdc-ornldaac
+knb fgdc-knb
+
+<bean name=fgdc-ornldaac />
+
+
+
+#java -Xms512m -Xmx1024m -jar  Solr_feed_R23.jar datanet "ornldaac/eml2" nodebug  mercury3_harvests_datanet datanet.log datanet_schema_xpath2.xml
+
+#java -Xms512m -Xmx1024m -jar   Solr_feed_R23.jar datanet ornldaac fgdc nodebug   mercury3_harvests_datanet datanet.log datanet_schema_xpath2.xml
+
+#java -Xms512m -Xmx1024m  -jar   Solr_feed_R23.jar datanet ornldaac eml nodebug    mercury3_harvests_datanet datanet.log datanet_schema_xpath2.xml
+
+#java -Xms512m -Xmx1024m  -jar   Solr_feed_R23.jar datanet  dryad mets nodebug    mercury3_harvests_datanet datanet.log datanet_schema_xpath2.xml
+
+
+#java -Xms512m -Xmx1024m  -jar   Solr_feed_R23.jar \
+    datanet \                                #source folder
+    mets \                                   #type of metadata to parse
+    nodebug    \                           #turn off debugging output? 
+    mercury3_harvests_datanet \
+    datanet.log \                          # log destination
+    datanet_schema_xpath2.xml  #xpath extraction rules 
+
+
+
+Questions: 
+1. Testing.  Need to be able to test that the correct values are being extracted form the source and placed in the index.  
+2. Performance.  Need to be able to run multiple parsers in parallel.  Can the indexing system operate correctly with more than a single parser operating at once?
+
+
+
+  <bean id="fgdc" class="index_utils.SimpleListBean">
+     <property name="list">
+      <list>
+        <value>TEXT</value>
+        <value>GEO</value>
+        <value>DATE</value>
+        <value>CSV</value>
+        <value>TEXT_SINGLE</value>
+        <value>LOOKUP</value>
+        <value>DEFAULTING_LOOKUP</value>
+        <value>DATELIST</value>
+        <value>fileID_CHOOSER</value>
+       <!--  <value>coords_LIST</value>-->
+      <!--   <value>junk_LIST</value>-->
+        <!-- <value>junk_ONE_OF</value> -->
+      </list>
+    </property>
+  </bean>
+
+<bean id="eml" class="index_utils.SimpleListBean">
+     <property name="list">
+      <list>
+        <value>EML_TEXT</value>
+        <value>EML_GEO</value>
+        <value>EML_DATE</value>
+        <value>EML_CSV</value>
+        <value>EML_TEXT_SINGLE</value>
+        <value>EML_LOOKUP</value>
+        <value>EML_DEFAULTING_LOOKUP</value>
+        <value>EML_DATELIST</value>
+        <value>EML_fileID_CHOOSER</value>
+        
+       <!--  <value>coords_LIST</value>-->
+      <!--   <value>junk_LIST</value>-->
+        <!-- <value>junk_ONE_OF</value> -->
+      </list>
+    </property>
+  </bean>
+
+
+example for eml:
+ <bean id="EML_DATELIST" class="index_utils.SimpleMapBean">
+     <property name="simpleMap">
+      <map>
+           <entry key="pubDate"         value = "//dataset/pubDate/text()"/>
+     <entry key="enddate"         value = "//dataset/coverage/temporalCoverage/rangeOfDates/endDate/calendarDate/text()"/> 
+     <entry key="last_modified"   value = "//systemMetadata/last_modified/text()"/>
+      </map>
+    </property>
+  </bean>  
+  
+  example for fgdc:
+  
+  <bean id="FGDC_DATELIST" class="index_utils.SimpleMapBean">
+     <property name="simpleMap">
+      <map>
+          
+          <entry key="pubDate"         value = "//metadata/idinfo/citation/citeinfo/pubdate/text()"/> 
+        <entry key="metd"             value = "//metadata/metainfo/metd/text()"/> 
+        <entry key="metrd"             value = "//metadata/metainfo/metrd/text()"/> 
+     <entry key="enddate"         value = "//metadata/mercury/enddate/text()"/>   
+        <entry key="last_modified"   value = "//metadata/mercury/systemMetadata/last_modified/text()"/>
+         
+     </map>
+    </property>
+  </bean>  
+
+
+Question:  What should 'Project' map to?  It is used in the UI but may not have meaning in datasets other than DAAC.
+
+
+Past Discussion Regarding the Mercury to DataONE Merge Process
+
+Modification  of Mercury Ingestion procedure
+
+How to join Science Metadata with  System Metadata?
+
+Original proposal is that Mercury  will be pointed to a system directory that Metacat maintains but that  mercury reads in order to ingest science metadata.
+
+At the time of injestion, mercury  will need to call a method? or query? Metacat in order to get the  missing fields needed for objectList  search  response (Identifier,  ObjectClass, Hash, Size, Modified) and add the fields into the solr  record representing the science metadata
+
+passing to mercruy only the system  meatadata object. mercury is responsible for grabbing the correct  scimetadata. This seems problematic since we will not be able to match the Science metadata objects to the Identifiers in system metadata objects.  It is not desiralbe to have to query metacat database to find that relationship.
+
+
+Mercury harvester (not part of  the Pilot catalog script) - validates the FGDC and EML files at the  schema level, and Mercury's parser validates some key field values  (dates, spatial info, some keywords). Since Mercury's harvester script  is not part of the pilot catalog architecture, Mercury expects Metacat  to provide valid metadata files (schema level),
+
+
+1.  Modify SOLR schema to record the additional system metadata attributes
+2.  Modify the science metadata parser (Mercury) to extract these values  from <<something>> (Metacat? parsed sysmeta docs?)
+3.  Indexer 
+
+Tasks  for Jim & Giri Sprint 2
+
+1. Modify existing example XML files  to include System Metadata elements
+ 1.a ORNL Daac  records only
+
+ 1.b. the merged metadata records will  be parsed and indexed using Mercury Indexer 
+2. Modify  Configuration file and Solr schema to include the additional System  Metadata elements
+3. Change XSLT in PilotCatalogue to  express only the SystemMetadata elements
+
+ * Document  the science metadata formats that the Mercury parser can work with
+ * Document how to add / modify format  parsing rules
+
+
+Story for Sprint 3
+
+Need a batch processor to run against  Metacat XML datastore directory to merge SystemMetadata files into  SciMetadata files for ingestion.
+ 1.b Working  on a script to merge both  Sci and System Metadata (System metadata elements will  be  added inside the <Mercury> node) Mercury node will always appear as a child of the root level node of a sci meta doc
+  1. Batch  process will examine files in Metacat dir.
+  2. Batch process will discard all  but DataONE SystemMetadata Xml files that point to Sci-Metadata  documents
+  3. Batch process will extract  significant SystemMetadata elements
+  4. Batch  process will use Identifier field in systemMetadata document to  determine the name of its corresponding Sci-Metadata document (This is unreliable, need to revise)
+   5. Batch process will merge significant SystemMetadata elements in the  Sci-Metadata document
+  6. Batch process will write out  merged Metadata document to a separate direct that is polled by Mercury  indexing engine
+  
+XXX need  to clarify above XXX
+
+Clarifications!
+
+1) Need samples from of the Scimeta (and XML schema) and  Sysdata from KNB and Dryad
+  a) Mercury injestion needs to know which elements of the Scimeta need to be indexed within Mercury
+  b) extend mercury indexer configuration file to read in the EML (knb) so as to index 
+
+2) Need to create a process to merge the 2 docs into one
+  a) need to know where the Sysmeta data file is located that represents a SciMeta file
+    1) method will receive a fullpath as parameter
+  b) open SysMeta
+  c) create XML Doc from SysMeta
+  d) read the ID of the SciMeta doc from the  SysMeta file
+    1) the Id of the SciMeta datafile in the SysMeta file will provide the filename of the SciMeta file: systemMetadata/identifier (this is unreliable)
+  e) open file sciMeta using provided ID from SysMeta (need a path + filename)
+  f) create a XML Document  (assuming wellformed xml) from Scimeta
+  g) grab root element of scimeta
+  h) create new node <mercury> (or identify an existing mercury node)
+  i) attach SysMeta root node to mercury node
+  j) attach mercury element as last child to root elemlent of scimeta document, if needed
+  k) save off merged sci - sys meta doc into cn_dev/mercury_inst_datanet directory
+  l) https://repository.dataone.org/software/cicore/trunk/cn-service/cn-prototype/DataONE-CnMergeMetadata
+  m) l) https://repository.dataone.org/software/cicore/trunk/service-api-java
+3) Due date of May 19?
+
+

@@ -1,0 +1,326 @@
+#persist rst
+
+
+Notes for week of 2011-Sprint 45 (07-Nov - 12-Nov)
+==================================================
+
+:Backlogs: https://redmine.dataone.org/rb/master_backlogs/d1
+
+.. contents::
+
+Monday
+------
+
+Rob 
+
+- updated d1_common_java, propagated through MNode. CNode remains.
+- made a perl script to create template code to assist process of ensuring consistency between api definitions and implementation. d1_common_java -> client code templates, and cross references to architecture docs
+- Going to do the same for d1_libclient_java CNode today:
+     Notes:
+         did not update rmi interfaces yet, want to wait for cn implementers to be ready
+             (need to remove a bunch of InvalidRequests, and a couple NotFounds)
+         found 5 unimplemented methods (client throws NotImplemented exception):
+             reserveIdentifier
+             generateIdentifier
+             hasReservation
+             isGroup
+             isPublic
+         (should I implement them?, would like to)    
+
+Roger
+
+- finished systemmetdatachanged call support
+
+  - django management command to process the list of updates
+
+- updated CLI, and describe() to match the docs.
+- working with cmd, cmd2 as alternative to simple command line
+
+- Fixed the broken tests in d1_common.
+- Working on converting CLI to using cmd2.
+
+..  Note:: 
+
+  See: https://redmine.dataone.org/issues/2008
+  
+  need a consistent way to define the root of each environment. Given the Root URL of a DataONE environment, a client can discover all it needs to know to interact with services available there. e.g. For the sandbox environment, a client may connect to "cn-sandbox.dataone.org" which should point to one of the sandbox CN implementations. From that, the client could pull the node registry and discover nodes and services available in that environment.
+
+  suggest::
+
+    Production: cn.dataone.org (RR DNS pointing to one of cn-ucsb-1, cn-unm-1, or cn-orc-1)
+    Staging: cn-staging.dataone.org
+    Sandbox: cn-sandbox.dataone.org
+    Development: cn-dev.dataone.org
+
+  Client instances should take a CN address as a parameter, this would be something that resolves to a CN baseURL, which could be a direct link to a CN, or an indirect link via the RR DNS mechanism.
+
+
+
+Chris
+
+- deploying cn-dev-2
+- issue with replication manager not seeing the system metdata even after synchronization
+    - this may have just been a configuration issue. Uncomment the hazelcast.xml file location
+      on every deployment of the CN in metacat.properties.  Looks like it may not have connected 
+      to the cluster correctly because of this.
+- mnreplication integration test needs to be updated to match the revised implementation
+- Need to bring Metacat up to date with recent changes
+- will work with current libclient impl, need to update again after cn signatures updated in libclient
+
+DONE. TODO: Need to add NotFound exception to MN.getReplica() in docs
+
+Ben
+
+- replication bugs in metacat
+
+Skye
+
+- dev env sorted out
+- working on list for web test apps:  https://redmine.dataone.org/issues/1949
+
+
+backlog:
+
+Move https://redmine.dataone.org/issues/819 to another story, 907 to backlog
+
+TODO: Need to implement the method restrictions as described in the Node List
+
+TODO: need to keep cn-dev and cn-dev-2 up to date with each other (when necessary)
+
+TODO: Test the issue with change system metadata even on hazelcast.
+
+
+Tuesday
+-------
+
+- status of synchronization on cn-dev, cn-dev-2
+
+- packaging of cn components
+
+- status of metacat as production MN
+
+
+Rob
+
+- refactoring cn apis
+
+Notes::
+         did not update rmi interfaces yet, want to wait for cn implementers to be ready
+             (need to remove a bunch of InvalidRequests, and a couple NotFounds)
+         found 5 unimplemented methods (client throws NotImplemented exception):
+             reserveIdentifier
+             generateIdentifier
+             hasReservation
+             isGroup  
+             isPublic
+             
+- may be an issue with fewer cnode tests available for libclient
+
+- remove RMI methods. Done.
+
+Robert
+
+- helping out Chris w/replication problems- isNodeAuthorized.
+- committing code and updating old stories/tasks
+- confirming synchronization still works on cn-dev/cn-dev-2
+- rebuild cn-dev/cn-dev2 with ldap changes and jar/war changes
+
+Roger
+
+- fixed broken tests in common_python
+
+- working through CLI
+
+- Updating new CLI to use cmd2
+
+
+Chris
+
+- updateSystemMetadata on MNStorage, switch to systemMetadataChanged functions
+
+- DONE. isNodeAuthorized not being proxied on the CN
+
+Ben
+
+- Bring metacat up to date following the libclient cn changes
+
+Nick
+
+- Met with ORC folks on hardware installation
+- Waiting on 4 port NICS, VMWare licenses
+- Need dedicated ports to enable console access to manage VMs
+
+
+Wednesday
+---------
+
+Chris 
+
+- troubleshooting replication
+- isNodeAuth working ok
+- problems remain with serializing replication status, perhaps related to version mismatch on client lib
+- taking about 20min to do a round trip (using cn-dev-2)
+
+Ben
+
+- Metacat upto 1.0.1
+- Need to revisit how to register nodes, e.g. Metacat registration dialog
+  - how to generate certificates for a MN?
+- Look into adding an xsl processing statement for XSLT
+
+Roger
+
+- Redid systemMetadataChanged - moved locking capabilities from management to GMN 
+- Continuing with CLI / CMD
+
+Nick
+
+- Working with VMs, need a Windows OS to access vcenter
+- Can start setting up VMs
+- Will check on speeding up processing for replication testing
+
+Rob
+
+- Checked in 1.0.1 common and client
+- more refactoring to be done
+- manifest metadata for versioning
+- Updating webtester
+
+Matt
+
+- libclient caching implemented
+- LRU implementation
+- continuing with data packaging on client side
+- next will be package support in R client
+
+
+Discussion: Node registration.
+
+- Metacat: need a button to start registration process instead of each time.
+- More general issues for MN registration:
+
+  - MN ID generation
+
+  - Client certificate for MNs
+
+  - MN ID = 4 char, random, readable string. 
+
+  - Certificates must be signed by a DataONE recognized CA
+
+
+Process for registering a node:
+
+1. Decide on subject
+
+2. Generate certificate (with recognized CA)
+
+3. Generate node document with subject and fake / null node id
+
+4. a. Call register node (with a fake / null node id and the same subject as in the Node doc) to get real node id
+   b. CN checks that node is real and services are operating(a node may be registered before it is complete or even started. registration may occur by an administrator first submitting a node  to reserve the node id and then working on bringing it up. registration will not be approved until the node can demonstrate its capabilities)
+   c. CN sets node id in MN node document
+   d. CN sets the verified status to false
+   e. MN records the returned node ID in its node document
+
+5. Manual: Approve node reistration in node registry
+    a. approval process checks that node is real and services are operating
+    b. approval process sets the verified status to true
+
+Action: Update metacat UI for registering the node
+
+Action: Update the GMN implementation / mechanism for registering
+
+Action: Design the administrative services and interfaces for managing Coordinating Nodes
+
+Action: Decide on whether the "node verified" status should be a property in the node document. (It is.)
+
+Action: ensure that the node update call is made by the same subject in the node document. (Nodes can and should be able to be updated by verified administrators of the system.)
+
+Action: ensure that the CN.register() verifies that the incoming client cert matches the subject in the Node document, and that the Subject has not been used for other Nodes
+
+
+Thursday
+---------
+
+Nick 
+
+    fixing config issues in replication
+
+    hung up on setReplicationStatus() wrt serialVersion - getting an exception
+    
+Chris
+
+    working out issues in replication, with Nick.  
+
+    might be an issue with creating rightsHolder subject when creating sysmeta
+
+    Subject strings question::
+
+      <submitter>CN=Christopher Jones A583,O=Google,C=US,DC=cilogon,DC=org</submitter>
+      <rightsHolder>DC=org,DC=cilogon,C=US,O=Google,CN=Christopher Jones A583</rightsHolder>
+
+    and::
+
+      <subject>cn=DEMO2,dc=dataone,dc=org</subject>
+
+    whereas DEMO2.pem contains::
+
+      /CN=DEMO2/DC=dataone/DC=org
+
+    How do we ensure Subjects are "equal"?
+
+    - Ben will look into CertManager method for normalizing DNs
+
+http://static.springsource.org/spring-ldap/docs/1.2.0/api/spring-ldap/org/springframework/ldap/core/DistinguishedName.html#compareTo(java.lang.Object)
+
+
+Ben
+
+     today - work on standardized subject
+
+     yesterday - added type marshaller to insert optional stylesheet reference into the xml objects
+             (NodeList, ObjectList, FormatList?)
+             
+Skye
+    - application list for Web Tester (index.html), still part of d1_integration, so is creating
+      separate project for it.
+      
+Rob
+
+- question regarding difference between InvalidCredentials and Invalidtoken
+
+ - services currently ignore these because apache / tomcat throws SSL exception before the call reaches the 
+servlet / controller.
+
+ - what's the proper behavior of client when an SSL connection error occurs - should it throw exception, or proceed as public?  (currently libclient_java continues as public). 
+
+Friday
+------
+
+Ben
+
+-    did the XSLT styles, wants to test on cn-dev on next deploymen
+-    did the metacat registration of MNs; not clear when to register versus update
+
+Rob
+
+-    touching up MNWebTester- new version up there for 1.0..1
+    
+Skye
+
+-    split off web test suite into new maven project -- wants to talk to Dave before committing
+        -- having trouble with classloader issues
+
+-    not sure what's next in the pipeline -- will try to contact Dave
+
+Roger
+
+-    task 1796 -- validation of checksum
+-    documentation for CLI
+    
+Matt
+
+-    working on EZID implementation library to wrap their web services for use on KNB MN
+        -- asked where to put it; agreement to add it to libclient
+
+

@@ -1,0 +1,74 @@
+Member Node Wranglers 
+    Fridays at 10:00 am Alaska
+                    11:00 am Pacific
+                    12:00 noon Mountain
+                    1:00 pm Central
+                    2:00 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+25 April 2014
+                                                                           
+Attending:  Laura, Amber, Skye, Bruce, Dave
+
+Regrets:  Rebecca
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+                CN fix (tidy process)?  first phase (repairing the databases) complete 4/7, 2nd phase (metacat issue where access policies changed and didn't tell the CNs) started 4/21/14 - still running per Skye; hope to be done sometime next week (ask Robert for sure) -- UPDATE:  Robert says it is taking a lot longer than expected, so later next week is a good guestimate. (LM)
+                
+                MN Dashboard - Holding off until 2nd phase of tidy is complete so that CNs can resume synchronization and hopefully catch some of the fixes that Dryad and ORNL DAAC have made (Dryad - metadata updates, hope to harvest more of their data; DAAC - "newest content" was Jan/2013, Jim working this) 
+                MN information (description) displayed on dashboard comes from the MN Node Doc; if we can develop a more descriptive description in conjunction with the MN and put it out there for Skye to pull into the dashboard. Laura to follow up.  
+                        - Current MN description text was copied from cn.dataone.org/v1/cn/node into Drupal CMS (member-node) content type
+                        - Proposal to incorporate text from MN Doc where description from cn.dataone.org/cn/v1/node is sparse but warrants
+                                approval from MN themselves before using it.
+                        - Any updates to the MN description text for the MN dashboard UI will need to be pushed into the appropriate Drupal CMS 
+                                Member Node content node.
+                
+                Status on OPeNDAP / DSpace subcontracts - DSpace moving ahead with implementation; OPeNDAP just provided SOW for their implementation (a little more complicated than DSpace with incompatibilities between DAP and DataONE), won't be able to complete full implementation this PY but will be able to prototype
+                DSpace users group meeting at Open Repositories (Helsinki meeting)
+                
+                Purpose of MN Description Document (past and future) - past: identify data holdings (type, volume, etc.), operations, to aid in MN development.  future: ???  
+        
+        1.5   Current MNs
+                Need MN desc doc for ESA.   
+       * Matt  says ESA likely will not be a MN in future, as they want to transition  to keeping their data at Dryad.  For  consistency, I'd like to have a  MNDD from them,  especially since we  don't know how long it will be before they make the  transition to Dryad  for their data management functions.  Laura draft up ESA MNDD.
+                
+        2. Status of upcoming MNs
+        
+     * Y5Q3
+       * LTER-Europe  (3232) - News item approved; hold off until CN fix completed.
+       * EDAC (3221) -  Soren says EDAC is ready to go; hold off until CN fix completed.  
+
+     * Y5Q4
+       * DFC (3532) -  Chris has been working with Lisa Stillwell and Mary Whitton answering questions
+       * MPC (3708) - registering in sandbox
+       * ORNL "slender nodes" (RGD (4248) and EDORA (4247)) - moved to "testing", awaiting MNDDs/logos from Bob
+       * GLEON (3422) - waiting on updated Morpho to be released soon
+       * PPBio  (3748) - At last week's MNF, Debora said Ben and Matt are helping them with some issues related to the server move
+       * NKN (3238) - Ed says they are up and running in sandbox.  
+       * SAEON (3205) - We are planning to work with Alex to upgrade their metacat.
+       * 
+    Future
+       * TERN Australia (4286): Hope to meet with Nikki Thurgate when she's in the states, perhaps around DUG; working on scope items A and B in particular, meeting again in June.
+       * IARC  (International Arctic Research Center) (4700) - met with Jim Long  4/10/14.  They currently run GeoNetwork, would like to be a fully  functional MN, can start small (expose metadata only) and work from there.  Jim is working on a proposal (with Bruce) to get some additional funding for a more general GeoNetwork-based Member Node  
+       * EU BON -- Looking to deploy a test MN in the next 6-9 months.  Bruce to get back with Hannu to revisit this plan. 
+
+        3. Old action items
+             MN Documentation - MN Deployment and MN Ongoing Operations - holding
+             
+        4. Not-high profile issues
+     * Redmine ticket generator - we think we've got a comprehensive list (Laura to check in with Roger prior to MNW)
+       
+        5. Around the room
+        Amber - LITA conference abstract proposal was not accepted (very library-based)
+        (focus for next phase re: MNs is on larger relevant-data repositories to solve science problems)
+        Bruce - busy!
+        Dave - nope
+        Skye - a lot of the dashboard content will be coming from the Drupal CMS, so if a MN changes logos, descriptions, etc. we will need a redmine ticket to ask the new content to be pushed to the Drupal site
+            
+
+
+

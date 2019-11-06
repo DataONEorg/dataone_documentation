@@ -1,0 +1,66 @@
+Attendees: Rebecca, Carol, Trisha, Suzie, Bill, Bob, Bruce, Amber, Steph, Bertram, John Cobb,
+
+
+Regrets:
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+We will also use the epad: http://epad.dataone.org/2013Oct04-LT-VTC 
+
+1.  Please join my meeting, Oct 4, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/123378873
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0007
+Access Code: 123-378-873
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 123-378-873
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+Agenda for 2013-10-04
+
+1.  CCIT Update (Dave)
+NPN and the ILTER are ready to come on. KU also close. Gulf Watch (AOOS) also close. Dashboard is progressing. Starting to get some usage counts. Working on splitting the metadata counts from data counts. Working on getting the Splunk tool configured - log aggregation tool.
+Dave was at a Center for Trustworthy Scientific Cyberinfrastructure  meeting. There's an overview document covering all aspects of security being worked on and will be a good resource for both DataONE and Member Nodes.
+Having discussions on immutable content and replication.
+
+One more topic - Rob is working through Member Node docs and is having trouble with the duality of meaning wrt to "Member Node" - i.e. the organization or the software. To discuss on wrangers call following this.
+
+Another outcome from CTSC - apparently it is a requirement for all Fed Funded work managing user accounts to verify that accounts are not created for anyone on the "Denied Persons List".  http://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/denied-persons-list
+
+2. CEE Update (Amber)
+Amber has been working on the white paper.  She's also working on the newsletter and is waiting for a piece from CCIT.  Working with Rob Nahf, Laura, CCIT on the new MN page for the web site.
+
+No comments came in over the weekend for changes to the DUG charter.
+
+3.  NSF Update (Bill)
+NSF met with Bill, Amber, Dave, and Rebecca. Schedules still the same with respect to the white paper (Oct 21st) and face-to-face meeting with Rebecca & Bill (Oct 24th).
+
+Action item: bulld a "History of DataONE" slide deck for us by project and others.
+
+4.  Proposal progress and Q&A's
+Next Friday will be reviewing the draft 
+
+5.  Around the Room
+
+Rebecca:  Current agenda for the AHM  is here: http://bit.ly/1hqi4sQ
+Trisha: we are making good progress on the new version of the DMPTool.  It will be released in early January.  We will work with Amber to think about the best way to configure the tool for DataONE. See https://bitbucket.org/dmptool/main/wiki/DMPTool2Project for more info.  We hit a milestone and now have nearly 6000 users and over 100 institutions that have customized to tool.
+Steph: prep for AHM. Newest NCEAS project is off the ground: http://snap.is - partnership with TNC and WCS, big emphasis on public communication so may provide some future opportunities for high-profile DataONE-NCEAS projects
+
+Bob:  Scheduled a teleconference next week with Dave Vieglais and Chris Jones to discuss adding additional ORNL data centers as MNs, based on relaxed set of requirements including a reduced DataONE need for immutability of metadata.
+
+Carol: The combined scientist-educator follow-up survey is ready to launch next week. Each of you will get a message with a suggested invitation to distribute in your respective institutions. The FigShare (early adopters) assessment is now being analyzed.
+
+Cobb: nothing to add
+
+Bruce: Lots of calls and emails working on Member Nodes and getting some questions answered.  Some work on Splunk (most of that's being done by a UTK grad student working with the rest of CCIT).  I haven't spent much time on the reference architecture, but plan to spend some time on that over the weekend.  
+
+Suzie: AHM prep.
+
+Bertram: getting ready for AHM (attended EUDAT meeting last week; preparing a report)
+
+

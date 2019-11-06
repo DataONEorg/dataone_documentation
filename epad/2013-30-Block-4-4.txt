@@ -1,0 +1,253 @@
+Development Block 4-4
+
+Releasing infrastructure 1.2.2: https://redmine.dataone.org/issues/3866
+
+Skye
+ * 2013-08-23
+   * testing replication auditing, dataone-orc diskspace, catalina logs, debug log, ldap log- 6 G. Check the ldap logging level.
+   * moved audit log layer into common, named auditing specific classes. possibly rename. 
+   * Class level documentation, unit tests. Jetty-based unit testing involved.
+   * Documentation page http://mule1.dataone.org/OperationDocs/solr4_cloud_config.html
+   * Creating a DOA layer for postgres instead of using Hazelcast
+   * Encrypt filesystem/disk for backups in order to secure private keys
+ * 2013-08-21
+   * disabled replication manager test today - ldap related
+     * build issues after mvn purge
+   * private keys not working. file permmissions: private should be 600
+   * Audit run on cn-dev yesterday
+     * found documents that didn't make it to CNs
+     * scrubbed, sync'd Dryad - many objects that didn't make it to the CNs via Metacat replication
+     * will update operations docs on auditing installation
+   * CCI 1.2.2 - would have have to back out ORE parsing if we released beforre Merritt fixed OREs
+     * OREs referenced a pid that didn't exist - had DEFAULT in it
+ * 2013-08-19
+   * laptop power supply died - working on this
+   * ORE refactoring: is it done?
+     * Some unit tests failing, Skye fixed them.
+   * Will branch for the release once tests are succeeding
+   * Merritt: sent ORE to parse, which didn't parse for Skye
+   * Dryad: reported issues #3118
+     * OREs not pointing to scimeta packages (minor syntax issue, not using ? when they should be)
+     * may need to add formatids
+ * 2013-08-14
+   * Dryad issues
+   * # 3744 is progressing slowly
+ * 2013-08-12
+   * Blockers for 1.2.2 release
+   * Appears to be an error in metacat processing dryad metadata:
+
+[ERROR] 2013-08-09 23:10:19,041 (TransferObjectTask:write:457) Task-urn:node:mnTestDRYAD-http://dx.doi.org/10.5061/dryad.g467j7g2?ver=2012-02-01T10:17:33.447-0500
+<?xml version="1.0" encoding="UTF-8"?>
+<error detailCode="1190" errorCode="500" name="ServiceFailure">
+  <description>Error inserting or updating document: &lt;?xml version="1.0"?&gt;&lt;error&gt;cvc-complex-type.2.4.b: The content of element 'DryadDataPackage' is not complete. One of '{"http://purl.org/dc/terms/":relation, "http://purl.org/dc/terms/":references}' is expected.&lt;/error&gt;</description>
+</error>
+
+http://dev.datadryad.org/mn/object/http://dx.doi.org/10.5061/dryad.100?ver=2011-07-28T14:19:30.986-0400
+
+   * Schema validation error? see https://redmine.dataone.org/issues/3908  https://redmine.dataone.org/issues/3855
+
+Dave
+ * 2013-08-23
+   * Lengthy calls with MS resarch and DataUp folks on future activities
+   * Still working through releases.dataone.org process
+   * renewal proposal work
+   * added quick command line tool for listing redmine tickets, generate crude kml for maps
+
+ * 2013-08-21
+   * Working through backlog
+   * putting together a plan for releases.dataone.org
+   * renewal proposal work
+ * 2013-08-19
+   * out of the office a bit this week
+   * working through the backlog
+   * security audit cleanup
+
+Chris Brumgard
+ * 2013-08-23
+   * Configured rsyslog on orc dev to send data to splunk over tls using DataOne's cert
+   * I want to reinstall from splunk to document everything that is involved in setting splunk and splunk clients up.
+ * 2013-08-21
+   * ORE unit testing is working - blame Eclipse for last week
+   * Working with David on splunk
+ * 2013-08-19
+   * Working on Ansible upgrade script
+     * Robert - send Chris packages that need to be held
+   * Will work with David on pgp file encryption, etc.
+ * 2013-08-14
+   * Final changes to resource maps, but now have spring framework issues
+   * Reverting to older spring framework during testing
+ * 2013-08-12
+   * Changed splunk.dataone.utk.edu to splunk.dataone.org and used the dataone certificate for the server.
+   * Worked on Ansible upgrade playbooks.
+     * Sets the packages to upgrade and which to block for normal updates.
+       * Need to decide which packages to pin and which ones to not. 
+   * Cleaned out old redmine tickets
+   * Discussed sharing console localadmin password with group
+     * Going to add to ProductionPW.txt file but don't use it to log in (use sudo). 
+       * Going to use this as a teaching chance for David to get him used to pgp.
+   * For resource maps, should we go ahead and release or wait for nested resource maps?
+     * No, go ahead and finish the ticket and commit code.
+
+
+David Doyle
+ * 2013-08-23
+   * upgrading/updating splunk breaks previous installs
+     * need better documentation for how to configure
+     * build a newly minted instance
+   * Bruce wants documentation for new sysadmin training
+ * 2013-08-21
+   * forwading work is looking good
+     * rsyslog forwarder on cn-dev-orc-1 (will get SSL set up here)
+     * win7 box
+     * work on cn-dev-ucsb-1, cn-dev-unm-1
+   * will replicate the config on another VM
+   * still need to get SSL forwarding set up
+ * 2013-08-19
+   * Worked on splunk this weekend
+     * experimenting with rsyslog transport of logs
+     * will be looking into ssl over tcp forwarders
+ * 2013-08-16
+   * Installing/configuring Splunk forwarders on ORC sandbox and Win7 box
+   * Working w/Chris B. on configuring rsyslog on ORC dev 
+   * Did some housekeeping work on ORC Win7 to get a monthly poweron-winupdate-poweroff procedure in place
+ * 2013-08-14
+   * Working on splunk - syslog
+    2013-08-12
+   * Reading up on various Splunk forwarding methods: light, heavy, universal forwarding w/Splunk forwarders vs. manually forwarding in Linux
+   * Testing forwarding/filtering:
+     * different benefits/drawbacks: robustness vs. resource use vs. ease of setup
+     * whichever method is used (probably not one solution for every use case), will need to have a method in place for filtering needed vs. "junk" data - either on the sending end via heavy forwarder/manual filtering or on the receiving end via Splunk indexer itself
+     * report structures: separate indexes definitely for each server, possibly for different categories as wanted
+   * Also learning about and practicing MN setup
+     * installing new Metacat instance and hooking up to D1
+     * modifying existing Metacat instance to communicate w/D1
+     * possibly going to be working on MN documentation - waiting on update from bwilson 
+
+Robert
+ * 2013-08-23
+   * Completed LDAP embedding into the cn node registry, also added a couple schema/ldif files into the cn-test-resources component
+   * UNM count is still off. Attempted to re-replicate with Hazelcast. Did not appear to work, no error messages or debug messages in log files. Need to track down the PIDS that are missing and perform discrete searches to see if there are any errors in UNM regarding the missing PIDS.
+   * Need to complete work on ansible helper script
+   * Need to Update Operations Docs to account for ansible installs
+   * Need to review logAggregation code change request for LogReport Dashboard component
+   * Integrate the  LDAP embedded server into other LDAP dependent projects
+   * Need to test LDAP schema changes into OpenLDAP to support new 
+   * Monday may miss standup
+
+ * 2013-08-21
+   * Got LDAP embedded server working with ApacheDS
+     * incorporating into cn node registry
+ * 2013-08-19
+   * Working on testing framework for LDAP (for Rob) re: node registry
+     * currently requires openldap installed for unit tests
+     * looking at apache OpenDS - embedded, supports unit tests
+ * 2013-08-16
+   * wrote up notes on AKN re-assigned issue to Chris J for further analysis
+   * Discussed with Rob tasks relating to Node Registry and Webtester
+     * looking for a replacement ldap testing service to replace our dependency in unit tests on openldap
+     * ApacheDS might work for us. writing some simple test cases against the embedded LDAP server.
+   * Need to complete work on ansible helper script
+   * Need to Update Operations Docs to account for ansible installs
+   * Need to review logAggregation code change request for LogReport Dashboard component
+ * 2013-08-14
+   * finished coding for jibx extensions
+   * tomcat stuff on UNM - related to consistency. Manually pushed replication button, seemed to resolve the problem
+   * will leave UNM up during network outage, and "see what happens"
+   * reviewing audit buildout
+   * AKN node issues - unknown issue. write up my notes so far for someone else to review.
+   * Need to complete work on ansible helper script
+   * Need to Update Operations Docs to account for ansible installs
+   * Need to review logAggregation code change request for LogReport Dashboard component
+ * 2013-08-12
+   * completed edits in the the 'NonEmptyString...' Decorators.  Need to add in additional unit tests for the  'NonEmptyString...' Decorators and the SimpleConstructorDecorators.
+   * Will stop/restart tc on UNM, upping the debug level of metacat. to determine count problem
+   * Need to Update Operations Docs to account for ansible installs
+   * Need to complete review of Skye's auditing buildout code
+   * Need to complete work on ansible helper script
+   * Need to review logAggregation code change request for LogReport Dashboard component
+   * Review Ornithology Avian Knowledge Network issue 
+
+Rob
+ * 2013-08-23
+   * MN deployment checklist changes. Committed.
+     * issue: phases in flow chart are public facing. We need a common understanding of each phase. Where is testing prior to staging? Do we have an issue with content testing/validate sci metadata? Need to clarify Testing phase and the various environments that can be used for testing. Dev/testing/assurance testing are potentially iterative.
+ * 2013-08-21
+   * closing backlogged tickets
+   * Releasing product documentation
+     * See: https://repository.dataone.org/documents/Projects/cicore/development/source/product_releases.txt
+     * Goal: high level software download list
+       * point to landing pages for Metacat, GMN, libraries, etc.
+   * Working with EDAC
+   * MN documentation effort
+ * 2013-08-19
+   * Continued work on documentation
+   * EDAC: how to represent external links with potentially changing bytes
+     * need to register node in staging next
+ * 2013-08-12
+   * Documentation - MN checklist
+   * Registry task (the node registry) (LDAP?) #2192
+
+Roger
+ * 2013-08-23
+   * Change the name of the Checklist. 
+   * Finished up Documentation work. added in some more documentation tickets. will review them later
+   * Completed the branching in obsoletes chain ticket. Look at Windows deployment, certificate extensions become dependency for cli for use with Windows.
+   * Out Next week for vacation.
+ * 2013-08-21
+   * Finishing mid-level docs today
+     * New overview page
+   * KU MN status
+     * will never change pids
+ * 2013-08-19
+   * Working on mid-level docs for python projects
+     * Available via PyPI, will check with Dave re: adding to releases.dataone.org
+   * Working with KU MN
+     * emails to CJ: indicated that pids may change over time
+ * 2013-08-16
+   * Continued work on the mid-level documentation.
+ * 2013-08-14
+   * Mid-level docs for python products, descriptions, overviews etc.
+   * Starting up 
+ * 2013-08-12
+   * Statistics for python downloads (pypi in process of adding stats API), but includes many mirror accesses / robots
+   * focus on dev docs
+
+Ben
+ * 2013-08-23
+   * Returning to dashboard work - another round of impl based on Chris' mockups. Graphing SVG fun!
+ * 2013-08-21
+   * Metacat work
+   * Helping Lauren Walker get spun up
+ * 2013-08-19
+   * Working on the AKN SSL issue
+   * Working with Mike F on PISCO issues
+   * Worked on ILTER Europe node
+   * Will look toward Dashboard work with Roger
+ * 2013-08-12
+   * PISCO MN issues, troubleshooting some PIDs
+   * Dashboard feedback requested
+   * Starting initial design on "view / rendering"
+
+Chris
+ * 2013-08-21
+   * TODO: KU Test certs
+   * Working on MN Dashboard mockups
+     * Q: lat/lon locations
+ * 2013-08-19
+   * off last week, catching up on emails
+   * will work on dashboard with Ben this week
+     * Dave will send Amber's feedback
+   * Will look into Dryad scimeta parsing issues
+
+Backlog Discussion
+#1551 - check with Rob on whether this is still an issue? Perhaps we just need to move to latest HTTPClient update
+#3448 - relate to pid view rendering
+#725 - check with Matt if he has time to work on it.
+#3262 - add some specific tasks
+#2643 - restructure ticket
+#2944 - develop a concise document describing how to shut down node, and remove replicas. make content archived, then delete
+#3809 - refactor to relate to other doc activities
+#3678 - add specificremaining tasks
+#3927 - close?
+
+

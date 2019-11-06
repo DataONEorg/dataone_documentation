@@ -1,0 +1,259 @@
+The Sci Meta and the two data objects create:
+
+http://mn-stage-ucsb-1.test.dataone.org/knb/d1/mn/object/bew_r_test.20121214_16281355520484.0
+http://mn-stage-ucsb-1.test.dataone.org/knb/d1/mn/object/bew_r_test.20121214_16281355520484.1
+http://mn-stage-ucsb-1.test.dataone.org/knb/d1/mn/object/bew_r_test.20121214_16281355520484.2
+
+But the Package doesn't:
+http://mn-stage-ucsb-1.test.dataone.org/knb/d1/mn/object/bew_r_test.20121214_16281355520484
+------------------
+
+R version 2.15.2 (2012-10-26) -- "Trick or Treat"
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: i386-apple-darwin9.8.0/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+Loading required package: utils
+Loading required package: rJava
+[R.app GUI 1.53 (6335) i386-apple-darwin9.8.0]
+
+[History restored from /Users/wb5/.Rapp.history]
+
+[Workspace restored from /Users/wb5/Progs/DataONE/r-demo/.RData]
+
+> setwd("/Users/wb5/Progs/DataONE/r-demo")
+> source("BEW_demo1.R", echo=TRUE, verbose=FALSE, keep.source=TRUE)
+
+> ################## R Script for running the demonstration
+> #### Remember to get an updated client certificate before starting
+> # Set up for submit .... [TRUNCATED] 
+
+> # Discard all current data to make sure we have a clean slate
+> rm(list=ls())
+
+> # Set up the output
+> cur_time <- format(Sys.time(), "%Y%m%d_%H%M%s")
+
+> con <- file(paste("BEW_demo1_",cur_time,".log", sep="") )
+
+> sink(con, append=TRUE, split=TRUE)
+
+> #sink(con, append=TRUE, type="message")
+> 
+> # Change the default timeout for the Reserve operation to 60 seconds to deal with the reserve timeout i .... [TRUNCATED] 
+
+> d1.config$setProperty("D1Client.CNode.reserveIdentifier.timeout", .jnew("java/lang/Integer","60000"))
+
+> # mn.nodeid <- "urn:node:mnStageORC1"
+> mn.nodeid <- "urn:node:mnStageUCSB1"
+
+> # mn.nodeid <- "urn:node:mnStageUNM1"
+> cn.env <- "STAGING"
+
+> d1.client <- D1Client(cn.env, mn.nodeid)
+
+> formatid.csv <- "text/csv"
+
+> formatid.eml <- "eml://ecoinformatics.org/eml-2.1.0"
+
+> require(emdbook)
+Loading required package: emdbook
+Loading required package: MASS
+Loading required package: lattice
+
+> print(paste("************* Using CN=",cn.env," and MN=",mn.nodeid,sep="") )
+[1] "************* Using CN=STAGING and MN=urn:node:mnStageUCSB1"
+
+> #Create some identifiers
+> id.obj_pkg <- paste("bew_r_test", cur_time, sep=".")
+
+> id.obj_scimeta <- paste("bew_r_test", cur_time, "0", sep=".")
+
+> id.obj_pred <- paste("bew_r_test", cur_time, "1", sep=".")
+
+> id.obj_sub1 <- paste("bew_r_test", cur_time, "2", sep=".")
+
+> print(paste("************* Package ID   = ",id.obj_pkg,sep="") )
+[1] "************* Package ID   = bew_r_test.20121214_16281355520484"
+
+> print(paste("************* Sci Meta ID  = ",id.obj_scimeta,sep="") )
+[1] "************* Sci Meta ID  = bew_r_test.20121214_16281355520484.0"
+
+> print(paste("************* Data Obj1 ID = ",id.obj_pred,sep="") )
+[1] "************* Data Obj1 ID = bew_r_test.20121214_16281355520484.1"
+
+> print(paste("************* Data Obj2 ID = ",id.obj_sub1,sep="") )
+[1] "************* Data Obj2 ID = bew_r_test.20121214_16281355520484.2"
+
+> # Start by creating the underlying data package
+> demo1.package <- new("DataPackage",packageId=id.obj_pkg) 
+[1] "@@ DataPackage-class.R initialize"
+[1] "@@ DataPackage-class.R - (missing jDataPackage)..."
+[1] "@@ DataPackage-class.R - (have packageId)..."
+
+> #Load up a Science Metadata object and create a DataONE object to hold it, and add it to the package
+> md_filename <- "/Users/wb5/Progs/DataONE/r-de ..." ... [TRUNCATED] 
+
+> finfo <- file.info(md_filename)
+
+> md_text <- readChar(md_filename,finfo$size)
+
+> demo1.scimeta <- new("D1Object", id.obj_scimeta, md_text,formatid.eml, mn.nodeid)
+[1] "@@ D1Object-class:R initialize as character"
+
+> setPublicAccess(demo1.scimeta)
+[1] "setPublicAccess: got policy editor"
+
+> addData(demo1.package, demo1.scimeta)
+
+> # Get the data object from the emdbook collection and then create a DataONE object to hold it and add
+> # it to the package.  It's necessary to conv .... [TRUNCATED] 
+
+> SeedPred.text <- convert.csv(d1.client,SeedPred)
+checkServerTrusted - RSA
+ INFO [main] (ObjectFormatCache.java:196) - refreshing objectFormatCache from cn: null
+ INFO [main] (CertificateManager.java:645) - Entering getSSLSocketFactory
+ INFO [main] (CertificateManager.java:854) - Using client certificate location: /tmp/x509up_u852569749
+ INFO [main] (CertificateManager.java:720) - creating custom TrustManager
+ INFO [main] (CertificateManager.java:279) - loading into client truststore: 
+ INFO [main] (CertificateManager.java:286) - 0 alias CN=DataONE Root CA,DC=dataone,DC=org
+ INFO [main] (CertificateManager.java:286) - 1 alias CN=DataONE Production CA,DC=dataone,DC=org
+ INFO [main] (CertificateManager.java:286) - 2 alias CN=CILogon Basic CA 1,O=CILogon,C=US,DC=cilogon,DC=org
+ INFO [main] (CertificateManager.java:286) - 3 alias CN=CILogon OpenID CA 1,O=CILogon,C=US,DC=cilogon,DC=org
+ INFO [main] (CertificateManager.java:286) - 4 alias CN=CILogon Silver CA 1,O=CILogon,C=US,DC=cilogon,DC=org
+ INFO [main] (CertificateManager.java:286) - 5 alias CN=RapidSSL CA,O=GeoTrust\, Inc.,C=US
+ INFO [main] (CertificateManager.java:673) - using allow-all hostname verifier
+ INFO [main] (RestClient.java:270) - rest call info: GET https://cn-stage.test.dataone.org/cn/v1/formats
+ INFO [main] (ExceptionHandler.java:94) - response httpCode: 200
+ INFO [main] (ObjectFormatCache.java:209) - successful cache refresh from cn.listFormats()
+
+> demo1.SeedPred <- new("D1Object", id.obj_pred, SeedPred.text, formatid.csv, mn.nodeid)
+[1] "@@ D1Object-class:R initialize as character"
+ INFO [main] (CertificateManager.java:854) - Using client certificate location: /tmp/x509up_u852569749
+
+> setPublicAccess(demo1.SeedPred)
+[1] "setPublicAccess: got policy editor"
+
+> addData(demo1.package,demo1.SeedPred)
+
+> #Create a subset of the SeedPred, just to have a second data object in this collection
+> SeedPred.sub1 <- SeedPred[SeedPred$species == "uva" ,]
+
+> SeedPred.sub1.text <- convert.csv(d1.client,SeedPred.sub1)
+
+> demo1.sub1 <- new("D1Object", id.obj_sub1, SeedPred.sub1.text, formatid.csv, mn.nodeid)
+[1] "@@ D1Object-class:R initialize as character"
+
+> setPublicAccess(demo1.sub1)
+[1] "setPublicAccess: got policy editor"
+
+> addData(demo1.package,demo1.sub1)
+
+> # Now add the relationship that says that the metadata object describes the data object
+> insertRelationship(demo1.package, id.obj_scimeta, c(id.obj .... [TRUNCATED] 
+
+> # Now put the Package into the DataONE member node
+> # create(d1.client, demo1.package)
+> 
+> # Restore output to defaults
+> sink() 
+
+> #sink(type="message")
+> 
+Warning messages:
+1: In write.csv(df, file = con, row.names = FALSE, col.names = TRUE,  :
+  attempt to set 'col.names' ignored
+2: In write.csv(df, file = con, row.names = FALSE, col.names = TRUE,  :
+  attempt to set 'col.names' ignored
+ INFO [main] (CertificateManager.java:854) - Using client certificate location: /tmp/x509up_u852569749
+> create(d1.client, demo1.package)
+[1] "====> create(D1Client,DataPackage"
+[1] "    * building the resource map for the 3 members..."
+[1] "@@ D1Object-class:R initialize as character"
+[1] "setPublicAccess: got policy editor"
+[1] "    * next member to create: bew_r_test.20121214_16281355520484.2"
+[1] "@@ D1Object-class:R initialize as something else"
+[1] "@@ D1Object-class:R initialize with jobjRef"
+[1] "--> create(D1Client, D1Object)"
+[1] "    * The object is not null."
+[1] "    * The sysmeta is not null."
+ INFO [main] (CertificateManager.java:854) - Using client certificate location: /tmp/x509up_u852569749
+[1] "@@ D1Client-methods 41:"
+[1] "    * Created."
+[1] "      - created pid: bew_r_test.20121214_16281355520484.2"
+[1] "<--  create(D1Client, D1Object)"
+[1] "    * next member to create: bew_r_test.20121214_16281355520484.1"
+[1] "@@ D1Object-class:R initialize as something else"
+[1] "@@ D1Object-class:R initialize with jobjRef"
+[1] "--> create(D1Client, D1Object)"
+[1] "    * The object is not null."
+[1] "    * The sysmeta is not null."
+checkServerTrusted - RSA
+checkServerTrusted - RSA
+[1] "@@ D1Client-methods 41:"
+[1] "    * Created."
+[1] "      - created pid: bew_r_test.20121214_16281355520484.1"
+[1] "<--  create(D1Client, D1Object)"
+[1] "    * next member to create: bew_r_test.20121214_16281355520484.0"
+[1] "@@ D1Object-class:R initialize as something else"
+[1] "@@ D1Object-class:R initialize with jobjRef"
+[1] "--> create(D1Client, D1Object)"
+[1] "    * The object is not null."
+[1] "    * The sysmeta is not null."
+Error in .jcall("RJavaTools", "Ljava/lang/Object;", "invokeMethod", cl,  : 
+  org.dataone.service.exceptions.ServiceFailure: class java.net.SocketTimeoutException: Read timed out
+ INFO [main] (CertificateManager.java:645) - Entering getSSLSocketFactory
+ INFO [main] (CertificateManager.java:854) - Using client certificate location: /tmp/x509up_u852569749
+ INFO [main] (CertificateManager.java:720) - creating custom TrustManager
+ INFO [main] (CertificateManager.java:673) - using allow-all hostname verifier
+ INFO [main] (RestClient.java:270) - rest call info: GET https://cn-stage.test.dataone.org/cn/v1/node
+ INFO [main] (ExceptionHandler.java:94) - response httpCode: 200
+ INFO [main] (SimpleMultipartEntity.java:217) - temp outputFile is: /tmp/mmp.output.6121459766923456226.tmp
+ INFO [main] (SimpleMultipartEntity.java:217) - temp outputFile is: /tmp/mmp.output.1089559976503603960.tmp
+ INFO [main] (CertificateManager.java:645) - Entering getSSLSocketFactory
+ INFO [main] (CertificateManager.java:854) - Using client certificate location: /tmp/x509up_u852569749
+ INFO [main] (CertificateManager.java:720) - creating custom TrustManager
+ INFO [main] (CertificateManager.java:673) - using allow-all hostname verifier
+checkServerTrusted - RSA
+ INFO [main] (RestClient.java:306) - rest call info: POST https://mn-stage-ucsb-1.test.dataone.org/knb/d1/mn/v1/object; MMP message has: ParamPart:pid = bew_r_test.20121214_16281355520484.2; FilePart:object = /tmp/mmp.output.6121459766923456226.tmp (57723 bytes); FilePart:sysmeta = /tmp/mmp.output.1089559976503603960.tmp (858 bytes); 
+ INFO [main] (ExceptionHandler.java:94) - response httpCode: 200
+ INFO [main] (CNode.java:276) -   CNode nodelist refresh: new cached time: Dec 14, 2012 4:28:21 PM
+ INFO [main] (CertificateManager.java:645) - Entering getSSLSocketFactory
+ INFO [main] (CertificateManager.java:854) - Using client certificate location: /tmp/x509up_u852569749
+ INFO [main] (CertificateManager.java:720) - creating custom TrustManager
+ INFO [main] (CertificateManager.java:673) - using allow-all hostname verifier
+ INFO [main] (RestClient.java:270) - rest call info: GET https://cn-stage.test.dataone.org/cn/v1/node
+ INFO [main] (ExceptionHandler.java:94) - response httpCode: 200
+ INFO [main] (SimpleMultipartEntity.java:217) - temp outputFile is: /tmp/mmp.output.4083510636917632970.tmp
+ INFO [main] (SimpleMultipartEntity.java:217) - temp outputFile is: /tmp/mmp.output.8168115522126552515.tmp
+ INFO [main] (CertificateManager.java:645) - Entering getSSLSocketFactory
+ INFO [main] (CertificateManager.java:854) - Using client certificate location: /tmp/x509up_u852569749
+ INFO [main] (CertificateManager.java:720) - creating custom TrustManager
+ INFO [main] (CertificateManager.java:673) - using allow-all hostname verifier
+checkServerTrusted - RSA
+checkServerTrusted - RSA
+ INFO [main] (RestClient.java:306) - rest call info: POST https://mn-stage-ucsb-1.test.dataone.org/knb/d1/mn/v1/object; MMP message has: ParamPart:pid = bew_r_test.20121214_16281355520484.1; FilePart:object = /tmp/mmp.output.4083510636917632970.tmp (458599 bytes); FilePart:sysmeta = /tmp/mmp.output.8168115522126552515.tmp (859 bytes); 
+ INFO [main] (ExceptionHandler.java:94) - response httpCode: 200
+ INFO [main] (SimpleMultipartEntity.java:217) - temp outputFile is: /tmp/mmp.output.8259165652239365400.tmp
+ INFO [main] (SimpleMultipartEntity.java:217) - temp outputFile is: /tmp/mmp.output.6498790447844519435.tmp
+ INFO [main] (CertificateManager.java:645) - Entering getSSLSocketFactory
+ INFO [main] (CertificateManager.java:854) - Using client certificate location: /tmp/x509up_u852569749
+ INFO [main] (CertificateManager.java:720) - creating custom TrustManager
+ INFO [main] (CertificateManager.java:673) - using allow-all hostname verifier
+ INFO [main] (RestClient.java:306) - rest call info: POST https://mn-stage-ucsb-1.test.dataone.org/knb/d1/mn/v1/object; MMP message has: ParamPart:pid = bew_r_test.20121214_16281355520484.0; FilePart:object = /tmp/mmp.output.8259165652239365400.tmp (2483 bytes); FilePart:sysmeta = /tmp/mmp.output.6498790447844519435.tmp (883 bytes); 
+> 
+

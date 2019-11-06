@@ -1,0 +1,132 @@
+Main CEE WG site: http://epad.dataone.org/CEEWG-May2013
+
+Social media
+ * we need to modernize our approach at D1
+ * currently Amber is doing everything.
+ * idea was to create a blog that D1 members can contribute to.
+ * Student interns have notebooks online (wordpress site). use a version that site. we need to integrate those efforts with the blog for the community
+ * Amber is migrating the old sites into a new notebooks site. 
+ * We need to make sure there's a workflow in place for people to contribute to the blog - once summer is over and interns aren't blogging, we might have a vaccuum. 
+ * Next steps: establish a calendar, assign posts, ping people as a reminder, etc. Could spend 45 min sketching out what this could look like. Nuts and bolts.
+ * Scott - what about having it be an aggregator? http://www.r-bloggers.com/ INNGE (http://innge.net/) started one for ecology: http://innge.net/?q=ecobloggers
+ * something like EEB tools [(http://eebtools.org/), based on this: http://floor.drees.usesthis.com/], but for data: people basically explaining how they do data management. their workflow. 
+ * Perhaps a data-related news aggregator: http://paper.li/
+ * blog could be used for working group updates
+ * audience: people who might want to use dataone tools, services etc. might be researchers, librarians, etc. this is a community building thing.
+ * materials
+   * quarterly WG updates
+   * Bill - quarterly update
+   * shoot for 1 for every 2 weeks
+ * target other working groups - share responsibility.
+   * sociocultural wg wants their students to be working more openly
+   * CI is going to be the gap. how much content do we want? Stacy - we could interview them and package it as a blog post.
+ * ask.dataone.org
+ * DataONE Wiki page: needs to be updated. may not do updates, but need to set up a system to take care of that.
+   * Wiki entries we edited and might want to revisit: https://docs.google.com/spreadsheet/ccc?key=0Agq_OgwoRF1AdHJFMllGdGxLX0lLNEVEQlowcVZ3Zmc#gid=0
+
+Social media planning
+ * Blog: how to proceed
+   * assign a point person for coordinating the blogging activity (Not Amber). 
+   * outline how we will reach out to other groups to contribute.
+   * write up language for emails to explains what we are doing.
+   * take time today to generate content.
+ * Discussion: How to promote dataone via new media?
+ * podcasts? Scott does them. Cheap. (I [scott] am quitting my current blog gig later this year, so can start doing some then...NICE! [Carly])
+ * videos of workshops etc. on vimeo
+ * but need things of interest to the community. shouldn't be just a marketing tool. should be a resource on its own. 
+ * use the blog and other communication as a way to build culture of data sharing, research around that, etc.
+ * can be responsive and flexible, especially compared to the website
+ * need to have good dissemination ideas. 
+
+Posts:
+ * WGs / PI / Amber / Dave quarterly
+ * Interns Weekly
+ * translate newsletter content
+ * re-post others' posts
+   * Carly http://datapub.cdlib.org
+   * Heather http://researchremix.wordpress.com/
+   * Stanford Dig. Library https://library.stanford.edu/blogs/digital-library-blog
+ * Aggregate! !!!! 
+
+Communication plan: what are we trying to achieve? Current resources:
+ * Blogging: https://notebooks.dataone.org/ 
+ * Slideshare http://www.slideshare.net/DataONEorg
+ * Vimeo: http://vimeo.com/channels/dataone 
+ * LinkedIn: http://www.linkedin.com/groups?gid=1872174&mostPopular=&trk=tyah 
+ * Twitter: https://twitter.com/Dataoneorg 
+ * Facebook: https://www.facebook.com/DataONEorg 
+ * Youtube: http://www.youtube.com/user/DataONEorg 
+ * 
+ * Notes on Communication planning - Wendy
+   * Developing short document outlining primary sections of communication plan
+
+Action items: (Carly, Scott, Amber)
+ * research aggregation. come up with recs. report back. 
+ * Aggregator features:
+   * Form to fill out to add a blog on the DataONE blog itself (a separate page)
+   * Feed puts in blog content along with any images/etc. -Works
+   * Feed pulls in posts from each blog based on particular tags. Ask author to use a tag. What tags? (e.g., data, metadata, ????)
+   * Should we get permission from the author of each blog to aggregate their posts? -YES
+ * Name for the aggregator? Throw in your ideas for names? Seems like creating a name, a brand, for the aggregator will allow it to take on a life of its own, which is good 
+   * 
+ * FeedWordpress http://wordpress.org/extend/plugins/feedwordpress/
+ * where to aggregate from. what sites. tags and categories.
+   * aggregation ideas:
+     * Science in the Open: http://cameronneylon.net/category/blog/
+     * dataists: http://www.dataists.com/; tags: data science, 
+     * Berkeley Energy and Resources Collaborative: http://berc.berkeley.edu/blog/
+     * Datacite: http://www.datacite.org
+     * Carly http://datapub.cdlib.org
+     * Heather http://researchremix.wordpress.com/
+     * Stanford Dig. Library https://library.stanford.edu/blogs/digital-library-blog
+     * Txchnologist http://txchnologist.com/post/49353849562/citizen-scientists-see-space-as-new-frontier
+     * NEON blog: http://www.neonnotes.org/ (special tags?)
+     * Library of Congress Digital Preservation blog: http://blogs.loc.gov/digitalpreservation
+     * Digital Curation Centre blog: http://www.dcc.ac.uk/blog
+     * Nature's Scientific Data Updates blog: http://blogs.nature.com/scientificdata/
+     * F1000 Research blog: http://blog.f1000research.com/ tags: data sharing
+     * Open Knowledge Foundation http://blog.okfn.org
+     * Digital Curation Centre http://www.dcc.ac.uk/news/
+     * Digital Koans http://digital-scholarship.org/digitalkoans/
+     * Infochimps http://blog.infochimps.com/
+     * World Bank Open Data Blog http://blogs.worldbank.org/opendata/
+     * London School of Economics and Political Science Impact of Social Sciences blog: http://blogs.lse.ac.uk/impactofsocialsciences/ (Carly guest blogger here)
+     * Data Curation Profiles Directory: http://docs.lib.purdue.edu/dcp/
+     * Data Conservancy: http://dataconservancy.org/blog/
+     * EOL: http://blog.eol.org/
+     * Geoscience Data Blog http://geosciencedatablog.blogspot.com/
+     * iPhylo, by Rod Page : http://iphylo.blogspot.com/ 
+     * JISC Managing Research Data Programme: http://researchdata.jiscinvolve.org/wp/
+     * Dryad News and Views: http://blog.datadryad.org
+     * Heritage Bytes: http://ux.opencontext.org/blog/
+     * University of Bristor data.bris blog: https://data.blogs.ilrt.org/project-blog/PLOS Blogs, tag 'data': http://blogs.plos.org/blog/tag/data/
+     * http://downwithtime.wordpress.com/
+     * http://jabberwocky.weecology.org/ (Ethan White)
+     * http://biofreshblog.com/
+     * http://oikosjournal.wordpress.com/category/new-ideas/
+     * http://blog.datadryad.org/tag/data-sharing-2/
+     * 
+
+Slideshare: 
+ * can we have folders? categories?  [No. You can only use tags]
+ * how to get modules at the top if there's lots of content? [you can direct people to the tagged modules instead of the data one account]
+
+Aggregation Questions:
+https://notebooks2.dataone.org/
+Policy re request for aggregation: Assume we need permission (only Carly's site is currently aggregated)
+What do we call the category we aggregate under? Syndicated, Feed, Aggregated ...around the room. coffee house. forum. hall of stuff. miscellany. potpourri. cornucopia. awesome stuff. paraphernalia.
+Tags: If syndicated posts come in with tags subtly different from ours, it dilutes the utility of our tag cloud.  We can retain or lose.  If we drop the tags then the post is less searchable ....
+Tags Part II: Filters: If we pull from sites we can use tags to define what to pull and what to leave.  An alternative is to ask syndicated sites to create a specific feed for us.
+Form for contributions: Create a way for people to say they want their blog aggregated.
+
+
+Here is the disclaimer that NEON uses for social media, blog, etc.:
+
+NEON, Inc. reserves the right to reject, edit, or remove any post or comment that in its opinion, is defamatory or profane, violates copyright, advocates for or against a candidate for political office, is off topic, or is otherwise inappropriate for NEON Notes. The views expressed in posts and comments on this blog are not necessarily those of the NEON, Inc. or of its governing boards.
+
+-- Discussion about use of aggregators - ideas:
+- have long list of feed running as ticker on side or under its own heading, and human curator promotes items selectively
+- have specific blogs that are consistently on topic always show up on front page, and selectively curate other blog posts into main page
+
+Outcome: See http://bit.ly/ZHZRyW for decision statement
+

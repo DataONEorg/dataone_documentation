@@ -1,0 +1,100 @@
+Attendees: Rebecca, Amber, Suzie, John Cobb, Mike, Carol, Bill , John Kunze, Viv, Trisha, Bob Cook, Bruce Wilson
+
+
+Regrets: Stephanie, Deborah, Hilmar, Bertram
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+1.  Please join my meeting, Feb 24, 2012 at 10:55 AM MST.
+https://www1.gotomeeting.com/join/987828505
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (636) 277-0134
+Access Code: 987-828-505
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 987-828-505
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Will also use the epad: http://epad.dataone.org/2012Feb24-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-02-24
+ 
+1.  CI Status (Vieglais)
+Working through the tests and consistencies of the packages. By the end of today, hope to have worked out all the inconsistencies. Want to have a new release candidate (3) ready on Monday or Tuesday. This will have all the functionality (3 CNs) and ITK components that were planned for this release.
+
+
+2.  Summer Internship Program Update (Budden)
+10 projects are advertised on the web site. There is a strong CI focus this year. Applications are with a web form this year and deadline for applications is March 12th (midnight MT). Please advertise the internships widely. Amber will do ESIP. 
+
+
+3.  Around the Room
+Steph: Traveling today - sorry!  CEE WG's ESA Session coming together - speakers submitted their abstracts on time for "Growing Pains: Ecology in the 21st Century". (Josh Tewksbury - natural history, Peter Kareiva - conservation, Randy Olson - communication, Mary Ruckelshaus - public/private partnerships, me - 'getting real with data', Terry Chapin - professional societies, individuals, social movements, Jarrett Byrnes - social networking tools, Nyeema Harris - diversity). Featuring data sharing in a session that is broader gives an opportunity to reach beyond the usual audience - especially with such big names in the mix.
+
+Rebecca:  Data sharing on public radio: http://hereandnow.wbur.org/2012/02/21/physicist-scientific-discovery
+
+John Cobb:
+A) Question: coordinating press efforts on release
+
+B) Upcoming workshop: Data Symposium 2012  <http://www.sewhip.org>.  I will giving a talk @ DataONE specifically and Data in general. Health oriented office.
+
+C) In a related note, I just got an introduction form Shawn Brown to the Tycho project <http://www.tycho.pitt.edu/> It is a open data access effort on public health expecially for policy formulation. Of particular interest is measuring and modeling the spread of infetious disease. They ahve expressed interest in learning about DataONE and, perhaps, creating some cooperative efforts.
+"I wanted to write to you to introduce you to some people I work with on a project called Tycho.  Tycho is an open public health data project that currently houses US CDC disease data across the entire country all the way back to the 1800’s.  We are very excited about the project and one of my collegues, Willbert Van Panhuis, will be coming to Milwaukee for the data workshop.   The project has a website if you would like to get more information: http://www.tycho.pitt.edu."
+
+Bill:  Bob and Bill on way tomorrow to CReATIVE - B workshop to define international opps for interoperability across respository systems, etc.  Attendees include LifeWatch, GBIF, etc.
+
+Working on agenda for next Sustainability and Governance meeting in mid May as well as EIM Institute and Library Training Summit. (Invitations have gone out for the Summit, Carol)
+
+Matt: Working on Sensor Network software training workshop for April 30-May4; also working on NEON Data Services Working Group recommendations; Matt and Dave to visit NEON next week to explore technical collaborations.
+
+Public website issues found: https://redmine.dataone.org/issues/2329
+
+Mike: Working on sending out Announcement in USGS related to the April 17, 18 USGS DataONE Workshop.    Latest Draft is below:
+
+Announcement:   
+
+USGS - DataONE Workshop 
+April 17-18, 2012
+Denver, CO Building 810
+
+The USGS is one of the initial Federal agency contributors to the NSF-sponsored DataONE project (https://www.dataone.org/). We would like to invite USGS data centers to participate in a 2-day workshop focused on how to become a "Member Node". 
+
+The first half of Day 1 will be an overview of the DataONE project, ways in which USGS is involved, and potential discussion for further collaborations. It will be open to any interested USGS personnel, and will be available via webex. The remainder of Day 1 and all of Day 2 will be a highly technical, hands-on workshop focusing on the underlying tools (Investigator Toolkit, DataONE APIs, Member Node toolkits) of DataONE . The goal is to establish at least 2 USGS data centers as Member Nodes both contributing and consuming data from DataONE by the end of Day 2.  Additionally, workflows will also be outlined illustrating how to participate and share data/metadata in the USGS/DataONE infrastructure without becoming a Member Node, but yet contributing data to this global effort. 
+
+The workshop will be lead by Mike Frame and members of the DataONE Cyberinfrastructure Team, Matt Jones (U.C Santa Barbara) and Dave Vieglas (University of Kansas/New Mexico University). 
+
+Interested USGS data centers should indicate their participation by contacting Mike Frame (mike_frame@usgs.gov) and/or Viv Hutchison (vhutchison@usgs.gov) to register individuals with technical expertise who are able to attend the workshop and also help better define USGS contributions/activities with DataONE. 
+
+Thanks,
+Mike and Viv 
+
+Bob Cook
+Had a discussion with the National Climate Assessment Data group (Anne Waple (NOAA), Ana Privette (NOAA)), Curt Tilmes (NASA)) about data activities at ORNL and their relation to NCA data management activities.  They are building a Global Change Information System (GCIS) (with NASA Earth Science funding, Curt is the lead (excellent guy)) with the following characteristics:  build on existing infrastructure; federated linking of existing data centers from US agencies using metadata (data reside at the agency); will be used by both non-experts (decision makers, policy) and experts (researchers); and traceability from end point back to the original data. I gave them a brief intro to DataONE.  They were interested in partnering with DataONE and are looking forward to having Bill Michener and Dave Vieglais visit in mid-March. NCA interested in linkages with other agencies besides NOAA, NASA, NSF (the main agencies contributing to NCA) and they were wanted to know more about in our interactions with USGS (Earth Science Clearinghouse and the Climate Science Centers. 
+
+Suzie: invited to be on a panel at the Society for Clinical and Translational Sciences meeting in Washington DC on April 19.  Fellow panelists are Daniel Ford Vice Dean for Clinical Investigations at Johns Hopkins and Ken Pienta, Associate Dean from University of Michigan. Dan contacted us as a result of the PLoS article.  
+BTW the SeWHIP group is also co-sponsored by a group interested in translational science.
+
+Q: What is Translatioanl Science?
+A:
+1 <http://en.wikipedia.org/wiki/Translational_science>
+2. ITis a new NIH center that has only recently been created
+3. "They have a lot of money. It was the largest "bump-up" in the FY2013 president's budget request
+
+Carol: On April 26th I will be participating in a discussion at the British Library on the role of libraries with open access scholarship. Mostly about journals, but likely to also include data and data repositories. 
+
+Trisha: John Kunze and I have been in conversation with Neil Davies about the Moorea Biocode (LTER site)  project and they are interested in using EZID and depositing their data in Merritt. It would be great to have this data in dataone. 
+
+John K: Ongoing saga around DCXL the Excel "add-in" vs "the web service".  Significant problems with DataCite's position on wanting to require CC0 licenses for metadata.
+
+Viv: Been getting some invitations to conduct data management training in various venues including the DOI Climate Science Centers...so will have a good chance to road-test some of the work we have done in the DataONE CEE group. Also working on a release of a metadata tool based on common questions about data...it's written in Java....hopefully it can be used in the DataONE toolkit at some point. :) 
+
+
+time for Viv to go live on TED! -- I'd download that !! ok...someone's being funny.... :)!
+
+Bruce -- nothing in particular to add.
+

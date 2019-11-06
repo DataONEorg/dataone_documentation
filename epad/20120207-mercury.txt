@@ -1,0 +1,60 @@
+Notes for Mercury discussion, 2012-02-07
+========================================
+
+
+- General schedule for release
+
+
+Copying source to DataONE repository:
+
+- Make a copy from the Mercury branch to d1 svn
+- May need a copy of common source as well - go up one level from the the UI
+
+- Building for the CNs
+
+  - creating a POM for the UI portion - Skye 
+
+- Dependencies (e.g. MySQL?) - logging only, will be removed
+
+- Configuration
+  - no issues except for database
+  - some JS issues
+    - Skye will forward email to Ranjeet
+  - missing scripts/collapsible.js from svn trunk
+
+http://mercury.ornl.gov/pilotcatalog2/
+
+- cn-dev-2 returning a 404 error
+
+  Base URL = https://cn-dev-2.dataone.org/solr/d1-cn-index
+
+  Example query = http://cn-dev-2.dataone.org/solr/d1-cn-index/select/?q=*:*&version=2.2&start=0&rows=10&indent=on
+  
+  Admin page: http://cn-dev-2.dataone.org/solr/d1-cn-index/admin/
+
+  - Error: distribution field not in schema, needs to be added back in
+  
+  other fields removed: cat, features, includes, manu, name, variableName
+
+
+
+- Responsibility for updating (who does what)
+
+Tasks
+- Ranjeet: commit changes to Mercury made during the call
+- Dave: mock up screen shots for the header in Mercury UI
+- Skye: email Ranjeet with JS issue
+- Skye: create POM for UI
+- Dave: webtest tool need to be run against the Mercury MNs
+- Skye: Generate data source list from CN nodeList XML
+- Skye: Check on why full text search isn't working - need to populate "fullText" field with all text in the XML document (excluding element names)
+- Giri, Ranjeet, Jim: what is "distribution" field - sounded like at the end of the call we agreed it should be removed.
+- Ranjeet: fix default.js
+- Ranjeet: List of nodes in development environment: https://cn-dev-2.dataone.org/cn/v1/node - update this list in OneMercury search UI
+- Skye: Enable leading wildcard characer in dataONE solr index?
+
+
+Mercury Member Node instances:
+USGS Clearinghouse MN: http://mercury.ornl.gov/clearinghouse/mn/v1
+ORNLDAAC MN: http://mercury.ornl.gov/ornldaac/mn/v1
+

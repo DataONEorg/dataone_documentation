@@ -1,0 +1,521 @@
+Notes for Search API Alterations - 2012-07-25
+=============================================
+
+Currently, the search API consists of a single method:
+
+  CNRead.search(session, queryType, query) → ObjectList
+
+   * queryType (string) – Indicates which search engine will be used to handle the query. Currently supported search engines include: “SOLR”. Transmitted as part of the URL path and must be escaped accordingly.
+
+   * query (string) – The remainder of the URL is passed verbatim to the respective search engine implementation. Hence it may contain additional path elements and query elements as determined by the functionality of the search engine. The caller is reponsible for providing a ‘?’ to indicate the start of the query string portion of the URL, as well as proper URL escaping. Transmitted as part of the URL path and must be escaped accordingly.
+
+Limitations:
+
+1. No way to discover the fields that can be used when constructing queries
+2. Inflexible response structure (no returnfields)
+3. No field introspection (e.g. what are the terms and their frequency in field_x?)
+Is this a true limitation?  Don't the examples below show that we can specify faceted searches through the query string?  This limitation is actually the same as #2 - when a faceted search is provided, the api does not support returning the facet info.  
+
+From my usage with mercury, it does appear that facet values/counts do have the access control portion of the query filter applied - we dont get facet counts larger than result size - which we would/should see if the facets ignored access control (right now just isPublic:true)
+
+4. Search is implemented on CNs only, meaning that clients interacting with a MN through the DataONE APIs must be able to conenct with the CNs to do something involving discovery
+5. More complex queries such as spatial on polygon
+6. Datapackage-based search: would like to search for keywords (sci meta), but find ORE document matches.
+7. Performance: certain UI interfaces may want to exclude fields in the ObjectInfo response to reduce the serialized response time (encoded in XML, JSON, etc.), and so required fields limit this.  For instance, checksum may not be desired, but it will still be serialized across the wire, affecting performance in AJAX-type UIs. This is largely a ObjectInfo schema cardinality issue.
+8. No way to discover the queryTypes supported at a node.
+
+
+Possible Solutions:
+
+1. Add an API method that returns the list of fields, their type, and number of unique values. This is already available under SOLR through the Luke interface ( http://wiki.apache.org/solr/LukeRequestHandler ) and so would be fairly easy to implement. The response from Luke should be cached / updated by the indexer process.
+
+Perhaps:
+  
+  CNRead.listSearchFields() -> SearchFieldList
+
+
+2. a) Add ability to include additional elements in the ObjectList response
+
+     CNRead.search(session, queryType, query, fields) -> ExtendedObjectList
+
+   b) Enable access to raw SOLR response (including response writers other than XML, e.g. JSON)
+   c) Add in another standard protocol (SOLR is something of a defacto standard, though is only implemented by SOLR)
+   d) ?
+
+
+3. Add API methods to support introspection on a field. This is very easy to do for public content, but may be complicated for access controlled content. SOLR supports this functionality out of the box through faceted query ( http://wiki.apache.org/solr/SimpleFacetParameters ), so for example one can obtain a list of keywords and their frequency of occurrence that appear in the result set obtained by applying some query.
+
+Access control can be achieved by adding access control restriction to the query (with consideration of SOLR equivalent of SQL injection). The question is whether facet values from content that the user does not have read access to will appear in the response.
+
+The response structure from a faceted select is quite different to a regular search response.
+
+Facet Query Examples:
+
+eg 1. Show author facet for all content:
+
+curl -s "http://localhost:8080/solr/d1-cn-index/select?rows=0&q=*:*&facet=true&facet.limit=10&facet.field=author" | xml fo
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <lst name="responseHeader">
+    <int name="status">0</int>
+    <int name="QTime">5</int>
+    <lst name="params">
+      <str name="facet">true</str>
+      <str name="facet.limit">10</str>
+      <str name="rows">0</str>
+      <str name="q">*:*</str>
+      <str name="facet.field">author</str>
+    </lst>
+  </lst>
+  <result name="response" numFound="74163" start="0"/>
+  <lst name="facet_counts">
+    <lst name="facet_queries"/>
+    <lst name="facet_fields">
+      <lst name="author">
+        <int name="Bruce Menge">7664</int>
+        <int name="Margaret McManus">3480</int>
+        <int name="Libe Washburn">3181</int>
+        <int name="Jack Barth">1616</int>
+        <int name="Mary Sue Brancato">513</int>
+        <int name="Anne Giblin">384</int>
+        <int name="Pete Raimondi">354</int>
+        <int name="John Vande Castle">280</int>
+        <int name="Alexander Buyantuyev">253</int>
+        <int name="UVM Spatial Analysis Lab, Grove, J.M, O'Neil-Dunne, J.">253</int>
+      </lst>
+    </lst>
+    <lst name="facet_dates"/>
+    <lst name="facet_ranges"/>
+  </lst>
+</response>
+
+
+
+eg 2. Show author facet for content with abstract containing "soil carbon"
+
+curl -s "http://localhost:8080/solr/d1-cn-index/select?rows=0&q=abstract%3Asoil%20carbon&facet=true&facet.limit=10&facet.field=author" | xml fo
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <lst name="responseHeader">
+    <int name="status">0</int>
+    <int name="QTime">3</int>
+    <lst name="params">
+      <str name="facet">true</str>
+      <str name="facet.limit">10</str>
+      <str name="rows">0</str>
+      <str name="q">abstract:soil carbon</str>
+      <str name="facet.field">author</str>
+    </lst>
+  </lst>
+  <result name="response" numFound="701" start="0"/>
+  <lst name="facet_counts">
+    <lst name="facet_queries"/>
+    <lst name="facet_fields">
+      <lst name="author">
+        <int name="Peter Groffman ,     Email: groffmanp@ecostudies.org">42</int>
+        <int name="David Tilman">41</int>
+        <int name="Robert P. Griffiths">26</int>
+        <int name="George Kling">22</int>
+        <int name="Daniel Childers">17</int>
+        <int name="Jill Johnstone">14</int>
+        <int name="Roger W. Ruess">14</int>
+        <int name="Tim Seastedt">12</int>
+        <int name="Isla Myers-Smith">10</int>
+        <int name="Eric S. Kasischke">8</int>
+      </lst>
+    </lst>
+    <lst name="facet_dates"/>
+    <lst name="facet_ranges"/>
+  </lst>
+</response>
+
+
+eg 3. Same as for #2 but include one record in the response output:
+
+curl -s "http://localhost:8080/solr/d1-cn-index/select?rows=1&q=abstract%3Asoil%20carbon&facet=true&facet.limit=10&facet.field=author" | xml fo
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <lst name="responseHeader">
+    <int name="status">0</int>
+    <int name="QTime">2</int>
+    <lst name="params">
+      <str name="facet">true</str>
+      <str name="facet.limit">10</str>
+      <str name="rows">1</str>
+      <str name="q">abstract:soil carbon</str>
+      <str name="facet.field">author</str>
+    </lst>
+  </lst>
+  <result name="response" numFound="701" start="0">
+    <doc>
+      <str name="abstract">The BOREAS TGB-12 team made measurements of soil carbon inventories, carbon concentration in soil gases, and rates of soil respiration at several sites to estimate the rates of carbon accumulation and turnover in each of the major vegetation types. This data set contains information on the carbon isotopic content of carbon dioxide sampled from soils.</str>
+      <str name="author">TRUMBORE, S.E.</str>
+      <str name="authoritativeMN">urn:node:ORNLDAAC</str>
+      <date name="beginDate">1993-11-14T00:00:00Z</date>
+      <str name="checksum">e2a368f6e6a0434dc337bc3c6740b3ba</str>
+      <str name="checksumAlgorithm">MD5</str>
+      <arr name="contactOrganization">
+        <str>The Oak Ridge National Laboratory (ORNL) Distributed Active Archive Center (DAAC)</str>
+      </arr>
+      <str name="dataUrl">https://cn-ucsb-1.dataone.org/cn/v1/resolve/scimeta_399.xml</str>
+      <str name="datasource">urn:node:ORNLDAAC</str>
+      <date name="dateModified">2012-07-13T20:58:09.05Z</date>
+      <date name="dateUploaded">2012-07-12T20:58:07Z</date>
+      <arr name="documents">
+        <str>BOREAS_TGB12CI_399.zip</str>
+      </arr>
+      <float name="eastBoundCoord">-98.29</float>
+      <date name="endDate">1996-10-10T00:00:00Z</date>
+      <str name="fileID">https://cn-ucsb-1.dataone.org/cn/v1/resolve/scimeta_399.xml</str>
+      <str name="formatId">FGDC-STD-001.1-1999</str>
+      <str name="geoform">metadata</str>
+      <str name="id">scimeta_399.xml</str>
+      <str name="identifier">scimeta_399.xml</str>
+      <arr name="investigator">
+        <str>TRUMBORE, S.E.</str>
+      </arr>
+      <bool name="isPublic">true</bool>
+      <float name="northBoundCoord">55.93</float>
+      <arr name="origin">
+        <str>TRUMBORE, S.E.</str>
+      </arr>
+      <arr name="placeKey">
+        <str>BOREAL FORESTS/CANADA</str>
+      </arr>
+      <str name="presentationCat">metadata</str>
+      <arr name="readPermission">
+        <str>public</str>
+      </arr>
+      <arr name="replicaMN">
+        <str>urn:node:ORNLDAAC</str>
+        <str>urn:node:CN</str>
+      </arr>
+      <arr name="replicaVerifiedDate">
+        <date>2012-07-13T00:00:00Z</date>
+        <date>2012-07-13T00:00:00Z</date>
+      </arr>
+      <bool name="replicationAllowed">false</bool>
+      <arr name="resourceMap">
+        <str>resourceMap_399.xml</str>
+      </arr>
+      <str name="rightsHolder">CN=ornldaac,DC=cilogon,DC=org</str>
+      <long name="size">8065</long>
+      <str name="sku">scimeta_399.xml</str>
+      <float name="southBoundCoord">55.88</float>
+      <str name="submitter">CN=ornldaac,DC=cilogon,DC=org</str>
+      <str name="text">TRUMBORE, S.E.  BOREAS TGB-12 CARBON DIOXIDE ISOTOPIC CONTENT DATA OVER THE NSA  http://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=399  http://daac.ornl.gov/mercury_harvest/399.xml  http://daac.ornl.gov/mercury_harvest/399.xml  http://daac.ornl.gov//BOREAS/guides/TGB12_Iso_CO2.html  metadata     The BOREAS TGB-12 team made measurements of soil carbon inventories, carbon concentration in soil gases, and rates of soil respiration at several sites to estimate the rates of carbon accumulation and turnover in each of the major vegetation types. This data set contains information on the carbon isotopic content of carbon dioxide sampled from soils.       19931114  19961010      Complete  As appropriate     -98.62  -98.29  55.93  55.88      Parameter_Sensor_Source  SOIL GAS/AIR|MASS SPECTROMETER|LABORATORY    Parameter  SOIL GAS/AIR    Source  LABORATORY    Sensor  MASS SPECTROMETER    Place Keywords  BOREAL FORESTS/CANADA       TRUMBORE, S.E.   6.1.10.8 Contact Electronic Mail: INTERNET &amp;gt;         The Oak Ridge National Laboratory (ORNL) Distributed Active Archive Center (DAAC)  ORNL DAAC User Services Office
+        Oak Ridge National Laboratory
+        Oak Ridge, Tennessee 37831 USA     
+        FAX: +1(865)574-4665   +1(865)241-3952  6.1.10.8 Contact Electronic Mail: INTERNET &amp;gt;  ornldaac@ornl.gov        http://daac.ornl.gov/  PUBLIC      Trumbore, S. E., E. T. Sundquist, and G. C. Winston. 1998. BOREAS TGB-12 Carbon Dioxide Isotopic Content Data over the NSA. Data set. Available on-line [http://www.daac.ornl.gov] from Oak Ridge National Laboratory Distributed Active Archive Center, Oak Ridge, Tennessee, U.S.A. doi:10.3334/ORNLDAAC/399    19990130     ORNL DAAC Staff    ORNL DAAC Staff   +1(865)241-3952  ornldaac@ornl.gov    FGDC Content Standard for Digital Geospatial Metadata   Created 2012 05 22 21 30 13 1331736613 by 160.91.11.44   19931114  19961010   BOREAL FORESTS/CANADA  -98.62  -98.29  55.93  55.88   CO2  14C  FLUX  TRACE GAS  CARBON CYCLE  CARBON DIOXIDE  CARBON ISOTOPES   SOIL GAS/AIR  MASS SPECTROMETER  LABORATORY  SOILS  LAND SURFACE   BOREAS  LABORATORY|MASS SPECTROMETER|SOIL GAS/AIR   TRUMBORE, S.E.     http://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=399  BOREAS TGB-12 CARBON DIOXIDE ISOTOPIC CONTENT DATA OVER THE NSA     http://daac.ornl.gov//BOREAS/guides/TGB12_Iso_CO2.html  BOREAS TGB-12 CARBON DIOXIDE ISOTOPIC CONTENT DATA OVER THE NSA    /home/web/mercury/write_mercury_xml.pl  mercury21.dtd   ornldaac@ornl.gov  ORNL DAAC User Services Office
+        Oak Ridge National Laboratory
+        Oak Ridge, Tennessee 37831 USA     
+        FAX: +1(865)574-4665  +1(865)241-3952     399  BOREAS_TGB12CI  0.016499999999999   http://daac.ornl.gov//BOREAS/guides/TGB12_Iso_CO2.html  BOREAS TGB-12 CARBON DIOXIDE ISOTOPIC CONTENT DATA OVER THE NSA scimeta_399.xml</str>
+      <str name="title">BOREAS TGB-12 CARBON DIOXIDE ISOTOPIC CONTENT DATA OVER THE NSA</str>
+      <date name="updateDate">2012-07-12T20:58:07Z</date>
+      <arr name="webUrl">
+        <str>http://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=399</str>
+        <str>http://daac.ornl.gov/mercury_harvest/399.xml</str>
+        <str>http://daac.ornl.gov//BOREAS/guides/TGB12_Iso_CO2.html</str>
+      </arr>
+      <float name="westBoundCoord">-98.62</float>
+    </doc>
+  </result>
+  <lst name="facet_counts">
+    <lst name="facet_queries"/>
+    <lst name="facet_fields">
+      <lst name="author">
+        <int name="Peter Groffman ,     Email: groffmanp@ecostudies.org">42</int>
+        <int name="David Tilman">41</int>
+        <int name="Robert P. Griffiths">26</int>
+        <int name="George Kling">22</int>
+        <int name="Daniel Childers">17</int>
+        <int name="Jill Johnstone">14</int>
+        <int name="Roger W. Ruess">14</int>
+        <int name="Tim Seastedt">12</int>
+        <int name="Isla Myers-Smith">10</int>
+        <int name="Eric S. Kasischke">8</int>
+      </lst>
+    </lst>
+    <lst name="facet_dates"/>
+    <lst name="facet_ranges"/>
+  </lst>
+</response>
+
+
+
+eg 4. As for #3, but with a limited selection of fields (Author, Title, beginDate):
+
+curl -s "http://localhost:8080/solr/d1-cn-index/select?rows=1&q=abstract%3Asoil%20carbon&facet=true&facet.limit=10&facet.field=author&fl=author,title,beginDate" | xml fo
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <lst name="responseHeader">
+    <int name="status">0</int>
+    <int name="QTime">1</int>
+    <lst name="params">
+      <str name="facet">true</str>
+      <str name="facet.limit">10</str>
+      <str name="rows">1</str>
+      <str name="fl">author,title,beginDate</str>
+      <str name="q">abstract:soil carbon</str>
+      <str name="facet.field">author</str>
+    </lst>
+  </lst>
+  <result name="response" numFound="701" start="0">
+    <doc>
+      <str name="author">TRUMBORE, S.E.</str>
+      <date name="beginDate">1993-11-14T00:00:00Z</date>
+      <str name="title">BOREAS TGB-12 CARBON DIOXIDE ISOTOPIC CONTENT DATA OVER THE NSA</str>
+    </doc>
+  </result>
+  <lst name="facet_counts">
+    <lst name="facet_queries"/>
+    <lst name="facet_fields">
+      <lst name="author">
+        <int name="Peter Groffman ,     Email: groffmanp@ecostudies.org">42</int>
+        <int name="David Tilman">41</int>
+        <int name="Robert P. Griffiths">26</int>
+        <int name="George Kling">22</int>
+        <int name="Daniel Childers">17</int>
+        <int name="Jill Johnstone">14</int>
+        <int name="Roger W. Ruess">14</int>
+        <int name="Tim Seastedt">12</int>
+        <int name="Isla Myers-Smith">10</int>
+        <int name="Eric S. Kasischke">8</int>
+      </lst>
+    </lst>
+    <lst name="facet_dates"/>
+    <lst name="facet_ranges"/>
+  </lst>
+</response>
+
+
+
+eg. 5. Find documents that match "Soil Organic Carbon" and is referenced by a resource map. Return the resource map in the response.
+
+curl -s "http://localhost:8080/solr/d1-cn-index/select?rows=1&q=abstract%3Asoil+carbon+AND+resourceMap%3A%5B*+TO+*%5D&facet=true&facet.limit=10&facet.field=author&fl=author,title,beginDate,resourceMap" | xml fo
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <lst name="responseHeader">
+    <int name="status">0</int>
+    <int name="QTime">36</int>
+    <lst name="params">
+      <str name="facet">true</str>
+      <str name="facet.limit">10</str>
+      <str name="rows">1</str>
+      <str name="fl">author,title,beginDate,resourceMap</str>
+      <str name="q">abstract:soil carbon AND resourceMap:[* TO *]</str>
+      <str name="facet.field">author</str>
+    </lst>
+  </lst>
+  <result name="response" numFound="233" start="0">
+    <doc>
+      <str name="author">TRUMBORE, S.E.</str>
+      <date name="beginDate">1993-11-14T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_399.xml</str>
+      </arr>
+      <str name="title">BOREAS TGB-12 CARBON DIOXIDE ISOTOPIC CONTENT DATA OVER THE NSA</str>
+    </doc>
+  </result>
+  <lst name="facet_counts">
+    <lst name="facet_queries"/>
+    <lst name="facet_fields">
+      <lst name="author">
+        <int name="DAVIDSON, E.A.">5</int>
+        <int name="ANDERSON, DARWIN">4</int>
+        <int name="Anne Cross">3</int>
+        <int name="Arnold van der Valk">3</int>
+        <int name="BATJES, N.H.">3</int>
+        <int name="BLACK, T.A.">3</int>
+        <int name="CRILL, P.M.">3</int>
+        <int name="EMANUEL, W.R.">3</int>
+        <int name="GOWER, S.T.">3</int>
+        <int name="HARDEN, J.W.">3</int>
+      </lst>
+    </lst>
+    <lst name="facet_dates"/>
+    <lst name="facet_ranges"/>
+  </lst>
+</response>
+
+
+e.g. 6: 
+
+curl -s "http://localhost:8080/solr/d1-cn-index/select?rows=10&q=abstract%3Asoil+carbon+AND+resourceMap%3A%5B*+TO+*%5D&fl=author,title,beginDate,resourceMap" | xml fo
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <lst name="responseHeader">
+    <int name="status">0</int>
+    <int name="QTime">1</int>
+    <lst name="params">
+      <str name="rows">10</str>
+      <str name="fl">author,title,beginDate,resourceMap</str>
+      <str name="q">abstract:soil carbon AND resourceMap:[* TO *]</str>
+    </lst>
+  </lst>
+  <result name="response" numFound="233" start="0">
+    <doc>
+      <str name="author">TRUMBORE, S.E.</str>
+      <date name="beginDate">1993-11-14T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_399.xml</str>
+      </arr>
+      <str name="title">BOREAS TGB-12 CARBON DIOXIDE ISOTOPIC CONTENT DATA OVER THE NSA</str>
+    </doc>
+    <doc>
+      <str name="author">ANDERSON, DARWIN</str>
+      <date name="beginDate">1993-01-01T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_530.xml</str>
+      </arr>
+      <str name="title">BOREAS TE-01 SSA SOIL LAB DATA</str>
+    </doc>
+    <doc>
+      <str name="author">EMANUEL, W.R.</str>
+      <date name="beginDate">1940-01-01T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_638.xml</str>
+      </arr>
+      <str name="title">SAFARI 2000 ORGANIC SOIL CARBON AND NITROGEN DATA (ZINKE ET AL.)</str>
+    </doc>
+    <doc>
+      <str name="author">DAVIDSON, E.A.</str>
+      <date name="beginDate">1937-01-01T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_517.xml</str>
+      </arr>
+      <str name="title">BOREAS TGB-12 SOIL CARBON AND FLUX DATA OF NSA-MSA IN RASTER FORMAT</str>
+    </doc>
+    <doc>
+      <str name="author">BATJES, N.H.</str>
+      <date name="beginDate">1950-01-01T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_634.xml</str>
+      </arr>
+      <str name="title">SAFARI 2000 DERIVED SOIL PROPERTIES, 0.5-DEG (ISRIC-WISE)</str>
+    </doc>
+    <doc>
+      <str name="author">NORMAN, J.M.</str>
+      <date name="beginDate">1989-07-24T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_105.xml</str>
+      </arr>
+      <str name="title">SOIL CO2 FLUX DATA (FIFE)</str>
+    </doc>
+    <doc>
+      <str name="author">HARDEN, J.W.</str>
+      <date name="beginDate">1993-08-01T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_402.xml</str>
+      </arr>
+      <str name="title">BOREAS TGB-12 SOIL CARBON DATA: NSA</str>
+    </doc>
+    <doc>
+      <str name="author">ALENCAR, A.C.</str>
+      <date name="beginDate">1973-01-01T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_941.xml</str>
+      </arr>
+      <str name="title">PRE-LBA RADAMBRASIL PROJECT DATA</str>
+    </doc>
+    <doc>
+      <str name="author">PEREZ, T</str>
+      <date name="beginDate">2000-07-08T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_1013.xml</str>
+      </arr>
+      <str name="title">LBA-ECO TG-09 SOIL ISOTOPIC C, N, H2O, AND N2O DATA, TAPAJOS NATIONAL FOREST, BRAZIL</str>
+    </doc>
+    <doc>
+      <str name="author">EHLERINGER, J.R.</str>
+      <date name="beginDate">1994-05-26T00:00:00Z</date>
+      <arr name="resourceMap">
+        <str>resourceMap_325.xml</str>
+      </arr>
+      <str name="title">BOREAS TE-05 SOIL RESPIRATION DATA</str>
+    </doc>
+  </result>
+</response>
+
+
+
+
+
+4. Search on CNs only limits ITK to online use only (i.e. connected to the internet), and reliance on rapid indexing. E.g. for morpho - user just added metadata, but does not show up in search for a few minutes afterwards.
+
+
+
+
+
+Possibly Relevant / Interesting Libraries, Standards, Protocols
+---------------------------------------------------------------
+
+SOLR: Indexer service built on Lucene. Fast, scalable, widely used.
+http://lucene.apache.org/solr/
+
+
+OpenSearch - A rather loose specification for describing search interfaces. Implemnetations generally return results in Atom
+http://www.opensearch.org
+
+
+SRW/SRU, A protocol promoted by the Library of Congress, uses CQL (contextual query language)
+http://www.loc.gov/standards/sru/
+
+
+SIREn: Efficient semi-structured Information Retrieval for Lucene
+http://siren.sindice.com/index.html
+
+
+SPARQL: http://www.w3.org/standards/semanticweb/query
+Requires decomposition of content into triples (actually or virtually)
+
+
+
+Other Useful Projects
+---------------------
+
+Apache Tika: Content and metadata extraction
+http://tika.apache.org/
+
+
+
+Notes from 20120925
+-------------------
+1) defining the REST endpoint for the new search ("query")
+GET /query/ --> List of queryEngine   CNRead.listQueryEngines()
+GET /query/{queryEngine} --> Types.QueryEngineDescription 
+GET /query/{queryEngine}/{query} --> Types.OctetStream
+GET /search --> 404
+
+
+2) defining the return type from CNRead.getQueryEngineDescription (formerly drafted as list search fields)
+ *   CNRead.listSearchFields() -> SearchFieldList
+ *   CNRead.getQueryEngineDescription() --> QueryEngineDescription
+ * similarities between search engine search field list responses might be consolidated
+ * versions of responses from a single engine is an issue
+
+/search/{queryEngine}
+e.g. /search/solr
+
+QueryEngineDescription
+  queryEngineVersion version of search engine implementation (e.g. "SOLR-3.6.1") (string)
+  querySchemaVersion version of schema being used for defining the search capabilities (e.g. "1.0.1") (string)
+  name (human readable) e.g. "solr" (string)
+  additionalInfo (URL, repeatable) e.g. "http://wiki.apache.org/solr/SolrQuerySyntax" Link to a description of the search engine and query syntax
+  queryFieldList(optional, QueryFieldList):
+    fieldName (string)
+    fieldDescription (string)
+    fieldType (string)
+    returnable (boolean)
+    searchable (boolean)
+    sortable (boolean)
+    multivalued (boolean)
+
+dataONEtypes.xsd will become version 1.1
+the namespace will remain /v1
+
+3) Versioning the search schema for DataONE
+ * ONEMercury is using a property file stating the schema version
+ * Will the search schema always be backwards comaptible? Probably not - hard to maintain, although the context of a field may change whereas the name of the field may not
+
+

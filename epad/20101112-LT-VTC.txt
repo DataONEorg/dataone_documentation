@@ -1,0 +1,167 @@
+Attendees: Rebecca Koskela, Amber Budden, Bob Cook, Carol Tenopir, Viv Hutchison, Todd Vision, Trisha Cruse, Dave Vieglais, Bruce Wilson, John Cobb
+
+
+
+Regrets: Mike Frame, Bill Michener, Suzie Allard (maybe)
+
+ Agenda for 2010-11-12
+
+ * Semantics and Integration Working Group Charter and Membership ready for approval (Koskela) - see https://docs.dataone.org/member-area/working-groups/integration-and-semantics
+ * Draft January EAB Agenda  (Michener/Koskela)
+https://docs.dataone.org/member-area/committees/external-advisory-board/2011jan17_eab_meeting_santa_fe_nm
+ * February Review - suggestions for potential reviewers
+ * DataONE project book/portfolio  (Vieglais/Michener)      
+                                                                                                                                                        The  project book contains final versions of all content generated on the  project. This includes the "Project Management Control Book" (items 1-3)  as well as high level deliverables. 
+
+Unknowns- location of  higher level meetings such as CCIT or AH meetings; outcomes from regular  development activity and decisions; operational activities that are not  part of Cyberinfrastructure development (e.g. The public web site,  mailing lists, project account management, etc).
+1. Project Management
+   * Proposal
+   * PMP
+   * People
+   * List of publications
+   * List of meetings
+2. Sponsor (NSF) Communications
+   * Annual reports
+   * Quarterly reports
+   * Cooperative agreement
+   * Reviews
+3. EAB
+   * Charter
+   * Members
+   * Reports
+4. DataONE Users Group
+   * Charter
+5. Cyberinfrastructure
+   * Architecture docs
+   * Security plan
+   * Operations
+   * This  item will grow over the duration of the project, so may be moved to a  higher level position in the project book, perhaps coincident with the  public release.
+     * Policies
+     * Member node agreements
+     * Investigator toolkit support
+   * Preservation
+   * Provenance
+   * Federated security
+   * Workflows
+   * Distributed storage
+6. Community Engagement
+   * Education
+   * Assessments
+   * Assessment and Usability
+   * Sociocultural Barriers
+   * EVA
+7. Sustainability & Governance
+   * Marketing plan
+   * Value proposition
+Software: epub software
+Concerns: Publication quality of all documents but don't have process for moving documents from draft form to publishable quality nor does anyone have responsibilty for this process
+What is the relationship between this and the public web site? 
+Easiest way is to add final versions of these documents to the subversion site and then have subversion do the version control. 
+Viv: zmags as a way to do the document online
+Probably doesn't have to be done all at once
+Two issues: content & packaging/display so would need a process to get the content into
+the approved packaging scheme
+Would need a framework of some sort to do the packaging.
+John:  On the bus back to the Airport after the AHM, Heather Piwowar mentioned that DataONE could benefit from getting more information out sooner, even if before it was finally approved. I.E. have areas on the web for "final" documents and publicaly available areas for "in process/development" content
+Subversion site is open for viewing and portions of the Plone site could be opened to the public. This would help to improve access.
+If permissions were changed on the Plone site for public, they would only see what they have access to so would actually be easier to navigate.
+
+
+ * Reorganization of the DataONE plone site (Budden)                                                       
+Working groups
+ *  <<Working Group>>
+   * Charter
+   * Participants
+   * << Meeting >>
+     * ppts
+     * docs
+     * reports
+   * Products
+     * papers
+     * posters
+     * videos
+   * Quarterly reports
+     * << report >>
+Amber would create this hierarchy of folders for each Working Group if structure is agreeable to the LT. Where would the drafts go?  For example, all drafts of Products would go in that folder and when there is a final version, a copy would be put in the project book.
+With Plone, you can implement work flows. Can mark items as private to the working group and when it's ready, could "publish" and it would then be accessible to all.
+Adding new folders or new sub folders? If it doesn't work for a working group, then would be good to have a discussion about what changes are needed and organize them for all groups.
+A first step would be to create the folders and have the working group members move the existing content into the folders.
+Mailing lists can be created for working groups.
+What types of tools are useful for collaboration sites? Perhaps is subversion were more intuitive then it would not need to be relearned each time a person used it. Projects all have different methods - a web interface for the tool would be extremely helpful.
+ohn:  WebDav atop SVN is what is needed. If I can think of it, I always assume someone else has done it. Who has already done this?
+
+Data Citation (Cruse)
+Conference at UCSD
+Phil Bourne (organizer) - open source code to facilitate knowledge sharing
+
+DataCite: co-host summer meeting in CA; new task group to look at Data Citation and Data Sharing - funded by gov't agencies and foundations
+2 day symposium CDL will host 
+Someone from DataONE should try to be on the Data Citation and Data Sharing group
+Someone from DataONE could do a workshop at the CDL meeting
+MacKenzie Smith (one of founders of DSpace) and Jon Wilbanks (head of Science Commons) - interested in bringing together the two DataNets on the (Science) Data Commons Project
+
+ * Round the room (All)
+
+
+Bob:
+Data Management Workshop at AGU
+Tuesday, December 13, at 12:30 pm
+ 
+Draft agenda and topics:
+http://wiki.esipfed.org/index.php/Data_Management_Workshop
+ 
+Agenda being re-worked to provide more focus (likely fewer speakers).
+
+John Cobb: Nothing additional to report today (already at SC10 working on the Ed program. Lots of worthwhile effort.)
+
+Bruce Wilson: Nothing particular to report.  I was at a workshop at NASA earlier this week on satellite data for IPCC AR5, mostly focussed on Earth System Grid.  I need to get back on the procurement question for the hardware (working with the various others on the CCIT on this).  Getting ready for a Data Conservancy-sponsored workshop at IDCC in December.  
+
+Carol T: Suzie and I are interviewing 2 post-doc candidates the week of 22nd. Nothing else.
+
+Viv: Continued work with the CEEWG sub-group on development of education modules on data management; Amber helped with our slide template; will send outline for modules out to LT for comment soon; working on getting someone to lead workshop on developing education modules in the Spring. 
+
+Amber: Have been working on setting up a second Best Practices workshop in Santa Fe, late spring next year.  Will circulate a list of invitees for additional recommendations.  Will also circulate a draft DUG charter for discussion / comments next week.
+
+Dave: Nothing to add, working through backlog from AHM and actions for DUG, EAB, and NSF.
+
+Todd: Talking with Labarchives (http://www.labarchives.com/) about a pilot project to publish "lab book" data to digital archives like Dryad.  Heather's survey to authors in ecology and evolution to monitor attitude change as the new data archiving policies come into effect is going through IRB now. 
+
+Comments from Marratech chatbox:
+[10:58 AM] Viv Hutchison joined.
+[11:00 AM] Todd Vision joined.
+[11:01 AM] Trisha Cruse joined.
+[11:02 AM] Rebecca: http://epad.dataone.org/20101112-LT-VTC
+[11:03 AM] Bob Cook:  yes
+[11:04 AM] Viv:  some people get stars for homework completed
+[11:04 AM] Dave Vieglais joined.
+[11:05 AM] Rebecca: https://docs.dataone.org/member-area/committees/external-advisory-board/2011jan17_eab_meeting_santa_fe_nm
+[11:15 AM] Bruce Wilson joined.
+[11:16 AM] John W. Cobb joined.
+[11:16 AM] John:  Hi Y'all soryy to be late.
+[11:21 AM] John:  On the bus back to the Airport after the AHM, Heather Piwowar mentioned that DataONE could benefit from getting more information out sooner, even if before it was finally approved. I.E. have areas on the web for "final" documents and publicaly available areas for "in process/development" content
+[11:33 AM] Bob Cook:  I like this plan....please go ahead.
+[11:36 AM] Bruce:  Yeah, Google blacklisted ORNL for almost a day from search results about a year ago.  Fun stuff happens.
+[11:38 AM] John:  I prefer SVN :> I'm most familiar with it
+[11:39 AM] John:  WebDav atop SVN is what is needed. If I can think of it, I always assume someone else has done it. Who has already done this?
+[11:40 AM] Trisha:  thanks
+[11:45 AM] Todd:  I am interested!
+[11:59 AM] Trisha:  ok
+[12:01 PM] Trisha:  bye bye
+[12:01 PM] Trisha Cruse left.
+[12:02 PM] Carol:  bye..
+[12:02 PM] Carol left.
+[12:04 PM] Viv:  bye guys...another call....
+[12:04 PM] Viv Hutchison left.
+[12:04 PM] Bruce:  What happened on the Semantics Group?
+[12:05 PM] Bruce:  Yes, I have that as a to do item to come up with suggestions.  I need to review some of my contacts list.
+[12:05 PM] Bruce:  I vote Aye.
+[12:05 PM] Bruce:  I helped write the charter, so I'd better vote for it
+[12:05 PM] Bob Cook:  bye
+[12:05 PM] Todd:  bye all!
+[12:05 PM] Bruce Wilson left.
+[12:05 PM] Dave Vieglais left.
+[12:05 PM] Bob left.
+[12:05 PM] Todd Vision left.
+[12:06 PM] Amber Budden left.
+[12:06 PM] John W. Cobb left.
+

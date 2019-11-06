@@ -1,0 +1,64 @@
+Registering a Member Node
+
+( http://mule1.dataone.org/ArchitectureDocs-current/design/NodeIdentity.html )
+
+-1. Decide on Node ID, other properties for node registration document
+
+- node name shows up in Mercury search UI - so needs to be meaningful
+
+0. Decide on environment for testing
+
+1. Verify operation
+(esp. for replication node
+
+1.5 Register user account using CILogon identity
+1.6 Approve user account (set as verified)
+
+2. Add to node registry
+  API call from MN to CN
+  
+  There needs to be some alert mechanism here to notify an administrator that a node has been registered. e.g. Email by node operator to "sys admin"
+
+
+3. Approve node registration
+
+
+
+Q. What happens when node information is incorrect before approval? 
+A. Delete the entry, correct, and re-register
+
+Q. How to manage test instances coming up and down and scrubbing content in test environment related to the test MN instance?
+A. wing it
+
+
+
+
+
+Approving a Node Registration
+-----------------------------
+
+Issue from the command line a curl get with production certs (if https connect) to ensure that they have a valid server certificate and that they recognize our server certificate
+
+You can review all member nodes by executing the command on the CN::
+
+  ldapsearch -x -W -D cn=admin,dc=dataone,dc=org -W -H ldap://localhost:389 -b 'dc=org' 'd1NodeType=mn'
+
+
+You can review all the content related to a new node id with the command::
+
+  ldapsearch -x -W -D cn=admin,dc=dataone,dc=org -W -H ldap://localhost:389 -b 'dc=org' 'd1NodeId=NODEID'
+
+
+If the node structure looks good, then you will need to approve the node::
+
+  /usr/local/bin/dataone-approve-node
+
+you will be prompted with a list of nodes that are unapproved
+
+Type in the number of node to approve.
+
+Verify that the selection is correct
+
+and you're done.
+
+

@@ -1,0 +1,115 @@
+Member Nodes store and provide access to their digital scientific data holdings.  Member Nodes also provide metadata describing their data to Coordinating Nodes to facilitate discovery and retrieval of the data within the DataONE Network. Member Nodes may host their own data and/or may partner with other data holders to provide access to partner’s data and metadata. Member nodes may have direct connection with user communities.
+ 
+ 
+Potential Benefits for Member Nodes
+ 
+ * Improved methods of access to their data, as well as wider access to and exposure of that data
+ * Cost-effective preservation and curation of their data and metadata
+ * Access to larger community with expertise and best practices in data life cycle management
+ * Toolkit for analysis, visualization and modeling their data
+ * Enable organizations to respond to increasing demands by funding agencies for long-term data management planning
+ * Visibility as a community leader in supporting open and rapid access to scientific data
+ * Recognition and credit for data and services provided through data citations in published literature
+ * Opportunities for collaborative research in the evolving field of cyberinfrastructure 
+ * Potential funding opportunities resulting from data discovery
+ 
+ 
+ 
+Summary Guidelines for Member Nodes
+ 
+The following are the general requirements for Member Nodes. Member Nodes are categorized into four groups - Tiers 1 through 4 - depending on the extent of their participation in DataONE. The specific requirements for each tier are described following the general requirements.
+ * Provide access to actively managed data 
+ * Provide descriptive metadata to Coordinating Nodes to facilitate data discovery, access and usability
+ * Ensure availability and reliability of physical data access
+ * Engage with the larger DataONE community to advance DataONE services, support emerging member nodes, and promote best practices in data management.
+ * Utilize a unique identifier for each dataset by participating in DataONE identity federation 
+ * Deploy an implementation of DataONE APIs (Application Programming Interfaces)
+ 
+ 
+ 
+Member Node Functional Tiers (Access and Requirments)
+ 
+Tier 1: Uncontrolled User Access to Public Data Only
+
+Storage/stewardship:   All data held will be available to the public with no restrictions
+ 
+Access
+ * Provide read only access
+ * All data and metadata are accessible to all users (authentication not needed or available)
+ 
+Requirements
+ * Ensure moderate level of availability and reliability of the system  
+   * Maintain human communications during normal working hours according to local time
+   *  Ensure service interruptions do not exceed two days at a time and no less than one month for mean time between failures
+ * Use following APIs from DataONE CI Tools set 
+   *  ping(), getLogRecords(), getCapabilities(),get(), getSystemMetadata(), getChecksum(),listObjects(), synchronizationFailed()       
+ 
+Tier 2: Controlled User Access to Public and Restricted Data
+ 
+ * Has ability to control user access in addition to capabilities of Tier 1 
+
+Storage/Stewardship:
+ *  A mix of publicly accessbile and restricted datasets.
+ 
+Access
+ * Provide public content as well as controlled access to selected datasets
+ 
+Requirements
+ * Implement a means to control access at the dataset level
+   * Use Tier 2 APIs in addition to Tier 1 APIs
+     * isAuthorized(), setAccessPolicy()
+   * Accept DataONE identities to access data
+     * Use R identities or have CILogin account
+ * Allow replication of data by one or more other member nodes
+ * Ensure moderate level of availability and reliability of physical data access
+   * Maintain human communications during normal working hours according to local time
+   * Ensure service interruptions do not exceed one day at a time and no less than one month for mean time between failures
+ * Allow the implementation of an existing member node stack in parallel with MN’s
+ * Use software conforming to DataONE processes or align software to interface with DataONE processes, e.g., MetaCAT, GMN, Merritt, Dryad, CUASHI, Mercury
+ 
+Tier 3: Read/Write Using Client Tools
+ 
+ * Has ability to permit external users to write data to the MN in addition to all capabilities of Tiers 1 and 2 
+
+Storage/stewardship:
+ * A mix of publicly accessbile and restricted datasets. Also user-contributed datasets.
+ 
+Access
+ * Set policy for write permissions for member node users
+ 
+Requirements
+ * Implement a means to control write/edit/delete user capabilities.
+   * Use Tier 3 APIs in addition to Tier 2 APIs and Tier 1 APIs
+     * create (), update (), delete ()
+ * Ensure moderate level of availability and reliability of physical data access
+   * Maintain human communications during normal working hours according to local time
+   *  Ensure service interruptions do not exceed 8 hours at a time and no less than one month for mean time between failures
+ 
+Tier 4: Able to Operate as a Replication Target
+ 
+ * Has the capability to serve as replication target in addition to capability of tiers 1-3 
+
+ Storage/stewardship:
+ * A mix of publicly accessbile and restricted datasets. Also user contributed datasets and datasets replicated from other member nodes.
+
+Access
+ * Accept replication of at least one dataset from another member node
+ * Serve as a back-up to replicated member nodes
+ 
+Requirements
+ * Provide sufficient disc space to be a replication target
+ * Ensure high level of availability and reliability of physical data access
+   * Maintain human communications during normal working hours according to local time; staff on call during other times
+   * Ensure service interruptions do not exceed four hours at a time and no less than three months for mean time between failures
+ * Use Tier 4 APIs in addition to Tier 3, Tier 2, and Tier 1 APIs
+   * replicate(), getReplica()
+
+
+
+
+
+
+
+
+
+

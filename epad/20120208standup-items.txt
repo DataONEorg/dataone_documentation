@@ -1,0 +1,59 @@
+Discussion of items from the Standup Discussion 2012-02-08
+
+
+Node Identifiers
+----------------
+
+Ref: http://mule1.dataone.org/ArchitectureDocs-current/design/NodeIdentity.html
+
+Options
+-------
+1. urn:datanet:
+2. urn:nodeid:
+3. urn:dataone:
+4. urn:nsf:
+5. urn:d1:node:...
+6. urn:dataone:node:...
+7. urn:d1node:...
+8. urn:nsf:nodeid:
+9. urn:irods:nodeid:
+
+urn:dataone:mn:KNB
+urn:dataone:mn:DRYAD
+urn:dataone:cn:UCSB
+
+urn:nodeid:mn:KNB
+urn:nodeid:mn:DRYAD
+urn:nodeid:cn:UCSB
+
+urn:nodeid:KNB
+urn:nodeid:DRYAD
+urn:nodeid:UCSBCN
+
+         1         2         3
+123456789012345678901234567890123456789
+urn:node:KNB
+urn:node:DRYAD
+urn:node:UCSBCN
+
+Should node subject be the node identifier? Nope. Certificates expire, may be multiple subjects associated with a node.
+
+what is the max length of the string? 25 characters (policy limit)
+ldap: 256 chars (functional limit)
+Case: character case is important.  urn:node:UCSBCN <> urn:node:ucsbcn But be careful of approving IDs to avoid "case squatting"
+NodeIds across environments: OK, but discouraged. A BaseURL must not appear in more than one environment
+
+Definition:
+NodeReference = "urn ":" node ":" id
+urn           = "urn"
+node          = "node"
+id            = *( unreserved )
+unreserved    = ALPHA / DIGIT / "_"
+
+Tasks: 
+Matt- update architecture doc
+Robert - update LDAP schema
+Robert - accept nodeID provided in the node document during registration
+
+
+

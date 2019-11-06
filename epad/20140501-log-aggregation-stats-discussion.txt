@@ -1,0 +1,142 @@
+Aggregated Log Statistics Discussion
+====================================
+
+Date: Thursday May 01, 2014 @4pm EDT
+
+Attending: Chris, Dave, Peter, Lauren, Matt, Ben, Robert, Skye
+
+The CN log aggregation service harvests log records from both the MNs and CNs in order to enable reporting for a number of use cases.  This reporting is becoming increasingly important for DataONE reviews, and so we need to be sure that 1) The necessary log records are indexed accurately, 2) access to the log records is appropriate, and 3) The service API is well documented for client use (with or without a certifcate).
+
+Log aggregation overview document: http://dev-testing.dataone.org:8080/hudson/job/API%20Documentation%20-%20trunk/javadoc/design/LogAggregator.html
+
+Pertinent tasks:
+ * Update log aggregation to support user dashboard https://redmine.dataone.org/issues/4477
+ * Update log event Solr index with new fields https://redmine.dataone.org/issues/4477
+ * Index geohash https://redmine.dataone.org/issues/4687
+ * Document the log aggregation component in the operations documents https://redmine.dataone.org/issues/3889
+ * Expose appropriate endpoint for Solr index
+   * https://redmine.dataone.org/issues/5133
+
+Related goals (In Metacat):
+ * Track data download, view, and citation statistics https://projects.ecoinformatics.org/ecoinfo/issues/5989
+
+Draft Agenda Items
+------------------
+ * Overview
+   * Current Status of CN Log Aggregation
+     * Split Brain Syndrome caused multiple harvests (two CNs) of the same entry
+     * Caused duplication of records
+     * Possibly caused corruption (incorrect field values)
+     * Re-index of all log entries is required for two reasons"
+       * Fixing split-brain fallout
+       * Populating newly added fields
+ * Documented API endpoint use
+   * Review DataONE API calls
+
+    Current end points:
+    https://cn-dev-ucsb-1.test.dataone.org/cn/v1/log (GET - getLogRecords() --> Types.Log)
+    https://cn-dev-ucsb-1.test.dataone.org/solr/d1-cn-log/select
+
+    The /v1/log endpoint has a different functionality than required of the solr request endpoint.
+
+    The /log endpoint description: 
+    http://mule1.dataone.org/ArchitectureDocs-current/apis/MN_APIs.html#MNCore.getLogRecords
+    
+     From the Architecture Docs:
+     "CNRead.query(session, queryEngine, query) → OctetStream
+        Submit a query against the specified queryEngine and return the response as 
+        formatted by the queryEngine."
+    
+    Proposal:
+        Use /cn/v1/query/{queryEngine}/{query} to handle queries to multiple backing stores:
+       * Object store
+       * Aggregated log store
+       * provenance store
+       * semantic annotation store
+        This proposal would be a v1 implementation, and that endpoints may change in the v2 API.
+        
+        Options:
+        A. /cn/v1/query/log-solr
+        B. /cn/v1/query/log
+        C. /cn/v1/query/log.solr
+        D. /cn/v1/query/logsolr <-- WINNER!
+                        
+   * Review MetacatUI legacy API calls
+   * Do we filter by IP? (CNs, other testing VMs, etc)
+       * Internal reporting of accesses by DataONE VMs may be useful
+       * The onus is on the client application to interpret the records correctly
+       * However, without  the correct authz (CN certs), clients may not be able to filter by IP, Subject, etc.
+       * Action: For now, show raw stats, no filtering, however, robot crawls are a concern
+   * Review the record values that are written to the MN access log (events)
+     * Can we distinguish events that happened based on the service endpoint
+       * Metric we need to report on: What is the 'impact' of DataONE on the community? Positve/Negative ...
+         * Justifies re-funding
+         * Can be used to express value to new investors
+         * Potentially useful: Did a CN query lead to an MN resolve() and GET? What is the ratio?
+       * e.g. for Metacat, action=read vs /mn/v1/object/{pid}
+     * If not, should we modify the schema/API, etc to do so?
+     * Can we determine if an object read event was from a direct GET, or from a package GET? No.
+ * Discuss support for temporal aggregations at various granularities
+   * We current use geohashes to bin by spatial location, but need a similar binning strategy for temporal usage statistics
+     * Yearly 
+     * Monthly
+               * Weekly
+     * Daily
+   * Proposal: For temporal aggregation, choose an epoch as a datum, and calculate integer-based offsets to and bin yearly, monthly, etc. based on Solr integer stats
+   * Action: determine whether or not solr 3.4 (and/or 4.x) can aggregate size field by date step, i.e. downloads per month for the last 10 years
+ * Discuss the statistics that will be supported:
+   * Count of Views (get() on METADATA) (at object level, this is same as next count)
+   * Count of Downloads of data objects (get() on DATA)
+   * Bytes downloaded
+   * Citations (out of scope for now)
+   * Problem: Querying across data stores (e.g. log records + system metadata like obsoletes/obsoletedBy chain) is difficult in implementations like Solr (flattened).
+     * Solution: Provide stats on all objects, but don't currently support providing stats for a 'concept' of an object (across versions)
+ * Review log aggregation data integrity issues
+   * Different counts between MN logRecords and CN Solr index
+     * May have been caused by split-brain scenario
+     * Solution: MN logRecords is authoritative --> reharvest all logs from all nodes.
+       * Increase # of concurrent MN.getLogRecords() requests (throttled on the CN)
+       * Increase page size for each MN.getLogrecords() request
+       * Be sure to profile for future review: record download rates
+   * Different counts between CNs
+     * CN Recovery process handles this
+   * Duplicate counts in log Solr index
+     * Caused by split-brain scenario
+     * Bug: log_aggregation needs to to detect duplicates
+       * Problem: Solr can't use composite keys - 
+       * Solution: need to create a single unique id field. Solr will overwrite entry for that key
+   * Missing counts in log Solr index?
+ * Review "sensitive" fields for querying, faceting
+   * Current fields in the Solr index:
+     * id, dateAggregated, isPublic, readPermission, entryId, pid, ipAddress, userAgent, subject, event, dateLogged, nodeId, rightsHolder, formatId, size, country, region, city, geohash_1, geohash_2, geohash_3, geohash_4, geohash_5, geohash_6, geohash_7, geohash_8, geohash_9, location
+     * Add formatType into the index (lookup in the CN objectFormatList)
+   * Sensitive fields (filtered from query/faceting)
+     * readPermission, ipAddress, subject, rightsHolder; don't filter userAgent
+     * Action: userAgent doesn't need to be filtered
+   * Document which fields are available per Subject role (public, investigator, MN, CN, etc.)
+     * CN, MN, and investigator (rightsHolder/changePermission permission) should have log read access
+
+Issues to resolve
+-----------------
+ * SOLR schema for logs includes nodeId field from systemMetadata, but is missing the nodeIdentifier field from the original log entry
+ * Support for temporal aggregations at various granularities
+ * What should our endpoint be?  Could either be RESTful as a POST under /log, or less RESTful and treated as a new query engine under the existing /query API
+   * Dave: proposed using the /query endpoint, with the option in a future v2 API release
+ 
+ * Request new field - formatType to allow aggregation across DATA, METADATA generic doc type.
+ * Documentation on how to use new geohash fields (end user documentation)
+ * Timing of log reharvest with roll out of new log schema.  If timed, avoids re-indexing for new schema fields.
+ * Action: Write up end-user documentation on using the geohash fields (Peter)
+ * Action: Time the roll out of the new schema prior to the re-harvest from the MNs (before the AHM)
+
+
+timing getLogRecords response (need to run from a CN):
+
+  export TIMEFORMAT="%R"
+  export NAMESPACE="d=http://ns.dataone.org/service/types/v1"
+  export NODE="https://knb.ecoinformatics.org/knb/d1/mn"
+  time  curl -s --cert cnode.pem \
+    "${NODE}/v1/log?count=7000&fromDate=2014-04-01T05%3A28%3A07" \
+    | xml sel -N "${NAMESPACE}" -t -m "/d:log" -o "N returned: " -v "@count" -n -o "Total: " -v "@total"
+
+

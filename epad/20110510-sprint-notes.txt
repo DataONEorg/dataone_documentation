@@ -1,0 +1,75 @@
+Notes on modifications to support SystemMetadata Replication
+--------------------------------------------------------------------------------------------
+Waltz, Leinfelder, Jones
+
+
+need separate CN method for creating science data's systemMetadata (without the data file itself)
+  CN.registerDataSystemMetadata(token, pid, systemMetadata...)
+     replication must produce copy of sytemMetadata of non available document..
+     
+  Made this CN.registerSystemMetadata(session, pid, sysmeta) -> boolean It is conceivable that there may be other object types we want to track besides data that will not be copied to the coordinating nodes. It is a POST to /meta
+
+
+CN_crud.updateSystemMetadata(token, pid, systemMetadata) -> Types.Identifier
+  replaced by
+  
+CN_crud.updateReplicaMetadata(token, pid, Types.ReplicaMetadata) -> Types.Identifier
+   full replacement of ReplicaMetadata, changes date sysmeta modified
+
+   
+CN_crud.setAccessPolicy(token, pid, AccessPolicy) -> boolean
+RE /access/pid (body containing token, AccessPolicy) -> boolean
+   -  changes date sysmeta modified too
+
+CN_crud.setReplicationPolicy(token, pid, ReplicationPolicy) -> boolean
+REST API: PUT /replication/pid (body containing token, ReplicationPolicy) -> boolean
+   - changes date sysmeta modified too
+
+This next method needs to be refactored
+-----------------------------------------------------------
+CN_store(?).setProvenance(token, pid, Provenance) -> boolean
+    obsoletes/obsoletedBy only changed by MN.update()
+    
+    derivedFrom can be set in its own method, requires write access on the derived object (Hold off on this, no separate method for now)
+        -- consider removing derivedFrom from Sysmeta until we can fully specify its use and meaning
+    
+CN.setDescribes()
+    describes can be set in its own method, but only with write access to described object and describing object
+        -- may want to relax the requirement later to allow third party annotations/perspectives/derivations on other people's data, but need to be able to differentiate the primary provider's description from these other descriptions
+    
+CN.setDescribedBy()
+    describedBy can be set in its own method, but only with write access to described object
+
+Story: Want metacat to save all sysmeta in tables, and stop storing sysmeta as XML docs
+   Task: refactor metacat tables to potentially merge xml_documents, xml_revisions, identifiers, and systemmetadata if it make sense
+   Task: create tables for access control (exist), replica policy, replica status, provenance info
+   Task: modify all dataone & native services in metacat to no longer store sysmeta xml
+   Task: modify getSystemMetadata to return XML from sysmeta tables serialization
+   Task: modify replication docInfo to contain full sysmeta info, and copy into replicated sysmeta tables (including both sysmeta and identifiers tables)
+   Task: reduce write into the replication log into a singe operation after sysmeta table and document have been fully replicated
+   Task: find mechanism to replicate sysmeta info for data objects that do not exist on the CNMetacat but for which we have sysmeta
+   
+Story:  Refactor the packager of the d1_synchronization in order to take advantage of new metacat systemMetadata storage capability.
+  Task.  dissociate 
+
+Data that needs to be replicated
+----------------------------------------------
+A. Node Registry Service
+    - guaranteed consistency
+B. ObjectFormat Service
+  - add only
+  - probably document oriented
+C. Identity Service
+  - add only
+  - candidate replication: LDAP replication
+D. Science Metadata
+  - add only
+E. System Metadata (http://mule1.dataone.org/ArchitectureDocs-current/notes/sysmeta_mutation_20101217.html)
+    E.1 IdentityGroup
+    E.2 ObjectStatusGroup
+    E.3 PolicyGroup
+    E.4 ProvenanceGroup
+F. Search indices (default might be to index locally instead)
+
+
+

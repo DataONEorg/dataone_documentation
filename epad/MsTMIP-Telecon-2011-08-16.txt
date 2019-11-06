@@ -1,0 +1,135 @@
+MsTMIP Telecon Notes: August 16th, 2011
+Next telecon:  Monday, August 29th from 2 to 4 p.m., EDT.
+
+Agenda:
+
+1) Driver data processing / status (Wei, Huntzinger)
+See notes below
+
+Weile is putting environmental driver data on NEX system: Please provide link to that data.
+Modeling teams need to sign up for accounts on NEX system (action item for all modeling teams).
+
+2) Discussion / Progress on spin-up runs and working with driver data (Modeling teams)
+
+Modeling teams should work to run their spin-up for the baseline simulations before the October workshop. We will be asking modeling teams to upload their initial conditions (from these spin-up runs) to the ftp server 2 weeks prior to the workshop.
+
+For next workshop, discuss output variable list (send out to modeling teams via email this week). Discuss this list of variables at next telecon (Huntzinger).
+
+3) Sample scripts for reading in files, generating output files, etc. (Wei, Jacobson)
+Reading netCDF files: sample scripts in FORTRAN or C showing how to read in the netCDF files (Yaxing working on this).  I sent a library of standard netcdf read routines to Suo and will send to Yaxing (Kevin Schaefer).  We will create a folder on the wiki for sharing routines between modeling teams.  Kevin Schaefer will start by posting a PAR partitioning routine.
+
+Currently, the SVN server hosting the output subroutine library (OSL) code right now requires users to apply for ORNL XCAMS account at https://xcams.ornl.gov/xcams/ in order to access it. In addition to the SVN server, we will distribute this OSL code to the modeling teams through the project wiki site.
+
+Action Item: upload current version of OSL to wiki site (Yaxing, Kevin, Andy) as well as the NEX site (Weile)
+
+4) October workshop: Logistics, plan (Wang, Cook, Huntzinger)
+ (NASA Ames, Moffett Field, CA, October 13-14, 2011)
+ -contact Weile re:  obtaining a visitors badge for NASA Ames
+ -reply to invitation from Terry Copeland (for funding to attend MsTMIP workshop in October)
+
+Attending (please sign in):
+Debbie Huntzinger
+At ORNL:  Bob Cook, Yaxing Wei, Mac Post, Dan Hayes, Shishi Liu
+Rob Braswell
+Suo Huang
+Kevin Schaefer
+Atul Jain
+Anna Michalak
+Altaf Arain
+Weile Wang
+Andy Jacobson
+Josh Fisher
+Maoyi Huang
+Changhui Peng
+QiuAn Zhu
+
+Driver Data Status / Processing
+
+Status of Environmental Driver Data
+ 
+1.    LAI for each PFT
+The SYNMAP PFT-based  global phenology data is available at MAST-DC FTP site.  North American phenology available in a week (Kevin).
+ 
+Analyzed SYNMAP  PFT-based global phenology data: ftp://nacp.ornl.gov/synthesis/2009/frescati/model_driver/phenology/analysis/SYNMAP_PFT/
+
+Original SiB  PFT-based global phenology data: ftp://nacp.ornl.gov/synthesis/2009/frescati/model_driver/phenology/original/SiB_PFT/
+ 
+SiB PFT-based  phenology data was mapped to SYNMAP PFT-based phenology data using the mapping table in the Excel file (on wiki). After mapping, cells that are not covered b to a SYNMAP PFT were filled with the FillingValue (-999.0). 
+
+More information on phenology processing on pbwiki site: 
+http://mstmipsynthesis.pbworks.com/w/browse/#view=ViewFolder&param=Processing
+ 
+2.    Land-Use / Landcover Change
+ 
+Hurtt's Land Use Change Data (To be used in baseline and sensitivity simulations)
+ 
+The global 0.5  degree Hurtt's & RCP4.5 land use change data (1700-2010) has been converted  to CF compatible NetCDF files and is available from the MAST-DC FTP site: ftp://nacp.ornl.gov/synthesis/2009/frescati/model_driver/land_use_change/analysis/global/Hurtts/.  
+ 
+The previously converted global land use change data: Hurtt's data  covers period 1700-2005 and RCP 4.5 data covers period 2005-2100. But for year  2005, RCP4.5 data is used because Hurtt's data in 2005 contains no transition  data. 
+ 
+Description of each variable can be found here: ftp://nacp.ornl.gov/synthesis/2009/frescati/model_driver/land_use_change/original/readme.txt.
+ 
+Global  Hurtt's &  RCP4.5 data was then subsetted and resampled to 0.25  degree for North America  region. The North America netcdf files are  available at: ftp://nacp.ornl.gov/synthesis/2009/frescati/model_driver/land_use_change/analysis/na/Hurtts/.
+ 
+HYDE Land Use Change Data (Alternate land-use data product to be used in optional/additional simulations beyond those specified in the simulation protocol)
+ 
+Atul Jain provided the North America HYDE land-use change data and it's available at: ftp://nacp.ornl.gov/synthesis/2009/frescati/model_driver/land_use_change/analysis/na/HYDE/. 
+ 
+We've received a new global 0.5 degree and 0.25 degree HYDE data with state maps for cropland/pasture/urban from Prof. Jain. We've cleaned the data to make them compatible with MsTMIP requirements. They will be available soon [updated by Yaxing]. Currently the HYDE data only contains state maps, no transitions. Transitions would be available in a few weeks.
+ 
+3.    Partitioning of cropland to major crop types
+ 
+We've identified the Monfreda crop types that can be used for modeling teams to partition SYNMAP cropland to major crop types (but we will not do the partitioning on our end). We put 4 major crop types (maize, rice, soybean, and wheat) data at: ftp://nacp.ornl.gov/synthesis/2009/frescati/model_driver/biome/original/crops/. Hay is not included in the Monfreda data.
+
+The original Monfreda crop data files are in 5-minute spatial resolution. They will be regridded to both quarter degree (for North America) and half degree (for global) resolution.
+ 
+Reference to Monfreda data:
+Monfreda, C. N. Ramankutty and J.A. Foley (2008). Farming the planet: 2. Geographic distribution of crop areas, yields, physiological types and net primary production in the year 2000, Global Biogeochemical Cycles, 22, GB1022, doi:10.1029/2007/GB002947.
+ 
+4.    Partitioning of grassland to C3/C4 types:
+ 
+We have identified an algorithm we plan to use to partition SYNMAP grassland to C3/C4 types. The algorithm is based on the work of Christopher J. Still1 and Joseph A. Berry: “ Global distribution of C3 and C4 vegetation: Carbon cycle implications”
+ 
+The algorithm requires a) SYNMAP; b) monthly mean temperature (T); c) average monthly total precipitation (P); and d) monthly NDVI. Since SYNMAP represents land cover state around year 2000, NARR, CRUNCEP, and MODIS NDVI data around year 2000 will be used for calculating the monthly T, P, and NDVI.
+
+Creates a one-time snapshot, and not the change in C3/C4 grass distribution with time.
+ 
+The algorithm works as follows:
+ 
+For any half/quarter degree grid cell contains grassland:
+
+(a) The algorithm checks if T is greater than 22 degrees Celsius most of the time in the year;
+(b) If (a) is true, then it checks if P is above 25mm in those months;
+(c) If (b) is also true, then the grassland contained in that cell is considered C4 grassland all year around; if (b) is false, then the grassland contained in that cell will considered as C3 grassland all year around
+(d) If (a) is false, then the algorithm checks if the monthly T is greater than 22 degrees Celsius for at least one month
+(e) If (d) is true, then the grassland in that cell will be considered as mixed C3/C4, which means that cell is dominated by C3 part of year and by C4 by the rest of the year. Monthly NDVI will then be used to estimate the fraction between C3 and C4. [One challenge in this step is to get the NDVI for the grassland portion from the NDVI representing a whole cell].
+(f) If (d) is false, then the grassland contained in that cell is considered to be C3 all year around.
+ 
+5.    Soil for North America
+ 
+We are currently harmonizing Canada soil and US soil together. The latest version of Canadian soil data (SLC v3.2) only covers agriculture land in Canada. The previous version (SLC v2.1) covers a broader area, but no field work was used to create that data. Therefore, we plan to use HWSD data to fill the missing values in Canada.  Global HWSD is ready for use (Kevin Schaefer).
+ 
+6.    Issue with "high" values in CRUNCEP swdown data
+ 
+It was brought to our attention that the CRUNCEP swdown data is the accumulation of radiation within a 6-hour period, instead of an average value over that time period. We are working to fix this and the new global CRUNCEP swdown data should be available soon.
+
+7.    Issue with "high" precipitation values in 2003 for NARR
+It was brought to our attention that there are some unreasonably high precipitation values in the July 2003 NARR dataset. We are looking into the cause of this problem and will work to fix this dataset as soon as possible.
+
+NLDAS National Land Data Assimilation System algorithm (Maoyi suggests checking into this algorithm)
+http://ldas.gsfc.nasa.gov/nldas/NLDASpublications.php
+http://ldas.gsfc.nasa.gov/nldas/publications/CosgroveForcing2002JD003118.pdf
+hourly
+
+
+TRMM data from 2000 - 20??
+3 hourly 
+quarter degree
+
+FTP  site for NARR data:
+http://ftp.cdc.noaa.gov/prate.2003.nc [500 MB netcdf file]
+
+We were using the apcp (3-hourly accumulative precipitation) variable from NARR. I will use the prate (precipitation rate) instead for 2003 precipitation to verify this [updated by Yaxing].
+ 
+
+

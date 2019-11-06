@@ -1,0 +1,65 @@
+Java Stack
+==========
+
+Level 0
+x dataone-cn-version-tool (not critical)
+x d1_jibx_extensions
+x d1_test_resources_trunk
+
+Level 1
+x d1_common_java
+
+Level 2
+x d1_libclient_java
+(needs some javadoc for classes, Skye) d1_cn_common
+(freeze, Skye) d1_cn_index_common
+
+Level 3
+(freeze after PISCO etc MN tests, Ben) Metacat 
+  - #2759 sanity check for locally cached schemas vs remote retrieval. Logic check in xml schema service to prefer cached schema
+
+(freeze, Skye) d1_cn_index_generator
+(to be tested with PISCO and stage nodes) d1_cn_noderegistry
+(freeze, Skye (Dave to contact Giri and Jim for potential changes here)) d1_mercury_common
+(freeze, Ben) d1_portal
+
+Level 4
+(freeze, Ben) d1_identity_manager
+(possible bug to be checked, but otherwise good. Robert) d1_log_aggregation
+(likely to be some more changes, Skye) d1_mercury_ui
+(maybe some issue with startup / restart - watch 5703) d1_portal_servlet
+
+d1_replication
+- verify mechanism of evict + add to trigger replication task
+- verify update of numReplicas for sysmeta triggers replication (e.g. 0 -> 3)
+
+Level 5
+(freeze after Story #2768, Robert) d1_cn_service
+(still being worked on - check with Robert) d1_solr_extensions
+(freeze after Task #2704, Robert) d1_synchronization
+
+Level 6
+(maybe some more processing rules for Dryad, no functional changes, Skye) d1_cn_index_processor
+
+Level 7
+(independent, freeze, Skye) d1_cn_index_tool
+(freeze, Robert) d1_process_daemon
+
+Level 8
+
+Debian packages
+
+Preconfiguration / bootstrap:
+- add dataone repo to sources list for all of them
+- still a few manual questions during update process
+
+
+Python Stack
+============
+
+(freeze, test, Andy) d1_common_python
+(freeze, test, Andy) d1_libclient_python
+(review and freeze, Andy) CLI
+(test and potential revision, Roger) GMN
+
+

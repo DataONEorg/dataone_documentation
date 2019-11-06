@@ -1,0 +1,190 @@
+----
+
+BUG (Chad): On the CN, the metacat mn.create method should be atomic and fail if either the system metadata or science metadata aren't stored.  However, the method should also support writing system metadata only in the case where the identifier refers to a dataset (since data are not stored on the CNs).
+
+Example:
+
+objectList = http://cn-dev.dataone.org/knb/object
+
+get("MD_ORNLDAAC_645_03032010095920") http://cn-dev.dataone.org/cn/object/MD_ORNLDAAC_645_03032010095920  = OK
+
+get("BAYXXX_015ADCP015R00_2005121550"), http://cn-dev.dataone.org/cn/object/BAYXXX_015ADCP015R00_2005121550 = ERROR
+
+because the EML could not be written:
+
+nb 20100713-08:22:43: [WARN]: MetaCatServlet.handleInsertOrUpdateAction - General error when writing eml document to the database: Error processing keyrefs: //additionalMetadata/describes : Error in xml document. This EML instance is invalid because referenced id BAYXXX_015ADCP015R00_2005121540 does not exist in the given keys. [edu.ucsb.nceas.metacat.MetaCatServlet]
+
+Note: 
+- Should add some invalid test data to ensure that failures are graceful
+- Add some examples of data in the test cases (i.e. only sysmeta stored in metacat)
+
+----
+
+BUG: (Chad, Robert).  Performing a search through the metacat web interface on cn-dev.dataone.org/knb generats an error:
+
+javax.servlet.ServletException: Service problem while intializing MetaCat Servlet: ServiceService.registerService - Service:
+PropertyService is already registered. Use ServiceService.reregister() to replace the service.
+    edu.ucsb.nceas.metacat.MetaCatServlet.init(MetaCatServlet.java:309)
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+    java.lang.reflect.Method.invoke(Method.java:597)
+    org.apache.catalina.security.SecurityUtil$1.run(SecurityUtil.java:269)
+    java.security.AccessController.doPrivileged(Native Method)
+    javax.security.auth.Subject.doAsPrivileged(Subject.java:517)
+    org.apache.catalina.security.SecurityUtil.execute(SecurityUtil.java:301)
+    org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:162)
+    org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:115)
+    org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:433)
+    org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+    org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+    org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:190)
+    org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:291)
+    org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:769)
+    org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:698)
+    org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:891)
+    org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+    java.lang.Thread.run(Thread.java:619)
+
+Chad indicates that this may be solved by replacing the apt installed Tomcat6 with a hand installed Tomcat from the Apache site.  However the error message suggests that the error is being caused by re-initialization of metacat, perhaps by the cn-service, or perhaps somehow through the metacat service.  This issues needs to be debugged and tracked down.  If necessary then a new copy of Tomcat received from the distributors should be installed, though this is a less desirable course of action as it decreases maintainability of the CN-service.
+
+I receive this error when i hit http://cn-rpw/knb/metacat . without the cn service layer running -rpw
+
+----
+
+BUG (Roger) The python MN needs to raise NotImplemented for methods that are not implemented but are part of the API.  
+
+----
+
+BUG (Roger) The Python MN should stub out the login method with the same signature as Metacat so that tests will work on both Metacat and the Python MN services.
+
+----
+
+BUG: (Dave) Architecture docs are not  building on Hudson
+
+----
+
+STORY: Service endpoints that do not exhibit any defined action should provide the caller with hints about the service URLs that are available on the node.  This applies for both CNs and MNs and is useful for guiding outside users towards appropriate use of the system.  The response should be an exception of type InvalidRequest.  The description of the error message should include references to supported collectiosn on the system (even if authentication is required to access those collections).  For example, the description in the error response of GET /cn could be:
+
+<p class='description'>No action is available for the specified URL.  Available actions include:
+  <dl>
+    <dt>object</dt><dd>List objects available on this node</dd>
+    <dt>object/ID</dt><dd>Retrieve the specified object</dd>
+    <dt>meta/ID</dt><dd>Retrieve system metadata for the specified object</dd>
+    <dt>checksum/ID</dt><dd>Retrieve the checksum for the specified object</dd>
+    <dt>log</dt><dd>Access the use logs</dd>
+    <dt>resolve/ID</dt><dd>Return a list of locations from which the specified object can be retieved</dd>
+  </dl>
+</p>
+
+- TASK: (Robert)KK Add an "index.html" file for the /cn location that provides pointers to supported paths on the coordinating node.
+
+
+- TASK: (Robert) When a request is made against a CN /cn/object, the response is currently undefined.  Options are:
+
+a) raise an exception (InvalidRequest) indicating that the query is invalid
+
+b) behave like the MN /object collection and support paging across the entire collection
+
+Option a) should be implemented with a reasonably high priority.  Option b) is a target for completion for the year 1 milestone if time permits.
+
+( - for a hit against /cn/object what do we wish to return? if not query string then forward to  /metacat/cn/object )
+
+
+- TASK: (Roger) Return an InvalidRequest error for the /mn location that provides pointers to supported paths on the python member node.
+
+
+- TASK: (Chad) Return an InvalidRequest error  for the /mn location that provides pointers to supported paths on the metacat member node.
+
+----
+
+BUG #706 continued (Chad) Need to work around this sooner than later.  Very hard to get correct exceptions on get() because of this. ( https://trac.dataone.org/ticket/706 )
+
+----
+
+
+Packager output:
+
+Packager output will be placed in folders following the pattern:
+
+node id will not work, for expediency i am using the node's name
+/datanet/<node id>-<object format id>/harvested/<merged-xml-file>
+/datanet/<node name>/<object format id>/<merged-xml-file>
+where:
+  <node id> = the identifier for the node in the node registry
+  <object-format-id> = A key to the object format that the science metadata is expressed in
+  <merged-xml-file> = The file resulting from the concatenation of the science metadata and system metadata documents.
+
+TASK: (Robert) KK replace the configurable properties param with one grabbed from the systemmetadata (crossreference the objectFormat of the merged file to a subdirectory location), in the harvester code
+
+----
+
+STORY: KK As a coordinating node, it is necessary to update the <replica> information in system metadata that is retrieved from member nodes.  <replica> needs to be set for all copies of the metdata, including the initial / original copy pulled in by the harvester.  
+
+TASK: (Robert) KK add into the sysmetadata pulled from mn, the origin replica information
+       <xs:element name="identifier" type="common:Identifier" minOccurs="1" maxOccurs="1"/> in the nodeList should equal the id of the replica being added
+
+The <replica>/<replicaMemberNode> element should contain the identifier of the member node as specified in the node registry (i.e. <nodeList>/<node>/<identifier>).  Note that this is not necessarily the URL of the member node.  
+See http://mule1.dataone.org/ArchitectureDocs/SystemMetadata.html#SystemMetadata.replica
+
+(kk)Note also that science metadata is technically replicated to all CNs, which means that system metadata for science metadata should also be updated with the CN replica information as the document is replicated across CNs.  This will likely cause a race condition as each CN updates the replica information in the system metadata as it is retrieved and stored during the CN replication process.  This can be avoided by either a) indicating a generic rather than specific CN (e.g. the CN URL might be cn.dataone.org rather than a specific CN); or b) adding all CNs as replicas as the system metadata is added to the first CN after initial harvest.  Option b is simplest, though has a chance of failure as the object may not yet be replicated to other CNs before being accessed.
+
+(Done -rpw)Note that recording CN replication information in the system metadata also requires that CNs appear in the node registry.  This in turn implies that there needs to be a "node type" property for the Node entry in the registry to help prevent CN harvesters from harvesting content from other CNs.
+
+TASK: (Robert) KK Develop a mechanism that enables a CN to determine if a particular object is science metadata or data and so should or should not be retrieved from a MN during the MN synchronization process.  For now, this could be a simple list of objectFormats that should be treated as science metadata.
+
+  validSciMetadataTypes.properties  mapping file, 
+
+  spring bean map in  /etc/dataone/harvest
+  or create a  list bean in spring xml that contains valid sciMetadata objectFormats.  
+  Do not call mn->get for the sciMeta data on invalid content.
+
+
+----
+
+CN Replication setup:
+
+TASK: (Dave) Contact Nick with information on setting up cn-ucsb-1.dataone.org
+
+TASK: (Dave) Contact Bruce with information on setting up cn-orc-1.dataone.org
+
+TASK: (Dave) Setup David Danzillio with admin access to cn-unm-1.dataone.org
+
+TASK: (Rob) Ensure that monitoring information is being retrieved from each of the CNs (cn-unm-1, cn-ucsb-1, cn-orc-1) and is being recorded by Cacti.
+
+TASK: (Dave) Update the operations documentation with details of the new CNs
+
+cn-ucsb-1 installation: 
+deb http://dev-testing.dataone.org/ubuntu karmic universe" to /etc/apt/sources.list
+apt-get update
+install cert from nick
+
+sudo apt-get install dataone-cn-os-core \
+  dataone-cn-metacat \
+  dataone-cn-mercury \
+  dataone-cn-rest-service
+
+----
+
+STORY: As a CN, it is necessary to provide a mechanism for outside users to discover the location of data and metadata in the DataONE system when the identifier is known.
+
+TASK: (Dave) Define the ObjectLocationList xml schema document to define the XML serialization for jaxb and pyxb.  Also should document how to implement for CSV and JSON serialization.
+
+TASK: (Rob) Implement cn.resolve() method in the CN rest service interface
+
+  - output = http://mule1.dataone.org/ArchitectureDocs/Types.html#Types.ObjectLocationList
+  - (dave) need to define the ObjectLocationList schema
+
+  Process: get system metadata for the object, extract the replica information, look up the MN URL from the registry, return ObjectLocationList document.
+
+https://repository.dataone.org/software/cicore/trunk/cn-service/cn-prototype/DataONE-CnRestProxy/src/main/java/org/dataone/cn/rest/proxy/service/impl/metacat
+
+----
+
+STORY: As a CN, it is necessary to keep system metadata up to date with respect to object avalability on different nodes in the system.  For example, when a MN goes offline for some reason, it is necessary for all system metadata to be updated if affected by the loss of the MN.  Note that this is a DoS attack risk (inadvertent or otherwise) as turning on and off a significant MN repeatedly will likely causes significant traffic volume through replication and updates propogated through the system. 
+
+TASK: When a memberNode leaves dataone, the SystemMetadata of all objects that have that memberNode listed as a replica needs to be updated so as to remove the memberNode from the replicaList
+
+
+
+

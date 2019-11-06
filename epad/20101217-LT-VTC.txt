@@ -1,0 +1,122 @@
+Attendees: Rebecca Koskela, Amber Budden, Carol Tenopir, Bill Michener, Suzie Allard, Todd Vision, Dave Vieglais, Matt Jones
+
+Regrets: Bertram Ludäscher, Trisha Cruse, Bob Cook, Steve Kelling
+
+ http://epad.dataone.org/20101217-LT-VTC
+ 
+
+ Agenda for 2010-12-17
+
+
+
+ * Summary of DataONE Data Preservation Workshop
+     (Rough meeting notes at http://goo.gl/QcV9z)
+
+ * Summary of DataONE Users Group
+Representation primarily from MNs; Service guidelines being revised - difference between the two breakout groups on specifics of the guidelines; charter has been revised and simplified
+Chair: Bob Sandusky
+Vice-chair: Richard Huffine
+Executive Secretary: Amber Budden (Director of CEO)
+
+Follow-up: hold next meeting in conjunction with ESIP in Santa Fe in July 11th-12th 2011 - conflict with CCIT meeting (adjacent weeks)
+Overlap: Bob Sandusky
+Need to decide on the location for this meeting - space available at NESCent
+
+
+ * DataONE NSF Review - please review the 2 documents before tomorrow's call
+            
+            Documentation needed: http://tinyurl.com/2c9krqr
+            
+            Timeframe: Need documents by January 3, 2011
+            Executive Team will edit documents by January 10, 2011 for distribution to
+             EAB members
+             Present to EAB at January 17-18 Meeting in Santa Fe
+             
+I.      Executive Summary (Lead:WM – input from ET & LT) {5 pages, including attractive, appropriate slide}
+ *       Synopsis (very short) of solicitation 
+ *       Short descriptions of award centering on Milestones and Deliverables with timetable for each milestone and deliverable
+ *       Progress to date on key scientific goals and vision (important to list these in order of importance) 
+ *       Vision for out-years of this award including educational impact, and noting that these two awards are the forerunners for any future DataNet program.
+
+II.    Introduction (Lead: WM – input from ET & LT) {1 page}
+       a.     DataONE vision and objectives as they relate to the solicitation
+       b.     Science objectives
+III.  Cyberinfrastructure (Lead: DV with BW,MJ & CCIT) {8-9 pages}
+      a.     Define cyberinfrastructure
+                      i.     Emphasize federated model
+
+      b.     Design, reference architecture diagrams 
+            i.     Service interfaces for software interoperability   
+            ii.     Include usage scenario(s) that refer back to the architecture diagrams 
+     
+     c.     Goals of the DataNet program as implemented by the DataONE  infrastructure             
+            i.     Curation and Preservation (many of the design choices fall under this category)
+                   a.     LOCKSS principle
+                   b.     Persistent identifier framework
+            ii.     Search and discovery
+                   a.     Improved access and discoverability of data / resources
+           iii.     Security  {1 page}
+                   a.     Privacy and access control (on a national/global scale)
+                   b.     System Integrity 
+          iv.     Integration with investigator tools
+                   a.     Supporting the full data life cycle
+d.      Software development and implementation timeline (Gantt chart, key deliverables, products)
+    e.     Technical Collaborations
+           i.     DataONE-Data Conservancy coordination
+           ii.     TeraGrid
+           iii.     Filtered Push
+           iv.   SONet/Semtools/DC
+IV.   Community Engagement (Lead: AB with CT,SA, Viv or Steph) {2 pages}
+       a.     Community Needs Assessment
+               i.     Baseline Assessment - what's been done, what's planned
+               ii.     Scenarios/Personnas
+       b.     Engaging the broader community 
+               i.     Education and outreach
+               ii.     DataONE Users Group (list the institutions)
+ 
+V.     Sustainability (Lead: TC with WM, DV,JC) {1 page}
+        a.     Technical Sustainability (DV,JC)
+                i.     Issues and impact on design 
+        b.    Long-term sustainability
+               i.     Sustainability
+               ii.     Governance
+ 
+VI.   Project Management (Lead: RK) {2 pages}
+       a.     List of sub awards and bios of key personnel; short description of duties
+       b.     External Advisory Board, Leadership Team – including reference to communication plan
+       c.     Overview of project management plan, including Risk Management and Metrics- references to PMP in Supplemental Material
+ 
+VII.  Supplemental Material (Lead: RK)
+       a.     Cooperative Agreement
+       b.     Proposal – no budget (check with Mike R)
+       c.      PMP
+       d.     Architecture Document (CI) (DV & MJ)
+       e.     Community Needs Assessment Document (CE)  (AE & CT) – would include submitted manuscript
+
+
+            Presentations needed: http://tinyurl.com/2c2epdn
+            
+Challenges that DataONE has faced and how we've addressed them:
+ * Scope creep
+ * How you deal with communication on large, distributed project
+ * Community engagement and appropriate expectations
+ * Sustainability
+
+ * What about having so few programmers & addressing it by building on
+work of others
+
+No numbered questions on CE - we could anticipate some?  How do we
+know the community needs or wants what we we're building
+
+
+ * Round the room (All)
+
+Amber: NESCent running a postdoc symposium for postdocs from all synthesis centers. Will explore potential for DataONE to be engaged as a leader of a break-out.
+Dave: Nothing to report.
+ 
+Matt: working with Data Conservancy, Semtools, SONet, and Phenoscape on observational data models.  Current activities are on a unified set of use cases, and now starting prototyping activities to complement the semtools semantic search prototypes.  Carl Lagoze from DC is going to start some students on creating OBOE-compatible ontologies for the DC use cases. 
+
+Suzie: The NDIIPP program is ending and they are starting the National Digital Stewardship Alliance which is a collaborative effort among government agencies, educational institutions, non-profit organizations and business entities.  I think Tricia and John may be involved with NDSA. We will want to keep track of NDSA activities related to data.  
+
+Carol: UT has made an offer to a new post-doc and she has accepted. Mithu Bhattacharya will join us officially in May.
+

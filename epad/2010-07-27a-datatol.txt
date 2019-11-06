@@ -1,0 +1,32 @@
+1a) Biva executes FPC1 in Taverna and publishes trace (Using Biva's tool).
+1b) Biva would show some simple queries using the Collaboration Interface
+
+2a) Anand downloads the data from SPS (Using Collaboration Interface), uses the data of Biva's FPC1, executes FPC2 in Kepler.
+2b) Upload the trace of FPC2 and establishes the link
+2c) Anand would show some other queries using the Collaboration Interface to express basic dependencis
+
+3) Anand publishes the trace for FPC1.
+
+4a) Saumen downloads the data from SPS (Using Collaboration Interface), uses the data of Anand's FPC1, executes FPC2 in CoMaD.
+4b) Upload the trace of FPC2 and establishes the link
+4c) Saumen would show some complex queries using the Collaboration Interface to express complete dependency graph
+
+5a) Anand downloads the data from SPS (Using Collaboration Interface), uses the data of Anand's FPC1, executes FPC2 in Kepler.
+5b) Upload the trace of FPC2 and establishes the link
+
+6) Show very complex queries to show used_by relation from one run to multiple runs
+
+Optional------
+
+Multiple source single destination
+
+7) Anand publishes the trace for FPC1.
+8) Saumen publishes the trace for FPC1.
+
+9a) Saumen downloads the data from SPS (Using Collaboration Interface), using one data from of Anand's FPC1 and another from Saumen's FPC1, executes FPC2 in CoMaD.
+9b) Upload the trace of FPC2 and establishes the link
+
+10) Show very complex queries to show generated_by relation from multiple runs to one run
+
+
+

@@ -1,0 +1,217 @@
+New Website Feedback
+
+Please use this page to document feedback on the dataone.org website redesign (http://dataone-beta.nmepscor.net/ ).
+
+Note: the functionality is essentially there although many new pages still lack content, others need editing (they were migrated from the old site) and others have latin text placeholders.  We are aware of these and they generally do not need to be commented on, unless you have a specific edit that is recommended.
+
+Below is a list of the primary pages for you to provide feedback.  When giving feedback on other pages, please set the URL as the section header and then use bullets to list comments beneath. 
+
+Pages available in hardcopy poster format are indicated with  ***
+
+
+
+General Comments (applies to multiple pages)
+
+ * I confess - Plum is non-plussed by me. For some reason it just seems too close to black that my old tired eyes (and mind)  get distracted wondering if my monitor is losing is color calibration.
+ * Are you testing the page templates for universal design / accessibility for people with disabilities? Best to do this early in the design process. I can help if needed (sandusky@uic.edu)
+ * I like the overall navigation scheme and design.  Very public friendly.  
+ * Really are going to have to have content managers refreshing the main scrolling images at least monthly.   
+ * Would be nice to see what the RSS feed is for... is there one feed for edits for the whole site?  One separate ones for news, info from each working group, etc?  or ???  I think having useful RSS feeds is important. <-- I agree with this confusion.
+ * Is there also a way for people to subscribe to email updates for news?  Should be very clear and upfront.
+ * Toolkit component names (e.g. ONEMercury) are confusing - why not ONESearch, ONEStats, ONECloud, etc.?
+ * Consisent Left Hand Hearders - i.e. Misc Links vs Links
+ * Some links are underlined and some are not - need consistency
+ * Some Weird Font Displays and flashing in FireFox from the Top Menu Navigation.  
+ * Color Contrast needs some improvement - Education - Modules - Could have underlying
+ * Is the RSS link a global one for the whole site or are there RSS feeds for specific areas of the site? Being in the header makes it feel global but it could be useful to have more tailored feeds.
+ * HTML validation is close to OK; CSS validation has more errors and accessibility validation is failing using http://fae.cita.illinois.edu
+ * Indicate links to documents, eg education modules page, maybe include size of these files and format (ppt, pdf, etc) so you can tell which are links and which are documents. Wikipedia's standard use is a good example.
+ * Have an arrow/box icon when a link is going to an external site (eg wikipedia)
+ * Bug?: In Products/best practices we searched for metadata which worked. But then when I clicked on publications on the left hand navigation, instead of navigating to the publications page, they system searched for the word "publications". A bug. If you are in search and don't navigate away from the search page, all of the left hand navigation terms are "searched" rather than linked.
+ * Bug?: Clicking on best practices and searching for metadata, gives a different result from clicking on the tag metadata. Then when  going back to the left hand navigation link for best practices, you get to a totally different screen. The results/screen shouldn't look different depending on where I've been right before I go there. The same label should give the same resulting page.
+ * Fixed width layout leaves lots of unused space on left and right when the browser is wide and cuts off when it's narrow; and the contrasting text background colour (white) and background (blue) makes the wasted space more prominent--like the bars on the side of a regular TV signal on an HDTV
+ * Will there still be two separate websites, one for public and one for members?  It's not clear where a member would go to log in.  not a member node, but a Dataone WG member.
+ * We generally like the new look of the site.  The graphics are good, there's a good balance between images and text and white space.  It definitely looks more modern.  We're not huge fans of the scrolling news updates, just because it's distracting but we understand it's useful fo rcalling attention.
+ * Watch Page Length - some pages require considerable scrolling.  
+ * External hyperlinks sometimes open a new page and sometimes don't (e.g., in training activities) - we suggest opening it in a new window/tab
+ * Like that the site captures the human element of the project
+ * Home page may need a succint description of the project - what about users who have no idea what DataONE is?
+ * Search bar in the header should be identified as searching web site vs. data. 
+ * The lines around the left side menus are weird- don't meet up but seems like they should?
+ * Header includes a search bar, but we were not certain whether it searched (or should search) the web site or the data. Some users may want to immiately search for data. Two options: 1) have radio buttons or a dropdown list next to the text search box to choose to search data or web site; or 2) after you hit go, search both automatically - display the results for searching the web site, but also provide a link to ONE Mercury that conducts the search for the text the user had already entered. 
+ * Bug: after searching the Twitter, etc. links do not display icons.
+ * Cross - Linking across sections for various content - i.e. Best Practices, Developer resources, etc. 
+ * For the future: Make a navigable lifecycle image. This would show our lifecycle image and provide a menu of DataONE products when you hover over a certain stage of the lifecycle. 
+
+***Home Page (http://dataone-beta.nmepscor.net/ )***
+
+ * It's a bit busy--maybe a bit more whitespace to make it more restful for the eye (+1)
+ * Similar thought- the latest news banner is rather distracting. Who reads those anyway? 
+ * The menus at the bottom are helpful for navigation but are also distracting 
+ * Not clear what is going to happen if you click on one of the social media icons (might just be my inexperience with them since I see them on other sites as well)
+ * It's not clear what the search box is going to search
+ * What is the rectangular box with the Go button for on the top?  Probably a search of the site, but not entirely clear or intuitive.
+ * Feels like broad categories (About, Participate, etc.) should be a hyperlink to a simple page describing the sub-links. This can also provide more information about what each category means, and might fix the breadcrumbs so that sub-categories will identify that they are below the "About" (etc) page.... Oops, the "Education Modules" page DOES include a breadcrumb with "Home >> Education". The short descriptions may be redundant and never seen by some people, but for those that DON'T understand the products (for instance) it could be helpful to have an orientation to what they are. 
+ * On the "Coming Soon" OneMercury graphic allow a lnik to the landing page for ONEMercury under tools so the user would know what exactly it is tha tis coming soon and why they might care. (second that: all news items should have links or short description)
+ * Needs to be a Home Area for all of the Latest News - Want to be able to pull up past or all of the news
+ * For a new user or visitor even though the look and feel is nice, it is not immediately clear without some digging what DataONE is.  What happened to the tagline project?  Something like DataONE knowledge for the earth or whatever it was that was decided.
+ * Navigation is QUITE GOOD...  It is intitutive and key topics are above the FOLD....
+ * Link COMING SOON Graphic on ONEMercury to Description of what that is and intro of the Tool. 
+ * The main tabs for About, Participation, education etc. should be hyperlinks to the home page for thsoe topics with on the pages for the tabs some more information about that topic.  That way you can eithe rgo to the specific Education topic you know you're interested or just go learn about DataONE Education.
+ * The use of the TERM "Partners" need to be consistent throughout the Site.   
+ * What's the rationale for something being in Find It Fast--are the rest Find it Slow? Seems like a heterogeneous mix of things now--a tool, a list of tools, some training
+ * The Latest News scroll is not very effective.  It's slow and you only see a very limited portion of the latest news at once.
+ * really like the Data top menu (find/contribute/cite/use)
+ * Header labels make sense and good that they are one word for main headings. 
+ * Consider using the native logos (including color) for social media instead of the plum color
+ * May want to emphasize, move to a more prominent position, the Data section.  If this is the site people wil be going to to find data
+ABOUT - Need to add Latest News in the Navigation - Only way to get to it now is to click on the Scrolling Story or the Image Graphics....
+
+About>What is DataONE (http://dataone-beta.nmepscor.net/what-is-data-one )
+ * Put some Graphics and easier to Read - punch up more 
+ * break up the text--maybe some subheadings? (like on DataONE organization page) 
+ * Add some color blocking / divide up the text
+ * "What is DataONE" needs to be shorter and more interesting, scannable, cut way down
+
+***About>DataONE Organization (http://dataone-beta.nmepscor.net/organization )***
+ * Hyperlink graphic to affiliated pages (yes please) this would assist with the ideas about the more modern graphic look and feel and highlight the relatiohship with NSF by allowing users to link to the funder and leaqrn about their programs
+ * Headings don't look like links
+ * Perhaps use different shading on the boxes to indicate different levels of involvement in the organization--darker for core/leadership, lighter for working groups? Now it all looks the same
+ * Should full-time positions be described as such in the text (i.e., the directors)
+ * Member node boxes should be marked as external, perhaps dotted line, since they're not inside the DataONE organization
+
+About>Working Groups (http://dataone-beta.nmepscor.net/working_groups )
+ * The Workiing group names run together because they run onto multiple lines - Put Bullet in Front, with indentation on subsequent life. (second this, could also logically divide CI and CE parts of the list)
+ * Will working group leaders have the ability to edit their working group pages? It seems like they should so it's kept up to date.
+ * the list of WGs is duplicated on the page and on the left
+ * In "Find it fast" on the left, OneMercury is not all capitalized as "ONEMercury"
+ * Paolo: The Provenance WG does not appear. There is only a "Scientific Workflows & Provenance Working Group" but this is misleading. 
+ * Bertram: Indeed, the Provenance WG has the wrong name: It is *not* the same as the scientific workflow working group! Please change it to "Provenance Workgroup"
+ * Should be "Sociocultural Issues" not "Sociocultural Barriers"
+
+
+
+About>Partners (http://dataone-beta.nmepscor.net/partners )
+ * Link partner names and graphics to web sites for the organizations
+ * So the MN section is under Participate
+ * The initial Pargraph talks to much about CI, versus actual Partners.   The Second Pargraph discussing MN - How is the Partner Section different than the MN Section
+ * Don't use Acyryonms in Page Titles (CN, MN,etc.)
+ * Bob's MAP is way to small - click on it to get a larger Image.  yes
+ * also, odd comment, but the human figure graphics in the first large graphic look like they've ingested the logos and the MatLab one looks like acid reflux drug adds.
+ * consider mouse overs on partner lists and/or map to describe what exactly it is that that partner is doing with DataONE, or who that partner is, etc.  Not a link, that could a nightmare, but some description if someone is curius what U IL is doing wiht DataONE
+ * Under World View there's no list like the North American view
+
+About>Communication (http://dataone-beta.nmepscor.net/communication )
+ * The Twitter feeds are running together
+ * Need to include FaceBook, RSS, Linked In, etc.
+ * 
+
+About>Contact Us (http://dataone-beta.nmepscor.net/contact )
+ * add the twitter handle to this?
+ * The Word "message", RED * doesn't say what it is for - assume required. 
+ * The Category Drop downs need to be topically driven - For instance - Products or "Can't install the ONEDrive", What about Question "I want to become a MN" - Probalby don't need WG - assuming already familiar with DataONE.
+ * Contact form: after submission should not take the user to the home page, just show an acknowledgment
+
+Participate>DataONE Users Group (http://dataone-beta.nmepscor.net/dataone-users-group )
+ * Again hard to tell some things are linked - some items change color when you mouse over them - confusing, color scheme, and underline issue.  (Agree - we especially want to make it clear how to join the DUG. Perhaps that whole line should be bolded?)
+ * Good description of the content of the links (better than the Training Activities page)
+ * "Current DUG Members (PDF)" is a dead link - or should be an anchor link to the bottom of the page. Wait, that's Founding Members. Seems poorly organized; better use of fonts? Maybe a brief table of contents at the top with anchor links?
+
+Participate>Member Nodes (http://dataone-beta.nmepscor.net/member-nodes )
+ * 
+
+Participate>Internships (http://dataone-beta.nmepscor.net/internships )
+ * Should have links to the interns Open Notebooks, twitter accounts, etc. 
+ * 2010 and 2009 pages not up yet?
+
+Participate>Developer's Resources (http://dataone-beta.nmepscor.net/developer-resources )
+ * Should be Developer Resources to be consistent (ditch the ')
+
+Participate>Open Positions (http://dataone-beta.nmepscor.net/open-positions )
+ * 
+
+Participate>Events Calendar (http://dataone-beta.nmepscor.net/events-calendar )
+ * 
+
+Products 
+ * If you click on the Product heading on the top menu, you get only the OneMercury page with no navigation to the other products; should preferably go to some overview of the products
+ * But really, products? That's a very project-centric view vs. a user-centred view. Visitor to the site aren't going to be thinking about how we organize the project, but will have their own problems and issues they're trying to solve. 
+ * Order in the menu: OneMercury first, Investigator Toolkit second, etc. - not clear why this order. Could be alphabetical, or more clear order of importance. All lists should have a logical order. Could use dividers to split semantically different items on the menu. Perhaps align to the data life cycle?
+
+Products>OneMercury (http://dataone-beta.nmepscor.net/content/one-mercury )
+ * The menu of products is missing from the left menu bar (it is there for Investigator Toolkit)
+ * ONE should be all CAPS throughout the site.
+ * May want to Consider after ONEMercury in the Navigation adding what exactly what that is - so maybe ONEMercury (Search)
+ * Page still unavailable?  there is a ONEMercury page elsewhere but not under products
+ * Breadcrumb does not make it clear where ONEMercury can be found. If it said "Home >> Products" it would be more clear
+
+Products>Investigator Toolkit (http://dataone-beta.nmepscor.net/investigator-toolkit )
+ * Clicking on OneMercury in the left menu gets a page not found
+
+Products>Data Management Planning (http://dataone-beta.nmepscor.net/data-management-planning )
+ * "NSF added the requirement for a data management plan" -- I think proposals were supposed to address data management all along, but there was no space or guidance. So what's new is the extra section. I guess that's what the line says... 
+ * Better explicate the links at the bottom of the page, e.g. who would want to look at DCC?
+ * Should there be a short cut to the DMP vs. having the 
+ * Put the list of other resources in some order vs. random; needs a heading
+ * I didn't realize the list at the bottom were clickable
+ * Valerie Enriquez at the bottom is out of place. Do other pages have authors? Need a consistent way to give that attribution
+
+***Products>Best Practices (http://dataone-beta.nmepscor.net/best-practices )***
+ * What about a tag-only search?  Don't want to have to enter a search term. Appears to be broken
+ * The graphic should be the same as the one we use else where
+
+Products>Software Tools Catalog (http://dataone-beta.nmepscor.net/software_tools_catalog )
+ * would it be useful to clarify the level of integration of each of these tools with the DataONE infrastructure (where applicable). Also, it's not immediately clear to me how the tools DB per se promotes reuse.
+ * What about a tag-only search?  Don't want to have to enter a search term. Appears to be broken
+ * Sort by First Letter of the Word on the Bottom
+ * May want shrink Logo's to help with size.   
+ * 9 Pages is a little long...
+
+Products>Repository Directory (http://dataone-beta.nmepscor.net/repository-directory ) 
+ * 
+
+Products>Publications (http://dataone-beta.nmepscor.net/publications )
+ * How about making this list be an embeded group from Mendeley?  That way it is actionable, easy to update, etc?
+ * someone beat me on this: was going to propose that this be integrated into Mendeley directly. A group that people can subscribe to? as a CS user who uses Latex, the main feature is easy access to a .bib file. Mendeley does this for you but you have to expose it.
+
+***Education>Training Activities (http://dataone-beta.nmepscor.net/training-activities )***
+ * "Trainings" feels awkard - should be "training activities"
+ * Too many different font kinds - what does it mean? For instance, "Upcoming trainings" might have the same font/heading category as "Past trainings"
+ * What order are "trainings" listed in - make the listings more consistent in format and put a date first (i.e., Aug 2010) to make the order clear. 
+ * The photo is maybe not one that will attract potential attendees--there's a big empty space at the top, the people aren't interacting with each other but the computers are dominating (but I guess this is a place holder)
+ * should be clearer who the audience is for the educational materials--now it's organized by format, which doesn't help a first time visitor figure out which one is appropriate for them
+ * the list of past training events will eventually get long and hard to navigate
+ * It's not obvious what the purpose of seeing the list of completed trainings, so that could be clearer--I didn't know what to expect by clicking on one of the links
+ * the list does help to anticipate what might be offered again in the future, but that could be even stated explicitly
+ * clicking on training activities in the left menu gets a page with a "Page not found" error
+ * Needs to be better connected to the Calendar. 
+ * Within a particular workshop/training description, be more accurate: "List of presentations" rather than "Agenda"
+ * Why are some headings changing colors when they are not links?
+ * Trainings (with an s) isn't really a word. Why does Upcoming Trainings change color when I mouse over it, but it isn't a link
+Education>Education Modules (http://dataone-beta.nmepscor.net/education-modules ) 
+ * Color Contrast needs some improvement - Education - Modules - Could have underlying
+ * Perhaps add short description of the modules and meta-data (i.e., topic, level, author)
+ * When there are many a list will be hard to navigate
+ * Seems like a very different kind of thing than the other education--this is more of a product that people can pick up, vs. something they would personally take
+
+Education>Graduate Courses (http://dataone-beta.nmepscor.net/graduate-courses )
+ * Need to distinguish from training
+ * Perhaps a forum for people who'd like to collaborate on designing a course? 
+ * Might want to allow people (via linking the Contact US) to submit additional courses in this section.   
+
+Data>Find (http://dataone-beta.nmepscor.net/find-data )
+ * In  the "Data" section the term "Use" is ambiguous. It could be ethical  use, or where you go to use data, or where you get data on how much the  data or site has been used
+ * The  navigation labels should match the page title. "Cite" label  now goes  to "Citing DataONE". Citing DataONE is actually less ambiguous, although  redundant. Use goes to Use Data
+
+Data>Contribute (http://dataone-beta.nmepscor.net/contribute-data ) 
+ * Seems out of order with use and cite: maybe the order is find, use, cite and contribute? 
+ * Should it be visually separated as a separate process? 
+
+Data>Cite (http://dataone-beta.nmepscor.net/citing-dataone )
+ * Should cite and use be merged? You can't cite without using and you shouldn't use without citing
+ * Do you mean citing data taken from dataONE? or citing dataONE? I don't think I know what the latter means, or when it would be necessary.
+ * Somewhat confusing as to what is meant by this...
+
+Data>Use (http://dataone-beta.nmepscor.net/use-data ) 
+ * Not sure what this page is going to say--is there anything general we can say about using dat
+

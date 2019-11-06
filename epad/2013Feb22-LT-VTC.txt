@@ -1,0 +1,82 @@
+Attendees: Rebecca, John K, Trisha, Bertram, Suzie, mike 
+
+
+Regrets: Viv, Steph, Matt (on IRC if needed), Bob (may join later in the hour), Amber
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Feb 22, 2013 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/379196697
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (636) 277-0130
+Access Code: 379-196-697
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 379-196-697
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+ We will also use the epad: http://epad.dataone.org/2013Feb22-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-02-22 
+
+1) CI Update (Vieglais)
+Everything is good in the CI world - production and preparations for the review. Some small changes are being requested before the R package can be distributed from the CRAN site. Still having some issues getting the Dryad MN online before the review.  Need to give Ryan sufficient time to work through the known issues. Discussion of obstacles presented to prospective MNs based on the requirements to become a MN. Actual implementations tend to point out problems or challenges in the requirements. Some good progress was made on identifiers at the CCIT meeting in Santa Barbara. Production is now at 1.1.1.
+Next steps for developers is triage on list of tasks, Member Node deployment, and getting ONEDrive ready for usability testing at joint U&A WG and Sociocultural WG meeting in Knoxville.
+
+2) RSV (Michener)
+
+LINK TO SLIDES: https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-reverse-site-visit-february-2013
+CI Slides are mostly in subversion: https://repository.dataone.org/documents/Meetings/20130228_Reverse_Site_DC/
+
+     - Deciding what will be in the following presentations:
+ *  "Future Plans and DataONE Activities" presentation
+
+    CI next 18 months (4-7 slides)
+        Member Nodes
+        Tools
+        ...
+    CE next 18 months (4-5 slides) Suzie will work with Amber - send slides to Bill Sunday night or Monday morning
+        DUG
+        Survey
+        Trainings and Workshops
+    Sustainability (1 slide)
+    Years 6-10 (1 slide)
+         Word cloud slide with inputs from EAB, LT
+ *  "DataONE Project & CI Developments Summary Recap"
+Slides from John K - long-tail of science 
+(John C will send current cover of ACM on long-tail science)
+Observatories
+Data deluge slide (Mike Frame will send to Bill)
+How DataONE fits in -
+   *  stable CI infrastructure
+   *  tools
+   *  semantics, provenance
+Goal: end on a high note
+
+ *  "Project management" (was in the Drafts folder with name from last RSV) - changed name (RK)
+Add communications slide before the Risk section
+Update risks to include a better risk
+Make sure slides have current version of ITK, DC->DataNets, call frequency
+
+  - Agenda for Wednesday next week (RSV practice)
+  Louisa May Alcott Boardroom - Westin Hotel
+
+Start time: Follow schedule for RSV and use Q&A time for critiquing slides
+9-6 on Wednesday - 
+On Thursday will be given questions by 7pm (ET) - verbal response on Friday, March 1st (9:05 - 10:30)
+10:40- noon DataONE team - Panel Dialog with Q&A
+
+NOTE to all:  may need to reach out to DataONE members after 7pm ET
+
+Draft version (1.0) of the Business Plan is being worked on by Bill and Grace Lerner - is rough but will have something available- Trisha will review and do edits of the rough draft
+
+Suzie: UA & SC WG leads  (Mike F, Kimberly, Suzie  & written ideas from Carol) met and planned our joint WG meeting in May.  We have outlined a draft agenda and reviewed our confirmed participants.  Key activities we identified are usability testing of ONEDrive, on-going assessment activities, Member node work (feedback on materials, outreach strategy etc), ideas for future interface, assessing the evaluation program so far.
+

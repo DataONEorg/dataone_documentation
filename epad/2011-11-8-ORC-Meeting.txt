@@ -1,0 +1,127 @@
+Discussion concerning Oak Ridge Coorinating node infrastructure (ORC) and related co-located MN 
+
+Action Items:
+1: Les: Can we get an netowrk diagram of the stack at the other CN's?
+2: Set up access for needed netids bwilso27,ndexter, <vieglais>, <cobb>, one other UCSB person, maybe Nick Brand>
+3: Get everyone added to OIT event mailng list
+4: routability and traffic shaping?
+5: Watch out on partiiontin - divide by 8
+6: Follow-up on a inceidnet respone playbook according to UTK patterns and needs. Work with netowrk services.
+
+
+Attendees:
+Larry Jennings
+Aaron Lesch
+Les Ault
+John Cobb
+Nick Dexter
+Bruce Wilson
+Robert McNeil
+
+
+Discussion Items:
+
+Agenda:
+where are we?
+
+is VMWare ready?
+Les 2 of the three hosts are seeing storage.
+
+Need acces for Wilson, Dexter, vieglais, Matt Jones, Nick Brand in UCSB, and cobb
+
+1. Need to add 2-4 1 Gb ports for virtual machine management.
+2. Based on research, Broadcom iSCSI does not support jumbo frames which would make it appear as a performance hit. If we would like to use jumbo frames, would need to stop using Broadcom.
+   * for large transfers, this would be an issue
+
+Hazel Cast envcryption issue: One JVM is dedicated entirely to synchronization. It accomplishes this using Java hazelcast synchronization. Becuase Hazelcast is all clear text, DataONE will tunnel all of this traffic thorugh a VPN at the coordinating nodes. (one coordinating nodes on each campus)
+
+How to do the tunneL?
+
+Robert suggests doing a point-to-point IPSEC based VPN using open swan under RedHat 5 (as opposed to a previous version in RH v.4 that didn't work well under windows)
+
+Nick: we are using Ubuntu.
+
+All CN's are Ubuntu 10.04 LTS.
+
+Prod, dev, staging, sandbox at each sites - 3 sites.
+
+Cobb: need ops. documentation, call list, paging e-mails.
+
+We usually handle through the helpdesk. It has a list of who owns the box.
+perhaps use sharepoint?
+
+Larry 
+
+in addtion to the helpdesk function at  974-9900
+
+
+You may want to cal the operations number directly
+974-6028
+
+Standard downtime Wed, midnight to Thu 2 AM (network may be down 10:00 PM to 12:00 PM)
+
+Q: Wilson: where is the weekly order of battle
+
+oit.utk.edu/TC you will see any upcoming major maintenance.
+
+Also there will be a power downtime Dec 26 adn 27th
+
+OIT events mailing list, will watch and forward important messages to developers.
+
+Is there any need for physical access?
+Stokely management center is open (staffed 24/7, During administrative closures, unstaffed.) Are there any people who should have physical access? 
+
+
+Security.
+
+routing: i2 first and then falls over to
+
+netwokring contact: Bill White. 
+
+
+Nick: We have a lot of storage?
+
+Q: How will you access these nodes 
+
+Each 140 Gb ofstorage  
+
+then 1  ( or 16) TB mounted on /var
+
+Q: Are you going ot nreed to access a single file-system larger than 2 TB?
+A: Yes.
+
+redirect to Les. There is an issue on how to access storage.
+
+Les: When you create a VM you can mount a file system but only 2 TB in size.
+
+If you add a NIC ino the VM that has access to the iSCSI option
+
+Third you can concatenated mutiple 2 TB filesystem at the SW level
+
+We have 130 TB per SAN.
+
+
+ORiginally we had a 16 disk group and mounted LUN's to test funtionality.
+It was organized as RAID6 as a 16 disk group with support of global hot-spares.
+
+We now have 16 hot spares. but I wouldn't go less than 8 spares (4 per rack)
+
+Raid 6 means double parity. So you need 3 disk failures in a 16 disk group to lose data.
+
+Les: when you build a VM make sure you align the partions (divisible by 8). By defaults RH offests to 63.
+Aaron:
+(call Aaron and Les to reconfirm this)
+when you do into fdsk, the offset needs to be set to something divisible by 8 (redhat chooses 63 which is sub-optimal)
+This make a 2-4X I/O perfromance contrast.
+
+When you add a virtual disk to a VM it askes for the SCSI ID. chose id 21 this is only way to get a different virtual controller. (which is on a second virtual network switch)
+solution, boot live cd, make sure starting offset is divisble by 8, will try test installation using Ubuntu, see what default is.
+
+We need to document (and make sure we have what we need) for NIDS, syslog aggregation.
+
+follow-up with Bill and Jeremy.
+
+Re-Meet  first full week in december
+
+meet once a month.
+

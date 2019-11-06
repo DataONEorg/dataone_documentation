@@ -1,0 +1,75 @@
+Member Node Wranglers (Fridays at 10:00 am AK/11:00 AM PST/noon MST/1pm CST/2pm EST)
+https://www1.gotomeeting.com/join/113672793
+
+24  May 2013 
+
+Attendees:  Laura Moyers, John Cobb, Matt Jones, Amber Budden, 
+
+Regrets:  Rebecca Koskela, Dave Vieglais, Mike Frame, Suzie Allard
+
+Agenda: 
+        1. High profile issues
+            None that we're aware of at this time
+            
+        2. Status of MNs 
+            MNs discussed last time:
+                    Dryad
+                    SEAD - they are very close to production, they are vetting information to decide what information to make public.  John/Laura to contact and see where they are in the process.
+                    TFRI (Taiwan Forestry Research Institute)
+                    
+            "stale" MNs: need an update on these MNs in redmine, please - (these were the "oldest" MN tickets, but they are not necessarily the things we need to focus on - see comments below)
+                    DSpace (3425 - last update in redmine: 12/14/12) (software stack, not a MN)
+                        Next Step: is a SW stack. Active nodes are Dyrad and SEAD and another woman contact us (who?) SEAD and Dryad are independat.
+                        Also contact Sandusky for update
+                    GLEON (3422 - last update in redmine: 12/14/12)
+                        Next Step: ??? Matt is familiar with Corinna Gries at Wisc. Taiwanese MN is also included here. GLEON doesn't habe a single repo. Poke Dave V. for an update.
+                    Fedora (3423 - last update in redmine: 12/14/12) (software stack, not a MN)
+                        Next Step: UTK Library was contemplating using Fedore as a pioneer MN example. Pulse Bruce and Suzie for an update. pulse Bruce ad Suzie for an update (See forwarded e-mail from B. Wilson forwarded on 5/24. May want to create a UTK library node ticket  ACTION:  Laura to follow up with Bruce and Suzie.  (email sent 5/29/13 - LM)
+                    Prarie Research Institute (3519 - last update in redmine: 1/25/13)
+                        Next Step: Pulse Cobb and Dave V. Was part of NSF Acq. proposal to preserve archive. 
+                    ARCTOS (3520 - last update in redmine: 1/25/13)
+                        Pulse Dave V as contact. It was a dupe ticket that had come in from a "contact me" query as well as other personal contact. 
+                        
+                        
+                        
+                        
+Matt: Here are some ideas for new High items
+    USANPN - Bruce
+    USGS NGP Topo maps - Mike Frame- status moving forward> We might be able to get it updated
+    NKN (get a schedule - what is their SW stack?)
+    
+ACTION Items: rename is MN backlog sprints
+"deploy by RSV" is OBE (overtaken by events)
+    
+            Next step for "stale" MN tickets: John/Laura to follow up, contact internal (D1) POC first, then perhaps go to MN POC
+            Matt suggests we focus on MNs in Master Backlog in redmine, those MNs that we are actively working on, specifically those Deploy by RSV and Y4Q4 which are all in a good position to become MNs sooner rather than later.
+
+        
+        3. Old action items 
+            ALL: look at open redmine tickets for MNDeployment and ensure they are assigned to the right person
+             Amber and Laura:  template for MNs who are presenting at DUG to deliver  to participating MNs so  they will have a starting point.  IN PROGRESS
+            Amber: send list of registered DUG attendees to Laura (Amber is traveling so RK will do it and copy Amber)
+            Laura: contact MN POCs from Amber's list to see if they want to participate in showcase  IN PROGRESS.  Suggest contacting all MN reps in one email: offer the opportunity to participate in showcase and say if not registered, please go to ...(DUG page url).  List should include contacts for all current MNs and those that are listed as in 'testing' or 'in progress' for end of year 4.  Also terrapop if the above criteria does not include them?  Do not want to contact the full list of MNs as some have only submitted an expression of interest and nothing further.  Matt may update priorites for all before end of Y4 so use most up-to-date classifications.
+             Laura: contact unregistered MN POCs, ask if they are attending the DUG  and if so, do they wish to participate in showcase.  See above.
+            Dave: add "duplicate" status in redmine
+            Laura: update ticket # 3693 status to "duplicate"  (update: "duplicate" status not available yet, will watch for it)  Did not create "duplicate" status; decided to use "rejected" and indicate that the duplicate ticket was a duplicate and "link" to the original one in the comments section.
+
+        4. not-high profile issues
+        Need a MN desription piece for the next newsletter (by June 7th).
+        Action Item : John and Laura provide that 
+        
+        5. around the room
+
+Matt: PPBIO nodes: They want PPBIO to be the main node. PELD and PPBIO are replicas of each other. (both at metacat based) The PELD node has some content that they do nto want replicated to DataONE.  PPBIO is a short term project and PELD is a LTER-like service. Still is fluid. Status: moving forward with PPBIO but deferring PELD.
+Action ITem: update Remdine to reflect this.  (Matt updated redmine 5/24/13 - LM)
+
+
+MATT: SEAD wants to go to production. Their node is tested and ready to go. They have expressed interest in going to production but we have not heard more. Last contact was that they needed to go thorugh some internal discussion about which content to publish.
+Action Item: touch base with Kavitha and  urge forward. (Laura emailed Kavitha and Inna 5/29/13)
+
+John:
+            Bay Delta Live / 34 North  ((http://www.baydeltalive.com/) sent a follow-up inquiry to Bob Cook. Amye Osti hopes to make it to DUG. This was an initial contact at AGU. They do semi-real time data updates for the Bay Delta area for use with water managers, other env. data managers, and policymakeers. This make it an interesting MN b/c/ it hits a different set os DataONE stakeholders. Takes updated input feeds and distributed aggregated data to a wide range of users.
+            34North
+            
+            PPBIO: via Chris Jones : Ready/eager to move forward. Working on distributing a DataONE issued cert to start testing. 
+

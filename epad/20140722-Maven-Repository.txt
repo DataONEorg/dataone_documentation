@@ -1,0 +1,149 @@
+Maven Repository Changes Discussion
+2014-07-22
+Chris J, Rob N, Skye B, Jing T, Dave V, Peter S, Mark S, Robert W, Ben L
+
+Setup
+General plan is to replace the file system based maven repo on dev-testing with something a bit more sophisticated that can also cache upstream artifacts.
+
+Proposal 1: adopted
+  maven.dataone.org to replace the dev-testing.dataone.org/maven
+  Benefit is not tying our dependency management to a single machine name.
+  Cost is adding to our poms the new repository name.
+  Target 1.4 release
+
+Proposal 2: adopted
+ * Use Maven Mangement software for the DataONE Maven repository
+   * Apache "Archiva" 
+   * an alternative is Nexus (http://stackoverflow.com/questions/5587237/how-does-archiva-compare-to-nexus)
+   * Install Archiva
+     * configure to work on jenkins-1.
+   * Need to hide behind apache with ssl connection and LDAP authentication
+   * current status: https://redmine.dataone.org/issues/4680
+
+        ProxyPass  /jenkins http://localhost:8080/jenkins nocanon
+        ProxyPassReverse    /jenkins http://localhost:8080/jenkins
+        ProxyRequests       Off
+        AllowEncodedSlashes NoDecode
+        <Proxy http://localhost:8080/jenkins*>
+                Order deny,allow
+                Allow from all
+        </Proxy>
+  Target 1.4.* release
+
+Proposal 3: needs more research
+ * Issue to solve: we can publish artifacts into prod that was built on a branch (aka beta) build.
+ * Software Release Lifecycle management for dependencies 
+   * Build and install our maven components whenever they are at an acceptable software lifecycle of development or release.
+     * alpha-snapshots (trunk/unstable)
+     * beta-snapshots  (branch)
+     * release candidates (tags)
+     * releases (tags)
+   * Need a mechanism to generate the correct artifact versions for the correct software lifecycle stage.
+     * maven's profile mechanism
+       * can create a named ID that we can associate with a lifecycle build. We can change out our version tags by profile.
+       * or within pom have singular release that's published to different repos.
+       * Problem.  What if we need to change a profile to combine different states into a  development build (say, beta branch depends upon released products,  rather than other beta branches)
+       * "what  (is) a Maven profile.. allowed to override(?) The short-answer to that  question is that a Maven profile can override almost everything that you  would have in a pom.xml."
+         * http://books.sonatype.com/mvnref-book/reference/profiles-sect-maven-profiles.html
+         * http://books.sonatype.com/mvnref-book/reference/profiles-sect-what.html
+   * Other Plugins to research that will perform similar (and possibly cleaner) actions
+     * Maven Release plugin http://maven.apache.org/maven-release/maven-release-plugin/  
+     * Maven Versions Plugin http://mojo.codehaus.org/versions-maven-plugin/
+
+
+
+Proposal 4: adopted
+ Manage all dependencies with Archiva, not just DataONE components.
+ why? because a dependency may be unavailable from remote repos. If the dependency is unavailable then the jenkins build process may fail and corrupt the maven repository. We have dealt with this problem in the past on hudson by wiping the maven repository nightly and rebuilding dev, but it has a tendency to slowdown any other build processes for a couple of hours each night. It is not always guaranteed to work.
+  
+Proposal 5: (review which products to publish, and establish workflow for publish to Maven Central)
+  publish products to Maven Central.
+  why?
+     products are more easily discoverable by developer community.
+     
+  Define which artifacts to publish
+      Any Tagged Release of
+          dataone-common-java
+          dataone-libclient-java
+  Who publishes the artifacts?
+  What status triggers the publishing of Artifacts?
+  
+Procedural
+
+ * Copy over past DataONE artifacts from dev-testing to Jenkins-1.dataone.org
+   * Pre 1.4.0 release
+
+Artifact naming sequence:
+
+  foo-1.0.0-alpha-SNAPSHOT
+      prototyping, early development
+  foo-1.0.0-beta-SNAPSHOT
+      hardening implementation
+  foo-1.0.0-RC1
+      Perhaps this is good?
+  foo-1.0.0-RC2
+      Maybe this one?
+  ...
+  foo-1.0.0
+      This is really the one
+
+Prducts dependent on a SNAPSHOT - snapshot copies are always retrieved (more recent timestamp is always considered newer version)
+
+References
+- Naming convention suggestions for artifacts: http://stackoverflow.com/questions/3150003/naming-convention-for-maven-artifacts
+- wtfia snapsot: http://stackoverflow.com/questions/5901378/what-exactly-is-a-maven-snapshot-and-why-do-we-need-it
+- Intro to build profiles: http://maven.apache.org/guides/introduction/introduction-to-profiles.html
+- Build numbe plugin: http://mojo.codehaus.org/buildnumber-maven-plugin/usage.html
+- Profiles for timestamping: http://stackoverflow.com/questions/10514425/using-maven-profile-for-artifact-versioning
+
+
+Example of Software Release Lifecycle management via profile in POM
+Profile shows three different lifecycle states: BETA, RELEASE CANDIDATE and RELEASE
+Default setting is for development (alpha)
+
+In order to build a Beta release of the project then call maven like:
+
+mvn -PBETA clean install
+
+
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.dataone.cn</groupId>
+    <artifactId>d1_cn_rest</artifactId>
+    <packaging>war</packaging>
+    <version>${this_artifact_version}</version>
+    <name>DataONE_Cn_Rest</name>
+    <url>http://dataone.org</url>
+    <properties>
+        <this_artifact_version>1.4.0-ALPHA-SNAPSHOT</this_artifact_version>
+        <d1_common_java_version>1.3.0-ALPHA-SNAPSHOT</d1_common_java_version>
+        <d1_libclient_version>1.4.0-ALPHA-SNAPSHOT</d1_libclient_version>
+    </properties>
+    <profiles>
+        <profile>
+            <id>BETA</id>
+            <properties>
+                <this_artifact_version>1.3.0-BETA</this_artifact_version>
+                <d1_common_java_version>1.2.1-BETA</d1_common_java_version>
+                <d1_libclient_version>1.3.0-BETA</d1_libclient_version>
+            </properties>
+        </profile>
+        <profile>
+            <id>RC</id>
+            <properties>
+                <this_artifact_version>1.2.2-RC</this_artifact_version>
+                <d1_common_java_version>1.1.1-RC1</d1_common_java_version>
+                <d1_libclient_version>1.2.5-RC5</d1_libclient_version>
+            </properties>
+        </profile>
+        <profile>
+            <id>RELEASE</id>
+            <properties>
+                <this_artifact_version>1.2.2</this_artifact_version>
+                <d1_common_java_version>1.1.1</d1_common_java_version>
+                <d1_libclient_version>1.2.5</d1_libclient_version>
+            </properties>
+        </profile>
+    </profiles>
+</project>
+

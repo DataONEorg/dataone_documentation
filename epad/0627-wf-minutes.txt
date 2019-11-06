@@ -1,0 +1,86 @@
+Workflows Meeting 
+June 27th, 2011
+Bill, Rebecca, Bertram, Karthik, Richard
+
+Post-talk talk: http://epad.dataone.org/0627-wf-karthik-rich
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Summary: 
+    - Get 300+ from Taverna 2 - if possible get more than this. The more data, the better.
+    - Write up slides for Berlin
+    - Continue editing/polishing the 'Understanding Workflows' document
+
+--------------------------------------------------------------------------------------------------------------------------------------
+<Introductions>
+
+Bill: Update?
+
+Richard: I haven't fully gotten into starting up with the 600 workflows yet. I would like to have a script to read in the files and open them in a browser, but that didn't work and it took some time. Downloaded all of the articles that we're going to need on the Mendeley. Done a few things on myExperiment using my limited knowledge of SPARQL - posted that on the blog last night, with some graphs that show some interesting things about how many things people upload workflows, and how many of those are downloaded. The main finding is that people generally load an average of five. Will be hard to judge if things are actually getting more complex or not. If we can still mine from myExperiment, which i think should still be possible, then we should be able to say that this person had training from this person, as their workflow is x times more complex. I've also gone through the entire notes from the start and just noted down things that we might want to have. You all got the email with those notes. Again, not as satisfactory as I would have hoped. I don't seem to be fuly capable of juggling conferences with work. Sorry about that. Things should settle down now. I'm not entirely concerned at this point. 
+
+So, let's go over that document. 
+
+Bill: I guess the one question I have is that, in terms of automating this, there is a lot that can't be automated. How much time do you want to spend on this? If we need to look at each one, anyway, then maybe it's not best to automate it.  At this stage, it would be really good to have some data. I think you probably have a reasonable feel for what we're looking at, and what I usually find is that when you have data in front of you, that clarifies which hypothesis which can be addressed, and maybe then identify some that we haven't thought of. I think your work on SPARQL already was already instructive in that regard. Item #3 on there - getting the workflows will be the key. 
+
+Richard: Ok, so, in that case, I'll just try and get it manually. Sorry that I don't have more data to show right now. It's unacceptable.
+
+Bill: No, I see you've been busy, but we are beginning to run out of time. 
+
+Richard: Conclusion I get is that I need to get more data and stop spending time trying to automate. I have a list of all of the workflows, and randomized, so that's fine, and I was just worried because there's a lot of tier 1 data that I could get repetitively. 
+
+Bertram: Can you clarify the analyses you're doing? 
+
+Richard: Currently there are three things we're trying to get off of myExperiment is get the 150 RapidMiner, and the 600/600 Taverna 1/2 workflows. <description of the tier system> Going to go through and sort out the research on the Mendeley. 
+
+Bertram: There's a historical reason why Taverna/myExp are together - they're done by the same people. For this particular hypothesis about why Kepler isn't in myExp., I'm not sure if we want to pursue to the answer - as we already know why this is happening. Also, myExp has certain features for parsing out Taverna, while it doesn't have those for Kepler. Also, I'm still interested in knowing how many papers there are that use workflows but aren't workflow-based papers.
+
+Richard: I'm still interested in that, as well. Do you know the full nature of myExp to parse workflows?
+
+Bertram: I'm not entirely sure; the quickest way to find out is to email dave, but maybe I can also talk to my buddies there and see if I can get anything from them. 
+
+Richard: If the system can parse workflows, it'd be worth pursuing, I think. That's one of the reasons I've been working on this document, to see if we can have anything to work on. I'll see if I can finish that up and email that around. I also hope to get the slides and send them around before Friday. 
+
+Richard: Karthik, how's the Method in Ecolgoy and Evolution proposal going?
+
+Karthik: Not fleshed out enough to show the group yet, but yeah, it'll be in better form before we meet. Depending on how much progress we make through this, we should be able to work on that.
+
+Bill: We have a few more minutes here - I would suggest going through the understanding workflows paper, and check each hypothesis. 
+
+More complex over time - more process steps, more branching, etc. Overlaps with hypothesis 3, that there would be increased levels of functionality. 4th one is that as workflow creators gain more experience, they should become more complex. 
+
+Richard: It'd be hard to look at that, as we may not have enough data given that the average amount of workflows is around 5 for people. 
+
+Bill: It'd be worth waiting for all of the data to say that, I think. 
+
+Bertram: To what extent are uploaded workflows demonstrations or actual science workflows? 
+
+Bill: That's a good point - a simple dichotomy between demonstratable versus operational ones. I know what you're talking about in regards to Kepler.
+
+Richard: I'd be interested in seeing if there are replications of the demonstration workflows. 
+
+Bill: H5 - functionality and download. H6 that I've seen covered, which should be interesting, but might be outside of the scope (especially as we're running out of time), depends on the amount of metadata and the effect that has. H7, because T2 is so new might now work, but a workflow that has been around a long time might get more use than one which has just been uploaded. 
+
+Richard: I'm worried about using downloads as a proxy for reuse.
+
+BIll: For the time being, we simply can't determine what the downloaders do with a workflow. And again, having this be a data-driven paper, then we'll find some more stuff. If there's time, we should be able to look at other things. But it would be useful to have some more data to talk about next time. 
+
+Bill: next call would be useful to look at the spreadsheet and see if we can give you any feedback on that. 
+
+Tuesday talk: 15GMT, 7amPCT, 8amMT
+
+Karthik: something to shoot for is a google spreadsheet that we can all look at at the same time with actual fields fleshed out and data in them.
+
+Richard: I guess i'll just improve that spreadsheet. Hopefully I'll have at least 300 in that. 
+
+Bill: Sounds like you'll be not twiddling your thumbs this week.
+
+Richard: No, certainly not. 
+
+<Hotel chat> Bertram can commute, but is going to stay on the 29th.
+
+Bill: This would be a good week for feedback, so feel free to get back in touch.
+
+Richard: I hope to finish up that document now, and then talk to Karthik, and then the slides. Should be good. Talk to you guys next tuesday. 
+
+--------------------------------------------------------------------------------------------------------------------------------------
+

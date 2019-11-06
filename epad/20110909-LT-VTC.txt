@@ -1,0 +1,151 @@
+Attendees: Bruce, Rebecca, Amber,  Dave, John Cobb,  Matt Jones, Bob Cook, Mike, Steph, Hilmar,
+
+
+
+Regrets: Suzie Allard, Carol Tenopir, Bill Michener, Steve Kelling, Viv Hutchison, Bertram Ludäscher, Trisha Cruse,Deborah (on ePad, not call)
+
+
+Call Information:
+
+Conference Call Number: (866) 804-6831
+This brings you to our conference call line - next press 1
+The conference number is: 12253#
+
+Epad: http://epad.dataone.org/20110909-LT-VTC 
+
+ 
+Agenda for 2011-09-09
+ 
+1.   CI Status (Vieglais/Jones/CCIT)
+Member Node implementations are in good shape: Metacat complete; generic MN stack pretty much complete; Mercury MN needs to be refactored but progressing well (Tier 1)
+Coordinating Node stack is progressing; lots of complicated interactions that need to happen with replication across 3 nodes; also isn't a master in charge so coordination is important; drop-dead date of having functionality is next week so that will be ready for EIM workshop
+and AHM; Dave is cautiously optimistic - so is Matt - there is a plan but still opportunity for things to go wrong
+Other pieces in CN stack - indexing sorted out but not tied in yet because dependent on synchronization; once indexing is working, the Mercury interface can be tied in
+ITK: Roger has finished with generic MN stack so will start working on this; as CN activities die down, developers will start working on Java ITK tools
+Hardware deployment: decent schedule for UCSB - servers will ship in the next week and a half; at ORNL - all been racked and Bruce working with UTK to get VMware setup; 
+Virtual servers are almost ready at UNM
+
+What will be happening at the AHM?  Would like to have a preview of what will be available at public release: "Mercury interface" (NEED A NEW NAME); ITK, 
+
+2.   DataONE public website changes (Budden/Koskela)
+Laura Arguelles and Chris Allen (UNM) has begun working on a revised website within Drupal 7 following a charge from the S&G WG.  This is being built in consultation with Rebecca and Amber, reflects feedback from the usabiity assement reports and will provide opportunity for growth of the project to be incporporated.  A sitemap and some s have been reviewed by CCIT and their input has been incorporated, also making sure that there is good communication regarding the design of the 'search interface' part of DataOne being led by Giri at ORNL DAAC / USGS (do we have a name for this yet?).  It is intended that the new site will be ready for review at the AHM (but not live).  The site will go live after the AHM in preparation for public release.
+As well as wanting to apprise you of the project I wanted to let you know that during the process of editing and content creation, we will be calling upon you for materials.  For example, each WG will have a page.  It would be useful if there was a basic structure to the content (co-leads, members, current projects, previous project outcomes) but you may also choose to use this space to add more detail about your WG activities.  There is also more technical CI language that will need to be written for some pages in addition to developing FAQs.  Amber will follow up with an email to the LT containing content needs based on the site map.  Amber will coordinate CE materials - is there someone that can be a point of contact within CI for editing? Dave will find someone
+
+Request by Dave to have Drupal code and style sheets in Subversion 
+
+3.   Data Life cycle revisions (Budden)
+Life cycle agreed upon by LT:
+1) Collect
+2) Assure
+3) Describe
+4) Deposit
+5) Preserve
+6) Discover
+7) Integrate
+8) Analyze
+
+Life cycle following feedback from DUG, BP and ESA workshops
+1) Plan 
+2) Collect
+3) Assure
+4) Describe
+5) Preserve
+6) Discover
+7) Integrate
+8) Analyze
+
+[Perhaps there is a technical report to write here about the "DataONE view" on Data Lifecycle in order to clarify and plant a flag]
+
+4.   Change in Co-Leaders for Public Participation in Science Research WG ( documents in
+https://docs.dataone.org/member-area/committees/management-team/meetings/2011/2011sep09
+       
+Amber will have conversation with PPSR Co-Leads about impact on PhD and future employment for Andrea
+       
+5.  Around the Room
+
+Rebecca: The UNC DataNet project was announced yesterday: http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0940841
+
+Don't forget to send All Hands Meeting URL to your WG members and use for your
+own registration and hotel reservation:
+https://www.dataone.org/content/dataone-all-hands-meeting-registration-and-information
+
+
+Cobb:
+I got a call from a colleague, Carol Song. She is PI for an Interop award, DRInet (Drought Information Network). <http://drinet.hubzero.org/>. Her program officer is Mimi McClure. Carol said that Mimi encouraged her to work with DataONE and all the datanets (perhaps as part of DN partners). But Carol inquired about DRInet as a DataONE member node and here seems some merit here. Perhaps a topic for discussion Monday of the AHM week, or some other time.
+
+Other Datanet awards are now showing in Fastlane, some
+<http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0940841>
+but I don't see the other two yet - does anyone else?
+
+  Bob:  Ruggle's TerraPop DataNet is searching for a project manager; the ad contains a brief description of their project:
+www.grss-ieee.org/wp-content/uploads/2011/08/Research-Series-TerraPop-Req-172906.pdf
+Sustainability & Goverance WG meeting in Knoxville next week
+Giri and his wife Priya had a baby yesterday.  I've been told Nithil looks lot like Giri.
+
+Matt: DataONE Implementation Workshop (Sep 30, following EIM) planning continuing apace; agenda posted; 17 participants registered; general overview and technical implementation approaches to be covered
+
+Also, have had recent contact with ILTER about becoming MNs.  The iLTER is using Metacat in many sites.  They are about to bring up their LTER-Europe node, and would likely upgrade their Metacat to include DataONE support when that becomes available.  This would likely include a handful of sites from ILTER around the world.
+
+
+Deborah:  
+I probably cannot call in today but I am trying to monitor the etherpad.  I have a question though.  Our working group had decided at our meeting in July that since we had 2 f2f meetings this year and one was recent and since we did not expect to have the post doc on board in oct, we would not do a f2f in oct at the all hands.  If however we could get a subset to come to the all hands meeting, would they receive their honorariums and travel and lodging support given that 2 f2f meetings have already happened this year? And does it make a difference if they did not attend one?  (for example, I attended the first f2f remotely and did not receive either an honorarium or travel and living support for meeting 1).  And if people came for just 2 days, is there a preferred 2 days (other than Monday).
+
+I will be at day one (9/28) of the EIM meeting in Santa Barbara – are there opportunistic meetings that we should try to have on wed lunch?  Another question - is there a job posting board at EIM and if not, could we request one?
+
+Is there any follow up on earth cube?
+
+Mike:
+
+Do we want to distribute the DataONE Data Management Survey at EIM?  Have you guys discussed this already?  Survey is in the final stages of development.
+
+Status of the Federal Libraries and Federal Librarians Surveys:  
+- The surveys went live on August 31, and are now collecting data from     participants.
+- The Libraries survey is being sent to directors of federal libraries, while the librarians survey is being sent either directly to federal librarians or to federal library directors for distribution to their librarians.
+
+As part of another meeting, USGS is following up on "interactions" with DataONE.  This is beyond the MN activities, but focusing on the Climate pilot project that is being considered.   Below is a summary of the Oct. 3 Meeting in Fort Collins:
+
+Monday October 3, 1pm-5pm -- Conference Room
+- How do Geo Data Portal, ScienceBase/LC-MAP, DataONE, and the Northwest Knowledge Network fit together? (Enterprise/Information Viewpoint)
+
+- Discuss Overview Diagram
+- Briefly present capabilities of each group.
+- Discuss roles of each group in a CSC data network.
+- Integration with NCCWSC Web site.
+- Example workflows -- how users and data interact with each system.
+    - Funded Project Scientist
+    - Scientist from outside CSC enterprise
+    - Resource manager from state or federal agency (e.g., LCCs, etc.)
+    - Generally interested public
+    - CSC Data Network node manager
+    - NCCWSC Manager
+
+Tuesday October 4, 8:30am-12pm -- Conference Room
+Based on the results of the Monday discussion:
+
+1. ScienceBase/LC-MAP-Geo Data Portal Integration (Computational/Engineering/Technology Viewpoints)
+    - Web Processing Services
+    - Published API
+    - User Interface Options
+    - Use by NKN and DataONE
+2. DataONE and NKN Integration (Information/Engineering/Technology Viewpoints)
+    -     Who is implementing the Member Node API and when?
+            MNCore and MNRead
+            MNStorage and MNReplication -- responsibilities
+            MNAuthorize -- status
+    - Integration with NKN
+
+Tuesday October 4, 1pm-5pm -- Conference Room
+1. Close Out DataONE/NKN discussion
+2. Handling Secure Data (Engineering/Technology Viewpoints)
+        Identity Management
+        MNAuthorize
+        Other options (Crowd, JOSSO, OpenID, ...)
+        Group Management
+3. Handling Large Data Sets (Engineering/Technology Viewpoints)
+4. Finalize agreement on viewpoint documentation and next steps.
+
+Steph: working on CEE WG plans at AHM with Viv
+
+Bruce Wilson: Gotta run.  Nothing else to report.
+
+

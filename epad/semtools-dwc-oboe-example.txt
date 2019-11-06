@@ -1,0 +1,218 @@
+Document Status: Obsolete
+Document moved to https://sonet.ecoinformatics.org/observational-data-use-cases/oboe-representation-examples
+
+-------
+
+This is an attempt to represent a DarwinCore observational data record as an OBOE structure.  The DwC record came form the Darwin Core examples website (http://code.google.com/p/darwincore/wiki/Examples), and is reproduced here for convenience.
+
+Darwin Core record of a preserved mammal specimen
+------------------------------------------------
+dcterms:type=PhysicalObject
+dcterms:modified=2009-02-12T12:43:31
+dwc:institutionCode=MVZ
+dwc:collectionCode=Mammals
+dwc:catalogNumber=14523
+dwc:collectionID=urn:lsid:biocol.org:col:34904
+dwc:occurrenceID=urn:catalog:MVZ:Mammals:14523
+dwc:basisOfRecord=PreservedSpecimen
+dwc:establishmentMeans=wild
+dwc:country=Argentina
+dwc:countryCode=AR
+dwc:stateProvince=Neuquén
+dwc:locality=25 km al NNE de Bariloche por Ruta 40 (=237)
+dwc:scientificName=Ursus arctos
+
+
+Pseudorepresentation in OBOE
+----------------------------
+observation "o1"
+  entity "countries:Argentina"
+  measurement "c1"
+    characteristic "dwc:countryCode"
+    value "AR"
+    standard "iso:countryCode"
+
+observation "o2"
+  entity "provinces:Nequen"
+  context "oboe-rel:within" "o1"
+  
+observation "o3"
+  entity "sbc:SpatialLocation"
+  measurement "m1"
+    characteristic "dwc:locality"
+    value "locality=25 km al NNE de Bariloche por Ruta 40 (=237)"
+  context "oboe-rel:within" "o2"
+
+observation "o5"
+  entity "sbc:SamplingEvent"
+  measurement "m12"
+    characteristic "dcterms:type"
+    value "PhysicalObject"
+  measurement "m13"
+    characteristic "dcterms:modified"
+    value "2009-02-12T12:43:31"
+  measurement "m14"
+    characteristic "dwc:institutionCode"
+    value "MVZ"
+  measurement "m15"
+    characteristic "dwc:collectionCode"
+    value "Mammals"
+  measurement "m30"
+    characteristic "dwc:catalogNumber"
+    value "14523"
+  measurement "m31"
+    characteristic "dwc:collectionID"
+    value "urn:lsid:biocol.org:col:34904"
+  measurement "m32"
+    characteristic "dwc:establishmentMeans"
+    value "wild"
+  measurement "m16"
+    characteristic "dwc:basisOfRecord"
+    value "PreservedSpecimen"
+  context "oboe-rel:within" "o3"
+
+observation "o6"
+  entity "sbc:Organism"
+  measurement "m17"
+    characteristic "dwc:occurrenceID"
+    value "urn:catalog:MVZ:Mammals:14523"
+  measurement "m18"
+    characteristic "dwc:scientificName"
+    value "Ursus arctos"
+  context "oboe-rel:within" "o5"
+
+
+Darwin Core record of bird observation
+--------------------------------------
+dwc:occurrenceID=urn:catalog:AUDCLO:EBIRD:OBS64515288
+dcterms:type=Event
+dcterms:modified=2009-02-17T07:33:04Z
+dwc:institutionCode=AUDCLO
+dwc:collectionCode>EBIRD
+dwc:basisOfRecord>HumanObservation
+dwc:individualCount>2
+dwc:eventID>http://guid.mvz.org/events/2006/11/26/17
+dwc:samplingProtocol>area count
+dwc:eventDate>2006-11-26
+dwc:locationID>http://guid.mvz.org/sites/arg/127
+dwc:country>Argentina
+dwc:countryCode>AR
+dwc:stateProvince>Neuquén
+dwc:locality>Valle Limay, Estancia Rincon Grande, 48 ha area with centroid at this point
+dwc:decimalLatitude>-40.97467
+dwc:decimalLongitude>-71.0734
+dwc:geodeticDatum>WGS84
+dwc:coordinateUncertaintyInMeters>200
+dwc:scientificName>Anthus hellmayri
+dwc:class>Aves
+dwc:genus>Anthus
+dwc:specificEpithet>hellmayri
+
+
+Pseudorepresentation in OBOE
+----------------------------
+
+observation "o1"
+  entity "countries:Argentina"
+  measurement "c1"
+    characteristic "dwc:countryCode"
+    value "AR"
+    standard "iso:countryCode"
+
+observation "o2"
+  entity "provinces:Nequen"
+  context "oboe-rel:within" "o1"
+  
+observation "o3"
+  entity "sbc:SpatialLocation"
+  measurement "m0"
+    characteristic "dwc:locationID"
+    value "http://guid.mvz.org/sites/arg/127"
+    standard "foobar:ID"
+  measurement "m1"
+    characteristic "dwc:locality"
+    value "Valle Limay, Estancia Rincon Grande, 48 ha area with centroid at this point"
+  measurement "m2"
+    characteristic "dwc:decimalLatitude"
+    value "-40.97467"
+    standard "oboe-units:Degree"
+     precision "0.0018"                       <== REPRESENTS 200m uncertainty
+  measurement "m3"
+    characteristic "dwc:decimalLongitude"
+    value "-71.0734"
+    standard "oboe-units:Degree"
+     precision "0.0018"                       <== REPRESENTS 200m uncertainty
+  measurement "m4"
+    characteristic "dwc:geodeticDatum"
+    value "WGS84"
+  context "oboe-rel:within" "o2"
+    
+observation "o4"
+  entity "sbc:TemporalPoint"
+  measurement "m11"
+    characteristic "dwc:eventDate"
+    value "2006-11-26"
+    standard "oboe-units:Date"
+
+observation "o5"
+  entity "sbc:SamplingEvent"
+  measurement "m10"
+    characteristic "dwc:eventID"
+    value "http://guid.mvz.org/events/2006/11/26/17"   
+    standard "foobar:ID"
+  measurement "m12"
+    characteristic "dcterms:type"
+    value "Event"
+  measurement "m13"
+    characteristic "dcterms:modified"
+    value "2009-02-17T07:33:04Z"
+  measurement "m14"
+    characteristic "dwc:institutionCode"
+    value "AUDCLO"
+  measurement "m15"
+    characteristic "dwc:collectionCode"
+    value "EBIRD"
+  measurement "m16"
+    characteristic "dwc:basisOfRecord"
+    value "HumanObservation"
+  context "oboe-rel:within" "o3"
+  context "oboe-rel:within" "o4"
+  
+observation "o7"
+  entity "foobar:CollectionOfOrganisms"
+  measurement "m17"
+    characteristic "dwc:occurrenceID"
+    value "urn:catalog:AUDCLO:EBIRD:OBS64515288"
+  measurement "m18"
+    characteristic "dwc:scientificName"
+    value "Anthus hellmayri"                        
+  measurement "m19"
+    characteristic "dwc:class"
+    value "Aves"                                    
+  measurement "m20"
+    characteristic "dwc:genus"
+    value "Anthus"                      
+  measurement "m21"
+    characteristic "dwc:specificEpithet"
+    value "hellmayri"         
+  measurement "m22"
+    characteristic "dwc:individualCount"
+    value "2"            
+    standard "oboe-units:Number"
+    protocol "area count"
+  context "oboe-rel:within" "o5"
+
+  
+NOTE on calculating precision in decimal degrees
+------------------------------------------------
+Differences in decimal degrees were converted to meters based on the WGS-84 Equatorial Radius, which is 6378137.0 meters.  Thus, at the equator, one degree is equal to 111319.5 m.
+
+Thus,  1 degree       200 m 
+       ----------  x          = 0.0018 m
+       111319.5 m
+
+This is not universally useful, in that the ratio of degrees to meters changes with distance from the equator.  To calculate decimal degrees for 200 m at other locations, one could apply a cosine correction as a function of latitude, such that the radius is 110895.9 m at +/- 5°, 109628.3 m at +/- 10°, 107526.4 m at +/- 15°, and 104606.1 m at +/- 20°.
+
+Thus, the OBOE approach in which we expect to express precision in the same units as the value is somewhat unsatisfactory in the case of latitude and longitude, even though it works fine for other physical quantities.
+
+

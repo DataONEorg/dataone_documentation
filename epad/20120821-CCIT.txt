@@ -1,0 +1,794 @@
+#persist
+
+Agenda for CCIT / Developers Meeting, 20120821-23
+=================================================
+
+:Document Status: DRAFT
+
+:Location: 
+
+  NCEAS_, 735 State Street, Santa Barbara
+  Second floor conference room
+
+:Date: 21 - 23 August, 2012
+
+GoToMeeting info for 21 Aug: 
+http://www.gotomeeting.com/fec/
+Meeting ID: 535-796-361
+
+
+Objectives
+----------
+
+Major goals for ongoing development work in DataONE include:
+
+- Increasing the number and diversity of Member Nodes
+- Increasing the diversity of ITK tools
+- Adding more infrastructure features
+- Progressive improvement of infrastructure usability
+- Integration across the DataNet projects
+
+
+The high level objectives for this meeting include:
+
+1. Review progress on the production environment and infrastructure
+
+2. Adjust the schedule of activities for the remainder of the project
+
+3. Enumerate and prioritize features to be developed
+
+4. Design for selected high priority features
+
+5. Outline goals for DataNet interoperability and activities to achieve it
+
+6. Initial preparations for reverse site visit, proposal renewal topics
+* September NSF visit to UTK/ORNL (Sept 10)
+  * Link to epad for Agenda: http://epad.dataone.org/2012Aug20-Knoxville-NSF-Vist-Planning
+Other topics:
+* Semantic WG integration
+* UTK DIBBS proposal (Bruce)
+
+
+Things that we will be measured on:
+- Depth of deployment
+  - number of MNs
+  - amount of data, type of data
+  
+- Ability to access data
+  - Easy to do a search that retrieves data
+
+- The WOW factor of the UIs and infrastructure
+  - Is this fundamentally new?
+  - Is this really helpful to users?
+
+- Promote the functionality of the overall system
+
+- How do we demonstrate the backup functionality?
+  - Perhaps the dashboard can be used to show object distribution across multiple nodes?
+
+- Preservation attributes of the design
+  - illustrate how institutional diversity etc provides a level of preservation
+
+- User oriented demonstrations / use cases
+  - e.g. basic case of researcher adding content to the system, later retrieving it and demonstrating how the system supports those operations
+
+- Can we demonstrate the data life cycle? e.g. follow what's done in the video.
+
+  - R
+  - Morpho
+  - DataUp
+  - ONEDrive
+
+  - Data citation tools
+  - possible resources for matlab development
+  - possible resources for kepler development
+
+- Site review will want live demos.
+- Site review will be expecting DataNet interoperabilities
+- Retrieving secure / private content from member nodes
+  - User logs into ONEMercury / portal, but how to pass those credentials to access the member node? As a proxy through the CN?
+
+
+Priorities:
+XX = lower priorities
+!! = critical
+
+- User facing capabilities
+  - DataUp - beginning of its lifecycle
+    - PM: John K, Dev: ??
+  - ONEDrive
+    - PM: Dave, Dev: Roger
+  - Morpho
+    - PM: Matt, Dev: Jing, Ben
+  - R
+    - PM: Matt, Dev: Chris J
+  - Web interface - ONEMercury etc
+    - PM: Dave, Dev: Ranjeet, Skye
+  - XX Total Impact
+    - PM: Ryan, Dev: Skye + ??
+  - XX Citation tools (e.g. zotero, mendeley - William Gunn)
+    - PM: Bob Sandusky  Dev: Skye, Ranjeet, ??
+
+- Core operations
+  - !! API changes - search
+  - Replication
+    - PM: Dave Dev: Chris, Skye
+  - Synchronization 
+    - PM: Dave  Dev: Robert
+  - Indexing
+    - PM: Dave Dev: Skye
+  - Log Aggregation
+    - PM: Robert  Dev: Robert
+  - Member node deployments
+    - PM: Dave, Dev: Chris, Ben, Roger, Rob
+
+- Dashboard
+  - Counts of objects page for: DataSet, User, MN Level, Whole system
+  - Log reporting
+  - PM: Dave, Dev: Robert, Skye, Matt
+
+- XX DataNet integration
+  - PM: Dave, Dev: ??
+
+
+Meeting Notes and Comments 2012-08-21
+=====================================
+
+* How are we handling end-user and member node support?  Open topic from previous discussions.  Consider putting this on the AHM agenda and have CCIT with other WG's to address some of this.  Also having CCIT meeting with WG's for demonstrations and discussion.  
+Sociocultural working group has been thinking about these issues and want to have more interaction with CCIT on developing user services.
+ * Discussion on Immediate Concerns
+   * Support, Operations
+   * Under user facing functionality:
+     * Separate technical jargon (Member Node, etc.) from how we refer to data access for scientists, etc.
+
+We should begin divorcing the technical terminology from the terminology we use to talk to end users, scientists, etc. E.g., MN is a technical term, perhaps identify a better term for 'user facing' communications.
+  * BEW: This has been an ongoing discussion.  From my perspective, the overall answer was that "Member Node" applies to the organization, and "Member Node Stack" or "Member Node Software" applies to the software itself that a Member Node (Organization) would actually be running.  That does help to distinguish, for example, that UCSB, ORC, and UNM are running the Member Node Software as part of their infrastructure, but they aren't Member Nodes from an organizational perspective.  
+
+Kunze: presentation on the 8 flavors of GUID in the wild
+* Interesting point by Matt: identifiers for data sets are somewhat analogous to trying to identify sentences or paragraphs within a publication. 
+* The case that an object is no longer available is covered within the existing DataONE framework.  The persistence of the object is not connected with the persistence of the identifier.
+* Note that DataONE documentation has been referring to a pid (persistent identifier), rather than a GUID.
+* There ishere is a difference between using the identifier for citation and credit as opposed to using the identifier for reproducibility.  
+* Many of the changes we are discussing are about updates to the metadata, though there are changes that are to the data themselves.  This is where the DOI has a mixed use -- in the citation section as a means of providing credit, where having an identifer that refers to all past, present, and future versions of the particular data set.  
+* John: It's good to keep a friendly relationship with the DataCite community, and mutable content is the norm in that community
+
+ *  Discussion about content immutability (John)
+   * 8 flavors of 'guid' in the wild
+     * globally unique (gu)
+     * persistent (p)
+     * actionable (a)
+     * identifier (id)
+     * mutable content (mc)
+     * immutable content (ic)
+     * gives us: gupaid-mc, gupaid-ic
+
+   * Robert: D1 guids aren't necessarily actionable
+   * Matt: There was a conscious decision to not require guids to be actionable based on early discussions on identifiers
+     * Persistence flavors
+     * Gupaid to *dynamic content* (home page
+     * Gupaid to stable but correctable content (landing page)
+     * Gupaid to never-changing content (csv file, etc)
+
+
+ * In what situations is some change OK, what are the driving use cases?
+   * Content mutability
+     * Option 1: Continue to use gupaids for 'files', but add a new metadata element (eg alt-id) for depositor-friendly, curator-friendly gupaid-mc
+     * This new element would hold DOI landing pages
+     * Option 2: Example: Water data updates get new version under old ARKs
+   * There's a desire to support both mutable content and immutable content - how do we do it technically
+     * Data management is complex though, educating the various groups regarding provenance, identifiers, etc is important
+     * The publishing community is used to having ng mutable content (say, at a given DOI)
+     * There's a difference between a 'publication' and a 'dataset'
+     * 
+ * What are the NON-technical consequences of not allowing mutable content?
+   * Bob: May be on a per-community basis
+   * Bruce: DOIs serve 2 purposes: provenance, credit (attribution)
+     * To date, DOIs are used more for attribution
+   * Ryan: When the bits change, a 'process' can create a DOI for the new dataset. However, you need a human to decide when a DOI should be created if the DOI represents 'scientifically meaningful changes' only
+
+ * What are the technical consequences of allowing mutable content?
+X0 --> X1 --> X2 \
+                  >  Z0 --> Z1 --> Z2
+Y0 --> Y1 --> Y2 /
+
+* types of changes
+  * error corrections
+  * recalibration
+  * new calculations
+  * additional data in series
+  * derived data sets (combinations of original)
+  
+
+Rob: wrt identifying credit:
+through systemMetadata obsoletes and obsoletedby, we have a mechanism to trace credit.  We'd just need an ITK method to implement it.  (same with notifying about data corrections - new datasets which fix previous ones).
+
+
+Actions from Block 1:
+
+- Precisely define the use cases for supporting mutable content (John, Matt, Bruce)
+- add parameter to resolve to enable resolution of the latest version of content
+- Add ITK method to enable tracing of credit (through obsoletes / obsoletedBy)
+
+Perhaps:
+- Add a new field to system metadata that provides an alternative identifier. The AltID refers to something that may change over time, but at some point in time is represented by the PID in the system metadata. The AltID would conceptually refer to all revisions of this object. There are many subtle issues with this - e.g. someone could hijack an altid by refering to the altid in their system metadata with a newer datemodified, so need to support "ownership" of AltIDs.
+- Rob: alternatively, the first object of the series could serve as the AltID. In this case, the hijacking issue and change to systemMetadata complications are avoided, and one could still get to the latest representation of the mutable data via the /resolve endpoint using the flag.
+
+- Perhaps add a property to system metadata indicating if an object is mutable.
+  - Data is always immutable
+  - An object can only be modified at the authoritative member node
+  - A CN should detect an object change and update replicas of that object.
+    - Problem - how to determine that a change is not an accidental or intentional replacement of the object?
+
+
+Block 2: Identity discussion
+----------------------------
+
+* Challenge with X.509 certificates.  Works OK for things that are pure browser based, but hard to make this work in anything other than user-hostile where command line tools are concerned.  CI logon is strongly tied to the http protocol.  Putting an embedded browser into an application is a problem. 
+* API-based solutions Enhanced Client or Proxy (ECP) profiles of SAML are not well supported yet across identity providers
+* In at least some cases, the cert is put in /tmp on Mac systems, which is system accessible.  Ideally, this cert should be put someplace which is user-specific.  Same issue would apply for Linux -- something like ~/tmp makes sense.  Cookies are put in a user area, and the certs should be as well.  For users working on Windows systems that are set up wet up with common corporate and federal guidelines, they can't write anyplace outside of their user directories.  This is also true on some Linux workstations, depending on how configured.  
+* the purpose of the JNLP is so that the private key is generated locally.  CILogon never gets the private key, which is a good security measure.  The certificate does get signed by CILogon as a result of a certificate signing request that the JNLP generates.
+* ?? Some new systems are coming without Java installed (Macs, in specific).  This does mean that a user has to install Java for this to work, I believe.  Minor issue.  
+* Can we work with CILogon to replace the JNLP download cert/key generation step?
+    - Potentially generate the key using d1_libclient_[java|python]
+    - Via a browser, potentially generate the cert/key in javascript? See http://kjur.github.com/jsrsasign/
+* Interest in ECP
+  http://www.cilogon.org/ecp
+* Discuss ECP support with someone at Google?
+* Promote ProtectNet accounts since they already support ECP?
+* DataONE becomes an identity provider and issues/manages passwords.  How does this affect interoperability across DataNet partners?
+* Pursue development of desktop-based application/widget (a la Dropbox, Google Drive, iCloud, etc) that manages authentication with id providers (via ECP first, fallback to browser?), cert/key generation, CILogon signing of the cert, and storing the cert/key locally in a way that is accessible to other desktop applications (and libclient-based apps).
+* Mapping between identities - need to be very careful about cross institutional mapping and ensuring that no account escalation is possible. e.g. mapping between accounts of different levels of assurance.
+
+Actions:
+- pursue ECP logon process for ITK tools
+  - develop Java tool for ECP
+  - develop Python tool for ECP
+- promote Protect Network and LTER network accounts
+- Lobby for broader ECP support
+- Contact CILogon - is Google planning to support ECP?
+
+
+Block 3 - Logging, Monitoring, 
+Actions:
+
+- Update the log aggregation identity / access control as per notes
+
+ * Bugs:
+   * Mechanism  to assign rights to a LogEntrySolrItem record should be abstracted into  a separate class and re-used by both the SystemMetadata listener and  the LogAggregatorTask. 
+   * The SystemMetadata listener should push the results onto the queue and not the topic.
+
+ * Backgound
+   * Administrators are only group that that currently has access. Groups and equivalent identity needs to be implemented.
+
+ * New features to add:
+   *  Rights holder has same level of access as the membernode subject. It will return a full log record, subject/ip address. Anyone who has permission to read a log entry may read the entire entry.
+   *  Access Policy : subjects having ChangePermission permission, rights holder for log Access. equivalent identities & groups
+   *  Track who has read for log records for further aggregation of metrics/statistics
+   *  Additional package or tool that will consolidate/summarize aggregated records into a matrix of user/object usage stats
+
+ * Subjects that have full access to CN.getLogRecords():
+   * returns all log records, not filtered based on session subject
+   * public user access: NO
+   * system administrators, CN subjects and report generators YES
+
+ * Subjects that have partial access to CN.getLogRecords():
+   * filtered based on session subject
+   * public user access: NO
+   * authoritative MN associated principle (node client certificate subject)  has access to log records about objects related to that MN  (authoritative MN only, but what about replicas MNs-- NOOO!!!)
+   * subjects that have ChangePermission permission on PID have access to log records about objects
+   * rights holder for PID have access to log records about objects
+ * all this needs to be reviewed by the sustainability and governance group
+ * bring the leadership team up to speed on log aggregation issues, and  request guidance on the balance of providing usage information to rights  holders and the privacy of other end users
+ 
+- Enable log aggregation on CNs
+- Productive Total Impact work for CN log reporting
+- Implement something like Google Scholar usage reporting for data sets (e.g. Steven Gaines)
+- Record when someone retrieves citation information (possible?)
+
+- turn Alice's work into a production service:
+Summary Pages for reporting:
+- cn wide
+- mn wide
+- creator
+- dataset / package
+Display number of objects, number of data packages, citations, views per rereporting type.
+Integrate views into ONEMercury search results and dataONE.org?
+Leverage total-impact api data?
+
+  Do we have a need for new endpoint to expose summary data from logAggregation? We may need a new data type to support information . After some thought, I think the log summary aspect could be a separate DataONE client similar to Mercury (ONELogSummary or something).  It would display statistics and could provide statistics.  I am not convinced we need a new API method and datatype for this functionality.  Especially since, as an ITK tool, we could more easily create multiple types of summary information for different types of remote services.  If after the tool is created and we think it useful, we could decide in the future to incorporate it into V2, but at the outset, it would easier if it were more informal as an ITK and less burdensome to implement. It would also count as another ITK implementation!
+
+Instrumentation
+
+- Investigate setting up Ganglia + jmextric ( https://github.com/ganglia/jmxetric )
+- Investigate setting up StatsD ( http://codeascraft.etsy.com/2011/02/15/measure-anything-measure-everything )
+
+- Create a tool to monitor the status of a PID as it progresses through the synchronization + replication process. This would be a matrix per pid, columns = node, rows = state, with indication of time entering, departing each state 
+
+Performance Metrics
+- Linode has hosting services that can be located internationally. May be a good option for installation of a CN overseas.
+http://www.linode.com/avail/
+
+
+Block 4 - Content Discovery
+
+Search API Changes:
+    Investigate/Review Kepler, existing search MN search implementations for ideas to search API format.
+    Update API - no searchEngines() needed.
+    Define return type schema for listSearchFields() - /search/{querytype}
+    Potentially deprecate old 'objectList' search endpoint?  no
+    Need to name new search endpoint name - search2....
+
+- Search service APIs
+  - Review proposed changes
+      - for listSearchFields(), is it really actionable programmatically since the semantics of the response fields need to be understood?
+      - The return type for a search is currently ObjectList, which isn't rich enough to accomodate ITK clients.  Developing the response type with a richer model is important.
+      - What do we name the REST endpoints of a new search API:
+        /search (current, return type is ObjectList)
+        /search2 ? (return type is OctetStream)
+        /find ?
+        /altSearch ?
+
+- Index generation
+  - Alignment / determination of controlled terms (e.g. GCMD keywords)
+      - precision may suffer using automated term alignment
+      - best of breed algorithms today may not be so good in the future since they improve over time
+      - annotations being apropos is in the eye of the beholder, i.e. annotations created by the original author of the object may be more useful than an annotation created by a third party.
+      - can the search API accomodate an 'augmented' semantic search where a particular ontology is specified as the concept space? 
+      - How are the metadata terms mapped to the ontology?  Semtools as an example, has an XML annotation syntax
+      - CUAHSI has variables mapped to controlled vocabularies, and the terms in the controlled vocabularies are mapped to ontology concepts for search
+      - Dryad adds terms into the science metadata, and use of the keywords depends on levels of trust (ie where the keywords come from/ where the concepts are defined
+      - CF metadata in the climate community is another example of a simple, constrained domain of attributes
+      - from a metadata file with a variable name, description and abstract of data overall, have a service give back the controlled vocabulary terms that match from 'these (say, 7) ontologies'
+      - the problem: using broad keyword 'buckets' tends to increase the *recall* space, not decrease it
+      - the goal: scientists want to improve *precision* of searches for specific collected data variables 
+      - the crux: which ontologies do we adopt/use??
+        CUAHSI list of variables, CF list of variable
+  - Interaction with external services (e.g. taxonomic name services, geolocators)
+
+   Identify key ontologies that are usable now.
+   Associating terms with content already available via automated process (experimenting with a lot of NLP algorithms)
+
+ACTIONS (block 4):
+- develop use cases for search responses based on how ITK tools like Morpho, HydroDesktop, etc expect the response (including control over the response fields)
+
+- accumulate a corpus of science queries that researchers (DataONE users) would like to see supported
+
+- Drop listSearchEngines() from the pproposed CNSearch API
+
+- Decide on a name for the second version of the search REST endpoint within the v1 API
+
+- Compile a list of UX changes (major component changes and/or minor tweaks) for DataONE discovery interfaces.
+
+- contact providers of 'Web scale' discovery sysetms used by research libraries (e.g., Summon, Primo, WorldCat Local, EBSCO, VuFind). Goal: make it common for DataONE objects to be returned by searches performed using library search systems.
+
+- Investigate SRU and possibly OpenSearch as standard APIs for search in DataONE. 
+  e.g. http://developer.k-int.com/svn/default/aggr2/trunk/sru/
+  e.g. http://infomotions.com/sandbox/solr-sru/
+
+- Generate sitemaps to enable google indexing of DataONE holdings
+
+
+
+Meeting Notes, Wednesday 22 Aug
+-------------------------------
+
+Block 5 - MN to MN Replication
+
+- Can we move forward with a single CN running the replication service, and continue to debug / develop replication with multple CN participation?
+
+- Perhaps switch from even driven replication to audit driven? i.e. a process iterates through system metadata, evaluating number of replicas. If insufficient, then schedule a replication task
+
+  - After synchronization, the rate of addition is quite low, so event driven repl shouldn't be a problem
+  - But sync and repl at the same time creates a lot of traffic
+  - both auditing and events end up populating the replication job queue - so creating the jobs is not an issue, it is the subsequent processing
+
+- Auditing needs to check on availability of replicated objects from member nodes
+
+- Computing checksums can be expensive, so try to avoid doing it for every object. Need to determine the frequency of checksum calculation to achieve some level of certainty that content is consistent
+
+- Need to evaluate replication policy for each object to ensure it makes sense - e.g. a user may specify that a 2TB object needs to be replicated to multiple MNs.
+
+- Need to track state of MNs to determine if it should be set to up/down. This should be a manual process by "operations staff" to evaluate state of MN
+
+- Need a mechanism for MN operators to notify of planned activities (e.g. outages)
+
+- Need to perform base monitoring of all MNs (e.g. Nagios watching monitor/ping)
+
+
+ACTIONS (Block 5):
+
+- Run replication from a single CN, to enable debugging
+
+- Need to start evaluating NodeReplicationPolicy properties to help guide replication, or at least
+
+- Prioritization should be dropped down to a single request factor. Can make this progressively more complex, but start simple.
+
+- More instrumentation
+  - more realtime view of events, hazelcast
+  - on a per PID basis - track status of the cluster of requests
+  - setup a shared logging point
+  - See also section on monitoring / instrumentation above  (Block 3).
+
+- Sanity checks for replication policy
+
+- How is preservation policy influenced by replication policy? Preservation policy documents need to be updated to be clear that prservation can be influenced by user choices for content replication.
+
+
+Block 6 - Scalability
+
+
+- As we move from 5 --> 20 --> 40 MNs, communication among node operators will be important, and management overhead will increase
+- There's an outstanding ticket for 'implementing a notification system' for operators, e.g. when syncFailed events occur
+- Reports to MN operators should likely be in digest form, perhaps sent on say, every 5th consecutive failed sync attempt
+- Cooperative agreement mentions we will create a help desk (functionality will be available)
+- We may need to change code in metacat to NOT store all metadata|data files in a single directory (/var/metacat/documents|data)
+
+- HTTPS can be a bottleneck - may want to drop to HTTP for certain content transfer.
+
+- Client connections/negotiation/socket opening/closing is inefficient if it's done on *every* connection.  connection pooling could be used
+
+ACTIONS (Block 6)
+- Add an administrative email list used for announcing policy changes, planned outages, etc.  This list would be exempt from highly technical reporting that may be sent to the node contact subject.
+
+- Perform some capacity tests on metacat.  Look at how many random sy|sci meta documents can be inserted until it breaks.  Determine the filesystem, databases, and memory constraints.
+
+
+
+
+Block 7,8 - Member Nodes
+
+- Bringing member nodes online: DUG discussion involved trust among MNs - access control on one MN needs to be respected on all other MN replica
+
+- May need an MN 'dashboard' that shows the status of objects, if the replication policy is fulfilled, etc
+
+- Potential new MN software stacks: Fedora, iRods
+
+Note: An MN agreeing to be a replication target is trying to be a good citizen.  The node wants it's data replicated but doesn't want to 'freeload'.  Perhaps the number of replicas from objects from that node can be somewhat proportional to disk space offered as replication target.  If so, would that then be a useful thing to 'dashboard'?
+
+ * MN Deployment issues
+   * LTER: upgraded metacat to 2.0.3.  Not daunting, but needed to be meticulous.  Helpful to have IRC communication while deploying
+     * When upgrading, the reconfigure of the DataONE configuration screen is a bit confusing.  The status says 'Bypassed'.. Needs better documentation, or a smoother UX
+   * Dryad: Changes to the API have been challenging.  What's the best way to keep MNs abreast of API changes? A liason?
+     * Changes to Dryad's internal code have slowed things down a bit
+     * Logging API has been difficult to implement because of the content that D1 requires was different then Dryad's internal logging setup
+     * The data packaging model is mismatched with Dryad's model, so doing the crosswalk is difficult
+     * 
+     * In hindsight, Dryad may have worked with GMN to satisfy the D1 API, and connect it to Dryad
+     * GET /node is confusing - needs better documentation, e.g. filling in dateLastHarvested is impossible for the MN - it's a CN task. Define optional vs mandatory fields for MNs  in Node structure similar to systemMetadata
+     * Having better documentation on using common, libclient - creating a custom MN implementation of the API requires a good understanding of these libraries
+     * Having a high-level overview of common/libclient, perhaps a tutorial, user guide, or the like
+   * ORNLDAAC:
+     * Ranjeet concurs with most issues above
+     * Suggestion: It might be nice to provide scripts/tools for an MN that automate SystemMetadata generation given a directory of scimeta and a directory of scidata. This of course depends on thethe content of the scimeta documents.
+     * The python CLI may provide some of this functionality
+   * Merritt
+     * Uses tthe Metacat software stack to provide the D1 API, connected it to the Merritt software stack
+     * Merritt provides inventory checks, identifier creation, format checking, checksumming, indexing, generates an async message to the user
+     * On Merritt create(), they also call Metacat create() after generating the sysmeta and ORE map
+     * Need to find a location to store ARKs that rrepresent a collection or mutable content when D1 only supports unique ids for revisions
+       * potentially use a triple statement in the object's ORE map
+       * look into the available predicates in ORE and CITO
+ * For dealing with take down requests, do we need a deleteReplica() method so that Tier 4 nodes don't necessarily have to implement Tier3 MNStorage (because of the need for delete() during an object expunge)?
+
+Member Node Materials / Help
+----------------------------
+ * Matt thought we should have a more dynamic web page that shows the status of active Member Nodes, some stats, etc.  Right now the MN contact fills out a word doc, and it's converted to PDF and posted on the d1.org page. This should be converted to a web form, and should include moreore dynamic info.
+ * This form info could instead be added to the node registry process
+ * 
+ * Mark S: Perhaps make the MN list show 'member since' date, 'tier support', etc.
+ * How to Become a Member Node web page needs to be much more succinct
+
+Candidate Member nodes: https://docs.google.com/spreadsheet/ccc?key=0Ai3ryhJR2IgZdDdlUlRsWmo3YmRQa2pUYVBsX09CQ2c#gid=0
+(copied from the operations docs in subversion)
+
+New MNs:
+- Dryad
+- ONEShare
+- AKN
+- UNM  Earth Data Analysis Center
+
+- Brazil
+
+- ILTER
+
+
+
+ACTIONS (Block 7,8)
+ * Review Metacat's DataONE configuration screen from a usability perspective, and update documentation to reflect issues that come up during upgrades (as opposed to newew installations)
+
+
+Suggestions for usability group:
+ * Process for becoming a member node is not clear from the description on the website. The "Become a Member Node" page is not easy to find. On this page, there is no button or email address that someone would use to actually submit an application.
+
+
+
+Meeting Notes, Day 3 08/23/2012
+-------------------------------
+
+Block 9 - DataNet Interoperability
+
+Overview slides by Dave on DataONE
+Overview slides by Michael on iRODS
+
+Database generated IDs are unique within an iRods installation, but not guaranteed globally unique.
+
+Perhaps 50 - 100 installations of iRods. Mostly standalone (their own iCat)
+
+Interoperability Discussion
+ * Identifiers
+   * DataONE is promoting use of guids across the entire network. iRODS currently using identifiers that are unique within a given deployment, but can't yet ensure that identifiers are unique across two iRRods servers (iCATs)
+   * Collections have an identifier - conceptually aligns with an ORE map document
+ * iRODS zones
+   * independent iCATs, but can share data across zones
+   * users in one zone are remote to the other
+   * identifiers are based on paths, and zones are in separate parts of the paths (/zone1/collection/files, /zone2/collection/files, etc.)
+   * softlinks can be created across zones for collections (not files) - simsimilar to unix symlinks
+   * paths in a zone may end up representing a guid, although internally iCAT uses a numeric id
+ * DataONE MN API discussion
+ * 
+   * replicas in iRODS are 'copies' of an object, and they aren't necessarily the same bytes
+   * a request will return the 'most recent' copy
+ * Identity Management in iRODS and DataONE
+   * DataONE uses X509 certs to from Cilogon to identify subjects
+   * iRODS supports multiple auth schemes, defaults to challenge/response
+     * server sends 64 bytes of random data
+     * client uses a password to hash the bytes: homegrown quick auth mechanism
+     * across zones, aauth refers back to the zone the user is registered in
+   * supports GSI auth and kerberos
+
+- iRods has a bunch of subsetting type operations available, DataONE is planning on enabling support of these on Member Nodes
+
+- Appropriate level of integration may be at the iCat level - conceptually an iCat instance would represent a member node
+
+- iRods / DFC is interested also in becoming a consumer of DataONE content through the client APIs
+
+
+
+ACTIONS - Bock 9
+
+- Can iRods utilize DataONE services to assist with identifier uniqueness? Ezid?
+
+- Evaluate mapping of Member Node APIs with iRods 
+
+ACTIONS: 
+- Mike Wan will investigate the DataONE API and creating an iRODS driver that exposes objects from DataONE
+- DataONE developers will investigate the iRODS server software to implement iRODS as a member node in DataONE 
+
+
+Discussion on ITK Tools
+-----------------------
+Adapting Morpho to the DataONE API:
+ * We need to implement an MN search API in order to move the search component forward in Morpho to still supporting Morpho --> Metacat searching as NOT part of the D1 network as an MN (but a potential MN)
+ * Morpho won't be able to EDIT anything other than EML at the moment, so searching may be restricted to EML object formats.  Can we use the import functionality to convert FGDC to EMl for editing?  this is a lossy process, so there are issues with it.
+ * This requires Metacat changes: the search functionality in Metacat will need to be ported to using SOLR (not insignificant)
+ * The DataONE search(2) API needs to be finalized to support richer return types, and to make it implementable on both MNs and CNs
+
+R Client development
+ * Work to be done includes DataPackage convenience methods, fit and finish work to hide the underlying Java calls
+ * Working aspects are get(), getSysMeta(), create(), update(), delete(), etc.
+
+DataONE Drive development
+ * representing hierarchies in the filesystem is tractable.  Representing leaf nodes (files) is more troublesome, since filenames aren't in system metadata, nor are mime ttypes.  Both are needed to do proper file system typing and association with applications at the OS level.
+ * Dave created a hash from object format to filename extension as a stop gap lookup for typing leaf nodes for the time being
+ * Probably should go with a read-only implementation first
+ * Depends on the search API changes
+ * The Dokan and FUSE models are very similar, and abstracting out the commonalities may be productive, while keeping in mind that performance is a big issue.  Roger can take the lead on the D1 Drive implementations
+
+ACTIONS:
+
+(summarize above)
+
+Discussion on Provenance
+------------------------
+Goals: Develop a provenance model for scientific workflows
+ * Started with developing D-OPM 
+ * open provenance model at W3C is now in the works (D-PROV)
+ * Aspects of scientific workflows:
+   * Automation
+   * Scaling
+   * Adaptation, Evolution, reuse
+   * Provenance
+
+
+ACTIONS Block 11:
+
+- Define a small set of use cases that guide the futher development of provenance WG activity
+
+- Define how to include references to provenance traces, scripts, workflows associated with a data package. Basically capture the immediate provenance of a data package within the data package. ORE documents (http://www.openarchives.org/ore/) and see http://mule1.dataone.org/ArchitectureDocs-current/design/DataPackage.html
+
+- Prov-WG: develop a transfer syntax for DProv
+
+- Enable parsing and indexing of provenance traces (DProv)
+
+  - What is required for provenance indexing (e.g. tto support ProPub)
+
+- Provide a UI that enables friendly display of provenance information associated with a data package. The "provenance explorer" - javascript / html. Keep it simple.
+
+- Tools to generate provenance traces from ITK enabled tools
+
+  - What is required for the R client to generate provenace trace?
+
+  - Workflow systems - need DataONE read / write actors / tools
+
+  - KNIME - interactive / command line mode  as a workflow tool
+  
+  
+  - iPython as a workflow tool??
+
+- Side issue - enable easy retrieval of content from CNs with the explicit goal of supporting the generation of third party indexes. This would enable experimentation of new indexes / UIs without directly impacting the primary UI for search on the CNs.
+
+
+Schedule
+========
+
+Day 1 - Tuesday 21 August
+.........................
+
+:08\:30: *Block 1.* Introductions, agenda review, progress report
+
+ - Review the current state of the DataONE infrastructure, including detail on
+   the Coordinating and Member Node implementations, and the various 
+   Investigator Toolkit pieces. (~30min, Dave)
+
+   - CN components
+      - CN to CN replication
+      - MN to CN synchronization
+      - MN to MN replication
+      - Identity Management
+      - Indexing
+      - Log aggregation
+      - Mercury UI
+
+   - MN implementations
+      - GMN MN stack
+      - Metacat MN stack
+
+   - ITK implementations
+      - CLI client
+      - R client
+      - Morpho client
+      - FUSE/Dokan client
+      - DataUP
+
+:10\:00: `Break`
+
+:10\:30: *Block 2.* Authentication, Authorization, Identity, Security (Ben, Bruce)
+
+  - The authentication workflow, identity management, and the challenges therein
+    - DataONE Portal
+    - Distributed identity tracking, mapping
+    - Distributed certificate management
+    - Distributed session management
+    - Possible Cilogon API interactions?
+
+  - System integrity and security (as time permits)
+
+
+:12\:00: `Lunch`
+
+
+:13\:00: *Block 3.* Reporting and monitoring (Robert, Dave)
+
+- Log aggregation, reporting
+  - Outcomes from Alice's work
+
+- Infrastructure monitoring
+  - continuous TCP port access (& UNM network reliability)
+  - Hazelcast cluster integrity
+  - CN service endpoint availability
+  - DNS round robin issues, maintaining CN synchronization
+
+- Sponsor required metrics
+  - Review and ensure we are able to report
+
+
+:15\:00: `Break`
+
+
+:15\:30: *Block 4.* Content discovery (Skye, Dave, Jeff)
+
+- Search service APIs
+  - Review proposed changes
+      - for listSearchFields(), is it really actionable programmatically since the semantics of the response fields need to be understood?
+      - The return type for a search is currently ObjectList, which isn't rich enough to accomodate ITK clients.  Developing the response type with a richer model is important.
+      - How do we address the REST endpoints of a new search API:
+        /search (current, return type is ObjectList)
+        /search2 ? (return type is OctetStream)
+        /find ?
+      
+
+- Index generation
+  - Alignment / determination of controlled terms (e.g. GCMD keywords)
+  - Interaction with external services (e.g. taxonomic name services, geolocators)
+
+- User interface
+  - Different types of tools / interfaces that can be leveraged
+  - Ease of content discovery is a very high priority
+  - Search use cases / scenarios to address
+
+:17\:30: `Close`
+
+
+Day 2 - Wednesday 22 August
+...........................
+
+:08\:30: *Block 5.* MN to MN Replication (Chris J, Skye)
+
+- Event-based Replication policy evaluation
+- Replication task creation, execution
+- MN prioritization, performance issues
+- Scheduled replica auditing
+
+:10\:00: `Break`
+
+:10\:30: *Block 6.* Infrastructure Performance and Scalability
+
+- Transaction rates
+- Number of simultaneous clients
+- How to improve performance?
+
+
+:12\:00: `Lunch`
+
+:13\:00: *Block 7.* MN software deployments, prioritization, support, software, MN services 
+
+- Member node deployment experiences, and where to improve
+- Review list of candidate MNs, and suggest prioritization
+- Define a process for determining how much resource DataONE should allocate to brining MNs online
+- Identify additional software stacks that should be built by DataONE
+- Issues of privacy of concern to MNs
+  - logging, identity, authentication, identity
+- Replica transfers (technical and legal compatibility)
+- Dealing with malicious content
+- How to improve metadata (e.g. automated quality checks at ingest?)
+- Advertising and utilizing services running on member nodes (e.g. WFS, WCS)
+- Replication target nodes that do not allow users to add content
+
+:15\:00: `Break`
+
+:15\:30: *Block 8.* MN software deployments, prioritization, support, software, MN services
+
+:17\:30: `Close`
+
+
+
+Day 3 - Thursday 23 August
+..........................
+
+:08\:30: *Block 9.* DataNet Integration and Interoperability (Dave)
+
+- Addressing the requirement for interoperability between DataNet implementations
+- High level architecture comparison, determine initial goals for interoperability
+- Schedule activities and assign responsibilities
+
+Standing up an iRODS Member Node has been mentioned as one way to interoperate with the DataNet Federation Consortium.
+
+:10\:00: `Break`
+
+:10\:30: *Block 10.* Investigator Toolkit component prioritization (Matt)
+
+- Select a small number of ITK tools that will be focussed on for dev by DataONE
+
+- Define specifications for each
+
+  - Discuss d1_libclient_java refactoring to accomodate multiple clients (e.g. Morpho)
+    
+- Schedule and responsibilities
+
+:12\:00: `Lunch`
+
+:13\:00: *Block 11.* Provenance tracing, annotation, (Bertram)
+
+:15\:00: `Break`
+
+:15\:30: *Block 12.* Scheduling review and adjustment (Dave)
+
+:17\:30: `Close`
+
+
+
+.. _NCEAS: http://www.nceas.ucsb.edu/contact
+
+
+
+

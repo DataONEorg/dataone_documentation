@@ -1,0 +1,68 @@
+Attendees: Amber, Carol, Steve, Suzie, Trisha, John K, Bruce, Steph, Dave, Matt, Bob
+
+
+Regrets: Rebecca Koskela, Bill Michener
+
+
+http://epad.dataone.org/20110128-LT-VTC
+ 
+
+  Agenda for 2011-01-28
+
+1. Update on NSF Review preparation
+20 page document to be finalised / edited next week by Bill, Rebecca, Dave, Amber
+Report due at NSF on Monday Feb 7th COB
+Slides due  at DataONE from all speakers on Wednesday Feb 9th
+
+Feb 9th deadline too tight for demo work.  For CI perspective, copy editing lower priority than getting the demos.  Demos to be done the week prior to the 14th. Therefore CI may need the week of the 14th to finalise powerpoints.  Copy editing to be done during practice run through?  One option is to cut some demos.  Not really viable given interest of NSF in the demos.
+Dave, Amber, Bill and Rebecca to reasses deadline in light of this.
+
+2. Data Life Cycle:
+Visualisation of the life cycle discussed during the last meeting and one with a  analyse/visualise/cite collapsed into one category.  Design not critical at this stage but suggestions welcome.
+  (https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/DataLifeCycle.pptx)
+  
+  The Data Life Cycle has been updated.  Please see the one here: https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/DataLifeCycle.pptx/view
+  
+General preference for slide 4 although a lot of discussion regarding preserve vs deposit vs publish.
+Not everything that gets deposited wil necc. be preserved. And preservation may not be in perpetuity. Preserve isn't really a single step, but if it _were_ a single step, it might (only) then be synonymous with "deposit".  Preserve may be a side effect, so possibly take it out of the life cycle.  Preservation requires maintenance that are independent of deposition.
+Trying to find a common language across disciplines.  Need to provide some context / definitions when presenting.  This is a basline model and may need to expand uping some of the steps in future iterations.
+Use instead of integrate?  Don't always 'integrate' data.
+
+Final consensus was reached on the following cycle: 
+1. Collect
+2. Assure
+3. Describe
+4. Deposit
+5. Preserve
+6. Discover
+7. Integrate
+8. Analyze ...
+on the understanding that this is a basic cycle that has nuances associated with each category depending on the type of user.  During presentation this needs to be expressed, the words defined (bc of differences in use across disciplines) and explanation that not al steps are neccesarily followed (e.g. after analysis you may the assure and deposit data without first 'collecting' it again).
+
+3.  Scenarios:
+There is a document on plone site with a  modeller and scientist scenario in addition to a librarian.   Moving forward we are using two scenarios only: librarian and  scientist. Questions for LT: 1) Does the Librarian cover all the  elements we need?  2) Does the climate change modeller scenario cover  everything we need or do we want to integrate some elements of the  empirical scientist scenario?
+Also attached is a full persona for a scientist.  This exemplifies  the type background information we are building for users.  We need a  'story' for the librarian.
+
+Scenarios: (https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/Sci_Mod_Lib_scenarios.doc )
+
+Persona: https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/SunPersona.docx/view
+
+Bob has completed a more comprehensive climate modeler scenario.  It is available here: 
+
+(https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/Climate%20Scenarios.doc )
+
+Bob, Amber, Dave and Rebecca to finalise climate modeler scenario.  Amber to work with Trisha to finalise librarian scenario.  EVA type scenario to be built using text from Steve and put into the same format as the others.  Demos have already been planned / developed in this regard and so the EVA scenario must fit what is being done by way of demos.  Therefore need CI review on this.  To be completed by early next week.
+
+4.  Status of CI on:
+NSF document
+All parts with be together for Monday
+NSF presentations
+Timeline is tight (see above)
+and
+Are here any tasks that non CI team can provide assistance on? 
+Primary request is for editorial assistance.
+Bob has some slides on the pilot catalogue that he can send.
+
+4. Around the room
+
+

@@ -1,0 +1,100 @@
+
+
+fields: id,replica_verified,replica_mn,checksum
+
+Query syntax guide:
+  http://lucene.apache.org/java/2_4_0/queryparsersyntax.html
+  http://wiki.apache.org/solr/SolrQuerySyntax
+
+mod_date:[* TO 20030101]
+
+
+http://cn-dev.dataone.org/solr/admin/
+
+Java usage example:
+
+ SolrServer server = getSolrServer();
+  SolrQuery solrQuery = new  SolrQuery().
+                setQuery("ipod").
+                setFacet(true).
+                setFacetMinCount(1).
+                setFacetLimit(8).
+                addFacetField("category").
+                addFacetField("inStock");
+  QueryResponse rsp = server.query(solrQuery);
+  
+   SolrDocumentList docs = rsp.getResults();
+
+
+
+Methods to implement:
+======================
+1).  SolrDocumentList search(SolrQuery query)
+
+2).  SolrDocumentList search(String query, Integer start, Integer count, String[] fieldList) 
+  
+  query e.g. "*:*", "repl_verified: date range"
+  
+  fieldList e.g. "id,beginDate,endDate,title"
+            e.g. "*"
+
+
+3).     getSearchFields();
+LukeResponse = LukeRequest.process(SolrServer server) 
+  
+
+Name = name of field
+Type = type of field
+Unique = number of unique terms, "distinct" element in Luke response
+Records = number of documents that this field appear in (to be verified)
+
+
+convenience methods:
+
+4). SolrDocument getSolrDocument(String pid)
+
+5). SolrDocumentList getDocumentsModifed(Date timestamp, boolean before, String field)
+//before = true > return documents older than timestamp
+//if field is null, the use datemodified
+
+Settings.getConfiguration().getProperty("cn.replication.shortlist.age")
+Settings.getConfiguration().getProperty("cn.replication.shortlist.numrows")
+cn.replication.shortlist.age=[* TO NOW/DAY-2MONTHS]
+http://lucene.apache.org/solr/api/org/apache/solr/util/DateMathParser.html
+   * pubdate:[NOW-1YEAR/DAY TO NOW/DAY+1DAY]
+
+SolrDocumentList getUnverifiedChecksums(String solrDateRange)
+ObjectList
+    ObjectInfo
+        Identifier
+        Checksum
+        ObjectFormatID
+        
+ SolrQuery solrQuery = new  SolrQuery().
+                setQuery("replica_verified:[* TO NOW/DAY-60DAYS]").
+                addField("id").
+                addField("checksum");
+    OR            
+                setFacet(true).
+                addFacetField("id").
+                addFacetField("checksum");  
+                
+                SolrDocument.getField("id"); ?      
+
+
+dataone solr impl. is 3.4
+SOLR Base URL = http://cn-dev.dataone.org/solr
+
+http://cn-dev.dataone.org/solr/select?q=....
+
+
+Python implementation:
+
+  def search(self, query, fields="pid,origin_mn,datemodified,size,objectformat,title",
+             start=0, count=100):
+
+
+  def getSearchFields(self):
+
+returns a list of ('Name','Type','Unique','Records')
+

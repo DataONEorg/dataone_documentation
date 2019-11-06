@@ -1,0 +1,115 @@
+Notes from Call on 20140411
+
+- Deb, Matt, Bertram, Bruce, Dave
+
+Please use the Google Doc:
+
+  DataONE_Renewal_Proposal/20140407_Panel_Questions/Phase_II_CI_Schedule
+
+  https://docs.google.com/document/d/1Oij7wCagOxG-WiOGXIFcrmzT5K9JvUg_wXY3tglLS5U/edit
+  
+  
+  
+  
+  
+  
+
+Notes- 
+
+- Maintenance must stay in, though could be reduced early on with the observation that we should be in good shape coming out of Phase I
+
+- We will have lots of MN software stacks available or in late beta stage, so can push the slender node stuff back. Important though to ensure that a developer is available for pushing MN implementations through testing / deployment activities.
+
+- Exmplars for Provenance, Measuremnet Search, Data Services
+
+- New infrastrucutre must operate on the DataONE services / capabilities
+
+
+Resources
+
+- 6 FTE total in current budget
+
+
+- Lots of overlap of resources between semantics and prov
+
+  - need folks very familiar with topics AND also very familiar with DataONE infrastructure 
+
+  - Scenario A (transfer 3 FTE from years 4/5 to years 1/2, one from each of the dev groups):
+      - Ben
+      - Postdoc 1 Deb's group
+      - Postdoc 2 Bertram's group
+  - Scenario B:
+      - additional 1 FTE from year 4/5 transferred to year 1/2
+
+  - Implementation support is essential as most of the domain expertise is low / no funding from DataONE
+
+Identities: 
+  - Ontology Czar
+  
+
+Schedule
+
+- agreement on exchange formats
+- at eleast minimum compatibility with standards, eg. prov-o
+
+Month 1-6
+  Design
+  
+Month 7-12
+  Prototyping
+  
+Month 13-18 
+  Hardening
+
+
+Prototypes available now
+
+-- OBOE/search UI (Mark and Matt's group)
+-- OA/Prov annotation model (Matt and Mark's group)
+-- Annotation framework (Deborah's group)
+-- SemantECO search (Deborah's group)
+-- Ontologies
+    -- Hydro use case ontologies
+    -- Salmon biology ontology
+    -- SBC Ontology
+    -- PROV-O
+-- ProvONE model => implement in DataONE/link in DataONE
+-- "RSV demo"
+    -- what was shown at the Reverse Site Visit ;-)
+-- PBase & Provenance querying prototype(s) -- in various incarnations
+-- implement the "figure" (from the proposal)!?
+-- ReproZip
+
+List of prototypes from Victor:
+
+-ProvenanceExplorer: server backend developed on Postgres and working. Was not fully integrated with Web interface.
+-ProvenanceAnalyzer: working through DLV implementation.
+-RPQ processor: based on Postgres and works with the types of queries mentioned in the GraphQ paper. Generates equivalent datalog programs as well.
+-PBase/Neo4j: enables to upload VisTrails traces to a Neo4j database, visualize them, and query them with cypher. Functional demo version with Web GUI.
+-PBase/RDF: similar to Neo4j version but uses RDF for storage and SPARQL for querying. Functional demo version as well.
+-PBase/search: still under development, considers searching and ranking capabilities and quality of service analysis.
+
+
+
+Goals for 18 months
+-------------------
+Scenario A:
+-- Semantic discovery integrated into DataONE search
+    -- manual annotation
+    -- search using: SOLR extensions, SPARQL via triple store
+    -- examples fully worked in 2 science domains
+    -- new science domains possible without any further sw dev, just creation of new content (ontologies, annotation, data)
+-- Provenance
+    -- implement ProvONE in DataONE systems (define attachment points)
+        -- define how prov data is linked into DataONE data packages
+    -- capture provenance from {R, workflow systems}
+        -- upload to DataONE MNs
+        -- aggregate and index on CNs for search
+    -- Display provenance information for all data packages
+    
+Scenario B: everything from A, plus:
+-- Natural language extraction to capture both semantic meaning as well as provenance information
+
+
+
+

@@ -1,0 +1,233 @@
+Standup Notes, Sprint-2012.35-Block.5.2
+---------------------------------------
+
+Topics to discuss include:
+ * 1.0.4 release, CN concurrency, performance
+   * Plan: this week, get 1.0.4 updates deployed in dev, staging
+   * Next week, deploy 1.0.4 changes in production
+   * Testing an 'upgraded' system vs a fresh install is an issue
+ * Client development, web UX, dashboard
+   * Aggregsted stats: # MNs, # total records, usage stats from logs
+   * Summary area at the top of a status page
+   * Have an announcement area for sys maintenance, etc.
+   * Needs to be publicly servable via dataon.org, so data interace needs to be designed
+   * Design how we'd store the information (usage stats, MN stats, etc.)
+   * Develop a web app that can serve up usage stats or system stats
+     * needs to integrate in with log aggregation, can't just be a standalone 3rd party client tool
+     * may still run on a separate VM, but just needs the correct auth cert
+   * Status landing page at cn.dataone.org?
+   * Skye: suggests we only run summary stats when someone requests it.  Run it, cache it.
+ * ACTION: After discussing dashboard/summary stats service and api, we will start small, and build as we go. 
+   * Skye will devlelop a wireframe proposal for a www front page heartbeat widget
+   * Skye will develop a wireframe proposal for a dashboard page, limited to system level stat summaries
+   * We will hold off on user and object level stats display until we can design in how this information will be stored and is accessed.
+ * ACTION: We'll discuss possible UX changes in Mercury and/or new intefaces at a later date due to time constraints
+ * MN replication with single CN, race condition fixes
+ * MN replication target deployments
+
+
+Jing
+----
+ * Worked on Morpho, changed the sequence diagram
+ * Worked in Photoshop on screen layout modifications, perhaps add in a screen for the replication policy
+ * Profile screens need to change wrt generating identifiers, profile creation wizard, etc.
+ * Review of Morpho code, already has a DataPackage class (along side the AbstractDataPackage), removed the DataPackage class in anticipation of new changes
+   * Working on implementation of code
+     * local id generator, morpho build file, etc
+ * Cilogon: Java browser vs external browser
+ * Looked at digester for Lucene (apache project)
+ * Updates on design for Morpho
+   * Worked with Rob on design
+   * Mainly move the DataStoreController into d1_libclient_java
+     * This is in review
+ * Testing Metacat replication with Ben
+ * Worked on Morpho Junit testing framework
+   * Created BaseTestCase, etc. Reusable.
+ * Design docs: https://repository.dataone.org/documents/Projects/cicore/architecture/api-documentation/source/design/morpho/
+
+
+Rob
+---
+ * Looking at Morpho changes wrt libclient, perhaps expand out DataStoreInterface..  May help many systems like Morpho to work with other data store impls
+   * e.g., a data store may 'tell the client' what it has (via a query)
+   * querying by data type (e.g. ORE map, etc)
+   * Interface should be the bucket where metadata publishing workflow methods would go
+   * Continued working with Jing on libclient wrt Morpho
+ * Working on the web tester, keeping it up and running. It's hanging on Ryan during tests
+   * Looking at the TypeMarshaller: on exception, input stream isn't closed which could be an issue.  Changed to finally blocks in trunk and branch
+ * Starting to refactor D1Client to handle connection management, implementing a bridge pattern - pass in your own http client
+   * potential issue with possibly-soon-to-be-deprecated(?) api methods that pass in a Session.
+ * Worked with Ryan to be the testing point of contact
+   * Need to be online soon - by AHM would be best (Sep 15 deadline)
+ * Tracking down memory leak problem with MN Webtester
+   * Increased Perm Gen size as a work around
+   * Looking at parallel GC settings
+   * Will use JMX monitoring
+   * May use class unloading 
+ * Worked with Ryan on Dryad MN
+   * Basic changes to the MN implementation
+   * Dryad will 'update' an object using the same pid, so this opens up the mutability discussion again
+   * perhaps create a CN method to getLatestestPid() so MNs don't need to follow the lineage chain - for now, a client method could suffice
+   * Side effect: Dryad, if changing bytes, can't be the authMN
+   * Roger: MNs could register diffs rather than keep full copies
+   * Rob: Perhaps don't release the objects until it's ready
+   * Needs to be solved by end of AHM
+ * 20120907 continued work with Ryan
+   * XML serialization of exceptions
+   * Use case for mutable data - perhaps wait to add a citation
+   * They do also do 'corrections'
+   * Trying to support scientific publishing workflow with reviewers, etc.
+   * 
+   * Seems to be a demarcation between mutable data and metadata - but some changes to metadta do impact data (e.g. column definitions)
+ * Web tester crashed again, looking at the stack traces
+ * Looking at D1Object design and division of packages
+
+Roger
+-----
+ * Updating the Dokan DataONE drive on Windows.
+   * Should be done today 9/5
+   * Minor issue with Dokan on XP 64 bit
+   * Looking at how the SOLR client gets facet values
+     * Dave: Would be good to know what SOLR APIs are being called
+     * Facet names are hard-coded in driver, values are pulled using those names
+     * To get facet names, would need Luke (sp?) handler, but this could be done through an API call that returns the list of search fields
+   * Will be out around 1pm today, be back later
+ * Working on GMN install documentation based on Jing and Derik's work
+   * Needs docs on other Tiers other than just Tier 4
+   * Will be easier to configure as a specific tier
+ * Start impl of ONEDrive
+
+Chris B.
+--------
+ * Using puppet to control node software and configuration details.
+   * Ubuntu software and security updates control.
+   * 3 versions (dev, stage, production) for the CN and MN nodes
+   * Should work with Nick Brand on this to ensure consistency across deployments
+ * Analyzing Nessus scan results from the ORC nodes last week.
+   * Found several severe potential exploits. 
+     * All of the critical exploits were java related.
+ * Working on fixing an outage for a host server at UT.
+   * Migrating VMs off of the host.
+     * Issue with a datastore lun
+   * Has access to the vSpherelogs now
+   * Waiting on OIT to fix the host machine
+     * First round software rejuvenation. 
+- (20120907) Complete rebuild of cn-stage-orc-1
+  - backup options for VMs? Perhaps automated snapshots could be made
+  - snapshots do incur a (slight?) performance penalty, an example: http://www.vmdamentals.com/?p=332
+  - A good writeup here: http://serverfault.com/questions/376900/why-are-snapshots-considered-as-temporary-backups-not-real-backups
+  - Disk IO is significantly impacted when a snapshot is done.
+  
+  
+
+Robert
+------
+ * Ran the fix-cn tool  with Rob's dataset of missing pids
+   * noticed about 600 failures for LTER, other random failures for other nodes
+   * Need to re-run Rob's auditing tool to confirm PISCO's data looks better
+ * Restarted tomcat on cn-orc-1, will restart re-indexing today
+ * working 1/2 day, contracted a cold on my travels
+ * need to discuss some issues that were missed at the CCIT
+ * Will focus on log aggregation, updateNodeCapabilities()
+ * Investigating the possibility that a hazelcast lifecyle restart event will disable listeners
+ * Need to discuss bugs:
+   * Tier 1 nodes AccessPolicy should/shouldn't only have public allow rule
+   * https://redmine.dataone.org/issues/3062
+ * Need to discuss rollout process (update process vs fresh install)
+   * Create snapshots for staging cn machines by Wednesday, 9/5/2012. We will have to perform a rollback from the staging channel on the cn staging machines on Friday, 9/7/2012 in order to test release of the stable channel. Once stable channel testing is complete and successful, new snapshots will need to be created.
+ * Need to discuss SOLR changes with Skye
+ * Ready to branch for 1.0.4
+   * Dave looked at doing snapshots: works on ORC/UNM, not UCSB
+     * KVM live snapshots is a new feature in CentOS, need to reboot host
+       * Plan is to do a full copy at UCSB first, then move to snapshotting after a reboot
+     * Could also use LVM partition snapshots do to the SAN layout
+     * from Nick:  There's one "official" way to make VM snapshots that works with our setup, call KVM Live Snapshots. The issue is that it's a new feature (added in CentOS 6.2, stable in CentOS 6.3), and our servers will need to be rebooted to use it. It also needs to be run from the VM host, so there's that issue too.
+ * 1.0.4 branched, UNM & UCSB upgraded to 1.0.4 ready for testing
+
+
+
+Chris
+-----
+ * Worked on MNReplicationTask changes to address the setReplicationStaatus() COMPLETED --> REQUESTED race condition
+ * Working on sandbox deployments with a single CN running d1_replication.
+ * Seeing some SSL unverified exceptions to some of the registered MNs, need to track that down
+ * Will add object formats into the production list for the 1.0.4 release - they're currently only in the dev env.  After the CCIT meeting, we have some more formats to add for Dryad
+ * We'll go through the backlog on Wed - we're a few sprints behind
+ * Will discuss HazelcastService changes in Metacat to respond to HZ cluster drop out
+ * Fixed replication SSL issues with Ben
+ * Modified MNReplicationTask logic, setting status earlier in the code caused some unexpected state, andnd attempts to remove the replica entry. Fixed.
+ * Added properties to turn of Prioritization factors individually. Now just using the request and preference factors
+ * Replication is working so far with low numbers of objects, spread across all available target MNs (due to a low outstanding request factor of 1)
+ * With onlnly one CN in the mix, I'm seeing it infrequently not get the event lock. Tracking this down.  It may somehow be contending with itself.
+ * Will be ramping up object counts again to see how the single CN scenario scales
+
+
+
+Skye
+----
+ * Reviewing resourceMap indexing strategy and triaging state of production index:
+   * Null/missing system metadata in PISCO synch exploited/highlighted 2 issues:
+     * Trusting resource map relationships - references to non-sense ids - Expose all relationships or only for known objects.
+     * When to build data relationships in index's flat data structure (currently builds relationships one time, when indexing ORE)
+   * Fixed handling of pids with null system metadata.  resource map indexes when all documents are accounted for.
+     * Updated for 1.0.4.
+ * Reviewing notes from CCIT
+ * Dryad - mapping dryads science metadata to search index schema.
+   * Basic science metadata parsing in testing on trunk.
+ * Update index tool to accept list of ids to (re)index.
+   * Updated this for 1.0.4
+ * Handle erroneous error in index parsing related to removing documents from index that aren't there.  Parsing of solr response does not expect/handle 'doc not found' response. Not destructive, just meaningless error output.
+ * Working on some indexing issues
+ * Worked on indexing Dryad science metadata, and an XSLT for Dryad docs
+   * Format ID for DrDryad science metadata, but there are a few:
+     * http://dev.datadryad.org/mn/object/http://dx.doi.org/10.5061/dryad.9025
+     * http://dev.datadryad.org/mn/object/http://dx.doi.org/10.5061/dryad.9025/1
+     * Issues - date format, describes field, URL not including "v1", linking data vs metadata
+     * Example system metadata:
+     *   http://dev.datadryad.org/mn/v1/meta/http://dx.doi.org/10.5061/dryad.9025
+     * Data object link:
+     *   http://dev.datadryad.org/mn/object/http://dx.doi.org/10.5061/dryad.9025/1/bitstream
+   * Ryan is going to be changing:
+     * Dryad 'publication' section in their schema will be removed from the schema
+ * Worked on indexing task processing backoff strategy: 20min, 1hr, 2hrs, 8hrs, etc in case the indexing fails when an object isn't replicated to the FS via Metacat replication yet (latency)
+ * Looked at index in production. Backoff algorithm should help with indexing issues. In 1.0.4
+ * Worked on UI mockups
+   *  http://epad.dataone.org/DashboardNodes
+   * https://cn-dev-unm-1.test.dataone.org/d1Search/nodelist.html
+ * Need to run index refresh tool to catch PISCO data - This was done 8-30
+ * Going to move the dryad indexing and onemercury integration out of the 1.0.4 release pending an 'official' Dryad MN test implementation.
+
+Ben
+---
+ * Working on tagging Metacat release for the CN buildout
+ * Working with MN admins, Metacat support issues
+ * Morpho discussions
+ * Ready to help with 1.0.4 release
+ * Will upgrade cn-stage-orc-1.test.dataone.org to the 1.0.4 branch
+ * Will cut a Metacat tag for the CN release
+
+Dave
+----
+
+ * Created a new project in redmine specifically for keeping track of member node deployments. Added a new "tracker" for this purpose which includes a modified workflow which is described at: https://redmine.dataone.org/projects/mns/wiki
+ * Added tasks for several member nodes indicated as higher priority at the Aug CCIT meeting.
+ * Preparing for upcoming AHM
+ * Continuing to work through copious notes from the CCIT meeting
+ * Created a new project in redmine to keep track of MN deployments
+   * new tracker called 'MN Deployment'
+  - Will chat with Matt re: MN team, come up with strategy on getting MN admins to use ticket systems
+  - Preparing for AHM
+    - Other WG members are looking for CCIT involvement/interaction
+    - be prepared to self-schedule with other WGs during the AHM
+- Created certs for Roger 
+   
+Matt
+----
+ * Writing a proposal relating to D1
+   * Includes extending D1 CI to support analytical/provenance aspects better
+   * ITK work
+   * Will know in a year or so
+
+
+
+

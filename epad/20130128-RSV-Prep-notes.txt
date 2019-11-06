@@ -1,0 +1,632 @@
+28 January 2013
+Santa Fe, NM
+
+AI:
+
+Attendees:
+Rebecca Koskela
+Bill Michener
+Bob Cook
+Susie Allard
+Bruce Wilson
+Amber Budden
+Dave Vieglais
+John Cobb
+Matt Jones
+Mike Frame
+
+Meeting Agenda at 
+<https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-reverse-site-visit-february-2013/folder-for-rsv-planning-meeting-santa-fe-1-28-1-30/Draft%20AGENDA%20RSVPlanning%20_23Jan2013.pdf/at_download/file>
+Schedule is loose.
+
+Bill Kickoff:
+
+Think out what to do for the next 18 months of the award
+
+Do some brain storming about the next proposal - DataONE - Two
+
+Chadduck offered to review alternative ideas about DataONE Two
+a sustainability component is expected.
+We want to do some new stuff
+We can't just keep doing what we are doing right now.
+
+
+Spend some time profiling member nodes
+Talk about collaboration and DataONE strategy
+Talk about what we are putting in place in terms of support
+Talk about prioritization and selection
+Talk about future MN goals
+We hope to have EDAC and Dryad and Brazillian MN's id we can get
+
+
+Talk about story-telling
+
+Lessons from
+Science Communicating the Message
+
+Leave the audience with a Key message
+
+HAve supporting points around that. 
+It ovule be several things
+Here is a challenge
+Here is the vision for implanting the solution
+Here is the result
+
+People remember a key message and up to 3 points.
+
+Last site-visit: DataONE war supporting the data lifecycle
+
+What are the key messages?
+
+Enable new science about data science and life on earth and the environment that sustains it.
+
+Exercise:
+
+Matt: DataONE enables critical science via an open and sustainable data framework and the tools researchers need.
+Matt: It is missing CE
+
+Allard: DataONE provides leadership, relationships , research, education, and technology solutions to the scientific data community  to enable new science.
+
+Bob Cook: Preservation and delivery to data to enable science
+
+John Cobb: DataONE uniquely helps science data users, archives, and producers by creating collaborative infrastructures across multiple collections. (Not said but continuing that allows easier and more comprehensive data access and methods. In the process it augments the use and re-use of science data and enables new previously impossible research from data aggregation and synthesis.
+
+Amber Budden: The Data Lifecycle message .
+Harnessing the value of community-wide resources through interoperable solutions for preservation and delivery of data
+
+Bruce Wilson: DataONE is a unique blend of community engagement and cyberinfrastructure that enables new science and meets NSF needs for long-tailed earth science data.
+
+Dave Vieglais: For a community wrestling with the high volume earth science data, DataONE enables efficient and reliable access to heterogeneous data resources through a combination not an open,extensible data management infrastructure, a suit of software tools, education, networking, and best-practices.
+
+
+Combine candidate effort:
+Enabling science through community building and sustainable data discovery (? services) and interoperability solutions.
+
+Three points:
+1. Engaging and Building Communities (Amber, Suzie, John)
+2. Sustainable and Open CI fw. (Dave,  Rebecca, Mike)
+3. User focused tools and services (Matt, Bob, Bruce)
+
+What is the evidence that we have that each of these are supporting our message.
+
+Notes from #1 breakout
+First what are the items that are in this area:
+        Best Practice development
+        Best Practices training and outreach
+        Education events
+                Data Manager's workshops
+                Metadata workshops at USGS
+                ESA activities/ conferences
+        DUG
+        MN recruitment
+        Participation in other comment activities (Earthcube, RDA, 
+        Assessments
+                Libraries
+                Librarians
+                Scientists
+                Data managers
+        Reciprocal research relationships
+                ESA working group
+                ESA 
+                Other Datanets
+                        Co-authored posters
+                        SC11 tutorial with SEAD
+                        panel sessions
+                                panel on data curation profiles
+                                Purdue 2-3 day workshop and report out
+                                AAG
+                                
+                        Booth colocation
+                Data requirements collaborations
+        Co-location of DUG with ESIP
+        NEON 
+                shared booth
+                training events/sessions
+        collaboration on grants and proposals
+                DCRC - DataONE and Illionois, came out of Data Conservancy and DataONE collar
+                DMPTOOL
+                DMPTOOL2 (Sloan grant)
+        Development collaborations
+                DMPTool
+                DataUP
+        Social Meida
+
+Break out more detailed discussion of DUG:
+
+Also think about how to order the presentations to make this point.
+
+Back to
+
+Detailed description of DUG.
+
+- what is a users group
+- what is this users group
+- how to participate (show the blooming GUD network analysis)
+- What does the DUG do (Main Focus)(
+        - requirements definition
+        - engage relevant communities
+        - messaging
+        - prioritization process
+                - MN process
+                - tool evaluation
+                - evaluation activitiees
+                        DMPtool
+                        usabiltiy
+                        Promotional materials
+                        examining the redefined website
+- DUG changes looking forward
+        Allard:
+                the revolution is pulling people together
+                the evolution is changing the relationship so those groups contribute to the whole
+        DUG interests expressed in evaluations
+                Open Access & Data sharing
+                Data Management
+                Request DataONE information packet
+
+Allard: Note: remember the interoperability thrust.
+Human interoperability is an interoperability.
+
+MN breakout:
+
+ (2) Mention Metrics 
+        How many
+        overview of nodes - summary
+        Size of holdings
+        growth over time
+        
+(2) Diversity
+        Platforms
+        Curation levels
+        Data types
+        Geography
+        present as logo grouping
+
+(3) Process definition (workflow communication)
+        communication includes the office hours
+
+(3) recruitment (including  prioritization and outreach)
+
+(4) projected growth ( stick with Project management plan goals)
+        how do we get to 50.
+        gap analysis
+
+(1) MN operational structure
+        CN/MN communication
+        Replication
+        Global replicated metadata catalogue
+        recap the
+
+(2) MN operations:
+        support
+        outage and recovery issues
+        
+
+The collection of member nodes enables science (through interoperability)
+
+
+1 About MN's
+2 Current MN status
+3 Process
+4 future - where we are heading
+
+Lunch
+
+Reconvene as a group.
+
+Think about structuring along the big 5 question - how why what, ...
+
+Key message triangle center surrounded by Three supporting points
+
+Core of triangle: Enabling science by building community and providing sustainable data discovery and interoperability solutions
+
+Three supporting points
+* Building Community:
+1. DataONE User group
+2. Member Nodes
+3. Education
+4. Assessments (Bill thinks this is a top item)
+5. Collaborations
+6. Research (RDA,etc) (Bill thinks this is a top item)
+    a. Personas
+    b. WG activities
+7. Communication
+    a. internal (proj mgmnt section)
+    b. external
+
+* Providing sustainable data discovery and interoperability solutions:
+1. Common set of open interfaces that support broad sharing and preservation of data
+    a. Architectural documentation
+    b. MN & CN
+    c. Exposing DataONE services to community tools
+    d. Identifiers
+    e. Replication
+    f. Access Control/identity
+2. Leveraging community tools (R, Lepler, Excel, etc.) and infrastructure (MN stack)
+3 Development of metadata cross-walks for discovery
+
+Discussion: we might have some difficulty in showing evidence of interoperability.
+
+Evidence is functioning api's and documentation.
+
+Also talk about the MN and CN stacks
+
+Also talk about the interoperability of client tools
+
+* Enabling Science via user=focused tools and services
+1. EVA Science stories drive priorities
+    a. Personas, baseline and DUG assessments, lifecycle
+    b. EVA-eBird and EVA-terrestial Biosphere Model
+2. Tools for Whole Lifecycle
+    a. DMP, DataUP and Morpho, R, ONEMercury, Zotero, R, VT, Kepler
+3. Community Drivern Development (this is the model we need to nurture)
+    a. DMP tool, DataUP, VT, Kepler, R-provenance
+4. Future Work
+    a. Streaming data, subsettingm integrationm semantics
+    b. planned for evolution
+    
+Should we include the idea of a stroage Member node? Not at this time, but we could if we got it implemented
+
+Things that came out of eBrid
+    data staging
+    proximity to HPC
+    Data subsetting
+
+iLamb lessons
+    provenance aware workflows
+    data integration with processing
+    better tool support for NetCDF
+
+For Powerpoint follow this same model. Have a central thought and then build three points around that.
+i.e. challenges, solutions, future solutions
+
+Example we built community
+we listen - assessments, DUG, ..
+we engage community - 
+We make and active effort to communicate with the communit and keep them innvoved
+
+Tuesday:
+
+Review of slide outlines. 
+
+Overview: Bill
+
+Engaging and building community: Suzie, Amber, John
+
+Slide 5 
+fix Earthcube typo
+rephrase NSF requiremens change 
+
+Slide 16: Should we retain education summit bullet?
+
+Slide 23:
+We are talking about MN's before we have presented the overall structure. That needs to have happened.
+One slide talking about 
+
+Perhaps regroup MN presentation elsewhere later.
+
+define a real name for "Office hours" 
+
+Iisten engage communicate
+but separate out 
+user researchers and then MN's
+
+
+************************************
+Wednesday, January 30, 2013
+
+Agenda:
+
+Kunze online in afternoon
+Next 18 months
+
+
+Discussion of next 18 months
+======================
+We need to be specific with respect to the next 18 months an
+
+Need to justify change in metrics
+   -- utilize change control 
+
+Current metrics
+----------------------
+Start with PMP metrics
+
+Number of Member nodes: end of
+  Yr 3: 10  
+  Current operational: (10) MN's: CDL/merrit, KNB, LTER, ORNL-DAAC, SanParks, USGS-CSC, ESA, PISCO, ONEshare, CLO/AKN/eBird
+   https://redmine.dataone.org/rb/master_backlog/mns
+    yr 4: 20
+High Prob: (12)   
+    EDAC, (200,000 datasets and ~ 8TB) (Dave: I'm fairly confident)
+    Dryad, 
+    SEAD, 
+    PELD, 
+    Taiwan, 
+    REPUNM, 
+    REPUCSB, 
+    REPORC, 
+    KU, 
+    AOOS?, 
+    USA-NPN, (probably June-July timeframe; ~10 datasets and 10's of MB)
+    USGS Topo
+Lower Prob: (2)  
+    DFC, 
+    iPlant, 
+        
+    yr 5: 40   
+        -- requires self-building network; 
+        -- new software stacks; iRODS, DSpace
+        -- Member Node in a box as a turnkey installation 
+   
+   Post ost discussion see some re-ordering. Look at https://redmine.dataone.org/rb/master_backlog/mns
+   
+   
+Other discussion: Chicago, UTK libraries
+    
+Other candidate member-nodes mentioned in Redmine but not included above: (25, counting DPsace as 1)
+NODC
+GMN production MN's at UNM and ORNL (2)
+Replication MN's at CN locations (3)
+USGS Climate Science Centers (8)
+    NKN-Gollberg
+    Berrien Moore
+    6(?) others
+Prarie Research Institute
+Arctos
+Globe.gov
+DSpace: 200 implementations have datasets per the DSpace site - 25 in US. These include Woods Hole, NASA Langley. Universities include (but I don't know if holdings are environmentsl) Delaware, George Mason, UIUC, Maryland, Michigan (Deep Blue), Oregon State, Missouri etc.
+GLEON
+IABIN
+CitSci.org
+iEclolab
+ALA Atlas of Living Australia
+AZGS - Arizona Geological Survey 
+USGS Topo
+iLTER - isreal
+
+
+Mike Question: What is the atomic unit of a MN? IS USGS one MN or several MN?s
+The same can be said for LTER, KNB, 
+Perhaps we need a new vocabulary in terms of member nodes: MN Connects (those that are actually interacting with DataONE directly) and MN Penetration (those that are reached through DataONE regardless of their direct connection to DataONE)
+Member Node Countries
+                                                                                 Y1         Y2      Y3        Y4       Y5
+Data Volume (TB)                                                       0.4       1           5         40       60
+    -- change to "capacity", focus on long-tail
+    
+Number of Metadata Records                                       5K    25K      100K     400K    1M
+     -- includes packages without data, and prior versions
+     - we also have metadata for previous versions
+     -- EDAC will add 200K
+     
+Number of Data Sets at Member Nodes                         5K     22K     90K    180K    360K
+     -- Add in USGS quads to CSAS clearinghouse
+     
+Number of Tools in the ITK                                             1        4        8          10        12
+  - python lib, java lib, (BASH client), (Developer Console), CLI, ONEMercury, DataUp, Morpho, R, ONEDrive, Kepler, VisTrails, 
+Number of Metadata Schemes Supported                        2        5         8           8          8
+  -- Have 5 now, easily can add 8
+  
+ Number of Member Nodes                                             3          6      10        20       40          
+ 
+ Total storage capacity at   Member Nodes (TB)              0.5       3      15       200      2K         
+    -- need to harmonize this with Data Volume stats, esp. in yr 5
+    
+Geographic coverage of   Member Nodes – countries        1       1        3          5        10          
+Now:
+    US
+    South Afrika
+Future
+    Tiawan
+    Israel (iLTER)
+    Brazil
+    others from iLTER's
+Number of Coordinating Nodes                                         3         3        3         4         5   
+    -- revise to 3 for end of project
+    -- new model in phase 2 for international CNs
+           
+Total storage capacity at each Coordinating Node (TB)      0.5      2       6         8         10  
+   -- already hit 10+
+            
+Geographic coverage of Coordinating Nodes – countries     1       1       1         1           2 
+    -- will not do.
+        latency issues require some attention and it may not be prioritized higher than other opportunities
+    
+DataONE Usage Statistics    
+Number of web interactions on DataONE portal(per/yr)          -        40K    200K    500K     1M
+
+What are web interactions?
+    web visits?
+        Web visits of at least a minute?
+    CN contacts?
+    Mercury searches?
+    -- Amber will shepherd the process
+        -we can count up the numbers of searches by unique users and also if that user clicked on the "data download" link or the "documentation" link within the metadata record
+        
+
+Number of DataONE users                                                     -          -         5K        10K     20K
+
+How to count users?
+Depositors:
+ Rights holders?
+ We should also counted authnetication for get/create calls
+ LDAP entries? 
+Accessors:
+  as measured by weblogs
+  2800 unique users (from google analytics - using supercookies to identify computers)
+  public web-site has 8000 users across 2 months
+Issues:
+    IP NAT and multiple user site erroneous aggregation and multiplication
+    Indirect use by members of our federation (e.g., LTER users hiding behind 1 account)
+-- Amber will coordinate compilation
+
+Number of Tool Downloads (per/yr)                                    -         -          1K         5K      10K
+   -- Amber will work with tool devs to try to compile these stats
+Example project metrics: Nanohub: <http://nanohub.org/usage/> and <http://www.youtube.com/watch?v=PK2GztIfJY4>
+
+
+Number of Metadata Catalog Search Records(per/yr)        -         10K    80K    200K    400K       
+Do we have a measurement harness for this? need to check.
+ONEmercury searches and API searches
+        -we can count up  the numbers of searches by unique users and also if that user clicked  on the "data download" link or the "documentation" link within the  metadata record.  Data downloads from these Mercury searches would be counted from the MN logs.     
+        
+Number of Data Set Downloads (per/yr)                                       -          1K     10K     20K     50K
+? may be short 
+-- will get one of the coredev to produce the logs from MNs
+
+Reliability & System Performance
+Uptime (availability) of Coordinating Nodes (%)                   n/a        50     99     99.9     99.9        
+100%
+
+Uptime (availability) of Member Nodes (% )                         n/a        50     85     98        99           
+
+-- better metric is resiliency of access to data, even in the face of MN outages (planned and unplanned)
+-- maybe just availability of replicated data objects, which is what we can actually control
+
+Server response time for average user interactions (sec)          n/a       8       3       1         1    
+-- meaningless bcse too broad
+-- should be more specific, such as search response time
+
+Response time of user interface for avg user interactions (sec)   n/a      8       5       1         1
+-- meaningless bcse too broad
+-- should be more specific, such as search UI time 
+
+Community Engagement
+Number of Baseline assessment of scientists completed               -      1       -         -           -
+-- done
+
+Number of repeat assessments of scientists completed                 -      -        -        1           -
+-- scheduled for March 2013
+
+Number of Baseline assessment of other stakeholders completed   -      -        -        1          2 
+-- done
+Number of repeat assessments of other stakeholders completed     -      -        -        1         2 
+-- educators will go out with this year's repeat scientist assessment
+
+Education and Outreach
+Number of edu modules developed and/or accessible through D1     0      4       6       8     10 
+-- met 5 yr goal
+   
+Number of times education modules are downloaded (per/yr)            0     50    100     200  400     
+-- 70 in last two months, so on track
+-- rebecca will check if apache logs were archived
+
+Number of BP guides developed and/or accessible through D1        15    40      75     100  110
+-- in some ways this is counter-productive as a metric -- fewer may be better
+-- we have ~100
+
+Number of times best practices are viewed/downloaded (per/yr)       0    200    400    800  1200
+-- 611 page views of BP in 2 months
+-- 54 downloads of primer in last 2 months
+
+Number of training sessions or workshops offered                           0        3        3      4       4            
+-- far exceeded (6 for ESA this year alone)
+
+Number of workshop participants (per/yr)                                        0      75    100    100   140  
+-- not well counted, but are exceeded
+-- Rebecca will collate #s
+
+Number of people in DataONE Users Group                                  25      50    100    150   200
+-- we have 100 now
+-- we have many more 'involved' in DataONE, we should report that as well
+    -- Rebecca will compile this
+-- look at community@dataone.org mailing list
+-- we really shouldn't be trying to get numbers for the sake of numbers
+-- need to redefine what DUG membership means, how formal it is
+-- Amber & Andrew will draft a better definition of membership
+     -- reconsider 2 year membership terms,concept of formal charter
+     -- could consider a 10-12 person advisory committee instead of 2 yr terms, everyone is a member
+
+Socio-cultural
+Number of proposals submitted to  support DataONE research activities    -    1      2     3     4
+-- hitting metrics, Rebecca can put in #s
+Number of students involved in  supporting DataONE research activities    -    3      5      5    5
+-- hitting metrics, Rebecca can put in #s
+ 
+Publications              
+Number of DataONE project publications                -       5   10     15    25
+   -- 20 on web site, underreported
+   -- DataONE grants included in acknowledgements
+   -- exceeding these numbers
+   
+Number of publications citing DataONE                - there aren't any numbers listed in PMP -
+-- need to post how to acknowledge DataONE, and how to cite DataONE
+
+Sustainability
+       
+Amt of in-kind support generated annually to support D1 (FTE/yr)  2       3       4        5        5         
+  -- compiled yesterday, Bill compiling these #s
+  
+Amount of funding generated annually to support DataONE          -       -      250K  500K  750K          
+  -- compiled yesterday, Bill compiling these #s
+
+Diversity of funding streams (including in-kind support)                2       2        3        3         4           
+  -- compiled yesterday, Bill compiling these #s
+
+Number of projects and partners collaborating with D1 or  
+ leveraging DataONE infrastructure                                             -        2        4        6        8
+-- check
+
+
+-- For phase 2 proposal, redesign and consolidate all of these to a more meaningful set
+
+
+List of MN 
+ESA MN will become part of Dryad
+
+link for Redmine area on MN's: https://redmine.dataone.org/projects/mns/issues
+
+iplant is enthusaistic if we will make irods available as a interface technologoy
+
+EDAC
+
+
+Mike: In next 18 months we need to ask who is/are the real focus of recruitment effort.
+
+Matt: Getting to 20 at the end of year 4 is one thing. Getting to 40 at the end of year five
+
+Dave: We need to target keystone Member node that help diffues within the community.
+
+Mike: our biggest challenge is MN recruitment.
+We need to reach a tipping point where the member nodes see value.
+
+and then have enough tools that allow people to use data.
+
+We have metacat as a stable MN interface
+Bill has been making inroads with the DSpace community.
+on the DSpace site 200 implementations specifically note that they have datasets in their collection
+
+Remember the cost to implement a MN. The biggerst cost is implementation. WE have to minimize the number of SW stacks that we support.
+
+The way to go is to target MN SW stacks and target communities
+
+Install these are 
+
+Rebecca: we also have a commitment for a 4th CN in year 4.
+
+
+
+Mike: We need a different strategy.
+
+Matt: we need a self-building strategy.
+
+John: We need a "MN in a box" tutorial and provisioning.
+
+Dave: We have had contactd with the PRagma group that has experience in SW deployent strategies iwth things like ROCKS
+The target will be a GMN. Get it so it is dead easy to install and get running.
+This would service small scale laboratory-scale MN's
+
+For successful networks, one must build resiliency into the network.(Bit botternet, and other file sharing networks)
+
+lots of little nodes and then target larger institution-wide nodes.
+
+Dave: Any NSF project that gets funded should just be able to install a GMN and meet NSF requirements.
+Mike: incorporate this into the Data Management plan for NSF grants.
+
+Matt: so we are talking abtou a lab-oriented plan.
+Mike: Put this in a proposal for phase 2.
+
+Matt: we need to focus not juston MN count buld also excitement through institutional interest and important data sets.
+
+Users want a tool, not a project.
+Dave: many people think of DataONE as a dropbox
+

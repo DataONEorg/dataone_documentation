@@ -1,0 +1,67 @@
+Member Node Wranglers 
+    Fridays at 10:00 am Alaska
+                    11:00 am Pacific
+                    12:00 noon Mountain
+                    1:00 pm Central
+                    2:00 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+28 February 2014
+                                                      
+Attending:  No meeting today, see you at http://epad.dataone.org/MNWranglers-20140307  
+
+Regrets:  
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+        New MNs announcements? -  
+       * GOA awaiting news item review from GOA folks
+       * Dryad - turned on 2/22/14
+
+        News from RSV affecting MNs:  
+        
+        IDCC workshop 2/27/14 -  How'd it go??
+
+
+        1.5    Current MNs
+       * Metacat 2.4.0 release notice went out 2/24/14
+       * eBird Update: see content from email from Steve 02/18 in last week's epad:
+                    http://epad.dataone.org/MNWranglers-20140221
+
+
+                     
+        2. Status of upcoming MNs
+        
+        Future
+       * Australia (4286): meeting 3/4/14; plan  for next 3-4 weeks is to work on 1) conceptual nature of TERN/DataONE collaboration and 2) technical details of  possible implementation (exposing metadata only via TERN and/or allowing repository(ies) within TERN to be MN(s) in their own right.
+       * Multiple ORNL potentials: working specifically on RGD (4248) (Regional and Global Data) and EDORA (4247)  (Environmental Data for the Oak Ridge Area) right now.  Meeting again 3/5, in the meantime they are working on code to be put in subversion.  (developer is Jim Green)
+
+     * Y5Q3
+       * Gulf of Alaska DP (3531) -  see above
+       * GLEON (3422)  - Ready to go; need to review the checklist to make sure all items have  been completed - Chris working an issue with Aaron Stephenson; we think Aaron has a Java/SSL configuration issue, Chris will help as he can.
+       * USGS ScienceBase (4002) - Mike to get back with us re: when USGS expects to work on the ScienceBase stuff (from their perspective)  Laura email to Mike 2/24/14
+       * LTER-Europe (3232) -  Per email from Ben 1/23/14, "LTER_EUROPE is registered and just waiting to be "flipped on"."
+         * Draft news item sent to David Blankman 2/19/14; he has forwarded to folks in Poland for review.
+       * EDAC (3221) -  EDAC to go ASAP after Dryad; draft news item sent to Rebecca for input from interested parties; will get back to you after RSV so by end of next week (2/28)
+       * U  Illinois Chicago (3213) - Chris and Bob pick up after CN.
+       * PPBio  (3748) - difficulty replicating between metacat instances at INPA and LNCC; David Dias and Ben L working; draft news item in progress
+       * SAEON (3205)  - they have migrated their server to their national office; need to upgrade Metacat; need some assistance from DataONE; Matt has responded
+       * NKN (3238) - registering node in test
+
+     * Y5Q4
+       * EU BON (3964) - Their December meeting has been pushed out to 29-31 January.  
+         * ACTION: Laura emailed Hannu for updates, no response as yet
+       * DFC  (3532) -  Mary Whitton from RENCI was to attend the IDCC workshop
+       * MPC  (3708) - Actively working re: metadata formats, etc. Laura ACTION to touch base and see what's going on up there.  
+
+        3. Old action items
+             
+        4. Not-high profile issues
+     * For next newsletter, profile NPN.  (Laura)  in progress
+            
+        5. Around the room
+
+

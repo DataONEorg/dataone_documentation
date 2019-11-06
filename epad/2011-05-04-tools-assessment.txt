@@ -1,0 +1,176 @@
+Possible Questions & Ideas for Specific Tools Assessment
+Subgroup: Lei, Mike, Bob S. 
+
+
+Funding Opportunities to NSF, COTS Vendors to make Tools available to DataONE and community.  Could help with sustainability and/or additional resources to development.  
+
+Target Group: DataONE Current & Potential Member Nodes
+Process: Send to MN, DataONE PI's, DUG Members
+Process: Ask Receipants to send to "5-10" people in their organization who are practicing scientists.   
+Sampling: request a mailing list from each MN of data depositors (and including data users / data downloaders, if possible). 
+
+Survey administration: Survey is potentially long and repetitive; consider variants that focus in on a portion of the stages of the lifecycle instead of all.  Send Survey of 1st 4 phases of the data Life Cycle to x number of respondents and then send last 3 phases of the data life cycle to y number of respondents.   
+
+Use USGS, LTER, Dryad for 1st 4 Phases.   Get DUG Members to send and sponsors
+Use EVA, DAAC Users for the last 3 Phases of survey 
+CUAHSI (ask Jeff if they're more front-side or back-side users; more integration?)
+Merritt (preservation step; get information about librarian - curator toolsets)
+NBII (focus on first 4 phases and data providers; perhaps also ask about last 3 phases)
+TeraGrid (how can we target domain scientists using TeraGrid services? John Cobb help?)
+South African National Parks
+SAEON
+USGS Science Base
+USGS Publications Warehouse
+
+Potentially:
+
+Please check any tools you currently use to support your data management activities.  
+            Acquire    Assure     Describe     ...        .    ..    ..    .    .    
+Tool 1
+Tool 2
+                                                1                                5        (Satisfaction)
+_____(Tool name)  
+_____(Tool name)  
+
+Note: Include definitions of Data Life Cycle as a reference...   For instance, we consider the following to be included within the "Acquire" phase - .....
+
+Collect:
+
+What primary tool do you currently use to "Collect or Acquire" data in your performing your research, please provide the following: 
+
+Tool name:__________
+Type of Tool: (In-house developed, Open Source, COTS, Other) 
+
+How frequently do you use it - Daily, Weekly, Monthly, Yearly 
+Why do you use this particular tool - Provided to me for free, Easy, Technical Support available, Other 
+What issues exist with the tool - GENERAL Comments box
+How would you like to see it improved - GENERAL Comments box
+What kind of data format or standards are supported by the tool - List of all standards (FGDC, EML,....)
+Where do you store output from this tool - local computer, network drive, USB/Portable drive, National Network  
+
+Assure:
+
+What primary tool do you use to "assure data quality" in your performing your research, please provide the following: 
+
+Tool name:__________
+Type of Tool: (In-house developed, Open Source, COTS, Other) 
+
+How frequently do you use it - Daily, Weekly, Monthly, Yearly 
+Why do you use this particular tool - Provided to me for free, Easy, Technical Support available, Other 
+What issues exist with the tool - GENERAL Comments box
+How would you like to see it improved - GENERAL Comments box
+What kind of data format or standards are supported by the tool - List of all standards (FGDC, EML,....)
+Where do you store output from this tool - local computer, network drive, USB/Portable drive, National Network  
+
+
+Describe:
+
+What primary tool do you use to "describe or document" data in your performing your research, please provide the following: 
+
+Tool name:__________
+Type of Tool: (In-house developed, Open Source, COTS, Other) 
+
+How frequently do you use it - Daily, Weekly, Monthly, Yearly 
+Why do you use this particular tool - Provided to me for free, Easy, Technical Support available, Other 
+What issues exist with the tool - GENERAL Comments box
+How would you like to see it improved - GENERAL Comments box
+What kind of data format or standards are supported by the tool - List of all standards (FGDC, EML,....)
+Where do you store output from this tool - local computer, network drive, USB/Portable drive, National Network  
+
+
+Deposit:
+
+What primary tool do you use to "deposit or submit" data to your repository.  Please provide the following: 
+
+Tool name:__________
+Type of Tool: (In-house developed, Open Source, COTS, Other) 
+
+How frequently do you use it - Daily, Weekly, Monthly, Yearly 
+Why do you use this particular tool - Provided to me for free, Easy, Technical Support available, Other 
+What issues exist with the tool - GENERAL Comments box
+How would you like to see it improved - GENERAL Comments box
+What kind of data format or standards are supported by the tool - List of all standards (FGDC, EML,....)
+Where do you store output from this tool - local computer, network drive, USB/Portable drive, National Network, Campus Network
+
+When you deposit data into your repository, how long do you anticipate the data to be available?
+
+How Confident are you in depositing your data to your repository.
+
+Preserve:
+
+What primary tool do you use to "preserve" data from your research activities.  Please provide the following: 
+
+Tool name:__________
+Type of Tool: (In-house developed, Open Source, COTS, Other) 
+
+How frequently do you use it - Daily, Weekly, Monthly, Yearly 
+Why do you use this particular tool - Provided to me for free, Easy, Technical Support available, Other 
+What issues exist with the tool - GENERAL Comments box
+How would you like to see it improved - GENERAL Comments box
+What kind of data format or standards are supported by the tool - List of all standards (FGDC, EML,....)
+Where do you store output from this tool - local computer, network drive, USB/Portable drive, National Network, Campus Network
+
+How confident are you that your data will be preserved for the next 10 to 50 years?
+
+
+Discover:
+
+What primary tool do you use to "Discover" data from your research activities.  Please provide the following: 
+
+Tool name:__________
+Type of Tool: (In-house developed, Open Source, COTS, Other) 
+
+How frequently do you use it - Daily, Weekly, Monthly, Yearly 
+Why do you use this particular tool - Provided to me for free, Easy, Technical Support available, Other 
+What issues exist with the tool - GENERAL Comments box
+How would you like to see it improved - GENERAL Comments box
+
+
+Integrate:
+
+What primary tool do you use to "Integrate" data from your research activities.  Please provide the following: 
+
+Tool name:__________
+Type of Tool: (In-house developed, Open Source, COTS, Other) 
+
+How frequently do you use it - Daily, Weekly, Monthly, Yearly 
+Why do you use this particular tool - Provided to me for free, Easy, Technical Support available, Other 
+What issues exist with the tool - GENERAL Comments box
+How would you like to see it improved - GENERAL Comments box
+
+
+
+Analyze:
+
+What primary tool do you use to "Analyze" data from your research activities.  Please provide the following: 
+
+Tool name:__________
+Type of Tool: (In-house developed, Open Source, COTS, Other) 
+
+How frequently do you use it - Daily, Weekly, Monthly, Yearly 
+Why do you use this particular tool - Provided to me for free, Easy, Technical Support available, Other 
+What issues exist with the tool - GENERAL Comments box
+How would you like to see it improved - GENERAL Comments box
+
+Summary Section:
+
+Please provide any general feedback or comments you feel are relevant to data management activities within your organization.
+
+(LONG TEXT BOX)
+
+
+
+Tools Assessment questions:
+Design questions according to data life cycle stages?
+Tools use: what, when, where, how, and why
+Question technique: critical incident? Or from general to specific?
+ 
+Potential questions:
+1. use of familiar tools vs. use of unfamiliar tools (adopting new tools)
+2. any established culture of tool use in specific discipline
+3. satisfaction with current tool use
+4. interest in providing tools information for the depositing of tools/methods
+
+
+
+

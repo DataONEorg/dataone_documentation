@@ -1,0 +1,135 @@
+13.10 Pragmatics - Kruijff-Korbayová
+http://www.coli.uni-saarland.de/~korbay/page.php?id=mscPrepPragmatics
+
+Reading
+Fromkin, Victoria A.; Rodman, Robert; Hyams, Nina M.; An introduction to language (9th. edition). Chapter 3: The Meaning of Language. Pragmatics, pp. 167-178. 2010.
+
+Exercises
+Use exercises for Chapter 3 (Fromkin et al. 2010):
+   * Contextual reference: 20A, 22, 23
+   * Conversational implicatures: 18, 19, 20C, 20D, 24, 25
+   * Presuppositions: 21
+   * Speech acts: 16, 17, 19, 24
+
+## Copies will be handed out after class
+
+==============
+
+The goal of computational linguistics/pragmaticians is to enable computers to understand these pragmatics. 
+
+When we see two sentences after another, we are used to see them as a larger whole. It's hard to turn this off. As humans, we look for relationships between different statements - even if this relationship goes outside of the syntax or given sentences. 
+
+==
+Sl. 3 
+Terminology: Utterance = Something (anything) that is uttered, as opposed to "sentence".
+In normal daily speech, people don't speak in grammatical sentences necessarily. 
+Communication happens: from speaker (making the utterance (utterer)) to the hearer (who interprets the utterance of the speaker).
+The contexts of language is different... In a regular lecture, the interaction btw. the lecturer and the student is different from an interaction btw. two friends who talk to each other back and forth. The contexts where there is only one speaker, and more listeners is much less interactive.
+
+"Intentional bringing-across of messages" - Interaction (in our context) 
+## as opposed to interacting with light switches
+
+In a cooperative interaction, even if the communication might seem less interactive, there is still an effort both on the part of the hearers (to interpret the meaning of the utterances by the speaker), and an effort of the part of the speaker--to get his/ her message across even if there is no need for reaction / reply back from the hearers (the audience).
+
+Example: Think of Entish - they say everything explicitely, and make fewer assumptions. They pack all of their content into the utterances. 
+
+==
+Sl. 4
+Writer of a book engages in written monologue
+
+
+Different modes of linguistic context:
+-monologue vs. dialogue
+-spoken, written, multimodal,
+-face-to-face, phone, email (online/internet communication), printed/written context
+
+In "situational context", the communication happens when the interaction btw. two parties (speaker and the receiver-hearer) is perceived by both... One can talk to someone (as much as wants) but when the dialogue is not perceived, is that really a communication?
+
+==
+Sl.5: Pragmatic Phenomena
+
+== Sl. 7
+-Contextual Reference
+-Non-literal meaning
+
+"Pronouns"
+-Deictic Use (From Greek δηκυναι, show/point): 
+Point to an object using words (and frequently with your hands or gaze, too)
+These objects can also refer to persons (i.e: her / him...).. In that case, those pronouns can be said to have 'deictic' use.
+
+-Anaphoric use (From Gr. ανα again + φερω carry)
+-Anaphoric pronouns refer to already-said / mentioned persons (the antecedent) in that context (meaning, the hearer already knows what the speaker is refering to by that anaphoric pronoun).
+***The use of anaphoric pronouns can be problematic in MT because the system needs to understand what the pronoun is referring to, and the gender of that pronoun in some languages...Because the meaning is so much dependent on the context, this can be a problem in some CL applications (For example: Turkish doesn't have gender... trying to translate smth to English, the system will not know whether herself/himself is a fem. or masc.)
+
+-Bound use of pronouns (welcome to Binding Theory!!! haha..)
+-Jane bit herself. V. *Jane said that the boy bit herself.
+***Reflexive pronouns refer to (bind to) the subject of that action (as in 'Jane bit herself').
+
+==Sl. 8: More about deixus
+
+-Social deixis: the social complication between the formal and informal 'you' in other languages (i.e: french: Tu vs. Vous, or German: Du vs. Sie)
+
+Adverbial words also have a relation to the context. -->Slide 10  shows adverbial words highlighted in green...
+
+==Sl. 10: Discourse Model
+
+**Discourse entities can refer to both abstract and concrete objects.
+
+==Sl. 11: Two Types of Anaphoric Reference
+
+Coreference: the relationship between the 'antecedent' and 'anaphor'
+                        i.e: The digger(1) leaned on his(1) shovel. 
+
+## It's more "one kind of relationship between antecedent and anaphor", she's showing two on the slide.
+
+## Clarification: Highlighted words are anaphoric reference, but there is no distinction between bridging and coreference.
+
+
+Bridging:
+The phenomenon of a linguistic expression introduced in a text referring to a certain antecedent and both being related in a way which is not explicitly stated.
+Example: 
+"I bought a book. The cover was torn. / I loved the author".
+Author and cover refer to "book" via bridging. 
+
+
+Sl.17: Non-Literal Meaning
+--Do you have coffee to go? -> Milk and sugar?
+    ***This answer only makes sense if the answer to the first question is yes.
+    *Cooperative behavior (even when it is non-literal) is important in interactive communication.
+    
+
+Sl. 18: Cooperative Principle (P. Grice --(the maxim principles))
+-->Grician Maxims (examples are on the slide)
+
+Implicatures can be cancelled by the addition of more information; see Bill example on slide.
+
+Sl. 20L Gricean Maxims: Adherence and violation:
+Important points to know:
+ * Quality: do your best at answering 
+ * Quantity: exact, clear answers
+ * Relevance: be relevant (no unnecessary information to a given question)
+ * Manner: 
+
+
+Sl. 23: Scalar Implications:
+*The 'scale' shows all the possible (potential) answers to a given question. (See examples)
+**The 'scale implicature (SCI)' shows / implies the exact answer (not more than the needed answer, or the opposite of it).
+
+Sl. 24: Flouting Gricean Maxims:
+--All metaphors, figurative speech, sarcasm / irony (deliberately) are considered as flouting gricean maxims.
+
+Sl.26: Presuppositions:
+--the statements presupposes a preceding event to be true for the statement to be appropriate. (i.e: Peter stopped smoking -->presupposes: Peter used to smoke (true))
+
+***What is an entailment in this context? I missed it***
+## I think she just means that something follows from something else
+
+Sl. 28: Speech Acts (Austin)
+-Performatives (subjective. ie: I apologize!)
+-Non-performatives (factual statements. ie: the earth is revolving around the sun).
+
+
+
+
+
+

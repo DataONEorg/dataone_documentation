@@ -1,0 +1,78 @@
+IARC (International Arctic Research Center Data Archive) and DataONE - conversations
+
+10 April 2014 (1p Eastern/9a Alaska)
+
+Attending:  Jim Long (IARC), Bruce Wilson (UT/ORNL/DataONE), Laura Moyers (UT/DataONE)
+
+IARC's website:  http://climate.iarc.uaf.edu/geonetwork/srv/en/main.home
+
+Helpful information related to joining DataONE as a Member Node:
+ * http://www.dataone.org/member-node-deployment-process
+ * http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html (a little more detailed version of the above)
+ * http://www.dataone.org/member_node-deployment-routes
+
+
+IARC would like to become part of a larger community and would like to participate in some reciprocal replication.  
+
+data volume: <5TB
+data qualities: ecological, native peoples data, etc. (goal to collect data that isn't being picked up by other archives)
+identifiers:  MD5sum; looking at obtaining DOIs (we can provide guidance there)
+
+An example of how we may look at data objects:
+
+An envelope (OAI-ORE, resource map) contains one or more metadata file(s) and data file(s)
+ * A science metadata file in ISO19115 format describing the data
+ * A science metadata file in FGDC format describing the data
+ * ... maybe other metadata files
+ * A science data file (the meat) in CSV format
+ * A science data file in XLS format
+ * ... maybe other data files in different formats
+
+IARC currently operates a GeoNetwork system
+also has an OAI-PMH point, ISO 19115 metadata 
+
+DataONE can harvest metadata records from IARC with the OAI-PMH info and make IARC's data discoverable via DataONE.  However, we'd lose the enhanced capabilities provided by the Investigator Tool Kit (things like R) which allow expanded analysis of data.
+
+Tiers
+ * tier 1: unauthenticated reads (anyone can read)
+ * tier 2: authenticated reads (requires a login)
+ * tier 3: allows writing data to the MN
+ * tier 4: allows replication of data from other MNs to the MN
+
+IARC has login capability, managing own accounts.  Not doing LDAP, using the account manager that comes with GeoNetworks.  
+
+CILogon and InCommon - InCommon (US-based identifier, based on SAML 2.0)
+CILogon (built on top of InCommon, extends it a bit (allowing Google logons))
+
+DataONE's Python stack is a full tier 4 implementation.
+
+Certificate authentication can be a little squirrely to get hold of
+    client certificates
+    server certificates
+    Coordinating Nodes (CNs) have certificates, too
+    in replication, will communicate with other MNs with their certificates
+Once you "get" it, certificates are manageable.
+
+Environments in DataONE:
+ * sandbox - play area, get things up and running, can wipe out if needed
+ * testing (staging) - environment looks more like the production environment, test the MN's operations, communication with CNs, etc.; when it seems to be working well, can move to...
+ * production
+
+Bruce to send MN slide deck to Jim, has links to lots of good info
+
+How does IARC handle data set updates?  If you delete it in GeoNetwork, it will save the delete.  User can delete a dataset and upload a new one.  
+
+Desired behavior is that if a data object is changed, it gets a new identifier.  
+
+There is a story in redmine to accomodate GeoNetwork; several entities in Europe are using GeoNetwork, as well as IARC.  
+
+??  Could we expose IARC's metadata via DataONE and later work on a more robust MN (maybe GMN) ??  
+Ultimate goal is to be a fully-functional MN; we can proceed in phases (expose metadata first, then work on how to expose data for direct access for full functionality) 
+
+DataONE Users Group, meeting info: http://www.dataone.org/dataone-users-group in conjunction with the Federation of Earth Science Information Partners (ESIP)
+
+ESIP started with funding by NASA, now NOAA, EPA, USGS, some NSF
+
+Bruce's actions:  MN slide deck to Jim, contacts, DUG info, same stuff as sent to TERN
+ 
+

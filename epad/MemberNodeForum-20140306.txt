@@ -1,0 +1,73 @@
+Member Node Forum - 6 March 2014
+                                                                                           
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+
+  (Occurs every 2 weeks on Thursday 4pm BRT (Sao Paolo, etc.), 3pm AMT (Manaus, etc.), 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 3am Taiwan, 5am Brisbane AEST)
+  Upcoming meetings 20 March, 10 April, 24 April
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307   (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,   -20130530, -20130613, -20130627, -20130711, -20130725, -20130808,   -20130822, -20130905, -20130919, -20131003, -20131017, -20131031,   -20131114, -20131212, -20140109, -20140123, -20140206, 20140220
+
+Attending:  Laura Moyers, Mike Frenock, Mark Servilla, Chris Jones, Bruce Wilson, Ryan Scherle, Rebecca Koskela, Rob Nahf
+
+Regrets: 
+
+Action items from last time:
+
+Agenda:
+
+0. Welcome new attendees - introductions: 
+
+1. Network-wide update and issues affecting MN's as a whole
+    CN issue (this is the consistency of system metadata across CNs issue, caused (primarily) by a synchronization issue) - in acceptance testing now; have done some testing on system metadata that we know was inconsistent; merge stuff is working well, but the potential number of change records was 30-40 per system metadata file - they've gotten it down to 1-2 change records per sys meta file; moved data to CN in development as a stage run before we run the fix in production.   
+    Update on Metacat upgrade - Metacat 2.4.0 announced 2/24/14 with patch 2.4.1 released 3/3/14.
+    Upgrading coordinating nodes to metacat 2.4.1 in the next week or two; when we do that upgrade, we'll temporarily go into read-only mode while the upgrade is occurring.
+      
+2. Open issues:  MNs please add anything you would like to address here.
+    Mike's question for Chris: SOLR index, update sysmeta on CN for stuff that hadn't properly updated, but SOLR query thinks the systmeta is still messed up.  Perhaps those records haven't been re-indexed?  Chris can manually re-index; Mike to send the wonky records to Chris.  Mike has a "compare" query to make sure what's on the CN is what is on the MN, and it has never matched.  Rob suggests maybe there's a synch issue.  Need a couple redmine tickets to track (Skye for indexing, Robert for synch).  Chris suggests Mike look at access log to see if any of the affected identifiers have synch failures.
+    Mark has been working with Aaron Stephenson at GLEON who is still having some problems with his certificates.  Chris says he has a Java issue that is keeping him from loading certs, also running an *untested* version of Ubuntu (12.0.4) which is likely causing some difficulties.  
+    
+
+3. Feature requests/opportunities for collaboration:
+
+FEEDBACK REQUESTED FOR THE 2014 DUG MEETING ---
+       We would like feedback from MN Forum members regarding what they would   like to see at the DUG and how they would like to be involved.    Everyone seemed to like the MN Showcase last time.  What else would be   important at the DUG?  DUG committee meets 1st Tues of month, so  comments to Amber will be passed on then.
+
+ESIP SUMMER MEETING - JULY 8-11, 2014 IN COPPER MOUNTAIN, COLORADO  
+    DUG is Sunday 7/6 and Monday 7/7, co-located with the ESIP meeting, plans for lodging, etc. still in process.  
+
+MN workshop at IDCC  (International Digital Curation Conference) last week in San Francisco  was a success.  This one was more introductory for folks who might be  interested in working with DataONE.  The next one is tentatively planned  for Helsinki in June.  
+
+
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+    LTER (Mark) - upgraded to metacat 2.4.0, ran ~24hrs, reindexed, turned on synchronization today (3/6/14); "ordinary" updates have occurred successfully but Mark to check on those that were wonky.
+    
+    Dryad (Ryan) - Dryad's MN is online now!  
+        When it was turned on, it took a little while for the indexing to process (maybe 24 hours).  Chris: also we are not synching all records, so it is something we need to look into.
+        Side note: there's a metadata field that Dryad should be delivering to DataONE but currently is not, so we'll probably hold off until we have a mutability solution before adding that field to what we deliver. (human-readable citation of the associated publication)
+        Next steps: troubleshoot objects that weren't synchronized, improve internal storage; support a generalized dSPACE solution
+        
+    PISCO (Mike) - hoping to upgrade to 2.4.1 in the next week or so; is anyone using Java 7?  Not yet.
+    
+    General note on downtime of MNs - inform the operations list but MN also set the up/down flag to down (not critical at this time but will become very important as we roll out the MN dashboard so that user can see at a glance which MNs are up/down).  Documentation??  Types (node types) - see the status field.  
+    Need documentation for ongoing operations (things like how to change the status when going down) - Laura to add to checklist (get with Rob).
+    
+
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't  forget irc.ecoinformatics.org, channel=dataone if you have an urgent  issue.  CCIT folks are always there and can assist you.
+

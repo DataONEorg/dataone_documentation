@@ -1,0 +1,105 @@
+..meta::
+  :keywords: DataONE, CCIT, VTC, 20110817
+
+DataONE Developer Call - 20110817
+=================================
+
+
+:Attendees: Matt, Chris, Rob, Robert, Bob, Ben, Roger, John, Dave
+
+
+Agenda and Notes
+----------------
+
+
+1. Review of the OAI-ORE resource map plans for describing packages in DataONE
+
+The relevant architecture docs are at:
+
+http://mule1.dataone.org/ArchitectureDocs-current/design/DataPackage.html#oai-ore
+
+The main changes from last week revolve around the use of terms drawn from the CiTO ontology that overlap with concepts described in the DataCite schema.
+
+Possible issues:
+
+- May be multiple formats of the same science data document (e.g. html, xml; presumably each with different identifiers) that describe a data object. This will currently be expressed in the objectFormat of the system metadata, but not in the resource map. So to find the formats of metadata available, a client will need to discover the identifiers of science metadata that point to the same object and that ocur within the same resource map, then retrieve the system metadata for each of those identifiers. This process could be alleviated by adding in references to the objectFormat identifier in the resource map, though with some duplication of information that neeeds to be managed by the origin member node.
+
+
+2. Quick review of search parameters to be extracted from system and science metadata to support content discovery.
+
+The relevant docs (still fairly rough) are at:
+
+http://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html
+
+These are s still being fleshed out, main issues are:
+
+a. permission indexing OK?
+
+b. object relation indexing OK?
+
+Change to describes and describedBy need to be changed to documents and isDocumentedBy and update this through all the documents.
+
+Potentially an issue with permission propogation when an object participates in multiple data packages - applying permission to the resource map should not necessarily flow through to all objects in the package.
+
+c. Cross reference to elements used by Mercury. Need to also verify that all the index terms needed by Mercury are available.
+
+d. Are we covering enough information to support good citation practices. e.g. as outlined in http://wiki.esipfed.org/index.php/Interagency_Data_Stewardship/Citations/provider_guidelines
+
+Publisher may not be the MN. Open to some interpretation.
+Distributor = MN (e.g. LTER content in KNB - LTER published, KNB distributes)
+
+Version may be expressed as the count of all parents of the object. Issues though when citing a data package - and there are multiple revisions of constituents, what is the version??
+
+Create a table in the search metadata doc that provides cross refernece to citation information.
+
+
+e. Spatial features represented as LL, TR coordinates of bounding box. Add centroid?
+
+Obvious issues with linear features.
+
+
+
+3. Preparations for the DataONE session at the upcoming EIM meeting (Sep 30). 
+
+https://eim.ecoinformatics.org/eim2011
+
+          Clemente   Izurieta   clemente.izurieta@cs.montana.edu          
+          M   Gastil-Buhl   gastil@msi.ucsb.edu   withdrawn       
+          Wade   Sheldon   sheldon@uga.edu          
+          Hannu   Saarenmaa   hannu.saarenmaa@uef.fi          
+          Kyle   Kwaiser   kkwaiser@umich.edu          
+          Ben   Li   bali@ucalgary.ca          
+          CJ   Grady   cjgrady@ku.edu          
+          steven   paton   patons@si.edu          
+          Tuan   Pham   pham@eecs.oregonstate.edu          
+          Lee   Marsh   lee@usanpn.org          
+          Corinna   Gries   cgries@wisc.edu          
+          Erik   Franklin   erik.franklin@hawaii.edu          
+          Tanya   Dewey   tdewey@umich.edu     
+          
+This is a one day workshop immediately following the EIM meeting which runs Sep 28-29.
+
+- Approx 15 participants, wide ranging interests
+- Survey available, not processed yet.
+- Will be a one day workshop
+  - general introduction 
+  - how to build a member node 
+    - take a MN and deploy it
+    - adapt their own service
+  - How to build client tools that interact with DataONE
+  
+- Generally technical participants
+- Need materials, esp. hands-on examples etc that can effectively step through the whole process with minimal glitches
+
+- Perhaps too ambitious?
+- But focus on how the services work with canned examples. e.g. could deploy MN fairly quickly as a simple deployment.
+- Also helpful to step through the data requirements for selecting the member node stack / process
+- Important to highlight the important pieces of the architecture / APIs
+
+- Seems to be an emphasis on MN impl, so perhaps less focus on building clients
+
+
+4. Any other business.
+
+N
+

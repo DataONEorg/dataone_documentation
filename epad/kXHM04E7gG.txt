@@ -1,0 +1,105 @@
+DataONE UAWG Meeting
+July 27, 3pm Eastern (teleconference) 
+ 
+Present:  Carol Tenopir, Mike Frame, Mary Beth West, Miriam Davis, Rachael Hu, Denise Davis, Bruce Grant, Amber Budden, Suzie Allard, Carol Hoover, Ellie Read, Lisa Zolly, Mike Frame
+
+Agenda
+
+1.     Update on DataONE Release (Amber Budden)
+
+DataONE went live Monday July 23rd. The soft release had been out on the web for several months, but the Press Release and offical release occured this past Monday. 8 Member Nodes currently included.  Go to ONEMercury, bottom of screen to see all MNs.
+120 new users on a daily basis since release.  If you have comments or thoughts, use the web form on dataone.org which is going to Amber and Rebecca and they will direct it accordingly.
+
+MN process - some changes coming to the website re why be one, what's involved, etc.  If we hear from potential MNs have them review that documentation first, then they can contact Amber directly or submit an inquiry through the website.
+
+Getting quite a lot of coverage on blogs and twitter.
+         
+2.     DataONE DUG Update (Amber Budden)
+ DataONE Users Group last week. ~40 attendees. Co-located with ESIP in Madison WI.  Break-outs related to Education, MN, Investigator Toolkit. 
+ Investigator Toolkit brreakout - looked at DataUP (excel add in being created).  Software officially released in mid-September, but code likely available mid-August.  Windows will be an addin to Excel.  For Mac  will be added later - will need to use the Web Interface.  Lot of interest in this.  Community wanted add in available to Mac users.
+ 
+ DataONE Best practices add into the DMP Tool.
+ 
+ Looked at all the capabilities D1 has to offer throughout the Data life cycle.
+ 
+ New users seemed to gain alot from interaction.
+ 
+ 70 DUG members.  Looking at ways to increase activity.  Now there are more things for community to be involved in with public release.  Looking for DUG to become a little more autonomous.  more interaction between members, 
+ 
+ Looking at having DUG events at other meetings. Ask members to represent DUG at meetings they attend
+ 
+ One thing that may affect attendance was no cost to registration.  Good and bad because no cost to registering and not attending.
+
+Suggestions for DUG:
+Are there other Meetings where we should have DataONE presence?  
+- possibly have members take ownership over various items and be responsible for bringing in others. 
+- maybe having sections focused on different issues. 
+- webcasting and streaming presentations in the future. 
+- make sure there aren't conflicts with other meetings such as digital libraries. 
+- maybe cohost with the AGU (a winter meeting)
+
+
+
+3.     Status of Assessments (Carol Tenopir)
+-        Academic Libraries/librarians (IFLA and article).  Targeting College and Research Libraries as outlet.
+-        Federal libraries/librarians (Carol Hoover and Miriam Blake working on article).  Plan is to get results that we have out now, then go back to this community in the future.
+
+-        Data Managers (Suzie Allard and Ellie Read working on article).
+
+-        Original scientist baseline article in PLoS has been viewed ~7000 times
+
+·        Follow up Scientists and Educators, Deployment Fall 2012; likely delayed until 2013 (bc of delay in roll out).   will include questions specific to DataONE this time.  suggestion to use the DUG membership to facilitate decisions and discussions on what's needed here.
+
+·        Institutional Policy Makers, Deployment Feb 2013 (people within academia, heads of computing services, instructional technology, office of research, for example)
+
+·        Graduate / undergraduate students – Feb 2013, Carly had looked at undergraduate teaching, we may want to add additional questions plus graduate students.  this may be one to wait on.  have to decide whether grads, undergrads are combined, and whether grads are combined with faculty bc they sometimes teach.  better response rates with students if we tie it to classes rather than just e-mail, but that will bias the sample (might be OK though).  
+
+lot of overlap to consider between "scientists", "educators", "grad students".  different groups that often perform the same functions.
+
+·        Publishers, Deployment March 2013? Or later
+ 
+4.     Usability Assessments at DUG and ESIP Summary (Mary Beth West)
+
+- conducted at ESIP and DUG last week
+
+- 26 usable tests
+- dataone.org and ONEMercury interfaces.
+- 10% participation of overall meeting
+- recruited through e-mail and presentation at DUG, visible table at conference as well
+-  participants received USB drive.  
+- Think aloud protocols and tasks. 
+- 30 - 60 min plus a
+- analysis beginning now, broken links already fixed, 
+- core issues going to CyberInfrastructure team now  
+
+
+high level issues: 
+- relevance stars were confusing, 
+- ONEM results "Datafiles button" often = 0, confusing, need to find a way to filter, dataset may be embedded in metadata record, it is there, 
+- compatability issues with browsers (already reported), 
+- definition and jargon on DataONE.org issues, issue for different types of users, 
+
+Questions: 
+- ones that need design issues, will usability team work together with development team?  
+ * that gap does need to bridged, discussed already with Leadership Team, now that system is up they may have time.  the intent is to have release updates with intermittent small patches, esp the critical issues.  use breakout groups of UAWG to help CyberI team (eg help menus) Maybe somethign to work on in September.
+
+
+- keep in mind that usability is an ongoing issue with every release, should continue to work together, 
+
+How do we comment if we do find problems?  
+ * comments from UAWG should be gathered by UAWG leadership at UT, collate this. (Mary Beth West as lead); Email: mross15@utk.edu 
+ * send her a screen shot and info on browser and operating system you are using.
+
+
+
+
+5.     Upcoming UA Working Group meeting in September (Mike Frame and Carol Tenopir) 
+- discuss how to get UAWG work into the systems
+ - finish design of scientists follow up, 
+ - thnk through how to combine and/or separate the scientists, educators, grad/undergrads, 
+ - will have to discuss the timing and coordinating of the various assessments, prioritization will be key
+ - consider and discuss the timing of the scientists assessment relative to the public release, needs to be time for adoption, 
+ - need to consider the needs of NSF via Bill M 
+ - may have as much as 14 contact ours for WG stuff at AHM
+ -
+

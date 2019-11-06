@@ -1,0 +1,435 @@
+November 1, 2010
+LT Meeting
+Attendees: Bill Michener, Rebecca Koskela, Dave Vieglais, Amber Budden, Bob Cook, Carol Tenopir, Trisha Cruse, John Kunze, Stephanie Hampton, John Cobb, Steve Kelling, Suzie Allard, Bruce Wilson, Todd Vision, Bertram Ludaescher
+
+NSF Attendees at the AHM: Irene Lombardo, Mimi McClure
+
+Block 1: NSF 18-month Review
+Logistics
+1. February 22-24
+ * Feb 22 -Joint presentation by Sayeed and Bill on DataNet vision, collaborations, etc. Data Conservancy review will follow
+ * Feb 23 - DataONE review
+ * Feb 24 - submit responses to any questions from panel received on Feb 23. Possible final joint presentation by Bill and Sayeed
+2. Attendees: Bill, Rebecca,Amber,Dave, Carol, Bruce, Matt? Others by VTC?
+3. Travel dates
+ * Feb 22 - meet for dinner and planning
+ * Feb 24 - afternoon 
+4. Lodging at Westin near NSF
+5. Planning as part of EAB meeting and presentations there
+
+John Cobb would also be availabe for the review (experience with OCI reviews)
+Examples from TeraGrid:
+2009 Annual Report: <http://www.teragridforum.org/mediawiki/images/c/c0/TeraGrid_Annual_Report_CY2009-FINAL2.pdf>
+
+Presentations to the REview Committee by TG staff <http://www.teragridforum.org/mediawiki/images/b/b0/TG_Annual_Review_2009_Slides_%28PDFs%29.zip>
+
+2009 review committe report on TG review <http://www.teragridforum.org/mediawiki/images/0/05/TGAR2009-Report.doc>
+
+TG's response to 2009 review http://www.teragridforum.org/mediawiki/images/6/6c/TGAR2009-Response.pdf
+
+
+Additional Planning:
+Written report due before review, Feb 7
+Mike Rippin (DC) & Rebecca (D1) are doing the table of contents for this report (due to NSF this
+Thursday, Nov 4)
+{get slides from Bill }
+1. Executive Summary (5 pages, including relevant color picture)
+  PI and key personnel and list subs working on award with short description of each one's duties (eg, WG, CCIT, LT, etc)
+  Syn
+  
+  
+  2. DataONE progress to Date and Plan for Future Activities
+  Project Description, Progress, Future Plans (15 pages)
+  
+  
+  3. Presentation for review panel (Proposed Timeline  ~ totals 8 hours)
+ *   Project Overview (30 minutes for presentation; 30 minutes for Q&A)
+ *   Cyberinfrastructure ( 2 hrs for presentation (and demo) ; 1 hour for Q&A)
+ *   Community Engagement and Sustainability ( 1 hr for presentation; 1 hr for Q&A)
+ *   Future Plans (including Coordinated DataNet Activities); 30 minutes for presentation and 30 min  for Q&A)
+ *   Challenges and Mitigation (30 min for presentation; 30 minuse for Q&A)
+
+Presentation would be given to EAB in January as practice run for NSF review
+(Dave, Matt, and Bruce should discuss who should attend EAB meeting as well
+as NSF review)
+
+Timeline:
+Nov 4: TOC for document 
+Mid- December: have CI activities completed for demo/review
+January ?: draft of document ready for EAB
+January 17-18: EAB meeting & dry run of presentation
+Feb 7: Document due to NSF
+Feb 22-24: NSF Review
+
+Action Items
+TOC: Mike Rippin (DC) & Rebecca (D1) due Nove 4
+Document
+ * Executive Summary - Bill
+ * CE - Amber, Bill, Rebecca, Carol, Suzie
+   * Baseline Assessment - what's been done, what's planned
+   * Scenarios / Value Proposition
+   * DataONE Users Group
+   * Education and outreach
+   * Sustainability & Governance
+   * Working Group Activities- work this into the dialog
+ * CI - Dave,Bruce,Matt  (Note: As John notes, CI is an overloaded term that means many things to different people.  Need to make sure that this section covers that entire waterfront so that reviewers will see their definition of CI)
+   * Design
+   * HW, SW development and implementation
+   * Security
+   * Technical substainability
+   * Deployment
+   * Curation and Preservation
+   * Policies, SLAs
+   * Metrics, assessment/feedback
+   * Collaborations
+     * DataONE-Data Conservancy coordination
+     * TeraGrid
+     * Filtered Push
+   * Investigator Toolkit
+   * Working Group Activities - work this into the dialog
+ * Project Management - Bill, Rebecca
+   * EAB, LT (Communication plan)
+   * PMP
+   * Risk Management
+   * Metrics
+
+Presentations
+ * Context - Bill
+ * CI - Dave, Bruce, Matt, 
+ * CE - Amber,Bill, Trisha, Carol, Suzie, Steph, Viv, Bob
+ * Project Management - Rebecca, Bill, Dave, Amber
+
+CI Activities (Dave, Bruce, Matt, CCIT)
+ * Demo
+ * Security Plans
+ * User documentation for MNs
+ * User documentation for ITK
+ * Reference architecture viewpoints
+   * Overall architecture
+   * CNs, MNs, ITK - Dave, Bruce, Matt, Todd
+ * Animations?
+
+Review Results back to LT - March timeframe?
+
+8 weeks before draft document to EAB
+2 weeks after that to revise & submit to NSF
+
+Block 3: January EAB Meeting in Santa Fe
+17-18 January - Inn at Loretta, Santa Fe
+Official recorder at meeting
+Attendees: Board, Amber, Bill, Dave, Rebecca, Bob, Carol, Bruce?
+Program:
+Morning Day 1:
+ * Reference architecture viewpoints, value proposition
+ * 90 min conference call with Alan Blatecky (afternoon Day 1)
+
+Value Proposition Discussion:
+Need a crisp statement of the D1 value proposition:
+ * 
+ * What types of agreements/policies will work
+ * What do scientists want?  Do their work faster, more efficient, in new ways
+ * List things D1 doing that are above and beyond buying disks and putting them on the floor
+
+ * Secure, persistent, long-term curation and preservation of data not tied to geography
+ * Platform for discovery and synthesis
+ * Enabling new science through discovery and access to data and analysis via integrated toolkit
+ * Engaging  community of scientists via .....
+
+ * What do we offer in and above what Google has to offer?
+ * The community of scientists
+ * Best Practices
+ * 
+ * Enabling science through engagement of the respective science, data, and policiy communities; easy, secure, and persistent storage of data; and integrated tools for the discovery and use of that curated data. 
+
+Block 2: DUG Meeting
+
+Chicago Dec 9-10th
+
+Attendess: List created from LT and S&G WG. Invitation went out after deadline for IDCC poster / presentations which may have influenced responses.
+Light on potential member node attendees and governmental agencies.  Representatives from existing MN and CN.  
+49 invitees, 23 accepted.  Of these nearly half are DataONE.  Wanted 25-30.
+
+S&G WG will look at list, identify crtical absences and make suggestions for alternatve individuals.
+
+Possibility of upfront questionnaire asking about current data practices (sharing requirements, storage capacity, security) and expectations for the meeting.  Follow-up survey asking more specific questions such as how much space can be allocated.
+
+Agenda:
+8 meeting objectives
+Provide overview of DataONE and progress to date
+Discuss/propose value proposition and roles and responsibilities of Member Nodes and Coordinating Nodes
+Document the process of evaluating, prioritizing and adding Member Nodes
+Propose structure and content of Member Node partnership agreements and related policies (e.g., Service Level Agreements)
+Discuss, propose/revise, and document the value, activities, roles and responsibilities of a DataONE Users Group
+Propose, evaluate, revise, and adopt an organizational structure and charter for the DataONE Users Group
+Develop an implementation strategy for fully standing up the DataONE Users Group
+Review meeting progress, action items, next steps and calendaring for future meetings
+
+B1 - Welcome / overview of project (Koskela)
+B2 - Value proposition, round table discussion, Q&A (moderator - Kelling)
+B3 - Prioritizing member nodes (moderator - Cruse)
+B4 - Member node SLA discussion (moderator - Frame)
+B5 - Value, activities etc of DYG (moderator - Sandusky)
+B6 - Organizational structure of DUG (presenter / moderator - Budden)
+B7 - Implementation strategy (moderator - Koskela)
+B8 - review meeting progress (moderator - Michener)
+
+3 things that need to be included:
+Sustainability discussion
+Investigator toolkit
+Public-facing documents
+
+
+Block 3: Working Groups
+
+What's working/ what's not
+
+CE WGs underway:
+Sociocultural
+Sustainability & Governance
+
+Joint CI/CE underway:
+EVA
+Usability & Assessment
+
+Discussion of Data preservation, metadata, and interoperability is such a large area of topics 
+Time existing co-leaders have to devote to managing WGs
+
+Another possibility - workshops rather than getting WGs going - example of the Federated Security workshop
+
+Someone in CCIT needs to come up with ideas for the workshops
+
+Status of the individual WGs 
+Since he's here, start with Bertram
+Bertram: name - Provenance WG or keep Scientific Workflows in name??
+Participated in summer of code (2 interns supported by DataONE/INTEROP); prototype
+& paper came out of this work
+This meeting want to agree on the philosophy/strategy created this summer
+ * Model
+ * Closer by linking their prototype with CCIT prototype
+
+Line: (via Bruce)
+Extend work done this summer  - what ontologies are out there? What's missing?  Where are the overlaps, in particular conflicting overlaps?  Ways existing ontologies can be used to improve searches? As well as integration of data - ways to build on what's already out there
+    What does the CCIT team need in the short term from the Semantics Working Group?
+        -further development of the Ontology repository to faciliate its merger with the developing CI
+
+
+
+John Cobb - Distributed Storage
+How can we engineer distributed storage to support MNs and CNs?
+Technology evaluation group to give advice
+Don't want vendor working group but want their expertise;
+Had plan to defer the stand up of this working group but questions did arise earlier
+than plan
+
+Sociocultural WG - identified key activities that people within the WG can work on -
+
+Citizen Science - call with Rick & Jake & D1 (Bill, Amber, Rebecca)
+
+
+Risk of duplication of effort across WGs
+
+CI Year 2 Plans (Vieglais)
+https://docs.dataone.org/member-area/committees/management-team/meetings/20101101_ltmeeting_albuquerque/20101101_LT_CIPlans_vieglais.pptx/view
+
+General Schedule:
+Does project control process lead us here or something else?  Specific example,
+compute nodes.  These weren't on schedule 2 years ago - driven by the science,
+EVA specifically. Project controls question: Baseline in proposal and the PMP
+Both of these are general - prototype, public release but details were not specified
+in those documents.
+
+Annotation: add document to system referencing IDs in system and notify users that requested they be notified
+
+Interaction between DataNets required by the Cooperative Agreement (CA)
+DC be MN for D1 and D1 act as archive node for DC
+
+From EVA WG -    second generation datasets (much larger than orginal datasets)
+D1 doesn't distinguish between generations of datasets; instead would be MN policy
+DataONE is a facilitator - they don't provide the storage; MN may need to distinguish
+between primary and derived data and there may be different preservation policies for
+the different types of data. D1 could contribute Best Practices for this situation. 
+
+3 major milestones:
+ * Yr 1 prototype and performance review
+ * 18-month review
+ * Public release of the infrastructure
+
+MN progress
+Authentication and authorization - focus of the developers for the next 6 month - extremely important!
+User-oriented documentation for MNs - important for the DUG in December
+
+CN progress
+Authentication and authorization - focus of the developers for the next 6 month - extremely important!
+
+ITK progress
+Major focus right now is abstraction of data package - merging of all the information from different locations; including what is a discrete unit of information
+User-oriented documentation 
+
+Redmine replaced Trac for
+Issue tracking -
+Risk Registry
+Decision Registry
+
+Replacement for Plone?
+OpenKM, HUBZero (nanotechnology project at Purdue; Michael McClellan - focused on user interface - for rapid application development; did not excel at data management; integration framework - might be interesting from an ITK perspective),
+Joomla,Drupal,Mambo, many others
+
+DNS, LDAP, mailing lists
+ * All single source of failure running well out of NCEAS
+ * DNS will go to a commercial site for the public release
+
+System administrators
+ * Good situation at NCEAS
+ * Some issues at UTK
+ * Some issues at UNM
+
+Collaborations
+Data Conservancy
+ * Shared standards
+ * Service interoperability
+ * Communications with sponsor and communities
+TeraGrid
+Also
+ * NSF 10-548 Dimensions in Biodiversity Program
+ * NSF 10-603 Advancing Digitization of Biological Collections (ADBC) Program
+
+What can D1 get out of these proposals? No direct funding but can get additional 
+repositories  out of the hub proposals
+Filtered Push (annotation and subscription proposal) - D1 is core piece of infrastructure of what they need and D1 needs annotation and subscription
+Also not mentioned but important are  the data management plans.
+
+Impediments
+ * Resources
+ * Working group focus
+ * DataONE popularity and expectations
+ * (minor) Intra-project communications
+ * (minor) Engagement of participants
+
+Timelines are important - what will be available & when
+269 people "interested" - on mailing list
+When people register - need to follow up
+
+CE Year 2 Plans (Budden)
+Community Engagement and Outreach
+1. Working Group Activity
+ * Milestones/metrics
+ * Citizen Science WG
+ * Convene WG meetings as appropriate
+ * Facilitate inter-WG communication and activities
+2. Community Outreach
+ * Public release will need marketing strategy and materials in advance
+ * Development of training tutorials & curricula and enhance DataONEpedia
+ * Second BP workshop early in 2011
+3. DataONE Users Group
+ * end of Year 2 need 50 members in DUG (double in size in one year)
+4. Sustainability
+ * Identification of key stakeholders
+ * Finalize value proposition
+ * Enhance communication across all levels for cohesion of effort
+
+Block 4: Adding Member Nodes
+ * Process
+ * Priority List
+
+Merlin: DeployMemberNode
+
+Evaluate the data source service
+ * Value assessment
+ * Data quality assessment
+ * Infrastructure support assessment
+ * Resource availability
+ * Service software capability
+Secure service agreeements
+ * Service support agreements
+ * Data sharing agreement
+Design the data and metadata mapping model
+ * Define sources for system metadata
+ * Define packaging model for data
+ * Document science metadata semantics
+ * Document authorization policies
+Implement the MN APIs
+ * Develop science md mapping to search index
+ * Implement API stubs
+ * Implement RO API methods
+ * Implement authz services
+ * Implement data, metadata create, update
+ * Implement service authn support
+ * Implement MN-MN replication mechanisms
+Deploy the MN service
+
+Even with short time estimations, would take 2-3 months to setup a new MN (technical perspective)
+NBII would serve as start for rest of USGS (give us an URL - what port? what do we need to sign?)
+Idea of a mentoring program for new MNs; also an incubation program
+Requirement of data management plans - libraries in a new role
+Not just critical mass but shape of that critical mass
+
+Important to have something for the DUG 
+From CE side who can help with user-side documentation: Trisha, Mike Frame, John Cobb
+ * High-level agreement
+ * then SLA - service level guideline rather than service level agreement
+ * But also a community of developers so need information for this group also
+
+Ad-hoc committee; short-lived to accomplish specific goals
+
+
+NSF Communications: Be mature
+
+Task: Review the CI metrics and ensure there is consistency in the ratios, e.g. average size / metadata + data record
+
+Task: S&G WG check out Publication performance metrics (wording and counts)
+
+Calendar:
+October 24-28, 2011
+
+October 24: LT
+October 25-27 AHM
+
+DUG: 
+Options: sometime in summer, possibly around ESIP
+11-15 July 2011 in Santa Fe, NM - usually runs Tues - noon Friday
+Need to talk with ESIP to figure out the timing - possibly Monday
+Discussion of summer vs winter meeting (Jan in DC); winter meeting would be after the
+public release
+January 2012, Washington, DC
+NBII node meetings are 3 days
+
+Action Items:
+WG slides: 2 per WG group
+ * What you've done
+ * What you plan to do
+18-month Review items (document and/or presentation) - seen notes above
+Bruce contact Carol M. at ESIP to connect a DUG at Jan 2012 meeting
+Conversation with Eva, Line, Bertram, Dave, Rebecca
+John & Pete Honeyman discuss Distributed Storage WG/ workshop topics
+Follow-up with Rick and Jake re: Citizen Science WG (Amber, Steve)
+MN documentation: Trisha, Mike, Bruce
+Bill and Bob make Power Point slide that distinguishes current MNs
+Bill,Bob, Amber follow-up with ESA for data management planning session(s)
+
+LT Wednesday working dinner - 6:30pm
+
+Thursday lunch time: Data Preservation
+
+
+=====================================================
+Parking Lot
+
+2 slides per working group: 
+- what you've done 
+- what you're going to do
+
+WG activities related to MNs (Member Nodes), CNs (Coordinating Nodes), ITK (Investigator Toolkit)
+-
+
+Profiles, personas, vignettes
+-
+
+Interactions with other projects / proposals
+- NSF 10-548 Dimensions in Biodiversity Program
+- NSF 10-603 Advancing Digitization of Biological Collections (ADBC) Program (due Date Dec 10, 2010) <http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503559&org=BIO&from=home> (FAQ at <http://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf11005>)
+- Filtered Push project (funded http://nsf.gov/awardsearch/showAward.do?AwardNumber=0960535 )
+- NSF 11-502 CDI (due date Jan 20, 2011) http://www.nsf.gov/pubs/2011/nsf11502/nsf11502.htm?WT.mc_id=USNSF_25&WT.mc_ev=click
+- NSF 11-511 VOSS Virtual Organizations as Sociotechnical Systems (due date Jan 13, 2011 and annually) <http://www.nsf.gov/pubs/2011/nsf11501/nsf11501.htm?WT.mc_id=USNSF_25&WT.mc_ev=click>
+
+
+

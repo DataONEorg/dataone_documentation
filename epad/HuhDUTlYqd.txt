@@ -1,0 +1,298 @@
+o Sociocultural WG (After Lunch) 5/2/12 (Allard, Davis, Pardo, Bilder, Suomela, Cobb, Crowston, Baird, Piwowar, Blake, Bissell)
+
+Brainstorming:
+HP - role of SC WG is/could be to address sociocultural issues DataONE will face/is facing 
+- exposing licensing terms really clearly in all the D1 tools, 
+- data citation best practices should be transparent for data sets in D1
+
+AB - provide recommendations to others in D1 for specific priorities on SC issues (began this morning)  Might be enabled by throwing ideas into the pot and prioritizing them.  Who else needs to be involved in  what ways for each item? 
+    Possible structure:
+        * What is needed... this week, this month, this year, in five years?
+        * Who is needed... within SCWG? within DataONE team? beyond?
+
+TP - context within which D1 will exist.  what can we do to prepare the environment for what D1 has to offer?  
+
+so two areas - inside dataone, and outside data one - there are sc issues.  These issues are more or less relevant and important at different points in the process.  If we are talking someone has to be listen, what are the different layers we are addressing.
+
+GB - we earlier (first AHM?) went through a discussion of what are the barriers to what D1 is trying to accomplish,  Maybe we should now go back and see how and what we are addressing from those earlier ideas.  We also need to look at the dependencies of those barriers.
+
+SCWG leadership - look for these early documents that were on the pre-plone site. 
+
+ Link to final charter https://docs.dataone.org/member-area/working-groups/sociocultural-issues/charter-sociocultural-working-group/SCWG-Charter-1-11-12-FINAL.docx/view
+
+Link to 2010 brainstorm and notes: https://docs.google.com/document/d/1J8LnCOth4YD51eAMr_c8SOwOhcs3ZMuC0KNoRwZVGgI/edit
+
+ Link to final charter https://docs.dataone.org/member-area/working-groups/sociocultural-issues/charter-sociocultural-working-group/SCWG-Charter-1-11-12-FINAL.docx/view
+ 
+Expected Deliverables, Outcomes & Schedule 
+·        Develop a shared bibliography related to best practices, technologies and policies (ongoing)
+·        Explain uses and limitations of the DataONE data lifecycle (Y3Q3) 
+·        Report on large-scale analysis of citation boost associated with data availability (Y3Q3)
+·        Facilitate selection of a research lifecycle model that will be used across DataONE (Y3Q4) 
+·        This can be more involved and less simplistic than the data life cycle model. This is the "people" based model. 
+·        Build "persona" description for stakeholders--day in the life, concerns, how DataONE fits in (Y3Q4) 
+·        Report on data citation practices in the environmental sciences (Y3Q4)
+·        Report on data reuse patterns across ten cross-disciplinary data repositories (Y3Q4)
+·        Report on success stories of free and open data exchange for DataONE User Group (Y4Q1)
+·        Paper addressing the theoretical constructs that inform intervention strategies, which can be useful for changing the behaviors of stakeholders around data (Y4Q1) 
+·        Report on detailed data reuse patterns for one data repository (Y4Q1)
+·        Develop prototype tool for automated data reuse tracking for DataONE datasets (Y4Q1)
+·        Explore what different groups of scientists and other key stakeholders mean by: data, data set, data reuse (Y3Q1)
+·        Organize DataNet Partners sociocultural symposium (Post-Y3) 
+o   Research practicality and impact of “data journal” model as a mechanism for data import to DataONE (in collaboration with Open Context and the California Digital Library) (Y4Q2)
+o   Examine, develop and integrate workflows for data citation as a key driver for data sharing (several collaborators, including NESCent, Open Context, and the Sloan Fdn) (Y4Q2)
+·        Environmental scan to examine institutional policies, e.g. data in institutional archives (Y4Q4) 
+o   Also engage in stakeholder surveys or other explorations of IP expectations and tools related to data sharing among DataONE member nodes as well as direct users of DataONE – International and National Research Facility perspectives will be especially important (Y4Q4) 
+·        Report on the impact of journal data archiving policies on the attitudes, experiences, and practices of scientists (Y5Q3)
+ 
+ 
+
+Reviewing DataONE Principles Document
+
+Link to DataONE Principles Doc
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/faqs-documentation-environmental-scan
+
+6.  DataONE maintains      confidentiality of [user, personal] private information, confidentiality      of data contained in DataONE (as specified by the data depositor), and      confidentiality of depositor (personal information).
+ * [MJ1]       [may be three      separate statements]
+ *  [MJ1]Not strictly true.
+ *  JWC: confidentiality is an overloaded def. such as pre-publication confidentiality vs HIPPA, vs. ..
+ * Define what Federation is.  If 6 is not true, then that needs to be clearly stated.  AB - use of "federation" in relation to DataONE has not been intentional, but has slipped in. 
+an issue is differenence between DataONE's principles adn member nodes principles
+
+SCWG - will come back to 6 and restate bc currently no one is happy with it, but its impacting all other WGs
+
+7.    DataONE maintains/ensures [MJ1] the integrity, authenticity and usability of digital objects it holds over time. DataONE acquires and ingests digital objects based upon stated criteria that correspond to its commitments and capabilities. DataONE commits to continuing maintenance of digital objects for identified community/communities. DataONE has a strategic program for preservation planning and action. DataONE has technical infrastructure adequate to continuing maintenance and security of its digital objects. DataONE creates and maintains requisite metadata about actions taken on digital objects during preservation as well as about the relevant production, access support, and usage process contexts before preservation. DataONE fulfills requisite dissemination requirements.
+ *  [MJ1]We can’t really do this, both philosophically and practically. Philosophically, we don’t change data objects that are contributed.  Practically, we don’t have the resources to maintain these.  We audit the integrity, but its largely the responsibility of MNs to correct any problems with new revisions.  Who is ‘DataONE’ in this scenario?  Staff paid by dataone and under DataONE direction, or all contributors including MNs that volunteer their time?
+
+
+TP - where is the list that indicates what users are expected to do, what principles they should hold to? (submit quality data, follow metadata standards, etc.)  A set of working assumptions, expectations.  "This is what you can expect from us, this is what we expect from you."
+
+jwc: Perhaps reduce to DataONE maintains/ensures]the integrity, authenticity and usability of digital objects it holds over time and replace "maintains/ensures" with promotes.
+GB: we need a stronger word than weasely "promotes"
+
+ 
+11.  DataONE      promotes techniques to articulate and measure the socioeconomic value and      benefit of Earth science data, information and applications.[WM1] 
+ [WM1]We don’t really do all of this.
+ SCWG comment - mostly don't like, thinking to remove.  Decision to remove. 
+ 
+ New principles to add/What is missing:
+ *  Consider adding: - "open" language. 
+ *   CONSIDER adding - describe the relationship between DataONE and member nodes.  Is DataONE supporting member nodes to make them more successful (servus servorum); a equal partner with MNs; leading the MNs ("primus inter pares"); encouraging or even imposing best practices on MNs; leading a community of practice; governance is guided by the principle of subsidiarity: authority should rest with member nodes unless allocating them to a central unit would ensure higher comparative efficiency or effectiveness in achieving certain goals.
+   *   GB: describe the community of practice and practices to which that community will adheres
+ * enabling the discipline of science to go beyond where it otherwise could
+ * sustainability - social issues specifically, economic
+ * evidence-based policy making, science research, deicsion making etc.  we do it, and we facilitate it.  (and it's a dynamic environment, constanly evolving.  In other words we don't follow deicisions made previously simply when evidence dictates otherwise)
+   * All actions are based on evidence, "dataONE strives to adapt and evolve based on evidence we generate and/or gather from the field" (roughly)
+ * DataONE community of practice also reaches out to other communities of practice, and/or participates in other communities of practice, practicing how to be
+ * transparency in actions, decision  making, etc. as an entity (not as a community of practice, but as a organization) for the purpose of improving understanding of what worked and what didn't
+ * open engagement
+ * more ideas:
+   * comment - issue/distinction between Community of practice vs. community of interest
+   * enabling infrastructure to maximize sharing and re-use of data and articulating best practices for sustainability
+   * D1 alleviates the burden of data management, reduce the risk, provides access to resources they didn't know existed. 
+ * we respect collaborators isness (we don't poach member nodes users)
+ * maximize data reuse
+
+clarify the definition of principle.  Should be one word bullets "we collaborate, facilitate, participate, enable, provide, open engagement . . . "  e.g. open government - collaboration through participation.
+
+
+
+DataONE Principles Revised Draft 5.2.2012
+
+1. DataONE is a community of practice/learning organization **revisit  vote to remove since it is now folded into #3
+
+2.Sharing and reuse of data. and value of Earth science data and information.  We believe openness maximizes reusability. 
+
+3. DataONE is a community-led learning organization that facilitates, coordinates and advises scientists to promote the use of Earth science data and information products, regardless of geoographic, national and institutional boundaries. [2nd half seems similar to #1] (scares me to be responsible for coordinating the Earth science community see edit -- better?).  Is this a principle?  
+
+5. Participation in DataONE is open to any organization that agrees to the principles of open access to and maximizing reuse of scientific data.
+
+6. Confidentiality of [user, personal] private information, confidentiality of data contained in DataONE (as specified by the data depositor), and confidentiality of      depositor (personal information). [may be three separate statements] is this a "how" not a principle?     **revisit & rephrase
+
+7 DataONE promotes integrity, authenticity and usability of digital objects. (what does this mean?)
+ 
+**DataONE acquires and ingests digital objects based upon stated criteria that correspond to its commitments and capabilities. DataONE commits to continuing maintenance of digital objects for identified community/communities. DataONE has a strategic program for preservation planning and action. DataONE has technical infrastructure adequate to continuing maintenance and security of its digital objects. DataONE creates and maintains requisite metadata about actions taken on digital objects during preservation as well as about the relevant production, access support, and usage process contexts before preservation. DataONE fulfills requisite dissemination requirements.  **Vote to remove and place in  another document 
+ 
+8.    Strengthen the ties between observations, research, and applications (like ++)
+
+9.  Enable envrionmental science research and discoveries. (like )
+
+10.  Scalable and sustainable st
+
+12.  DataONE develops its policies and makes its decisions based on evidence when available.  (begs the question of what do we do when that evidence is unavailable)  DataONE contributes to the body of evidence through research and making its experiences transparent.
+
+14.  DataONE alleviates the burden of data management, creates access to new resources and shares/promotes best practices around the data lifecycle. Talks to researchers (duplicating above?)
+
+Kevin: Perhaps list principles as short values: we value openness, we value data sharing, .... and then show a flowdown to current list of principles
+
+(Group reviewed 5/2/12)
+[DataONE purports that...]
+
+1. Data science is transforming environmental science.
+
+2. Data should be part of the permanent scholarly record and requires long-term stewardship.
+
+3. Sharing and reuse maximize the value of data to environmental science. 
+
+4. Environmental science is best served by an open and inclusive global community.
+
+5. The data environment is dynamic and requires evidence-based decision-making about practice and governance.
+
+
+Changes to consider
+
+Proposed alternative for 4. Earth science data sharing is best served by an open and inclusive global community of individual researchers and partnership among data repositories.
+
+(minor: switch 2 and 3? reason: 1 and 3 both seem to be about Earth Science and the value of data so flows better to me)
+
+- add an Approaches section after this to say how we will achieve the principes, which would include most of the former principles?
+
+
+
+
+
+
+OUTTAKES FROM PRINCIPLES
+DataONE encourages and is responsive to evidence and will evolve its governance, structure, and staffing to continuously improve its performance and adherence to the above-stated principles.
+
+Promoting the persistence, integrity, and permission-structures of its data records.
+
+DataONE supports staff, resources, and a technical infrastructure sufficient to meet its obligations. is this where sutainabilty fits?
+
+(enables, transforms, or revolutionize . . . )
+
+http://www.va.gov/bluebutton/  The blue button initiative...
+http://www.greenbuttondata.org/ The green button initiative
+Is there a data button initiative?
+
+Also many of the prio principles can be collected into "approaches" that are arrived through the principles
+
+---------------------------- 
+WHAT ARE THE TOP SC ISSUES FACING (ADOPTING, MARKETING, IMPLEMENTING, USING etc) DATA ONE
+
+For sustainability & governance to think about OR for SCWG to address
+
+1. Clear well-known documented evidence of the advantage of reuse* *- Marketing-2 perspectives (1) create a plan to collect stories as they develop in DataONE,  (2) research evidence from outside D1 community. Is current activity on this.
+
+2. The logistics of re-using data  (finding, using, rights)**** ties to usability and education and usability (workflow) what are the business processes , the ten steps to each of these.
+
+3. What is the reward for reusing data? What is the reward/warrant/requirement for sharing data*** look for empirical studies that show reuse of data saves time, money, creates value.  Examples where data can't be gathered again.   create a short biblio to support this.
+
+4. The sociocultural context that affects sharing/reuse*** Umbrella
+
+5. Developing connections to tool development community for sustainability * should be marketing to this community to help create tools by being integrated into these cycle. Look at identified tools and research how common tools are, what their development processes are.
+
+6. "not invented here" syndrome by domain scientists** understand overall current barriers to adoption, including technologies and policies. not willing to learn new tool or not trusting content (data). This has high link to tech team in terms for development/deployment. There are classic barriers to adoption that are beyond the technology and we need to have mitigated these. Look at innovation literature. Check on Kevin's paper.
+
+7. not in their mind space so they don't think of going to dataone to help them do their science * 
+
+8. communication issues for the team (internal communication)***working on this now and presenting recommendations.
+
+9. lack of institutional support and no incentive (e.g. time = $) for data management planning** Think this could be a very significant barrier to incorporation into regular workflow for scientists. May require direct outreach to higher-level personnel in institutions to set aside resources (staff and $$) and develop institutional policy to support these activities.
+
+10. lack of researcher support for data initiatives
+
+11. perception that adhering to DataONE practices/DataONE activities may lock participant in and lose flexibility ** a significant messaging piece which has to be backed up by technology.  Are we willing to stake the claim that ours is the best way, or just ours is a good way to do a good thing?  These are different messages, and what is it that we are willing to support. Technical extensibility must be built in if we talk about it.
+
+12. culture of DataONE is opposite to what is the culture of how science is being conducted
+
+13. plan for future not just here and now, need to help groups prepare for it -- need to "pave the path" for adoption ** Work in parallel to educate, create outreach materials, answer questions about adoption - provide "customer service" WHILE technologies are being developed.
+
+14. release is in the critical path but need to think about culture change now ****  THis might be rephrased as creating demand or present DataONE as a solution to someone's problem.  And being prepared to meet that demand when and if it's generated.  Limit the "dead call" scenario. New communication plan starts to address this (list of interested parties, ask permission to list on website, create package and steps for how to express interest.  This is a forefront issue. (orchid and Open Government Partnership are good models for this)
+
+15. where is the demand for what DataONE offers? [see the baseline survey of scientists - Nearly two thirds (67%) of the respondents agreed that lack of access to data generated by other researchers or institutions is a major impediment to progress in science.]
+16 Team Science -- hot topic and DataONE is uniquely positioned in this area *
+17 project wide outreach could include some questions/exploration about sc issues
+18 focused primarily on technical issue -- need to have adequate emphasis on sc issues *
+19 Document the value that DataONE has already created
+20 Identity and Rights (KEvin)
+21 identify customers/clients/end-users**
+22. Who interacts with dataone and what is the purpose and nature of that interaction?*
+23. Risks of pushing too much for substantive changes in scientific practice? Should we meet scientists/others where they are, or push them to where we want them to be?
+24. DataONE isn't agile enough to react as this area evolves **
+25. What data should NOT be shared in DataONE? E.g., too sensitive, too many legal encumbrances, too non-standardized, etc. Can we clarify the limits of DataONE's capabilities regarding data management?
+
+
+These ones are a little different... very grounded in current tool... don't know where else to put them where they won't get lost
+- reveal/filter on dataset licenses in all dataone tools
+- reveal/facilitate MNs recommended data citation practice in all dataone tools
+- reveal data reuse for dataone datasets, facilitate exploration, filtering based on levels of data reuse *
+
+
+1. 5 principles 15mmin
+2. old deliverables 20min
+3. 21 itms top 5 for governance 
+
+DELIVERABLES FROM CURRENT CHARTER https://docs.dataone.org/member-area/working-groups/sociocultural-issues/charter-sociocultural-working-group/SCWG-Charter-1-11-12-FINAL.docx/view
+
+ 
+Expected Deliverables, Outcomes & Schedule 
+
+*notes from 5/2/12 Joint meeting.  T Pardo created a table to track Deliverable, audience, purpose, etc.  on Google Docs 
+
+·        Develop a shared bibliography related to best practices, technologies and policies (ongoin) supports Principle 5, start up Zotero, Mendeley - Ahrash is setting up NOW!!  This is actually more of a best practice than a deliverable.
+
+·        Explain uses and limitations of the DataONE data lifecycle (Y3Q3) It is being used, there's not much more to do here.  OUT!
+
+·        Report on large-scale analysis of citation boost associated with data availability (Y3Q3)
+   * Heather working on this.
+
+ * ·        Facilitate selection of a research lifecycle model that will be used across DataONE (Y3Q4) 
+   *  This can be more involved and less simplistic than the data life cycle model. This is the "people" based model. 
+   * Research life cycle was something that was meant to lay on top of the Data Life Cycle.  Original interested group member has left.  Talk to Bruce Grant bc he has been laying the researcher's methods over the data life cycle.  Miriam Blake is interested.
+
+·        Build "persona" description for stakeholders--day in the life, concerns, how DataONE fits in (Y3Q4)    DONE.  Who is the audience? Marketing.  CI should be using this, and this n eeds to be on our communication list. Perhaps get feedback from D1 people who have used personas for various activities, including vetting them with scientists to make sure they resonate.
+
+·        Report on data citation practices in the environmental sciences (Y3Q4)
+   *  Heather Piwowar, audience policy makers
+
+    ·        Report on data reuse patterns across ten cross-disciplinary data repositories (Y3Q4)
+    
+·        Report on success stories of free and open data exchange for DataONE User Group (Y4Q1),  Amber Budden has said someone is working on this.  Came from a member who is now gone.  Would be a great marketing tool. address later?
+
+·        Paper addressing the theoretical constructs that inform intervention strategies, which can be useful for changing the behaviors of stakeholders around data (Y4Q1) Suzie, Y4Q2
+
+·        Report on detailed data reuse patterns for one data repository (Y4Q1), Heather, data repositories policy makers, funders
+
+·        Develop prototype tool for automated data reuse tracking for DataONE datasets (Y4Q1)  Summer internship under Heather, dataone administrators, dataone user base who needs metrics, member nodes
+
+·        Explore what different groups of scientists and other key stakeholders mean by: data, data set, data reuse (Y3Q1)  Maribeth Manoff, Miriam Blake are interested, Miriam Davis (what data management means to different groups)
+
+·        Organize DataNet Partners sociocultural symposium (Post-Y3) skip
+
+o   Research practicality and impact of “data journal” model as a mechanism for data import to DataONE (in collaboration with Open Context and the California Digital Library) (Y4Q4) changed to quarter 4 from quarter 2, needs thoughts to continue to involved.
+
+o   Examine, develop and integrate workflows for data citation as a key driver for data sharing (several collaborators, including NESCent, Open Context, and the Sloan Fdn) (Y4Q2)  Ahrash and Heather are interested.  research paper
+
+·        Environmental scan to examine institutional policies, e.g. data in institutional archives (Y4Q4) Remove to hopper, not an actually expected deliverable.
+
+o   Also engage in stakeholder surveys or other explorations of IP expectations and tools related to data sharing among DataONE member nodes as well as direct users of DataONE – International and National Research Facility perspectives will be especially important (Y4Q4) 
+·        Report on the impact of journal data archiving policies on the attitudes, experiences, and practices of scientists (Y5Q3)
+
+
+1. CI and personas
+2. crowdsourcing through abstracts for interesting papers for students or researchers interested in these issues
+3. prize for externally created research for D1 SCWG
+4. build a list of SC risks for DataONE
+5. are we marketing to member nodes or scientists?  important to better understand teh SC questions to pursue to best help DataONE. 
+
+
+Challenges & Trends to Keep on the Radar   v 5.3.12         Created by the SCWG 
+ 
+ 
+1.    Need for documented evidence of advantage of reuse
+    a.    Plan for collecting stories as they develop in DataONE (program assessment& marketing)
+    b.    Evidence from outside D1 community (marketing)
+2.    Need for clear vision of logistics of reusing data 
+    a.    The proper processes  (Ten steps).
+    b.    Ties to usability and education WG
+3.    Lack/Prevalence of rewards for reusing data
+4.    Connections to the tool development community
+    a.    Watch for ways to integrate into cycles of identified tools
+5.    The “not invented here” syndrome among domain scientists
+6.    DataONE internal communication issues
+7.    Lack of institutional support and no incentive for data management planning
+8.    Planning for future “uptake” at the institutional level. Work in parallel to educate, create outreach materials, answer questions about adoption - provide "customer service" WHILE technologies are being developed.
+9.    Planned behavior theory to move intention to action.
+
+

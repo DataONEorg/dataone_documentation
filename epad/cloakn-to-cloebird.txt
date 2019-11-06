@@ -1,0 +1,114 @@
+
+
+ldapadd -c -D cn=admin,dc=dataone,dc=org -W -H ldap://localhost:389 -x -f cloeBird.ldif
+
+cloeBird.ldif
+
+dn: cn=urn:node:CLOEBIRD,dc=dataone,dc=org
+d1NodeBaseURL: https://dataone.ornith.cornell.edu/knb/d1/mn
+objectClass: device
+objectClass: d1Node
+d1NodeType: mn
+subject: cn=urn:node:CLOEBIRD,dc=dataone,dc=org
+cn: urn:node:CLOEBIRD
+d1NodeLastCompleteHarvest: 1900-01-01T00:00:00Z
+d1NodeSynSchdYear: *
+d1NodeSynSchdWday: *
+d1NodeSynSchdMday: *
+d1NodeContactSubject: cn=Kevin Webb A1685,o=Cornell University,c=US,dc=cilogon,dc=org
+d1NodeId: urn:node:CLOEBIRD
+d1NodeState: up
+d1NodeSynSchdMon: *
+d1NodeReplicate: FALSE
+d1NodeSynSchdSec: 10
+d1NodeApproved: TRUE
+d1NodeSynSchdHour: 1
+d1NodeSynSchdMin: 15
+d1NodeName: Cornell Lab of Ornithology Avian Knowledge Network
+d1NodeDescription: Cornell Lab of Ornithology's Avian Knowledge Network data and products
+d1NodeSynchronize: TRUE
+d1NodeLastHarvested: 2014-02-19T01:15:13.306+00:00
+d1NodeLogLastAggregated: 2014-03-09T13:56:30.603+00:00
+d1NodeAggregateLogs: TRUE
+
+dn: d1NodeServiceId=MNRead-v1,cn=urn:node:CLOEBIRD,dc=dataone,dc=org
+d1NodeServiceId: MNRead-v1
+d1NodeServiceName: MNRead
+d1NodeServiceVersion: v1
+objectClass: d1NodeService
+d1NodeServiceAvailable: TRUE
+d1NodeId: urn:node:CLOEBIRD
+
+dn: d1NodeServiceId=MNCore-v1,cn=urn:node:CLOEBIRD,dc=dataone,dc=org
+d1NodeServiceId: MNCore-v1
+d1NodeServiceName: MNCore
+d1NodeServiceVersion: v1
+objectClass: d1NodeService
+d1NodeServiceAvailable: TRUE
+d1NodeId: urn:node:CLOEBIRD
+
+dn: d1NodeServiceId=MNAuthorization-v1,cn=urn:node:CLOEBIRD,dc=dataone,dc=org
+d1NodeServiceId: MNAuthorization-v1
+d1NodeServiceName: MNAuthorization
+d1NodeServiceVersion: v1
+objectClass: d1NodeService
+d1NodeServiceAvailable: TRUE
+d1NodeId: urn:node:CLOEBIRD
+
+dn: d1NodeServiceId=MNStorage-v1,cn=urn:node:CLOEBIRD,dc=dataone,dc=org
+d1NodeServiceId: MNStorage-v1
+d1NodeServiceName: MNStorage
+d1NodeServiceVersion: v1
+objectClass: d1NodeService
+d1NodeServiceAvailable: TRUE
+d1NodeId: urn:node:CLOEBIRD
+
+dn: d1NodeServiceId=MNReplication-v1,cn=urn:node:CLOEBIRD,dc=dataone,dc=org
+d1NodeServiceId: MNReplication-v1
+d1NodeServiceName: MNReplication
+d1NodeServiceVersion: v1
+objectClass: d1NodeService
+d1NodeServiceAvailable: TRUE
+d1NodeId: urn:node:CLOEBIRD
+
+
+su postgres -c "psql -d metacat  -c \"update systemmetadata
+ set origin_member_node = 'urn:node:CLOEBIRD', \
+  authoritive_member_node = 'urn:node:CLOEBIRD' \
+ where guid in ( 'resourceMap_CLOEODMETADATA.06132013.1', \
+ 'CLOEODDATA.06132013.1', \
+ 'CLOEODMETADATA.06132013.1', \
+ 'CLOEODDATA.02182014.1', \
+ 'CLOEBDMETADATA.10242013.1', \
+ 'resourceMap_CLOEODMETADATA.02182014.1', \
+ 'CLOEODMETADATA.02182014.1', \
+ 'CLOAKN.11162012.1' )\"";
+ 
+su postgres -c "psql -d metacat  -c \"update smReplicationStatus \
+ set member_node = 'urn:node:CLOEBIRD' \
+ where guid in ( 'resourceMap_CLOEODMETADATA.06132013.1', \
+ 'CLOEODDATA.06132013.1', \
+ 'CLOEODMETADATA.06132013.1', \
+ 'CLOEODDATA.02182014.1', \
+ 'CLOEBDMETADATA.10242013.1', \
+ 'resourceMap_CLOEODMETADATA.02182014.1', \
+ 'CLOEODMETADATA.02182014.1', \
+ 'CLOAKN.11162012.1' )\"";
+ 
+
+
+
+
+evict 
+ resourceMap_CLOEODMETADATA.06132013.1
+ CLOEODDATA.06132013.1
+ CLOEODMETADATA.06132013.1
+ CLOEODDATA.02182014.1
+ CLOEBDMETADATA.10242013.1
+ resourceMap_CLOEODMETADATA.02182014.1
+ CLOEODMETADATA.02182014.1
+ CLOAKN.11162012.1
+
+
+delete Node structures urn:node:CLOAKN
+

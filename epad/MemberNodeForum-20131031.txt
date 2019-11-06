@@ -1,0 +1,88 @@
+Member Node Forum - 31 October 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 14 November, 5 December
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307  (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,  -20130530, -20130613, -20130627, -20130711, -20130725, -20130808,  -20130822, -20130905, -20130919, -20131003, -20131017
+
+Attending:  Laura Moyers, Inna Kouper, John Cobb, Amber Budden, Matt Jones, Rebecca Koskela
+
+Regrets:   Bruce Wilson
+
+Action items from last time:
+
+Laura to check to see if LTER's ("old") data had been replicated to KNB successfully - still verifying
+Laura to check with Matt and see where the draft replication policy change is after it was sent out for feedback - we think that, since there are some concerns about the change(s), we should have a sit-down with all affected parties and discuss - date/time TBD
+
+
+Agenda:
+
+0. Welcome new attendees - introductions
+
+1. Network-wide update and issues affecting MN's as a whole
+
+This shouldn't affect DataONE operations but FYI:  The server hosting Redmine, Subversion, and Git for NCEAS and associated projects will be moved from NCEAS to the UCSB data center this Sunday, November 3rd, starting at 2pm PST. Expected downtime is about 2 hours.
+
+2. Open issues:  MNs please add anything you would like to address here.
+    The DataONE All Hands Meeting was last week in Albuquerque. 
+   * The CCIT group team decided on a path forward for mutability. They plan to develop a prototype and make it available before the RSV in Feb.
+   * One item of particular interest was a demonstration of the MN dashboard.  We want to share the current prototype with the MN Forum - would a meeting next week work, or would it be better to wait until our next regularly scheduled meeting on 11/14? (we would like for Chris Jones to be able to join the MNF for that demo)  Since Chris will be away next week, let's plan on demo-ing at the next MNF on 11/14/13.
+
+    28 November is US Thanksgiving - with that and the Christmas break (for many of us) we would only meet 12 December?  Is this ok?  I can open the forum for other dates in December if needed.  LM
+        conclusion: Maintain the bi-weekly schedule (punctuated by holiday interventions)
+    
+    To ask Mike Frenock (PISCO): are other people able to add data to PISCO now to help with the volume of data?  Also, how is indexing going?
+
+3. Feature requests/opportunities for collaboration:
+
+ Laura to follow up on this: ~~~~~     
+      Kevin:  an observation: on CN.dataone.org/onemercury, the checkbox that says "only results with data"... what about a situation when the metadata has a link to the data for download?  This result would show up only when the checkbox is unchecked. 
+          Either DataONE holds the data (related to a metadata document) OR DataONE does not hold the data but there is a link to the data (for download) in the metadata document (risk there is that there are dead links)
+          Maybe make this clearer on ONEMercury - some help text, etc.
+          There are other MNs with data in this situation (link to data in metadata) where searches with checkbox checked or not may impact data discovery/access.  (SEAD will have data like this.)
+
+We have submitted a ticket in redmine to ask for this issue to be reviewed:  Task #4144: Evaluate "Only results with data" checkbox in ONEMercury         
+          
+          
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+
+SEAD (Inna and Kavitha) - experiencing some technical issues (see email traffic with Kavitha and Chris); since Chris is going to be out of town next week for GLEON, perhaps we can get someone else involved for some more immediate support.  SEAD All Hands meeting Weds/Thurs of next week.  
+    Kavitha to send email traffic to Matt
+    Matt to help find another developer to help in Chris's absence
+Question about resource maps - some of the data available via SEAD is quite large; is there a way to provide visibility without allowing download access?
+    SEAD is Tier 1, so cannot declare access other than "public"; Tier 2 allows access controls via system metadata 
+    SEAD will look at implementing Tier 2 to help the issue of not allowing access to large data files
+Matt to send info to Kavitha 
+ * Design document on how to handle DataPackages with large numbers of files:
+   * http://mule1.dataone.org/ArchitectureDocs-current/design/VeryLargeDataPackage.html
+
+Gulf of Alaska Data Portal (was GulfWatch) policy decisions made; waiting on SSL certificate
+
+Laura to check on URN for eBird/AKN -  https://redmine.dataone.org/issues/3604
+
+If  you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org or mnforum@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+DataONE survey to build understanding of data needs. "You are invited to participate in an NSF-sponsored research study, in which the DataONE (Data Observation Network for Earth, www.dataone.org) organization is investigating how scientists work. Your responses will help us better understand how scientists manage their data, which will then allow DataONE to better serve their data management needs. The questionnaire should take about 20 minutes to complete" https://utk.co1.qualtrics.com/SE/?SID=SV_aWxuyT94cZBsBb7
+
+contact points: 
+NEW EMAIL contact: mninfo.dataone@gmail.com   - This email monitored by DataONE staff.  I think we might migrate to   this being the primary point of contact for MN questions so we can keep  a  better handle on issues/resolutions.
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't forget irc.ecoinformatics.org, channel=dataone if you have an urgent issue.  CCIT folks are always there and can assist you.
+

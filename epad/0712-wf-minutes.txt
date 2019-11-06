@@ -1,0 +1,200 @@
+July 12th Workflow Meeting
+Present: Richard Littauer, Bill Michener, Karthik Ram, Bertram Ludäscher
+
+Tasks for the coming week (7/12 to 7/19):
+   * Continue going over the data. Blog about it, ask questions of Karthik or others if needed.
+   * Put this list on the mentor plan. 
+   * Send out a message requesting information on views vs. downloads. 
+   * Create a list of things that you would like to research from myExperiment - send this around when it is written. 
+   * Get the embedded information for the workflows, manually or otherwise.
+   * Get the embedded information for non-minable workflows. 
+   * Reupload the new datasets to the server.
+   * Mine the non-numeric columns using R in some way. Experiment with this. (I can help with this. We can summarize these numerically using regexp. Let's work on this via Dropbox).
+   * Load the new code onto Github.
+   * Load the example R code onto github. (If you do this remember that everything is public. If the goal is to share ongoing efforts, then be sure to annotate the code as you go along).
+   * Plot as much data as feasible to see what can be seen. (see the book on ggplot2 for examples. I use it everyday so if there are plots you are trying to visualize but cannot code up, let me know).
+   * Start a commented R code for all of the plots that are being done.
+   * Start putting plots into the Understanding Workflows document.
+   * Fill out the Understanding workflows document.
+   * Research papers for the draft that might be useful.(perhaps start something on Google docs and outline the sections?)
+   * Sort at least half of what papers we have. 
+   * Explore different graphing possibilites (box plots, etc.) 
+   * Send an email to David de Roure talking about what we're doing, asking for co-author advice and thoughts. 
+   * Earmark any ecology papers for Karthik. (it would be great if you could either tag these or move them to a sub-folder on Mendeley).
+   * Appraise whether its worth going over the other tiers, and what to do for the next two weeks. 
+
+Links:
+ * OKCon Recap: https://notebooks.dataone.org/workflows/2011/07/12/okcon-recap/
+ * Scraping description: https://notebooks.dataone.org/workflows/2011/07/12/scraping-the-surface/
+ * Scraping code: https://notebooks.dataone.org/workflows/2011/07/12/open-source-code-screen-scraper/
+ * Dropbox: https://www.dropbox.com/home/DataOne%20Workflows
+
+Previous Week:
+   * Put everything in the database using Karthik's server in SQL - all of the ripped information from the screen scraping of myExperiment. Taverna 1, 2, rm, and the other 8. All cleaned up.
+   * Blogged about the scraping I am doing, and about the OKFoundation Conference. 
+   * Good news: easy to mine this.
+
+Minutes:
+R: I realised today if I edit the script a bit, I can get a bit more off of the site - like the name of every beanshell, which will let us know what sort of workflows are being used or made. 
+
+Bertram: I'm looking at the graphs in the DropBox - any particular ones?
+
+R: Let's just go over all of them, there aren't many. Let's look at t2-views-downloads. I haven't yet found out what views / downloads really means. 
+
+Bertram: You used R to render this?
+
+K: Yes. 
+
+R: And SQL. 
+
+Bertram: Do you have that SQL code loded somewhere?
+
+R: I can store what I've done in R.
+
+K: Bertram, I've put a script in the dataone dropbox folder, which goes through the process of connecting to the MySQL database. Richard, you can put in the code for all of these plots, and it should work, if Bertram wants to run it for example. 
+
+R: I'm putting it into my github right now. I've loaded my screenscrape to github.
+
+Bertram: It'd be nice if as a result of this project we have some sort of code that can be reused for follow-up studies, that would be nice. 
+
+R: What I'm going to do this week is get more experienced with R, and try and see what I can get from the fields that aren't numeric. What sort of tags ar ebeing used? Etc. I'd also like to improve my beautiful soup code and get all of the names I can about the workflows themselves on myexperiment. We can then see what the details are for these sorts of things. 
+
+Bill: While we're on the graphics, let's go through each one. 
+
+Bill: If we run a best fit on t2-views-downloads, it might look quite different to the straight regression line. 
+
+Richard; I had one where I cut out the outliers for this, and it does look strange. It follows the curve of the lines.
+
+Bill: One real danger is eliminating outliers. I woudl encourage you to keep those in there. We don't know if they are outliers. The data is probably correct, if this is being scraped. Outliers are ok. If we're trying to make an explicit mathematical formula - such as this is the percentage of views that will get downloaded - you eliminate the outliers, but then you present both. 
+
+K: the one point that is a major outlier - at 8000 - is an exception, but is just very popular.
+
+Bill: That might be an outlier.
+
+R: I think downloads don't count as views - I think views is just people who've walked away without downloading. I'll send out a message, because i haven't seen news about this anywhere. 
+
+K: That 8000 is the QTL of a mouse. 
+
+R: It's the most complex, and cited, and might have the most for that reason.
+
+K: The ones at the opposite end are very simple workflows that aren't useful for a large amount of people. There are two that are log in and log out of a certain system - how useful would this be? It might be that more complex workflows are more downloaded and useful. 
+
+Bill: Those are all good points. It would be nice to nail that down and determine if that is the case. There's another one that has been viewed 2400 times but has zero downloads. Some of these workflows which aren't viewed much, but which are downloaded a lot, may be embedded in other workflows. Because the views/downloads definition would change things  a lot, so we need to look into that.
+
+R: It doesn't tell me if there are any embeddded workfows. Not true. I now have code that does this.
+
+Bill: Gettting these definitions is a high priority issue. Now, the tags vs. downloads graphs.
+
+Richard: shows that they're not really related. 
+
+K: The amount of tags might be a detailed workflow, which isn't applicable to a wide range of people. 
+
+Bill: t2-downloads-bip? 
+
+Richard: That's just a quite proxy for the amount of beanshells, inputs, etc. for complexity. The more you have of these, the more downloads there are. The more complex the workflow is, the more it is downloaded. 
+
+Bill: And then authors?
+
+Richard: The amount of authors stored in the metadata is stored for T2 only. 
+
+Karthik: It might be useful, Richard, for you to go through the other workflows that aren't taverna 1 or 2 to see if they are embedded or not - just yes/no. In any sort of regression that we do, it would be nice to keep that in as a covariate. That would parse out the amount of downloads. 
+
+Richard: I'll look into that. I'll do it for T2 first and see how fast it is.
+
+Bertram: how is this stored?
+
+Richard: SQL. Should I upload this code onto github? Another intern is using it.
+
+Karthik: Sure, that's fine. (Later: Don't include the server information.)
+
+Bill: Some of these individual workflows that tell a story it might be worth to store, if they tell a story, so that we can incorporate them into the publication. 
+
+Richard: I write down the conversation each week so that we don't have to go through and listen. 
+
+Bill: Any questions?
+
+Richard: My questions are really simple - like how do you query multiple databases at once, in R? I can just record these as I go along and send them to Karthik.
+
+K: And I can send back line by line.
+
+Bill: The next step then is clearly getting some definitions, in terms of what the terms are. I don't discount the possible benefit of having David de Roure as a coauthor to this, so as to get his view as well. He clearly has a tremendous amount of experience that we coudl draw upon as we're completing final pubs here. 
+
+Richard: I could fire him an email, describing what we've done so far. Hopefully he doesn't mind that we're screen-scraping.
+
+Bill: I don't think he'd care, and he'd have good input, especially as we move ahead. And it woudl be good to get his read on the paper as well. He might have some insights that we can work in, as well. I presume you have a list of other graphics that you would like to perform that relate to those hypotheses that we could come up with?
+
+Richard: I'll write that down and send it around.
+
+Karthik: It woudl be great if you could work that into your code - such as, 'we're creating this plot for x' - and then list the code below, so that we can edit the code with you. That's the nice thing about doing this in R. It's very self referential -we'd be coming up with a workflow to study workflows, and we can edit it and refine it with you as we go, with feedback. We edit the code, run it one more time, and then we have a different plot that we can save and use for publication.
+
+Richard: I would like to redo the screen scraping as close as we can to the deadline. What's the comment function on R? is it #? I can comment the R code, then. 
+
+Karthik: yes. Just follow the example in that example script, and then you should be good to go.
+
+Richard I'll do that.  
+
+Bill: Some of these workflows (on the authors graph) - where you have a situation where there is a limited number of responses, it would be good to have this as a series of box plots. It would be good to use different graphs for some of these.
+
+Richard: I'll explore some different graphing possibilites - means, medians, outliers, etc. 
+
+K: What are we trying to get out of this?
+
+Richard: this information is mined from the workflow metadata itself. Many authors haven't included their names in the metadata.
+
+Karthik: What are we trying to ask here?
+
+Richard: I assume that if you have collobaration in a workflow, you have more experience. If mult, than does this mean more downloadable?
+
+Bill: I would view this differently. I would look for a biforcation between 0 authors and 1 or more authors. If privacy/trust stops people from assigning their name to a workflow, and if the user doesn't know, than there is little trust that this is someone credible that might be worth citing. That might be something - using boxplots for this might help, as well. Also, in this case, authors would ideally be on the x-axis, with downloads on the y axis. As we look at some of these others, some might be best represented as a bar chart, etc. More discussions about this, probably next week, would be good. This is cool, it's awesome that you've gotten the --- one thing that you connected me to last week was a spreadsheet with only 50 workflows.
+
+Richard: That was one I did manually. It's pretty useless now, except to show what else we wanted to mine initially. 
+
+Bill: So we got most of what we wanted, except for some higher tier stuff, liek sufficiency of metadata, which we were looking for fields for. Is there anything we're missing?
+
+Richard: Other things: accounts necessary, grid or not, mines research
+
+Bill: Some of these may not be as important. You're mentioning which package it comes from?
+
+Richard: Yes.
+
+Bill: A key thing missing is embedded workflows. 
+
+Richard: Yes. I need to get that. 
+
+Bill: So, the amount of text is a surrogate for metadata. Would be useful to mine this. Would also be useful to get a fairly simple narrative in terms of 'here are the hypotheses', 'here is the protocol we're using', and then as the results pop up, you can embed it in there. It sounds like you anticipate having a lot more of that next week. At that point, we should be able to give you more guidance before we meet. 
+
+R: Yeah, I hope to wrap up getting the data next week, and then just think of ways of analysing it and getting it up.
+
+K: It would be good to talk about it with us, as well. I like the idea of fleshing out the manuscript - away from etherpad, and onto a google document. So that we can start formatting it and fleshing things out. 
+
+Richard: Yeah, sorry for not talking as much this week.
+
+Bertram: I just want to second getting David de Roure on board. How can we get him involved in this? Once we have a high-level overview or something, getting him on would be good.
+
+Bill: And it'll certainly carry a lot of wait. bertram, is that a meeting of graduate students?
+
+Bertram: <talks about children in the room behind him.> 
+
+Bill: Any other questions or comments? Karthik, as well?
+
+Richard: Your deadline for the conference is the 25th, Bill?
+
+Bill: Clearly, we don't want to put too much in there, other than some teasers, and I can certainly talk about other aspects of DataONE at this particular conference. If we can just pull out some very high level highlights - I don't want to detract from other venues for this. When we're face to face we can talk about this. At some point, it might be more beneficial to go by the PLoS round or something like that, as some of the questions we're addressing are quite broad interest. Others that are more specialised - computer science and so on - although they might be interesting, they might not have an impact on the broader community. If we keep our results and discussion on the broader community, our scientists do work, it might be interesting.
+
+Richard: If you told me what to do, how I can help, for the 25th paper, I'd appreciate it. As I don't have any experience writing a paper like that.
+
+Bill: I'll check out the site, and see if I can have a proposal next week. This is a 1000 word abstract for the digital curation conference in Bristol. You don't necessarily have to publish there - I was there two years ago, a plenary, but published in another journal that had a broader reach. These have a peer-reviewed journal, but to get accepted and give a talk you don't necessarily have to produce and give a full-blown paper. 
+
+Richard: I'll be very close to that, as well. I'd be only a day away.
+
+Karthik: I'm still not sure where I want to pitch the review article. Because Methods seems a bit narrow. Trends in ecology would be a good route to take this.
+
+Richard: If we target it at ecology - this isn't the only resource we have, we have a lot of research that I've gotten. Much of those are Kepler, and much ecology - we can use those as the main resource, and use this database as an extra bit. We can mine those for information, and that would very much sit ecology. It's possible to aim it that way. This database is great, but it's not the only resource we have from this effort. 
+
+Bill: Ok, sounds very good. I guess we're all booked for flights. 
+
+Next meeting: Friday might work, but let's say a tentative Tuesday. 
+
+Tuesday 19th, 5pm ET, 2PCT, 10pm GMT. 
+
+

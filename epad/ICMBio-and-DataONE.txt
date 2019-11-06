@@ -1,0 +1,46 @@
+ICMBio and DataONE - 28 August 2014
+
+Attendees:  Rodrigo Jorge, Katia Ribeiro, Suzie Allard, Bruce Wilson, Laura Moyers, Mike Frame, Pedro Correa
+
+Introductions
+
+This is an exploratory meeting to talk about ICMBio, DataONE, and how we may work together, particularly ICMBio as a DataONE Member Node (MN)
+    Short Introduction about DataONE member node (Laura)
+ * https://www.dropbox.com/s/zaxjrqua9s7mil4/ICMBio%20DataONE%20MN%20overview%2020140828.pptx?dl=0
+    Short Introduction about ICMBio Inventory of Biodiversity Data for Decision Support in Brazil (Rodrigo) 
+ *  https://drive.google.com/file/d/0B4PbbU-6hxUKc3prdDRBUWhVdnM/edit?usp=sharing
+    Clarification about DataONE member node (all)
+    Agenda for the next steps (all) 
+
+Comments from the Skype call:
+
+[4:18:44 PM] Bruce E. Wilson: Link to Laura's slides: https://www.dropbox.com/s/zaxjrqua9s7mil4/ICMBio%20DataONE%20MN%20overview%2020140828.pptx?dl=0
+[4:25:32 PM] Mike T. Frame: Ecological
+[4:36:57 PM] Mike T. Frame: perfect
+[4:50:54 PM] Laura Moyers: This is great!!  We have been looking at the ALA!
+[4:52:04 PM] Bruce E. Wilson: Note that the USA National Phenology Network is an existing DataONE member node and we've had some significant work with a Citizen Science (public participation in scientific research) working group.
+[4:52:09 PM] Laura Moyers: Wow... that's a lot of data!
+[4:54:26 PM] Mike T. Frame: Some comments: Do you want to generate Collection Level Metadata (i.e. BISON, Cornell Bird Lab.) for the occurrence data?  Do you have existing EML for this Occurrence Collections? Finally, I think work that GBIF is doing, that Pedro, Giri, and Tim Robertson are coordinating is very relevant here to this effort. Last I saw that work will be moving forward later in the calendar year
+[4:56:06 PM] Allard: You mentioned indigenous knowledge -- is that part of your citizen science component? or are experts collecting that from indigenous peoples?
+[4:58:53 PM] rodrigospjorge: In relation to traditional knowledge - people are getting involved in generating data for managing their own resources, with some data going to the general system. But our research center is more involved in investigating areas of traditional use, perceptions related to traditional management and so on. But citizen science is a tool in mind
+[4:59:12 PM] Mike T. Frame: Just verified that GBIF will not be finishing its development unit probably next Fall (Aug 2015) from the most recent note.. So, that should be factored into the planning and timeframes.
+Rodrigo - When will your data become more widely available in Brazil (After Jan 2015)?  That should be done first I believe
+(Expect to launch the Data Portal later this year (perhaps November/December 2014) and spend some time gathering feedback once it is deployed.  Anticipate looking at ICMBio and DataONE collaborations spring 2015 to allow adequate time for deployment/refinement of the Data Portal there.)
+
+Katia asks Mike: relationship between USGS and USAID
+    USGS - focus on US natural resources research, in the Department of Interior so work primarily within US borders
+    USAID - broader focus
+[5:07:30 PM] Mike T. Frame: www.usgs.gov is a good reference for what we do in the United States
+ 
+    
+Next steps:
+    Bruce will be on campus at UT 11 September  
+    Laura will set up a Doodle Poll to see when everyone is available to meet next
+    Pedro and Bruce (and others?) to talk in detail about the architecture of the data portal (data, metadata, back-end tools, etc.) to facilitate both the data portal development and future DataONE MN development
+    Rodrigo and Katia would like to bring their director into these discussions
+
+[5:17:56 PM] rodrigospjorge: Thanks everyone!
+[5:18:19 PM] rodrigospjorge: https://drive.google.com/file/d/0B4PbbU-6hxUKc3prdDRBUWhVdnM/edit?usp=sharing
+[5:18:52 PM] rodrigospjorge: those are our slides!
+[5:19:21 PM] Pedro Luiz Pizzigatti Corrêa: Thank you Rodrigo
+

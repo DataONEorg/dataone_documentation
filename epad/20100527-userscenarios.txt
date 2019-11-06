@@ -1,0 +1,48 @@
+User Scenarios
+
+EVA Experiments
+Tell the story of searching for and retrieving the data that goes into the EVA bird migration example. 
+In future years, future prototype demos will expand to show the end-to-end process more completely, as the Toolkit capability increases. 
+Pro: good visuals!
+
+Simple search and retrieve
+
+Storing content back to the D1 infrastructure. Contributing data to the infrastructure.  Including metadata definition, everything necessary for preservation, statements on usability, access control, data quality.
+
+As a reviewer, I would like to replicate experimental results so as to assure published findings can be preserved for re-examination years into the future. (Replication of an experiment - published finding needs to be re-examined x years into the future)
+
+
+As a Researcher, I would like to analyze seasonality of river flows to study breeding opportnities for rare fish.  Coincidence of high water and spring season.  
+
+Researcher has some data (on their desktop) but would like to retrieve relevant / compatible content from D1 (query by example perhaps)
+
+Meta-analysis of <some topic> that requires integration of many data sets to address some pressing issue.
+
+As a potential user, I would like an example of retrieving data from multiple sources so as to evaluate DataONE's capabilities.
+
+As an educator, I would like to generate a teaching activity using raw arctic ice loss data in order to show students that it is a real phenomenon. I would also like to link to biological data on marine and terretrial populations so as to demonstrate the present impacts of ice cover reduction and possible future impacts of ice loss.
+
+
+Cornell Lab of Ornithology has created a number of model runs for the EVA workflow relating to the migration of birds.  How would this data (and relevant preservation, discovery, and science metadata) be archived in DataONE?
+
+As a researcher interested in bald eagle populations, I'm generally aware of literature about studies of re-emerging bald eagle populations.  I want to find the data associated with the publications I know about, and then query for "more data like this" so that I can conduct a meta-analysis of population trends in bald eagle populations.  A literature search (e.g Web of Science) will turn up published literature studies, but is unlikely to yield results for operational agencies or citizen science data.
+
+Go back to a couple of examples, like the Halpern et. al. study of ocean vulnerability and the Sebastiaan Luyssaert et all synthesis of NPP data.  Extract the steps required as science use cases.  
+
+As a researcher, I would like to share my collected data with the world.
+
+As a researcher, I would like to make sure my collected data persists even if (when) my hard disk crashes.
+
+There was an NCEAS project that NBII was involved in years ago related to river restoration.   Very manual effort to take all of this data for the past 50 or so years, do the analysis, etc.   Would also be a good reference to look over.
+
+Allan Knapp and Linda Smith study on annual net PP across LTER sites.  Revist that study with additional content available through D1 infrastructure.
+
+Members (contributors) would like to see usage of their data in DataONE, statistics, feedback, etc.   
+
+Ability to annotate data sets, and perhaps search by annotations (interested in datasets considered interesting by X) - Also need to provide the annotations back to the source or contributor.   
+
+NSF now requires a Data Management plan as a mandatory component of every grant application. Use the Python-based MN implementation to show how any grant applicants can use the prototype to share and preserve the data they are collecting through the DataONE ecosystem.
+
+Use of DataONE in a classroom setting to enhance topical learning as well as enhance training of metadata management methods for students
+
+

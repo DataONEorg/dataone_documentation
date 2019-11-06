@@ -1,0 +1,66 @@
+DUG ITK session planning
+
+10:20-12
+---------------
+20 min: ITK intro: Matt
+    PythonCLI (cover in intro)
+    -- overview and feedback
+    ONEMercury (lower priority) (mention Mary Beth)
+    -- overview not needed
+    -- what new features or redesigns should be considered
+    -- shouldit be a social networking app?
+    -- other radical departures?
+    Other tool ideas, prioritization of existing tool efforts
+        https://repository.dataone.org/software/allsoftware/demos/implementation_ws_2/itk-tool-prioritization-by-lifecycle.xls
+
+Morpho (30) (Matt)
+   - how to satisfy different user groups
+      -- institutional users
+      -- individual users
+      -- how to interact with MNs
+      -- work prioritization
+      
+DataONE-R (30) (Matt)
+    -- demo of capabilities
+    -- feedback on how to handle search
+    -- feedback on current feeatures
+    -- intermediate data products issue
+
+13:00 - 14:40
+--------------------
+
+DataONE Drive (30) (Matt)
+   -- Design discussion
+
+15 min: DataUp Intro (Carly)
+45 min: DataUp discussion
+     Objectives: 
+         1) Feedback on capabilities/features
+         2) How to engage community/sustainability
+         3) Priorities for further DataONE development investment in tool
+             a) use the DataONE API so people can upload to Tier 3 nodes
+             b) ...
+
+General wrapup., questions: 10 minutes (Carly)
+
+Day 2: 10:20 - 11:10 (40 min speaking, 10 min questions)?
+------------------------------
+General ITK info (Matt) (10)
+   Assurance
+   -- checks in various tools (DataUp, Morpho)
+   - LTER QA checker
+   - R
+Acquisition
+ * Morpho (Matt) (6)
+ * KNB: (6)
+ *    Web tools -- why don't we have these? We do for individual MNs.
+ * Dryad: submission process (4)
+ * Submission to Mercury (4)
+ * DataUp (Carly) and Merrit approaches(10)
+   
+
+
+
+
+
+

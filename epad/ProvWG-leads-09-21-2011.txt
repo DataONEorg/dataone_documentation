@@ -1,0 +1,132 @@
+http://epad.dataone.org/ProvWG-leads-09-21-2011
+
+Present: Bertram, Paolo
+
+* D-OPM discussion
+-- need to add *dependencies* (currently only read/write observables)
+-- role of roles (cf. W3C WG)
+- example: 
+-- input: [int] e.g. l= [4,3,1,4,2]
+-- output maximum element of list ==> 4 (which one, btw? ;-)
+What's the "right" / "best" provenance for this?
+(note that max is a FILTER: the outputs will be identical to some of the inputs!)
+The provenance of the filter is such that it will record some "oid_identical" assertions, and some "no_good" assertions
+
+We might have e.g. 
+4 --identical_to--> 4_2
+4 --no_good-->  3, 1, 2  
+4 --weakly_depends_on--> [4_1, 3, 1, 4_2, 2] = l 
+
+capturing some (not all!) of the max-semantics by looking at it as a FILTER
+
+so "max" in a sense is a SUBTYPE of FILTER
+(=> add discussion of this to agenda!)
+such as MIN,... 
+(cf. the "Theory of Lists" by Bird;
+also Cheney's work, and
+early Widom work on lineage)
+
+
+one idea: try and reuse the well-known distinction between why, where, an how provenance from databases (Buneman)
+but note that in DB provenance, one is interested in the "positive" provenance: what that is in the answer to the query -- I wouldn't include the entire complement of the query answer! 
+
+[[ cf. Cheney's writings ]]
+Questions: can or can't you point to the container?
+If the container is e.g. a folder, saying that the output (file) depends on "the folder", isn't saying much.
+
+Another example (making the above a bit more realistic):
+Consider an input collection of "candidate (phylogenetic) trees" Ts =  [t1, ..., tn]
+Now assume that you're trying to come up with a "consensus tree" tc of this.
+The way this might be done is by
+(1) keeping the "best trees" T1s = [t_j1, ...t_jk] 
+(2) computing an "aggregate" of these: tc := foo(T1s)
+
+For this example, instead of the "mechanical" recording of what went in and out, a more "semantic" (-ally meaningful) provenance record would state that:
+-- certain trees t were "looked at but discarded"
+-- other trees t were "looked at and used"
+-- the output tree tc is some foo-aggregate of the latter.
+
+To encode this as simply as possible, one could make pairwise links from tc back to the t's in the input, and using a label that represents the "right" kind of dependency ..
+
+The "GoldenTrail" here excludes Ts \ T1s, that is, those trees that didn't make the "cut", and instead includes the T1s (and their lineage).
+
+==> propose a vocabulary of dependency relations (probably a taxonomy if not ontology of those dependencies: some imply others; e.g. if y _same_object_as x, then y _depends_on x)
+
+
+
+
+
+Action items:
+* Finish the postdoc ad below (Bertram); check with Shawn; then send to Bill, Rebecca, Dave
+
+
+
+DataONE Semantics PostDoc 
+https://www.dataone.org/content/post-doctoral-position-dataone-semantics-and-integration-working-group
+
+- survey:  state of the art in provenance management infrastructures for science.
+  - there is a need for openness (open model, open source, extensibility) and interoperability (between provenance models of different systems, different formats, .. )
+- design and development of the provenance management component of the DataOne Cyberinfrastructure.
+  - gather DataONE requirements ->  liaison with CCIT
+  - gather interoperability requirements -> liasion with stakeholders
+  starting points:
+  - D-OPM initial model
+  - DataToL prototype
+  - goldenTrail prototype
+  
+  - research: study and compare models of provenance; interoperability between models; common model
+  
+  
+Draft Job Description:
+merge the following with the draft below:
+- work provenance repository, combo of DToL and GoldenTrail
+- working with Kepler, Taverna, Vistrails, Galaxy, R? 
+- liaison with CCIT
+... 
+
+New story: (get this out prior to DataONE AHM!!)
+- provenance is cool, ubiquitous, hot topic: 
+-- .. to support..  reproducible science 
+-- pervasive across multiple areas of science
+
+why provenance:
+-- trends in open science & scientific pubs: publish data  + "methods" (workflows) + provenance: "digital objects" (DO)  - publication, sharing, reuse
+
+Provenance is an integral part of this vision.
+
+but this requires a new kind of metadata infrastructure. must provide
+- interoperability of data models and tools for provenance description and management
+- applications that can generate, publish, retrieve, and consume DOs.
+- on a large scale
+
+- DataONE has bought into this vision and is a stakeholder
+the ProvWG within DataONE is responsible for making it happen
+
+WE NEED YOU!
+
+- there's a big, visible project (DataONE) working on it
+- you can be part of that..
+
+Trend in science, enabled by new technologies in data-intensive science:
+- to publish results together with datasets that support the findings
+
+is linked from the publication. 
+
+
+Draft Advertisement (starting from Semantics WG ad):
+
+[[ CHANGE THIS OPENING STUFF ]] 
+DataONE, which is headquartered at the University of New Mexico (UNM), is recruiting a post-doctoral associate to work with the  Provenance in Scientific Workflows Working Group of the DataONE project. This is a full-time, 12–month position that is renewable up to three years. The physical location of where the Post-Doctoral Associate is located is flexible. 
+Applications will be accepted starting immediately and will be accepted until the position is filled.
+
+The Data Observation Network for Earth (DataONE; http://dataone.org) is developing the foundation of new innovative environmental science through a distributed framework and sustainable cyberinfrastructure that meets the needs of science and society for open, persistent, robust, and secure access to well-described and easily discovered Earth observational data. Supported by the U.S. National Science Foundation, DataONE will ensure the preservation and access to multi-scale, multi-discipline, and multi-national science data. DataONE seeks to transcend domain boundaries, making biological data available from genome to ecosystem and making environmental data available from atmospheric, ecological, hydrological, and other earth science sources. This broad disciplinary focus brings many challenges in the description, publication, discovery, and integration of datasets across multiple disciplines.
+
+The post-doctoral researcher will work with an interdisciplinary team of researchers from across the country in designing and implementing provenance technologies within the DataONE Cyberinfrastructure. 
+
+Provenance technologies include a broad range of standards, methods, and tools that will enable DataONE to sustainably achieve its objectives for the interpretation and meaningful exchange of datasets within the Earth observational data community. This will enable a broader range of data-driven science and the kinds of cross-disciplinary science necessary for addressing today’s emerging science problems.
+
+Responsibilities: The successful candidate will work as an integral member of the DataONE Provenance Working Group to develop and document use cases; evaluate standards, tools, and technologies; participate in the development of a roadmap for research and implementation of semantic technologies within the DataONE cyberinfrastructure; facilitate collaboration with other relevant research projects and efforts; and complete targeted prototyping and technology implementation tasks in collaboration with the DataONE Core Cyberinfrastructure Team (CCIT).
+Required Qualifications: PhD completed or near completion in Computer Science, Information Science, Earth/Environmental Science, or equivalent. Interest in semantic approaches to data discovery and integration and be broadly familiar with data in the earth/geosciences domain. The successful candidate will have strong interest in and knowledge of semantic technologies. Demonstrated excellent communication skills through a record of publication and public presentation and a strong interest in advancing the scientific endeavor through facilitating better access to and integration of scientific data. The successful candidate will be expected to engage in professional development training opportunities and seminars. The successful candidate will also be expected to travel several times per year to Working Group meetings and for presentation of DataONE work at professional conferences.
+Preferred Qualifications: Interest in and experience with earth or environmental sciences and the types of data used within these disciplines.
+The post-doc will work under the direct supervision of Dr. Deborah McGuinness (RPI) and Dr. William Michener (UNM). Interested candidates should send a CV, a brief statement of interest in this position, and a list 3 references and their contact information to Rebecca Koskela (Executive Director of DataONE; rkoskela@unm.edu), DataONE, University of New Mexico, 1312 Basehart Drive SE, MSC04 2815, Albuquerque, NM 87106. Inquiries for further information about the position are welcome. Salary and benefits for this position are competitive and commensurate with the applicant’s qualifications and experience.
+

@@ -1,0 +1,77 @@
+Attendees: Trisha, Bill, John Cobb, Bertram, Stephanie, Bruce, Dave, Steve, John Kunze, Hilmar, Viv
+
+Regrets:  Rebecca, Amber, Bob Cook, Mike Frame
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+
+1.  Please join my meeting, Mar 16, 2012 at 9:55 AM PDT.
+https://www1.gotomeeting.com/join/409927801
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (267) 507-0006
+Access Code: 409-927-801
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 409-927-801
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Will also use the epad: http://epad.dataone.org/2012Mar16-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-03-16
+ 
+1.   CI Status (Vieglais)
+Setting up sandbox environment and then UNM installed a new intrusion detection system and shut everyone out and then sporadically shutoff various services.  Very disruptive, but a few things were learned.  Hard to understand why some things worked and other things didn't.  Unable to access UCSB LDAP.  Came across a few bugs, and now fixed.  Sandbox is now up and running. Dave will provide info on URLs etc to the leadership team. Latest bug fixes have been succesful and everything is working.  Going to push dev to sandbox over the weekend and more elaborate testing over the weekend. Testing will include a limited amount of metadata and data. 
+
+Maybe write up a a "lessons learned" on the perimeter security DoS since this sort of thing is liekly to repeat. I.e. how to identify when this is happening to one or more nodes and how to respond/adapt.
+
+2.   PPSR meeting prior to ESA in August (Michener)
+  DataONE agreed to support a CS (citizen science, not computer science ;-) meeting that will be held in Portland on August 4th and 5th.   The costs are small since a foundation is also supporting the meeting. This is a teriffic opportuniting for DataONE as this is the first time that CS will all be pulled together in a single meeting.  Some will already be in Portland for an informatics meeting.  Others will be there on Monday (exact date?) for a data mangement meeting.  People to help out are needed... Carly can probably help, but let me check with her.  
+
+3.   National Climate Assessment Meeting Update (Michener/Vieglais)
+Nancy Grimm made the connection with the new release of NCA and DataONE. An opportunity for DataONE to connect with this group.  The report generates quite a bit of attention. (someone came into my office, so I lost the first part of this so Bill/Dave fill-in)
+This is viewed as a great opportunity for DataONE: the idea of creating a living publication that includes content that is continually updated (how do you trace the content as it changes is a challenge); how to associate all the varioius data compontents and track those over time; citation formats is another challenge; all of these pieces are a very interesting use case that DataONE should be able to support. If DataONE can take this as a use case it would be very beneficial to see if we could support this.  NEXT STEPS: 1) beaucracy on NCA's part; 2) they need to get organized; 3) a potential meeting; 4) offered guidance and consultation down the road; 5) contact Nancy Grim and let her know that we are acting on this; 6) map out the use case, EVA working group is looking at this, also impacts the provenance working group and this might be a good use case for them. 
+
+
+4.   Member Node priorities (Michener)
+
+Some of us (BRAD) are getting many requests to become MN and coming from many different communities.  Perhaps we need to fomalize and establish principles and establish a process to review requests and bring on new members nodes.  What communities do we want to target?  Do we want a 1000 flowers bloom or do we need to target groups.  A smaller group to work on this.  The small group would include BRAD, someone else from CI, library, science and community engagement. We need to be strategic about this and that needs to be reflected in the princples. CI: John Cobb;  Library: Trisha; Community Engagement: Suzie; Government: Mike Frame; Science: Stephanie.  Rebecca or Amber will launch this process.  Bill will talk to Mike, Suzie, and Stephanie to see if they are interested in participating. 
+
+It is timely to have this discussion. It might also be good to have a DataONE mini-"charrette"  ;> to gather a few LT and greater Dataone community white papers about how to proceed.
+My feel: thinking about howto scale MN's without inflicting resource demands on CI and DataONE resources. John Cobb
+
+Observation (Trish) We need to work to reach a consensus about how to proceed with MN recruitment. At times it has seemed that we have multiple opinions about how to proceed.
+
+5.   Around the Room
+
+Mike Frame (by email):
+We  (Usability & Assessment) have sent out Agenda's for our Joint meeting with SC (Sociocultural WG).   Looks like the meeting will be a good mixture of "hands-on" usability testing and some of our traditional assessment work.  We are still confirming participants, several still have not RSVP, but logistics are being finalized.      
+
+The USGS DataONE Workshop registration and announcements have gone out in USGS.   I did invite EPA to also participate, but have not heard back from them.   Day 1 of the meeting will be available via Webex.   Day 1 will be more general in nature and Day 2 will be more hands-on sessions focusing on DataONE cyberinfrastructure tools.   
+
+John Cobb: Nothing to add
+
+Steph: Sorry, I need to run! ... upcoming 'Trends in Ecological Analysis and Synthesis' Symposium in Santa Barbara next week, hosted by NCEAS, will feature ecoinformatics and data sharing - e.g., Bill and Matt, CEE WG member Josh Tewksbury will be on a panel
+
+Bertram: Greetings from Bob (briefly met with him this morning in Davis).
+I'll attend the upcoming EVA WG meeting in Boulder, CO as discussed before.
+Goal is to see how we can link up EVA use case and ProvWG work.
+Agenda for pre-IPAW meeting of ProvWG still being finalized.
+Idea that the EVA/National Climate Assessment use case should become a driving use case for the WG... ==> need someone at the UCSB meeting in June to present the use case!
+(and ideally from the CCIT as well: Dave!?)
+
+We are very close to turning on the AKN website as a member node to DataONE. We are now working through Cornell Legal  to make sure  that statements of useage are ok. This shouldn't be a problem. 
+
+John Kunze:  Discussed (Carly, Trisha, and Dave V) need for DCXL landing page, perhaps hosted with DataONE, that directs Excel add-in users to repositories that might accept their data.  This might be complemented by setting up a DataONE MN that specializes in low-barrier submission for folks who have no affiliation with a DataNet project, maybe gated by size and frequency of deposit.  With an unfunded role, UC3/CDL is joining a data publication / data paper proposal to JISC homed at the British Atmospheric Data Centre (BADC).  BADC doing full-blown data paper, CDL doing a very lightweight data paper (like an extended citation).
+JWC: Perhaps we can point to a low barrier to entry MN such as KnB and invite them to deposit to KnB or Dryad and index into DataONE -- ???
+Question: need to establish a low barrier member node. 
+Example to benchmark: HubZero offers low barier personal repository services
+
+Viv: 1) Working with Mike F on DataONE-USGS Member Node Workshop in April. We have 11 registered in one form or another so far, and will be advertising further. One issue is very restricted travel for Federal gov't employees. 2) Also, working with Amber on the May Data Management Workshop. We have 7 trainers lined up to help present the modules and we are nailing down the exact date so we can begin to invite students to attend. :)
+
+

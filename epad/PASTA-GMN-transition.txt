@@ -1,0 +1,46 @@
+
+Process:
+
+1. We're keeping the same Node ID.
+2. Update all sysmeta for the old objects to create 2-3 replicas.
+3. After replicas have been created, archive them.
+4. Set replication policy on old objects to block LTER.
+5. Bring PASTA-GMN node online at same Base URL and Node ID.
+6. CN will pick up all the new objects and we have already manually handled all the old objects.
+
+
+
+>> 2. Any existing content that LTER wants to deprecate should be replicated to 2 replica servers and archived, so that people that have used and/or cited those existing packages don't get abandoned. The KNB has a copy already and is happy to host these.
+>
+> Agreed.
+
+
+
+>> 3. If LTER is planning to no longer host those obsoleted data packages/records, then we need to ensure that we can support that (i.e., that the Replication audit doesn't try to force a copy to exist at LTER);
+>
+> Should we pull some more people into the meeting to determine this?
+
+- Chris not available. Will find out what the current support for this is.
+
+
+>> if possible, I would leave the AuthoritativeMN set to LTER for the deprecated content, as they are still the control point for that content, even if they aren't hosting a copy.  I'm not sure how that might work with out replication audit.
+>
+> I may have missed something here, in the GMN implementation, if the Authoritative MN plays into authorization for object access. Will bring up on Monday...
+
+Not sure how the authoritative MN can operate with content that is not held there - not even system metadata. Need to check through the methods and their reliance on this property.  Definitely the origin member node should remain LTER, but I would have thought the authoritativeMN would switch to one of the replicas.
+
+- There are CN calls to update sysmeta, but are those deprecated by the change to having MNs be authoritative for sysmeta?
+
+
+>> 4. If deprecated packages conceptually represent the same data as newer packages, it would be best if the new packages are marked as obsoleting the old packages (and vice versa), so that people that have used or referenced the old data can find the corresponding new data sets. 
+>>
+>
+> I agree, but I'm not sure it can be done through the existing APIs. MNStorage.update() requires the object that is being deprecated to exist on the same node and be writable by the caller. In this case, the object being deprecated will be on another node.
+>
+
+Darn. There's always another edge to consider. You are exactly correct that we do not have an API to support this operation.
+
+- Suggestion: We don't have to resolve this one now, as there is little value in the old objects and unlikely that they have been in use. Instead, simply archive the old objects without updating them and add an agenda item for the CCIT meeting to determine if we need a new API method, or improvements to the existing method, to handle this type of situation in the future.
+
+
+

@@ -1,0 +1,188 @@
+Note to accompany Telephone conference
+
+Topic:
+
+Coordinates: 
+Tuesday, Oct. 16 13:30 EDT, 12:30 CDT 11:30 MDT 9:30 AKDT
+Telephone: 877-416-7592 conf. code 9171592
+    (If for some reason a problem with the telcon line emerges, watch the epad location for alternate call-in arrangement)
+Etherpad at <http://epad.dataone.org/20121016-XSEDE-suppl-disc>
+
+Invitees
+Cobb, John
+Cook, Bob
+Jones, Matt
+Steve Kelling (or Dan Fink or Kevin Webb in his absence
+Koskela, Rebecca
+Michener, Bill
+Silva, Claudio (or Jorge Poco in his absence)
+Vieglais, Dave
+
+Attendees:
+Cobb, John
+Cook, Bob
+Jones, Matt
+Koskela, Rebecca
+Jorge Poco in his absence)
+Michener, Bill
+Vieglais, Dave
+
+Regrets:
+    Claudio Silva
+    Steve Kelling
+
+Action Items:
+1. Target submission date to submit: End of next week?
+2. We need an outline soon with writing assignments (Cobb ASAP)
+3.
+4.
+
+Dave:
+Assuming: Large amounts of data and large amounts of processing - that would be an ideal scope. Batch processing.
+
+Bob: Also have the data come from a member node.
+
+Matt: How much data?
+Bob: Several Tb
+Jorge: "It is alot of data that we need to process.
+
+Bob:
+Last Summer Jorge set up model on a lap top and could run a few years.
+We wouldlike to run 
+We would like to do 20 years and global land domain at 1/2 degree. WE would like to do more
+
+we are looking at 10-100X effort of a laptop
+
+The workflow was to take information subsets and process
+
+Data is in NetCDF format and available via ftp and/or THREDDS
+
+Matt: That argues for setting up a node within XSEDE.
+
+Q (Matt) Is the dataset static?
+A (Bob) The modeling groups are contributing data (up to 10 now) once dat ais contributed, it is stable but we are getting new depositions from new teams.
+
+The projectd we are running this for runs for another 15 months.
+
+Developing the workflow would be beneficial
+
+Matt: How does UVCdat get data now?
+A Bob reads NetCDF files.
+
+Jorge: WE were reading from NetCDF but we could implement additional protocols
+
+Matt: It sounds like a similar effort 
+
+Cobb: output? interactive or stored?
+A: both
+
+Cobb: What about additional contributions?
+A: Bob: 
+
+We are also looking at North America at 1/4 degree.
+
+Ecosystem processes, every month for a time period.
+Computation, analytical, numerical models.
+
+Some models give different 
+most are looking at carbon, land-cover, and nutrient cycling
+There are other infromation.
+
+We do have 5 different scenarios for the globa( and North Amercia)
+
+Bob: So we are looking to develop an EAGR
+Bill: Actually we are looing at a supplemental proposal. I would keep it in the couple of hundre K$
+
+Matt: so if we were going to do this,then
+1) Setup MN in XSEDE
+2) replicate the data into XSEDE-MN
+3) Access from within an XSEDE during UVCdata runs
+
+UVCdata funded by DOE
+Code repo is at LLNL
+pick a verions of UVCdat
+
+Q: What is the Sci Highlinght?
+A: Improved understanding of global ecosystem models for data intensive cases.
+
+Matt: Do we want the node to persist?
+
+This is kind of a file management and staging issue.
+
+Matt: a Few TB, but how many files?
+A: (Bob) a large number
+
+Data owner is LLNL Dean Williams is open to collaboration
+
+ILAMB issues
+modelling
+benchmarking (particularly with observational input/valididation)
+
+So there are 2 subtasks
+A: developing modelling analysis WF
+B: Developing observation data corporation and validation
+
+XSEDE interaction
+
+Dave:
+size of persisten storage
+persisting 
+number of objects
+
+We may stress DataONE metadta traffic if we have a few millions objects.
+(but we can adjust granularity)
+
+Dave it would be good to set up a workflow to show the content that can be managed this way.
+
+My concern is that the the DataONe infrastructure might be stress tested.
+
+That could help us 
+
+Agenda:
+1. Overview of Supplemental effort to connect DataONE and XSDEDE
+    focus on EVA eBird, ILAMB, or both?
+2. Boundary conditions
+    a. Connect DataONE and XSEDE
+    b. Have a finshed result sufficently before the RSV
+    c. Hope for a long-term effort hat will esatablish an ongoing effort, hopefully self-sustaining
+3. Proposed scope of work
+4. Next steps and goals for submission 
+
+Tasks:
+
+set up a XSEDE interface 
+    Gateway
+    contact
+    potential MN "machine"(s)
+    build a MN instance
+UVCdat
+    deposit files
+    access files
+XSEDE allocation
+    data store
+    data acess
+    
+    
+Resources:
+    Someone like Nick Dexter before. (Need to identify person)
+        maybe 1/4 or 1/2 time systems, developer, analyst person to deploy DataONE SW systems
+        We may need to adapt XSEDE's data management stack
+        
+so we need a person who
+    understand DataONe
+    understand XSEDE
+    cna help adapt mistmip effort to working
+    
+    
+David Koop and Jorge were at the DataONe AHM demonstating accessing data via DataONE Api's
+
+Does UVCdat  needs resources.
+
+time critical
+
+typical supplement through fastlane
+
+Target date to submit: End of next week?
+
+We need an outline soon with writing assignments (Cobb ASAP)
+

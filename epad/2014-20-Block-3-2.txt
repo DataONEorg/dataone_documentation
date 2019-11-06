@@ -1,0 +1,148 @@
+Notes for Development Block 3.2
+===============================
+
+Previous epad notes: http://epad.dataone.org/2014-18-Block-3-1
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+Sprint Planning for Block 3.2
+-----------------------------
+ * VM Operating System upgrades
+   * (Scheduled in CCI 1.2.7, fall back to CCI 1.3.1)
+ * CCI 1.3 preparation (to be released during Block 3.2)
+   * Incorporate Solr search and log aggregation changes into the CN stack
+     * Refactor log aggregation to minimize Hazelcast usage
+   * Incorporate JibX extensions into d1_common_java, release it
+     * Refactor CN components to use new d1_common_java changes
+     * Schedule Meeting to determine the scope of changes to apply. (review empty vs null List/Map variables in JibX)
+   * Incorporate HTTPClient 4.3 into libclient (affects CN stack)
+   * Replication Auditing w/splunk logging
+
+Roger
+=====
+ * 20140523
+   * Finished ONEDrive work.
+   * Working on CLI tickets.
+ * 20140521
+   * Got things working for TerraPop. They are now starting the install to their production server.
+   * Finishing up ONEDrive.
+ * 20140519
+   * Fixing ONEDrive issues.
+   * Helping with GMN installation for TerraPop project.
+
+
+David D
+-------
+
+ * 20140604
+ * Building dashboards in Splunk
+ * Configuring Splunk apps
+   * Working on getting Linux stats into Splunk
+   * Stats are in place (except CPU, which has a dependency)
+   * Need to work on tweaking polling times for Linux stat - too much incoming data right now, hitting license limit
+     * Maybe turn some inputs off or switch Linux stat reporting over to production systems only
+ * 20140528
+   * Finished cleaning up apache log in Splunk for prod/stage - deleted duplicate entries where found, reharvested where needed
+   * Checked syslog and hazelcast logs for archivable logs that Splunk was missing, but logrotate deletes logs there more quickly
+   * Was missing hazelcast storage cluster from Splunk logging - added that to Splunk
+   * Added a 2TB drive to Splunk to handle archived logs
+   * TO DO:
+     * get w/Skye re: harvesting CN replication logs - think I found those, need to double-check
+     * Bruce wants me to start looking into building a list of IPs from which we're getting lots of unauthorized access attempts for potential adding to deny.hosts across more than one D1 machine via Splunk
+ * 20140523
+   * Continuing to harvest logs
+ * 20140521
+   * Old apache other_vhosts_access logs from prod/stage CNs are now in Splunk - data archived back to last week of 3/2013
+     * need to clean up potential duplicate events
+     * need to pull old syslog/hazelcast logs
+   * OIT ran another security probe last night - going through Splunk logs to see if anything appears affected
+   * Talking w/Skye re: CN replication getting audit logs into Splunk
+ * 20140519
+   * UTK OIT "upgraded" email accounts, which means I need to rebuild email accounts on all my devices
+     * (Not a DataONE problem, except I suspect my PGP keys won't work anymore, so they'll need to be rebuilt and rolled out - will send email to coredev when that's in place to tell people to get the new one)
+   * Old apache logs on prod need to be indexed to Splunk
+     * pulled copies out of log rotation to ensure they don't get rotated to deletion, just need to add them
+     * Q: non-prod?
+   * Old syslog/hazelcast content as well
+       * same Q: non-prod?
+   * Found some splunk content with bad metadata that needs to be pulled out, fixed, and reindexed
+     * some of that was done during AHM, need to finish up
+   * Need to build a larger vDisk into Splunk to handle older data
+
+
+Rob N
+-----
+ * 20140521
+   * work on the jenkins-1 machine, and installed a couple items to support the debian packaging jobs
+   * EDAC: delegating approval to some who can :-) - Robert said he'd look into it.
+   * libclient_refactor:  same as Monday, continued work.
+ * 20140519
+   * Beginning refactor of libclient wrt/ inverting the dependency on HttpClient and working with the new ConnectionManager introduces in v4.2  (and v4.3)
+   * 
+
+Robert
+------
+ * 20140519
+   * Look at why Log Aggregation is not repeating executions. Need to restart d1-processing in order to grab DRYAD log records
+   * Help Jing with CN buildouts and Jenkins
+     * Jing is receiving SSL Peer unauthorized errors
+   * Meet with Rob regarding d1-test-resources changes
+ * 20140521
+   * Dryad log records have been retrieved
+   * Rob agreed with d1-test-resources change, my svn repo is corrupted so integration will be tricky
+   * Helping Jing with CN Buildouts on Jenkins-1
+     * Merged all Branch modifications into the trunk
+     * Jenkins-1 does not build out all dependencies when d1-java-common is build
+     * Move the blubold solr-tomcat deb package over to jenkins-1
+   * Upgrade all of dev environment to 12.04
+ * 20140528
+   * Working with Jing on upgrade
+Peter
+ * 20140521
+   * finishing up documetation for geohash, log aggregation, sysmeta solr index updates
+   * begin work on log aggregation refactoring
+     * remove hazelcast dependency to remove split brain vunerability
+     * add ./cn/v1/logsolr endpoint
+ * 20140528
+   * continuing work on refactoring log aggregation
+
+Skye
+----
+ * 20140521
+   * Out on monday (5/19)
+   * Worked on system upgrade - OS/Java - specifically on oneMercury
+     * Fixed jsp parsing issue
+     * Upgraded pom to remove tomcat6, old jsp api dependency declarations
+     * Worked on SSL connection issue - appears resolved
+       * http://stackoverflow.com/questions/7615645/ssl-handshake-alert-unrecognized-name-error-since-upgrade-to-java-1-7-0
+     * Tested indexing on cn-dev-orc-1.test.dataone.org (all metadata files missing)
+ * 20140523
+   * Upgrade issues
+     * DWR scripting in one-mercury causing error in tomcat7
+     * Log file ownership issue for tomcat7 user
+     * tested indexing on cn-dev-orc-1 - no issues seen
+     * https://redmine.dataone.org/issues/4708
+     * MN replication testing early next week in dev
+   * MN Dashboard maintenance (to release or not to release)
+ * 20140528
+   * MN Dashboard released on dataone.org
+   * Upgrade support/testing
+   * Beginning replication/auditing testing.
+   * Discussed changing 'staging' ubuntu channel label to 'beta' to avoid confusion with 'stage' environment.
+
+Chris
+-----
+ * 20140528
+   * Modifying system metadata for CLOEBIRD and GOA pids
+   * Getting back to mutability proposal for the CCIT
+   * Doctor appt tomorrow, Thu 5/29
+
+Jing
+-----
+ * 20140523
+   * Set up replication among the cn-dev-orc, cn-dev-unm and cn-dev-ucsb
+   * Fixed some bugs on the cn-build scirpt
+   * Debian repository on Jenkins?
+   * How to test the cn?
+   * Upgrade cn-dev-ucsb and cn-dev-unm without taking them out of DNS?
+

@@ -1,0 +1,63 @@
+Member Node Forum - 24 Jul 2014
+                                                                                    
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+                                                                         
+      (Occurs every 2 weeks on Thursday 8pm South Africa, 3pm BRT (Sao  Paolo,  etc.), 2pm AMT (Manaus, etc.), 2pm EDT, 1pm CDT, noon MDT, 11am   Arizona  and PDT, 10am AKDT or  Friday 2am Taiwan, 4am Brisbane AEST)
+  Upcoming meetings 7 August, 21 August, 4 September
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+Attending:  Ed Flathers, Amber Budden, Laura Moyers, Mike Frenock, Bruce Wilson, Mark Servilla
+
+Regrets:  Rebecca Koskela 
+
+Action items from last time:
+    none
+
+Agenda:
+
+0. Welcome new attendees - introductions: 
+
+
+1. Network-wide update and issues affecting MN's as a whole
+    UCSB firmware to be updated Tuesday 29 July 3p PDT - no MN impact anticipated
+
+2. Open issues:  MNs please add anything you would like to address here.
+    Laura asked about difference between stage environments and the sandbox
+    Bruce said the stage environments are like production in that the expectation is that most of the kinks have been worked out and we're looking at MN integration with the CNs, do processes perform as anticipated, etc.  In the sandbox, there is more leeway in regard to testing things out - it's not expected to be as clean and tidy as stage.  Laura asked if you have more development to do (i.e. using a software stack other than metacat) to make your repository talk with DataONE, you will be working in the sandbox first to work out kinks in basic communications, etc. (YES), and if you run metacat, for example, you might start out directly in one of the stage environments, because metacat talks with DataONE quite nicely (YES)  
+
+3. Feature requests/opportunities for collaboration:
+    Ed at NKN and Bob Sandusky at U Illinois-Chicago are both going to be using RedHat - great opportunity for collaboration.  Ed is also recording everything he's done looking toward documenting the differences between ubuntu and redhat.  Ed anticipates a potential problem with the version of Apache that they're running.
+    Mike said he was running redhat but is running centOS now.
+    
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+    Ed (NKN) - about ready to stand up MN in sandbox - question about reusing old certs or requesting new ones - Bruce says there is a very slight chance of something untoward happening, so go ahead and use the old ones and if there's a problem we'll address them then and reissue new certs
+    Mark (LTER) - start working with Roger next week on moving from metacat to GMN
+    Mike (PISCO) - going to teach someone to load data today, batch uploads with Java
+    Tracy (MPC/TerraPop) - continuing discussions of creating Dublin Core metadata content for harvest/indexing purposes; we need to provide Tracy/Wendy the wrapper for the DC content (Bruce); the plan is to put a couple data objects out there in sandbox with DC metadata and see what happens.  I (Laura) would like to know what happens if we have the DC metadata out there (labeled as "metadata") as well as the DDI (labeled as "data" perhaps?).  Goal is to stand up MPC/TerraPop as soon as possible with DC metadata with no/little adverse impacts down the road (potential use of DDI metadata as the indexing metadata).
+
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+Summer DataONE newsletter here: 
+http://www.dataone.org/sites/default/files/sites/all/documents/newsletters/DataONENEWS_Summer2014.pdf
+
+
+
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't    forget irc.ecoinformatics.org, channel=dataone if you have an urgent    issue.  CCIT folks are always there and can assist you.
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307   (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,  -20130530, -20130613, -20130627, -20130711, -20130725, -20130808,    -20130822, -20130905, -20130919, -20131003, -20131017, -20131031,  -20131114, -20131212, -20140109, -20140123, -20140206, -20140220,  -20140306, -20140320, -20140403, -20140417, -20140501, 20140529,  -20140612, -20140626
+

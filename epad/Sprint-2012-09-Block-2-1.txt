@@ -1,0 +1,228 @@
+2012-03-20
+
+Replication
+
+Object "A", CN = "CN", MNs = "MN1", "MN2".
+
+A is to be replicated from MN1 to MN2
+
+
+CN -> MN2.replicate(CNCert, PID="A", node="MN1")
+
+MN2: baseURL = resolve nodeId to baseURL
+
+MN2 -> MN1.getReplica(MN2 Cert, PID="A")
+
+  MN1 -> CN.isNodeAuthorized(MN2 subject, PID)
+  
+  MN1 returns "A"
+
+MN2 -> CN.setReplicationStatus(MN2 Cert, PID="A", "Completed")
+
+
+
+
+2012-03-16 Notes
+
+Updates to Sandbox Needed ?:
+
+Y cn-index
+Y mercury
+Y cn-metacat
+Y cn-os-core
+Y cn-portal
+Y cn-processdaemon
+? cn-rest-service (resolve does not appear to be buggy)
+? cn-solr
+N cn-version-tool
+
+
+
+Preparation for RC release next week
+------------------------------------
+
+1. Is the dev environment up-to-date with the latest snapshots as
+available in the ubuntu-unstable packages?
+
+ * Yes:
+   * a few changes are needed
+     * new bouncy castle
+     * add security provider in /usr/lib/jvm/java-6-sun/jre/lib/security/java.security
+     * java security extension
+ * Needs testing, was deployed last night, bouncy castle issue needs to be resolved first
+   * d1_integration will be used to add content to DEMOs1-4, GMNDEV
+
+ * knb war built by hudson unstable is including multiple (4) versions of d1_common, d1_libclient
+   * update:  performing the fullclean before building the war fixed the mutliple  liblclient/common_java jars being included in metacat
+   * http://cn-dev.dataone.org/cn-version.html
+   * http://cn-dev-2.dataone.org/cn-version.html
+   * http://cn-dev-3.dataone.org/cn-version.html
+
+2. Is the tagging complete for the latest RC?
+ * remaining to be tagged:
+   * d1_portal
+   * d1_cn_service
+   * d1_indexer
+   * d1_mercury_common have been tagged including build out
+   * d1_solr_extensions
+   * d1_portal_servlet
+   * all of level 7 (cn-buildout), except index, mercury and version tool
+
+3. Does the following build control file have the latest version of all tags in it?
+
+https://repository.dataone.org/software/cicore/trunk/d1_stable_build_control/20120228_control.properties
+Yes
+
+4. RC versions of all Debian packages should be available in the
+ubuntu-stable repo at http://dev-testing.dataone.org/ubuntu-stable
+- Is that repo working out OK? Are the sandbox CNs pointing at this
+repo for pulling CN Debian packages?
+ * We haven't pointed the sandbox env here yet: tags first
+ * Yes
+
+5. Is the buildout process working? Is everyone OK with the unstable
+and stable build process on Hudson? Any suggestions for improvement?
+ * to debug any build failures, we need to have the default'String Parameter' updated to the latest tagged release in the Configuration settings of stable software packages
+ * skye: suggests automating the preparation for tagging
+   * not critical, but will help in the long run
+
+6. As a general timeline (for discussion):
+
+ * Today - we should have Dev environment running with latest snapshots.
+We should also have the sandbox installed with the latest RC.
+   * we'll try!
+
+ * Next week (March 5-9) - Advertise availability of sandbox to the
+DataONE leadership team plus CCIT for review during next week.
+Incorporate suggestions in the unstable (trunk) in preparation for
+next (hopefully final) RC.
+   * confirm that all environments can communicate over each CN required TCP ports
+   * 22, 443, 389, 5432, 5701, 5702
+
+ * Week after next (March 12-16) - build out and advertise next RC for
+review. Incorporate changes.
+
+ * Week after that (March 22) - Public release on that Thursday
+
+
+
+
+
+
+Robert
+~~~~~~
+
+  * finished up fixing bugs in d1_cn_rest
+  * built out cn dev environment earlier this morning
+  * need to add bouncyCastle to dataon-cn-os-core buildout
+  * need to finish branching and tagging for next release candidate
+  * need to update all poms after tagging to new snapshot level
+  * need to test dev environment
+  * knb buildout in unstable is very unstable
+
+  * 
+
+Rob
+~~~
+ * consolidated test output for authorization tests into 1 result per node per test
+ * deployed MNWebTester containing latest libclient_java (1.0.1-RC3)
+ http://mncheck.test.dataone.org:8080/MNWebTester_v1.0.1-RC3-SNAPSHOT_r7305/
+ http://mncheck.test.dataone.org:8080
+ * running tests against DEV environment
+ * should I create a d1_integration Hudson job for SANDBOX?
+
+Skye
+~~~~
+* DONE::Finalized tags for index, mercury, cn version tool components.
+* DONE::Will be testing mercury3 integration with resolve endpoint and testing metadata view.
+* DONE::Build search index and bring mercury3 up on all dev cn.
+
+
+   * Investigating invalid xml character bug discovered during cn dev testing wednesday.
+    * Added five test cases - still having issue replicating SAX parse exception for invalid xml char
+    * Going to try catching sax parse exception in index processing and re-retrieve sysMeta object from
+        hzcast and re-attempt with fresh copy of system metadata.
+    * Need to discuss with Rob - perhaps can get the test file directly from rob.
+
+Ben
+~~~
+ * DONE changed portal to be environment aware
+ * DONE will be tagging portal
+ * 286 objects now, can add many many more. will be getting back to KNB data loading
+ * PENDING working with LTER folks to stand up an MN
+ * MN IT tests now passing for Metacat deployment (demo2), including authorization (tier 2) bugs.
+ * worked on a couple CN replication bugs/details with replication status.
+
+
+Andy
+~~~~
+ * CLI is working, still testing update and resolve
+ * will work with Matt on this
+ * had problems with order of the DN, manually setting the rights_holder can be ambiguous, especially when the openssl tools print DNs backwards from our adopted standard
+ * Working on data packaging tool.
+
+
+Roger
+~~~~~
+ * Finished install and working on registration of GMN on mn-stage-orc-1.
+ * Updated install documentation (was very outdated)
+
+
+Chris
+~~~~~
+ * DONE troubleshooting CN Sandbox portal postrgresql session database issue
+   * exception re: no acl in pg_hba.conf for 128.111.36.77, when I think there is
+   * Roger can't register mn-stage-orc-1 due to lack of registered identity, troubleshooting this - need to chat with Ben
+ * Was working on performance logging for when we import KNB data to the portal
+   * Due to multiple CNs/JVMs/threads involved, our approach will be to parse log files
+ * DONE Will upgrade the Sandbox env today once the deb packages based on tags are added to the ubuntu-stable channel
+ * Thoughts on split-brain issues: Matt suggested we monitor connections on each CN, and if two are remote CNs are unreachable, shutdown services.
+   * Suggestion: perhaps the easiest is just to remove firewall allow rules via ufw
+ * Add the CCIT + Duane to the sandbox as identities
+
+
+Matt
+~~~~
+ * Gave talk at NEON; received well, will likely become a MN next year; brought up issues of handling v. large data sets (e.g., their AOP effort collects 18TB raw data per day of operation)
+   * Some discussion of assigning identifiers to continuous sensor streams, and data packaging
+
+Dave
+~~~~
+
+
+
+March 14th Notes
+----------------
+
+Robert
+~~~~~~
+ * Will work to bring Sandbox environment up with RC3 packages.
+  
+Skye
+~~~~
+ * Indexing logs and reviewing for errors.  found invalid XML error. File not found errors. Maybe rebuild cn-dev.
+ * Version tool command has been added to debian buildouts.
+ * Coordinate with Dave what next batch of features to include in next Release.
+   
+Ben
+~~~
+ * UNM has resolved network problems.
+ * Resolved MN tester bugs, metacat may be ready for a tag.
+  
+Andy
+~~~~
+ * command line interface to add packaging. discover of package document or determine if one should be built.
+ * May know some software packages that could help determine network problems between CNs.
+  
+Roger
+~~~~~
+ * Replication work. Attempt to complete replication tests today.
+  
+Chris
+~~~~~
+ * DONE Sandbox SSL certificate issues w/regard to MNs, installed wrong godaddy intermediate. need to to the bundled intermediate cert
+ * Sandbox is upgraded to RC3
+ * Dev environment work: worked with Roger and Ben on replication issues.  Ben fixed bugs in metacat replication.
+ * UNM network bouncing and created havoc in hazelcast. We have to learn how to deal with intermittant CN processing.  
+ * CN dev environment seems stable network wise, probably need to upgrade all packages now.
+

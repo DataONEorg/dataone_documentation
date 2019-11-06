@@ -1,0 +1,386 @@
+Notes for Standup 2013.20-Block.3.2 (5/12 to 5/25)
+=================================================
+
+Chris B.
+--------
+ * 20130531
+   * Worked with David on ORC node
+   * Robert and Chris started Ansible upgrade in dev
+     * flags are getting reset, looking into it
+     * initial installation works fine, but upgrades are problematic
+   * Working on the ORE maps in indexing
+     * using a separate branch
+     * using an interface to translate to ResourceMapFactory
+ * 20130524
+   * Finished getting David set up at UTK
+     * public key is in the sysadmin folder
+     * worked with Robert on dataone-cn-os-core install scripts
+     * still failing this morning (blanking out the CONTEXT label field)
+   * Meeting with Skye on indexing today
+   * Created the UTK DSpace VM for Joe Agrippa
+   * OIT will be upgrading nodes at UTK (migrating VMs around, no outage expected)
+ * 20130522
+   * dataone-cn-os-core package is finished being tested (Robert)
+     * fails installation during preconfigure
+   * Meeting with Joseph Agrippa (sp?) re: DSpace at ORC
+     * Keep SEAD and Dryad impls in mind if UTK is planning a DSpace MN, and consolidate the effort
+   * Working with David
+ * 20130520
+   * Wrote Ansible playbook for LDAP, covers initial setup with LDAP auth in VMs
+   * Working on dataone-cn-os-core package: getting an error installing this package
+     * perhaps a certificate issue?
+     * will debug this with robert
+ * 20130517
+   * Ready for an Ansible demo
+ * 20130515
+   * ansible loading templates in deb config db
+   * learning David some DataONE
+   * will be ready for ansible demo on Friday
+ * 20130513
+   * Finished ansible module
+     * using it to populate templates (stating each question, associated flags)
+     * some default values
+     * known IP addresses may get 1 to 2 questions
+     * asks for LDAP and Java passwords
+   * Shooting to finish playbooks this week (demo on Friday)
+
+Robert
+------
+ * 20130324
+   * Working with Chris on dataone-cn-* packages
+     * figured out some full-clean LDAP installation problems
+     * Debugging scripts now - ensuring properties are being set correctly
+     * need to take one of the cn-dev machines out of the round robin
+   * LogStats API work
+ * 20130522
+   * dataone-cn-os-core package is in testing phase, troubleshooting bugs
+ * 20130520 
+   * release of revised dataone packages for Chris
+   * working on XML download of config file
+ * 20130517
+   * Still working on debian installs
+     * XML parsing piece
+   * Shooting to wrap up by Monday
+   * Met with Chris B Thursday to review Ansible. Looks very convenient. May be able to automate CN update procedures (http://mule1.dataone.org/OperationDocs/coordinating_node_deployment/upgrade.html) via ansible.
+ * 20130515
+   * restructuring postinst along procedural lines
+   * writing up document
+ * 20130513
+   * got the git repo set up on github, now cloned on dev-testing (dataone-cn-os-core)
+   * using ubuntu-rpw channel at the moment, usable by Chris B.
+   * working on using set -e in the scripts, and pulling values from XML file
+   * see http://epad.dataone.org/d1DebConfigXml for continuing implementation notes and decisions
+
+David Doyle
+-----------
+ * 20130324
+   * Worked with Chris on the DSpace VM
+   * Subversion training and access
+   * Continued work on D1 documentation
+ * 20130522
+   * Working on documentation
+   * Working with Chris
+ * 20130517
+   * Vsphere access now
+   * worked with Chris on building VMs
+     * Doing a windows install
+   * Now has Sysadmin access in subversion
+ * 20130513
+   * Getting access to systems (VPN, Sharepoint, VSphere, etc.)
+   * Will be getting together with Chris this week
+   * Working on documentation
+
+Roger Dahl
+----------
+ * 20130524
+   * Initial versions of controlled hierarchies in ONEDrive are working
+     * still working on the ability to click through down to the science data object
+     * using 'workspace' resolvers
+     * testing against production
+ * 20130522
+   * Working on ONEDrive controlled hierarchy
+     * q re: taxanomic tree
+ * 20130520
+   * Adding in the filtered D1 objects (implementing matt's mockup)
+     * taxa
+     * time periods
+     * authors
+     * regions
+ * 20130517
+   * Finished initial conversion of ONEDrive to a Workspace based approach.
+ * 20130515
+   * Working on ONEDrive. Still hoping to complete by EOW.
+ * 20130513
+   * Continued ONEDrive work - shooting for the end of the week
+
+Rob
+---
+ * 2013
+ * 20130524
+   * In touch with Ryan re: dev environment, haven't heard back yet
+     * Needs to register in /portal and at docs.dataone.org for the certificates
+ * 20130522
+   * Testing Dryad - found some issues
+     * Will register dev.datadryad.org in dev
+   * Packaging up libclient
+     * added new maven assembly goal to produce artifacts with /libs on dev-testing
+     * will manually copy to rreleases.dataone.org
+     * release names need to follow tag names precisely
+ * 20130520 
+   * Looking at the libclient jar issue (releasing a jar + libs/ tgz)
+     * R client includes everything except jibx*
+     * jibx is only needed for the codegen phase of the buildout
+     * maven dependency list still has them listed, trying to figure out how to exclude them
+ * 20130517
+   * Performance testing wrapped up for very large resource maps
+     * Upshot: creating is expensive with foresite, deserializing isn't
+     * Perl script takes 10 seconds to serialize
+     * Big impact is the high degree of cardinality for the documents field
+     * Suggest review of the writeup documentation
+   * Libclient discussion
+     * Use maven to create a release with dependencies
+     * release.dataone.org
+     * JibX tools and its dependencies on Eclipse plugin arch are not needed for the execution of the jibx generated classes.
+   * Will work on using hudson to create a recipe for producing product releases for common and libclient
+ * 20130515
+   * finishing Very Large Data Packages arch document (http://mule1.dataone.org/ArchitectureDocs-current/design/VeryLargeDataPackage.html)
+   * memory needed to build the model from the serialized form is the main limitation, and the reasoning model I use takes 3-6 times the memory, so this may need to inform our data package requirements
+   * need tools for estimating resource map size prior to deserializing into a model, where the memory hit is incurred.
+     * use of a solr query (q=resourceMap:{ReM}) gets the number data one objects in the resource map
+     * number of objects in the map is a good indictor under normal circumstances.
+ * 20130513
+   * Experimenting with nested, large resource maps
+     * Generation is quicker with certain techniques
+     * Looking at the memory footprint - using VisualVM
+     * DataPackage holds a resource map - but isn't used. Refactoring that out.
+   * Will document as well
+
+Skye
+----
+ * 20130524
+   * Working on EML support in indexing for taxonomic coverage
+   * ONEDrive: 8 taxonomic ranks? Scientific name
+     * Should use the genus and species binomial for the 'scientific name' field
+   * Adding in entity-attribute information from EML
+     * eml-attribute description field
+     * parameterDescription
+     * parameterUnits
+   * Will be out next week
+   * Moving into Solr 4 installation work
+   * Will discuss indexing with Chris today
+ * 20130522
+   * Rolled out replication auditor project
+     * new hudson build
+     * integrated into process daemon
+     * has a standalone tool
+   * Worked with Dave on common solr code
+     * Classes will be added to d1_cn_common
+     * Will be using Solr 4 Cloud service
+       * cloud config provides multimaster replication
+       * Be sure these Solr VMs are added to the operational procedures, layout is sane in datacenters, etc.
+   * Change build tool to use database access layer
+ * 20130517
+   * MN forum - generated some questions re: libclient
+     * Mike F. using Matlab and needs some Java/JRE assistance
+   * Proposal for eceptions logging index and moving to Solr 4.x
+     * Using Jetty may increase performance
+   * Auditing is now split out into a single project
+     * Continued work
+ * 20130513
+   * Upgrading production ORC and UNM machines
+     * some trouble in the Solr index, ended up re-building the indices
+     * cleaned out cn-specific names (like cn-ucsb-1)
+     * Solr is read-dominated, updates are expensive
+     * Rebuild finished Sunday - pushing through some lingering OREs
+     * Some trouble with ORC - hzIdentifiers is short (200K, vs 331K)
+   * Will be entering tasks on the exception logging
+     * Would want to upgrade to Solr 4.x - big changes - new required field
+ * 20130515
+   * Proposed idea of a common location to place dataone CN utilities
+     * Common place for finding indexing, auditing tools, utilities
+     * /usr/share/dataone/(bin/tools) seem to be popular in su.
+       * in /usr/share "application-specific, architecture-independent directories be placed here" (Filesystem Hierarchy Standard). So as long as the scripts are in perl/java/shell/python then it seems like it would be the place.
+   * Splitting replication auditing into stand alone project.
+     * Working on stand alone replication auditing tool.
+   * Writing up proposal for new event, exception logging index service
+     * solr 4 with cloud replication on jetty server...
+       * seperate jvm, no additional load on the tc 
+         * no additional load on metacat, indexes, cn services
+       * no need for immediate migration of existing solr indexes to begin creating solr 4 install/config etc.
+
+Dave
+----
+ * 
+ * 20130524
+     * Working with eBird helping setup for publishing annual dataset
+   * OS issues - rebuilding desktop machine
+   * Opportunity for working through builds of all products with empty machine
+   * considering adding support for "query" method in CLI
+ * 20130522
+   * Will prune Metacat builds on Hudson for 7 days
+     * Will delete the Metacat build, Metacat_unstable will save 10 builds
+   * Catching up on the backlog
+     * working on dependency diagrams
+     * streamlining releases
+     * could use a redmine URL for release notes
+ * 20130522
+   * Working through backlog of issues
+   * Completing product dependencies and setting up release pages / process
+ * 20130520
+   * LT meeting
+     * Increasing MNs and content
+     * Improving discoverability and usability
+   * Catchup after travel, grant reporting, etc
+ * 20130517
+   * LT meeting all week on strategies for next iteration of DataONE project
+   * General concensus that we need to seriously consider the "slender node" concept, or a Tier0 API for MNs. Approach would be to leverage existing services or capabilities (e.g. site maps, OAI-PMH, WCS, ...) available at a repository, and have a DataONE adapter (perhaps run by DataONE) that performs translation sufficient for a repository to appear with Tier 1 capability.
+   * Also Discovery is the other hot topic that is seen as essential for DataONE's future.
+   * Met with UNM IT about issues with storage being offerred up. Basically we have a large amount (currently 16TB, but growable to about 1PB) of space available, but due to implementation and operational issues, is not really very useful in a production environment, except perhaps for storing backups or as scratch space.
+
+Matt
+----
+ * 20130520
+   * At the LT meeting last week, working on the new proposal
+     * Confirmation that size is approximately 1/2
+     * Dev of Core CI was key, hopeful that CI size will remain
+     * CE working group - education modules, training, etc.
+
+Ben
+---
+ * 20130324
+   * Troubleshooting some minor logging issues with CILogon
+     * slightly holding up the release
+ * 20130522
+   * Finished CILogon upgrade
+     * deployed on cn-dev
+     * servers need to be pre-registered. So, Ben registered all of the CN envs (in dataone-cn-portal)
+     * minor change in d1_solr_extensions
+     * for production deployments:
+       * will need to upgrade dataone-cn-portal and dataone-cn-solr
+ * 20130520 
+   * Upgraded the CILogon code to use their new API
+     * configuration is no longer RDF/XML - now plain XML
+ * 20130517
+   * PPBIO node will be coming online (Brazilian node)
+   * 
+
+Chris
+-----
+ * 20130522
+   * TODO: email Bob re: DSpace
+   * Deprecated mn-orc-2.dataone.org, mn-unm-2.dataone.org from the replica target MNs
+     * some troubleshooting of LDAP syncrepl - updates not making it to cn-unm-1.dataone.org
+     * ended up restarting slapd on unm
+     * Ben - LTER upgrade and invalid pid removal with Mark S.?
+   * Working on hz updater code for ORNLDAAC pids
+     * testing in the dev env - can't use stage because ORNLDAAC stage MN == prod MN
+     * using pids on mn-demo-5
+   * Metacat-specific work
+   * Put some thought into the Settings/Workspace API - need to discuss this
+   * Minor coordination on Dryad MN spinup with Rob
+     * Are we ready to register in stage?
+     * Are we planning for a demo by Friday?
+   * Will be getting back to hzIdentifiers issue, but restarted d1-processing on cn-orc-1
+ * 20130520
+   * Ansible walk through with Chris B.
+   * discussion with Dave and Roger re: ONEDrive and a Workspace API
+   * Investigating the ORC hzIdentifiers set offset after our CN upgrade last week
+ * 20130517
+   * Have been out this week - catching up on emails
+ * 20130513
+   * Metacat-specific work
+   * Working with Skye on upgrading production CNs
+   * Working on ORNL system metadata updates
+   * Sensor best practices workshop writing
+
+ONEDrive Discussion
+-------------------
+ * Workspace Type
+   * XML document that supports 
+     * Lists of pids
+     * queries
+     * folders - contain either of above
+     * See an example at: https://repository.dataone.org/software/cicore/trunk/d1_workspace_client/src/examples/workspace.xml
+   * python library can serialize and deserialize this type - likely will be rolled into to libclient
+   * Populated by logging in, and calling an API to get the workspace instance for the user
+ * Initial implementation:
+   * We'll use a wildcard query
+   * Will implement the mockup view that matt put together (by year, by author, etc). These will be the first pass filters
+   * 
+User Settings API notes
+ * API name: This could be the Workspace API, or Settings API, or other
+ * Association with CNs/MNs
+   * This could be a stand alone service and not tied to a CN or MN per se
+ * Potential REST endpoints and API calls
+   * The settings or workspace could be seen as a series of parameters, one being a per-subject 'collection' or 'folder' of 1) static pid lists, and 2) saved search queries
+     * e.g.
+     * Settings.listCollections() OR Workspace.listFolders()
+       * /collections/{subject} OR
+       * /folders/{subject}: 
+       * returns the settings collections for a given user. Should be able to pass in a collection name parameter to limit the collections returned.  The return format would be either XML -see the schema Roger worked on), or a standardized JSON object of the same information.  Look at Badgerfish for transforming XML to JSON consistently.
+ * How do we model taxonomic hierarchies?
+   * We have about 8 solr fields 
+   * No hierarchies are wrong/right
+     * Just follow an example such as
+       * EOL - may have a REST service to view taxonomy
+       * GBIF
+       * ITIS - has REST API
+     * OR, browse by rank <-- good first stab
+       * kingdom
+       * phylum
+       * class
+       * order
+       * family
+       * genus
+       * species
+       * etc
+
+
+Talk with Skye on Indexing Plans
+--------------------------------
+
+topics:
+
+1. (P1) Foresite for parsing resource maps - redmine 3723
+
+- Chris B has this on his schedule after Ansible
+
+
+2. Generalized pattern for index processing
+
+- pluggable pre-processing
+- SOLRField class supports this
+- Issue is picking up the new code in a running process - simplest is to simply add and restart.
+
+
+2. a. (P2) Performance of indexing - redmine 3766
+- multiple instances of SOLR can work with the same index. e.g. search instance handling public requests, then start up one or more jetty instances that can write to the index.
+    - Replace the hazelcast iterator with a postgres query.
+    - Improve the commit strategy refresh/rebuild
+
+3. (Depends somewhat on #4) Upgrade to SOLR 4 and related upgrades - subtask of redmine 3764
+
+- Cloud design - write to a single virtual instance that is manifest across the CNs.
+  - would significantly reduce the hazelcast traffic since sysmeta would only be pulled by one CN
+- Would require rebuilding index, perhaps some schema redesign, some new required fields (e.g. version)
+- Provides a new upgrade path for solr for dataONE.  Debian packaging. (perhaps start from https://github.com/zeraholladay/solr4-tomcat-debian )
+
+
+4. (P3) Refactoring the solr index schema, especially for dealing with packages - redmine 3726
+
+Need to denormalize data as much as possible - but tradeoff is flexibility. 
+
+- Add support for data set variables (e.g. column name and units)
+
+- http://siren.sindice.com/documentation.html (seems a bit dated)
+- http://jena.apache.org/documentation/larq/
+
+
+
+5. OpenSearch (parallel activity - lots of design required) - redmine 3608
+
+- Issues with state management - query, page, etc.
+- Scalability of view generation using SOLR as a velocity template engine
+- Example templates were fairly broken
+- Seems best to havea separate java app to implement the view rendering and perhaps handle some/most of hte state information
+

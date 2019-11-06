@@ -1,0 +1,121 @@
+Attendees: Rebecca, Amber, Carol, Dave, Bruce, Trisha, Bill, Matt, Todd, Suzie
+
+Regrets: Bob Cook,Stephanie, John Kunze,Viv
+
+
+http://epad.dataone.org/20110318-LT-VTC
+ 
+
+  Agenda for 2011-03-18
+
+1.  Planning for July DUG (Budden)
+Questions for leadership team:
+ * Primary stakeholder groups to include in DUG meeting (ESIP co-location constraint of 25 rooms)
+ * Mechanisms of solicitation for additional DUG members
+ * Funding for travel to the DUG
+Amber will be meeting with chair and co-chair of DUG next week. One solution may be to get another block of rooms at another hotel in Santa Fe. Identify people from next potential MNs but also ask people from the other stakeholder groups, ex, librarians, scientists. Possibility of focusing on the ToolKit at the next meeting. Also inviting people in pairs from an institution.
+Focus on the ToolKit would inform decisions on the ToolKit for year 3.  This would include prioritization of the tools to be included. 
+Should funding be available for first time participants for this meeting?  Don't have the funds for 60 people so may have to come up with travel grants for a set number of people.  Probably need to approach this on a case by case basis. Should there be an application process for travel grants?  Recommendation to do this as well as require a report afterwards.
+Open call with apply to join is one possibility. Will discuss this with Richard and Bob next week as well as asking the LT for input.
+
+
+2. Process for implementing Member Nodes, including how to decide on the  order of MNs implemented, who decides, what information is needed for  the that decision (Michener)
+
+Process for becoming a Member Node:
+http://www.dataone.org/content/process-establish-member-node
+
+Criteria for standing up a Member Node
+http://www.dataone.org/content/criteria-standing-dataone-member-node
+
+Registration Document:
+https://repository.dataone.org/documents/Projects/MemberNodes/RegistrationDocuments/
+
+List of prospective Member Nodes:
+http://mule1.dataone.org/OperationDocs/membernodes.html
+
+We do need to formalize a process for adding MNs. Perhaps a MN Review group that makes recommendations to the LT for formal approval.  Is the Registration document sufficient for gathering sufficient information for decisions on MNs. 
+
+CCIT was making recommendations on potential MNs but also need other input beyond
+technical recommendations. This is probably too large a topic for LT meeting. Recommendation to make a subgroup of 4 people: 2 from CCIT(one from existing MN and
+one from potential MN) 2 from LT including someone from CE
+Group tasked with reviewing existing documents that we have, including the Registration
+document; making a recommendation for how to proceed with determining the next MNs.
+
+Do we anticipate doing implementation for potential MNs or will they be responsible for doing their own implementation in order to become MNs?  This should be a key point for selecting
+the next nodes (not needing implementation help from DataONE). The subgroup could make recommendation on this. 
+
+Nominations for CCIT members: Bruce & Matt for existing MN; Paul Allen or Jeff Horsborough for potential MNs; Bruce agreed to serve. Jeff is out of the country right now so Dave will check with Paul.
+Nominations for other 2 members: Suzie or Carol, Mike Frame, Trisha; Suzie volunteered so
+will check with Trisha and Mike to see which one would agree
+
+3. Member Node Logging (Jones)
+
+Matt:
+The development team and CCIT have been discussing some issues  concerning our current design for logging all DataONE user operations  and various privacy concerns that this might raise.  We feel that we  need some user-informed feedback on these approaches (from the LT, the  Socio-cultural Issues WG, and the development community), but it needs to be fast -- we need to make decisions in the next week or two as this is a fundamental change and so would have far reaching consequences for how the system is implemented and what MNs are required to do.  I've  written up a synopsis of the issues in our architecture documents here:
+
+http://mule1.dataone.org/ArchitectureDocs-current/notes/LoggingAndPrivacy.html
+
+If  possible, could we discuss this at the LT meeting this week and decide  at least how to gather feedback and come to a decision on these  important issues?  Thanks in advance for your thoughts and opinions
+PS  Until now we have been working towards use cases that everything be  logged, so these changes would depart significantly from  our current  design.
+
+Bob Cook:
+DataONE needs a Privacy Policy that is based on our funder's privacy  policies.  For example NSF and NASA have Privacy Policies that define  the information that can be collected and retained and the purposes for  which that information can be used.
+
+NSF Privacy Policy:  http://www.nsf.gov/policies/privacy.jsp  (just for NSF web site)
+NASA Privacy Policy: http://www.nasa.gov/about/highlights/HP_Privacy.html
+
+From your synopsis below, I couldn't tell how much your thinking had been constrained by NSF's policy.
+
+Perhaps the discussion of requirements / design should begin by looking  at our sponsor's policies, as well as our MN privacy policies.  I would  think that we'd want to comply with their privacy concerns and collect  all the information that we can under NSF's policy (e.g., domains and IP  addresses) and fully use that information to understand our users.
+
+Trisha:
+At the CDL we just completed a privacy policy (attached) that addresses  many of the issues that Matt brings up -- perhaps this will be of help  to the group. We also have put together implementation guidelines for  our various programs that must comply with the policy
+https://docs.dataone.org/member-area/committees/management-team/meetings/2011/2011mar18vtcmaterials/CDL_privacypolicy-final.docx
+(Note that we also have a companion security policy that is under review and should be released soon.)
+
+Susie:
+Some thoughts to add to the discussion on Friday:
+ 
+What  are we defining as privacy? Hal Abelson (MIT) has been talking about  privacy  as we move towards a more networked society.  His take is that users expect  that software will not harm the user.  He notes the paradigm is moving  from users having a say in what info is communicated to others and  when/how it is communicated  to a new view that  users can have a say in  when (how and what) information is “used by others  in ways that affect them.”  An attorney talking about this area a lot  is Erin Kenneally whose thoughtful work boils down to  focusing on  “reasonable expectations of privacy.”  Clearly we are bumping up  against a topic many are wrestling with (W3C had a workshop  in this area last year).   When we say privacy what are we planning to  deliver?
+ 
+Other  thoughts -- (1) many places note that logging information will be taken  for analysis  but that individual information will be erased after it  has been  analyzed (days to no more than 2 weeks – similar to the records kept when a book is checked out of a library) and records kept only in aggregate (similar to usage stats kept by libraries to determine what  resources are being used); (2) is there “truly anonymous”  access  – Abelson would argue no.  (3) I’ve also read that the European  Commission is focusing heavily on trust and security (though security  isn’t the same as privacy even if there are some areas of crossover), I  don’t know if that is something for us to  consider in terms of bringing on European nodes.  
+ 
+Clarification  in our document.  I do have a question to clarify the second privacy  scenario in our document – is the scientist asking that data he  contributed be dark to others? Or that the analysis he is doing on a set of data  contributed by others  be confidential?  
+ 
+ What do we owe NSF (as the funder)? Not sure that NSF has clear definitions or criteria on privacy concerns. When PMP was written, the metrics assumed full logging so would be difficult to gather metrics without logging. Do we have a sense of how often anonymous access to data is required? 
+ Need to log but also need a policy on how long the details are kept and move to aggregates sooner rather than later. 
+ The Socio-cultural WG had this on their list but had thought they would address it later rather than sooner.
+ Logging is done by MNs themselves. Came up in the CCIT discussion of what MNs would need to provide to determine which tier they would be in (logging in tier 1 or not). How would a DataONE user know the privacy policy of a MN? At least one CN and one MN would be involved but perhaps more then 1 MN. Concern about transparency to the user - decision would be up to the user if they had sufficient information on which to base the decision. 
+ Could have a "click through" with registration that would address some of these privacy concerns. Hadn't planned on implementing this infrastructure. There is not consistent user interface so where would this be implemented.
+Data providers can specifiy whether or not a user needs to authenicated in order to access the data. It's easier to start out by logging everything now and then turn off later if it became necessary. Important to have transparency to the users.
+Policy needs to consider restrictions of sub award/ CN/ MN institutions. Needs to be an amalgation of all policies
+Need to present user with DataONE privacy statement - when should this be done? Where and how to present this information.
+Suzie said the Socio-cultural WG would tackle this at their May meeting.
+
+4. Around the Room 
+Suzie: Last week at WebWise, the IMLS funded conference, the datanets had a strong presence.  The conference runs on a single track so essentially everything is a plenary.  IMLS invited me to speak on information science building STEM partnerships a talk in which I featured DataONE and Sayeed gave an overview of DC.  Both talks were well received.  Josh Greenberg from Alfred Sloan Foundation gave a keynote in which he mentioned DC but not us. I spoke to him about us and he noted DC because they are actually building a repository and he said our approach to building repository capacity was different than what he was discussing.  
+
+Bill:  Paddy Paddington of DC has requested a meeting with those of us in D1 interested in life sciences data to examine overlap, id areas of collaboration,e etc.  He and a couple others are interested in flying to Albuquerque for a meeting.  Who wishes to be involved in this meeting?  Do we want to have a meeting? 
+Matt and Dave may have some input. What is the overlap between D1 and DC so this may
+be an opportunity to explore this topic. Life science use cases for the two groups. From a technical perspective, have a list of items where D1 and DC could/should collaborate. Matt will send the list to BIll. Does this need to be face-to-face or would a virtual meeting suffice?
+Steve Kelling should also be there. Carl Lagoze If virtual meeting Todd could also attend.
+   https://sonet.ecoinformatics.org/observational-data-use-cases
+   
+Dave: nothing to report this week. 
+
+Carol: Nothing this week.
+
+Amber: Nothing to add
+
+Matt: Nothing this week.
+
+Bruce: Nothing to report
+
+Todd:
+Interested if anyone was aware of this project:
+http://research.microsoft.com/en-us/projects/entangledbank/default.aspx
+Matt said Rich Williams was post-doc at NCEAS so volunteered to contact him to find out more details.
+
+
+
+

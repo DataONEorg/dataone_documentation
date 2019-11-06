@@ -1,0 +1,223 @@
+Notes for Sprint 2013.28-Block.4.2
+==================================
+
+Rob
+---
+ * 20130717
+   * added baseline requirements document for the planning section of mn_checklist
+   * adding more of the technical requirements for each tier in the select-tier sub-document
+   * will adapt ResourceMap parsing tests to run against production (d1_integration blocks tests against production)
+ * 20130715
+   * More MN documentation
+     * how do we explain registering new formats?
+     * selecting Tiers section: clarifying baseline requirements
+ * 20130710
+   * Continued work on documentation based on EDAC feedback
+     * registering new sci meta formats, and the workflow involved
+     * 
+
+Ben L.
+-----
+ * 20130717
+   * Working on ILTER MN 
+   * Metacat changes surrounding ILTER harvesting
+ * 20130715
+   * Working on Metacat components/features
+   * Continued discussion with ILTER
+     * running 2.0.x
+-20130708
+    - CCI-1.2.0 deployed on Friday (7/5/2013) w/ CJones
+    - Updating CLOAKN object to use gzip instead of csv object format (7/8/2013)
+
+Chris B.
+--------
+ * 20130715
+   * Finished ORE impl in d1_index
+     * Worked with Skye on Friday
+     * One error remaining - tracking this down
+   * Looking at docs that David is working
+   * Unchecked exception from ResourceMapFactory
+ * 20130710
+   * Resource map integration in d1_index
+     * running tests now
+   * Looking at sflow for network usage
+   * Working on ORC security
+
+-20130708
+    - Replaced instances of the old resource map in the d1_cn_index_processor project with the new foresite backed resource map.
+    - Working on writing a test for the integration using SolrFieldXPathEmlTest.java as a model. 
+    - Working with David on documentation for ORC.
+
+Skye
+----
+ * 20130719
+   * Patched bug in cn_index_processor (Jing)
+     * Will tag this so they can use it from maven
+   * May need to reharvest ORNLDAAC
+     * There are content changes so bytes and checksums are off
+   * Looked at parsing CDL ORE docs - a problem with the ore:describes - Resource elements not typed correctly
+ * 20130717
+   * Good progress on the zookeeper install
+     * will work in dev today
+   * Worked on the Solr 4 installation
+   * Installed new CN index component in dev with Chris' ORE changes
+     * some ORE's aren't indexing - evawf* etc.
+ * 20130715
+   * ORE parsing work with Chris B.
+   * Finished up CSS styling for EML
+   * Looking toward zookeeper impl
+ * 20130712
+   * EML stylesheets and formatting
+   * USGSCSAS and ORNLDAAC
+     * not indexing resource maps?
+     * deleted and reharvested content refers to the same autogen id
+     * Robert will flush hzObjectPaths map
+   * Finishing off tasks for onemercury and indexing
+     * prepping for 1.2.1 release
+   * Working on Solr4/Jetty on dev
+     * Finalizing zookeeper configs
+-20130708
+    -Checking in initial versions of solr, jetty, solr/jetty bridge dpkg installers
+        - Testing this week in dev
+        - To support replication auditing reporting.
+    -Testing some index and mercury updates
+        -Fixed eml xslt issue in mercury
+        -Updated index parsing for last name, last name case normalized.
+            - Need to test in dev
+            - Support for ONEDrive author sort.
+    -Need to prepare index, mercury, cn_common for 1.2.1 release
+        - including 1.2 branches for components
+
+David
+-----
+ * 20130719
+   * some sick time this week
+   * working on documentation
+   * worked with Bruce on hardware documentation
+ * 20130715
+   * Should have some documents to commit to svn by EOB EST today
+   * Sysadmin work at ORC - documentation, photos of hardware, etc
+ * 20130710
+   * Continued documentation
+     * Will commit to svn branch or trunk
+ * 20130708
+   * Documentation!
+        - New DataONE sysadmin to-dos/to-haves
+        - ORC filesystem structure for host hardware
+        - Structure and interconnections of host hardware at ORC
+        - Procedures for common DataONE sysadmin tasks    (building/maintaining VMs on D1 ORC infrastructure, other best practices and procedures)
+        - Training: Ansible, Vim, others
+
+Robert
+------
+ * 20130719
+   * Installed on cn-sandbox-unm-1
+     * orc and ucsb are next in sandbox
+     * then, branch, and install and test on stage
+     * 
+ * 20130717
+   * Able to install via Ansible without being prompted for input
+     * Now running Ansible installs locally
+     * Will try on sandbox next
+   * Will branch on Thursday, test on Stage to verify
+ * 20130715
+   * Continued Ansible installs/testing
+     * Dealing with a corrupted VM, rebuilding, etc.
+     * Stuck at upgrade from 1.1 -> 1.2 prompts for passowrds, but shouldn't
+   * Jury duty tomorrow and this week
+   * ORNLDAAC, USGSCSAS - pids flushed from hzObjectPath map; will create object list for Skye to index
+ * 20130712
+   * working on ansible install, problems simulating ansible upgrade/install of 1.2.X 
+   * jury duty next week
+   * create a script to flush hzObjectPath map of ORNLDAAC and USGSCSAS ORE pid
+ * 20130710
+   * Working on ORNLDAAC and USGSCSAS pid discrepancies
+     * UNM running slowly - looking into this
+     * not confident about scimeta pids (OREs look good)
+   * Getting back to Ansible and 1.2.1 release
+   * Will then return to jibx changes
+
+Roger
+-----
+ * 20130719
+   * Continued work on batch system of CLI client
+ * 20130717
+   * Adding a "transaction" system to the CLI. By default, commands that change contents are no longer executed directly. Instead, they're queued. The queue can then be displayed and executed. It can also be edited.
+ * 20130715
+   * Finished the new packaging code for the CLI.
+   * Went on to do some refactoring of the CLI to make the code layout more like ONEDrive.
+   * Added system metadata creation for packages to the package module in libclient.
+   * Updating the documentation for the CLI.
+ * 20130710
+   * Working on caching solutions in ONEDrive
+     * two level design
+       * level 1 - cache basic attrs using filesystem callbacks
+       * level 2 - cache results of queries
+     * trying this out in the code
+ * 20130708
+   * ONEDrive cleanup after getting things going for DUG
+
+Chris
+-----
+ * 20130717
+   * continued work on Metacat tickets
+   * Enabled replication in the production environment
+ * 20130715
+   * PISCO MN troubleshooting
+   * PISCO syncing comparison
+   * Continued Metacat work
+   * TODO: turn on replication in production
+ * 20130710
+   * Metacat-specific work
+   * Dryad science metadata testing
+   * Working with Mike F. on PISCO MN crashes
+     * USGS Clearinghouse harvesting looks to be the issue
+ * 20130708
+Dealing with G+ not connecting ! Ugh.
+
+Dave V.
+-------
+20130715
+ * Reporting, other non-dataone work
+ * Further work on client side workspace cache, performance tweaks, tying into onedrive.
+20130712
+ * Working on client side workspace cache, committed initial version
+20130710
+ * At DUG earlier in week
+ * ONEDrive reception good, but concern over being too slow
+ * Repeated surveys for ITK targets - lots of spatial tool requests, e.g. ArcGIS
+ * Lengthy discussion on interoperability
+   * CSW (Catalog Services for the Web) seen as high priority by DUG, both as a data source and as a service that should be exposed by CNs
+   * OAI-PMH also another protocol that should be revisited
+20130708
+ * At DataONE Users Group meeting
+
+
+1.2.1 Release Notes
+--------------------
+
+1) How to version/branch/tag ansible for Monday Rollout
+    a) do we move ansible versions with the control properties
+        i) add in the versions of the debian packages to the ansible yaml files before tagging. cci 1.2.1
+    b) can we use our control properties for ansible configuration
+        i) no, lets type them by hand for now... maybe look at a future task for automating updates of the ansible yaml files
+        ii) we should add into the control properties file the ansible version
+    
+2) use of automated updates
+    a) no automated update, but move to system where sys admins are informed of security updates to apply. 
+    b)  pin slapd, tomcat, postgres, apache, java let the others float (Maybe openssl lib since we use certs everywhere in the infrastructure)
+
+3) Version locking of packages
+    a) /etc/apt/preferences use of Pin
+    b) use of dpkg holds
+    c) create a run upgrade-playbook that excludes dataone sensitive packages
+        i) maintain a listing of all active debian package for an ubuntu release
+        ii) no create of grand listing of all debian pacakges installed on a system, maybe we pin packages via /etc/apt/preferences.  have a general playbook that runs updates on non-pinned packages.
+    
+4) How do we structure environments and ansible host fil
+    a) currently, each environment has a unique set of playbooks that may be run in coordination with a master host file. The dev and sandbox playbooks will be similar with the exception that the playbooks and modules are specific to the environment by a yaml 'hosts:' line. In the trunk, the hosts line will be the only distinguishing factor between these subdirectories.  In the branch, the staging and prod branches will be edited to reflect the specific version installed on each environment.   It may be simpler to generalize the hosts line to indicate a generic environment 'dataone' and maintain separate host files in svn that are then refered to on the commandline.  Another option maybe to maintain a single master host file, default the host line to the yaml file to 'all', and then restrict the environment to which the playbooks are applied via the commandline limit argument.
+    
+5) How to handle dist-upgrades
+    a) issue by hand
+
+

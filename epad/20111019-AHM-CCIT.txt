@@ -1,0 +1,659 @@
+These notes are captured in SVN at:
+
+https://repository.dataone.org/documents/Meetings/20111017_AHM_Albuquerque/CI
+
+
+
+
+
+
+ACTIONS
+=======
+
+- prepare for ORC @ SMC outage Dec-24 - Jan-01
+- Determine license limitation for VMWare at ORC (Bruce) and UNM (Dave)
+- Document VM specifications for CN, MN installations
+  - Identify resources required for each
+  - Design filesystems
+- Build sandbox systems for development
+- Design, implement and test the load balancing approach
+- Evaluate peervpn (www.peervpn.net) as a VPN solution for secure communications between the CNs (necessary for Hazelcast traffic)
+- Create administrator group
+  - mailing list
+  - document key information about servers and services
+  - document availability of members
+  - create administration log
+  - assign priviledges for console access to VPNs at ORC, UCSB, and UNM
+- Document and implement procedure for ACL changes: "update ACL only via CN, only possible if Auth MN is Tier2+"
+
+
+
+
+
+Wednesday Schedule
+
+  - Preparations for public release. Scope, date, schedule, assistance for component review, testing.
+
+Focus on immediate concerns for public release
+
+- Hardware installation and standup
+* Note: ORC has three machines in SMC building (UTK campus) that are identical, running VMWare, and managed as a HA cluster.  the fourth (older) system will remain at the JICS building on the ORNL campus.  It will continue to run KVM.  
+* ORC systems at SMC will likely have a lights-out power upgrade between Christmas and New Years.  This is an opportunity :-) to test recovery from an outage before we do the publicity on go-live.  
+
+VM specifications
+
+- how should space be allocated to file systems?
+- Standard linux FS supports up to 16TB (ext4?)
+
+CN VMs
+- test, staging, production (each with same specifications)
+- Need to design the process for switching between staging and production
+
+Production: CN-UCSB-1, CN-UNM-1, CN-ORC-1
+Staging: CN-UCSB-2, CN-UNM-2, CN-ORC-2
+Testing: CN-DEV-1, CN-DEV-2, CN-DEV-3, ...
+
+UCSB specs:
+Each HW server has 8 cores, 128GB RAM
+- Dell 
+- 2x4 core?
+- 128 GB RAM?
+- 8 ethernet 100GB (4=storage, 4WAN)
+
+ORC specs:
+- Dell R715
+- 2x12 core
+- 128GB RAM
+- 8 ethernet 100GB (4=storage, 4WAN)
+
+UNM Specs:
+- Dell R810
+VMware Infrastructure/Server details:
+ * Dell PowerEdge R810's X 8, 4 each in two locations.
+ * 128GB RAM, 4 CPUs per server - 6 Core CPU's (Intel E7540 @ 2.00GHz)
+ * 24 cores / HW server
+
+Four HW servers at each site (ORC 3 new servers; 1 old server)
+
+Components of CN
+Tomcat (metacat, mercury, RESTservice, portal): 
+- 8GB heap
+- permgen 512MB
+- Metacat disk: 40GB
+
+Postgres: 
+- RAM: 12GB
+- Disk: KNB=64GB, allow about 500GB?
+
+Processing
+- HZ 4GB, permgen 512MB
+- Connection pool (# handles= lots more than OS defaults)
+
+Indexing
+- 4GB, permgen 512MB
+- Disk: 500 GB
+
+Total = 28GB RAM, 1+TB disk
+Filesystems: 1 PG, 1 Solr index, 1 for file storage, 1 for logs, 1 for root - disadvantage = over allocation of contingency
+(preferred) Alternative = 1 root 40GB, 1 for software 100GB, 1 for data 1TB
+
+/
+/usr/share/java = software
+/usr/share/solr
+/usr/share/cn
+/var/lib/tomcat6 (software)
+
+/var/metacat
+/var/lib/postgres
+/var/lib/solr
+
+/var/log
+/var/log/dataone
+/var/log/tomcat6
+
+Move all dataone storage to /var/dataone/...
+/var/dataone/metcat
+/var/dataone/solr
+/var/dataone/postgres
+/var/dataone/log
+
+/etc/dataone
+
+/tmp
+
+/home
+
+Local disks are for HW host operation. VMs all use iSCSI storage to ensure migration ability.
+
+RAM: 64GB (VMWare at UNM and ORC may be limited to 32 GB/VM)    
+Disk:
+Cores: 8
+OS: Ubuntu 10.04 LTS, 64bit
+Network ports:
+Administrators:
+
+Postgres configuration:
+max_connections: 400
+shared_buffers: 12GB
+    -- will need to seet kernel.shmmax in linux to allow this
+work_mem: 10MB (used for sorting, per connection so can't be too high)
+
+
+TASK: Robert, Ben, Nick Brand, Nick Dexter - write up specs for CN VM - resources, file system structure
+
+Console access to CN VMs: Nick Brand, Nick Dexter, John Benedetto or Jamin Ragle , Dave, Matt, Bruce
+
+
+The Staging CN system has to be independent of the production MN environment.
+Need to have representation of MN technology and range of content for testing the staging environment.
+
+- Staging must have all 3 CNs engaged
+- Need to be able to test replication
+- Several MNs (one for each technology, plus more)
+- Need to ensure that there are different tiers of MNs
+- Hosting: use the CN data center hardware. can simulate network bandwidth restrictions, and load
+- Should try to ensure that there is a dev CN available for testing (reasonably high uptime)
+- Need to have different versions (of D1 service APIs) of MNs - CNs must provide backward compatibility with MN versions
+- Developers need to have simulation environments for development work independently of the cn-dev installations
+
+MN VMs
+- test, staging, production (same configs for each?)
+
+Deploying a MN:
+-1. Gather human readable information about the candidate member node and go through the "member node approval committee"
+
+0. Make sure node is operating properly
+    a. MNTester
+    b. register with "cn-sandbox" = current version of deployed infrastructure
+    c. Re-run MNTester tests (verifying replication)
+
+1. Create a node document
+2. call CNRegister.register(session, node) → NodeReference on a CN
+  Giri - is this currently available? if so please provide the base url
+  POST cn-dev.dataone.org/cn/v1/node
+
+3. update node document with the CN provided node id. (and remember it)
+
+4. Signed node agreement must be provided to the "member node approval committee" before approving node participation in the network
+    -- https://docs.dataone.org/member-area/planning-for-dug/dug-general-documents/member-node-documents-final-versions
+
+5. CN admin presses OK
+
+- document types MUST be in objectformat list
+- science metadata SHOULD be in a format that can be processed by indexing
+
+
+Node Identifiers - random:
+bad
+- hard to figure out which node is which (node references in sysmeta)
+- helpful for debugging if node ids are recognizable
+
+good
+- more difficult for node operators to pretend to be someone else
+- identifier should have no meaning beyond being a string
+- easier for registration (no need to determine if name is already taken)
+- if more than a few, then impossible to remember node ids, so randomness doesn't matter
+
+Conclusions:
+- should be easily memorized
+- there are good reasons for making these identifiers less than opaque
+- Random Node IDs will be generated by the CN registration process. (or serial?)
+- Decision is to use short random string (4 chars, alpha numeric).
+
+KNB
+- need to test and release production version of metacat
+- update system metadata entries (perhaps)
+- create resource maps for all current packages
+- establish DOIs for all data sets (optional)
+- issues for other metacats connecting / sharing / replicating content with KNB. As those nodes come online then the authoritative member node will need to be updated for all those objects
+- BIG ISSUE: identity mapping. 
+
+Merritt
+- establish ERC object format in d1 objectformats
+- indexing process needs to support ERC format
+- CN object store needs to support the ERC (non-xml) format
+- Get a new, stable version of metacat for verifying Merritt added functionality
+
+ERC will be treated as a data granule, FGDC will be treated as the science metadata document. Resource Map wil bind the ERC, FGDC and associated data granules so end user is able to retrieve the package.
+
+
+Dryad
+- update to pass MNTester for Tier 1
+- XSL updates?
+  - dryad templates for display of content in Mercury
+- implement resource maps
+- is there a way to test the resource maps? (e.g., run MNTester on particular objects?)
+  - update MNTester to read and verify resource maps
+- register/test with cn-sandbox (if it exists)
+- create node document
+- register/test with production CN
+- update for Tier 2
+- re-register?
+
+ORNL DAAC
+- all Tier 1 methods are implemented (using 0.6.4)
+- ready with 15 DAAC datasets (will be adding ~ 800 datasets soon)
+- tested with validation tool (passed except synchronizationFailed, which is  optional  now?)
+-  waiting for  the CN registration
+- test with CN production environment
+- update with OAI-ORE (next phase)
+- update to Tier 2?
+- replication?
+
+
+
+USGS Core Sciences Metadata Clearinghouse
+
+- all Tier 1 methods are implemented (using 0.6.4)
+- ready with ~60 datasets (from one NBII source)
+- tested with validation tool (passed except synchronizationFailed, which is  optional  now?)
+- waiting for  the CN registration
+- test with production
+- add more USGS data sources
+- replication?
+
+SANParks
+- same upgrade / deployment process as for KNB
+- need to obtain permission from some data contributors for participation / replication in DataONE
+- should there be a mechanism to filter on e.g. home institution to exclude from DataONE.
+
+(LTER)
+- many data download links are broken
+
+MN deployment at CN locations
+These are replication targets - blank member nodes that offer space for others
+- How many MNs do we deploy?
+- Approximately 300TB space available at each location
+- ext4 limit is 16TB
+- xfs offers many features for large file systems
+- (are we going back up MNs?)
+- see bug #86 in metacat 
+
+Which MN should we deploy?
+- arguments for deploying both GMN and Metacat
+- Two MNs deployed (one GMN, one Metacat) at each CN location
+- 32TB / location available for replication space in DataONE
+- MN software MUST be tier 4
+Resources:
+- Different hosts from the CNs
+- Need to ensure that the replication targets offer true replication of content (failure independence)
+- Should label these as affiliated with institutions rather than labeling them as CN associated MNs
+
+Mercury Updates for Public Release
+
+- Updates to indexing process to fully populate solr index
+- Connect the ONE-Drive to ONE-Mercury
+- Lots of small UI issues - wording, placement, ...
+- What is pubdate?
+- Too many stars? Use numerical scale in place of or addition to
+- Height of the records
+- Rendering of EML, Dryad, ... stylesheets
+- links to download data need to point to the API methods to retrieve content (this should be a call to resolve, then download from returned URL)
+- Preserve navigation from the original DataONE page (same banner / top level menu)
+- DataONE web page has search page - need option to search site as well as CNs
+- Good help document - context specific help for specific fields (e.g. rollover)
+- Spatial search thing, need better spatial search tool
+- Need documents to identify what ONE-Mercury actually is. e.g. "find data"
+- Export search results
+- Export link of search results
+- High lighting search terms (some want this, some don't)
+- Voice activiated search
+- Citation content need to be fleshed 
+- bounding boxes by eco-egions
+
+- Review of comments / observations from Tuesday afternoon demos
+    - http://epad.dataone.org/AHM2011-ToolFeedback-Summarized 
+    (provides links to all of the other documents)
+    
+    - ONEDrive: http://epad.dataone.org/AHM10182011ONEDriveFeedback
+    - ONEMercury: http://epad.dataone.org/AHM10182011-OneMercury (more notes from ONEMercury will be uploaded soon)
+
+
+Thursday Schedule
+
+Coordinating Node Services
+
+1. Synchronization
+
+Change Notification
+-------------------
+
+- (lower priority) addition of notification mechanism for indicating presence new content on MN. There is a usecase for more frequent update, but without continual polling. e.g. a MN may specify monthly sync, so new content may not show up for a month
+
+Changes Access Control for an Object
+------------------------------------
+
+- access control list can be updated in two locations - on the MN and the CN, which can lead to conflict. Also, ACL on replicas may be updated. No mechanism to inform MNs that ACL has been updated.
+
+Option - ACL is updated ONLY on the CNs. CNs need to call back to MNs with update to sys meta ACLs.
+
+- MNs MUST be informed of ACL changes. CN could call update on MNs?
+
+- Authoritative MN SHOULD be responsible for managing ACLs for an object. The DataONE infrastructure MUST propogate those changes to all DataONE managed copies of the object.
+
+- Need a mechanism to change the authoritative member node.
+
+- Option: add serial number to sysmeta. Changes are made only to a specified version of sysmeta. 
+
+- NOTE: changes to ACLs MUST be propogated to all copies at a high priority. This has implications to MNs that have a low sync rate.
+
+- Process (update ACL only on auth MN): 
+  0. User edits ACL on an object using ITK tool; 
+  1. Update ACL on auth MN; 
+  2. Notify CN of ACL change; 
+  3. CN retrieves new ACL; 
+  4. CN pushes ACL change to all object copies;
+  5. CN verifies ACL change;
+
+Decision: Implement the following process. To be revisited later.
+- Process (update ACL only via CN, only possible if Auth MN is Tier2+):
+  0. User edits ACL on an object using ITK tool;
+  1. Update ACL on CN-1; 
+      a. lock PID
+      b. check serial number on sysmeta - change request serial # must match sys meta serial
+      c. update on CN-1
+      d. unlock PID
+      e. changes propogated to other CNs
+  2. CN-1 pushes ACL to all object copies;
+  3. CN-1 verifies ACL change;
+
+
+- ACTION: Add serial number to system metadata 
+  - Matt will sync 0.6.4 and tag 0.6.4, create a v1.0.0 branch and add long serial number to sysmeta
+  - Methods that change sys meta require adding the serial number as a parameter
+
+- If a Tier 1 MN is authoritative, then there is no support for changing ACLs.  If a Tier 1 MN needs to remove an object from public read, that is a manual process that requires contacting DataONE support.  
+- If a Tier 1 MN attempts to create an object that has an ACL other than public read, that synchronize to the CN should fail.  This is similar to the problem that the synchronize should fail if the identifier for the object is not unique.  
+- Note: switching authoritative MN SHOULD be a manual process that involves agreement between MN operators. ->> Need a mechanism to notify and initiate such a process.
+
+- what happens when a MN goes away / offline? It's all good.
+
+
+2a. MN-MN Replication manager
+- need sandboxes for developers
+- need to be able to propogate changes to all nodes participating in sandbox easily 
+- Testing environment is major block
+  - Use DEMO 1-3 for MNs
+  - Use CN-DEV-2.dataone.org
+  - Deploy a GMN instance as a replication target for testing
+  - Setup a new CN VM at ORC as CN-DEV-3.dataone.org
+  - Rename CN-DEV to CN-DEV-1
+
+Audit issues / discussion items
+- update replica verified triggers serial # increment? yes.
+- process is currently serial, obvious benefits to several operations (to several MNs) simultaneously (especially as total object count increases). Option to process a random subsample.
+  - Action: add a getChecksums(PIDs) method, enables MN to optimize request handling
+- Add a audit troll process that retrieves content and verifies checksums independently of MNs
+
+2b. CN-CN Replication
+- Load testing essential for this
+   * Test insert rates ~ 10 datasets/min
+   * Increase rate of submission until it breaks
+   * Test up to 500k granules
+- What happens when time to complete operations slows down?
+- What happens when there is a significant delay to replication of science metadata?
+
+ACTION: what is the maximum rate achieved for synchronization on a single node?
+
+3. Indexing
+- Add in additional metadata formats
+- Additional fields need to be indexed to fully support Mecury UI
+- Inefficient process currently iterates through all sysmeta to determine what has recently changed
+- alternatives:
+  - use listobjects
+  - query the postgresql table
+    - issues with connection pools - configure metacat max pool to be less that postgres max pool
+- access control needs to be tested in production (CN) environment
+- Need to restrict access to SOLR update mechanisms
+
+4. Registration
+- need an approved flag in the registry
+- node creation needs to be authenticated
+- only registered, verified subjects can be contacts for MNs
+- need to add contact subject for MN in the node registry
+- Need an update mechanism for changing properties of the node registry.
+  - Document the process for updating the registry and create essential tools for CN operators to update node registry entries
+  
+ACTION: add contact subject to node registry schema for V1.0.0
+
+5. Identity mapping
+- How to map CILogon identities to non-cilogon identities??? e.g. existing KNB accounts? how to map them to cilogon accounts to ensure that ownership and ACL information is preserved?
+
+before:
+object1 - permission: read
+            subjects: matt@knb
+
+after mapping:
+object1 - permission: read
+            subjects: matt@knb
+
+Equivalent Identities: matt@knb
+                       matt@cilogon
+
+--> matt@cilogon can read object1
+
+- issues of repudiating access to objects for a subject
+
+- group mapping is necessary as well. (postpone this functionality)
+- what is the policy for group name collision (for legacy group names). First wins?
+- Various attributes that would be useful to track for a "person", but this could be implemented in a separate system using the subject as a primary key to another user profile database.
+
+- Need to ensure additional attributes can be added to cert (e.g. name, email)
+
+- What information should be exposed in listusers() to assist with identity mapping? Significant privacy concerns that need policy decisions. If we do not expose this infomration, then it is very difficult to construct identity mapping. One option could be to return subject given an email (exact match).
+  ACTION: need to change the listUsers() method to accept a query string and not report email address as part of the response.
+  ACTION: set email as optional in the Person class of the types schema for V1.0.0
+
+- Should we hide the identity verification tab?? Yes. Implication is that there will be no write access? - no, this is a member node policy.
+
+- Issue: review of data associated with publication exposes reviewer identity. Issue of anonymity for review process invovles many more aspects than can be dealt with for now.
+
+6. Logging
+
+- MN getLogRecords is working
+
+- Log information appears complete
+
+- Need to map all subjects to a canonical user - this is a Log Aggregation operation
+
+- Any client tools made by DataONE need to set a user agent string to identfy the tool for use tracking
+
+- General request for *all* log record information from MNs to identify the proportion of use that is through DataONE vs. other mechanisms to access the content. This is out of scope for the DataONE APIs.
+
+Log Aggregation
+---------------
+
+- where to store the log records?
+
+  - postgres
+  - lucene (probably best option)
+  
+- Who has access to the aggregated logs and which aggregations?
+
+  - by PID
+  - by owner
+  - by member node
+
+- public user access: NO
+
+  - restrict IP address, subject -> should not be required or filled with something else. Perhaps IP and Subject could be hashed to retain uniqueness for analysis. 
+  
+    ACTION: logrecord IP and Subject should be optional for V1.0.0
+
+- ACTION: change "memberNode" to "nodeid" in LogEntry for V1.0.0
+
+- ACTION: need to inform DataONE users that access is logged and reportable to system operators and object owners.
+
+Subjects that have access to CN.getLogRecords():
+
+ - authoritative MN associated principle (node client certificate subject)
+ - subjects that have changePermission permission on PID
+ - rights holder for PID
+ - system administrators and report generators
+ 
+ACTION: all this needs to be reviewed by the sustainability and governance group
+
+ACTION: Implement all this stuff (Robert)
+
+
+7.CN & MN landing pages (lower priority)
+
+Intent of these pages is for human consumption
+
+cn.dataone.org/ = ONE-Mercury
+
+              /cn = Node list (with client side XSL transform) (with login link)
+              /cn/v1 = Node document for the CN
+              /cn/v1/node = Nodelist for all nodes (with client side XSL)
+
+              /portal/  As a login page
+              - Add link to "My Account" page from the Mercury page
+
+/mn/v1/node = node document for MN
+/mn/v1 = node document for MN
+/mn = undefined
+
+ACTION: (lower priority) get consistent with trailing slashes. Should operate the same if trailing slash is present or not.
+
+ACTION: (Ben) mock up CiLogon page edits, get approval with usability, request page update
+
+ACTION: (Dave) Can we move "A765" from the CN to another attribute in the subject?
+
+Action: (Dave) Surname and given name as attributes in the certificate
+e.g. immediately after Subject: DC=org, DC=cilogon, C=US, O=Google, CN=Dave Vieglais A335
+have something like Email: ...
+                    Surname: ...
+                    GivenName: ...
+instead of: X509v3 Subject Alternative Name: ...
+
+
+ITK Activities
+
+1. Java libclient
+- data package class
+- javadoc
+- overview document (started in architecture docs)
+- test coverage needs to be reviewed and up-to-date
+- examples (as part of the overview doc)
+- (lower priority) mock services should be available with the client code
+- (lower priority) add to sonatype maven repo
+
+2. Python libclient
+- rename package to d1_libclient
+- data package similar issues to java
+- docs need to be brought up to date 
+- test coverage needs to be improved
+- examples
+- include overview docs - same / similar as for the java libclient
+- (lower priority) mock services should be available with the client code
+- distribution packaging
+
+3. Python Command Line Client
+
+- Need to be cleaned up
+- (low priority) Update to use cmd2 library
+- test
+- examples
+- docs - Ask for help on this (perhaps Bruce Grant or Heather)
+- distribution packaging
+
+4. ONE-R-Package "dataone" package in R
+- data packaging piece
+- local data caching (should really be implemented in the java client)
+- data typing support (or not - up to user to figure this out)
+- provide a bit more metadata (size, type, etc) easily as a command
+- (2014) Generate science metadata and provenance information
+- Documentation
+- Learn how to publish CRAN package
+
+5. Formalize versions of all released software
+
+- formalize names of all components and packages
+
+6. Auth info for CNs / restart process
+- account info for Hazelcast, LDAP, postgres, 
+- (low priority) add manager for tomcat - but not for metacat
+- script for starting / stopping CN services (proper sequence of startup / shutdown)
+
+7. Debian packaging
+- need for indexing, mercury (update / replace existing)
+- should be using updates instead of replace process 
+  - requires a much more formal release of CN debian packages instead of package per svn commit
+- Matt - there's a package to help with updating configs
+  - could be done mostly as a postinst script change that includes more intelligence for updating existing config files
+  - High priority for CN operations
+
+8. Updating architecture and operations documentation
+- ops docs can be minimal, but operational stuff for how to go live is most important
+  - sequences for installation, updates
+  - who is responsible for what?
+  - (Matt) Create an administrator list and make sure all sys admins have contact info for the others.
+  - (Dave) Check with UNM on VPN access to VMware stuff
+
+- 
+
+
+- Architecture docs
+  - Major goals for 2012 - 2014:
+
+    - Improving discovery
+    - Additional MNs
+    - Data services
+    - Larger systems integrations (TG, USGS ScienceBase, etc)
+    
+Parking Lot issues: 
+ * The UCSB DNS is currently authoritative for DataONE DNS.  Need to do something different about this.  
+ * Load balancing
+ * JVM settings, PG settings
+ * Check VMWare licensing limitations for VM allocation (e.g. RAM 32GB)
+ * Secure VPN required for HZ traffic between data centers. OpenVPN supports p2p configuration
+ * Backup strategy for production CNs
+ * Upgrade scripts for everything in /etc/dataone
+ * How to deal with client certificates when switching between staging and production - server certs stay with server (DNS)
+ * Need strategy for admin coverage of CNs
+ * Increase shared mem max kernel parameter for postgres
+ * Need RR DNS entries for staging and dev as well as production
+ * Ensure CN install scripts are easy and well documented for setting up simulation environments
+ * MN Registration workflow
+ * Need an administrative procedure for removal of bad content from the entire D1 federation, includes a blacklist of PIDs so that bad content is not subsequently picked up and synched. Deletion of content on a MN requires notification of the MN admin for removal.
+ * Document recommendations for MN operation - e.g. strongly recommend replication for all content, especially if MN reliability is questionable
+ * getReplica() needs to be implemented on Tier 1 nodes.
+ * synchronizationFailed() needs to be secured so it doesn't turn into a spam gateway (could be ip address restrictions to CNs). NOTE: this operation can be made optional for tier 1 nodes, required for tier 2+ (failure on a protected object should be communicated to the MN operators).
+ * Need a process for final approval of a Member Node registration request. Who verifies the request?
+ * Need a node contact somewhere associated with the node ID. Request for a new node coming online needs to be communicated to all existing node operators so they can ensure legal requirements for content replication restrictions can be met.
+ * whole MN registration process is a larger problem that requires engagement of the whole project
+ * create a simple web interface for registering a node
+ * CCIT Outreach Opportunities in 2012 targeting tech people in libraries
+   * American Library Association Annual Meeting, June 21–26, 2012 in Anaheim CA for Library Information Technology Association group (LITA)
+     * Session proposal accepted - we need to decide if we want to do this or not
+     * Full text of the proposal: "Long-term Stewardship of Scientific Data: Your Library Can Participate in DataONE. This session will demonstrate how libraries participate in DataONE (NSF-funded DataNet partner) by installing and running a Member Node which stores accessible copies of biological and environmental data as part of DataONE's global network. 1: Introduction to DataONE 2: How libraries participate in DataONE 3: Demonstration of installing and running a Member Node 4: Linking DataONE to library search systems 5: DataONE education and outreach services 6: How to join the DataONE User's Group"
+     * This could be modeled after the workshop held at UCSB in order to minimize preparation effort 
+   * CODE4LIB Conference Pre-conference, February 6, 2012 in Seattle, WA
+     * CODE4LIB is a library developer's conference, so attendees could do hands-on activities; more technical than the ALA / LITA audience above
+     * Full or half-day proposals are sought
+     * Rooms for 30-50 people available
+     * List of current proposals at http://wiki.code4lib.org/index.php/2012_preconference_proposals
+     * Conference info at http://code4lib.org/conference/2012/
+     * This could be modeled after the workshop held at UCSB in order to minimize preparation effort, perhaps focused on the GMN 
+ * Amend te DUG "Process to become a MN" with our additional requirements about the technical process
+   * see notes above, and here: https://docs.dataone.org/member-area/planning-for-dug/dug-general-documents/member-node-documents-final-versions
+ * What is the process for upgrading a node from e.g. tier1 to tier2?? There needs to be an update node registry operations that verifies and executres the operation.
+ * Discussion required on level of assurance provided by authentication and verification of support in authorization
+ * How can we expose the citation and license (where applicable) for the data in the R and ONEDrive clients (for example).  In the R client, can we create a method that returns the citation for the data set.  In the ONEDrive client, could we expose the citation and the license as part of a right click or include a aacitation.txt and an aalicense.txt file in the directory for the data set.  Data Citatiom is a key aspect of DataONE, and we need to make it easy for users to find and get the citation.  
+ * Need to have some mechanism for determining geographic distribution of MNs to help guarantee content availability should one set / lab / institution go offline
+ * What is the cutoff time for a MN to be considered offline?
+ * What is the strategy for planned MN outages?
+   * update node capabilities to be offline? Need mechanism to disinguish between planned and unplanned outages. So need a notification system (to inform admins of changes)
+ * Need to have a mechanism to prune replicas (if a node goes offline, content is replicated, comes back online, and original objects are still available - adding to the total number of replicas).  Decision for this meeting is that until we have an API to remove a replica, we just leave the extra replica copies available.  
+ * Monitoring mechanisms required to track resources available at member nodes - to help inform replication process
+ * Need to implement push notification of new content (MN call to CN)
+ * Deploy nagios and instruments for nagios to monitor
+ * Other monitoring aspects - JMX instrumentation of CN services
+ * Perhaps also re-enable the Cacti system - ensure monitoring ssh accounts are available on all machines, update cacti script to match current D1 APIs
+ * There is a use case to  consider where a MN may wish to allow users to submit data and only  update the ACL to be private (share with specific people) and only the  MN staff would be able to update the ACL for making the data public.  An  example would be if the ORNL DAAC wanted to allow users to submit data  to the MN through DataONE, but the data is only made public by the ORNL  DAAC staff after curation. 
+ * Discussion of replication: If an authoritative MN goes down and we need to update the replications, s, then the replication manager needs to look at the existing replicas, verify that the checksum still match, and then the replication manager can then replicate from any copy.  If the checksums don't match and a quorum can't be established, then this is an error that requires human intervention.  
+ * The process of updating the Authoritative Member Node should be a human-mediated process.  
+ * Need a CN operators group that can be notified of any issues triggered by CN operations or other aspects of the DataONE infrastructure
+ * Clarify ways that working groups can interact with the developers and CCIT.  Are there paramters for adding WG representatives to the developers email list?  What guidance do we want to give people on submitting tickets in Redmine?  The initial guidance from Dave is to submit requests as features in the DataONE project.  
+ * Per discussion with Usabilty group around metrics, need to look at how users are stored/identified in the system.  Is there a non-identifying token that can be provided through the logs to be able to connect different sessions by the same logged-in user?  Something like a sequential userID would work; a hash (possibly salted) of the principal string could also work.  
+

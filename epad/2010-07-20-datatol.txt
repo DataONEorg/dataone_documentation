@@ -1,0 +1,112 @@
+Participants:
+
+Anand, Biva, Lei, Ilkay, Manish, Dan
+regrets: Paolo, Saumen, Shawn
+
+Last week's actions:
+1.  finalize "benchmark" queries (mentors)
+https://docs.google.com/document/edit?id=1IopffnHOwPk6v-Pyp_BGQeR3wcSknGFL34EUKpq05Xk&hl=en&authkey=CNnsqdIF
+
+2. revise SPS schema (Anand, Biva, Saumen, Manish?, Shawn? Paolo? Bertram? Ilkay?)
+  --  adjust names: (i) use DToL  names, (ii) list OPM synonyms in parentheses  (see above)
+  -- have layout reflect "wf-land"   (almost empty!?), "Trace/OPM-land", "data-land", "collab-land"
+  --  various fixes 
+      -- proc vs. proc_exe (remove   run_id in proc?)
+      -- retrieve.user_id (?)
+       -- data.run_id (?)
+      -- data requires duplicate  copy  for each retrieve record (?)
+      --   data supports references to actual data ?
+      --  run_id removed from used,  was_triggered_by, was_generated_by,  was_derived_from
+      -- give meaningful definitions   of attributes (what information they represent)
+       -- add constraints for "fusing"  run provenance relations  (was_triggered_by, etc.)
+      -- SB: Do we really need to   store global and local ids? Can local ids be converted to global ones   at upload time? (Note this might solve "fusing" problem as well)
+-->  Shawn to coordinate call with  Anand, Biva, Saumen, Manish, ...
+3. implement SPS schema
+4. describe native to shared provenance schema mapping
+  Anand:  Kepler Provenance Recorder  has a spreadsheet 
+  Biva:  Taverna
+  Saumen: Kepler/COMAD  
+5. implement native to shared provenance schema mapping
+
+Weekly Reports:
+
+* Anand: http://groups.google.com/group/datatol/web/weekly-report-5?_done=%2Fgroup%2Fdatatol%3F
+1) Created the SPS schema in my local environment.
+2) Finished  the coding for utlity for  uploading data to ftp server and asserting the  equivalence.
+==> use similar names for Biva's, Anand's, and Saumen's tools; btw: 'utility' is too generic
+3) Working on capturing the rest  of the dependency relations as suggested by Manish in native OPM trace.
+4) Analyzing and working on mapping between the native trace and  SPS.(Analyzing whether querying the native API will capture extra  useful  information  than that of the OPM format which can be dumped  into the SPS. )
+
+* Biva: http://groups.google.com/group/datatol/web/the-taverna-api-client?hl=en
+adding codes and snippets
+created SPS local system
+
+schema is basically the same as Saumen's 
+  
+* Saumen: http://groups.google.com/group/datatol/web/saumen-20100720?_done=%2Fgroup%2Fdatatol%3F&hl=en
+
+ Discussions:
+ 
+ Anand:  Kepler OPM trace -> SPS - staging area approach? ==> take offline
+ 
+ Biva: Taverna End-to-end:
+ load wf1 from myExperiment
+ bind data
+ run wf1 
+ [[fyi: only extracts values in its own Taverna store]]
+ need to have DB connected to Taverna (via jar)
+ include jar in a certain installation folder, this 
+ [[ Ilkay: related to Data Playground? Not known ]] 
+ traces are in the local MySQL DB (using internal Taverna-ids)
+ querying the traces via API 
+ populate local SPS variant
+ publish from local SPS to shared SPS 
+
+Biva's question: native prov store has read/write provenance, not d-depends, i-depends !?
+Manish: doesn't Paolo have some logic to infer i-dep, d-dep from read/write prov?
+==> create EXAMPLE, document!
+
+global-ref: gid
+local-ref:  lid
+taverna-ref: tid
+
+gid ~ lid : we know how to keep it
+lid ~ tid: we don't know
+
+Suggestion:
+- do it by hand
+- use hashes: 
+--- tid ~ hash(*tid)
+--- lid ~ hash(*lid)
+
+Anand: Kepler end-to-end scenario:
+Take a workflow definition file/create a new workflow
+Bind that data(right now its a mock up input)
+Run the workflow with OPM output enabled
+==> Bertram: going via OPM or via "native" provenance?
+Anand: currently using OPM; not clear whether that's enough..
+==> need to study requirements, decide OPM, native, or combo
+
+Biva: the OPM format of Taverna is lossy (not enough);
+hence using native traces 
+
+OPM is missing e.g. link between gid ~ lid
+
+How do we do publish step?
+Variant I: create "publish button", given trace file, and local--global relations
+Variant II: via code snippets / API
+Not doing V-I now, but V-II
+
+
+  NEXT ACTIONS:
+
+0. Looking at the benchmark queries, finalize DToL Schema of SPS (focus on what you need NOW; not for future versions)
+==> Anand, Biva, Saumen to interact tightly (daily calls?) 
+1. Deploy global SPS database (Anand, Biva, Saumen) --> help from Daniel Zinn
+2. Finish upload of traces (Kepler, Taverna, COMAD) to the local SPS
+3. Upload  local traces to global SPS
+4. Answers as many queries as possible from "benchmark queries"
+4.1. conceptually analyze what queries can be answered
+4.2. exact SQL queries/stored procedure to answer the queries
+4.3. result of SQL queries against test trace
+

@@ -1,0 +1,69 @@
+Must be done:
+- Three member nodes - dryad, daac, and knb
+- Member node integration testing
+- CN integration testing
+- Three coordinating nodes up
+  - CN packages to deploy
+  - VMs to be ready to receive CN packages
+- CN replication
+- documentation, presentations, demonstrations
+
+
+Should be done:
+- Testing the mercury indexer
+- Completing command line client (python or java)
+- Completing the R client 
+- Automating the harvest of content from member nodes by CNs
+
+- Add recommendation for date rendering
+
+
+
+#332 - Dave - move to next sprint and flesh out tasks
+
+#429 - MN integration testing.  Needs further discussion (chad and dave), move to sprint 10.
+
+#609 (rpw add to sprint 10) Design and implement the  scheduler for synchronization service component
+#658 - (rpw move to sprint 10) Create a watcher for the logs to handle replicate and create messages on the CN
+#662 - (rpw move to sprint 10) Modify the harvester to read and update the registry information
+#663 - (rpw move to sprint 10) Utilize a simple objectFormat registry to determine which configuration to feed the Mercury indexer
+#664 - (rpw move to sprint 10) Implement CN_crud.resolve  method
+#666 - 
+
+#680 - move to next sprint
+#681 -
+#682 - move to next sprint - dependent on a few fixes to Metacat, and rebuilding the packages
+
+#683 - dependent on #682 + #429
+#684 - dependent on #683
+#685 - could be as simple as running the db clean script, but need to extend at some point to completely nuke metacat for a clean install
+#686 depends on #683
+
+#688 - should be done today, otherwise move to sprint 10
+#689 - depends on #688
+#690 - waiting on next version of the indexer with debug output - sprint 10
+#691 - change owner to Rob, move to sprint 10
+
+#693, 694, 695 - move to sprint 10
+
+#277, 291 - tests need to be updated
+
+#618 - move to backlog, not really required for prototype
+
+#677 - harvester is remaining item
+- may be a task for pulling usage infomration from the mercury mysql database for the DataONE logs
+
+#698 - should be fixed now, move to sprint 10
+
+#702 - move to backlog, requires research on best library for doing this
+
+#703 - Move to next sprint if not done before.
+
+
+
+
+
+
+
+
+

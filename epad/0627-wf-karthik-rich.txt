@@ -1,0 +1,57 @@
+June 27 - Workflows Meeting
+Karthik, Richard
+
+Karthik: We should try and get through this internship, as you have a set time. We can work on extra stuff later, but for now, let's focus on keeping this going for now, and then we can focus on different projects that we can continue on from this effort. We'll get one paper out of all of the work that you're putting out on this internship, and then we can see about extra projects, which is why I'm not rushing MEE. Once we have a better sense of all of the data collected on this effort, we can see what's next.
+
+Richard: That's good to hear. Right now I'm feeling very overloaded by this internship, but I really need to just tone it down to a manageable size and then do that as well as I can. 
+
+Karthik: Yeah, but we've done a lot of good work; going through google scholar, mendeley, etc. At this point sure, more data would be nice, but it'd be best to work with the data that we have and finish this up. In that process, we'll be able to clarify wha'ts left a lot better. 
+
+Richard: That's what I was trying to do this morning; go through past notes, to see about other hypotheses, to make sure that we get the most out of the data that we have.
+
+Karthik: I've seen the questions that you've sent me about what we can get out of MySQL. I can write the SPARQL code for that - I'll go one step further, and see if I can work on the package for R that deals with RDF data. I've downloaded all of the myExperiment database, so I'll give you R code with comments in the code that you'll be able to run. For instance, you'll be able to call for the top __ of any category. In that process, you'll understand how this works. I don't enjoy SPARQL - it's not intuitive, and not like SQL. But I can also convert the RDF database into XML, which is a lot more friendly, which could easily be read into a normal database, which could be queried inside R. What this code should do is drop it into a CSV file. So we can run queries that we can plot, and then use in R. Does that sound reasonable?
+
+Richard: That sounds excellent. That is one of the reasons I've been reluctant to sit and put all of this into excel, because of having to switch between things. The problem for me is that I'm completely lost by SPARQL (I don't know the variables, for instance.) 
+
+Karthik: It isn't intuitive, I agree. I'll try to annotate this into one single R script. Then every time you run it, it'll put it all into one CSV file that you can run off of. 
+
+Richard. That sounds great. I'm not entirely proficient at R.
+
+Karthik: This shouldn't be complicated. You should just be able to press enter and spit it out. Given that you're a programmer, and that you know Python, it shouldn't be hard for you to change the query. 
+
+Richard: I agree, that should be fine. If I can't do it, I'll just keep in touch. 
+
+Karthik: Ok, I'll try to get it for you by midnight tonight, and then we'll go from there. We can see how it works from there. From that point forward, you should have data that you should be able to keep working with. 
+
+Richard: I'm just wondering if there is a better way to get tier 2/3 data without plugging in the file. 
+
+Karthik: That can be done with SPARQL as well. 
+
+Richard: Would that be faster than me just going online and doing it, you think?
+
+Karthik: This can be automated without a huge learning curve. For instance, if you want the top ten, it'll be three lines of code, which'll get the ID numbers, which'll be stored as a vector inside R. Then I can say, for each of these numbers, go back to myExp and get all of the data in tier 2. 
+
+Richard: So, we can get tier two data easily? I was worried I was going to be there counting. Bertram said that taverna should be done like that.
+
+Karthik: Yes, I think so. Worst case, we'll have a list of things that can be done, and then spending like 4 hours doing mindless work. Ideally, we're not going to spend too much time automating this to perfection. If I can do all of the things I can do in R, then we should save time. 
+
+Richard: The reason I've spent time on this is because I don't really want to copy and paste for the next two weeks non-stop.
+
+Karthik: I understand. 
+
+Richard: Thanks a lot for this.
+
+Karthik: No worries. 
+
+Richard: I'll try and edit that document we're working on, I don't know how much use it'll be to us later, though. Tomorrow morning I'm flying to Berlin. 
+
+Karthik: In that case, I'll just email you. 
+
+Richard: I have a paper (pretty much my first publication) due on Wednesday, so...
+
+Karthik: That's fine, there's no rush at all. There's no pressure to juggle this while you're in Berlin and dealing with your talk. There should be enough time. I'll get this to you this week. 
+
+Richard: great. keep in touch, good luck, don't rush, talk to you by email.
+
+Karthik: perfectt. Happy travels, good luck with your talk. 
+

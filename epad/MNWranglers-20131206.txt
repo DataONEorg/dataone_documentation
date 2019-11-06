@@ -1,0 +1,71 @@
+Member Node Wranglers 
+    Fridays at 10:00 am AK
+                    11:00 AM PDT
+                    12:00 MDT
+                    1:00pm CDT
+                    2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+
+Switching to SKYPE: Amber's username is aebudden
+
+6 December 2013  
+
+Attending:  Amber, Laura, Dave
+
+Regrets:  Bruce, Rebecca, John Cobb
+
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+        Replication from two weeks ago completed ok?  -  we believe it completed ok, but broader CN issue is muddying the waters.
+        
+        CN synch issue - see 12/5/13 email from Chris; finalizing the design on fixing problem and keeping it from happening again. 
+        
+        New MNs announcements? - holding off until CN issues resolved; NSF wants to highlight SEAD so we're going ahead and "announcing" them to some degree.
+        
+        IDCC workshop? - hold until Bruce present
+
+        2. Status of MNs  (this information left from 11/15/13)
+     * Y5Q2
+       * holding off on announcing NPN and SEAD until the CN issues are resolved
+
+       * Gulf of Alaska DP (3531) -  The GoA PIs et al. met before Thanksgiving, which is what we were waiting for before we could announce. Matt?
+       * FRIM (4083) - Jing Tao D1 contact, Omar Ali is tech MN POC, currently installing latest version of Metacat, Bruce sent an email to Omar - no reply as yet - Laura
+       * LTER-Europe (3232) - Matt?
+       * Dryad (3118) - From last week: Todd Vision said the metadata issues have been resolved and he has requested a timeline from Ryan - I'll share with team when I get it  (RK)  
+         * From 11/14/13 MNF, Ryan said there are two issues, one of which should be resolved by code that he was to review Thurs afternoon, and another related to the fact that data in their development system isn't clean (i.e. may be incomplete, 
+       * EDAC (3221) - email trail indicates some technical issues were in the works, have been resolved, now we need to decide what are next steps.  Suggest hold off on any move to production until after CN issues resolved.  Rob will talk with Soren and see what's next. 
+       * Kansas (3188) - email out to CJ - no reply as yet; Bruce said there was a synch issue?  Dave: there was an error in their science metadata documents, in the process of repairing; this should be able to go prod after CN issues resolved. 
+       * U Illinois Chicago (3213) - Bob says "We still have to finish up installing the prerequisites for Metacat (Java). The cert is installed and functional. I'll be in touch with Chris to schedule our next install session."  Laura to follow-up with Bob/Chris.
+       * PPBio (3748) - Matt said last week: LLNC server migration is complete. May need support now for further configuration. Laura to be in touch with Debora.
+       * SAEON (3205) -  moving metacat to more permanent server - Matt?
+       * NKN (3238) - Luke says "we are on track here in Idaho with our attempts to stand up the MN stack.  We've been sidetracked with other priorities, but are committed to continuing forward."  Laura to check in with them.
+
+     * Y5Q3
+       * USGS ScienceBase (4002) - Laura to check in with Mike Frame.
+       * DFC (3532) - Bruce has emailed Lisa - update? (also invite to IDCC workshop)
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting - ask Matt next week, Carol didn't get a chance to talk to anyone when she was there in Oct.
+
+     * Y5Q4
+       * EU BON (3964) - Laura to check in with them.  Latest notes indicate they were going to have a meeting in early December.
+       * MPC (3708) - decided to go with GMN with Dublin Core for metadata; they think they will pursue OAI-PMH in the future for other purposes.  All DC terms are contained in EML, Dave recommends create simple EML documents, so D1 doesn't have to do anything special to use; allows richer metadata if they choose.
+
+     * Backlog
+       * Contacting  those who contacted us first; have already received word back from Movebank (Sarah Davidson) (moved to deferred) and met with Mike Huhns from USCarolina (planning); EPA AED meeting probably in January to discuss broader EPA involvement; Montana State University deferred; holding off on the two Brazilian entities to see what happens with PPBio (hope for success story there to encourage others' involvement); no response yet from other potential MNs contacted
+       * iRODS is blocker for iEcolab and iPlant
+       * DSpace is blocker for UTK
+       * After holidays plan to get back in touch with Alison re: Australian involvement
+       * Holding off on others in Backlog until there is some movement on current PY efforts.
+
+        3. Old action items
+        
+        4. Not-high profile issues
+         
+        5. Around the room
+                Dave: end of February, review; need to have clean documentation of adding new MNs, demonstrate that the process is routine, easy 
+                Amber: if anyone from MN community at AGU, Amber, Dave, Mike Frame, Bob will be there; Laura to send out info Monday to MNF list; Amber is sending out to other DataONE contacts
+                
+

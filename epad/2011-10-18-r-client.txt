@@ -1,0 +1,155 @@
+Here is the note for R client taken during the discussion. If you have any other comments to share, please post them here. Thank you!
+
+Multi-object data pkg: provide preview function just on CN instead of MN
+ 
+Parameters for create() or upload(): only the dataset ID
+ 
+Searching function on R client: could be text-based; link to search engine; develop search API (but not top priority)
+ 
+Local cache: top priority
+ 
+Identifier: have a function to automatically generate identifier but not dramatically long string
+ 
+Create a function to list users’ rights to the dataset (read, write, etc)
+ 
+Special accounts: authenticated user roles
+Verified users: not clear
+ 
+Metadata: when uploading if not providing metadata, system gives error? If no systematic metadata, system gives back error, but not necessary for scientific metadata. Make the metadata template available so users can just download, fill, and upload it.
+ 
+Data analysis: make remote services available, run workflows on scheduled time
+ 
+Provide a function to provide R history
+ 
+Other two tools: matlab and excel, any others? Simulation model tool maybe.
+ 
+Consider data preservation properties, for example, data products link with raw dataset
+ 
+Access to genetic data files
+ 
+Deal with large object: providing identifier for existing object in system
+ 
+Provide guidelines: metadata generation, best practices using R client (don’t archive too many intermediate outputs, for example)
+ 
+More official batching process, getting portion of large dataset from other MN to the user
+ 
+Provide a package function, provide package ID, relating to dataset
+ 
+Interoperable function: link from Mercury search to R client (using the same ID), have sort of D1 object search
+
+Q: Do DataONe MN's support the functionality of upload before curation? A: Some do. Q: Cool!
+
+A general comment to DataONE architecture that sparked a neuron during the R demo: When downloading data, particularly large data, it could be useful to do a cooperative download from ALL (i.e. sum of) MN's in order to spped downloaded. This could crate a P2P download functionality seamlessly.
+
+What would help? suggestions from the audeince:
+- Documentation
+- Set of case study examples. Show how it was used to do specific things.
+- Tutorials (and present them atrelevant conerences )
+- provide scripts/templates for R users
+- point out additional functionality that DataONE brings to R community
+- Have some blackbox provenance. What is the parameters going in. Capture dependancies "There is a wealth of information in the command history" could use gudiance from provenance WG
+- capture proveance and input and output functionality
+- provide guidance on size of tranfer request. I.e. rasie a flag when a 1 GB download is requested
+- Provide help on porting normal R scripts to being "ported" to DataONE integrated
+- From usability it might be useful to have a visual view of data and owrkflow. Exp. for the commandline averse users.
+- Provide "hooks" for collecting metrics. (myabe templates)
+- Provide a "stroy" case study for how DataONE added R functionality as a pattern that could be used for other "plugin" developments
+
+Have an intermediate (scratch) area for users to describe metadata and upload to the system later
+
+need a convinient fucntion to do the citation of the dataset
+
+Availability of citable analysis (R script upload); or run R scripts remotely and just download the results
+
+A complete description what R can complete, what R cannot, and suggestions for other tools that can complete the tasks R cannot; same for other tools
+
+Discussions of "chaining" ITK tools together came up a couple of times. One was in the context of searching for data using Mercury and then linking from results to starting a dataset download in R. Another had to do with improving metadata creation; improving R may not be the best approach: instead could R be "chained" to some other ITK tool (Morpho?) for metadata creation? 
+
+List of themes from the flip charts: the issues that got votes during the prioritization process (issue / vote total across all 4 sessions):
+
+Locally cached data        11
+Improve metadata generation: templates; for derived data products; apply from existing object         9
+Provenance data: in science MD; R history dump        9
+Supporting large datasets: show related that might be smaller; interop. w/ batch data sources; preview size, characteristics        9
+Multi-object packages: support for operations; preview; streamline access        7
+Help, guidance, case studies on R client use in DataONE        4
+Archive R scripts people have used        4
+Return a citation you can embed in a document using copy & paste        3
+ID generation: like tinyURL, short, pre or append constant        2
+Mechanism to transform non-DataONE R scripts to DataONE enabled scripts        2
+Enable R plugin to send usage data to DataONE        2
+Support writing data packages to DataONE as single transaction        2
+Integrate R client with workflow engines        2
+Text-based searching within R        1
+Support setting access restrictions: lists of allowed readers / writers        1
+Allow remote execution of R scripts: near big datasets        1
+Access to phylogenetic data in DataONE        1
+Promote R as tool for data quality assurance (session 4)        1
+
+Flip chart transcripts for R Client sessions
+Session 1
+
+ * Multi-object packages - provide a preview function to grasp its contents - 1
+ * Text-based searching within R - 1
+ * Locally cached data - 4
+ * ID generation: something like tinyURL, or that prepends/appends constant values - 2
+ * Access restriction setting-function to list allowed readers / writers - 1
+ * Access controls - set a "secret word" (password) on an object - 0
+ * Templates to assist specifying science metadata - 4
+ * Data package class is in development - 2
+ * Supporting discovery of data packages that include R scripts and allowing remote execution - 0
+ * Provide access to science metadata within R and allow operations upon it - 0
+ * Include provenance data in the sciene metadata (e.g., the R history dump) - 2
+ * Enable MaxEnt (sp?) Open Modeller for interoperability with DataONE - 0
+
+Session 2
+
+ * Access to phylogenetic data within R via DataONE - 1
+ * In presentation, carefully use the word 'object' - 0
+ * Broader data type conversion support - 0
+ * R's own limitations on large datasets (i.e., show related objects that might be smaller, useful) - 3
+ * Streamline access to multi-object data packages - 4
+ * Local data caching 3
+ * Improve metadata generation support for derived data products - 3
+ * Guidance information acessible from within tools, specific to R - 2
+ * Interoperability with batch-oriented data sources - 2
+ * Ensure reserveID works - 0
+ * Add objects to a data package witin R - 0
+ * Improved memory management within R (in memory vs. on disk) - 0
+ * Linkage between Mercury discovery -> save results / IDs -> direct import to R - 0
+ * Apply metadata from an existing object to a new derived object - 1
+
+Session 3
+
+ * Documentation, guidance for DataONE R client users - 0 
+ * Case-study examples for how to use DataONE R client and its benefits including an example that archives the R script in DataONE or git hub or ... - 2
+ * Compile / archive scripts people have used - 4
+ * Capture provenance within R client: actions, IDs, data transfers, etc. - 2
+ * Indicate size of data sets prior to committing to download - 3
+ * Provide mechanism to transform non-DataONE R scripts to DataONE-enabled R scripts - 2
+ * Broader data type conversion support - 0
+ * Streamline access to multi-object data packages
+ * Local data caching - 1
+ * Improve metadata generation support - 1
+ * Graphical interface to improve usability - 0
+ * Information preview (size, characteristics) of data objects of interest - 1
+ * Enable R plugin to send usage data to DataONE - 2
+ * Write up a case study on the development of the R plugin itself - 0
+
+
+Session 4
+ * Methods, support for writing data packages to DataONE as a single transaction (value) - 2
+ * Avoid generation of many intermediate versions of datasets (e.g., X/L autosave) and commit / archive only occasionally - 0
+ * Function to return a citation that you could embed in a document via copy & paste - 3
+ * Capture provenance data - what the user did while using R - 5
+ * Support remote execution of R scripts, especially for large data sets - 1
+ * Improve support for metadata generation (or not, if R is not the appropriate tool)
+ * Improve support for access to multi-object packages
+ * Local data caching - 3
+ * Broader data type conversion support - 0
+ * Integrate R client with workflow engines - 2
+ * Create a DataONE R client email group
+ * R is an important tool for data quality assurance, annotation of quality; use resource maps to support connections between objects, including scripts (value) - 1
+ * Communicate the optimal scope of each DataONE tool, including a tool's limits 
+ * Support for selection of specific version of an object
+

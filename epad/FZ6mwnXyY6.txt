@@ -1,0 +1,411 @@
+Deliverable - decision tree
+Break into two groups
+
+Introductions
+Cookies  
+Accessibility
+Metadata (ICPSR)
+
+
+
+
+
+Linking to DataONE
+Problems
+National Laws
+Liability
+Attribution
+Copyright
+Content Accuracy, Completeness, and Usability of NBII Data and Information 
+Non-Endorsement of Commercial and Other Non-NBII Products and Services 
+Define terms
+e-mail
+ftp
+online surveys
+marketing information
+collection and release of given info
+retention of collected info
+Links to Non-NBII Sites
+Non-Endorsement of Commercial and Other Non-NBII Products and Services
+NBII Public-Domain Software
+Content Accuracy, Completeness, and Usability of NBII Data and Information
+Copyright
+Liability
+Attribution and Citing of NBII Data and Information
+
+
+
+ICPSR Privacy Policy
+http://www.icpsr.umich.edu/icpsrweb/ICPSR/org/aboutweb.jsp
+ 
+NBII Disclaimer, Attribution & Privacy Statement
+http://www.nbii.gov/portal/server.pt/community/about_nbii/1684/disclaimer___privacy
+ 
+NASA Web Privacy Policy and Important Notices
+http://www.nasa.gov/about/highlights/HP_Privacy.html
+ 
+NASA Privacy Impact Assessments
+http://www.nasa.gov/privacy/PIA.html
+ 
+ICPSR Access Policy Framework
+http://www.icpsr.umich.edu/icpsrweb/ICPSR/curation/preservation/policies/access-policy-framework.jsp
+
+Policy-making for Research Data in Repositories: A Guide
+http://www.disc-uk.org/docs/guide.pdf
+ 
+ 
+EXAMPLES OF INTRO
+Our privacy policy explains the types of information we gather from visitors to our Web site.
+ 
+The following statements and disclaimers apply to all Web pages managed by the National Biological Information Infrastructure (NBII) unless otherwise noted.
+ 
+Thank you for visiting NASA and reviewing our policy notices. We have integrated   these statements into a single posting for ease of use. The following links   will help you navigate to a specific section: 
+ * Privacy Policy 
+ * Security Notice 
+ * Accessibility Statement 
+ * Linking Policy and Disclaimer of Endorsement 
+ * Privacy Impact Assessment
+ * NASA Officials for Privacy Related Matters
+ 
+ 
+ [ICPSR Text]
+ 
+Cookies
+ 
+Cookies are used on the ICPSR Web site for authentication, so that site visitors avoid having to repeatedly pass through notification pages for each dataset they wish to download. Cookies set for authentication purposes are session cookies and disappear when you close your Web browser.
+ 
+ICPSR also makes use of Google Analytics (GA) to analyze useage patterns. The GA software sets a persistent cookie that lasts for six months.
+ 
+[HOW SPECIFIC DO WE WANT TO GET --  SEE NBII  OR NASA FOR GREATER DETAIL]
+ 
+Accessibility Policy
+ 
+In order to meet the needs of all of our site visitors, ICPSR strictly follows the Web accessibility guidelines set forth by the Federal Governments's Section 508 Standards  . Our accessibility page provides more information on how ICPSR meets the needs of differently-abled site visitors.
+ 
+ICPSR Metadata
+ 
+For librarians and other metadata professionals, ICPSR makes its metadata records available in DDI XML and MARC format.
+ 
+Linking to ICPSR
+ 
+If you want to link to our Web site, we're prepared logo graphics and HTML code you can just copy/paste into your Web site.
+ 
+If you want to link to particular studies, please make use of the Persistent URL/DOI that's listed on the study home page. That way you can be sure your link will never break.
+ 
+Problems
+ 
+If you encounter problems with the ICPSR Web site, please contact web-support@icpsr.umich.edu.
+ 
+[ITEMS TO CONSIDER FROM OTHER POLICIES]
+[FROM ICPSR DATA]
+National Laws  
+ 
+Also relevant to ICPSR's access policy are national laws, statutes, and codes related to the privacy and protection of research participants. Of particular note is the federal regulation on Protection of Human Subjects (45 CFR 46 [1]). Institutions bear the responsibility for compliance with 45 CFR 46. Every university must file an "assurance of compliance" with the Office for Human Research Protections that includes "a statement of ethical principles to be followed in protecting human subjects of research." University Institutional Review Boards (IRBs) review research to address these issues. Other relevant U.S. laws include the Family Educational Rights and Privacy Act (FERPA); the Health Insurance Portability and Accountability Act (HIPAA); the Federal Confidentiality Order; and the Confidential Information Protection and Statistical Efficiency Act of 2002 (CIPSEA).
+ 
+[OTHERS FROM NBII]
+
+ 
+ 
+[OTHERS FROM NASA]
+Privacy Policy
+·       Automatically collected info
+·       Info collected for tracking and customization (cookies)
+·       Personal info 
+·       Info from children
+Security
+Accessibility statement
+Linking policy and disclaimer of endourcesmnt
+ 
+ 
+ 
+ [FULL TEXT FROM WEBSITES]
+ 
+NBII REVISION
+
+DataONE
+
+The following statements and  disclaimers apply to all Web pages managed by DataONE unless otherwise noted [and from member nodes? what do we mean by managed by DataONE since DataONE is an organization composed of MN and CN]. 
+[from this point forward DataONE will be referenced as we]
+
+How we handle the information we gather when you visit the DataONE Web site [or member nodes?]
+[Policy Question - very broad  which needs to be articulated at the start: If there is a conflict  between this policy and DataONE policy -- which wins?]
+
+Web server activity logs 
+ 
+Like most webservers, DataONE collects and stores all of the information that your Web browser sends when it requests a Web page, including:
+ 
+ * the name, domain, and numerical internet address of the "host" computer (typically a computer belonging to your Internet Service Provider and not your personal computer) from which you access the Internet.
+ * the date and time you accessed our site;
+ * the Internet address of the Web page that you came from the page you requested from our site and the number of characters sent to your computer; and
+ * the information your Web browser software sends as its so-called "User Agent," which typically identifies the browser software and may also indicate the operating system and type of CPU used in your personal computer.
+
+It is DataONE's policy not to resolve this information to an individual user.  [Policy Implication -- this could affect data producers' willingness to share.] The logs are periodically summarized and analyzed in order to study site usage over time and to perform other studies to help us improve the site's organization, performance, and usefulness.
+ 
+Electronic mail
+When you send us personal identifying information via e-mail (that is, in a message containing a question or comment, or by filling out a form that e-mails us this information), we use it to respond to your requests. We may forward your e-mail to others including Government employees, partner agencies, or contract personnel who are better able to answer your questions. [Policy Implication - does this limit us too much?  Could this affect users willingness to contact DataONE?] We do not retain or distribute lists of e-mail addresses to any parties outside of the DataONE except as necessary to conduct DataONE business or meet legal requirements. 
+ 
+File transfer protocol (FTP)
+Many DataONE sites using the file transfer protocol may also store your e-mail address if your Web browser is configured to provide it. By default most Web browser software does not send your e-mail address; this option is configured through your browser preferences.
+ 
+Outreach and Community Services
+We may collect information from you, with your permission, that will allow us to provide customer services, such as promotional materials and product availability notices. We may forward the information collected to other DataONE employees or member nodes to provide specific services. We will remove such information at your request [Policy Implication: Is it necessary to state this?  There are complicated technical and workflow issues associated with this.]. 
+ 
+Collection and release of gathered information
+We want to make it clear that we will not obtain personal identifying information about you when you visit our Web site, unless you choose to provide such information to us. Except in the course of officially authorized law enforcement investigations, or in the event of a suspected attempt to deliberately circumvent our system's security with the intent to gain unauthorized access or to do physical damage, we do not attempt to identify individual users or share any information we receive with any parties outside of DataONE. In the latter case, collected information associated with a suspected intruder might be shared with an incident response service.
+ 
+Retention of collected information
+Cookies - Some DataONE services may save a "cookie" on your browser to provide a temporary history of actions taken. We do not retain any record of "cookies" beyond what is necessary for running the service. DataONE also might use third party analytics software to analyze useage patterns. The third party software may set  persistent cookies that last for a fixed duration.
+ 
+Web server activity logs - Monthly extracts of the log files are archived and stored off-line at our discretion for an indefinite period of time. Some statistical summaries derived from these data may be retained online or off-line at our discretion for an indefinite period of time.
+ 
+E-mail - Information collected via e-mail will be retained at our discretion in a directly readable form for as long as necessary to complete our response. The e-mail may be retained in an archival form as required by U.S. Federal laws. For more information, please refer to the National Archives and Records Administration's Records Management Program [Provide link].
+ 
+Outreach and Community Services - Such information may be maintained at our discretion for an indefinite period of time.
+ 
+Links to Non-DataONE Sites
+The DataONE site contains numerous links to data and information on the Web.  Links and pointers to non-DataONE sites are provided for information only and do not constitute endorsement, express or implied, by DataONE or its member nodes, of the referenced organizations, their suitability, content, products, or services, whether they are governmental, educational, or commercial.
+ 
+Non-Endorsement of Commercial and Other Non-DataONE Products and Services
+Hypertext links and other references to non-DataONE products and services are provided for information only and do not constitute endorsement or warranty, express or implied, by the DataONE, its member nodes, as to their suitability, content, usefulness, functioning, completeness, or accuracy.
+ 
+DataONE Public-Domain Software [Policy Question: Is this relevant?  Better to leave out Public-domain?]
+Links are provided to public-domain software developed by or for the DataONE. Although these programs have been used by the DataONE, no warranty, expressed or implied, is made by the DataONE as to the accuracy and functioning of the programs and related program material, nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the DataONE in connection therewith.
+ 
+Content Accuracy, Completeness, and Usability of DataONE Data and Information 
+We make every effort to provide and maintain accurate, complete, usable, and timely information on our Web pages. These data and information are provided with the understanding that they are not guaranteed to be correct or complete.  Conclusions drawn from, or actions undertaken on the basis of, such data and information are the sole responsibility of the user.
+ 
+Copyright [Policy Question: are we public domain? creative commons?]
+DataONE-authored or produced data and information are copyrighted by DataONE [Policy Issue; Likely to be cc].   Some DataONE pages contain material that is copyrighted by others and used by DataONE with permission. You may need to obtain permission from the copyright owner for other uses. Furthermore, some non-DataONE data, products, and information linked, or referred to, from this site may be protected under U.S. and foreign copyright laws. You may need to obtain permission from the copyright owner to acquire, use, reproduce, or distribute these materials. It is the sole responsibility of you, the user of this site, to carefully examine the content of DataONE and all linked pages for copyright restrictions and to secure all necessary permissions.
+
+Accessibility Policy [To Do: Find best location for this]
+In  order to meet the needs of all of our site visitors, DataONE  follows the Web accessibility guidelines set forth by the Federal  Governments's Section 508 Standards   Our accessibility page provides  more information on how DataONE meets the needs of differently-abled site  visitors. [Policy Implication: If we follow accessibility guidelines we must build an accessibiliy page.]
+
+[To Do: Policy on use of DataONE logos and linking to DataONE]
+
+Interaction with Children[To Do: Find best location for this]
+The  Children's Online Privacy Protection Act (COPPA) governs  information gathering online from or about children under the age of  13. Verifiable consent from a child's parent or guardian is  required before collecting, using, or disclosing personal information from a child under the age of 13. We  collect no information about you or your child, other than that collected from every user as detailed in the previous section. When DataONE site needs to  collect information about a child under 13 years old, COPPA required  information and instructions will be provided by the specific Web page  that collects information about the child.   The Web page will specify  exactly what the information will be used for, who will see it, and  how long it will be kept. 
+
+There are several exceptions that permit collection of a child's email address   without receiving parental consent in advance: 
+ * To  provide the parents with notice and to seek consent for  communications with the child. Note: this may require  collection of the parent's email address as well. 
+ * To respond to a one time request from a child. 
+ * To  respond more than once to a child's request; i.e., subscription to a newsletter. However, parental consent is required prior to  the second communication. 
+ * To protect the safety of a child who is participating on the site; i.e., in a chat room. 
+ * To protect the site or to respond to law enforcement;  i.e., in the case of a Web site compromise. 
+
+Personal  information about children under 13 years of age may be needed to respond to his/her communication to us, such as to receive a poster or  to acquire information for a school project. Personal information  about your child will be destroyed immediately upon completion of its  intended purpose. On rare occasions, it may be determined that a  communication from a child under 13 years old should be maintained for  historical purposes. Should such an occasion occur, DataONE will obtain the necessary consent from the child's parent. 
+
+Finally,  we provide many on-line tools and services in support of DataONE's mission.  A child under 13 years old may inadvertently provide  personal information to one of these services. If this should happen, the information about the child will be deleted immediately upon  discovery. [Policy Implications: there are technical implications associated with this.]
+ 
+Liability
+Neither DataONE nor any member node thereof, nor any of their employees, contractors, subcontractors, make any warranty, express or implied, nor assume any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed, nor represent that its use would not infringe on privately owned rights.
+
+
+ 
+Attribution and Citing of DataONE Data and Information
+As a condition of use, those who refer to data and information found through the DataONE portal in their publications and presentations must formally cite both the original author(s) and data authority for any cited item(s) as well as DataONE itself, as the source through which the data or information was found. Such citation may be in any format appropriate to the publication or presentation, or in any format required by the original creator or provider of the data/information. Identifying the source for citation is the responsibility of the user, and users should be prepared to provide a copy of the citing publication or presentation to the cited authors or data providers, upon their request.Details of DataONE's citation policy can be found at XXX [To Do: Data Citation policy]  
+ 
+To Contact Us
+If you have any questions about this "DataONE Privacy Policy and Disclaimers," please contact:
+ 
+ [To Do: Contact Info]
+ 
+ 
+ 
+NASA Web Privacy Policy and Important Notices
+http://www.nasa.gov/about/highlights/HP_Privacy.html
+ 
+Thank you for visiting NASA and reviewing our policy notices. We have integrated   these statements into a single posting for ease of use. The following links   will help you navigate to a specific section: 
+ * Privacy Policy 
+ * Security Notice 
+ * Accessibility Statement 
+ * Linking Policy and Disclaimer of Endorsement 
+ * Privacy Impact Assessment
+ * NASA Officials for Privacy Related Matters
+Privacy Policy
+This notice provides NASA's policy regarding the nature, purpose, use and   sharing of any information collected via this Web site. The information you   provide on a NASA Web site will be used only for its intended   purpose. We will protect your information consistent with the principles   of the Privacy Act, the e-Government act of 2002, the Federal Records Act,   and as applicable, the Freedom of Information Act. 
+Submitting information is strictly voluntary.  By doing so, you are   giving NASA your permission to use the information for the intended purpose.  If   you do not want to give NASA permission to use your information, simply do   not provide it. However, not providing certain information may result in NASA's   inability to provide you with the information or services you desire. 
+There are several types of information we collect. These include: 
+Automatically Collected Information 
+Information Collected for Tracking and Customization  (Cookies) 
+Personal Information 
+Information from Children 
+NASA will only share   your information with another government agency if it relates to that  agency,   or as otherwise required by law. We may share information with private  organizations as part of a service that provides NASA.gov users with  increased capabilities or functionality on the site. NASA never creates  individual profiles. 
+Automatically Collected Information
+ 
+We collect and temporarily store certain technical information about your   visit for use in site management and security purposes. This information includes: 
+The Internet domain from which you access our Web site (for example, "xcompany.com" if     you use a private Internet access account, or "yourschool.edu" if     you connect from an educational domain); 
+The IP address (a unique number for each computer connected to the Internet)     from which you access our Web site; 
+The type of browser (e.g., Netscape, Internet Explorer) used to access     our site; 
+The operating system (Windows, Unix) used to access our site; 
+The date and time you access our site; 
+The URLs of the pages you visit; 
+Your username, if it was used to log in to the Web site; and 
+If you visited this NASA Web site from another Web site, the URL of the     forwarding site. 
+This information is only used to help us make our site more useful for you.   With this data we learn about the number of visitors to our site and the types   of technology our visitors use. 
+Except for authorized law enforcement investigations, no attempts are made   to identify individual users or their usage habits. Raw data logs are retained   temporarily as required for security and site management purposes only. 
+Information Collected for Tracking and Customization (Cookies)
+A cookie is a small file that a Web site transfers to your computer to allow   it to remember specific information about your session while you are connected.   Your computer will only share the information in the cookie with the Web site   that provided it, and no other Web site can request it. There are two types   of cookies, session and persistent. Session cookies last only as long as your   Web browser is open. Once you close your browser, the cookie disappears. Persistent   cookies store information on your computer for longer periods of time. 
+NASA Web sites may use session cookies for technical purposes such as to enable   better navigation through the site, or to allow you to customize your preferences   for interacting with the site. A few NASA Web sites may also make use of persistent   cookies to remember you between visits so, for example, you can save your customized   preference settings for future visits. Each NASA site using persistent   cookies identifies itself as doing so.  If you do not wish to have session or persistent cookies stored on your machine,   you can turn them off in your browser. However, this may affect the functioning   of some NASA Web sites. 
+ 
+  Providing Information to Third Parties
+NASA may share information with private organizations as part of a  service that provides NASA users with increased capabilities or  functionality on the site. On www.nasa.gov, the "Share" function at the  top of each page is provided by a third party, AddThis. This firm  collects information on visitors who use this feature to share NASA  content on their Facebook pages, Twitter feeds or other social media or  social networking sites. As noted in their privacy policy AddThis uses this information for its own business purposes, including marketing the information to other parties.
+AddThis does not collect information from users who do not use the feature.
+ 
+Personal Information 
+If you choose to provide us with personal information, through such methods   as completing a form or sending us an email, we will use that information to   respond to your message and to help us get you the information or services   you have requested. 
+Remember that email isn't necessarily secure. You should never   send sensitive or personal information like your Social Security number in   an email. Use postal mail or secure Web sites instead. 
+Some of our Web sites ask visitors who request specific information to fill   out a registration form. For example, vendors looking for marketing opportunities   by visiting our NASA Acquisition Internet Service site may be asked to register   to obtain email notices of business opportunities. Other information collected   at Web sites through questionnaires, feedback forms, or other means, enables   us to determine visitors' interests, with the goal of providing better service   to our customers. 
+ 
+Interaction with Children
+The Children's Online Privacy     Protection Act (COPPA) governs information gathering online from or     about children under the age of 13. Verifiable consent from a child's parent     or guardian is required before collecting, using, or disclosing personal     information from a child under the age of 13. 
+We collect no information about you or your child, other than that detailed   in the previous section, when you visit our web site unless you choose to provide   information to us. When a NASA Web site needs to collect information about   a child under 13 years old, COPPA required information and instructions will   be provided by the specific Web page that collects information about the child.   The Web page will specify exactly what the information will be used for, who   will see it, and how long it will be kept. 
+There are several exceptions that permit collection of a child's email address   without receiving parental consent in advance: 
+ * To provide the parents with notice and to seek consent      for communications     with the child. Note: this may      require collection of the parent's email address          as well. 
+ * To respond to a one time request from a child. 
+ * To respond more than once to a child's request; i.e.,      subscription to a     newsletter. However, parental      consent is required prior to the second communication. 
+ * To protect the safety of a child who is participating      on the site; i.e.,     in a chat room. 
+ * To protect the site or to respond to law enforcement;      i.e., in the case     of a Web site compromise. 
+Personal information about children under 13 years of age may be needed to   respond to his/her communication to us, such as to receive a poster or to acquire   information for a school project. Personal information about your child will   be destroyed immediately upon completion of its intended purpose. On rare occasions,   it may be determined that a communication from a child under 13 years old should   be maintained for historical purposes. Should such an occasion occur, NASA   will obtain the necessary consent from the child's parent. 
+Finally, we provide many on-line tools and services in support of NASA's mission.    A child under 13 years old may inadvertently provide personal information to   one of these services. If this should happen, the information about the child   will be deleted immediately upon discovery. 
+    Web Site Security Notice
+For site security purposes and to ensure that this Web service remains available   to all users, this Government computer system employs software programs that   monitor network traffic to identify unauthorized attempts to upload or change   information,. Anyone using this system expressly consents to such monitoring   and is advised that if such monitoring reveals evidence of possible abuse or   criminal activity, such evidence may be provided to appropriate law enforcement   officials. 
+Unauthorized attempts to upload or change information on NASA servers are   strictly prohibited and may be punishable by law, including under the Computer   Fraud and Abuse Act of 1986 and the National Information Infrastructure Protection   Act of 1996. 
+Accessibility Statement
+We continually strive to ensure the pages on this Web site are accessible   to individuals with disabilities in accordance with    Section 508 of the Rehabilitation Act.   If you have any difficulty viewing any page with adaptive technology, please   contact the webmaster for this site, or the       Center Section 508 Coordinator.
+Documents on NASA Web sites are presented in many formats. These formats are   generally accessible to users using screen reading software. Some files on   this Web site may be posted as Adobe Acrobat Portable Document Format (PDF)   files. Adobe provides their  Acrobat   Reader software as a free download. 
+Linking Policy and Disclaimer of Endorsement
+NASA links to many Web sites created and maintained by other public and/or   private organizations. NASA provides links to these sites as a service to our   users. The presence of a link is not a NASA endorsement of the site. 
+When users follow a link to an outside Web site, they are leaving NASA and   are subject to the privacy and security policies of the owners/sponsors of   the outside Web site(s). NASA is not responsible for the information collection   practices of non-NASA sites. 
+NASA Privacy Impact Assessments (PIAs)
+For a list of Approved Privacy Impact Assessments (PIAs) Click here.
+ 
+NASA Officials for Privacy Related Matters
+ 
+ 
+ 
+ICPSR Access Policy Framework
+http://www.icpsr.umich.edu/icpsrweb/ICPSR/curation/preservation/policies/access-policy-framework.jsp
+Version 1 -- June 28, 2010
+ 
+Prepared by ICPSR Dissemination Committee -- Nathan Adams; Robbin Gonzalez; Felicia LeClere; Kaye Marz; Mary Morris; Brent Phillips; Matthew Richardson; Martha Sayre; Karen Sullivan; Mary Vardigan (Chair)
+ 
+1. Overview
+ 
+This policy focuses on ICPSR's mission in providing access to data for social science research and instruction. The policy describes ICPSR's mandate in this area, the objectives and scope of the endeavor, the guiding principles, and related risks and challenges. The appendices provide additional information on access rules, roles and responsibilities, and related links.
+ 
+2. Purpose
+ 
+Providing access to digital resources for purposes of scientific inquiry is at the heart of the organization's mission:
+ 
+ICPSR provides leadership and training in data access, curation, and methods of analysis for a diverse and expanding social science research community.
+ 
+Access is also a critical component of the Strategic Plan, most notably in Direction I, which emphasizes ICPSR's leadership role. Stated objectives of this strategic direction include:
+ 
+Create, model, and promote policies, procedures, and necessary technologies to enable access to social science research while protecting the rights of research participants
+Extend access to data internationally in partnership with others
+The notion of access to data and what access means has changed as ICPSR has evolved and matured. When the organization was established in 1962 with the express goal of sharing and providing access to quantitative social science data, most ICPSR data users were Consortium members. Over the decades, grant and contract sponsors have capitalized on the infrastructure of ICPSR to provide access to additional resources through topically-themed archives, and now a substantial amount of data is made available freely to anyone.
+ 
+In addition to the member-nonmember dimension to access, ICPSR deals with access levels along a continuum from public-use to confidential data, which is another important distinction to be addressed. It is also the case that the stakeholders for data access are many and varied: researchers, policymakers, practitioners, instructors, students, and sponsoring agencies and foundations all use or support the use of ICPSR resources. For these reasons, it is essential that ICPSR establish a clear and transparent access policy to support its data access and dissemination activities.
+ 
+This policy is intended to coordinate with ICPSR's policies covering digital preservation, data acquisition, and deposit. It also serves as a component of the organization's response to assessing compliance with the Trustworthy Repositories Audit and Certification (TRAC) guidelines.
+ 
+Related Links
+ 
+3. Mandate
+ 
+ISR and the University of Michigan
+ 
+ICPSR is a unit of the Institute for Social Research (ISR) at the University of Michigan. It operates within ISR under the terms of a Memorandum of Agreement (MOA) that defines ICPSR's relationship with ISR and the University of Michigan. ICPSR's mission to provide access to data for research and instruction is in keeping with the scholarly and educational missions of both ISR and the University of Michigan.
+ 
+ICPSR Constitution
+ 
+As a membership-based consortium, ICPSR has a Constitution and a set of Bylaws that describe its organizational identity, membership and governance structure, stakeholders, and organizational procedures. The Constitution lays out ICPSR's mandate to provide access to data resources:
+ 
+Article II. Purposes
+The purposes of the ICPSR are to promote and facilitate research and instruction in the social sciences and related areas, by acquiring, developing, archiving, and disseminating data and documentation for instruction and research; conducting related instructional programs; conducting such other activities as may be authorized in accord with the Bylaws; and obtaining the resources necessary to accomplish these purposes.
+ 
+Sponsors
+ 
+ICPSR enters into agreements with government agencies, foundations, and other funders to distribute data on behalf of the sponsoring entities. Thus, contractual obligations to sponsors provide another aspect of ICPSR's mandate to provide access to data resources.
+ 
+National Laws
+ 
+Also relevant to ICPSR's access policy are national laws, statutes, and codes related to the privacy and protection of research participants. Of particular note is the federal regulation on Protection of Human Subjects (45 CFR 46 [1]). Institutions bear the responsibility for compliance with 45 CFR 46. Every university must file an "assurance of compliance" with the Office for Human Research Protections that includes "a statement of ethical principles to be followed in protecting human subjects of research." University Institutional Review Boards (IRBs) review research to address these issues. Other relevant U.S. laws include the Family Educational Rights and Privacy Act (FERPA); the Health Insurance Portability and Accountability Act (HIPAA); the Federal Confidentiality Order; and the Confidential Information Protection and Statistical Efficiency Act of 2002 (CIPSEA).
+ 
+Related Links
+ 
+4. Objectives
+ 
+ICPSR's commitment to access has the following objectives:
+ 
+Support the repository's Designated Community: researchers, students, practitioners, and other users who need to obtain access to the ICPSR archive of social science data
+Ensure uninterrupted access to valuable data resources over time through technology changes
+Provide access to digital holdings in a manner consistent with the protection of the privacy of survey participants
+Support the objectives of sponsoring agencies that contract with ICPSR to make their data resources available to a wide audience
+Related Links
+ 
+5.    Scope
+ 
+This policy covers access to the entirety of the ICPSR holdings and other products by the ICPSR Designated Community -- social science researchers, graduate students, undergraduates, policymakers, and practitioners, as well as newer categories of users such as journalists.
+ 
+6.    Access Levels
+ 
+In keeping with the objectives above and its commitment to enduring access, ICPSR's repository commits to offering various levels of access to data and data-related resources, consistent with deposit agreements for stored objects. Further, the repository commits to acquire public-use data whenever possible and when feasible may take the initiative to create public-use files from restricted-use collections to enable some degree of public access. When this is not possible, the repository selects the least restrictive option for access, recognizing that the protection of human subjects is paramount. The ICPSR Authentication and Authorization Rules (PDF) document provides additional detail on access rules and levels as well as authentication and authorization.
+ 
+Related Links
+ 
+7.    Operating Principles
+ 
+ICPSR is guided by the following principles in delivering access to its digital content:
+ 
+To provide access to data and other resources in as open a manner as possible without compromising the privacy of survey participants. This goal is made explicit in Direction 1 of the ICPSR Strategic Plan.
+To decrease barriers to access through: (1) providing multiple access options in terms of technical formats and access mechanisms for restricted data; (2) continuing innovation with respect to user experience on the ICPSR Web sites.
+To use existing community-oriented open access licenses such as Creative Commons whenever possible.
+To comply with community standards for access, most notably the Open Archival Information System (OAIS) Reference Model (ISO 14721:2003).
+To meet the needs of the Designated Community with respect to the topical coverage of the digital content delivered.
+To use a standards-based approach in terms of data and documentation format so as to promote interoperability and long-term preservation. For example, ICPSR currently uses MARC record and Data Documentation Initiative (DDI) formats for its metadata records.
+Related Links
+ 
+8.    Roles and Responsibilities
+ 
+Several ICPSR staff members and others in the social science research community play important roles in access. The Access Roles and Responsibilities document outlines the responsible groups and their roles.
+ 
+Related Links
+ 
+9.    Challenges and Risks
+ 
+Like other digital repositories, ICPSR faces risks and challenges in disseminating data in the age of the Internet. Maintaining a revenue stream sufficient to support long-term access in a competitive world, meeting the changing research needs of the community, and staying abreast of technology are key challenges. Providing access in as open a manner as possible while adhering to necessary constraints on access is another ongoing challenge.
+ 
+Funding the Access Mission
+ 
+ICPSR maintains a diversified revenue stream with funding from both member dues and grants and contracts, and this funding model has proven to be a successful and sustainable one over the five decades that ICPSR has been in existence. Nevertheless, this model is not without its challenges. Member dues revenue tends to be stable but does not increase significantly from year to year. Revenue from grants and contracts can fluctuate, and maintaining this funding stream requires diligence in identifying new revenue sources. It is an ongoing challenge to ensure reliable funding to support access to a growing archive of data.
+ 
+Barriers to Access
+ 
+While many current initiatives call for free access to data with no restrictions on use or distribution, a substantial portion of ICPSR's data has some access constraints. The organization has determined that there are important reasons why ICPSR must actively control access to its data, even if these controls appear to be barriers to access. These reasons relate to ICPSR's commitment to ethical social science norms and to the funding required for ICPSR to pursue its mission into the future, as discussed above.
+ 
+Competitive Environment
+ 
+Another risk that ICPSR faces is the ubiquity of free data on the Internet, which in theory could limit the use of ICPSR data and affect the viability of the organization. There are vast stores of data on the Internet available free of charge to any user. To the extent that users find that such data satisfy their research and instructional needs, ICPSR's access mission may be called into question. While the organization has not faced a membership drop in response to such free data (in fact, membership has grown substantially in the last decade), this is a potential threat that needs to be monitored.
+ 
+Content Needs of Designated Community
+ 
+ICPSR's traditional clientele —the social science research community—are now requiring access to data that blur the boundaries between the social sciences and the biological and physical sciences. ICPSR needs to rise to this challenge by anticipating the needs of the community for these more complex data collections, acquiring them, and providing them in formats and systems that expedite their use. This may mean requiring new skill sets for staff and widening ICPSR's perspective on data relevant to the field.
+ 
+Technological Change
+ 
+It goes without saying that the rapid pace of change in technology in the digital environment is a challenge for any repository providing access to digital assets. ICPSR monitors and implements new technologies for data capture, storage, analysis, and visualization to ensure that ICPSR stays relevant and agile enough to continue to meet the needs of its users.
+ 
+10. Audit and Self-Assessment
+ 
+ICPSR commits to periodic self-assessments against established audit and certification program standards in order to evaluate, measure, and adjust its procedures, approaches, and practices with respect to access.
+ 
+Related Links
+ 
+11. Policy Administration
+ 
+This policy was approved on June 28, 2010, by the ICPSR Directors Group after review by the ICPSR Council. ICPSR commits to a periodic review of this access policy by the Dissemination Committee. Recommended changes, when rising to the level of major revisions, will be brought to the Directors Group for approval and to Council for their information. Each new version of the policy published on the Internet will carry a version number and a date stamp.
+ 
+1 The Federal Policy for the Protection of Human subjects or the "Common Rule" was published by HHS in 1991 and codified in separate regulations by 15 Federal departments and agencies. See OHRP 45 CFR part 46 Frequently Asked Questions (FAQs) (PDF) http://www.hhs.gov/ohrp/45CFRpart46faq.pdf
+ 
+

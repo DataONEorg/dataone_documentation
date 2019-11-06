@@ -1,0 +1,22 @@
+Notes, actions, comments from Breakout Group 1, 2012-07-15 DUG
+==============================================================
+
+
+Questions
+=========
+
+1) How are identifiers ensured to be unique?
+A: the CN validate identifiers for uniqeness when harvesting content from MNs
+
+2) Are there specific identifier schemes supported, or is uniqueness within DataONE sufficient?
+A:  allow for any current identifier schemes. No white space, <800 characters in length.
+
+3) Can a MN join at one tier and move to a different tier at a later time?
+A: yes, can join and then shift
+
+Created account - logged in.  Tried to access the member form.  Got an error:
+
+Insufficient Privileges
+You do not have sufficient privileges to view this page. If you believe you are receiving this message in error, contact the site administration. 
+
+

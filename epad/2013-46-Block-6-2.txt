@@ -1,0 +1,544 @@
+Development Block 6.2
+=====================
+
+Last Block Etherpad: http://epad.dataone.org/2013-44-Block-6-1
+
+G+: https://plus.google.com/hangouts/_/event/cb76pav4nbripd606928j9pjiao?authuser=0&hl=en
+
+Sprint Planning
+---------------------
+
+ * D1 Dashboard minimal rollout to production
+   * Log aggregation data before we can go to prod.
+   * Continue to provide new feature development
+ * Design Mutability - Complete Draft of UseCases and Highlevel API changes
+ * Fixing Production Errors
+   * Move to Single Master Mode. 
+   * D1-processing service running only on single CN
+   * Move to Rackspace DNS
+ * Pushing MN-MN Replication 
+ * DataONE User Documentation
+ * Splunk 
+ * Ansible Testing
+ * MN rollouts
+   * Dryad (https://redmine.dataone.org/issues/3118) , EDAC and KUBI
+
+
+
+
+Chris B.
+--------
+
+ * 20131127
+   * Finished mac'ifying OneDrive.
+     * Generates a .app bundle that should work on mac and includes all external dependencies except for fuse.
+   * Network diagnostics
+     * UNM is working now.  Port 5002 is open for iperf
+     * Going to work with David on Splunk'ifying the script.
+     * Going to start anaylzing the results. 
+
+ * 20131125
+   * Created a script for doing network diagnostics.
+     * It does a traceroute and iperf testing between sites.  
+     * It uses tcpdump to record the activity during iperf and then tshark to analyze the behavior of tcp.
+     * It runs every hour between sites.
+     * Collecting run data to analyze later.
+   * Worked with David on Splunk regexes for Bruce.
+
+ * 20131122
+   * Ansible
+     * Ansible 1.4 released!!!  (No passwd sudo for accelerate)
+     * Removed the accelerate transport option from the playbooks
+     * Problem: SSH transport now defaults with control persist.  
+       * Found out how to override it. 
+     * Testing playbooks with David
+   * Network testing
+     * Did networking between the sandbox cn's using traceroute and iperf
+     * Can discuss initial results after standup
+     * Next large file transfer with checksumming
+     * 
+     * orc  —> ucsb: 0.0-30.3 sec  53.5 MBytes  14.8 Mbits/sec  15.608 ms 114291/152430 (75%)
+     * orc  —> unm:  0.0-30.0 sec    213 MBytes  59.5 Mbits/sec
+     * ucsb—> orc:   0.0-30.2 sec  2.91 GBytes    825 Mbits/sec  15.513 ms 1150598/3273464 (35%)
+     * ucsb —>unm: 0.0-30.0 sec  5.28 GBytes  1.51 Gbits/sec
+     * unm —> orc:  0.0-30.2 sec  3.27 GBytes    927 Mbits/sec  13.630 ms 2708933/5094083 (53%)
+     * unm —> ucsb: 0.0-30.2 sec  1.27 GBytes    361 Mbits/sec  14.781 ms 4318368/5245940 (82%)
+
+     * TCP
+       * orc —> ucsb: 0.0-60.0 sec  2.34 GBytes    335 Mbits/sec
+       * orc —> unm: 
+       * ucsb —> orc:  0.0-60.1 sec    165 MBytes  23.0 Mbits/sec
+       * ucsb —> unm:
+       * unm —> orc: 0.0-60.0 sec    125 MBytes  17.5 Mbits/sec
+       * unm —> ucsb:
+   * Splunk regex with David
+
+ * 20131120
+   * Training David on settting up a node with ansible
+   * Testing ansible playbooks on cn-dev-orc-1
+     * Need to decide on the nopasswd issue for sudo and accelerate
+   * I want to do some network tests with iperf between the nodes
+   * Fixing the object marker issue for dasboard
+
+ * 20131118
+   * - Firewall issues at ORC were resolved a couple of weeks back.
+   * Refining my fix for the google map display issue within dashboard
+   * Confirmed that there is high and constant cpu utilization due to marker code in dashboard. 
+
+ * 20131115
+   * Same was Wed.
+
+ * 20131113
+   * Have potential fixes for map view but I'm waiting to meet with Chris.
+     * There are two ways of fixing the bugs with map view and I want to ask Chris J which way he would prefer.
+   * Waiting of certs for cn-dev-orc-1
+     * Need to test the latest iteration of ansible playbooks.
+     * Need to train david on setting up a dev box. 
+
+David D.
+-------
+ * 20131127
+   * Working on Splunk searches for bwilson
+   * Documentation - new sysadmin doc draft sent to bwilson/cbrumgard for perusal, splunk docs in progress
+   * Helping cbrumgard with getting networking test script results findable/parseable in Splunk
+   * Ansible and cn-dev - playbook testing
+     * building a test cn-dev box using manual system already in place for training purposes
+ * 20131122
+   * As 11-20, plus bwilson has some advanced searches he wants me to build for Splunk
+ * 20131120
+   * ORC docs
+   * splunk docs
+   * cn-dev-orc-1 ansible build tests
+ * 20131115
+   * Finishing off some ORC docs
+   * Waiting for Redmine 4153 - prod MNs high priority, non-prod MNs and the one remaining non-prod CN less so
+   * If CN certs come in to Chris B. from Dave/Chris J., will work on cn-dev install over the weekend/next week
+   * Per Bruce, hope to have an idea of next steps w/Splunk by middle of next week
+   * Working on an OS autoupdate issue w/one of our VMs at ORC today
+ * 20131113
+   * Prod CNs at UNM and UCSB appear to be live in Splunk - going to doublecheck today and see what data is moving in, which non-prod boxes we're still waiting on
+     * Meeting w/Bruce tomorrow - next steps w/Splunk
+
+Rob N.
+------
+ * 20131127
+   * fixed sync logic bug #4182
+   * committed cn readOnly mode code. #4186
+ * 20131122
+   * EDAC can implement millisecond precision on fromDate in listObjects.
+   * discovered that sync update method doesn't allow for null changes to be ignored, also that only one of obsoletedBy and isArchived is recorded due to 'else if' construct.
+     * https://redmine.dataone.org/issues/4182
+     * will make subtask of 3736 for second point.
+   * adjusting Tier1.testGet test to try to avoid getting very large objects: testing against EDAC tries to get a 200Mb item and throws a heap error.
+   * adding millisecond precision test to Tier 1 MN tests.
+ * 20131120
+   * troubleshooting EDAC issues in stage
+     * EDAC time precision is lower than the standard, which is leaving a pid in the set of objects to sync. It's failing sync, too, so resulting in repeated syncFaileds being sent to the MN.
+     * 
+ * 20131115
+   * committed draft of auth'r and auth'n overview (user-level guide), sending it to non-coredev people for review.
+
+ * 20131113
+   * writing up authentication documentation (user-level guide) for architecture docs.
+   * EDAC:
+     * auditing sync and CN-replication of submitted content.
+     * goal: review indexing with EDAC
+
+Skye
+----
+ * PTO week of 11-25 thru 11-29
+ * 20131122
+   * System metadata, smreplicationstatus diff analysis (see bottom of epad)
+   * Traiging Dryad test sync in cn-dev env.
+     * Some ORE still referencing pids without metadata (still investigating)
+ * 20131120
+   * Dashboard on dev Drupal CMS:
+     * http://129.24.63.92/backbone#nodes
+     * smaller content area requires adjustments.
+     * css conflicts between bootstrap and drupal theme.
+   * Dryad test run.
+     * forgot to manually deploy dryad xsd yesterday
+   * EDAC triage missing pids with Rob.
+ * 20131118
+   * Discussion with Robert and Chris about metacat updgrade
+     * Noticed that the storage hazelcast cluster seems to remain fractured
+   * Integration of dashboard into drupal CMS
+     * Assuming left hand nav bar presence
+     * Rebecca is asking if MN have agreed to stats?
+ * 20131115
+   * Met with Chris Allen and Isis Serna at unm about integrating dashboard into dev dataone.org site.
+   * Replication operations.
+   * Testing https://redmine.dataone.org/issues/4174
+ * 20131113
+   * HTTP to HTTPS redirect bug:
+     * https://redmine.dataone.org/issues/4174
+   * Dashboard polish
+     * Possibly helping with log aggregation output work
+   * Answering many email questions from Amber, Rebecca, Bruce
+
+Jing
+----
+ * 20131125
+   * Bug about the ssl configuration on ESA metacat
+   * Bug aboout the mn.replicate can't handle the ssl exception correctly
+ * 20131122
+   * Fixed the mutiple threads issues in perl to assign uid number.
+   * Deployed the fix into my test machine
+   * Need to fix incorrect values in the nceas's ldap in ou=Account
+   * tickets 
+ * 20131120
+   * Fixed a security issue which the identity service did verify the certificate of the ldap server.
+   * Working on an issue that no uidNumber is signed to the new created user. There is a race condition we need to watch out
+   * Working on some bugs that reset password doesn't work.
+   * NCEAS identity service is refered from the kepler site.
+ * 2013115
+   * Installed the light-weight Metacat for the identity service in the identity.nceas.ucsb.edu
+   * Developping a plan how to set up NCEAS identity service
+ * 20131113
+   * Metacat identity management service, run only on apache. Work directly on NCEAS 
+   * Update LDAP Ecoinformatics,
+   * Fix Metacat to access CN. 
+   * 2.3.0 Needs upgrading on production CN so as to archive documents.
+
+Roger
+-----
+ * 20131127
+   * Working on #4041: Review KUBI synchronization results
+ * 20131125
+   * Working on #4041: Review KUBI synchronization results
+ * 20131120
+   * Working on #4041: Review KUBI synchronization results
+ * 20131118
+   * Working on #4020.
+ * 20131115
+   * Worked on various documentation issues.
+   * Now back to #4020: Create documentation for the Python test utilities
+ * 20131113
+   * Completed parsing resource maps. Fixed Bugs, reimplemented to use SPARQL
+   * Documentation
+
+Dave V
+------
+ * 20131125
+   * Back to normal hours for a while, catching up on activity
+ * 20131120
+   * At open linked data meeting in Taiwan
+   * Working on UML rendering issue on mule1, seems to be related to version of dot
+   * Developing plans for broader interactions with publishin groups
+ * 20131115
+   * More proposal related work
+   * Working through some python code review
+ * 2013113
+   * Proposal and management work
+   * In Taiwan next week, returning Friday Nov. 22nd
+
+Robert W
+--------
+ * 20131127
+   * Worked on CN Audit Design
+ * 20131125
+   * Worked on CN Audit Design
+ * 20131122
+   * Worked on CN Audit Design
+ * 20131120
+   * Worked on CN Audit Design
+   * Answered some questions, ignored others...
+ * 20131118
+   * Production issues are becoming a nest of hornets
+   * - Robert still investigating split brain issue.
+   * - Split brain priority is higher than Metacat perf fixes
+   * - Issues are not visisble from the outside.
+   * - will probably need to merge CN sysmeta records then do MN resync.
+   * - Two issues: Sysmeta is inconsistent and CNs have different sysmeta counts.
+   * - LDAP problem also caused sync failures. Due to CNs not having entries for Gulf Watch.
+ * 20131115
+   * MN-MN replication started for KNB.
+ * 20131113
+   * Re-Replication of Content. UCSB and ORC are missing similar content that UNM holds. UNM is missing content that ORC holds. UCSB is missing a small set of content that ORC holds.
+   * Diff on PIDs counts from three different CNs. Compare PID sets. Fix missing Objects on one cn to the next
+   * use netcat to verify open ports between 3 cns
+   * GOA, USANPN (obsoletes/ObsoletedBy)
+     * SystemMetadata on the different CNs may not be correct.  Work on a way to discover differences and resolve.
+
+Ben
+---
+
+Total number of object that have replicas
+Total number of replicas that have been made by d1 replication service
+Total number of replicas requested by replication policies
+
+Update set of Pids from KNB to allow for a max of two replicas in replication policy
+Query CNs for counts of replicas vs replication policies
+For those replicas in the CN that does not have a replication policy, then is was an out of band replica (different count #)
+Query Archival MNs for 
+
+Chris
+-----
+ * 20131127
+   * Continued SQL work on consistency reporting
+     * Slow due to huge files
+     * started querying now
+   * Ask Ben about portal usability if 2 CNs are down
+ * 20131125
+   * Working on VM for cn-consistency reporting
+     * database-unm-1 - will load all 3 CN dbs into it
+   * Conference with Robert/Skye/Chris re: consistency audit workflow
+ * 20131122
+   * CN consitency checking
+     * coordination with Robert and Skye
+     * access policy inconsistency evaluation
+   * Followup with MN wranglers re: GLEON
+ * 20131115
+   * Catching up on emails
+   * Working on replication of LTER objects, monitoring replication
+   * UIC install
+
+Matt
+----
+ * 20131125
+   * Continued work on R client refactoring to use httr
+     * Started implementation of Node, CNode, and MNode in R
+     * Reminder: source code moved to GitHub
+       * https://github.com/DataONEorg/rdataone
+
+CN Upgrade discussion
+
+Rollout Procedure for Metacat 2.3.0
+-----------------------------------
+
+0. Turn off d1-processing
+
+1. ensure CN metacats have replicated all content between themselves successfully.
+- Use Metacat admin ui first
+- Restart TC second
+- Use CN repair tool
+  - runs on the CN, requires a diff'd list of pids as input, plus cn url it is replicating to
+  
+2.upgrade ucsb and unm
+
+    - upgrade via apt-get upgrade
+    - close off hazelcast ports via ufw to orc.
+    - re-setup metacat via administrative interface
+    - restart tc
+    - confirm that both metacat instances have the same sysmeta
+        - if they don't restart tc in different order
+    - Before d1-processing is started on unm/ucsb
+        - FIX replication.properties metacat.password (password is from dev env)
+        - FIX process daemon application context wrt to replication beans
+            (configure application context for replication as in 1.1.0 tag)
+        
+3. change RR to point at UCSB (remove orc)
+
+4. upgrade orc
+    - upgrade via apt-get upgrade
+    - turn on the ports for orc on ucsb and unm
+    - upgrade via apt-get upgrade
+    - re-setup metacat via administrative interface
+    - restart tc
+        -confirm that all metacat instances have the same sysmeta
+            -if ucsb/unm do not have sysmeta that is located on orc, then use the cn-repair tool to fix hazelcast
+5. turn on d1-processing on UCSB
+
+
+Once upgraded, we have some reharvest tasks for MNs
+GOA
+
+20131120
+We have to figure out the discrepancy between system metadata *content* across CNs
+
+Strategy for comparing CNs content of system metadata
+
+1) use pgdump to create a snapshot on each CN
+2) use pgrestore with configs to recreate all 3 CN tables into a single new db instance
+ * systemmetadata, xml_access, smreplicationstatus, smreplicationpolicy
+3) For AccessPolicy diff classification:
+ * SELECT guid, principal_name, permission, perm_type from xml_access ORDER BY guid, principal_name, permission, perm_type;
+ * output to file
+ * diff 3 files - evaluate visually using Meld or FileMerge, classify the types of problems, ensure that the CN Audit code being written addresses all classes
+
+Diff criteria - determine differences
+1.) systemmetadata table 
+    Any differences in following column values:
+   * rights holder
+   * replication allowed
+   * number replicas
+   * obsoletes
+   * obsoletedBy
+   * archived
+   * dateSysMetadataModified
+RESOLUTION for systemmetadata table
+   * Highest serial version
+   * Rights Holder on the highest serial version, followed by mod date (if same serial)
+   * replication allowed if set to true, merged to true.
+   * number replicas - merge to highest value.
+   * archived if true anywhere, merge to true
+   * obsoleted if set anywhere, merge value
+   * obsoletedBy if set anywhere, merge value
+   * dateSysMetadataModified - keep latest
+
+
+2.) smreplicationstatus - want to merge all distinct/unique smreplicationstatus records
+   * Distinct smreplicationstatus records are guid, member_node, status.
+   * SELECT guid, member_node, status, date_verified FROM smreplicationstatus ORDER BY guid, member_node, status, date_verified
+   * output to file
+   * visually diff, classify the types of problems, ensure that the CN Audit code being written addresses all classes
+   * criteria:
+     * merge all rows, remove duplicates of (guid, member_node, status), and choose date_verified that is most recent
+   * guid, member_node, status defines the unique replica status record, duplicates will be merged:
+     * Preference INVALIDATED, COMPLETED, FAILED
+     * if status is the same but date verified differ, keep the newer date verified.
+   * Any smreplicationstatus records with 'QUEUED' or 'REQUESTED' can safetly be discarded
+     * True of a manual fix while replication is down - not necessarily safe if part of a daemon/audit process.
+
+3.) smreplicationpolicy
+   * 91 rows on unm/ucsb.
+   * 129070 rows on orc.
+   * ORC likely represents the master copy of this table
+
+PG_DUMP command to run in background
+ nohup su postgres -c "/usr/bin/pg_dump -Fc metacat" > metacatDB.dump 2> metacatDB.err < /dev/null &
+
+Reporting
+Need to know:
+- total number of affected records by PID  
+- proportion of total that have been resolved with no loss of information (no conflicts)
+- mostly for informational purposes - which fields were affected. Perhaps something like the number of records that were affected for each system metadata property that was found to be inconsistent.
+
+Initial Evaluation of CN AccessPolicy Discrepancies
+===================================================
+
+CN-UCSB is missing 1386  Access Control Rules present on CN-ORC
+CN-ORC  is missing   52  Access Control Rules present on CN-UCSB
+                     
+CN-UNM  is missing 1386  Access Control Rules present on CN-ORC
+CN-ORC  is missing   30  Access Control Rules present on CN-UNM
+                     
+CN-UCSB is missing   25  Access Control Rules present on CN-UNM
+CN-UNM  is missing    3  Access Control Rules present on CN-UCSB
+
+There are 16 identifiers that may need manual ACL reconciliation across the CNs:
+--------------------------------------------------------------------------------
+
+autogen.2013061412245323230.1
+autogen.2013061413310702892.1
+autogen.2012122012391321421.1
+autogen.2012122209301298522.1
+autogen.2013110415061851620.1
+peggym.109896.1
+peggym.109898.1
+peggym.109899.1
+peggym.109900.1
+peggym.109901.1
+peggym.109902.1
+peggym.109904.1
+peggym.109905.1
+peggym.109906.1
+peggym.109907.1
+peggym.109908.1
+
+The inconsistency percentage is approximately 0.2% of the total ACLs in the system
+----------------------------------------------------------------------------------
+
+Total UNM ACLs:  685636
+Total UCSB ACLs: 685658
+Total ORC ACLs:  686992
+
+The affected authoritative Member Nodes for the inconsistent ACLs include
+-------------------------------------------------------------------------
+CDL
+KNB
+SANPARKS
+GOA
+LTER
+
+
+System metadata difference analysis:
+-- pids
+        orc has more pids - 823 or so
+        ucsb and unm are equal but contain 14 pids not present on orc
+
+-- mod date
+        - 67280 changes between orc and ucsb
+        - 32068 changes between ucsb and unm
+        - 69159 changes between orc and unm
+        
+-- rights holder
+        ucsb and unm are equivalent
+        all changes between orc/ucsb/unm are missing records no value changes (823)
+
+-- replication allowed
+        ucsb and unm are equivalent
+        65302 diffs between orc and ucsb/unm.
+
+-- archived
+        between orc and ucsb
+                -823 rows on orc not on ucsb
+                -19 rows that have changes
+        between ucsb and unm (ucsb superset execpt one record)
+                -110 rows have changes
+                all changes on ucsb except 1 only on unm -- doi:10.5063/AA/nceas.907.2
+
+-- obsoletes
+        846 changes between orc and ucsb
+        0 changes between ucsb and unm
+
+-- obsoleted_by
+        1437 changes between orc and ucsb
+        309 changes between ucsb and unm.
+        1445 changes between orc and unm.
+
+-- replication status table
+        -27476 changes between orc and ucsb
+        -31658 changes between ucsb and unm
+        -59132 changes between orc and unm
+
+
+
+
+Actions taken on Production CNs 2013/11/23
+
+ON ORC - 160.36.13.150
+ufw delete allow to any port 5701 from 129.237.201.155
+ufw delete allow to any port 5702 from 129.237.201.155
+ufw delete allow to any port 5703 from 129.237.201.155
+
+ufw delete allow to any port 5702 from 128.111.54.80
+ufw delete allow to any port 5703 from 128.111.54.80
+ufw delete allow to any port 5701 from 128.111.54.80
+
+ufw delete allow to any port 5701 from 64.106.40.6
+ufw delete allow to any port 5702 from 64.106.40.6
+ufw delete allow to any port 5703 from 64.106.40.6
+su postgres -c "psql -d metacat  -c \"UPDATE xml_replication SET replicate = 0, datareplicate = 0 WHERE serverid > 1\""
+
+ON UNM - 64.106.40.6
+/etc/init.d/tomcat6 stop
+ufw delete allow to any port 5703 from 128.111.54.80
+ufw delete allow to any port 5702 from 128.111.54.80
+ufw delete allow to any port 5701 from 128.111.54.80
+
+ufw delete allow to any port 5701 from 160.36.13.150
+ufw delete allow to any port 5702 from 160.36.13.150
+ufw delete allow to any port 5703 from 160.36.13.150
+
+ufw delete allow to any port 5701 from 129.237.201.155
+ufw delete allow to any port 5702 from 129.237.201.155
+ufw delete allow to any port 5703 from 129.237.201.155
+su postgres -c "psql -d metacat  -c \"UPDATE xml_replication SET replicate = 0, datareplicate = 0 WHERE serverid > 1\""
+
+ON UCSB - 128.111.54.80
+/etc/init.d/tomcat6 stop
+ufw delete allow to any port 5701 from 160.36.13.150
+ufw delete allow to any port 5702 from 160.36.13.150
+ufw delete allow to any port 5703 from 160.36.13.150
+
+ufw delete allow to any port 5701 from 129.237.201.155
+ufw delete allow to any port 5702 from 129.237.201.155
+ufw delete allow to any port 5703 from 129.237.201.155
+
+ufw delete allow to any port 5701 from 64.106.40.6
+ufw delete allow to any port 5702 from 64.106.40.6
+ufw delete allow to any port 5703 from 64.106.40.6
+su postgres -c "psql -d metacat  -c \"UPDATE xml_replication SET replicate = 0, datareplicate = 0 WHERE serverid > 1\""
+/etc/init.d/tomcat6 start
+

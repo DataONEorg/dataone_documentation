@@ -1,0 +1,67 @@
+Present: Bertram, Paolo
+
+Questions @CCIT:
+==> What (if any) are the DataONE-blessed means to store/retrieve data?
+Specifically, we want to store and then retrieve "data-blobs", ideally with some attached meta-data (for discovery)
+==> Data cloud storage / member nodes storage?
+
+
+* Use cases, requirements etc:
+- allow to store, discover, retrieve "native" provenance (from the wf system: COMAD, Kepler, Taverna, Vistrails CKTV)
+- employ DOPM as a exchange format so that external provenance tools (for querying and visualization!) are shielded from the different native models, and instead use DOPM
+
+* Possible focus of students !? (TBD later)
+-- Repository, DOPM stuff: Saumen
+-- Generic Prov-graph querying and viz: Michael
+
+* Summer Internship
+
+https://www.dataone.org/content/2011-summer-internship-program
+DataONE Contact: Amber E Budden <aebudden@dataone.unm.edu>
+
+ * Schedule:
+   * May 23 - Program begins*
+==> last week of May to be used by mentors for setup and to draft project charter
+(what exactly are we going to build? draft overview / architecture)
+
+==> Have official start for students at June 1st
+   * June 27 - Midterm evaluations
+==> Ask Amber what this means? 
+
+   * July 29 - Program concludes
+==> we probably could/should go another week or so into August!?
+
+   * October 18-20 - DataONE All-Hands-Meeting, New Mexico (attendance encouraged)
+ * * Allowance will be made for students who are unavailable during these date due to their school calendar.
+
+- Do we need a face-to-face and if so, when?
+==> Yes, have a F2F to kick-off meeting with students (Saumen, Michael, volunteers if available)
+==> Meeting at Davis; possible dates:
+--- Sometime between June 1-3 (Wed-Fri)
+--- June 6-10 (Mon-Fri)
+==> Fix the dates, confirm with Rebecca travel details
+
+- Misc: 
+-- use again google site and mailing list!? (worked well last time)
+-- use a shared code repository (didn't work so great last time)
+==> suggest to use code.google.com this time?  With GIT?
+-- minimize dependencies on existing code
+
+ * Scientific workflow provenance repository and publishing toolkit
+ * Description: Scientific workflow systems are increasingly used to automate scientific computations and data analysis and visualization pipelines. An important feature of scientific workflow systems is their ability to record and subsequently query and visualize provenance information. Provenance includes the processing history and lineage of data, and can be used, e.g., to validate/invalidate outputs, debug workflows, document authorship and attribution chains, etc. and thus facilitate “reproducible science”. We aim to develop (1) a provenance repository system for publishing and sharing data provenance collected from runs of a number of scientific workflow systems (Kepler, Taverna, Vistrails), together with (2) a provenance trace publication system that allows scientists to interactively and graphically select relevant fragments of a provenance trace for publishing. The selection may be driven by the need to protect private information, thus including hiding, abstracting, or anonymizing irrelevant or sensitive parts. Part (1) will be based on a DataONE-extension of the Open Provenance Model (D1-OPM) and leverage an earlier Summer of Code project. In particular, the provenance toolkit includes an API for managing workflow provenance (i.e., uploading into and retrieving from a data storage back-end). Part (2) will implement a new policy-aware approach to publishing provenance, which aims at reconciling a user’s (selective) provenance publication requests, with agreed upon provenance integrity constraints. For an existing rule-based backend, a graphical user environment needs to be developed that lets users select, abstract, hide, and anonymize provenance graph fragments prior to their publication.
+ * Qualifications needed: For Part 1, applicants should have experience in SQL and Java or a scripting language (e.g., Python or Perl). For Part 2, programming of GUIs with Rich Internet Application (RIA) technologies (e.g., GWT) is a plus.
+ * Skills to be learned: : Collaborative open source software development using state-of-the-art languages and tools (databases, workflow systems, interactive information visualization).
+ * Primary mentor: Bertram Ludaescher (University of California Davis)
+ * Secondary mentor: Paolo Missier (Newcastle University)
+
+
+* ProvWG:
+- meeting when, where, doing what?
+==> main deliverable still: D1-OPM model and paper
+- key MoPs to unify: Kepler, COMAD, Taverna, Vistrails, Restflow, ... (anything else?)   
+==> eScience Central  as a potential implementer / consumer of the model
+==> Co-locate meeting with Internship F2F!!??
+==> Who would be there?
+Reps from Kepler, Taverna, Vistrails, Pegasus, Swift (Mike Wilde!?), Restflow, Galaxy
+==> update ProvWG member list (e.g. DataConservancy!!)
+

@@ -1,0 +1,98 @@
+Software release versioning discussion
+=============================
+
+https://docs.google.com/spreadsheet/ccc?key=0Ai3ryhJR2IgZdEJMaWx5TnJraExpU3VNNU1vZUQ1dHc
+
+Release mechanisms
+-------------------------------
+-- Debian packages
+  -- mainly for CN packages
+-- Maven releases in Maven Central
+  -- mainly for Java libraries
+-- Python eggs in PyPI
+  -- mainly for python libraries and clients
+-- website downloads
+  -- everything, but especially standalone software
+  -- http://releases.dataone.org
+-- SVN checkouts
+  -- everything should be backed by a single tagged SVN directory
+
+
+Versioning
+---------------
+( https://repository.dataone.org/documents/Projects/cicore/development/build/html/software_versioning.html )
+
+major.minor.patch_{alpha##|beta##|rc##]
+
+patch = completely backwards compatible, identical API
+minor = completely backwards compatible, includes new features
+major == breaks compatibilty
+
+alpha == feature incomplete, unstable
+beta == featuer complete, unstable
+rc == feature complete, potentially stable, in testing
+released == feature complete, stable
+
+SNAPSHOT == alpha or beta?
+
+Dependencies
+--------------------
+metacat-2.0.0 -> d1_libclient_java-1.0.1 -> d1_common_java-1.0.1 -> d1_schemas_1.0.2
+
+Stable
+
+Unstable
+
+Testing
+
+http://releases.dataone.org
+
+Distributions for:
+-----------------------
+   -- End Users
+      -- installing app that may depend on a library
+      -- a. either use OS packaging mechanism (e.g., apt-get)
+      -- b. or distribute within the app
+   -- 3rd party Developers
+      -- using lib for development of an app
+      -- use maven/pypi
+  -- internal development
+  
+
+Release Process Proposal (based on maven release plugin)
+http://maven.apache.org/plugins/maven-release-plugin/index.html
+- to be done from a clean checkout, 
+- to be done on a "build machine" - not on a developers machine
+
+Prepare Release:
+
+1.        Verify no snapshots in dependencies.
+2.        Update version in pom from SNAPSHOT to 'rc', 'release'.
+3.        Update SCM element with tag destination info.
+4.        Verify tests pass.
+5.        Commit modified poms.
+6.        Tag code in SCM w/release version tag.
+7.        Update version in pom back to snapshot.
+8.        Commit modified poms.
+
+Release:
+
+1.        Checkout from SCM w/optional tag.
+2.        Run deploy goals (deploy, site-deploy) (copy build artifacts to buildout location).
+3.        Build debian packages.
+4.        Copy fresh debian packages to appropriate distribution channel.
+
+
+=============
+
+cd $WORKSPACE/cn-buildout;
+export TAGS="DATAONE-CN-INDEX_v1.0.0-RC1 DATAONE-CN-METACAT_v1.0.0-RC1 DATAONE-CN-OS-CORE_v1.0.0-RC1 DATAONE-CN-PORTAL_v1.0.0-RC1 DATAONE-CN-PROCESSDAEMON_v1.0.0-RC1 DATAONE-CN-REST-SERVICE_v1.0.0-RC1 DATAONE-CN-SOLR_v1.0.0-RC1 DATAONE-CN-VERSION-TOOL_v1.0.0-RC1"
+for TAG in $TAGS; do 
+  echo $TAG; 
+  TAGDEST=`echo $TAG | awk '{sub(/_v(.*)/,""); print tolower($0)}'`
+  svn co "https://repository.dataone.org/software/cicore/tags/$TAG" $TAGDEST
+done
+export SVNREVISION=`svn info . | awk '/^Revision:/{print $2}'`;
+make -f $WORKSPACE/cn-buildout/Makefile_hudson publish
+
+

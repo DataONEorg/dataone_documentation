@@ -1,0 +1,71 @@
+
+Libclient is being refactored to accomodate the new org.apache.HttpClient 4.3.x behavior.
+
+(Re)-design
+-----------------
+
+org.dataone.client.itk - new package for the high-level objects
+    DataPackage
+    D1Object
+    D1Client
+
+org.dataone.client  -  API for the service implementations, modeling composite service APIs 
+    MNode                converted to interface
+    CNode                converted to interface
+                              *previously, CNode had extra methods to support getting a baseUrl from
+                              a cached CN NodeList, in order to support new MNode(baseUrl) 
+                              I hope to support these by interposing a ServiceLocator / NodeRegistry
+
+org.dataone.client.rest - API for adapting Java methods to our defined REST / multipart API
+    MultipartRestClient
+    
+org.dataone.client.impl.rest  - implementations of the MNode, CNode, andMultipartRestClient
+    BaseD1Node  (non-public)
+    RestClient (non-public)     (has-an HttpClient)
+    MultipartMNode               extends BaseD1Node implements MNode
+    MultipartCNode               extends BaseD1Node implements CNode
+    HttpMultipartMNode         extends MultipartMNode
+    HttpMultipartCNode          extends MultipartCNode
+    HttpMultipartRestClient    implements MultipartRestClient;  (has-a RestClient)
+
+
+Factories and maybe a ServiceLocator (since the registry behind cn.listNodes is akin to a ServiceLocator)  need to be written to allow dependency inversion, but for now, implementation would be:
+
+/* set up the http elements that will be used by  multiple MNodes / CNodes */
+
+HttpClient hc = HttpClients.createDefault();
+
+int millisecs = 30000;
+RequestConfig defaultTimeouts = RequestConfig.custom()
+            .setConnectTimeout(millisecs)
+            .setConnectionRequestTimeout(millisecs)
+            .setSocketTimeout(millisecs).
+            .build();
+
+
+MultipartRestClient httpMrc = new HttpMultipartRestClient(hc, defaultTimeouts);
+
+MNode mn1 = new HttpMultipartMNode(httpMrc, nodeBaseServiceUrl1);
+MNode mn2 = new HttpMultipartMNode(httpMrc, nodeBaseServiceUrl2);
+CNode cn = new HttpMultipartCNode(httpMrc, cnBaseUrl);
+
+Settings.getConfiguration().setProperty("D1Client.D1Node.get.timeout",60000);  // could be set anytime prior to the get call.
+mn1.get(...) // get some data, waiting up to 60 seconds
+cn.get(...) // get some data, waiting up to 60 seconds
+
+mn1.getSystemMetadata(...)  // get some systemMetadata, waiting up to 30 seconds
+mn2.getSystemMetadata(...)  // get some systemMetadata, waiting up to 30 seconds
+
+
+MNode mn3 = new MultipartMNode(httpMrc, baseUrl3);
+mn3.get(...)  // get some data, no timeouts, same HttpClient (and ConnectionManager);
+
+* I'm not completely satisfied with the timeout handling, but it preserves current behavior
+
+
+
+
+
+
+
+

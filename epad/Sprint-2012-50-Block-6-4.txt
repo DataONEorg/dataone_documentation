@@ -1,0 +1,536 @@
+Sprint-2012.50-Block.6.4 Notes
+------------------------------
+
+Chris B.
+--------
+
+ * 20120104
+   * troubleshooting slow login on ORC boxes
+   * talking with OIT re: moving static IP addresses
+   * Chatted with Roger re: ONEDrive, will check out d1_client_onedrive from svn
+ * 20130102
+   * ITK toolkit?
+   * Securing NAS
+   * Working on whiptail module for interactive install through Ansible for d1 packages
+     * debconf is using whiptail to present UI
+     * Ansible doesn't have UI, working on that
+   * Possible IP issue at UT. 
+     * OIT may have converted us to static IP's (waiting on response)
+     * If so may have a brief outage while switching interfaces (very brief)
+   * Possible security issue: looking into it 
+ * 210121214
+   * Converting playbooks to be interactive to do remote shell calls
+   * Recursive playbooks - 
+   * Still securing NAS
+     * Waiting on a response from OIT on this issue
+ * 20121210
+   * pulled configuration options from dataone-cn-* to add them into Ansible
+   * trying to secure NAS system - currently exposed to the Internet
+   * won't be at standup Wed
+ * Examining .deb packages for DataONE
+ * dataone-d.usg.utk.edu is now online, VMs created
+ * Advanced configuration options for debian packages
+   * use debconf-get-selections, debconf-set-selections
+   * use non-interactive mode
+   * Ansible playbook will ask questions
+ * 
+
+Rob
+---
+ * 20120104
+   * Working with Karthik on R client documentation
+   * Karthik wants to pull javadocs into .rd files - is this possible?
+   * Will finish up character encoding in calling query() using the Solr engine
+ * 20130102
+   * Gettin' goin'
+   * Looking at R package documentation
+   * Query capabilities for the R client (against the CN)
+     * proper encoding for Solr is an outstanding issue (Lucene-based escaping)
+     * chars to escape: + - & | ! ( ) { } [ ] ^ " ~ * ? : \
+     * escape special chars with: \
+     * only query values should be escaped
+   * Karthik will work on tests and docs
+ * 20121221
+   * A few errands, appts
+   * Looking at pacakaging in R
+     * multiple packages pointing to objects
+     * reporting that there are newer versions is important
+   * Documentation for DataPackaging - generic best practices can go in the architecture docs DataPackaging page
+ * 20121219
+   * implementing query() in R client
+   * incorporating Karthik's recommendations: roxygen2, testthat, etc.
+   * need to decide how responses from Solr are served up to the client: raw XML? Java objects? JSON? ...
+   * consider OpenSearch support for a common response syntax?
+ * 20121217
+   * Worked on R client features, troubleshooting with Bruce
+   * Will continue to work on features
+     * Search: given pid, return pacakage(s) it is a member of
+     * large dataset support
+ * 20121214
+   * Documenting functionality of R client in README
+     * asDataFrame(), etc
+   * Will support Bruce
+ * 20121212
+   * as.data.frame() is now working in the R client
+     * uses resource map to find scimeta doc
+   * documentation for the R client, will try the R oxygen plugin
+ * 20121210
+   * R client - separating out metadata parsers into their own packages to be pluggable
+   * as.data.frame() work, uses science metadata parser to help load CSV-style data
+   * working on tests
+ * 20121207
+   * getting singleton pattern working in R is difficult
+   * working on registry of data formats
+   * use library() function
+   * will write up progress thus far, feedback via email with Karthik
+   * R client SSL connections with knb.ecoinformatics.org
+     * do we need to cache the GoDaddy intermediate CA chain in the libclient store??
+     * Java 7 doesn't ship with expected CA certs?
+   * ff and bigmemory packages for large datasets
+ * 20121205
+   * progress on the CSV parsing, trouble with rJava in R
+   * plan to build a parser registry for d1_client_r
+ * Evolving the R client
+   * CSV to R data frame
+   * first get the method working that reads the package's metadata and parse accordingly
+   * then split out the EMLParser into it's own R package
+
+Skye
+----
+ * 20120104
+   * working on monitoring project, Chris will look at redmine tasks for this
+   * Installed it in sandbox
+   * dev storage cluster is completely partitioned - no member can see the others, will look at this
+   * looking at process cluster config - all spring-based, can't parse the file easily, so can't test monitoring for the process cluster
+ * 20130102
+   * Upgraded sandbox with 1.1, ran replication tests, 100% replicated
+   * Installed dataone-cn-monitor daemon manually in sandbox
+   * Looking at Statsd client code to move into this monitor daemon
+ * 20121221
+   * Continuing on membership monitoring, unit tests
+   * Wasn't able to replicate problem that Robert saw
+ * 20121219
+   * Continued work on membership monitoring
+     * Created client config factory
+   * Component activation utiliy is in d1_cn_common (to control active state of component?)
+   * Looked at lock contention seen in the stage cluster, unit test
+ * 20121217
+   * Worked on thread locking issues on the CNs wrt hz.unlock();
+     * High volume, cluster partitioning can cause this error, confirmed by unit tests
+ * 20121214
+   * Mercury updated in stage, pkg id in panel now
+   * ORC, UNM no resonse timeouts for index, perhaps keys owned by UCSB
+   * membership monitoring aside
+ * 20121212
+   * a few fixes buildout for dataone-cn-index, detecting migration of solr
+   * looking at stage indexing run errors, CONCURRENT_MAP_GET warnings
+   * errors in indexing beta6 and beta4 files - no need to support them
+   * UI update to ONEMerc, testing in dev, will push to stage (dataone-cn-mercury), coordinate with Robert
+   * cn-stage-ucsb-1.test is struggling, 250% CPU usage for TC, now not in the RR
+ * 20121210
+   * Fixed stage solr index problems - still had old schema
+   * variable indexing rates on each CN
+   * resolve URLs need to be addressed
+   * continued work on the membership
+ * 20121207
+   * membership monitor code will be committed today
+   * testing network partitions via unit tests
+   * partitions may be created in different ways (like 2 nodes not talking to each other)
+ * DONE: Will work on replication audit locking, repl looking good for 1.1
+ * membership monitoring test harness - consitently cause cluster partioning.
+   * look at emulab? for network outage testing
+ * DONE: fix shutdown of solr index build tool - hzcast interaction
+ * FIXED: Dustins says unm-2 host has trouble booting
+ * Continuing work on hazelcast cluster partitioning detection (split brain syndrome)
+   * Google thread regarding consistency vs availability in hazelcast:
+     * https://groups.google.com/forum/?fromgroups=#!topic/hazelcast/43DnVVvBE8k
+   * Working on test harness:
+     * would like a 'simple' junit test which can create local clusters and simulate partitioning.
+   * Daemon process to run independently of other D1 components to inform on local hz cluster when partitions occur / are repaired.
+
+
+
+Roger
+-----
+ * 20130102
+   * 
+ * 20121219
+   * working on PyPI package for GMN packages (use released d1 common and libclient packages, not subversion)
+     * will get certificate packages working via PyPI
+     * then, GMN package for PyPI
+     * have Chris B. reset the VM fpr cn-stage-orc-1
+   * Vacation tomorrow
+ * 20121217
+   * Worked on performance improvements in ONEDrive, encountered by Dave. Smarter cacheing.
+   * Worked on GMN installation
+   * Will continue on ONEDrive
+ * 20121214
+   * Out partially
+   * More work on ONEDrive in faceted search
+     * code simplified to now restrict facets, like keyword restriction, then restriction for that key is still available
+   * Will be installing GMN on mn-stage-unm-1
+ * 20121210
+   * working on d1_common_python and d1_libclient_python for 1.1
+     * looking at pyxb to import the 1.0 and 1.1 bindings
+     * pyxb author suggested a method for importing both bindings separately
+     * updating the script for building the bindings
+   * will upgrade stage GMN instances to use the new libraries
+ * 20121207
+   * will work on iterations for the demo on the 17th
+   * getting stage MNs with GMN working with libclient 1.1
+   * will clear GMN dbs for mn-stage-[unm|orc]-1.test.dataone.org
+ * 20121205
+   * checked in ONEDrive
+   * ready for initial testing
+   * generally, discover is working with faceted searching
+   * can't open an object and download
+   * shows ORE docs as folder
+Ben
+---
+ * 20130104
+   * forked the Simple ECP Java project
+   * using it in Morpho now
+   * Also created a Hudson job and added the library to the Maven repo
+   * Meeting with Mark Servilla re: identity provider work, ECP works with LTER shibboleth setup
+ * 20130102
+   * Simple ECP client work, working with main developer
+   * Most issues are usability oriented, like passing in username/password as opposed to relying on commandline input
+   * Morpho is looking good. Jing is working on ACL editor mods for updating system metadata
+   * Will look into Identity Provider support for KNB LDAP (See: https://redmine.dataone.org/issues/3394 )
+ * 20121221
+   * Working on ECP Java client, with changes (from Github)
+   * It's working - got a cert
+ * 20121219
+   * battling with ECP authentication
+     * SOAP spaghetti
+     * once working, should be able to use in clients like Morpho
+     * still need identity providers to support it
+   * Can set up KNB as a provider (+ECP) as the first step
+   * Protect network supports ECP, will look at LTER account for testing
+ * 20121214
+   * Looking at ECP profile wrt Java libraries, Jim Basney recommended some
+     * not terribly turnkey
+     * bash impl, perl impl as references
+   * 
+ * 20121212
+   * working on the portal, names looked garbled for certain characters
+   * issue is character encoding from the form to the servlet, now UTF-8
+   * describe() issue in Metacat
+   * Morpho, access control rules are now going into sysmeta (moving to sysmeta ACL vs EML ACLs)
+   * Jing: using CN.listSubjects() to write access rules
+ * 20121210
+   * Fixed replicaStatus default for CNs
+   * Fixed default count in listObjects(), was -1, now 1000
+   * looking at a /portal error in the dev env (prompted by Matt using it) stage2?
+ * 20121207
+   * Running through Metacat unit tests, error in CN tests
+   * will cut a new Metacat 2.0.5-RC3?
+ * 20121205
+   * Talk with Jing re: Comparator for Group/Person in d1_common_java
+   * Morpho: working on ReplicationPolicy screen dialog
+   * 
+ * EZID doi generation in Metacat
+ * Work out total returned in listObjects() when count=0
+ * 
+
+Robert
+------
+ * 20120104
+   * Increasing partition size increases migration time
+     * Initial migration is 6mbps over 6 min vs 60 sec with lower partition count
+   * Not much difference in network chatter with larger or smaller partition counts
+   * 
+ * 20130102
+   * ran baseline of 1000 evictions/repopulation on stage, no errors
+   * ran 1000 evictions/repopulation with partition count of 2710, no errors
+   * possibly evict in parallel to increase load
+   * nohup /usr/bin/tcpstat -i eth0 -f "tcp port 5701" -o "%S  Bytes=%N  TcpPackets=%T bps=%b\n" 10 > tcpstat.out 2> tcpstat.err < /dev/null &
+   * 
+   * PREFIX="some.prefix" (e.g. hostname)
+   * tcpstat -i eth0 -f "tcp port 5701" -o "$PREFIX.Bytes:%N|g\n$PREFIX.TcpPackets:%T|g\n$PREFIX.bps:%b|g\n" | tee tcpstat.out | nc -u statsd.dataone.org 8125
+   * Output will appear under statsd.dataone.org, Graphite / stats / gauges / PREFIX
+
+ * 20121221
+   * upgraded hazelcast to 2.4.1 (non snapshot in the stage env)
+   * network utilization monitoring for the CNs, including graphing
+   * couldn't replicate the errors on sandbox =/
+     * tried reducing partition count to 10
+     * also tried reduced heartbeat timeout to 60s
+     * reduced heartbeat simulated the issue, but not lower partition count
+   * today: run eviction test, then run another test to increase partition count by an order of magnitude
+ * 20121219
+   * Determining which variables affect timeouts on the CN
+     * decreased 'map partition count' - similuating 500 sysmeta/partition. Caused timeout to ...
+     * also 'maximum number of heartbeat seconds' - reducing it to 60 from 300, should increase timeouts
+     * if partition count is raised well beyond 271, with reduced heartbeat, do we get timeouts?
+   * Will continue these tests, work in stage with higher object counts
+ * 20121217
+   * Created a program to test locks. No outstanding locks on staging. 
+   * Working on test cases to test/monitor disconnects
+ * 20121214
+   * reviewing disconnection of staging unm from orc.  appears that UNM is timing out on heartbeat monitor to 'master node' and then resetting its connection. It re-connects without a problem.  Heartbeats are sent by default every second. Heartbeat monitor will disconnect from 'master node' after 300 seconds of non-response from master node.
+ * 20121212
+   * bug report from Ben via the portal (identity manager mapIdentity())
+   * working on unit test for this now, might use github project for spring unit tests in future, once an official release is cut. found some simple code to perform spring rest unit tests
+ * 20121210
+   * will rebuild dev env
+   * finished 1.1 buildout in the stage env
+   * need to address schema location for the 1.1 schema (ns.dataone.org), needs tagging
+ * Looking at CNs out of sync
+ * merged code from trunk into 1.1 branches that have been branched. ran builds of d1_common_java and d1_libclient_java for staging build on hudson.
+ * Stage branching is complete. building, not complete
+ * trunk moved to 1.2.0-SNAPSHOT
+ * lvm snapshots have been taken on the 3 stage cn machines.
+ * build on hudson is failing on certain indexer tests wrt hazelcast
+ * Will look at C# development and MS Studio 2010 env, 2012 no longer at educational prices (found out that is under a different product name and pricing structure)
+ * rebuild dev
+
+Bruce
+-----
+ * 20130102
+   * Will continue work on R client, documentation with Rob
+   * COINS support in the bibliographic clients, should be demo'd at the Reverse Site Visit
+   * MN deployment: US NPN
+ * 20121221
+   * Demos went well
+   * constructing vignettes for R, uses R markdown
+   * documentation can go into d1_client_r, but figuring out how that fits into the CRAN package is a question
+ * 20121214
+   * Trouble with R script, timeouts against the CN reserveId()
+   * Some successes, intermittent
+   * Rob will look at default timeout setting
+ * 20121212
+   * continued work on demo
+   * Mac cert issues through Gatekeeper for CILogon
+ * 20121210
+   * working on R demo for EAB
+ * 20121212
+   * Did the 10.7.5 OS X Lion upgrade about 2 weeks ago, which turned on Gatekeeper.  So far, I've had to turn GateKeeper completely off to get the CILogon cert installation program to run properly, even though I told the system to trust the cert. The "always trust" dialog box was disabled in the Java run box.
+   * Working with Rob on getting R client working.  A few trust issues on cert still.  
+
+Dave
+----
+ * 20130104
+   * Starting prep for CCIT meeting
+   * working with Robert and tcpstat a bit, to send network metrics to statsd
+   * working with prov and semantics WGs as prep for RSV
+ * 20130102
+   * Doing some triage on redmine
+     * REST interface enabled
+     * issue categories - category per product (not instance)
+     * sprints
+     * Product status reports
+ * 20121221
+   * Working through backlog accumulated from EAB prep
+   * Adding in support for query API in chrome extension
+ * 20121219
+   * EAB went well, lots of questions, ran out of time
+   * Didn't demo ONEDrive
+   * Interested in ways to drill into filesystem paths
+   * Bruce did the R demo, went well
+   * EAB is okay with the schedule, had suggestions:
+     * strategies for next proposal
+     * de-couple CN stacks into products (less monolithic). e.g. indexing is pulled out, each community could create their own indices. replication engine - split to be standalone, usable as an independent auditor of replicas
+     * log aggregation - standalone, customized reporting
+   * overall, try to productize. get away from 'club' membership, rather create well-defined capabilities, even if used outside of D1
+   * discussion with Tony Hey: DataUp as a functional prototype
+   * NSF is encouraging
+   * Highlight interactive demos for reverse site review in February
+   * Cost estimates for MN spin ups: adapting is more expensive
+ * 20121214
+   * EAB finalizations
+     * ONEMerc looks ok
+     * R plugin will likely be good to go, need to deal with reserveId() issue
+     * DataUP ready
+     * ONEDrive - make a decision today
+   * Need to look at hz performance, look at WAN mode
+ * 20121212
+   * EAB preparations, ONEDrive running on the Mac, however, there's issues
+     * DataUp is functional as is
+     * R demo is working on Robs machine, Bruce getting it going
+     * ONEDrive, internals look good, but user perspective isn't complete
+ * 20121210
+   * MNs: TFRI, GLEAON
+   * Prepping for EAB
+     * getting ONEDrive working on the Mac
+   * dealing with Redmine crash, trying to understand why it happened. Flakey switch?
+
+Matt
+----
+ * D1 workshop for Brazilian Ministry for Environment
+   * discussions with geospatial group, support GEO network
+   * INPA/PPBIO MN - 350 datasets. ready to go, political support needed
+   * LBA node - global carbon/atmospheric monitoring project
+     * 300K replicated objects to Oak Ridge, 300K more
+   * Will eval GMN, Mercury, Metacat
+   * Interest in Brazil for standing up a CN ...
+     * LNCC computing group could represent Brazil as an MN or CN, discussion needed
+Chris
+-----
+ * 20130102
+   * installing target replication nodes
+   * turning attention to ONEMercury UI bugs, will work with Skye
+   * ONEShare 
+ * 20121221
+   * Worked on migration disrcepancies
+     * upshot: around 500 objects failed to originally sync from mnStageLTER to the CN, although we have references to these docs in obsoletedBy fields
+     * complete migration, 32.3K + 500 missing = 32.8K
+     * note that indexing didn't complete on the CNs, so we are short 6K in the index 38K objects in the CN's sysmeta tables
+ * 20121219
+   * Worked on Metacat update() exceptions seen on mn-stage-ucsb-3 during migration of content
+ * 20121214
+   * Tracking down missing schema issue for mn-stage-ucsb-2
+     * misconfig of HTTP virtualhost wrt jk ajp13 worker?
+   * Upgraded mn-stage hosts to java 1.6.0_34 - had been installed differently, now uses d1 ubuntu-java. DONE
+   * d1_cn_content_migrator work
+     * certificate auth working now
+     * dealing with update() vs create() calls when sysmeta has obsoletes/obsoletedBy entries
+     * mn-stage-ucsb-3 is now mnStageLTER
+   * cn-stage-ucsb-1 performance issues
+ * 20121212
+   * working on migration of LTER sciemeta, ORE content
+     * d1_cn_tools/d1_cn_contet_migrator
+     * troubleshooting cert authentication
+   * Troubleshooting cn-stage-ucsb-1 performance issues
+   * turn sync on for mn-stage-ucsb-1, will be used for R demo DONE
+ * 20121210
+   * Worked with Mike Frenock on fixing PISCO node comm issues in stage. DONE
+   * Worked with Mark Reyes to register ONEShare node in production. DONE
+   * Worked on Stage target MN deployments
+   * Contacted Ranjeet re: ORNLDAAC stage MN. Fixed. DONE
+   * Contacted Mark Servilla re: LTER stage deployment. Server is Gone
+     * will migrate content from the CN to another MN and point the node baseURL to this node
+   * 
+ * 20121207
+   * prepared stage CNs for LVM snapshots
+   * wrote up epad on adding PVs to LVM VGs, will need to do this in production
+   * Coordinating with PISCO, LTER, ORNL MN ops to get stage in working order
+ * 20121205
+   * Working on stage target MNs
+
+Dicussion Topics
+----------------
+ * DONE Metacat listObjects() bug, returns zero objects
+ * CCI 1.1 release
+   * 20121217
+     * Testing in stage shows cluster member disconnects, either by cluster partitioning or volume?
+     * Considering WAN mode
+     * Heartbeat testing vs membership monitoring
+       * Will try decreasing the heartbeat threshhold (from 300s)
+       * Increase the number of partitions
+     * We may need to look at other products for certain aspects that are better at each component of CAP
+     * Responding to cluster partition events that are detected:
+       * 1) First pass: change properties in properties files
+       * 2) Each component would listen individually via BaseMembershipListener in d1_cn_common
+         * each component can implement the listener separately (monitor, storage, processing, indexing, etc)
+       * 3) Recovery options. a) Restart services (brute force), b) Implement custom MergePolicy (more fine grained)
+       * 4) Client resilience: reacting to non-available CNs.  Example of a CN service failure response:
+         *  Temporarily change getIdentifier() to a different, single point of failure service, then back when the cluster is merged again. Use a redo log to apply reserved ids to the central identifier store
+   * DONE test objects in stage - need to scrub? is that ok? - not needed
+   * DONE are stage MNs in opertational status? Robert will check
+   * deployment to production
+     * push to after demo
+ * Orphaned MN issues
+   * authoritativeMemberNode is no longer viable
+   * resolve() takes whatever it finds in the replica list
+   * should develop a process for handling defunct MN content
+   * brute force: pull from CNs, populate MNs
+     * update node baseURL to point to the new MN
+     * update subject, certs, etc.
+ * EAB demo needs
+   * DataUp
+   * ONEDrive
+   * ONEMercury
+   * ONE R
+ * Video conference solutions
+   * EVO paid only in 2013
+   * GoToMeeting
+   * G+ hangouts
+ * Metacat describe() issue
+ * Develoment strategy/timing
+   * https://docs.google.com/open?id=0By3ryhJR2IgZNFpCRzd1dFJweTA
+   * monthly internal demo of pieces of the system
+     * existing capabilities
+     * prototypes, new ideas
+ * 
+
+
+Poor man's Redmine
+==================
+Issue:   a node should be able to update its entry even if it is unapproved.  Matt suggests that a call to listNodes list all approved nodes and a subject's own node entry.  I think exposing the getNode call could be just as useful.
+
+Issue: CNRead.describe() does not always include the Content-Length field. Some background info and a test URL included below. The issue appears to be caused by sysmeta objects being present while their corresponding sci objects are missing.
+
+Tuesday 07:22:02pm        roger        Chris, Skye, Robert, Content-Length is missing from the CNRead.describe() response. Is that something that can easily be added in?
+Tuesday 07:22:31pm        robert        when did it go missing?
+Tuesday 07:22:43pm        robert        or did we ever have it?
+Tuesday 07:22:48pm        chris        yeah, i thought we addressed that
+Tuesday 07:22:49pm        roger        It probably wasn't ever there.
+Tuesday 07:23:16pm        robert        how did we address it? hmmm
+Tuesday 07:23:31pm        robert        there is no content-length of the describe response is there?
+Tuesday 07:23:32pm        chris        i recall a ticket for it
+Tuesday 07:23:38pm        robert        it is all header info
+
+Tuesday 07:23:42pm        roger        No, it looks like this now:
+Tuesday 07:24:14pm        roger        < HTTP/1.1 200 OK
+Tuesday 07:24:14pm        roger        < Date: Wed, 05 Dec 2012 02:14:04 GMT
+Tuesday 07:24:14pm        roger        < Server: Apache/2.2.14 (Ubuntu)
+Tuesday 07:24:14pm        roger        < DataONE-Checksum: MD5,4504b4dd97f2d7a4766dfaaa3f968ec2
+Tuesday 07:24:14pm        roger        < Last-Modified: Thu, 01 Jan 1970 00:00:00 GMT
+Tuesday 07:24:14pm        roger        < DataONE-ObjectFormat: text/plain
+Tuesday 07:24:14pm        roger        < DataONE-SerialVersion: 1
+Tuesday 07:24:14pm        roger        < Vary: Accept-Encoding
+Tuesday 07:24:14pm        roger        < Content-Type: text/xml;charset=UTF-8
+
+
+Tuesday 07:41:40pm        roger        The Content-Length entity-header field indicates the size of the entity-body, in decimal number of OCTETs, sent to the recipient or, in the case of the HEAD method, the size of the entity-body that would have been sent had the request been a GET.
+
+
+Tuesday 07:59:03pm        chris        so roger, robert, it looks like the code is there to set the Content-Length header:
+Tuesday 07:59:05pm        chris        response.addHeader("Content-Length", dr.getContent_Length() + "");
+Tuesday 07:59:33pm        chris        and the length is set from sysmeta.getSize()
+Tuesday 07:59:33pm        roger        Hmm.
+Tuesday 07:59:46pm        chris        so i'm not sure why it's not showing up
+Tuesday 07:59:56pm        roger        I wonder if it's there, but somehow gets truncated out. Because I'm also getting an odd message: * no chunk, no close, no size. Assume close to signal end
+Tuesday 08:00:06pm        roger        That's from Curl.
+Tuesday 08:00:06pm        chris        hmm
+Tuesday 08:00:53pm        vieglais        example url?
+Tuesday 08:00:57pm        chris        what pid are you testing with?
+Tuesday 08:01:31pm        roger        curl -v -X HEAD 'https://cn-dev-unm-1.test.dataone.org/cn/v1/object/testMNodeTier3:201294154151906_path-ascii-doc-example-ldap:%252F%252Fldap1.example.net:6666%252Fo=University%252520of%252520Michigan,%2520c=US%253F%253Fsub%253F(cn=Babs%252520Jensen)'
+Tuesday 08:01:50pm        chris        in fact, the DescribeResponse constructor requires the length
+Tuesday 08:04:58pm        vieglais        do you have read permission on the object?
+Tuesday 08:05:24pm        chris        curl -v -X HEAD 'https://cn-dev-unm-1.test.dataone.org/cn/v1/resolve/TierTesting:cn-dev-orc-1:Public_READ.14'
+Tuesday 08:05:35pm        chris        this shows Content-Length
+Tuesday 08:08:03pm        chris        although roger's example is public read too
+Tuesday 08:08:14pm        vieglais        yeah, just saw that as well
+Tuesday 08:08:37pm        chris        that's a crazy pid
+Tuesday 08:08:56pm        vieglais        oh - try and retrieve the object - it gives a 404
+Tuesday 08:09:25pm        chris        ah - maybe it was cleared from the db, but not hazelcast in the dev env
+Tuesday 08:10:04pm        chris        so /meta works, but not HEAD or GET /object
+Tuesday 08:10:27pm        skye        i get a Error 349 (net::ERR_RESPONSE_HEADERS_MULTIPLE_CONTENT_DISPOSITION): in chrome on /object
+Tuesday 08:10:34pm        chris        eh, but the describe response is just a subset of getSystemMetadata()
+Tuesday 08:11:11pm        roger        The PID was retrieved from Solr. Maybe they fell out of sync.
+Tuesday 08:11:16pm        skye        https://cn-dev-unm-1.test.dataone.org/cn/v1/object/testMNodeTier3:201294154151906_path-ascii-doc-example-ldap:%252F%252Fldap1.example.net:6666%252Fo=University%252520of%252520Michigan,%2520c=US%253F%253Fsub%253F(cn=Babs%252520Jensen)
+Tuesday 08:11:35pm        vieglais        in any case, the describe method should be returning a 404
+Tuesday 08:12:49pm        robert        rob, can you provide any details on that crazy pid? should it return a valid object?
+Tuesday 08:13:06pm        skye        this works https://cn-dev-unm-1.test.dataone.org/cn/v1/meta/testMNodeTier3:201294154151906_path-ascii-doc-example-ldap:%252F%252Fldap1.example.net:6666%252Fo=University%252520of%252520Michigan,%2520c=US%253F%253Fsub%253F(cn=Babs%252520Jensen)
+Tuesday 08:13:41pm        rob        oh, I thought Roger was the one with the crazy pid
+Tuesday 08:13:45pm        roger        Skye, did you only change /object to /meta?
+Tuesday 08:13:51pm        skye        yes
+Tuesday 08:13:52pm        chris        yeah, so the system metadata are there, so describe() get's populated.
+Tuesday 08:14:16pm        roger        Rob, ha
+Tuesday 08:14:43pm        rob        that's an object created to test character escaping
+Tuesday 08:15:08pm        rob        but whether it's represented correctly or not is the question, eh?
+Tuesday 08:15:55pm        chris        the Content-Length is supposed to be 684336
+Tuesday 08:17:06pm        vieglais        really? seems large for a test object?
+Tuesday 08:17:44pm        rob        it's a metadata object so it could be retrieved from a CN
+Tuesday 08:17:49pm        chris        yeah, that's what's in the pgsql table on cn-dev-unm-1
+Tuesday 08:22:14pm        rob        I get the sysmeta as well when I use the properly escaped URL:
+Tuesday 08:22:17pm        rob        https://cn-dev-unm-1.test.dataone.org/cn/v1/resolve/testMNodeTier3%3A201294154151906_path-ascii-doc-example-ldap%3A%252F%252Fldap1.example.net%3A6666%252Fo%3DUniversity%252520of%252520Michigan%2C%2520c%3DUS%253F%253Fsub%253F%28cn%3DBabs%252520Jensen%29
+Tuesday 08:24:13pm        rob        when I change to /object/testMNode(etc) I get an interesting exception in Chrome: "Duplicate headers received from server" … "Error 349 (net::ERR_RESPONSE_HEADERS_MULTIPLE_CONTENT_DISPOSITION): Multiple distinct Content-Disposition headers received. This is disallowed to protect against HTTP response splitting attacks."
+Tuesday 08:24:57pm        roger        Maybe Chris is tweaking that right now?
+Tuesday 08:25:09pm        chris        no - no changes
+Tuesday 08:25:31pm        chris        i'm just looking at metacat tables - the document isn't registered. just the sysmeta
+Tuesday 08:25:47pm        chris        i think that's the disconnect here
+
+

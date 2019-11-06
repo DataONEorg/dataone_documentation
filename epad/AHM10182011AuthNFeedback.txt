@@ -1,0 +1,331 @@
+General Feedback on Authentication and Identity mapping
+
+Requirements/Suggestions drawn from notes below:
+
+Top priorities have to do with (1) minimizing the steps the user has to take to gain access (2) reducing barriers and annoyances where ever possible, including longer cert lifetimes and timeout values and (3) providing help / tooltips / feedback throughout (4) removing information, tabs, functions that are not essential for users.
+
+Group 1: minimizing steps the user has to take to gain access
+
+ * Make things as easy as possible for the broader use case (I want to log in with my Google account; I want to log in with my University account).  Minimize the number of pages the user goes through.
+
+Group 2: reducing barriers and annoyances
+
+ * People really don't want to have to log into the web site every day.  Google allows two weeks to stay logged in and this seems a common practice.  Can we let people stay logged into the web site (maybe not so much the downloaded cert) for longer than 18 hours?  
+ * Leverage the IDs that exist at the Member Nodes
+
+Group 3: providing help / tooltips / feedback throughout
+
+ * For people with multiple Google identities (for example), how can they tell which Google account was used
+ * Remember my OA
+ * Why should I love and embrace access control using certificates
+ * Show cert lifetime on CILogon page
+ * Explain why a complicated ID management system is needed / desirable for DataONE perhaps via a FAQ)
+ * Provide feedback on which identity is in use: "hello Bertram@google.com, or Bertram@ucd.edu
+ * Explain how group and individual authentication rules interact, including groups within groups
+ * Explain to users the effects of having their account at home institution decommissioned
+ * Explain to users system behavior if they're already logged into a Google account and then try to access DataONE
+ * Explain to users how to see which identity is related to their current certificate
+ * Hide the LDAP field from users
+ * Explain to users what the 'logout' action does (e.g., what happens to the certificate)
+ * Explain to users what a proxy certificate chain is and how and when to use this approach
+ * Show users a 'logged in' indication to the user (from CILogon? within other ITK tools?)
+
+Group 4: removing information and functions
+
+ * Consider hiding the Identity Mapping tabs for the initial release.  Is this a critical functionality given concerns about this.  
+ * Hide the LDAP string (useful for debugging and developers) -- it's confusing.
+
+Group 5: other functional requests
+ * Identity management for exceptional cases: ID reuse at an institution; revocation / banning / blocking; responding to abuse; allowing laid-off / terminated people to maintain their access. Tools are needed for DataONE systems / security administrators to take action on identities, ACLs, etc.
+ * Resolution of multiple identities for one individual with multiple affiliations; the name authority problem (Orcid?)
+ * Allow groups to own other groups
+ * Allow groups to hold the ownership rights for objects
+ * Provide a checkbox to indicate user is at a public computer, so certificate can 'time out'
+ * Find a way to do identity mapping so that the user doesn't see the whole list of all of the accounts in the system. That's an information leak.  Can we do this so that the user has a Link To Another account button, which then gets the user to log in with that second account, which then links the two accounts?
+ * Define the information DataONE keeps about identities (from MN, tools, wherever)
+ * Monitoring for abuse
+ * Plan for migration of existing DataONE users (e.g., plone site accounts)
+ * Use CILogon with DMP tool and other DataONE sites and services, not separate username / passwords
+ * Process and support for bequeathing ownership of data / objects; or assuming ownership when objects are orphaned
+ * Ability for users to verify their ownership of data deposited in the past
+ * Support ability for scheduled computational resources to maintain access (e.g,. an R script that runs daily at 2:00AM); variation: certificate times out during a long operation (download or upload)
+ * Use 'predictive search' instead of scrolling a long list of Identity Providers (BEW: this is already done)
+
+Ad hoc notes from Session 1 
+AD hoc notes from 1:00 Auth ID Session
+
+- Is logging using logged in identity? (yes)
+
+- Can we assume ID's are unique w/o a provider
+
+- What if one of my ID's gets re-allocated to another user at one of my institutions? A:This is a problem. WE need to work this issue, but we think it is rare.  Also, InCommon "best practice" requires InCommon members to not re-use  identities
+
+- Should we block certain ID's? such as postmaster (prevent ID reuse by product)
+
+- if you have multiple mapped identities - how do you decide which organizational affiliation is used for data creation? A: The affiliation is the affiliation used for login.
+
+- Revocation of access - how to handle
+
+- can we allow a group to own a group? (we would like to)
+
+- Can we allow multiple admins for a group (delegation)
+
+- What does "remeber my OA mean?" - add a tool tip
+
+- explain page - what is a certificate and why should I love them?
+
+- Put cert lifetime on CI Login page (user info)
+
+-What lifetime should be allowed? Should the vary by role  (e.g.e read olny -> 2 weeks )
+
+- What info shoudl datane collect and keep for D1 user identities; what information should MN collect?
+
+- Need "report false map" for ID mapping how watch for abuse
+
+- What should be done with esisting d1 accounts (plone, ...)
+
+- This seems complicated. It would seem easier to use Dryad ID. PLease start with my home institution ID.
+
+- Seems not optimized for common case that the majority of users will use.
+
+- The proposition of "the first time is more complicate" is not true. WE want the barrier lowest at the first time.
+
+- Need a FAQ to explain how (why?) anyone would want to do a more advanced ID management function.
+
+- For personalization give feedback not only "Hello Bertram" to "Hello Bertram (@google, @Dryad, ...)
+
+- Make additional plugin for leveraging logins at MN's for DataONE.
+
+- Shouldn't DMPTool use CILogin access to federated identity instead of creating a new DMPtool U/P combination.
+
+- Consider using e-mail instead of web-login for the identity proofing for identity association
+
+- Make it clear what can be done without a login
+
+- Keep in touch with Orchid for an industry-wide  identity mapping and pull it into the slide deck to show 2``    AS
+
+
+Raw Notes from Ben Birch; annotated with Bruce Wilson's transcriptions
+Tamaya A Session 
+
+    What do you mean by authentication? 
+       There are levels of authentification. 
+        
+    Identity Mapping   
+    You have to send a query to Chicago, e.g.? 
+        Yes. You only have to do it once.
+        
+    Groups
+    How about a group owning a group? 
+        
+    Begin Logon
+    Would "Remember my OK" extend the life of the certificate?
+        That would allow you to skip that step (for a certain amount of time)
+
+    What would stop a user from making an extremely long time for the life of the certificate? 
+        Built-in maximum. 
+    
+    Is this a login workflow or an identity management workflow? 
+
+    This seems too complicated compared to other logins. 
+
+    This is a barrier to entry. 
+        There is a lot of functionality accessible without a login. 
+
+    It's good to have a solid certificate base like we are developing
+
+Badger A & B Session
+
+    No new DataONE passwords
+    CiLogon handles authentication. 
+
+    Initial Logon 
+    Begin login
+    Select identity provider 
+    Certificate based identification 
+    
+    Identity mapping 
+
+    Data One recognizes any identity you have established. 
+    Some legacy accounts may be no longer valid. 
+
+    Groups 
+
+    Mapping Issues 
+        Map identities to google login
+        Log out 
+        
+        Remember my selection? 
+            We decided that an 18 hour limit is practical. 
+
+        How about having a longer time than 18 hours? 
+        
+        I thinkm that reading should be less of a barrier! 
+            Some member nodes say data is readable by any authenticated user. 
+
+        You can spcify access rules on a group basis. 
+
+        Do data providers specify filters for access? 
+            
+        The member node gets to decide who can write to the data. 
+
+        Does the member node have to accept the DataONE credential? 
+            Yes. 
+
+        If I'm a brand new user, what do I see that tells me what I need to do to authenticate? 
+            Initiation proess. 
+            Which account do you want to use to verify.  
+            A brand new user can do a lot without logging in. 
+
+        How hard is it to get your idetity provider to certify you? 
+            Depends on the provider. 
+
+        If you get riffed, and that id is no longer valid, how do I know what other option I have?
+
+        You need more "What Is This" clickable help features. 
+        
+        scrolling through a long list of providers would be a problem. Predictive serach is a good solution.
+        
+        Hide LDAP field from user, show in more user-friendly format
+        
+        Need to handle duplicated emails
+        
+        Consider using forever cookie for known IDs to populate a list?
+        
+        Have an indicator on page for "log in as" or not log in
+        
+        Consider having a desktop app for certificate generation?
+        
+        Consider if users can reuse Java applet
+        
+        No need to show all accounts list
+        
+        
+
+Hawk B & C Session
+    Identity mapping (done within DataONE) 
+
+    Crucial to allowing access to older data
+
+    Groups 
+       We need to have a way to allow someone to co-manage a group.
+       
+       What about groups within groups?
+       Can a group be a rights-holder?
+
+    Begin logon
+    Select an identity provider
+    Log on
+    Certificate Lifetime (in hours)
+    Remember my OK for the site
+    Have certificate. 
+    Log off. Log in under Google password.
+    New identity not connected to other identity. That's where identity mapping comes in. 
+    Logged in as Chicago ID. 
+    Mapped to Google identiy.
+
+    Who is CILogin? 
+       NSF funded middleware service.              
+
+    When you were setting up a Google idenity, you were kicked off the DataONE site to the Google site. 
+    Wouldn't this be confusing to users? 
+
+    What's this Certificate Lifetime thing? 
+        It was set as a practical comprise. 
+
+    What about the accumilation of expired certificates? 
+        They are overwritten. 
+        We opted for a less secure and less burdensome solution. 
+
+    I work in a library where we have different levels of security. Could that be used in DataONE? 
+        We don't want to getting into having levels of users. That's not necessary in DataONE. 
+    
+    Are there any concerns over allowing access for 18 hours? 
+        But owners of the artifact have control over their datasets.  
+    
+    What about shared computers, especially in school settings?  
+    - how to revoke a certificate
+    - make a "public computer" checkbox
+    - what does a user logout do
+    
+    Does a logout wash the browser cookie? 
+    
+    Do we need the option of requesting different certificate lifetimes?
+        An alternative is using a proxy certificate. Proxy chains can be created. 
+    
+    From a user interface standpoint, could this be simplified? 
+    
+    How might one generate user profiles based on identity? 
+        The principle of public access to data was paramount in our decision process. 
+
+    How about privacy? 
+        There are two sides: one that wants anonymous use, the other wants user data collected. 
+        
+    Define the default access policy
+    
+    Is identitiy mapping transititive? (e.g., A->B, B->C, so A->C?)
+    
+    Consider following two situations: 
+    (1)if a user does a long run for large computation and the certificate expires during the long run, how to renew/update the certificate?
+    (2) if a user begins a long time downloading, how to handle authentication: mulit-pkg download or show timed out?
+    
+    For above two situations, how they can be done for Kerberos/AFS?
+    
+    Consider programmatically renew a certificate, but it may create a hole
+ 
+WOLF B & C
+    Who maintains CILogon? 
+        It's an NSF-funded middleware initiative. 
+    
+    Identity mapping 
+    
+    CILogon handles authentication. 
+    DataONE handles authorization. Identity mapping is part of authorization. 
+
+    How can I know that the data that I archived 10 years ago is still mine? 
+
+    Do members of a group inherit all the privelidges of the group creator? 
+
+    How do you set up access rules? 
+        Each Digital object sets their own access rules. 
+
+    What about people that process data over a long period? 
+    
+    What about getting the certificate from the R-script? 
+    
+    What does "how long my certificate lasts" mean? It means "Remember me for ...", maybe consider changing the wording
+    
+    Document certificate download process: include lifetime for certificate in docs.
+    
+    Certificate cleanup process: 
+    - some apps have a path/password for the certificate. 
+    - Certificate is not password protected.
+    
+    How to do scheduled task?
+    - request certificate for longer life
+    - proxy certificate chain
+    
+    logged in as a banner?
+
+BEW general observations across sessions:
+ * issue that a user may only have rights in a particular role.  Some identity providers may have serious concerns about allowing access to resources without validating against that identity provider.  
+ * Explain (developer documentation) what the different levels of validation are within CILogon (higher levels apparently not used).  Generalc concerns about what level of identity assurance makes sense.
+ * Concern about groups. Can these be pulled from the identity provider. For example, should DataONE have an LTER Information Managers group, rather than working off of the IM group that LTER defines.  
+ * The documentation (public-facing) should focus on the reusing existing accounts.  Identity mapping is a secondary issue and one that many users won't understand initially.
+ * Showing all of the accounts is a significant information leakage
+ * How does an account get deprovisioned when someone leaves an organization.  
+ * Security hole issue that if someone has left, for example, a particular group, if that person has done identity mapping they may still have access to things they shouldn't, by using the mapped account.
+   * Can we check to see if an account has bene repudiated by the issuing organization
+   * For some cases, if access is done by a group or an explicit grant, the data owner may need to remove the person, in the form of their discontinued account, from access.
+   * Removing someone doesn't help where accounts are handled as a wildcard in granting permissions.  As an example, if there's a grant for *.lter.edu to something, and a user identity maps to a google account, they can still access *.lter.edu for as long as that user@lter.edu identity is still in the DataONE system.
+   * There are some places, like ORNL, that expect that when someone's account is closed, that is done within a few minutes of notification and that all access based on that account is repudiated within 15 minutes (or there abouts).
+ * Can an identity map be restricted to a particular application area?
+ * Can identity mapping be used as a form of delegation (e.g. john doe on behalf of jane smith)?
+ * It appears that the certificate gets downloaded to /tmp 
+ * Can a user repudiate a certificate (particularly a longer-lived one) for access if they've lost control of that cert (e.g., stolen laptop; other compromise)?
+ * For a person using Google login, the page doesn't show which Google account was used.  I have four different Google accounts, and it's not clear which one was used to create a particular account.  
+ * Documentation should reflect that if a user has already logged into a Google account, they won't see a login page.  Need more testing and documentation around what happens with Google accounts (multiple accounts, already logged in, ....)  May need to look at this for multiple platforms and mutiple browsers.
+ * Launching https://cn-dev.dataone.org/portal on Safari on my Mac (Lion) brings up a dialog that this site requires a client certificate.  I see a list of three, none of which are relevant to this case.  I couldn't cancel the dialog and trying to use one of the certs resulted in an "Safari can't open the page" error.  
+ * portal page does not redirect from http://cn-dev.dataone.org/portal.  That page just hangs.  A user has to explictly ask for https.  
+ * If there are concerns about identity mapping, is it possible/desirable to have an object attribute (system metadata new field) for whether access by mapped identities is permitted?
+

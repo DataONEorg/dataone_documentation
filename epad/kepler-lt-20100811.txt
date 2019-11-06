@@ -1,0 +1,37 @@
+LT call notes 2010-08-11
+------------------------------------
+Present: Jones, McPhillips, Brooks, Bowers
+
+1) Discussion of MM bugs that precipitated a new release plan proposal
+Matt overviewed the steps leading up to the need for a new release incorporating bug fixes to MM.  The team discussed the general need for installers, but agreed that the current proposed approach to release 2.1 only under the MM was fine because it only affects users that need to install new modules.
+
+2) McPhillips: Perhaps now would be a good time to revisit the role of the Kepler Leadership team?
+Discussion of the role of the LT. Agreed that the primary responsibility of the LT should focus on strategic direction of the project and product.  Individual release details should be decided with the broader community, including developers. Some concern that the LT spends too much time on short term issues at the expense of longer term strategic planning.  Tim would like to delegate the technical stuff to another group of people. Agree that we don't need additional structural remedies, but we do need the LT to expend greater effort on reaching consensus on strategic directions and priorities that can be fleshed out by technical groups.
+
+3) Kepler 2.3 discussion (see bug list)
+Discussed how to make the strategic decisions needed to prioritize the science oriented release
+  -- propose to:
+    1) identify the specific science areas that we will target
+    2) identify specific features needed by those science communities that are not in Kepler
+
+  -- Also discussed: we should identify why most of our projects have developers creating workflows rather than the scientists themselves
+      -- possibly lack of features in the tool, or bugs
+      -- possibly that scientists see the advantage of getting help from the devs
+      -- ilkay points out that for CAMERA scientists do generate their own workflows
+  
+  -- Discussed user groups again: stats experts/command line experts are a hard audience to satisfy, might be better targeting analysts that are quantitiative but that benefit from higher level views, and that might dive into the details if someone else provides template components
+
+  -- Discussed need for easily wrapping external programs; this is the common case for bioinformatics and phyloinformatics; might benefit from additional language support for, e.g., perl, that would help particular communities
+
+  -- Suggestion that we all need to be present to make these prioritization discussions
+      -- this might best be accomplished with a face-to-face
+  
+4) Action items:
+* LT members flesh out specific science areas to be addressed, and list the features/bugs that need to be addressed to be effective for that community
+   -- 1/2 day virtual meeting to discuss, modify, and decide upon which of these we will tackle in K/C for release 2.3
+   -- Matt to send Doodle to schedule this towards end of month
+   
+
+
+
+

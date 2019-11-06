@@ -1,0 +1,118 @@
+Spring 2013 UA/SC Joint WG Meeting:
+FAQs, Other Documentation & Environmental Scan of Institutional Policies Subgroup
+
+Twitter sharing during the meeting @DataONEorg #UASCwg
+
+Current Meeting Documents________________________________________________________________
+
+2013  Joint UA & SC WG Meeting Knoxville Apr 30 - May 2:
+ * - Plone Site Folder   https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-ua-sc-wg-meeting-2013
+ * Agenda https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-ua-sc-wg-meeting-2013/Joint%20SC_UA%20WG%20Agenda%204.26.13.doc/view
+
+Past Meeting Documents________________________________________________________________
+
+AHM Sept 2012:
+ * Plone Site Folder    https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm
+ * Executive Summary https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/ahm-2012-executive-summary-report-ua-and-sc-wgs
+ * Report Out https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/DataONE%20UA%20SOCIO%20Summary%20AHM%202012.pptx/view
+ * Breakout Session notes: UA and SC combined sometimes including CI and PPSR    http://epad.dataone.org/yOOvlIEvyn
+ * FAQ Subgroup https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/faqs-subgroup-ahm-2012
+ * *****FAQ development since AHM 2012 housed in FAQ Subgroup link above.*****
+ * Prior E-Pad: Fall 2012 AHM http://epad.dataone.org/rS9WvaakOt  
+
+
+PRESENT MEETING 2013 JOINT WG MEETING  
+
+Brief discussion re the "Data Ecosystem" from the AHM 2012.  Follow up to date: 
+
+a.      This is the idea of an effort to identify the administrative actors who support and influence research data services in academic and federal institutions.  
+b.      Drafted three survey questions to include in Scientists Educators Follow Up Survey.  They currently appear in the latest survey draft.  (The entire draft needs to be vetted by the UA group so the inclusion of these questions is still awaiting approval.  I will check with Ben to see whether he plans to do that vetting at the Joint WG Meeting.)
+
+Written description of what information we hope to find. uSe existing questions as a guideline.
+
+FAQs DISCUSSION
+
+ Suggestions on ask.dataone.org
+ - less room for contributors more for tagging
+ 
+ Tasks for us:
+ are the right questions here?
+ are the answers given useful from a SC perspective?
+ put up the questions and answers that LT has already comented on.
+
+ Action items:
+ - Dave Vieglais will follow up to determien if there is a way to set an administrative function or tag that will allow some answers to be distinguised as the "official" answer. 
+     - this needs to be both a technical fix in the system and a fix that users will easily notice as the "official" answer.
+     - a process - way to work out the answers without airing our dirty laundry.  
+     
+     FAQ3 from original list - Amber B suggests, adding sentence to address the "suggestion" from LT team in feedback.  To the effect of, "ONEShare is a unique type of member node within the DataONE network that allows for data to be deposited directly from excel with the use of DataUp" or some such - see also Matt's answer.
+     
+     
+     FAQ4  - nothing on ask.dataone.org currently as of 4/30
+     
+     FAQs 5 & 6 revised in the group on the doc.  
+     
+     Suggested that any time we add a question to ask.dataone.org we e-mail Amber, Rebecca and Dave - not needed, can use the RSS feature.
+     
+     
+
+WHAT IS THE INVESTIGATOR TOOLKIT?
+Current Answer: 
+The Investigator Toolkit (ITK) is the set of software tools that have  been "DataONE enabled" so that users of the software are able to access data and information exposed through DataONE.  The ITK is a core part of  the DataONE architecture, arising from the understanding that DataONE  needs to work with the tools that people are already using, as well as  those tools which the broader community will develop in the future.  Different scientific domains and different types of users will need a  wide variety of tools to create, manage, and analyze data.  
+Current Comment: 
+It  would be useful if you linked to the web site description of the  Investigator Toolkit for more information and for the list of tools (http://www.dataone.org/investigator-toolkit).  It would also be useful to give some example tools, such as Morpho and R among others.
+jones (Mar 14 '13)
+
+Revision: 
+The Investigator Toolkit (ITK) is the set of software tools that have  been "DataONE enabled" so that users of the software are able to access, contribute, and work with data exposed through DataONE. Examples of ITK software include Morpho, DataUp, and an R-client. The ITK is a core part of the DataONE architecture, arising from the understanding that DataONE needs to work with the tools that people are already using, as well as those tools which the broader community will develop in the future. Different scientific domains and different types of users will need a wide variety of tools to create, manage, and analyze data. Further informaiton and a list of current tools within the ITK can be found at: http://www.dataone.org/investigator-toolkit.  For information on how to enable software to work with DataONE as part of the ITK, see the [DataONE Architecture Documentation](http://mule1.dataone.org/ArchitectureDocs-current/).
+
+SUBMITTED TO ASK 5/1/13
+
+WHAT IS A MEMBER NODE?
+Current Answer: 
+Member Nodes store, manage, and provide access to their digital  scientific data holdings. Member Nodes provide metadata describing their  data to Coordinating Nodes through the DataONE service interfaces to  facilitate discovery and retrieval of the data and metadata within the  DataONE Network. Member Nodes provide access to their own data, and may  partner with other data holders to provide access to partner's data and  metadata. Multiple tiers exist for Member Node participation, starting  with implementing the read-only data access methods, allowing  organizations to evolve their participation and fulfill sponsor  requirements. Member Nodes may have direct connection with user  communities and encompass a diversity of organizations, institutions,  and capabilities.
+Current Comment: 
+Probably should add the URL to the web site description: https://www.dataone.org/member-nodes
+jones (Mar 8 '13)
+Also,  I would revise your first sentence to: "Member Nodes are repositories  that store, manage, and provide access to their digital scientific data  holdings as part of the DataONE federation of repositories."
+jones (Mar 8 '13)
+Current Answer: 
+See https://www.dataone.org/member-nodes for details and further information.
+Briefly,  A Member Node is an organization that uses software that is "DataONE  enabled" to store, manage, and provide access to digital scientific data  managed by the Member Node.  Enabling access to data through DataONE  provides additional tools (the Investigator Toolkit) for users to  retrieve, analyze, and store data.
+There are different tiers of  partnering with DataONE as a Member Node, recognizing that different  organizations have different needs and capabilities.
+
+Revision:
+Member Nodes are organizations that are software enabled (have installed the DataONE Member Node software) to store, manage, and provide access to digital scientific data holdings as part of the DataONE federation of repositories.  Member Nodes provide descriptive metadata to DataONE Coordinating Nodes facilitating discovery and retrieval of  the data records. Enabling access to data through DataONE provides users with additional tools (see the Investigator Toolkit) for data management, retrieval and analysis. 
+Member Nodes provide access to their own data, and may partner with other data holders to  provide access to partner's data and metadata. Member Nodes may have direct connection with user  communities and encompass a diversity of organizations, institutions, and capabilities.  There are different tiers of partnering with DataONE as a Member Node, recognizing that different organizations have different needs and capabilities.
+For more informaiton on Member Nodes see: https://www.dataone.org/member-nodes
+
+SUBMITTED TO ASK 5/1/13
+
+Question: How frequently does DataONE synchronize with Member Nodes and will data permissions affect synchronization?
+
+
+A couple people at my institution contribute data to KNB. This is harvested by you, and available through DataOne. Recently some of our metadata disappeared from DataOne and I suspect it is because the permissions on the metadata set were accidentally changed and they became private. When this happens, does it get dropped from DataOne? I am guessing you only harvest or maintain KNB metadata sets where the access permissions are public.
+One of our formerly private metadata records has just been edited to allow for public read access, so I assume it will be harvested by DataOne again. How often do you harvest from member nodes?
+Thanks for any information or insight you can provide.
+
+Answer 1:
+
+DataONE completely respects the permissions that are set on data and metadata from Member Nodes -- so yes, if you set a data package to private, it will disappear from the public search in DataONE. That said, it is still harvested by DataONE, and if you are logged in with the appropriate accounts you could see the data set (although not through the DataONE web site -- we only show public data there for now). Harvest schedules are determined by Member Nodes, and in the case of the KNB, we ask to be harvested every three minutes. So changes should show up pretty quickly, assuming that the Coordinating Nodes are not busy harvesting some other node with a large number of changes. After you reset the permissions to public on the KNB, wait 3-5 minutes and they should show up on DataONE.
+If you are interested in the harvest schedules for other Member Nodes, they are listed in our node registry: https://cn.dataone.org/cn/v1/node
+
+Answer 2: (NEW - additional answer)
+Because Member Nodes have different needs and update at different rates, and because DataONE is a partnership with the various organizations that operate Member Nodes, there is no single, fixed synchronization schedule.  Each Member Node specifies its own synchronization schedule and that schedule can be updated as needed, through calls to the [updateNodeCapabilites()](http://mule1.dataone.org/ArchitectureDocs-current/apis/CN_APIs.html#CNRegister.updateNodeCapabilities) method.  
+
+At present, there is no method for a DataONE user to inquire and find out the synchronization schedule for a particular Member Node.  
+
+The relationships between DataONE and Member Nodes (MNs) are discussed here: http://www.dataone.org/member-nodes and specify how MNs  control access to their data, so you are providing an example of how this policy is enacted. A change in permissions will affect access.
+
+ As Member Nodes establish agreements with the Coordinating Nodes, the specific terms of synchronization are established in the software.
+
+
+Question: 
+I have a java application in which I have implemented Tier 1 of DataONE APIs. How do I incorporate user login/authentication into my java app?
+
+Answer: BRUCE, is this in the Architecture Docs?  I am uncertain as to where it is located.
+
+

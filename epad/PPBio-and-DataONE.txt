@@ -1,0 +1,91 @@
+PPBio (Brazilian Program for Biodiversity Research) and DataONE
+http://ppbio.inpa.gov.br/ 
+
+Thursday, 30 January 2014, 4pm BRST, 1pm EST
+https://www1.gotomeeting.com/join/269048624
+
+Attending:  Debora, Laura, Ben
+
+Agenda:  this is a catching-up session.  PPBio has made a lot of progress technically, and we need to pick up some of the administrative tasks to be done as well as charting a course for near-term development.
+
+Matt said in an email 1/27/14:  
+ * Deborah, Dave, Livia, Ben, and I worked on the technical issues last week and made good progress.  Ben helped determine that part of their issues with SSL was due to the particular point release of Java they were using, which had a security limitation for an SSL bug that was fixed by upgrading Java.   I think David now has content syncing, and will be moving forward with configuring their LNCC metacat instance this week. On Friday, David said he was planning on starting that, and would stay in close contact with Ben. 
+
+Debora further added in an email 1/28/14:  
+ * on Friday our two Metacat instances at INPA (PPbio and PELD/LTER) were successfully synchronized and David is working on synchronizing with LNCC now - thanks Ben and Matt for your assistance.
+ * After synchronization with LNCC I believe we can start replicating PPBio data objects to DataONE and start testing in staging environment.d
+ * We´ll still have one technical issue to address - Could ICPEDU's root certificate be added as a trusted CA in DataONE?
+ * More information on ICPEDU is provided here (in Portuguese): http://www.rnp.br/servicos/icpedu.html and http://portal.rnp.br/web/servicos/repositorio and an example is here http://ac.lncc.br/
+ * Ben and Matt if it´s possible for you to take a look at it and let me know if more information is needed to check whether ICPEDU can be added as trusted in DataONE it will be great.
+
+Currently, PPBio and PELD are synching between themselves, and the LNCC will host the PPBio DataONE MN.  LNCC (Brazilian GBIF node) will have more reliable internet connectivity as well as having more resources available to help (lots of folks working with PPBio spend a lot of time in the field, etc.).  Livia says progress with LNCC is not synchronizing yet because they are cleaning up their database.  PELD is NOT going to be a MN right now; only the data objects in PPBio will be discoverable via LNCC/DataONE.  
+
+LNCC is providing server space and other technical support to PPBio, and PPBio will be the DataONE MN.  Bill Magnusson (PPBio PI) would like to see the PPBio MN up ASAP.  
+
+Debora asked Ben about the ICPEDU certificate (see lines 17-19 above).  We think Matt is pursuing the answer to this question.  Question: is this certificate trusted?  Does Brazilian government issue SSL certificates?  
+
+Debora says the PPBio team has been drafting the MN description document, ready to send to internal PPBio team for review and then send to Laura.  Then Laura can start drafting the press release.  
+
+Metacat deployments w/replication
+inpa.PELD <--> inpa.PPBIO (not a replication "hub") --> lncc.PPBIO (MN) --> DataONE (CN)
+
+======================================================================
+Tuesday, 8 October 2013, 3:00pm Brasilia, 2:00pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am ADT
+
+Attendees: Laura Moyers (DataONE),  André Carneiro, Bruce Wilson (UT/DataONE CCIT), Dave Vieglais (DataONE CCIT), Debora Drucker (Embrapa, PPBio), Flávia Pezzini (CRIA, PPBio), John Cobb, Lívia Naman (PPBio), Matt Jones (DataONE/Ecoinformatics)
+
+Debora: PPBio - research program within the Brazilian Ministry of Science, Technology and Innovation, one of the main goals is to make biodiversity/ecological information more widely available; almost 10 years old, different managers in the different regions (Brazil is a large country); built a data policy to encourage data sharing; have a metacat instance up and running; PPBio interested in DataONE's goals of data sharing, discoverability, replication/preservation, etc.
+
+PPBio wants to become a DataONE Member Node.  Perhaps the focus of this meeting should be on technological aspects of becoming a MN...  BEW -- Given the role of PPBio, one possible route going forward is whether/how DataONE MN tools can help getting data from other projects into PPBio as a repository (see below--not expecting data from other projects, given institutional needs for other projects).  
+
+Flavia: When a researcher begins a project, an agreement is signed saying that s/he will participate in data management practices (store their research products (data) in the PPBio repository).  
+
+Matt: Do we anticipate that PPBio will contain data from other projects?
+
+Debora: No. We hope that PPBio will serve as an example and will encourage other researchers/data repositories to follow with data management practices. Later in the conversation we revisited this question focusing a specific project in western amazon that yes could be a partner initiative and host data at the PPBio Node.
+
+Matt: Will PPBio be in Manaus or LNCC site?
+
+Flavia:  PI (Bill Magnusson) in Manaus, repository at LNCC (Laboratório Nacional de Computação Científica)
+
+Nodes in Manaus and LNCC are the same thing. Same server as before, moved to LNCC, in Petrópolis, Rio de Janeiro.  Institution is part of ICPEDU (http://www.icp.edu.br), a PKI infrastructure for Brazilian academic institutions. It is similar to InCommon from the US.  Would that be enough for DataONE?  InCommon certs used at UCSB already, so likely sufficient. Could ICPEDU's root certificate be added as a trusted CA in DataONE?
+
+Idea is to connect from DataONE from LNCC, but keep a server in Manaus for replication.  Haven't done the replication yet.  Use metacat replication for the LNCC to Manaus replication. Could move to DataONE replication, as this will migrate out of Metacat to DataONE replication (DataONE replication is a better long-term replication strategy -- moving all of KNB to DataONE replication).  Would require that LNCC and Manaus both be DataONE Member Nodes, but shouldn't be much work to do that.  Changes to object-based replication (DataONE), rather than repository-based replication (Metacat), though still would want to replicate all of the content in the repository.  
+
+Some concern LNCC staff not on call. (I would like to apologize for missing the call, I suddenly had to replace the Brazilian delegate on GBIF's Governing Board Meeting). Can get to technical issues through email and IRC (irc.ecoinformatics.org).  Need to develop the relationship with the LNCC folks to help them be more ready to reach out to DataONE staff for help.  
+
+Wants more than one technical contact for the MN Forums.  No problems from the DataONE end.  (Laura will make sure PPBio technical folks are added to the MN Forum list.)  Emails for technical contacts in the call.  BEW -- IRC is a good place for quick questions, at least in terms of getting in touch with multiple DataONE technical people.  May need to address issues of Linux compatibility with GoToMeeting (strong Linux presence in Brazil; problem for Andre today).
+
+Current metadata is in Portugese.  Would it be a problem with MD in Portugese only?  Matt -- no not an issue.  Currently have metadata from Taiwan in Chinese.  Translations for titles particularly useful, as well as abstracts. That can also come later.  Seeing issue that translations in morpho are not coming in on-line.  &&&&&Need follow-up on this issue.  Might be going into the MD document, but might not be showing up on-line. Matt to check.  Might also be only showing just the native language coming from the client.  
+
+Target is Tier 4 MN.  Running Metacat as the stack.  Andre will know how much space is available on the node.  New server, to be at LNCC, good network connection, stable power.  
+
+Technology note: Google hangouts may work better for some communications given Linux gotomeeting compatiblity issues.    Look at  using Skype or Google  Hangout for getting with Andre and others at LNCC  (Andre confirms that  a Hangout should work for him).
+
+The MN form has been filled out, but there were some questions about the certificates.  Getting a partial document is fine and we'll work with folks on filling in the answers where there are questions or we don't know all of the answers just yet.  
+
+Dave -- who will be be the primary point of contact?  probably Livia (Lívia Naman <livianaman@gmail.com>).  But she can be out in the field so backup contacts, including LNCC is good.  Technical contact point is the person DataONE needs to be able to contact and update with information.  Could be Andre, but that sounds like something that needs further discussion.  Andre will understand the computing environment but less familar with the science content of the node. (Luiz can be added as well)  Conclusion: Send info to both Andre and Livia.  Add both to operators list for DataONE. 
+
+Dave -- how quickly do we want to get this on line?  Debora -- as fast as possible.  
+
+Can we identify a scientific outcome/goal that this PPBIO-DataOne collaboration can work toward?
+PPBIO also involved with EU BON.  Note that there's a telecon tomorrow (October 9, 2013) with EU BON folks.  Goal of a global collection of data initiatives.  Desire to coordinate the work of similar folks doing similar kinds of work.  Similar questions about GBIF.  What's the status on GBIF becoming a part of DataONE? A: some ongoing discussions, including EU BON discussions.  One particular question is how to handle the Darwin Core data.  GBIF is also a data coordinator, and GBIF could potentially provide contributions in that sense.  LNCC is the host for the Brazilian node for GBIF.  
+LNCC has skills/experience with high performance computing and scalable execution of scientific workflows. LNCC is very interested in collaborating in this area as well.
+
+Another possible outcome is integration with LBA.  Possible integration point with the PPBIO.  
+
+Matt -- new NCEAS project which could relate to integration of data, esp for Western Amazonia -- http://www.snap.is/groups/western-amazonia/ 
+
+Collaboration on outreach is also possible, both with other projects in the area and with DataONE.  Education about data practices would be another related possibility. 
+
+Discussion about what info to present about the Member Nodes, beyond what's on the MN Info form.  There is ongoing work for development of a DataONE MN dashboard, as well as improving the documentation for what's involved in becoming a MN.  The MN Dashboard is in prototype stage, but is intended as a more- real-time presentation of the holdings and status for the MNs and the overall DataONE system.  DataONE is also working to streamline the process of bringing MN's on board and we very much welcome any feedback on things we can do to make things easier for MN's coming onboard.  Likely to have some particular challenges with international, given time and language, as well as the network latency issues inherent in going from US to Brazil.   
+
+
+
+Next steps:  
+ * make contact with Andre and other technical folks; since PPBio is metacat, there shouldn't be significant issues with implementing a DataONE MN;  PPBio's metadata seems to be complete, etc. from when Matt has looked at  it previously.
+ * get certificates
+ * MN description document
+ * designate PPBio folks to be on Member Node Forum distribution (Laura/Debora)
+ * We'll send an email to PPBio folks with documentation/MN checklist information
+

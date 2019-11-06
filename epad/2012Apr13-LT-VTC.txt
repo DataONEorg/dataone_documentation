@@ -1,0 +1,312 @@
+Attendees: Rebecca, Amber, Bill, Bruce, Suzie,Bertram, Matt, John K, Dave, John Cobb, Steve
+
+Regrets:  Hilmar, Viv
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Apr 13, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/862105097
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 289-0016
+Access Code: 862-105-097
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 862-105-097
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012Apr13-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-04-13
+
+1) CI Update (Dave)
+Reminder that need feedback on CI by Monday, April 16 using RedMine
+
+https://cn-stage.dataone.org
+
+USGS/DataONE meeting next week
+What are the resources needed to bring a MN online - the initial MNs take more work to bring online but ideally will require less developer time. This includes the s/w that needs to be developed as well as the configuration issues. Still hoping to have the Mercury MN working at public release time.
+
+Dave's report to NSF from April 12, 2012
+DataONE CI Status Update - 20120411
+===================================
+
+Overview
+
+A major goal of the DataONE cyberinfrastructure is to support the long-term reuse of science data available through new and existing repositories by providing a platform that fullfils the basic requirements of: 1) persistent, unique identifiers for all content; 2) high level of confidence for long-term content availability; 3) mechanisms for discovery of relevant content; and 4) infrastructure supporting multiple user identities and consistent content access control.
+
+These core capabilities are implemented in a federated system comprised of three major components: 1) Member Nodes which are new or existing data repositories (e.g. Knowledge Network for Biocomplexity; ORNL Distributed Active Archive Center; Dryad) that support the DataONE Member Node service interfaces; 2) Coordinating Nodes which provide
+centralized services such as tracking content, managing content replication, user identity management, and metadata indexing for content discovery; and 3) The Investigator Toolkit which consists of software libraries, applications, and application extensions that enable seamless interaction with the DataONE platform.
+
+The development of the DataONE infrastructure requires integration testing of all components prior to their release. This is especially important for this system which, once available for general use, must operate with high reliability and content consistency so that the system will be trusted as a core piece of infrastructure for data management best practices. The integration testing process uses separate complete installations of all components of the DataONE infrastructure, with each complete installation being an "Environment". We are working with four separate environments in developing DataONE infrastructure: 1) Development which is the potentially unstable, latest stream of activity
+used for testing bug fixes and generally initial testing of new features or changes; 2) the Sandbox provides an environment where fixes and features can be evaluated in a more stable situation than Development environment; 3) The Staging environment where release candidates are evaluated by end users; and 4) the Production environment which is the
+operational, stable version of the DataONE infrastructure.
+
+As of the week of April 9, the development process has asymptoted to the
+point where most development activities are focussed on making
+non-critical fixes and updates. All core services are operational in the
+staging environment (accessible at: https://cn-stage.dataone.org )
+currently being reviewd by the DataONE Leadership Team.
+
+We anticipate deployment of the production environment during the week
+of May 14 or sooner depending on feedback from reviewers. The initial
+production environment will contain thee Coordinating Nodes located at
+Oak Ridge TN, University of California Santa Barbara, and the University
+of New Mexico. Member nodes will include: The Knowledge Network for
+Biocomplexity, which in turn will also trigger installation of the LTER,
+PISCO, and SANParks Metacat based MNs; The Merrit system of UC
+California Curation Center; The ORNL Distributed Active Archive Center;
+and The USGS Clearing House. Member Nodes expected to participate soon
+afterwards will include the Avian Knowledge Network; more USGS data
+centers; and Dryad. The Investigator Toolkit will inlcude several
+low-levels tools initially focussed on supporting developer interested
+in development of plugins or application extensions and will include
+base libraries in Python and Java, a plugin for R, and a command line
+client that enables access to all the DataONE services.
+
+Platform Services
+-----------------
+
+The DataONE platform relies on a number of core services that together
+implement the cyberinfrastructure functionality addressing the
+requirements of the project. These services and their current status are
+summarized as follows.
+
+DataONE APIs
+~~~~~~~~~~~~
+
+The APIs define the service endpoints for communication between nodes
+and clients participating in the cyberinfrastructure.
+
+Status: Stable, complete.
+
+Synchronization
+~~~~~~~~~~~~~~~
+
+Synchronization is the process where Coordinating Nodes recognize new or
+changed content on Member Nodes, and process that content so that the
+Coordinating Nodes obtain a copy of the System Metadata, and a copy of
+the Science Metadata or Resource Map if appropriate. Synchronization of
+content triggers other operations such as replication and indexing.
+
+Status: Stable, fully operational, but some edge-case consistency issues
+that have proven difficult to track down and resolve. Now able to
+reproduce the inconsistent state, so a resolution is expected soon.
+
+Replication
+~~~~~~~~~~~
+
+Replication is the process where Coordinating Nodes request Member Nodes
+to retrieve a copy of an object so that the number of copies in the
+DataONE system conform to the requested number of replicas.
+
+Status: Stable, appears to be fully operational.
+
+Authentication
+~~~~~~~~~~~~~~
+
+The Authentication Service utilizes the InCommon system to generate
+client side certificates augmented with additional identity and group
+information for DataONE users that enables secure access to DataONE
+services such as content creation and alteration of properties such as
+access control rules.
+
+Status: Stable, operational, though usability and possibly some
+functional changes required.
+
+Access Control
+~~~~~~~~~~~~~~
+
+The Access Control services define who is able to read or modify content
+that is added to the DataONE system. Access control is core to all
+services and appears to completely operational, though there are many
+combinations of rules and update sequences that continue to be fully
+tested.
+
+Status: Stable, operational. Full integration testing is ongoing.
+Operational, but still requiring further testing in field conditions is
+the timely propogation of a change in access control rules (e.g. making
+an object publicly readable or vice-versa) to all replicas of an object.
+
+Log Aggregation
+~~~~~~~~~~~~~~~
+
+The Log Aggregation service runs on the Coordinating Nodes and retrieves
+access log records from Member Nodes, combining them in a manner that
+enables generation of summary reports for content contributors, node
+operators, and other stake holders.
+
+Status: Implemented, but requires further testing in an operational
+environment. Especially important is ensuring appropriate evaluation of
+access control rules for log records.
+
+Indexing
+~~~~~~~~
+
+The Indexing Service generates an index that is used to assist with
+content discovery. The service parses the various metadata formats added
+to DataONE, providing a common view across the different formats. The
+Indexing Service is necessary for operation of the ONEMercury search
+user interface.
+
+Status: Stable. Existing metadata format extraction rules will require
+some fine tuning, additional metadata formats to be added over time.
+
+Search
+~~~~~~
+
+The Search Service runs on the Coordinating Nodes and provides a
+programmatic mechanism for client tools to search the DataONE holdings.
+It uses the same index as the ONEMercury user interface.
+
+Status: Stable. Currently provides access to only publicly readable
+content. Full support for authenticated access to restricted content is
+prototyped, but requires further testing and evaluation before
+integration to the Coordinating Nodes.
+
+CN Mirroring
+~~~~~~~~~~~~
+
+Coordinating Node mirroring is a service (actually several services)
+ensuring all system state (system metadata, science metadata, node
+statuses, user identities, etc) is mirrored, and consistent between the
+CNs. There are four mechanisms being employed for implementing this
+service, each chosen for the type of content being mirrored and its
+latency tolerance.
+
+Status: Unstable (somewhat). There are some edge case conditions that
+can cause inconsistency between the CNs. In most, the issue appears to
+be related to a conflict between access permission rules on legacy
+content being ingested by DataONE. A fix for this problem is currently
+undergoing testing in the sandbox environment.
+
+Software Implementations
+------------------------
+
+Metacat MN
+~~~~~~~~~~
+
+Fully operational. Probably ready for cutting a final release.
+
+GMN MN
+~~~~~~
+
+Fully operational though some minor issues remain that do not affect
+operation within the DataONE environment.
+
+Mercury MN
+~~~~~~~~~~
+
+Operational, requires further testing.
+
+Dryad MN
+~~~~~~~~
+
+Operational, requires further testig.
+
+CLI
+~~~
+
+The command line client provides a tool for low level interaction with
+the DataONE services. The CLI is operational, with additional
+functionality and features being added on a regualr basis.
+
+R Client
+~~~~~~~~
+
+Updated to work with the current API and service versions. Operational
+as something between proof of concept and a usable tool, will require
+further work before general deployment is feasible.
+
+ONEMercury
+~~~~~~~~~~
+
+Operational. Some UI tweaks required, especially for rendering metadata
+documents. Access to only public content is fully implemented. Providing
+access to restricted content requires some significant changes to
+ONEMercury operation and will not be a feature for the public release.
+
+Hardware
+--------
+
+All hardware located at the three centers is fully operational with no known issues.
+
+General Schedule
+----------------
+
+Current
+~~~~~~~
+We are currently evaluating the service and user interfaces in the Staging environment that is running our latest release candidate. In parallel, we are working to resolve the edge-case inconsistency issue between Coordinating Nodes. Issues identified will be collated and
+resolved as necessary during the week of 16 April.
+
+Week of April 16
+~~~~~~~~~~~~~~~~
+-  UI and other changes incorporated
+-  New release candidate tagged and built, incorporating fixes from sandbox, development and staging environments as necessary
+-  (Also running a USGS Member Node and client tool workshop in Denver)
+
+Week of 23 April
+~~~~~~~~~~~~~~~~
+-  Update stage environment with new release candidate and advertise to project participants
+-  Prepare production servers
+-  Ongoing revisions
+
+Week of 30 April
+~~~~~~~~~~~~~~~~
+-  Prioritize, schedule, and incorporate issues identified by users
+-  Documentation cleanup
+
+Week of 07 May
+~~~~~~~~~~~~~~
+-  Prepare release
+-  Tentative initial public release
+
+Week of 14 May
+~~~~~~~~~~~~~~
+-  Collate responses from user feedback
+-  Ongoing development of client tools
+
+June
+~~~~
+-  Prepare version 1.0.1 update incorporating user requested changes where possible
+-  Metadata index supporting discovery process will be progressively improved (e.g.  controlled vocabularies and keywords, support for more metadata formats)
+   
+   
+   
+2) Feedback on infrastructure (all)
+Bruce, Bill, John K, Suzie, Amber and Rebecca have checked out the URL to varying degrees.
+Reminder to all to take a look this weekend.
+
+3) NSF meeting (Bill)
+Rebecca sent out the minutes from the NSF/DataONE meeting yesterday.(Error in notes - S&G is not a shared CI,CE WG) 
+Tenative plan to hold bi-weekly calls with DataNet teams and monthly videoconferences with combined DataNets. July 13 & 14th meeting of all DataNets has been requested but conflict with travel day for DataONE DUG meeting in Madison, WI.
+The new DataNet reverse site visits showed them to be on track.  The three other DataNet teams complained about the reporting structure as being burdonsome (monthly). Looking at what will be considered to be success at 18-month review for the new DataNets.
+NSF still wanted an RCN but DataNets complaining about time required for this effort.
+
+4) Around the room
+
+John Cobb: Nothing for me
+
+Steve Kelling: Nothing for me
+
+Suzie: Last week the  SCWG held a phone conference to review current activities and to prepare for the joint working group meeting in May. 
+
+The SEC has announced their inaugural SEC Faculty Achievement Awards and Carol was chosen as the honoree at UT. The twelve professors representing the SEC schools are now being considered for SEC Professor of the Year.  Carol continues the tradition of Lady Vol championships in all areas!
+
+Amber: Short Course - deadline for applications is today. Thus far we have had 5 with an extra one form an assistant professor. Therefore we will extend the application deadline until next Weds (18th). Please promote - information can be found at: http://bit.ly/HOWP65. Joseph JaJa as SESYNC has indicated that they would like to host future workshops and could cover (partial?) costs.
+
+Bruce: Still looking for a replacement for Nick (will be transitioning out June 1st)
+
+Matt: working on demo for next week's meeting in CO
+Overwhelming response to sensor network workshop in Albuquerque - closed registration early because of the response.  Looking for funding to hold the workshop again next year.
+
+John K: have draft charter for Preservation & Metadata WG ready for review.  With Dave and Matt's input, Carly and I drafted a basic approach to DCXL (Excel add-in) metadata, based on EML.  This meets minimum requirements for EML and DataCite DOIs.
+
+Rebecca:  Quarterly reports due at the end of the month - Please send reports, presentations, and references for papers by the last week of April
+
+

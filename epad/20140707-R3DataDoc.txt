@@ -1,0 +1,56 @@
+DUG 2014
+July 7th 
+
+Community lead: Sherry Lake
+Facilitation: Viv Hutchison
+Attendees: Chris Eaker, Dave Vieglais, Margaret O'Brien,  Mark Servilla, Reagan Moore, Wendy Thomas, Heather Heinz,Kevin Browne, Felimon Gayanilo, Matt Neilson, Jim Michaelis, Isis Serna, Ismael Calderon, Ed Hart, Karl Benedict, Laura Moyers, Pedro Correa, Jim Myers, John Kunze
+
+Roundtable 3: Data Documentation
+
+To faciliate the discussion, we have provided the following talking points for each subject area:
+
+ * What are the main challenges?
+ * What solutions currently exist?
+ * What contribution can / should DataONE provide in this landscape?  How can that be best achieved?
+
+Introductory Remarks: 
+- Information Entropy concept
+- Points Researchers need to understand
+    - awareness of future repository requirements, publisher requirements, standards for     metadata
+- Critical Roles of Metadata - data discovery, data retreival, data use, data archiving
+- Metadata formats - ReadMe files, data dictionaries, codebook Structured Formats - DDI, FGDC, XML, etc. 
+
+Discussion: 
+ * What are the main challenges?
+   * What to collect and what not to keep is an issue. Not every observation needs to be archived; but we don't know which ones. 
+   * We continue to think about the metadata process as separate from the data process. 
+   * Metadata creation is analogous to the software development process - the documentation confirms the validity of the software. 
+   * Need to engage the up and coming scientists - hard sometimes to find ways to reach them. 
+   * Researchers do not want to learn a new tool. Need to build capabilities into the tools that researchers are already using. (i.e., SAS capturing mmetadata elements)
+   * Deciphering the standards and deciding how to use them is a real challenge. Finding ways to condense the standards down to minimal amount of information needed is essential. Best practices for where in a standard certain information needs to reside. 
+   * The number of metadata editors is vast. A shorter list of editors 
+   * Level of caring about which standards and how much information about the data is provided is different for researchers vs catalog managers who are caring for the data long-term. Tools need to only present the elements of a standard that are relevant to the researchers -- standard profiles
+   * Some disciplines do not have standards that fit neatly into a 'profile'. 
+
+ * What solutions currently exist?
+   * Involvement early on with strategies for metadata; revisit during the process. 
+   * Need to help incorporate the metadata workflow incrementally into the current workflows they are already using. (i.e., DMPTool offers some information that could be reused in a metadata record - link together this information as a by-product of the data mgmt planning process.) 
+   * Need to find ways to show researchers how metadata enhances the process. 
+   * UVA has a Data Management Boot Camp for students
+   * Hire and train people that understand both the science process and the information managment process to help with the metadata creation process. 
+   * Recommend one standard; develop tools around it; simplify the process by pre-populating some of the fields for the researcher. 
+   * Take advantage of the extraction capabilities of tools researchers are using. 
+
+ * What contribution can / should DataONE provide in this landscape?  How can that be best achieved?
+   * DataONE could hold a summit that brings together organizations working on metadata tools and representation of standards to help find common points of collaboration to result in ease of use for researchers in addition to helpfulness to catalogs. For example, finding ways to support metadata extraction from tools that researchers are already using. This might actually help to shorten the list of tools available. 
+   * Help coordinate linkages between the DMPTool and the metadata process. 
+   * Quality assessments on metadata as a means of providing the community with what is working and not; will also help community with tool development that focus on the qualityof the metadata. Encourage metadata editors to provide some sort of assessment of metadata based on the expected uses for the metadata. 
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+Notes on the UA WG session in block 6
+
+Breakout groups:
+1. new dataone web site
+2. the "pilot" catalog
+3. existing workflow tools
+4. existing metadata, data management / creation / deposit tools
+5. existing analysis tools (e.g., visualization, stats)
+
+the assessment process should also gather information about what tools (and repositories) are being used.
+
+discussion of need for additional grounding: what are the researcher/citizen scientist /etc. activities that need to be supported by various tools
+- this can be satisfied, in part, by:
+-- a lit review
+-- talking to DataONE insiders
+-- talking to outsiders
+
+
+New scenario (from Alison Specht): one dataset described by different sets of metadata and deposited in three distinct community repositories
+
+This group seems to need a better understanding of the overall flow of data and interaction points of DataONE. E.g., a captioned video animation.
+
+Usability
+-- next phase of coordinating nodes (water resources / hydrology, one specific LTER site, an unaffiliated researcher managing his/her own data, a physical collection (e.g., herbarium).
+
+Rama: this is a more bounded problem.
+
+Bruce Grant: also get, if available, their current data management procedures
+Get screenshots of their current interfaces
+Get existing reports of evaluations of their users
+Get some specific users to survey (about 40), interview a subset (about 10)
+Gather / develop workflow diagrams
+
+--> look at the Purdue http://wiki.lib.purdue.edu/display/dcp/Purdue-UIUC+Data+Curation+Profiles+Project
+
+Use these as found data
+Use these as inspiration for our own investigations
+Use as a springboard for adaptations to next version(s) of surveys
+
+Construct any i/v guide to allow probing targeting data producers as distinct from data reusers/consumers
+
+
+
+
+
+
+
+

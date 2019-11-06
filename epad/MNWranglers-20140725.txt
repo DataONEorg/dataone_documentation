@@ -1,0 +1,109 @@
+  Member Node Wranglers  - please note time change to half-past the hour
+    Fridays at 10:30 am Alaska
+                    11:30 am Pacific
+                    12:30 noon Mountain
+                    1:30 pm Central
+                    2:30 pm Eastern
+
+Please note new GTM info, also:
+   * https://www1.gotomeeting.com/join/698027049
+
+25 July 2014
+                                                                  
+Attending:   Laura, Rebecca, Mark, Amber, Bruce
+
+Regrets:   Dave 
+
+
+Agenda: 
+
+NOTE:  New meeting time at least through the end of July - 2:30p Eastern
+
+        1. High profile issues (or current items of interest
+        
+        FOLLOW-UP -- DUG activities/outcomes:
+     * An email from Tracy this week indicates that they would prefer to put the DC metadata out there (in addition to the DDI info that would NOT currently be used for indexing) so that they can get the MPC/TerraPop MN up and running before their review in October.  We talked about this at the MNF yesterday; the plan is to provide Tracy with the "wrapper" for their DC metadata, and they'll generate a couple datasets with DC metadata as well as the DDI info in sandbox and we'll see what happens.
+     * FROM LAST WEEK'S DISCUSSION:
+       * We  would like to go ahead and create rules for DDI, but putting DC  metadata out there may be the best short=term, get-it-out-there  solution.  Dave's  take on DDI - better off  implementing support for DDI in DataONE rather  than some sort of custom  implementation.  How we put the metadata out  there initially is  intended to be permanent.  Let's ask TerraPop to  provide a couple  example DDI metadata files, we can provide them how we  would pull  particular fields from their DDI, we would need to create  rules to tell  the CNs how to strip appropriate metadata from the DDI  files.  (http://www.ddialliance.org/)
+       * If  we provide MPC the information that we search upon, they can help  generate the "rules" for DDI  (Dave, Skye and maybe Mark to help)
+       * can go ahead and get the MN up and running but NOT searchable until we put the rules out there.
+       * Issue with having to generate new identifiers if we start with DC metadata then switch to DDI metadata.
+       * Index fields: http://releases.dataone.org/online/api-documentation-v1.2.0/design/SearchMetadata.html#values-extracted-from-science-metadata
+       * Rules for processing EML: http://releases.dataone.org/online/api-documentation-v1.2.0/design/SearchMetadata_eml.html
+       * 
+   * draft up translation of DC terms to indexing terms (see what's on mule1) 
+
+   * DUG discussion re: increased MN involvement with DataONE - letter drafted, intend it to come from Bill with current/prospective MN representatives as recipents (Laura to provide list).  It makes sense that Mark will be DataONE POC to coordinate this effort.  We are inviting participation from MNs.
+            
+
+        1.5   Current MNs
+               
+                
+        2. Status of upcoming MNs
+     
+     * Y5Q4
+       * GBIF (4730) - Tim Robertson in development (wow, he's good)
+       * ORNL MNs (RGD (4248) and EDORA (4247)) - met 7/17/14.  We can go to production with what we have now (URLs in metadata view but not in download links) and add in URL
+       * GLEON (3422) -  Nothing new.  passed the MNDD template on to Corinna - she will pick up when she gets back in August
+       * MPC (3708) - Bruce to get DC "wrapper" info to Tracy, Tracy to apply DC to a couple datasets in sandbox and we'll see what happens/what works best
+       * USCarolina (3689) - they've been working
+       * DFC (3532) - Lisa doing development and running WebTester.  Next step - get DFC in development environment
+       * UIC (3213) - replication only - has to be done by 31 Oct - Laura to follow up immediately
+       * PPBio (3748) - Debora in SB, Amber to talk with her re: MNDD
+       * SAEON (3205) - Chris or Mark will be able to help Alex at SAEON.
+       * NKN (3238) - at MNF yesterday, Ed said they are ready to set up MN in sandbox (after switching to redhat); he asked if they could use the same certs, and we said probably (if there's a problem we can issue new certs)
+       * IARC (4700) - Jim in development, we've (Laura) been talking; not sure who will be his CCIT POC
+
+    Future
+       * Montana State University Institute on Ecosystems (IoE) (3687) - in testing, nearly ready to go to production (news item drafted, MNDD/logo available)
+
+       * TERN-Australia - Rebecca and Bruce working on wording of MOU
+       * FigShare???  FigShare as either an ITK element or as a MN or both.; Dan Vallens (FigShare) was at the DUG.  FigShare and DataONE agree that it's a good idea for FigShare to be a participant both as a MN and the Investigator's tool kit; resource concerns on both ends, to be discussed further.  Question: should pushing FigShare data into DataONE be an opt-in or opt-out? 
+         * Amber - NCEAS is having a CodeFest first week of September - is there anything (small) we can propose that would forward the FigShare relationship?  http://nceas.github.io/open-science-codefest/
+         * Bruce - will ask about it
+       * NODC - revisit, target for next 18mos (Bruce/Matt)
+       * EU BON -- Looking to deploy a test MN (probably Sierra Nevada - August/Sept (Aug 10-Sep 7 we think) in Albuquerque to talk with DataONE developers) in the next 6-9 months. 
+
+        3. Old action items
+              MN Documentation - MN Deployment and MN Ongoing Operations - Laura to do  this>>>>   use Ask.dataone.org - where can I find? is there  documentation  on....?  
+       * topics for Ask.dataone.org:    
+         * is there documentation on creating/installing certificates?
+         * what's the difference between the different environments in DataONE (development, sandbox, stage, production)
+         * 
+             
+        4. Not-high profile issues
+            (Was under Current MNs related to SANParks, CDL, etc.)
+            LT  to address Memorandum of Understanding (re: operations and service expectations) between DataONE and MNs
+            suggestion: compile a list of common hangups from both perspectives - these might be good points to include in the MOU, such as:
+       * does the MN need to have harvesting turned on all the time, even if they aren't adding new data to their repository?
+       * what's the harvest frequency? MNs may not know, need to document (John already asked this in ask.dataone.org and Matt replied)
+       * what about certificates?  does the MN need them?  what kind (client/server)?  can I use the same certificates in all environments (sandbox, stage, production)?
+       * what are the expectations regarding uptime?  ideally a MN would be up all the time, but there are times when it cannot be (upgrades, backups, etc.); minimal downtime is acceptable, but what if a MN is down a lot (infrastructure problems, power outages, etc.)?
+       
+        5. Around the room
+        Rebecca - nothing new
+        Bruce - nothing else
+        Amber - dashboard does not display on the mobile version of the website, so for time being remove that functionality and display tabular MN information (not data)
+        Mark - ARCTOS (hosted at TACC) - Mark knows Gordon Jarrell and can follow-up with them.
+                - will alternate weeks focusing on DataONE and LTER
+        
+
+
+Tickler (things to revisit periodically)
+
+Purpose of MN Description Document (past and future) 
+    Intent is to describe the (potential) MN, identify the types/quantity/formats of data they hold, - perhaps we need a  "friendlier" format, perhaps an interview process;
+    Workflow: should this information (MNDD) be collected at the beginning of the process, or is the way we've been doing it lately (after the fact) a new way of doing business??  Also consider if  this information gathering (form or interview) is the best use of resources for those potential MNs who may or may not become a MN if implemented as a first step.  Possibly change the workflow? Is a pdf the best way to view the information?
+    Next steps:  Laura to come up with alternative(s) to current MNDD - content is good, but format/mechanism needs some work.  
+    Another thing: Laura and Amber to look at workflow for last stages of implementation, test with EDAC  too late for that, need to pick another one.
+    Also -- how does the MN DD relate to: 
+                    the node document:  https://cn.dataone.org/cn/v1/node  - developers have/create this information (node registration, see updateNodeCapabilities)
+                    and redmine??    <--- work with redmine as mostly-authoritative source
+    Could a spreadsheet be a viable solution?  Maybe.  A database would work.  In any case, some information is appropriately "private" -  how  would we handle that?
+                
+
+Revisit the default "only results with data" checkbox to unchecked; plan is to move the   checkbox from search page to results page but remain checked by default, initial draft in development environment.
+               
+Bob's feedback about the dashboard - he suggested a count of MNs on the dashboard (MNs, RNs), probably/maybe an easy thing to do a count of MNs and RNs and display
+                
+

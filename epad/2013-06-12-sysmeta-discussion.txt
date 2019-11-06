@@ -1,0 +1,63 @@
+Discussion on Who can Change System Metadata (after creation)
+
+Participants: Dave V, Chris Jones, Bruce Wilson, Laura Moyers, Rebecca Koskela, Skye Roseboom, Mark Servilla, Roger Dahl, Robert Waltz, Felimon Gayanilo, Ben Leinfelder, John Kunze, Stephen Abrams
+
+
+http://mule1.dataone.org/ArchitectureDocs-current/design/SystemMetadata.html#roadmap-to-system-metadata-control-changes-draft-to-be-reviewed
+
+
+Two main issues:
+
+1. What part of the system can change the system metadata?
+
+2. Where is the authoritative copy of the system metadata located?
+
+Latency is a concern for propogation of changes to system metadata such as accessPolicy, which could take some time depending on synch policy and load on the systems.
+
+Will this change be beneficial WRT mutable content?
+    - From a timing perspective, yes. functionally, it's somewhat unrelated.
+
+There is concensus that this is a good change. Need to discuss the details.
+
+Can this change be affected without changing the Types schema?
+
+Replica information, created and managed by the CN.
+
+- Consider pulling replica information from system metadata entirely, and maintaining only on the coordinating nodes
+
+- replica location information can be retrieved by the resolve() method
+
+- removing replica info will break existing v1 system metadata
+
+    - SystemMetadata.Replica is actually currently optional, so we may not have to make any Type change. Just don't serialize replica entries into SystemMetadata documents.
+    
+- Ben brought up the point that an MN may want to flag replicas as 'bad', and could do it directly in SysMeta.  With this change, the MN would need to make a CN API call to flag the change.
+
+Methods using replica type:
+
+  CNReplication.updateReplicationMetadata(session, pid, replicaMetadata, serialVersion) → boolean
+  
+
+Conclusion on type changes: No changes to the types schema will be needed. Replica infomraiton is currently optional, and so is not necessary for CNs to fill this infomration. The CNs will manage replica information with an internal structure similar to the existing replica type, except with the addition of a version attribute to help ensure consistency across the multi-master environment.
+
+
+API Changes: Which APIs do we introduce, deprecate, or change?
+
+Discussion on:
+ MNCore.updateSystemMetadata() 
+ MN{Core|Authorization}.systemMetadataChanged()
+ MNCore.setObsoletedBy()
+ MNCore.sytemMetadataChanged()
+ MNAuthorization.setRightsHolder()
+ MNAuthorization.setAccessPolicy()
+
+Conclusion: 
+
+Add MNCore.updateSystemMetadata()
+Add CNCore.sytemMetadataChanged()
+
+All others would not be added or changed.  Since the MN will be the authoritative source of system metadata, there's no need to move MNAuthorization.systemMetadataChanged() to MNCore.systemMetadataChanged(). Likewise, the CN won't be managinging Replica entries in system metadata any more, so will not need to call back to the MN for changes to sysmeta.
+
+
+
+

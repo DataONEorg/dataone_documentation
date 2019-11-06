@@ -1,0 +1,79 @@
+.. meta::
+   :keywords: DataONE, CCIT, 20130422, VTC, mutability
+
+DataONE Developer Call - 2013-04-22
+===================================
+
+Attendees: Dave, Chris, Mark, Rob, Roger, Bruce, Matt, Ben, John, Roger, Ryan, Skye
+
+
+Agenda
+------
+
+1. General update on infrastructure status, current activities
+
+New documentaiton of MN Process:
+http://mule1.dataone.org/OperationDocs/member_node_deployment_2/mn_checklist.html
+
+Morpho:
+
+- Waiting on process for dealing with legacy accounts / identities
+- Need NCEAS to become an identity provider for InCommon
+
+CTSC Security Audit
+
+- Dave, Matt, Chris, Chris B and Bruce
+- Mark - recently went through the process
+
+
+2. Discussion about content mutability
+
+http://mule1.dataone.org/ArchitectureDocs-current/design/ContentMutability.html
+
+Ryan 
+  - Dryad team is supportive
+  - Need to remove a lot of DataONE jargon in the document
+  - When content shows in (OneMercury) Search results - the SID should be the visible identifier
+
+- when a SID is present, the SID should be presented to the user, otherwise the PID will be presented as the "citable" identifier - How will a user resolve which is which?
+    - We really need to be able to display both, as some packages will have only PIDs, and some will have both (and probably need to be able to differentiate both)
+    
+- when MNs update system metadata, make sure documentation is available to make it clear what can be changed in what circumstances (e.g. obsoleting content). esp synchronization and update. (also check formatId as a possibly mutable property)
+
+- Name "SeriesID" OK? CitationID not recommended since there are cases where both SID and PID may be useful
+  - "series" is used in several metadata formats
+  - perhaps "series" could be used to refer to the entire set of objects in some collection, e.g. discrete measurements in a time series
+      * "version_series_id" would allow later definition of
+        "time_series_id", etc.
+  - (Rob) other (unreviewed) possibile names:  "entity_id", "product_id"
+
+- Possible race condition:
+  - content on node, get() or getSystemMetadata() using SID could refer to different objects if updated in between
+   - (Rob) if PIDs where in the HTTP header of get() calls at least, then client can figure out that content doesn't match sysmeta
+  - use only PIDs in existing APIs (except maybe resolve())
+  - new API for handling SIDs (e.g. resolveSID -> list of PIDs)
+
+- Need to clearly define:
+
+  - when SIDs are used in UIs
+  - how SIDs are used in OREs
+  - Which APIs (if any) can accepts SIDs?
+  - Which new APIs are necessary to support SIDs?
+
+- Who is responsible for replication of mutated copies?
+  - MNs should set up replication policy that allows prior versions to be replicated
+  - New CN service for MN to notify CN that it is dropping its copy of the object
+  - New Exception 'VersionNotAvailable' that is returned whenever a version of an object has been dropped in favor of a more recent version in the same series. Functionally similar to a "permanent redirect"
+  
+- Old/deleted object PIDs MUST be maintained in the infrastructure - to avoid reuse and to enable redirect / reference to replacement
+
+- Consider adding comment trace / log to system metadata or at least associated with a PID to manually record information of operational / administrative significance
+
+- possibility of a broken obsolescence trace if a MN is rapdily updating 
+
+
+
+3. Any other business
+
+- Next CCIT meeting. (Dave will email for suggestions)
+

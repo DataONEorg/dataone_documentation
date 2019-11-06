@@ -1,0 +1,372 @@
+Upgrade Ubuntu from 10.04 to 12.04
+
+
+1. Prepare
+  For Production machines follow the procedure as outlined in http://mule1.dataone.org/OperationDocs/coordinating_node_deployment/upgrade.html
+  
+ Remove the previous dataone installation, this is due to conflicts of dependencies (sort of)
+   root@cn-cat-1/# apt-get remove --purge dataone-cn-os-core
+   root@cn-cat-1:/# apt-get remove dataone-cn-version-tool
+   root@cn-cat-1:/# rm /var/cache/apt/archives/dataone*
+   root@cn-cat-1:/# rm /var/lib/dpkg/info/dataone*
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+sudo apt-get install update-manager-core
+
+sudo vim /etc/update-manager/release-upgrades
+(Verify that the line presents in the file: Prompt=lts)
+
+2. Do upgrade
+
+sudo do-release-upgrade
+
+notes:
+
+on cn-stage-ucsb-1.test.dataone.org the following error occurred:
+
+Updating repository information
+WARNING: Failed to read mirror file
+
+No valid mirror found 
+
+While scanning your repository information no mirror entry for the 
+upgrade was found. This can happen if you run a internal mirror or if 
+the mirror information is out of date. 
+
+Do you want to rewrite your 'sources.list' file anyway? If you choose 
+'Yes' here it will update all 'lucid' to 'precise' entries. 
+If you select 'No' the upgrade will cancel. 
+
+(selected y)
+
+The first time I did this the upgrade failed.  I then commented out all lists in /etc/apt/sources.list.d/*.list and tried again. I got to the following messages:
+
+Do you want to start the upgrade? 
+
+
+2 installed packages are no longer supported by Canonical. You can 
+still get support from the community. 
+
+7 packages are going to be removed. 144 new packages are going to be 
+installed. 393 packages are going to be upgraded. 
+
+You have to download a total of 244 M. This download will take about 
+31 minutes with a 1Mbit DSL connection and about 9 hours with a 56k 
+modem. 
+
+Fetching and installing the upgrade can take several hours. Once the 
+download has finished, the process cannot be canceled. 
+
+
+
+If you continue, an additional ssh daemon will be started at port '1022'. 
+Do you want to continue? Continue [yN] y
+
+Starting additional sshd 
+To make recovery in case of failure easier, an additional sshd will 
+be started on port '1022'. If anything goes wrong with the running 
+ssh you can still connect to the additional one. 
+If you run a firewall, you may need to temporarily open this port. As 
+this is potentially dangerous it's not done automatically. You can 
+open the port with e.g.: 
+'iptables -I INPUT -p tcp --dport 1022 -j ACCEPT' 
+To continue please press [ENTER] enter
+
+
+Third party sources disabled 
+Some third party entries in your sources.list were disabled. You can 
+re-enable them after the upgrade with the 'software-properties' tool 
+or your package manager. 
+To continue please press [ENTER] enter
+
+2 installed packages are no longer supported by Canonical. You can 
+still get support from the community. 
+7 packages are going to be removed. 160 new packages are going to be 
+installed. 479 packages are going to be upgraded. 
+You have to download a total of 344 M. This download will take about 
+1 minute with your connection. 
+Installing the upgrade can take several hours. Once the download has 
+finished, the process cannot be canceled. 
+ Continue [yN]  Details [d]y
+
+Allow debConf configure ldap configuration: no
+
+Ask to input a new root password for MySQL:
+Keep it blank which means the password were not changed (press the enter key)
+
+Restart services during package upgrades without asking?: yes
+
+replace file `/etc/security/group.conf'? N
+
+replace file '/etc/sysctl.conf'? N
+
+replace `/etc/ldap/ldap.conf' ? N
+
+replace `/etc/apt/apt.conf.d/50unattended-upgrades'?   N (unm doesn't have)
+
+replace file `/etc/ntp.conf' ? N (unm doesn't have)
+
+replace file `/etc/rsyslog.conf' ? N
+
+A new version of configuration file /etc/rsyslog.d/50-default.conf is available, but the version installed currently has been locall modified. What do you want to do about modified configuration file 50-default.conf? Keep Local version (process enter key for the default value)
+
+replace file `/etc/updatedb.conf'? N (ucsb doesn't have )
+
+Obsolete major version 8.4 (ok, press enter key)
+
+replace /etc/init.d/tomcat6?  N
+
+A new version of configuration file /etc/default/tomcat6 is available, do you want to replace?
+Keep the local version(process the enter key for the default value).
+
+replace /etc/logrotate.d/tomcat6? N
+
+ A new version of configuration file /etc/default/tomcat6 is available, but the version installed currently has been locally modified.   What do you want to do about modified configuration file tomcat6? : keep local version (Press enter key for the default value)
+
+A new version of configuration file /etc/default/grub is available, but the version installed currently has been locally modified. 
+     
+What do you want to do about modified configuration file grub?  (Press enter key for the default value)
+
+Continue without installing GRUB? N
+
+The grub-pc package is being upgraded. This menu allows you to select which devices you'd like grub-install to be automatically 
+
+chose /dev/vdb because on cn-sandbox-ucsb-1,/dev/vdb1 mounts /boot
+
+
+
+replace /etc/apparmor.d/usr.sbin/slapd? N
+
+replace /etc/apache2/mods-available/jk.conf? N
+replace /etc/libapache2-mod-jk/workers.properties? N
+
+replace `/etc/munin/munin-node.conf'? N (unm doesn't have)
+
+removed 26(on cn-dev-orc-1) (42 on cn-dev-ucsb-1) obsolete packages. Continue? y
+
+Restart required. Continue? y
+
+
+3. Install openjdk 7 and configure it
+
+a. sudo apt-get install openjdk-7-jdk
+   Need to get 93.7 MB of archives. After this operation, 202 MB of additional disk space will be used. Do you want to continue? Y
+   
+b. choose openjdk-7 as default java, javac and javaws:
+sudo update-alternatives --config java
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1051      auto mode
+* 1            /usr/lib/jvm/java-6-sun/jre/bin/java             63        manual mode
+  2            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1051      manual mode
+Press enter to keep the current choice[*], or type selection number: 2
+
+sudo update-alternatives --config javac
+Selection    Path                                         Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-7-openjdk-amd64/bin/javac   1051      auto mode
+* 1            /usr/lib/jvm/java-6-sun/bin/javac             63        manual mode
+  2            /usr/lib/jvm/java-7-openjdk-amd64/bin/javac   1051      manual mode
+Press enter to keep the current choice[*], or type selection number: 2
+
+sudo update-alternatives --config  keytool
+Selection    Path                                               Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/keytool   1051      auto mode
+* 1            /usr/lib/jvm/java-6-sun/jre/bin/keytool             63        manual mode
+  2            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/keytool   1051      manual mode
+
+Press enter to keep the current choice[*], or type selection number: 2
+
+4. Merge postgresql from 8.4 to 9.1
+
+(on cn-stage-ucsb-1 Postgresql 9.1 not installed)
+apt-get install postgresql-9.1
+
+Please see the https://redmine.dataone.org/issues/4467
+Migrate the database data from Postgresql 8.4 to 9.1 (after the upgrade, the system has both 8.4 and 9.1 running):
+  a. stop both 8.4 and 9.1 server:
+       sudo /etc/init.d/postgresql stop
+        
+  b. make some links as the root:
+       sudo -s
+       ln -s /etc/postgresql/9.1/main/postgresql.conf /var/lib/postgresql/9.1/main/
+       ln -s /etc/postgresql/8.4/main/postgresql.conf /var/lib/postgresql/8.4/main/
+        
+  c. run the upgrade script with the —check option as user postgresql:
+
+    root@cn-cat-1:~# su - postgres
+    postgres@cn-cat-1:~$ /usr/lib/postgresql/9.1/bin/pg_upgrade --check -b /usr/lib/postgresql/8.4/bin -B /usr/lib/postgresql/9.1/bin -d /var/lib/postgresql/8.4/main -D /var/lib/postgresql/9.1/main
+    
+    (if the postgres can't start, the command can be helpful:
+     "/usr/lib/postgresql/9.1/bin/pg_ctl" -w  -D "/var/lib/postgresql/9.1/main" -o "-p 5432 -b" start)
+   (in cn-dev-unm-1, i have to increase shared memory size:
+    echo 3221225472 > /proc/sys/kernel/shmmax
+    and edit /etc/sysctl.conf
+    add a line kernel.shmmax = 3221225472 )
+
+  d. do a real upgrade as user postgresql:
+  
+      postgres@cn-stage-ucsb-1:~$ vi upgradePostgres.sh
+       #!/bin/bash
+       echo `date` >>  /tmp/pg_upgrade.out
+      /usr/lib/postgresql/9.1/bin/pg_upgrade -b /usr/lib/postgresql/8.4/bin -B /usr/lib/postgresql/9.1/bin -d /var/lib/postgresql/8.4/main -D /var/lib/postgresql/9.1/main  >> /tmp/pg_upgrade.out 2> /tmp/pg_upgrade.err < /dev/null 
+      echo `date` >>  /tmp/pg_upgrade.out
+      
+      postgres@cn-stage-ucsb-1:~$ chmod 750  upgradePostgres.sh
+      postgres@cn-cat-1:~$ nohup /var/lib/postgresql/upgradePostgres.sh &
+      on a staging this took a really long time.
+      postgres@cn-cat-1:~$ exit
+      
+  e. remove 8.4:
+        root@cn-dev-ucsb-1:~# apt-get remove postgresql-8.4
+        Do you want to continue [Y/n]? Y
+  f. edit the file /etc/postgresql/9.1/main/postgresql.conf as the user postgres:
+        root@cn-cat-1:~# su - postgres
+        postgres@cn-cat-1:~$  vi /etc/postgresql/9.1/main/postgresql.conf
+        change the port to 5432
+        postgres@cn-cat-1:~$  exit
+  g. start postgresql 9.1:
+       root@cn-dev-ucsb-1:~#/etc/init.d/postgresql start
+        
+  h. vaccum db as the user postgres
+       root@cn-cat-1:~# su - postgres
+       postgres@cn-stage-ucsb-1:~$ vi vacuumPostgres.sh
+        #!/bin/bash
+        echo `date` >>  /tmp/vacuumdb.out
+         /usr/lib/postgresql/9.1/bin/vacuumdb --all >> /tmp/vacuumdb.out 2> /tmp/vacuumdb.err < /dev/null
+        echo `date` >>  /tmp/vacuumdb.out
+        
+        postgres@cn-stage-ucsb-1:~$ chmod 750  vacuumPostgres.sh
+        postgres@cn-cat-1:~$ nohup /var/lib/postgresql/vacuumPostgres.sh &
+
+        (also takes a long time in staging, 9 hrs on cn-stage-unm-1)
+        
+5.install tomcat7:
+
+
+a. Install libtomcat7-java
+   
+   root@cn-dev-ucsb-1:~# apt-get install libtomcat7-java
+    Do you want to continue [Y/n]? Y
+
+   
+b. install tomcat7
+   root@cn-cat-1:/#  apt-get install tomcat7
+
+
+6 Add a new file dataone.list in the directory  /etc/apt/sources.list.d as root:
+
+The new file contains two lines:
+
+for cn-dev machines:
+deb [arch=amd64] http://jenkins-1.dataone.org/ubuntu-unstable precise universe 
+deb [arch=amd64] http://jenkins-1.dataone.org/ubuntu-extra precise universe 
+
+for cn-sandbox machines:
+deb [arch=amd64] http://jenkins-1.dataone.org/ubuntu-beta precise universe 
+deb [arch=amd64] http://jenkins-1.dataone.org/ubuntu-extra precise universe 
+
+for cn-stage and cn-production machines:
+deb [arch=amd64] http://jenkins-1.dataone.org/ubuntu-stable precise universe 
+deb [arch=amd64] http://jenkins-1.dataone.org/ubuntu-extra precise universe 
+
+6.1 sudo apt-get update
+6.2 sudo apt-get upgrade
+    upgrade packages (check-mk-agent check-mk-agent-logwatch libnoggit-java) from ubuntu-extra
+    Install these packages without verification [y/N]? y
+    replace file `/etc/xinetd.d/check_mk'? N
+    if not propmpted to replace the check_mk file, then it is likely that check-mk-agent may not be configured correctly
+    add the line 
+    only_from      = 129.237.201.155 128.111.84.5
+    to /etc/xinetd.d/check_mk
+    
+7.Install dataone-cn-os-core
+ a  edit /etc/ldap/slapd.d/cn=config.ldif
+     comment three lines that start with:
+      olcTLSCACertificateFile:
+      olcTLSCertificateFile: 
+      olcTLSCertificateKeyFile: 
+
+b  apt-get install slapd
+  
+  
+ c change the Java7 keystore password: 
+    sudo keytool -storepasswd -keystore /usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/security/cacerts
+  
+ d sudo apt-get install dataone-cn-os-core
+  
+   for all debian installs: Install these packages without verification [y/N]? y
+    
+   Is this the first CN? No
+   keystore password:
+   ldap password
+  
+   confirm that bouncycastle has been installed correctly
+   /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext should contain
+     bcmail-jdk16-1.46.jar
+     bcprov-jdk16-1.46.jar
+
+  if not, then perform the following operation:
+  dpkg-reconfigure dataone-cn-os-core
+
+  Enable nodes for single active master mode
+  edit /etc/dataone/node.properties file
+  on the orc and unm node add the following line:
+  cn.storage.readOnly=true
+  
+8.Install dataone-cn-metacat
+a. sudo apt-get install dataone-cn-metacat 
+b. Takes 30 minutes for tomcat7  to come back up after manual update, might be best to perform metacat manual upgrades after  everything else is installed!
+c. go through the metacat admin page (bypass geo server and data one configuration. The others just click “save” - except to change the deploy directory to tomcat7)
+
+
+9.Install dataone-cn-portal
+a. sudo apt-get install dataone-cn-portal 
+
+10.Install dataone-cn-rest-service
+a. sudo apt-get install dataone-cn-rest-service 
+
+11.Install dataone-cn-solr
+a. sudo apt-get install dataone-cn-solr 
+
+12.Install dataone-cn-processdaemon
+  a. sudo apt-get install dataone-cn-processdaemon 
+  b. Log Aggregation is not repeating executions in branch and tags, modify the logAggregation.properties file to run from minutes execution(fixed in beta release)
+    
+13.Install dataone-cn-index
+a. sudo apt-get install dataone-cn-index
+
+
+14.Install dataone-mercury
+a. sudo apt-get install dataone-mercury 
+
+15.Total installed packages (checking and optional step):
+tao@cn-dev-orc-1:/usr/share$ dpkg --get-selections | grep dataone
+dataone-cn-index                                install
+dataone-cn-metacat                                install
+dataone-cn-os-core                                install
+dataone-cn-portal                                install
+dataone-cn-processdaemon                        install
+dataone-cn-rest-service                                install
+dataone-cn-solr                                        install
+dataone-cn-version-tool                                install
+dataone-mercury                                        install
+
+16. Final Step- Remove unneeded packages
+  
+sudo apt-get remove --purge sun-java6-jdk sun-java6-jre  sun-java6-bin tomcat6 solr-common solr-tomcat
+    will ask if you wish to remove solr index data, select no
+
+17 start the dataone service
+ sudo /usr/local/bin/startDaemons.sh
+
+
+
+
+
+  
+

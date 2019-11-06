@@ -1,0 +1,62 @@
+Attendees: Rebecca Koskela,  Amber Budden, John Cobb, Bill Michener, Trisha Cruse, Mike Frame, Matt Jones, Dave Vieglais, Suzie Allard, Carol Tenopir, Bob Cook, John Kunze, Viv Hutchison, Steve Kelling, Bruce Wilson,
+
+Regrets:   Todd Vision,
+
+
+  Agenda for 2011-01-07
+
+
+ * Status of DataONE Users Group charter
+
+Charter has been rewritten and voting on the new charter ends today. So far there are 12 votes, which is not a majority.  
+
+
+Materials from DUG - pdfs on the web site Is it appropriate to convert these to web pages? Don't have a basic architecture description on the public web site. Do have a request for being able to download The Best Practices web pages as pdfs. 
+
+ * Status of preparations for the DataONE NSF Review 
+        Location reminder:
+            https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review
+
+          Introductory talk is pretty much there.  The first talk is a 40minute review of the entire program. No questions will be allowed during this 40 minute period. From this review, go directly into the cyberinfrastructure portion of the review. NSF wanted to see relationship to RFP and what we said we would accomplish.  
+          Organized the cyberinfrastructure portion of the talk - included the animated cartoon. Placeholders for some slides; anticipating 3 speakers: Bruce do overview and "day in the life of a member node; Dave - details; Matt - WGs and other topics (roughly about same time for each speaker)  First test will be at EAB meeting in January. Bill will be working on Sustainability presentation this weekend. Will also work on the Challenges & Mitigations presentation. 
+          Dave almost ready to send CI portion to Matt and Bruce. Dave & Bruce will do EAB presentation but Dave, Bruce & Matt will do NSF review.  Dave also working on the documents needed for the review. 
+          Update on CI development: hampered by significant bugs but think they have resolved all the major bugs.  Not sure how much will be able to demo at EAB meeting.  Will be able to show CN, MN and perhaps MN replication for the EAB meeting (1/17-18).  More developers would be helpful.
+          Community Engagement documentation is pretty much written and Amber will work on the presentations this weekend. 
+          
+Preservation - what needs to be ready for EAB meeting; 
+
+Status of voice over for animation - just the one animation so far
+ * Round the room (All)
+
+Cobb:
+    Jan 15 deadline: TG allocation request. Inputs welcome
+            currently we plan to submit an allocaiton request of duration 1 year (April 1, 2011- April 1,2012). current request will include:
+                Quary VM node for deploying DataONE MN software stack example
+                5 TB of pilot storage at one or more TG facilities (thinking Albdeo and IU DC_WAN)
+                considrable computaitonal resources (maybe in the 5M SU range) to support Cornell eBird/EVA effort
+    
+Wilson:
+* Moving forward with process for ORC equipment buy.  The computing hardware can be purchased directly from Dell.  Will wait to compare the Dell quote with what UCSB gets from their quotes and what UNM gets back from their bid process.  Working on some aspects of data packaging for ORNL DAAC node.
+
+Amber: Having a call next week with the leaders of the CS working group to get the WG stood up / a workshop established.
+
+Mike: Heard great feedback from the new USGS people who attended the DUG.   They were excited and really felt that some of the USGS activities ongoing should leverage the work being done in DataONE as Viv and I had been proposing.
+
+Mike: I'd like to schedule with Dave, Matt, and Bruce some kind of joint developer meeting related to the Investigator Toolkit.   The opportunity exists to use some of the USGS Developers working on a set of Data Management tools that are related to the Inv. Toolkit.   I think this will take laying out some joint development tasks for the various Programmers.   This is an opportunity to leverage USGS funds, apply DataONE tools within USGS.   Viv is also actively involved in this effort and can add her point of view.
+
+Carol -- Masters and Ph.D. program in Information Sciences starting in fall; accepting applicants now.  Masters students at UTenn; Ph.D. at University of Illinois.  IMLS funded, includes NCAR.  Contact Carol or Suzie if looking for more information or have possible candidates.  Includes funding for 2 years for masters students and 4 years funding for Ph.D. All students get on-site experiences at NCAR during the program.  PLOS Article related to the Baseline Scientist Assessment is moving forward.   
+
+John K.-- Receiving external contributions to Preservation guidelines (from workshop attendees) by Jan. 9, writing beginning in earnest Jan 10.  Setting up an EZID account for DataONE (right now as personal account for D. Vieglais).
+
+VIV -- 
+**Conducted a sub-group meeting for the CEE WG on Wednesday, Jan 5th. Checked in with group on the status of the initial data management course slides-- some segments are complete and ready for sub-group review, other sections still need to be created. Agreed on a due date of Feb 25th for materials and another phone meeting on Monday, Feb 28 to discuss them and develop next steps. 
+**Working on submission of a USGS Powell Center proposal to engage a 2-year Working Group to develop an enterprise-wide data management strategy for USGS. If funded, will be some interesting opportunities for DataONE overlap/input. 
+
+Trisha
+Working collaboratively with UIUC, Purdue, DCC, Smithsonian and UVA to develop tool to generate data management plans.  DCC is providing software and we are modifying.  There is a beta (or alpha) version available for the NSF requirement.  
+
+DataCite/EZID -- all DOIs generated via EZID will be indexed / available in the Web of Science. This is good -- all Dryad data will be in Web of Science.  I think other indexers will follow (Science Direct) [That's cool!] [Yeah, that's great.]
+
+Bill: RFP for storage at UNM is completed and will be out on the street today or early next week. If the process fails, we can always go with Dell or HP as they are on state contract.  The RFP can be shared with ORC and UCSB.
+ 
+

@@ -1,0 +1,78 @@
+DataONE Users Group
+Jul 7th - 8th 2013
+Chapel Hill, NC
+
+Roundtable 6: Open Access / Data Sharing
+Session Facilitators: Bill Corey, Debora Drucker, Mike Frame
+http://epad.dataone.org/dug2013-RT6
+Participants:  Jane Greenberg, Angela Murillo, Stephen Richard, Brian Wee, Steve Aulenbach, Matt Jones, Karl Benedict, Soren Scott, John Cobb, Filimon, Patrick West, Mary Beth West, Tracy, Steve Morris
+
+Talking points / Guiding Questions
+ * What are the main challenges?
+ * What solutions currently exist?
+ * What contribution can / should DataONE provide in this landscape?  How can that be best achieved?
+
+Main Challenges
+Open Access - what is it?
+"shades of grey" - 
+licenses issue - CC commons not defined for data
+
+ * 3 categories:
+   * open for reuse
+   * open for attribution
+   * open for distribution
+
+ * attribution stacking problem
+ * International differences in copyright law and inclusion of data as intellectual property
+ * Legal issues - differences between countries
+ * Differences on how institutions look at data sharing
+ * How to ensure attribution for aggregator's role in data sharing
+
+Solutions
+ * Public Domain Dedication and License    (PDDL) Public domain for data/databases
+ * Open Database License (ODC-ODbL)    Attribution share-alike for data/databases
+ * Attribution License (ODC-By)     Attribution for data/databases
+ * Community Norms Document    Use with ODC-ODbL, ODC-By, CC0    Use as a stand alone document to identify community norms and expectations, best practices
+ * CC0  Creative Commons Zero  "No Rights Reserved"  no attribution requirement
+ * CC BY  Attribution
+ * CC BY-SA  Attribution share-alike
+ * Are licenses enforcable...will they stand up in court?
+ * WC3 - rights ontology - IPROnto
+ * Experience on researchers encouraged to share when they know who is downloading the data
+
+
+
+DataONE contributions
+ * linking licenses to data sets  allowing filtering      which licenses do you use?  Do you specify a license, or a set of licenses?
+   * Make them structured/machine-readable licenses attached to data
+   * Could also be a 'license thesaurus' (see W3C Rights ontology; IPROnto)
+   * Be sure to cover all three axes
+     * Re-Use policy
+     * Attribution policy
+     * Redistribution policy
+ * Make recommendations about how to machine link licenses into current metadata standards
+   * FGDC, CSDGM/BDP, ISO 19115, EML, etc.
+   * Right to redistribute is related to current ReplicationPolicy in SystemMetadata
+ * Provenance system can help avoid attribution stacking problem
+   * Can also help with showing role of aggregators in curating data objects
+   * Provide a machine-readable mechanism to link provenace models into existing metadata standards
+   * Or, provide separate mechanism to link prov and metadata (e.g., through ORE)
+   * Host a provenance trace construction service
+ * Provenance should include the licensing schemes
+ * When searching for data, add ability to filter by license type
+ * Organize community activities to come to agreement on licensing and data policies
+ * Show advantages of sharing data
+
+ * Rights in multiple directions
+ * Short / medium / long term
+
+
+
+
+
+
+
+
+
+
+

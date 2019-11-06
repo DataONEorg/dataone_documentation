@@ -1,0 +1,748 @@
+#persist
+
+ CCIT Meeting 2014 24 June - NCEAS
+ 
+ Meeting Recordings - YouTube
+ 1. 24 June 2014 AM Session - http://youtu.be/0ZLf8Sf4g74
+ 2. 24 June 2014 PM Session - http://youtu.be/81Wo9gfOZ-c (only last half of afternoon session)
+ 3. 25 June 2014 AM Session - http://youtu.be/ULR-LNDi_b8 
+ 4. 25 June 2014 PM CN/MN Session - http://youtu.be/Y3qVzqt1L18
+ 5. 25 June 2014 PM Semantics Session - http://youtu.be/th2gNWHG4tQ
+ 6. 26 June 2014 AM CN/MN Session - http://youtu.be/WlukoqhNKL0
+ 7. 26 June 2014 AM Provenance Session - http://youtu.be/yum2acFiUEE
+ 8. 26 June 2014 PM Plenary Session - http://youtu.be/V_I5ueeVHp4
+
+Attending: Mark Servilla, David Doyle, Roger Dahl, Stephen Abrams, Ryan Scherle, Matt Jones, Dave Vieglais, Tim Robertson, Jim Green, Jing Tao, Ben Leinfelder, Peter Slaughter, Skye Roseboom, Robert Waltz, Amber Budden, Lauren Walker, Chris Jones, Jeff Horsburgh, John Kunze, Bertram Ludaescher,  Xixi Luo, Mark Schildhauer (from Wed PM), Margaret O'Brien (wed-thu) (remotely monitoring in spurts, Deborah McGuinness - google hangout did not work)
+MsTMIP:  Yaxing Wei, Josh Fisher, Debbie Huntzinger, Steve Aulenbach, and Bob Cook (Wednesday pm and Thursday am)
+
+Agenda:
+https://docs.google.com/a/epscor.unm.edu/document/d/1X70oJoVnXJ8AHAT-W2V5vGzT_m0smrgll2r-_N3Nspc/edit#
+
+1. Overview
+ * Goal: Scope, Requirements, Work, Milestones for 5 focal projects
+   * System Maintenance and evolution
+   * Member nodes and Member node software
+   * Data Services Registration
+   * Provenance
+   * Semantic measurement search
+  
+2. System Maintenance and Evolution
+ * Coordinating nodes
+   * Series identification
+     * See https://docs.google.com/document/d/1uK4WqoMuMqM93J03Z2N1Hm2-IkgZe4kXMNlieSjS-SY/edit?usp=sharing
+     * Add 'seriesId' field to system metadata; field is optional (be sure to add it at end of field sequence in SM)
+     * Can change a SID over time; which means that old SIDs may no longer exist?
+       * The only way to change a SID would be via an update() operation, not just by changing SystemMetadata
+         * Two recognized reasons for SID change:
+           * Scientifically significant content change
+           * typo, incorrect values in SID
+     * Issues to resove:
+       * Using SID in ORE means we lose scimeta/data linkages for previous PIDs; do we allow SIDs in OREs?
+         * How does not allowing SIDS in ORE mesh with MN that do not want to track PIDs?  Users of the MN would create ORE with SIDs or PIDs?
+         * Decision: YES
+           * Requires good guidance for MN operators/developers to use SIDs meaningfully in OREs
+       * How do we define 'scientifically meaningful change'?
+         * Provide documentation outlining what may and may not be a scientifically meaningful change, provide recommendations, best practices, other educational matieral to guide content managers on implications of changes. e.g. a change to a data value is scientifically significant
+           * It may be more meaningful to discuss conceptual equivalency rather than scientifically meaningful.
+           * A change to a data file may not be 'conceptual equivalent' if all the values of the dataset remain the same.  For example, if a value .2 has its representation changed to 0.2, then the change is not 'conceptually meaningful' (a new sid is not needed).  However, if a metadata document is translated from French to English, then the change is 'significant' (a new sid is needed)
+           * DataONE SIDs represent conceptual equivalence among a series of versioned objects (e.g., versions of a data table). 
+             * This sentence needs to be added into the DataONEcTypes Schema when defining <seriesId>
+           * DataONE recommends that a new SID is assigned whenever there is a scientifically meaningful change to an object.  If a scientifically meaningful change is made without changing a SID, sufficient documentation must be provided to enable consumers to determine the significance of the change.
+       * Logging: MNs must report log entries using PIDs, not SIDs
+         * Yes. Since this is not enforceable (SIDs and PIDs are both Types.Identifier), solid guidance is needed for MN ops.
+         * If an Identifier is found in the Log Record that is not a PID, the CN will accept the log record, but no other systemMetadata information may be attributed to it (Who can view it? What is the access policy of the unknown PID? Or how do we populate systemMetadata that may be critical for the proper functioning of the logSolr index for a PID that no longer exists? Do we define defaults... adding information?)
+       * Implicit replication in the absence of a replication policy seems potentially harmful:
+         * user forgets to set false on TB size data stream that updates hourly/daily.
+         * The actual proposal was that the default replication occurs for objects of a maximum size, and that size would change over time
+           * "in the absence of an explicit ReplicationPolicy for an object, DataONE Coordinating Nodes would create two replicas of any object that was smaller than a certain threshold size, probably around 500 MB today.  This would ensure that the replication capabilities of DataONE are more fully utilized, while keeping the control of replication firmly in the hands of Member Nodes"
+     * What to do with sync errors that result in holes in the obsolescence chain; if updates to system metadata occur too late to retrieve PID updates on the MN
+       * Ignore and not worry? Yep. 
+       * What are the conditions that cause this error, and which operations should be ignored? (Ignore the PID transaction or ignore the exception caused by the error?) Currently, there is no error that occurs in Synchronization during processing a transaction from having a PID in obsoletes/obsoletedBy that does not exist, and going forward there should not be an error.
+
+   * Work for SID Version 2.0 API implementation:
+     * Design
+       * Conceptual design
+         * SID (complete). Review, Editing. [1 day]
+         * System metadata ownership changes, [1 week]
+         * Can / should we include a key/value list of somewhat arbitrary information in system metadata?  Review, decision is No [0 day]
+         * Various other minor changes to system metadata / types as recorded in the Redmine backlog redmine #2829 Review, document, [2 days]. 
+         * API change recommendations redmine #3755 
+       * Document method behavior changes and new methods [3 weeks]
+         * Resolving possible conflicts in operations performed through v1 and v2 APIs
+       * Draft version of transition guide for MNs and Clients for moving from V1 to V2 [1 week]
+       * Merge changes for SID support with other V2 API changes
+       * LibClient support needed for V2 and V1 in parallel [3 days]
+       * Document Client UI changes needed to expose information to users [2 days]
+         * recommendations for how to present SIDs, citation practices
+     * Implementation
+       * Changes to types [1 day]
+       * Changes common and libclient etc libraries [1 week]
+       * Create a version 2 API implementation for CNs
+         * Refactoring content storage to support V2 types, storage including de/serialization [3 week]
+           * Metacat
+           * Rest Service
+             * Cn Common
+             * Identity/Identifier
+           * LDAP 
+             * Node Registry
+         * D1 Processing Daemons [5 weeks]
+           * Log Aggregation [1 week]
+           * Synchronization [2 weeks]
+           * Replication [1 week]
+           * Replication Auditing [1 week]
+         * Indexing Daemons (2-3 weeks)
+           * Index Schema update/design (SIDs)
+             * Managing SID relationships
+             * Query expansion for SID/PID
+       * Integration tests written [4 weeks]
+       * Client tool support for V2 (assuming libclient is already available)
+         * ONEMercury, UI changes (add SID display) [2 days]
+           * clickable SID, navigates to head of SID chain
+         * Python common and libclient []
+         * DataONE R [2 weeks]
+         * Python CLI [1 week]
+         * ONEDrive for minimal v2 support [1 week] 
+         * Morpho (punt until Authentication issues resolved) 
+       * Obtain usability assessment of changes [input from Usability Group]
+         * ONEMercury [Heuristic Evaluation from Rachel?]
+         * ONE R? [Heuristic Evaluation, Cognitive Tasks analysis, Focus Group?]
+         * Python CLI? [Heuristic Evaluation, Cognitive Tasks analysis, Focus Group?]
+         * ONE Drive?
+     * Deployment
+       * Deploy, test, revise concurrent operation of V1, V2 APIs in development and beta environments until unit and integration tests pass [4 weeks]
+       * Deploy, test, revise operation of V1 + V2 in stage environment [2 weeks]
+       * Tag infrastructure release [1 week]
+       * Deploy to production [1 week]
+     * Document intended deprecation path and timeline [2 days]
+
+   * System metadata ownership [ see line 55]
+ * API Version 2 Support
+   * Should we 1) duplicate the full API to v2, or 2) extend v1 calls with v2 API calls?
+     * We can't really replicate v2 content to a v1-only node
+     * Benefit of not deprecating v1 methods, adding new v2 methods, is that all MNs would then support v1, which allows client-MN compatibility
+     * DECISION: do (2) - v2 implementations will be required to implement v1 APIs
+   * Need to be able to track the use of V1 versus V2 APIs. This will be useful for determining when V1 should be removed.
+   * Need to have a mechanism to convert types from version 1 to version 2. e.g. retrieve a V1 representation of V2 system metadata (this can simply be the implementation of the v2 getSystemMetadata() call, which can do the conversion/serialization)
+   * 
+ * CN consistency (and multi-master to single-master)
+   * This will be a Phase II operations activity
+     * Design work during breakout session
+     * Does single master scale as more services and data repositories are added?
+
+ * The backlog
+   * CN release efficiency
+     * Potentially breaking out services on the CNs that aren't core to synchronization/replication/indexing
+
+ * Investigator Tools
+
+ * Log Reporting
+ * Member Nodes
+   * For content that is not held by the Member Node, but instead accessed through a URL pointing to a location where the data bytes can be retrieved, the recommendation is that the URL pointing to the data should be documented in the OAI-ORE document.
+     * do the documents, isDocumentedBy predicates still apply?
+     * What is the identifier for the remote content? No identifier -> dc:identifier will be empty
+     * 
+   * Slender node. 
+     * A Slender Node is a data repository that has agreed to expose their content through the DataONE federation but will not be installing a Member Node software stack. Instead, DataONE, or some third party MN operator, will enter into an agreement with the data repository and will operate a Member Node instance that will act as a content cache for the data and metadata advertised by the data repository. The Member Node will harvest content from the data repository and cache it for future access through the DataONE service interfaces.
+     * The harvesting will occur through a well known protocol such as OAI-PMH, Catalog Services for the Web, or through a generated site map that includes some extensions
+     * Work:
+       * Evaluate existing protocols and make recommendations for any additional information to be included
+       * Develop tools to ingest these protocols into the caching member node
+       * Keeping the cache fresh
+         * Who provides the identifier? SIDs or PIDs
+         * Who generates the science metadata documents?
+         * Who generates the ORE document?
+         * What is required to produce system metadata for the objects? 
+       * These could all be addressed with templates that contain mostly default values.
+       * 
+   * 
+
+3. Data Services Registry
+ * Provide Service Descriptions
+ * Advertising service description in Node capabilities
+   * Available service, which subset of object formats are available to 
+ * Examples of taking advantage of services, documentation
+
+4. Breakout -- Operations and ITK
+ * Software Development Standards and Processes
+   * We need to change our software development culture, but we make only one software cultural change at a time.
+     * Work on it as a group for a month, or minimally two Sprint Cycles.
+     * At end of month, kaizen
+   * Follow SOLID software development principles.
+     * Summary: All new code should be written according to the SOLID principles.
+     * Benefits:
+       * Test creation will be easier. 
+       * Decrease long-term maintenance burden.
+     * Costs:
+       * Minimal. Some time required to revise code that is "poorly written".
+   * Collaborative development processes, pair programming, code review 
+     * Summary: Encourage development by collaboration between at a minimum of two developers. Collaboration may take the form of collaborative code creation, formal code review (after 'in progress' development cycle and before 'testing' cycle), active division of labor (one person codes, the other documents) or concurrent review of an active coding author via a passive reader
+     * Costs:
+       * Time to develop new practices (1 day?) and get the team accustomed to them (ongoing).
+       * Loss of flexibility when people have commitments for paired time.
+     * Benefits: 
+       * Better training for new developers.
+       * Reduction in mistakes/errors
+       * More robust solutions
+     * Other notes: 
+       * Eclipse Saros might help with collaborative editing
+       * Cloud 9. based on etherpad.
+       * Sonar quve and Crucible are tools that may be useful with collaborative development
+   * Test driven development
+     * Summary: Software contracting by tests. Any software feature or bug fix must first be written as a Unit Test. The Unit Test defines the expected change in behavior of a software component, or the requirement of the software feature. This Unit Test expresses a 'contract' of the code.  If the implementation of the code passes the Unit Test, then it has fulfilled the software contract.
+     * Costs:
+       * Time to develop mock objects and test harnesses.
+       * Defining all changes as requirements/contracts.
+     * Benefits:
+       * Greater comfort that new changes are not breaking anything.
+       * The developer who introduces a bug is immediately notified, so the bug can be located and fixed quickly.
+   * Encapsulate our code
+     * Summary: For modularity, it would be better to code to interfaces rather than implementations, so we can create mock implementations to support unit tests
+     * Benefits:
+       * ease of testing
+       * more robust
+       * easier to upgrade
+     * Costs:
+       * Design effort 
+         * Each software component will be analyzed to define what level of abstraction is needed 
+       * This will happen as we write new tests, rather than doing one big project to update everything. (So there is no large cost to fit into the schedule.) 
+     * Other notes:
+       * We only have Web Service level APIs for the Rest Interface.
+         * Each software component layer should have Interface definitions to separate implementation from design contract
+       * synchronization cannot be unit tested, because it depends on live member nodes -- we need to refactor software components depend on an interface, which can use a mock MN
+   * Automated integration tests
+     * Summary:  Prove that a system/component is correct by exercising a service
+         * Roger has created a replication tester that can mock the CN to test MN replication service code
+         * We could create similiar testers that mock the MN to test the CN replication service code, other services.
+     * Benefits:
+       * Confidence that component is operating as expected
+       * Allows more rapid development as each component can be verified for correctness.
+       * Reduce introduction of new bugs.
+     * Costs:
+       * Time to develop extended tests with adequate coverage.
+       * Review the test framework already present on Jenkins/Hudson
+       * Time and effort to build integration tests.  Need to have components that support integration testing
+         * Mock CN, Mock MN objects.
+       * Other notes:
+         * selenium can be useful
+   * Regression test automation- related to Sim Environments for Developers
+     * Summary:  Prove that a release is correct.   Starting from known MN content and known/empty CN.  Run CN processes.  Report on expected vs actual results.  For instance expected number of documents synchronized, expected number of docs replicated, etc.  As more services are added becomes harder to manually verify release is correct.
+     * Benefits:
+       * Confidence in release.
+       * Quicker release verification.
+       * Consistent verification.
+     * Costs:
+       * Time to build test framework and starting environments.
+   * Documentation System
+     * Needs further thought. 
+     * Astah.net UML editing
+     * Sphinx is current
+   * Migrate to Git!
+     * Summary: Move all code from SVN to Git. Use Github.
+     * Benefits:
+       * Each developer maintains own complete workspace that commits may be made against. 
+       * easier releases because you don't have to synchronize all projects for one big release
+       * allows for easy integration with modern tools (TravisCI, etc.)
+       * merges would be less painful than in SVN
+       * allows each developer to quickly switch between projects, or work on multiple  projects at once, without stopping to worry whether code is in a stable state before switching
+       * pull requests can be trigger point for code review.
+       * Expands potential developer community
+     * Costs:
+       * Time for developer training (1 day, plus some ongoing support)
+       * Need a separate location for store large media files (Git doesn't support large files) --  store them in a separate repository (i.e., not a code repository), OR just keep them in the SVN
+     * Other notes:
+       * merging/maintenance in SVN is a problem, because not everyone knows how to do it, so there are bottlenecks
+       * the technical migration should not take much time (took approx 1 day for Dryad)
+       * most likely want a separate git repository for each package in cicore/trunk
+       * Dryad process for using git: http://wiki.datadryad.org/Using_Git
+       * NESCent notes on git tricks and troubleshooting: https://docs.google.com/document/d/1rwarfgayGtcqwTI5N40jPu3quhA0hVITbBm4GlSixYE/edit?usp=sharing
+ * CN Release process
+   * why does it take so long? 
+     * Lack of automated regression testing (see above)
+     * better testing is needed (see above)
+       * unit tests throughout code base
+       * Create more integration testing
+     * a "simple" deployment takes several hours. Larger deployments take much longer.
+       * All deployments require a business workflow that must be executed by a human. Nothing is automated.
+         * Need Instrumentation of process monitoring. 
+           * Tailing log files to determine if TC is fully up, Testing Storage HZ to determine if daemon processes should be started.
+           * automate production system tests (monitoring?)
+       * Semi-Automated Deployment
+         * Benefits:
+           * Speed deployment process
+           * Reduce possibility of human error
+         * Costs:
+           * (1 week) determine appropriate technology
+           * (3 weeks) implement technology
+           * (1 week) training (on how to handle possible problems, force a build to complete)
+         * Possible technology solutions:
+           * we can speed the process with orchestration software (Ansible)
+         * Software Applications stacks need to be separated from single Application Server
+             * Look at Tomcat Manager (use the CLI to start/stop the apps)
+             * separation of software stacks (onto separate Tomcat instances or Machines)
+             * TCAT  to Manage Tomcat instances (http://www.mulesoft.com/tcat/leading-enterprise-apache-tomcat-application-server )
+               * tomcat instance manager
+             * Docker may be useful to run the apps in separate spaces (http://www.docker.com/)
+
+       * Is Java inhibiting our testing of the code?
+         * Replication tester developed in Python providing a mock style testing.
+           * simulates CNs and MN operations to test MN replication service code
+     * Release planning
+       * Add in a Release Candidate step.  Dev->Beta->RC->Release
+       * Clear milestones.
+       * Clear priorities of work.
+         * Management definition and oversight of release process
+       * Clearly Document for the development how to track changes in Redmine and relate them to milestones.
+   * Lack of modularity in software inhibits extensive unit testing (see above)
+     * Creates dependency upon Integration testing
+     * Due to complexity of integration testing, developers must 'manually test'
+     * Manually testing is restricted in trunk to the development environment
+     * Each developer is restricted upon the bottleneck of dev environment access
+   * During migration from TC6 to TC7,  were some configuration and property files had dependencies hardcoded
+
+ * MN sandbox environment
+   * needs to be kept up-to-date, or time is wasted getting it up-to-date during a release
+   * potential use of OpenStack to clone configured MN machines.
+ * Sim environments for developers
+   * Needs more design work to identify technologies and prioritization of work
+   * developers need an environment that they can use to better develop and test code
+   * VMWare image?
+   * OpenBox technology
+   * LocalNetwork for a cluster that is inaccessible from the LAN.
+     * Access to the LocalNetwork will be provided by a 'manager' host/vm
+     * Images should be clonable/ snapshotable
+     * Each developer should have access to their own cluster
+     * VM Machine harddrives are relatively small/ 10G
+ * Maven repo
+   * Use of archiva for dependency management or Nexus.
+   * creation of jars need to reflect their quality status, 
+   * and musn't be mixed (blah.1.0.0-SNAPSHOT.jar, blah.1.0.0-beta.jar, blah.1.0.0-RC1.jar, blah.1.0.0.jar)
+     * i.e. no two exactly named jars should have different checksums
+   * maven.dataone.org
+     * we need this to correct the problem that we're deploying "beta" branches to production
+     * would be useful for 1.4 release
+     * Each environment should have its own maven repo that it pulls dependencies from (maybe)
+ * Jenkins migration
+   * Testing: almost complete
+   * Review Beta dependency builds 
+ * Java 7
+   * Testing: almost complete
+   * the poms currently target 1.6
+     * How do we enforce Java 6 only language features?
+     * a pom compiling with a 1.6 restriction will still allow 1.7 features to be compiled
+       * Look for plugin that will parse for 1.6 compatibility
+       * Test this out, does it really fail?
+ * CN Consistency
+   * Summary: Use Tidy until significant effort may be scheduled for further research.  Effort will be after v2.0 release. Establish Regular Meetings to Plan Design and Evaluate Technological solutions post V2 release.
+   * Benefits:
+     * Scalability
+     * Consistency
+     * Free up developer resources from maintenance for DataONE enhancements
+   * Costs:
+     * Uncertainty of reliability of any new technological solution
+     * Rewriting business/data layers already in production
+   * Notes:
+     * Access Control is a strong consistency argument over availability
+       * Write Strong consistency
+       * Read High availability
+       * High Consistency for SystemMetadata and Identifiers
+       * High Availability for Objects (Sci Metadata/Resource)
+   * https://docs.google.com/a/epscor.unm.edu/spreadsheet/ccc?key=0At7xDQH2gn9ndDk5eFlfVEVxM2NkdFM0eTFUUVVWZkE&usp=sharing
+     * Identifier reservations must be constistent
+     * Decouple messaging from Object Store
+     * Requirements for messaging
+         * Distributed Lock
+         * Reliable replay of mesages
+         * Guaranteed Delivery
+         * Size of Content is small/SystemMetadata must be decomposible
+
+   * Roger's Suggested Sync Strategy
+     * Use ZooKeeper or something like that to keep track of the CNs and designate one as master at any given time.
+     * For v2 (MNs authoritative for System Metadata):
+       * We allow only 1 CN at a time to run MN sync. The hit is that we reduce our sync capacity to 1/3.
+       * Then we have 3 queues, one for each CN.
+       * The CN that runs the MN sync push updates into the queues for the other 2 CNs.
+       * All CNs pop updates from their own queues and update their own storage.
+       * If a CN is down, updates pile up in its queue until it comes back and starts popping them.
+     * For v1:
+       * A bit more complicated because CNs accept update requests from MNs (setRightsHolder(), setAccessPolicy()).
+       * When accepting those calls, they would be directed to the master CN.
+       * Then the process is the same as for v2.
+     * Notes:
+       * The queues are a single point of failure. One possibility is to use the AWS Simple Queue Service (SQS). First 1 mill messages per month are free. Then $0.50 per  1 mill messages. We could use the SQS for CN to CN sync and another messaging queue / bus for intra-CN communication.
+
+
+   * Tidy 2
+     * Create a separate Auditing VM. 2 cores, 50GB, 4GB, postgres, 
+     * Modify Tidy Process to perform delta checks (last known constistency date)
+       * Store the delta date somewhere in order to pull before each Tidy Run.
+     * Modify Tidy to produce an UPDATE sql document for the node that has inconsistent data
+       * Updates needs to be keyed to serial version + lastSystemMetadataModified date of the inconsistent systemMetadata record
+     * Additions
+       * automate the rsync, every day the dumped database for each cn (/var/postgres-bak)
+       * Automate the transformation of each dumped database
+       * Automate the creation/replacement of previous database tables
+     * Test if Tidy can complete for Max # of sync'ed objects in a day
+       * If Tidy processing lags behind the the Max throughput for CN Sync, then we can not run it on a daily basis
+       * If possible, Automate Tidy to Run on a Daily basis
+         * Run after Tidy Database has been sucessfully updated
+         * Daily runs will run from Delta T to Current Time - 24 hrs.
+
+ * ITK
+   * LibClient
+     * LibClient may be used by Others
+     * Dependencies are problematic
+       * Logging process
+         * No logging implementation in a Library
+         * No Log4j, slf4j policy for common, commons. Use an Interface
+         * Class path management, untangling dependencies
+         * LogBack, appenders, cabana. webapp can then see all the logs across the cluster
+       * Running maven dependency analyze
+         * version display show updates, used undeclared libraries, 
+         * pom issues, not all dependencies are declared, some dependencies are assumed
+           * We should always explicitly declare dependencies instead of relying upon transitivity of pom dependencies.
+           * use maven dependency analyze
+     * Thread Safety
+       * declare in the Java Doc whether the classes are thread safe
+       * never have a public constructor on a singleton
+         * ways to exploit the certificate in use of singleton
+         * need to re-use http connection - in progress, see  https://docs.google.com/document/d/1ELTBX3A8AT4SJCaRppt_pcjkUoTBFX892rvbq8GVtls/edit?usp=sharing
+
+     * Construct Builder Classes for Types (Domain Objects)
+     * Can Auth be parated
+     * WebService clients
+   * Remove the Solr Index dependency from CN stack
+     * decouple indexing process
+   * Development of New Search Interface
+     * New Metacat search interface is not tied to Metacat
+     * 1.4 Solr Geohash fields will be available that metacat search expects.
+   * Integration of Online Citation Managers with tools suite
+     * Zotero integration in search mechanism
+
+ * MN Implementation
+   * Tim's Hadoop implementation
+
+
+5. Breakout - Semantics and Provenance
+ * Dave: overview
+   * 18 month milestones (2nd 36 month review)
+   * 1. ... increased capacity ..
+   * 2. ... complete of data services ... 
+   * 3. Pre-release implementation for prov tracking and management capabilities
+   * 4. Functional proof-of-concept of Semantic Measurement Search capabilities targeted at a subset of science domain data represented by DataONE
+   * ... 
+   * 36 months:
+     * ... provenance part of production ... 
+     * ... semantics pre-release ... 
+   * "Earned Value Management" 
+     * scope, requirements
+     * break down work 
+     * allocate resources
+     * identify milestones
+     * track actual vs planned
+
+            Voyage of discovery approach that DataONE is taking makes Earned Value Management a challenge
+ * For this meeting, we need to define:
+   * Scope
+   * Requirements
+   * Work
+   * Milestones
+ * Focus to have at least one satisfied "customer" after 18 months  (question is it most likely that this is MsTMIP but also LTER SBC?)
+   * MsTMIP community 
+   * GCIS 
+     * two ends of the "whole solution" (DataONE as the "glue")
+   * Challenges:
+     * e.g., paper hold up; editor loaded data: didn't match the paper
+     * difficulty to trace versions
+   * Josh Fisher:
+     * contributor of and user to MsTMIP
+     * use case related:
+       * issues in the outputs 
+       * uploading multiple versions 
+       * running multiple experiments
+       * what-if scenarios
+       * multiple submissions, multiple versions, multiple models
+     * BL-Q: what kinds of provenance support needed?
+       * within run-provenance
+       * multi-run provenance
+       * wf evolution provenance
+       * notebook interaction provenance
+     * BL-Q: what tools and products?
+       * cf. Ben Best's lunch presentation 
+       * mix of "best practice" and "new tools"?
+       * provenance for self => provenance for others
+     * Scenario management
+       * Mark: typology of models in scope?
+         * semantic indexes across project-experiment folders? 
+       * Steve: need shared vocabulary 
+     * Semantics of Measurements
+       * => semantics of variables (not all vars can be measured)
+     * Use case:
+       * temp update => worth to redo the whole thing?
+     * Most important variable: net CO2 flux
+       * small number 
+       * the sign (plus or minus?)
+       * data dictionary might come handy 
+       * soil respiration
+         * root => part of the plant? Or part of the soil?
+       * need a way to specify which interpretation is used
+         * modelers might not give you (or have) that information
+     * multiple ways to represent photosynthesis, respiration
+       * are the outputs different because of different representations?
+       * important: dendrogram (of what?)
+     * focus on "worms" and "leaves"
+       * who dies when temp goes up to X?
+
+ * People resources
+   * Provenance 
+     * postdoc (TBD) + developer (Chris)
+   * Semantics 
+     * post-doc (Xixi) + developer (Ben)
+     * Margaret (1 mo.) + 2 x 50% students @ UCSB
+     * 
+ * MsTMIP
+   * 
+   * MsTMIP Website:  http://nacp.ornl.gov/MsTMIP.shtml
+   * MsTMIP Data Portal:   http://nacp.ornl.gov/mstmipdata/
+   * MsTMIP Prov / Semantics Wiki:  http://mstmipd1.pbworks.com
+   * Variable mapping: https://docs.google.com/spreadsheets/d/17YAXpj1gu0g8Wi2SyNu90bUgy9OFALLQMlnK9DmE-BI/edit#gid=0
+   * Example of the type of annotation needed/collected for MsTMIP: screening document: https://docs.google.com/document/d/1Q0gIJ8qDDclc24MasP6Xb1rnM1J0Uo1lFDsO6G89gAE/edit
+   * now in phase II (3 year project)
+   * specifc goals, limited resources
+   * "embedded postdoc" 
+   * developers (Chris, Ben) could/should spend time on this
+   * strawman:
+     * pick a study 
+       * e.g. the one mentioned by Josh, 
+       * or Christopher's "data wrangling"
+     * have the DataONE postdoc(s) work with a MsTMIP member to "redo" an existing use case with "new technology" (mix of best practice, new tools !?)...
+   * Yaxing: MsTMIP has its own infrastructure (netCDF, THREDDS!?) 
+     * Model outputs are standardized NetCDF structures
+     * THREDDS server is used to provide acess to model outputs
+     * They use CF metadata conventions (http://cfconventions.org/) to document variables using a controlled vocabulary
+     * This system needs to be DataONE-enabled
+   * Hayes and Turner EOS 93(41) -- classification of Net Ecosystem Exchange (NEE) variables, could be used as basis for vocabulary/ontology development
+
+   * Semantic measurements deliverables 
+     * 1.Knowledge Model: Vocabulary (OWL) for NEE and related variables for typing data sets
+       * Focus on measurements that are critical and problematic for their effort, eg Net Ecosystem Exchange, NEE
+       * Product: NEE ontology
+       * Product: Classification of sources of differences of model results (see review paper by Hunsicker et al.; Josh Fisccher has the reference)
+     * 2.Semantics capture:Mechanism for 3rd party annotation, manual, with tooling support
+       * What tool(s) would produce these? Mostly Matlab and R
+         * Need to meet further with MsTMIP to understand workflow and tools that would be effective
+       * Ability to annotate data products (typically in NetCDF with CF metadata)
+       * Ability to annotate model capabilities (what they can produce)
+     * 3.Machine-assisted semantic annotation: (not in first 18 months) "Fingerprinting" -- can we detect these variable types from the data themselves (this is really a machine learning approach to annotation)
+       * Difficult to accomplish in first phase, so instead identify specific use cases for fingerprinting
+     * 4.Semantic Display and Search system
+       * allows MsTMIP researchers to find datasets that have changed in specific ways (e.g., just the high-northern latitude has changed)
+       * find data in precise ways (differentiating subtle measurement types like NEE variants) (e.g., find all model outputs that only use 'constant N deposition' in particular driver data scenario)
+     * 5. Semantic storage system (see Provenance #7 below)
+     * (New; at one point was the Highest priority) (Semantic type checking framework): for each semantic type, define a means of applying an arbitrary set of QA rules (defined by the modeling teams) that can get run on each model output and that flag inconsistencies with that semantic type; mostly focus on semantic definitions and consistency (e.g., consistent definitions of NEE applied); open question is whether we include 'zonal plots' in the tests (for data subsets)
+     * Requires MsTMIP data objects referenced inside D1: Deploy MsTMIP data behind a DataONE MN (eventually targeting ORNL DAAC)
+     * Use Semantic tools and approaches (triple-stores, inferencing engines) commonly with Provenance
+
+   * Requirements:
+     * Schematic diagram of the overall design
+     * Working descriptions of each deliverable
+     * annotation store (triple store or other technology)
+     * DataONE-referenceable artifacts (discreetly identified and MN registered model inputs, models, and model outputs including versions)
+     * 
+ * Steve: 
+   * in our use case, heavy use of PROV-O
+   * activities also captured (some)
+   * new release: "indicators" coming out 
+
+ * Provenance Discussion
+   * Lauren presented overview of prov-o based model, and UI mockup of provenance display
+   * Debbie: very useful for the MsTMIP derivation process
+     * Can show relationships between, e.g., the source driver data used in a model to create a figure in a publication
+   * Matt: potentially pre-compute inferred relationships, the index them in a Solr index for search
+   * Mark: .importance of visually appealing interfaces onto prov/sem so scientists engaged-- useful, but attractive.. e.g. like VUE-- Visual  Understanding Environment... (Tufts)
+     * need  an attractive, interactive, RDF-OWL-based 'flow chart' visualization of a completed workflow be useful?
+     * emphasis here is on usability/interpretability of workflows and prov for commu members after analysis is complete/published, etc.  Other discussions about PROV here have considered assisting with actual workflow development-- multiple versions of code and data as scientists work through and share data.  How realistic under 12-18mo timeframe? 
+     * In any case, how will D1 show some "final product workflow" that enables exploration of PROV relative to multiple data sources, merges/transforms, and multiple code/models/scripts that facilitate these and produce final results (output data-sets, figs/graphs, tables, articles, etc)?-- similar to "snapshot" concept that Debbie and Josh mention...?
+   * ...
+   * Bertram: Cui bono? 
+     * Prov for the data creator vs Prov for the consumer
+       * Use case and "prov queries" for Christopher (the data producer)
+         * "inward provenance"
+           * cf. Burrito + sys-level prov ... vs digital notebook provenance 
+           * what one might want to track:
+             * command line invocations (cf. digital notebook prov)
+             * (certain) function calls from the script/workflow (cf. "noWorkflow" tool)
+               * file access (read, write)
+             * code versions
+             * data versions
+           * What a solution might look like:
+             * 1. Have a good conceptual model and data model (should include the whole data life-cycle, from internal prov to external/outward-facing prov)
+               * versioning code (wf evolution prov)
+               * versioning data (incl. intermediate data products)
+               * what prov:used, prov:gen_by, prov:derived etc relations mean!
+             * 2. Capture provenance at multiple levels:
+               * command-line invocations
+               * within script function/service invocations 
+               * script evolution
+             * 3. Make prov browsing and querying easy
+               * ... for the inward and outward use cases
+       * Use cases and "prov queries" for NN (the data consumer)
+         * "outward provenance"
+       * Use case: notification to data users that a new version of a data set was created or that a portion of a data set was changed
+       * Use case: ability to track provenance of a particular MsTMIP scientist's analysis that goes into a manuscript:
+         * create a workflow that goes in supplementary information with the MS so someone else can rerun their analysis
+         * differentiate the exact version of code that was used in the analysis
+         * try to make it less painful
+         * add COINs tags to make it easy to cite a 'workflow' in a paper
+         * both inputs and outputs can be terabytes of data, so each snapshot needs to be able to easily archive directly into the data store
+         * analysis machine is a different cluster than the data repository machine
+         * Sub-use case:  track provenance for generation of a specific figure.  Allows author to incorporate reviewers' comments when revising manuscript during the journal's review process (revisit past method for generating a figure (data, code, plotting method) and revise based on reviewers' comments).
+         * boosts profile and communicaiton of reliability of the research
+       * Use case: ability to link between DataONE repo artifacts and GCIS repo artifacts
+         * Probably unlikely for GCIS to be able to become a MN, so unclear how we can reliably link to their products, but Steve A. is interested in discussing this further
+       * John: can we incorporate 'incentives' to be sure data changes are well documented as they are made
+       * Yaxing: large size (GB, TB) of data, granularity issue
+       * Matt: rsync, git can do delta-compression on binary data during transfer
+ * What tools are used to generate these PROV traces?
+     * Use Matlab
+       * User calls function to generate prov trace
+       * Program tracks derivation relationships exactly
+       * Prov tracking in Matlab
+         * => http://www.artefact.tk/software/matlab/provenance/
+         * => http://stackoverflow.com/questions/24065992/how-to-track-function-calls-in-matlab 
+       * 
+     * 
+ * Provenance deliverables
+     * 0. Identify customer-critical provenance use cases and queries
+       * this will guide what kind of provenance we need to capture, how to store/organize, and how to query (& visualize?) it.
+     * 1. Survey of existing software (Matlab, R, Python prov tracking)
+     * 2. Provenance capture I (single run)
+       * 2.1 Matlab function library for scientists to assert provenance relationships and storing to DataONE; script would generate identifiers as needed and handle the archiving; snapshot multiple scripts, data sets, inputs, and outputs and their versions
+       * 2.1.a. Ability to add additional manual notes as part of the capture process during specific runs (possibly integrate notebook tools like iPython Notebook)
+         * Needs to be aware of 'runs' and other semantic labels (relationships among code versions)
+       * 2.2 Evaluate the effectiveness of automated provenance capture via instrumenting runtime engines (e.g., what is in NoWorkflow)
+       * 2.3 Implement addition language libraries (years 3-5)
+     * 3. Provenance capture II (multi-run, multi-steps, data versioning, script versioning)
+       * Not clear that anything else beyond (2.1) needs to be implemented. But the asserted provenance should probably be aware of multiple runs over multiple data versions, script versions, etc.
+       * Evaluation of Burrito might be useful: http://pgbovine.net/burrito.html 
+     * 4. Provenance capture III (documentation & semantics)
+       * Digital notebooks can provide user-friendly, sharable, high-level documentation (via "comments")
+     * 5. Provenance Search: ability to find model outputs (and/or runs) that would have been affected by change in some particular input data sets
+       * Deliverable: user interface for searching/traversing provenance links
+     * 6. Provenance display and browsing: show relationships between data, figures and scripts in the data discovery and display UI so that others can track analysis and see specifics of data and code used (following the mockups shown)
+     * 7. Provenance storage
+     * 8. (consider for yrs 3-5) Model re-runs: ability to automatically recompute model outputs when core dependency data have been changed
+       * Model reruns are compute intensive (weeks to load data, days to weeks to run a scenario); can't just rerun everything again
+             DECISIONS: Can commit to (1), (2),  (5), (6), & (7) above. 
+             BL: added (0) above.
+
+Short term schedule and assignments
+-----------------------------------------------------
+ * 1.2.7 CN release and upgrades (Week of June 30th)
+   * Nick/Matt on DNS changes
+   * Jing and Robert on upgrade
+     * Postgres 9
+     * Java 7
+     * Tomcat 7
+     * Ubuntu 12.04
+ * Libclient 1.4 release (week of June 30th, target release week of July 7)
+   * mock object and httpclient upgrade
+   * needs code review and testing
+   * Rob to do release
+   * Skye to do code review
+ * 1.3 CN release (week of July 7)
+   * Immediately following 1.2.7
+   * Peter needs to do regression testing, but is running in DEV env now
+   * Jing and Robert will release and deploy
+   * 1.3  -- https://redmine.dataone.org/issues/5471
+     * In pipeline, Log index field additions
+     * object index field additions
+     * needs more regression testing. 
+   * Separate LogAggregation from d1 processing to a separate VM and remove HZ from it without touching the rest of the CN
+     * Consider use SolrCloud for replication
+ * 1.4 CN release - Separate LogAggregation from CN processing (week of July 14 and 21 and 28)
+     * Consider use SolrCloud for replication
+   * Minor OneMercury help text, UI updates (from Heather Heinz testing) (2 days of dev and testing effort) (1.4)
+   * Release replication auditing (work complete just needs scheduled into release) (1.4)
+   * Move to new maven repository in poms
+   * Move OneMercury to another VM or servlet container 
+     * Needs some discussion (2-3 days of effort?)
+   * Robert and Peter and Skye
+ * CN consistency design and workplan ()
+   * Support Single Master Operations
+   * Essential
+     * Fix updateNodeCapabilities()
+       * Use new message bus for this
+     * Refactor sync to not depend on HZ
+     * Refactor metacat (system metadata storage) to eliminate dependency on HZ (to enable consistent system metadata storage)
+       * Once system metadata map listening is no longer available (HZ storage cluster is removed) these components must move to new messaging solution:
+         * Refactor indexing to remove use of HZ sys metadata map event listening
+         * Refactor replication to not use HZ sys metadata map event listening
+         * Refactor replication auditing minimally to instrument replication requests
+   * Not essential
+     * Reconfigure portal to not use HZ for session sharing
+   * Move to single master CN, remove hazelcast from our process
+     * Identify an approriate messaging technology for inter-data center communications (this is covered by CN Consisistency effort)
+     * Identify a replacement of Hazelcast Structures for Java intra process.
+     * See http://epad.dataone.org/20140602-CN-single-master-discussion
+     * All Software Components and Packages in DataONE will be Copied into their own 1.4 Branch
+   * Robert and Peter
+ * V2 release (start week of June 30th; estimated completion: October-December)
+   * active trunk development
+   * Validation and Extension of D1 Types
+     * redmine task #3849: Modify d1_jibx_extensions to add contraints and constructors
+     * redmine #5318  CNs must not accept invalid system metadata (2.0?)
+     * redmine #1664  LDAP D1 class migration from one schema version to the next (2.0)
+     * redmine #4067  Validate Node stream in MultipartHttpServletRequest in register and updateNodeCapabilities. (2.0)
+   * V2 API changes
+   * SID implementation
+   * Sysmeta ownership
+   * Other schema and API proposed changes
+     * View service API
+     * Package service MN API (note this is a MN service)
+     * redmine #3755 Structural changes to D1 APIs for 2.0 release
+     * redmine #2829 Structural changes to D1 Data Types schema for Version 2.0 release
+   * Evaluate #2635 and 2634 for inclusion in this or alternate release
+     * redmine #2635  Modify LDAP Access objects to select/modify replication target limits (2.0 or greater)
+     * redmine #2634  Modify LDAP to include limits on replication targets (2.0 or greater)
+   * Data services registration design (2.0 is dependent on this)
+     * Schema changes for Node type, implications for all methods using Node
+   * Chris and Ben through July 31st
+   * Skye coordinates through release (October-December?)
+   * Jing
+   * Marco, Roger
+ * Provenance and Semantics design/milestone/workplan proposal (August 30)
+   * Chris, Ben, Xixi, Matt, Mark, Bertram, Dave
+   * Communicate with MsTIMIP team
+   * Xixi could start now, rest start Aug 1
+ * MN Deployments and support
+   * ongoing
+   * Ben and Chris for Metacat support (20%)
+   * Roger and Marco for GMN support (20%)
+   * Laura and Bruce handle all ongoing monitoring and prodding
+ * Tidy II development and release (weeks of July 14 and 21)
+   * Rob
+ * Automated Regression Test Suite (August)
+   * Rob
+ * Maintenance and operations
+   * review backlog, assign to appropriate milestones
+   * triage and assign maintenance tasks here
+   * redmine #3882  Refactor hzNodes out of CN Node Registry (1.5)
+   * redmine #2415  Implement exceptions for log endpoint (1.5 or 2.0 or greater???)
+   * redmine #5321  Multiple Hazelcast Client connections to same storage instance (1.5)
+   * redmine #4654  Independent review of d1_common_java (2.0?)
+
+ * Automation of CN Software Release
+   * redmine #4460  Upgrade Ansible to automate rollout to Next Ubuntu Release (????)
+
+ * Deploy new search interface (weeks of July 28 and Aug 4)
+   * Depends on CN 1.3 release and deployment
+   * Address usability feedback from DUG
+   * Add faceting by MN
+   * First pass will use SOLR-based metadata rendering
+   * Lauren
+ * View service and package service implementation
+   * Design review
+   * Implementation
+
+
+

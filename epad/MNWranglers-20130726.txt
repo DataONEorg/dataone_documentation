@@ -1,0 +1,78 @@
+Member Node Wranglers (Fridays at 10:30 am AK/11:30 AM PST/12:30 MST/1:30pm CST/2:30pm EST) - NOTE: 30 minutes later than usual
+
+https://www1.gotomeeting.com/join/796052705
+
+26 July 2013                              
+
+Attendees:  Rebecca, Laura, John C., Dave
+
+Regrets:  Amber, Suzie,
+
+Agenda: 
+        1. High profile issues
+            SEAD - see below
+            Need help with fleshing out the detailed MN deployment checklist, particularly on the CCIT side:  https://repository.dataone.org/documents/Committees/MNcoord/Coordination_Work_Area/DRAFT_Member_Node_procedures.docx  - who can help?  (LM)
+            Rob Nahf is probably the best bet right now as everyone is really busy. cy Dave, Matt, Chris
+            When do we use the webtester? Does the MN work independently of other stuff, i.e. verify services, evaluate services.  A MN doesn't have to pass ALL tests, and this has been a point of confusion for some MNs.  Need a list of tests that MUST be passed for tier 1, tier 2, etc.
+                  
+        2. Status of MNs 
+            "In Progress" and "Testing" MNs for Y4Q4 are:
+       * Dryad (3118) - a/o 6/27/13, Dryad was testing in dev environment; related to schema Dryad uses, compatibility with metacat, need some feedback from Chris
+       * EDAC (3221) - optimistically moved to Y5Q1
+       * Kansas (3188) - a/o 6/28/13, ran into a s/w issue that Roger was addressing; good to go, just have to finalize and run through testing environment
+       * SEAD (3521) - a/o 7/23/13, NCED data will be metadata-only via SEAD to begin with.  Inna says as soon as NCED has verified all their metadata, they will be ready to move to production.  Hooray!
+            
+            "New" for Y4Q4:
+       * PPBio (3748) - a/o 6/28/13, suggested to move this up the priority list; a/o 7/23/13, after discussion with Debora Drucker at the DUG, John emailed David Dias with some questions/clarifications; current status?  Debora knows what needs to be done re: agreement with folks there and deciding what data to expose, etc.  Since they are running metacat, technically it should be a straightforward implementation; we just have to sort out administrative issues locally (there at PPBio).  
+         * Rebeccca: some discussion w/Debora about perhaps creating a CN there
+         * Dave: standing up a CN is a big deal, if we can get PPBio up as a MN it will be a good start (demonstrate value of DataONE, etc.)
+         * Laura: ensure contact by end of August (there will likely be contact well before then)
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting; suggest move to Y5Q2 at least...  revisit when Matt is available
+       * AOOS (3531) - From  Matt:  This is for a project I have working with AOOS, and we have deployed a Metacat instance that is in testing.  The node is located here for now:  https://evos.nceas.ucsb.edu/evos.  Several things need to happen before this node goes production, including: 1) rebrand the site as AOOS;  2) move the node to a stable AOOS address; and 3) get signoff from the AOOS folks that they are ready to have it go live.  Ben and I have managed this server thus far, so it should be straightforward to bring this node up once the ducks are in a row.  revisit when Matt is available
+                        Action Item: Needs follow-up and reconfirmation of status and prospect when Matt is available..  
+       * SAEON (3205) -  From Matt: Ben has worked with these folks consistently, and helped establish a Metacat node there in Cape Town, but we need to follow up with them to get it done.  They seemed amenable when we have spoken in the past.  revisit when Matt is available
+
+            Y5Q1:
+       * USANPN (3186) - MEETING SCHEDULED FOR 7/24  http://epad.dataone.org/MN-NPN-20130724   https://redmine.dataone.org/issues/3186 
+         * Another meeting next Thurs at noon EDT
+       * EDAC - Soren said they hoped to be able to turn on ~September
+             
+             Others:
+       * NKN (3238) - currently in product backlog meeting  6/18/13, everyone seemed eager to more forward, another meeting to be scheduled in the near future to state specific goals/plans, suggest week after Knoxville mtg.  REVISED:  suggest early August  (try for Chris if Dave can't make it)
+       * Oregon Explorer program at OSU: Rebecca  to meet with Janine Salwasser mid June for more info. OE might be  better when we  have MN in a box, call them a new prospective MN (create  redmine ticket).  Rebecca: met with Janine in Alb, early in process, potential MN if we do a "slender MN", looking at after PY5.  (redmine ticket 3844, currently Y5Q4)  ok for Y5Q4
+       * Rebecca: spoke to Steve Ruggles @ Minnesota Population Center.  They  WILL need logins (user authentication before download of data).  Looking  at later in PY5. (Laura note in redmine.)  Rebecca to find out what  kind of authentication they are using now.  answer technical questions with Cathy Fitch/Wendy Thomas 
+
+             Follow-up on remaining (formerly) Y4Q4 prospective MNs:
+       * ILTER (International LTER - Israel) (3233) -  Per Matt: David Blankman has notified me that the Israel LTER Metacat instance has been decommissioned in favor of using the ILTER Europe Metacat instance, and so this Israel MN is being removed.
+
+
+        3. Old action items
+            
+        4. not-high profile issues
+         At some point after Dryad and EDAC go production, we need to do a post mortem with everyone to discuss issues that impacted their implementation.  Communication seems to be an issue.  Plan??  Wait until Dryad and EDAC are production, but when one of them is online, maybe we can take the detailed MN documentation and ask them to review it and see if it meshes with their experience
+        An old action item:  Poll MN's for what is of value to them in DataONE participation (how to accomplish this? - MN forum topic?) prepare for DUG time-frame, we need to identify 1) what we need to know, 2) questions to ask to find that out, 3) format for asking those questions (survey monkey?, other?) - maybe get with Suzie et. al. for guidance?  Ideally, we should do this sooner rather than later.  Maybe conversations at DUG could provide some info along these lines. Would be nice to have both Suzie and Amber involved with this - look at late August/early September for SA/AB availability to discuss (Laura put on calendar)
+        
+        5. around the room
+        
+From Amber: I have set about a google map of DataONE MNs 
+(https://maps.google.com/maps/ms?msid=201099493701187189053.0004e2571a86a5a6caaeb&msa=0&ll=27.059126,-0.351562&spn=140.072175,317.109375). 
+I have asked Laura to continue to population with 'upcoming' MNs.
+
+The  purpose is twofold: 1) when we need a map for presentations we have  something that is up-to-date (I found myself adding triangles to our map  for my presentation for this meeting) 2) In the absence of our  dashboard, I was also thinking that we could put this on our site?   There are pros and cons of having a google map - it'd be nice if we  could customize the look a little
+Comment: It may be useful to rethink this a bit. For exampe, While LTER network office is in Alb. the LTER holdings probably constitute many, many pin-pricks on a map like this.
+Example peer benchmark: ODG http://display.grid.iu.edu/ (b.t.w. this display is also a good case studiy w.r.t. to dashboard presentation planning)
+
+New opportunity; A. Sallans suggests two opportunities. (see e-mail conversation)
+Beetle project - 270TB in size images of beetle behavior
+Herbarium network - potential pitfall if a herbarium represents their data as a single object consisting of a single, large RDMS. (frequent updates, large blobs, excessive aggregation at the granule level) Recommendation: Very Dangerous - make Dave V. go first.   This is SERNEC |www.sernec.org/‎ 
+
+Other entities working on collecting/managing env/eco data:
+iDigBio (Fl)  (Andrew's herbarium folks (SERNEC) have talked with iDigBio)
+GBIF (Europe)
+
+
+Rebecca:  revisit the google map idea when Amber is present, Rebecca not here 8/2 or 8/9, Laura to set up MNW meetings via GTM02
+Dave: nothing today
+John: nothing today
+Laura: follow up on Andrew's opportunities above
+

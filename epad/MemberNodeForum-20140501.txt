@@ -1,0 +1,84 @@
+Member Node Forum - 1 May 2014
+                                                                                         
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+                                                                         
+    (Occurs every 2 weeks on Thursday 8pm South Africa, 3pm BRT (Sao Paolo, etc.), 2pm AMT (Manaus, etc.), 2pm EDT, 1pm CDT, noon MDT, 11am Arizona  and PDT, 10am AKDT or  Friday 2am Taiwan, 4am Brisbane AEST)
+  Upcoming meetings NO MEETING 15 May (DataONE All Hands Meeting), 29 May, 12 June
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307     (note typo on year-sorry), -20130321, -20130404, -20130418,   -20130516,   -20130530, -20130613, -20130627, -20130711, -20130725,   -20130808,   -20130822, -20130905, -20130919, -20131003, -20131017,   -20131031,   -20131114, -20131212, -20140109, -20140123, -20140206,   -20140220, -20140306, -20140320, -20140403, -20140417
+
+Attending:  John Cobb, Bruce Wilson, Dave Vieglais, Ed Flathers, Mark Servilla, Corinna Gries, Ryan Scherle, Amber Budden
+
+Regrets:  
+
+Action items from last time:
+    none
+
+Agenda:
+
+0. Welcome new attendees - introductions: 
+
+1. Network-wide update and issues affecting MN's as a whole
+ *  CN issue - phase 2 ...  has begun (it will take a while to complete), index has been regenerated and looks complete, now verifying content on CNs matches what is on the MNs
+   * update: in process of wrapping up phase 2 remainder of this week; anticipate being able to add new MNs
+ * "dashboard" should be able to move to production soon after
+ * few other issues (odd dates, some data not being harvested) should resolve after this
+ 
+
+2. Open issues:  MNs please add anything you would like to address here.
+ * MN Operations documentation - on hold
+
+
+3. Feature requests/opportunities for collaboration:
+ 
+
+    
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+Corinna (GLEON) - issues with Morpho latest version have been resolved, and a couple datasets are out there (success!!); now we need to "sell" this to users (
+
+Ed (NKN) - registered in sandbox; need an accepted metadata standards list  http://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html
+    ISO 19115-2 - Karl Benedict said he had been having some trouble getting his data up there with this m/d std; a lot of NKN's data is under this std
+    Maybe start with EML and work on getting the ISO 19115-2 data out there
+    Or, maybe work with Morpho (see GLEON)
+    Roger can help, or Ed can get on IRC for questions
+    
+Mark (LTER) - status quo, waiting for tidy phase 2 to complete to run out PASTA GMN
+
+Ryan (Dryad) - ~5500 records were not harvesting, discovered that ~150 had schema problems, now we have to figure out what's up with the remainder
+    next step, figure out how to move to next tiers of operation
+    Dave suggests a call next week to make a plan for moving forward (perhaps the Weds 2pm EDT standing call)
+
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+ESIP SUMMER MEETING - JULY 8-11, 2014 IN COPPER MOUNTAIN, COLORADO  
+     DUG is Sunday 7/6 and Monday 7/7, co-located with the ESIP meeting,  plans for lodging, etc. still in process.  Survey for agenda planning at the DUG website: http://www.dataone.org/dataone-users-group
+
+MN workshop at Open Repositories (Helsinki) in June - APPROVED -  Bruce, Dave (maybe), Suzie, and Rebecca presenting
+
+DataCites/ORCID collaboration - Ryan will be on a panel for data/people identifiers at the OR meeting in Helsinki
+
+LITA meeting abstract submitted: http://bit.ly/1oABmBk  - not accepted for this meeting
+     LITA 2014
+Transformation: From Node to Network
+November 5-8, 2014
+Albuquerque, New Mexico
+
+
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't  forget irc.ecoinformatics.org, channel=dataone if you have an urgent  issue.  CCIT folks are always there and can assist you.
+

@@ -1,0 +1,126 @@
+Attendees: Rebecca Koskela, Bill Michener, Carol Tenopir, Suzie Allard, Amber Budden, Bob Cook, Bruce Wilson, Stephanie Hampton, Matt Jones, Dave Vieglais, Todd Vision, John Cobb
+
+Regrets: Steve Kelling
+
+Here's a link to the epad for notes from this meeting:
+http://epad.dataone.org/20101203-LT-VTC
+
+ Agenda for 2010-12-03
+
+{Finishing the agenda from the November 19 VTC}
+
+      1.  Redmine Issue Tracking (Vieglais)
+      Reminder that not using Trac anymore, now using redmine for submitting tickets and
+      the risk register ( https://redmine.dataone.org/)
+      "Sign in" is located in upper right corner and risks are at https://redmine.dataone.org/projects/d1risk
+      May be useful to create subprojects for the Working Groups to enable them to keep track of issues.  Redmine also supports wikki pages.
+      CCIT and developers have been using it for several months and are happy with it.
+      Gantt chart portion not particularly sophisticated. Based on setting start and end dates for tasks.(https://redmine.dataone.org/projects/d1/issues/gantt) 
+The Data Tree of Life from last summer may have benefited.  Setting up an example might be helpful but not clear that all working groups would use this. Suzie didn't think her group would use it but if they ch
+      2.  NEES & DataONE(Cobb)
+      Distributed earthquake facilities
+      Need archiving and curation process
+      Having a series of workshops and maybe invited on behalf of DataONE or for own expertise
+      How are data being archived now?
+      Illinois to San Diego - now?? Now in 3rd incarnation - rebid went to Purdue (both IT and engineering person are at Purdue) Think it's in a turnaround scenario - doing better than previous incarnations NEES sites will be looking for equipment refresh in a couple of years.
+      
+      Bill's suggestion to watch and wait on NEES
+      GEOS has identified 100+ data layers necessary for addressing crucial issues - Bob Cook is representing DataONE there - this would be a higher priority 
+      
+      John's impression is that we could share our preservation/archive and best practices expertise. 
+      Data is different but community engagement is similar
+      
+      
+      Understood Action Items:
+          1: Continue to monitor Cobb to act as conduit for now.
+          2: Share DataONE results, especially best practices and experience building communities for archiving and curation
+          3: Some DataONE "friends" may be approached by NEES as part of DataONe or as part of their other activities to participate in NEES workshops and discussions charting NEES strategies.
+          4: No large commitment of DataONE resources at this time and not until a clear common goal is identified.
+          
+            Upsides:
+     * A) To the extent that DataONE can be of service to another large NSF  project with a large CI component, it can only help to emphasize the  importance of DataONE as a component of Data CI both directly for  environmental and ecological science and as an exemplar for data focused  CI NSF-wide
+     *  B) Possible re-inforcing strategies on providing data management plan services for NSF proposals.
+     * C) collaoboration and exchange on information, strategy, and technology.
+
+            Action Items:
+     * DataONE LT discussion on strategy (really more like a fuller briefing) on a LT call in the near future
+     * Discussion on how to engage NEES
+
+
+      3.  Round the room (All)
+      
+      
+      
+      Bob Cook, two items:
+      
+1.  At Nancy Grimm’s invitation, attended on Tuesday & Wednesday the National Climate Assessment workshop on Ecosystem structure, function, and biodiversity in relation to changes in climate,
+ 
+ * first in a series of workshops on Monitoring climate change and its impacts: sources for indicators, detection, and attribution.
+ * Primarily Feds, discussing ecosystem indicators
+ * Had discussions about data with NEON folks (Liz Blood, Dave Schimmel, and Brian Wee).  Schimel discussed ideas of linking NEON data as a member node to DataONE’s Investigator Tool Kit (exploration, visualization).
+ * Made connections with Jim Rolfes, CTO at DOI, doing an agency wide data integration activity; passed those interactions along to Mike Frame
+ * Henry Golz (NSF) and Marie Bundy, NOAA Estuarine Reserves Division:  interested in DataONE’s assistance in synthesis of information collected at reserves and coastal LTER 
+ 
+2.  AGU Workshop on Data Management Plans
+            telecon next week to finalize agenda for workshop on Tuesday, December 14 (noontime)
+            
+Bruce:  Dealing with job changeovers this week (announcement came out on Wednesday).  I will be off-line at a meeting (at Sandia) for much of next week.  Unfortunately, it's a meeting where I won't have network or cell coverage.  I will be at AGU the following week.  Will be working on getting the equipment specification pulled together in edges of time.  
+
+I won't be on-line for LT telecon the next two weeks.  
+
+Stephanie: seems like we have set the CEE Working Group meeting for 5-7 April in Santa Barbara
+Carol: An offer for a post-doc at UT has been made. We will know next week. Also, UT is submitting a grant proposal to IMLS (Suzie Allard, PI; Tenopir, co-PI) for master's students to work on science data management.
+
+Dave: Request for letter of collaboration from Rob Guralnick of the University of Colorado, Boulder, who is lead on a proposal in response to the the "ADBC HUB" NSF rfp (http://www.nsf.gov/pubs/2010/nsf10603/nsf10603.htm). The proposal writing group has been maintaining a blog (http://nsfadbc.wordpress.com/) to help communicate their activities with the community. The project is a collaboration with a number of institutions that will be helping to direct a significant national digitization effort for natural history collections around the country. The HUB at CU would act as a Member Node in DataONE to assist with the preservation of digitized information.
+
+Notes from Marratech:
+[10:58 AM] Suzie Allard joined.
+[10:58 AM] Amber Budden joined.
+[10:59 AM] Bruce:  Bill has changed a bit.  Love the pic  .  
+[10:59 AM] Bob joined.
+[11:00 AM] Steph joined.
+[11:00 AM] Rebecca: http://epad.dataone.org/20101203-LT-VTC
+[11:02 AM] Matt Jones joined.
+[11:03 AM] Dave Vieglais joined.
+[11:03 AM] Todd Vision joined.
+[11:03 AM] Rebecca: http://epad.dataone.org/20101203-LT-VTC
+[11:05 AM] Dave:  https://redmine.dataone.org/
+[11:06 AM] Dave:  https://redmine.dataone.org/projects/d1risk
+[11:10 AM] Dave:  https://redmine.dataone.org/projects/d1/issues/gantt
+[11:15 AM] Bruce:  epad has gone away for me.  Anyone else having problems?
+[11:16 AM] Suzie:  yup
+[11:17 AM] Dave:  me too
+[11:18 AM] Dave:  server appears to be running fine
+[11:22 AM] John W. Cobb joined.
+[11:27 AM] Steph:  I have a 10:30 meeting, gotta run - dates set for CEE Working Group, I think - 5-7April in SB - i wrote this on the epad
+[11:27 AM] Steph left.
+[11:33 AM] Bill:  we are the only constancy in your life
+[11:35 AM] Bruce:  Well, DataONE and USA-NPN
+[11:35 AM] Bill:  ouch
+[11:35 AM] Todd:  epad is back
+[11:35 AM] Bob Cook:  take care Carol
+[11:37 AM] John:  If we had a robust no added cost solution, would the Ofc. of rserac hbe more excited?
+[11:37 AM] Suzie:  yes!
+[11:38 AM] Suzie:  also we have multiple communities to address in terms of easy access for investigators and understanding that libraries can help with curation and education
+[11:40 AM] Rebecca: http://epad.dataone.org/20101203-LT-VTC
+[11:40 AM] Rebecca: reminder to put items on epad
+[11:41 AM] Bruce:  @Suzie -- We might want to get back with OR with a more substantive proposal about how they could collab with D1.
+[11:41 AM] Bill:  Bob, I'd like to follow up more on the mtg.
+[11:41 AM] Bruce:  @Suzie -- but that will be in January.  
+[11:42 AM] Suzie:  @Bruce Sounds good!
+[11:43 AM] John:  Any actions on this for any of us except Bill and Sayeed?
+[11:44 AM] Bruce:  Sounds like our action is simply to pass along what we might hear to Bill.
+[11:45 AM] Bruce:  And the following week is AGU.  I'll be in the air.
+[11:45 AM] Matt:  bye
+[11:45 AM] Suzie:  bye
+[11:45 AM] Amber Budden left.
+[11:45 AM] Bruce Wilson left.
+[11:45 AM] Todd Vision left.
+[11:45 AM] Dave Vieglais left.
+[11:45 AM] Suzie Allard left.
+[11:45 AM] Carol:  bye
+[11:45 AM] Bob left.
+[11:45 AM] Bill Michener left.
+[11:45 AM] Matt Jones left.
+[11:45 AM] Carol left.
+

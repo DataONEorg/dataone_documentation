@@ -1,0 +1,159 @@
+#269 - need integration
+#288 - need integration
+#349
+#251
+#451 
+
+
+coredev-sprint-6
+
+633 - Move unfinished pieces to next sprint
+- add task for deploying nrpe to all nodes that need to be monitored.
+- add task for MN monitoring using the MN_health API
+  - CPU, bandwidth
+  - Addtional metrics for MN 
+  - Basically replace nrpe functionality with the MN_health API.  This might require running nrpe on another machine and have nrpe plugin that calls the MN_health API and responds to nagios with appropriately formatted messages.
+- contact Nick to find out main differences / uses of Munin and Cacti
+
+CN - information flow: harvest -> metacat + packager -> mercury index
+
+- Need to verify that the packager is working for the range of examples
+  - today- problem with NCEAS examples not working with the metcat create method.  Quick hack is to edit the identifiers so they load.
+  
+  - enhancement: switch to SAX processing for the packager
+
+- Modify cn-buildout to add test data through a test directive 
+
+
+
+coredev-sprint-7
+
+
+New bug in Metacat: identifiers with .<number> are not accepted.  Quite likely conflicts with the metacat versioning.
+
+Monitoring
+
+Story: points: 8 (Roger + Rob) Enable nagios  monitoring of MN services through the MN_health API. (Basically replace  nrpe  functionality with the MN_health API.  This might require running  nrpe  on another machine and have nrpe plugin that calls the MN_health  API and  responds to nagios with appropriately formatted messages.)
+Tasks:
+- Write a nagios plugin that calls HTTP method on MNs to retrieve values.  The plugin will run on the nagios / munin machine
+Metrics to return:
+  - total number of objects on MN
+  - total number of requests / day
+  - number of unique visitors (cummulative)
+
+- Implement a MN health API method to return these values in a single HTTP request (from the Log)
+  - define the message format
+  - implement the method
+
+- Configure Nagios / munin to record the new variables
+  - also define the interval for polling
+
+#633  (additional tasks for 633)
+- (Rob) Notes for setting up NRPE on existing nodes / machines
+- (Dave) Install NRPE and configure on nodes
+
+    Notes: Nagios plugins can piggyback additional information ("long service output") along with the status and summary text with each check.  It's automatically parsed, but up to us (me) to figure out how to store.  Long text data can be passed (4Kb cited as default limit, but that limit can be raised as well.
+    
+
+
+
+CN Service
+
+Story(3): Setup static MN instances that the CN harvest mechanism can use to pull test data and load into Metacat + Mercury.
+- (dave) generate KVM config that will build a static MN setup.  LDAP Auth for users, Apache installed, iptables open ssh+http
+- (Robert) setup a local machine for developing the harvest functionality with the existing test data
+- (Robert) Enable the harvest process to pull test data from a HTTP server, equivalent to  mn_crud.get() and mn_crud.getSystemMetadata()
+- (Robert) Update the harvestor to read mn_replicate.listObjects() XML response to get a list of objects to retrieve
+
+
+Story(5): (Robert) The CN needs to  maintain a list of registered Member Nodes and their service endpoints and additional metadata that can be used by the harvester to iterate over Member Nodes to initiate MN synchronization
+- create schema for the registry
+- enable serialization of the registry document against metacat
+
+Outline of registry document:
+<registry>
+  <node type="member">
+    <name>Human readable name of member node</name>
+    <lastHarvested>2010-06-07T23:55:10Z</lastHarvested>
+    <lastCompleteHarvest>2010-06-07T23:55:10Z</lastCompleteHarvest>
+    <baseURL>http://some.mn.com/mn/</baseURL>  
+    <services>
+      <service name="mn_crud.get" rest="object/${GUID}" available="true"   datechecked="2010-06-07T23:55:10Z" />
+      <service name="mn_replicate.listObjects" rest="object" available="true"   datechecked="2010-06-07T23:55:10Z" />
+      <service name="mn_crud.getSystemMetadata" rest="meta/${GUID}" available="true"    datechecked="2010-06-07T23:55:10Z" />
+      ...
+    </services>
+  </node>
+  ...
+</registry>
+
+
+Story(3): (Robert) Modify the harvester to read and update the registry information
+  - harvester needs to read content from the registry document
+  - harvester needs to update registry doc when harvest has completed.
+
+
+Story: (Sprint 8) Utilize a simple objectFormat registry to determine which configuration to feed the Mercury indexer 
+  - how portable are the mercury indexer config files?
+
+
+
+MN Service
+
+Note: Member nodes need to support mn_crud.get(), mn_crud.getSystemMetadata(), and mn_replicate.listObjects() with all responses in XML.
+
+Story (3): (Roger) Verify that the Dryad and DAAC member nodes are operating as expected (url patterns and responses)
+Tasks:
+- Verify that Dryad MN is responding as expected
+- verify that DAAC MN is responding as expected
+- Generate a list of identifiers and set of content (scient metadata, system metadata, data) that can be used for integration testing purposes
+
+Story(3): (Chad) Deploy the metacat member node instance and populate with test data
+
+
+Integration Testing
+
+Story(5): Ensure the Python + Java client libraries implement at least all of the methods that will be required by the CN for MN synchronization
+  - mn_crud.get
+  - mn_crud.getSystemMetadata
+  - mn_replicate.listObjects
+
+- Task: Update the python client to support the required methods
+- Task: write test cases that exercise  the methods for the python client
+- Task: Update the java client to support the required methods
+- Task: write test cases that  exercise  the methods for the java client
+
+
+
+
+
+
+
+
+REST URI patterns: 
+ * Updated by Dave.  Back to a more REST  style, with a unique keyword as the first token in the URL.  All calls  have a specific token, so that the issue of differences in how "/" is  encoded in URL's and processed by different servers.  For the  coordinating nodes, this is less of an issue, because we control how  these are configured.  For MN's, however, there will be differences in  web servers and how those servers are configured for processing.
+ * The discussion/decision was that  applications should pass GUID's (for example) through URL encoding as  part of the call and that the receiving stack should do a URL decode.   This needs to be put into the API documentation/diagrams to show exactly  where the encoding and decoding happen, to ensure that the encode and  decode happen exactly once.  There may be GUID's (such as particular  UUID methods) which include percent characters, which would make double  URL decoding a destructive process.  
+
+Discussion of the integration testing  (see http://mule1.dataone.org/ArchitectureDocs/integration-testing.html for Matt's summary of the results of  the discussion on Tuesday and http://epad.dataone.org/20100525-ci-integration-testing for the raw notes).  Not all of the  high priority tests need to be done for July 31st, since some of them  represent features that won't be implemented for the year 1 release, but  the high priorities will need to be accomplished for the initial public  release).  
+
+Harvesting:   Metacat assumes that the harvester is provided URI's.  Need to populate  a sitemap.xml with the URL's, which the harvester will go get.  Note  that the get function is a REST URL.  May need to call the create()  mechanism to make the appropriate objects.  ???Further discussion  suggests that leveraging the harvester in Metacat or Mercury would be  more work than creating a simple harvesting application.  Create method,  when it completes, either writes out a log message or a JMS entry.   Sentiment seems to be that JMS is better, to guard against things like  changing the log level to null.  JMS message "done creating, here's the  GUID".  Problem with coordinating nodes replicating.  They create  content in Metacat, which may not go through the create().  But JMS  isn't in Metacat, at this point.  Metacat logs the initial CRUD  operations, but doen't differentiate a replication event as separate.  
+
+Story: Metacat, on completion of CRUD  operation, will send a message to a package queue to indicate a change  in content that needs to be processed.  Message needs to contain the two  local identifiers plus the external identifier.  ??Will system metadata  be treated differently from science metadata?? Chad is passing the  system metadata identifier in the replication message.  
+
+
+Story: Need to implement the mn.ping()  as part of the health monitoring (may be part of nagios monitoring)
+
+Story: Need to design and implement a  log aggregation facility at the CN to be sure we have all logs (even if  MN goes offline) and can respond to log requests without a distributed  query
+
+Story:  Need to design and implement a statistical counter on the downloads for  data sets and metadata objects that can aggregate at daily, weekly,  monthly, and annual time scales.
+- also for  blocks 1&2 in the performance metrics spreadsheet using System Metadata at CNs.
+
+ (Usage Statistics)  &&&&Task:  Cobb and Jenkins to provide suggestions about existing systems that  handle distributed log aggregation and log statistical summarization
+
+Story: Need to design and implement a  system for accumulating uptime and other metrics fromt he nagios  monitoring system for use in reporting at daily, weekly, monthly, and  annual scales
+
+Investigator  Toolkit: will have client linbraries fleshed out for integration  testing, so take advantage of these to implement reference ITK tools:
+1.  (highest priority, start with python client lib) command line clients  based on client libraries
+2. R add on for search and retrieval  of content from D1 infrastructure.  Even implementing get() would be a  valuable addition (given D1 identifier, retrieve data and store in R  workspace).  (Note that it would be very beneficial to ensure local  caching is used to avoid multiple retrieval of objects)
+3.  Investigate how much work would be required to implement in Kepler  (search and retrieve)
+

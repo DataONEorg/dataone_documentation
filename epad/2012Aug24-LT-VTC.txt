@@ -1,0 +1,170 @@
+Attendees: Suzie, Rebecca, Bill, Dave, Amber, John Cobb, Carol, Steph,Bertram, Bob, Viv
+
+Regrets:  Mike Frame, Matt Jones (flying back from CCIT)
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Aug 24, 2012 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/936682888
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (630) 869-1014
+Access Code: 936-682-888
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 936-682-888
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+
+We will also use the epad: http://epad.dataone.org/2012Aug24-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-08-24
+
+1) CI Update (Vieglais)
+
+CCIT meeting this week in Santa Barbara
+Significant milestones coming up:
+ * RSV  (no dates yet)
+ * Proposal renewal
+
+Checked metrics from PPM - in good shape for the most part
+Would have 40 MNs by end of 5th year and 20 MNs at end of year 4 so this
+would mean 1 per month and increasing to 2 per month
+Have 55-60 potential MNs on the list; 
+Identified someone who will get in touch with the potential MN
+Also reviewed the MN process
+Broad recognition that need management system for keeping track of MNs - Word document won't be sufficient
+Need one person full time to deal with MN
+
+Related to the 2 milestones above -
+Need to focus on user-oriented aspects of the infrastructure - want users to have good experience and return
+List of priorities:
+
+- User facing capabilities
+  - DataUp - beginning of its lifecycle (important but unknown because haven't seen source code)
+  - ONEDrive
+  - Morpho
+  - R
+  - Web interface - ONEMercury issues; no longer based on Mercury  functionality; may need to change name
+  - XX Total Impact
+  - XX Citation tools (e.g. zotero, mendeley)
+
+(XX means could be dropped if don't have sufficient time or resources)
+
+- Core operations
+  - !! API changes - search
+  - Replication (will run from 1 CN rather than all 3 CNs)
+  - Synchronization 
+  - Indexing
+  - Log Aggregation
+  - Member node deployments
+
+- Dashboard
+  - Counts of objects page for: DataSet, User, MN Level, Whole system
+  - Log reporting
+
+- XX DataNet integration
+
+Framework for the EAB meeting in December
+Does CCIT have usability testing results done at ESIP?  Not yet - just overview
+Did discuss design features of a search
+
+2) CE Update (Budden)
+Organizing a workshop for Intecol 2013
+Also with TerraPop
+Coppus
+Getting DUG and ESA materials on the web site
+Mailing list system - still a difficulty for the DUG
+Working on privacy statements and copyright & licensing
+MN workflow needs to be posted
+
+3) EAB Meeting 17-18 December, Washington DC (Michener/Koskela)
+  Current agenda: http://bit.ly/Oeg6kT (have also pasted it down below - line 133)
+  Currently listed on the agenda: Bill, Dave, Amber, Rebecca, Bruce, Mike Frame
+  Have said they are available: above, Suzie Allard, Stephanie, Bob
+  
+4) AHM Reminders (Koskela)
+Cutoff for hotel block: today, August 24, 2012
+Due date for WG agendas: September 4, 2012
+
+
+Working Groups:
+CEE: 11 registered
+CCIT & developers: 13
+Semantics: 7 + student
+Metadata: 6 + student
+PPSR: 7 + 1 guest
+Provenance: 7 + student
+Sociocultural: 10 (includes students)
+U&A: 16 (includes students & some dup with Socioculture)
+Summer Interns: 2 (not counted elsewhere)
+LT: 4 (not counted elsewhere)
+
+
+5) Around the room
+
+
+Bertram: Attended CCIT meeting yesterday. Identified joint next actions (ProvWG/CCIT), thus requesting some shared slot with one or more suitable CCIT members to fdevelop ProvWG/CCIT use case during AHM. Will coordinate with Dave.
+Overlapping also with Semantics and Metadata WGs. Will coordinate with those WG leads to discuss whether/when to meet.
+
+Suzie: Planning underway for the Sept 10 NSF visit to the Oak Ridge Campus.  The meeting will be at the UT facilities and will include reports from CI, CE and WGs with leaders based at UT-ORNL. We will also highlight synergistic activities that DataONE has facilitated.
+
+
+Carol: Classes started this week and we have 19+ returning and new graduate students who are specializing in science data and information management.And, we are working on a new proposal for 2013.
+
+John Cobb: Talk at HUBbub (HUBzero) - HUBbub 2012 will be held at the University Place Conference Center in Indianapolis, Indiana, September 24-25, 2012
+
+Steph: Frontiers manuscript on 'big data' resubmitted. Carly's ms on instructor survey still in review at Ecosphere. Viv and I working on agenda for ahm. Good but unofficial news on NCEAS support.
+
+Amber: Nothing to add.
+
+Bob:  Nothing to report.
+
+Viv: Did a presentation to NOAA Metadata Meeting about the USGS Mercury Clearinghouse, and included a section on DataONE. 
+
+
+
+DataONE External Advisory Board Meeting: December 17-18, Washington, DC
+Pre-meeting reading materials:
+1)   Annual report and most recent quarterly report
+2)   Sustainability and governance progress report
+3)   Data policies
+
+December 17 
+8:00 am – Breakfast
+8:45 am – Introductions and review of agenda
+9:00 am – DataONE demos (current and emerging capabilities) – Dave Vieglais and Bruce Wilson
+10:30 am – Coffee break
+10:45 am – Future CI plans (6-12 months, mechanisms for prioritization) – Dave Vieglais, Bruce Wilson, and Amber Budden
+11:15 am – Data and Member Node policy review – Dave Vieglais and Amber Budden
+Noon – Lunch
+1:00 pm – DataONE Users Group activities and status – Amber Budden, Andrew or Richard (possibily call)
+2:00 pm – CI and Community Engagement Working Group status – Amber Budden, Dave Vieglais, Bob Cook,Stephanie, Suzie
+3:00 pm – Coffee break
+3:15 pm – Sustainability and Governance progress – Bill Michener, [Mike Frame, Bob Cook], and Rebecca Koskela
+·      Implications for universities and institutions
+·      Engagement of other disciplines and research sponsors
+Will work with Kevin Guthrie (board member) to develop this session
+4:30 pm – Review NSF discussion items
+5:00 pm – Adjourn
+6:00 pm – Walk to Nora’s for dinner
+ 
+December 18
+8:00 am – Breakfast
+8:45 am – Plans for Reverse Site Visit and discussion (BRAD will create template for LT review)
+9:45 am – Plans for renewal proposal (BRAD will create template for LT review)
+10:30 am – Coffee break
+10:45 am – Meeting with NSF representatives  (needs to be scheduled & may move)
+Noon – Lunch
+1:00 pm – Executive session with PI
+1:30 pm – EAB Executive Session (discussion and writing)
+4:30 pm – Report back
+5:00 pm – Adjourn
+6:00 pm – Walk to dinner for those staying overnight
+

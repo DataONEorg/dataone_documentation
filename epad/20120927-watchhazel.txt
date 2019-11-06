@@ -1,0 +1,43 @@
+
+Discussion about stats collection / monitoring of replication stuff
+
+
+For each node track:
+
+  - queued status of mn replication tasks
+  - requested status
+  - completed status
+  - failed status
+
+each value is an integer representing the total 
+
+Create a new HZ map structure: hzNodeReplicationStatus
+Process cluster
+
+keys (String) = NodeID + "_" + "queued" | "requested" | "completed" | "failed" | "invalidated"
+value (integer) = count
+
+
+Modify WatchHazel to track this additional structure - no changes to the watchhazel server side component should be needed. Client will need to respond to events on the hzNodeReplicationStatus structure and update client side tracking of the values.
+
+Implementation:
+
+1. Instrument processing service to emit values into the new monitoring HZ structure
+
+2. Verify server side component of watch hazel will work with no canges, or update as necessary
+
+Events to monitor would be:
+- new entry created -> client should create a new row in the UI 
+- entry updated -> client needs the value of the entry transmitted in the update message, i.e. key + value
+- entry removed (?) -> client removes the row from the UI (may be best to just leave it there and indicate inactive)
+
+3. Implement new client side page to render the values from the map entries rather than simply tracking the events on the structure
+
+
+Layout will be something like:
+
+Node | Property | current value | graph of values (sparkline) |
+.
+.
+.
+

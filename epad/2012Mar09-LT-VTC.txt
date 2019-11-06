@@ -1,0 +1,71 @@
+Attendees: Rebecca, John Cobb, Bertram, Carol, Suzie, Bruce, Amber, Dave, Steve, Matt, Hilmar, Steph
+
+Regrets: Bob Cook, Bill Michener
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+
+1.  Please join my meeting, Mar 9, 2012 at 10:55 AM MST.
+https://www1.gotomeeting.com/join/270675433
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (267) 507-0007
+Access Code: 270-675-433
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 270-675-433
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Will also use the epad: http://epad.dataone.org/2012Mar09-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-03-09
+ 
+1.  CI Status (Vieglais)
+
+Squashing bugs all week and now in good shape for deploying the sandbox environment. Today are working on sandbox environment and then will send out URLs.  Won't be that interesting until tie in the MN environment. 
+All the services are working on the development environment. CN can harvest content from MN; replicate content; indexing process appears to working.
+A few known issues but they should not affect the production environment. 
+Need to finish deploying the CN installation then run tests (over weekend or on Monday)
+then can tie in some MN (KNB, ORNL DAAC) subsets. 
+There is staging version of KNB that does have the full content that could be used.
+
+If no functional changes are required after setting up the sandbox environment, then the
+schedule would be similar to last week's with a week added on. However, if there are
+functional changes required, then more time would be required. 
+
+An estimate of the public release date can be made once the all the components have been brought together in the sandbox environment.  At that point we will know whether or not all the pieces work together. The public release will not be on March 22.
+
+2.  Around the Room
+
+Steve: nothing from me
+
+John Cobb:
+S&G notion seen on the web today (and heading to SXSW) <http://duraspace.org/show-me-money-national-digital-stewardship-alliance-ndsa-kickstarting-crowdsourced-project-funding> using kickstart for crowd-sourced/microfinanced data archive efforts. hmm! (duraspace folk)
+
+Matt Jones: "Software Tools for Sensor Networks" planning going well.  Currently have 66 applicants for 24 slots, so we're going to have some challenges picking participants.
+
+Bertram: participated in (co-organized) Dagstuhl seminar on Principles of Provenance:
+http://www.dagstuhl.de/en/program/calendar/semhp/?semnr=12091 
+Several ProvWG members were there (Paolo, Shawn, new postdoc: Victor);
+worked on revision of D-OPM, planning of upcoming ProvWG meeting prior just prior to IPAW at UCSB.
+Question for Rebecca: paperwork with Victor -- all going smoothly? (ETA) Paperwork has reached Victor and he is in the process of setting up an appointment with the consulate, which is the next step in the visa process.
+
+Suzie: nothing this week
+
+Amber: We will be opening registration for the DUG meeting next week.  The dates are Jul 15-16th in Madison WI. Being co-located with ESIP and the theme for their meeting is 'Innovation'. (?innovation or In Ovation?). Oh John, always one for a chortle.
+Internship applications are due by the end of Mar 12th next week.  I will tweet and such again today - please promote.
+Moving forward with the student training session to be held at NCEAS week of May 21st.  Viv, Amber, Carly Strasser, Ruth Duerr, Lisa Zolly, Heather Henkel, Mark Schildhauer and possibly Bob Cook confirmed as speakers. 
+
+Carol: The scientists' baseline article in PLoSONE has been downloaded/viewed 4806 times. The libraries baseline survey is now closed and we are writing it up as an ACRL report. Librarians survey paper has been accepted for presentation/proceedings at IFLA in Helsinki in August. A preliminary report on the data managers baseline will be presented by Ellie Read at IASSIST. Also, U&A and Sociocultural leads met this week to work on the May meeting agenda draft.
+
+Bruce: nothing this week
+
+Dave: Matt & Dave met with Viv & Mike on the upcoming USGS/DataONE workshop 
+
+Steph: Stacy (post-doc) is will be full time 1 April 
+

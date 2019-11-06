@@ -1,0 +1,238 @@
+Notes for Sprint 2012-17 (2012-04-22 - 2012-05-05)
+==================================================
+
+Sprint Goals:
+
+- Deploy production CNs and at least one production MN (as data source) plus replication target MNs
+- Release versions of ITK components: CLI, R-plugin, ONE-Mercury
+- Revise documentation, prepare for publish
+
+
+Standup Notes 2012-04-23
+------------------------
+
+Outage Notice: There is a scheduled 24 hour power outage at UNM, 2012-05-25 17:30 - 2012-05-26 17:30. Routers and firewall will be offline and thus UNM network will be inaccessible from off campus. VM hosts etc remain online, but inaccessible.
+UPDATE: Scheduled outage has been cancelled in 2012, perhaps due to outrage.
+
+
+Process to Release
+~~~~~~~~~~~~~~~~~~
+
+Update Sandbox Environment
+- version 1.0 common, libclient
+- latest revisions of other components
+
+
+Push updates to Stage (?)
+
+
+Setup production environment
+- Renew DataONE wildcard certificate (expires 2012-07-17)
+- Verify operation of production virtual machines
+- Install and configure CN software
+- Install MN software (replication targets)
+- Verify operation of production environment
+- Configure production MN sources
+
+
+Build version 1.0 release of software
+- CNs
+- MNs
+- ITK Components
+
+
+Backlog notes
+
+- 2411 update comments and more to backlog
+- Need a remove() / delete() operation that removes an object from a MN (2603)
+  - rename delete() to archive()
+  - create new method delete()
+  - Should this also be a CN method? Callable by authorized MN, audit process. Operation could be handled by update system metadata operation?
+  - quick way to remove offending objects is to set access policy to basically nobody.
+
+2601 - bagit + ORE
+
+Need a public document for how to become a member node
+
+- SOLR Schema field names
+- Review consistency of REST endpoints, 
+- How to better describe the API endpoints to be clear on interface definitions implemented by client vs server (i.e. the session parameter)
+- Session should be indicated as optional in docs, falling back to public.
+
+
+Design planning for CLI
+-----------------------
+% dataone
+DataONE Command Line Interface
+> package create pkg-abc
+> set format-id eml://ecoinformatics.org/eml-2.1.0
+> package scimeta add knb-lter-gce.297.17
+> set format-id text/plain
+> package scidata add INV-GCEM-0705a1
+> package scidata add INV-GCEM-0705a2
+> package scidata add INV-GCEM-0705a3
+> package save
+> package done/end/leave
+% 
+
+create - upload to dataone
+get <pid> - get from dataone and load into memory
+update <newpid> - update object in dataone
+delete - delete object from dataone
+
+new <pid> - create new package in memory
+open <filename> - open new package from disk
+save <filename> - save new package to disk
+clear - clear package in memory and start over
+
+add <pid> [filename] - add the content of pid to package (eventually creating the object on a MN if filename provided)
+remove <pid> - (implies removing all associated linkages too)
+
+link <scimetapid> <scidatapid> -- adds and makes "documents" linkages (implies add)
+unlink <scimetapid> <scidatapid> -- removes linkage
+
+show - display package in memory (display everything that is known about the package)
+show <pid> - show contents of file (if text)(hex dump if binary?)
+
+done - leave package mode
+
+Refactoring existing commands
+-----------------------------
+Get rid of:
+meta
+name
+print
+delete
+
+Replace:
+leave with done
+scimeta with add
+scidata with add
+
+
+dataone package create <pkgpid> <scimetapid> <scidatapid> [...]
+dataone package delete <pkgpid>
+dataone package update <pkgpid> <newpkgid> <scimetapid> <scidatapid> [...]
+dataone package show <pkgpid>
+
+dataone -e 'package new pkgid; package add <pid> ; ...'
+or
+dataone -e 'package; new pkgid; add <pid>; ...'
+
+
+Authorization
+-------------
+
+1. Identity mapping is stored on the CNs.
+
+- mapping is performed by users
+- verification of identity is performed by account administrators
+- legacy identities need to be mapped as well, and these will not likely be in CILogon
+
+
+2. Identity mapping defines equivalence of identities. 
+
+Transitivity: Given Subjects A, B, and C, with A mapped as equivalent to B, and B mapped as equivalent to C, by simple inference, A should be considered equivalent to C. 
+
+Given a certificate with Subject = A, and SubjectInfo containing Persons A and B with Person A having equivalentIdentity entries of B, and person B having equivalentIdentity entries of C, the list of subjects considered equivalent is A + B + C.
+
+(See algorithm below)
+
+Is this scalable? What happens when a person has a couple dozen identities? 
+Limiting hops from subject of certificate likely to introduce permission interpretation issues.
+
+
+3. Identity information is transmitted as properties of the client certificate used when making the secure connection to a service.
+
+- ambiguity when interpreting SubjectInfo which contains a list of Person and list of Group. Each Person contains a list of Subject that specifies equivalentIdentity. Does presence of a Person in a certificate SubjectInfo indicate equivalence to the Subject of the certificate or is it necessary to specify this in the equivalentIdentity Subject list? Better (more efficient) ways to represent this?
+
+
+4. Interpreting Access to an object
+
+Access control is applied on a per object basis, with rules encoded in the SystemMetadata.accessPolicy, which is composed of a list of one or more AccessRule entries, each of which has one Subject and one or more Permission entries.
+
+An object with no accessPolicy is not accessible by any subject other than the rightsHolder Subject specified in the systemMetadata for the object.
+
+
+5. Permissions are hierarchical. READ < WRITE < CHANGEPERMISSION. Thus a Subject with a CHANGEPERMISSION entry has WRITE and READ access.
+
+
+6. Special Subjects "public", "authenticatedUser", and "verifiedUser" are defined.
+
+
+7. Identity management - how does an identity and/or identity mapping become deprecated or revoked?
+
+8. There is no mechanism to indicate if an identity mapping has been verified.
+
+
+
+Actions:
+
+- Need tool (java and python) that given session, returns list of equivalent identities
+- Need tool (java and python) that given list of equivalent identities and an AccessPolicy, returns whether the list has permission to read, write, changepermission  (rnahf: restored from earlier: seems to have been accidentally erased)
+
+- Design mechanisms for revoking identity. Is it sufficient to remove the verified flag from a Person, and then only allow equivalence mapping between verified identities.
+
+
+- Future Option: add the list of equivalentIdentities to the session certificate
+
+For recursive algorithm:
+https://repository.dataone.org/software/cicore/trunk/d1_common_java/src/main/java/org/dataone/service/types/v1/util/AuthUtils.java
+test cases:
+https://repository.dataone.org/software/cicore/trunk/d1_common_java/src/test/java/org/dataone/service/types/v1/util/AuthUtilsTestCase.java
+
+
+Roger's algorithm for obtaining list of Subjects that are equivalent from a session:
+
+getequivalentIdentities( session )
+  subjects = ["public"]
+  if session == null
+    return subjects
+  sessionSubject = normalize(session.DN)
+  subjects.append( sessionSubject )
+  subjects.append( "authenticatedUser" )
+  if session.subjectInfo == null
+    return subjects
+  for person in session.subjectInfo.person
+    if (person.subject == sessionSubject) and person.verified
+      subjects.append( "verifiedUser" )
+    for group in person.isMemberOf
+      subjects.append( group )
+    for subject in person.equivalentIdentity
+      subjects.append( subject )
+      for person2 in session.subjectInfo.person
+        if person2.verified and person2.subject not in subjects
+          subjects.append( person2.subject )
+        for group in person2.isMemberOf
+          subjects.append( group )
+  return subjects
+
+
+- Start with empty list of subjects
+- Add the symbolic subject, "public"
+- If the connection was not made with a certificate, stop here.
+- Get the DN from the Subject and serialize it to a standardized string. This
+ string is called Subject below.
+- Add Subject
+- Add the symbolic subject, "authenticatedUser"
+- If the certificate does not have a SubjectInfo extension, stop here.
+- Find the Person that has a subject that matches the Subject.
+- If the Person has the verified flag set, add the symbolic subject,
+ "verifiedUser"
+- Iterate over the Person's isMemberOf and add those subjects (which are groups)
+- Iterate over the Person's equivalentIdentity and for each of them:
+ - Add its subject
+ - Find the corresponding Person
+   - If the Person has the verified flag set and if "verifiedUser" has not
+   already been added, add it.
+   - Iterate over that Person's isMemberOf and add those subjects
+
+
+
+
+
+
+
+
+
+

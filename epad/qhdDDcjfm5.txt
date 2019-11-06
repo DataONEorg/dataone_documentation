@@ -1,0 +1,98 @@
+
+Welcome to EtherPad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text.  This allows you to collaborate seamlessly on documents!
+
+Agenda
+    Member node metrics (per Bruce)
+    Diagrams
+    Action items (next steps)
+
+DataONE Metrics
+
+What we log (data users)
+    IP address
+    User ID    
+    When (date)
+    Which Member Node
+    Unauthenticated read = "nobody" (perhps "guest" or "anonymous")
+    Which browser reportedly used
+    What they did (event was - read/update)
+    
+Member Node API
+    MN logs information immediately 
+    Periodic log back to Coordinating Node
+    
+Availability
+    to anyone with rights permission
+    to object (owner and anyone he grants)
+    e.g., DAAC object owner (ORNL DAAC)
+    
+Permissions
+    permissions to read
+    permissions to write
+    
+    
+    
+Governed by who has rights permission for particular access
+
+Unauthenticated searches
+    still provide date, time, IP address
+    can see this information if you have permission
+    
+The "user agent" field - provides information about searches that are built
+
+Careful to explain
+    for a lot of things (for the user) there is limited privacy
+    log on - we know who you are
+    not logged in - limited use 
+    
+    
+    
+Static Measures   
+1. Cost-benefit analysis [static measure]
+    right software in place
+    adequate staff (metrics from existing MN, CN would be useful here)
+ 
+Dynamic Measures    
+2. Services provided by DataONE, MN, CN (how much and how often used)
+    software
+    
+3. Where metrics collected, aggregated
+    Metrics can be collected either at CN or MN; MN metrics would have to be sent to CN for aggregation across DataONE
+    
+4. Supports - helpdesk for the user
+  
+    how often helpdesk contacted, response time
+    
+5. Helpdest for the MN, CN
+
+6.   interacting support between MN and CN (making sure monitored to maintain standard)
+        interoperability (in the face of changes at either). Software interoperability is set up at the beginning but this needs to be maintained. This is important for CI to understand (new 'improvements' in software are not neccessarily well received)).
+        
+What are metrics supposed to be doing?
+Sustain system
+Adds to individual researcher prestige by being provider (DOI)
+Prestige for MN 
+MN gains reputation because the more used datasets are highly valued and provide reflective glory to MN: demonstrated ROI; attracts funding
+
+
+    
+
+
+How often used?
+e.g., DOI increasingly used as citation
+How much data volume sent to a particular user? (transmission information)
+Which particular datasets accessed by the user?
+    Important for credit to originator (almost as important for citations in publications)
+    Important for managing digital repository 
+    
+Cost-benefit analysis
+    right software in place
+    
+
+thanks everyone!
+
+not quite sure how I log out! Lovely to chat.
+
+

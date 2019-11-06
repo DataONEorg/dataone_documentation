@@ -1,0 +1,62 @@
+Discussion of new ORNL MN - DataONE Collaboration 
+
+Participants:  Dave Vieglais,  Giri Palanisamy, Ranjeet Devarakonda, Jim Green, Rebecca Koskela, and Laura Moyers, Matt Jones
+
+Not able to Participate:  Bruce Wilson, Chris Jones
+
+Teleconference numbers:
+Toll Free Number:  866-703-9626
+Pass Code:  767574
+
+
+Goal:  Build on existing services and practices of ORNL Data Centers to enable more efficient and effective collaboration with DataONE
+ * ORNL data centers a have long history of business practices concerning curation, stewardship, version control, and metadata generation.  Funders are very happy with these practices and would prefer to see resources devoted to the data centers' missions, not used to support DataONE / NSF 's goals.
+ * DataONE would like to lower the requirements for data centers to become MNs, to enable broader MN membership and to lessen the develpment and maintenance required for MN software.
+
+
+CCIT Discussions in Santa Barbara (September 2013):
+Discussion of plans to support two significant changes intended to address concerns raised by potential member nodes:
+1.  Transfer of system metadata control to MNs
+ * requires some fairly disruptive changes to both CNs and MNs
+ * Likely to be a significant lag between updates available and fully deployed
+2.  Supporting mutable content
+ * Move towards supporting insignificant changes to content. Edits deemed as not scientifically important by a MN will be supported.
+ * Continue support for immutable content as well
+
+- Possible technical architecture and list of changes that will be needed in CN and MN
+
+System metadata - currently the CN holds the authoritative copy of system metadata, which is inconvenient for MNs who need to change their system metadata as they have to contact a CN, request a change, etc.  The desired change is that the MN be responsible for system metadata so that changes may be made locally and the CNs can pick up changes on synchronization and propagate changes out from there.  The MN will have the authoritative copy of the system metadata.  A big concern was that access control rules had to be coordinated/requested through CNs.
+
+Mutability - currently, every object in DataONE is considered to be immutable.  If a minor change is needed (spelling, etc.), the current design requires that the "old" object be "deleted" and the "new" object be "added".  The "old" object shouldn't really be deleted, for reproducibility in particular.  After examining several options, a solution has been proposed that MNs may change content provided they are scientifically-insignificant.  "Scientifically-significant" becomes a policy decision rather than a technical decision.  We will be adding a mechanism to the CNs that will track changes over time to allow a user to know if they have most current version, or if there have been changes to a previously accessed data object since that earlier access.  
+
+If there is a change in system metadata, say, the MN will make desired changes, and when synchronization occurs with CN, the CN will accept the "new" system metadata and keep a copy of the previous version of the system metadata.
+
+Every object requires a checksum (system metadata, science metadata, data object).
+
+What about situations where we just have system/science metadata (another entity retains the data object)?  KNB and others have this situation; DataONE is ok with this.
+
+Discussion on links to a data object not retained by DataONE: not necessarily a good idea to include the url for the data object in the metadata, as often links break.  Idea: maybe we could show the link even if the link is not resolvable.  Not exactly within scope; while a nice idea, it could perhaps be better resolved another way (resource maps, MN ensure that their links are valid, etc.)
+
+"Only results with data" checkbox on search 
+
+What can we do to add more MNs?
+We can reduce barriers to make becoming a MN easier (perhaps less stringent requirements?).  Caution: we need to be careful to not eliminate essential characteristics (reliable access, preservation, etc.).  What about scaling of interoperability?  
+
+DataONE will pick up on changes made to a MN's data/metadata now (via checksums) where previously the did-it-change focus was on the DOI.  
+
+Mutability issues with USGS Topo Maps, for example - there are ~300K metadata records, each with a link to the data object, which will be updated often.  It would be very difficult to have a distinct metadata record for each iteration of the data (high volume).
+ * True, but isn't it also critical to understand via the metadata what changes were made to the data, and thus the metadata would reflect the data provenance?
+ * The series identifier can accommodate this idea, with the series indicating the concept of the data with the individual object identifiers pointing to various iterations of the data (including most current).  While the concept of a series identifier can handle mutable data, that particular solution may not be the most effective solution.
+
+Options to explore: 
+    CNs: index the data object's URL
+    proxy object, may be part of resource map or another object
+    
+    when harvesting science metadata documents from sites, some can be dropped which have already been registered with the CN (i.e. a deleted object); Question: if you have 100 objects one day and 90 the next, can the missing 10 be obsoleted (at the CN)?  No, if the missing 10 are really deleted, the MN should obsolete those objects.  Their DOIs will be archived.  
+    
+AHM coming up soon, probably the last opportunity to propose changes (for the time being).  A tentative date for changes (such as those discussed here) would be late-winter/early-spring.
+
+ORNL can offer up some of the new potential MNs as "guinea pigs" to test changes to system.
+
+Perhaps talk again after the AHM.
+

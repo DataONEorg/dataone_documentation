@@ -1,0 +1,232 @@
+Development Block 6.1
+=====================
+
+Last Block Etherpad: http://epad.dataone.org/2013-42-Block-5-4
+
+G+: https://plus.google.com/hangouts/_/event/cb76pav4nbripd606928j9pjiao?authuser=0&hl=en
+
+Sprint Planning
+---------------
+
+ * D1 Dashboard
+   * Beta Version. Significant changes due to evaluation at AHM. Most cosmetic changes have been made. Time series graph models need information from Log Aggr (Robert dependency). Chris B working on map. Need minimal version of Dashboard on Prod 'fairly soon', as in yesterday.
+ * Implementing Mutability
+   * Ongoing discussion. Completing evaluation of the SID approach.
+ * Network changes at UCSB
+   * Complete
+ * MN documentation
+   * Complete. (now in maintenance mode, where spot improvements are happening as needed).
+ * MN rollouts
+   * GOA, NPN, SEAD complete
+   * KUBI: In progress.
+   * EDAC: in testing phase.  delays due to stage environment problems, encountering subtle behavior issues with listObjects and value of obsoletedBy field.
+
+
+Chris B.
+--------
+
+ * 20131028
+   * Need clarification on ticket #4106 in regards to which set of vm's and time
+   * Need certs and keys for cn-dev-orc-3
+   * Status of network transistion?
+   * Firewall playbook
+     * Uses site_facts module and reads from a xml config file stored on the target box
+   * Fixed the install ldap playbook
+   * Generate keys playbook
+ * 20131030
+   * Network transistion status
+     * Fixed the debconf template file
+     * Firewall playbook?
+     * Waiting on debconf file to be put into releases for general role out.
+   * Working with Roger on testing onedrive on mac os x.
+   * Need orc-dev certs
+ * 20131101
+   * Mac'ifing onedrive to be deployable as an app bundle.
+   * Modified d1_client's ObjectFormatInfo class to take a file-like object in addition to a path for the csv input.
+   * Altered metacat postinst to set effective_cache_size and work_mem for postgres.
+   * Reviewed dashboard in preparation for fixing several of the issues assigned to me.
+ * 20131104
+   * Need to test metacat postinst script
+     * Need a node to test with (dev-ucsb or dev-unm)?
+   * Handling a firewall issue at UTK that is blocking UCSB from connecting to ldap. 
+   * Producing an app bundle for OneDrive
+ * 20131106
+   * Improved the spatial data reporter for dashboard to reduce output data size
+     * Working on transferring the data using gzip to improve message size
+   * Fixed a popup issue on dashboard info icon
+ * 20131108
+   * Worked on the gmap centering issue with dashboard
+   * Macify'ing onedrive
+ * 20131111
+   * Working on google map issues in databoard
+
+
+
+
+Chris J.
+--------
+ * 20131030
+   * KUBI troubleshooting SSL. Progress.
+   * Dashboard work with Skye, Robert
+   * Met with MPC. Preliminary discussion
+   * Worked with Bob Sandusky for UIC MN install
+   * Presentation for GLEON MN trip
+ * 20131028
+   * Troubleshooting SEAD MN sync
+   * Troubleshooting CDL archive/update issues
+   * Troubleshooting SSL cert issues on KUBI
+   * Working on dashboard tickets from AHM feedback
+   * Meeting with MPC
+   * TODO: Find cn-dev-orc-1 key for Chris B.
+
+
+Skye
+--------
+ * 20131108
+   * Dashboard work continued...
+     * https://redmine.dataone.org/issues/4119 (in testing)
+     * https://redmine.dataone.org/issues/4122 (in testing)
+     * https://redmine.dataone.org/issues/4123 (in testing)
+     * https://redmine.dataone.org/issues/4124 (in progress)
+ * 20131104
+   * Dashboard work
+ * 20131101
+   * Dashboard AHM updates
+   * A little triaging of SEAD, NPN sync/replication.
+ * 20131030
+   * Dryad test run / triage
+     * New Issues:
+       * https://redmine.dataone.org/issues/3916
+       * https://redmine.dataone.org/issues/4140
+   * OneMercury updates exposed by dryad ORE modeling
+     * https://redmine.dataone.org/issues/4135 (in testing)
+     * https://redmine.dataone.org/issues/4137 (in testing)
+     * https://redmine.dataone.org/issues/4103 (in testing)
+   * D1-Dashboard Summary View work
+     * Updating layout
+     * Updating time series views
+     * Met with Robert/Chris to define aggregated log output for dashboard model.
+   * Met with MPC (minnesota population center) group
+     * Early stages - planning etc.
+ * 20131028
+   * Need to run new harvest/test for Dyrad in dev.
+   * Fixing broken index test on trunk.
+   * Dashboard updates from AHM review
+     * layout changes
+     * logging model design.
+   * Minnesota Population Center MN meeting Tuesday.
+     * Custom RoR MN impl.
+
+Roger
+-----
+ * 20131113
+   * Closed #4168: Parsing resource map does not give access to the PIDs
+   * Working on #4020: Create documentation for the Python test utilities
+ * 20131108
+   * Closed #4110: Fix unit tests in d1_client.tests.test_solr_client.py
+   * Working on #4168: Parsing resource map does not give access to the PIDs
+ * 20131106
+   * Closed ticket #4149.
+   * Working on ticket #4110: Fix unit tests in d1_client.tests.test_solr_client.py
+   * Q: https://redmine.dataone.org/issues/4107
+ * 20131104
+   * Fixed issues in 20131030.
+   * Working on ticket #4149: python objectListIterator.totalObjectCount() fails
+ * 20131101
+   * Working on tickets mentioned in 20131030.
+ * 20131030
+   * Got the Linux version of ONEDrive working and checked in.
+     * The same code base works on Windows and Linux now, with automatic switching between Dokan and FUSE.
+   * Looks like the new PyPI distribution of GMN worked well for KUBI.
+   * Today: I need to get back to some issues in libclient.
+     * Issue 1: Finalize fixes related the resource map generation and parsing with new version of Foresite.
+     * Issue 2: Filtering on object type in listObjects() doesn't work. Problem is either in GMN or in Python libclient.
+ * 20131028
+   * I'm working on the Linux version of ONEDrive.
+   * KUBI: Chris J is looking into certificate related exceptions on the CN.
+
+Rob
+---
+ * 20131108
+   * EDAC
+     * bug discovered where obsoleted items are not included in mn.listObjects()
+       * Q: is this something we can support in the future?
+         * put in the mutability use cases
+     * only one of the three packages is showing up in ONEMercury.
+       * need to continue troubleshooting
+   * authorization documentation
+   * adding overview of CN functionality (ONEMercury, Portal, Web Services) in MN_deployment documentation (environments.txt)
+ * 20131106
+   * added scenarios to mutability requirements
+   * EDAC: resubmitting resource maps
+   * Introduction to Certificates documentation written, trying to find a home for it.
+ * 20131104
+   * stage cn-replication is fine now
+   * EDAC needs to make changes to resource maps to get them into indexing.
+ * 20131101
+   * EDAC is registered to stage
+     * have cn-replication (metacat replication) problems which are blocking indexing
+     * 
+ * 20131028
+   * "mn_checklist" documentation review
+     * instructions on certificates
+     * introduction to certificate for the uninitiated
+   * EDAC
+     * plan to deploy to stage today:
+       * email verification ?
+       * will submit as myself, need to be verified in stage, need the node document to be approved.
+
+Robert
+ * 20131108
+   * working on production problems
+   * applied David D.'s changes for splunk on prod
+ * 20131106
+   * writing up mutability doc
+ * 20131104
+   * Problems with production replication
+   * Rebuilt dev environment a few times, Jing needs a relatively stable environment for Dev testing
+   * 
+ * 20131101
+   * forced replication on SEAD, re-indexed
+   * there are other problems with production
+ * 20131030
+   * Helped restart Staging for Rob. Missing files.
+   * Tested reconfiguration procedure for UCSB changes on Dev/Sandbox. 
+     * dataone-cn-os-core reconfiguration works. Other packages dataone-cn-metacat dataone-cn-portal dataone-cn-processdaemon dataone-cn-solr dataone-cn-index dataone-mercury will need removal
+   * SEAD sync'ed just to 3 CNs. However, none of the data/scimetadata objects were replicated by metacat to the other members in the cluster.
+ * 20131028
+   * completing the cn-log-report tool
+
+
+
+Dave
+ * 20131030
+   * At TDWG meeting, lots of discussion on semantics, biodiversity data
+   * Opportunities for providing services for GBIF / collections archive
+   * Various admin tasks for reneal, reporting
+   * Not able to participate in SU until at least next week.
+
+Jing
+ * 20131101
+   * Fixing a bug that the authoritative node certificate can't be granted the permission to archive and obsolotedBy method.
+   * Tested in MN
+   * Need to work with rob to test on CN
+ * 20131030
+   * Removed the solr index for the archived objects.
+   * Refactory some the metacat-index code 
+
+David D
+ * 20131108
+   * See 11-06:  VM maintenance, splunk indexer app configuration, waiting on redmine 4153
+ * 20131106
+   * Splunk indexer app installs/configs
+     * Still waiting on syslog/apache configs for UNM/UCSB boxes that I don't have sudo access for - see https://redmine.dataone.org/issues/4153
+   * Maintenance work on some ORC VMs
+ * 20131101
+   * Splunk instructions sent to Dave/Chris J/Nick for UNM and UCSB, awaiting rollout
+   * Tweaking forwarders/indexer
+ * 20131030
+   * Checking over Splunk UCSB instructions for changes that need to be made due to UCSB infrastructure change, then sending out instructions to UNM/UCSB
+
+
+

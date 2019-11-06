@@ -1,0 +1,285 @@
+Attendees: Rebecca, Bruce, Bob, Dave, Mike,John Cobb, Amber, Suzie, Bertram,Deborah, Bill
+
+
+Regrets: Viv (maybe)
+
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Sep 13, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/895113193
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0605
+Access Code: 895-113-193
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 895-113-193
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2013Sep13-LT-VTC 
+
+
+September 13: CI WG plans for years 6-10 (Dave)
+September 20: Sustainability & Governance WG in years 6-10 (Trisha, Bill)
+
+
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-09-13
+
+1.  CI Report (Dave)
+
+- Preparations for CCIT meeting. Many topics to cover, a few key items:
+  - Work through process of setting up a MN or two, following available docs
+  - Resolve a few issues related to content mutability and identity management
+  - Planning for changes to system metadata management (MN authority)
+  - Indexing, auditing, dashboard
+  - Review, adjust plans for remainder of y5
+
+- Good discussion about MN documentation and how it can flow between the various locations. One sticking point is the artificial barrier between doc writers and the public web site.
+
+- Generally on track with priorities identified early in the year
+
+- Lengthy discussion about overall development process and how to further streamline activity
+  - Sticking with two week sprints grouped into approximately two month blocks
+  - More emphasis on ensuring goals for sprint and block are met before taking on additional work
+
+- Quick look at dashboard prototype
+  - http://mule1.dataone.org/prototype/dashboard
+  - Using numbers from stage environment, not production
+              past 100 years? why such a short window? : v }: this may be the coverage rnge of data and not data or inclusion in the DataONE meta-collective
+              but seriosuly, is the download column live? No this is a view to staging environment. We hope to produce ths data for Prod. nodes in the future, soon.
+              if a node is temporarily down, how do I see that on the d-board? Do the colors change form blue to something else?  Perhaps system "button" will show this.
+
+            on map for some reason, Replication MN's co-locating with CN's are not listed.
+
+2. a. CI WG plans for years 6-10 (Dave)
+
+Primarily from the second planning meeting held in Knoxville, July 2013, where plans developed during the May meeting in Albuquerque were reviewed and key aspects selected with consideration of the anticipated resource constraints.
+
+Ongoing CI activity for DatONE falls into three broad categories:
+
+1. Maintenance of the status quo
+2. Addition of new features necessary to maintain relevance of DataONE to target audiences
+3. Research and development activities that are high risk, but high potential value
+
+The first category of activities is necessary for the core of DataONE to remain operational into the future. The second category represents a progressive update and enhancement of the infrastructure to ensure that the infrastructure provided by DataONE remains relevant as new expectations emerge, perhaps driven by other systems or infrastructure that overlap or align with the goals of DataONE. In general, the R&D activities (the third category) are predominantly excluded from the renewal proposal and instead will be undertaken through additional research proposals that leverage the DataONE infrastructure.
+
+Several topics were identified as within scope and achievable during a five year period and with the anticipated budget. These include (in order of priority / importance):
+
+ * Maintenance of the core infrastructure
+ * Adding provenance support to DataONE, including linking pubs, data, and workflows
+ * Enhanced reporting capabilities
+ * Enabling measurement driven discovery through semantic annotation
+ * Supporting data shaping / subsetting services
+ * Slender node implementation (tier 0)
+ * Implementation of other MN software stacks (by DataONE)
+
+More detail on each topic follows.
+
+Maintain the Core Infrastructure
+
+Maintaining the current software implementations with no or minimal feature updates. Includes bug fixes, updates necessary to track changes to third party dependencies, security updates, hardware replacement / maintenance, system administration, documentation.
+
+Note that the cost of maintenance will generally increase as more products and features are added to the DataONE repertoire.
+
+Duration: Y6 - Y10
+
+Anticipated resource requirements include:
+
+ * Developers, 2 FTE
+ * UI Design (0.5 FTE)
+ * System Administrators (0.2FTE)
+ * Support personnel (MN support), 0.5FTE
+ * Management personnel (0.5FTE)
+ * Technical writers (0.5FTE)
+ * Hardware ($50K / yr / location)
+ * Software licenses
+ * Space, power, physical facilities 
+ * Network access
+ * Member Node resources, e.g. staff, space, hardware, (contributed by other projects)
+
+
+Add Provenance Support to DataONE
+
+The goal is to extend the current DataONE metadata capabilities to: 
+
+(1) Incorporate additional provenance metadata, in the form of 
+    (a) W3C-PROV and 
+    (b) DataONE-PROV extensions to W3C-Prov (= D-PROV)
+and allow it to be ingested & stored as system- or science-metadata at (some? all?) MNs.
+
+(2) Index that metadata at CNs, in order to … 
+
+(3) Implement “smart” (provenance-enabled) searches and queries.
+
+From a users POV, (3) will provide the main added value: 
+Enhanced data discovery:
+find data, based on how it was created, using what tools, using what input datasets or types, by whom, etc.
+
+Showing linked data:
+the “social life” of data, i.e., data in context
+
+Supporting provenance can be generalized to "supporting somewhat arbitrary relationships between uniquely identified content". Adding provenance support will also enable support for linking publications, data, and workflows.
+
+Duration: Y6 - Y10
+
+Anticipated resource requirements include:
+
+ * 1 FTE dedicated for 5 years (qualified developer)
+ * Working group support - expert direction will be required
+ * $12K travel
+
+
+Enhanced Reporting Capabilities
+
+The initial implementation of this activity will be completed before the end of Y5. Additional updates and enhancements are expected to be made over Y6 - Y10. Hence it is expected that no additional resources need be allocated for this work during Y6 - Y10 since update and maintenance activity will be included under general Infrastructure Maintenance.
+
+
+Enabling Measurement Driven Discovery through Scalable Semantic Annotation
+(Measurement Search)
+
+This activity will produce a semantically-driven search and discovery system that extends the current DataONE query subsystems to allow researchers to search for data sets that contain specific measurement types.  Current searching in DataONE focuses on fielded and full-text metadata search but that does not specifically enable precise queries of measurements.  This is mostly because the metadata corpus contains uncontrolled descriptions of measurements (e.g., variable names, descriptions, units, etc.), which makes it impossible to find all of the data sets containing a particular measurement type.
+
+This activity relies on some of the capabilities required for supporting provenance tracking in DataONE, most notably, some mechanism for recording statements associated with PIDs.
+
+Duration: Y6 - Y8
+
+Resources:
+
+ * 1 FTE Ontology expert, (1 year duration)
+ * 2 FTE Developer (2 years duration)
+ * 0.25 FTE UI design
+ * $30K travel
+ * $10K materials
+ * I would expect working group support needed for this - i notice it mentioned above but not here - was that intentional?  (comment from deborah)
+
+
+Supporting Data Subsetting and Extraction Services
+(Registration of data subset/extraction services)
+
+Provide metadata support for registration of data extraction and subset services provided by member nodes and the linkages to see what services can be applied to data sets resulting from search operations.  
+
+Deliverable: Users are able to use the DataONE GUI and API search interfaces to discover data, find out what subsetting/extraction services are available for those data sets, invoke a subsetting operation on discovered data, and deliver that data to analysis, manipulation, and visualization tools that understand the relevant data format.  
+
+Duration:  1 year (likely Y6 - Y7, revisit Y9)
+
+Resources:
+
+ * 0.5 FTE developer
+ * 0.5 FTE engagement of CCIT members
+ * $2K travel
+
+
+Slender Node
+
+A Slender Node (SN) is a mechanism that enables the equivalent of Tier 1 Member Node services (publicly readable content) to be achieved with data repositories that do not expose the DataONE MN service APIs, but do currently support another widely adopted data access service protocols such as OAI-PMH or Catalog Services for the Web (CSW). There are at least two ways to achieve this:
+
+Implement a gateway service that is able to operate as a facade to the OAI-PMH or CSW service, providing a view that is compliant with DataONE Tier 1 MN services. The gateway may be co-located with the SN or may be operated at a separate location. 
+
+Implement SN service specific functionality in the Coordinating Node software, enabling the necessary Tier 1 operations (e.g. synchronization) to be performed by the CN. Note that this is conceptually equivalent to locating the gateway described in #1 within the CN software stack.
+
+Duration: 1 Y (early <= Y6 - Y8)
+
+Resources:
+
+ * 1 FTE developer
+ * 0.25 FTE engagement of CCIT members
+ * $5K travel
+ * $25K storage capacity
+
+
+New MN Software Stacks
+
+Implementation of new MN software stacks is an expensive process that requires significant testing and iteration, especially where the conceptual mode of operation of the target repository stack is not well aligned with the functional requirements of DataONE.
+
+Where possible, this activity should be passed on to others responsible for the particular software stack, and DataONE effort directed at providing technical guidance and supporting testing and deployment of the new stack.
+Q: How will DataONE incorporate exernally developed and contributed SW stacks? 
+    Move into DataONe Repo or external?
+    How to integrate core DataONE-II and external contributory efforts
+    Need to chart an plan/strategy for SW maintenance for contributed SW - try to avoid taking on a mortgage for contirbuted SW.
+
+It is reasonable to expect that 1 FTE will be required to shepard and otherwise guide and manage new implementations of MN software being developed by third parties.
+
+This activity is suitable to supplemental and incremental add ons to DataONE. It consists of augmenting the currently supported set of MN SW stacks with additional stacks that can enable (or ease) the recruitment of additional MNs using those stacks. This would augment the currently support Metacat, GMN(Python), and Mercury implementations of the DataONE API. 
+
+The primary effort will be in the actual implementation of the stack. The implementation will include the actual augmentation of the SW stack and may include pilot MN implementations to test and validate the stack. Each stack could be implemented pretty much independently, in parallel or sequentially, according to the availability of resources (financial and effort) and  priority. In addition there are three “umbrella” activities that would have be coordinated with DataONE “glue the efforts together: overall management of the stack implementations, managing integration with DataONE core functions, including scheduling tasks to available DataONE Core-CI available effort hours, and coordination of long-term maintenance and upgrades to deployed stacks. 
+
+Duration: Y6 - Y10
+
+Resources:
+
+ * 1 FTE developer to work with new MN implementations
+ * Travel to meet with vendors of different repository systems.
+
+How CI WGs would function - check the threads above (maintenance, provenance, semantics)
+Perhaps team leaders for driving the projects
+Working Group members: half a dozen for each topic - but budget allows for 10 total (8 WG members plus 2 co-leads) 
+
+Developer team will be very critical - need to be very specific about any rehires for the follow-on years
+Deborah: Ben is a good example of this
+
+
+2.b. Budget (Rebecca)
+$10 M Budget:
+-       Amber Budden (1 FTE)
+-       Rebecca Koskela (1 FTE)
+-       Dave Vieglais (0.75 FTE)
+-       Developers (3 FTE)
+-       Acct (1 FTE)
+-       Web designer (0.5 FTE)
+-       Equipment ($200 K per CN)
+-       Supplies
+-       UCSB (Matt 2 months, sys admin)
+-       UTK (Susie 2 months, Bruce 1 month, sys admin)Moyers? included or not?
+-       UCOP (Trisha 1 month) 
+-       PSC
+-       Travel
+-       F&A
+ 
+$13.3 M Budget:
+-       Add developers (3 FTE)
+ 
+Not budgeted:
+-       1.15 FTE UI
+-       1 FTE Domain expert = 1 ontology expert
+
+Trisha: Suggestion of switching web designer for UI person (but does the title 'designer' include web maintenance?yes  possibly more broad?) If you want a web production person that is different that design. Agreed - think that was what was intended (with some design skill thrown in). I think those are different enough to approach separately.
+
+
+3.  White paper outline and writing assignments (Bill)
+White paper outline: http://bit.ly/17ZoICP
+25-page Project Description from last proposal 
+(file is called _Pages from DataNetONE_fullproprosal.pdf): http://bit.ly/1aHBqMu
+
+Hard deadline for white paper: October 21
+Can review at LT face-to-face meeting - Bill at NSF on the 24th of October so NSF needs document by October 22
+
+Next phone call important for establishing who does what with the white paper
+
+4.  Around the room (all)
+
+
+John Cobb: Nothing to add
+
+
+Bob:  Two Best Data Management Practices Webinars were held this week, in conjunction with NASA.  One on Tabular data (126 participants) and one on Geospatial Data (116 participants).
+
+Suzie: Robert Olendorf will be continuing in the SCWG as the replacement for Miriam Blake which maintains the LANL presence. 
+The UA/SC Joint Working Group meeting has been scheduled for May 13-15 (with travel days of May 12 & 16) at Knoxville, TN. 
+
+Mike: Nothing to report.
+
+Trisha: nothig to report
+
+Deborah:  Semantics working group regular meeting call right after this call.  ISWC presentations videos, posters, etc in process.   Announcement of Mark Schildhauer taking over as co-lead with Deborah and replacing Jeff H as co-leader of working group.
+
+

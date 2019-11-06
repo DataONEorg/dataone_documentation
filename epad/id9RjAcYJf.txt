@@ -1,0 +1,51 @@
+DataONE Animations Discussion
+Paul Allen and Bob Sandusky
+August 18, 2010
+
+General goals for animations
+ * Animations should be understandable by anyone interested in DataONE: domain scientists, administrators, NSF program officers, librarians, social scientists, computer scientists
+   * avoid information overload or excessive technical detail
+ * Animations should be short: less than 3 minutes long
+ * Animations should have narration and be captioned
+ * Animations should be consistent with the technical implementation
+ * Animations should express what is implemented, what is to be implemented in a future milestone, and be clearly labeled as to what version of the DataONE architecture they represent
+
+Process
+1. select a process to represent or a question to address
+2. storyboard the animation
+3. review with CCIT
+4. revise and vet
+5. produce animation using a visually talented person
+
+Ideas for key questions/processes to be documented
+ * What does it mean for my respotitory to become a member node?
+   * What do I have to implement?
+   * What additional services can I then offer my clientele?
+ * Scientist  point of view (data producer)
+   * three types of scientists
+     * already associated with a MN
+     * already associated with a data repository/network 
+     * scientist, unaffliated with any data repository/network
+   * Where does my data go?
+     * How is my data replicated? (split off into separate technical detail)
+     * Preservation
+   * Where does my metadata go?
+     * What metadata does D1 support?
+   * Data usage reporting
+   * Other value added
+     * data access control (future)
+ * How does D1 benefit scienctists in domain X? (data consumer)
+   * Discovery 
+     * How do scientists locate data
+   * Retrieval
+   * data integration (future capability)
+   * Investigator Toolkit Integration
+ * What happens when a member node fails or is dismantled?
+ * Core D1 operations - Coordinating Nodes
+   * services offered
+     * search
+     * preservation (oversee replication of data)
+   * syncrhonication of metadata
+   * 
+ * Future Roadmap
+

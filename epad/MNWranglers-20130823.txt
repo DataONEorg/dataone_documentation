@@ -1,0 +1,81 @@
+Member Node Wranglers (Fridays at 10:00 am AK/11:00 AM PDT/12:00 MDT/1:00pm CDT/2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+
+23 August 2013
+
+Attendees: Laura, Bruce, Rebecca, John                                                                  
+
+Regrets: Amber
+
+Agenda: 
+        1. High profile issues
+        Documentation - Laura and Rob proceeding apace (but not as apace-d-ly as I would like - LM)
+        See the current flowchart: http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html and down at the bottom there is a link to the working copy
+        Terminology:  in Develop(ing) maybe keep "Use existing MN software" and under it say "any new elements" - retains a link to "old" idea while identifying the next level of new elements (Laura to ask Rob to change)
+        
+        Also changes to statuses in redmine, see the backlog view of MNDeployment tickets
+        Laura to check into AKN/eBird tickets (3560 and 3209).
+        
+        Bruce: email out to Dave, Matt, Chris re: OpenDAP, no response as yet
+        
+        Rebecca:  Y5Q2 DFC, Reagan said that interoperability within 6 months, asked for someone in DataONE as POC (that would be Dave), to discuss when Dave's here.
+        
+        Bruce: CDIAC moved into backlog based on conversation that indicated no action in near future, ARM ok for now.
+        
+        Matt's MNs - Bruce to check into.  We think Matt is back from his travels...
+
+        System vs science metadata - changes, non-critical changes (i.e. all caps vs title case in title fields).  
+        
+        2. Status of MNs 
+     * Y5Q1
+       * NKN   (3238) - follow-up meeting 29 August
+       * EDAC (3221) -  From MNF 22 August: EDAC is evaluating options  for supporting multiple data formats / representations of the same  content. DataONE can "kind of" support this by presenting links that are  cited in the science metadata (e.g. link to access same data through a  WCS / WFS service available on the EDAC server)
+       * Kansas (3188) - From MNF 22 August: KU node is joining stage testing - in process of issuing and configuring certificates
+       * SEAD  (3521) - a/o 8/19/13, NCED verifying their metadata; Inna says as soon as NCED has verified all their metadata, they will be ready to move to production.  
+       * NPN (3186) - follow-up meeting 28 August
+     * Y5Q2
+       * ILTER-Europe (3232) -  Ben L lead.
+       * Dryad (3118) - Rebecca: most of data is passing testing, resource map is not working correctly; Bruce: mildly optimistic, don't know what they're doing about the science metadata issue
+       * iEcolab (3219) - Ben in conversation with them
+       * DFC (3532) - ask Dave to talk with Reagan Moore, (iRODS)  Rebecca said at meeting with NSF 8/22/13 Reagan said that interoperability within 6 months, asked for someone in DataONE as POC (that would be Dave), to discuss when Dave's here.
+       * iPlant BIEN (3234) - iRODS
+       * U Illinois Chicago (3213) - From last time: 
+         * ask Dave which  person on CCIT can help with this; 
+         * Bruce will 
+           * 1) talk to Bob re:  metacat/GMN, leaning toward metacat
+           * 2) Chris Jones is the primary contact point for CCIT on this
+       * USGS Topo Maps (3525) - a/o 21 August, Mike Frame to check and get back with Laura
+       * PPBio (3748) - a/o 8/22/13, Debora is planning to meet week of 26 August with all the Brazilians to talk about DataONE (what is it, etc.), and after they've had a chance to talk amongst themselves we'll all "sit down" together
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting (Carol going to Taiwan in October)  also a Matt-thing
+       * AOOS (3531) - From Matt:  This is for a project I have working with AOOS,  and we have deployed a Metacat instance that is in testing.  The node is  located here for now:  https://evos.nceas.ucsb.edu/evos.   Several things need to happen before this node goes production,  including: 1) rebrand the site as AOOS;  2) move the node to a stable  AOOS address; and 3) get signoff from the AOOS folks that they are ready  to have it go live.  Ben and I have managed this server thus far, so it  should be straightforward to bring this node up once the ducks are in a  row.  revisit when Matt is available
+       * SAEON  (3205) -  From Matt: Ben has worked with these folks consistently,  and   helped establish a Metacat node there in Cape Town, but we need to  follow up with them to get it done.  They seemed amenable when we have  spoken in the past.  revisit when Matt is available
+
+     * Product Backlog (in redmine) - from last week's discussion, this is not just a "work on what is in the backlog" sort of thing, it is also (or more importantly) a "how quickly can we put a "flip a switch" metacat or GMN installation out there, or MN-in-a-box".  Also, OpenDAP vs DSpace: which MN stack can we implement first?  Answer drives which potential MNs (targets) might come to fruition this PY.
+
+        3. Old action items
+     * MNDeployment statuses - (Bruce): I've created status variables and updated the existing MN's.  
+       * The current status values are 
+         * New (no work or maybe some initial discussions), 
+         * Planning (work is in progress to scope and plan out the work), 
+         * Developing (there is active work to implement the plan), 
+         * Testing (the MN is working to put data into sandbox (as opposed to dev) to validate that the data going into DataONE is valid/correct), 
+         * Operational (live data is available in the production instance),
+         * Deferred (some work or discussions have started, and there's an intent to get back to this, though not necessarily a defined date where that will happen)
+         * Closed (we do not expect that this organization will become a MN)
+         * Dup-Closed (the tracker is a duplicate of another MNDeployment, used so that we can differentiate based just on status between candidate MN's that didn't pan out and those where we got the same thing on the list twice).
+       * I've gone through and updated the status values on MNDeployment trackers that didn't fit this scheme. 
+       * For MNDeployment trackers that were showing in the "Deferred" target version, I either updated the status to deferred or removed them from this target version (if they were closed).  Closed MNDeployment trackers will now not show up on the backlog page (https://redmine.dataone.org/rb/master_backlog/mns), but they will show up on the all issues reports (e.g. https://redmine.dataone.org/projects/mns/issues?query_id=61 ) depending on how the filters are set on that page.
+       * For the three trackers that I knew were duplicates, I changed the status to dup-closed and made sure they didn't show up on the backlog page.
+       * I changed the date on the Operational target version so that this shows at the top of the backlog page, rather than the bottom.  For a backlog page, operational belongs at the bottom.  But I see us using this more as a status page, and I'd like to lead with what's in operations.  
+
+        4. Not-high profile issues
+        Rebecca: what is the status of the issue where some MNs think they have more products than what DataONE shows?  Is it resolved?  (USGS and ORNL DAAC have had this issue where they think they have more data products than we see in DataONE.)
+        John: there are redmine tickets which track this issue
+            ... looking at tickets....
+        Seeing a lot of tickets which show "new" are probably resolved but ticket hasn't been updated.
+        ACTION: follow up on tickets that may not be necessarily assigned to us - BIG job - let's talk about this again when Dave's with us.
+        
+        5. Around the room
+            We did that as we went through.  Sorry for the hopping around.
+

@@ -1,0 +1,229 @@
+Attendees:John Cobb, Mike, Bill, Amber, Dave, Stephanie, John Kunze, Suzie
+
+
+Regrets: Rebecca, Bertram
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Feb 1, 2013 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/312121736
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0602
+Access Code: 312-121-736
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 312-121-736
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2013Feb01-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-01-25 (11:00 MST - 11:30 MST)
+
+1) CI Update (Vieglais)
+Developers working through testing v1.1; likely to be pushed out tonight / tomorrow.  Main concern is ensuring full back-ups are maintained.
+Some bad news - first incidence of machine hacking on Wednesday.  Very peripheral machine so doesn't appear to be an impact on DataONE itself.  Machine was used for monitoring so not integral to operations.  Recovery straight forward and should be up and running by end of weekend.
+
+Q: WM: How was machine hacked?  DV: Procedure is to isolate machine after hack and different group are doing the forensics.  Don't know outcome yet.
+Q: JC: Might be worth asking the forensics team where the infection came from (e.g. if it is associated with another DataONE machine).
+Q: JC: Update risk register item arising from this?  DV: Will take a look.
+
+Next week CCIT & Devs meet in SB.  preparing for RSV and some triage on time taken to push out v1.1.
+Demo prep looking good; Morpho to be released before RSV. Lagging on ONEDrive implementation but will be in demo-able prototype state.  Other big topic for CCIT meeting is to plan for remainder of funding cycle.
+
+Q: WM: Is Feb 8th a realistic date for Dryad to come online? DV: Yes, seems reasonable.  TV: Need to address an issue of dealing with versioning and mutability.  DV: There is a plan in place for this.  To be disucssed at CCIT next week.
+
+
+2) MN Update (Cobb)
+1) Good MN prioritization work at the RSV prep meeting.
+Also a good place to visually see the prioiritization is via a Redmine backlog view
+<https://redmine.dataone.org/rb/master_backlog/mns>
+        - still need to place 10 operational MN's in the list
+        - will move 
+
+2) Continue to prep for MN "office hours"
+        soliciting a better name than "office hours" 
+        Will launch in Feb., but will grow more later
+
+3) Looking for contacts with more prospective node. Some timely items:
+        EDAC node: Well on the way, but it is high profile item for the RSV
+        Dryad: looking to tie items up and finish testing/deployment. It is looking closer
+        NKN and USGS regional climate centers
+        SEAD
+        USGS Topo maps - editing API may work well with DataONE; May also harvest into           existing USGS MN and serve through that...(MIKE)
+        Continue contact with PELD in Brazil. Current issue is "spin-off" authority
+        
+
+3) CEE Update (Budden)
+Internship proposals due MONDAY (http://bit.ly/W0RMUE)
+Volunteer requested for internship committee - Suzie able to help but not lead.  Bill can also assist.
+Newsletter deadlines to be extended further into March due to RSV prep.
+
+4) Reverse Site Visit (Michener) - Full Day Feb 28 ; Ending at NOON March 1. 
+Team to be available in DC on 27th for run through.
+Need to submit agenda to NSF - therefore may yet change a little (currently 8.25 hours without time for lunch/breaks)
+Materials have to be sent to NSF Feb 13th.  Briefing package to include presentations; Thanos report; proposal; pmp; higher level overview of project, CI and CE; publications, 
+Strasser & Hampton - undergrad education & data mgmt http://www.esajournals.org/doi/full/10.1890/ES12-00139.1
+
+Revised agenda: http://bit.ly/11p8zqM
+                
+DataONE Project Overview - Bill, Mike, Bob                                            40        0
+
+Building Community
+  CE - Amber, Suzie                                                                               60        30
+  Member Nodes - John C                                                                       30        15
+Enabling Research                
+CI II (demos and brief overview  yrs 4-5) (Matt, Dave)                                50        20
+Research demos (sem, prov, md) - Dave, Matt, Bertram, Deborah, John K  40        15
+Sustainable, Open CI Framework
+CI I (design, R&D, implementation)  Dave, Matt, Bruce, Rebecca               40        25
+
+Proj. Mgmnt. (challenges & mitigation) - RK, Bruce, Suzie                         20        20
+Sustainability - Bill, Bob, Mike, Amber                                                      30        15
+Future Plans and DataONE activities - All: CE WG; CI WG                        30        15
+                
+Sub total minutes        340        155
+Total minutes             495        
+Total hours               8.25        
+
+Diversity of Funding Streams (Yr. 4)
+•NSF
+–DataNet
+–Other NSF grants
+•USGS
+–UNM, CDL, CDI
+•Foundations
+–IMLS grants (Suzie) _funded student support for students engaged in DataONE related activities SciData 181,778  SciLinks 190,975 (UT match not in these numbers)
+–Moore Foundation
+–Sloan
+•Commercial
+–MS Research
+•In-kind contributions
+
+Funding from Related Grants (Yr. 4)
+•NSF
+–DataNet ($4M)
+–ABI Development (UWisc, UCSB, UNM) ($140K)
+•NOAA
+–AOOS (Matt)
+•USGS
+–UNM, CDL, CDI, ORNL-Giri P. ($125K)
+•Foundations
+–IMLS grants (Suzie) synergistic activities total value including students for Yr 4 SciData 227,304   SciLinks 238,800 _ (UT match not in these totals)
+–Moore Fnd. (Trisha)
+–Sloan (Trisha)
+–Leon Levy (Steve)
+•Commercial
+–MS Research -- Trisha
+
+In-kind Support (FTEs) (Yr. 4)
+Staff (4.05 not incl. CDL, etc.)
+•UNM (1.0)
+–Bill – 0.5; Tracy – 0.5
+•USGS (0.7)
+–Viv – 0.25; Mike – 0.25; Lisa – 0.10; Heather – 0.1
+•UT (1.25)
+–Suzie – 0.20; Carol – 0.25; OIT – 0.15; Kimberly – 0.15; admin. support – 0.5) 
+-Line ~ 0.3 (via RDAV)
+•UCSB (0.7)
+–Matt – 0.25; Steph – 0.1; Mark – 0.1; admin. support – 0.25
+•ORNL (0.25)
+–Bob --  0.05; Bruce -- 0.05; Yaxing -- 0.1; John Cobb:  0.05
+•CDL
+–Trisha -- ___; John -- ____; Mark -- ____; Carly -- _____
+•MNs, WG leads, WG participants
+•KU (0.25)
+–Dave – 0.25
+
+Collaborating Projects/Institutions (Yr. 4)
+•NSF SONET (mark, deborah, matt, ...)
+•National Center for Ecological Analysis and Synthesis
+•National Evolutionary Synthesis Center
+•NSF SemTools
+•Mercury Consortium
+•USGS 
+•International Land Modeling Benchmark ProjectI (-LAMB) (UC-Irvine)
+•Multi-Scale Synthesis and Terrestrial Model Inter-comparison Project (NASA)
+•Ultra-scale Visualization-Climate Data Analysis Tool (UV-CDAT) DoE Project
+•DMP Tool Consortium
+•California Digital Library, UC3
+•SANParks
+•SAEON
+•TERN
+•Safety.gov
+•NEON
+•Science Links 2(IMLS; U. Tenn.)
+•SciData (IMLS; U. Tenn.)
+•ESIP
+•AOOS
+•ESA
+•LaScala (IMLS)
+•Dryad
+•OTS
+•NSF RCN: Animal Diversity Web
+•NSF Software Infrastructure for Sustained Innovation (Stanford)
+•USGS Climate Science Center
+–Northwest Knowledge Network
+–North Central Climate Science Center
+–South Central Climate Science Center
+•NSF ISEES
+•NSF Filtered Push Project (Harvard)
+•NSF: ABI Deveelopment: A toolbox for analysis of long-term ecological dynamics using the Kepler Workflow System (U. Wisconsin, U. New Mexico, UC Santa Barbara)
+•Alliances
+–EarthCube, COOPEUS, CREATIVE-B, EUDAT, LifeWatch, Research Data Alliance
+•__ Member Nodes
+•UNM
+•NSF INTEROP: Building a Virtual Data Canter
+•Coordinating Nodes
+–UCSB, ORC, UNM
+•DataNets
+–Data Conservancy
+–DataNet Federation Consortium
+–SEAD
+–TerraPop
+•- advisory board for Encyclopedia of Life (McGuinness)
+- Vision: board of directors of ORCID, Advisory Board for Databib, also international partner in EU FP7 ODIN project (http://odin-project.eu/) and Advisory Board to PRIME (http://www.ucl.ac.uk/prime)
+- Research Data Alliance
+--Deborah is on the terminology working group;
+- RPI is co-leading the US effort
+
+5) Around the room
+
+Steph: nothing new to add; happy to help groom materials for RSV! and dates are held on my calendar if you want remote or in-person presence
+
+John Cobb: upcomging submission deadlines:
+XSEDE'13:  (July 22-25, San Diego) <https://www.xsede.org/web/xsede13/call-for-participation>
+    submissions deadlines:
+        March 8: tutorials, abstract-only papers, student papers (all tracks)
+        April 12: Vis showcase abstracts; posters; and BoF's
+S13: (November 17-22 Denver)
+submission deadlines (very very early this year)
+    February 7: Workshop proposals
+    March 25: Tutorials
+    Other program elements a little later (and highly competitive - paper aceptance is only ~ 21%)
+    
+Deborah:
+I would like to know how long the demos/speaking slots are and also like to know approximately what kind of relevant  introduction they will have gotten before it
+Deborah and Natasha is co-running a NSF meeting on opportunities and challenges for knowledge representation next week- http://krnsfworkshop.cs.illinois.edu
+
+Suzie: nothing new
+
+Mike: Nothing to report beyond drafting a DataONE Abstract for the USGS TNM / CDI Meeting:::  The National Map (TNM) Users Conference and the fourth annual Community for Data Integration (CDI) Training and Workshop event May 21-24, 2013 in Denver, Colorado.
+
+http://nationalmap.gov/tnmuc_cdiworkshop/
+
+
+John Kunze: I presented on a dataset discovery panel (webinar) yesterday with Mary Vardigan (ICPSR), Michael Diepenbroek (PANGAEA), and Nigel Robinson (Thomson Reuters).  326 participants.  Talking to SDSC and Microsoft about DataUp development possibilities.  Any news on DataUp supplemental funding?
+
+Todd: nothing here
+
+Bruce: Nothing beyond what's already been discussed.
+

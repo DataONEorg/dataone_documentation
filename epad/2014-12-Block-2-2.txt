@@ -1,0 +1,258 @@
+Notes for Development Block 2.2
+===============================
+
+Previous epad notes: http://epad.dataone.org/2014-10-Block-2-1
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+Sprint Planning
+~~~~~~~~~~~~~~~
+
+ * CN upgrades to Metacat 2.4.1
+ * CN Consistency wrap-up
+   * http://epad.dataone.org/cn-audit-systemmetadata-design
+ * Finish Dashboard v1
+ * Operating System Upgrades
+
+Rob
+---
+ * 20140328
+   * Jenkins: got 
+ * 20140326
+   * EDAC - loaded more datasets, will see how harvesting went.
+     * Q. replication policy is set to false?
+   * Tidy: implemented new authMN column in merge_Result.  test run 10001 finished successfully (0 failures)
+   * Jenkins - working through installation
+     * Q: do we need tomcat?
+       * apparently not -> K.I.S.S.
+ * 20140318
+   * EDAC: they need time to build data packages, so it would be difficult to test all of their collection quickly.  (approx 280000 items, about 13Tb worth of data).
+     * their data packages are: 1 zip file, 1 FGDC file, 1 resource map - so the data package is delivered pre-assembled.
+   * Tidy: added special handling for OBJECT_FORMAT.1.1 file 
+
+Skye
+-----
+ * 20140402
+   * Finishing up Dashboard mods from Monday review
+     * Meeting today @ 4mtn
+ * 20140328
+   * Finished up Dashboard modification requests from Dec
+     * Review meeting Monday @ 2 mtn.
+   * Pushing through list of pids on prod that were from 'accidental' archive bug in metacat.
+     * Initially seems like all the pids in the list were already in the index...
+       * Actually seeing count go down by several hundred.
+ * 20140326
+   * Dashboard work
+     * Upgraded to bootstrap 3.1 - allows coloring icons with css selector
+       * migrating css selector names from boostrap 2.x to 3.x
+     * Node detail UI layout
+ * 20140324
+   * Dashboard UI work continued.
+ * 20140321
+   * Tidy rollout procedure definition with chris, robert, rob
+     * http://epad.dataone.org/cn-audit-systemmetadata-design (starting line 555)
+   * Digging back into dashboard updates - working the low hanging fruit first.
+   * Got email from ops mailing list :)
+ * 20140317
+   * Prepped redmine tickets for 1.2.6 CCI release
+   * Investigating hibernate session issue when using spring-data jpa and multiple threaded app.
+     * Appears related to underlying hibernate session being used across threads
+   * http://epad.dataone.org/DevRetroTopics
+
+David
+-----
+
+ * 20140326
+   * Still working on Splunk forwarder rollout
+     * rolling out to MN boxes
+     * adding some config options to get rid of debug spam
+     * new functionality in v6 to alert when license use is close to our max - need to configure that to alert us before a license violation event occurs
+ * 20140324
+   * Forwarders and hazelcast logging complete on prod CNs
+   * Splunk user accounts built for coredev, users notified
+   * TO DO:
+     * Build forwarders into MNs
+     * Build hazelcast alerts into Splunk based on known error messages
+     * Clean up some configs
+     * Document changes
+ * 20140321
+   * Building out Splunk forwarders and hazelcast logging to CNs
+     * non-prod CNs complete, prod over the weekend
+       * cn-stage-unm-2 no sudo just got sudo access to cn-stage-unm-2, will build out today
+   * Building coredev user accounts into web interface
+   * Got some hazelcast log entries from Robert that point to issues we want to know about, going to look into those messages w/Bruce to start building error alerts
+
+ * 2014031718
+   * Splunk v6 upgrade installed on indexer, forwarder, and Splunk agent on Win7 admin box
+     * Couple of minor to-dos left, mostly cleaning up Splunk v6 on indexer
+   * Up next-
+     * Getting Hazelcast logs into Splunk
+     * Increase openldap minimum checkpoint interval
+   * 3/18
+     * Test Hazelcast logging to Splunk setup working on cn-sandbox-orc-1
+     * Looking into changing how Splunk handles log gathering
+
+
+Roger
+-----
+ * 20140321
+   * I've updated the documentation for Python 2.7.
+   * Refactoring the GMN documentation to create two separate sections, one for standalone installation and an additional section to bring the standalone instance into a D1 environment. Much less confusing.
+   * Need to set up meeting to hammer out details for the template for member node deployment tickets.
+   * Will be out next week. Back Monday March 31.
+ * 20140317
+   * Fixed PyPI installation warnings by generating a MANIFEST file that includes each file that should be included instead of a MANIFEST.in file that excludes files that should not be included.
+
+
+Chris
+-----
+ * 20140326
+   * still dealing with CN pid indexing. restoring the db has been super slow because of indices. Wrote script to drop all indices and constraints to just get to the data.
+   * Met with Dave/Isis/Chris Allen 
+ * 20140324
+   * Finished CN upgrades
+   * Working on indexing pids that were un-archived
+ * 20140321
+   * Meetings, then some more meetings.
+   * CN CCI 1.2.5 upgrades
+     * Upgrades went well on sandbox CNs
+     * While checking operations, counts, etc, Metacat replication reports 0 docs to xfer, but doc counts are off.  Need to chat with jing and Ben about this. Had some issues troubleshooting the replication call via curl.
+     * Upgrades went well in stage.
+     * cn-stage-ucsb-1 continues to not replicate data via LDAP. Kept out of RR.
+     * ORC VMs seem to be in need of patching compared to UNM and UCSB. Patched now, but talk with David.
+   * Worked on Tidy procedures with Skye, Robert, Rob.  Looks solid.
+   * MN support for EDORA
+     * troubleshooting updateNodeCapabilities() in sandbox
+   * MN support for MPC
+     * communicating with Fran, Fabio, and Wendy re: DDI, science metadata
+     * trying to understand their science metadata plans
+ * 20140317
+   * Prepping for DNS changeover
+   * Working on CN upgrades
+     * issues with getting hudson to build the right version of dataone-cn-metacat
+     * upgrading sandbox CNs now, will tag and do stage/production this afternoon
+   * Troubleshooting updateNodeCapabilities() error for EDORA node
+
+
+Jing
+----
+ * 20140324
+   * Fixed an issue to rename a ldap entry which DN starts with "cn=".
+   * Test metacat on ubuntu. Morpho.10.1 always froze. I suspect it is caused by openjdk.
+ * 20140321
+   * Ran the program again ldap-dev server twice. Found and fixed some bugs.
+   * Installed a virtualbox ubuntu 12.04, and apache 2, tomcat 7 and openjdk-7 on it. Finished the configuration of them. Just installed metacat and will configure and test it.
+ * 20140317
+   * Comparing the accounts in NCEAS' ldap server manually
+
+
+Robert
+------
+ * 20140317
+   * Ran with 1000 records, worked well. Still a problem with OBJECT_FORMAT_LIST
+   * Will work with Peter to get changes into dev enviroment buildout
+
+
+Dave
+----
+ * 20140317
+   * Switching DNS to AWS
+   * Administrative trivia
+ * 20140317
+   * Added server project in redmine for tracking activity such as major software updates or hardware reconfigurations
+
+
+Matt
+----
+ * 20140317
+   * 
+
+
+Peter
+-----
+ * 20140318
+   * made changes to log aggregation, will test on cn-dev-orc-1
+ * 20140321
+   * started compiling evaluation data of Solr 4 into a document - this will be made available via EtherPad for comments/evaluation by any/all
+
+
+Discussion Topics
+~~~~~~~~~~~~~~~~~
+
+OpenJDK Issues
+ * Connecting to Metacat
+ * There's a problem with both HTTP and HTTPS connections inder OpenJDK 7
+   * symptom: Morpho is frozen 
+
+Counting CN data:
+ * Total # of data, metadata, maps. Every 30days since we started.
+   * listObjects() doesn't completely work because we can't slice by dateUploaded
+   * Solr index can't work because it doesn't have archived pids
+   * Will need to construcct a SQL query, and wrap it in a script (Chris)
+
+Operating System Upgrades
+ * See and add to story https://redmine.dataone.org/issues/4466
+ * Having newest software is desirable
+   * 14.04.0 on the servers may not be an issue
+   * Dave: Go to 12.04 first?
+     * Robert: Fresh 14.04 installs will enable better (LVM-based) backups
+     * Going to 12.04 enables us to upgrade fairly easily
+     * Filesystems should be partitioned consistently (we can do this with fresh installs)
+     * Software packages should be consistent
+     * Fresh install requires data migration (PostgreSQL, Filesystem, etc.)
+     * New hardware may not be in place yet for a straight install of 14.04
+   * Roger: what about upgrading one at a time (mixed 10.04/12.04 env)?
+   * DECISION: Upgrade to 12.04 first, then schedule upgrades to 14.04 in 6 months
+   * DECISION: Do fresh installs of 12.04? No, we run a dist-upgrade
+   * DECISION: Once upgraded to 12.04, we have the ability to move Ansible orchestation forward. Ansible will not be used to upgrade to 12.04
+   * TODO: Ensure CN installation for 10.04 is complete/up to date (Robert)
+   * DECISION: Migrate Hudson to Jenkins and install build (https://redmine.dataone.org/issues/4478)
+     * Create a dedicated VM for build and mvn distribution. 
+     * Use of Artifactory or Apache Archiva for Maven Build Artifact Repository Manager. (robert create task)
+     * Migrate off of OpenLDAP for unit tests, move to embedded apache LDAP
+ * Base install vs upgrade
+   * Current CN upgrade roadmap (10.04 --> 12.04 --> 14.04 ?)
+   * New CN environments with new 14.04 base installs?
+   * 
+ * Upgrade to Java 7
+   * OpenJDK 7 or Oracle JDK 7?
+     * Oracle JDK includes proprietary components
+     * We promote FOSS systems, so would prefer OpenJDK 7
+       * Needs testing
+     * Considerations for CILogon, certificate handling, libraries, etc. (BouncyCastle)
+       * Needs testing
+       * Can we remove BouncyCastle from our installation stack and dependency chain
+ * Upgrade to Tomcat 7
+   * possible optimization for CN Rest Service becuase of limitations of Tomcat 6
+ * Upgrade to PostgreSQL 9
+   * Portal servlet needs testing under PG 9, Java 7
+ * Upgrade to OpenLDAP
+   * take out workaround for bug in 10.04 Openldap
+ * Upgrade to Hazelcast 3.x? No
+   * Better serialization
+   * Feature to not use locks (RPC call to owner member for write?)
+   * DECISION: stick with 2.x series for near future
+ * d1_common_java and d1_libclient_java issues
+   * TODO: Add ticket for upgrading jibx (Robert)
+ * Metacat installation issues
+   * Jing might be able to test out the use of Metacat with Java 7, Tomcat 7, PostgresSQL 9 and report back to us
+ * Scheduling
+   * CN consistency is completed (week of Mar 17-21)
+   * Ensure Java 7 works on workstations (builds all components) (Week of Mar 24-28)
+   * Migration to Jenkins, building with Java 7 (Week of Mar 24-28)
+   * OS upgrades to 12.04 in DEV (week of Mar 31 - Apr 4)
+   * Ubuntu 14.04 install: Delayed for 6 months
+     * Dailys available now: http://cdimage.ubuntu.com/ubuntu-server/daily/current/
+     * Final Beta available March 27, 2014
+     * Release candidate available April 10, 2014
+     * Final release April 17, 2014
+   * What should our schedule be in lieu of this?
+   * This Block should resolve our testing. End of March.
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+Histogram - 
+
+#Bipcod histogram
+data=dbGetQuery(con,"select Downloads,Beanshells,Inputs,Processors,Outputs,Datalinks,Coordinators from taverna_1")
+data$bipcod=data$Beanshells+data$Inputs+data$Processors+data$Outputs+data$Datalinks+data$Coordinators
+# qplot(bipcod, data=data$bipcod, geom="histogram") 
+hist(data$bipcod)
+ggplot(data,aes(x=bipcod)) + geom_histogram() + xlab("Complexity")
+
+#Clusters
+
+# ------------------------------------------------------------
+#Cluster plots
+
+#mydata=dbGetQuery(con,"select Beanshells,Inputs,Processors,Outputs,Datalinks,Coordinators from taverna_2")#
+#mydata=dbGetQuery(con,"select Beanshells,Inputs,Processors,Outputs,Datalinks,Coordinators,Local_N,String_N,Beanshell_N,Wsdl_N,Xml_N,Soap_N,Bio_N,WF_N from taverna_2")
+mydata=dbGetQuery(con,"select Beanshells,Inputs,Processors,Outputs,Datalinks,Coordinators,Local_N,String_N,Beanshell_N,Wsdl_N,Xml_N,Soap_N,Bio_N,WF_N,Versions,Views,Downloads,Myexp_v,Myexp_v_m,Myexp_v_a,Myexp_d,Myexp_d_m,Myexp_d_a,Ext_v,Ext_d,Credits,Attributions,Number_Tags,Favs,Ratings,Citations,Reviews,Comments from taverna_2")
+
+mydata <- na.omit(mydata) # listwise deletion of missing
+mydata <- scale(mydata) # standardize variables
+
+# Determine number of clusters
+wss <- (nrow(mydata)-1)*sum(apply(mydata,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(mydata, 
+centers=i)$withinss)
+plot(1:15, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+
+# K-Means Cluster Analysis
+fit <- kmeans(mydata, 13) # 13 cluster solution
+# get cluster means 
+aggregate(mydata,by=list(fit$cluster),FUN=mean)
+# append cluster assignment
+mydata <- data.frame(mydata, fit$cluster)
+
+# K-Means Clustering with 13 clusters
+fit <- kmeans(mydata, 13)
+
+# Cluster Plot against 1st 2 principal components
+
+# vary parameters for most readable graph
+library(cluster) 
+clusplot(mydata, fit$cluster, color=TRUE, shade=TRUE, 
+labels=2, lines=0)
+
+# Model Based Clustering
+library(mclust)
+fit <- Mclust(mydata)
+plot(fit, mydata) # plot results 
+print(fit) # display the best model
+
+# Centroid Plot against 1st 2 discriminant functions
+library(fpc)
+plotcluster(mydata, fit$cluster)
+
+##################################################################
+
+Bipcod complexity against duration with users with more than one workflow only:
+
+data=dbGetQuery(con,"select * from taverna_1")
+data$Uploaded_date=as.Date(data$Uploaded, "%d/%m/%Y@%H:%M:%S")
+#data$Updated_date=as.Date(data$Updated, "%d/%m/%Y@%H:%M:%S")
+data$Start_date=rep("01/11/07@01:01:01",NROW(data))
+data$Start_date=as.Date(data$Start_date, "%d/%m/%Y@%H:%M:%S")
+data$duration=as.duration(data$Uploaded_date-data$Start_date) # new column
+data$duration=data$duration/84600
+data$bipcod=data$Beanshells+data$Inputs+data$Processors+data$Outputs+data$Datalinks+data$Coordinators
+data$User_URL = sub("http://www.myexperiment.org/", "", c(data$User_URL))
+regex=which(grepl("users/30|users/221|users/1620|users/43|users/4706|users/5|users/267|users/1019|users/13207|users/666|users/500|users/1938|users/15178|users/12835|users/8560|users/7582|users/7581|users/6658|users/4707|users/13|users/12139|users/8705|users/7551|users/1307|users/1169|users/8344|users/8014|users/7599|users/586|users/13255|users/12763|users/10069|users/925|users/6890|users/2|users/9777|users/9775|users/7600|users/7161|users/5187|users/345|users/2037|users/18|users/17168|users/1601|users/15456|users/15427|users/15175|users/1355|users/1333|users/12553",data$User_URL, ignore.case=T))
+data$User_URL_flag <- rep(NA, NROW(data))
+data$User_URL_flag[regex]="Yes"
+data$User_URL_flag[-(regex)]="No"
+#ggplot(data=subset(data,data$User_URL_flag=='Yes'),aes(duration,Beanshells+Inputs+Processors+Outputs+Datalinks+Coordinators)) +geom_point() +geom_smooth(method=lm)
+file = ggplot(data=subset(data,data$User_URL_flag=='Yes'),aes(duration,bipcod)) +geom_point() +geom_smooth(method=lm) +ylab("BIPCOD (Complexity Proxy)") +xlab("Duration") + opts(plot.title = theme_text(size = 20, face = "bold")) + opts(title = "Tavernas\n - BIPCOD vs. Downloads\n For experienced users")
+#ggsave(file,file="Taverna 2 - BIPCOD vs. Downloads for experienced users.png")
+file
+
+

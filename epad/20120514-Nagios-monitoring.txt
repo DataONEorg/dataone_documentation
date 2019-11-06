@@ -1,0 +1,24 @@
+Notes for Monitoring DataONE services
+
+Using "Nagios" with the "check_mk" plugin for alerting.
+
+
+Coordinating Nodes
+
+Check ports
+  5701 storage cluster
+  5702 process cluster
+  5703 portal cluster
+
+Join cluster/add map/insert item/delete item/delete map/leave cluster (relatively heavy weight)
+
+For storage cluster - get size of system metadata map.
+For process cluster - get size of replication, synchronization, and indexing queues
+
+For all clusters - % full
+
+
+Other processes
+  LDAP
+  TOMCAT - make sure redirect is working
+

@@ -1,0 +1,251 @@
+DataONE Provenance Working Group Meeting, June 7-8
+Genome Center (GBSF Building), University of California, Davis
+
+Meeting Overview and Venue: 
+ * Tuesday 
+ * ProvWG Session I, 9am -- noon @ 3206 GBSF
+ * ProvWG Session II, 1:00pm -- 5pm @ 5206 GBSF
+ * Wednesday 
+ * ProvWG Session III & Summer Project I, 9am-12:30pm @ 5206 GBSF
+ * Summer Project II, 1:30pm -- 5pm @ 3202 GBSF 
+
+
+DRAFT AGENDA TUESDAY AM (ProvWG Session I) 
+ * 8:30--9am Informal start (coffee & bagels -- not a full breakfast))
+ * 9--10am Introductions:
+   * ProvWG overview, prior work, goals & deliverables
+ * 10am--noon: Scoping D-OPM (DataONE extensions to OPM)
+ * Key use cases, requirements for scientific workflow provenance not facilitated by OPM: What concepts, attributes, observables are missing?
+ * Noon--1pm: LUNCH (on campus)
+
+TUESDAY PM (ProvWG Session II)
+ * 1--5pm: D-OPM Scoping & Initial Model 
+   * Review of existing models (previous summer project, related models)
+   * Initial design of D-OPM extensions
+
+WEDNESDAY AM (ProvWG Session III & Summer Project I) 
+ * 8:30--9am Informal start (coffee & bagels)
+ * 9am--noon: D-OPM Model
+   * Review of D-OPM draft model, next steps on D-OPM
+   * Scoping of ProvWG/D-OPM & Summer Project
+ * Noon--1:30pm: LUNCH
+
+WEDNESDAY PM  (Summer Project II) 
+ * 1:30--5pm: Summer Project (cont'd)
+   * Provenance Repository, Query and Visualization tools: Initial architecture, design
+
+
+NOTES 
+
+TUESDAY AM (ProvWG Session I)
+Participants:
+ * Bertram Ludaescher (UCD)
+ * Jim Myers (RPI)
+ * Yogesh Simhan (USC)
+ * Michael Agun (Gonzaga)
+ * Shawn Bowers (Gonzaga)
+ * Anand Sarkar (UCD)
+ * Michael Wang (UCD)
+ * Lori Clark (UMass)
+ * Sven Koehler (UCD)
+ * Leon Osterweil (UMass)
+ * Paolo Missier (Newcastle)
+ * Saumen Dey (UCD)
+ * Ewa Deelman (USC)
+
+Bertram overview of DataONE ProvWG (slides, charter)
+ * Goals of this meeting:
+   * Define extensions to OPM (DataONE OPM, or D-OPM)
+   * Vocabulary, conceptual model, scoping of D-OPM
+   * Technical report to give back to DataONE
+   * Possibly a paper that describes/defines D-OPM (DataONE OPM version)
+ * How this wg fits into other DataONE working groups
+   * support the data lifecycle 
+   * provide standards, architectures, prototypes of provenance 
+   * this year's prov. repository would be a good fit for a member node
+   * research and prototyping of provenance tools
+ * What was done last summer: 
+   * DToL ... Data Tree of Life
+   * Tracking provenance "across" scientific workflows
+   * E.g., data output by one run in one system, input to another run in another system, and be able to find (data/process) dependencies across runs (as if it were one large run)
+   * Naming schemes are important for this to work, as is versioning of workflows, processes, etc.
+   * Also resolving different workflow and provenance models
+   * Developed a relational schema for storing "inter-trace" provenance information (based on read, write, ddep, idep, id mapping, trace, workflow)
+   * Schema didn't cover workflow model or artifact "structures" (treated as atomic in the schema)
+
+Questions/Comments:
+ * Paolo: In UK the med practice(?) is validated against policies using a core prov model.
+ * Lori: what is the use of "idep"? Is it meaningful without the data items?
+ * Shawn: adding the workflow def in the model
+ * Paolo: adding the data structure in the model
+ * Leon: What are the uses of the model? E.g., for repeatibilty (rerun same exact workflow), for reproducibility (get the same result), for auditing, changing something and rerun
+ * Leon: Check that the process is "valid" e.g. that two incompatible models were used to generate a result
+ * Paolo: In Proteomics, the quality model to use depends on the process models used
+ * Paolo: Non-deterministic models make repeatability/reproducibility difficult
+
+Terminology discussions (Paolo)
+ * OPM/PIL
+ * OPM is now called PIL (W3C)
+   * Scope is provenance on the web
+ * Data structures not part of PIL
+   * Lists (Paolo)
+   * Other structures: relations, nested lists (trees), graphs
+   * Some notion of artifacts as non-atomic but may just be a reference to something else
+ * Process structures (workflow specification)
+   * Same idea, a reference in PIL to a "process" description
+ * Why? 
+   * Audit -> Trust
+   * Reproducibility
+ * Extensiblity mechanism(s)
+   * Paolo hope's will be part of PIL
+
+ * OPM/PIL concepts
+   * www.w3.org/2011/prov/wiki/ProvenanceConcepts
+   * resource, process execution, recipe link, agent, role, locaitn, derivation, generation, use, ordering of processes, version, participation, control, provenance container, views or accounts, time, collections
+ * issue w/ resource: artifact assumed to be immutable
+     * in opm, limitted model of what derivation means
+     * e.g., control flow versus data dependence
+     * was the same resource used, a copy of the resource, etc.
+     * want to keep track of things like copy in case it is important in trust issues
+     * Paolo: minimal set of assumptions (e.g., if we performed a "copy" then it worked properly)
+   * Currently one driving PIL use case: 
+   * data journalism example
+     * government publishes data
+     * journalists, bloggers, etc. use date
+ * Issues
+   * immutable objects
+   * versioning
+   * observables/oververs
+   * assert that two "things" are really "the same" / physical / logical
+
+ * Uses of provenance by single scientist (scoping):
+   * debugging
+   * archival/preservation and discovery
+   * audit, reproduce, repeat (trust) 
+     * different data, parameter, wf change (algo/method), platform
+   * reuse, repurpose, rerun 
+   * fitness for use (reletative quality of information for purpose)
+   * check scientific coherency (does the provenance warrant a particular method)
+   * improved understanding
+     * similarly, extract parallel potential 
+   * cost analysis (i.e., how much did it cost)
+     * performance analysis, cpu time, etc.
+   * verification and validation
+   * comparison
+     * e.g., "method swap" and analysis
+
+ * "Workflow Land"
+   * ...
+ * "Trace Land"
+   * ...
+ * "Context Land"
+   * project, plat
+
+
+Provenance Uses, Scoping
+- Audit, reproduce/repeat, debug
+- reuse, reproduce
+- rerun with modification ( data, parameter, wf, platform)
+- project support
+- archival, preservation, discovery
+- fitness for use
+- Is Y ok for B given that X <-- T <-- Y
+- Improved understanding (optimization potential, extracting parallelism)
+- Verification, Validation
+- Cost & Performance Analysis
+- Model Comparison ("method swap" and analsys) 
+
+
+Scope of D-OPM:
+(1) PIL (Provenance Interchange Language)
+(2) Data Structure
+        (a) nested list
+        (b) access path
+(3) Process Structure [WF land: WF, actor, channels, ports]
+        (a) Vistrials allows WF evolution
+        (b) Pegasus allows WF execution plan (the executable WF may be different from the abstract WF and it may not be possible to map back[?])
+(4) Context
+        (a) who
+        (b) when
+        (c) where
+
+Streaming Data: any special use case?
+
+A WF could be run multiple times
+(a) with different parameters
+(b) with different input data items
+(c) with modifications to a actor or to WF design
+
+Run vs Invocation:
+- Run is linked with an agent
+- Invocation is not
+
+Data Binding could be at various stages:
+(1) Data Type (conceptual) : netCDF
+(b) Logical: N101576
+(c) Physical: //../../N101576
+
+Pegasus:
+1. WF
+2. Sub WF (unit of planning) 
+3. Job (unit of scheduling)
+4. Tasks
+
+Pegasus captures the trace of the execution to develop the execution plan. [Abstract WF -- (reduce)--> WF1  -- (add StageIn)--> MF2]. 
+
+Following notions may be needed:
+(1) isInstanceOf
+(2) isReplacementOf
+        (i) isReductionOf
+        (ii) addedTo
+
+There was an idea that this trace could be captured using Vistrail's evolution model. There was another thought that OPM itself could capture the WF definition/evolution (?).
+
+06/07/2011
+
+Do we need to capture “port”?
+ 
+WF: 
+[A:x] --- (data) --- [u:B]
+[A:y] --- (data) --- [v:B]
+ 
+WF Run:
+[a1:x] --- (d1) --- [u:b1]
+[a1:y] --- (d2) --- [v:b1]
+
+Approaches:
+(1)   use OPM and  add the port information as “role” (e.g. “role: port x”)
+(2)   use “port” as the first level entity
+ 
+We need to undersatnd whether a port is an “input” or an “output” port. 
+ 
+Do we need to capture “channel”?
+ 
+Channels are used for
+(1)   control flow
+(2)   data flow
+ 
+Through a data stote (BPMN: gateway): [A:x] à (data store) à [u:B]
+Data pass through: [A:y] ---(data)--->[v:B]
+Control pass: [A:y] ------>[v:B]
+ 
+In D-OPM we would call this “Data Connector (DC)”.
+ 
+An output port could be connected to one or more DCs and one or more DCs could be connected to an input port.
+ 
+In D-OPM we would use the following relations:
+Send: (Actor/Procvess Invocation, Port, Data Connector, Data)
+Recieve: (Actor/Procvess Invocation, Port, Data Connector, Data)
+ 
+sent ~ gen_by
+received ~ used
+ 
+We need to clearly state “inside” and “outside” languages. 
+ 
+Data Collection:
+ 
+A set of generic vocabolary needed to understand/capture provenance of a collection: operations those are used with collection are “insert”, “delete” and “select”. In D-OPM we need to capture finer grain dependencies for a collection. Also, we need to have backward compatibility with OPM.
+ 
+One way:  we use OPM to capture the dependency to the collection and then introduce another another relation (wasDerivedFrom) to map respective elements from the collection. Paolo showed an example.
+
+

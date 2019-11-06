@@ -1,0 +1,153 @@
+Attendees: Rebecca, Amber, Carol, Steph, Bill, Suzie, Viv, Dave, John Kunze, Todd, John Cobb,
+
+Regrets: Bruce, Bertram, Bob Cook, Matt
+
+Conference Call Number: (866) 804-6831
+This brings you to our conference call line - next press 1
+The conference number is: 64914#
+
+Will also use the epad: http://epad.dataone.org/20110701-LT-VTC
+ 
+Agenda for 2011-07-01
+
+1. Representation for Todd on LT while he's on sabbatical (Michener)
+
+Todd will be on sabbatical starting in a few days (July 1) through the end of June 2012.
+Proposes that Hilmar Lapp represent him on LT during his sabbatical.
+Question about charter for LT - there is a charter but doesn't go into details on 
+substitution
+
+2. Status of Summer Internship Program (Wilson/Vision/Budden)
+
+It's mid-term time for Summer Internship program so sent out an evaluation for mentors
+to complete on the continuation of their summer internships. The students were also asked to do a mid-term survey. Interns also posting to list and doing their blogs. 
+Encourage on the potential products of the summer internship program - in particular publications. 
+15 mentors and 4 students have responded to survey
+
+3. Status of DUG (Budden)
+
+Stephen Abrams will be substituting for John Kunze. Mike Frame will not be able
+to make the meeting. Andrew Sallans has agreed to present the DMP Tool.
+Matt will be presenting the status of the CI at the meeting.  He is on vacation and won't
+be back in contact until right before the meeting itself.
+
+John Kunze, Stephan and Matt will be having a call to discuss their session.
+
+4. Working Groups - devoting one of the LT calls to WG status (Koskela/Michener)
+
+Working Groups that will be meeting at the October All Hands Meeting:
+ * CEE
+ * PPSR
+ * U&A
+ * Socioculture
+ * Provenance
+ * Semantics
+
+CCIT will be meeting at the AHM
+AHM is at the same time as TDWG
+
+Any others?
+
+5. Equipment Status (Vieglais)
+Existing equipment problems: physical network connection at DataONE office that connected to UNM network failed; configuration was partially lost during a shutdown
+To avoid in future, moving DataONE operational equipment to main campus. Research library will host the DataONE equipment and DataONE is also a part of the Research Storage Consortium that will provide storage. UCSB is moving ahead with a purchase from HP. At ORNL are having a problem negotiating with their HP vendor so most likely will go with Dell.
+Physical location of equipment is also being negotiated. Will be using VMWare for virtualization. However, Bruce hadn't included license fees in his budget but will move ahead
+with VMWare.  It is not clear which virtualization software that UCSB will be using.
+
+In the past, it was said that the CNs needed to have identical hardware configurations. This was to be able to share system administrators across the network.  UNM decided to go with the Research Storage Consortium and secured system administration for their node so
+shared system administration is not necessary across all CNs.  Not expecting any significant
+issues with the virtualization environment but currently we hope to stnadardize on VMware.
+
+We will also need a summary of size and other statistics to include in summaries to NSF and other project summaries.
+
+
+6. Around the Room 
+
+Bertram: Apologies, but I can't attend today. So here is my part of the "around the room":
+
+*  Prov-Repository summer project moving ahead. Started effectively with  Kick-off meeting ==> will extend into first week of August. Reusing  some of last year's ideas and code.
+* Meeting report on Prov Working Group meeting and Summer kick-off coming forth (finalizing over the weekend)
+* FYI: I'm in Venezuela until July 25th. Email/skype ok (mostly).
+
+John Cobb:
+
+1) EVA1-yr2 progressing. Planning call yesterday mapping details for runs on Lonestar (on Teragrid/XSEDE)  and deposting data in DataONE MN's at TG, maybe AKN. opportunity: deposit this data in DataONE as a permanent collection. size estimates? anticipated between 5 and 50 TB and 1000 and 100,000 metadata objects
+
+2) (re-iteration of previous e-mail) SC11 proposed tutorial has been accepted. Led by Scott Jensen at Indiana U. but DataONE is a partner as well.  Will be working over summer to finalize content (slides)
+
+Todd:
+* I'm concerned that DataONE's news is not getting disseminated as effectively as it could, and there's not an easy entry point for help requests.  I'd like to discuss a couple of suggestions...
+Are DataONE news events being pushed out on Twitter feeds?  No
+ * Need news items coming in
+ * Need a posting process
+Have Twitter feed show up as news items - 
+If post to Facebook, it goes directly to Twitter
+
+RK will check to see if possible to link the Facebook page/Twitter feed to DataONE
+web page
+Bill will get content for a new newsletter ready within a week
+
+* Heather Piwowar submitting poster from Tracking 1000 dataset summer internship to ASIS&T, and her proposal to organize a session on data sharing at AAAS was accepted.
+* Dryad curator Elena Feinstein will be attending ESA and co-staffing the DataONE/Dryad booth - I'd like to volunteer her to participate in the DataONE workshop there, in part to get her more up to speed on DataONE
+* Just FYI, there's a Dryad board meeting in Vancouver next week, and Dryad's NSF renewal proposal is being submitted the week after. After  that, Dryad is likely to begin the process of incorporating and filing for nonprofit status.
+* UNC Galapagos Research Center is a new partnership with Univ San Francisco Quito, Ecuador that is just beginning to think about data management infrastructure for a multidisciplinary research center on San Cristobal. They would welcome learning more about ecoinformatics/KNB/DataONE.  Suggestions for how to assist them? More broadly - join
+organization of field stations 
+Does KNB have an outreach component? Historically, dependent on one on one contact.
+Check with Mark Schildauer or Jim Reigitz
+
+Carol: Miriam Davis, our new post-doc starts Aug 1. My panel proposal for ASIST was accepted, I'll present scientist assessment along with Carole Palmer of Data Conservancy presenting her interviews with scientists, 2 of our doc students presenting on personas, and someone from the Dutch national library presenting the PARSE Insight survey of data stakeholders.  The PLoS ONE article on baseline assessment was published yesterday. link at http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0021101
+
+Amber: DMP Tool will undergo usability testing in advance of ESA ready for beta release.  This is to be done at UVa.  Beta will include NSF BIO directorate guidelines. 
+Working on promo materials for ESA.
+Had a call with Gary Gellar at GEO BON about the potential interactions with DataONE.  He will be attending the DUG and would like to use GEO BON to leverage their partners to become MNs of DataONE.
+Also some preliminary discussions with Andrew Sallans about how SERNEC (Southeast Regional Network of Expertise and Collections) might interact with DataONE (e.g. as a Member Node?).  They are putting in a revised NSF Advancing Digitization of Biological Collections (ADBC) grant and want to include statements about alignment with DataONE. Again, he is attending the DUG and this will be discussed further.
+Don Croll (UC Santa Cruz) is putting in an IGERT grant app and are including a DataONE run training workshop as part of the grant.  This would be approximately 2 days every 2 years, focussed on how to manage data and share / work with data via DataONE. 
+
+Suzie:  I received ( co-PIs Carol T and Peiling Wang) a grant from the Institute for Museum and Library Services for a program called SciData (~$550K). As noted in the press release "SciData will advance the field of digital scientific data curation by training a core group of eight master's graduates with a thorough understanding of digital data curation and scientific publishing. It will build a model for scientific data curation that other programs may adopt and will continue previous recruiting relationships with minority-rich schools to attract an increased number of diverse students to the field." 
+
+Arsev Aydinoglu whose dissertation featured DataONE has been appointed as a Visiting Assistant Professor at the School of Library and Information Science at the University of South Carolina.  He has been specifically given time to continue his research stream.
+
+Dave: nothing to add.
+
+Viv: USGS Community of Practice called "Community for Data Integration" has a meeting coming up in mid-August. Lucky to have Bill there to give a DataONE overview -- there will be participants there from all over the USGS with both technical backgrounds and data management backgrounds and will likely spark a lot of good questions about how USGS participation in DataONE. 
+A lot of activity with the DataONE intern - development of data management education online modules are coming along nicely and can be posted by the end of July. Will look for some feedback from the DUG. 
+
+John K:  We're excited to report hiring Carly Strasser to manage the
+year-long Excel add-in project.  She starts today and will attend the
+NSF RDLM conference.  Maybe Bill can plug the project in his talk? :-)
+
+There's also a rich discussion on the beyond-the-pdf list, including a
+funding proposal from Phil Bourne (editor-in-chief PLoS Computational
+Biology) for a data journal using CDL infrastructure:
+
+   http://groups.google.com/group/beyond-the-pdf/msg/8be7f2a8b996b941?
+
+This is based on our "data paper" paper that we presented at Phil's
+Beyond-the-PDF conference last January:
+
+   http://escholarship.org/uc/item/9jw4964t
+
+Bill: nominees to attend EAB mtg in DC Nov 10-11?
+Dave will need additional support
+Sustainabilty & marketing
+New faces
+Steph thought we did this already - will check previous minutes
+From May 27th call:
+1.     Matt Jones
+2.     Trisha Cruse
+3.     Bruce Wilson
+4.     Stephanie Hampton
+5.     John Cobb 
+
+EAB is pleased with our progress. Bill will send out the summary to everyone.  EAB
+had suggestions for face-to-face meeing in November (demo of cyberinfrastructure).
+Sustainability planning for the long term will be another topic at the November meeting.
+
+NSF call: restructuring within Data Conservancy to focus on 3 nodes:
+ * JHU node - faculty and researchers (university centric)
+ * Snow and Ice Data  - Ruth Duerr
+ * Life Sciences and Biodiversity data (Paddy Patterson at MBL - unfunded)
+
+The 3 new DataNet awardees are supposed to be announced in August.
+NSF still wants a DataNet Federation.
+

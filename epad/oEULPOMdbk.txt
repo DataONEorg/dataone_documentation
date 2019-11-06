@@ -1,0 +1,18 @@
+2012 DataONE Summer Internship Project Proposal
+
+DataONE internship project designed to create citation and usage reports that integrate into the DataONE site and can be used as well in standalone tools.
+
+Data usage and citation synopsis
+
+Use the DataONE aggregated log facility on Coordinating Nodes to create a continually-updated summary of data downloads and citations.  Use this summary to provide a nicely formatted display of usage and citations for all of DataONE, for particular Member Nodes, and for particular data sets, possibly including a graph showing usage over time. Also include a summary across all of the datasets for a given user (for data they own and use). Citation and reuse data will be drawn from various sources including PubMed Central, Scopus, PLoS, Twitter, and total-impact.
+
+Collaborate between CI and CE on this project.
+
+breakdowns by tool
+different eventtypes
+
+
+#altmetrics
+
+
+

@@ -1,0 +1,70 @@
+Attendees: Matt, Bertram, Dave, Suzie, Rebecca, Carol, Viv, Amber, John K.,Steph, Todd,Bill
+
+Regrets: Mike Frame, Bob, Trisha, John Cobb, Bruce
+
+http://epad.dataone.org/20110422-LT-VTC
+
+  Agenda for 2011-04-22
+
+
+1. Request from Socio-cultural WG for change in Leadership & Member List (Allard)
+
+Maribeth Manoff, Co-lead of WG, has opportunity to lead the e-Science initiative at UTK so
+won't have sufficient time to continue as co-lead but would like to continue as a member of 
+this working group.  We would like to name Kimberly Douglass as the new co-lead of the WG since she has been active with DataONE as a post doc and now as a faculty member -- and has been involved with the WG from the beginning.  We would also like to remove Heather Joseph from the working group since she has not been participating or responding to emails.  There were no objections to making these changes. 
+
+2. Citizen Science Charter & Membership List ready for Approval (attached as
+Public Participation in Science and Research Working Group) 
+  (Budden)
+Changes in resource section
+Remove membership list from charter - use spreadsheet for membership list & diversity matrix
+
+Charter approved with modifications
+
+
+3. Quick update on DataONE Summer Internship program (Budden)
+
+121 applications with 75 complete; 60 from eligible applicants 
+10 projects but could only fund 8; Project 10 (animation) only had 2 applicants and didn't
+have the requested backgrounds. Project 1 (PPSR) had 26 applications but the two mentors on the project (Weltizin & Bonney) did not have time to review the applications so this project
+was not funded.
+
+4. Around the Room 
+
+Koskela: Reminder for WG leaders to send their quarterly reports (1page) ASAP - needed for 
+3Q report - CEE WG has submitted theirs
+Also need papers, presentations, etc for the report, don't forget to include size of audience
+if presentation or workshop
+
+Amber: Received an email from Scott Lathrop (Blue Waters Technical Program Manager for Education, TeraGrid Area Director for Education, Outreach and Training) asking to chat about potential collaborations.  He is on the EAC for EPSCoR.  Talking with Dryad later today about ESA booth arrangements.  Mike has linked me up with a graphic designer at USGS who is going to design some panels for us and will give us access to the USGS image library for the publicaitons.  Will send around some text / knock-ups in the next few weeks before talking to the designer.
+
+Matt: Attended Joint Working Group on Observational Data Semantics (SONet, DataONE, Data Conservancy); Dave, Jeff Horsburgh, Hilmar Lapp, and I were there from DataONE; very useful discussion around shared observational data model, prototypes, co-development of both core model and domain extensions; discussion of appropriate body to be long-term home for a community-ontology development process; there was a consensus that BioPortal/OBO provide a valuable service, but are too bio branded; need a broader one that includes bio and env and eco and evo, plus that will have long-term financial support; expression that DataONE/DC would be appropriate venues for this long-term service, but that the community-building process is probably more important than the technical implementation
+
+Attending USGS/DataONE collaboration meeting next week with Dave and Mike (and Viv! :) to explore ways to work together on ITK tools.
+
+Steph: Worked with group of undergrad-focused faculty developing teaching modules to introduce undergrads to working with large-scale public data sets - a project at NCEAS that it is in its 2nd year. This experience with this group will be really useful in working with the student intern for our CEE working group over the summer. CEE working group is moving forward with organizing ESA symposium in collaboration with Josh Tewksbury of Nat History Network, also working toward wikipedia editing and manuscripts/products previously mentioned. 
+
+Viv: Did a Metadata Workshop webinar presentation to the US Forest Service and presented slides about DataONE that were well received. Working with the CEE WG on annotation of data management education slides. Looking forward to working with summer intern on converting the power points to an online learning experience. 
+For Mike Frame: Carol and Susie gave a great presentation to the Biological Informatics Program at USGS, arranged by Mike, about results from the DataONE assessment and surveys conducted from a project called Increasing Biological Information Sources (IBIS) in the Southeast. 
+Also arranging for Bill M to make presentation to the USGS Senior Leadership Team (all Associate Directors) in May, hopefully. 
+Organized a meeting between DataONE and USGS to align common development goals and schedules and explore possible collaborations on Investigator Toolkit tools.   
+
+Bertram: Attended Intl. Conf. on Data Engineering (CS database conference), presenting work on "Scientific Workflow Design 2.0" (demonstrating collection-oriented workflows and provenance querying).
+Sponsoring ECS-199 (undergraduate) summer projects for top ECS-10/ECS-166 students (Python newbies), possibly together with DataONE summer intership. 
+Q: What are the resources for Working Groups / year; and can those be used in development (software, research) e.g. to co-sponsor an intern / volunteer over the summer?
+
+Suzie: Presented  "DataONE: Facilitating eScience through Collaboration" as an invited plenary panel speaker at the Third eScience Symposium hosted by the University of Massachusetts and New England Area Librarians. Elena Feinstein from the Dryad project was another panelist. 
+Doc candidate Arsev Aydinoglu presented his doctoral research (on-going but to be defended in early June) which is a study of DataONE in which many of you have participated. 
+
+Carol: nothing more to add.
+
+Todd V.: nothing to add, except upcoming visit/seminar at OCLC (this Tues 9am eastern)
+
+John K.: Appearing on an Interdisciplinary Graduate Student Symposium (IGPS) panel at UC Davis tomorrow (4/23) on the topic "Why is the NSF making you share your data? Should you care? What should you do about it?”.  Also presenting on DataONE and data curation at an OSTI/DOE (Office of Scientific and Technical Information)  Scientific and Technical Information Program Working Meeting May 4-5 (Pleasanton, CA).  OSTI is a third US member of the DataCite consortium, along with CDL and Purdue.
+
+Dave V: Meeting with Matt and others at Santa Barbara this week on Ontologies etc (see Matt's summary above). Meeting with Mike, Matt and USGS folks in Denver next week on ITK development. Not much else to add.
+
+Bill: Meetings have been arranged at USGS on May 18th (Dave, Mike, Bill) - highlight collaboration opportunities for Toolkit and education - Are working on a new power point
+presentation for this.  
+Bill and Bob Cook will also try to meet with NASA (Martha Maiden & Woody Turner) that week
+

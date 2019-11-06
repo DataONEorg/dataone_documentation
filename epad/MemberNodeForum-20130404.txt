@@ -1,0 +1,79 @@
+Member Node Forum - 4 April 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/318278809
+  (Occurs every 2 weeks on Thursday 2pm EST, 1pm CST, noon MST, 11am PST, 10am AK)
+  Upcoming meetings 18 April, 16 May (can't meet 2 May due to UA/SC joint WG mtg)
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (213) 289-0010
+Access Code: 318-278-809
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 318-278-809
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry)
+epad.dataone.org/MemberNodeForum-20130321
+
+Attending:  Laura, Amber Owens,  Mark Servilla, Ryan Scherle, Amber Budden, Kavitha, Inna Kouper, Rebecca, Matt was able to duck in just as we were finishing up.
+
+Action items from last time:
+1. Issue: Develop a implementation checklist that MN implementation teams can use (specifically on CCIT side).  https://redmine.dataone.org/issues/3678
+
+Implementation checklist is almost ready for widespread distribution and can be found here:
+http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html
+(Matt is POC.) (Point of Contact)
+
+2. Issue: support SEAD for April 22 NSF demo.
+
+AmberB:   Datanets at American Association of Geographers - talking about  interoperability.  Although SEAD will not be able to be there, it will  be good to demonstrate that SEAD is actively involved and connecting.
+
+Kavitha:  I have been working with Matt and Chris. Been using IRC webchat for  communicating issues. Registered the node with stage environment. Data  checks currently going on. Matt and Chris  suggested we use more opaque  identifiers, add format type in headers and clarified questions on  implementing some methods. Currently checking for more issues. 
+
+Action items from previous meetings (follow-up):
+3.  We need to create a "compatible versions" for current version of  DataONE API's and SW products (and maybe MN versions as well).
+  (i.e. available documentation needs to match currently released s/w version)
+  Need someone from CCIT to address this next time, please.
+
+Agenda:
+1. Network-wide update and issues affecting MN's as a whole
+We aren't aware of anything.
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+SAVE    THE DATE:  The DataONE Users' Group meeting is July 7-8, 2013 at   Chapel  Hill, NC.  Agenda and registration details to follow.
+    We expect to have two slots of special interest to Member Nodes:
+        - A MN showcase speed session where each MN can present a short (~3 slide) summary of the MN and interesting activities
+        - A poster session one evening where longer, informal discussions can occur.
+Preliminary agenda is available in the DataONE Newsletter: http://www.dataone.org/sites/all/documents/March-2013-DataONE_Newsletter.pdf and on the website: http://www.dataone.org/dataone-users-group
+
+New  this year: plan to highlight/showcase MNs, MNs provide summary/slides  about their MN; more formal RFI coming later; MNs talk about kind of  data you hold, etc.; current and perhaps prospective MNs to present.   This is a good opportunity to get to know each other and the kind of  things we do.
+
+There  will be a poster session at first night (7/7/13) reception: might be  able to leverage poster presentation to have your organization fund your  attendance.
+
+Registration process is live at http://www.dataone.org/dataone-users-group.  Group rate is $83/night for DUG and ESIP meeting (register for meetings separately but can reserve room at hotel for both at once)
+
+3. Feature requests/opportunities for collaboration:  MNs please add items here.
+QUESTION  for CCIT folks:  in gathering usage statistics, is there a way to  identify the type of user (or user's institution) to better understand  who our users are?  Privacy concerns to be considered.
+
+Ryan: gathering "ordinary" statistics (IP address, type of activity, objects accessed) , can guess at geographic location for users who are not logged in. For users who are logged in, we   will sometimes know what institution they are associated with, but if   they logged in with ProtectNet or Google, there isn't much information  available.... 
+We  don't want to ask for too much (identifying) info, can make the process  too cumbersome for the user and they won't want to use DataONE.  
+
+Laura: maybe this level of detail is beyond what is technologically/politically feasible? 
+
+There  is a live stats screen in the works ("dashboard") to be displayed on  the Member Nodes page, a four-panel display of current statistics.   Rebecca said that this should be implemented sometime this year.  Matt  is POC.
+
+4. MN showcase:  If you would like to share what your MN is about, please add here.
+
+OTHER INTERESTING THINGS: 
+
+Upcoming deadlines:
+ASIST annual meeting
+Beyond the Cloud: Rethinking Information Boundaries
+November 1-6, 2013, Centre Sheraton, Montreal, Quebec, Canada
+https://www.asis.org/asist2013/am13cfp.html  
+Deadline for papers, panels, tutorials, and workshops is April 15.
+Deadline for posters, demos, video is July 1.
+

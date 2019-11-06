@@ -1,0 +1,71 @@
+A Messaging queue is local to a coordinating node.
+
+Job Scheduling is distributed across the membernodes.
+
+Time-based job scheduling triggers will be created upon initialization of system by reading the nodelist document. 
+   1) The nodelist is read once, written many
+   2) maybe need a periodic job that locks the cache and performs refresh?
+
+
+The nodelist (child)object(/s) should be cached. 
+
+The nodelist (child)object(/s) should be distributed/replicated. 
+
+The nodelist java object should implement Serializable (Jibx can provide this functionality).
+
+The update of the nodelist for all coordinating nodes should be an atomic operation.
+  Before a synchronization job has completed, all CNs must have updated version of nodelist or none should.
+
+When the nodelist object is changed, it should be serialized and persisted in a permament store (even better yet, the significant element/s of node object (a child object) of the nodelist should be persisted). 
+   The nodelist is stored in DataONE's LDAP using a custom schema.
+    Should the nodelist (child)object(/s)  be lockable? If a job's last action is to update the node that it has synchronized, and job's are sequentially executed, then probably not, but on the otherhand, how is replication of updated nodelist verified?)
+
+Ad-hoc job scheduling triggers may be created by interations between membernodes and coordinating nodes. (Membernode posts a refresh request to a coordinating node)
+
+Ad-hoc job requests are sent as messages.
+
+
+The scheduler will send exactly one job per membernode for synchronization to any coordinating node. Any additional jobs submitted during the execution of membernode synchronization will be ignored (or deferred)
+
+
+The choice of the coordinating node to perform a synchronation job should be based on load.
+ 
+
+The batch Job process listens for the job and adds an adhoc job to the scheduler to start a batch process.
+
+
+?Upon starting, the Job must determine if the membernode is safe for synchronization by a locking mechanism. If the membernode synchronization is locked, then Job completes without error. 
+
+Last action of a Job is to update the nodeList.
+
+Possible Technologies under review:
+
+ActiveMQ
+  --Messaging broker under Apache 2 License
+  --mvn
+  --spring integration
+Terracotta/Ehcache
+  -- Java Caching of objects
+  -- in-memory and disk-store caching
+  -- conforms to JSR107 JCACHE API
+  -- clustered caches with Terracotta
+  -- replicated caching with JGroups, RMI and JMS (?)
+  -- Apache 2 license with options for enterprise support
+  --mvn
+  --spring integration
+Terracotta/Quartz
+  -- Job scheduler
+  -- distributed and clustered jobs are submitted via Terracotta
+  -- JDBC store clusters and  distributes as well
+  --mvn
+  --spring integration
+Hazelcast
+  -- distributed caching of objects
+  -- distributed messaging
+  -- distributed locks
+  -- distributed executors
+  --mvn
+  --spring integration
+Jgroups
+ -- clustered messaging service
+

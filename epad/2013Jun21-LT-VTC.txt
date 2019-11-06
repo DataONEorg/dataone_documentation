@@ -1,0 +1,107 @@
+Attendees: Amber, Viv, John Cobb, Mike, Rebecca, Dave, John Kunze, Bruce (late)
+
+
+Regrets:  Bob, Bill, Suzie
+
+1.  Please join my meeting, Jun 21, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/274946208
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (267) 507-0017
+Access Code: 274-946-208
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 274-946-208
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+ We will also use the epad: http://epad.dataone.org/2013Jun21-LT-VTC 
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-06-21
+
+1) CI Update (Vieglais)
+
+- Update to CN 1.1.4 today (fixing some ONEMercury issues, adding NSF acknowledgement)
+- Impacts from network outages at NCEAS and plans for reducing likelihood
+
+There were impacts from the NCEAS outages - LDAP server (used for managing accounts)
+so couldn't login to other services or commit items to subversion - single point of failure but
+hadn't been any down time prior to this; investigating options.  Did not affect DataONE infrastructure.
+
+- TFRI (Taiwan Forestry Research Institute) - indexing completed this week; test of unicode support - 
+
+Now working on upgrades to CN s/w stack (1.2) major difference in how they will deploy the software (new package deployment); add in 2 additional capabilities - migration of system metadata back to MN and support of versioning for immutable metadata content
+
+2) CEE Update  (Budden)
+This week announcements: AGU session was accepted - 
+Coffee House is now online (blog aggregator)
+
+Newsletter is ready to go out next week
+Working on DUG - approximately 56 registrants - first conference hotel now full and second hotel option is available
+
+3) Member Node Update (Cobb)
+
+
+Updates:
+        TFRI moving toward operational status. Very near. (if not there) Issue: when to declare "operational"
+        NKN: follow-up call went well. Moving forward. Need to predict an expected 
+        U. Kansas: Moving forward. staging soon. (delaying some science metadata updates until after deployment)
+        SEAD: Moving toward production. Issue is branding for NCED, which is a data provider for them
+        EDAC: Moving forward. Soren sent a note asking that we consider Data Management in more detail. Concern is publication format. Are we publishing derived data in the MN?
+    Documentation issues:
+    Are there D1 extensions to the ORE spec?
+    
+     lacking is coherent documentation that actually defines what needs to  be implemented. The most recent example relates to a multi-part  mime-type post response that from Soren's work with the documentation  had not appeared anywhere. The use of the d1_libclient method is not  desired because 1) it introduces additional (and potentially  incompatible) dependencies into the entire Gstore system, that will have  to be tracked as we further evolve the system; 2) it's another  component that we need to actively track updates to as it's not entirely  clear what the development roadmap for it is, or how changes to the  method will be coordinated with installed instances. Given our  experience with incomplete documentation and apparent changes (or  unrevealed behaviors) to the API over our development cycle we are not  confident that updates to the method will be communicated in time to  integrate those changes into the operational system.     
+    
+
+Is is possible/advisable for DataONE to support Gstore directly.
+   Dave: Content should be presented in a format that is preservable.
+   Rebecca: Does DataONE have a preferred format ro set of formats?
+   Dave: We encourage using the data formats that is most useful to science users. [ obs. a bit tautological]
+   Dave; weh nit comes to it, a MN can deposit whatever format they like.
+    
+    Mike: Tend to agree that it is the MN responsibility for data formats. However, DataONE could publish best practices and suggestions. For Instance, what if MN publish ESRI ShapeFiles (Which thousands of datasets exist in USGS, EPA, Universities, etc.). Is this an OK format? We probably don't have a choice at this point if we want to make it easier on the MN to contribute.... Perhaps down the road, DataONE could offer some kind of "preservation conversion/best practice service" for MN not necessarily using the best archivial format. 
+        
+        LTER (or LNO): some objects moved from public to non-public access. a test of our infrastructure and process.
+
+Dryad:
+    Rebecca: Note to Todd re: DG presence
+
+        Score: 
+                Operational MN's : 13 + 1 = 14 
+                By PY4Q4 MN's: 11 - 1 = 10
+                By PY5Q2: 8
+                By PY5Q4: 1
+                
+
+Action Items:
+        Waiting on NPN for description document 
+        Cobb to call Ryan re Dryad progress
+        Cobb to contact (e-mail Dias PPBIO)
+        Consider creating a "guide to MN" deployment (see Soren's comments and EDAC example)
+
+
+4) DUG Planning - RoundTable Objectives (Budden) 
+http://bit.ly/11Sg7y2
+
+
+
+5) Knoxville Proposal Workshop (Koskela) - postponed to next week's call -
+will send email to LT with pointer to document
+Defining Core CI and CE See google doc in e-mail and respond next week.
+
+
+6) Around the Room
+
+Suzie: Sorry to miss the call. I  am traveling to Florence, Italy for the INSPIRE 2013 conference for an invited presentation  an invited presentation on identifying and talking with science stakeholders who are not scientists.  A couple weeks ago I led a four day science communication workshop for TUBITAK Turkey. IN b. In both cases, I used DataONE materials (with our brand) a
+
+Mike: For later discussion - Won't be on the full MN call (can stay for first 15 minutes), but would like to get an update on the CSAS MN reindexing, and error issues. Record below is still showing errors:
+https://cn.dataone.org/onemercury/send/xsltText2?pid=nrdata.nps.gov_gos_2166812.xml&fileURL=https://cn.dataone.org/cn/v1/resolve/nrdata.nps.gov_gos_2166812.xml&full_datasource=USGS%20Core%20Sciences%20Clearinghouse&full_queryString=%20*%20AND%20has%20data%20AND%20%28%20datasource%20:%28%20urn:node:USGSCSAS%20%20%29%20%29%20&ds_id=
+
+John Kunze:  Good progress on prototype metadata dictionary from the Metadata Working Group, code named SeaIce. Design document at https://github.com/cjpatton/seaice/wiki, hosted service (very unstable and very alpha) at http://seaice.herokuapp.com/.
+
+Viv: Nothing much to add this week - just working on data management videos (includes Bob Cook and Carly in DataONE) and planning to attend the Knoxville meeting in July. 
+

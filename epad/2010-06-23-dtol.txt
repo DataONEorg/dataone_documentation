@@ -1,0 +1,149 @@
+Participants: Biva, Anand, Saumen, Paolo, Dan Crawl, 
+
+Biva: ...  --> report
+Anand: OPM tool, not working
+Paolo: What exactly is not working?
+Biva: Also had problems with OPM tool
+Nobody posted the specific error messages!?
+Paolo: please give feedback when tool does not work
+What is that other tool?
+
+General comment: please post error messages, problems, (and workarounds!) proactively...
+
+Saumen:
+Was able to run FPC in COMAD?
+
+==> put all workflows (3 x 3) on Deliverables & Products
+
+==> swapping: not a priority right now
+
+
+Biva:
+ER model conceptual schema 
+http://datatol.googlegroups.com/web/ERD.pdf?gda=AzP4KDoAAABROR6ycoXdmZrY1wtnxfTYsd9JRivmeUhRDl7ENZnon2R_j6BDxZrdbuZlXxtls9b97daDQaep90o7AOpSKHW0
+
+Relational Database
+http://www.google.com/url?sa=D&q=http://datatol.googlegroups.com/web/RaletionalSchemaImplementation.docx%3Fgda%3DBxackVYAAABROR6ycoXdmZrY1wtnxfTYra8Fa7c71NWnLsT8Aa0Pm6wiQLz2gRUUL7LIuaMDb0iPejVaDRn2nnPn5dkMWQlZm8H8djb5b-PAGUnHN4c9dBPhGuxsWDLdLep2NLleRSE%26gsc%3DemiPwAsAAAB60tFFmRZa-lOaDljXyPeK&usg=AFQjCNEHxK66GvNfIuQMBKrpoQie9nW0DQ
+
+
+Anand:
+ I created the ER-diagram:  for conceptualization of our plan of exact placement  of SPS and  SDS within the overall picture.
+      I will be refining it more.
+      
+      http://groups.google.com/group/datatol/web/conceptual_schema.pdf?_done=%2Fgroup%2Fdatatol%3F
+      
+      ER -diagram
+      http://groups.google.com/group/datatol/web/high-level-model-diag.pdf?_done=%2Fgroup%2Fdatatol%3F
+
+
+Kepler SQL schema:
+http://code.kepler-project.org/code/kepler-docs/trunk/teams-and-wg/4-interest-groups/provenance/sql-schema/schema-v8.png
+
+Paolo:
+I have been trying to summarize the various contributions into a 
+single ER model. Much of this is based on the BLPM sheet on this page: 
+https://spreadsheets.google.com/ccc?key=0Aj4GvsnUzshadGduS2Q0VklKUmEz... 
+I have a diagram for the main structural (workflow) and provenance 
+entities: 
+http://datatol.googlegroups.com/web/ProvenanceEntities.png?gda=IysvqE... 
+and another for the main "OPM-style" properties (either asserted or 
+inferred): 
+http://datatol.googlegroups.com/web/Provenanceproperties.png?gda=uarM... 
+ps I have done these with ArgoUML if anyone needs to edit, I will post the argo file 
+
+and here are the sources I have used to generate the tentative integrated conceptual model:
+Anand's ER diagram: 
+http://groups.google.co.uk/group/datatol/web/high-level-model-diag.pd... 
+  however, this diagram captures mostly meta-information, rather than 
+the provenance model itself, so that will come at a later stage 
+Anand's conceptual model: 
+http://groups.google.co.uk/group/datatol/web/conceptual_schema.pdf?_d... 
+By and large, I have also included Biva's model: 
+http://datatol.googlegroups.com/web/conceptualSchemaBiva.pdf?gda=2ZDj... 
+in the sense that there is a substantial overlap (good and 
+unsurprising!) with Andand's model 
+this is still all drafty 
+
+in addition to the diagrams, here is the argo file that you can open 
+using ArgoUML: 
+http://groups.google.co.uk/group/datatol/web/SharedProvenanceModel_PM... 
+ArgoUML is available here for free: http://argouml.tigris.org/ 
+
+Collaborative Provenance Model:
+http://tw.rpi.edu/portal/File:IPAW2010_FP_Altintas.pdf
+
+http://daks.ucdavis.edu/%7Eludaesch/Paper/qlp-ssdbm09.pdf
+
+what are the questions we might want to ask against this schema 
+(in terms of users) can it answer these questions
+
+==> Collect the "20 Questions/Queries"
+(aside: The 4th Paradigm book, dedicated to Jim Gray)
+
+Paolo: 
+Moving to implementations of the (integrated) schema
+
+[Manish has QLP implementation in relational DB] 
+
+Dan:
+Using HSQL in Kepler
+Java PI
+
+Biva:
+D1-->WF-->D2
+What about the intermediate data?
+
+To what extent is the system (and the provenance system) aware of references?
+Paolo: Taverna is "aware" of references
+Next version LOD compliant references
+
+Anand: where do we store the actual data?
+
+Paolo: in the SPS, we have to have the data somewhere
+have a distributed system with large data store
+
+Bertram to ask DataONE project for that "data store" 
+
+Saumen: CouchDB possible store
+
+Shared data store at google?
+
+http://docs.google.com/leaf?id=0B_5CaPcogJCkZGY4ODEwNTQtZmJjZC00NGM0LTkxZDYtZTA3MWRkZDMxZDY1&hl=en
+
+NEXT ACTIONS:
+* Anand, Biva, Saumen to put "products" and "deliverables"
+on the corresponding page on the DToL page
+* also create / link-to "homepage" 
+
+
+* Bertram: take crack at shared conceptual model/schema,
+starting from Paolo's version & other versions
+--> slides, and write-up 
+=> shoot for end of week for a "1st complete draft"
+=> finalize by next call
+
+* Write 20 (not really) questions: what we should ask of the provenance store 
+==> goal: agreed upon ones should become benchmarks for the overall project
+==> should include "export native provenance" queries
+
+* Explore implementation and query (API access) alternatives,
+run some key queries against it
+1a) Anand: "stand up" Dan's DB as a separate entity
+1b)
+2a) Biva: Taverna provenance API (build problems)
+2b)
+3a) Saumen: Manish's QLP implementation  
+3b)
+ 
+
+
+
+
+
+
+
+
+
+
+
+

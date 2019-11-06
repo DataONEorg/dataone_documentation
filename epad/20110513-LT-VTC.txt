@@ -1,0 +1,193 @@
+http://epad.dataone.org/20110513-LT-VTC
+Attending: Amber, Viv, Trisha, Bertram, John K., Dave, Carol, Matt, Suzie, John C, Bill, Mike, Todd, Rebecca,Steve
+Regrets: Bob Cook, Bruce, Stephanie
+
+  Agenda for 2011-05-13
+
+
+
+1. Report on Joint U&A and Sociocultural WG Meeting (Allard/Tenopir/Frame)
+Groups working on tasks had members from both WGs
+
+Policy and Best Practices group: based on USGS NBII and NASA DAAC; sent on to
+Bob Sandusky and Matt for review
+Also created some guiding principles - may be useful to S&G WG
+Created workflow for where policies may be needed
+
+Personas Group:
+Mapped personnas onto the data lifecycle
+
+All draft materials are at:
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/joint-ua-socio-working-group-mtg-knoxville-may-3-5-2011
+
+Tools (Mike):
+Looked through existing surveys and reports looking for mentions of specific tools used in
+all parts of the data life cycle
+Briefing on data life cycle so all groups framed their reports on the data life cycle
+
+Assessment (Carol):
+Looked at the NSF Review timeline and discussed librarian & libraries assessment; altered
+to get to government libraries
+Also looking to send to more academic libraries, beyond research libraries
+
+Next assessment will be data managers (not on timeline so needs to be changed) - in
+particular from not-for-profit (ex, Nature Conservancy, government agencies)
+Started talking about middle school and high school educators
+Carol and Suzie are working on a 3-page summary
+
+What worked well: update on priorities from CCIT and LT; clear deliverables expected by the end of the meeting; optional field trip to ORNL Thursday afternoon; allowing participants to choose which sub-group and task to work on; framework of data lifecycle for all tasks
+
+Personas Subgroup (Kevin)
+Being developed on Google doc http://bit.ly/D1Personas
+Developed:
+Primary personas
+Research scientist
+Sun: Early-career herpetologist  
+Jean: Agricultural scientist at a field station
+Laura: Mid-career oceanographer
+Andreas: Biochemical modeller
+William: Late-career plant taxonomist
+Abby: Science data librarian
+Secondary personas
+Rick: Citizen scientist
+Elizabeth: University administrator
+Additional persona
+
+Additional persona that might be developed include:
+Primary personas
+Joon: Member node manager
+Secondary personas
+Mr. McMillin: High school science teacher
+David: Graduate student
+Renee: College educator
+Anne: Resource manager
+Simon: Software developer
+Wilbur: Naturalist
+Paloma: Journalist
+Tim: Citizen science project leader
+Ajit: Consultant
+Buyer personas
+Robert: Academic society manager
+
+
+Research scientist personas were developed to span multiple dimensions:
+Work setting: Academic (tenure and non-tenure track), government/tribal, private
+Career stage
+Subject/discipline
+Single discipline vs. use of multi-disciplinary data
+Research setting: Field, lab, modeller
+Data: Human vs. machine-collected
+Data management skills: novice to expert
+
+
+Policies & Best practices (Suzie & Kimberly)
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/joint-ua-socio-working-group-mtg-knoxville-may-3-5-2011/policies-best-practices-subgroup
+
+Created a Terms & conditions document that has notations for LT or S&GWG review about key points for discussion/decision.    (Terms & Conditions draft 5.5.11)
+
+Created DataONE guiding principles which may be useful high level discussion and S&GWG
+
+Developing workflow to look at key points for policy development  https://docs.dataone.org/member-area/working-groups/usability-and-assessment/joint-ua-socio-working-group-mtg-knoxville-may-3-5-2011/policies-best-practices-subgroup/work-flow-and-policy
+
+
+2. Report on Best Practices Workshop  (Budden/Hutchison)
+40 attendees (about 10 from DMP Tool group)
+
+Day 1: DMP
+DMP Tool profiled and feedback received; 4 new exemplar DMPs created and 2 existing reviewed; Comprehensive data repository list, community standards and metadata standards lists created.
+Hoping to have beta version available at ESA in August
+
+Day 2: Best Practices
+55 new Best Practices created and edited for the D1pedia
+Created a DataONE Best Practices Primer that was reviewed at the meeting
+
+Day 3: Software Tools
+150 new Software Tools created and edited for the D1pedia
+Group struggled with the existing categories and made suggestions for new categories - need a way to tag tools with multiple purposes
+
+Some excellent feedback and suggestions for moving forward with D1pedia to improve its functionaility and accessibility
+Materials currently in a dropbox but will be added to plone shortly.
+
+Questions: data repositories - how many are targeted as DataONE MNs? Not sure yet,
+need to go through the list.  Some of the repositories are targeted to the DMP Tool, not
+necessarily DataONE. One of the action items is to contact the repository manager to verify the information collected on the repository at the meeting.
+
+Who will keep the links on the tools up to date?  Some groups thought it should be wiki where community could keep it up to date.  Others wanted ratings on tools.  Question about duplication of list of tools 
+
+http://ebmtools.org, http://ebmtoolsdatabase.org/, http://www.smartgrowthtools.org/ebmtools/index.php
+  For example, here's the page for Kepler: http://ebmtoolsdatabase.org/tool/kepler-scientific-workflow-system-0
+
+3. CI Status (Vieglais/Jones)
+Progressing according to plan and have started working on authenication and access control. Needed extra technologies for the CNs.
+Two and a half meetings coming up: CCIT meeting and Semantics WG (partial overlap with CCIT)
+
+Location of physical locations for equipment at CNs - need to have this nailed down within a week so can order equipment
+Trying to order  h/w in by the end of the month 
+Research Storage Consortium at UNM is having vendor presentation next Tuesday and a decision on vendor by May 18 (Wednesday)
+
+TeraGrid collaboration is moving forward. EVA is becoming high profile at NSF
+
+
+4. Feedback from NSF (Michener)
+NSF (finally) provided feedback on our external review.  In essence, the NSF PDs felt that we did an outstanding job and that we were the "poster example" for the entire DataNet program.  Alan Blatecky presented a summary of our progress to the National Science Board and it was very favorably received.  
+
+No word on the next round of DataNets.  Bill will be in DC next week so is hoping to have a conversation with OCI while there.
+
+5. Preparation for meetings with USGS and NASA (Michener/Frame) 
+
+Bill, Mike, and Bob are working on a presentation for USGS and NASA Program Managers related to DataONE, potential Agencies interests.  Want to address the issues of concerns of agencies (NASA in particular) about credit assigned. Will include material produced at the S&G WG meeting in April.  Bill will share the presentation in a dropbox early next week.
+Wednesday afternoon will visit USGS and discuss collaborations, specifically on tools.
+Bob is working on bullets on advantages of being a MN.
+
+Working on one graphic that illustrates the advantage of becoming a MN (animated) -
+shows connections to DataONE - tools, etc.  Would appreciate feedback how to make
+this more powerful. Also any other ideas to make this point.
+
+From another angle, it would be good to show the relationship between DataONE community work and the activities of the Community for Data Integration at USGS -- Viv is leading a Data Management Working Group that directly parallels (on purpose), and is greatly influenced by, the DataONE  effort. Over 50 people call into the USGS Data Mgmt WG each month, and there are 2 active sub-groups looking at USGS Best Practices and Data Policy. A  slide could emphasize the success of building community within organizations as well as across organizations and the collaborative activities that creates. 
+
+6. Around the Room 
+
+Bertram: small ProvWG meeting scheduled for June 8th at UC Davis, Summer Internship day before: June 7th; for ProvWG focus on D-OPM; invite people who can represent provenance issues for certain systems (Kepler, Taverna, Vistrails, Galaxy, R, ...) Probably only small subset for June meeting; full WG meeting at DataONE AHM in Fall.
+Summer Internship project #8 (Provenance Repository)  scheduled June 1st--July 31st.
+As part of FilteredPush project (w/ Harvard) will be participating in http://research.calacademy.org/spnhc meeting (demo camp on curation workflow)
+Harvard folks will be visiting UCD  before the SPHNC meeting. Need to connect with DataONE?
+
+John K.: Presented yesterday on DataONE and data curation at PASIG (Preservation 
+and Archiving Special Interest Group).  Interesting conversation with
+Mark Leggott; he heads up Islandora, which is a glue layer between the
+Drupal CMS and the Fedora repository stack.  He showed a bunch of examples
+of sites built with Islandora, including data visualization with R scripts.
+He also said they have plans to incorporate Taverna and Kepler, although 
+I'm not sure exactly how he means it.  Anyway, we will follow up with him
+with an eye to wrapping Islandora around the Merritt repository.
+
+Viv: Aside from helping with the Best Practices Workshop this week, will be meeting with DataONE intern, Melody Basham, next week in Denver to develop a work plan for the summer. Her summer project will focus on the CEE work on development of an online suite of data management learning modules. 
+
+Mike: Nothing much to report, have been working on OMB Briefing all week, will mention in the briefing some of the results from the Scientist assessment which came out of DataONE.   
+
+John C: Continued work on combined DataONE and TeraGrid Nugget highlight to NSF (OCI and CISE) connected with SOTB 2011 release.
+
+Matt: working on identity, authorization and authentication systems; TeraGrid node deployment/feedback; EVA use case in prep for summer runs on TeraGrid.
+
+Steve: Bob is starting the second version of the EVA WG on carbon cycling.
+Student intern coming to lab on Monday.  Paul Allen will get him started on the summer's 
+work.  Steve going to Edinburgh on Monday to present the EVA bird work.  The 2011 State of the Birds Report has been released. Lots of buzz from federal agencies on the content of the report. 
+
+Amber: Intern face-to-face meetings begin next week, internship prgram officially starts at the end of the month.
+Heading to NY at the end of next week for the first PPSR working group meeting.  The co-chairs implemented all the changes required by the LT, including removal of Steve Kelling and Kevin Crowston from WG participant list.
+Now that BP is over, focusing more heavily on DUG planning so a full update next week.
+
+Todd: Speaking to ORCID participant meeting in Boston next week.  Any points to convey regarding researcher identity needs for DataONE?  
+    -- Matt: InCommon integration; verified identity support (e.g., InCommon Silver); Identity equivalence mapping; are all important
+
+Dave: Met with Genome Standards Consortium Monday-Tuesday. Some tools may be of relevance to DataONE - Ontogrator and Terminizer to provide faceted browse / discovery interface (from NERC Environmental Bioinformatics Center, Norman Morrison).  Did anyone notice: http://cityroom.blogs.nytimes.com/2011/05/07/bird-week-watching-and-counting/ ?
+
+Carol: The UT office of research has given us some end-of-year funds to increase our GRA's hours this summer, so Lei and Arsev will have more time to devote to DataONE. Mithu, the post-doc who was to start May 23 has accepted a tenure track position, so we are looking at our applicants again.
+
+Trisha: nothing to report.
+
+Suzie: nothing else.
+
+Todd again: Encourage folks to take a look at the RSC initiative:
+http://rcsproject.wordpress.com/2011/05/13/royal-society-to-investigate-open-science/
+

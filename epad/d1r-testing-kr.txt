@@ -1,0 +1,17 @@
+> cli <- D1Client()
+20130305-16:26:10: [WARN]: /tmp/x509up_u501 (No such file or directory) [org.dataone.client.auth.CertificateManager]
+
+# Right ok, so I create x509up_u501 and copy my certificate usercred.p12
+
+ karthik@karthik-rams-macbook-pro ⮀ ~/Downloads ⮀ ls -l usercred.p12
+-rw-r--r--@ 1 karthik  staff  2677 Mar  5 16:15 usercred.p12
+
+cp usercred.p12 /tmp/x509up_u501
+
+# Then this happens
+
+ cli <- D1Client()
+20130305-16:28:42: [WARN]: /tmp/x509up_u501 [org.dataone.client.auth.CertificateManager]
+
+
+

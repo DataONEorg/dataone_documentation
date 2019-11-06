@@ -1,0 +1,34 @@
+Note: This document has been preserved to subversion at:
+https://repository.dataone.org/documents/Meetings/20101209_DUG_Chicago/you-want-to-be-a-member-node.txt
+
+
+This is a jot list created coming out of the 2010-11-01 LT discussion. The idea is to provide guidance on what organizations that want to become a member node can/should be doing now that will simplify the process of eventually becoming a member node.
+
+ Policy issues
+ *  Have a clear statement for data distribution and data replication policies.  Who can download what data?  Are the data all public?  Are the metadata all public?  Are there any data that are restricted access?  If your data is being replicated through DataONE, are there restrictions on who can maintain replicas?
+ * Know who is authorized to enter into agreements on behalf of the node.  DataONE needs a clearer description of what needs to be signed, which guides this.  The intent is that the agreement is an operational letter of understanding, which clarifies roles and intents, rather than a formal Service Level Agreement or legally binding contract.
+ * Have a clear understanding of the conditions under which other member nodes' data can be replicated at your site as part of the preservation process.
+ * Consider performing a self-assessment of your operations against the OAIS reference model (http://public.ccsds.org/publications/archive/650x0b1.pdf aka ISO 14721:2003 ).  
+ 
+ Metadata and Identification issues
+ * The more complete the metadata, the better.  A minimum is basic metadata for each data set (collection of files), similar to a basic Dublin Core structure of &&&&&.  
+ * Each distributable unit of data needs some type of identifier and that identifier needs to be uniquely associated with the data.  If the data changes, the identifier needs to change.  For distributable units of data, there should also be metadata with the size, checksum, and format of the data.  Where applicable, it is desirable to have unit-level metadata for elements like spatial extent, temporal extent, biological extent, or other descriptive/discovery metadata appropriate to the domain.  
+ * For the case where the distributable unit of data is a file, this translates to having a unique identifier for each file, the checksum for the file contents, the size of the file, and the type of file structure. This is consistent with the concepts of archivable units in the OAIS reference model.  
+ * Modification date/timestamps should be tracked for the metadata records, to support harvesting protocols (metadata needs to have revision tracking/versioning).  
+ * Support for OAI-PMH for metadata harvesting in one or more recognized metadata formats (Dublin Core, GCMD DIF, EML, ISO 19115, ...) is indicative of many of the supporting metadata elements for becoming a member node.  
+ 
+ Technical Infrastructure:
+ * Needs  to support https (TLS) using certificates signed by a recognized [definition of recognized in this context? - jwc] certificate authority for the primary connection points to DataONE.  
+ * A mechanism needs to exist where an identifier (for a deliverable unit of data) can be translated to retrieve the data.  In other words, as an example, the DataONE stack needs to be able to determine what 
+ * A means to track deliveries of data.  Which data units were delivered when to whom?  The to whom can be an IP address.
+ * If your operation supports authenticated delivery of data, there will need to be some means of mapping DataONE identities to those used in your operations.  Membership in InCommon is one way to accomplish this.
+ * Have available disk space, appropraitely partitioned according to your security enclave model, equivalent to the amount of space required for your replicas.  As an example, if you intent is to have 3 copies of your data in the DataONE replicas (one at your site, two copies elsewhere) then you should plan to have free storage space equivalent to twice your data volume available for peer storage of replica data.  
+
+???? How does this all work for something like the National Oceans Database -- where the data are in a database.  They do, in fact, define a deliverable unit of data, which is basically the data from one bouy for one day for many cases.  Their update notification is based on that deliverable unit of data.  
+
+Need to support the DataONe basic CRUD services. These need to be deployed as a RESTful web service listening on port # ??? with the following URL's ..... (this needs to be filled in, probaby by referring to an existing DataONE arch document)
+
+
+
+ 
+

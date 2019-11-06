@@ -1,0 +1,72 @@
+Page 1
+DataONE
+
+
+DataONE is a federated data network that improves access to, and preserves data about, life on Earth and the environment that sustains it. DataONE supports science by: (1) engaging the relevant science, library, data, and policy communities; (2) facilitating easy, secure, and persistent storage of data; and (3) disseminating integrated and user-friendly tools for data discovery, analysis, visualization, and decision-making. 
+
+What DataONE can do for you? 
+
+DataONE:  
+Provides secure infrastructure to manage, preserve, share, integrate, and analyze scientific data.  
+
+Enables discovery, easy access and usage of multi-scale, transdisciplinary, global data through a single location.
+ 
+Provides educational resources created by experts for the research community including data management planning, best practices, vetted software tools, and education modules
+
+Offers combined expertise and resources across diverse, multidisplinary communities to collectively educate, advocate, and support trustworthy stewardship of scientific data.
+
+DataONE is Data, Discovery, Knowledge, Community ...
+                                                                            for a Sustainable Future
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Testimonials (on the side)
+
+
+
+
+Footer: 
+For more information, URL, Twitter, Facebook, email (info@dataone.org), QR code?
+
+
+Page 2
+DataONE logo
+
+
+DataONE,  a federated network providing infrastructure and services for  environmental science, enables new science and knowledge creation  through anytime, anywhere access to data about life on Earth and the  environment that sustains it.  DataONE is comprised of three principal components:  
+ 
+1.  DataONE Member Nodes organizations provide data, computing resources, and/or services such as data replication. These organizations may include data repositories, libraries, universities, research networks, governmental and nongovernmental agencies, computing centers, and commercial enterprises.
+ 
+2.  DataONE Coordinating Nodes support network-wide services that enhance interoperability of the Member Nodes and support indexing and replication services.  Coordinating Nodes make it easy for scientists to discover data wherever archived and make it easy for data repositories to replicate their data and make Member Node data and services more broadly available to the international community.  
+ 
+3.  The DataONE Investigator Toolkit provides interfaces to tools that are familiar to scientists and that can support them in all aspects of the data life cycle including a Data Management Planning Tool that “walks” scientists through the process of developing Data Management Plans that satisfy sponsor requirements, and tools such as R, Excel, and MATLAB. 
+
+Graphics:  Map of the World and overview of D1 cyberinfrastructure
+Figure 1 from JEI paper, showing Diversity data center, software stack, and ITK and CN:  
+Figure Caption (way too long:  Figure 1. Overview of DataONE cyberinfrastructure elements illustrating value derived to users associated with a Biodiversity Member Node. Biodiversity data collectors (a) deposit data into a biodiversity repository, which is a Member Node of DataONE.  Biodiversity data users (b) can access these data directly from the biodiversity
+repository. The crescent around the repository represents the software stack that
+enables the Member Node functionality for the repository. This software stack is
+developed and installed by DataONE staff, making use of the characteristics of the
+biodiversity repository system and metadata. Biodiversity users can continue to access
+data as they did before (b). However, by linking up to the DataONE cyberinfrastructure
+(c), these data are accessible to a broader community of DataONE users (d) through
+DataONE enabled search and retrieval. The cyberinfrastructure components include
+the Coordinating Nodes (that maintain a metadata catalogue of data held in the
+biodiversity repository), additional Members Nodes (for data replication and
+preservation and for integrated data search and retrieval) and the Investigator Toolkit
+(which provides increased functionality through integrated software elements such as
+Mendeley, Zotero, VisTrails, Kepler, Excel, R and others).
+
+Call out example
+
+As one example, DataONE is part of a consortium that is developing a Data Management Planning Online Tool. The tool “walks” scientists through the process of developing a concise, but comprehensive data management plan that could enable good stewardship of data and meet requirements of sponsors and home institutions.
+
+
+How to get Involved
+How to sign up for email distribution; join DUG
+what else?
+
+Footer: 
+For more information, URL, Twitter, Facebook, email (info@dataone.org), QR code?
+

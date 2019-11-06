@@ -1,0 +1,27 @@
+A place to record features desired for V2 (or later) of the Member Node Dashboard:   (public facing dashboard only?)
+
+Integration with drupal CMS to provide node content information
+    - logo
+    - mn document
+    - home url
+    - upcoming node info (name)
+    - short node id
+    - node name
+    - list to display in
+        - show in main list (boolean)
+        - show in replica list (boolean)
+    -     show in upcoming list (boolean)
+
+Strategy for dealing with display for 'replication only' nodes - both D1 managed and 3rd party institutions (U of I @ Chicago)
+
+Graphs with timeframes (1, 5, 10, 20 years)
+Current vs revisions (vs archived?)
+Data Set metrics - how many, size, downloads
+Graphs to display replica holding metrics.
+Graphs of download metrics (potential breakdown by data, data sets, metadat)
+
+Map of spatial distribution of data (sets) in D1
+Chart of temporal breakdown of data in D1
+
+Data citation metrics (would need data source for this)
+

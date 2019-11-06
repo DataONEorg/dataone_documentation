@@ -1,0 +1,80 @@
+SysMeta
+
+As it is now, SysMeta XML documents are used in different roles:
+
+- Passing parameters that are provided by a client when it creates an object.
+- Holding data that is provided by an MN when the information is harvested by a CN.
+- Holding operational data maintained by the CNs.
+- Providing operational data when requested from CNs by clients.
+- Providing object data (such as associated objects) when requested from MNs by clients.
+
+Because SysMeta objects are floating around in the entire system, we need all these rules that describe what is allowed to be done in specific roles, by who and when:
+http://mule1.dataone.org/ArchitectureDocs-current/notes/sysmeta_mutation_20101217.html
+
+People in specific roles, such as a scientist that wants to create an object in DataONE or a programmer that makes a client, have to consider those rules and they have to relate to the entire SysMeta object and find out which pieces are relevant to them in that role. That is, which information they must provide, which information they may provide and which information they are not allowed to provide:
+http://mule1.dataone.org/ArchitectureDocs-current/design/SystemMetadata.html (Table 1).
+
+Also, consumers of SysMeta objects must consider not only the SysMeta but provenance. Did they retrieve a full version from a CN or a “skeleton” object from an MN? Was it a SysMeta object created by a client app or maybe by hand by a scientist? Is it an authoritative version or not?
+
+So, I think we should break up the SysMeta type and provide types that are made more specifically for their various roles. I think a starting point would be to consider separate types for each of the roles I described in the list at the top, except for the role of holding the operational data, that’s an implementation specific detail.
+
+As I see it, the various smaller types will only be created and consumed on the fly in REST calls.
+
+In addition to helping with the issues above, I think there are other advantages:
+
+- DataONE will be more free to change implementation details without having to update anything in the public APIs.
+
+- we can remove some redundancy. For instance, checksums are available via getSystemMetadata(), listObjects and getChecksum. Object size is available via getSystemMetadata(), listObjects() and describe().
+
+- The methods such as describe() and getChecksum() that are there to provide light weight calls because of big SysMeta objects are no longer needed.
+
+
+Offloading authentication and authorization from MNs to the CNs.
+
+The current plan re. authentication and authorization on MNs is to have that functionality on MNs and for DataONE to provide libraries to ease implementation of MNs.
+
+This is a suggestion for an alternate solution. The idea is to have an MN perform a REST call to a CN each time a decision is required as to if a given action on a given object should be allowed for a given user.
+
+Basically, when a user attempts to interact with an object on an MN, the MN calls a CN in the background with the pid, type of action and the cert ref. When a yes/no answer comes
+back from the CN, the MN allows or denies the action.
+
+So, at the cost of higher load on the network and on CNs, some of the authn/authz headaches go away. For filtering of searches, CNs will need highly efficient, streamlined mechanisms for determining which objects to include for a given user. By offloading auth/authz to CNs, MNs get to take advantage of that functionality.
+
+Trust:
+
+For replication, MNs already need to allow DataONE to have full access to all their objects. MNs also must trust DataONE to correctly apply access rules to the replicas. So it seems like there’s no extra trust needed for MNs to defer to CNs for application of the rules also as they apply to their local objects.
+
+Even if the proposed functionality is available, MNs can still chose to do their own access control for some or all of their objects. For instance, maybe a situation is possible where an MN wants to expose objects through DataONE but does not trust DataONE to apply the access control policies. In that case, the MN would have to disallow DataONE access to the objects and they would not get replicated. It could then simply apply its own access rules instead of calling out to a CN for that information.
+
+Scalability: 
+
+I think the increase in CN and network load caused by this type of architecture would relate to the difference between number of objects appearing in searches and number of actions performed on objects. My guess is that there might be tens or hundreds of search results returned by CNs for each action performed on a MN (just thinking about the difference between the number of impressions and clicks in a Google search).
+
+If search results are returned from CNs in pages of 20 hits per page, and the user goes on to download one of those objects, the CN would first have to apply the access control rules 20 times for that user, and then only one more time for the actual download. So server load may not increase a lot. And the extra network traffic for that extra call would be low since the call would contain only a cert reference, PID and desired action. The response would be a small yes/no answer.
+
+Other advantages:
+
+- Maybe this would completely eliminate the need for a MN to talk SAML or similar?
+
+- MNs are currently required to keep event logs that can be harvested by CNs. That mechanism would no longer be required, as CNs would learn about the events through the authorization calls and would be able to update their logs directly. Removing the logging requirements and associated APIs would further lower the threshold for D1 participation.
+
+- Access control rules would not have to be pushed out to MNs together with replicas.
+
+- MNs would not have to trust that other MNs correctly enforce their access control rules.
+
+
+Misc notes about the API
+
+- In create() and update(), the PID is passed both in the URL and in the SysMeta. There is a potential for conflicts between the two. Breaking SysMeta up would resolve this issue. Else, ensuring that the two are the same should become a step in the SysMeta validation.
+
+- The spec currently requires MNs to store their own copies of SysMeta and to update them if required. For instance, after an update(), the MNs should update the obsoletes and obsoletedBy fields it its copy of the SysMeta. I don’t think that SysMeta objects should be stored by the MNs. I think that after an object is created in DataONE, all its metadata should be maintained in a single location, on the CN (least a single virtual location). Updates should be coordinated by CNs so that CNs can keep track of the process. Upon completion, CNs would update their copy of the metadata. This would also make it easier to create MNs by removing the current requirement that MNs be able to read back updated SysMeta documents from CNs.
+
+- In Python, instead of using custom notation for slicing (start, count), the functionality could be exposed as native Python slicing support ([a:b]). Also, the size of collections could be retrieved with len() instead of the current method which is to retrieve the collection with start and count set to zero. This would be in line with what we have already done for iteration through the collection iterator modules.
+
+- We need to specify how the various parameters are passed, in the API docs. URL, headers, body, MMP field or file and the name.
+
+- In d1baseclient, wrap returned body in DataONE Exception if it failed deserialization to the type that the return code designates it as (a DataONE object or DataONE Exception).
+
+- If we stay with a system that requires the MNs to keep logs, we can simplify the process by having MNs store only the events that have occurred since the events were last harvested.  That way, all requirements for filtering are removed. Only slicing would be required. CNs would send a special ACK to MNs after harvesting to tell MNs that it’s ok to erase all the events that were harvested. CNs would send that ACK after successfully harvesting and replicating the events. If something went wrong, the CN would not send the ACK so that when harvesting was restarted, it would get all events again.
+
+

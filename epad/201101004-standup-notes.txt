@@ -1,0 +1,52 @@
+Chris
+-----
+ * worked on comparison of libclient java and python
+   * See: https://docs.google.com/spreadsheet/ccc?key=0AjusEcfJ75HCdDQxaURDbmZLeVpYdlZmbUVfVlliRmc&hl=en_US#gid=0
+   * Roger pointed out that some of the functional python equivalents to MNode and CNode in java are likely in cnclient.py and mnclient.py.  Will review these.
+ * Worked with Nick on a scheduled replication check design (as opposed to event-based checks)
+   * After discussion, ReplicationManager will periodically get the object list from the CN (not the MNs), and will call MNRead.getChecksum() for each object after the list has been shortened based on time (exclude very recently created or modified objects) to cut the process space down.
+ * Working on deploying d1_replication with Robert and Nick today
+
+Rob
+---
+ * fleshing out authorization tests in d1_integration
+ * regarding mn.isAuthorized() method, mild concern over the overloading of the NotAuthorized exception.  Roger asserts that the isAuthorized() method does not require authorization, so it might not be an issue, unless a node is mistakenly configured to require client authorization for that method.  see:  https://redmine.dataone.org/issues/1808 
+ * following on Ben's changes wrt passing a Session object to CertificateManager, am going to refactor the locus of that logic out of RestClient and into D1RestClient.  (Aiming to keep RestClient DataONE ignorant)
+ * created AccessUtil class in d1_common_java, to help build accessPolicies, accessRules, subjectLists, etc.
+
+Nick
+----
+ * Working on sequence diagram for regular sweep of replication policies and checksumming of objects for validity.
+   * See: http://mule1.dataone.org/ArchitectureDocs-current/design/UseCases/09_uc.html for updates.
+   * Notes:
+     * Called by process daemon
+     * MN can specify maximum % of objects out of total store to be checked
+     * Will attempt to check only objects that have not been checked recently
+
+Robert
+------
+ *   Assist with Replication deployment
+ *   Assist with cn-rest-service buildout w/regard to identity mgmt
+ *   Bugs in Synchronization due to hzClient
+ *   Bugs in resolve
+ *   Modify IdentityTestCase to use the MockMultipartHttpServletRequest
+
+Roger
+-----
+ * Looked at the FUSE client. It appears to be working fine. Only thing is  I got some errors because the server is returning v0.5.1 objects.  (http://cn.dataone.org/cn/).
+ * I’ve worked on the logic that relates to certificate subjects in GMN.
+   * Split the list of special subjects into two parts, where, in debug  mode, both lists are used, while in production, only the list of  production subjects are used.
+   * Added flags to the subjects in the list instead of checking for the subjects in the code.
+   * So, for instance, Rob’s test subjects, Writer, Reader and NoRights have flags on them that correspond to those rights.
+   * I think we need more specific subjects for testing behavior that relates to public/private/authorized subjects.
+ * Took a look at the d1client code and the corresponding tests and both  have a lot of broken code in them. It’s because, a long time ago, we  disabled the tests because they were fragile integration tests that kept  breaking. The intention was to convert them to unit tests. But it  really doesn’t make sense to try to make unit tests for the d1client  module because all it does is very high level stuff that integrates CN  and MN functionality. So I think the way to go is to fix up d1client and  rewrite the interation tests, which means that we have to have some  known, static environment in a CN and an MN that the tests can be  executed agains.
+ * I’ll be able to help with anything that’s urgent while on vacation.
+ * I will update gmn-dev with the latest GMN today.
+ * 
+
+Ben
+ * CertificateManager now allows you to "register" a certificate/private key pair for a given Subject. Modified the D1Client to use the Session object that it is passed in order to look up the previously-registered cert/key to use when making client calls.
+ * The "old" CertificateManager methods still work exactly as before -- you can either define the single certificate location or let it figure out the /tmp location for CILogon certs.
+ * Portal/ID manager: uses this new CertificateManager feature to act on behalf of the logged-in/authenticated user. 
+ * I'm in the process of getting all the CNIdentity methods working on cn-dev. The client and server implementations didn't quite match each other nor the documentation so I've been changing them to match the docs as needed. Includes stuff like the params being multi part entities or on the request uri or what not. Hope to redeploy cn-rest service and do a simple test by end of today.
+

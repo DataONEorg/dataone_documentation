@@ -1,0 +1,155 @@
+Attendees: Rebecca,Carol, Bob, Suzie, Bertram, Dave, John Cobb,Bill, Steph, Todd
+
+Regrets: Amber, Bruce, Mike Frame
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Jan 18, 2013 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/521395472
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (773) 897-3000
+Access Code: 521-395-472
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 521-395-472
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2013Jan18-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-01-18
+
+1) CI Update (Vieglais)
+
+Pushing out 1.1 update - has not happened yet; basic problem now is administration of the VMs at each CNs - only affects the staged environment not production environment
+Basic problem at UNM is that Dave doesn't have access to the VMs - may have to remove UNM from the production environment and run with 2 CNs
+Also at UNM - one of the replication targets became unusable when RSC storage went off line for maintenance this week
+
+Dryad and EDAC MNs ready to come on line - will do this after the release of 1.1
+
+Morpho is now working with DataONE infrastructure so can be demo'd at the RSV
+
+2) CE Update (Budden - by email)
+
+CE update:
+   * Received confirmation from ESA that the Data management workshop (for early career scientists) has been accepted.
+   * DMPTool2  press release went out, we are meeting next month for a back-to-back  Sloan funded DMPTool and IMLS funded DMPTool meeting.  Many overlapping  participants (Sloan - development, outreach; IMLS - education)
+   * DataONE invited to participate in spring AGU meeting via DUG chairs - email was sent to LT
+   * DUG survey closes on Monday so please respond if you haven't already (https://www.surveymonkey.com/s/5KD6ZTR)
+   * Beginning planning for next newsletter.  Will cover this in more  detail next week however we are due to have a WG update from the CE  side.  If anyone has timely (early March release) material then I  will prioritize that WG
+     * Steph: i'll send Amber a note..
+
+3) MN Update (Cobb)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+MN Description forms update process: 10 nodes, 5 updated
+
+External MN documentation under revision and will be brought to LT soon.
+
+Initiating a  MN coordination call at regular interval. Ability to commonly discuss issues and surface any issues that need to be addressed
+
+Discussion: Member node description documentation
+Q: is 
+specifically the URN field on the description form:
+    - Does it need to be exertnally visible?
+    - Can one search for data via a URN?
+    - Dave V: Node id is really not externally needed.
+      List of node information available from CNs: https://cn.dataone.org/cn/v1/node
+      - Node ID is a basic, immutable field that should be contact across the node (even as HW changes) It is an important part of the node technical documentation.
+
+4) WG Quarterly Reports (Koskela)
+Don't forget that Working Group Quarterly Reports are due next Friday - if WG co-leads
+are not on the LT call already, they should join at 11:30 MST using same call information
+as sent to LT - I'll send a reminder email to WG leads on Tuesday, Jan 22 with the call
+information.  Reports should use the template from the docs.dataone.org site 
+(http://bit.ly/PeFJDh)
+
+5) Risk Register (Koskela)
+https://redmine.dataone.org/projects/d1risk
+
+Q:What is meant by "handling?" peridocal updates?
+A: Update risk register in Redmine.
+    insure the content is correct and updated.
+    Update likelihood and impact
+    Update mitigation strategy
+    
+    Als0 : IMPORTANT: A risk manager should keep on top of assigned issues, so if one issue occurs or rises in impact or likliehood, they should update.
+    
+    Also, additional "wathcers" can be added to a risk redmine issue
+    
+    top ten goes into the 1/4ly report (High risk and high impact)
+
+Koskela: 18
+Vieglais: 13
+Budden: 4
+Cobb: 4
+Michener: 4
+Frame: 3
+Cook: 2
+Kelling: 2
+Tenopir: 2
+Wilson: 2
+Allard: 1
+Cruse: 1
+Hampton: 1
+Hutchison: 1
+Jones, M: 1
+Vision: 1
+
+Total: 60
+
+7 Risk: High  Impact: High
+ * 3295         Inability to design quality User Interfaces that attract users Dave Vieglais 2012-10-04 16:36                     
+ * 3294         DataONE does not meet users needs for data and tools Dave Vieglais 2012-10-04 16:35                     
+ * 3293         High barriers to better Member Node inclusion John Cobb 2012-10-04 16:34                    
+ *  3292        Inarticulate or lack of value proposition to attract users or Member NodesCommunity Engagement Amber Budden 2012-10-04 16:37                     
+ *  3291         No perceived benefits for involvement by DataONE Member Nodes, libraries or data contributors Management Rebecca Koskela 2012-10-04 16:31                     
+ *  105          Member time constraints -- "stretched too thin" Management Vivian Hutchison 2010-10-07 00:14                     
+ *  120         Lack of funded DataONE staff to perform tasks Financial William Michener 2010-10-07 00:14
+
+Then need to pick 3 from the following: Risk High Impact Medium
+ * 50         Feature Creep  Management Dave Vieglais 2010-10-07 00:14                     
+ * 52         Unrealistic time frame or schedule Management Dave Vieglais2010-10-07 00:14                     
+ * 53         Inadequate or late 3rd party software IT Matthew Jones2012-05-15 00:29                     
+ * 55         Stakeholder adoption is poor IT Amber Budden 2011-06-02 16:10                     
+ * 100         Unclear requirements: We built the wrong thing. IT John Cobb 2010-10-07 00:14                     
+ * 101         CI doesn't scale to meet demand IT Bruce Wilson 2010-10-07 00:14                     
+ * 106         Poor communication between CE & CI Management Rebecca Koskela 2010-10-07 00:14                     
+ * 107        Lack of trust by larger community in D1 Communications Carol Tenopir 2010-10-07 00:14                     
+ * 111         Failure to include key stakeholders Communications Rebecca Koskela 2010-10-07 00:14                     
+ * 112         Failure to manage expectations Communications Patricia Cruse 2010-10-07 00:14                     
+ * 114         Failure to overcome barriers to data sharing Communications Stephanie Hampton 2010-10-07 00:14                     
+ * 115         Lack of organizational support (home institutions) Management Rebecca Koskela 2011-01-10 01:20
+
+6) Around the room
+Steph: Mark Schildhauer and I just returned from NSF Dimensions of Biodiversity PI meeting - Mark and Corinna Gries (LTER) gave a presentation on CI issues. the PIs were very vocal about needing access to CI resources, and workforce development for CI-capable scientists. DataONE was described and several people mentioned it throughout the meeting.
+
+
+Bob: Planning for the EVA meeting next week at NYU and also planning for the Best Practices Workshop at the North American Carbon Program Meeting in Albuquerque (February 3) (sponsored by ORNL DAAC, USGS, and DataONE)
+
+John Cobb:
+(Advanced Regional Network ) ARN2 workshop postponed until later in Winter/Spring: Stil in N.C. Data is a theme
+Edification: NSF SI2 PI meeting yesterday: https://sites.google.com/site/si2pimeeting/agenda
+
+
+Suzie:  Kimberly, Carol (cannot attend), Mike (cannot attend) and I have been invited to a meeting of the DataNet Federation Consortium’s (DFC) Policies and Standards Group. This group is led by Helen Tibbo from UNC and her  colleague Cal Lee. Their primary tasks is gathering user requirements from the scientific communities the DFC is serving. The meeting will include all the DataNet projects who are collecting user requirements from the scientists. The goal is  to discuss our methods, learn from each other, and possibly do some alignment. NSF asked them to do this to demonstrate collaboration across the projects and has given DFC money for travel.
+
+Deborah: 
+*Submitted an Innovative applications of artificial intelligence paper last night that used some DataONE use case requirements to motivate updates to our semantic ecological and environmental monitoring platform
+* Work is in progress with collaborations between CEE, Semantics and Interoperability working group, SBC LTER, and SONET on refinements of use cases
+
+Bertram:
+Nothing new this week.
+
+Todd
+Nothing to report here
+
+Bill: Just back from IDCC - DataUp won 2nd place in the poster contest!
+
+

@@ -1,0 +1,51 @@
+Hands-on Session  17.06.2010
+
+
+Let's get started with this (from the build-area)
+    ant change-to -Dsuite=comad-exp
+
+
+goto: kepler/comad-exp/workflows/demo
+
+
+==> Instantiate Attribute
+    org.kepler.domains.ComadDirector
+
+==> Instantiate Component 
+    org.kepler.coactors.CollectionComposer
+
+Create your initial xml data structure:
+
+<Annotation key="start_time">"01-01-2008"</Annotation> 
+<Annotation key="end_time">"01-01-2009"</Annotation> 
+<Collection label="HumidityDataCollection"> 
+ <Annotation key="station_number">"s2"</Annotation> 
+ <Collection label="station"> 
+  <Collection label="CollectionPoint"> 
+   <Data label="timestamps">1.196499599E9</Data> 
+   <Data label="humidity">29.700001</Data> 
+  </Collection> 
+  <Collection label="CollectionPoint"> 
+   <Data label="timestamps">1.196503199E9</Data> 
+   <Data label="humidity">28.799999</Data> 
+  </Collection> 
+  <Collection label="CollectionPoint"> 
+   <Data label="timestamps">1.196510399E9</Data> 
+   <Data label="humidity">29.200001</Data> 
+  </Collection>   
+ </Collection>  
+ <Annotation key="station_number">"s5"</Annotation> 
+ <Collection label="station"> 
+  <Collection label="CollectionPoint"> 
+   <Data label="timestamps">1.196499599E9</Data> 
+   <Data label="humidity">36.799999</Data> 
+  </Collection> 
+ </Collection> 
+</Collection> 
+
+http://code.google.com/p/waters16s/
+
+
+
+
+

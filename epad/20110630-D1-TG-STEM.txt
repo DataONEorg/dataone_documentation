@@ -1,0 +1,121 @@
+Coordination Meeting for DataONE, TeraGrid MN, STEM TeraGrid Analyses
+
+Notes from previous meetings:
+ * http://epad.dataone.org/20110429-D1-TG-STEM
+ * http://epad.dataone.org/20110610-D1-TG-STEM
+
+Attendees: Kevin Webb, Paul Allen, John Cobb, Nick Dexter, Daniel Fink
+
+
+Agenda
+ * review of target dates:
+   * July 15 - STEM analysis products being deposited dynamically, as analyses are complete
+   * discuss and resolve any blockers at CCIT meeting in July; add check up call to CCIT agenda
+ * status report on action items from previous meeting:
+   * (Kevin   - lead, Daniel, Matt, Paul, Vivek): [June 30] come up with real   metadata template for STEM results; use Matt's first draft created for   the Feb NSF demo
+     * 6/30 status: 
+       * Kevin has procedure to generate necessary metadata files for all types of STEM results.
+       * We need to generate a metadata file for every output file from the STEM process
+       * Approach would make things the most atomic (as per D1 preferences?)
+       * How to link groups of files together? (e.g., 52 individual images making up an animation) 
+       * BagIt support in Metacat won't be ready in time.
+       * More of a usability issue than a technical problem.
+   * (Daniel   - lead, Dave, Nick, Kevin): [May 31] Draft a document describing  information flow and major components, systems, services and protocols   involved in the interactions. 
+     * Daniel Sent around this document last week.
+   * (Matt   - lead, Kevin, Dave?, Paul, Nick): Review the R package design and refactor as necessary for   supporting this experiment
+     * No longer need this issue; technology not needed
+   * (Dave):[June 15] Design and implement setup staging implementation of D1 infrastructure
+     * Nick is working closely with D1 development team (and is doing some development)
+     * Nick keep this group advised of potential issues with D1 integration
+   * Mount filesystem for intermediate data transfer (Nick)
+     * Expect that this will work fine.
+   * Production  runs will start in beginning of July
+     * Kevin is testing workflow on TG today
+     * Full species test scheduled for tomorrow.
+     * EML generation is in place so that things are in place to ingest into MN
+   * Discussion of post-STEM processing
+     * Nick shared the dataflow
+     * 5TB Data on DCWAN will stay untl end of allocation (March 31 2012)
+     * 5TB Data on Albedo will stay until end of allocation (March 31, 2012)
+     * Cornell needs to figure out where to put data locally
+   * Allocations
+     * We are fine-tuning storage needs estimates. We can request supplemental when we determine that.
+     * We can also ask for additional computational hours when we show that we are able to use the existing allocation.
+   * Papers at TG11
+     * Nick has paper
+     * Daniel has invited talk
+   * TG transition to Exceed name/program
+     * June and July
+     * be ready for bumps, maybe
+   * TG Science Highlights Article
+     * will feature Daniel's work
+   * Nautilus allocation
+     * SGI ultraviolet computer; single system image for 1000 cores
+     * can do big animations
+     * Is there a cool visualization that we might want to do (after the runs are done).
+     * Daniel spoke to VisTrails people
+ * action items
+   * Nick will get Kevin an example of a Metacat object containing a zipped file set (cc to Paul).
+     * http://knb.ecoinformatics.org/knb/metacat/knb-lter-vcr.156.3/knb
+   * Paul will clarify with Dave/Matt about D1 preferences about granularity of objects (single files? zipped filesets?)
+   * Nick will get whole group a diagram of post-STEM dataflow showing http://dl.dropbox.com/u/242778/dataflow-diagram.png
+   * Kevin/Daniel will determine "final" storage needs so that we can ask for a supplemental allocation
+   * Kevin should try to determine the ratio of TB/storage hours so that we can ask for more storage once we get a bead on that
+   * Nick/John will get copy of paper/presenation used in TG11 to this group when available
+     * Paper: http://dl.dropbox.com/u/242778/TG11_Abstract.pdf
+   * PAUL: Need someone external to review metadata/data to make sure we've captured everything of importance.
+ * issues for July CCIT meeting
+   * nothing specific yet identified
+
+Notes:
+John Cobb:
+1) TG-11 related papers: Nick and Dan - how's it going?
+2) TG -> XSEDE transition
+3) TG Highlights article featureing Dan.
+4) NICS support
+NICS is willing  to assist in support of the allocation. The following note is from Yashema Mack t NICS/UT
+
+<begin quote>
+Hello Dr. Cobb,
+
+
+I wanted to follow-up with you to let you know that I will be the
+Point-of-Contact for your project.
+
+I am available to help with questions or concerns related to Kraken,
+Nautilus or other NICS resources.  Please send email to help@tergrid.org and
+put "Kraken" or "Nautilus" in the subject line.  If you need to speak to the
+NICS Scientific Support staff – you may call (865) 241-1504 between 9am and
+6pm ET Monday-Friday. If you would like to speak to me directly my contact
+information is listed below.
+
+
+Information about NICS resources can be found at our website.
+
+http://www.nics.tennessee.edu/
+
+http://www.nics.tennessee.edu/computing-resources/kraken
+http://www.nics.tennessee.edu/computing-resources/nautilus
+
+
+System downtime's are posted at TeraGrid News. You can subscribe to news at
+http://news.teragrid.org. <hxxp://news.teragrid.org/>
+
+
+<http://news.teragrid.org/>
+
+Occasionally, we will ask you for images and summaries that we can use in
+our presentations and reports to funding agencies.  When you have papers in
+professional journals, we will appreciate receiving a copy.
+
+Thank you.
+
+
+
+Yashema Mack
+NICS/RDAV Scientific Support
+National Institute for Computational Sciences
+University of Tennessee
+<end quopte>
+
+

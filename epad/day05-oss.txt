@@ -1,0 +1,68 @@
+# A placeholder for code blocks
+#URL for this etherpad is: http://epad.dataone.org/day05-oss
+
+Let's start with day-05 on the training repo: https://github.com/NCEAS/training/tree/master/2014-oss/day-05
+
+# To clone the training repo locally:
+cd <location of choice>
+git clone https://github.com/nceas/training
+
+if you already have the repo:
+git pull
+
+Please open this in a new tab:
+https://github.com/NCEAS/training/blob/master/2014-oss/day-05/data-manipulation/00-messy_data.md
+
+
+
+https://github.com/NCEAS/training/blob/master/2014-oss/day-05/data-manipulation/00-messy_data.md#more-messy-non-standard-input-formats
+
+Note:
+str_locate_all
+vs.
+str_locate which just finds the first instance
+
+http://www.rdocumentation.org/packages/base/functions/readLines
+
+str_sub(rawData[1],dashes[[1]][1],dashes[[1]][2])
+
+
+
+
+===========
+
+
+* Writing EML+-:'(
+* Data viz with ggplot2+ +++++++++++++++++++++++
+* More from this morning (data manipulation, learning about apply) ++++++++++
+* Incoporating citations with R markdown+++++++++++++++++
+* ticket tracking +?+?:-o what is it?
+
+
+
+library(ggplot2)
+df <- read.csv("http://inundata.org/climate.csv", header = TRUE)
+
+
+                                                   
+                        
+                                
+                                        
+                                                
+myplot <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) 
+summary(myplot)
+ 
+                                        
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + geom_point() 
+
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + geom_point(size = 2)
+
+=======
+Solution
+
+
+
+
+
+
+

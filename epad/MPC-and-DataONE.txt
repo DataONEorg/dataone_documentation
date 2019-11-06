@@ -1,0 +1,229 @@
+MPC and DataONE
+2 September 2014
+
+1. Please join my meeting.
+    https://www1.gotomeeting.com/join/481193840
+2. Or, call in using your telephone.
+    Dial +1 (646) 749-3112
+    Access Code: 481-193-840
+
+Attending: Bruce, Chris, Skye, Wendy, Tracy, Laura, Mark, Alex
+
+Looks like we're ok for the science metadata, but we need to work on resource maps
+From 8/29/14 MNW meeting:
+ * MPC  and Dublin Core - lots of email traffic past day or two (Bruce, Skye,  Chris, Wendy) - looking at their parser, concerns about the namespace  (potentially confusing), so ensure that dcterms -> dcterms URI and dc  (that would be qualifieddc??) -> dc URI
+   * need to make sure the examples are right
+   * dc elements are a subset of dcterms, what MPC creates is confusing with both dc elements and dcterms
+   * does qualifieddc container import dcterms only (no, both)
+   * can decouple document namespace from parser namespace, so we're cool
+   * working  with pre-planning for DDI, suggest leaving their code_book stuff as  application/octet stream for the time being;  formatID is currently  immutable (can change with 2.0), so whatever we decide now sticks until  they would re-do this DDI_code_book with a different (more appropriate?)  formatID
+   * Skye - two RMs defined for every data package, see this: 
+     * https://dataone-test.pop.umn.edu/mn/v1/object/?count=10
+     * 3rd record is a RM, and so is the 5th, but it looks like they're defining the two RMs differently
+     * What's up with that??
+     * also embedding a RM within a RM - i.e. circular reference
+   * issues  with identifiers (case, underscores, etc.), perhaps a lack of  consistency is due to pulling identifiers from another source and using  them with DataONE
+   * Chris is holding off on syncing until there is more stable content, identifiers, RMs, etc.  
+   * Let's talk Tuesday with Wendy - Laura to find time to talk
+
+Data package = any resolvable URI ... in general
+DataONE wants to make links resolvable in DataONE, i.e. a DataONE MN is the owner of that URI.  Science data and science metadata are registered in DataONE.  
+
+MPC will not be providing data but rather directing users back to the MPC site for links to data  (wait... I get that, but it sounds confusing...)
+
+We need a resource map that "contains" the system metadata, the qualified dublin core science metadata, DDI as html, .... what else did Chris say??
+
+We have a typing issue as well: formatID = application/octet-stream (thinks it's a binary app file)
+    the DDI HTML should be typed as /HTML
+
+At this point, Fabio could clear everything out of the MPC MN and we can start from scratch; we've been holding off on synching so we could do this rather than going through an update process
+
+Mapping for dublin core terms is complete, will be in testing this week, perhaps ready to push to production next week (part of 1.4.0 release)
+
+there are prefixes on identifiers with the resolve URLs which do not need to be there (REM for resource maps, etc.), this reflects subdirectories on the MPC end
+
+resolve service expects a unique (within DataONE) identifier to be passed as a parameter
+
+If there is a change to the HTML (XML?) file, there will need to be a new identifier to reflect this changed content.
+
+Chris and Skye to write up a redmine ticket detailing what changes need to be made; Wendy says most everything discussed today will be simple changes for her to make to generate RMs, etc.
+
+Fabio back on 9/15; plan to do first harvest when Fabio's had a chance to make changes on his end
+
+
+
+===========================
+MPC and DataONE
+11 November 2013 (Never forget), 10am EST, 9am CST
+
+Attending:  Alex, Wendy, Bruce, Laura, Fran
+
+We need to follow-up after some good email conversations last week or so and make sure we have a plan and are on the same page
+
+Phase I: metadata only.  
+What metadata formats does MPC want to use?  We need to make sure D1 is using the correct mapping.  MPC looking at OAI-PMH.  DDI 3.2 (Data Documentation Initiative social science data, microdata output).
+
+ACTION:  Need a story in redmine for DDI, link to MPC's MNDeployment ticket  (future, not blocking)
+
+MPC planning to send record-level metadata to D1.  OAI-ORE requires Dublin Core; we think we'll start with Dublin Core metadata via OAI-PMH.
+
+Geospatial metadata/data available later with ISO 19115
+
+Stack?  First choice ruby, fallback on java or python  - early days yet
+
+MPC to decide how to handle PMH (making metadata available) - early days here, too
+    MPC's data isn't served up real-time at present
+D1 deciding how to consume PMH (discovering metadata)
+
+Timing:  current target is end of July 2014 (D1), MPC's schedule indicates some version of API up and running by end of 1st quarter 2014 (31 March).  These target dates seem reasonable at this time.
+
+Does D1 have any restrictions in its consumption of Dublin Core?  Not that we're aware of.  
+
+Check back in 2 December (any open questions, any decisions on which stack, etc.)
+
+===================================================
+MPC and DataONE Technical Talks
+29 October 2013, noon EDT, 11am CDT
+
+Attending: Laura Moyers (DataONE-MNs), Bruce Wilson (DataONE-CCIT/MNs), Skye Roseboom (DataONE-CCIT), Chris Jones (DataONE CCIT), Alex Jokela (MPC), Jesse Erdmann (MPC)
+
+TerraPop mostly written in ruby but has some java (per Alex)
+
+Tiers: http://mule1.dataone.org/OperationDocs/member_node_deployment/select-tier.html
+
+TerraPop written in ruby on rails for the most part, some inner workings are written in java, so there is some jruby to make them talk to each other; db backend is Postgres; Jesse uses Python and perl
+Skye has done a little with jruby.
+
+Restricted access?  metadata is unrestricted, but the microdata it "points" to can be restricted; US data is unrestricted
+
+Is data mostly in databases or in files?
+
+fixed width unicode; data that are derived from microdata live in db - accessed via TerraPop webapp
+
+is microdata tabular?  format isn't delimited in any way; hierarchical - household record and person record, person record linked to household record
+    household 1
+        person 1, person 2, etc.
+    household 2
+        person 1, etc.
+
+granule = lowest possible identifiable-by-a-DOI that makes sense object (can be a record in a file, can be a file, one day's worth of data from one sensor, one year's worth of data, etc.)
+resource map = defines all the objects that are part of a dataset (science metadata + data)
+
+ACTION: Alex and Jesse decide on what is a 'granule' of data that would be exposed as a file via the D1 API (MNRead.get(identifier)
+
+?? what is the goal for the data we want to make available/visible?  
+?? what format/standard for metadata?  may be a question for Cathy and company
+ * another avenue for TerraPop data discovery; broader visibility of data
+ * also compatibility re: ppl taking TerraPop data and other entities' data and working with them together
+
+OAI-PMH requires use of Dublin Core at least
+
+ACTION: get back with Tracy/Cathy/Wendy to see what metadata standards are used at MPC
+
+Extract engine - assembles everything that needs to happen re: microdata; tend to be really big files
+
+If first step is to expose science metadata, need to standardize metadata standards
+We think Wendy might be working on something like this re: how MPC communicates with D1 and others
+One of D1's goals is to communicate with multiple metadata standards; we can create crosswalks between repository's metadata and D1 
+Want system and science metadata served from same place
+
+Some of the data is coming from other places
+No direct link from TerraPop to access data; currently is being tested by folks; Tracy is gatekeeper right now.  By end of year plan to have data available via TerraPop.  We can email Tracy and find out how to access data there.
+
+Plan of attack:
+ * Metadata is first target (bare science metadata)
+   * Better (next step) is to wrap science metadata with pointer to data
+   * Implies creation of system metadata objects to track science metadata
+     * http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html#Types.SystemMetadata
+ * Second target is providing access to data to be publicly available (i.e. Tier 1)
+ * Then look at access to restricted data sets (i.e. Tier 2) - MPC is looking at federated logins.  DataONE - CILogon
+
+Does MPC have way to store XML metadata (was that system or science, or both?)
+No.
+
+D1 uses MimeMultipart; could MPC use java / jruby to handle messaging in the D1 API?
+... possibly
+D1 also has a certificate manager to help manage auth calls in tier 2 and up; 
+
+Does MPC have an idea of identifiers w/in TerraPop?  not really.  D1 - idea of persistent identifiers for preservation and reproducibility (i.e. don't reuse identifiers)
+
+Alex is really working on multiple related projects, also looking at making sure these can communicate, etc.
+
+D1 identifiers <=800 chars, no spaces
+
+Could take identifier down to the person record, for example. 
+
+System metadata can identify when a data object has been obsoleted and what it was obsoleted by
+
+Alex to check with Tracy and Wendy to see what they are thinking, then work with D1 to see how to make things happen.
+
+Touch base with Alex and Jesse Monday next week (11/4), see who else we want to get involved in these discussions, then get back together in 2-3 weeks.  
+
+Methods of communication:
+http://irc.ecoinformatics.org/   channel = dataone
+email Bruce, Laura, Chris or Skye (see distribution for this meeting's invite)
+
+==============================================================
+Minnesota Population Center (MPC) and DataONE - discussions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+30 September 2013, 2:30pm EDT, 1:30pm CDT
+
+Attending:  Laura, Bruce, Rebecca, Tracy, Cathy, Wendy
+
+Tracy - PM for TerraPop, worked with creating boundary files, etc.
+Cathy - executive director of TerraPop, also administrative ?? for MPC
+Wendy - curator/data archivist/data geek, deal mostly with standards
+Bruce - ORNL/UT person, DataONE CCIT and Member Nodes
+
+MPC hopes to start moving forward sooner rather than later, starting at the metadata level.  That is, expose metadata at first but users would go to MPC to access the data itself.  
+
+We don't (currently) have systems in place that allow other systems to harvest data, but other things we're doing will lead us in that direction.  We've been at social science microdata level; moving into broader environmental data.  
+
+TerraPop brings 3 kinds of data together: social science, environmental, and ....  <-- someone please tell me what the 3rd kind is.
+
+Bruce: what are you using internally for your data management system?
+MPC: homegrown
+Bruce: Are you running OAI-PMH  system?
+MPC: no
+Bruce: used to be ORNL DAAC manager, so understands where MPC/TerraPop is coming from
+
+OAI-PMH:  Open Archive Initiative - Protocol for Metadata Harvesting
+
+How do we work with people who do OAI-PMH to ease transition to DataONE MN?  Another option is the GMN (Generic Member Node) stack.  
+
+MPC:  Does GMN require another copy of metadata/data, or can it be an interface to an existing system?
+
+Bruce: Can be an interface.  GMN is an option, as is Metacat, and OAI-PMH.
+
+MPC: Want to be doing this (metadata harvesting, etc.) one way.
+
+Bruce: one goal in DataONE is to have one "interface", meaning regardless of what underlying systems the MN uses, the user can use one tool (i.e. R) to find data from multiple MNs.  Transparency - user doesn't have to go multiple places/use multiple tools.
+
+MPC:  of the three options, GMN is lightest weight (data and metadata), OAI-PMH is just metadata, Metacat ?? (Bruce: java-based stack from Ecoinformatics, several MNs already running metacata (i.e. KNB), also NPN (National Phenology Network) will be standing up a metacat MN)
+
+MPC:  looks like GMN or OAI-PMH would be better options for MPC.  
+
+Where do we go next?
+ - is data in shapefile format, or other formats?
+ - some is shapefile, others we are considering exposing metadata for now are sample (country-census year combination)
+ - what's the structure for that data?
+ - fixed format, flat files
+ - start with metadata exposure now with data interactions later
+ - several flavors of OAI-PMH to choose from (i.e. some folks use Dryad, Fedora, custom, etc.), if MPC wants to go this route we need to keep in contact re: plans, desires, etc.
+ - depending on the timeline of MPC MN implementation, we might want to consider GMN 
+ 
+ - Wendy has already looked at the GMN a bit, is there a technical person who can help with technical cost of implementing
+ - start with Bruce and he can help as well as pull in other CCIT people as needed (Roger maybe)
+
+MPC is the broader entity, includes several data infrastructure projects in addition to TerraPop.  TerraPop involves international census, survey, etc. data; 
+
+DECISIONS/CLARIFICATIONS from this meeting:
+ * The DataONE Member Node will be MPC (Minnesota Population Center).
+ * The plan is to expose metadata only now, with data interactions to follow.
+ * At this point, we are considering GMN as software stack.
+
+ACTIONS from this meeting:
+ * MPC will look for their technical folks and put them in contact with Bruce and other CCIT people (email)
+ * Laura to set up another meeting like this November 6th or 7th to touch base and see where we are technically, etc.
+

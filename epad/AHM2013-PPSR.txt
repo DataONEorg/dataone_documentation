@@ -1,0 +1,143 @@
+DataONE All Hands Meeting 10/22-24/2013 - PPSR working group (Todd Suomela, Chris Eaker and Laura Moyers representing UT present)
+12:30-3:00
+
+Jennifer Shirk (CLO), Andrea Wiggins (CLO), Anne Bowser (CLO-summer intern), Robert Stevenson (UMass), Greg Newman (co-chair, CSU-citsci.org), Megan Hines (USGS), Julian Turner (CSU-CoCoRAHS), Todd Suomela (UTK), Laura Moyers (UTK), Rick Bonney (co-chair, ), Chris Eaker (UTK-Hodges Library, Data Curation) briefly
+
+Primary topic of conversation: Redesign of citsci.org, specifically the PPSR-CORE metadata.  This is project-level metadata; project will have a GUID.  The project's datasets' metadata will point to this project-level metadata (i.e. include the project GUID in each dataset's metadata)
+
+Plan to devote most of Thurs/Fri to writing
+
+Today - Greg and Jennifer's show - citsci.org and how it relates to citizen science in general,  Ideum guys (Ben and Miles - building next citsci)
+metadata and data sharing issues to resolve, identify who's doing what where
+
+Jennifer:  citizen science exploding, 1000s of projects; need to understand the field, networking, in-depth research either about the field or about a given project in context of the field; USGS (and other federal entities) has list of PPSR projects; 
+
+project-level metadata - project name, desc, URL, # participants, etc.  -- want simple to start with
+
+scistarter.org - http://scistarter.com/index.html  
+citsci.org - http://citsci.org/cwis438/websites/citsci/home.php?WebSiteID=7 (Greg Newman)
+informalscience.org - http://informalscience.org/ 
+cocorahs.org - http://cocorahs.org/  Community Collaborative Rain, Hail & Snow Network, Colorado State (Julian Turner)
+citizensciencecentral.org - at Cornell - http://www.birds.cornell.edu/citscitoolkit 
+
+need a metadata architecture (user data about citizen science projects) that crosses all PPSR entities ----  PPSR_CORE data standard
+
+also, need a dashboard - how many PPSR projects are out there, what kinds of data to they hold, what is the impact of citsci, networking, 
+spatial/temporal data highly desired but problematic, number of papers, citations, etc. 
+
+Miles: is it a good idea to have one metadata structure that all PPSRs adhere to 
+informalscience.org is like a dataone for PPSR
+goal for today: define fields (does this mean common metadata standard)
+want "most recent data" capability
+
+PPSR has living data sets
+
+Discussion of proposed REQUIRED FIELDS:
+Miles showed a spreadsheet PPSR_CORE_v2
+ * ProjectGUID - GUID for each PPSR project
+   * owner of project needs to generate a GUID or ask someone like citsci.org to do it for them
+ * ProjectName - name of project
+ * ProjectDescription - goals, objectives, purpose, vision, etc. (there are different types of project descriptions, i.e. public-facing, for participants, for funders, for data users, etc.) a description that is universal; no minimum/maximum
+   * can add additional description fields for entities which require different/additional information (not required)
+ * ProjectDateLastUpdated - date the project information (this metadata) was last updated
+ * ProjectCoordinatorName / ProjectContact / ProjectContactEmail - discussion about making contacts separate (i.e. not in-line in this table), what if you have one project in citsci, then later you have a diff project in citizenscience, how will it know if you are the same person; Coordinator and Contact are often two different people - DECISION: keep ProjectContact which links to a separate table with name, email, phone, etc.  Keep ProjectContactEmail as non-required - if it is omitted, pull email from ProjectContact record in separate table
+ * ProjectStatus - "Starting" or "Active" or "Complete" or "Hiatus" or "Pending"  <-- controlled vocab for these statuses is desirable.  Important so that we don't contact people whose project is closed.
+ * ProjectStartDate / ProjectEnddate are optional fields
+ * OPTIONAL for further discussion: ProjectNumParticipants, ProjectNumActiveParticipants (lots of confusion from Andrea's survey, what does "registered" mean, or contributor, or active, etc.)  Important for use case studies, but very difficult to define.  registered vs active, all-time vs current
+
+maybe citsci.org could be like LTER - a network of networks, exposing metadata for all these other PPSR entities.
+
+3 models of cit sci project owners
+    no website - need someone else to generate GUID and/or store data
+    CoCoRAHS - capable of generating GUID
+    citsci.org and others - serve as GUID providers / data storers
+    
+Laura needs to attend later meetings on this topic to follow up.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10/22/13 3:30-5:00
+
+Ideum plans to draft up XML and mock-up of webform to enter data and get back with PPSR
+
+Scheduling of efforts - keep things moving along, but need community feedback
+
+Dashboard - what kind of metrics are desired - this can drive the kinds of metadata you want to require "Begin with the end in mind"
+
+Further discussion on desired metadata fields, especially regarding later reporting needs
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10/23/13 8:30-10:00
+
+Needs if PPSR entities want to be MN or somehow contribute to an existing MN
+ * Decision on how often to take a snapshot of data
+   * yearly, quarterly, monthly
+ * How to handle corrections (QC)
+ * How to handle updates of data
+   * append "current year" file, separate file "date range", etc.
+   * 
+ * What is citsci.org thinking about doing?  Are they a "network of networks" like KNB and LTER?  Greg says they host data for PPSR projects as well as metadata.
+ * CoCoRAHS (Julian) is very interested in slender node.  <--- get with Dave re: slender node and streaming/live data
+ * See the PPSR MN persona - eBird is different from Zooniverse in terms of data types, data collection, etc.
+
+CAISE (Center for Advancement of Informal Science Education) c.f. informalscience.org, see 2009 paper "Public Participation in Scientific Research: Defining the Field and Assessing Its Potential for Informatl Science Education"  http://eric.ed.gov/?id=ED519688  (focus on educational outcomes)
+
+See PPSR WG charter
+
+See the Tool Kit / steps on http://www.birds.cornell.edu/citscitoolkit/toolkit
+
+Need an ongoing PPSR group, beyond DataONE, see NSF and others' emphasis on citizen science (LM)
+
+3 C's model (co-created, contributory, 
+rubric for scientific outcomes
+scientists very concerned with data quality
+
+Rick proposed a white paper focused on scientific outcomes of citizen science, case studies
+Rob suggests a (separate) paper with emphasis on data quality
+
+See How Science Works:  http://undsci.berkeley.edu/article/howscienceworks_01   <--- share this with Bruce et. al.
+
+Investigate PPSR WG's reputation within DataONE and in the broader PPSR community (LM)
+
+Using humans as sensors is crowdsourcing, faux-data collection as an educational tool isn't "real" either.  Need both good scientific outcomes and citizen participation for it to be real citizen science.
+
+Julian is really into metadata (value of good metadata in data discovery, etc.)
+
+Requests for participation from data users is much bettter received than requests from repository (my time's not wasted, etc.)  Julian's "data story" 
+
+Andrea - can get funding for education rather than science, even if science is the ultimate goal.
+
+see "biscuit paper" as a stepping stone to a PPSR directorate in NSF (see line 88 above)  woo hoo!!!  (Bill said when finished he and Rick could present to NSF)
+
+Zooniverse (massive data collection, papers), case study for "biscuit paper"
+
+If we want the steps to be useful to the community, we need to demonstrate their utility.  Factors, rather than linear steps.  A set of (not exclusive) factors.
+See foldit project
+What is 4th paradigm (data-driven research rather than working from a hypothesis)
+
+2nd morning session: plan to work as group on the proposed "biscuit" paper, Megan to take notes.
+
+=============================================================================================================
+10/24/13, 10:30-noon  breakout for data characteristics that drive good science outcomes
+
+What are the things you can do to elevate trust/usefulness in/of data?
+
+Julian, Rob, Megan
+
+Looking at it from the user/data searcher's perspective
+
+Sometimes difficult to find ALL the data for a PPSR project.  Sometimes a PPSR project will only make available a portion of their data because ALL the data is overwhelming or not useful to a majority of users or 
+
+discoverability - ensuring data is visible to users, can they be discovered via an internet search engine, is the dataset registered in a repository (specific to scientific domain), are common terms used to describe the data (metadata standards?), 
+
+accessibility/usability - "the extent to which information is available, or easily or quickly accessible" - see Hunter et al 2012 paper (Megan has) can you get the data in a raw format? do you have an API? is it publicly available?
+
+trust - is project/entity trusted/reliable?  is data reliable/trusted?  consider observational error - how does that impact reliability/believability/trust of data?
+
+=============================================================================================================
+10/24/13, 1p-3p, entire group reconvenes to discuss science outcomes paper outline
+
+citsci.org is an infrastructure, not a project (see how funding questions apply)
+
+See Data Exchange Protocol - core fields for project metadata  (PPSR_CORE)
+
+

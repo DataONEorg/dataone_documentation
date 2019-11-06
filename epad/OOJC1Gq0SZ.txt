@@ -1,0 +1,186 @@
+White paper:
+Purposes
+1. to help facilitate member node creation of best practices for data citation 
+2. To inform data creators, publishers, and repository holders of the reasons for good data citation practices
+
+Possible Outline
+
+What is data citation?
+(be inspired by Vision and Cook papers in references?)
+Just as we cite papers, so too should we cite datasets.
+“Many researchers…are not aware that published data deserves citation just like published articles, perhaps in part because so many articles presently use data without citation.” Freese, J. (2007). Replication standards for quantitative social science: Why not sociology?. Sociological Methods & Research, 36 (2): 153-172. 
+
+
+“…Researchers’ behavior, attitudes and knowledge concerning the citation of data sets fall short of the ideal that would foster openness, fairness and economy in the pursuit of scientific knowledge.”
+Sieber, J. E. & Trumbo, B. E. (1995). (Not) giving credit where credit is due: Citation of data sets. Science and Engineering Ethics, 1 (1): 11-20.
+
+
+Why we need data citation
+Data citation helps publication and sharing, which helps preservation and re-use:
+  •Gives credit to data producers and data publishers
+  Is this an intellectual property question as well?
+     –Vital incentive for data sharing and archiving
+  - Provides a link from traditional literature to data
+  - Gives intellectual legitimacy to creation of data by treating it as a first-class citizen 
+  •An important part of Research metrics for datasets [Chavan]
+     –Sponsors want publication and retention numbers
+   Need recipes and stuff, i.e., standards and archives
+   Facilitates tracking data reuse
+       understand data lifecycle, what topics can be well studied by reused data, etc.  
+
+
+Hypothesis: Establishing a system of simple, easy  conventions for data citation will encourage its practice, hence data  publishing, which will promote data sharing and re-use by providing standards and producer incentives and will lead to data preservation. 
+data citation  --> data publishing  --> sharing --> use --> data preservation
+
+- currently lack a standard
+- as a result, great diversity of practices [Sieber; Enriquez et al] and often data are not cited using best practices.  "We manually reviewed 500 papers published between 2000 and 2010 across six journals; of the 198 papers that reused datasets, only 14% reported a unique dataset identifier in their dataset attribution, and a partially-overlapping 12% mentioned the author name and repository name.  Few citations to datasets themselves were made in the article references section.  "  [Enriquez et al]
+- this makes it very hard to track data [Enriquez et al]  "Consistent with these findings, dataset reuse was difficult to track through standard retrieval resources.  Searching by repository name retrieved many instances of data submission rather than data reuse, combing the citation history of data creation articles was time consuming, and searching citation databases for the few early-adopter dataset DOIs and HDLs in reference lists failed due to apparent limitations in database query capabilities and structured extraction of DOIs. "
+
+- few journals and funders specify data citation standards, only a third of repositories surveyed offer a data citation recommendation [Enriquez et al]  "We found that few policies recommend robust data citation practices: in our preliminary evaluation, only one-third of repositories (n=26), 6% of journals (n=307), and 1 of 53 funders suggested a best practice for data citation.  "
+
+
+current data citations are variable
+•Not always an identifier
+•Data vs. data subset, unclear
+•Date of collection vs. date of publication, unclear
+
+WHat we want From data citation
+•Precise identification of dataset
+   –At level of version, file, table, etc., or groups thereof
+   –So that readers can find and understand the data
+•Credit to data producers and data publishers
+   –Vital incentive for data sharing and archiving
+•A link from the traditional literature to the data
+   –Gives intellectual legitimacy to creation of data sets
+•Research metrics for datasets
+  --Sponsors want publication and retention numbers
+
+Current work on data citation
+•DataCite initiative: to encourage data publishing via global data citation support: standards, persistent reference to datasets in regional archives
+•Supplemental materials publishing standards for data, surrogates, and extended descriptions and methods, e.g., technical data application appendices
+•Publishers: increased volume of submission
+•Community standards (so many to choose from!): ORNL DAAC, Pangaea, GCMD, ESIP, GBIF, TDWG, OECD, NISO/NFAIS, IPYDIS, Dataverse, etc.
+
+Organizations/Programs with data citation recommendations:
+1. DAAC hasdata ciation recommendations and asks for citation of the use of any ORNL DAAC dataset.  http://daac.ornl.gov/citation_policy.html
+
+
+2. International Polar Year (IPY): last updated recommendations in 2008.  The motivation is to make data quickly and easily available and to give credit to producers of data.  The recommendation recognizes Chicago Manual of Style, 15th edition. Cited like books.
+o   http://ipydis.org/data/citations.html ;  http://classic.ipy.org/Subcommittees/final_ipy_data_policy.pdf
+
+3. International Council for Science World Data System (ICSWDS) produced a document in October 2010 on certification of World data system facilities and components. The focus of this report is on global interoperability with interconnections between data management components and concentrates on access rather than citation. ICSWDS wants to oversee WDCs and FAGs and CODATA. http://www.icsu.org/index.php4
+
+ 
+4. The Earth Observing System (EOS) has an August 2010 paper “Data Citation and Peer Review” which discusses the importance of data citation practices and some level of standardization.   http://aurora.gmu.edu/spaceweather/images/2010EO340001.pdf
+ 
+ 
+5. IODE (Intergovernmental Oceanographic Data and Information Exchange of UNESCO) held a data citation workshop on April 2, 2010 (Paris). Stated values were that  data citation needs to have a standard and that digital libraries need to be engaged in the publication of data.   http://www.iode.org/index.php?option=com_oe&task=viewEventRecord&eventID=625
+ 
+•2008: Kelly, M. C. (2008). NISO thought leader meeting on research data.  Retrieved from http://www.niso.org/topics/tl/NISOTLDataReportDraft.pdf. 
+•2009: Green, T. (2009). We need publishing standards for datasets and data tables. OECD Publishing White Paper, OECD Publishing.
+•2009: Brase, et al. (2009). Approach for a joint global registration agency for research data. Information Services & Use, 29 (1): 13-27. (i.e, DataCite)
+
+
+Why we need a standard
+and/or Why member nodes ought to have a formal data citation policy
+–Any dataset, database, data file
+–All levels of granularity (table, row, cell)
+–For any snapshot (version, e.g., in time)
+–Any formatted view: XML, HTML, CSV, etc.
+–With and without annotations
+–Links to older, newer, and latest versions
+–Actionability (“Click-through”)
+–Persistence (validity into the future)
+--Machine readable for automated parsing
+
+Suggested elements for data citation policy
+
+dois
+- but they cost money, we need to admit this
+handles?
+other unique identifiers?
+
+Other suggestions
+We recommend your citation policy state that the citation be in the formal references list rather than a table or supplementary information, since these are not easily tracked [Seeber]
+
+other unique identifiers for repository and/or contributors (ORCID and Niso Institutional Identifiers)
+
+Examples
+Can also cite the Cook and Vision references.
+
+- DAAC:  http://daac.ornl.gov/citation_policy.html
+"Citation Style
+ * On-Line Data Set
+ * Turner, D.P., W.D.Ritts, and M. Gregory. 2006. BigFoot NPP Surfaces for North and South American Sites, 2002-2004. Data set. Available on-line [http://daac.ornl.gov] from Oak Ridge National Laboratory Distributed Active Archive Center, Oak Ridge, Tennessee, U.S.A.doi:10.3334/ORNLDAAC/750.
+   * Web Page
+   * Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC). 2009. SAFARI 2000 Web Page. Available online [http://daac.ornl.gov/S2K/safari.html] from ORNL DAAC, Oak Ridge, Tennessee, U.S.A. Accessed November 5, 2009.
+   * MODIS Subset
+   * Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC). 2009. MODIS subsetted land products, Collection 5. Available on-line [http://daac.ornl.gov/MODIS/modis.html] from ORNL DAAC, Oak Ridge, Tennessee, U.S.A. Accessed November 20, 2009.
+   * Online Map
+   * Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC). 2009. FLUXNET Network Map. Available online [http://www.fluxnet.ornl.gov/fluxnet/Maps/Political_fluxnet_networks_cropped_small_april2009.png] from ORNL DAAC, Oak Ridge, Tennessee, U.S.A.
+   * CDROM
+   * Chapman, B., A. Rosenqvist, and A. Wong. 2001. JERS-1 SAR Global Rain Forest Mapping Project. Vol. AM-1, South America, 1995-1996. CD-ROM. National Space Development Agency of Japan, Earth Observation Research Center; National Aeronautics and Space Administration, Jet Propulsion Laboratory; European Commission Joint Research Centre; Earth Remote Sensing Data Analysis Center of Japan; Remote Sensing Technology Center of Japan; and Alaska SAR Facility. Available from Oak Ridge National Laboratory Distributed Active Archive Center, Oak Ridge, Tennessee, U.S.A.
+The content of Citations should include as much of the following information as possible:
+   * contributing investigators/authors
+   * year of publication
+   * product title
+   * medium (for items other than printed text)
+   * online location (i.e., URL)
+   * publisher
+   * publisher's location
+   * date accessed
+   * digital object identifier"
+
+- Dryad
+"How do I cite data from Dryad? from http://datadryad.org/using
+When using data from Dryad, please cite the original article.
+Sidlauskas, B. 2007. Testing for unequal rates of morphological diversification in the absence of a detailed phylogeny: a case study from characiform fishes. Evolution 61: 299–316.
+Additionally, please cite the Dryad data package. The citation should include the following elements:
+ * Author(s)
+ * The article publication date
+ * The name of the data file, if applicable
+ * The title of the data package, which in Dryad is always "Data from: [Article name]"
+ * The name "Dryad Digital Repository"
+ * The data identifier
+For example:
+Sidlauskas, B. 2007. Data from: Testing for unequal rates of morphological diversification in the absence of a detailed phylogeny: a case study from characiform fishes. Dryad Digital Repository. doi:10.5061/dryad.20
+If you are using a large number of data sources, it may be appropriate to provide a list of referenced data packages, rather than citing each individually in the references section. This list of data packages can then be deposited in Dryad, so others who read your publication can locate all of the original data."  
+
+
+Not in scope?
+The fact that it is hard to track even data dois (note, easily resolved through adherence to best practices in semantic mark-up (e.g., RDFa + XML). Requires a standard mark-up term (e.g., Dublin Core) for data citation, which may not yet exist.
++ problems with interfaces like ISI web of science not supporting lookup of DOIs
+
+
+
+References
+
+Altman, M., & King, G. (2007). A proposed standard for the scholarly citation of quantitative data, 13(3/4). Retrieved from http://gking.harvard.edu/files/abs/cite-abs.shtml
+
+Chavan V, Ingwersen P. (2009) Towards a data publishing framework for primary biodiversity data: Challenges and Potentials for the biodiversity informatics community, BMC Bioinformatics. 10(Suppl 14): S2
+
+Cook, R.  (2008)  Citations to Published Data Sets.  FLUXNET newsletter.  
+http://daac.ornl.gov/ornl_daac_citations_200812.pdf
+
+Enriquez V, Judson SW, Weber NM,  Allard S, Cook RB, Piwowar HA, Sandusky RJ, Vision TJ, Wilson B.  Data citation in the wild.  IDCC 2010, Chicago IL. 
+http://dataonedatacitations.wordpress.com/2010/09/13/dcc-poster-submission-data-citation-in-the-wild/
+
+(this one or another one about the importance of unique identifiers)
+Page, R. D. M. (2008). Biodiversity informatics: the challenge of linking data and the role of shared identifiers.,9(5), 345-54. Retrieved from http://www.ncbi.nlm.nih.gov/pubmed/18445641
+
+Parsons, Mark A.; Duerr, Ruth; Minster, Jean-Bernard. (2010)  Data Citation and Peer Review.  Eos, Transactions American Geophysical Union, Volume 91, Issue 34, p. 297-298.  http://public.deltares.nl/download/attachments/16876020/DataCitation_EOS_2010EO340001.pdf
+
+Seeber, F. (2008). Citations in supplementary information are invisible, 451(7181), 887. Nature Publishing Group. Retrieved from http://www.nature.com/nature/journal/v451/n7181/full/451887d.html
+
+Sieber, J. E., & Trumbo, B. E. (1995). (Not) giving credit where credit is due: Citation of data sets, 1(1), 11-20. Retrieved from http://www.springerlink.com/index/10.1007/BF02628694
+
+Vision TJ. (2010). Open Data and the Social Contract of Scientific Publishing, 60(5), 330-331. American Institute of Biological Sciences. Retrieved from http://caliber.ucpress.net/doi/abs/10.1525/bio.2010.60.5.2
+
+more possibly-relevant citations are in this group:
+http://www.mendeley.com/groups/544621/data-citation/
+
+
+could have citations to:
+- why urls are not permanent
+
+

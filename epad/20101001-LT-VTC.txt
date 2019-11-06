@@ -1,0 +1,56 @@
+
+
+Here's a link to the epad for notes from this meeting - it will be created about an hour before the meeting:
+http://epad.dataone.org/20101001-LT-VTC
+ 
+ Attendees: Rebecca Koskela, Bob Cook, Carol Tenopir, Dave Vieglais, Steve Kelling, Bruce Wilson, Todd Vision, John Cobb (15 min late)
+ 
+ 
+ Regrets: Suzie Allard, Mike Frame, Bertram Ludaescher, Matt (via Dave),Viv
+ 
+
+ Agenda for 2010-10-01
+
+
+ * Progress in planning for and issuing invites for the AHM 
+   *  Will CE WG  
+     * Have sent invitation but don't have too many responses; taking a tally and will let me know in the upcoming week (eg by about 7 oct)
+     * Viv: will not be on the call today (traveling), but just to  let you know -- the invitation for the CEEWG is out and responses are  starting to trickle in. We have posed the idea of the ABQ meeting being  our first, and will see who might be able to attend. 
+   * Will SW & P WG be meeting? 
+   * Are there more than 2 DataONE post-docs?            
+Carol: The UT post-doc position will be unfilled for the Nov meeting, so no UT post-doc there. Hope to fill by January, will be advertising this month and reviewing previous applicants.
+ 
+ * Progress in planning for and issuing invites for DUG
+As soon as the contract with the hotel is complete, the invitations will be sent out - expecting this to be early next week.
+
+ * Update on NSF review 
+    Bill's summary that is  also based on his conversations with Dan Atkins and Tony Hey at a meeting in Seattle after the NSF review meeting:
+
+- The September review represented a very effective discussion among the science coordinators, DataNets, and OCI  (The science coordinators present were: Cheryl Eavey, Clifford Jacobs,Peter McCartney, and Sylvia Spengler {by phone}. Bob Chadduck was also present as a consultant to OCI)
+- My sense in terms of what we need to do for February is (at a high level):
+   a.  establish the compelling vision for how our CI will enable new and transformative science
+   b.  show our plans and timeline for creating the CI
+   c.  provide compelling demos of the interim products/deliverables and show how they will      enable activities and science that we could not do previously.  Further, describe how the work will lead to even more powerful data/tool support for the community.
+   d. overall, show our value proposition and how we link our CI to the science.
+   e. in  short, this is all quite doable, but will take some effort and prioritization to do so.
+
+
+
+ * Round the room (All)
+Carol: Nothing to add
+
+Stephanie: Carly has been in touch with Heather about joint work possibilities.
+Is anyone planning anything for ESA next year?  Carly and Heather are interested in doing
+something for ESA.  Todd and Bill discussed having a booth at ESA. Bob thinks DataONE would be interested.  Feedback from last workshop was positive. Stephanie will pass ideas by LT. Todd asked about paid vs open workshop formats. Ecoinformatics session was orphaned because planned so late - day after workshop. Bill and Todd picked up session when leader dropped out. Carly also interested in Excel add-on project.  Workshop proposal date is Dec 2nd - The November AHM would be a good time to discuss DataONE plans for ESA.
+
+Bob:Nothing to add
+
+Steve: successful in running the models on TeraGrid (using Lonestar) -processed 50 species and results are similar to cluster results.  Improvement in time? could 550 species in 8 hrs if could get the processors; depends on workload at the time
+
+Bruce: Nothing to add
+John: Nothing to add
+
+Todd: poster on summer work on data citation has been accepted to DCC; UK funding for Dryad has started this week so can add other journals; asked for names of journals in environmental sciences that might be interested; Heather Piwowar began collaborating with Angus Whyte from DCC who is collecting some of the for study of data citation/reuse: http://www.dcc.ac.uk/about-us/dcc-staff-directory/angus-whyte
+
+Dave: heavy emphasis on CI for February review; important not to have changes to software or hardware right before important demos
+

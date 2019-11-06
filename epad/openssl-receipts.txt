@@ -1,0 +1,83 @@
+OpenSSL recipes
+
+
+About certificates:
+- A root CA is a self signed certificate.
+- An intermediate CA is a CA signed by a "higher" CA, such as a CA root cert.
+
+
+View certificate request:
+$ openssl req -in ca.csr -text
+
+
+View private key:
+$ openssl rsa -noout -text -in privkey.pem
+
+
+View certificate:
+$ openssl x509 -noout -text -in newcert.pem
+
+
+Check if private key matches a given certificate:
+1. View private key.
+2. View cert.
+3. Compare private key modulus to public key modulus
+
+
+Check which certificates a given server will accept:
+$ openssl s_client -showcerts -connect gmn-dev.test.dataone.org:443
+or
+$ openssl s_client -showcerts -connect stress-1-unm.test.dataone.org:443 -CApath . -cert usercert.pem -key userkey.pem
+
+
+Create a self signed or root CA certificate:
+$ openssl genrsa -des3 -out selfsigned.key 4096
+$ openssl req -new -x509 -days 3650 -key selfsigned.key -out selfsigned.crt
+$ openssl rsa -in selfsigned.key -out selfsigned.nopassword.key
+
+Create a new server certificate signed by the dataone test (intermediate) CA
+Create public and private key pair for the Certificate Signing Request (CSR):
+$ openssl genrsa -des3 -out test.key 4096
+Create the CSR:
+$ openssl req -new -key test.key -out test.csr
+Sign the CSR with the CA:
+$ openssl x509 -req -days 36500 -in test.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out test.crt
+Remove the password from the new key (optional):
+$ openssl rsa -in test.key -out test.nopassword.key
+
+
+Removing the password from a public and private key pair
+If a private key that is to be used by Apache is password protected, Apache will prompt for the password each time it's started. The password can be removed to prevent this.
+$ openssl rsa -in server.key -out server.nopassword.key
+
+
+Creating an intermediate CA cert:
+Create private key for int ca:
+$ openssl genrsa -des3 -out ca_intermediate.key 4096
+Create certificate request (CSR) for int ca:
+$ openssl req -new -key ca_intermediate.key -out ca_intermediate.csr
+$ openssl req -new -key server.key -out server.csr
+$ openssl req -new -sha1 -key private/cakey.pem -out ca2008.csr
+Sign CSR with root ca:
+$ openssl x509 -req -days 36500 -in ca_intermediate.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out ca_intermediate.crt
+$ openssl ca -days 365 -out ca2008.crt -in ca2008.csr
+
+
+Creating a self signed certificate:
+Apache self signed certificate HOWTO
+http://www.perturb.org/display/entry/754/
+/ ca.key pass phrase: test
+As DN, I put my IP number (this probably only needs to be done in the root cert)
+server.key pass phrase: test
+challenge password: <blank>
+Performed the optional step to remove the password.
+Skipped Apache config step.
+
+Standard location for server side cert on Ubuntu:
+  /etc/apache2/ssl
+
+
+Convert P12 certificate (returned by CILogon) to PEM:
+$ openssl pkcs12 -in usercred.p12 -nokeys -out usercert.pem
+$ openssl pkcs12 -in usercred.p12 -nocerts -out userkey.pem
+

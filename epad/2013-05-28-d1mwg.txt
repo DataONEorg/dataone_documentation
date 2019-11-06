@@ -1,0 +1,57 @@
+On the tech breakout call: Greg, Chris, Karthik, John
+
+"Metadictionary" Prototype
+
+Goal: to build a proof-of-concept  web-based software service that acts as a public registry of metadata  terms from all domains and from all parts of "metadata speech".
+
+ * Anyone can search and read term definitions (without registration).
+ * After authentication (after one-time account registration), anyone can add new terms.
+ * New terms may be similar to or propose alternate definitions for existing terms.
+   * Every term has a unique concept identifier in addition to a (not nec. unique) natural language string.
+ * Anyone can refine their own terms at will when part of the "vernacular".
+ * No one can change a term once it is "canonical" or "archival".
+ *  New terms enter the vernacular (similar to Internet Draft) and auto-expire in 6 months unless renewed.
+   * It is risky to use terms in the vernacular
+   * Auto-expire terms are inactive but still visible in the archive.
+
+ * Platform : python, NLP tools
+ * Github: open source, Modified 3-clause BSD license
+ * Flask: browserable demo on local server (localhost)
+ * Heroku: playground for developers hosted free on the internet (limited resources)
+
+ * Starter vocabulary:  dublincore.org (15 terms and definitions)
+ * Term structure:  term (natural language string), unique concept id (string), definition (string)
+   * important: expect term structure/schema to change often
+   * optional later: up/down votes, example section, synonyms, antonyms, see also
+   * concept ids from EZID?  
+     * http://n2t.net/ezid/doc/apidoc.html
+   * semantically significant subparts: ??? eg, "temperature" of X in units Y is number N
+   * special category for interoperability: elements for time and place (lat,lon,elevation)
+   * special connector terms: ??? "per" "by" ("squared" "cubed") "of" "in"
+
+ * Managing term evolution:
+   * identifiers, versions, version numbers, stable reference, "replaces", "obsoletes"
+ * Term classes ???
+   * Vernacular (unstable rapidly evolving)
+   * Canonical (stable)
+   * Archival (stable, obsoleted canonical and expired vernacular)
+ * Reputation-based voting -- support now or later?
+ * For Chris to read up on between today and June 3
+   * Heroku, Flask, EZID API, Python NLP tools
+ * ??? = suggested topic for Chicago
+
+Useful libraries: nltk, simplenlp, nl and langtools.
+Good book for Chris to read through: http://www.amazon.com/Natural-Language-Processing-Python-ebook/dp/B0043D2E22/ref=sr_1_1?ie=UTF8&qid=1369759546&sr=8-1&keywords=natural+language+python
+
+Github usernames:
+Karthik: karthikram
+John: jkunze
+Jim:
+Greg:
+Nassib:
+Chris: cjpatton 
+
+e.g. Flask app. Can be spun up locally or quickly deployed on heroku for easy sharing.
+http://markx.herokuapp.com/
+
+

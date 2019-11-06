@@ -1,0 +1,216 @@
+Attendees: Rebecca, John Cobb, Amber, Todd, Bob, John Cobb, Suzie, John Kunze, Dave
+
+
+Regrets:  Bill, Mike Frame, Deborah McGuinness, Bertram, Carol (in London)
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+ We will also use the epad: http://epad.dataone.org/2013Jun28-LT-VTC 
+ 
+If you have items to add, let me know.
+
+1.  Please join my meeting, Jun 28, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/459586681
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (773) 897-3015
+Access Code: 459-586-681
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 459-586-681
+
+Agenda for 2013-06-28
+
+1) CI Update (Vieglais)
+Starting to deploy 1.2 update to CN stack - fixes to internal authentication procedures; the deployment should be complete by Monday
+Lots of activity on ONEDrive in preparation for demos and assessment at DUG
+Quite a few changes will be made to indexing on CN stack - spatial and taxonomic hierarchy - lots cleaner and more controlled views of multifaceted searches
+Trying to schedule next CCIT meeting - most likely September (last week in August is out) 
+  - likely to be 24-26 September, at NCEAS in Santa Barbara
+Update on Dryad MN: progressing closer to being operational - only remaining issue is a configuration issue - metadata format referencing an ontology document rather than a schema document - once this is sorted out, should progress on
+For DUG should be running in the test environment
+
+2) CEE Update  (Budden)
+DUG Session Objectives: http://bit.ly/11MpIFC
+Will use hashtags and epads to communicate remotely
+No live reomte presence
+slides will be available.
+
+Dinner on Sunday is a catered reception w/ heavy Hors D;ouvres
+
+Personal Query: who is driving from Knoxville/Oak Ridge? Caravan?
+(To get reimbursed for mileage, you'll need an estimate for the airline fare and D1 can only reimburse up to that amount - case can be made for multiple people in same vehicle) - driving alone is cheaper than flying. Caravaning will be even cheaper.
+Laura and John are coming who else? Mike Frame and Mary Beth
+
+3) Member Node Update (Cobb)
+
+PISCO: SOLR index query issue from Thompson Reuters: investigating
+(Could be a misunderstanding of how to parse the search results)
+
+USGS CSAS: Resolved the CN and MN incongruity
+
+TFRI live: (Mentioned above: Thanks Amber)
+
+Much other progress in many areas, see Redmine flurries, esp. Dryad
+
+Next Nodes: Dryad, SEAD, UKansas, EDAC (My personal estimate of most likelies)
+
+Todd: Any candidates on MN list that are DSpace repositories: 
+John C: Dryad, SEAD (RK: thought this was Fedora), libraries are interested
+Action Item: develop list of Dspace MN's
+
+4) PPSR Working Group changes for review (Koskela) 
+
+Hi Rebecca:
+
+I am requesting two things: that we add Karen Oberhauser to bring our  working group back up to 12 members, and that we appoint current member  Greg Newman as co-chair to replace Andrea Wiggins, who would like to  step down as co-chair but remain as an active  member of the group.
+
+Karen Oberhauser is a Professor in the Dept. of Fisheries, Wildlife and  Conservation Biology at the University of Minnesota, where she and her  students conduct research on several aspects of monarch butterfly  ecology. Her research depends on traditional lab  and field techniques, as well as the contributions of a variety of  audiences through citizen science. Her strong interest in promoting a  citizenry with a high degree of scientific and environmental literacy  led to the development of a science education program  that involves courses for teachers, and opportunities for youth to  engage in research and share their findings with broad audiences. In  1996, she and graduate student Michelle Prysby started a nationwide  Citizen Science project called the Monarch Larva Monitoring  Project, which continues to engage hundreds of volunteers throughout  North America. Karen is passionate about the conservation of the world’s  biodiversity, and believes that the connections her projects promote  between monarchs, humans, and the natural world  promote meaningful conservation action.
+
+Karen has recently begun to collaborate with the working group on  production of a paper (led by Andrea and me) that focuses on  understanding the characteristics of citizen science projects that lead  to successful scientific outcomes.  She (like Gretchen LeBuhn)  brings to the group the credibility of being a tenured professor who  has used citizen science to great success in her research and career.
+
+Greg Newman focuses on developing and evaluating online ecological data  management systems in support of multi-scale citizen science and  community-based monitoring programs to provide decision support for  those involved with the management and conservation  of natural ecosystems. His research involves developing and evaluating  the International Biological Information System; an ecological data  management support system for the nationwide citizen science website 'CitSci.org' (www.citsci.org)  and the National Institute of Invasive Species Science (www.niiss.org).  This system is a spatially and temporally explicit online Geographic  Information System designed to detect, assess, monitor, and control  invasive species  worldwide. Greg's research areas include: designing and evaluating  online tools in support of multi-scale citizen science; developing tools  for multi-scale ecological analyses using integrated data sets;  assessing the usability and effectiveness of online  tools; evaluating different science communication approaches; and  developing comparable ecological indicators for multi-scale analyses.  Greg also serves on the Web and IT subcommittee for the North American  Pika Consortium to help assist in citizen science  web development activities.
+
+Greg has been active in the citizen science working group for the past  few years. He is always the first to respond to requests for help; took  an active role in creating the data management guide; and is currently  leading production of a second paper on ensuring  data quality in citizen science projects. I believe that he is the most  likely member of the working group to successfully take on a  co-leadership role.
+
+Best, Rick
+
+Votes:  
+Mike Frame - yes
+Bertram - yes
+Suzie -yes
+Bob - yes
+John K - yes
+Todd- yes
+Bruce - Yes
+John C. - yes
+Viv - yes
+
+5) Knoxville Proposal Workshop (Koskela)
+
+Core CI
+Description
+The  core-CI for DataONE encompasses the resources and activities necessary  to ensure ongoing operations of the DataONE federation. Operation of  Coordinating Nodes is crucial to the function of the infrastructure and  so their maintenance and upkeep must be considered the highest priority.  This includes ensuring hardware is functional at each of the  coordinating node locations (as well as a fourth, independent site to  ensure effective monitoring), operating systems are secure and  maintained, and the Coordinating Node software stack remains up to date  and any flaws identified as the network grows are identified and  corrected in a timely manner.
+In  addition to operating the Coordinating Nodes, it is necessary to  maintain several software products that the Coordinating Nodes, Member  Nodes and consumers (e.g. investigator tools) rely on for normal  operations and interaction with the infrastructure.
+Several  software products have been, or are being developed by DataONE, and  these should be maintained into the future to ensure they are not  orphaned and fall into disrepair. User interactions with the  infrastructure will continue to evolve with technology changes and  expectations, so UI design and (re)implementation will continue to be an  important activity into the future.
+As  the number of Member Nodes increases, the total time dedicated to their  support will show a corresponding increase. Member Node participation  and satisfaction is essential to DataONE, and so sufficient resources  should be allocated to cover this aspect of operations.
+These  activities require physical equipment, software licenses (e.g. for  VMWare), and personnel for system administration, software development  and maintenance, documentation, and project management.
+Resources
+   * Director / management FTEs required = 1.0?
+   * Developers for maintenance and critical feature support (3 FTE)
+   * UI design (0.5FTE)
+   * System administrators (0.2FTE / location) (CN locations?)
+   * Hardware ($50k / yr / location)
+   * Software licenses: estimates? - maybe 10K$/yr - maybe
+     * VMWare may not be low. (was 7.2K$ for UT/ORC CN RK to check on UNM) (who pays for UNM VMware?)
+     * Splunk, maybe
+     * GotoMeeting
+     * Most else is Open Source
+   * Space, physical facilities
+   * Network access
+   * Support personnel (MN support, etc.) (1.0 FTE)
+   * Management personnel, MN support? (0.5FTE)
+   * Technical writer(s) (0.5 FTE)
+   * MN Resources (staff, space, hardware, etc; contributed)
+   * Working group / CCIT participants (need a core CCIT (6-10) going forward plus WGs that work on specific topics - more ephemeral than the WGs are now)
+Probably could be some overlap among CCIT and developers
+Activities
+   * Support and operate current CI software (3 CNs and 40+ MNs, 12+ tools, monitoring services)
+   * Manage technloogy transition of current CI SW (i.e. keeping up with underlying SW version upgrades, technology obsolescence, and/or technology substitution.)
+   * Systems maintenance and patching
+   * Refresh hardware
+   * Provide helpdesk support
+   * CI-related metrics are collected and maintained
+   * Grow number of MNs
+   * MN Forum meets to discuss operational issues
+   * Write and maintain operational documentation
+   * Manage software development process
+   * Maintain collaboration infrastructure
+   * Support adaptation of new ITK tools to work with DataONE
+   * Support the evolution of user interfaces and interactivity
+Outputs
+   * Maintenance releases of ITK software
+   * Maintenance releases of MN software
+   * CI-related performance metrics
+   * Maintenance releases of CN software (indexing, authentication, etc)
+   * Good operational documentation
+   * Trusted and met software delivery schedule
+   * New MNs come online
+   * Ticket tracking systems, VTC systems, build systems, source code management systems, etc.
+   * Community-supported ITK tools
+   * Science Impact? (under both CI and CE, probably - a whole project output)
+
+Core CE
+
+Education and Engagement:
+   * Workshop activities at 2 meetings / yr
+   * Exhibit booth at 1 meeting / yr (only 1? - barebones is one. would prefer 2, would like to partner with other projects as we have in the past, ...)
+   * Maintenance of online education materials
+   * Creation of screencast tutorials for DataONE services
+   * Maintenance of Internship program
+   * Maintenance and enhancement of public websites, social media activities
+   * Enhancement / development of marketing materials (posters, banners, flyers, handouts etc)
+   * Publish quarterly newsletter
+DUG / Outreach:
+   * Conduct annual DUG meeting
+   * Maintain DUG wide communications
+   * Provide DUG specific materials for outreach
+   * Maintain active MN forum network
+   * Support usability testing of DataONE services / products
+   * Collaborate on community driven projects
+Working Groups / Workshops
+   * Usability/Assessment workshop activities 1-2 / yr (shared with CI)
+   * Focussed workshop activity for material development 0.5-1/yr (~30 participants)
+   * S&G WG 1 in-person / yr
+Evaluation considered under management at the moment
+
+Resources:
+
+1 FTE Director/Administrator Community Engagement
+0.5 FTE UI specialist (shared with CI) (design layer of tools/ materials/ public facing materials)
+0.5 FTE student / intern admin - maintenance of educational materials/ screencasts
+0.5 FTE MN support person (shared with CI) 
+0.5 FTE web person
+Funding for <8 interns
+Travel support for single face-to-face intern meetings
+Travel support for 5 individuals for 2 meetings / yr (training workshops)
+Meeting costs for DUG (space, staff support, catering etc)
+Travel support for 5 DataONE personal to DUG meeting (presenters)
+Travel support / Meeting costs for WG / Workshop activities
+Software / subscription costs (photo libraries, paid social media accounts etc)
+[Note: Postdocs not inlcuded in a bare-bones core funding, but they could/should be supported with additional funding/related projets/picket proposals
+
+Other Project components: (apart form CI and CE above)
+Management/Leadership
+Project Management
+Support for reviews
+EAB support
+Support for interaction with 
+    NSF,
+    international efforts (EUDAT, ...)
+    Other Datanets
+Evaluation
+Assessment activities
+
+
+Dinners:  Bistro By the Tracks and Cafe Four (Suzie may be able to get a private room; Market Square in Knoxville)
+
+ 6) Around the Room
+
+Bob:
+Of  interest….Elsevier and ORNL DAAC have just released a Web service that allows readers of Elsevier articles to link directly to the data sets at the ORNL DAAC (for articles that use DAAC data).  The Web service is based on the article's DOI.  
+·      http://www.sciencedirect.com/science/article/pii/S0921818111001159
+Todd: cool, the same feature just went live for Dryad a few weeks ago (yes, cool back at you.  can you please provide an example paper/ URL?)
+
+John Kunze:  (repeating from last week's epad but we ran out of time) Good progress on prototype metadata dictionary from the Metadata Working Group, code named SeaIce. Design document at https://github.com/cjpatton/seaice/wiki, hosted service (very unstable and very alpha) at http://seaice.herokuapp.com/.  Possible tie-in to RDA metadata working group?
+metadata ain't currently a term in this metadictionary :> <smarl-aleck mode>
+
+Suzie:
+Mary Beth West, who runs the UT User Experience Lab,  has accepted a position in private industry which is an amazing opportunity. Her last day is July 12 2013. We are beginning a search for her replacement.  There is continuity in that we have three students who are trained and have experience with the equipment and running subjects. Miriam will be helping with oversight (which she has done before) until we have our new UEL manager.
+Say it ain't so!
+
+I presented, "Identifying and Talking with Science Stakeholders" at the INSPRIRE 2013 pre conference workshop in Florence, Italy entitled "Information for Innovation and Socioeconomic Development: International Workshop at the Crossroads of Earth Information, Technology and Social Sciences."  My presentation talked about the DataONE approach and also hit on some basic tenets of science communication.  I was also invited to speak on teh closing "what we learned/what's next" panel.  It was an interesting program featuring activities from EU countries with representation from Google and Microsoft as well.  
+
+

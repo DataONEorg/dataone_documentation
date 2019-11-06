@@ -1,0 +1,159 @@
+Attendees: Rebecca,Suzie, Mike, Bill, Matt,  Bertram, Bruce,Steve, Viv, Amber, Dave, Deborah, John Kunze, Trisha , Deborah
+
+Regrets: Stephanie, Carol, Bob Cook
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+Call Information:
+
+Conference Call Number: (866) 804-6831
+This brings you to our conference call line - next press 1
+The conference number is: 56445#
+
+Will also use the epad: http://epad.dataone.org/20110826-LT-VTC if participants can get to it
+ 
+Agenda for 2011-08-26
+ 
+1.   CI Status (Vieglais/Jones)
+Goal for this week: bring test services up
+Core funcitionality for CNs
+Synchronization process delayed achieving goal of TIer 1 functionality this week
+Main goal for next week will be Tier 1 functionality and push it through to tools also
+
+Have determined and documented the packaging strategy - think it will work for all the MNs
+Requested feedback on this at the DataCite meeting
+
+Replication is Tier 4 functionality and working on this along with synchronization
+
+Have also been dealing with certificate management; want to be able to issue certificates for testing purposes; CILogin didn't accept the DataONE certificates so came up with a hybrid solution - part commercial, part home grown
+
+Metacat MN in good shape
+Generic MN also in good shape
+
+Merritt continuing development (based on Metacat implementation)
+Mercury developers need to update to the new DataONE core libraries in order to bring Mercury MN uptodate - also need full access to the source code because it's such an important component of the infrastructure - right now only have some access to some code but not all the critical code. This needs to be resolved ASAP. Bruce will check on this.
+
+Matt working with ROpenSci - contribute Matt's code to that group for assistance with maintenance
+
+Aiming for core functionality for the EIM meeting in September and most functionality for the AHM in October
+
+2.   Names for DataONE portal, aka search engine aka Mercury
+Flash
+Lightning
+MercuryONE
+DataONE search portal (sorry, no imagination :-) )
+iData
+ONESource
+Doogle
+
+3.   Status of revised LT charter (Frame/Wilson/?)
+The only comment Mike received was from Bruce so it's time for the vote to approve,
+or not, the revised LT charter.  The latest charter is found at: 
+https://docs.dataone.org/member-area/committees/management-team/documents/leadership-team/lt-charters/DataONE_Leadership_Team_Charter_v9.docx/view 
+Bruce - Aye
+Suzie - Yes
+Mike: Yes
+Matt - Yes
+Steve-yes
+Viv-yes
+Bertram - Yes
+
+4.   Planning for All Hands Meeting (Michener/Koskela/Vieglais/Budden)
+      Need agenda for the LT face-to-face meeting on Monday
+ *       Hold off on this until the NSF calls resume (NSF may be making requests at this point)
+ * Will also have some people from NSF (at least Mimi & Irene)
+      
+      Working Groups that will be meeting:
+ *       Provenance
+ *       Semantics (Deborah said this group wasn't planning on meeting but Dave said it would be useful to have some of the group there) The AHM is the one opportunity each year for all the project members to get up to speed on what is happening with all the aspects of DataONE. Would also be good to get input from everyone for the Earth Cube project.
+ *       Federated Security (at least Jim & Randy)
+ *       Distributed Storage(John, Peter - Dave to check with John)
+
+ * Sociocultural
+ * U&A
+ * PPSR
+ * CEE
+
+      Tenative agenda for AHM:
+ 
+Plenary – 
+ * State of DataONE(includes CI)
+Working Group Highlights (submitted in advance)
+ * Evaluation (who, what, why, how)
+ * RCN Planning DataNet Federation (if appropriate)
+ * Planning for EarthCube EAGER proposal
+ 
+Evaluation (using SurveyMonkey)
+ 
+WG Breakouts for planning / introductions
+ 
+ Reception on  Tuesday: incl intern posters
+
++++++++++++++++++++++++++++++
+CCIT & WGs all day
+ 
+
+++++++++++++++++++++++++++++
+WG and WG Interaction Time (based on predetermined need)
+ 
+Report Back
+Summary & Calendaring
+
+5.   Earth Cube (Michener)
+Bill talked with Cliff Jacobs (running Earth Cube project at NSF) - Charrette Nov 1-4 (Tues-Fri) at NSF; 10 yr plus program
+
+Deborah & Matt planning to go - invitations not necessarily being sent but can register on web site and include what you would bring to the meeting, not just DataONE, but MN, research projects, etc. Not up yet but should be available next week. The whole online community process should also go up next week (including request for white papers).
+
+Probably want to identify other contributors for EAGER proposals
+The time frame is pretty rapid - want products out within a few months after announcement of which proposals are accepted
+
+6.   Around the Room
+
+Bruce -- Back from a productive workshop on Data Citation and Attribution.  I also had the chance to visit Lawrence Berkeley Laboratory (LBL) while there.  I gave a briefing on DataONE to Adam Stone (Rosio Alvarez's deputy), to the LBL head librarian, and the LBL head Records Manager.  They are looking at implementing a braoder institutional repository and would consider being a DataONE member node, particularly as they are looking to base that repository on Fedora Commons.  I (and Suzie & Trish) also had a chance to talk with Herbert van de Sample and Miriam Blake of Los Alamos National Laborary (LANL).  Note that Mimi sat in on much of that discussion.  Herbert is very interested in what we're doing with OAI-ORE, and I'll get info to him with pointers to what we've written up and the ongoing example of data packaging.  Miriam (head of LANL libraries) is also interested in following more with DataONE and the ways it can work with some goals LANL has for the open science side of their portfolio.  There is interest in other ways LANL can be involved with DataONE.  Rails for the ORC installation finally arrived earlier this week and the systems are (I believe) racked.  An order for the VMWare is being submitted (we should be able to work with a demo license to start).  We've got tentative agreement to work with the UTK VCenter infrastructure for one aspect of monitoring and to enable the HA capabilties of VMWare at ORC.  There will be a full outage, however, of the machine room where we're located at UTK during the end of the calendar year, probably between Christmas and New Years.  
+
+Suzie:  Attended the Data Citation and Attribution workshop — Bruce, Trisha and Heather P were also there. I was asked if we  could help the CoData working group with an assessment about data citation and they will be in touch in the next couple weeks to move ahead on this. CoData group leaders are Daniel Cohen (NAS), Todd Carpenter (NISO) and Micah Altman (Harvard).  I met with Alyssa Rosemartin (via phone) at USA-NPN and we will be conducting a usability study with citizen scientists who use the site.
+
+Bertram: attended first day of DataCite. Considering to broaden scope of ProvWG to adopt/recommend data citation standards & best practices. Also met with ROpenSci folks; provenance is also of interest to them.
+Interested to increase cross-workgroup communication (e.g. ProvWG with EVA, semantics, archival); e.g. via monthly WG-leads call!?
+
+Mike: Nothing to report.  
+
+Amber: Was in ABQ working on finishing up getting the BP and ST databases published.  Also worked out details of enhanced usability with the UNM web team.  Met with the web team, Dave and Rebecca about the public website and this will be available for functional testing at the AHM. Got the CEE education modules online. Communicated with Alyssa Rosemartin about potetnial interactions btn NPN and DataONE and they will be attending the post EIM implementation workshop.
+
+Viv: Amber got the CEE WG Data Mgmt Education Modules up on the DataONE website....
+
+Steve: nothing to report
+
+John K: At CODATA and DataCite meetings in Berkeley this week, where was told that NSF will study IETF governance ($5M per year) as possible model for DataNet.  Talked with Mark Parsons (NSIDC, ESIP) and Bob Cook about ESIP data citation guidelines and DataONE draft guidelinesd.
+
+Trisha: Hi -- I heard an alternative pronunciation of DataONE -- Dah-tah-oh-ney -- teehee.  John, Bob, and I have a bunch to report from the DataCite meeting, but I will hold that until next week.  A couple of us were invited to a "thought leaders" Research eScience Workshop meeting at Harvard in late Oct. The organizers are GBMF, Sloan, and MSR.
+
+Matt: EIM proceedings about to go to printer; registration discounted until Sep 1; EIM training workshop planning into high gear next week -- have 15 participants signed up now -- instruction by Jones, Budden, Vieglais, CJones, Leinfelder, Waltz, and Dahl.  DataONE booth approved for EIM, will be table just outside of main conference room, will have to move day 1 and day 2.
+
+Dave: Nothing more to add. Planning for Irene, recovering from quake: http://famousdc.com/wp-content/uploads/2010/07/FamousDC-Earthquake-Devastation.jpg
+
+Deborah – Would like to get logistics on post doc hiring – salary range in particular, location confirmation.   Would like to follow up on earthcube conversations – possibly most directly with Matt and Bill,  I will also be at EIM first day, I will follow up with Jeff on all hands planning for semantics, I am also interested in the eScience workshop,  thinking of booths - is there a booth at AGU?  (i know signups are happening now)
+
+Bill: I am incommunicado for next two weeks.
+
+            
+                        
+August 26, 2011
+10:58 Suzie: mike or rebecca are you on the phone -- i am not sure if my headphones are working
+11:09 Amber: sorry - have been on the line but internet only just resolved its issue
+11:14 Bruce Wilson: @Dave -- Got it.  I will push on the subversion mirror issue for Mercury.
+11:30 Bertram: Yes to reserving some time to have e.g. ProvWG and CCIT meet
+11:38 Deborah McGuinness: I am protecting Nov 1-4 on my calendar so I could go to the earthcube meeting if invited
+11:38 John Kunze: Just joined
+11:49 Bill: Trisha: I joined a couple of minutes ago
+11:50 Bertram: Have to go to class... bye
+11:55 Mike: Hey I have to drop off and return a call I just missed
+11:55 Suzie: my mike is out
+11:56 Suzie: sounds great thanks
+11:58 Amber: @Matt - Can we talk at some point about the implementation workshop?
+11:59 Matt: yep
+11:59 Matt: next week?
+12:00 Amber: Taking some vacation time but will be online a few hours a day.  We can set up offline.
+12:00 Rebecca: @Deborah - please send me what RPI pays postdocs
+12:07 Deborah McGuinness: ireland sounds great
+

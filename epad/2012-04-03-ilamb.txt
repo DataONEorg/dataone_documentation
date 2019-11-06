@@ -1,0 +1,294 @@
+#persist
+
+Notes from November 2011 EVA Working Group:
+http://epad.dataone.org/20111115-ilamb
+
+Slides and documents to be shared:
+    -- https://repository.dataone.org/documents/Meetings/20120403_DataONE_EVA_Boulder/
+    
+Tuesday, April 3
+-------------------------
+Jeff Morisette, Rosie Fisher, Anna Michalak, Yaxing, Christopher, Steve, Shishi, Dave Lawrence, Vineet, Bertram, Suresh, Jorge, Claudio, Bob, and Matt
+
+Introduction & Meeting Goals by Bob Cook
+ * identify ILAMP activities that can feed into and drive DataONE CI that can be supported by DataONE
+ * Meeting Goals
+   * Review CI pilot plan for quant. benchmarking
+   * Discuss requirements for benchmarking selected model output
+   * Develop plan for visualizing land model output (carbon, vegetation, hydrology, etc)
+   * Develop EVA papers and proposals
+ * DataONE overview
+   * Review of broad goals of DataONE
+   * Components: Member Nodes, Coordinating Nodes, Investigator Toolkit
+   * Overview of tools at each stage of data lifecycle
+ * EVA overview
+   * EBird EVA use case
+   * Land Model EVA use case
+ * Open source software benchmarking system
+       * C-LAMP, LBA-DMIP, NACP Interim, MSTMIP, GCP Trendy, CMIP5, Furure MIPs, IPCC AR6
+     * 4 stages
+       * Select outputs to analyze (observations / model outputs)
+       * Convert to common space/time representation
+       * Intercomparison
+       * Scoring system
+     * Large number of models, incomparison approaches and scoring systems
+       * Ongoing question as to what are the most fruitful approaches
+       * Any system needs to be flexible and deal with new types of algorithms and scoring systems
+       * These are really arbitrarily complex computations at any of the 4 stages
+     * Implemented in R, Python, NCL, Matlab, IDL
+       * Also legacy code in perl, fortran, etc
+     * Workflow systems useful in intermixing these systems
+     * Claudio: Climate Data Visualization
+       * http://portal.nccs.nasa.gov/DV3D/vtDV3D/_build/html/index.html
+
+MsTMIP & Benchmarking by Christopher Schwalm
+ * Shows graph of models comparing 1) "Systematic error", 2) Bias, 3) Correlation for each model
+   * Schwalm et al 2010 JGR
+ * Sources of variation
+   * Climatic drivers
+     * Precip, radiation, temperature, etc
+   * Initial conditions
+     * What land/carbon state did the model start with
+   * How biomes and soils are defined
+   * Land use and land cover history
+   * Model structure
+ * MsTMIP: Try to hold first 4 sources constant, only compare effect of model structure
+   * 27 Terredtrial Bioshperic Models
+ * Model Evaluation approach
+   * Identify observational data to cmpare
+   * Examine how to best compare observations with model estimates
+ * MsTMIP Benchmarks
+   * Gross Primary Productivity
+   * Net Ecosystem Exchange
+   * Total Respiration
+   * Sensible Heat
+   * Aboveground Biomass
+   * Total Living Biomass
+   * Total Soil Carbon
+   * Leaf Area Index
+   * Evapotranspiration
+   * Soil Moisture
+ * None of the observational data are available at the scale and resolution that the models work at, so there is always some degree of estimation on the observational data grid
+ * Scoring of model skill (distance between observed and model output)
+   * Tabular (raw distance between model and data at pixel level?)
+     * Useful for model improvement/development
+   * Scores
+   * Normalized Scores
+   * Rank
+ * Visualizations
+   * Use normalized scores for intermodel visualization of model skills
+ * MsTMIP modeling teams provide model outputs, Schwalm provides comparison benchmarks and visualizations
+ * desire for standard metadata about observational data, and tracing the modeling and comparison process 
+
+Q: Has anyone used continuous integration testing frameworks for driving these evaluation benchmarks?
+
+Model Intercomparison Framework by Shishi Liu
+ * Framework
+   * Read data
+   * Process and compute
+   * Intercomparison
+   * Scoring system
+ * Read data
+     * Model outputs
+     * Observations
+     * Model driver data
+     * Data Type: NetCDF
+     * Procedures:
+       * Select variables
+       * Select models/sites, time period, region
+ * Process & Compute
+   * Aggregate by time intervals
+   * Regrid data
+   * Compute by specified region
+ * Intercomparison
+   * Methods: reagional, seasonal, inter-annual, etc
+   * Metrics
+     * Differences, pearson correlation, etc.
+   * Visualization
+     * Tabular
+     * Standard charts
+ * Scenarios
+ * Some questions about how the scaling and aggregation is applied
+
+ILAMB overview by Dave Lawrence
+ * Lineage important, collect in README files
+ * Observations Data must be publicly available, to be used for comparisons
+ * Overview of metrics that could/have been developed
+ * Overview of visualization of some of the metrics (mostly mapping, e.g., RMSE at global coverages)
+
+Afternoon Breakout Session:
+Two groups, overall process of Model Intercomparison Infrastructure
+
+1. Select output to analyze (Observation/Model Output)
+2. Convert to common representation
+3. Intercomparison
+4. Scoring System
+
+
+ * Hydrology (entire Group)
+   * Two types of data
+     * Global gridded data sets
+     * Point data
+   * Steps to complete the comparison--Gridded Latent Heat Flux  (as an example)
+     * 1. Obtain and maybe QC the observations dataset (source is MPI -Jena) FLUXNET)
+       * typically via email/communication to get FTP link
+       * would be nice to automate this through federation
+       * work on metadata, fill in gaps
+       * encode versioning in obs data sets
+       * use abstract identifiers to promote long-term viability of workflow
+       * all files in netCDF format, CMIP or CF compliant
+       * Cache data locally
+     * 2. Get the model data
+       * May be local? May be already part of ILAMB system
+       * Cache data locally
+     * 3. Regridding in space and time for obs and model output
+       * params for: interpolation algorithms, extent,resolution, etc.
+       * Cache results
+     * 4. Calculation of the metric (provided by the scientist)
+         * e.g., calculate RMSE for each grid cell for each month
+       * create a standard class for each class of metrics, subclass for given metric implementation (e.g., gridded data metrics that iterate over whole grid)
+         * this allows new metrics to subclass the general metric class and be plugged in
+       * parameters: include how to partition metric over user-supplied spatial regions
+       * Generate a score for this metric
+       * ISSUE: order of regridding & aggregation can affect the results
+       * Create any plots/visualizations (& potentially archive)
+     * 5. Build synopsis tables/rdf? that can then be used to generate a web view of the synopsis metrics, along with input data, visualizations, etc.
+       * 
+Vegetation (Rosie, Suresh, Christopher, Steve, Bertram, Anna, Jeff, Jorge)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Wednesday, April 4, 2012
+---------------------------------------
+participating:  Yaxing, Christopher, Steve, Shishi, Dave Lawrence, Vineet, Bertram, Suresh, Jorge, Claudio, Bob, and Matt
+
+
+DataONE linkages with other activities
+NSF OCI:  other DataNets; goal is to link each of the DataNets
+NSF-Geo:  EarthCube--in planning phase
+NASA:  Earth systems DAACs (similar to ORNL DAAC)
+DOE:  Earth Systems Grid Federation is being constructed; DataONE may want to contact ESGF in a year or two
+
+European Union
+    many efforts funded by EU to link across the Atlantic (with NSF)
+    CReATIVE-B (a biodiversity network)
+    
+Global Efforts by the EU
+    EUDAT
+
+Pilot Workflow
+based on discussion from yesterday, providing more detail for each of the workflow steps
+    
+1.  PARC:  First element of the Workfow
+
+PARC = Project, Aggregate, Reproject, and Clip
+
+Read Metadata:  temporal coverage, time step, units, spatial metadata
+Reproject:  
+Regrid:  extract data values; spatial and temporal regridding
+Aggregate:  avarage, single pixel extraction
+Clip
+    has inputs in addition to those for PARC
+        inputs to Clip:  land cover, ecoregions, climate regimes
+            need to evaluate function and define thresholds
+    outputs from Clip would be by region (e.g., North America), subregion, 
+
+Post processing / another element of the workflow
+    zonal values (averages)
+
+
+PARC Inputs
+Temporal & Spatial metadata
+Observation of interest:  T-avg or ET
+Spatial Characteristics
+Resampling
+Derived data
+
+PARC Outputs:  
+Documentation 
+Provenance  
+
+Requirements
+User interface
+    diagnostic package
+    scripting language (python, R for metrics)
+    visualization
+    ILAMB -- decided that metrics would be in R
+    
+    
+Visualization by Claudio Silva
+-----------------------------------------------
+Overview talk of visualization capabilities
+ * Ultrascale Visualization
+   * UV-CDAT (http://uv-cdat.llnl.gov)
+   * Fully provenance enabled; saves all versions of your work
+   * VisTrails used as engine in the middle
+ * Reproducible documents
+   * Freedman et al., Phys Review 2012
+   * Bauer et al., JSTAT 2011
+
+Note from Matt: also of interest is how to go up and down levels of abstraction in trying to both visualize and understand phenomena; see in particular:
+    -- http://worrydream.com/LadderOfAbstraction/
+    
+a brief history of visualization:
+http://hci.stanford.edu/courses/cs547/abstracts/08-09/090213-heer.html
+
+
+
+Actions/papers / proposals
+1.  DataONE to merge UV-CDAT visualization exploration, analysis functionality into its data access ( Claudio (lead), Matt, Suresh, Giri)
+    Pilot:  use DatONE data access linked to UVCDAT functionality
+        take advantage of the ORNL DAAC's collection of netCDF data files in a THREDDS data server / data catalog
+        Daymet:  http://daymet.ornl.gov/thredds/catalog/allcf/catalog.html
+        ORNL DAAC:  http://thredds.daac.ornl.gov/thredds/ornl_catalog/daac.html
+
+2.  Pilot project:  use DataONE / ILAMB / MsTMIP resources to build a pilot, based on the Tuesday afternoon exemplars  (Matt (co-lead), Bob (co-lead), Suresh, and others)    
+
+3.  Paper:  using UVCDAT to visualize / explore / analyze climate or land model data (Claudio (co-lead), Debbie, Christopher (co-lead), Anna, Forrest, Bob, and others)
+
+4.  Paper:  application of workflow technology, archival and  provenance for the ILAMB metrics (based on #2)  (are there other activities that could also be used here?) (many, including Bertram (lead), Dave, Matt, Christopher, Claudio (co-lead), Vineet, Steve, and Bob)
+    4.a.  maybe a related paper devoted to provenance (Bertram and Yaxing)
+
+5.  Paper:  regridding and its uncertainty (Jorge (lead) , Shishi, Yaxing, Suresh, and Christopher (potentially Anna))
+
+6.  Proposal:  build the pilot ILAMB workflow and determine how to construct a proposal to build the pilot to a fully functioning product / tool (TBD)
+    -possibly including sensitivity of metrics, how sensitive are the metrics to how they are calculated in the workflow (more than just a single number for the ranking / score; having an uncertainty on the ranking; how scores for individual outputs are weighted to come up with the total score)
+
+
+7.  Summer Intern Projects (at Standford and at ORNL) (summer 2012) (TBD)
+
+8.  Integration and leveraging of Anna's and Vineet's SI2 data assimilation project with DataONE EVA's activities (perhaps via VisTrails).  Need to work out some links between code and ftp / HPC resources.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Wednesday, April 5
+
+Bertram's talk
+    developing DataONE open provenance model (D-OPM)
+
+
+Example Use Cases from around the room
+
+-Bob:
+Kepler workflow that uses a Web service to generate MODIS subsets--subsets are based on a time variable source 
+
+- Yaxing:  Land cover develped by Martin Jung is based on an analysis of multiple input land cover data sets
+
+Multiple high-level steps were involved:
+Step 1: Original SYNMAP data (1km, global, one year ~2000) was derived from MODIS land cover, GLC2000, and GLCC. In this step, leaf type and leaf longevity information from AVHRR-CFTC are major auxiliary data. The detailed workflow of step 1 is described in text format in a paper published by Marin Jung.
+Step 2: Original SYNMAP data was reprojected, reformated, regridded into Analyzed SYNMAP data (0.5 degree, global, one year ~2000). The detailed workflow of step 2 is organized as a workflow model in ESRI ArcGIS.
+Step 3: Analyzed SYNMAP data was harmonized with Hurtt's land use change data to derive global Land Use Change data based on SYNMAP PFT types for MsTMIP project (0.5 degree, global, yearly 1700-2010). Step 3 was done in a Matlab program.
+
+Challenges for this use case: drill into each step to get the sub-workflow, then integrate these heterogeneous sub-workflow together.
+
+
+-Bob:  
+MODIS data from an early version (Version 4) were used to draw conclusions about the relationship between greening and drought; other workers using a later version of MODIS data (Version 5) were unable to reproduce the results using Version 4 data.  Part of that problem was the ways in which the data were processed / aggregated in the earlier study were not documented so that the later workers could re-do the analysis
+
+Steve Aulenbach
+-IGBP 59
+
+Major use case:
+ * How can one reproduce Figure 3 in a paper?
+
+

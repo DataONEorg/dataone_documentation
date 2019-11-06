@@ -1,0 +1,26 @@
+Introductions
+
+Bill, Rebecca, Bertram, Karthik, Richard
+
+Richard Update:
+    - I haven't fully gotten into starting the 600 workflows yet. Partially because of a python script I've been having difficulty with, partially because I don't unterstand SPARQL
+    - downloaded/uploaded around 400 on myExperiment
+    - Done a few things using SPARQL - put up the graphs on the blog. Going to be hard to test things diachronically - as users generally load around 5. If we can mine about myExperiment, which should be possible, then we should be able to say that this person has training from this person, etc. Complexity needs to be measured.
+    - Gone through the entire notes from the start - wrote up questions for the draft thing which is meant for De Roure. 
+    - Not as much as I had hoped - not as capable of juggling conferences with work. Sorry about that. 
+    - Not entirely concerned at this point too much - should be fine, I think, given the time we have available. 
+
+Bill: That sounds fine. So, the document you wanted to talk about more was Understanding Workflows.
+
+Richard: Yes, I'd like to go over the epad with notes about that. 
+
+Bill: To what extent is it worth pursueing automation further, if you're going to have to look at each one anyway. Automating it could eat up a lot of time available. 
+
+Richard: Ok, in that case, let's just do it manually. I'd still like to go over these notes, as it would be useful to see what we are going to look at before getting at all of the data.
+
+Bill: I think there are a lot of reasonable questions in the document that are hypothesis based or could be. At this stage, it would be really helpful to have some data. I understand where you're coming from, doing a full literature review and seeing where we are - to some extent, I think you probably have a good feel for that. When you have some data in front of you, though, I think that it will be clear which hypotheses to address, and maybe some new stuff will become clear. I would encourage you to spend more time actually getting some data. Item #3 - some of the workflows done manually would be really key. 
+
+Bill: Next week, let's take a reasonable analysis of the literature, and then step back and see what we have. 
+
+
+

@@ -1,0 +1,72 @@
+Technical / Process Documentation Design
+================================
+
+Introduction
+------------------
+Especially related to issue https://redmine.dataone.org/issues/3678 regarding adequate documentation for member nodes wanting to deploy their implementations, the weakness of existing documentation has been exposed.  In some cases, the information needed is documented, but not easily findable, and in some cases, especially on the workflow side, it is missing.  Finally, documentation written by several groups (coredev, MNWranglers, LT) resides in several places (www.dataone.org, mule1.dataone.org/architecture, /operations, /guides), and in different formats (MSWord, pdf, ReStructuredText/sphinx).
+
+The purpose of this epad is to build and share a coherent organization for existing documentation to allow all contributers to work more efficiently and flexibly, with greater awareness of other efforts, and with lesser worry of duplicating efforts.
+
+
+Documentation audiences
+--------------------------------------
+MN onboarding documentation needs to serve at least 3 distinct audiences:
+
+1.Member Node Wranglers - process owners and facilitators of the process of onboarding new Member Nodes.  They need to know the overall process and be able to refer Member Node contacts (project leaders and technical leads) to the appropriate procedures.  They also need to document their internal processes for such things as adding MN contacts to appropriate lists and assigning DataONE technical contacts.
+
+2. Member Node project leaders:  They are those accountable for their Member Node implementation and coordinating their organization's resources to get their implementation working.  Their needs are similar to MN Wranglers in that they need to understand the processes, and be able to hand off technical procedures to their technical resources.  They need to know the MN registration and testing process and general implementation requirements in the planning phase in order to put together the appropriate implementation plan.
+
+3. Member Node technical leads:  These folks are mostly responsible for building, installing and testing their organizations implemention.  They need access to the  technical requirements and procedures, as well as a technical overview of the DataONE architecture.  They may also benefit from guides for making technology choices relevant to their implementation, and documentation on the code libraries DataONE has invested in.  (d1_common and d1_libclient)
+
+
+
+Existing Documentation Summary
+--------------------------------------------------
+The 4 locations mentioned above are listed below.  The main difficulty for those wanting DataONE documentation is where to go to find it.  Each location has its own independent search facility, so finding something is a fragmented and redundant task.  If the 4 sites were better defined by audience and what type of things belong there, and cross-references included in the documents were more systematically applied, the fragmentation problem might go away.
+
+www.dataone.org 
+ * workspace: https://repository.dataone.org/documents/Committees/MNcoord/ ?
+ * audience: Member Node Wranglers, Member Node project leaders
+ * format:  MSWord, pdf documents linked off of web-content (html)
+ * 
+
+mule1.dataone.org/ArchitectureDocs-current
+ * workspace: https://repository.dataone.org/documents/Projects/cicore/architecture/
+ * audience: MN technical leads, coredev, (Member Node project leaders)
+ * format: ReStructuredText, html-ified via Sphinx
+ * current scope: use cases, abstracted technical requirements, design choice discussions and elaborations, technical discussions
+
+mule1.dataone.org/OperationDocs
+ * workspace: https://repository.dataone.org/documents/Projects/cicore/operations/
+ * audience: MN technical leads, coredev, MN system admins, (Member Node project leaders)
+ * format: ReStructuredText, html-ified via Sphinx
+ * current scope: Administrative Topics, Member Node Deployment, Data Format Registration, VM Building, CN administration.
+
+mule1.dataone.org/guides
+ * workspace: https://repository.dataone.org/documents/Projects/cicore/guides/
+ * audience: MN technical leads, Member Node Wranglers, Member Node project leaders
+ * format: ReStructuredText, (still needs to be set up with Sphinx)
+ * current scope:  high level non-technical introduction to DataONE, trying to stick to the conceptual. not much there.  Is it necessary?
+
+
+Problems with Current Structure
+-----------------------------------------------
+* multiple glossaries - maybe not a problem, but can lead to redundant or conflicting entries.  
+* some overlapping and mixed points of view (overly technical or overly high-level)
+* lacking cross-references.
+* multiple search indexes
+
+
+
+How to organize it?
+----------------------------
+
+-Need High level documentation under dataone.org> participate > Member Nodes
+
+
+
+
+
+
+
+

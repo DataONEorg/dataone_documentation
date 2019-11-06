@@ -1,0 +1,100 @@
+% Cover letter using letter.sty
+\documentclass{letter} % Uses 10pt
+%Use \documentstyle[newcent]{letter} for New Century Schoolbook postscript font
+% the following commands control the margins:
+\topmargin=-1in    % Make letterhead start about 1 inch from top of page 
+\textheight=8in  % text height can be bigger for a longer letter
+\oddsidemargin=0pt % leftmargin is 1 inch
+\textwidth=6.5in   % textwidth of 6.5in leaves 1 inch for right margin
+\usepackage{hyperref}
+
+\begin{document}
+
+\signature{Richard G. Littauer}           % name for signature 
+\longindentation=0pt                       % needed to get closing flush left
+\let\raggedleft\raggedright                % needed to get date flush left
+ 
+ 
+\begin{letter}{}
+
+\begin{flushleft}
+{\large\bf Richard G. Littauer}
+\end{flushleft}
+\medskip\hrule height 1pt
+\begin{flushright}
+\hfill 138/9 Nicolson Street, Edinburgh, UK EH8 9EH \\
+\hfill +44 77997 53925 \\
+\hfill richard.littauer@gmail.com \\
+\hfill \href{http://www.rlittauer.com}{http://www.rlittauer.com}
+\end{flushright} 
+%\vfill % forces letterhead to top of page
+
+\opening{Dear Sir/Madam}
+
+I am writing regarding the DataOne Summer Internship. Specifically, I would like to apply for project three, `Understanding how scientists analyse data' and project six, `Tracking the reuse of 1000 datasets'.  I found the advertisement for the internships on ECOLOG-L.
+
+My interest in question three stems from my undergraduate degree in Linguistics, arguably one of the most contested and debated social sciences. I am used to looking at arguments from differing perspectives, using faulty, incompatible, or insufficient data to back up the trending theories of the day. This training has left me fascinated with the way different scientists approach their data, especially from within a particular theory. I would relish the opportunity to explore this in a meta-theoretical setting.  My interest in project three comes from the same perspective -- data in Linguistics is often reused for decades, and open archives are rare and often incompletely coded. Tracking the use of open access data would provide justification for closer checking of archival techniques as well as for future funding for projects that don't specifically benefit the host university. A cross-discipline analysis of archives is integral to the future of open study in the sciences, especially in a world for archives are larger and are mined more efficiently, and I would literally leap at the opportunity to be a part of this. 
+
+My experience in the vibrant technological field of Linguistics has prepared me adequately for this experience. The majority of my modules have been in theoretical work, especially in syntax and semantics, and I have been accepted into a PhD program at UNM this year to study theoretical implications of language contact for language evolution. And apart from attending the most prestigious research department in the UK in Linguistics, I have contributed to several side projects that show that I am a driven self-starter: I compiled, coded, and distribute a dictionary for a constructed language, translated into nine languages, for a community of five thousand; I founded the Undergraduate Linguistics Association of Britain, which held it's first conference in March in Edinburgh for over fifty students; I taught myself HTML, CSS, php, SQL, javascript, LaTeX, BibTex, and coded my dissertation in Python; I am currently teaching myself statistics, and have some history with R; I have independently researched extensively into wetland ecology, human genomics and avian bioacoustics; and I write on several blogs about ecology and evolution, in which I have had no formal non-linguistic training, to a readership of thousands.
+
+I will be able to contribute to the projects by utilising my analytical skills to explore approaches to data; coming from such a varied field of scientific study as Linguistics, I would be able to fully appreciate the differences between individual scientists and between theoretical backgrounds. The project goal of "developing new and significant understanding of the scientific process" cannot be accomplished without examining different research in the relevant literature, first, but I expect that through the application of lateral thinking and developed research and notation skills, I will be able to help achieve this. I expect to contribute to the tracking of 1000 datasets in a similar fashion, by using my experience with GoogleScholar, PubMed, and other scholastic archives to track references to datasets, and by examining the bibliographies of relevant literature, across disciplines, and their methodological sections. 
+
+Finally, I hope to learn more about research and scientific approaches and analysation of data from this internship. I would love to have more experience in data mining, either manually or computationally, and working closely with mentors would put my in good stead for my planned future PhD and MSc research. As I intend to study different approaches to evolutionary linguistics by integrating biologic and ecologic models to language change, using computational models that triangulate their results with archaeological and genetic data, looking at how data is approached and reused would be a fantastic learning experience. Furthermore, a knowledge of workflow languages and a fuller knowledge learned through hands-on training in R would help me greatly. In summation, this is an opportunity that would benefit my future career as a computational linguist and ecologist (as odd a pairing as that might seem.) 
+
+I am a US citizen, although I currently reside in Scotland, and would be happy to relocate to the US for the summer, as my visa is expiring before August anyway. My last commitment in the UK is before the May 23rd starting date, although I have applied to other summer internships from which I have yet to hear back. I would be happy to talk more about my eligibility, if necessary! My email is \href{richard.littauer@gmail.com}{richard.littauer@gmail.com}.  I apologise for the especially long cover letter --  I wanted to make sure that all of the relevant points were addressed.
+
+
+\closing{Sincerely yours,} 
+
+\end{letter}
+ 
+
+\end{document}
+
+
+%PARAGRAPH 1:
+
+%State the reason for the letter.
+%Name the specific position or type of work for which you are applying.
+%Indicate how you learned of the opening (referral, newspaper, Career Fairs, job posting, etc.).
+%PARAGRAPH 2 AND POSSIBLY 3:
+
+%State why you are interested in the position/organization.
+%Indicate how your academic background and other experiences make you a good candidate.
+%Mention relevant skills you have developed through your experiences (summer jobs, volunteer positions, internships, community service, campus leadership and activities, etc.).
+%Explain what you can do for the employer (use your knowledge of the organization).
+
+%FINAL PARAGRAPH:
+
+%Explain your interest in discussing the position or other possibilities within the company/organization.
+%Repeat your phone number and/or e-mail address.
+%Offer to produce additional information if desired.
+%Close with a statement or question that will encourage a response (e.g., you will be in the city on a certain date and would like to set up an interview).
+
+%-----
+
+%tructure. Ideally, a cover letter has no more than four paragraphs.The goal of the first is to specify what you are applying for and howdid you find out about that opportunity. The last one outlines youravailability for an interview, suggesting in this way a concretefollow-up for your application.
+
+%The second paragraph should list your skills and qualifications thatmake you the right person for the position you are applying for. Readcarefully the announcement, identify the requirements and see how yourskills match those required. Do not simply state you have them, proveit. Ideally, you should start from your experience and show how youhave developed those qualifications by doing what you have beendoing/learning. Same as in the case of your CV, the result shouldportrait you as an independent, creative person that can takeinitiative and deal with responsibilities, apart from the specificskills needed for the job. In short, the second paragraph should showwhy you are good for the job.
+
+%The third should point out why you want it. You should outline yourinterest for the skills you are going to learn if you get the job. Theimpression left should be that you can make a genuine contribution tothe company's operations, while simultaneously deriving satisfactionfrom your work.
+
+%After the fourth paragraph leave a blank space, same as you should doin the beginning, after the salutation (Dear). Write the properclosing, as described above and your name. Do not forget to leave ablank space between the closing and your name and to sign the letter inthat space.
+
+%Enclosure. It is customary for formal letters to mention whether youhave enclosed any documents accompanying the letter. Simply mentionenclosure, or write curriculum vitae under the heading enclosure at theend of the letter.
+
+%---
+
+%Application packages should include a brief letter describing your interest in and suitability for an internship, as well as your possible start and end dates. It should be accompanied by a resume and a list of courses taken, showing your GPA.  Deadline for applications is February 15th, 2011. Successful applicants will be contacted after March 1st, 2011.
+ 
+%\noindent PARAGRAPH ONE: State reason for letter, name the position or type of work you are applying for and identify source from  which  you learned   of   the  opening.  (i.e.  Career  Development  Center, newspaper, employment service, personal contact). 
+ 
+%\noindent PARAGRAPH  TWO:  Indicate why you are interested in the position, the company, its products, services - above all, stress what  you can  do  for  the employer. If you are a recent graduate, explain how your academic background makes you a qualified candidate for the  position.  If  you have practical work experience, point out specific achievements or unique qualifications. Try not to repeat the  same  information  the reader will find in the resume. Refer the reader to the enclosed resume or application which summarizes your  qualifications,  training,  and experiences. The purpose of this section is to strengthen your resume  by  providing  details which bring your experiences to life. 
+ 
+%\noindent PARAGRAPH THREE: Request a personal interview and  indicate  your flexibility as to the time and place. Repeat your phone number in the letter and offer assistance to help in a speedy response. For example,  state that you will be in the city where the company is located on a certain date and would like to set up an  interview. Or,  state  that  you  will  call  on a certain date to set up an interview. End the letter by thanking  the  employer  for  taking time to consider your credentials. 
+ 
+
+
+
+
+

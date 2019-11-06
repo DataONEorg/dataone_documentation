@@ -1,0 +1,217 @@
+805Notes for Development Block 4.2
+===============================
+
+Previous epad notes: http://epad.dataone.org/2014-24-Block-3-4
+
+G+ URL: https://plus.google.com/hangouts/_/nceas.ucsb.edu/d1-standup
+
+Etherpad for V1, V2 API naming convention: http://epad.dataone.org/20140701-API-V2
+
+Sprint Planning
+---------------
+
+Topics for this block:
+ * CN upgrades
+   * CCI 1.2.8 release
+     * UCSB first, then ORC, UNM
+   * CCI 1.3.0 release 
+     * story: https://redmine.dataone.org/issues/5471
+     * eval tidy results
+ * Migrate to new version of redmine: https://redmine.dataone.org/issues/5569
+ * libclient refactor and review (trunk only)
+ * v2 planning/implementation
+
+Topics for CCI 1.4 - https://redmine.dataone.org/issues/5533
+ * ONEMercury UI changes for screencasts
+ * Refactor d1_processing/d1_cn_rest to minimize Hazelcast usage
+     * log aggregation
+       * will continue to use hazelcast for sysmeta map listener
+     * synchronization
+     * replication
+     * cn-rest webapp must communicate node changes/additions to d1_processing components
+ * Incorporate JibX extensions into d1_common_java, release it(at CCI SB in July we discussed this as a part of v2 due to scope of changes that would be neededin v1 stack)
+     * Refactor CN components to use new d1_common_java changes
+     * Schedule Meeting to determine the scope of changes to apply or add. (review empty vs null List/Map variables in JibX, add in Builder Methods for complex objects)
+ * Incorporate HTTPClient 4.2 into libclient (affects CN stack - focus on testing affected components)
+ * Replication Auditing w/splunk logging
+
+
+David D
+-------
+
+20140721
+ * STAGE CN SYNCREPL:
+   * Sync replication working across all stage CNs
+     * Tested Friday - cn-stage-unm-1 not accepting or pushing replications; restarted slapd, replication activity began across all stage CNs
+     * Tested over the weekend - replication working across all stage CNs without any further prodding on my end
+     * TO DO: Ask coredev - is this good to call fixed, or do we need any further tests?
+ * SPLUNK CLUSTER
+   * worked on the cluster peers over the weekend, replication activity is now happening across all peer indexers at ORC, and replicated data is searchable by search head
+   * TO DO:  Full list of to-dos can be found at https://redmine.dataone.org/issues/5521
+     * need to bug Chris, Dave, et al re: whether we want to get further cluster VMs set up offsite (UNM/UCSB) VMs to be set up at UNM for offsite cluster peering
+ * REPLACEMENT TRAINING
+   * Hopefully should have a name for replacement by Tuesday; if not, Bruce will begin making further inquiries
+   * Sending out more documentation to ORNL JICS contact
+
+20140718
+ * VM upgrades and migrations are complete on all but mn-orc-1
+   * script that modifies node status page is returning errors when I try to run it
+ * Splunk cluster work
+ * Need to build my keys into subversion done
+ * Syncrepl on stage CNs
+   * Now that stage CNs are on 12.04, need to check and see if this is still failing
+
+20140716
+ * Working on Splunk cluster buildout
+ * Still need to bring ORC VMs down for various upgrades
+   * nearly all machines need to have their network adapters updated, the virtual hardware they're running on is no longer supported
+   * need to bring prod and stage MNs over to new host hardware
+   * some VMs need to be placed in the correct virtual network
+
+20140714
+ * Brought down cn-orc-1 Friday, migrated to new HW, removed old network adapter/added new network adapter, tested good, brought back up Saturday
+ * Gathered up several ORC sysadmin docs and links to send off to the team lead at ORNL who will be in charge of my replacement
+   * needed to update several documents to reflect new hardware and VM management tools
+ * TO DO:
+   * work on Splunk cluster buildout
+   * several VMs at ORC are running on outdated VMware versions - need to make a list of affected VMs, test upgrade on a nonessential VM, schedule some downtime and roll out upgrade on remaining VMs
+     * this isn't strictly necessary in a mission-critical sense, but probably good to do this while we still have a sysadmin working full-time
+
+
+Dave V
+------
+
+20140718
+ * Need to ensure that all VMs have correct entries in resolv.conf
+ * MN-UNM-1 is using an NFS mount which is *very* slow. Need to plan how to move away from that storage.
+ * Need to complete setup of the maven repo. Requesting that Rob work with Mark Servilla to get this sorted out.
+ * Seems likely that InCommon will move away from supporting ProtectNetwork as an identity provider due to a significant increase in membership fees. Need to evaluate whether DataONE will be negatively impacted by this change.
+
+20140716
+ * Suggest adding ssh public keys to svn at:
+    /documents/Management/Users/${USER}/sshpublickey/
+  and moving gpg public keys to:
+    /documents/Management/Users/${USER}/gpgpublickey/
+  to help simplify server etc setup
+
+20140714
+ * Setting up new version of redmine (2.4.2) + backlogs
+ * Configuring new document server for Phase II (Alfresco community edition)
+ * Scheduling work for Phase II project execution plan
+
+Chris
+-----
+ * 20140718
+   * continued work on v2 libclient refactor with Ben, Skye, Rob
+   * EDORA and RGD MN meeting
+     * having problems with dataone-approve-node in stage
+     * cjones@cn-stage-ucsb-1:bin$ sudo ./dataone-approve-node 
+     * [sudo] password for cjones: 
+     * Choose the number of the Certificate to use
+     * 0)    urn:node:cnStageUCSB1.pem
+     * 1)    urn_node_cnStageUCSB1.pem
+     * 0
+     * Jul 18, 2014 4:40:18 PM com.hazelcast.config.ClasspathXmlConfig
+     * INFO: Configuring Hazelcast from 'org/dataone/configuration/hazelcastClientConf.xml'.
+     * Exception in thread "main" java.lang.NoSuchMethodError: com.hazelcast.config.NetworkConfig.getPort()I
+     *     at org.dataone.cn.hazelcast.ClientConfiguration.getPort(ClientConfiguration.java:68)
+     *     at org.dataone.cn.hazelcast.ClientConfiguration.getLocalhost(ClientConfiguration.java:72)
+     *     at org.dataone.cn.client.NodeApproval.<init>(NodeApproval.java:58)
+     *     at org.dataone.cn.client.Main.main(Main.java:93)
+   * TODO: contact Pat @ urn:node:SC
+ * 20140716
+   * continued v2 work - Ben, Rob, Skye
+   * working on Metacat v2 impl
+   * IOE production cert
+ * 20140714
+   * Continued work on v2 impl with Ben
+   * Trimmed back /var/postgres-bak in production
+
+
+Skye
+-----
+ * 201400714
+   * Libclient http client work branch review.
+   * OneMercury UI changes as requested by Heather/Amber.
+ * 20140716
+   * Small cross browser fixing for onemercury
+     * Safari 'processing' spinner broken
+     * Paging control rendering in chrome does not handle page zoom
+   * Strategies for supporting differening API versions 
+   * Support 1.3.0 testing
+
+Peter
+-----
+ * 20140714
+   * working on CCI 1.4
+   * help with testing CCI 1.3
+
+Robert
+------
+ * 20140714
+   * create doodle pool for refactoring
+   * work on 1.2.8 release
+   * branch 1.3.0 release for testing
+ * 20140716
+   * UNM and ORC are upgraded to 1.2.8
+     * quickly look at ORC
+   * Upgrade UCSB to 1.2.8
+   * look at tidy again
+ * 20140718
+   * UCSB upgraded to 1.2.8 and places as Active Master in DNS RR
+   * Looking at 1.3.0 
+
+Rob
+---
+ * 20140716
+   * libclient_java:
+     * compiling comments from yesterday's review
+ * 20140718
+   * libclient_java
+     * committed changes to d1_common_java and d1_libclient_java branches to remove httpclient version restriction
+     * v2 refactoring design discussions and work
+
+
+
+Roger
+-----
+ * 20140718
+   * Continued work on ONEDrive Zotero integration.
+ * 20140716
+   * Adding install docs for ticket generator for Windows
+   * Fixing a small issue for the ticket generator for Windows
+   * Helping Laura with generator installation and use
+   * Started on Zotero integration for ONEDrive
+   * 
+
+Topics
+------
+
+ * Scope of libclient software
+   * DECISION: libclient v1.x changes need to be backwards-compatible
+   * DECISION: libclient is primarily an external product for use by DataONE users/MN developers, etc.
+   * Is libclient and external or internal product?
+     * Dave: Everything that we do should be considered external
+   * Scope includes low-level and high-level functionality
+   * This refactor includes backwards incompatible changes
+   * Suggestion: break libclient into two products: one for external clients, one for the CN
+     * Against: we should be using th same codebase for the same functions
+     * Against: more code to maintain, duplication is possible
+     * For: more flexible code for client-side vs server-side software
+   * For backwards compatibility:
+     * Perhaps move D1Client back to org.dataone.client from org.dataone.client.itk
+     * move concrete MNode and CNode back to org.dataone.client, and change the interface locations
+     * v2 libclient will exist independently of v1, and will not be backwards-compatible
+     * D1RestClient is no longer in v1.4
+     * ObjectFormatCache has been moved
+     * We probably should incrementally make these changes: first, HTTPClient changes (v1.4), then refactor the API (v2.0)
+       * This may sacrifice some testing features in v1.4
+   * DECISION: roll back HTTPClient to the 4.1.3 series in d1_common_java trunk
+   * DECISION: move the libclient trunk pom to version 2.0-SNAPSHOT
+   * DECISION: move d1_common_java Mime/Multipart support into d1_libclient_java in v2
+     * remove/delete MultipartRequestHandler which is a deprecated mini HttpClient and causes the dependency in d1_common_java
+   * TODO: Rob - change the pom of d1_common_java v1.2 branch such that it doesn't restrict HttpClient version (v1.2.1) (resulting in new tag 1.2.x)
+     * done
+   * TODO: Rob - change the pom d1_libclient_java from v1.3 branch that points to new d1_common_java version v1.2.x (resulting in new tag 1.3.x) 
+     * done
+

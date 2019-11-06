@@ -1,0 +1,613 @@
+Test: urn:node:mnTestSEAD
+Prod: urn:node:SEAD
+
+http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html#Types.Node
+
+openssl x509 -text -in /path/to/your/urn:node:mnTestSEAD
+
+https://cn-stage.test.dataone.org/cn/v1/accounts
+
+https://cn-stage.test.dataone.org/portal
+========================================================================
+
+IP Based access restriction for production CN access to getLogRecords:
+
+# Path needs to be adjusted according to baseURL path of MN
+# Example show for a baseURL path of "/mn"
+<Location "/mn/v1/log">
+  Order Deny,Allow
+  Deny from all
+  # IP addresses for CNs required since there is no reverse DNS
+  Allow from 128.111.36.80 64.106.40.6 160.36.13.150
+</Location>
+
+# IF https is available:
+<Directory "/www/hidden/docs">
+<IfDefine SSL>
+    SSLRequireSSL
+    SSLRequire           %{SSL_CLIENT_S_DN_CN}  eq "urn:node:CN" or  
+    %{SSL_CLIENT_S_DN_CN} eq "urn:node:CNUCSB1"
+</IfDefine>
+...
+</Directory>
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SUBJECT_VERIFIED = 'verifiedUser'
+SUBJECT_AUTHENTICATED = 'authenticatedUser'
+SUBJECT_PUBLIC = 'public'
+
+
+1. Start with empty list of subjects
+2. Add the symbolic subject, "public"
+3. Get the DN from the Subject and serialize it to a standardized string. This string is called Subject below.
+4. Add Subject
+5. If the connection was not made with a certificate, stop here.
+6. Add the symbolic subject, "authenticatedUser"
+7. If the certificate does not have a SubjectInfo extension, stop here.
+8. Find the Person that has a subject that matches the Subject.
+9. If the Person has the verified flag set, add the symbolic subject, "verifiedUser"
+10. Iterate over the Person's isMemberOf and add those subjects
+11. Iterate over the Person's equivalentIdentity and for each of them:
+  - Add its subject
+  - Find the corresponding Person
+  - Iterate over that Person's isMemberOf and add those subjects
+
+~~~~~~~~~~~~~~
+
+Index task processing:
+
+1. the system metadata fields are loaded
+2. sub-processors for the ID are run (loading science metadata for example)
+3. then things are merged with the values from SOLR 
+
+so the final merge part - the only values that should override the values extracted in the task should be those related to the resource map entries.
+
+Im still not sure what that merge logic is for.  Ive backed out my changes.  The problem with the multi-values in single value field does not seem related to the merge specifically.
+
+Skye - want to hop onto Skype to talk this through?
+
+sure! starting skype - Im on skype now
+
+
+    public SolrDoc processID(String id, String sysMetaPath, String objectPath) throws IOException,
+            SAXException, ParserConfigurationException, XPathExpressionException, EncoderException {
+        // Load the System Metadata document
+        Document sysMetaDoc = loadDocument(sysMetaPath, input_encoding);
+        if (sysMetaDoc == null) {
+            log.error("Could not load System metadate for ID: " + id);
+            return null;
+        }
+
+        // Extract the field values from the System Metadata
+        List<SolrElementField> sysSolrFields = processFields(sysMetaDoc);
+        SolrDoc indexDocument = new SolrDoc(sysSolrFields);
+        Map<String, SolrDoc> docs = new HashMap<String, SolrDoc>();
+        docs.put(id, indexDocument);
+
+        // Determine if subprocessors are available for this ID
+        if (subprocessors != null) {
+            // for each subprocessor loaded from the spring config
+            for (IDocumentSubprocessor subprocessor : subprocessors) {
+                // Does this subprocessor apply?
+                if (subprocessor.canProcess(sysMetaDoc)) {
+                    // if so, then extract the additional information from the
+                    // document.
+                    try {
+                        // docObject = the resource map document or science
+                        // metadata document.
+                        // note that resource map processing touches all objects
+                        // referenced by the resource map.
+                        Document docObject = loadDocument(objectPath, input_encoding);
+                        if (docObject == null) {
+                            log.error("Could not load OBJECT file for ID,Path=" + id + ", "
+                                    + objectPath);
+                        } else {
+                            docs = subprocessor.processDocument(id, docs, docObject);
+                        }
+                    } catch (Exception e) {
+                        log.error(e.getStackTrace().toString());
+                    }
+                }
+            }
+        }
+        // ? why is this here
+        // docs.put(id, indexDocument);
+
+        // TODO: get list of unmerged documents and do single http request for
+        // all
+        // unmerged documents
+        for (SolrDoc mergeDoc : docs.values()) {
+            if (!mergeDoc.isMerged()) {
+                mergeWithIndexedDocument(mergeDoc);
+            }
+        }
+
+        SolrElementAdd addCommand = getAddCommand(new ArrayList<SolrDoc>(docs.values()));
+        if (log.isTraceEnabled()) {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            addCommand.serialize(baos, "UTF-8");
+            log.trace(baos.toString());
+            // System.out.println(baos.toString());
+        }
+        sendCommand(addCommand);
+        if (docs.size() > 0)
+            docs.clear();
+
+        return indexDocument;
+    }
+
+
+======================================================================
+notes from 2011-10-11
+
+
+<node replicate="false" synchronize="true" type="mn" state="up">
+<identifier> ??? </identifier>
+<name> ornldaac_mn </name>
+<description>ORNL DAAC Mercury Member Node</description>
+<baseURL>http://mercury.ornl.gov/ornldaac/mn/</baseURL>
+<services>
+<service name="MNCore" version="v1" available="true"/>
+<service name="MNRead" version="v1" available="true"/>
+<service name="MNAuthorization" version="v1" available="false"/>
+<service name="MNStorage" version="v1" available="false"/>
+<service name="MNReplication" version="v1" available="false"/>
+</services>
+<synchronization>
+<schedule hour="*" mday="*" min="0,5,10,15,20,25,30,35,40,45,50,55" mon="*" sec="0" wday="?" year="*"/>
+<lastHarvested>1900-01-01T00:00:00.000+00:00</lastHarvested>
+<lastCompleteHarvest>1900-01-01T00:00:00.000+00:00</lastCompleteHarvest>
+</synchronization>
+</node>
+
+Questions - is HTTPS required? If authorized access is ever required then HTTPS will be necessary.
+
+
+=====
+
+Content in this pad is temporary only - Use it like a scratch pad.
+
+gmn=> explain analyze SELECT "mn_object"."id", "mn_object"."pid", "mn_object"."url", "mn_object"."format_id", "mn_object"."checksum", "mn_object"."checksum_algorithm_id", "mn_object"."mtime", "mn_object"."db_mtime", "mn_object"."size", "mn_object_format"."id", "mn_object_format"."format_id", "mn_object_format"."format_name", "mn_object_format"."sci_meta", "mn_checksum_algorithm"."id", "mn_checksum_algorithm"."checksum_algorithm"
+FROM "mn_object"
+INNER JOIN "mn_object_format" ON ("mn_object"."format_id" = "mn_object_format"."id")
+INNER JOIN "mn_checksum_algorithm" ON ("mn_object"."checksum_algorithm_id" = "mn_checksum_algorithm"."id")
+ORDER BY "mn_object"."mtime" ASC
+LIMIT 1000
+OFFSET 803000
+;
+                                                                                      QUERY PLAN                                                                                       
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=592265.20..592267.70 rows=1000 width=308) (actual time=17220.744..17221.686 rows=1000 loops=1)
+   ->  Sort  (cost=590257.70..592985.32 rows=1091048 width=308) (actual time=16551.271..17149.914 rows=804000 loops=1)
+         Sort Key: mn_object.mtime
+         Sort Method:  external merge  Disk: 288680kB
+         ->  Merge Join  (cost=40.15..10954.91 rows=1091048 width=308) (actual time=0.074..9594.943 rows=1092711 loops=1)
+               Merge Cond: (mn_object_format.id = mn_object.format_id)
+               ->  Index Scan using mn_object_format_pkey on mn_object_format  (cost=0.00..37.45 rows=1080 width=45) (actual time=0.013..0.055 rows=30 loops=1)
+               ->  Materialize  (cost=0.00..4663745.35 rows=1091048 width=263) (actual time=0.056..9098.164 rows=1092711 loops=1)
+                     ->  Nested Loop  (cost=0.00..4652834.87 rows=1091048 width=263) (actual time=0.052..7748.179 rows=1092711 loops=1)
+                           ->  Index Scan using mn_object_format_id on mn_object  (cost=0.00..2601558.15 rows=1091048 width=201) (actual time=0.041..5092.224 rows=1092711 loops=1)
+                           ->  Index Scan using mn_checksum_algorithm_pkey on mn_checksum_algorithm  (cost=0.00..1.87 rows=1 width=62) (actual time=0.001..0.002 rows=1 loops=1092711)
+                                 Index Cond: (mn_checksum_algorithm.id = mn_object.checksum_algorithm_id)
+ Total runtime: 17400.561 ms
+(13 rows)
+
+~~~~~~~~~~~
+
+API  Method  Metacat  LDAP  Mercury
+
+
+
+Node
+  identifier
+  name
+  description
+  baseUrl
+  services (suggested changes here)
+      name (API Name)
+      version (release version, includes schema + interface)
+      available (set by the CN / monitoring infrastructure)
+  synchronization
+      schedule
+      lastHarvested
+      lastCompleteHarvest
+  health
+  replicate
+  synchronize
+  type (MN | CN )
+  environment (test | staging | production )--remove
+
+
+
+
+
+[new 0.6.2] Metacat impl structure
+------------------------
+abstract class MNBase {}
+    MNCoreImpl extends MNBase implements MNCore
+    MNReadImpl extends MNBase implements MNRead
+    MNAuthorizationImpl extends MNBase implements MNAuthorization
+    MNStorageImpl extends MNBase implements MNStorage
+    MNReplicationImpl extends MNBase implements MNReplication
+abstract class CNBase {}
+    CNCoreImpl extends CNBase implements CNCore
+        -partial Metacat implementation
+    CNReadImpl extends CNBase implements CNRead
+        -all Metacat?
+    CNAuthorizationImpl extends CNBase implements CNAuthorization
+        -all Metacat (sysMeta)
+    **CNIdentityImpl extends CNBase implements CNIdentity
+        -implemented outside of Metacat
+    **CNRegisterImpl extends CNBase implements CNRegister
+        -implemented  outside Metacat
+    CNReplicationImpl extends CNBase implements CNReplication 
+        -proxies to Metacat
+        
+* many existing methods in CrudService refactored to MNBase
+* sysMeta-related methods in IdentityManager moved to SystemMetadataManager
+* similar CN and MN methods will reuse classes/methods for that shared function (e.g., SystemMetadataManager.getInstance().getSystemMetadata()) rather than sharing the root of a class hierarchy for shared methods. We want to keep the distinction between CN and MN stacks very clear at least in the class hierarchy.
+* refactor ResourceHandler to minimize duplicate code when handling the REST calls
+* Metacat won't implement CNIdentity, CNRegister
+
+TODO: Check on elementFormDefault="unqualified" attributeFormDefault="unqualified"
+
+
+To check
+--------
+Identifier (simple type versus complex type) 0.6.1
+
+To rename as new class, deprecate old
+-------------------------------------
+ObjectFormat    --> 0.6.2 (includes accompanying change in systemmetadata) Talk with Chris on Monday to make this change.
+AccessRule      --> 0.6.1 (includes accompanying change in systemmetadata) Change today (Matt)
+SystemMetadata  --> 0.6.3 (change in ordering of elements within sysmeta document)
+LogEntry        --> 0.6.3 (entryId is of type Identifier, but there is an Identifier type already in LogEntry named, identifier. Change entryId type to NonEmptyString)
+
+To Remove (never used)
+----------------------
+EncryptedNonce  --> 0.6.1
+Challenge       --> 0.6.1
+
+To deprecate then remove
+------------------------
+AuthToken       --> 0.6.4
+
+Break apart the namespaces
+
+
+sequencing
+0. switch Identifier back to the complex type that it was
+1. finish 0.6.1 build
+2. merge ObjectFormat changes 
+    - metacat merge, too.
+?. update d1_common_ (currently 0.6.1), d1_libclient_ versions (currently 0.6.1)    
+?. update d1_integration version (currently 0.5.0)
+    it's pom currently points to d1_libclient_java v 0.6.1 
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:ore="http://www.openarchives.org/ore/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs1="http://www.w3.org/2001/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://foresite-toolkit.googlecode.com/#pythonAgent">
+    <foaf:mbox>foresite@googlegroups.com</foaf:mbox>
+    <foaf:name>Foresite Toolkit (Python)</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="science_data_id">
+    <dcterms:identifier>science_data_id</dcterms:identifier>
+    <dcterms:description>A reference to a science data object using a DataONE identifier</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="science_metadata_id">
+    <ore:aggregates rdf:resource="science_metadata_id"/>
+    <ore:aggregates rdf:resource="science_data_id"/>
+    <dcterms:identifier>science_metadata_id</dcterms:identifier>
+    <dcterms:title>Simple aggregation of science metadata and data</dcterms:title>
+    <dcterms:description>A reference to a science metadata document using a DataONE identifier.</dcterms:description>
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.openarchives.org/ore/terms/Aggregation">
+    <rdfs1:label>Aggregation</rdfs1:label>
+    <rdfs1:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="resource_map_id">
+    <dc:format>application/rdf+xml</dc:format>
+    <dcterms:created>2011-08-09T13:06:57Z</dcterms:created>
+    <ore:describes rdf:resource="science_metadata_id"/>
+    <dcterms:creator rdf:resource="http://foresite-toolkit.googlecode.com/#pythonAgent"/>
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+    <dcterms:modified>2011-08-09T13:06:57Z</dcterms:modified>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.openarchives.org/ore/terms/ResourceMap">
+    <rdfs1:label>ResourceMap</rdfs1:label>
+    <rdfs1:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
+  </rdf:Description>
+</rdf:RDF>
+
+Replication Notes
+-----------------
+Moved to http://epad.dataone.org/20110811-replication-notes
+
+
+Standup 2011-08-16
+-------------------
+CJones: working on design for CN replication manager; need to be aware of locking of system metadata wrt the synchronization and other CN services
+
+Rob: Working on d1_integration; issues with how tests copied into main; question as to whether to "turn the web build on its head"; can't package up tests and deploy them in the war for web exposure;
+- tests located in /sr/main don't run from maven command line.  Sent email to Porter and Dave.
+ after testing, looking at X509 self-signed certs; was able to easily create certs with Robert's code; needs to be expanded to make special purpose certs;
+
+  -- re: authentication; need mechanism to update root public certs outside of shipping new libclient
+  
+Rob (cont'd): need client code to use BigInteger instead of long
+refactored mn.describe() and types.v1.DescribeResponse to use BigInteger for content_length to be consistent with sysmeta.getSize()
+
+Robert: working on "the RMI problem"; the RMI seems to work; issue is how to create an HTTP servlet request that gets forwarded to Metacat; requestDispatcher forwards it, but the receiving context never receives the request; has added in everything he can see; hidden properties?; suggestion to code directly against metacat for these create/update/etc calls, sync service to call metacat directly; should be able to use an adapter class so that we can switch from HTTP to RMI later
+
+Roger: working against bug 1697; asymptotically approaching completion; working on issues on access control mixed in with performance; next on list is to go through all of the REST calls one more time to check for issues, for code refactoring and cleanup;  need to get integration testing with java cleint against python server and vice versa
+
+Matt: Planning EIM workshop
+
+http://javaskeleton.blogspot.com/2010/07/avoiding-peer-not-authenticated-with.html
+
+Long-lived/no-password certificates:
+1. cannot be CI-Logon (ttbook), because their long-lived certificates require passwords
+2. proposed to be self-signed, or ones trusted by a dataONE CA. (the latter could revoke individual ones if necessary).
+
+in testing:
+ * running integration tests that use multiple users.
+ * running integration tests from Hudson
+   * locate testing certificates under src/test/resources?
+   * use X509CertificateManager in d1_certificate_manager to create them
+ * from MNWebTester
+   * need the server (provided in the form) to accept whatever is provided by the client
+     * it is a requirement that the server accept our self-signed (dataONE trusted) certificates
+     * because some of the tests will use these long-lived certificates
+   * YET: the user running the tests (via browser) may be able to do some things, if he has a CI-Logon certificate installed.
+ * Different test subjects, for example:
+   * testUser1
+   * testUser2
+   * testUser3
+   * testGroup1
+   * testGroup2
+   * etc...
+   * 
+in production:
+ * used for MN/CN service accounts
+ * servers need to accept long-lived certificates from these 'service subjects'
+   * CNs and MNs need to add the dataONE CA as a trusted root.
+
+Client-Side requirements:
+ * ability to make calls to the server as different subjects (within the same process space)
+ * the test-subject certificates (as PEM files) need to be available
+   * what are the security concerns?  (can they be included in the d1_libclient_java package?)
+     * probably need to live outside that because of python libs
+
+Server-side requirements:
+ * needs to extend trust the dataONE CA (that validates the test/service-subjects)
+ * needs to accept certificate-less requests for certain method calls
+ * 
+
+General
+ * create root certificate for dataONE cert
+ * install PEM (public key) on test servers
+ * store private key in secure location
+
+
+
+
+SSL connections and certificates needed
+(certificates used for SSL channel shown in parens)
+
+A. ITK1 -> TMN1
+(u1@test.d1  -> h1@test.d1)
+u1@test.d1 is a DataONE signed certificate for a user
+h1@test.d1 is a DataONE signed certificare for a host
+
+B. TMN1 -> TCN1
+(h1@test.d1  -> *.d1.org)
+
+C. TCN1 -> TCN2
+(h2@test.d1  -> *.d1.org)
+
+D. TMN1 -> TMN2
+(h1@test.d1 -> h2@test.d1)
+
+E1. TCN1 -> CILogon
+(*.d1.org  -> ?)
+
+E2. CILogon -> TCN1
+(? -> *.d1.org)
+
+Synopsis: 
+  1. Test ITK users identify using D1 signed test certs
+  2. Test MNs identify using D1 signed test certs
+  3. Test CNs acting as servers identify using godaddy wildcard certs
+  4. Test CNs acting as clients identify using D1 signed test certs
+  
+Identifying nodes
+-----------------
+  Node.Name: contains human readable name
+  Node.ID: constant, opaque identifier for node
+  Node.Subject: semi-constant Subject DN for node, may change when host services move to a new base URL (because of SSL conventions that CN has to correspond to service address)
+  
+  
+-------------------------------------------------
+
+The following script is for testing only. I am monitoring port 80 and formatting results to be sent to my localhosts port 8125
+
+In a separate shell i run : nc -ul localhost 8125
+then I run a bash script entitled tcpStatToStatd.sh
+
+--------------------------------------------------
+#!/bin/bash
+
+if [ ! -d /home/rwaltz/bin/TcpToStatD ]; then
+        mkdir /home/rwaltz/bin/TcpToStatD;
+fi
+
+PREFIX=`/bin/hostname -s`
+PREFIX="tcpstat.$PREFIX.5701"
+
+
+nohup tcpstat -i eth0 -f "tcp port 80" -F -o "$PREFIX.Bytes:%N|g\n$PREFIX.TcpPackets:%T|g\n$PREFIX.bps:%b|g\n" 10 > /home/rwaltz/bin/TcpToStatD/tcpstat.out 2> /home/rwaltz/bin/TcpToStatD/tcpstat.err < /dev/null &
+
+# need to sleep or tail might fail with file not found
+
+sleep 5
+
+# place a subshell in the background with ( ) 
+
+# 'sed' is used to remove precision from bps stat
+# 'trap' prevents child processes dying with SIGHUP when shell is exited
+# 'disown' the script so it will not wait for the background job to finish before it exits
+
+(   exec 0</dev/null # stdin
+    exec 1>/home/rwaltz/bin/TcpToStatD/nctail.out # stdout
+    exec 2>/home/rwaltz/bin/TcpToStatD/nctail.err # stderr
+    trap "" HUP
+    tail -f /home/rwaltz/bin/TcpToStatD/tcpstat.out | sed --unbuffered 's/\([0-9]\+\)\.[0-9]\+/\1/' | nc -u localhost 8125 ) &
+disown
+
+
+#!/bin/bash
+
+DEST="/tmp/TcpToStatD"
+FDEST="${DEST}/tcpstat.out"
+EDEST="${DEST}/tcpstat.err"
+
+if [ ! -d ${DEST} ]; then
+        mkdir ${DEST};
+fi
+
+PREFIX=`/bin/hostname -s`
+PREFIX="tcpstat.$PREFIX.5701"
+
+touch ${FDEST}
+
+nohup tcpstat -i eth0 -f "tcp port 80" -F -o "$PREFIX.Bytes:%N|g\n$PREFIX.TcpPackets:%T|g\n$PREFIX.bps:%b|g\n" 10 > ${FDEST} 2> ${EDEST} < /dev/null &
+
+# need to sleep or tail might fail with file not found
+# touch fixes this
+#sleep 5
+
+# place a subshell in the background with ( ) 
+
+# 'sed' is used to remove precision from bps stat
+# 'trap' prevents child processes dying with SIGHUP when shell is exited
+# 'disown' the script so it will not wait for the background job to finish before it exits
+
+(   exec 0</dev/null # stdin
+    exec 1>/home/rwaltz/bin/TcpToStatD/nctail.out # stdout
+    exec 2>/home/rwaltz/bin/TcpToStatD/nctail.err # stderr
+    trap "" HUP
+    tail -f ${FDEST} | sed --unbuffered 's/\([0-9]\+\)\.[0-9]\+/\1/' | nc -u localhost 8125 ) &
+disown
+
+----------------------------------------------------------------------------------------------------
+Last problem to note is that when the listener dies, we have 4 processes to clean up before restarting
+----------------------------------------------------------------------------------------------------
+
+#!/bin/bash
+
+DEST="/home/rwaltz/bin/TcpToStatD"
+FDEST="${DEST}/tcpstat.out"
+EDEST="${DEST}/tcpstat.err"
+
+if [ ! -d ${DEST} ]; then
+        mkdir ${DEST};
+fi
+
+PREFIX=`/bin/hostname -s`
+PREFIX="tcpstat.$PREFIX.5701"
+
+touch ${FDEST}
+
+nohup tcpstat -i eth0 -f "tcp port 80" -F -o "$PREFIX.Bytes:%N|g\n$PREFIX.TcpPackets:%T|g\n$PREFIX.bps:%b|g\n" 10 > ${FDEST} 2> ${EDEST} < /dev/null &
+
+# place a subshell in the background with ( )
+# 'sed' is used to remove precision from bps stat
+# 'trap' prevents child processes dying with SIGHUP when shell is exited
+# 'disown' the script so it will not wait for the background job to finish before it exits
+
+FNCDEST="${DEST}/nctail.out"
+ENCDEST="${DEST}/nctail.err"
+
+(   exec 0</dev/null # stdin
+    exec 1>${FNCDEST} # stdout
+    exec 2>${ENCDEST} # stderr
+    trap "" HUP
+    tail -f ${FDEST} | sed --unbuffered 's/\([0-9]\+\)\.[0-9]\+/\1/' | nc -u localhost 8125 ) &
+disown
+
+
+Alright, looks like the NC option is too flakey. This does the job in python:
+
+==== sendstats.py ====
+'''Given statsd formatted input on stdin, break on \n and send to statsd server
+'''
+
+import sys
+import socket
+import logging
+
+class Client(object):
+  
+  def __init__(self, host="statsd.dataone.org", port=8125):
+    self.addr = (host, port)
+    self._udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+  def send(self, message):
+    try:
+      self._udp.sendto(message, self.addr)
+    except (Exception, e):
+      logging.error("Bummer: %s" % str(e))
+
+if __name__ == "__main__":
+  logging.basicConfig(level=logging.INFO)
+  client = Client()
+  while 1:
+    line = sys.stdin.readline().strip()
+    if not line: 
+      break
+    if line.startswith("#"):
+      break
+    client.send(line)
+    logging.info(line)
+
+====
+
+It reads from stdin, line by line. Run it like tail -f /some.file | python sendstats.py
+
+
+====
+
+
+
+
+
+
+
+===================================================================================================
+
+failed: [160.36.13.145] => {"failed": true, "item": ""}
+msg: 'apt-get install 'dataone-cn-os-core' ' failed: dataone-cn-os-core failed to preconfigure, with exit status 30
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+will affect apache/ldap and postgres setup
+
+cp /etc/ssl/private/ssl-cert-snakeoil.key /etc/dataone/client/private/puppet-dev.utk.edu.key
+cp /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/dataone/client/certs/puppet-dev.utk.edu.pem
+cp /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/ssl/certs/mockDataoneCA.crt
+
+cat /etc/ssl/certs/ssl-cert-snakeoil.pem > /etc/dataone/client/private/urn:node:CNPUPPETDEV.pem
+cat /etc/ssl/private/ssl-cert-snakeoil.key >> /etc/dataone/client/private/urn:node:CNPUPPETDEV.pem
+

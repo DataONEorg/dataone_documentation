@@ -1,0 +1,120 @@
+Member Node Forum - 13 June 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/318278809
+  (Occurs every 2 weeks on Thursday 2pm EST, 1pm CST, noon MST, 11am PST, 10am AK)
+  Upcoming meetings 27 June, 11 July (lots of people traveling - Laura will be on the call for anyone who needs to come), 25 July
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (213) 289-0010
+Access Code: 318-278-809
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 318-278-809
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry)
+epad.dataone.org/MemberNodeForum-20130321
+epad.dataone.org/MemberNodeForum-20130404
+epad.dataone.org/MemberNodeForum-20130418
+epad.dataone.org/MemberNodeForum-20130516
+epad.dataone.org/MemberNodeForum-20130530
+
+Attending:  Laura Moyers, Aaron Stephenson, Chris Jones, Rebecca Koskela, Mark Servilla, Matt Jones
+
+Regrets: John Cobb, Amber Budden
+
+Action items from last time:
+
+1.  Submit/answer an ask.dataone.org question re: versions of Java/Matlab/DataONE API interactions and JAR files with LIBclient (Mike and Skye with help from Laura)
+
+In an email to Mike Frenock et. al., Mike suggested we word the ask.dataone.org questions like so:
+    -    How can we access javadocs for the various released versions of the DataONE api, not just the latest development version, and how do we know when a new version has been released?
+    -    What other external jar files need to be included when using DataONE libclient within environments like Matlab?
+    I "asked" the questions last week, and so far Rob Nahf has answered the 2nd one. 
+    
+Matt/Chris:  There is a ticket for the first question:  https://redmine.dataone.org/issues/3677  When this is done, we can answer the question appropriately in ask.dataone.org.  
+    
+2.  Send reminder to look at Matt's MN Deployment Checklist and provide feedback; i.e. does this help you see where you are in the process? if you are already a production MN, does it address the issues/questions you faced during your implementation process?  Reminder sent out this week, good feedback - thanks!
+
+Rebecca: met with EDAC (Soren, Karl, RobN), one point of confusion is who is responsible for which tasks; WHO does it needs to be identified as well as WHAT to do  WHEN
+
+Also, Webtester needs to be better documented.  What does it mean if you don't pass all the tests for the webstester?  Can you move forward, is it a go/no-go? Does everyone use it or just some people?  When do you use the webtester?  
+
+Chris: incorporate feedback from MNs into future documentation efforts
+Webtester written to have 3 diff status based on results, needs to be documented/communicated to MNs.
+
+ACTION: Laura to forward Soren's comments to Rob Naif (he has Kavitha's comments).
+
+3.  SEAD meeting with DataONE re: NCED data access issues on 6/12/13.
+It looks like SEAD is ready to move to production, dependent upon NCED's willingness to make their metadata available via DataONE while retaining downloading capability at NCED (as an initial implementation).
+    
+Agenda:
+1. Network-wide update and issues affecting MN's as a whole
+    Matt: network troubles at UCSB where we host development services, production data services are not affected;  some people may have noticed difficulty logging into some web sites like redmine, ask, and docs.dataone.org; fixes in progress
+    
+2. Open issues:  MNs please add anything you would like to address here.
+
+If you're planning to present at the MN Showcase/Update at the DUG, please  have your slides in to me (Laura) or Amber Budden  (aebudden@dataone.unm.edu) by 1 July.
+
+SAVE THE DATE:  The DataONE Users' Group meeting is July 7-8, 2013 at  Chapel  Hill, NC.  
+    We expect to have two slots of special interest to Member Nodes:
+        - A MN showcase speed session where each MN can present a short (~3 slide) summary of the MN and interesting activities
+          If you are planning to  attend the DUG and you want to participate in the MN showcase there, please let us know so we can help you prepare your slides, etc.  Even if  you're NOT attending the DUG, if you'd like for your MN to be showcased, let us know and we can present for you.
+         - A poster session during the reception starting at 18:00 on Sunday,  July 7, where longer, informal discussions can occur.  
+ 
+Agenda and registration are available on the DataONE website:  http://www.dataone.org/dataone-users-group
+
+(reminder: DUG just precedes the Summer ESIP Partners meeting <http://wiki.esipfed.org/index.php/Summer_2013_Meeting> ) However, attending ESIP is not a requirement for attending the DataONE Users Group meeting.
+
+
+3. Feature requests/opportunities for collaboration:
+
+Chris: I would like to learn what Corinna and Aaron are planning for the GLEON MN.
+Aaron: See the email from Dave/Corinna, that's what Aaron knows.  what resources are available to someone starting from scratch?
+Chris: for starting metacat, there is a user's guide (http://knb.ecoinformatics.org/knb/docs/); then get onto the IRC irc.ecoinformatics.org (#dataone channel or #KDI), can answer questions; also email contact: metacat-dev@ecoinformatics.org
+Aaron: what if you've never used IRC?
+Chris:  Windows mIRC client, Mac: Colloquy download s/w; create a connection; join a channel; can text/chat in realtime
+
+4. MN showcase:  If you would like to share what your MN is about, please add here.
+This  might be a good place to talk about what you want to say during the MN showcase at the DUG (session 2, 7 July) if you're planning to  participate.
+
+Member Nodes who are present, please discuss your status:
+
+LTER: still implementing the generic MN
+GLEON: just starting out
+
+Matt:  there has been quite a bit of action lately with MNs, communications, preparing for development, etc.  We need to ensure that representatives from those MNs  
+ACTION:  Laura to identify MNs to be added to MNForum distribution, based on email/redmine traffic and D1 communication
+
+Mark:  available for Aaron if questions, etc.  (That's so nice - collaboration and helping each other out! - LM)
+
+Chris:  PPBio status?  Waiting for continuing conversation with JWC/David iaDias
+Matt:  David Dias on IRC quite a bit last week getting SSL set up (required for communication w/DataONE);  This happens twice - first in test then in production
+Chris:  server certificate
+Rebecca:  is this info (setting up server certs, etc.) in the documentation?
+Matt:  depends on s/w stack (metacat vs other), steps different based on s/w stack
+Laura:  can there be a general step in the documentation - ensure communciations channels with D1
+Chris:  we do have MNs which don't use SSL (tier 1)
+Rebecca:  that was a gotcha with eBird (they're tier 1 but had to set up SSL)
+Rebecca:  sounds like documentation is there, so maybe we just need a pointer
+Matt:  this particular concept (i.e. SSL) is in the architecture documentation but not indicated in the MN checklist.
+
+Chris:  two sections of architecture documentation - design (everyone should read to understand the design) and API reference (those who are developingn their own MN refer to this a lot)  INCLUDE this comment in documentation made available to "users"
+
+ACTION:  Laura to read up on D1 design documentation; Laura to create space in repo for joint documentation effort and communicate to doc team (Matt, Chris, Dave, Rebecca, Rob, John, AmberB, who else??)
+
+OTHER INTERESTING THINGS: 
+
+contact points: 
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+John - cobbjw@ornl.gov ph 865.576.5439
+
+Upcoming deadlines:
+ASIST annual meeting
+Beyond the Cloud: Rethinking Information Boundaries
+November 1-6, 2013, Centre Sheraton, Montreal, Quebec, Canada
+https://www.asis.org/asist2013/am13cfp.html  
+Deadline for posters, demos, video is July 1.
+

@@ -1,0 +1,41 @@
+DataONE Sociocultural portal
+
+Goal of the DataONE Sociocultural portal
+
+
+Possible implementations:
+Discussed several possibilities.  These rose to the top as most appropriate:
+ * forum
+ * wiki
+ * Drupal
+
+Could be hosted in several places:
+ * on DataONE's site (ideal but burdonsome for people outside our group)
+ * on a forum hosting site (easiest, but not flexible)
+ * on a web hosting space with an automated but flexible phpBB install option, like DreamHost (costs money, takes a bit of time, but very flexible) 
+
+Prototype #1a:  Free Forum 
+
+Decided to start with a free hosted phpbb forum site to start through phpbbweb.com
+Link to the prototype:  http://dataonesc.s4.bizhat.com/
+
+Seeded with some example structure and content.
+
+Strengths:
+Many.  At least in initial work, it does most things that we are interested in well.
+
+Weaknesses:
+ * no RSS feeds.  Could get them in hosted version.  There is a "new since you logged in last time" ability
+ * no tagging.  Could maybe get it in hosted version
+
+Prototype #1b:  Forum installed in hosted webspace
+
+Due to above issues, decided to experiment with installing phpBB code on my on webspace.  
+Link to the prototype:  http://researchremix.org/dataone-sc/
+
+Hosting prices, for reference
+ * Dreamhost:  http://www.dreamhost.com/hosting.html
+   * I've used Dreamhost for years and like them a lot (Heather)
+   * I'd be willing to be the admin (Heather)
+   * $9/month + $10/year if we wanted our own domain
+

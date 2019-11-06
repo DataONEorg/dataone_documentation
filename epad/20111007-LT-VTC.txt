@@ -1,0 +1,140 @@
+Attendees: Rebecca, Amber, Bruce,Stephanie, Carol, Viv, Dave, Matt, John Kunze, Bertram, Bill
+
+Regrets: Suzie Allard, Hilmar Lapp, Mike Frame, Bob Cook
+
+
+Meeting Information:
+1.  Please join my meeting, Nov 7, 2011 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/404747824
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (773) 897-3006
+Access Code: 404-747-824
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 404-747-824
+
+Will also use the epad: http://epad.dataone.org/20111007-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2011-10-07
+ 
+1.     CI Status (Vieglais)
+
+Plans for Tuesday afternoon at AHM:
+Previous: Mendeley/Zotero, R plug-in, ONEMercury, ONEDrive
+Now: OneMercury & Mendeley/Zotero, R plug-in, ONEDrive, Authentication Interface
+
+Idea is that showing the usability of the login is important and the Zotero/Mendeley piece isn't enough (in our minds) to take up a full slot.  Mendeley/Zotero is also strongly tied into the Mecury toolset, so showing them both at the same time makes sense to us (CCIT).  Authentication is also something that's not as user friendly as we would like, so getting this right is a key issue moving forward.  
+
+MNs in good shape - have MN test tool now and good for making sure MNs are working properly. Dryad and Mercury need some tweeks but will be ready for AHM (read access).
+Merritt MN coming together quite nicely and may be ready for AHM or soon after.
+CNs: synchronization is working, replication is being tested today. 
+The 3 CNs will be working quite nicely independently but also achieving synchronization.
+
+1.  Mercury interface and working with CNs - still working on getting code up to date; some functionality might not be working at AHM
+2. Search index construction is working but additional fields need to be added (configuration issue)
+3. R-plugin was partially working for EIM Workshop but some pieces need to be added
+Will be tight but should be working for AHM
+
+ONEDrive dependent on search indices so when those are working, ONEDrive will be working 
+
+Will be tight but should be ready for Tuesday afternoon
+U&A WG plus students will be at AHM and Carol reminded Dave to let her know what is
+needed; Need detailed notes from both the technical aspect as well as the usability aspects
+Will need 4 people at least (one for each session)
+
+Implementers Workshop went really well (after EIM2011). Positive comments from Lee Marsh
+
+
+2.     Documents for review  (Koskela/Douglass) (documents attached and in Plone)
+Rebecca, 
+ The T&C doc is fashioned from the ones Bob and Mike pointed us  to (NASA & USGS) so we are pretty confident it covers everything.  We have made notations at points that may address larger policy  questions (blue comment boxes) and highlighted in yellow  places that need finalization such as contact info and links.  
+
+The principles doc purpose is to simply state our values so they can be easily transmitted to developers or other pertinent audiences (PR  etc) It is produced by abstracting our missio/purpose statements and  other documents related to the technical aspects.  We also made some assumptions! So it definitely needs review.
+
+Unfortunately I will be in the air during our call this week :-(   if you want someone online who can talk about the documents maybe  Kimberly Douglass could join for that portion of the call?
+
+Thanks!
+Suzie 
+
+DataONE Principles
+
+Good items 
+Some items need to be cleaned up but others not really, statements about DataONE rather
+than principles
+Ex: #1 
+Data Observation Network for Earth (DataONE) is poised to be the foundation of new innovative environmental science through a distributed framework and sustainable cyberinfrastructure that meets the needs of science and society for open, persistent, robust, and secure access to well-described and easily discovered Earth observational data. DataONE is designed to increase the use and value of Earth science data and information. 
+Needs to be more concise and last sentence is good summary
+
+Bill made some notes and will make them available to WG
+
+Matt: 
+#6 - not actually true
+
+Bill:
+#4 - open to anyone 
+We have to take in account resources (not supporting physics or medical community)
+    
+#7 - first line - also not actually true - can't commit to that perhaps audit but not up to
+MN to do that; Bruce: can provide the means to...
+
+#11 - overstepping what we have promised to do
+Is this actually a principle -
+
+Overlap betweeen the two documents
+Comments will go to Suzie - some discussion about using Google Docs to consolidate comments but documents are in Word now so someone would need to make them into Google Docs
+
+Terms and Conditions
+
+"Interactions with children" - raised a red flag
+Issues under copyright paragraph - which license to use
+DataONE is not an organization/institution
+Licenses - going with Apache 2
+
+Identifying user information - collect and do share so what's in document is not actually true
+
+Would be useful for someone from CCIT to meet with this subgroup at AHM (if the subgroup
+is planning to meet at the AHM)
+
+Need to discriminate between Principles and T&C - 
+Confidentiality statements need to be very carefully stated and run by CCIT first to make sure that they are actually implemented
+
+December 14, 15 Data Governance Workshop (Bill, Trisha, & MacKenzie Smith) in
+Washington, DC
+
+
+3.  Around the Room
+
+Bertram (can't talk right now): ProvWG meeting preparations in full swing (DOPM model being refined, clarifying relationship to W3C working group on provennace, etc). Preparing technical note on both GoldenTrail prototype and DOPM model itself.
+
+Hampton: 1. Stacy Rebich Hespanha is a new postdoc starting part-time this month - she will be at the All Hands Meeting. She just received her PhD in Geography, and is also a part-time outreach coordinator for another UCSB center.  2. Michelle Chang is an Environmental Sciences grad student at UCSB who will be helping Amber with Best Practices materials this fall. 3. New draft of CEE Working Group manuscript now being circulated to WG members... 4. ESA Student Section endorsed our proposed ESA 2012 symposium, jointly organized by D1 CEE WG members and Natural History Network.
+
+Matt: DataONE implementation workshop went well.  Several potential new MNs. Requestt for slides.
+(18 people in the room)
+
+Amber: As mentioned, Implementation Wksp went well. DataONE website redesign well underway and looking good although content is still needed (http://bit.ly/mYN3Mo). Working with UNM student Grace on marketing materials and with UCSB student Michelle on some editing and CEE activities. DMPTool released this week.
+
+Carol: Next week at the ASIST meeting I will present on baseline assessments, along with someone from the Parse Insight european survey and Carole Palmer of UIUC.
+
+Bruce: Working on getting ORC nodes stood up.  Also working on some text for web pages on new DataONE site 
+
+John Kunze: RENCI update
+
+Dave: Not much to add - Preparing for AHM + public release
+
+Viv: 
+DOI Climate Science Centers program held a meeting this week at Fort Collins Science Center -- Dave V attended and briefed on DataONE -- there was a lot of interest in using DataONE for that network. 
+
+Bill: 
+Lengthy conversation with Carl L - wants to join our project & interested in joining the Semantics WG; he's also interested in EarthCube - especially the semantics and provenance aspects of the project
+Mike Frame has been asked to represent USGS at EarthCube; is also putting together a white paper so suggested sharing the white papers & highlighting the collaborative effort
+
+Rebecca:
+Reminder that Grace Lerner will be requesting bios from everyone so please give ok to information that she has found on you or give new information that you want on the new
+DataONE website.  Pictures will be taken at AHM
+
+Grace is working with the Sustainabilty & Governance WG on the brochure and marketing materials.  We're hoping to have these ready for review at the AHM.
+

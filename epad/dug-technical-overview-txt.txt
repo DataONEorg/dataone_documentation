@@ -1,0 +1,118 @@
+..
+
+  The authoritative version of this document is available at:
+    https://repository.dataone.org/documents/Meetings/20101209_DUG_Chicago/dug-technical-overview.txt
+
+  Any further edits should be made to the copy in subversion.
+
+----
+
+
+Overview
+--------
+
+Member Nodes form one of the three major components of the DataONE infrastructure along with the Coordinating Nodes and the Investigator Toolkit. This document provides pointers to the technical reference material for implementing and deploying Member Nodes. It should be noted that details of the process are still under active development and so subject to change up to the first public release of the infrastructure which is targeted for late 2011.
+
+Member Nodes interact with the DataONE infrastructure through a set of REST (Representational State Transfer) service interfaces [ http://mule1.dataone.org/ArchitectureDocs-current/apis/REST_interface.html ] utilizing HTTP for communications. Message serialization occurs primarily in XML, with JSON, CSV, and HTML also targeted for support. 
+
+An existing data repository can participate in DataONE as a Member Node through three different strategies:
+
+1. Implement the DataONE Member Node service APIs as part of the existing data repository application interfaces ("native service support").
+
+2. Utilize a proxy service which offers a translation layer between the DataONE service interfaces and existing service interfaces exposed by a repository ("proxy service").
+
+3. Deploy a standalone Member Node software stack and perform custom synchronization of content between the Member Node data store and the existing data repository ("standalone service").
+
+DataONE has implementation examples of each that can be used directly or as examples to assist with new implementations. DataONE has a liberal open source policy, so all source code can be re-purposed as necessary to assist with new deployments.
+
+
+How much will is cost to participate as a Member Node?
+
+Estimating the cost for implementing and deploying Member Node services on an existing repository involves many variables including the technology of the underlying data repository, services it may already expose, the structure of data and metadata being used, and the technical expertise available. A rule of thumb would be that two months of development time should be sufficient for most repositories to support Member Node services. In many cases the effort would be much smaller, and as more examples become available the cost for implementation should show a corresponding decrease. 
+
+Native Member Node implementations currently exist for Metacat, with Dryad close to completion, and support for Fedora Commons in the works. A proxy service (the "Generic Member Node" or GMN) written in Python and based on the Django web framework is also available with implementation examples for Dryad and ORNL DAAC. The GMN can also operate as a flexible standalone Member Node service.
+
+
+How will participating as a Member Node affect our existing workflow?
+
+In general there should be little to no impact on existing operations. Existing data repositories can continue to operate in parallel with the Member Node services. Aspects that may see some impact include restriction on identifiers being used (to ensure global uniqueness), how the repository works with content that may be replicated to it from another Member Node, and there will be some additional connectivity demand to support the necessary network communications.
+
+Full support of the DataONE service interfaces will enable interactions with applications from the Investigator Toolkit, which may significantly expand the possibilities for user interactions with an existing data repository.
+
+
+What happens if my Member Node needs to be taken offline or decommissioned?
+
+Decommissioning a Member Node is technically as simple as turning the node off - the Coordinating Nodes will detect the loss of the node and it will eventually be flagged as inactive. All content that was replicated will continue to be available through the Coordinating and other Member Nodes. A more controlled approach however is desirable and would ensure that the data remains in a stable state. At least a week before the shutdown, the Member Node administrator should inform DataONE of the impending change and the Member Node registration should be configured to report the warning through the getCapabilities() service. The Coordinating Nodes will perform the synchronization and ensure that data objects are replicated as necessary.
+
+
+What types of content are available on Member Nodes?
+
+DataONE member nodes may contain a wide variety of content. The primary constraints are:
+ * Emphasis on the Earth Sciences.
+ * An identifier system must be in place to uniquely identify data items within the member node.
+ * The content should consist primarily of data (there are other mechanisms for sharing and archiving scientific articles)
+ * A mapping must be made between the member node's internal data structure and the DataONE data model (see below)
+ * Individual data objects must be small enough to be easily transferred across the network to other nodes. Data objects on the order of Megabytes or (low) Gigabytes are reasonable, while data objects on the order of Terabytes will not work well.
+ * Content should be stored in widely-used formats that are expected to be readable for many years into the future.  Although DataONE replicates content to provide bit-level preservation services and will provide ongoing support for some widely-used data formats, DataONE does not guard against the obsolescence of poorly-supported data formats.
+
+Content held by current member nodes includes:
+ * ORNL-DAAC: Data from terrestrial ecology and biogeochemical dynamics produced by NASA's Terrestrial Ecology Program.
+ * KNB: Biodiversity, ecological, and environmental data from a  highly-distributed set of field stations, laboratories, research sites, and individual researchers.
+ * Dryad: Data associated with journal articles in the basic and applied biosciences.
+
+
+How are data modeled in DataONE and what metadata standards are supported?
+
+Data, in the context of DataONE, is a discrete unit of digital content that is expected to represent information obtained from some experiment or scientific study. The data [http://mule1.dataone.org/ArchitectureDocs-current/glossary.html#term-8] is accompanied by science metadata [http://mule1.dataone.org/ArchitectureDocs-current/glossary.html#term-science-metadata], which is a separate unit of digital content that describes properties of the data. Each unit of science data or science metadata is accompanied by a generated system metadata [http://mule1.dataone.org/ArchitectureDocs-current/glossary.html#term-system-metadata] document which contains attributes that describe the digital object it accompanies (e.g. hash, time stamps, ownership, relationships).
+
+In the initial version of DataONE, science data are treated as opaque sets of bytes and are stored on Member Nodes (MN, http://mule1.dataone.org/ArchitectureDocs-current/glossary.html#term-18). A copy of the science metadata is held by the Coordinating Nodes (CN, http://mule1.dataone.org/ArchitectureDocs-current/glossary.html#term-5) and is parsed to extract attributes to assist the discovery process (i.e. users searching for content).
+
+The opaqueness of data in DataONE is likely to change in the future to enable processing of the data with operations such as translation (e.g. for format migration), extraction (e.g. for rendering), and merging (e.g. to combine multiple instances of data that are expressed in different formats). Such operations rely upon a stable, accessible framework supporting reliable data access, and so are targeted after the initial requirements of DataONE are met and the core infrastructure is demonstrably robust.
+
+Data Packaging [http://mule1.dataone.org/ArchitectureDocs-current/design/DataPackage.html]provides a more complete description of data, science metadata, and system metadata and their relationship to one another.
+
+
+How is security implemented in DataONE? How are users authenticated and how is access to content controlled?
+
+The primary purpose of Security in DataONE is to protect Member Node data that reside within the system from intentional and non-intentional harm; for example, unauthorized viewing of private data and or alteration or deletion of another user's data. System operations also benefit from Security by protecting services and other resources from malicious activity that often occurs on the Internet. Security for DataONE is part of the initial system planning and design, thereby providing solid integration to all services; not simply an 'add-on' wrapper that occurs as an after thought. 
+
+Security in DataONE consists of two processes: 1) verifying the identity of users -  "authentication" and 2) the application of rules that govern access to system resources (e.g., data)- "authorization".  To simplify user authentication, DataONE is working with nationally recognized identity providers, like CILogon at the National Center for Supercomputer Applications located at the University of Illinois at Urbana-Champaign, to streamline and incorporate user identities from multiple academic and commercial institutions.  This approach to identity federation will eliminate the need for a specific DataONE user account (i.e., Member Node users may use their own identity service), unless specifically requested by the user.  Data providers at Member Nodes, on the other hand, will be given full control over who may view or modify their data by defining their own local authorization rules which will be propagated and enforced by DataONE.  Authentication and authorization will ensure both data integrity and system reliability for today and into the future.
+
+The details of security implementation for DataONE are currently (late 2010) under active development. Initial drafts of design approaches for authentication and authorization are being documented in the DataONE architecture documentation (http://mule1.dataone.org/ArchitectureDocs-current/index.html) and any comments or suggestions for improvement would be welcome (mailto::developers@dataone.org).
+
+
+What is the expected storage capacity of a Member Node?
+
+Ideally, member nodes will participate in the cooperative replication scheme supported by DataONE. This scheme involves member nodes storing copies of data from other member nodes and will require data storage capacity in a member node over and above that required for the data native to that member node. In order for the cooperative replication scheme to be successful, a good rule of thumb is that member nodes should expect to provide additional storage capacity equivalent to the capacity dictated by replication expectation for their own data. For example, if a member node brings 100GB of data to the DataONE network and its replication policy is there should be two copies of each dataset somewhere in the DataONE network, that member node should in all fairness expect to provide 200G of storage capacity (over and above the original 100GB) for reciprocal replication datasets from other member nodes. 
+
+Providing additional storage capcity to support replication of datasets within the DataONE network is an ideal. DataONE recognizes that some member nodes will be extremely resource limited and so this is not an absolute requirement for participation in DataONE. The DataONE system also expects that storage capacity of member nodes will change over time; a method in the Member Node API allows for Coordinating Nodes to query the member node as to the storage capacity avaialble on the member node.
+
+
+What are the connectivity requirements for participation as a Member Node?
+  
+Scientists and citizens using DataONE will benefit from good performance, and the community's perception of DataONE's quality will rise or fall in part because of performance. Reliable, high-capacity Member Node commectivity is one contributing factor to good performance. DataONE expects that a Member Node will be available via the network 99.9% of the time (i.e., the Member Node services provide a response when contacted). This level of availability provides for about 8.5 hours of unscheduled downtime per year.
+
+DataONE expectations for bandwidth are that a Member Node be connected locally by at least a 10base-T connection (10 Mbps) to a local backbone operating at T1 or higher rates (about 1.5 Mbps). This level of bandwidth should allow a gigabyte file to be transferred in approximately 2-4 minutes.
+
+DataONE recognizes that network capabilities around the world vary (e.g., Internet backbone bandwidth and network reliability vary between countries), and the expectations listed above should be considered guidelines, and not fixed requirements.
+
+
+What checks are made to ensure a Member Node is actually a Member Node and operating as expected?
+
+DataONE will be deploying a Member Node testing service as part of the core operations. Given a Member Node service URL, this service will run a number of tests to check conformance with the API specifications. It will also run some simple stress tests to guage performance and finally generate a report detailing the overall functionality. The same test information is used by the Coordinating Nodes when registering a Member Node, and will be performed on a regular basis to ensure the node continues to operate as expected.
+
+Once registered, Coordinating Nodes will perform routine status checks to detect if a Member Node becomes inaccessible, and will automatically update routing information to avoid directing clients to attempt connecting to that node.
+
+
+DataONE Application Programming Interfaces
+------------------------------------------
+
+* Implementation guidelines
+
+* Methods signatures for Member Nodes: http://mule1.dataone.org/ArchitectureDocs-current/apis/MN_APIs.html
+
+* REST interfaces: http://mule1.dataone.org/ArchitectureDocs-current/apis/REST_interface.html
+
+* Serialization guidelines are available in the REST interface documentation, http://mule1.dataone.org/ArchitectureDocs-current/design/Serialization.html and in the descriptions of the errors that might be returned from Member Nodes ( http://mule1.dataone.org/ArchitectureDocs-current/apis/Exceptions.html ).
+
+

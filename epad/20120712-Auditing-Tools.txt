@@ -1,0 +1,135 @@
+#persist
+
+Auditing Tools
+==============
+
+Consistency of synchronized content
+
+
+A. List of all PIDs on a node.
+------------------------------
+Status: implemented 'listIDs' in d1_auditing_java
+
+
+Input: 
+Node base URL
+
+Output: 
+One identifier per row, write to stdout. Diagnostics, errors, extra info to stderr.
+
+Approach: 
+MNRead.listObjects() provides a mechism to page through the identifiers available on a node (member or coordinating). While paging it is necessary to page by the actual number of records returned rather than the number requested. listObjects() does not require authentication.
+* tests of CNRead.listObjects() against production nodes show that paging is not working as expected in that duplicate entries are returned due to probably non-deterministic ordering of results from the database table.
+
+Resources: 
+Documentation available at:
+  http://mule1.dataone.org/ArchitectureDocs-current/apis/MN_APIs.html
+Simple example in bash (does not page):
+  https://repository.dataone.org/software/cicore/trunk/itk/d1_client_bash/d1listobjects
+Java client library:
+  https://repository.dataone.org/software/cicore/trunk/d1_libclient_java/
+Maven repository for libclient (and other DataONE products):
+  http://dev-testing.dataone.org/maven/
+
+
+
+
+B. List identifiers on one node but not another
+-----------------------------------------------
+Given a list of identifiers (e.g. from A above) from two nodes (N1, N2), report the identifiers present on N1 but not on N2.
+
+Status: implemented 'listIDsAminusB' in d1_auditing_java
+
+Input: 
+Base URLs for two nodes
+
+Output: 
+Identifiers that appear on N1 that are not on N2, written to stdout, one entry per row. Diagnostics, errors, extra info to stderr.
+
+Approach: 
+Sort identifier lists and compare using an algorithm such as implemented in "grep -vhFxf"
+
+Resources:
+As for A above, also a crude implementation in bash:
+  https://repository.dataone.org/software/cicore/trunk/itk/d1_client_bash/d1piddiff
+
+
+
+C. Verify System Metadata Consistency for a PID
+-----------------------------------------------
+Given an identifier, retrieve system metadata from two nodes and verify that expected properties match. The two nodes may be any of coordinating or member nodes.
+
+Status: implemented 'compareSysmeta' in d1_auditing_java
+
+Note: The CNs return system metadata from the shared Hazelcast map, so it's mostly meaningless to compare one CN vs. another.  A much more practical alternative for CN to CN comparison is to check the ObjectInfo returned by listObjects, as those values are taken from the systemMetadata table in each of the CN's backing datastore.
+I have a java implementation for that.
+
+Input:
+Identifier
+Base URLs for two nodes
+
+Output:
+"OK" to stdout if no problems, otherwise for each prperty with a delta, output to stdout one property per line, with property, N1 value, N2 value quoted and separated by commas. Diagnostics, errors, extra info to stderr.
+
+Approach:
+Need a list of property xml paths (or some other convenient, configurable representation) that should be checked. Retrieve sysmeta for PID from each node, and compare the values. Authentication may be required for accessing some system metadata, so will need to setup an appropriate client certificate for this operation.
+
+Resources:
+As for B above. Also system metadata description in the documentation: 
+  http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html#Types.SystemMetadata
+
+
+
+D. Verify object retrieval for a PID
+------------------------------------
+Given an identifier, resolve its location and verify that the object can be retrieved from each location listed.
+
+Status: implemented 'verifyResolve' in d1_auditing_java
+
+E. Verify ObjectInfo Consistency between CNs
+--------------------------------------------
+Since it's difficult to compare on a pid by pid basis (listObjects doesn't filter by pid), get ObjectList from each CN, and compare the set of objectInfos.  Specifically, report the objectInfos that are not present on all of the CNs. 
+
+Status: implemented 'objectInfosAminusB' in d1_auditing_java
+
+Input: 
+Base URL's for the nodes
+
+Output:
+Serialized (tabular) representation of ObjectInfos that are not present in all of the ObjectLists, sorted by identifier. 
+
+
+F. List of all objectInfo on a node:
+------------------------------------
+Similar to A, except that it lists the a tabular view of the objectInfo, one entry per line, instead of the identifier. 
+
+Status: implemented 'listOBjectInfos' in d1_auditing_java
+
+Input: 
+Node base URL
+
+Output: 
+One objectInfo per row, write to stdout. Diagnostics, errors, extra info to stderr.
+
+Options: 
+- exclude dateSystemMetadataModified from the objectInfo, to allow items to match each other even if they have different versions of the sysMeta.
+
+
+
+G. IsAuthorized filter
+----------------------
+
+for a given pid return the highest access level (perm.NONE, perm.READ, perm.WRITE, perm.CHANGE).  This helps mediating between the listObjects view (no access control on ObjectInfos) and the getSystemMetadata view.  Uses the current subject of the client.
+
+Input:
+Base URL of the node to check against
+Pid of the object to test
+
+Output: the identifier and the maximum permission on one line.
+
+
+Additional tools for completeness' sake in d1_auditing_java
+searchIDs - same as listIDs, except gets the object list from cn.search, only makes sense for CNs
+searchObjectInfos - same as listObjectInfos except gets objectinfos from cn.search
+
+

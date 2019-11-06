@@ -1,0 +1,179 @@
+Attendees: Rebecca, Amber, Bruce, Carol, Bill, John Cobb, Steph, Bob, Matt, John Kunze, Bertram, Dave, Viv
+
+
+Regrets:  Deborah, Suzie
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+1.  Please join my meeting, Oct 5, 2012 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/883512001
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 289-0015
+Access Code: 883-512-001
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 883-512-001
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2012Oct05-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-10-05
+
+1) CI Update (Vieglais/Jones)
+Working on the 1.1 version of the infrastructure - changes in some of the APIs; want to
+begin testing next week
+
+Operations seem to be working ok - was an issue with one of the machines becoming unresponsive
+Dave did major update to the RedMine system this week - should be more responsive now
+
+Mon-Wed was at Research Data Alliance meetings in Arlington, VA. Will be at eScience meeting in Chicago next week.
+Status of Dryad - still unknown 
+No estimated dates for next MN - next 2 are still planned to be Dryad and AKN
+
+2) CE Update (Budden
+Workshop proposal accepted for Intecol 2013 (London, August 2013) subject to inclusion of discussion of multiple repositories.  
+DataONE poster accepted for AGU (Thurs am).  Will be at NEON booth with DataONE banner during the rest of the meeting.
+Initiating planning for 2013 meetings / booth exhibits.  Please enter meeting info here: https://docs.dataone.org/member-area/external-meetings-conferences
+Putting together ideas for a workshop in outreach (see later item).  
+Working on editing the AHM Movie for distribution.  Movie has been transcribed and the 'story' is being built.  From that I will start to edit the video footage.
+DataUp released.
+
+
+3) Review of initial FAQs (Koskela)
+Q: We  are working with the Office of Research to create a data  management program (plan). Do you have a checklist of accomplishments that  would ensure our program (plan) meets federal requirements?   
+A: While there are common elements to data management plans, different agencies have varying requirements. The DMP Tool is a good resource to begin with and contains a structured checklist for multiple Funding Agencies:        
+
+Q: We have an institutional repository; should we consider being a DataONE member node? {Why or why not?} this part not answered below   
+A: (Cut this sentence)DataONE  is a federated data network that improves access to, and preserves data   about, life on Earth and the environment that sustains it. (end of cut) If your  institutional repository contains such data, you may wish to consider DataONE  as part of your preservation strategy. For additional information, look at  the DataONE member node guidelines:  
+This doesn't really answer the quesiton of why / why not.  neither do the resources that it would link to.  If this is an important question, do we need to build some some of matrix answering this question?
+
+maybe phrasing like "We would love to talk to you about this in more detial ...."
+
+Q: How  should I prepare my data for addition to a DataONE repository?   
+A: The preparation for submitting data depends upon the software that a particular member node   (repository) is running. For member nodes running Metacat, the submission process can be as easy as using Morpho to save the data to your repository's  Metacat instance. Other repositories, such as ORNL DAAC, have much more involved data review and curation practices. For more information:        
+BEW: Consider adding references to general data preparation guides, such as expand the answer to the question to include references to general guides for data preparation, such as http://daac.ornl.gov/PI/BestPractices-2010.pdf, http://www.cdlib.org/services/uc3/datamanagement/documenting.html, and http://www.data-archive.ac.uk/create-manage
+
+Q: Can I store my data with DataONE?  
+A:  Data cannot be stored with DataONE in the way you would store data in a cloud data   storage service.  However you can deposit your data with a member node  that participates in DataONE, thus making your data discoverable and retrievable via DataONE.
+JWC: Perhaps also have a link or something that could point to resources that might help a user find a MN that might be able to store your data depending on your type of data (re-word "more betterer") from a researcher's persepctive.
+
+Q: How do I search for data on the DataOne Website?   
+A: You  can find one or more datasets on the DataONE website by using the ONEMercury   search engine. ONEMercury accesses datasets through the use of metadata  search terms and through the identification of geographic boundaries  representing locations where data has been collected.  
+
+Q: What is a DataONE member node?   
+A:  Member Nodes store, manage, and provide access to their digital scientific data holdings.
+Bill M.: This could be clearer. It says what a MN does not what a MN is. The thing I use is that a MN is a data repository or data center that house a diverse array of scientific data.   
+They also work together to agree on a common interoperability framework to create a network (i.e., there are many repositories that are not MNs).    
+
+Q: What institutions are currently DataONE member nodes?   
+A: Knowledge Network for Biocomplexity (KNB),  Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC),   South Africa National Parks (SanParks), Ecological Society of America (ESA) Data Registry, USGS Core Science Metadata Clearinghouse, Partnership for   Interdisciplinary Studies of Coastal Oceans (PISCO), University of California Curation Center (UC3) Merritt, Long Term Ecological Research network (LTER) are currently DataONE member nodes. For upcoming member nodes see:       
+
+Q: Can I use my university authentication information to access data that requires a DataONE login?   
+A: Many datasets do not require a login. Where a login is needed to get data, that is done using CILogon. CILogon allows data users to gain access to a cyberinfrastructure using the    authentication credentials from their home instititutions. For more information see:  
+BEW: To me, this didn't answer the question.  Suggested:  Many datasets do not require a login.  Where a login is required, if your university or other home institution is a member of CILogon, then you should be able to use your account there to access data requiring a DataONE login.  In some cases, the data can be accessed by any user who is logged in (versus an anonymous user).  In other cases, the data may be restricted for one of many different reasons, and the data managers for that dataset will need to grant access to your specific account.  
+
+Q: How do I cite the data I download from the DataONE system?  
+A: DataONE enables access to data from a wide variety of sources, and those sources have  different licenses and requested citations. Often, these are reflected in the metadata for the dataset and/or ancillary documentation. For more information see:       
+BEW (comment): Getting good material on our site for how to use the bibliographic tools is something we need to do.
+TJV (comment): question about citation, answer describes licensing. Include "...cite and what permissions for reuse do I have on the data..." in the Q?  Or drop the word "license" in the A? 
+
+Q: Does DataONE have any training/teaching modules for instructors who want to encourage data management and data sharing?   
+A: DataONE provides links to 10 data management training modules that can be easily   integrated into a lecture, seminar, or workshop. If you use of any of the modules, the DataONE team would appreciate your feedback on the modules. For more information see:  
+
+Have comments from Steph - Bruce sent his comments (now incorporated into this epad) - Matt: look fine 
+
+4) Process for Press Releases for DataONE (Michener/Budden/Vieglais)
+Came about because of the DataUp press release - there really isn't a process in place
+to make sure that all bits are ready before a press release.  This is meant to put a process in place to make sure that press releases that include DataONE are reviewed before being issued to the public.
+
+There is a spectrum of DataONE "relatedness" from DataONE funded to not related at all. Where is the boundary where DataONE needs to pay attention/review?
+
+In future, what's the best process for making sure press releases that mention DataONE have been reviewed by "DataONE"?
+
+(Koskela) What's the definition of a functioning MN?
+
+5) Outreach Workshop (Budden)
+LT support of activity?
+Suggestions for potential members (thin on media / pr expertise)
+Suggestions for co-leads - Workshops don't need co-leads
+
+Outreach Workshop Activity
+ 
+Proposal:
+A ‘workshop structure’ working group comprised of approximately 6-8 individuals that would meet once initially, with future meetings subject to outcomes from the first meeting.
+ 
+Rationale:
+The discussion of various funding models has raised the importance of user engagement / uptake beyond that of Member Nodes.  For example, under a model where libraries might pay subscription rates to be able to provide DataONE services to their staff, faculty and students they need evidence that their community values the service.  Equally, funders want to see usage metrics.  We are well aware of this need and have multiple metrics within the PMP to address these questions (though some may need review) and also have been calling for ‘case studies’ or example stories of scientists using DataONE.
+ 
+Having recently launched, now is the appropriate time to explore methods to enhance user engagement through social media and other opportunities.  The U&A surveys provide an excellent background to the scientist community and this will inform future outreach development in addition to capitalizing on the Usability evaluations conducted on the current website.
+ 
+Following the rationale of DataUp, we should work to engage scientists in ways / forums / outlets where they are already active.  Hence any group thinking about these questions should comprise environmental scientists who have reputation within social media.  However, the intent is not to simply bring together a group of socially active ecologists but also have expertise from the areas of data visualization, media and communication, pr, and program development (to reduce strain on CI and provide insight on development challenges).
+ 
+ Objectives? End-or-workshop goals?
+ 
+ 
+Potential participants:
+Nathan Yau  - data visualization, author, tweeter/blogger (flowingdata.com); 
+Eric Berlow - ecological networks, data visualization, social media (virtualdata.org), data consultant 
+Liz Neeley - social media expert, COMPASS;
+Scott Chamberlain - scientist, developer (open source software - rOpenSci), tweeter/bloger, interested in DataONE
+Jarrett Byrnes - scientist, tweeter/blogger, founder of SciFund Challenge
+Michelle Hudson - yale data librarian, tweeter
+Carly Strasser - experience in DataONE, tweeter/bogger (co-lead?) (Not unless she gives up other DataONE committments)
+Chris Lortie - scientist, journal blogger (oikos), tweeter, data consultant
+Karthik Ram - scientist, developer, tweeter (over extended in DataONE- this one would be a definite "no" - he's already in 2 WGs)
+Possible suggestion: Elizabeth Leake: focus aree: Cyberinfrastructure outreach. Former TeraGrid CEO lead, current working on STEMTrek <www.linkedin.com/groups/STEMTrek-4566653/about>. She was critical in getting e-Bird work featured as a TeraGrid "nugget" and arranging the Nature-News article on eBird.<http://www.nature.com/news/2010/100810/full/news.2010.395.html>. BTW, she will be at the eScience meeting next week if anyone who is there want to look her up.
+
+BEW: The "real" UTK folks are in the College of Communications here.  There are probably some people in that other part of the College (including marketing) who would be relevant.  I'll get with Carol & Suzie on that question.  
+
+Bob:  There is a social media session at AGU this Fall, both oral and poster sessions, dealing with Earth Science.  That session might be useful for other names as well as approaches.
+
+Have a steering committee as oppossed to co-leads that set the agenda.  Comprised of Amber and 2 others.  1 of these should be from marketing / pr background.
+
+
+6) Around the room
+
+John Cobb: Nothing to add
+
+Matt: Meeting with NODC and ESRI immediately following this LT meeting about an NODC member node and about ESRI making GeoPortal Server a DataONE Tier 1 MN stack.  
+
+Regarding the RSV, I think we should push the dates as late as possible, to give us time to get more ITK tools released and more MNs online.  So the April dates would be my preference if we can suggest that.
+
+Amber: Nothing to add.
+
+Carol: Nothing to add.
+
+Bruce: Nothign to add.  
+
+Steph: Carly's survey of ecology professors being revised for Ecosphere, seems likely to be published there
+
+Dave: Nothing to add (except NODC call as per Matt above)
+
+Bob:  Nothing to add this week.
+
+John Kunze: nothing more to add beyond the DataUp/ONEShare discussion above.
+
+Trisha: Hi -- Carly gave a webinar on DataUp earlier this week and had about 90 participants.  I am thinking that once ONEShare is healthy Carly could give a webinar to the DataONE community -- just an idea.
+
+Bill:  Continue to hold the following dates for the RSV: Feb 11-12, 19-22 as well as the more likely dates of Feb 27-March 7, March 25-27, April 3-4, April 15-19.  It is likely that up to 10-12 DataONErs will be allowed to attend.  NSF is reviewing the content and format of the RSV.  They hope to have dates within a week or two.  We need to provide a list of COIs ASAP.  
+Matt will send Rebecca new spreadsheet - Matt also thought that the April dates would be better because would have more tools in ITK
+
+There is an opportunity for us to submit a supplement proposal to meet some opportunistic need that will help us sail through the RSV--e.g., connecting with XSEDE to establish compute nodes, to bring in unanticiapted MNs, etc.  It should be 2-3 pages with a budget.  
+XSEDE needs a strong science use case driver - John Cobb will follow up on this
+The ILamb project doesn't really intersect with the XSEDE project but John will follow up
+with Bob Cook
+
+Help:  Who knows a good Natural Language Processing person? Peter McCartney suggested Gully Burns at USC http://www.isi.edu/people/burns but his interests don't necessarily seem to be strongly in the NLP field.
+BEW: I know Fernanda Ferreira (https://sam.research.sc.edu/uscera/facultyExpertise/cv/29602;jsessionid=0B92D0105E83735429DA43FC7BE77447) reasonably well, but she might not match.  I've met Manton Matthews (http://www.cse.sc.edu/~matthews/) a time or two.  
+
+Viv: nothing to add, except working on scheduling a Spring CEE meeting - have a Doodle out for WG members...
+
+Bertram: Nothing to add, other than: ProvWG/Prov-Explorer work humming along. We're trying to add some undergraduate students to help with the programming.
+

@@ -1,0 +1,73 @@
+Summer Student Project Ideas for 2012
+
+Please add a brief description of any projects you have in mind for student activities. You can add as many ideas as you like, but keep in mind that we are limited to at most one student per mentor. I've added a couple of ideas below to get things started, feel free to edit and add more.
+
+ITK Component for VisTrails
+Use the python client library as the basis for constructing a VisTrails component that will allow seamless integration of workflows with DataONE as a storage medium. Possibly augmenting data writes with provenance information.
+
+
+Science Metadata Mapping to Index Fields
+DataONE Needs to supporting indexing of a reasonably large number of science metadata types. An important part of this indexing is defining the mapping between content origin (i.e. fields in the metadata) and the indexing fields being used be DataONE for discovery. There are plenty of these mappings that need to be done.
+
+
+Content Change Notification
+Develop a tool that watches for some content defined by a query, and when a change is detected, broadcast notification to listeners through a mechanism such as PubSubHubub (http://code.google.com/p/pubsubhubbub/)
+
+
+
+Title: A portable web application for data and metadata submission
+Primary Mentor: Chris Jones
+Secondary Mentor: Matt Jones
+DataONE needs a variety of mechanisms to ingest content into the DataONE Member Nodes.  The focus of this project would be to develop a user-oriented, streamlined web application that communications with any Member Node to upload a dataset consisting of one or more data files plus associated metadata.  Students will gain experience with designing and developing web applications for environmental data management, and will gain a detailed understanding of common environmental data and metadata standards.  In the simplest case, users should be able to fill in simple metadata needed to create a basic EML/FGDC record, but should also be given the option to upload an already existing metadata record instead of creating it in place.  This project can build upon ideas from existing, similar tools, including the Metacat metadata registry (see http://knb.ecoinformatics.org/knb/cgi-bin/register-dataset.cgi?cfg=nceas). Ideally this application would have a responsive, client-side interface that uses AJAX to streamline interactions with Member Nodes and Coordinating Nodes.  Ideally this might be able to be built using only HTML5 and Javascript, or possibly use a modern web framework like GWT or extJS (Sencha GXT, etc).  The resultant clean web application should be deployable in a variety of web environments at multiple member nodes, and the look and feel should be customizable with some CSS substitutions to allow it to integrate with existing web sites.
+Necessary Prerequisites: Experience with HTML, CSS, and Javascript, and one or more programming languages, particularly Java or Python.
+Desirable skills / qualifications: Experience and understanding of environmental data formats and metadata systmes such as Ecological Metadata Language and the Biological Data Profile.
+
+Data usage and citation synopsis
+Use the DataONE aggregated log facility on Coordinating Nodes to create a continually-updated summary of data downloads and citations.  Use this summary to provide a nicely formatted display of usage and cit`ations for all of DataONE, for particular Member Nodes, and for particular data sets, possibly including a graph showing usage over time. Also include a summary across all of the datasets for a given user (for data they own and use). Citation information might be drawn from various citation indexers, including SCI, Google Scholar and the Total Impact tool.  Collaborate betweeen CI and CE on this project.
+Primary Mentor: Skye
+Secondary Mentor: Heather
+
+Matlab Access to DataONE
+Build a Matlab module using the DataONE Java library to search for, download, and upload data from within Matlab. Can be based upon the analogous project providing access to DataONE through R.
+Mentor:
+Secondary:
+
+ITK Component for Kepler
+Use the Java libclient library to modify Kepler to be able to search for, download, and upload data at Member Nodes.  Existing functionality in Kepler that can upload/download data to EcoGrid servers could be modified to utilize the DataONE client interfaces.
+
+Auth Portal Features
+-- Display/UI enahancement
+-- administrative user
+-- better ui for mapping identities
+-- get CILogon skin to look the same as Portal
+-- integrate with search portal
+
+Submission tools for batch upload
+    -- uniform metadata generated
+    -- get a lot of data into system efficiently
+    -- e.g., along lines of opendap harvester
+
+
+Project Title: Developing a DaaS  (Data as a Service) view of 
+
+DataONE
+
+Primary Mentor: John W. Cobb (Oak Ridge National Lab.)
+
+Secondary Mentor: Nicholas Dexter (University of Tennessee)
+
+Necessary Prerequisites: Programming ability; BS in Computer Science or related field with computer science experience; experience in another discipline science (preferably in a DataONE oriented field like biology, ecology, environmental science, …) 
+
+Desirable skills / qualifications: Experience with Database design, large scale data algorithms, python proficiency , software design, RESTful  web services, cyberinfrastructure, analytics proficiency(R, …)
+
+Abstract: DataONE is establishing an interoperable, extensible, sustainable national (and international) scale cyberinfrastructure for the collection, analysis, and synthesis of data from many projects, fields, and modes of science. The V1.0 Software stack for DataONE will soon be in deployment. It represents a interoperable set of data collections of the DataONE member nodes. While this software stack is complete and allows exploration and re-use of the data collections, there are other forms for how the sum of these collections could be presented. Some alternate interfaces may be more (or less) suitable for various analysis and synthesis research. This short term project would explore developing an additional, somewhat more universal key/value metadata store for the collected DataONE metadata (using an approach such as Google Big-Table, Cassandra, or similar tools as appropriate). The goal would be to enable an additional set of REST interfaces from which to access the DataONE collection along the lines of DaaS - Data as a service  cloud model. The specific sequential tasks in this project could be:
+1) Develop familiarity with DataONE Software stack
+2) Design DaaS service definitions and make technology choices. Included in this design should be some anticipation of future query engines and science applications.
+3) Implement pilot DaaS service on DataONE test node
+4) Import and convert DataONE metadata
+5) Test implementation for correctness and performance
+6) Develop query tools to exercise the REST interface and provide useful higher level "toolbox items" for DataONE infrastructure and target science areas
+7) Pilot application to science problems of interest.
+8) As well as appropriate documentation and scholarly communication throughout the project.
+(although these could be modified in response to mentor/Intern discussions early in the project as well as reasonable achievability during the project's duration)
+

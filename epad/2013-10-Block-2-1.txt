@@ -1,0 +1,342 @@
+Notes for Sprint 2013.10-Block.2.1 (March 02 - March 16, 2013)
+==============================================================
+
+Rob
+---
+ * 20130315
+   * Continued documentation work (Guides)
+     * Q: Re obsolesence chain and provenance when 'splitting a data entity unto multiple entities'
+     * A: We handle what we're given in update(), but future work could track this in a D-PROV trace
+ * 20130313
+   * Working on mid-level documentation
+     * Not architecture, not operations documentation
+     * Make a new folder called 'guides'
+     * Multiple docs, RST format
+     * Audiences: MN ops, end users
+   * In the search index: 'contains' field - do we need this? for Skye
+   * Q: archive() removes objects from the search index, obsolete() doesn't now. What's the difference?
+     * archived objects are not visible via search services, obsoleted objects are
+     * TODO: write up the scenario re: delete() that involves an obsolescence chain
+ * 20130311
+   * R client work
+     * Work on listing packages that an object is a member of
+     * Will add to the 'mid-level' documentation for MN ops
+ * 20130308
+   * Working with Soren from EDAC, MN implementation
+     * Will be able to use the WebTester, got feedback on the tool
+     * EDAC's api serves up a 'live' version of their data - bytes may vary
+     * Also have static snapshots, which DataONE interface is hitting
+     * Need to ensure D1 is not hitting the 'live' instance by following links
+     * WebTester tests that look at content threw some NPEs, cleaning that up
+     * Using FGDC science metadata, moving to ISO 19115
+     * Feedback: ready for 5 months. Hold up? Dave's been responding
+   * Looking at R client features
+     * Idea of using the id of a member of a package to get the package
+     * Perhaps create a function that lists the packages that the pid is a member of
+ * 20130306
+   * R client
+     * adding unit tests
+       * more like integration tests
+         * create, retrieve, etc...
+         * require CN and MN (default configuration uses cn-dev/mn-demo-5)
+       * certificate considerations (outside groups, like CRAN, want to be able to run unit tests)
+     * created branch from 1.0.0 tag
+       * will use for bug fixes/minor releases
+     * issues with the demos not working
+       * Matt systematically checking them
+       * using fake identifiers is throwing people off
+       * unclear that you have to find an ID in ONEMercury to make any of the retrieval commands work
+     * centralized project bug reporting:
+       * https://redmine.dataone.org/rb/master_backlog/dataone_r?jump=rb_master_backlogs
+ * 20130304
+   * Working on tickets in the R client
+     * Created v 1.0 branch (after v 1.0.0 tag that Matt made)
+     * using R unit in trunk for testing
+ * 20130301
+   * Worked on Java intermediate cert issues in libclient with Robert
+   * Looking at R unit for unit tests in d1_client_r
+     * Will likely branch d1_client_r for further development
+
+
+Robert
+------
+ * 20130315
+   * Some time off this week
+   * Working on os core scripts, testing and iterating now
+   * Had talked with Chris B. re: Ansible
+   * TODO: Create ticket for more dynamic configuration pulling for props like IP list, etc.
+ * 20130311
+   * working on os-core scripts - simplifying, culling down the questions
+ * 20130308
+   * some more PTO, Thursday
+   * rebuilt cn-dev-orc-1. LDAP was really messed up due to filesystem filling up and causing LDAP db corruption.
+   * ran CN repair tool for LTER and PICSO.  Looks like all pids that can be updated for KNB, LTER and PICSO have obsoletedBy correctly set.  There were various errors due to checksum differences between CN and MNs.
+   * still working on buildout scripts, and will return to design of reconiliation of SM between CNs
+ * 20130306
+   * some PTO
+   * Revision chain correction on the CNs
+     * differences between DB tables
+     * what does hzSystemMetadata map say?
+   * Larger issue of reconiliation of SM between CNs
+     * working on design docs for that feature
+ * 20130301
+   * Worked on Java libclient with Rob on Wednesday wrt public intermediate certificates in cacerts
+   * Working on Debian buildout
+   * Flights for DataUp meeting in April (COMPLETED)
+   * Modified CN repair tool wrt obsoletedBy fields missing in sysmeta on MNs and CNs
+     * will look at fixing the 50 or pids in production
+
+Skye
+----
+ * 20130315
+   * Working on Replication auditing
+     * Merging from branch to trunk, some refactoring of ReplicationManager
+     * Some cleanup in the auditing code
+     * Will want to test soon, next week
+ * 20130311
+   * Working on OpenSearch impl
+     * Velocity integration with Solr
+ * 20130308
+   * Worked on OpenSearch implementation
+     * Solr install needed velocity jars - now on unm-dev manually
+     * Working through velocity templates for the OpenSearch
+     * Provides a description of the query engine to get RSS, HTML results
+   * Amber requested text for the newsletter - wrote some up for indexing
+ * 20130306
+   * Added ESRI FGDC format for indexing
+   * Testing stylesheets
+   * Looking into OpenSearch impl until Chris returns to work on replication auditing.
+   * Usability review feedback - evaluate for inclusion in next CN release
+   * postgres.conf on cn-dev differs wrt SSL encryption directive (it is uncommented)
+     * Skye will recomment and send RW an email
+     * Error: Invalid line 79 in /etc/postgresql/8.4/main/postgresql.conf: »ssl _ciphers = 'ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH'        # allowed SSL ciphers
+ * 20130304
+   * Worked on polishing AJAX-backed data loading panel in ONEMercury - performance improvements
+   * Working on 1.1.2 release issues
+     * ESRI FGDC stylesheets
+   * Will work with Dave re: OpenSearch support
+     * may need to expose Solr endpoints that we don't expose currently
+ * 20130301
+   * Performance work with search results in ONEMercury
+     * cutting out DataPackage requests went from 16s to 1-2s
+     * using XHR requests for the DataPackage panel now
+   * Will be working on OpenSearch impl
+   * Continued Dryad work
+
+Ben
+---
+ * 20130315
+   * DOI
+     * Publish/register with DOI using Morpho+Metacat is working for EML objects.
+         * test DOI example: http://n2t.net/ezid/id/doi:10.5072/FK2JD53XZ
+     * TBD: Data objects are a bit trickier because title is not included in the actual data object (scimeta might describe the data title, but how to best find that in a general way?)
+     * TBD: DOIs for ORE objects?
+       * not sure if Morpho is generating DOIs for them or even if it should.
+       * Probably want that eventually so that the ORE identifier can become the primary citation, but none of our tools are ORE-centric, except maybe R-client.
+   * 
+ * 20130313
+   * Integrating DOI support into Metacat, Jing's working on Morpho side
+     * looks to be complete, some details are needed on providing title and author strings for DOI metadata
+   * Working on IdP paperwork
+   * Admin stuff for recruiting at NCEAS
+ * 20130308
+   * Meetings
+   * Reading/background on points below
+   * Working on Metacat & Morpho /DOI support 
+ * 20130306
+   * Planning legacy replication testing procedure with Chris (KNB/LTER/PISCO)
+   * ongoing encoding concerns with CILogon DNs
+     * King of Thailand example
+     * Restriction to use ASCII characters for display
+   * AKN Member Node set-up/support/coaching/planning
+ * 20130304
+   * Making progress with CILogon re: UTF8 (vs UTF7)
+   * Worked on /portal problem that was introduced by HZ 2.4.1 
+     * Uses Servlet API 3.0 (TC 7), not API 2.3 (TC 6)
+     * HZ docs say they don't require Servlet API 3.0
+     * Will submit a bug report to HZ folks
+   * Will work on a few outstanding issues WRT Morpho RC, IdP setup
+ * 20130301
+   * CILogon certificate work (UTF-8 characters in DN subject) (extended character sets)
+     * Using a 3rd party character set lib for "UTF-7" CILogon support
+     * The jar needs to be installed as a java extension
+     * This may affect JiBX?
+     * TODO: Create a UTF-7 ticket to describe the issues, including design, libclient, JiBX and PyXB issues
+   * Shared sessions in Hazelcast 2.4.x depends on Servlet API 3.0, be we're using Servlet API 2.3?
+     * Will try to exclude servlet-api 2.3 use maven-shade. Will test it.
+
+Chris B.
+--------
+ * 20130305
+   * Ansible: where does it pull 'facts' from.
+     * Looking at Robert's changes for scripting. Transition to Ansible.
+     * Working on whiptail support in Ansible for prompting question. Probably will git push to Ansible
+   * Looking into Splunk. Test installation.
+ * 20130313
+   * Finished up Ansible work on making installs efficient (no repeats)
+     * lots faster
+   * Worked with Robert on packaging, will likely replicate the buildout prompting work that he's doing
+   * Will move configurations into svn to reduce the number of packages being built
+ * 20130311
+   * Working with Ansible 1.0
+     * Has recursion of playbooks, had to update some software versions
+     * Working on making the playbooks more efficient wrt duplicate dependencies
+ * 20130308
+   * Code cleanup on Linux for PyFS
+ * 20130306
+   * Commit minor changes to ONEDrive
+     * Resolved CSV issue
+     * Take a look at PyFilesytem(?) for ONEDrive/FUSE. Yet another abstraction level.
+   * Return to Ansible work. 
+ * 20130304
+   * Tested ONEDrive/Dokan over the weekend
+     * particular subset of CSV files causing an issue - same issue on Mac, but also can't read XML
+ * 20130301
+   * Dokan ONEDrive reading is working
+     * XML is fine, but trouble with CSV. Will look at ONEDrive on Mac to see if it's the same
+     * Minor issue with http lib
+
+Roger
+-----
+ * 20130315
+   * Parsing of ORE's in python foresite is working now
+   * Changed ONEDrive to use new ORE code
+   * Will be out for 2 weeks. Will finish up documentation
+ * 20130313
+   * Working with foresite
+     * Need some clarity on how we are using foresite vs rdflib objects
+     * ie pass an ORE to foresite to parse, foresite provides methods, but not direct access to triples
+     * only gives back the last set of triples described in the document
+ * 20130311
+   * Reimplementing ORE parsing using foresite
+ * 20130308
+   * Finished up ORE parsing library for pids
+     * Parses RDF and grabs pids in a package - dependent on XMl syntax
+     * Should probably move code to use the foresite library
+     * We should have an ORE handling question/answer on ask.dataone.org
+   * Looked at ONEDrive bug in Windows, still working on this
+ * 20130306
+   * GMN
+     * Certificate set-up instructions in GMN
+     * Example scripts for populating GMN
+   * libclient_python
+     * additional ORE parsing methods
+   * ONEDrive
+     * CB found bug: preconfigured search -> faceted search has invalid path
+     * TODO: someone add to redmine (Roger)
+ * 20130304
+   * Working on examples for using libclient_python (KU GMN instance is asking for it)
+     * Adding examples in, and documentation for it
+   * Continued work on DataPackage generation in libclient
+   * Then back to ONEDrive
+ * 20130301
+   * Continued work on ORE library for d1_libclient_python
+     * resource map generator given a list of pids
+     * GMN support for package creation from a directory
+   * In GMN, going from debug to release mode, ACL are enforced
+     * Need to modify docs to configure authorization
+     * May need a long term CILogon cert? Will likely use a long term D1 cert for admin operations for now
+
+Matt
+----
+ * 20130308
+   * Checked in some R client docs
+ * 20130306
+   * Looking around in R client
+   * Release announcement was sent out quite broadly
+   * Added a few new bugs that are causing problems
+     * Difficulty searching; finding identifiers of packages that can be retrieved (metadata identifiers). Can't easily be linked to the ORE identifiers that then point to data objects.
+       * Use _either_ scimeta identifier or ORE package identifier to retrieve DataPackage object
+       * need to query CN to find ORE id given scimeta id
+     * "D1 Identifer search" needs to be fixed/is fixed in trunk
+   * Plan release schedule for R client (this week Rob)
+
+Dave
+----
+ * 20130313
+   * Working on newsletter text
+   * Configuration of ask.dataone.org
+   * Will be in Thailand next
+ * 20130208
+   * Biweekly call for MN operators/administrators
+     * How to find info, who to ask, etc.
+     * Redmine can be tricky
+     * Discussed using stackoverflow for a community forum
+       * Installed stackoverflow (django, etc.)
+       * http://ask.dataone.org
+       * Will bring this approach up with the LT
+ * 20130306
+   * Discussion with Elsevier on linking to content
+   * Working through backlog of stuff
+   * Need to move stage-unm-2.test.dataone.org to another host (currently at KU)
+ * 20130304
+   * Review: demos worked well, well received, and good feedback
+     * 34 Questions:
+       * Clarifications on the project
+       * Liked both infrastructure & outreach components
+       * Wanted to see interaction between DataNETs, etc (DSpace, iRods)
+       * ITK: really liked the R plugin
+       * Would like to see intermediate documentation (synopses of libraries, tutorials, etc.)
+       * Continued interaction wrt usability, etc.
+   * Newsletter: Amber and Rebecca
+     * Developers write up a quick paragraph on different components (libraries, tools)
+
+Chris J.
+--------
+ * 20130311
+   * Prioritization meeting with Dave, Matt
+   * Discussion with Ben re: invalid system metadata for replicas across KNB/PISCO/LTER
+ * 20130308
+   * Was away Tues/Wed
+   * Planning meetings yesterday with:
+     * Dave/Matt for future development
+     * Ben/Matt/Jing for KNB development
+   * Worked on https://redmine.dataone.org/issues/3539 (replica checksum problems across PISCO/KNB/LTER)
+     * confirmed that MN.synchronizationFailed() is called when checksums differ
+     * Am now working on code for purging the offending objects from the MNs. Ben and I thought this was the only tractable solution
+   * Tracking down a production Metacat replication issue:
+     * Updated the object format list on UCSB, it didn't replicate to ORC or UNM
+     * getting an SSL  peer not verified exception
+     * wondering if this may be contributing to our CNs getting out of sync WRT count??
+   * TODO: ticket for getObsoletesChain()
+ * 20130304
+   * TODO: Add ticket for changing system metadata fields that are 'immutable'
+ * 20130301
+   * Monitored stage2 and production envs during the NSF demo
+   * Working on ServiceMethodRestrictions for target replica nodes
+   * Followed up with Ryan re Dryad MN changes
+   * Updated object formats in all dev envs to add Dryad 3.1 and ESRI FGDC-ish metadata formats
+     * Note: the object format list in dataone-cn-metacat will now be the persisted location
+     * TODO: ticket for the persisted location, and a prop in node.properties for the fs location
+   * Reviewed backlog to prep for cleaning up
+   * Aside: will be out Tuesday, Wednesday next week
+   * 
+
+Discussion topics:
+==================
+ * Replication and reconciliation of KNB/PISCO/LTER objects
+   * Dealing with whitespace and entity escaping differences across metacats
+   * Not having system metadata is problematic
+     * If we generate it, will sync add a replica entry if the object already exists on the CN
+     * If checksums don't match
+   * Test in CN sandbox
+     * [CONFIRMED] confirm that the sync code ensures there's a replica entry when it comes across a replica on a replica node
+     * mnDemo{3,4} replica nodes are available
+     * mn-sandbox-ucsb-1 has content (5K records)
+     * change system metadata for a few sample pids for testing
+       * doi:10.5072/FK2/LTER/knb-lter-gce.100.15
+       * update authMemberNode field to mnDemo3 since that's what the generate sysmeta code does now (AKA generate SM on production)
+       * remove replica entries in sysmeta on mnDemo3
+       * set serial version = to 1 since generated sysmeta will do the same
+       * evict the pid(s) from hzSystemMetadata so the changes are reflected in memory
+       * Set mn-demo-3 to synchronize to the CNs
+     * for some objects, update mnDemo3|4 to have incorrect checksum in sysmeta
+       * expected result: synch reports failure to MN
+         * Got: 
+         * knb 20130308-08:39:13: [DEBUG]: Synchronization for the object identified by doi:10.5072/FK2/LTER/knb-lter-gce.100.15 failed from urn:node:cnSandboxUCSB1 Logging the event to the Metacat EventLog as a 'syncFailed' event. [edu.ucsb.nceas.metacat.dataone.MNodeService]
+       * solution: delete object from replica node, call CN.setReplicationPolicy() to force reprocessing
+     * change dateSysMetaModified so CN starts re-harvesting
+
+Topics for ask.dataone.org:
+ * Generating ORE documents
+

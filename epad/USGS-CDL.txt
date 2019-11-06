@@ -1,0 +1,54 @@
+Email from Mike: I'd like to see about us standing up a "specific USGS Only" DataUp repository that we could look at testing with some of our researchers. In the short-term, it makes the most sense to do this at CDL. We'd have some sessions with interested researchers and data managers. We'd also begin looking at relationships between metadata, DOI's, datasets, etc. within/coming out of DataUP to other USGS systems (i.e. OME - Online Metadata Editor, ScienceBase, DOI workflows, etc.). This is very high-level, but I think if we were able to do this before this years grant ends (Sept 1), that would help us define next years activities, plus begin assessing the value of DataUp within USGS. Last I looked, nearly the fully $24K of the grant has not been spent.
+
+Our Cooperative agreement (copied into a google doc): https://docs.google.com/document/d/1R2ig79fMhAnKhve1WkC--f1iBRM8Wuzm0D4htW5lCqM/edit?usp=sharing
+
+Summary of DataUp's current state:
+ * A few months back we learned that Microsoft forked the DataUp code and began working on a new/improved implementation of the web application. They call it Sequim (or sometimes "Data Onboarding"). They plan on making it open source.
+
+ * John and I got a demo on Friday 6/7/2013. It is much, MUCH improved from the current DataUp implementation.
+ * Microsoft wants to keep up their relationship with CDL, DataONE etc., would like to use the "DataUp" name, and generally would like to continue collaborations
+ * We just received an NSF Supplemental Grant (supplement to DataONE) for about $190k to improve DataUp. Much of what we proposed to do has been accomplished in Sequim. 
+   * Probably get funding Sept. 1 
+
+Talking points:
+ * What is the timeline for spending this money?
+        Funds have to be spent by 8/31/13 or request a No Cost Extension
+        Coop goes through 2017. Some flexibility in what we work on.
+
+ * What are the consequences of not spending it?
+   * Should be spent by end of calendar year. otherwise someone else might grap the funds
+ * Assuming we need to spend before Sept, should we focus on DMPTool? DataUp? Something else?
+ * Need to coordinate with NSF funds in some way?
+
+Ideas on how to use the funds
+ * DataUp: in flux. hard to know what what we can do before the details of MRC relationship and NSF funds get established. Could use funds to work on USGS-specific DataUp once we have the new dev hired on with NSF funds
+ * DMPTool:
+   * seems like DMPTool might be meeting needs of USGS without any additional funding.
+   * even if we work with DMPTool we would need to do a no-cost extension given DMPTool2 timelines
+   * DMPTool profile for USGS might be useful (VH). Push DataUp to next fiscal year. Maybe training exercises.
+   * Stephen - unless we are considering feature enhancements, I don't see pulling together a USGS-specific template or training exercises being able to spend the funds. 
+ * Surveys of researchers: Mike and Lisa are working with UTK to think about surveys for USGS researchers. Can this link together?
+ * USGS library repository? thinking about repositories for USGS datasets/digital stuff.
+   * should be in-house repo (not remote)
+   * could use CDL to build out concept of what this should look like.
+   * could be a way to get Merritt code base in shape to allow USGS to locally deploy Merritt. Develop an in-house repo solution based on Merritt. (SA)
+   * this might be longer-term. for future coop money
+ * Identifier services/harvesting service/link checking (JK). This would fit with Viv's policy activities.
+ * webinar/workshop on setting up repos, data management with NCAR, CDL, etc. Others can travel to Denver
+
+Potentially easy ways to allocate funds specifically for USGS by end of calendar year
+ * DataUp developer to work on USGS metadata schema/best practices stuff (salary)
+ * John's dataone intern https://notebooks.dataone.org/general/week-2-finalized-design-and-begin-implementation/
+ * hire intern to work at CDL on USGS-specific stuff (e.g., DMPTool)
+
+Longer term
+ * webinar/workshop on setting up repos with NCAR etc in Denver (travel)
+ * Merritt extension to allow local deployment for USGS (salary for merritt devs)
+ * Merritt-based USGS repo (housed at CDL). USGS pays for storage (storage; salary for merritt devs)
+
+Next steps:
+ * Carly to talk to Joan etc. about intern / paying for them. 
+ * CDL to figure out MRC/CDL relationship and NSF funding for DataUp and report back to USGS
+ * Mike to look into no-cost extension - will let CDL know what needs to be done. CDL probably needs to request a No-cost extension and rationale (Leverage other grants, etc.). Contracts would then issue modification and extend period. 
+ * John - invite Mike, Viv, and Lisa to the metadata vocabularies briefing on Monday (Viv can only sign on for first 20 min or so)
+

@@ -1,0 +1,39 @@
+esdora.ornl.gov:8080/fedora  has a Fedora instance.
+
+?? Can we convert the project from netbeans to Maven?
+
+Need to have a good working VM with access?  Can we set this up at UNM or UCSB, since the ORNL node is still not in the UTK network (at least another week)?
+
+
+Issue of packaging is a major question.  Need to do the simple case of a dataset with one data file and one companion file.  Fedora 3 has a service definition.  Use this architecture to model content service and relationships.  Need system metadat and science metadata.  Need a Dublin core metadata as a minimum but other science metadata needs to be supported.  
+
+Need to be able to return the bytes of the data set in the get object call.
+
+Need to address question of license.  There is a trac instance of this.  What should go into the header of the file?  Could return a Fedora XML.  
+
+If an object has a simple Dublin core system metadata and a single data object, can do that as the first case.  Doesn't apply to any DAAC data set, but is useful for testing.  Next step is a package of data streams.  Could do some simple sort of packaging.  Return a document that contains the appropriate URL's.  
+
+Side note -- the MN - MN replication means that however the packaging is done, all of the elements need to be replicated from one MN to another.  It is not enough to replicate the container object if it simply contains pointers.  
+
+Fedora has a lot more capabilities than the DataONE.  Need to match these down to the D1 capabilities.  Won't be using all of the Fedora Commons power.  Can make some assumptions about how things should be stored in FC, particularly for this summer project.  
+
+Bruce to identify some simple cases of data that should be stored.  Simple Dublin Core metadata with one digital object in the collection.  
+
+METS as a return object, FOXML also a standard for the new version.  Should be OAI-ORE compliant?  
+
+What happens with Fedora export of an object? What do you get for an object.  Jerry--by default FOXML, can specify.   Get an XML descriptor of object.  For Archive purpose, get more than XML, get the underlying documents as a binary stream encoding in the XML.  
+
+Discussion of how to handle the data object and science metadata objects.  In DataONE these two have separate identifiers.  For Fedora, there are advantages of putting the science metadata as a stream within the object, from a query perspective.  Need to better clairify this issue.  
+
+
+MN service-api:
+https://repository.dataone.org/software/cicore/trunk/service-api-java/src/main/java/org/dataone/service/
+
+VM setup at UNM:
+- authenticate against NCEAS LDAP
+- VM specs:
+  - RAM: 1024 MB?
+  - Disk space: 200 MB ? You mean GB, right?
+  - Processors (1 or 2) 1 for now.
+
+

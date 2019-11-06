@@ -1,0 +1,68 @@
+Proposal for a DataONE Implementors Workshop
+====================================
+
+Overview
+--------------
+This one-day workshop will provide training and instruction for the technical community to build software that integrates with the DataONE system. We will provide an overview of the DataONE infrastructure, along with technical tutorials on how to implement a Member Node software stack and an Investigator Toolkit component that utilizes DataONE services.
+
+Date
+------
+September 30, 2011 
+
+Venue
+---------
+To be held at: NCEAS, Santa Barbara, CA
+
+The workshop will be held following the Environmental Information Management Conference in order to make it easy for participants in that conference to join in.  We expect the audience at EIM 2011 will be just the type of technical information managers and developers that would want to participate in DataONE.  Many of these individuals will already be traveling to Santa Barbara, so it should be minimal additional financial burden for them to stay the extra day for the workshop.  Exposure for DataONE will be substantial at EIM, and will be timed well to coincide with the production release of the DataONE infrastructure.
+
+Organizers
+----------------
+Matthew Jones
+Dave Veiglais
+...and  others -- please add your name if interested in helping
+
+Candidate Topics
+-------------------------
+1. The DataONE federation, architecture, and services
+2. DataONE Service API
+3. Deploying a DataONE Member Node
+4. Implementing a DataONE Member Node
+5. Authentication and authorization in DataONE
+6. Implementing a tool compatible with the DataONE Investigator Toolkit
+
+Draft Agenda
+-------------------
+8:00 am Coffee at NCEAS
+8:30 am Welcome, introductions (Matt Jones)
+8:45 am Introduction to DataONE (Amber Budden) (Archive vs holding space)
+9:00 am Member Nodes, Identifiers, and the DataONE Service Interface (Dave Vieglais) (30 min + 30 min Q's)
+10:00 am Break
+10:15 am Set up a MN, register it, run tests against it (Matt)
+{Search, read activity}
+11:00 am Write activity with CLI, then maybe programatically
+12:00-1:15 pm Lunch
+1:15 pm MN activities (con't)
+2:00 pm Investigator Toolkit overview (Chris Jones)
+2:45 pm Break
+3:00 pm  R client demo (Matt), and/or FUSE read demo (Dave) with API explanations
+4:00 pm Questions and discussions
+5:00 pm Adjourn
+
+Technical needs
+-----------------------
+Sync and repl needs to be done
+create new cn buildout to be deployed
+    -- include new versions of Mercury, Metacat , indexer, etc.
+Need staging nodes for KNB and other nodes (deployed by end of next week)
+Registration process for MNs (script) - libclient should be able to do this now when on a CN (and certs setup).
+Create VM Ubuntu images, on server? (8 groups of 2)
+   -- Include sample data, metadata, resource map for activities
+   -- Each VM set up with networking configured (bridged?), static IP in DNS,        
+   -- *.test.dataone.org wildcard cert installed
+Need staging nodes for CNs (trusting the DataONE CA) end of next week -- cn-ucsb-1, cn-unm-1, cn-orc-1
+Make sure people have CILogon accts, create one on protect net if needed
+MNs need to retrieve CN subjects from NodeList, use that to verify ops from CNs
+
+
+
+

@@ -1,0 +1,80 @@
+Member Node Wranglers 
+    Fridays at 10:00 am Alaska
+                    11:00 am Pacific
+                    12:00 noon Mountain
+                    1:00 pm Central
+                    2:00 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+11 April 2014
+                                                                           
+Attending:  Laura, Amber, Skye, Bruce, Dave, Rebecca
+
+Regrets:  
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+                CN fix?  first phase complete 4/7, second phase to begin after issues related to the Heartbleed have been addressed (eBird, TFRI, Dryad) reissue CN certs, affected MN certs (client and server)
+                
+                There will be a power outage at UNM tomorrow which will affect operations at the UNM CN (and communication w/other CNs), take down ONEShare, etc.
+        
+                MN Dashboard - meeting 3/31/14, follow-up 4/2/14, sharing with MNF 4/3/14 with note sent to MN POCs (mnforum distribution)  Look at some changes Skye has made based on last week's review:  http://129.24.63.92/current-mem-nodes
+                
+                Is it accurate to include RNs in MNs?  They are MNs, but not MN organizations, and we do include them in the count of MNs.  We will be adding UIC (Bob Sandusky) which will operate as a replication node only.  
+                What is the intent of showing RNs on this current MNs page?  Want to include all MNs (currently 19 including RNs).  
+                Resolution: 2 column table with status and name columns, popup when user rolls over the name OR link to page on Drupal site OR include static text above/below the RN table that says something like "DataONE Replication Nodes are....";  Laura to come up with some text to describe RNs
+                In future, need to figure out how to handle UIC re: how it appears on RN table.
+                Turn off the rollover until we determine a better way to handle.
+                Ensure that on the upcoming MNs that we include only MNs that are in testing.  Include MNDD column
+                
+                [[Note for evaluating color lind views - this app works great on OSX : https://itunes.apple.com/ca/app/sim-daltonism/id693112260?mt=12&l=en ]]
+                
+                // Modifications to be made (some/all repeat from laura's notes above)
+                    Remove table hover row highlighting
+                    Add Replication node text in tooltip popup on 'name' hover
+                    Remove logo column/link from Replication table
+                    Add member node document column for 'upcoming' nodes table
+                    Tooltips in new tables. (the on hover tooltips for columns in new tables)
+                    Update 'Status' legend popup with 'upcoming/in progress' status
+                
+                Purpose of MN Description Document (past and future) - past: identify data holdings (type, volume, etc.), operations, to aid in MN development.  future: ???  
+        
+        1.5   Current MNs
+                Need MN desc docs for ESA and SANParks.  
+       * Worked with Judith Botha and Matt to develop MNDD - PDF in docs.dataone.org  
+       * Matt  says ESA likely will not be a MN in future, as they want to transition  to keeping their data at Dryad.  For consistency, I'd like to have a  MNDD from them,  especially since we don't know how long it will be before they make the  transition to Dryad for their data management functions.
+                
+        2. Status of upcoming MNs
+        
+     * Y5Q3
+       * GLEON (3422) - Chris and Corinna working
+       * LTER-Europe  (3232) - News item approved; hold off until CN fix completed.
+       * EDAC (3221) -  Soren says EDAC is ready to go; hold off until CN fix completed.  
+       * PPBio  (3748) - Debora says "things are advancing to solve the replication issues, but still not solved".  
+       * SAEON (3205) - Awaiting response from Wim re: upgrading their metacat.  
+       * NKN (3238) - Ed says they are up and running in sandbox.  
+
+     * Y5Q4
+       * DFC (3532) -  Chris has been working with Lisa Stillwell and Mary Whitton answering questions
+       * MPC (3708) - Email traffic re: data package formats, etc.
+       * ORNL "slender nodes" (RGD (4248) and EDORA (4247)) 
+
+    Future
+       * TERN Australia (4286): met 3/27/14.  Bruce sent out draft MOU,  Alison/Nikki updated,   and they have templates for us to work on based  on previous work with   NEON.  Will be working in dropbox, meet again 13 April, also plan to meet f2f at AHM.
+       * IARC (International Arctic Research Center) (4700) - met with Jim Long 4/10/14.  They currently run GeoNetwork, would like to be a fully functional MN, can start small (expose metadata only) and work from there.  
+
+        3. Old action items
+             MN Documentation - MN Deployment and MN Ongoing Operations - holding
+             
+        4. Not-high profile issues
+     * Laura working with Roger/Chris/Rob on redmine ticket generator - going well, meeting again 4/14 to continue going through the draft tickets to ensure we've covered everything w/o overkill
+
+       
+        5. Around the room
+            
+
+
+

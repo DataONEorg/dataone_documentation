@@ -1,0 +1,171 @@
+- Should we add slicing support to monitor/object and monitor/event?  (start, count, total). It would enable us to limit the number of entries  returned in the “per day” stats. 
+At minimum, whatever capability is currently supported should be maintained. 
+Cost to implementation on the MN side has to be considered.
+We currently have no facilities for slicing or for limited the amount of returned information. Though the maximum possible amount of returned information is limited by the number of unique dates that objects have been created on in D1.
+
+I have these as REST calls currently implemented:
+monitor/object?day (daily objects {created?})
+monitor/event?event=read&day  (daily retrieval events)
+monitor/object  (total objects {created})
+monitor/event?event=read  (total retrievals)
+
+Unless we wish to increase the granularity of monitoring, continued support for these (even, if different format, is fine).
+Also want to monitor other events as well, but I think that is within spec.
+
+~~
+
+- In mnclient, is there a mechanism that a client can use for retrieving  what was actually received from the server, in case the server returned  an error code but the returned information did not correctly deserialize  to a DataONE exception?
+Each (most?) of the dataone API methods implemented in the client have a x_response() method. Calling this instread of x will return the response. e.g. get_response() and get().
+True, but that is after the fact. Normally, one will try to get an object that can be deserialized as a valid D1 type. When something else is received, one would then have to do the same call again with get_response() to try to get at the actual bytes? Currently, yes. Alternative is to cache each response, but that can be expensive depending on the type of resposne.
+I think what we could use is an alternative method to get what was received if what was received was not what was expected. So, say I get a 404 but the DataONEException did not come through. Then it would be nice to be able to do another call on that same address and receive the raw bytes of what was received. So get the url and call the url directly?
+So, say I do a listObjects call and I expect to receive back either an ObjectList or a DataONEException. The client will determine what was received and either return a deserialized ObjectList or a deserialized D1Exception. If the client was not able to deserialize what was received into one of those objects, then it should be possible to get what was received without doing another roundtrip to the server. In part because of efficiency, but also because the error may no longer be there.
+As mentioned above, this requires caching.
+Aha.
+Missed that point.
+I think that we could at least cache the returned information if it was short. Or just limit the cache to the first N number of bytes. The idea is just to have something to look at if the call failed so badly that there's not even a DataONEException.
+you mean like DataONEBaseClient.lastresponse ?
+Oh! It is there? Yes, that was my basic question. So it's already taken care of then. Should we formalize that behavior in the APIs? Nope. It's a hack - better to have a more rigorous caching mechanism.
+Hmm. We can't force an MN to always return what the API spec calls for.
+If it doesn't return what the spec says then it not a dataONE API implementation.
+True, but it's trying to be, and we should have a standardized way of finding out why it's failing, IMO.
+That's what integraton tests are for. That's kind of outside what the client is designed for (though of course can be).
+Integration tests can't catch temporary issues. So right now, the situation is, the client makes the call and if there's a temporary issue, all the client can say is that, "something failed". And if there was something received from the server, the user can't see what it is. So the user can't decide what to do next, and can't tell an admin what happened.
+Huh? if the response fails then an exception is raised.  the client can then look at self.lastresponse.body and figure out what to do. 
+It can only look there if that is a standardized method in the spec.
+No, it is not to be part of the spec - it can be a recomendation, but that's all. There will likely be many types of client libraries implemented, at varying levels of sophistication. 
+Though all communicating with REST and all having fairly easy access to what was returned from the server.
+Exactly, which is why it's not necessary to make it part of the DataONE specification.
+Actually, I'm confusing the client and the library a bit. I would like to have this support in our library, so that the client can get to that information. But I think it would be good to have that in the spec so that a client using another library also can get to that information in a standardized way.
+So the specification would say to cache the HTTP response from the server?
+Yes, or a number of bytes from it, but only if that response was not what was expected.
+That is purely client implementation specific and is not to be part of the DataONE API specifications. It can be a recommendation but not a specification.
+I don't mean for the REST API spec but for the d1 client API spec.
+For use when a client using our library makes a call through the library and what comes back can't be deserialized.
+Wrap it in a DataoneException if it is not already an exception that can be read. So, the client, when recieving a body is unable to deserialize the message.  you wrap what was returned and raise an exception to the client. 
+I like that idea.
+i think we do something like this on the java side right now. Rob would know.
+What kind of exception do you return and what do you put in the other fields that are supposed to come from the server?
+ServiceFailure looks like an excellent fit. With description set to something like, "Server returned invalid response", and the reponse in the traceInformation.
+We return a ServiceFailure.  detailCode is NULL but description is filled in. response could go in the traceInformation along with a generic message. That makes sense.
+Not even the response bytes?
+Ok, so to address this use case, you'd have to add the response in.
+Dave, reading through this again, it seems we talked about two different things. By DataONE API, you meant the REST API and I meant the D1 common and client library APIs. I think that Robert's solution sounds great. Which means just altering the deserialization methods in d1_common.types to create ServiceFailure exceptions on the fly if what was received did not deserialize correctly.
+Which is exactly how the DataONEBaseClient is implemented.
+Tried  it with getOperationStatistics(). If GMN returns the string “invalid”  in various combinations, none of the results returned or raised from the  library contain that string:
+/ 200, “text/html”: NotImplemented DataONE exception.
+/ 200, “text/xml”: SAXParseException.
+/ 400, “text/html”: The Python Exception baseclass with string “No DataONE exception in response”.
+/ 400, “text/xml”: ExpatError: syntax error.
+I'm also wondering how I could have phrased the initial question more clearly, so we didn't have to arrive here in such a roundabout fashion?
+Re:  Discussion at standup. I don’t think I can agree that the way the  Python and the Java side handles invalid responses from the server is  already similar.
+Java: A DataONE exception is raised and the traceInformation contains the actual response from the server.
+Python:  Any native Python, 3rd party library, DataONE or other exception can be  raised. Different API methods can raise different exceptions. For each  method, all possible exceptions much be caught. Then it must be  determined if an exception was due to an invalid server response and  then the .response member is used for retrieving the response.
+Suggestion:  How about we create a specific DataONEException called something like  InvalidServerResponse for use in that situation? The reasoning is that  for an invalid server response, all the client can really be expected to  do is to cancel the operation and give the user the response so  that it can be reported to the server administrator, while for all  exceptions that are caused by “local” issues, including failure to  connect to the server, the client may want to respond in various ways.
+
+~~
+
+- There is no longer support for wildcards in monitoring APIs. Is that by  design? If so, need to update the example in the docs that uses  wildcards. There is a usecase for wildcards, where there are closely  related formats, such as the eml formats that vary only by version  number.
+Wildcard support can be expensive to support - need to evaluate implementation impact acr
+
+
+
+- getOperationStatistics. I think it should be called getEventStatistics  because there are other stats related to Operations that are not  returned by this call. (uptime, load averages, bytes transferred,  available resources).
+
+- getOperationStatistics. There’s no PID filter, so it’s not possible to  get the events concerning a single object or a single set of objects  with related names.
+
+- We used to have an orderby argument in listObjects. It’s no longer there. Was it removed on purpose?
+order by will be determined by the query/filter syntax of the underlying search/collection filter implementation. We seem to be moving away from a univeral DataONE filter syntax for all searches and towards a implementation specific syntax.  However, if we do have a native dataone filter syntax, then we should have an orderby argument. -rpw  
+Right now, listObjects is both the discovery mechanism for CNs and the search interface for clients. Maybe it's best to split them up.
+We are dealing with object collections and the types of filters that can be applied to objectCollections. There is no search per se in REST.  So, an objectCollection can be filtered with a Solr syntax or a Metacat syntax or even possibly with a native dataOne syntax.
+
+~~
+
+- Do we need the filtering capabilities on the object, log and  monitoring collections? 
+Should it be possible for a client to discover  items in those collections without having to go through a CN?
+It is possible for a client to interact directly with a MN, but that is not the design. The CNs catalog content, and clients should use that catalog to find stuff. 
+
+
+/monitor/ collections: Is it necessary to have any filtering at all in the /monitor/   collections on MNs since CNs will have to read those collections and   aggregate them so that accurate stats can be retrieved for a given   object? If so, it seems like what we need is just a timestamp filter.   The collection can include a timestamp and each time the CN queries the   collection, it can pass in the timestamp it got the last time, to get   new objects.
+
+/object/ collection: MN_replication.listObjects(token[, startTime][, endTime][, objectFormat][, replicaStatus][, start=0][, count=1000]) → ObjectList. If all searches will be done through a CN, then this call only needs the args a CN would use, which I think would not include objectFormat.
+Currently, this is correct. For synchronization, i need startTime, endTime, start, count and replicaStatus.  I don't know what use case would need objectFormat identified as a filter.
+
+Object only: where is the collection held of objects for dataone that may be filtered? I think that's why we have CNs.  MNs do not provide all the collected assets of DataOne.
+I'm thinking of this scenario. An object is replicated out to 3 MNs, and it's possible to connect to an MN and query the stats for that object from there. But the stats will be incomplete and the only way to get complete stats is either to have the client connect to each MN in turn and aggregate the results or having a CN pull the stats and do the aggregation. If we do the latter, then we don't need any searching/filtering on the monitoring collections.
+oh, by stats you mean the details of the SystemMetadata?  as in, the CN holds the definitive copy of the SystemMetadata and that is the only place you are guaranteed an accurate copy.
+It's relevant to the object collection as well because, if searches are always done through the CN, and the CN is not going to use the filtering capabilities when it syncs an MN, why have them?
+yes, the CN uses the filtering capabilities of the MN. 
+Including objectFormat?
+No, i mentioned that above. We should determine if a Use Case requires it, but I don't know of one yet.
+Wasn't the conclusion on the replicaStatus discussions that MNs should not have to keep track of it?
+ok, i thought replica status really meant, synchronize me again! kind of thing. i'll have to reread.
+Synchronize the whole collection again, you mean?
+no just the object
+Yes, that is what it means. But when an object is updated, the operation will be coordinated by the CN, so it will already know that it will need to go and get.... actually, won't need to get anything. It will already know that the object changed.
+let me check how i'm using this indicator. for some reason, i think i remember using it as a way to determine the objects to retrieve for synchronization. it wasn't that I added it in, it was that I took it out. So, i guess i'm not using it.
+Forgot... an object won't ever get updated. At least I think that's were we're currently at? So... The replicaStatus flag would be set on new objects that are created on a MN so that the CN can query for them and synchronize them without worrying about objects that have already been replicated. But I think that will be handled better by the timestamps. A new object will have a timestamp that is after the previous sync and so will get picked up based on that.
+Which makes me think, maybe all that is needed in this interface is startTime + slicing. And the collection could return a timestamp that the CN could use for the next sync.
+Right, my process right now is wholly dependent upon timestamps + slicing for synchronization.
+I guess the collection wouldn't even have to include a specific timestamp since you can just pick up the latest timestamp in the collection? So, sync is, retrieve everything that has timestamp later than current timestamp, go through all returned objects and find the latest timestamp, use that timestamp on next sync. And then, every once in a while, go back and retrieve everything without setting a timestamp, so that objects that fell between the cracks due to fluxuations of the clock on the MN (maybe).
+
+startTime and endTime of the object collection filter should alway evaluate against dateSysMetadataModified.  A MN collection may have an Object or SciMeta object updated via the native interface of the MN's repository.
+Objects  in D1 are not immutable?
+good point. So what SystemMetadata may be mutable on the MN that the CN would consider significant?
+We go through changes so quickly that it's hard to keep track. At one point, the SysMeta object on the MN was considered an immutable skeleton object that was returned to the CN and maintained there from there on. In that first transfer, it would contain all information that only the MN can provide.
+Ok, if the MN sysMeta is immutable as well, then... 
+I think that even if that's not the case anymore, we could get by with just timestamp + slicing. Hope I don't seem picky. It's just that, since there will be so many MNs compared to CNs, anything we can do to reduce the feature set required on MNs is of potentially big benefit.
+No i agree. I do want to make certain that dateSysMetadataModified is the definitive timestamp that I am querying against. 
+Right now, your description of the pull operation of the CN-MN synchronization process is correct with one modification.   I do not persist the current time as the timestamp. I use the most recent dateSysteMetadataModified element from the systemmetadata. So, i always go back and requery for more objects based on the highest value that was last returned. I don't care at what time i performed the last query. cool.
+That sounds perfect and is what I meant as well.
+What has not been written is the 'trickle' validation of synchronization. So the process that verifies all object on the MN have in fact been synchronized to CN.  I call it trickle because i think it should be a low priority process.
+Yes. So the trick won't be to find out if objects are missing because you can compare internal count with count returned from the MN in the /monitor/object call. But once those counts don't match up, you could use beginTime, endTime filtering for searching for the missing objects. Though at that point, maybe it's better to just do a complete resync, that is, don't specify a timespan at all.
+Right, if the count's don't match, then we need to do a full comparison, or, we can more effieciently try to do somekind of sorting algorithm to determine where the numbers don't add up via slicing the timeframes involved.
+That's a good idea. You could even do a binary search. Split the collection up in the middle and compare counts to find out which part is wrong. Split that part in the middle again, etc. yep.
+I forget, is "total" in the ObjectList the total number of objects on the MN or the total number of objects that will be returned with the current filter? I guess the latter. So yes, then a binary search would work fine, though I don't know if it's even worth it. I guess it would be, on an MN with a zillion objects and only one missing.
+Anyways :)
+So, Total is the number of objects matched through the query, count is the number of object returned in the ObjectList. 
+Exactly.
+In other words, /monitor/object is not even necessary in the case of trying to match up numbers. Can just do an unfiltered query against /object/, setting start and count to 0.
+that should work so long as MN support it. So, sure.
+It has to support it, or it's not an MN :)
+But then again. There are []'s around those params in the API spec... Can we really let those be voluntary?
+ya, default is start=0 ,count=1000 right?
+Start is voluntary as well.
+Ah... Right... But... Hm. Ok, I get it. They are not in []s because an MN can ommit them if it wants, but because the CN can chose to not use them if the MN has less than 1000 objects. So, an MN has to support them.
+ok, no.  The Member node must return in the objectList the start, count and total attributes of the list.  Anything that queries the REST interface can ommit those terms and still receive results with the given defaults.
+Yes. The use of the exact same names for those both as parameters in the API and as attributes of the returned collection is kind of confusing. They don't necessarily even always match. You can query X objects and the MN can chose to return Y objects, in which case the two "count" values are different.
+Right.
+ If you query with a start of 0  and a count of 1000, then it is true that you may only return a start of  0 and a count of 500, but only if the total also is 500. But the  sematic meaning of start and count is exactly the same from the REST api  parameters and the ListObject schema.
+The meaning is not exactly the same because one is a request for objects and one is the response, and as you said, the response may not always exactly match the request.
+No, we are not talking about verbs, these are nouns, or attributes of nouns.  So the semantics is  (countx and startx of Collection Z) == (county and starty of CollectionZ)  the x and y don't matter for semantic meaning, they indicate variables.
+Yes, I think I understand now.
+So, back to the statement, "that should work so long as MN support it. So, sure.", about using the object collection with start and count to find out how many objects are on a server, the MN does have to support start and count, right? It's just usage of them that is optional
+yes, given that it must support defaults, it must support the attributes of start and count and total.
+Ok, so in that case, we're still ok with a minimal set of listObjects with only timestamp + slicing for keeping an MN in sync, and checking if it actually is in sync (no missing objects). And the same interface can even be used for searching via binary search for missing objects if desired.
+So far I agree, with the caveat that there may be a Use case we don't remember that requires the objectFormat and replicaStatus for some reason. 
+Indeed. And if there isn't already, there's sure to be at some point :)
+Also requiring another X > 10 new filters.
+So limit the MN from the beginning and all other searches are perfomed on the CN.
+Yes, what I want to examine with this is the possibility of removing almost all filtering capabilities on collections on MNs.
+Agreed.
+Thanks for your time.
+~~
+
+wrt to items noted by Roger and others in the etherpad http://epad.dataone.org/Sprint-2011-12-Block-2
+
+1. I think the monitoring API needs some careful review. It is probably  fine, but I believe it was driven primarily by the requirements of Cacti  logging, which may or may not coincide with what is really needed for  monitoring the DataONE infrastructure. It's important that the  monitoring calls don't significantly impact the operations of the Member  Node, nor significantly raise the hurdle for implementation /  participation.
+
+2. The python client is already implemented exactly like the conclusion from the discussion on epad.
+
+3. Wildcards on the MN monitoring APIs need to be considered in the  context of #1. Generic support for wildcards can be expensive from a  processing point of view.
+
+4. Other items refer back to #1, and also the general observation that  the design of the infrastructure is that a client will discover content  through the CNs and so minimal discovery support is required on the MNs.
+
+5. Mutability of system metadata.
+a) new (i.e. un-catalogged) content on MN is discovered by the CN by  calling listObjects with a filter on the system metadata last modified  time stamp. System metadata on the MN should never change except in the  case where an update has occurred.
+
+b) an update has occurred. Say A0 is updated. In this case a new object  A1 is created along with its system metadata. The system metadata of A0  is updated to indicate that it has been deprecated. The last modified  timestamp on A0 system metadata is set. The CN picks up the object in a  synchronization operation and updates it's copy of system metadata for  A0 to reflect the deprecation.
+Other changes other than updates are possible for  system metadata. For example, a user may want to change the access rules  or replication policy for an object.  Also, a data object that was  initially uploaded without a 'describedBy' element may later be  associated with a metadata document and a 'describedBy' element would be  added to SystemMetadata.  We developed a document describing who can  change SystemMetadata, where, and how, and placed it here:
+   http://mule1.dataone.org/ArchitectureDocs-current/notes/sysmeta_mutation_20101217.html
+Note  in particular the section titled "Matt’s modification of the notes from  Robert above" -- we obviously need to clean up this document, integrate  the sections, and formalize it.
+

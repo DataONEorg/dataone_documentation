@@ -1,0 +1,49 @@
+Notes on suggestions/ideas to improve/enhance content discovery and searching:
+
+
+-Replace OpenLayers with google drawing tools. (fixes map paint issue, less code to maintain)
+
+-Data Panel redux:
+        -Ajax/on demand data package retrieval.
+        -Organize information by package - currently flat.  For science metadata in multiple packages.
+
+-Download all / Download package.
+
+-Improved detail views
+    -maps
+    -inline display of some data files?
+    -Client side xslt view.
+        -Removes processing time from CN/web server.
+
+-Citation Page - need more information on what this would be.
+
+-Improved query filtering building
+        -facteted browsing...
+        -controlled keyword heirarchy
+
+-Total impact data service integration.
+
+-View search results on a map.
+
+-Portal login link.
+        -Display user name.
+        
+-Improved COINS integration for zotero, mendelay
+        -add to detail view.
+
+-Socialize
+    - Twitter this data set, etc
+    - twitter, fb, mendelay
+
+-Data Package navigation
+    -Move between science metadata, data files in package
+
+        
+-Rewrite in HTML/js/css.
+    - Seperate data from presentation.
+    - Design more dynamic user experiences.
+    - Clean code base.
+    - Mash up re-usable data services and widgets.
+
+    
+

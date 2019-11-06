@@ -1,0 +1,84 @@
+.. meta::
+   :keywords: DataONE, CCIT, 20120523, VTC
+
+
+Developers Call - 2012-05-23
+============================
+
+:attendees: Roger Dahl, Bob Sandusky, Chris Jones, Skye Roseboom, John Kunze, Ranjeet Devarakonda, Giri Palanisamy, Jim Green, Mark Servilla, Robert Waltz, Rob Nahf, John Cobb, Ben Leinfelder
+
+Call Info:
+
+1.  Please join my meeting, 23May, 2012 at 16:00  CDT.
+https://www1.gotomeeting.com/join/295607393
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (404) 891-0552
+Access Code: 295-607-393
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 295-607-393
+
+
+
+Agenda and Notes
+----------------
+
+1. Scheduling and location for the next CCIT meeting. The Doodle poll indicates either the week of July 31 or August 21 as the most inclusive options.
+
+- August 21
+
+
+Location options:
+
+- Juneau
+- Santa Barbara
+- Albuquerque
+- NESCent
+- ORC
+- Marconi (San Francisco) **
+- Denver
+- UIC in Chicago (free meeting room, good wifi)
+- Other?
+
+
+
+2. Status of Member Nodes that will be participating in the initial release.
+
+KNB
+PISCO
+SANParks
+ESA
+
+- Volume issue on the MN (93k objects), out of memory error
+- Need to identify the cause of this issue - may affect other metacat instances?
+
+
+Dryad
+  - Cleaning up some issues
+  - Core functionality planned to be back up by next week
+  - Need to add getReplica() method (recent change to Tier 1 API). Same as get(), just logged as a replicate call insted of read.
+
+CDL (Merritt)
+  - sticking with tier 1 roll out
+  - will later include Shiobleth / tier 2
+
+DAAC
+USGS CSAS
+  - Logging working for the most part
+  - Need ORE example documents (Dave)
+  - Will be adding about 50 more objects on each DAAC and USGS
+
+LTER 
+- after review which finishes June 30
+
+
+- DOI requests should identify the shoulder for each of the MNs (waiting on PISCO)
+
+
+
+3. General update on the infrastructure deployment process.
+
+    
+

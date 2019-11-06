@@ -1,0 +1,201 @@
+Attendees: Rebecca, Amber, Bob, Mike, Bruce, Viv, Bill, Matt, John Cobb, 
+
+Regrets: Todd, Dave, Suzie, Carol, Trisha (CA holiday), John Kunze (ditto)
+
+http://epad.dataone.org/20110325-LT-VTC
+ 
+Agenda for 2011-03-25
+
+1. Summer Institute on Data Curation - Recommendations for DataOne presenter? (Michener)
+
+---------------------------- Original Message ----------------------------
+Subject: Summer Institute on Data Curation - Recommendations for DataOne presenter?
+From:    "Cragin, Melissa H" <cragin@illinois.edu>
+Date:    Wed, March 23, 2011 9:07 am
+To:      "wmichene@lternet.edu" <wmichene@lternet.edu>
+--------------------------------------------------------------------------
+
+Dear Bill,
+
+  As you might know, we are holding our annual Summer Institute on Data Curation in June. This year the focus is on Research Data in the Life Sciences.  The primary audience for the Institute is practicing academic librarians and other information professionals, along with a smattering of domain scientists.
+
+We would really like to have one or two people from DataOne present and participate, and still need someone with expertise in environmental data management, as well as semantic web technologies for life science data.
+
+I had invited Matt jones (did not heard back from him), and  Bruce Wilson, who is unavailable that week.
+
+If you can recommend anyone from your project, I'd be happy to talk with them about topic and scope of a presentation, and could answer any questions they might have on general participation.
+
+  We will be able to support their travel expenses (based on the Univ. of Illinois policies), and we can also offer an honorarium.
+
+The dates are June 6-9, and presenters are certainly welcome to come for the entire time, though this is certainly not required.
+
+Thank you for considering, and I look forward to hearing from you.
+
+Best Regards,
+Melissa
+
+Melissa Cragin, Ph.D.
+Research Assistant Professor
+Graduate School of Library and Information Science
+University of Illinois at Urbana-Champaign
+501 E. Daniel St.
+Champaign, IL  61820
+Semantic web technology is probably not a critical piece. Amber will ask Carly if she is interested.  Viv did this last year and thought it was a great group of people. Giri covered some aspects of semantic web technology last year.  Matt has lots of slides and he could talk to Carly about this.  Will wait for the official response from Carly.
+
+2.  Update on planning for July DUG (Budden)
+Initiating monthly calls.  Selected ITK as the organising theme but will also include DataONE updates and information on the process of adding Member Nodes (following activity of our new sub-group).  
+Due to ITK the focus stakeholder groups will be MNs (invitation of exisiting DUG), domain scientists, librarians, data managers and development partners.  In the next two weeks we will create a draft list of invitees from these categories and from looking at ESIP invitees.  Feedback from CCIT requested for the 'development partners' category and suggestions from the LT welcomed and should be directed to Amber.  Also plan to get a basic agenda put together in the next few weeks once we understand from ESIP how much time on Tuesday will be available to us.  WRT travel grants there was concern that these should not been seem as competitive so the recommendation was to have flexible terminology as opposed to calling it an 'award'.  Also, it was felt that recipient contribution may be better in the form of commitment to a focus group or some such, as opposed to a written report.
+
+3. Quarterly Working Group Reports  (Koskela) 
+    see https://docs.dataone.org/member-area/working-groups/working-group-reporting-templates
+
+4. Risk Register (Michener/Hutchison/Vieglais)
+    Now use RedMine instead of Trac (https://redmine.dataone.org/) - make
+    sure that you sign-in (upper righthand corner); click on Risks under Latest Projects;  
+    Some LT members had problems accessing the risk register due to redmine permissions; created ticket for Dave to review these permissions: https://redmine.dataone.org/issues/1438
+    Need to re-evaluate the top 5 risks:
+    Viv: 105:  Member time constraints -- "stretched too thin" (P: High; I: High)
+    Matt: checked mitigation strategies and wondered if we are implementing our mitigation strategies. 
+    Bill: on a monthly basis review the opportunities for other funding
+    Bill: 120:  Lack of funded DataONE staff to perform tasks (P: High; I: High)
+    Dave: 50: Feature Creep (P: High; I: Medium). No change to this risk. It is still an important risk to be aware of.
+    To what extent has it already occurred? how to measure?
+    Do we have a technicak baseline against which we have a scope change log? Many of the SVN checkins are implementation of the alrady planned baseline not feature additions.
+    Proposal was not detailed - now there is a requirements document
+    Matt concerned about ITK - DUG may come up with a list longer than can deal with - would be good for them to prioritize
+    Mike comment: USGS/DataONE development meeting in April to align timelines. Mike has hired a graduate student whose primary goal is to work on joint DataONE, USGS 
+    Dave: 52: Unrealistic timeframe or schedule (P: High; I: Medium). No change to this risk. Time estimation remains challenging, especially when all resources are fully engaged - contingency time has been built into the two month development blocks (bug squashing time) - remains to be seen if this is sufficient. Serious concern over resource availability remains.
+    Viv: 55: Stakeholder adoption is poor (P: Medium; I: High)
+    Bill suggested that P be Medium and I is High - this is how it is listed in the register.  Above a typo?
+    How do we assess stakeholder adoption? Have metrics related to number of MNs, downloads, etc
+    Assign this risk to Amber? :) Yes :)
+    Bill:  56: Funds not released (P: High; I: Medium)
+
+Mike: Risk 137 might should be closed - AD's are hired...
+
+5. June workshop being held  by a Data Interop at Purdue concerning drought. I have been asked to  attend and present a DataONE talk (30 minute talk on sharing data). I'd like to have LT discussion, if  possible, tomorrow, and if we should participate and who? (John Cobb)
+Bob Cook will talk to John about the work on drought that they are doing.
+" am writing to invite you and/or others on the DataOne project to speak at
+a drought symposium that we are planning in conjunction with our NSF Data
+Interoperability project (DRINET).  The meeting will be on June 21-22 at the
+Purdue West Lafayette campus." <http://drinet.hubzero.org/symposiuminfo>
+Drinet collaborators: <http://drinet.hubzero.org/members/contributors>
+
+6. Bob Cook: I'd like to make a suggestion about outreach to our DataONE community (the people who attend the AHM or the DUG).
+
+It has been a month now since our highly successful review at NSF.  I  think we should prepare some sort of a summary of DataONE, based on the  material that was compiled for the NSF review (not the full set of  slides but something based on them.)  The summary could be a set of  modified powerpoint presentations posted on our Web site, a Webinar, or a  newsletter  with links to modified slides.  We have lots of material  and there are many ways we could handle this.
+
+Of particular importance is getting the CI developments out in front of  our DataONE community.  Those demos / screencasts are really cool.  We  shouldn't wait until the AHM meeting in October to present those to our  community.
+
+I've shared the screencasts with several people on EVA and the CI  development team...they were really impressed, but had not seen  them...we need to get the word out!  I couldn't find links to those  screencasts on our docs.dataone Web site.
+
+I know everyone is really busy (lots of WG meetings coming up) but a little outreach now is critically important.
+
+I'd be willing to help with this outreach.
+
+Bob
+
+More thoughts on outreach based on material compiled for the NSF review, from Trisha:  I was hoping for a webinar that would provide a demo for everyone.  I think that the DUG was fired up in Dec. and now I am a bit afraid that we haven’t followed up with them.
+
+Which community are we talking about?  The DataONE community -- those who attend the AHM and the DUG.   
+1 hour - 1.5 hour  (or more likely, 30 min webinar about once a month and post the slides online
+Good idea to do it internally - animation could go on the public web site
+"preview of what's coming" so would be fine doing before the public release
+Graphics from review would be good on public site
+
+Mechanisms for doing the webinar? Webex suggested by Mike and Bob -- Viv will look into using the USGS Webex license
+
+Bob volunteered to lead the effort & will work with Amber
+
+7. Around the Room 
+
+
+Mike:
+We have a Member Node Sub Group meeting scheduled for Friday, April 8th to discuss the MN requirements, documentation, etc. The group is made up of Suzie, Paul A, Bruce, and Mike.  
+
+There is a UA/Socio Culture WG Preparation Meeting/Call early next week with the Group Leads.  
+
+
+Cobb:
+TeraGRid allocation proposal for eBird State Of The Birds for next year as well as allocation for the TG resources to stnad up a DataONE MN on TG was reviewed and results communicated this week. Good news, we received the following allocations:
+Lonestar 2,800,000 SU's (TACC)
+Nautilus 150,000 (NICS/RDAV)
+DASH 100,000 (SDSC)
+TRESTLES 100,00 (SDSC)
+Quarry 2 Virtual hosts (at IU)
+IU Collections - 5 TB (located at IU, mountable most anywhere)
+PSC-Albedo - 5TB (located at Pittsburgh but mountable TG-wide)
+ASTA  2 rating
+an "SU" is a service unit and is equal to 1 core hour on the machine.
+Lonestar is planned production eBird platform for next year.
+Nautilus (TN) is a Vis/analytics machine: An SGI ICE with NVIDIA's and staff that understand R optimization on fat nodes and cude offload
+Trestles and DASH are SDSC data intensive arcitectures. They might be useful for DataONE in general and specifically in trying to optimize the speed of assembling the eBird data given that the system memory is large enough to load large DBMS's directly into memory.
+Quarry is a VM server. We have 2 hosts, one for prod. and one for dev. for deploying MN SW
+IU-Collections is IU local Lustre wide area mountable Filesystem. Albedo is a TG-wide wide area lustre file-system
+ASTA is advanced support. WE requested 6 months (0.5 FTE) of support, WE got a rating of 2 (medium) but I think we can follow-up and NIC/RDAV will make a consultant available to us to optimize R (mpi, GPGPU, ....).
+All-in-all a very good result. We have the rope lets run with it.
+
+Bill: Promotional materials for the Env Information Management Institute are complete and I will be sending around soon. We have about 10 instructors plus a number of guest lectureres.  Room for up to 20 students. 3 weeks in Albuquerque and UNM beginning
+end of May (on DataONE calendar)
+
+
+Bruce: nothing further
+
+Bob: proposal to NASA for EVA was not funded
+
+Viv: Preparing for WG meeting in early April. Now authorized to see the Risk Registry in the Redmine site! :)
+
+Matt: need to plan the MN training activity; would be good to get Amber and Dave and Matt and Bruce on a call to start the planning
+EIM : Sept. 28-29 in Santa Barbara
+
+Notes from Marratech:
+
+[11:14 AM] Mike:  Think Same...
+[11:14 AM] Matt:  same
+[11:20 AM] John:  So maybe we could explicitly link those outcomes to this risk
+[11:20 AM] Mike:  Something related to DUG
+[11:20 AM] John:  thanks
+[11:21 AM] Matt:  yes, its fine I think
+[11:22 AM] Mike:  I would probably link to some of the stakeholder metrics Bill mentioned as John suggested
+[11:23 AM] Mike:  I think Risk 137 (Acting Ads) should be closed, ADs are hired
+[11:25 AM] John:  I hear you well.
+[11:25 AM] John:  Mike
+[11:26 AM] Mike:  I've also hired a Graduate Student at CBI whose primary goal is to work on integration of USGS and DataONE tools
+[11:28 AM] John:    This would be good, but the DUG might be a *source* of scope creep
+[11:28 AM] Mike:  so, our role could be to help get "them" to integrate and/or modify those tools...
+[11:28 AM] John:  So does that allow use to move P from H to M?
+[11:29 AM] John:  It was talked about over time but it's not clear when it moved into the baseline
+[11:29 AM] John:  It as not our enemy. it was a highlight of the review
+[11:30 AM] Bill:  vIv does such a wondefful job with them.
+[11:30 AM] Viv:  oh...I sense sarcasm there
+[11:31 AM] Mike:  I think Viv would be good for 105, MN.....
+[11:33 AM] Bob Cook:  John C ==>we're doing some drought work...I'll talk to you
+[11:33 AM] Bill:  bring your own water bottle
+[11:34 AM] Viv:  bill...LOL...
+[11:37 AM] John:  Many of the NSF Feb review sessions could form the core of a few webinars
+[11:37 AM] John:  esp. the demos
+[11:38 AM] Mike:  I really like a series of webiners...  It would update and gain some support
+[11:40 AM] Mike:  Yea, we use Webex all of the time.
+[11:40 AM] Bob Cook:  webex is good
+[11:41 AM] John:  A big value is to also archive and make available for on-demand viewing after the fact.
+[11:41 AM] Mike:  Depending on how many people, we might be able to use our USGS Webex License - like we supported "hosting it"...
+[11:41 AM] John:  (perhaps that was obvious, but just in case)
+[11:41 AM] Bill:  great!
+[11:44 AM] Mike:  Bob - Viv will help check into using our Webex License.  I'm not sure about that many people...
+[11:46 AM] Mike:  Ohh god....
+[11:46 AM] Mike:  Thanks Ambur, great!
+[11:46 AM] Mike:  Ok, makes sense...
+[11:48 AM] Mike:  John, are the VMs at TeraGRid OR or in Tx?
+[11:49 AM] Bob Cook:  TeraGrid in TX
+[11:50 AM] Mike:  Thanks...
+[11:51 AM] John:  bummer
+[11:52 AM] Mike:  Matt, shouldn't have fixed that for you Viv!
+[11:53 AM] Viv:  right!
+[11:56 AM] John:  I'm sorry, what are the deates for the EIM inst.?
+[11:57 AM] Bill:  May 23-June 10 for EIM Institute
+[11:57 AM] John:  <red-faced>
+
+
+
+
+

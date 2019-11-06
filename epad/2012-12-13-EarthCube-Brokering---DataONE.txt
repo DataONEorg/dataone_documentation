@@ -1,0 +1,114 @@
+#persist
+
+EarthCube Brokering and DataONE
+
+Participants:  
+EarthCube Brokering:  Jay Pearlman,  Mattia Santoro, Enrico Boldrini
+DataONE:  Dave Vieglais, Chris Jones, Bob Cook, and Yaxing Wei
+
+Not able to particpate:  Matt Jones and Stefano Nativi 
+Tardy:  SiriJodha Singh Khalsa,
+
+Background
+
+Brokering:  Stefano Nativi's talk on Brokering at AGU:
+http://www.agu.org/focus_group/essi/documents/Union_2012_Nativi.pdf
+
+DataONE:  Bill Michener's talk on DataONE (July 2012 to the NSF Science Advisory Board)
+http://www.ornl.gov/filedownload?ftp=e;dir=uP12mVATj9OB
+
+
+Agenda
+1.  Introduction:  Goal is to initiate discussions about possible CI collaborations between DataONE and EarthCube Brokering
+     - Discovery & Access Brokering is being used for the GEO System of Systems, in addition to EarthCube
+2.  description of DataONE CI (Dave Vieglais, Matt Jones) 15 minutes
+  - DataONE architecture docs: http://mule1.dataone.org/ArchitectureDocs-current/index.html
+  - service oriented architecture, with distributed content (Member Nodes)
+  - standard APIs that provide communication between Member Nodes
+  - Coordinating Nodes (three currently):  keep track of content among Member Nodes, along with replication
+  - security and authentication
+  - metadata harvested and indexed; used by search interface (ONEMercury) and API
+  - able to harvest a number of different scienc metadata formats; DataONE has mapping from each standard into the DataONE required metadata
+  - investigator tool kit-- common tools that have been adapted for the DataONE API
+          - Python library and command line tool
+          - R plugin:  R code can be used directly with DataONE API
+  - currently have ~6 Member Nodes and have another dozen in development 
+  - provenance tracking, search capabilities are being enhanced
+  - DataONE does not have ability to search / access outside of the current Member Nodes
+  - new Member Nodes are identified through DataONE User Group and also self-identified
+  
+  DataONE is one of the DataNET projects; other DataNET projects have come on-line in the past year or so
+      DataONE (https://dataone.org)
+      DataNET Federation Consortium:  Reagan Moore, http://datafed.org/
+      Data Conservancy:  Sayeed Choudhury at Johns Hopkins, http://dataconservancy.org/
+      Terra Populus (Steve Ruggles at Minnesota, http://www.terrapop.org/)
+      SEAD (Margaret Hedstrom, Beth Plale) http://sead-data.net/
+      
+3..  description of EarthCube Brokering (Stefano Nativi / Mattia) (10 minutes)
+ * http://www.eurogeoss.eu
+ * Interoperability arrangements via a service bus
+   * metadata models, data models, encoding formats, vocabs
+   * protocols: discovery, access, viz, etc
+   * sets of heterogeneous CIs, each using its own service bus
+ * Each system implements it's own service bus
+ * Developed 3rd party components that implement each service bus in the brokering infrastructure framework
+   * either on the client or on the service provider side
+ * SOA - Brokering approach
+   * Users
+   * Producers
+   * Registry
+   * Client apps need to know about diverse interfaces
+ * service consumer <-- broker (+registry) --> service provider
+ * Complexity moved from client&producer sides to middleware&cyber-infrastructure
+ * Allows Network of Networks
+   * no need for federal specs
+   * low entry barrier
+   * multidisciplinary
+ * New capabilities
+   * semantic discovery, data access, qa/qc, etc. other services
+ * Facilitates sustainability
+ * Brokering Framework
+   * Discovery Broker (CSW/OpenSearch/OAI-PMH, etc) + Web 2.0 Resources
+   * Semantic Broker (augments Discovery Broker through OpenSearch SPARQL)
+   * Access Broker
+     * problems: different services, formats, CRS, resolution, etc.
+     * broker invokes transformation services to enable interoperability at the data level
+ * GEO Web Portal
+   * provides access to catalogs
+
+ * current brokering focus is on geospatial data 
+
+4.  discussion on collaboration between EarthCube Brokering and DataONE CI
+ * long-term data preservation (DataONE)
+ * benefit would be to make the DataONE data (heterogeneous ecological / field data) accessible through brokering
+ * access broker could obtain a data object (e.g., geoTIFF) and modify (subset, mosaic, reproject, reformat, change resolution, etc.) based on the user request
+ * Peformance and scalability. Brokering framework is cloud-based (e.g. Amazon cloud)
+ * Access-control for the brokering services. not available at this moment. brokering is now focusing on open and freely available data
+ * How the identification is achieved across distributed systems? Brokering framework relies on data providers for data preservation, identification, and other data management acitivies. Brokering framework provides a nice complementary layer for existing systems like DataONE CI.
+
+next steps:
+ * Brokering needs to test DataONE API and some data resources.
+   * CSW interface or similar discovery interface
+   * Brokering is Java-based. DataONE provides Java library. DataONE API provides lower-level capabilities than ONE Mercury user search interface (e.g. identifier retrieval, resolving identifier across member nodes, ...)
+   * 
+ * API to access DataONE Member Nodes:
+   * http://mule1.dataone.org/ArchitectureDocs-current/apis/MN_APIs.html
+ * API to access DataONE Coordinating Nodes
+   * http://mule1.dataone.org/ArchitectureDocs-current/apis/CN_APIs.html
+ * To understand DataONE messaging and object types:
+   * http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html
+ * Java common library (type definitions etc): https://repository.dataone.org/software/cicore/trunk/d1_common_java/
+ * Java client library: https://repository.dataone.org/software/cicore/trunk/d1_libclient_java/
+ * Questions: log into IRC:  irc.ecoinformatics.org, channel #dataone
+ * DataONE discovery & access demonstration science scenarios (DataONE ProvWG is working on several scientific workflows focusing on climate modeling inter-comparison by involving discovery&access&publish capabilities provided by DataONE)
+
+
+action:
+contact infor for everyone
+
+
+
+
+
+
+

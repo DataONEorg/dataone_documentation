@@ -1,0 +1,98 @@
+Member Node Forum - 30 May 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/318278809
+  (Occurs every 2 weeks on Thursday 2pm EST, 1pm CST, noon MST, 11am PST, 10am AK)
+  Upcoming meetings 13 June, 27 June, 11 July
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (213) 289-0010
+Access Code: 318-278-809
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 318-278-809
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry)
+epad.dataone.org/MemberNodeForum-20130321
+epad.dataone.org/MemberNodeForum-20130404
+epad.dataone.org/MemberNodeForum-20130418
+epad.dataone.org/MemberNodeForum-20130516
+
+Attending:  Laura Moyers, Amber Budden,  Mark Servilla, John Cobb, Matt Jones, Dave Vieglais, Kavitha Chandrasekar
+
+Regrets: 
+
+Action items from last time:
+
+1.a. Submit an ask.dataone.org question re: versions of Java/Matlab/DataONE API interactions, and 
+1.b. Answer the question.  (Mike and Skye with help from Laura)
+
+2.a. Submit an ask.dataone.org question re: JAR files with LIBclient, and
+2.b. Answer the question.  (Mike and Skye with help from Laura)
+
+(after further discussion, I think these are related/kind of the same issue and can be addressed with one ask.dataone.org question)
+
+3. MN implementation checklist status (action taken offline)
+    MN Forum members please take a look at Matt's MN Deployment Checklist: 
+    http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html 
+     and provide feedback - does this help you see where you are in the  process? if you are already a production MN, does it address the  issues/questions you faced during your implementation process?
+     Send out a reminder asking people for feedback. (Laura)
+
+4. (Laura) Learn more about Thomson Reuters Data Citation Index (PISCO)
+    General press release: http://thomsonreuters.com/content/press_room/science/730914
+    Dave: DCI  has a good history of interacting with academic environment
+    Matt: Elsevier also has a competing initiative, DataCite also; many of our partners are already participating in these other initiatives; we need to continue providing our product, being aware of others
+    Dave: TR gets a lot of their income from commodities
+    Matt: TR charges libraries for subscriptions to data
+    
+Agenda:
+1. Network-wide update and issues affecting MN's as a whole
+    Dave: all stable; some side effects in that the docs site is not available at times
+    Matt: a PLONE problem, memory swapping problem, Nick looking into it
+    
+2. Open issues:  MNs please add anything you would like to address here.
+
+SAVE THE DATE:  The DataONE Users' Group meeting is July 7-8, 2013 at  Chapel  Hill, NC.  
+    We expect to have two slots of special interest to Member Nodes:
+        - A MN showcase speed session where each MN can present a short (~3 slide) summary of the MN and interesting activities
+         If you are planning to  attend the DUG and you want to participate in  the MN showcase there, please let us know so we can help you prepare  your slides, etc.  Even if  you're NOT attending the DUG, if you'd like  for your MN to be  showcased, let us know and we can present for you.
+        - A poster session during the reception starting at 16:30 on Sunday, July 7, where longer, informal discussions can occur.  
+ 
+Agenda and registration are available on the DataONE website:  http://www.dataone.org/dataone-users-group
+
+(reminder: DUG just precedes the Summer ESIP Partners meeting <http://wiki.esipfed.org/index.php/Summer_2013_Meeting> ) However, attending ESIP is not a requirement for attending the DataONE Users Group meeting.
+ please add items here.
+
+3. Feature requests/opportunities for collaboration:  MNs
+
+4. MN showcase:  If you would like to share what your MN is about, please add here.
+
+This might be a good place to talk about what you want to say during the MN showcase at the DUG (session 2, 7 July) if you're planning to participate.
+
+If present, please discuss your status:
+SEAD - dealing with data access issues before implementation; phone call 6/12/13 to clarify and resolve with NCED
+Dryad - moving closer to implementation; found a minor issue to resolve; in testing; issue now is related to passing metadata correctly
+LTER - near completion of GMN integration to PASTA; deployed Metacat 2.0.7 28 May 2013 and working with Chris Jones et al to re-synchronize LTER data across KNB and PISCO nodes.
+iDigBio - still in talking stage, gathering info
+TerraPop - Laura to email Tracy, high level info
+PISCO - Laura to work with Mike/Skye on the ask.dataone.org question
+TFRI - will learn more in developers call
+PPBIO - updated to metacat 2.0.7, content replication (policy discussions, etc.), new node operator coming up to speed (also managing PELD node which may not become a MN at this time because its content is available through PPBio) 
+
+OTHER INTERESTING THINGS: 
+
+contact points: 
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+John - cobbjw@ornl.gov ph 865.576.5439
+
+Upcoming deadlines:
+ASIST annual meeting
+Beyond the Cloud: Rethinking Information Boundaries
+November 1-6, 2013, Centre Sheraton, Montreal, Quebec, Canada
+https://www.asis.org/asist2013/am13cfp.html  
+Deadline for posters, demos, video is July 1.
+
+
+

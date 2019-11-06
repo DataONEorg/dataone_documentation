@@ -1,0 +1,65 @@
+Attendees:
+Dave V., John Kunze, Rob Nahf, Bob Sandusky,
+
+
+Agenda
+------
+
+1. Finalize dates and location for next CCIT meeting
+
+If you have not completed the doodle poll ( http://doodle.com/4w9k8evcgtnkcqi5 ), please do so now.
+
+Current best dates for the meeting are Feb 5-7.
+
+Meeting location suggestions so far are Boulder, Santa Barbara, Albuquerque, Knoxville
+
+- Action: Dave to send out poll for location. Dates Feb 5-7 are fixed.
+
+2. Discussion and hopefully some resolution on the issue of mutable content
+
+Brief outline in architecture docs at:
+
+ http://mule1.dataone.org/ArchitectureDocs-current/design/ContentMutability.html
+ 
+ Note: last two
+   * Changing the description of spatial, temporal, taxonomic, or some other extent
+   * Correcting the description of units used in a data column
+are potentially (likely?) scientifically significant.  The first five are potentially not scientifically significant.  Nor is this list necessarily exhaustive.
+
+Proposition: If we allow changes to the science metadata, then we need to be able to retrieve the original version (version as of a particular point in time).  If we did that, would the citation need to include some form of a timestamp?  And how does that affect the whole issue of reproducibility. 
+
+General assumption is that generally users should always get the most recent version of data.  If you don't ask for a previous version you get the current version.
+
+??Is this just for science metadata or are we re-opening the discussion of mutability of data.  Changing data is different, and some is handled through the stream data object.  However, many formats bundle the science metadata with the data, such as EML, netCDF.  So, allowing science metadata changes means we may have objects that change.  And opening up changes in any object fundamentally can open up changes to the data.  Need to enumerate what we wouldn't be able to support, given mutable science metadata.  All of the services rely on the identifiers and the checksum, with all methods currently assuming that if you have the identifier and the checksum matches, then you have _the_ object.  Big change, and the question is how to implement this.  For this to work in Metacat, at least, you have to have the document identifier at the create stage for the update.  
+
+If the mutable identifier is put in system metadata, then the problem is that system metadata changes aren't tracked, which means that an old version of the mutable identifier can get lost.  For example, if the mutable identifier for an object is dataset_v1 and then that gets changed to the dataset_v2 as the mutable identifier, then that old identifier would be lost.  However, the primary use case would be that dataset_v2 is a _different_ object.  A possible mitigation here is that we would declare the shadow_ID as an immutable attribute of a package.  Slight modification would be to make this attribute immutable if not null.  
+
+We would need to create a new identifier (call it a citation identifier)(represents a labeled collection), representing the concept where some groups want to create a means of "trivial" updates.  Can we call this something other than a citation identifier.  And what should people be citing? We definitely need to allow people to be able to cite a PID, which can point to a data package, and the data package is what we display in the interface.  Working name as shadow identifier.  ORE package label is a possible tool. 
+
+Could these shadow ID's be used for the Get method.  If you ask for a package label in Get, what do you GET?  Presumably, you get the latest one.  How does someone ask for all of the versions of given shadow ID?
+
+Concept thought: If we restrict the shadow identifier to apply to just packages, we might be able to use the package label as the means to do this.  A given identifier could be either a package label or a PID, but not both.  The GET operation with a package label would return the most recent package with that label.  To find the identifier at a given time, someone would need search based on that package label, which returns all objects with that value, and it then becomes possible to find the object at a particular point in time.  
+
+Considered whether to do this in science metadata, but there's no consistent way to do this across different metadata standards.  
+
+A key question is whether we need to do this with just the resource map or if we really have to do this for all objects.
+
+However, it is possible to put attributes on any object in the resource map.  Could create a DataONE shadow ID attribute on the resource map itself, as well as on any object that the resource map describes.
+
+
+Use case: Dryad, and update to science metadata document with citation information.
+
+1. Dryad creates initial science metadata (PID=A) with ORE doc (PID=C) that points to sci meta + data (PID=B). ORE has label that represents the "shadow identifier" (SID)
+
+2. Dryad receives update with info
+
+3. Dryad updates sci meta, which means an update in DataONE with new science metadata (PID=D), new ORE document (PID=E) but same package label (SID). The original sci meta is lost.
+
+Authorization - to change a package provenance requires write access to the original package (or prior version)
+
+
+Notes in etherpad from 2012 AHM at:
+
+ http://epad.dataone.org/20120919-mutability
+
+

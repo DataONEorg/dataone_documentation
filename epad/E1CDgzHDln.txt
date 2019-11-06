@@ -1,0 +1,99 @@
+Upgrade Ubuntu from 10.04 to 12.04
+1. Prepare
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install update-manager-core
+sudo vim /etc/update-manager/release-upgrades
+(Verify that the line presents in the file: Prompt=lts)
+2. Do upgrade
+sudo do-release-upgrade
+notes:
+Allow debConf configure ldap configuration: no
+Allow service to restart automatically: yes
+Group security configuration: choose the default option N (keep it)
+rsyslog: keep local version
+tomcat6: keep local version
+removed 26 obsolete packages.
+restart machine.
+
+
+3. Install openjdk 7 and configure it
+a. sudo apt-get install openjdk-7-jdk
+b. choose openjdk-7 as default java, javac and javaws:
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+sudo update-alternatives --config  key tool
+
+
+Merge postgresql from 8.4 to 9.1
+
+Please see the https://redmine.dataone.org/issues/4467
+
+
+5.install tomcat7:
+
+
+a. Install libtomcat7-java, this will remove the cn packages.
+sudo apt-get install libtomcat7-java
+b. install tomcat7
+sudo apt-get install tomcat7
+
+
+Modify the /etc/apt/source.list file as root:
+
+Add two lines:
+
+deb http://jenkins-1.dataone.org/ubuntu-unstable precise universe 
+deb http://jenkins-1.dataone.org/ubuntu-extra precise universe 
+6.1 sudo apt-get update
+7.Install dataone-cn-os-core
+
+  sudo apt-get install dataone-cn-os-core
+   Is this the first CN? No
+   keystore password:
+   ldap password
+
+
+8.Install dataone-cn-metacat
+a. sudo apt-get install dataone-cn-metacat (sudo mkdir /usr/share/metacat sudo cp ~/external/metacat.war /usr/share/metacat/.)
+b. go through the metacat admin page (bypass geo server and data one configuration. The others just click “save”)
+
+9.Install dataone-cn-portal
+a. sudo apt-get install dataone-cn-portal (sudo mkdir /usr/share/portal sudo cp ~/external/portal.war sudo mkdir /usr/share/portal)
+
+10.Install dataone-cn-rest-service
+a. sudo apt-get install dataone-cn-rest-service (sudo mkdir /usr/share/dataone-cn-rest sudo cp ~/external/cn.war /usr/share/dataone-cn-rest/.)
+
+11.Install dataone-cn-solr
+a. sudo apt-get install dataone-cn-solr (sudo mkdir /usr/share/dataone-cn-solr cp ~/external/d1_solr_extensions.jar /usr/share/dataone-cn-solr/.)
+
+12.Install dataone-cn-processdaemon
+a. sudo apt-get install dataone-cn-processdaemon (sudo mkdir /usr/share/dataone-cn-processdaemon cp ~/external/d1_process_daemon.jar /usr/share/dataone-cn-processdaemon/.)
+
+13.Install dataone-cn-index
+a. sudo apt-get install dataone-cn-index
+(sudo mkdir /usr/share/dataone-cn-index
+ sudo cp ~/external/d1_index_build_tool.jar /usr/share/dataone-cn-index/.
+ sudo cp ~/external/d1_index_task_generator_daemon.jar /usr/share/dataone-cn-index/.
+ sudo cp ~/external/d1_index_task_processor_daemon.jar /usr/share/dataone-cn-index/. )
+
+dataone-cn-index dataone-cn-processdaemon dataone-cn-solr dataone-cn-solr3-tomcat7 dataone-mercury solr-common
+
+14.Install dataone-mercury
+a. sudo apt-get install dataone-mercury (sudo mkdir /usr/share/dataone-mercury sudo cp ~/external/onemercury.war /usr/share/dataone-mercury/.)
+15.Totatl packages:
+dataone-cn-os-core
+dataone-cn-version-tool
+dataone-cn-metacat (missing metacat.war)
+dataone-cn-portal (missing portal.war)
+dataone-cn-rest-service (missing cn.war)
+dataone-cn-solr3-tomcat7
+dataone-cn-solr (dataone-cn-os-core, dataone-cn-metacat, openjdk-7-jdk, solr-common (= 3.4.0~blubolt2~lucid1), solr-tomcat (>= 3.4.0~blubolt2~lucid1), dataone-cn-version-tool
+)
+dataone-cn-processdaemon  (depends dataone-cn-os-core, dataone-cn-metacat , libcommons-daemon-java, dataone-cn-solr, dataone-cn-version-tool)
+dataone-cn-index (depends on dataone-cn-os-core, dataone-cn-metacat, openjdk-7-jdk, jsvc, postgresql, libcommons-daemon-java, dataone-cn-solr, dataone-cn-version-tool, curl)
+dataone-mercury  (dataone-cn-solr, dataone-cn-version-tool)
+Welcome to EtherPad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text.  This allows you to collaborate seamlessly on documents!
+

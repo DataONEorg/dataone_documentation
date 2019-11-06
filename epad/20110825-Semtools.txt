@@ -1,0 +1,44 @@
+
+Semtools discussion (Margaret, Mark, Chris)
+
+ * Margaret  
+   * DONE:  move habitiat from sbc-ext into oboe-ecology, create sub=classes and 
+   * define habitat classes against SWEET or others using similarConcept ...
+   * organismtissuesample: add parent anat-portionoftissue 
+   * DONE: sample: remove discretesample, passive sample from sbc, 
+   * in sbc-ext use ecology-sample, 
+   * DONE: add watersample airsample to oboe-ecol.
+   * include more labels, defintions, similarConceptTo from (somewhere)
+   * annotations: where object props are needed.
+   * DONE: oboe-chemistry: add class "mixture", move Water to subclass. annotate, needs object property "has H20". 
+   * Water class: define as simmilarTo sweet class watermixture (a child of mixed chemical substance).  
+   * DONE: move Event to TemporalEntity, but leave in sbc-ext if you want to keep it. not well defined or even currently used. add a note.
+   * DONE: move sbc organism children to  oboe-biology, organism. remove the non-sbc organism
+   * DONE: add to oboe-biology, spermatophyte, gametophyte, sibs to Adult, etc.
+   * sbc's OrganismPart children (KelpPart) look at AnatomicalStructure/organism/surfaceStructure. might put kelpPart here.
+   * DONE: move "Phytoplankton" to oboe-ecol. a "community"? check forest, and phyto in lter-vocab.
+   * lower priority - consider making "process" into a characteristic. need to talk to Shawn.  
+   * 
+   * DONE oboe-spatial: put classes under the spatial primitives point/waypoint line/transect/replicateTransect, polygon/plot/replicatePlot
+   * oboe-environment: waterColumn and waterColumnBin belong in environment, when that module exists.  
+   * temproral: sbc class temporalPoint is probably wrong. see TO DO under it's subclasses.
+
+
+
+ * Chris
+   * DONE: Add otolith to Acellular Anatomical structure
+   * DONE: PopulationSample 
+     * isn't equivalent to 'Population and Sample'
+     * should just subclass Sample
+     * what is the relationship to Population?
+       * use an object property? range is 'Population' e.g. consistsOf Population
+       * annotate PopulationSample with 'incomplete, needs partonomy relationship with Population'
+       * do the same for all subclasses of PopulationSample
+   * DONE: copy sbc-extension "PhysicalFeature tree to oboe-environment" rename SolidEarth -> Terrestrial. fix typo in "AtmospherePhsical...", "Atmospheric" Hydrologic
+
+ * Mark 
+   * report to Midford about our suggestions relative to TAO and CARO
+   * otolith is_a acellular anatomical structure
+   * Need design pattern for "PopulationSample"-- reference ro.owl for adequacy of object properties 
+   * add annotations where object properties are needed
+

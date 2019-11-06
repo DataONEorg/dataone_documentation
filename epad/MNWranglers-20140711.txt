@@ -1,0 +1,98 @@
+Member Node Wranglers  - please note time change to half-past the hour
+    Fridays at 10:30 am Alaska
+                    11:30 am Pacific
+                    12:30 noon Mountain
+                    1:30 pm Central
+                    2:30 pm Eastern
+
+Please note new GTM info, also:
+   * https://www1.gotomeeting.com/join/698027049
+
+11 July 2014
+                                                                      
+Attending:  Laura, Rebecca, Amber, John, Dave
+
+Regrets: Bruce
+
+
+Agenda: 
+
+NOTE:  New meeting time at least through the end of July - 2:30p Eastern
+
+        1. High profile issues (or current items of interest
+        
+        DUG activities/outcomes:
+   * MN lightning talks: KNB, GoA, TerraPop, GLEON, PPBio, LTER, and NPN presented.  There was a lot of positive feedback from DUG attendees that they thought it was interesting to learn about MNs.
+   * Put Bob Sandusky and Ed Flathers in contact - they are both using RedHat and can support each other.
+   * Talked with TerraPop re: 2 issues - where they are in their implementation (they're not as far along as I thought) and DDI.  DDI is the Data Documentation Initiative and is a metadata format used widely in the social sciences.  Wendy Thomas is very involved with the DDI Alliance.  Greg Gollberg was also present at this discussion as he is working on a project to determine a relationship between climate studies and social science studies.  He asked Wendy and Tracy if MPC would like to be involved in this study both as a participant and a partner.  Chris asked Wendy if she'd be interested in talking about DDI at one of CCIT's learning sessions (what are those called??) and she seemed amenable.
+     * Dave's take on DDI - better off implementing support for DDI in DataONE rather than some sort of custom implementation.  How we put the metadata out there initially is intended to be permanent.  Let's ask TerraPop to provide a couple example DDI metadata files, we can provide them how we would pull particular fields from their DDI, we would need to create rules to tell the CNs how to strip appropriate metadata from the DDI files.  Laura to draft info email to Dave suggesting we try a couple files with DDI metadata first....
+   * Discussion with Dave, Chris, Jim Myers (SEAD), Greg Gollberg, Bruce, Laura about getting MNs more involved in the design/development process, identifying resources in the field, determing areas of expertise, etc.  Notes here: https://docs.google.com/document/d/1UBNJe5zhLOPEPfyuEUapVc6fKJWQBKt23UR80_xiN6c/edit?usp=sharing
+   * Met with Nikki Thurgate of TERN-Australia.  Based on this conversation, it looks like we may target EcoInformatics http://www.tern.org.au/Eco-informatics-pg17733.html first.  This is contrary to previous discussions where it was HIGHLY desired that TERN as a whole be the MN.  This requires more discussion.  Also, we are reviewing the MOU and plan to rework it as an agreement between DataONE and TERN and keep the parent institutions (UNM, UQ) out of it - also requires more discussion.
+   * Bruce talked with several people:  Laura to ping Bruce to put some notes here.
+            
+
+        1.1 (Leftover from previous meetings - don't want to remove from this epad yet)
+                    >>>Purpose of MN Description Document (past and future) - past: identify data holdings (type, volume, etc.), operations, to aid in MN development.  future: ???  
+                 Intent  is to describe the (potential) MN, identify the  types/quantity/formats  of data they hold, - perhaps we need a  "friendlier" format, perhaps an  interview process; 
+                  Workflow: should this information (MNDD) be collected at the beginning   of the process, or is the way we've been doing it lately (after the   fact) a new way of doing business??  Also consider if this information   gathering (form or interview) is the best use of resources for those   potential MNs who may or may not become a MN if implemented as a frist  step.  Possibly change the workflow? Is a pdf the best was to view the  information?
+                Next steps:  Laura to come up with alternative(s) to current MNDD - content is good, but format/mechanism needs some work.  
+                Another thing: Laura and Amber to look at workflow for last stages of implementation, test with EDAC  too late for that, need to pick another one.
+                
+                Also -- how does the MN DD relate to: 
+                    the node document:  https://cn.dataone.org/cn/v1/node  - developers have/create this information (node registration, see updateNodeCapabilities)
+                    and redmine??    <--- work with redmine as mostly-authoritative source
+                
+                  Could a spreadsheet be a viable solution?  Maybe.  A database would work.  In any case, some information is appropriately "private" - how   would we handle that?
+                
+                
+                >>>Question: revisit the default "only results with data"    checkbox to unchecked; what is the process for making this decision?     Let's bring it up at the DUG.  
+                What was discussed/decided at the CCIT and DUG meetings?  --  move the checkbox from search  page to results page, remain checked by default, initial draft in development environment.
+                
+                  >>> Bob's feedback about the dashboard - he suggested a count of MNs on the dashboard (MNs, RNs), probably/maybe an easy thing to do  a  count of MNs and RNs and display
+                
+                  >>> SANParks is often off-line because of their location;  EDAC  is sometimes non-responsive (could be due to their size).  Should  we  have performance expectations or requirements of a MN before they  commit  to participate in DataONE?  Would this present a barrier to a  MN's  participation?
+                      SANParks is replicating (i.e. if they are off-line, their data is available from another site where their data is replicated).  
+                      There was some talk previously of doing a metadata dump of a MN's   content to help when a MN is unavailable for a time.
+                      Check heartbeat of MN, if last check indicated down, put them last in the list of sources to check with the resolve function.
+
+        1.5   Current MNs
+                 CDL's synchronization is now turned on.  There was some confusion about what it meant to be "synchronizing";  still turned off - email out to Stephen Abrams asking if they've updated their certificates post-heartbleed; Stephen says they have reinstalled their certs and their "MN is configured to allow harvesting", but I think they haven't gotten the message to the CNs yet.  Working.
+                Memorandum of Understanding - this would be a good thing to have with MNs (and not get legal departments involved) - LT to address.
+                
+        2. Status of upcoming MNs
+    
+     * Y5Q4
+       * DFC (3532)  -  Bruce has corresponded with Lisa; following up - Rebecca: talked  with Reagan, they plan to do one iRods installation (a NC piece of  CUASHI)
+         * they plan to have their MN up and running by October (before their RSV)
+       * MPC (3708) - registering in sandbox - met f2f at DUG.  They are testing, and we (DataONE) have to provide them a list of Dublin Core fields and a package format for them to create metadata files to include in the resource maps.  Wendy had put metadata information in the resource map at a high level, and the API can't read that information from there.  After we provide them the DC/pkg format information, they will generate the metadata files, and we can harvest in test and see what happens.
+       * ORNL MNs (RGD (4248) and EDORA (4247)) - these metadata-only MNs are in testing.  Not sure if they will be in production before the end of the month.
+       * GLEON (3422) -  Corinna presented at DUG.  Expect to move to production after their meeting in October, so should probably move this one out to Y6Q1, UNLESS... we can convince Corinna to go now.  I think she's hesitant to do that at this point, and I don't want to push her if she's not (politically) ready to go.
+       * PPBio (3748)  -  Debora presented at DUG.  Debora/Laura to update their MNDD so that we can call them an "upcoming member node" on the Dashboard  
+       * NKN (3238)  - They had had some issues and in the process of rebuilding, they  decided to go with a redhat install rather than ubuntu; working.
+       * SAEON (3205) - Chris is working with Alex to find a time when they can upgrade their metacat  Laura to ask Chris if someone else can help.
+
+    Future
+       * FigShare???  FigShare as either an ITK element or as a MN or both.; Dan Vallens (FigShare) was at the DUG.
+       * NODC - revisit, target for next 18mos (Bruce/Matt)
+       * iPlant (see what happens with iRods at DFC)
+       * IARC (International Arctic Research Center) (4700) -  Jim is awaiting word on $$ and working on other projects in the meantime.  (Rebecca to check on PO for his work; 7/102014 - waiting for UAF/IARC Grants office to get paperwork to Jim - is actually a PO so he really doesn't need to be waiting on this)  (this is a GeoNetwork node)
+       * EU BON -- Looking to deploy a test MN (probably Sierra Nevada - August/Sept in Albuquerque) in the next 6-9 months. 
+       * 
+
+        3. Old action items
+             MN Documentation - MN Deployment and MN Ongoing Operations - holding  ready to pick up again, good feedback from DUG attendees that some of what we have is great, other areas need polishing, big thing is advertising what we do have available. Laura to do this>>>>  use Ask.dataone.org - where can I find? is there documentation on....?  
+             
+        4. Not-high profile issues
+     * Redmine ticket generator - plan to apply to IARC and GBIF (Roger gave me some instructions - now I have to just do it! - LM)
+       
+        5. Around the room
+        Laura - working with Amber on some PEP items; ongoing discussions with XSEDE re: partnering with them as a Service Provider; things on my plate: apply redmine ticket generator to IARC and GBIF, pick up documentation again, support IoE (Institute on Ecosystems at Montana State - Seth Mason) in their implementation
+        Rebecca - looking at the PEP items
+        Dave - changes to EDAC MN (background: NM EPSCoR data needs to be replicated, so the new node will contain all the GStore stuff (currently in EDAC) as well as the EPSCoR stuff, they are currently saying they want a tier 4 MN, but if all they want is to have their data replicated, they can do with a tier 1 - need to discuss with Soren et al. about this (tier 1 vs 4) and will EDAC MN still exist.  
+                - redmine upgrade schedule in next two weeks
+        John - nothing today - the XSEDE thing will be interesting
+        Amber - nothing today 
+
+
+
+

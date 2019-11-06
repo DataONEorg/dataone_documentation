@@ -1,0 +1,46 @@
+This Etherpad is for questions we anticipate might be asked by the Reverse Site Visit panel for the review at NSF in late Feburary, 2013
+
+ * Why hasn't much changed since 2011?
+   * Much has changed - growth
+   * CI released and in production
+   * Accelerating deployment of tools and MN's
+   * Accelerating holdings (metrics: records, ...)
+   * Increased community engagement
+   * Increased CE research results
+ * Why aren't more repositories becoming MNs in year 4 of the project?
+   * They are
+   * Since CI is now operational, we have directed more DataONE effort and in kind contributions here.
+ * Why don't you just adopt OGC services (e.g., CSW) rather than inventing your own?
+ * What role do you see of cloud computing related to current and future DataONE CI? *
+ * Why is so much Metadata versus actual Data available in DataONE?
+   * Because Metadata is where the science is.
+   * "The scientific value of a dataset is proportional to the amount of metadata and only weakly dependant on the raw data sizes" For example - The Keeling curve.
+ * How difficult is it to bring on MN? Cultural & Technical
+   * It varies. Some fit well. Some require significant effort. Some required DataONE to make minor CI modifications. We are seeking a spectrum of ease and difficulty
+ * What do you see as your biggest challenges - community and technical moving forward?
+   * Reaching practicing discipline scientists and persuading them to use DataONE in the conduct of their research
+ * What do you see as the focus of the DataONE project in the next 5 years
+   * In the first phase, DataONE has developed comnity driven requirements and implemented them with CI, Nodes, and tools.
+   * In the next phase, one focuse will be to bring in more and more practicing scientists, particularly with science impact 
+ * Do you envision being Sustainable after the next 5 years?
+   * Yes
+ * What level of support is needed for DataONE to continue - base level, optimial level, etc.
+   * See S&G Discussion from Oakland meeting and Thanos report.
+   * Go Big!
+ * What tools do you envision DataONE working with and/or supporting?
+   * We listen then engage. - user and community driven
+   * DUG provided input 
+   * Assessments framed the questions
+   * Our list is ....
+   * Next few ITK items are <insert CCIT mtg. results>
+ * Do you envision broading your scope beyond the environmental community?
+ * What do you envision the role of DataONE Working Groups to be? Are they needed in the future? What products have resulted? What level of comittments do you get from members?
+ * So you mentioned CUASHI the last two years, but not this year. What's up with that?
+ * What compelling CISE research is targeted for phase II?
+ * You say 6 new MN's are coming "real soon" what are those MN's?
+   * EDAC
+   * Dryad
+   * U. Kansas Biodiversity Research Institute
+   * Replica target MN's (Tier 4) co-located at the N sites.
+ * How does DataONE fit into Holdren's announced new US Gov. policy promoting open access to gov. funded research? <https://petitions.whitehouse.gov/response/increasing-public-access-results-scientific-research> 
+

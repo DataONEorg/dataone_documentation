@@ -1,0 +1,374 @@
+Cutting a stable software release from development
+==================================================
+
+Tools (deprecated)
+-----
+The description of the tools below are for reference in case the day comes that they are updated to conform to new practices.
+
+In order to make branching and tagging easier, I have committed some perl scripts.
+
+If you checkout https://repository.dataone.org/software/tools/trunk/control_release/
+
+you will find a few of perl scripts: branchD1ComponentRelease.pl, tagD1ComponentRelease.pl and 
+
+They both may take three arguments, but only require two
+--component  Takes a D1 Component name (format differs between the two commands)
+--release  Takes the D1 release tag
+--revision Takes a SVN revision number (optional argument)
+
+
+branchD1ComponentRelease.pl will create a branch
+
+You must provide a component name that contains the relative path to the component from the trunk
+
+such that branchD1ComponentRelease.pl --component cn/d1_cn_common --release 1.0.1-RC3 is a valid command
+
+tagD1ComponentRelease.pl will create a tag from a branch
+
+The component name does not need the relative path, but the version information must be the same as the branch command
+
+such that tagD1ComponentRelease.pl --component d1_cn_common --release 1.0.1-RC3   should create the tag from the above branch 
+
+The procedure for branching and tagging will follow thusly:
+
+Branch a Component(deprecated)
+------------------
+ 
+Run the command
+ 
+> branchD1ComponentRelease.pl --component relative_path_of_component_from_the_trunk --release release_name
+ 
+For instance if d1_common_java was being branched for a release, you would first check the pom in the trunk for its debian version. (https://repository.dataone.org/software/cicore/trunk/d1_common_java/pom.xml)
+ 
+You will note that the version element has a release number concatenated with the string '-SNAPSHOT' for instance, '1.0.1-RC8-SNAPSHOT'.  The release_name of the --release argument to branchD1ComponentRelease.pl will be the release number minus the the '-SNAPSHOT' string, in this instance the command:
+ 
+> branchD1ComponentRelease.pl --component d1_common_java --release 1.0.1-RC8
+ 
+would be a valid command.
+ 
+After running branchD1ComponentRelease.pl, update the checked out branches directory.
+ 
+> svn update branches
+ 
+1) Maven Branches
+The new branch should download from subversion.  After it has downloaded, then you will need to edit the pom.xml file.^1  You will need to edit the version element of the project to remove the '-SNAPSHOT' designation.  If the component relies on other dataone components, their versions will be listed in the properties element.  Remove the '-SNAPSHOT' designation from those elements as well.^2
+ 
+Once the pom.xml file has been edited, confirm that the component will still build.  
+ 
+> mvn clean install
+ 
+2) Debian Branches
+  Once a debian package is branched, a tag may be immediately thereafter be created.
+ 
+^1 The d1_cn_service project is a parent project to two components, d1_cn_rest & d1_cn_rest_proxy.  The top level project d1_cn_service should be branched and tagged, but all three poms will need to be modified in the branch before being tagged.
+^2 Caveat: If the components have not had any modifications since the last release, then modify the version number to reflect the last stable tag (the previous tag is sufficient for a release).
+
+Determine the components and products to release
+-----------------------------
+
+You will need to communicate with other developers, look at redmine tickets and review subversion logs to determine the the extent of changes that will need to be included in a production release.   These changes should be noted in a redmine ticket. Ideally every file that has been modified/added/deleted will be noted in redmine tickets that relate to the release.
+
+Always create a release story ticket to which all activities of the current release are related. All software components that will have a new version number will be added as a task for the release story.  Each story or bug that affects the components of the release should be added as 'related issue' to the release story ticket.
+
+see https://redmine.dataone.org/issues/5462
+
+Check Out Trunk
+---------------
+
+Ensure, that the development trunk of dataone should be checked out to a user's filesystem
+
+svn checkout https://repository.dataone.org/software/cicore/trunk trunk
+
+
+Check Out Subversion Branches
+-----------------------------
+
+If you do not have have the subversion branches checked out, then do so:
+
+XXX todo TEST
+> svn co  --depth immediates https://repository.dataone.org/software/cicore/branches branches
+
+The subversion branches will meet the criteria for Major.Minor releases.  All patches between minor/major releases will occcur within the branches checked out for that release.  For instance, when development has ended upon the 1.1 release of DataONE, branches for every component will need to be created to support maintanence releases.  The format of the branch names are such:
+
+<UPPERCAST PRODUCT NAME>_v<MAJOR>.<MINOR>
+
+Configure Beta Build Control file
+------------------------------------
+
+The beta build is controlled through a configuration file. 
+
+If you have not done so, then checkout the d1_beta_build_control directory:
+
+> svn checkout https://repository.dataone.org/software/cicore/trunk/d1_beta_build_control  d1_beta_build_control
+
+The property that builds the current beta environment is named current_beta_control.properties.
+
+You are then ready to modify the current_release_control.properties file.
+
+The  Beta build control file only needs to be updated upon a new Major or  Minor release of the products.  For maintenance or bugfix releases,  modifications are performed in the same branch and thus the beta control file may point to the same branch.
+
+Compare the Trunk to the Branches
+-----------------------------
+
+In order to ensure that all changes have been merged, a visual inspection of the differences should be made of all the modifications made in trunk to the files in the branch. 
+
+on Apple Macintosh OSX, additional tools will need to be installed.
+
+(confirm that the script runs with the Beta Channel instead of the Staging Channel)
+Add in the merge command details. https://repository.dataone.org/software/tools/trunk/control_release/mergeDiffProjects.pl
+
+After ensuring that all the files in the projects have been merged, increment the version number in the pom.xml file for java projects, or the control file for debian package builds.
+Make certain to test building the newly changed java components. Ensure any dependencies in the pom have been updated to point to the appropriate version of the dependency.
+
+
+
+Run Beta Jenkins Build Process & Upgrade
+-----------------------------------
+
+Login to Jenkins at the default 'Jenkins' screen as admin (trying from any other screen will cause a failure).
+
+Click on the tab 'Beta Builds'
+
+In the project dataone-cn-metacat-deb-beta, edit one place: 
+
+ *     under Build -> Execute -> Command edit the string 'JARS=( Metacat_stable/workspace/METACAT_X_X_X/dist/knb.war );' (substitute release numbers for X_X_X )
+
+In the project Metacat_Stage, edit four places:
+
+ *     Source Code Management -> Subversion -> Modules -> Repository URL edit the string to be https://code.ecoinformatics.org/code/metacat/tags/METACAT_X_X_X (substitute release numbers for X_X_X )
+ *     Execute shell -> Command edit the string 'cd "$WORKSPACE/METACAT_X_X_X/docs/user/metacat"' (substitute release numbers for X_X_X )
+ *     Invoke Ant -> Targets -> Press Advanced... Button -> edit the string 'metacat.dir=/home/jenkins/work/jobs/Metacat_stable/workspace/METACAT_X_X_X' (substitute release numbers for X_X_X )
+ *     Javadoc directory -> edit the string 'METACAT_X_X_X/build/docs'  (substitute release numbers for X_X_X )
+
+
+Once these edits have been made, then click on the job 'Build_Beta' in the 'Staging Beta' tab.  OIn the left side bar of the page, click 'Build Now' to begin the build process.
+
+The build process is complete when  'Build_Beta_Level_8' had completed running its last job, currently 'dataone-mercury-deb-stagedataone-mercury-deb-stage'.  Login to the staging machines, and execute the 'sudo apt-get update'  and 'sudo apt-get upgrade' commands.
+
+note: as of 09/07/2012 if a beta package needs to be rebuilt and redeployed, the package will have to be removed 'sudo apt-get remove <package-name>' and then re-installed.  Due to package dependencies, this may a cause all of the packages to be removed and reinstalled. Please take note of any packages that are removed, so as to reinstall them later.
+
+
+Configure Stable Build Control file
+-----------------------------------
+
+The stable build is controlled through a configuration file. 
+
+If you have not done so, then checkout the d1_stable_build_control directory:
+
+> svn checkout https://repository.dataone.org/software/cicore/trunk/d1_stable_build_control  d1_stable_build_control
+
+The property file that builds the current release is named current_release_control.properties. Each historical release and release candidate should have its own tagged d1_stable_build_control properties file. 
+
+> svn info current_release_control.properties
+
+Before modifying the  current_release_control.properties file for a new build, confirm that the previous version was tagged, and if not then tag it.
+For example, is the previous release was 1.0.4 for the CN ant the next release is 1.1.0, then the following command would be appropriate to execute:
+
+svn copy -m"Preparing for 1.1.0 tagging by backing up current stable build properties" https://repository.dataone.org/software/cicore/trunk/d1_stable_build_control https://repository.dataone.org/software/cicore/tags/D1_STABLE_BUILD_CONTROL_v1.0.4
+
+Now, you are ready to modify the current_release_control.properties file.
+
+Confirm for each component that will be released in the CCI release that the current_release_control.properties has the component equivalent to the tag location.
+
+For instance, d1_common_java is a component that will be released in CCI verion 1.2.6. The version number of d1_common_java will be 1.2.0 for CCI version 1.2.6. The entry in the current_release_control.properties should look like:
+
+D1_COMMON_JAVA=tags/D1_COMMON_JAVA_v1.2.0
+
+This nomenclature indicates to Jenkins a relative path in the subversion repository from which to pull the current code for compilation and packaging.
+
+Commit Control File
+-------------------
+
+Once  all the components have been tagged and branched for a release, then  you will need to commit the current_release_control.properties into svn.
+
+Tag a Component
+---------------
+
+
+When the current_release_control.properties file is edited and committed, each branch should be copied into a new tag.
+
+If you perform this on the commandline, then it is tedious. It is best to use a program to ensure consistency. Check out the control_release project under tools if you have not already done so.  It contains two programs. Once manages merging changes from the trunk into a branch. The other manages creating new branches as well as creating tags from branches.  AT this phase, the program controlStageAndRelease.pl is the perl file to execute.
+
+
+> svn checkout https://repository.dataone.org/software/tools/trunk/control_release control_release
+
+
+change directory into control_release and run
+
+./controlStageAndRelease.pl --tag --all
+
+using the --all tag will force each component as listed in the current_release_control.properties to be compared against the subversion repository to determine if it does in fact exist. If it does not exist, then a new tag will be created by copying the branch as listed in the  current_beta_control.properties to the new tag.
+
+If you only need to check on a single tag, then you can specify the component.
+
+./controlStageAndRelease.pl --tag --component componentName
+
+it would be good to automate this process based on the two Build Control files.  Given the locations of the the tag and branch repositories, the control files, the subdirectories to pull from and create tags of would be located in the build control files.  In order to determine which tags to create, the versions in the build control file would be compared against tags repository to determine if the tag already exists. If the tag of a component in the stable build control file does not exists, then the procedure would be to execute a command such as::
+
+
+
+If the component builds cleanly, then you will commit the pom.xml back to subversion and then tag the branch with the tagD1ComponentRelease.pl command.
+
+> svn commit -m'Preparing branch for tagging version 1.0.1-RC8 ' pom.xml
+
+> tagD1ComponentRelease.pl --component component_name --release release_name
+
+such that 
+
+> tagD1ComponentRelease.pl --component d1_common_java --release 1.0.1-RC8
+
+would be a valid command.
+
+Confirm that the tag exists in subversion by reviewing the list of components in https://repository.dataone.org/software/cicore/tags/ .
+
+You will then edit the current_release_control.properties file.  Find the property that controls the component and update it to the latest release.
+
+For instance, the property:
+
+D1_COMMON_JAVA=tags/D1_COMMON_JAVA_v1.0.1-RC7
+
+would be modified to read:
+
+D1_COMMON_JAVA=tags/D1_COMMON_JAVA_v1.0.1-RC8
+
+
+Update Trunk to new Snapshot level
+----------------------------------
+
+1) Maven Projects
+Lastly, edit the pom.xml in the trunk of the project and change the revision numbers.  You will modify the  version element of the project to increase the revision number and you will modify the d1 component property elements to point to the lastest SNAPSHOTs of those dependencies, such that if dataone_common_java had just been updated from RC7 to RC8, along with all of its dependencies from RC3 to RC4, then the new trunk pom.xml would look like:
+
+    <artifactId>d1_common_java</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.1-RC9-SNAPSHOT</version>
+    <name>DataONE_Common_Java</name>
+    <url>http://dataone.org</url>
+    <description>DataONE Common Code with Service Interface Definitions</description>
+    <properties>
+        <org.jibx.version>1.2.3</org.jibx.version>
+        <d1_jibx_extensions_release>1.0.0-RC5-SNAPSHOT</d1_jibx_extensions_release>
+        <d1_test_resources_release>1.0.0-RC5-SNAPSHOT</d1_test_resources_release>
+    </properties>
+
+while the pom.xml in the tag would look like:
+
+    <artifactId>d1_common_java</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.1-RC8</version>
+    <name>DataONE_Common_Java</name>
+    <url>http://dataone.org</url>
+    <description>DataONE Common Code with Service Interface Definitions</description>
+    <properties>
+        <org.jibx.version>1.2.3</org.jibx.version>
+        <d1_jibx_extensions_release>1.0.0-RC4</d1_jibx_extensions_release>
+        <d1_test_resources_release>1.0.0-RC4</d1_test_resources_release>
+    </properties>
+
+commit the pom to the latest SNAPSHOT.
+
+2) Debian Packages
+  Edit the control file and increase the RC level and then commit.  
+
+Update Branch to next Release level
+----------------------------------
+
+1) Maven Projects
+Lastly,  edit the pom.xml in the trunk of the project and change the revision  numbers.  You will modify the  version element of the project to  increase the revision number and you will modify the d1 component  property elements to point to the lastest SNAPSHOTs of those  dependencies, such that if dataone_common_java had just been updated  from RC7 to RC8, along with all of its dependencies from RC3 to RC4,  then the new trunk pom.xml would look like:
+
+    <artifactId>d1_common_java</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.1-RC9-SNAPSHOT</version>
+    <name>DataONE_Common_Java</name>
+    <url>http://dataone.org</url>
+    <description>DataONE Common Code with Service Interface Definitions</description>
+    <properties>
+        <org.jibx.version>1.2.3</org.jibx.version>
+        <d1_jibx_extensions_release>1.0.0-RC5-SNAPSHOT</d1_jibx_extensions_release>
+        <d1_test_resources_release>1.0.0-RC5-SNAPSHOT</d1_test_resources_release>
+    </properties>
+
+while the pom.xml in the tag would look like:
+
+    <artifactId>d1_common_java</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.1-RC8</version>
+    <name>DataONE_Common_Java</name>
+    <url>http://dataone.org</url>
+    <description>DataONE Common Code with Service Interface Definitions</description>
+    <properties>
+        <org.jibx.version>1.2.3</org.jibx.version>
+        <d1_jibx_extensions_release>1.0.0-RC4</d1_jibx_extensions_release>
+        <d1_test_resources_release>1.0.0-RC4</d1_test_resources_release>
+    </properties>
+
+commit the pom to the latest SNAPSHOT.
+
+2) Debian Packages
+  Edit the control file and increase the RC level and then commit.  
+
+
+
+Jenkins Stable Build Processes
+----------------------
+
+The build process on Jenkins is as follows:
+
+Login to Jenkins at the default 'Jenkins' screen as admin (trying from any other screen will cause a failure).
+
+Click on the tab 'Stable - tags'
+
+If dataone-cn-metadata-deb-stable project is being released, then follow the next steps:
+ * In the project dataone-cn-metacat-deb-stable, edit two places: 
+   * under String -> Parameter edit 'DATAONE_CN_METACAT_DEB' to be  represented by the default value tags/DATAONE-CN-METACAT_vx.x.x (where  x.x.x is the tag for dataone-cn-metadata-deb-stable being released)
+   * under Build -> Execute -> Command edit the string 'JARS=(  Metacat_stable/workspace/METACAT_X_X_X/dist/knb.war );' (substitute Metacat project release numbers for X_X_X )
+
+If the Metacat project is being released, then follow the next steps:
+
+ * In the project Metacat_Stable, edit four places:
+   * Source Code Management -> Subversion -> Modules -> Repository URL edit the string to be https://code.ecoinformatics.org/code/metacat/tags/METACAT_X_X_X (substitute Metacat project release numbers for X_X_X )
+   * Execute shell -> Command edit the string 'cd  "$WORKSPACE/METACAT_X_X_X/docs/user/metacat"' (substitute Metacat project release numbers for X_X_X )
+   * Invoke Ant -> Targets -> Press Advanced... Button -> edit the  string  'metacat.dir=/home/hudson/work/jobs/Metacat_stable/workspace/METACAT_X_X_X'  (substitute Metacat project release numbers for X_X_X )
+   * Javadoc directory -> edit the string 'METACAT_X_X_X/build/docs'  (substitute Metacat project release numbers for X_X_X )
+
+
+To build out the new production release, click on the Job entitled 'Build_Stable' and then click on the sidebar link 'Build Now'
+
+
+Addendum on Jenkins
+-------------------
+Notes about Jenkins builds:
+
+There are three different apt repositories built by hudson:
+
+  http://dev-testing.dataone.org/ubuntu-unstable/
+
+and
+
+  http://dev-testing.dataone.org/ubuntu-stage/
+
+and
+
+  http://dev-testing.dataone.org/ubuntu-stable/
+
+The unstable packages are built from the subversion trunk. Jenkins will take the existing version number in the package and append RYYYYMMDD.nnn to the version number, where YYYY=year, MM=month, DD=day, nnn = build number for the day. So for example, the package "dataone-cn-portal" currently has Version: "1.0.0-RC2~unstable" in the DEBIAN/control file. The resulting file name and package version as generated by Jenkins are:
+
+  dataone-cn-portal_1.0.0R20120303.002-RC2~unstable_all.deb
+
+for the file name and the version information contained in Packages.gz is:
+
+  1.0.0R20120303.002-RC2~unstable
+
+The auto-generated version number means that any build of the package is equivalent to a snapshot, and apt will always install the new version during upgrade or install operations.
+
+Add discussion of Beta testing and releases.
+
+The stable packages, build by the Stable_Build job on Jenkins, use the version information exactly as recorded in the DEBIAN/control file. These packages are built from subversion tags, and so will not change between compilations.
+
+The result is that the ubuntu-unstable repository always contains only unstable (trunk) builds, and they always have a modified version tag.
+
+The ubuntu-stable repository always contains only the stable builds from tags, and these have the version as recored in the DEBIAN/control file.
+
+As a result, there should never by a mix-up between unstable and stable packages.
+
+However, it of course critical that the version numbers in the DEBIAN/control files are updated when a new release is being made. Apt uses that information to determine if it needs to install the package over an existing installation. 
+

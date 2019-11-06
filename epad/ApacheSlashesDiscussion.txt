@@ -1,0 +1,391 @@
+Content from this etherpad has been captured and summarized at:
+
+http://mule1.dataone.org/ArchitectureDocs-current/notes/ApacheConfiguration.html
+
+
+http://stackoverflow.com/questions/4390436/need-to-allow-encoded-slashes-on-apache
+
+http://www.jampmark.com/web-scripting/5-solutions-to-url-encoded-slashes-problem-in-apache.html
+
+http://www.mail-archive.com/bugs@httpd.apache.org/msg32379.html
+
+
+
+Apache Configuration parameters affecting URL processing for REST calls
+
+AllowEncodedSlashes  [On|Off]
+
+AcceptPathInfo  [On|Off|Default]
+
+
+- Location in configuration file
+- Method for testing
+  - Log files
+    - Message in error log when callign with %2F
+    
+  - Also check if getting through to CN
+
+Apache's AllowEncodedSlashes directive does not seem to work as it should (https://issues.apache.org/bugzilla/show_bug.cgi?id=35256). Tests on cn-dev with against all permutations of AllowEncodedSlashes [on|off] and AcceptPathInfo [on|off|default] still leave %2F blocked in the first stage of request processing. 
+
+Giving the error :
+[Thu Dec 09 14:16:47 2010] [info] [client 127.0.0.1] found %2f (encoded '/') in URI (decoded='/cn/object/xxhttpAESon/APInotset'), returning 404
+in the apache2/error.log
+
+
+All similar tests with the %2F in the query portion of the URI make it through tomcat and to the /cn/ service endpoint. I used URLs in the form of:
+localhost/cn/object/get?id=ooo%2Fooo 
+localhost/cn/object?id=ooo%2Fooo
+
+
+some test results:
+
+
+
+
+DV Testing - Basic Apache install
+Apache version::
+
+  Apache/2.2.14 (Unix) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l PHP/5.3.1 mod_perl/2.0.4 Perl/v5.10.1
+
+Default config.
+
+request::
+
+  curl -v http://localhost/test%2F
+
+log message::
+
+  Mon Dec 13 14:17:31 2010] [info] [client ::1] found %2f (encoded '/') in URI (decoded='/test/'), returning 404
+
+curl -v http://localhost/test%2Fbogus
+Mon Dec 13 14:27:39 2010] [info] [client ::1] found %2f (encoded '/') in URI (decoded='/test/bogus'), returning 404
+
+With 
+AllowEncodedSlashes On
+AcceptPathInfo On
+
+request:
+curl -v http://localhost/test%2F
+
+log message
+Mon Dec 13 14:24:03 2010] [error] [client ::1] File does not exist: /Applications/XAMPP/xamppfiles/htdocs/test
+
+curl -v http://localhost/test%2Fbogus
+
+Mon Dec 13 14:30:10 2010] [error] [client ::1] File does not exist: /Applications/XAMPP/xamppfiles/htdocs/test
+
+
+With 
+AllowEncodedSlashes On
+AcceptPathInfo Off
+
+curl -v http://localhost/test%2F
+Mon Dec 13 14:34:48 2010] [error] [client ::1] File does not exist: /Applications/XAMPP/xamppfiles/htdocs/test
+
+curl -v http://localhost/test%2Fbogus
+Mon Dec 13 14:33:28 2010] [error] [client ::1] File does not exist: /Applications/XAMPP/xamppfiles/htdocs/test
+
+
+With 
+AllowEncodedSlashes Off
+AcceptPathInfo On
+
+curl -v http://localhost/test%2F
+Mon Dec 13 14:38:24 2010] [info] [client ::1] found %2f (encoded '/') in URI (decoded='/test/'), returning 404
+
+curl -v http://localhost/test%2Fbogus
+Mon Dec 13 14:38:49 2010] [info] [client ::1] found %2f (encoded '/') in URI (decoded='/test/bogus'), returning 404
+
+Another Round of tests using a simple CGI script to return the environment variables
+
+script::
+
+  cat htdocs/test.cgi
+  #!/usr/bin/perl
+  print "Content-type: text/html\n\n";
+  foreach $key (keys %ENV) {
+  print "$key --> $ENV{$key}\n";
+  }
+
+Using the request::
+
+  curl http://localhost/test.cgi/bogus%2Fstuff
+
+i.e. the identifier is "bogus/stuff"
+
+----
+
+::
+
+  AllowEncodedSlashes Off
+  AcceptPathInfo Off
+
+Error Log::
+
+  Mon Dec 13 15:45:00 2010] [info] [client ::1] found %2f (encoded '/') in URI (decoded='/test.cgi/bogus/stuff'), returning 404
+
+Response::
+
+  Default 404 page
+
+----
+
+::
+
+  AllowEncodedSlashes On
+  AcceptPathInfo Off
+
+Error Log::
+
+  Mon Dec 13 15:46:08 2010] [error] [client ::1] AcceptPathInfo off disallows user's path: /Applications/XAMPP/xamppfiles/htdocs/test.cgi
+
+Response::
+
+  Default 404 page
+
+----
+
+::
+
+  AllowEncodedSlashes Off
+  AcceptPathInfo On
+
+Error Log::
+
+  Mon Dec 13 15:46:48 2010] [info] [client ::1] found %2f (encoded '/') in URI (decoded='/test.cgi/bogus/stuff'), returning 404
+
+Response::
+
+  Default 404 page
+
+----
+
+::
+
+  AllowEncodedSlashes On
+  AcceptPathInfo On
+
+Error Log::
+
+  No message recorded
+
+Response::
+
+  SCRIPT_NAME --> /test.cgi
+  SERVER_NAME --> localhost
+  SERVER_ADMIN --> you@example.com
+  PATH_INFO --> /bogus/stuff
+  REQUEST_METHOD --> GET
+  HTTP_ACCEPT --> */*
+  SCRIPT_FILENAME --> /Applications/XAMPP/xamppfiles/htdocs/test.cgi
+  VERSIONER_PERL_PREFER_32_BIT --> no
+  SERVER_SOFTWARE --> Apache/2.2.14 (Unix) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l PHP/5.3.1 mod_perl/2.0.4 Perl/v5.10.1
+  QUERY_STRING --> 
+  REMOTE_PORT --> 50155
+  HTTP_USER_AGENT --> curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+  SERVER_SIGNATURE --> 
+  SERVER_PORT --> 80
+  REMOTE_ADDR --> ::1
+  SERVER_PROTOCOL --> HTTP/1.1
+  PATH --> /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin
+  REQUEST_URI --> /test.cgi/bogus%2Fstuff
+  GATEWAY_INTERFACE --> CGI/1.1
+  SERVER_ADDR --> ::1
+  DOCUMENT_ROOT --> /Applications/XAMPP/xamppfiles/htdocs
+  PATH_TRANSLATED --> /Applications/XAMPP/xamppfiles/htdocs/bogus/stuff
+  HTTP_HOST --> localhost
+  VERSIONER_PERL_VERSION --> 5.10.0
+  UNIQUE_ID --> TQaGaEprSyIAAFOcw20AAAAB
+
+----
+
+Request::
+
+  curl http://localhost/test.cgi/bogus%2Fstuff%3Fvar%3Dvalue
+
+i.e. identifier = "bogus/stuff?var=value"
+
+Response::
+
+  SCRIPT_NAME --> /test.cgi
+  SERVER_NAME --> localhost
+  SERVER_ADMIN --> you@example.com
+  PATH_INFO --> /bogus/stuff?var=value
+  REQUEST_METHOD --> GET
+  HTTP_ACCEPT --> */*
+  SCRIPT_FILENAME --> /Applications/XAMPP/xamppfiles/htdocs/test.cgi
+  VERSIONER_PERL_PREFER_32_BIT --> no
+  SERVER_SOFTWARE --> Apache/2.2.14 (Unix) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l PHP/5.3.1 mod_perl/2.0.4 Perl/v5.10.1
+  QUERY_STRING --> 
+  REMOTE_PORT --> 64650
+  HTTP_USER_AGENT --> curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+  SERVER_SIGNATURE --> 
+  SERVER_PORT --> 80
+  REMOTE_ADDR --> ::1
+  SERVER_PROTOCOL --> HTTP/1.1
+  PATH --> /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin
+  REQUEST_URI --> /test.cgi/bogus%2Fstuff%3Fvar%3Dvalue
+  GATEWAY_INTERFACE --> CGI/1.1
+  SERVER_ADDR --> ::1
+  DOCUMENT_ROOT --> /Applications/XAMPP/xamppfiles/htdocs
+  PATH_TRANSLATED --> /Applications/XAMPP/xamppfiles/htdocs/bogus/stuff?var=value
+  HTTP_HOST --> localhost
+  VERSIONER_PERL_VERSION --> 5.10.0
+  UNIQUE_ID --> TQaK80prSyIAAFOexIUAAAAD
+
+----
+
+Request::
+
+  curl http://localhost/test.cgi/bogus%2Fstuff%3Fvar%3Dvalue?var2=value2
+
+i.e. identifier = "bogus/stuff?var=value" with a query parameter at the end of the URL
+
+Response::
+
+  SCRIPT_NAME --> /test.cgi
+  SERVER_NAME --> localhost
+  SERVER_ADMIN --> you@example.com
+  PATH_INFO --> /bogus/stuff?var=value
+  REQUEST_METHOD --> GET
+  HTTP_ACCEPT --> */*
+  SCRIPT_FILENAME --> /Applications/XAMPP/xamppfiles/htdocs/test.cgi
+  VERSIONER_PERL_PREFER_32_BIT --> no
+  SERVER_SOFTWARE --> Apache/2.2.14 (Unix) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l PHP/5.3.1 mod_perl/2.0.4 Perl/v5.10.1
+  QUERY_STRING --> var2=value2
+  REMOTE_PORT --> 49339
+  HTTP_USER_AGENT --> curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+  SERVER_SIGNATURE --> 
+  SERVER_PORT --> 80
+  REMOTE_ADDR --> ::1
+  SERVER_PROTOCOL --> HTTP/1.1
+  PATH --> /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin
+  REQUEST_URI --> /test.cgi/bogus%2Fstuff%3Fvar%3Dvalue?var2=value2
+  GATEWAY_INTERFACE --> CGI/1.1
+  SERVER_ADDR --> ::1
+  DOCUMENT_ROOT --> /Applications/XAMPP/xamppfiles/htdocs
+  PATH_TRANSLATED --> /Applications/XAMPP/xamppfiles/htdocs/bogus/stuff?var=value
+  HTTP_HOST --> localhost
+  VERSIONER_PERL_VERSION --> 5.10.0
+  UNIQUE_ID --> TQaLPEprSyIAAFOdxIcAAAAC
+
+----
+
+Request::
+
+  curl http://localhost/test.cgi/bogus%2Fstuff%3Fvar=value?var2=value2
+
+i.e. identifier = "bogus/stuff?var=value" with a query parameter at the end of the URL
+
+Response::
+
+  SCRIPT_NAME --> /test.cgi
+  SERVER_NAME --> localhost
+  SERVER_ADMIN --> you@example.com
+  PATH_INFO --> /bogus/stuff?var=value
+  REQUEST_METHOD --> GET
+  HTTP_ACCEPT --> */*
+  SCRIPT_FILENAME --> /Applications/XAMPP/xamppfiles/htdocs/test.cgi
+  VERSIONER_PERL_PREFER_32_BIT --> no
+  SERVER_SOFTWARE --> Apache/2.2.14 (Unix) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l PHP/5.3.1 mod_perl/2.0.4 Perl/v5.10.1
+  QUERY_STRING --> var2=value2
+  REMOTE_PORT --> 59889
+  HTTP_USER_AGENT --> curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+  SERVER_SIGNATURE --> 
+  SERVER_PORT --> 80
+  REMOTE_ADDR --> ::1
+  SERVER_PROTOCOL --> HTTP/1.1
+  PATH --> /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin
+  REQUEST_URI --> /test.cgi/bogus%2Fstuff%3Fvar=value?var2=value2
+  GATEWAY_INTERFACE --> CGI/1.1
+  SERVER_ADDR --> ::1
+  DOCUMENT_ROOT --> /Applications/XAMPP/xamppfiles/htdocs
+  PATH_TRANSLATED --> /Applications/XAMPP/xamppfiles/htdocs/bogus/stuff?var=value
+  HTTP_HOST --> localhost
+  VERSIONER_PERL_VERSION --> 5.10.0
+  UNIQUE_ID --> TQaNjkprSyIAAFOfxYgAAAAE
+
+
+----
+
+Request::
+
+  curl http://localhost/test.cgi/bogus%2Fstuff/something/else
+
+i.e. identifier = "bogus/stuff" with additional path at the end
+
+  SCRIPT_NAME --> /test.cgi
+  SERVER_NAME --> localhost
+  SERVER_ADMIN --> you@example.com
+  PATH_INFO --> /bogus/stuff/something/else
+  REQUEST_METHOD --> GET
+  HTTP_ACCEPT --> */*
+  SCRIPT_FILENAME --> /Applications/XAMPP/xamppfiles/htdocs/test.cgi
+  VERSIONER_PERL_PREFER_32_BIT --> no
+  SERVER_SOFTWARE --> Apache/2.2.14 (Unix) DAV/2 mod_ssl/2.2.14 OpenSSL/0.9.8l PHP/5.3.1 mod_perl/2.0.4 Perl/v5.10.1
+  QUERY_STRING --> 
+  REMOTE_PORT --> 57774
+  HTTP_USER_AGENT --> curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8l zlib/1.2.3
+  SERVER_SIGNATURE --> 
+  SERVER_PORT --> 80
+  REMOTE_ADDR --> ::1
+  SERVER_PROTOCOL --> HTTP/1.1
+  PATH --> /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin
+  REQUEST_URI --> /test.cgi/bogus%2Fstuff/something/else
+  GATEWAY_INTERFACE --> CGI/1.1
+  SERVER_ADDR --> ::1
+  DOCUMENT_ROOT --> /Applications/XAMPP/xamppfiles/htdocs
+  PATH_TRANSLATED --> /Applications/XAMPP/xamppfiles/htdocs/bogus/stuff/something/else
+  HTTP_HOST --> localhost
+  VERSIONER_PERL_VERSION --> 5.10.0
+  UNIQUE_ID --> TQaQiEprSyIAAFOixfMAAAAF
+
+
+----
+
+Things to try:
+1. Blank install of apache 2.2.12
+
+2. Startup order of tomcat and apache
+CN-DEV:
+    with tomcat shutdown, and apache restarted (allowEncodedSlashes On, AcceptPathInfo On), still get "found%2f" message in error.log
+    starting up tomcat after apache: still get error as above
+    with startup order: tomcat, apache: still get error as above
+    
+ Also tried lowercase directive settings ("on" instead of "On").  No difference as expected.
+
+3. Check version of apache in more recent version of Ubuntu
+
+CN-DEV = Ubuntu 9.10, Apache 2.2.12
+redmine.dataone.org = Ubuntu 10.04, Apache 2.2.14
+----
+
+Loaded Modules:
+ core_module (static)
+ log_config_module (static)
+ logio_module (static)
+ mpm_worker_module (static)
+ http_module (static)
+ so_module (static)
+ alias_module (shared)
+ auth_basic_module (shared)
+ authn_file_module (shared)
+ authz_default_module (shared)
+ authz_groupfile_module (shared)
+ authz_host_module (shared)
+ authz_user_module (shared)
+ autoindex_module (shared)
+ cgid_module (shared)
+ deflate_module (shared)
+ dir_module (shared)
+ env_module (shared)
+ jk_module (shared)
+ mime_module (shared)
+ negotiation_module (shared)
+ reqtimeout_module (shared)
+ setenvif_module (shared)
+ ssl_module (shared)
+ status_module (shared)
+Syntax OK
+
+

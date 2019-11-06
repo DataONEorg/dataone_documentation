@@ -1,0 +1,177 @@
+Member Node Forum - 21 March 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/318278809
+  (Occurs every 2 weeks on Thursday 2pm EST, 1pm CST, noon MST, 11am PST, 10am AK)
+  Upcoming meetings 4 April, 18 April, 16 May (can't meet 2 May due to UA/SC joint WG mtg)
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (213) 289-0010
+Access Code: 318-278-809
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 318-278-809
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry)
+epad.dataone.org/MemberNodeForum-20130321
+
+Attending: Laura, John Cobb, Amber O., Mark Servilla, Matt Jones,Ryan Scherle, Amber Budden, Kavitha (SEAD), Mike Frenock, Bob Waide
+
+New Action Items create this meeting:
+1. Issue: Develop a implementation checklist that MN implementation teams can use.
+2. Issue: support SEAD for April 22 NSF demo.
+
+Action Items from last time:  (please update status)
+1. define better communication channels for in-development and in operation MN's
+    create a MNF mailing list - DONE  You can reach everyone on this Forum with     mnforum@dataone.org  (see #2 below)
+    create incoming communication patterns - IN PROCESS  (mninquiry@dataone.org)
+    It might be problematic to have too many means of communication (user might not know which "email address" to use)
+     Matt: working on ask.dataone.org (not "publicly" available yet),  another non-mailing list method of asking/answering questions - IN  PROCESS
+    
+2. draft a contact sheet for getting information about open issues (mailing lists, chat, redmine)   DONE:  We have a distribution list for the Member Node Forum -  mnforum@dataone.org.  As we have new/potential MNs come on board, they  will be added to this distribution list and be invited to the MNF  meetings.
+
+https://redmine.dataone.org/projects/mns
+(done)
+
+
+3.  We need to create a "compatible versions" for current version of  DataONE API's and SW products (and maybe MN versions as well).
+    Status?
+     Update: we already have very well established versions.  What we didn't  have was releases of the documentation of each version, and we have  committed to publishing those.  
+    Mike said that documentation doesn't necessarily match the currently released s/w version. (right -- it matches the current development head)
+Note: This pertains to both SW as well as SW documentation. (jwc - oops)
+Redmine ticket: https://redmine.dataone.org/issues/3677
+
+4. Determine a way to get MN-folk redmine access.  DONE:  When someone requests an identity on docs.dataone.org, they automatically have access to redmine.dataone.org.
+    status?
+    Redmine discussion: How to use, does it make sense
+    Kavitha was able to obtain access last time!
+    Mike Frenock was also able to get into redmine and was able to find good info.
+status: complete
+new accounts created throgh the DataONE portal should work. (re-verify)
+Existing accounts may need correction.
+Matt can check the MNForum mailing list against who has access to redmine and give access appropriately.
+
+
+Q: (Mike) where is our first scaling wall?
+ 
+Agenda:
+1. Network-wide update and issues affecting MN's as a whole
+Matt: no issues that we're aware of at the moment.
+
+
+2. Open issues:  MNs please add anything you would like to address here.
+Last  meeting: We discussed options for a "best practice" for communicating  with Member Nodes.  These ideas/options have been further discussed in  the Leadership Team and Member Node Wranglers meetings - making progress  on improving communication channels.  We also addressed some issues  that SEAD has to support their testing efforts, and discussed making  redmine available to everyone who requests access to docs.dataone.org. 
+
+Mike: all ok.
+Kavitha:  finished running "local" tests, wondering what is the next step.  Matt:  register node in staging environment for further testing, content  check, etc ...  Matt to talk to CCIT guys who do testing and get back  with Kavitha.
+
+Issue: Deveope a implementation checklist that MN implementation teams can use.
+    Redmine ticket: https://redmine.dataone.org/issues/3678
+
+John: what could we have done to help ease this process, provide information on next steps, etc.
+
+Kavitha:   NSF demo coming up April 22, wondering how much they can demo at that  time (i.e. time-frame for testing, etc.)  Matt says testing shouldn't be  too time-consuming if they're passing tests ok so far, sometimes  content issues may cause a hold-up - can vary from a day to several  weeks (!!), but it sounds hopeful for SEAD (LM's comment).
+
+Issue: support SEAD for April 22 NSF demo.
+
+Q: What metadata types exist in SEAD
+A: Currently minimal Dublin Core and minimal FGDC.
+
+Q: (Matt) Dryad update?
+A: (Ryan) interested in seeing a check-list. Once  passing a checklist, one is 50-60% complete. There are many developerer  checklists beyond that. Dryad still has a few tests hanging. One for  Dryad is URL encoding. Not sure, but maybe DataONE is doing something non-standard on URL encoding. Then some local priorities trumped.
+Q: (Matt) Timeline? Anything that DataONE needs to do?
+A: No, things are pecing along.
+Q: do we need to take action on the URL encoding mis-match?
+A: a pointer to a place in the documentation on the way ID's are pointing.
+
+Q: (Laura) Is there some documentation that describes the process of dev/test/implement?
+A: (Kavitha) Can find the documentation she referenced and pass on to Laura.
+
+Matt:  quite a bit of the "testing" is content editing; i.e. appropriate node  names/descriptions, properly identifying file/dataset types, etc.
+
+Matt said he can help/get help compiling a checklist kind of document to help this process.
+
+Mike: a checklist would be really helpful!
+
+Ryan: one POC from CCIT would be helpful in tracking down information
+Matt:  Since Dryad has been involved for a long time, we have had more than  one person as POC, but moving forward for new MNs we probably should  make it a point to assign one persistent POC to the MN
+
+Mark: still working toward implementation and refining code in PASTA.  Will tell everyone when there is something new to report.
+
+SAVE    THE DATE:  The DataONE Users' Group meeting is July 7-8, 2013 at   Chapel  Hill, NC.  Agenda and registration details to follow.
+    We expect to have two slots of special interest to Member Nodes:
+        - A MN showcase speed session where each MN can present a short (~3 slide) summary of the MN and interesting activities
+        - A poster session one evening where longer, informal discussions can occur.
+
+Dates possible conflicting with Open Respositories event.  
+OR is not always at the same time of year - sometime spring/summer, just happens to overlap this year.
+
+Kavitha says that Inna hopes to attend the DUG meeting.
+
+3. Feature requests/opportunities for collaboration:  MNs please add items here.
+Last  time Mike asked about the status of querying, and Matt responded that  it is available as a service programming interface call, documented  here: http://mule1.dataone.org/ArchitectureDocs-current/ 
+
+Issue: checklist for MN implementation
+
+Mike:  Is a
+
+I   have documented an example of how to use the query API on a   question/answer site that we are developing.  The Q/A site is not   publicly released yet (its still in testing), but here is the link to   the question for those interested:
+    https://ask.dataone.org/question/24/how-can-we-download-a-specific-set-of-metadata-fields-for-a-large-number-of-metadata-records/
+
+
+
+4. MN showcase:  If you would like to share what your MN is about, please add here.
+Last   time we talked about LTER's transition from metacat to a generic MN   using PASTA (Provenance Aware Synthesis Tracking Architecture).
+
+Other:
+
+Upcoming deadlines:
+ASIST annual meeting: April 15  https://www.asis.org/asist2013/am13cfp.html  Deadline for papers, panels, tutorials, and workshops. Deadline July 1 for posters, demos, video)
+SC13 papers : April 1: http://sc13.supercomputing.org/
+
+Interesting other info:  RD alliance occurred this week in Sweden
+
+
+I   have documented an example of how to use the query API on a   question/answer site that we are developing.  The Q/A site is not   publicly released yet (its still in testing), but here is the link to   the question for those interested:
+    https://ask.dataone.org/question/24/how-can-we-download-a-specific-set-of-metadata-fields-for-a-large-number-of-metadata-records/
+
+
+
+4. MN showcase:  If you would like to share what your MN is about, please add here.
+Last   time we talked about LTER's transition from metacat to a generic MN   using PASTA (Provenance Aware Synthesis Tracking Architecture).
+
+Other:
+
+Upcoming deadlines:
+ASIST annual meeting: April 15  https://www.asis.org/asist2013/am13cfp.html  Deadline for papers, panels, tutorials, and workshops. Deadline July 1 for posters, demos, video)
+SC13 papers : April 1: http://sc13.supercomputing.org/
+
+Interesting other info:  RD alliance occurred this week in Sweden
+nyone querying using SOLR?  Examples of how it works?
+Matt:  Some R-inistas are using it or trying to use it. Matt can point to a couple of examples
+Mike: does R-client use SOLR?
+Matt: Query interface   uses SOLR interface.  People using R-client are experiencing this and  have questions that Matt is seeing on other lists.  He can give some  examples to Mike.
+
+I  have documented an example of how to use the query API on a  question/answer site that we are developing.  The Q/A site is not  publicly released yet (its still in testing), but here is the link to  the question for those interested:
+    https://ask.dataone.org/question/24/how-can-we-download-a-specific-set-of-metadata-fields-for-a-large-number-of-metadata-records/
+
+
+
+4. MN showcase:  If you would like to share what your MN is about, please add here.
+Last  time we talked about LTER's transition from metacat to a generic MN  using PASTA (Provenance Aware Synthesis Tracking Architecture).
+
+Other:
+
+Upcoming deadlines:
+ASIST annual meeting: April 15  https://www.asis.org/asist2013/am13cfp.html  Deadline for papers, panels, tutorials, and workshops. Deadline July 1 for posters, demos, video)
+SC13 papers : April 1: http://sc13.supercomputing.org/
+
+Interesting other info:  RD alliance occurred this week in Sweden
+http://www.eudat.eu/events/rda-launch-and-first-plenary
+
+Bob W: RDA meeting question - was DataONE involved in the meeting in any way?
+Matt/John:   yes!  Bill Michener and Rebecca Koskela involved in RDA for some time,   but we're not sure if any DataONE staff were at the mtg.  DataONE is   fully involved in RDA.
+
+

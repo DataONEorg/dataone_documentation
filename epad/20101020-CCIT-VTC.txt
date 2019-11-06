@@ -1,0 +1,52 @@
+Comitted to SVN at: https://repository.dataone.org/documents/Committees/CCIT/20101020_CCIT_VTC.txt
+
+Note from the 2010-10-20 Developers Call
+
+16:00 ET, Marratech meet2.nceas.ucsb.edu
+
+Participants: 
+Mark Servilla, Chad Berkley, Bruce Wilson, Dave Vieglais, Paul Allen, Bob Sandusky, Rob Nahf, Ryan Scherle, Rebecca Koskela, Jeff Horsburgh, Robert Waltz, John Kunze
+
+
+= Agenda =
+
+1. finalizing the AHM agenda:
+
+  https://repository.dataone.org/documents/Meetings/20101102-ABQ-AHM/CCIT
+
+Perhaps drop the data citation in favor of continuing the packaging 
+Similarly with the embedded identifiers
+
+A couple of key topics that the developers need to meet face to face over white boad. e.g. tagging and versioning, milestones etc.  Perhaps on Wednesday.
+
+- Dave review risk register and ensure major topics are covered.
+
+
+2. Annotation and notification use cases
+
+  http://epad.dataone.org/ccit-annotation-usecases
+
+
+3. Around the room
+Mark - PASTA framework, 3 core subsystems, metadata, WF, and data manager (e.g. URL references within EML documents)
+
+Bruce - not much to add
+
+Chad - metacat stuff, fixing bugs. 1.9.3. release - fixing perforamnce issues on new hardware
+
+Rob - Resolve functionality, mostly done with some caveats.  integration
+
+Bob Sandusky - more animations with Paul, posta at Am Science and Tech on preservation.
+
+John Kunze - curation repository service "Merit" repository design. Ez identifier system - identifer scheme agnostic.  Forwards URNs handles, etc.  Presented on the Excel project - Moore wants to kick in some funding. Citation - datacite metadata standard being finalized - should be out soon. Carol Gobel - missing action on DataONE. Data management guidelines released - would likefeedback from DataONE. http://www.cdlib.org/services/uc3/datamanagement/ Bagit spec internet draft - http://tools.ietf.org/search/draft-kunze-bagit-05
+
+Ryan - released a new version Dryad, adds a bunch new cool features (including some notification features). Interfaces with EZID system that John mentioned.  Some searching over harvested content, e.g. treebase and a few LTER things. Starting to harden dryad - to support data publication mandates from journals. 
+
+Paul - science pipes project ongoing.  many different audiences, including schools ebird, citizen scientists.  NSDL grant for exemplary ecological datasets to be made available through science pipes.  IOOS may be some usefule connections to follow up on.
+
+Robert - Bunch of new code checked in for building against new schemas.
+
+Rebecca- please make reservations for Tamaya. Also please provide content for upcoming quarterly report - presentations, collaborations, publications.
+
+
+

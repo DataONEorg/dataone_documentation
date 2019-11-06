@@ -1,0 +1,155 @@
+Development Block 5.
+=====================
+[[ Tip - to start a hangout: http://hangouts.google.com/start ]]
+
+Hangout URL: https://plus.google.com/hangouts/_/event/cb76pav4nbripd606928j9pjiao?authuser=0&hl=en
+
+
+Last Block Etherpad: http://epad.dataone.org/2013-37-Block-5-2
+
+Sprint Planning
+---------------
+Milestones / Significant Events: AHM Meeting, Renewal Proposal Submission
+
+ * MN deployments
+   * (Rob) EDAC is planning to rollout another patch release of EDAC with D1 changes around Oct. 7.
+   * Ryan requested for new test sync/index of dev.dryad MN - will do early this week. (Skye)
+   * Chris will work with Bob Sandusky on the UIC deployment
+   * Chris to follow up with Stephen/John re: Merritt revision archiving
+ * MN Documentation (Rob)
+   * met with web-site team to try to 'formalize' layouts (to abstract the content and separate it somewhat from the layouts).
+     * it's a somewhat heavy-weight solution in the context of getting something done for the AHM.
+ * Dashboard release (Chris, Skye)
+   * Incorporate feedback from CCIT meeting
+ * Log reporting / log agg anonymous stats enabled (in staging) (Robert)
+ * Splunk monitoring (David, Chris)
+   * Blocked by VM allocation at UNM
+ * ITK tool development/Morpho
+   * Blocked by InCommon membership of the KNB auth system (Matt working on this)
+ * CCI release 1.2.3
+   * Foresite ORE parsing in indexing (work complete)
+   * Foresite ORE validation in sync (in testing)
+   * Anonymous Log Endpoint responses on CNs (in testing)
+   * logAggregation bug fix for hazelcast exceptions/split brain problem (in development)
+   * Optimization of log queries against MNs (in design)
+
+ * Report of downloads per object format per month (data/metadata) (Robert)
+   * Number of GETs per month by object format per MN since DataONE production deployment
+   * Filter out CN activity
+   * First pass: total number of GETs per month per MN  since DataONE production deployment.
+
+ * Maintenance Items
+   * cn-unm-1 object counts out of sync. Logging level at debug. Out of parity by 30. Need to examine metacat log files.
+   * Plan UCSB CN and other MN downtime for server migration to the North Hall Data Center, plus subnet change
+   * Merrit and ONEShare pid archiving: https://redmine.dataone.org/issues/3980
+     * Can be corrected by MN operator(s)?
+
+
+
+Chris Brumgard
+ * 20130930
+   * Completed redmine tasks for tickets 3959 - 3962
+   * Going to have David test them on a blank vm
+ * 20131002
+   * Working on restructuring the upper level playbooks
+   * I want to have David wipe out cn-dev-orc-1 and do a fresh install with them.
+ * 20131004
+   * Nothing much to report.
+
+Rob Nahf
+ * 20131002
+   * reviewed DSpace documentation structure and look-and-feel
+   * meeting with Amber about website
+ * 20130930
+   * MN-checklist and web-site landing page documentation
+     * talking with web-site team on how best to approach changes to web-site.  getting an idea of their constraints.
+   * MN Deployments - EDAC
+     * met with them re: their status
+   * Thinking/writing about mutability
+
+Dave V
+ * 20131004
+   * certs for USANPN, LTER_EUROPE
+   * mutability proposal development
+   * renewal proposal writing
+ * 20131002
+   * Observed that CILogon subject from same IdP has changed, most likely from an attribute change at the IdP. Basney and Fleury are looking into enabling an alert when IdP attributes change.
+   * Ken Klingenstein mentioned "Insert" project, enables consistent client cert management. Investigating option to work with CILogon
+ * 20130930
+   * Proposal writing
+   * CTSC Meeting on Tuesday, Wednesday
+
+Matt
+ * 20130930
+   * Gulfwatch MN
+   * Proposal writing
+
+Robert
+ * 20131004
+   * total number of GETs per month per membernode for the object format types since DataONE production deployment.
+     * The code is biased to download log records from the CN. If the total records for a timeframe (down to a diurnal interval) is not equivalent, then the log records will be pulled from the MN.  The object format for an object is pulled by issuing CN.describe instead of raiding the postgres db.
+     * The code will be reused in the logAggregation auditing thread.
+   * total number of GETS per month per membernode failed on KNB. Need to re-run with a little better exception handling. runs quickly (luckily)
+ * 20131002
+   * total number of GETs per month  since DataONE production deployment. Working in Java, no good in Perl, what format is needed for data?
+ * 20130930
+   * LogAggregation scheduled KNB, got through 798310 as of 1am EST 0930, but has not collected any further.  No reports of Errors or Exceptions(yet).
+     * No errors, its just taking a really long time to slice up the records, actually there are Timeouts reported from D1Client
+   * Decided to work on auditing of logAggregation. First pass will be to take a timeframe, examine the results, if CN larger than MN, remove duplicates... In order to fix LTER production issues.
+
+Chris J
+ * 20131007
+   * More MN support
+     * cert downloads and password problems for Lee Marsh USA NPN
+     * tracking down KU sync issues - looks like EML validation issues
+     * D1 REST service impl help for Lisa Stillwell at RENCI for iRods
+ * 20131004
+   * Largely MN support
+     * Generated test server-side cert for USA NPN server
+     * Review of the KUBI member node, wrote up tickets for CJ and Aimee
+     * Need to look at how the KUBI sync went last night
+     * Working on email response to Lisa Stillwell @ RENCI for iRODS DataONE impl
+   * Replication discussion with Matt/Ben/Jing/Lauren
+     * Need to resolve 25 pid difference between PISCO MN and the CNs
+     * Need to resolve ~700 pid difference between LTER MN and the CNs
+     * Will be generating sysmeta on the KNB for existing replicas from ESA, SANPARKS, PISCO, LTER
+   * Will get back to dashboard code today
+ * 20131002
+   * Continued dashboard work based on CCIT feedback
+     * Updated Summary with D1 color scheme
+     * Met with Skye re: future work
+     * Server-side script development to produce summarized centroid output
+     * Testing GeoJSON in Google maps showing grid-aggregated points
+   * Release 1.2.3 coordination
+   * Prep for upcoming meetings
+   * Of interest: Thompson Reuters 'Data Citation Index'
+     * http://wokinfo.com/products_tools/multidisciplinary/dci/
+     * should DataONE, KNB, others be in this index?
+
+David D.
+ * 20131002
+   * Splunk forwarding in place at ORC
+   * Test connection in place at cn-dev-ucsb
+   * TO DO:
+     * UCSB rollout
+     * Build forwarder at UNM and begin UNM rollout
+     * Build Apache log forwarding into existing Splunkfrastructure(tm) and then integrate into remaining rollouts
+ * 20131004
+   * Sudo access to UNM/UCSB not enabled for me for MNs and CNs on prod/stage/sandbox/demo - blocking Splunk rollouts at UNM/UCSB - need a fix
+   * Will build forwarder at UNM in the meantime, since I have sudo access to that box
+   * Still working on Apache log forwarding
+
+Roger
+ * 20131004
+   * Still working on documentation.
+   * For sanity, also going back and working on Windows version of ONEDrive.
+ * 20131002
+   * Working on a number of documentation issues. Story #3932
+
+Jing
+ * 20131002
+   * Fixed bugs for metacat and morpho release.
+   * Blocker for the morpho release: application for join InCommon (matt is processing the application).
+   * To Do:
+     * Provide a plan to merge the nceas ldap server.
+

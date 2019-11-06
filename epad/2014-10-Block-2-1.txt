@@ -1,0 +1,110 @@
+Notes for Development Block 1.4
+-------------------------------
+
+Previous epad notes: http://epad.dataone.org/2014-8-Block-1-4
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+Sprint Planning
+~~~~~~~~~~~~~~~
+
+ * CN upgrades to Metacat 2.4.1
+ * CN Consistency wrap-up
+   * http://epad.dataone.org/cn-audit-systemmetadata-design
+ * Finish Dashboard v1
+
+
+Rob
+---
+ * 
+ * 20140314
+   * EDAC registration: they seem to have fixed the remaining bugs, but I'm waiting for confirmation.  I sent the production certificates for them to install, and will proceed when they are ready. They currently have only 3 packages exposed, so I will ask about that.  At the very least, we should hold off announcement before there are more 'books on the shelves'.
+   * CN consistency impl (tidy): added review field to merge_result, to allow us to annotate passing jobs that we might need to review.
+   * d1_libclient_java planning: talked with Roger to understand his Replication tester.  there doesn't seem to be a direct overlap, and in fact, it seems to be an example of what I hope to be able to allow in he java code:  a tester that can encapsulate multiple actors (CN and MN, in this case)
+ * 20140312
+   * CN Consistency impl (tidy): trouble-shot NPEs (with Robert), minor refactor to account for case when no CN systemmetadata (edge case)
+   * d1_libclient_java planning: exploring refactor options to allow easier testing (alternative MN and CNs), how to reduce dependency on (de-couple from) the specific HttpClient connection management.
+
+
+Roger
+ * 20140314
+   * Finished the Ticket Generator. Will work with Laura as needed on the template.
+   * Will be looking at fixing PyPI install warnings.
+ * 20140312
+   * Finished draft of MN Deployment Tickets template. Will send to Laura. Cycling back to the ticket creator to make sure that all the info in the template is correctly included in the template.
+
+
+David D
+--------
+ * 20140314
+   * Working on Splunk upgrade
+     * Indexer upgraded to v6, connections checked, basic functionality working
+       * Will be checking Splunk apps on the indexer next for deprecated apps or apps that are now obsolete b/c of new functionality in Splunk core
+     * Updating forwarders after indexer tweaks complete
+ * 20140312
+   * Splunk v6 upgrade prep work
+     * VM snapshot rules at orc updated
+       * removed indexer scheduled snapshots (unnecessary as long as we have a good install snapshot)
+       * added monthly scheduled snapshot rule for test indexer
+     * removed several old snapshots
+     * ran some pre-v6 snapshots in case of disaster during upgrade process
+     * Splunk indexer was running Ubuntu 10.04, upgraded to 12.04, checked settings and functionality of OS/splunk
+   * built Splunk forwarding rules back into cn-dev-orc-1
+
+Peter
+ * 20140314
+   * Log aggregation upgrade on hold for a day or two until Metacat Solr upgrade (to solr 4.7) is done
+
+Skye
+-------
+ * 20140314
+   * Work on dashboard UI (https://redmine.dataone.org/issues/3875)
+   * minor usnpn ore troubleshooting
+
+
+Robert
+------
+ * 20140314
+   * testing tidy, 1000 load
+   * 3 errors to handle, 
+     * object_format_list should not be a failure
+     * place retry logic on SSLUnverifiedException
+     * InterruptedExceptions causing DAO Exception
+   * INFO [main] 2014-03-14 09:36:56,785 o.d.tidy.merge.MergeExecutorService[142] - Total pids to process = 1855
+   * INFO [main] 2014-03-14 13:17:25,865 o.d.tidy.merge.MergeExecutorService[282] - Number of Jobs Successfuly Completed 1834
+     * 8.5 pids per minute
+     * 28 days for production run(?), no this lag is due to selecting from the massive views
+ * 20140312
+   * testing tidy
+
+
+Dave
+----
+ * 20140314
+   * Preparing for DNS switch
+   * Planning / preparations for work through July and beyond
+   * 
+
+Jing
+----
+ * 20140314
+   * Finished the code for the merge
+   * Tested the whole process in my local ldap server and it worked
+   * Found a bug that the alias user can't login through a non-TLS connection
+
+Chris
+-----
+ * 20140314
+   * Discussed tidy tests with Rob/Skye/Robert/Dave
+   * MN support for USANPN - Metacat will be upgraded
+   * MN support for EDORA in sandbox
+   * MN support for NKN in sandbox
+   * MN support for GLEON - working with Aaron
+   * CN upgrades: still working on this
+
+Topics
+------
+ * Improved MN testing via libclient changes
+ * DNS switch to Amazon Route 53
+ * 
+

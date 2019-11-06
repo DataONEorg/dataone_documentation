@@ -1,0 +1,236 @@
+/'Notes for Sprint 2013-4-Block-1-2
+---------------------------------
+
+Dave
+----
+ * 20130201
+   * monitor.dataone.org was hacked - offline for forensics. Creating a new machine
+   * Working on CCIT and RSV meetings
+   * NSF request for materials by Feb 14 (presentations, not demos)
+     * Demos on stage and/or production
+     * Demos are 3-4 minutes, max 10
+     * Merc, Morpho, DataUp, R, ONEDrive, provenance VisTrails plugin, Kepler
+   * Cloned sandbox, less than 10 minutes. Tried today, still going after an hour
+     * Services need to be shutdown, but shutdown would be better
+   * Triaged MN deployment tickets
+ * 20130130
+   * Reports
+   * At meeting with LT on prep for RSV and proposal
+   * Preparing draft presentations for RSV
+   * IMPORTANT: NSF has requested all presentations and supporting material for the RSV to be provided by FEB 14
+     * Demos need to be outlined and we need to be confident of them, but do not need to be included in the pre-review material (placeholders in the presentations)
+ * 20130125
+   * Quarterly report
+   * Discussion with Randy Butler and Jim Basney: CTSC
+     * supporting security topics for NSF topics
+     * security audit across systems
+   * Virtual machine access
+   * Tested VM cloning to local storage, moving it may be slower
+   * Sent out CCIT agenda
+ * 
+Robert
+------
+ * 20130201
+   * Updated upgrade procedure docs
+   * worked with Ben, Skye on CN troubleshooting
+   * Ready to start upgrades
+ * 20130130
+   * Examining CN stage logs
+     * PISCO creates for 60K objects, a few updates
+     * Discrepancies between PISCO MN and CN stores needs fixing
+     * Approve node application isn't working.
+ * 20130128
+   * Meetings
+   * Will write up documentation
+ * 20130129
+   * ORC and UCSB are upgraded
+   * Skye is indexing on ORC and UCSB
+   * UNM is upgrading, basically done, now configuring Metacat
+   * VM backups rather than LVM snapshots - Dave, Chris B, and Nick will do these.
+
+Skye
+----
+ * 20130201
+   * Wrote class to update ReplicationPolicies on the CNs
+   * Problems with the target replica member nodes
+     * SSL issues, whitelist issues, etc.
+ * 20130130
+   * template for new DataONE look and feel from Chris Allen - adding to ONEMerc
+   * Looking at CN errors (partition migration redo exception)
+     * CONCURRENT_MAP_GET timeout
+     * Did check_mk, tried to verify network trouble at that time. No luck.
+     * Will install membership monitor in stage
+   * 
+ * 20130125
+   * Need to test replication in staging
+   * Completed abbreviated index migration in stage
+     * UCSB and ORC index is rebuilding
+   * Minor Mercury updates
+   * Meeting with Rebecca and Chris for theming discussion
+   * Performance review next week
+
+Ben
+---
+ * 20130201
+   * Worked om PISCO/KNB/LTER replica issues across the CN
+     * slight differences in documents with whitespace across Metacat instances
+   * Working on Morpho bugs with GMN
+   * Morpho is now using UUIDs
+     * Need Metacat 2.0.6 release to also support UUID generation in MN.generateIdentifier()
+ * 20130130
+   * ticking off Morpho bugs
+   * Discussion with Jing and Rob 
+ * 20130128
+   * Will focus on Morpho bugs, prepping for release
+ * 20130125
+   * Q? Participate in the DataUp meeting in April?
+     * Contractor will work on DataUp, SB devs probably should go.
+   * Metacat discussion for development
+   * Working on Morpho tickets, getting ready for an RC release at the CCIT
+     * looking at performance and libclient (10 sec round trip)
+     * Rob: SSL conn benchmark, 400ms. Could be the MN.create() call
+ * 20130128
+   * [DONE][5824] implement calls to CN.setAccess/setReplPol when editing in Morpho
+ * 2013013
+   * [5831] rework 'inherited' access rules for data entities -- namely do not inherit except at initial data import
+   * Discussed D1Object.DataSource redesign w/ Rob+Jing. Will be minimally invasive and allow clients to specify what kind of storage to use for D1Object bytes. Default to ByteArrayDataSource (same as current). Morpho will use FileDataSource and manage those files locally as needed. Others can use these (Java) built-in implementations or implement their own DataSource customization if the need arises.
+   * Watercooler discussions at NCEAS have highlighted need for better [super|advanced|basic] user documentation and support. There's quite a large dsconnect between developers and users. Perhaps add to CCIT meeting agenda.
+     * Two NCEAS post-doc researchers want to mine the D1 holdings for text analysis, including attribute-level details which we do not currently index.
+     * M. Schildhauer has expressed frustration with getting at biodiversity data (taxonomic coverage and/or DarwinCore). We index this, so perhaps this is just a training issue. http://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html#values-extracted-from-science-metadata
+
+Rob
+---
+ * 20130201
+   * Working on release process, working with Ben and Jing (version 1.2 of d1_libclient_java)
+   * DataSource changes are working well in Morpho
+   * R client preparation, tickets for organization
+     * Will change some method calls to avoid dataframe/datatable confusion
+     * Documentation, will use templates
+ * 20130130
+   * R client work. will continue on work for release
+   * Changed libclient java, javax.activation.datasource interface addition
+     * FileDataSource, ByteArrayDataSource, URLDataSource, etc.
+     * Not storing in a byte array anymore, but rather inputstream. cursor management is handled for you
+   * Will plan on release of libclient 1.1.1
+ * 20130128
+   * Documentation of R client, inline comments can be problematic for generic methods
+     * working on plan B - will work in the Rd markdown language for problematic methods
+     * Also describing things like CILogon workflow
+ * 20130125
+   * Q? Are there tools being created for generating identifiers?
+   * Refining R client documentation
+   * Added D1Object.refreshSystemMetadata(), pulls CN copy of the sysmeta
+   * Goal is to release next week
+
+Roger
+-----
+ * 20130201
+   * Performance review stuff
+   * Working on GMN function to automatically add subject from cert
+   * Will work with Chris on packaging
+   * stage deployments
+ * 20130130
+   * Worked on GMN bug that Jing ran into wrt PyXB
+     * What happens if a user already has install pyxb at a version that conflicts with python lib?
+   * Removed install options for GMN that were confusing
+   * Adding to GMN: automatically read client cert to auto add subject to white list
+ * 20130128
+   * Will install GMN on mn-orc-2
+   * Getting GMN ready for 1.1 release (updating the python stack)
+   * Getting ONEDrive ready for demo'ing
+ * 20130125
+   * Installed GMN on mn-ucsb-2
+     * Installation is getting easier
+     * Installed in separate virtual host, but hosts.conf is changed
+
+Chris B.
+--------
+ * 20130201
+   * Fixed the latest d1_libclient_python package update
+     * But, causes ONEDrive to not work, missing mime-objectformat mapping file
+   * Will continue work on the packaging to deal with this issue
+ * 20130130
+   * Trouble with PyPI libclient version of libclient (seems outdated)
+   * Adding installer for Dokan/Windows - PyPI is the bottleneck
+ * 20130128
+   * Packaging mostly done for Mac and Linux (64-bit), now working on Windows
+ * 20130125
+   * Back to ONEDrive, Mac and Linux packaging with Fuse
+     * Windows is next, with Dokan
+     * Targeting early next week
+
+
+Chris J.
+--------
+ * 20130130
+   * TODO: discuss operations support model with Dave/Matt
+   * Intermittent network trouble all day, couldn't work on the CNs effectively
+   * Today, reset the sysmeta on the stage cns as described below in the epad (replicationAllowed = false)
+     * Restarted TC, indexing. Will restart processing for repl tests
+     * Testing the replication of parc.1.2, will then do a full batch to test PISCO --> KNB back-channel repl
+   * Connected to UNM VPN, vSphere: Dave - need to touch base on Host/VM access
+ * 20130128
+   * Removed GMN from the mn-ucsb-2 VM (conflicts with other production MNs)
+   * Created more redmine tickets for rollout
+   * Working on UI layout
+   * Working on stage replication test
+     * PISCO's 83K objects requesting replica will take a long time
+     * Q: Thoughts on setting the replication flag to false via SQL and then to true on a subset via the API?
+     * This will more closely reflect the production env since zero objects have replicas requested
+   * Adding ServiceMethodRestriction to target replica nodes (to restrict insertion from only MN certs, not individual)
+   * Q: how do we want to name replica target nodes since they show up in the ONEMerc interface?
+     * Currently: 'DataONE {UCSB|UNM|ORC} Dedicated Replica Server'
+ * 20130125
+   * TODO: back out GMN on mn-ucsb-2. DONE
+   * TODO: DNS for production MN VMs: partially DONE - waiting for UNM IP allocation
+
+
+
+Discussion
+----------
+ * 1.1 Rollout procedures (backup possibilities for VM cloning)
+   * Shutdown linux entirely, perform the clone offline
+   * Turn off all services and daemons, ldap, postgres, tc, indexing and processing ( for the the 2 CNs that are being cloned, and are out of the cluster)
+   * Leave TC, ldap, postres online, but we disable the cn-rest-service(disabling will make any call to rest service responde with ServiceFailure --message saying offline), take processing and indexing daemons offline
+     * we disable ports on firewall 
+   * Leave tc, ldap, postgres online with cn-rest-servce,  take processing and indexing daemons offline
+     * we disable ports on firewall ( for the CN that is left up and responding to requests)
+   * Leave tc, ldap, postgres online with cn-rest-servce,  take processing and indexing daemons offline (leaving port up on firewall)
+ * Ordering of upgrading machines does not matter. We need to merge data differences after the fact.
+ * Merging differences Robert to write up ticket and consider the initial algorithm under 3474.
+ * Indexing migration would require two CNs to stay offline/out of the cluster after upgrade procedure
+
+ * Libclient sysmeta refresh
+
+ * Certificate usage
+   * Required CA cert acceptance on an MN
+     * D1 CA certs
+   * Discretionary acceptance on an MN
+     * CIlogon CA certs
+     * Commercial CAs
+     * 
+
+ * 
+ * ON CN stage:
+   * DONE. Need to update systemMetadata to replica 0 via SQL.
+     * Turn off TC on 3 Stage CNs
+     * Run SQL script on Staging CNs
+     * Turn on TC on 3 Stage CNs
+ * DONE. Modify the endpoint for LTER node Base URL. mn-stage-ucsb-3.test.dataone.org/knb/d1/mn
+ * DONE. Turn on Synchronization and Replication to test normal startup in production
+   * IN PROGRESS. Update SM.replicationPolicy (replication=allowed) on a few records to see how they are handled by target replica nodes that have the PID but not the SM
+     * Expect: successful update of replicationStatus on CN, but failed SMchange event on MN. Continued failed "gets" on the target replica node becuase there is no SM record for the object.
+
+ * Turn off Replication (processing property) for further testing... (replication.ACTIVE=false)
+ * Replication testing (LTER-KNB-PISCO)
+   * Generate SM on KNB for [LTER|PISCO] content. (Do this in a tiered fashion)
+     * Track AuthoritativeMN - see what we end up with.
+   * Let synchronization run.
+     * check replication status updated to reflect two replicas
+   * Generate SM on [LTER & PISCO & KNB] for [LTER|PISCO|KNB] content. For all of the Nodes.
+   * Let synchronization run and complete
+ * Turn on Replication and note any activity
+
+
+
+

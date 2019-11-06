@@ -1,0 +1,94 @@
+Attendees: Rebecca,Bob, Suzie, Carol, Bruce, Steph, Mike, Matt, Dave, Bill
+
+
+Regrets: Bertram, John Kunze
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Nov 2, 2012 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/464008065
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 289-0016
+Access Code: 464-008-065
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 464-008-065
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2012Nov02-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-11-02
+
+1) CI Update (Vieglais)
+Next CCIT meeting Feb 5-7 and Santa Barbara is the choice destination.
+Development: everything in 1.1 release is complete but still some issues with replication and don't know if benign or not.  Have added some instrumentation to track timing of events, etc. Will try to make a decision later today about 1.1.
+Virtual machine updates at ORC (VMWare 4.1 -> 5.1) are proceeding - will be some down time for network changes (This is to provide a higher bandwidth, so it's not critical right now; working on how to minimize downtime).  
+
+Immutability discussion continuing and Dave will write this up - available later today or next week. Prototype work in Semantics WG on keywords
+Work continues on ITK tools
+ONEShare? 
+
+2) CE Update (Budden)
+
+
+
+
+3) Update from PI(Michener)
+Call with NSF yesterday and are looking forward to seeing the supplement ASAP - they will meet with NSF XSEDE folks (Irene Qualters & ). Nancy Wilkins-Diehr also said that se would speak with John Towns and keep him in the loop.
+
+November 30th 2pm ET (?) talk at OSTP - Mike Frame also available? Yes
+Talk about DataONE and how DataONE works with government agencies; would like to see attendee list in advance
+
+Hold the dates: February 27 - March 7th 
+Not guaranteed but so far is the first choice for NSF for the RSV - keep later dates as well but the earlier days won't work for NSF
+
+Conference call this morning with Fran Berman, Beth Plale, Sayeed C. about the RDA -
+will help with a planning plan meeting in January to draw in a wider US audience 
+
+4) Supplement with XSEDE (Cobb)
+John distributed a draft of the supplement - did talk to Nancy Wilkins-Diehr last week after the call and she was positive about this supplement
+
+For a supplement, Bill thinks that the 6 items need more than a sentence - try to be more specific rather ambiguity
+Resources - will need actual budget - how much and what exactly will be funded?
+
+Deploy on a MN (Nautilus) - deployment of the carbon models and replicated to Nautilus
+
+Have length about right but need specifics
+
+5) Around the room
+
+Bruce: Upgrade to VMWare of the first of the three servers has gone fine and we've seen no problems with the dev systems so far, so we're moving forward with upgrading the second and third servers.   The upgrade on the firewall is proving a bit more difficult, so that's still an effort in progres.  
+
+Carol: Our ACRL white paper is finally up on the ACRL website. "Academic Libraries and Research Data Services: Current Practices and Plans for the Future" is the first listing at http://www.ala.org/acrl/issues/whitepapers (up as of 5 minutes ago; ACRL will issue a press release next week) AI: also deposit into TRACE (UT's institutional repository) and deposit the data with Dryad
+
+Mike: USGS is working on the ESRI related proposal (due next week) related to DataONE PI Toolkit access/integration. Dave - I'll probably send you something quickly to review/add to early next week.   USGS is also working on a "combined Assessment" proposal, based on DataONE Assessments" of our Scientists/Data Managers. USGS is also working on another related to training modules, with participants from DataONE. 
+
+Amber: Nothing to add
+
+Steph: nothing new
+
+Suzie: Nothing new.
+
+Todd: Nothing here.
+
+Bob:  Nothing to report.
+
+John Cobb: XSEDE13 conference(July in San Diego) CFP is on the street; <https://www.xsede.org/web/xsede13/call-for-participation>
+DataONE should think about how to participate - maybe a paper and a MN tutorial. Key dates:
+March 8: tutorial proposals,  papers
+April 12 Viz showcase abstracts, BoF's, Posters, stu. posters
+
+Matt: Had a conference call with NODC to become a member node. They are interested and pursuiing it.  We were scheduled to have a followup call Nov 9, but it looks like that needs to be rescheduled.  Ken Casey at NODC seems enthusiastic.  Christine White from ESRI was also participating in the call, and ESRI is interested in implementing DataONE services in the GeoPortal server product.  This needs more discussion and possibly addiitonal support.  More later after our next call.
+
+Trisha: We had a conference call with UNM this week and have developed a draft MOU for ONEShare.  We are working on ONEShare and have resolved a handful of the critical issues.  John and Carly are at a PLoS hosted meeting today on altmetrics. Also, we are putting the finishing touches on a pricing structure for our Merritt repository and we are happy to share with DataONE -- particularly the cost camparison piece. 
+
+

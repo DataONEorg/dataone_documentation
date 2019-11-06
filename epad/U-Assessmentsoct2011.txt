@@ -1,0 +1,47 @@
+
+User Tasks for Usability subtasks:
+Scientists
+1. Find a data set that they have deposited or that someone else has deposited.
+2. Generate a well formatted citation for a dataset
+3. Control access to their own data (options for who can use it/see it;  how long an embargo, etc.) (if possible test different ages/stage of  careers)
+4. Easily find terms and conditions for use of that dataset; and allow follow-up
+5. Download a data set into common formats (excel, R, etc.)
+6.  Find teaching/training materials that  I could incorporate into my  course (data lifecylce, commonly used metadata standards, workflows, etc.)
+7. Tasks/use scenarios vary based on subject discipline of researcher, e.g. human subjects for social science researchers and medical),    Use tasks but also different users--task list may be static, but   different users by discipline, workplace, age/point in your career
+
+8. being able to filter by type of data easily, geographic scope, time period
+9. ability to easily find software requirements needed to view/analyze the data
+10. being able to reach contact/owner of the data; promoting collaboration and sharing, building sense of community and 
+10a. trust in the quality of the data and that the system is secure, reliable, long term, safe
+11. being able to get help about system
+12.  know enough about the dataset/data context from the descriptive summary  so they can determine if this is relevant (in metadata, but also  abstract description, also links to papers, further reports)
+13.  If I want to deposit data, how does DataONE lead me through the process  of depositing data to a member node (assuming I don't know about the  member nodes)?
+14.  See tools when I need them, at the point in my workflow when it makes  sense (not every task, but common tasks like submission, metadata,  downloading)
+15. Feedback/progress bars
+16.  Addressing motivational issues--what's in this for me, why should I  deposit data, no cost, citations, etc. Overcoming barriers. This could  be a website task, value proposition of dataONE (should be immediate and  prominently displayed)
+17.  Ability to state returns for reuse of your data; make it clear what is  the function/rules of a member node and what is DataONE--clarifying  member node terms of use and how a member node differs from "dataONE"
+18. Accomodations for institutional requirements (customizable like the DMP tool)
+19.  Setting up an account, capture profile information  that will help me,  ownership properties, usage statistics  (Probably for future testing,  won't be available for a while).
+
+Usability issues for data manager
+
+1. Uploading data
+Upload data in a consistent format (i.e. CSV, any standardized format in a discipline)
+Upload multiple data at a same time
+Upload metadata along with the original data sets
+Provide any relevant procedure to upload data
+Allow data managers to upload incremental data sets
+
+2. Modifying data
+Allow data managers to control/maintain the data sets they uploaded
+
+3. Locating data
+Import data citation information in different citation formats
+Provide some terms and conditions (i.e. restrictions)
+Provide metadata for a group of related files
+Locate relevent data for their own scientists
+- Provide instructions about how to search for particular data sets
+- Provide search options for relevant studies (Associated/Related DataBase)
+Extract data in different formats from the database
+
+

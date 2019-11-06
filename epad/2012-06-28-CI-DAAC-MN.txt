@@ -1,0 +1,57 @@
+Meeting:  ORNL and USGS Member Nodes CI
+
+Participants:  Ranjeet, Giri, Jim Green, Dave V., Chris Jones, Skye Roseboom, Robert Nahf, and Rebecca Koskela
+
+Agenda
+
+1.    Goal:  Get ORNL and USGS Member Nodes up and fully functional by July 6
+2.    Resource Map  documents linking metadata and each data granule / files  (ORE)
+        a.    ORNL/ USGS Status  and example mapped resource document
+        b.    Test to ensure mapped resource document meets DataONE requirements
+        c.    Path to completion for both ORNL and USGS
+3.    Reindexing ORNL and USGS resources, so that new mapped resources documents are included
+4.    Member Node comprehensive validation, including  new mapped resources
+5.    Other tasks (comprehensive list) that need to be completed by ORNL for public release of DAAC and USGS Member Nodes
+6.    Summary of actions required before public release:   What, who, when
+
+
+1. Expose the system metadata for the resource map just the way we are exposing system metadata for sciene and data.
+
+
+
+Example System Metadata:
+
+  <?xml version="1.0" encoding="UTF-8"?>
+<d1:systemMetadata xmlns:d1="http://ns.dataone.org/service/types/v1">
+  <serialVersion>1</serialVersion>
+  <identifier>resourceMap_1000.xml</identifier>
+  <formatId>http://openarchives.org/ore/terms</formatId>
+  <size>13240</size>
+  <checksum algorithm="MD5">ac27e22bdb777a7b773b580401608b0f</checksum>
+  
+  <submitter>CN=ornldaac,DC=cilogon,DC=org</submitter>
+  <rightsHolder>CN=ornldaac,DC=cilogon,DC=org</rightsHolder>
+ 
+  <accessPolicy>
+    <allow>
+      <subject>public</subject>
+      <permission>read</permission>
+    </allow>
+  </accessPolicy>
+  
+  <replicationPolicy replicationAllowed="false"/>
+
+  <dateUploaded>2005-06-21T23:00:00.000+00:00</dateUploaded>
+  <dateSysMetadataModified>2012-06-23T02:15:19.324+00:00</dateSysMetadataModified>
+
+  <originMemberNode>urn:node:ORNLDAAC</originMemberNode>
+  <authoritativeMemberNode>urn:node:ORNLDAAC</authoritativeMemberNode>
+</d1:systemMetadata>
+
+link to ORE system meta example: https://cn-dev-2.dataone.org/cn/v1/meta/test_040_20120604T1416Z
+
+
+Another example: https://knb.ecoinformatics.org/knb/d1/mn/v1/object/resourceMap_kgordon.4.24
+
+
+

@@ -1,0 +1,278 @@
+Year 2+ Milestones for CI
+=========================
+
+18 month review by NSB.  Go / no-go decision made by NSB for each DataNet project. (Originally 36month)
+
+Devs
+-----
+Chad
+Robert (full-time, will reduce to ~70% for Fall 2010 semester)
+Roger
+Rob
+Jim Green (10 hours/week through July; possible extension)
+Giri (very part-time)
+(plus one more dev from UNM)
+Laura (50%)
+(Dave)
+
+Sysadmins
+---------
+Nick (25%)
+David D. (50%)
+Dave S. (25%; some time moved to fund Giri)
+
+Students
+--------
+Tianmu Zhang (UTK Grad student, 50%; some security background, starts Aug 1)
+UCSB - 3 graduate students ?
+
+Other Ideas
+-----------
+Summer (2011) students:  How to focus this work on key deliverables.  
+
+CCIT members
+
+Also consider interactions with VDC
+Ryan
+hilmar
+Matt (2 months)
+Dave (2 months)
+Mark S.
+Paul Allen
+Sandusky
+
+The question is how to focuse VDC to contribute to this. Overlapping interest.
+
+
+Major Topics / Objectives
+
+
+Streaming Data
+Packaging Data formats
+
+1. Evaluation of the prototype
+
+1.1. Evaluation of the core infrastructure
+
+  - Resources: (1 dev + 3 sys admins + CCIT for 3 months)
+
+1.1.1. Set up a testing framework for exercising the core cyberinfrastructure
+1.1.1.1. Design the testing framework
+1.1.1.2. Document the administration process for VMs that support the testing infrastructure
+1.1.1.3. Setup the test harnesses, mechanisms for building VMs
+
+  - Testing framework
+      - simulate 3 CNs and up to 100 MNs, with clients connecting to MNs
+      - Utilize three existing VM hosts at three different geographical sites to deploy CNs + n MNs
+      - Integration testing (interoperability of MN implementations, client implementations)
+          Both Java and Python access methods work correctly.
+      - Replication performance and validity (CN - CN, MN - CN, MN - MN)
+      - Test CN rebuild. (from tape or by re-populating from CN's)
+      - Backup / restore process -- define, implement, and test
+  - Monitoring (nagios)
+  - Tiered testing - manual data creation, sensor outputs, 
+  - Verify that we get the same results from cn.query searches as from portal searches
+
+1.1.2. Test the interactions between components
+1.1.3. Evaluate the system scalability
+
+  - Scalability: number of data sets, size of data sets, number of member nodes
+
+1.1.4. Evaluate the reliability of the system (consistency of data, connectivity of member and coordinating nodes) under different types of load - number of users, number of data sets, size of data sets)
+
+  - Reliability: member node removal, coordinating node removal, network outage
+
+1.1.5. Evaluate the performance of the system (response time for different services under different scenarios)
+  - Performance: time for response to operations (metadata insert and query performance)
+    * data insert
+    * metadata insert
+    * query (API and portal interface)
+    * Note that the Mercury portal does not call cn_query.search; performance of both is important.  How does cn_query.search take advantange of the indexing and Mercury pre- and post-processing of the search. 
+
+1.2 Evaluation of User interfaces including the portal and programmatic interfaces
+
+  - Resources: UA group, Ask a couple of CCIT members to drive this
+
+1.2.1. Review the web interface for usability, performance, applicability, accuracy, precision
+
+  - Effectiveness: does the prototype demonstrate something useful to the community?
+
+     - Evaluation of precision and recall
+
+     this should be an evaluation outside of the implementation team.
+
+    eval should analysis what is wrong and a *>prioritized<* list of what should be addressed.
+        ask CCIT to help with eval group.
+        maybe ask members of the user community to participate in eval (DIUG and early user)
+
+1.2.2. Review the programmatic interfaces for applicability to other potential member nodes and investigator tools
+
+- Need to schedule UA interaction
+- EVA (July) interaction for architecture usability
+
+
+2. Update design, architecture based on prototype results and input from broader user base
+(CCIT responsible for this - break into digestible chunks) plus external reviewers
+
+Contingent upon above. This is based on anticipated eval results.  Perhaps one month of time to go through an integrate changes from evaluation.
+
+2.1 Design for authentication and access control (need to enage some developer time)
+     -- short-term design and implementation in yr 2
+         -- starts Aug 2010 (Matt, Zhang, Dave, ~1 month)
+     -- longer term trajectory comes out of FedSec WG
+  
+2.2 CCIT refactoring of documentation (initial clean up, consistency checking)
+
+  - Also need to refine the specification of all additional use cases (beyond CRUD) for later development (in yr 2 or 3)
+  
+2.3 Formalize the docs / clean up / complete (rewrite for external audience) (Outreach group)
+      * Specs are pretty good (need CCIT review of specs)
+      * Need background material added to make this this more accessible to an external audience
+      * Needs reorganization to present sensibly
+
+2.4 External review of design docs (cuahsi, lter, ...)
+
+  - Review technological sustainability / dependence on projects / components / technology evolution
+
+
+3. Refactoring / rebuilding the infrastructure
+
+    Implement authentication methods
+    Implement access control mechanisms
+    
+  - Documentation for member nodes - setup config, requirements
+
+
+3.1. Identify the broad requirements of data management that need to be supported by the core infrastructure
+
+  - What are the broad requirements for data storage - number, size, dynamic / static, ...
+  - Observatory networks coming online - multi-terabyte data sets
+
+3.2. Incorporate design, architecture, user interface changes that are suggested from evaluation process
+
+3.3. Prepare member nodes for public release
+
+3.4. Prepare coordinating nodes for supporting the public release
+
+
+4. Building up the investigator toolkit
+
+    - usability testing
+
+ - Identify categories of tools to focus on
+   - consumers: data use (re-using existing data available in system)
+       - focus on data analysis; consume and archive data
+       - utilize the ITK client libraries to enable search and retrieval in a number of key products (R, Matlab, Kepler, VisTrails, ...)
+         - design
+         - code
+         - documentation
+         - packaging
+         - support
+         - promote mechanisms for maintaining the linkages between data + metadata
+   - producers:
+      - Major challenges for metadata generation
+
+ - Target R and a workflow tool
+ - Iterate development - initially support search, retrieval
+
+ - Approximately 2 months per tool, but each tool increases software maintenance load
+
+
+5. Preparing for services that operate against more than a single data set - interoperability between data. (semantics groups)
+
+
+6. Working Groups
+ * Distributed storage working group
+ * Federated Security working group
+ * Semantics cluster
+ * Deliverables include charters, getting groups meeting.  Ties into key NSF attention on community engagement.  
+
+
+
+12 Month Milestone (July 31, 2010)
+- Meet the requirements of CA
+
+18 month review (what to promise)
+NSB Meeting (Feb 2011 ?)
+
+- What is the deadline for providing materials to this meeting (Rebecca to check)
+
+- Things that show well, broad support from the community
+
+
+- Web interface
+
+(Rebecca) DataONE needs to be clear about what we will provide at 18 month period. Set expectations realistically
+
+(Matt) Perhaps in yr 2 shift to user toolkit and science case focus. Continue work on back-end systems/services in background.
+
+
+24 Months (July 31, 2011)
+
+- Wide deployment of member nodes using the python stack and Metacat
+
+30 Months (End of 2011)
+
+Metrics:
+A. Size and Diversity of DataONE Data, Metadata, and Investigator Toolkit Holdings 
+1 Data volume – total size of data holdings in DataONE Member Nodes and Coordinating Nodes 
+2 Number of metadata records – quantity of metadata records held at a Coordinating Node (note: the concept of a record may vary across metadata standards) 
+3 Number of data sets held by Member Nodes – (note: may be less meaningful as an absolute value because of the immense variability in data set granularity, but probably still useful in tracking the shape of the data accumulation curve) 
+4 Number and types of software tools included in the Investigator Toolkit 
+5 Number of different metadata schemas supported – (note: more metadata schemas is not necessarily better) 
+
+B. DataONE System Capacity 
+6 Number of Member Nodes 
+7 Total storage capacity at Member Nodes 
+8 Geographic coverage of Member Nodes – continents, regions, and countries covered 
+9 Number of Coordinating Nodes 
+10 Total storage capacity at Coordinating Nodes 
+11 Geographic coverage of Coordinating Nodes – continents, regions, and countries covered 
+
+C. DataONE Usage Statistics 
+12 Number of web hits on DataONE portal 
+13 Number of DataONE users – (note: recording of individual IP addresses may be most readily implemented; requiring users to login to Member Nodes is not presently required)  
+14 Number of downloads of tools from the Investigator Toolkit 
+15 Number of metadata catalog searches completed – (note: over time it may also be desirable to assess precision and recall of incoming searches) 
+16 Number of DataONE datasets downloaded (daily, weekly, monthly, annually) – (note: this may be straightforward if included in specifications for Member Node data, impossible otherwise) 
+17 Most frequently downloaded datasets 
+
+D. Reliability and System Performance 
+18 Uptime (availability) of Coordinating Nodes 
+19 Uptime (availability) of Member Nodes – (note: tracked if heartbeat is fully implemented) 
+20 Server response time 
+21 Response time of user interface 
+
+
+----
+(Bruce has a bunch of storage space  that could be used temporarily through 2011)
+
+- How long did it take EVA to develop their data integration
+
+
+
+Stress testing
+    client tools will be needed to stress test or at least test
+    part of stress testing will be to break things and make sure that the replication and redundancy worked.
+    
+(Matt) it would be good to have a test platform. 
+(note we can deploy dev and prod in a VM environment)
+
+Need to have a requirements document that outlines the designed scalability
+
+
+Feedback: (during 1:00 PM MDT report-back)
+
+(Bill)
+* If we want eval by eval WG we will have to figure out when ot do it and plan.
+Can a subset fo the group do that?
+We need tofigure out how to do that over the next year.
+
+* July EVA WG meeting would be a good place to get some feedback. This could be a milestone - get feedback from EVA
+
+* Review of arch. by tiger teams. These could be mash-ups. You could break these up into Arch components. Bringing them together face to face can help.
+
+* wrt ITK, spekaing form a naive perspective, it seems that one opportunity might be to prototype some of the with teh EVA DB. That way we would have something to so and in that way it might lead to a better iterative development in the long term and lead to short term successes.
+
+
+

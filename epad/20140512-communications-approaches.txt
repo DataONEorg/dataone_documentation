@@ -1,0 +1,48 @@
+Audience
+--------
+- LT internal
+- LT to project
+- Project internal
+- Project with community
+
+Type of communication
+---------------------
+- Mailing lists
+- Document sharing
+    - Remote store
+        - Local synchronization
+    - Realtime collaborative editing
+    - Code sharing and version control
+        - Wiki
+        
+- Conference calling
+- Website 
+- Social media
+- Issue tracking, task tracking, time tracking
+
+Issues to address
+-----------------
+- Need to be able to categorize final versions
+- Workflow 
+    - no workflow for document management is imposed - do we need one?
+        - different groups might want different workflows to reach final products
+- Use google docs with a defined workflow, file management/naming conventions, and archival of docs in a project repository
+
+Desiderata
+-----------
+- batch upload
+- batch download, offline sync copies of repo
+- image and media preview/browse
+- drag and drop sharing to folders
+- shouldn't take a lot of time -- don't rearchitect
+
+Supported Workflows
+-------------------
+- Google drive for collaborative editing -> final documents pushed to {alfresco, something else}
+- Etherpad -> 
+- Code repo (svn, git) -> 
+
+
+Frequency of communications
+
+

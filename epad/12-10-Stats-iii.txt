@@ -1,0 +1,83 @@
+Notes by: Antonia, Richard
+
+Overview:
+
+Today:
+    Statistical hypothesis testing
+        Sampling distrubutions, confidence intervals
+    Students T test
+Thursday
+    Different data
+    chi-square tests
+Friday
+    ANOVA
+    
+
+=============
+
+Example theory to be tested: Does Caffeine improve cognitive performance?
+
+We need a working hypothesis to test this. 
+
+An experimental hypothesis makes a predicaiton about the relationship between two or more events or variables. 
+
+How to test: If cognitve performance is increased, students should be better at a) recalling a text or b) faster to finish their homework after a cup of coffee.
+
+Sl. 6
+Independent and dependent variables
+
+For Example b):
+    Amount of coffee is independent variable
+    Time to finish is the dependent variable. 
+
+So, here, we manipulate the independent variable to see its effect. 
+
+Sl.8
+Testing against the null hypothesis
+
+The null hypothees states that any results we find will be just due to chance.
+
+So, the null for b) (notated as H_0) would be that coffee has no effect. 
+
+Alternatively, H_1, is that the coffee has an influence.
+
+This is called a two tailed hypotheses, (neutral with respect to the direction of the effect.)
+### Like a nekomata - a two tailed Japanese cat.
+
+Not saying if you will be faster or slower, just that there will be a difference.
+
+Coffee speeds up time, H_2, would be one tailed. 
+
+Goal:
+
+To decide between H_0 and H_1
+
+[...] ##Slides will be online later.
+
+[... Decided to only take notes about extra comments that aren't clear. These will be refferred to by slide number....]
+
+==============
+
+Slide 14
+## Design Variant: Have the same group of people who didn't have coffee do the homework, come back another day, drink coffee then and then do the homework again.
+
+## It all comes down to the fact that there are always differences between different people on the same day, or the same people on different days.
+
+Sl.16
+## μ stands for mean
+
+Sl. 42
+Sampling distribution
+Distribution of e.g. mean across infinite number of samples. Can approach normal distribution.
+(looks something like this. __..-ˆˆˆ-..__)
+
+In social science, the alpha level is normally .05 or .01.
+This is an arbitrary level decided by cultural norms. 
+
+===
+This came up in the long meandering discussion. http://en.wikipedia.org/wiki/BLEU
+
+Some of the computers in the pyscholing building have SPSS. 
+
+Statistics block course in February: http://www.coli.uni-saarland.de/kvv/detailpage.php?id=1732
+

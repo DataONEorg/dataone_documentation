@@ -1,0 +1,129 @@
+25 January 2011
+
+Attendees: Rebecca, Amber, Bill, Viv, Bob, Carol, John Kunze, Trisha, Bruce, Matt, Steph,
+Todd, Steve, John Cobb
+
+
+
+Feedback from EAB
+1. What is DataONE?
+2. Presentations need to be DYNAMIC
+3. Make bird migration presentation relevant to DataONE
+4. Personna story upfront
+5. Get into information about the organization a lot later
+6. Start with WHY, less about what, how , when
+7. Think of a newspaper article, start with the story then get into the details
+
+What is needed from this meeting:
+1. Clear idea of what the presentations will include, including the common scenarios and the
+    data life cycle thread that will run throughout the presentations
+ 2. Who is responsible for what and when it needs to be done
+ 
+ 
+ Draft of the the Overview presentation is available in the Presentation folder
+ https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/
+ 
+ Follows the basics of:
+ *  Why
+ *  What
+ *  How
+ *  Progress
+ *  Process   
+
+CE Plans:
+How DataONE is getting information from the community
+ *  Assessment Work
+ *  Integrated work across working groups (personas/scenarios)
+How they are informing the community
+How they are passing the information on to CI to inform the design of DataONE (no specifics)
+ * Design is influenced by CE issues.  For example, the needs for MN to control inputs and replication affects design.  The whole authentication infrastructure is driven in part by a need to engage the broader community.  Minor thus far, but usability group has done some reviews of the pilot catalog.  
+Data management planning, including Best Practices
+
+Need a graphic for the data life cycle - also agree on the terminology
+ * Data creation/collection 
+ * Data deposition/acquisition/ingest 
+ * Data curation and metadata management (primary as well as composite/second generation datasets)
+ * Data protection
+ * Data discovery, access, use, and dissemination 
+ * Data interoperability, standards, and integration 
+ * data curation of composite/second generation datasets (combine with 3rd bullet?)
+ * Data exploration, visualization, and analysis 
+
+Use active words in diagram to shorten:
+Creating - Create
+Depositing - Deposit
+Describing - Describe
+Protecting - Preserve
+Discovering - Discover
+Integrating - Integrate
+QA/QC - Assure 
+Analyzing&visualizing - Analyze
+Visualize
+Cite
+
+
+Using (can be visualizing, analyzing, etc)
+
+FWIW: DCC (http://www.dcc.ac.uk/resources/external/data-life-cycle and http://www.dcc.ac.uk/resources/curation-lifecycle-model)
+* Storage
+* Use
+* Authenticity and integrity
+* Creation
+* Disposal
+* Retention
+* Review
+* Reuse
+
+Lifecycle stages from the CCIT:
+   -- see notes for tools at each stage at: https://repository.dataone.org/documents/Meetings/20101102-ABQ-AHM/CCIT/20101103_ITK_discussion.txt
+1. Acquisition   create
+2. Documentation   Document
+3. Deposition   Deposit
+4. QA  QA
+5. Analysis   Analyze
+6. Visualization 
+7. Preservation 
+8. Citation
+9. Disposition, decomission 
+
+Also see diagram at: http://libraries.mit.edu/guides/subjects/data-management/lifecycle.jpg
+
+Scenarios: https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/DataONEScenarios4.doc/view
+
+A full persona (scenarios with bacnkground information on the user): https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/SunPersona.docx/view
+
+
+What is needed from CI:
+Present CI from the viewpoint of the user
+What is the Investigator Toolkit? (need some mockups of what it will look like)
+ * From the user perspective
+ * What tools and when
+Member Nodes
+ * Who (including those over the next couple of years)
+ * Why
+ * When
+Initially chose MNs with tools such as Mercury, Morpho as places to start
+pilot MN effort to incorporate options for data co-location with HPC faclities e.g. TeraGrid pilot. Status: Positive discussions at TG Froum (project governing body): proceeding with pilot effort; TG allocation request submitted on Jan 15, eval in March and planed implementation start on 4/1.
+
+Replication Nodes
+  Process of buying 600-800 TB of storage (more likely 1.2 Pb total -- roughly 400TB per CN)
+Compute Nodes
+Simple, high-level diagram of the CI
+
+Suggestion from Matt: highlight strengths of existing MNs (wrt scenario development)
+
+Is the data portal part of the ITK or is it something else?
+Three components:
+CN
+MN
+ITK
+
+But then talk about compute nodes and replication nodes - 
+Replication nodes are member nodes
+Compute nodes are something different so not member nodes but CCIT hasn't talked
+about this yet; purview of TeraGrid (John's note)
+{ John Cob:  Also to (partially) answer Bob's question, I think that one outcome of  the EVA experience was that it showed the value in linking computing  centric CI (Like TeraGrid) with datanets like DataONE and highlighted  how short-term storage services such as TeraGrid's albedo and wide-area  file systems do not meet the same needs as datanet's long term, well  curated archives, but that there is the possibility of interoperable CI.
+
+And that DataONE has (is) taking action on those opportunities.}
+
+

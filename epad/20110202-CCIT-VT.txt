@@ -1,0 +1,99 @@
+..meta::
+  :keywords: DataONE, CCIT, 20110202, VTC
+
+DataONE Developer Call - 2011-02-02
+===================================
+
+:Attendees: Bob Sandusky, Chris Jones, Jeff Horsburgh, Rebecca Koskela, Paul Allen, Mark Servilla, Rob Nahf, John Kunze, Line Pouchard, Ryan Scherle, Matt Jones
+
+
+Agenda and Notes
+----------------
+
+1. Summary of the semantics working group meeting held during Jan 24-26 at Stanford (Jeff / Line)
+
+Major deliverables
+- roadmap of technologies that may be of use to DataONE
+- identify a scientific scenario to help describe use cases, defining semantics for DataONE
+- Scenario: Representation of hydro data or hydro science in climate models
+  - how to make obs and climate data work together
+  - https://sonet.ecoinformatics.org/observational-data-use-cases
+- Talked a lot about ontologies and onto repositories
+- Needed more specific scenarios and use cases
+- Perhaps co-locate next meeting with CCIT?
+
+
+2. Selection of July CCIT meeting location.
+ - one of Santa Barbara, New Mexico, NESCent, UTK
+ - Dates: 19-21 July, travel on 18,22.
+- Select between NM and Santa Barbara
+
+3. Scheduling for next activities on authentication and authorization 
+- Lots of institutional / project investment in existing infrastructures
+- Work through design and prototype from existing feedback from workshop
+
+4. Progress towards review preparedness
+- Send out CI section for review by CCIT late Wednesday / Thursday morning.
+
+5. Preservation Strategy draft for NSF review -- feedback?
+
+From Jan 31 email:
+
+Dear CCIT,
+
+A draft report from the Preservation Workshop is attached.  It weighs in
+at a little over 6 pages, and I understand that we still need to get it
+down to 3-5 pages for the NSF review.
+
+I know this is an especially busy time for everyone, but if you a few
+minutes, I left in a number of comments to highlight some issues that the
+group should be aware of to comment on as to plausibility/feasability.
+
+I'll summarize the 6 salient points below.  Please skim them and holler
+if you see something we shouldn't put in the NSF report.
+
+   1.  I fair amount of security is assumed at the MNs, which the report
+       tries to make more explicit by reference to widespread PCI and ITIL
+       standards for physical security and electronic perimeter controls
+       (firewalls) that we all take for granted in higher ed and federal
+       agencies.  I'm asking the DUG if perhaps this should be more of a
+       requirement of MNs than just a recommendation.
+
+   2.  The workshop consensus was on making 2 replicas of each dataset
+       (2 copies plus MN copy making 3 instances).  One issue brought up
+       by the EAB is that a uniform policy like this could cause problems
+       when registering especially large datasets.  Do we need an answer
+       for that right now better than "don't register REALLY big data"?
+
+   3.  The report claims that access control rules will be honored for
+       replicated data, but doesn't say where those rules will be fetched
+       from, what happens if they change since the replica was created,
+       etc.  I'm not very comfortable with it, but can we live with this
+       claim for now?
+
+   4.  For fixity/integrity checking, the workshop proposed the "pop
+       quiz" approach for random subsets of data holdings:  request the
+       data and recompute the digest.  Exhaustive checking isn't feasible
+       for the amount of data we'll have and re-computing digests is
+       needed to prevent easy spoofing (eg, when asked for the digest,
+       just return what you stored originally).
+
+   5.  Two claims regarding formats:
+
+       a. "DataONE will encourage use of data formats that are open,
+          transparent, widely used, and non-encrypted".
+
+       b. "Use of automated characterization tools, such as DROID and
+          JHOVE2 will be strongly recommended of data providers."
+
+       If we're ok with these, we'll have to document them somewhere, eg,
+       MN guidlines.
+
+   6.  Is it ok to make this claim regarding migration:  "The versioning
+       of managed content that results from migration will be reflected
+       in that content’s system metadata.  All migrated content will be
+       subject to “before” and “after” characterization to ensure the
+       semantic invariance of the transformation."
+
+
+

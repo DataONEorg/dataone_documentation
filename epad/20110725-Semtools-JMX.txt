@@ -1,0 +1,431 @@
+OBOE Ontology Extensions Meeting Agenda
+=======================================
+MINUTES
+-------
++-------------------+----------------------------------------------------------+
+|DATE               | July 25-26, 2011                                         |
++-------------------+----------------------------------------------------------+
+|TYPE OF MEETING    | Ontology Development, Annotations                        |
++-------------------+----------------------------------------------------------+
+|CALL IN            |                                                          |
++-------------------+----------------------------------------------------------+
+|NOTES              | Everyone                                                 |
++-------------------+----------------------------------------------------------+
+|ATTENDEES          | Shawn Bowers, Ben Leinfelder, Chris Jones,               |
+|                   | Margaret O'Brien, Mark Schildhauer                       |
++-------------------+----------------------------------------------------------+
+
+**Initial Agenda**
+
+ * Review the Agenda for Day One and Day Two
+   * Add/remove agenda items
+
+ * Drive the ontology development by annotating many datasets
+   * Annotating metadata fields
+     * Most common attributes in knb: Year, date, plot, species, site
+ * Develop design patterns for ontology class development
+
+
+ * Review and discuss syntactic changes to OBOE
+   * Modular files approach
+     * **oboe-core**
+     * **oboe-characteristics**
+     * **oboe-standards**
+     * oboe-spatial
+     * oboe-temporal
+     * oboe-taxa
+     * oboe-chemistry
+     * oboe-anatomy
+
+   * Spatial class additions (GML 3.2.1 entities)
+     * Use WCS ontology schema from iri.columbia.edu?
+
+   * Temporal class additions (GML 3.2.1 entities)
+     * Use WCS ontology schema from iri.columbia.edu?
+
+   * Taxanomic classes (Top level taxonomic rank classes)
+     * Ranks as classes vs. ranks as individual members of Rank?
+     * Other models?
+
+   * Anatomical class additions (portions of CARO & TAO)
+     * Fully incorporate CARO?
+
+   * Authoritative definitions of terms
+   * Domain-agnostic URI? (purl.org?)
+   * Resolvable class definitions
+
+ * Discuss part/whole relationship approaches
+   * Has been an impediment to class development (need a solution)
+     ENVO (environment ontology) RO (relationship ontology)
+     Mark: RO is missing several notions of partonomy relationships
+   * Discuss OBOE Relationship class
+   * Discuss SBC implementation of hasPart/partOf wrt:
+   * Varzi, Winston et al. concepts recommended by Mark
+
+     * parts as individual units (cognitively salient parts, e.g. ships in a fleet)
+       * individualMemberOf
+       * hasIndividualMember
+
+     * parts as portion of a whole (dependent on the interaction as a whole, e.g. the left side, slice of pie)
+       * Self-connected 'parts'
+       * hasPortion ??
+       * portionOf ??
+
+     * material constitution (e.g. iron is part of steel)
+       * materialPortionOf
+       * hasMaterialPortion
+       * consituentOf
+       * hasConstituent
+
+     * mixture composition (same as parts as individual units?)
+
+     * conceptual inclusion (domain and range are parts of a model)
+
+     * functional components 
+
+ * How to define protocols
+   * restrictions on entities/characteristics?
+   * Ask Ben
+
+ * Annotations (Day 2?)
+   * Morpho+semtools download: http://bespin.nceas.ucsb.edu/downloads/semtools/
+
+
+NOTES: 
+
+ * Morpho/tool enhancement
+   * individuals in the ontology should show up in the browser (GermanyCreek instance of Site)
+   * metadata (values) as observations ("floating context")
+   * primitive values vs. class/instance values in annotation syntax (value as static attribute of measurement or as a nested element of measurement)
+     * this also applies to attribute mapping syntax, where a value can be used here as well too
+     * in general need to deal with primitive value (entities) and non-primitive value entities (individuals/classes) 
+   * add map conditions (e.g., if="species eq 'WCH'" value="jmx:Chinook") to annotation interface
+     * need to include in search and materialization
+   * need to add object-property range entity search in discovery tools
+     * e.g., CohoPopulation = Population and consistsOf only Coho
+     * other examples SmellingSalts made up of Amonium, or Hydrogen in Water
+     * searching for Coho would then match a dataset with observations of CohoPopulation
+   * need to support context in measurement types in morpho annotation editor
+     * e.g., ConcentrationOfAmmoniumInFreshWater, the InFreshWater is "lost" when an attribute tied to the measurement type
+     * the context observation can "float"
+     * an attribute could be tied to a measurement of the context observation
+     * multiple attributes could have the same context observation
+
+
+ * discussed oboe model w.r.t. entity, characteristic, value (entity) 
+ * discussed using individuals, e.g.:
+      observation:
+         entity: "jmx:GermanyCreek"
+      versus
+      observation:
+         entity: "oboe:Location"
+         characteristic: "oboe:Name"
+         value: "Germany Creek"
+   * Note that above, we could also add an Id characteristic
+      observation: 
+         entity: "oboe:Location"
+         characteristic: "oboe:Id"
+         value: "jmx:GermanyCreek"
+ * went through example JMX datasets to identify measurements (13 datasets):
+   * date (month, day, year)
+   * species (code, e.g., WCH)
+   * week #
+   * fork length
+   * weight
+   * k factor (condition index)
+   * location (creek)
+   * age
+   * card #
+   * pos #
+   * origin (wild, hatchery, etc.)
+   * trap type (screw trap, etc.)
+   * life stage
+   * trap set date (day, mo, yr, time)
+   * trap pulled date (day, mo, yr, time)
+   * counts (the main data collected)
+     * count of live smolt, dead smolt, lamperey w/eyes, w/out eyes, by fish species, etc.
+   * staff guage (height of creek)
+   * debris (in river)
+   * secchi (water clarity of river)
+ * discussed possible JMX use case: 
+   * Excel to CSV to basic EML (automated)
+     * Requires some conventions on Excel like one table per sheet, one cell per attribute name, unique attribute names (Ok to have tables in "long" or "wide" form -- pivoted/unpivoted)
+   * Semantic annotation of attributes via pre-defined template / measurement types / value mappings
+   * Ability to select datasets, materialize to rdf triples, and execute data subsetting query (e.g., via SPARQL) ... e.g., for a specific year, location, species, 
+   * Feed this subsetted data into model/data flow used by JMX (i.e., Mara [sp?])
+ * another more ambituous JMX use case: 
+   * create a general routine to map from JMX observational data to the JMX/EPA uber schema
+   * this would help automate the conversion from ad-hoc spreadsheets to the uber schema (e.g., to make it easier for tribes)
+
+
+July 26, 2011 Discussion
+========================
+
+
+Modeling Measurement Types
+ * Substance
+   * Ammonium
+     * a1
+     * a2
+
+vs
+
+ * Organism
+   * Fish
+     * Coho
+       * c1
+       * c2
+
+ * PopulationSample
+   * CohoPopulationSample
+     * == PopulationSample AND consistsOf only Coho
+
+ * MetaPopulation
+   * (consists of population{1..n})
+ * Population
+   * (consists of Species{1..1})
+   * CohoPopulation
+     * consistsOf Coho{1..n})
+
+ * Sample
+   * DiscreetSample
+   * OrganismTissueSample
+   * SensorSample
+   * PopulationSample
+     * takenFrom Population
+     * CohoPopulationSample
+     * 
+
+ * Organism
+   * Animal
+     * ...
+     * Salmonid
+       * Salmon
+         * PacificSalmon
+           * CohoSalmon
+             * AliveSmoltCohoSalmon = AliveOrganism and SmoltStageOrganism
+             * AliveSmoltCohoSalmonPopulationSample
+
+   * AliveOrganism
+   * DeadOrganism
+   * FishStageOrganism
+     * SmoltStageOrganism
+     * YearlyStageOrganism
+
+
+Mark: A characteristic can also be modeled as a measurement type 
+ * e.g., temperate can be broken down to a measurement of kinetic energy in the molecules of the entity being measured (e.g., air, water, etc.) 
+ * another example would be productivity, which has "surrogate" measures
+
+OBOE organization, files
+
+core model:
+oboe-core.owl
+All modules and/or extensions should import this file.
+
+OBOE:
+oboe.owl
+imports of oboe-core and all domain modules only
+does not have any extensions.
+
+Domain modules:
+oboe-[domain].owl
+By building modules specific to scientific domains, (eg, oceanography, chemistry, hydrology), we can engage experts in those domains as needed.  
+
+OBOE Extensions:
+oboe-sbclter.owl  
+extensions import oboe-core, and whatever domain modules they need. Extenstions are allowed to pull from any of the modules and make assertions between them.  
+
+
+TUCANNON LW
+observation 'date'
+    entity oboe-temporal:TimeInstant
+    measurement m1
+        characteristic oboe-characteristics:Time 
+        standard oboe-standards:Date (add)
+    context
+        oboe-characteristics:During 'week'
+                    
+observation 'salmon'
+    entity jmx:PacificSalmon
+    measurement m2
+        characteristic oboe-taxa:TaxonType (add)
+        domain
+            entity jmx:WildChinookSalmon (add)
+            entity jmx:WildSteelHeadSalmon (add)
+            entity jmx:CohoSalmon (add)
+    measurement m5 
+        characteristic oboe-characteristics:Length
+        standard oboe-standards:Millimeter
+        protocol jmx:ForkLengthProtocol (add)  
+        precision 1   
+    measurement m6 
+        characteristic oboe-characteristics:Mass
+        standard oboe-standards:Gram
+        precision 0.1
+    measurement m7
+        characteristic jmx:FishCondition (add)
+        standard jmx:KFactor (add)
+        precision 0.01    
+    context
+        oboe-characteristics:Within 'trap'   
+                    
+observation 'week' 
+    entity jmx:FishingWeek (add under jmx:AdministrativeFeature)
+    measurement m3
+        characteristic oboe-core:Name
+           
+observation 'river'
+    entity jmx:TucannonCreek (individual of jmx:Creek)
+                        
+observation 'trap'
+    entity jmx:RotaryScrewTrap (individual of jmx:Trap)
+    context
+        oboe-characteristics:Within 'river'
+    context
+        oboe-characteristics:At 'date'
+    context
+        oboe-characteristics:During 'week'      
+
+mapping
+--------
+map Date m1
+map Species m2
+    if Species eq 'WCH'
+        value jmx:WildChinookSalmon
+    if Species eq 'WSH'
+        value jmx:WildSteelHeadSalmon
+    if Species eq 'FALL'
+        value jmx:????
+    if Species eq 'COHO'
+        value jmx:CohoSalmon
+map Week m3
+map Fork Length m5
+map Weight m6
+map K Factor m7
+
+TUCANNON smolt catch
+observation o1
+    entity jmx:LiveWildSpringOncorhynchustshawytschaSmoltPopulationSample
+    measurement m1
+        characteristic oboe-characteristics:Count
+        standard oboe-standards:Number
+        protocol jmx:TrapProtocol
+    context
+        Within 'trap'
+        
+observation o2
+    entity jmx:DeadWildSpringOncorhynchustshawytschaSmoltPopulationSample
+    measurement m2
+        characteristic oboe-characteristics:Count
+        standard oboe-standards:Number
+        protocol jmx:TrapProtocol 
+    context
+        Within 'trap'
+        
+observation 'trap'
+    entity jmx:RotaryScrewTrap
+    context 
+        Within 'creek'
+        also context of Secchi and Debris ???
+                    
+observation 'creek'
+    entity jmx:UpperTucannonCreek
+    
+observation 'stream'
+    entity oboe-hydrology:Stream
+    measurement
+        characteristic oboe-characteristic:Length
+        standard oboe-standards:Meter
+
+observation 'debris'
+    entity jmx:Debris        
+    measurement
+        characteristic oboe-characteristics:Amount
+    context
+        Within 'stream'
+        
+observation 'secchi'
+    entity jmx:Water
+    measurement
+        characteristic oboe-characteristic:Depth (subclass Length)
+        standard oboe-standards:Meter
+        protocol jmx:SecchiProtocol
+    context
+        Within 'stream'                                 
+
+observation 'duration'
+    entity oboe-temporal:TimePeriod
+    measurement
+        characteristic oboe-characteristics:StartDate
+        standard oboe-standards:YearMonthDay
+    measurement
+        characteristic oboe-characteristics:StartTime
+        standard oboe-standards:HourMinute
+    measurement
+        characteristic oboe-characteristics:EndDate
+        standard oboe-standards:YearMonthDay
+    measurement
+        characteristic oboe-characteristics:EndTime 
+        standard oboe-standards:HourMinute
+        
+        
+Use case sample (Wednesday)
+
+"tall table"
+loc    spp    wt
+---    ---    ---
+1        A    1
+1        B    4
+2        C    3
+2        D    1
+
+"wide table"
+loc    sppA    sppB    sppC    sppD
+---    ----    ----    ----    ----
+1        1        4    -        -
+2        -        -    3        1
+    
+
+"tall table" annotation
+-----------------------
+observation 
+    entity jmx:Species
+    measurement m1
+        char Taxon
+    measurement m2
+        char Mass
+        
+map wt m2
+    if spp eq "A"
+        value jmx:SpeciesA
+map wt m2
+    if spp eq "B"
+        value jmx:SpeciesB
+map wt m2
+    if spp eq "C"
+        value jmx:SpeciesC
+map wt m2
+    if spp eq "D"
+        value jmx:SpeciesD 
+        
+        
+"wide table" annotation
+-----------------------       
+observation
+    entity jmx:SpeciesA
+    measurement mA
+        char Mass
+observation
+    entity jmx:SpeciesB
+    measurement mB
+        char Mass
+observation
+    entity jmx:SpeciesC
+    measurement mC
+        char Mass        
+observation
+    entity jmx:SpeciesD
+    measurement mD
+        char Mass
+

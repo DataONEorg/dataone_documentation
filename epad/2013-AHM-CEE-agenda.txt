@@ -1,0 +1,258 @@
+ Community Engagement and Education Working Group AGENDA
+October 22-24, 2013 – Albuquerque, NM
+
+DataONE Docs site: 
+https://docs.dataone.org/member-area/working-groups/community-engagement-and-education
+ 
+Tuesday, October 22
+
+(Morning - DataONE Plenary Sessions)
+
+12:30 Review of overall status – round the room updates
+
+1. Library Outreach (Carly, Steph W) 
+ * primer
+ * aggregating survey results
+ * providing other resources to librarians helping scientists
+ * webinars around DMPtool - 12th upcoming one is data management focused and Steph W is involved, DataONE will be mentioned (Nov 5) http://blog.dmptool.org/webinar-series/
+
+2. Hands-on Modules (Steph H)
+ * existing heavily vetted dmp modules. would be much better with hands-on modules
+ * 3 hands-on exercises done. been deployed a bit (e.g., ESA 2013). Need more!
+ * keeping notes on hands-on exercises here: http://epad.dataone.org/2013-AHM-CEE-handsOn-notes
+ * EM Lesson 1: 
+
+3. Social Media (Scott/Carly)
+ * Coffeehouse blog (http://coffeehouse.dataone.org) is pretty automated - it's an aggregator site
+ * If you have suggestions for blogs that could be included, please submit this suggestion
+ * Twitter automated when blog post is added
+
+4. Data Stories (Stacy + Sarah)
+ * outgrowth of training module assessments. most requested stuff: more activities and more stories about data.
+ * go out and interview people that work with data. what's caused conflict in sharing? success stories?
+ * time intensive.
+ * three places these stories go: (1) dataone notebooks site. narrative versions. (2) mockups of how to integrate stories into existing modules. Sarah will demo during AHM. (3) stand-alone version of stories so people can download distinct from training modules
+ * this meeting: focus on barriers to best practices for data
+
+5. Communication Strategy (Wendy/Amber)
+ * not really a working group activity
+ * Wendy shared NEON communication strategy but didn't want to share broadly. 
+ * Amber and others are working on the marketing + communication plan for DataONE. Will combine with Sustainability and governance working group.
+
+6. Video Contest (Steph H)
+ * $500 prize money that's "gift" money so fairly unrestricted
+ * haven't gotten much traction. never taken off back burner. 
+ * Stacy's idea: pay someone to do this (UCSB media student?). use the data stories as fodder.
+
+7. Data Sharing and Human Rights essay (Cliff)
+ * OSTP memo and other countries' memos about requiring data archive
+ * Human rights lawyer also interested in this - Cliff interacting with a number of folks on this draft
+ * Draft completed last week
+ * Audience is biologists
+ * eg bio discoveries in an area with indigenous people who use those resources, what rights do scientists and they have re the data, if you test water quality what rights do the people have who are using that water, the taxpayers' right to access data collected with public funds
+ * AAAS Science and Human Rights Coalition trying to address this issue at large
+
+8. ESA Activities (Carly)
+ * 4th year of training workshop, though shorter time available this year, used hands-on activities
+ * DMPtool workshop very successful
+ * Lunchtime Morpho/DataUp workshop
+ * Amber/Matt did Ignite presentations
+ * Carly presented work on "why ecology instructors are not teaching basics of data management as part of their work with undergrads"
+
+9. Ontologies testing (Stacy)
+ * Text mining to help develop ontologies used in data search
+ * Focus on ontologies taking a back burner right now unless one of the ontologies researchers gets excited about it
+ * Mapping out ways that this approach could help to advance data searches - you are harvesting whatever scientists have said about research in the past to help develop relationships that aid search
+ * Presenting this work at AGU 2013
+ * Drafting a ms that outlines this approach as a potential tool for data discovery
+
+10. Huang teaching module (Steph H)
+
+11. Frontiers ms follow-up (Steph H) - lots 
+Much discussion in the blogosphere following Frontiers ms publication, with many opportunities to cite Duke/Porter guidelines for coauthorship paper
+   Blog post: http://ideas4sustainability.wordpress.com/2013/07/13/a-critical-appraisal-of-a-new-paper-on-big-data-and-the-future-of-ecology/
+    
+12. Other updates?
+ * AGU 2013 session by Carly and Amber: ED43E. Managing Ecological Data for Effective Use and Reuse 
+ * IDCC deadline coming up - CDL is hosting - there will be a D1 member node workshop proposed. Gail is interested in a workshop for librarians - $6K cost though for workshops - maybe this should be part of the library outreach discussion
+ * John thinking about a paper on data publication - how do people go about publishing their data in data papers?
+ * Carly has a postdoc working on data publication summary right now
+
+ 
+1:30  Update from Amber about the future for DataONE and her vision for CEE, Q&A
+
+2:00 Discussion of Working Group Next Steps – review ideas from previous meetings
+
+ * Software-related training activities and materials, eg screencasts - 
+   * ONEmercury - maybe several 3-min piece on specific topics
+   * R package - R community already well plugged in, probably lower priority
+   * ONEdrive - going to usability testing right now, so lower priority right now
+ * Ecoinformatics and environmental protection – does data sharing affect decision making in natural resource management (Cliff)
+   * Cliff thinks that this may need a workshop to discuss whether there are case studies that could test hypothesis that data sharing makes any difference
+   * Gail - very interested, but is it too soon
+   * John - interested and imagine how EPA, NOAA data already get used
+ * Metrics for DataONE success (Wendy) - leadership team has this on their radar
+ * Teaching modules (e.g., Carly & Steph revise Huang module?)
+ * Curriculum (John) - breadth of knowledge to effectively use data can make it difficult for the novice dive in - what is the landscape that exists where it is possible to provide the right training. What are the core concepts?
+ * Cross-reference of materials (Heather) – making sure references are linked up and we aren’t reinventing the wheel
+ * Collaboration with PPSR on training at a conference – data management for citizen science managers (Wendy) -Amber says that it is not going forward this year
+ * Cost of data management (Steph)
+ * Distributed Graduate Seminar using DataONE resources (Kristin) - could piggyback on an existing LTER course in which students use DataONE resources like the LTER data, maybe request a supplement for just a face-to-face meeting of the students, an opportunity exists with ILTER visit and paying for students to join a workshop in Asia
+ * Paper on data publication (John) - new venues coming along, there is a range of options, review criteria
+ * Data discovery, inspired by postdoc who recently gave a talk on the process he went through to gather data for a paper ultimately published in Nature - possible to develop a data management training module or other resource, how do you strategize - (Stacy)
+ * 
+
+
+3:00                  Break 
+John shared a video from Malaysia group doing data management for malaysian research data MyERNet - he will try to upload the video to our passworded site
+
+3:30                    Decide on next steps 
+ * Feedback on data stories (Stacy, Sarah) - Tues, Weds morn
+ * Data stories outstanding tasks (Stacy, Sarah)
+ * Finding data - possible hands-on activities (Stacy, Tom, Gail)
+ * Primer for librarians (Carly, Steph W, Gail) - Tues
+ * Survey collection for library outreach project (Carly, Steph W, Gail) - Weds morn - see http://www.citeulike.org/group/18394
+ * Data publication ms (John, Cliff, Gail, Steph) - Tues, Weds morn https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/data-publication-ms/
+ * Education and training strategies (John, Tom, Kristin, Steph W, Steph H) http://www.nceas.ucsb.edu/outreach/summer-institute/2013/summer-institute-2013 
+ * Teaching modules (Tom)
+ * Hands-on activities (Tom, Steph H, Kristin) - Tues http://epad.dataone.org/2013-AHM-CEE-handsOn-notes, Weds
+ * Human rights ms (Cliff, Steph H)
+ * Cost of data sharing (Steph H, Trisha Cruse, Gail)
+
+4:00                  Break out to work on ongoing projects – e.g., hands-on teaching modules and library outreach, Wikipedia, others?
+5:00                   Adjourn
+6:00                  Reception and Poster Session
+ 
+Wednesday, October 23
+8:30                    CEE WG Sub-teams meet to work on new projects
+10:00                  Break
+10:30                  CEE WG Sub-teams meet to work 
+Noon                   Lunch
+1:00                   Full group – Sub-groups report out
+2:00                  CEE WG Sub-teams meet to wrap up older projects 
+3:00                   Break
+3:30                   CEE WG Sub-teams meet to work on projects
+4:30                  CEE Sub-teams report out
+ 
+Thursday, October 24
+8:30                   CEE WG Sub-teams meet to work - Updates:
+
+Data stories: lined up possible interviews for this afternoon. Adding to concept map. Still unresolved: story about credit/authorship/use. Educ group discussed doing a module around Duke & Porter paper. Possibly also a module about finding data.
+
+Collection of user needs/assessment surveys in one place: added 30+ references to these to a CiteULike group. Will tag. Carly added splash page to DataONE notebook site.
+
+Education group: worked on hands-on activities for modules. Have ideas, ready to write out - can do several today. Feedback appreciated (link above).
+
+Distributed graduate seminar: Parts: LTER PIs, ecoinformatics component. List of topics. Need to summarize into something to share with LTER PIs/faculty to solicit interest. Also need to pursue a supplement to bring students together to work on something (synthesis).
+
+Data publication paper: identified/assigned sections. Adding literature to docs site. Working in google doc. Steph has a box for an example (data set reuse). References on data publication usually refer to pub w/o peer review, and not as many as we expected. Also working with Carly to make sure this is distinct/different from her post-doc's work. This paper: pitched at biologists new to publication. Carly & postdoc: broader overview of what's being done.
+
+Human rights paper: Cliff will set up shared outline. Thinking of pitching to Professional Biologists section of BioScience.
+
+What people want to work on:
+- Primer for librarians
+- keep going on others...
+
+10:00                   Break
+10:30                   CEE WG Sub-teams meet to work
+11:30                 Prep for upcoming meetings? Workshops, etc
+- ESA occurs after the end of the award
+- D1 has a booth, and Amber planning to put some stuff in, possibly training or potentially a poster on data stories, 
+IDCC - Several D1 leaders involved in this, Member Nodes workshops but not at ESA
+Open Repositories in June - Amber could ping Steph W about helping out with MN workshop, possible that Steph W could present a poster http://or2014.helsinki.fi/
+IASSIST - June 3-6 - Dec submit poster/workshop proposal - potentially present same poster as Open Repositories, maybe Carly and Steph W do a poster or a workshop  http://www.iassistdata.org/conferences
+ALA - D1 poster being presented in Jan, (Steph H will ping Gail in December to make sure we don't miss deadline) Gail suggesting that a different poster on the June primer for librarians might be good - Carly could help to put together a poster that Gail could present (June 26-July 1, Las Vegas - http://ala14.ala.org/)
+
+                            Discuss video contest or other ideas for achieving multimedia goal - Stacy and Steph will hire an undergrad at UCSB and use the $500 stipend to get some video content
+
+Noon                  Lunch
+1:00 –                 
+2:45                     Report out, wrap up
+
+
+Librarian Outreach Stuff: summarized in this google doc https://docs.google.com/document/d/1NstATI1C3mjziWoGpbW395wHR1JBxVIUdlxiYa1p_Uw/edit
+
+
+3:30 – DataONE Plenary – CEE WG report out (Steph, Gail)
+5:00 - Adjourn
+ 
+Attending: 
+Stephanie Hampton (NCEAS)                                                       hampton@nceas.ucsb.edu
+Gail Steinhart (Cornell)                                                      gss1@cornell.edu
+Carly Strasser (Cal Digital Library)                                    carly.strasser@ucop.edu
+John Porter (UVA)                                                                        jporter@virginia.edu
+Cliff Duke (ESA)                                                                        CSDuke@esa.org
+Heather Henkel (USGS)                                                      hhenkel@usgs.gov
+Stacy Rebich Hespanha (NCEAS)                                    hespanha@nceas.ucsb.edu
+Tom Langen (Clarkson)                                                      tlangen@clarkson.edu
+Kristin Vanderbilt (LTER)                                                      vanderbi@sevilleta.unm.edu
+Stephanie Wright (UWa)                                                   swright@uw.edu
+                                                                                                                                                                  
+
+Wrap up:
+Milestones for next 12 months: (3-5 bullets)
+ 
+Nov 2013 – Primer for librarians posted (Strasser, Wright)
+Nov 2013 – DMPtool webinar (Strasser, Wright)
+Dec 2013 - AGU session ED43E. Managing Ecological Data for Effective Use and Reuse (Budden, Strasser)
+Dec 2013 - AGU presentation on Ontologies and text mining (Rebich Hespanha)
+Winter 2013/2014 – Continue populating website with Data Stories [Rebich Hespanha]
+Dec 2013 - submit proposal for poster for ALA Midwinter (Steinhart, Hampton)
+Dec 2013 - submit proposal for workshop / poster for IASSIST (Steinhart, Strasser, Wright)
+January 2014 - submit poster abstract on DataONE for librarians for ALA annual meeting (June-July 2014) (Steinhart, Strasser, Wright)
+Jan 2014 - Huang teaching module revised (Huang, Strasser, Hampton)
+Feb 2014 - Member Node workshops at IDCC (Budden & several other D1 leaders)
+April 2014 – Draft ms on synthesis of data stories themes [Rebich Hespanha]
+April 2014 – CEE WG meeting
+May 2014 – Submit ms on data sharing and human rights (Duke) 
+May 2014 – Submit manuscript on data publication [Porter, Duke]
+May 2014 – All Hands-on Exercises for Data Management Modules drafted and reviewed by CEE team [Hampton, Langen]
+June 2014 – 2-3 short videos on Data Management topics completed by undergrad Communications intern [Hampton, Rebich Hespanha]
+June 2014 - Presentation of poster on DataONE for librarians at Open Repositories (Wright) & IASSIST (Wright, Strasser, Steinhart)
+June 2014 - Member Node workshop at Open Repositories (Budden, Wright)
+June 2014 - Poster presentation on DataONE for librarians at ALA Annual (Steinhart)
+
+Accomplishments from past 6 months: (3-5 bullets)
+ 
+ * o   AHM Working Group meeting [October 2013, Tamaya]
+ * o   Production of 5 hands-on activities to accompany Data Management training modules (3 have been deployed and refined)
+ * o   Coffeehouse blog established and active as an aggregator site
+ * o   5 Data stories posted and stories actively being collected
+ * o   Led/participated in 4 activities at ESA 2013 [Strasser, Hampton, Budden]
+ * §   Preparing Data to Share  workshop
+ * §   DataUp and Morpho workshop 
+ * §  DMPtool workshop
+ * §  Strasser presented D1 postdoc work – survey of ecology instructors published in Ecosphere
+ * o   Publication of coauthorship and data sharing ms [Porter, Duke]
+ * o   Huang revising parasite-host relationships teaching module [Huang, Strasser, Hampton]
+ * Text mining to help develop ontologies used in data search with Semantics working group
+ * Outreach toolkit for librarians
+   * Primer for librarians drafted (Strasser, Wright, Steinhart)
+   *  New section of DataONE notebooks website for librarians
+   * CiteULike group with needs assessment bibliography
+   * One page synopsis on data management
+   * Questions in askdataone tagged for librarians - to be used as an FAQ for outreach toolkit
+ * Discussed DataONE with ILTER in October 2013 (Porter, Vanderbilt)
+ * DataOne Investigator Toolbox featured in "Big Data" seminars (UVA Dept. seminar, ILTER plenary presentation) (Porter)
+ * Outline of distributed graduate seminar for LTER/DataONE 
+ * Draft of data publication manuscript (Porter, Duke)
+ * Outline of human rights and data sharing ms (Duke)
+ * 21 new data stories recorded, and 3 more prospective interviews 
+ * Data Stories ethnographic analysis initiated, complete for several interviews
+ * Overview of DataONE presented to undergraduate students (Rebich Hespanha)
+
+Products
+ 
+ * Coauthorship and data sharing ms published
+    Duke, C. S., and J. H. Porter. 2013. The Ethics of Data Sharing and Re-use in Biology. Bioscience 63:483-489. doi:10.1525/bio.2013.63.6.10 - http://www.dataone.org/sites/all/documents/DukePorter2013.pdf
+ * Librarian outreach materials:
+   * new section of D1 notebooks- https://notebooks.dataone.org/dataone-librarians/
+   * primer for librarians - google doc
+   * 1 page synopsis on importance of data management ( PDF on dataone docs site)
+   * FAQ - http://ask.dataone.org questions relevant to librarians (done - tagged with “librarians”) 
+   * Bibliography of researcher needs assessments: http://www.citeulike.org/group/18394 
+ * abstracts accepted for presentation at AGU Annual Meeting (Dec 2013)
+   * "Visual Browsing of Earth and Environmental Science Metadata and Journal Abstracts to Enhance Data Discovery"
+   * "In Their Own Words: Researchers’ Stories of Challenges and Triumphs in Data Management and Sharing" 
+   * "Text Mining for Construction of Earth Science Ontologies"
+

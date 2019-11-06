@@ -1,0 +1,248 @@
+Development Block 5.1
+=====================
+
+Release CCI 1.2.2, excluding ORE parsing changes. Determine if Dryad profiles will be supported in this release.
+
+Roger
+ * 20130906
+   * working with CJ at KU for stage testing
+     * don't think they have test certificates
+   * new Pasta node, ready for staging
+     * should we use the same nodeID or a new one?
+     * from earlier conversation, best to keep the same node ID, conceptually the same node
+     * all existing content will be archived, the node goes down, then comes up with new content.
+     * the archived content will be available only at replication sites.
+     * should the new content be seen as updates of the old ones? 
+     * need to update the replica information on the system metadata. 
+     * Dave, Roger, Matt, and Mark to discuss
+   * looking into making a windows installer for CLI
+     * usually needs different installers for python versions and 32/64bit
+     * C-extension support for some libs needed 
+   * tickets for Mac installs
+ * 20130904
+   * updating python dependencies to use fixed versions, instead of latest.
+   * will reach out to:
+     * KU
+     * pasta (LTER GMN) status
+       * info: rework of how they expose their content.  Deprecate old representations.
+   * mn.update behavior - should we move to have only one way to do obsoletes instead of two ways?
+
+Rob
+ * 20130904
+   * more documentation progress
+   * https://drive.google.com/a/epscor.unm.edu/folderview?id=0B7KFBjH3OAo_U0NXZUtNZHhUTjg&usp=sharing#
+ * 20130830
+   * MN documentation with Laura
+     * Scoping projects: need a project page for GMN
+   * NodeRegistry work: backburner, but will get to this next week
+ * 20130828
+   * drafted high-level MN onboarding document to be put on www.dataone.org > participate > Member Node
+     * https://docs.google.com/document/d/1YVEyFrqZPclr_tzhLtzYdW8tdu-fVeVQ-8yeHYhH9xc/edit?usp=sharing
+     * will either hand off to Chris Allen to put on the site, or do it myself (already using DataONE color palette)
+     * will align mid-level MN onboarding process diagram with it, in terms of phase and step names.
+   * Following up with EDAC
+     * will omit links back to services in sci meta docs
+ * 20130826
+   * Working with Laura on MN checklist documentation
+     * What's the entrance condition into the "Testing" phase is
+     * Registering new formats
+
+Skye
+ * 20130906
+   * for testing the release
+     * created java libclient tool for transfering packages into sandbox env
+     * trouble with eml submissions in mn-sandbox-ucsb-1
+   * 
+
+ * 20130904
+   * blockers:
+     * on Hudson, poms without versions failed?
+       * org.apache.org HTTPClient not downloading (missing dependencies)
+       * Dave will do some work on Hudson
+     * content for SANDBOX testing
+       * trying to get Demo1, Demo2 back "into rotation" on SANDBOX
+         * these have a good variety of content
+       * Robert to help out
+   * added solr features to help out with ONEMercury
+   * some performance improvements
+ * 20130830
+   * Release work for 1.2.2
+     * 3 1/2 hours to run ansible playbooks
+     * Bouncy Castle not present?
+     * dataone-cn-solr install allowed openjdk-6 over java-sun-6. Need to resolve this and remove openjdk-6
+       * Ansible playbook was incorrect, needs fix.
+   * Added dev docs for index processing:
+     * http://mule1.dataone.org/OperationDocs/search_index_config.html#index-processor-configuration
+ * 20130828
+   * having trouble getting builds to complete on hudson
+     * downloading jar problem. full disk issue?
+     * need someone to look at this - Dave will have a look
+   * Public key now on ansible.dataone.org. sudo not working
+   * Documentation on d1_indexing
+ * 20130826
+   * Pushing the 1.2.2 release to stable, will change ORE parsing factory to XPATH for now
+     * requires a 1.2.3 release when Merritt catches up
+     * Dryad support will be pushed to 1.2.3
+   * Author last name sorting
+
+Robert
+ * 20130906
+   * out yesterday - cold 
+   * will work with Skye on packaging stuff
+     * YAML - "install = NO" problem.
+   * working on issue 3886 - strategy for manipulating solr log query strings for dashboard public access
+ * 20130904
+   * working on issue 3886 - strategy for manipulating solr log query strings for dashboard public access
+ * 20130830
+   * Work on UNM CN node issues - need to get it back into the RR
+   * #3886 is a priority
+   * Ansible: peg packages to a certain level of support
+     * Also, upgrading servers. SSH only sends one command per session
+
+
+Chris B.
+ * 20130906
+   * same 4 tasks as Wed.
+     * some promising results for Ansible
+       * Fireball and py-mico(?) give better performance
+       * Fireball more work to set up, but faster.
+       * Fireball to be replaced by Accelerate, and should reduce the work, but not out yet.
+   * 
+ * 20130904
+   * tasks 3959-62: ansible transport to speed up time and reduce dependencies. 
+ * 20130830
+   * Ansible: decide which packages need to be pegged
+     * Eg: apache - peg this to a specific version
+   * Upgrade SSH, or look at other transport
+   * Helping David with splunk forwarders
+ * 20130828
+   * Updated rsyslog on unm and ucsb dev box to forward to orc splunk server
+     * dns entries aren't working, only direct IP addresses within the inputs.conf file.
+     * using the geotrust intermediate cert, authenticating the server is next.
+   * Splunk documentation.
+   * Read up on OPeNDAP.
+ * 20130826
+   * Setup a clean instance of Splunk with DataOne Cert for web, syslog and forwarding.
+   * Documented procedures for installation and setup of splunk.
+   * Talked to Dave on Friday about setting up remote rsyslog forwarding on a unm or ucsb dev box
+
+David
+ * 20130906
+   * Splunk:
+     * separate forwarder for prod to get around issues
+     * trying new configurations to use the new forwarder and test it out.
+     * if works, use for other ORC boxes and then remote boxes.
+     * 
+ * 20130904
+   * continued work on splunk.
+     * obstacle: SSL certs on forwarders throwing errors.  Wildcard certs aren't working in test environments because only goes down 1 subdomain.
+   * meeting with Bruce later today to get a gameplan.  Want to wrap up by Friday.
+ * 20130830
+   * 90% done with forwarder on sandbox
+     * working on SSL certs with Chris
+   * continued work on sysadmin docs
+ * 20130828
+   * Will work on splunk forwarders in sandbox
+ * 20130826
+   * Not available on Mondays due to class conflict.
+
+Dave
+ * 20130906
+   * administrative work
+ * 20130904
+   * administrative work
+   * Hudson
+   * UNM storage requirements (research storage consortium) - chance to give input to get off NSF2 and using a newer protocol
+     * block-level access vs. file access?
+   * Agenda for CCIT and AHM meetings.
+     * progress to date
+     * schedule (and priorities) through July
+     * sub-group for MN documentation to review it and nail down the details.
+     * dashboard review / input
+     * search index direction, enhancements
+     * API changes
+       * series ids
+       * sysmeta control to MNs
+       * slender nodes
+ * 20130904
+   * Administrative work
+   * Prep for CCIT, AHM meetings
+   * Hudson appears to be working now
+ * 20130830
+   * dealing with Hudson and Jenkins
+ * 20130828
+   * working through cleaing up the release process (releases.dataone.org)
+   * proposal writing
+   * getting back to onedrive development
+ * 20130826
+   * Travel
+
+Matt
+ * 20130830
+   * 
+
+Ben
+ * 20130906
+   * Sem-Tools grant work, so will be not doing D1 
+   * working on a Morpho release
+   * will be helping a few of the MNs already working with.
+ * 20130830
+   * continued work on the d1_dashboard
+   * working with USANPN
+ * 20130828
+   * Continued work on the d1_dashboard
+     * restructuring to pull information from multiple sources
+     * 
+ * 20130826
+   * working on the d1_dashboard
+     * D3 visualizations work
+
+Chris
+ * 20130911
+   * Continued work on the data distribution map / heatmap display
+     * working on a server-side script to produce a JSON output for heatmapjs
+   * Story development for milestones
+ * 20130903
+   * Working on a plan for indexing N/S/E/W bounding box centers as geohashes in the Solr index
+     * will coordinate with Chris B.
+     * will provide data for the dashboard map display (heatmap)
+   * Working with Lee Marsh on USANPN registration in stage
+   * Troubleshooting MN registration in sandbox with Skye
+ * 20130830
+   * NKN, NPN certs
+   * Dashboard heatmap work
+   * Meetings: NKN
+ * 20130826
+   * Working on dashboard implementation
+     * currently working out some dependency issues for external libraries
+     * working on mapping ui + heat map
+     * Focusing on D3 for graphing summaries, etc.
+   * 
+
+Jing
+ * 20130906
+   * subject management for Morpho
+     * transitioning from LDAP identification to CILogon
+     * impacts a lot of the Metacat Member Nodes 
+     * as a DataONE ITK
+   * "subject mapping" will be responsibility of the individual Member Nodes
+
+MN.update behavior
+------------------
+"previous pid" provided in the parameters and also sysmeta of new object.
+ - Client controls those fields in the system metadata
+ - Member Node should ensure accuracy of inputs.
+ - assume that we have to keep the method signature the same.
+ - changing behavior would likely break released libclients
+ 
+Reference API Documentation: it would be better to make explicit how it needs to be specified.
+ - clarifying the docs
+
+
+Kaisen meetings
+---------------
+    - what purpose is epad sprints serving?
+    - would redmine be a better place for recording things?
+Release planning
+
+

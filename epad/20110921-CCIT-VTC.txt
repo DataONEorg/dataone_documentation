@@ -1,0 +1,115 @@
+..meta::
+  :keywords: DataONE, CCIT, VTC, 20110921
+
+CCIT Developer Call for 2011-09-21
+==================================
+
+Attendees: John Kunze, Bob Sandusky, Matt Jones, Ryan Scherle, Nicholas Dexter, Chris Jones, Mark Servilla, Bruce Wilson, Ryan Kroiss, Ben Leinfelder
+
+
+Agenda and Notes
+----------------
+
+
+1. General schedule for public release
+
+Significant Dates:
+
+- EIM meeting, implementors workshop: September 30
+- AHM Meeting: October 18-20
+- EAB Meeting: November 10-11
+- Release: ?? (at CCIT mtg, agreed target was Nov 15th)
+
+Products:
+
+- 6 Member nodes
+    - KNB
+    - DAAC
+    - Dryad
+      - needs to be tested 
+      - security certificates need to be updated
+      - resource map structure to be implemented
+      
+    - Merrit
+      - in good shape, no major stumbling blocks.
+      - timing is tight
+      - 17k water quality reports
+      - Questions on generating metadata 
+      - Need to also generate resource maps
+      
+    - NBII (other USGS, Mercury based MNs)
+      - still some issues to sort out wrt resource maps and sys meta generation
+    
+    - AKN (Insufficient resources)
+    - CUAHSI (Insufficient resources)
+    - another Metacat
+    
+      - Easy target would be south africa - already agreed in letter of support,
+    
+- http://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html  
+
+- 3 Coordinating Nodes
+    - CN-CN replication
+    - Node registry
+    - Synchronization
+    - Search
+    - MN replication
+    - Identity management
+    - Object format registry
+    - Authentication proxy
+
+- Investigator Toolkit
+    - ONEMercury 
+    - ONEDrive
+    - ONE-R-Plugin 
+       - lots of work to do on this
+       - especially wrt data structure / model
+    - Zotero and Mendeley interaction (through ONEMercury UI)
+    - command line stuff
+    - code libraries
+
+- Supporting documentation
+
+- Testing framework
+
+
+2. Preparations for AHM
+
+- Travel, logistics
+- Agenda, draft agenda available at:
+https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/2011_0913_oak_ridge/AHM_AGENDA_2011Oct18-20_ver2.docx
+
+For CCIT, Developers:
+Main focus is on the products that are to be released in 2011, and to gether feedback from the other project participants on the products to be available, especially the user facing tools. Main role of CCIT will be to guide the demonstrations, gather feedback from users, and collate to identify changes needed for the public release of those products.
+
+Day 1: 
+AM - Plenary
+PM - Product reviews (ONEDrive, R-Plugin, ONEMercury, Zotero, Mendeley)
+
+- also need to distribute documentation for becoming a member node etc
+- multi-step cilogon process?
+  - would be interesting to present the users with the whole process of logging in and managing certificates
+- What does dataone status look like, how to represent this
+
+Day 2:
+AM - Collating feedback, changes to be incorporated for release
+PM - 
+
+Day 3:
+AM - High level schedule of activities for 2012 +
+PM - WG reports, close
+
+
+
+
+3. Any Other Business
+
+Is WebEx good?
+- Accessibility good
+- Audio not so great
+
+EarthCube initiative 
+- Needs participants from DataONE to promote this infrastructure
+- http://earthcube.ning.com/group/technology-solutions
+
+

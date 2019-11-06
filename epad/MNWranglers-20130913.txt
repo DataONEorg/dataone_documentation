@@ -1,0 +1,97 @@
+Member Node Wranglers (
+    Fridays at 10:00 am AK
+                    11:00 AM PDT
+                    12:00 MDT
+                    1:00pm CDT
+                    2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+
+13 September 2013
+
+Attendees:  Rebecca,John Cobb, Amber, Bruce, Chris
+                                                                                                                            
+Regrets:  Laura  :( 
+
+Agenda: 
+        1. High profile issues
+        Documentation - Meeting 9/9 2:00 EDT identified current documentation, audiences, entry points, action items.  (Dave)
+
+        
+        2. Status of MNs 
+     * Y5Q1
+       * NKN (3238) - meeting 12 Sept; s/w installed, a little confusion re: client side certs but all resolved now; they think they've got DOIs for everything now (Ed); Luke's been making notes during the process which should be quite useful toward the "standing up a GMN" documentation in the works; NKN will come to MNF meeting 10/3 to discuss their status
+       * EDAC (3221) -  Rob Nahf: waiting on Soren/Karl to register node into Staging.  Rebecca to talk with Karl; Bruce to check with Rob N.
+       * Kansas (3188) - has Roger gotten them a cert? -- Per email from Chris, yes one has been sent for stage work.
+       * SEAD (3521) - a/o 9/10/13, Inna said she'd send out a query to the NCED folks asking where they are with their metadata/DOI efforts
+       * NPN (3186) - meeting 11 Sept; Lee and Ben working closely; looking good in Staging; Lee had had a problem with https vs http and cookies, but I think he's got it under control now, also some discussion about data entry via morpho vs direct entry via D1; next meeting 2 October
+       * GULFWATCH:  previous action item: Matt to send MN desc doc to Laura
+
+     * Y5Q2
+       * ILTER-Europe (3232) -  Ben L lead.  David Blankman is POC.  ILTER-Europe is becoming THE place for all the  LTERs in Europe to keep their stuff; they are running metacat; QUESTION: since Ben is no longer D1, who will be our POC?
+       * Dryad (3118) - Dave:  last conversation between Chris and Ryan - 90% of content works fine  and some just doesn't; related to identifier scheme that Dryad is using  and discrepancy in resource maps, etc. Plan to work with Chris/Ryan at CCIT meeting.
+       * iEcolab (3219) - Ben in conversation with them; 
+         * Matt:  another metacat instance, running in Spain, have a lot of content,  partner with KNB (replicated their data to KNB already), expressed  interest in becoming MN; if they're willing, it should be  straightforward to implement.  
+         * Bruce: do we want to put this on the hotlist?  
+         * Matt: Maybe we should have Ben focusing on one MN at a time (i.e.  ILTER-Europe first); as of 1 Sept, Ben is no longer on DataONE, Jing Tao is taking his place; 
+         * Dave:  when Ben is covered up, will Chris be a good go-to person?  
+         * Matt: yes
+       * DFC (3532) - 
+         * Dave: Reagan has mentioned more than once that they'd like to be a MN, have already implemented ingest function.  
+         * Matt:  has had a conversation with them and have assigned a developer (Lisa  Stillwell) to implement MN, focus on tier 1 at first but looks like they'd like to be tier 4 eventually.  Jargon and LibClient Java to create a home grown stack (we think)
+       * iPlant (3234) - iRODS  (they are in AZ and TX); hold off on pursuing this until we have some  success w/iRODS (i.e. DFC in test)
+       * U Illinois Chicago (3213) - Bruce has emailed with Bob; they plan to talk at CCIT meeting 
+       * USGS Topo Maps (3525) - Per Mike Frame, they should have DOIs by 1 November, then will need to create system metadata; aiming for end of December
+         * is this really a new MN or a subtask under CSAS? (JWC) Mike said it was a sub-MN at the July Mtg.
+       * PPBio (3748) - a/o 8/22/13, Debora was planning to meet week of 26 August with all the Brazilians to talk about DataONE (what is it, etc.) - Laura waiting to hear back from her a/o 9/5/13; Matt has been talking to Debora; PPBio´s  server content was successfuly copied to a new server at LNCC. We are  now at the stage of exchanging certificates. LNCC aparantly is able to  generate thrid parties certificates. Peld server will be kept at Inpa  and PPBio server will start to operate from LNCC. Instead of configuring  replication between PPBio-KNB, we could configure the new server to  replicate to DataONE. The idea is to keep replication between PELD a nd  PPBio servers. We´re having a conference between the brazilians involved  next monday.
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting (Carol going to Taiwan in October)  also a Matt-thing; Dave in Taiwan in November, may be a good time to talk about this if the TERN folks will be at the same mtg (Chau-Chin Lin is primary contact)
+       * SAEON  (3205) -  Matt: they're running a metacat node, helped them set it up, Victoria ?? is POC there, interested in perhaps being a part of ILTER; haven't talked to them lately
+
+
+     * NEW potential MN:  EU BON - European Biodiversity Observation Network, see https://redmine.dataone.org/issues/3964  ; Matt will convene a conf call with GBIF, EUBON, DataONE et al to see if they want to be separate MNs or one or... 
+       * Ci staff in Finland - Hannu
+       * Will need a Metacat upgrade to integrate MN
+       * Interest in another MN workshop -- ACTION: Bruce to work wtih Dave and Matt to see if we can schedule one (look for 10-ish people to attend)
+
+     * New Potential MN: Embrapa's DSpace repository: From Debora Drucker: "I mentioned before to you is at http://www.alice.cnptia.embrapa.br/ with more than 22.000 itens. Note the website is also available in English and you may also be interested on checking http://www.sabiia.cnptia.embrapa.br/alice-oai/request?verb=ListRecords&metadataPrefix=oai_dc  I've been interacting with one of the members of the development team,  Marcos Visoli, who is also working with Geospatial data at the project I  lead at Embrapa. We believe Alice Repository is an interesting  candidate to become a DataONE Member Node. We are aware this would mean  development efforts from our side too."
+       * Their "data" is mostly PDFs (they are a publications repository), with metadata about the PDFs.
+         * Any copyright concerns (i.e. making publications available which have been published elsewhere)?  Maybe..?  
+         * Not  a terribly high priority for DataONE, but it wouldn't be harmful.  We'd  be providing long term access to these articles. Potentially a good  thing but a different model.  Q: relevance of articles to broader  audience?  
+         * Would we turn them away if they did the work to implement?  
+         * Would we need a different doc type?  object format??
+
+<<< left over from last time >>>
+        3. Old action items
+             Laura to check into AKN/eBird tickets (3560 and 3209).   
+             https://redmine.dataone.org/issues/3560  is eBird (operational)
+             https://redmine.dataone.org/issues/3209 is what will be the broader AKN (in Product Backlog)
+             Regarding URN, Steve Kelling says CLOAKN is NOT the right name to associate with the current MN (eBird).  Previously, we had  said (at least amongst ourselves) that it would be really nasty to try to change the URN on a MN.  We probably ought to have a separate meeting, maybe  with the eBird and AKN folks or maybe just us and then with them, to try  to sort this out.
+             
+             OPeNDAP (Hyrax) member node:  We think Jing Tao is looking at the level of effort to do this.  Bruce, Matt, Dave to telecon with James Gallagher and Dave Fulker next Thursday to work on mechanics and longer term plans.  
+             
+             Working on developing a reference architecture document as the intermediate level of detail. 
+        
+        4. Not-high profile issues
+        
+     * To talk about when Dave's here: 
+           Rebecca had asked: what is the status of the issue where some MNs think they have more products than what DataONE shows?  Is it resolved?  (USGS and ORNL DAAC have had this issue where they think they have more data products  than we see in DataONE.)
+        John: there are redmine tickets which track this issue
+
+            ... looking at tickets....
+        Seeing a lot of tickets which show "new" are probably resolved but ticket hasn't been updated.
+           ACTION: follow up on tickets that may not be necessarily assigned to us - BIG job - let's talk about this again when Dave's with us.
+        
+        5. Around the room
+
+Q: (REbecca) can we tell who is in staging now?
+A: Check Redmine (Bruce)
+
+
+Q: (Amber) General Dashboard Question: Is it worthwhile to have a structured feedback process on Dashboard issues?  General agreement that this needs to happen.  Also need to look at usabilty of the presentation of the data.  One column that overpowers everything else.  John -- if I'm a MN operator, can there be a tab that shows what's up.  Same thing for someone downloading data.  &&&&&.  Further discussion of where does the MN dashboard fit on the public web site.  Need assess stakeholders and structure of the public web site.  Could put dashboard under about, could put it in data.  Need to discuss this at AHM.  Likely want to go with current structure for Bill to have things to show for NSF on Thursday of AHM meeting week.  
+I assumed that the dashboard would appear somehwere like http://www.dataone.org/member-nodes
+(and may appear elsewhere)
+but I am out the loop a bit 
+
+Action: Consideration of website structure and potential resigned (MN under About? Participate? Data? or as own Stakeholder Tab?).  have this conversation at the AHM in the context of the full website.
+
+

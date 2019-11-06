@@ -1,0 +1,41 @@
+High-level summary:
+ * Sequim is new DataUp implementation from MRC.  They want to keep up their relationship with CDL, DataONE etc. 
+ * We were told that they have decided to make Sequim open source once it's complete.
+ * John and I got a demo on Friday 6/7/2013. It is much, MUCH improved from the DataUp we know and love. In fact, even Kris Tolle called our version a "prototype". 
+ * Kris is working down the bitbucket list of wants/bugs from DataUp and incorporating them into Sequim (bitbucket: https://bitbucket.org/dataup/main/wiki/improvements_issues)
+ * Much of what I imagined we would do with DataUp using the NSF funds has been done with Sequim.
+ * We need to figure out how to proceed given these facts.
+
+Other points of interest:
+ * Sequim has an "impersonate" feature to allow deposit without user login (what we had before was one hardcoded user/password pair per repo) and (new) deposit with user login; this might help the USGS thing
+ * Sequim als will have an "auto-delete-on-publish" feature, which will remove files from the online tool's storage (reducing Azure storage costs) when a file is deposited
+
+Table of Sequim features versus what we proposed: https://docs.google.com/spreadsheet/ccc?key=0Agq_OgwoRF1AdExxWjJGQl9OdGhjWk9KMHNqVzNMNHc&usp=sharing
+
+MRC/SDSC Milestones document: https://docs.google.com/spreadsheet/ccc?key=0Agq_OgwoRF1AdGx4TnpMRWJweGpjTUlUWFNqaE5UMFE&usp=sharing
+
+
+Sequim screenshots: https://www.dropbox.com/sh/5glvx95xtdg6y47/4cBB5Nv29S
+
+
+= = = = = = =  = = = = = = = =  = = = = = = = =  = = = = = = = =  = 
+
+Bill: With respect to any modifications to the scope of work, I will need to request approval for any significant changes (ie budget re-allocations among NSF categories, scope of work, etc.) via fastlane, which the cognizant program officer may either accept or reject (after some undetermined period of review).  This is NSF policy.
+
+John: If we want to put NSF $$ into DataUp we imagined it would be via a project manager that we'd hire, or maybe a developer that would work with support from SDSC's .NET infrastructure (IAS can't really support a .NET developer).
+
+= = = = = = =  = = = = = = = =  = = = = = = = =  = = = = = = = =  = 
+
+To do:
+Formally ask MRC if they want to partner on this. 
+- what we proposed
+- further development
+
+talk to Ilya - can a dev set at SDSC?
+
+go through our proposal - how to approach these items if we are working with microsoft.
+
+the future of DataUp - how these will impact future spreadsheet ideas.
+
+logistics/budget: if we do a sub sub contract, what are implications? Can we directly pay salary for someone in SD? otherwise resources diluted.
+

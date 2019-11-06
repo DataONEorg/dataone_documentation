@@ -1,0 +1,85 @@
+DataONE Users Group
+Jul 7th - 8th 2013
+Chapel Hill, NC
+
+Roundtable 2: Interoperability / Semantics
+
+Participants: 
+Dave Vieglais, Steve Aulenbach,  Mike Frame, Steve Richard, Pedro Correa, Greg Gollberg, Brian Wee, Patrick West, Angela Murillo, Inna Kouper, David LeBauer, Robert Downs, Karl Benedict, Todd Vision, Mary Beth West, Bill Corey
+
+Talking points / Guiding Questions
+ * What are the main challenges?
+   * Metadata interoperability
+     * Consistent representation of metadata to end users
+     * Sparsity of existing metadata
+   * Service interoperability
+     * Many services already available and deployed for exposing data
+     * Technical interoperability with DataONE relatively straightforward
+     * Policies of data repository may impact fesibility of participation (e.g. content mutability)
+
+ * What solutions currently exist?
+   * Metadata interoperability
+     * Existing DataONE mechanisms for aligning metadata to common internal schema
+     * Systems that facilitate more complete mapping of metadata entries to controlled vocabulary / ontology terms
+     * Systems that utilize ontologies and semantics to facilitate content discovery
+   * Service interoperability
+     * Many existing services and capabilities for sharing data, e.g. OAI-PMH, CSW (Catalog Service for the Web)
+     * Many consumers of these services, e.g. CSW clients
+
+ * What contribution can / should DataONE provide in this landscape?  How can that be best achieved?
+   * Metadata interoperability
+     * Include / emphasize reference data and associated metadata with the investigator tools
+     * Consder incorporation of metadata quality feedback to contributors
+     * Continue to promote best practices for metadata management
+   * Service interoperability
+     * Investigate adding CSW consumer capabilities to CN
+     * Re-evaluate OAI-PMH as a data provider service 
+     * Perhaps re-evaluate the tier 4 requirements of authentication to enable fully public repositories to participate as replication targets
+     * consider also exposing CSW, OAI-PMH, and similar services (e.g. WFS, , the Web Feature Service) at member and coordinating nodes 
+
+Possible areas for discussion:
+- Interoperability of datasets
+- System interoperability
+
+Searching - should discovery be driven by CNs alone or could it be a MN function, perhaps distributed across MNs? There is no reason for CNs only to drive discovery, it can be MNs or even third parties. A common search API across MNs or CN search embedded into MN search capabilities?
+
+Bigger issue with metadata search - for client interop one needs metadata interop. One approach is mapping schemas, another approach is to open Solr index for access and metadata search. 
+
+True interop should be done via original metadata documents rather than normalized metadata docs or index. Although for interop one needs a consistent model for matching varying metadata models and enforcing some matching.
+
+People are looking for data, so processing metadata is mainly about giving the user the button to click on to get the data.
+
+Also, types of interoperability - metadata, data, search, etc. How can DataONE interoperate with other systems? E.g., catalog services for the web (CSW). Federated search is usually implemented by the client.
+
+Discussion occured about exposing the DataONE SOLR Search Index for client access to search, discovery metadata/data... 
+
+How can DataONE resource maps be accessed by other services? If other services interop is implemented, CSW member nodes, for example, could better integrate with DataONE nodes. Issues with this: content immutability – how to maintain that in a wider member node implementation? Also, statistics consistency, e.g., levels of logging
+
+Discussions related to csw service usage in DataONE occured. Potential solution to gain additional MN easily through this approch could result. Content revisions, Logging, etc. all have to be addressed. Potentially, adding csw to CN, but Policy 
+
+OAI-PMH protocol is a useful interop option, some issues with access control. Public access vs restricted access content and its replication. Openly public repositories don’t need complicated access control mechanisms such as in Tier 4. Data availability can also change (example of LTER data).
+ 
+ Idea of "slender node" - minimal necessary service end-point to be a MN. Could be OAI, csw, other protocols  Ties with the idea of publicly available content.
+ 
+ Geospatial interop - WFS, etc. Open source solutions are improtant (e.g., alternatives to ArcGIS).
+ 
+ Producer vs consumer view on interop
+ 
+ CSW - what records does it not work for? The base standard is Dublin Core with bounding box - has to be querable, but not necessarily with results. Google geocodes with placename keepers or GNIS gazeeteer as controlled location options.
+ 
+ Data objects in dataone - how are they comparable to objects in CSW?
+ Outcome - investigate csw as ingest and output services for DataONE. 
+ 
+ 
+ Common search index - now geared toward human consumption. More machine-readable is good, for researchers and for consistency of repositories. What are the standard/best practices for this? Tools for original contributors?
+ 
+- ontology for parameters and units, currently no common solution for concepts for earth sciences broadly, other ontologies can be partially re-used and crosswalked with
+
+Use cases - good consistent metadata descriptions help identify what's in the data..
+ 
+ Include reference data in the R plugin etc as examples
+ 
+ 
+
+
+

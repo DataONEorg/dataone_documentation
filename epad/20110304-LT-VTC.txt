@@ -1,0 +1,183 @@
+
+Attendees: Rebecca, Amber, Carol, Todd, Bill, John Cobb, Steve, Bob Cook, Trisha, John Kunze, Dave, Bruce, Matt, Steph
+
+Regrets: Suzie, Viv, Mike
+
+http://epad.dataone.org/20110304-LT-VTC
+ 
+
+  Agenda for 2011-03-04
+
+1. NSF Report (distributed by email and https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/D-ONE-report%20-2.pdf)
+
+Cyberinfrastructure - Panel Recommendations:
+·      The semantic problem is key. It would help if the team could show how this is being done in the upcoming months on a case-by-case basis. How are the synonyms, hyponyms, polynyms which will exist in the thousands, being resolved? (CCIT, Vieglais)
+·      Different parameters need different facets (or attributes) to be discoverable. Semantic interoperability, cross-discipline DataONE lifecycle data management nomenclature and faceted search resolvers could enhance data discovery. (CCIT, Vieglais)
+·      Develop user-friendly graphical user interfaces (GUI) APIs to overlay current systems administrative command-line functions for broader impact and use.(CCIT, Vieglais)
+Relates to the demos that were all command-line driven;
+Up to the CCIT to identify which pieces need GUIs and then work with CE to check the usability
+
+Be able to point to specific locations in the Architecture Document and/or PMP.
+
+Staffing and Project Management - Panel Recommendations:
+·      Find ways to backup the development and operations staff.  
+·      Find ways to compensate for the inherent unreliability of the ‘volunteer’ members.  
+·      Adjust development schedules accordingly.
+(Executive Team will respond to these recommendations)
+
+Network Coordination - Panel Recommendations:
+·      A DataNet federation approach was articulated by the PIs of both projects.  Promoting education, assessment, socio-cultural practices, and training at professional meetings; governance involving data management, archive and preservation, were presented as part of the plans of each project.  A recommendation is to formalize the federation plan, along with an emphasis on sustainability that would be included in the project execution plan for the remaining 3-5 years of the projects. (Executive Team will respond to these recommendations)
+ 
+ Need the debriefing call with NSF before we will be able to respond with Data Conservancy on this.
+ 
+·      The project team should consider formalizing the schedule for expansion of the Member Nodes. This could be done via a matrix in which the next members are listed by inclusion schedule and categorized by metrics that would illuminate why they are trying to add this member and not another member. This would help in spanning as broad as possible a member spectrum putting the system through additional tests.  It may also help them rationalizing the expansion schedule. (LT)
+
+We have the next 3 on the prioritization list. In the next few phone calls we want to come up with a more formal approach to this, while leaving some flexibilty for input from the DUG.
+Todd: provide them with the documentation that we already have
+Probably want to identify the 4 after the next 3 MNs.
+
+Strategic and longer-term planning - Panel Recommendations:
+·      Plans for the DataONE network should include the development of procedures for logging and recovery, as is done for distributed database management systems. (CCIT)
+This is in respect to treating DataONE as a transactional model.  Dave thinks we can address
+this with the current implementation.  If a transaction fails, it disappears out of the system. Need to verify this.
+·      The DataONE team stressed the importance of the DataNet federation and the need to work and collaborate for both common technologies and sharing the scope. In other words, avoid duplication and work to complement each other. Some technical aspects were presented, such as authentication and authorization, semantic issues, replicating each other, and collaborating on educational aspects. It would help if the team could formalize this through some sort of a collaboration plan, to which the next DataNET partners could be added. (Executive Team with NSF and Data Conservancy)
+Can't respond until the debriefing call with NSF
+
+·      Curriculum development – the current approach is collaborative and still in its early stages. Define learning objectives for the MSc. and PhD programs to support DataNet goals. 
+(Courses  at UTK and UNM - have learning goals)
+Both are available so will have them ready to go if needed.
+
+·      Plan on potential educational use of the data early in the project.  There are implications for the metadata requirements that need to be accommodated during the implementation of the storage and access plans. (CEE WG)
+Again - requires clarification from NSF
+Bruce: ways to get classes to use the data early on
+AAAS ways to use science data in the classrooms - are these individuals involved in our WGs?
+Make sure we don't forget the middle -- high school students
+What aligns with national teaching standards? - curriculum requirements
+
+Assessment - Panel Recommendations:
+·      The panel recommends that assessment be done comparatively.  An example data reuse project should be attempted by two groups: one using DataONE and one using another tool kit. The Project investigators could then measure how much time and effort is needed to ingest new data or how difficult it is to use the existing APIs for data access. (U&A WG, EVA WG)
+ Something for the future
+ 
+·      The metrics are not comparative and the panel suggests that metrics of this type be added. The assessments based on these metrics will then constitute publishable scientific results that can have an impact that will persist beyond the lifetime of the Project. In this regard the team should seek coordination with other DataONE projects to perhaps develop a common list metrics that can be applied across DataNet. (Executive Team with NSF and Data Conservancy)
+Need more discussion with NSF 
+
+2. Technical training workshop to be held after EIM 2011 in Santa Barbara (Jones)
+
+Yes, I'd like to discuss a proposal for a technical training workshop to  be held after the EIM meeting this fall in Santa Barbara, with the hope  to convince many in the technical informatics community to become a  part of DataONE.  It would be great to get the CE side of the project  involved in this, although much of the training would be on the  technical end and so would likely involve the CI crowd too.  The  workshop would be focused on how people can implement MNs and ITK  software that is compatible with DataONE.  Many participants will have  already paid their way to EIM, and so I think it is a good opportunity  for us to engage them at minimal cost, and at an opportune time when we  are finalizing our production rollout of the system.  I think many of  the information managers in the community would be excited to  participate.  I started a synopsis/proposal with my initial thoughts for  the workshop on etherpad that I'd like to discuss during the LT:  http://epad.dataone.org/D1-implementors-workshop -- obviously this needs to be further developed if we decide to move forward with it. 
+
+Could hold this at NCEAS on Friday after EIM 2011 - 
+DUG composed of potential MNs so need to consider the DUG and potential overlap. 
+In the July meeting we may have identified more MNs and this could be a potential opportunity for MNS & potential MNs to get more technical training.  So the two are complementary rather than conflicting.
+
+
+3. Training opportunity at SC'11 (Michener)
+Meeting is November 12-18, 2011 Seattle (Tutorials on Sun and Mon prior)
+Tutorial proposal deadline is April 8. Acceptance rate is ~ 20-40% for tutorial proposals usually. I have a COI since I an on the tutorials review committee.
+
+Amber, Rebecca, and John Cobb will respond positively to Beth and offer to participate. Amber will lead.
+
+Beth Plale is part of one of the possible new DataNets.
+
+We're planning on putting in a proposal for an SC'11 tutorial on geo
+metadata catalogs.   Are you interested in participating?  We'll do the
+bulk of the work, but it'd be great to have 3 catalogs (e.g., datacat,
+mcs, and xmccat) represented.
+
+I'm cc'ing Scott, primary author of XMC Cat who'll be hosting the
+tutorial.   If you're interested, send us the name of a contact person
+that Scott can work with.    If you're not, we welcome your suggestion for
+an alternate, but I think it'd be fun to have these three represented as
+they have different strengths.
+
+cheerful regards
+
+beth
+
+: Beth Plale
+: Director, Data to Insight Center
+: Associate Professor of Computer Science, School of Informatics and
+Computing
+: Indiana University Bloomington
+
+4. Summer Internships (Vision,Wilson)
+We have some internships in the INTEROP project (4) plus some DataONE funds for 
+interns.  Want to be able to announce the program within the next 2 weeks. Based on last summers results, we want a strong committment between the mentor and intern. One
+example, is another animation. 
+https://docs.google.com/document/d/1JZoGrZLjKXCjzju_sm5CH5ddwP__ZqOQXGck2SP6Otg/edit?hl=en&authkey=CJ3siOoP#
+
+Matt: alternative suggestion is to get students for WGs
+Todd: close to what happened with the Tree of Life Project last summer
+
+Also a discussion of having a student working at a potential MN
+
+Where to post D1 summer internship announcements???
+• Federation of Earth Science Information Partners e-mail list (Bruce Wilson)
+• Earth and Space Science AGU Section e-mail list (Bruce Wilson)
+• American Society for Information Science & Technology e-mail list (??)
+• LTER-all
+• Dataone users
+• http://www.cs.wisc.edu/dbworld/
+• http://groups.google.com/group/workflows?hl=en
+
+5. Around the Room 
+Trisha: nothing to report.
+
+Steph: Nothing to add this week.
+
+Bob:  The ORNL DAAC's User Working Group meeting is next week in Annapolis.  We have DataONE on the agenda, and Martha Maiden and Jeanne Behnke will attend.  Good opportunity to discuss the ORNL DAAC as a member node.
+
+Cobb: Nothing to add 'round the room. I sm retruning from the NEES Governance Board meeting. One thing they mentioned was a follow-up item from the NEES data archiving and curation workshop was that they are interested in creating NSF cross-directorate large project collaobrations on long temr data archiving and curation. This may overlap with one or more DataONE interests
+
+Amber: Nothing to add.  Ongoing activities include meeting logistics, DataONEpedia revisions, standing up Citizen Science.
+
+Carol: Nothing to add, although one of last summer's interns has contacted us and volunteered to work on the librarians and libraries surveys which are going out next week.
+
+Bill: Mark Schildhauer and I attended meeting on Environmental Data Repositories in Marburg Germany. There was significant interest in DataONE and Sonet and SemTools.
+
+Dave: nothing to add - attending DAAC meeting next week with Bob
+
+John: not much, going to UC Davis for data workshop
+
+Matt: Sorry to report that Chad Berkley has resigned to take a job in mobile development, will be considering how to replace over next few weeks
+
+Bruce -- Not much to report.  Worked with Dave and Matt yesterday on some planning stuff for CI and the aforementioned work on the Summer Internship.  FWIW, the current plan is to not use Melange this year -- it doesn't add a lot of value for our situation.  We'll probably just have the students submit application information and letter of reference by e-mail.  
+
+
+Marratech notes:
+
+[11:13 AM] John:  I agree with Todd, but I also think that the committee is cautioning us that the selection (and non selection) of new member nodes is a "ticklish" issue and we should be careful --- and I think we are aware of that.
+
+[11:20 AM] John:  curriculum enrichment incl. things like science fair assistance may be a high payoff area for K-8
+[11:20 AM] Bruce:  @Carol -- there is a DOE program through ORISE that engages teachers in curriculum development in science over the summer.  They might be good partners.
+[11:21 AM] John:  There is also a big K-12 STEM corsscut theme in the President's Fy12 budget proposal, but I'm guessing this is not news to this group
+[11:22 AM] John:  I think that Steve has provided snippets to that effect for EVA and SOTB
+[11:22 AM] Carol:  Thanks Bruce and John. We are also thinking of working with the new Knox County science magnet high school
+[11:25 AM] Todd:  Also see http://www.esa.org/ecoed/
+[11:25 AM] John:  SC'11 Tutorial deadline is April 8
+[
+[11:30 AM] Bruce:  SC 11 -- November 12-18, 2011
+[11:32 AM] Trisha:  how will that overlap with DUG?
+[11:32 AM] Bill:  yes, great idea
+[11:35 AM] Trisha:  OK 
+[11:37 AM] John:  Are we doing Google summer of code this year?
+[11:37 AM] Bruce:  There aren't any current plans to participate in the actual Google Summer of Code program as DataONE.  
+[11:38 AM] John:  O.K. - its a good thing, but it does take significant mentor time to do it well
+[11:38 AM] Steve left.
+[11:39 AM] Todd:  https://docs.google.com/document/d/1JZoGrZLjKXCjzju_sm5CH5ddwP__ZqOQXGck2SP6Otg/edit?hl=en&authkey=CJ3siOoP#
+[11:41 AM] John:  Given NSF review feedback, is it possible to add semantic focused project ideas? something that is doable in a fixed time frame by a student?
+[11:42 AM] Stephanie:  That sounds right on, Todd - an individual mentor is good
+[11:42 AM] Dave:  there's some relatively constrained work that could be done on the merucry index related to semantics
+[11:43 AM] Todd:  John, yes I suggested Hilmar might work on a proposal aligned with the semantics WG
+[11:44 AM] John:  Would the interop internships be physically co-located with mentor or also remote?
+[11:44 AM] John:  Thanks
+[11:46 AM] John:  MY personal opinion is that we should go forward but weshould make sure that mentors really can commit to be a (tor)mentor
+[11:48 AM] John:  March 14 is soon.
+
+[11:53 AM] Trisha:  I would like to hear your take on orcid
+[11:53 AM] John:  sorry, my microphone is back now
+[11:54 AM] Stephanie Hampton left.
+[11:54 AM] Trisha:  I didn't either
+[11:55 AM] Trisha:  Thanks to Todd
+
+
+

@@ -1,0 +1,136 @@
+Use Cases Group
+
+11:30 - 1pm, June 3rd Breakout session
+
+Google Doc;
+https://docs.google.com/document/d/1LOtqBaVATIdIOXJuwH3On9enQvJfApT_rbVbNY_PZY8/edit?usp=sharing
+
+
+Scientists:                                    Metadata:
+Designs Experiment                    automatic metadata, definition of variable names
+Collects data                              instrument created metadata
+Analyzes data                            e.g. callibration/outage info
+Publishes/archives data            can be added by data curator
+
+there is a 3rd column, to the right, where system metadata is being generated from the start. some is quite useful in tracking date the research started, each time data is being collected, analyzed, published, etc.
+
+some is useful for retrieval/sharing/re-use.  Eg.., I'm looking for research datat on observations of X species gathered in the field on X date, There are the other types of use case, perhaps more..where the dependence is on human or semi-human generated metadata, subject/taxonomy terms/ontology cocnepts that are represented in a standard way. For example, the taxon of hte Alpine Rabit, or referecne to weather condition or climate reading that was noted as an initial, or generic var1 or an acronym, e.g., CHL or Tpg (see below) and now needs to be standardized in a way that is understandable to all, or at least clear on what the term means for communities.
+
+Using data publication as a hook - "publication" here being interpreted broadly as any event in which a scientist's data might be subject to review by others, particularly (but not necessarily) by others outside the scientist's domain (deposit in a repository, publication of associated paper or publication of data itself).  This hook may be important to focus on as it is entirely possible that questions about terminology may never be raised until then.
+
+Proposed tool can serve as communication mechanism
+- between scientist & data reviewer (reviewer in sense of preceding)
+- amongs community in establishing preferred terminology
+
+Data model implications
+- store non-preferred terms that may be local/obscure or may be in the vernacular wtihin a community ("CHL", "phaeo", "Tpg")
+- map non-preferred terms to preferred terms & definitions, or perhaps just to definitions
+
+Use case 1(a):Scientist uses community standard or personal names for variables in dataset, then on publication has to go back and edit the variable names to standardise them/make them easier to share. Issue: might not always be a good match between terms in the scientist's head and in the dictionary - possible proliferation of terms?
+
+Use case 1(b): Scientist (having been through use case 1a before) looks up standardised terms to name variables before data collection starts.
+
+Use case 1(c): Novice scientist is unsure of correct terminology to use for variable names so looks terms up. Issues: disambiguation and clarity of definitions
+
+Use case 2: Researcher Alice wants to use researcher Bob's dataset. Bob has named one of his variables "temp_2m" - Alice needs to look it up to determine that "temp_2m" is the temperature 2 metres above ground level. 
+
+Use case 3: Data repository manager Caroline (with no domain knowledge) needs to work with researcher Bob to ensure that Bob's dataset has standardised metadata before it goes into Caroline's repository.
+
+Technical use cases:
+ * Look up and view a term (what does "rainrate" mean?)
+ * Suggest new term (I want to propose "temperature: 10m above mean sea level")
+ * Disambiguate term (What's the difference between "CO2 concentration ppm" and "CO2 concentration mol/m^3")
+ * Dispute term (We don't need both "rainfall rate" and "rainrate"  -suggest deleting "rainfall rate")
+ * Look up version history of a term
+ * Find related terms
+ * Promote term from vernacular to canon
+ * Edit/deprecate/tag/comment on a vernacular term
+ * Browsing for terms (list all ecological terms)
+
+Questions:
+Who can edit a vernacular term? Anyone?
+Who can edit a canonical term?
+Who determines when a vernacular term should be promoted to a canonical term?
+
+
+
+USE CASES
+
+Use-Case: Look up and view a term
+Author: 
+Version: 0.1
+Date: 3rd June 2013
+Purpose: User types term into a search box and gets a list of terms returned
+Actors: Dictionary user
+Related Use-Cases:
+Disambiguate term
+Find related term
+Summary:
+User  types a term (e.g. “rain”, “pika”,...) into a search box on the  dictionary site and gets a list of terms returned, with links to
+ their definitions and individual webpages
+Typical Course of Events
+User navigates to the dictionary site
+Use enters the term into a search box
+Site  returns a list of terms and definitions, sorted by relevence with links  to the individual term’s page. Search results may be split across  multiple pages (list 1-50, 51-100 etc)
+User clicks on appropriate link to get to term page.
+Alternative Course of Events
+Error page with error saying something like “Term not found. Click here to propose a new term.”
+Pre-Conditions
+<here>
+Post-Conditions
+<here>
+Miscellaneous Notes: 
+Is there scope for a faceted/advanced search here? Search in only canonical/vernacular?
+Use-Case Diagram:
+
+System requirements (wishlist) and functionalities:
+Website with search capability, multiple page functionality, user input capability, 
+term history documentation
+Underlying structured database
+ranking algorithm for the search
+(autocomplete)
+keyword and context 
+
+
+
+Use-Case: Submit new term
+Author: 
+Version: 0.1
+Date: 3rd June 2013
+Purpose: Submit a new term for inclusion in the dictionary
+Actors: Registered user
+Related Use-Cases:
+Promote a term from vernacular to canon
+Edit/deprecate a vernacular term
+Summary:
+
+
+Typical Course of Events
+User logs in to dictionary site
+User clicks a button to suggest a new term
+User enters the proposed name for the term
+(checking  step) Site searches for the proposed term and returns examples of  canonical and vernacular terms (if they already exist) If no terms are  returned, site redirects to the next step
+User fills out a form for the term, definition, example of use etc. for the term
+User clicks a submit button
+Site automatically creates term page as a vernacular term
+
+Alternative Course of Events
+
+
+Pre-Conditions
+<here>
+Post-Conditions
+<here>
+Miscellaneous Notes:
+<here>
+Use-Case Diagram:
+
+System requirements (wishlist) and functionalities:
+Website with search capability, multiple page functionality, user input capability, 
+term history documentation
+Underlying structured database
+New page function - allows user to create new page for a new term - this could be via a webform
+
+
+
+

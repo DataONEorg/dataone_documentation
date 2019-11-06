@@ -1,0 +1,74 @@
+.. meta::
+  :keywords: DataONE, CCIT, 20110810, VTC
+
+
+2011-08-10 - DataONE Developer Call
+===================================
+
+:Attendees: Bruce, Matt, Chris, Giri, Jim, Mark, Neck Dexter, Robert, Ryan, Ben, Porter, Bob, Robert, Ryan K., Dave 
+
+
+Agenda and Notes
+----------------
+
+1. General update on CI
+
+Hardware:
+UCSB - partial delivery, Nick starting to setup racks.
+ORC - Equipment all delivered, racks setup, installing now. Maybe powering some piecesup next week.
+UNM - moving ahead, blocked by UNM IT 
+
+Schema changes propogated through python and java
+Latest schema: https://repository.dataone.org/software/cicore/tags/D1_SCHEMA_0_6_3/
+GMN updated
+Metacat being completed
+
+d1_common_java latest build: http://dev-testing.dataone.org/maven/org/dataone/d1_common_java/0.6.3-SNAPSHOT/
+
+Mercury - need to test
+- Get Roger to point stress test tool at the Mercury node 
+- Mercury common changes: https://daacsvn.ornl.gov/svn/mercury_common/ui/branches/mercury_common_08102011. the code needs Solr 1.4
+- We will also move the UI changes soon.
+
+CN synchronization targeted for August 25.
+
+
+2. Package descriptions using OAI-ORE resource maps
+
+See: http://mule1.dataone.org/ArchitectureDocs-current/design/DataPackage.html#oai-ore
+
+DataCite metadata documentation:
+http://schema.datacite.org/meta/kernel-2.2/index.html
+DataCite relationship types: http://schema.datacite.org/meta/kernel-2.2/include/datacite-relationType-v2.xsd
+
+Using it as recommended by DataCite would look like this in XML:
+<relatedIdentifiers>
+    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">10.1234/testpub</relatedIdentifier>
+    <relatedIdentifier relatedIdentifierType="URN"
+relationType="Cites">http://testing.ts/testpub</relatedIdentifier>
+</relatedIdentifiers>
+
+Notes from CCIT meeting: 
+
+https://repository.dataone.org/documents/Committees/CCIT/20110719_CCIT_SantaBarbara/raw_notes_from_etherpad.pdf
+
+
+Need to rename cn.get as something like cn.indirectGet
+
+libclient requires:
+- config parameter to indicate follow redirects or not
+- ability to handle a redirect exception
+
+server requires:
+- generation of 302 message and exception
+- object location lookup with resolve
+
+
+
+3. Any other business
+
+ORNL DAAC MN test - status
+
+Mark: LTER now fully CILogon enabled
+
+

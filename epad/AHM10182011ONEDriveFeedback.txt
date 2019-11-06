@@ -1,0 +1,350 @@
+Feedback on the ONEDrive, 2011-10-18
+
+
+Names appearing in this document:
+DV = Dave Vieglais
+MF = Mike Frame
+RS = Ryan Scherle
+
+================= Summary ==================
+
+Concerns:
+ * overwhelming the user/computer with too many files (+2)
+   * number of files per folder
+   * filename length
+   * total size of content on disk
+ * how best to market this tool? (+1)
+ * paths not being persistent if content in DataONE changes
+ * need a query building tool for file browsing (similar to the Mercury browsing tool)
+ * this is a very (conceptually) inefficient way for a user to browse data
+ *  (How does it respond to "ls -aR" ?) (actually works very well)
+ * Published v Unpublished data--Data from Dryad can be accessed 
+ * Quality Control
+ * this makes it easy for users to accidentally download a lot of content (throwing off statistics)
+ * when there is a resourcemap, why aren't the contents shown as a bagit package?
+
+Feature requests:
+ * separate filtering from access -- use mercury as the recommended way to search, then allow the results to be opened in a filesystem view (e.g., a "smart folder") (+3)
+   * allow filtering on geography (+1)
+ * ability to drag a folder (data package, all data associated with a keyword, etc.) into other investigator tools (+2)
+ * shopping cart or bookmark lists (+2)
+ * generate more features like abstract.txt automatically from the metadata, investigate other output formats that people would want (+1)
+ * multi-language support -- generate multi-language abstracts (+1)
+ * ability to find data similar to existing data, or collaborative filtering (+1)
+ * improve listing of keywords, using controlled vocabularies or separating into pages (+1)
+ * adding a hook so that data sets cannot be combined, permanently, which changes the original data sets
+ * take the metadata and format it for as a new data set, perhaps for only particular users.
+ * modify the display to indicate which items will work with which applications (user interface)
+ * ratings system (e.g., quality of the data package)
+ * allow the filter query to be updated on the fly (while the drive is mounted)
+ * Use CDL Namaste tags for enhancing the directory listing?
+ * when opening a file, report the canonical path, rather than the path used to locate the item (this will allow applications to cache a path that should be stable)
+ * statistics should be segragated by the tool/interface that generated them -- this way we can sort out the stats for ONEDrive from other tools
+
+
+================= Session #1 (Badger) ==================
+
+ * What is an ITK component? an interactive tool kit to allow communication with DataOne
+ * would there be a problem if a facet has millions of values, or a facet value has millions of data objects? 
+   * DV: it actually performs very well
+   * Not trying to normalize the keyword facets now
+   * if there are too many results, we could create a path that was similar to search results paging -- but this may be a problem for tools that memorize paths (the paths would change as items were added)
+ * is everything read-only
+   * DV: yes, for now
+ * Will the windows implementation work if there are millions of titles?
+   * DV:  Yes, probably.
+   * suggestion: use the identifier as a way to navigate to a particular file (using a directory scheme like pairtree)(+2)
+     * could provide truncated identifier
+ * Why are there so many keywords for so few titles?
+   * DV:  That's a good question.
+ * Is it filtering on the command line:
+   * DV:  Yes, right now the filtering is done on the command line.  We are exploring, through OneMercury, a way to browse and search the interface and then drag it to the command line.
+ * it's a challenge to develop a good UI for this type of interface
+   * spaces and other strange characters in the metadata can cause poblems for filesystem display
+ * For every metadata granule, is there more information in each folder?
+   * DV:  Yes.  The sub folders contain information, too.
+ * If I were a librarian, how would I tell scientist what this tool would do for them:
+   * DV:  Direct access to scientific data
+   * MF: It's making all the data available from the File/Open menu option. Eventually, publishing new data will be as simple as "Save As..."
+     * write access isn't as critical as read access
+   * For COTS SW that has a captured file open syntax, it allows inclusion of DataONE collections
+   * It facillitates workflow access to data. Often the progress of workflow is paced by data transasctions. So doing this can accelerate and simplify workflows. Less manual data schlepping.
+ * concern about people overwriting existing data (we need to UI to indicate that it is not exactly the same as a local filesystem) (unintentional writing to DataONE)
+ * Can users combine things (data sets) that were not intended to be combined?
+ * Are the keywords from combined categories?
+   * DV:  yes.  It is pulling keywords from all of the categories. --> this is an area that is ripe for improvement
+ * separate filtering from access -- use mercury as the recommended way to search, then allow the results to be opened in a filesystem view
+   * mercury already does something like this with RSS -- can create any search and save its results as a feed (RS: this is common in other search systems as well)
+ * MF: is it higher priority to clean up the features of the read-only system, or to implement the write capabilities?
+   * a few people said the read capabilities are more important
+ * Does each entry have a unique URL?
+   * DV:  yes, and there is the potential to provide citation information as well.
+ * What kinds of FAQs need to be available when the site goes live to enable ease of use?
+   * MF:  we have to simplify the package by perhaps adding an icon, simplification of the tool
+ * Can people see themselves using this on a regular basis? (response was noncommittal)
+ * What's the advantage of opening the data this way instead of searching for the data and downloading it on my hard drive?
+   * uniquely identify the data by the identifiers
+   * there is an advantage in being able to use content directly, in your existing set of tools, rather than having to download, organize, and then work with the content
+ * you can trust the quality of the data more than data that was just found and downloaded.
+   * how can we convey provenance information?
+ * How much quality control is DataONE providing?
+   * DataONE is not providing quality control; it is up to the member nodes.
+ * If someone uses the data, will the identifier change?
+   * DV: the identifier stays with the file
+ * some of these discussions sound like the GitHub model
+
+
+Uncontrolled keywords
+
+Normalize keywords - use controlled vocab.  - methodology, geographic,
+instruments
+
+Give people chunks - a-d
+Having path - remember path.
+Limit Mount points - max. Number
+Provide short url - direct path to url - sort of like a DOI.
+Filtering via GUI
+Parsing Keywords for keyword folder
+Automatically provide extract of record, record
+
+Need a temporary staging area - framework of GET
+
+Proveannce
+
+What about units checking - some kind of hook. - annotation property - good
+time to think about it before (via resource map).
+
+I want to know everything going on in this park?  Copy query through ONE
+Mercury
+
+Question - how important is write access?
+
+Develop tool, need these keywords, spatial bounding, this time result.
+
+Use file system to provide access to day - use mercruy to provide search -
+give file string to mount.  Like smart folder on MAC - gives shorten path,
+put in folder. Give direct
+
+Generating mechanism for Filter via through Mercury
+
+Keyword clean-up
+
+Should change default
+
+Generating abstract.txt very helfpul -
+
+Use style sheets for metadata
+
+What kind of open formats are useful is
+
+Auto generated file from Mercury
+
+Generate citation (endnote)
+
+Help pages - purpose, installation, integration with Mercury
+
+Reason to do this vs just web - added value.
+
+Scroll and using tools
+
+Distinguishing between data that is published and not.
+
+Some reason to trust this data, more can do to attist to quality of data,
+provenance information, link between metadata and data - deals with issue
+of stuff just lying around on web.
+
+Type DOI in and
+
+Stick in the Folder - text citation in the folder - right next to file
+
+I want this dataset version.
+
+This is an active project, want the latest - embedding a version control
+system.
+
+================= Session #2 (Hawk) ==================
+
+ * How do we know what the files are, if the filenames are all just identifiers?
+   * DV:  Those file names are all unique identifiers and the problem is how to make them useful to the users.  Perhaps some combination between the file name and the identifier would make the files more useful.
+ * It would be useful to have a sandbox, to be able to save the datasets I like (e.g., shopping cart)
+   * DV:  excellent suggestion and it wouldn't be too hard to enable with log in, you could have a section in your account.
+   * compared to dropbox/googledocs -- is this a hybrid of their models?  (tags, virtual folders, nesting)
+ * Filters--focus on e.g., Geography--is it searchable?
+   * Yes, the searches can be limited by content area
+ * Can provide search capabilities within a filter
+ * are new keywords added to the list as the metadata changes?
+   * DV: Yes.
+ * Are their abstracts available for everything?
+   * DV:  Yes, however the quality varies
+ * You mention the sandbox, can you just select the folder and drag it to your desktop?
+   * DV:  Let's see.  Yes, it worked.
+   * windows filesystems let you add a comment to files, which would help for sorting
+ * MF: how important is write access vs improvements to the read-only access?
+   * should make the read only access more useful before progressing to the write capability
+ * When you make alterations to the datasets, creating new sets, where does it get stored?
+   * DV:  It depends on where you put it.  (Concern about these sets getting lost)
+ * DV: how many people would/wouldn't want to use this type of system?
+   * Social scientist says she wouldn't use this type of program, due to privacy/security concerns
+ * What if someone wants to use a subsect a data set?
+   * DV:  In the future we will be able to provide that kind of service.
+ * What about translating the information in to several languages?
+   * DV:  it isn't a problem to do a rough translation, but it is much more difficult to do an accurate translation.  It depends on the language in which an individual is running the package.
+ * add user ratings? and allow users to adjust their search results based on ratings and identities of the raters
+ * windows doesn't allow files to be copied if the file name is longer than a specific length 
+ * When there are too many keywords, can they be collapsed into a first letter?
+   * DV:  yes.
+ * Is there required metadata that goes into the facets?
+   * Yes, and the performance doesn't suffer much.
+ * Are there any measures of similarity in finding data sets? (suggestion)
+   * could be uncovered as the usage increases, similar to Amazon algorithm (you might also like... suggestion)
+   * 
+
+Filename browsing is difficult - how do I know what to choose?
+- maybe title string and I'd
+
+Some place take datasets I find, my space, don't have to find them again -
+bookmarks
+
+IDs move around, new version, what can be trackable
+
+Filter on Geography.
+
+Provide a search.  - do in ONE Mercury as search, drag into file system
+
+Take uncontrolled keywords and map to controlled - could do on MN basis for
+their controlled vocab.
+
+MN listing of data set
+
+Add comment to file itself at your desktop - right click in windows,
+attributes.
+
+Folder coloring option in MAC
+
+Display on screen of science metadata or data to tell if it will work with
+your application.
+
+Generate citation records can take into endnote
+
+What about google desktop - chaining queries. Filter within filter that is
+in place
+
+Some portions are ready only and some writeable
+
+Key is for write, have a bunch of pieces, can't take 30 minutes to do.
+
+Issue - role of MN
+
+Social science data - have to have controlled access
+
+Potential subsetting
+
+Priority with integration on ONEMercury is high - take a link from Mercury
+into OS is big - would be a deciding factor
+Improving Read Only, queries, filter, fix filename
+
+International language support.  Generate multi-lingual abstract
+
+Data object user rating - then filter on star, who rated it!
+
+Filter on data for use with a separate software
+
+Like adopted interface people familiar.
+
+Folder lengths may be an issue   issues of how many files in a directory.
+
+Collapse of keywords in alphabet or grouping.
+
+Top level view across the data to allow drilling down - high level view
+
+Any measure of similartly, want something similar to this.
+
+
+================= Session #3 (Wolf) ==================
+
+ * Is this meant for human interace or machine?
+   * DV:  It is meant for human interace usable on your desktop
+ * so the queries are implicit?
+   * DV:  regarding the filters, what you will see when you submit a querie are all of the files that contain that keyword.
+ * why do other keywords show up when the filter is "habitat"?
+   * DV: these are the keywords that co-occur with habitat
+   * DV: yes
+ * can we copy the query from the mercury search to create a drive?
+ * Can you just mount the data package?
+   * DV:  yes, you could. (and lets!)
+ * is it possible to change the query at the command line and see an updated view in the file browser? 
+   * DV: right now, you would need to mount a new version of the OneDrive. But it should be easy for us to allow the query to be updated.
+ * This is a highly labor intensive program.  Should it be used for someone looking for something more obscure?
+   * DV:  It could be, but yes, it is labor intensive.  The program provides a common view across everything, so all files retrieved would appear under a block related to the one keyword.
+ * MF:How important is the write feature?
+   * It is more important to improve the read feature first, then work on the write feature
+   * The contributions of data could be twofold:  new data and then comments about already existing data.  Do you have a way to differentiate?  
+     * DV:  not yet, but we are considering areas where the deliniation can be seen.
+ * Can we see the files with or without annotations, and other information?
+ * Will paths be created in the files with citation information?
+   * DV:  No, eventually, there will be a way to directly export the citation into your citation software.
+ * Pairtree-ing again.  But it isn't human friendly, so not ideal for file system browsers
+   * DV:  It is important to present a hierarcy of content, so that the user can understand the content.  It enables restriction and categorization.
+ * It is an interesting idea because you have complete power about how you present the data.
+ * If a query has 15,000 hits, will it wait to display all of the hits or list the hits and regenerate as results appear?
+   * DV:  The actual return from the server fetches a lot at first then continues to fetch after the first hits are returned.
+ * RS: how important is preserving the paths to objects?
+   * the identity of the object is more important than the actual path
+   * perhaps the filesystem can report the canonical path, rather than the path used to locate the item
+
+
+Filters that are spatial and temporal are needed
+
+In mercury search, can just copy query string into filter
+
+Mount at the level of the data package.
+
+Use Title of Data Provider as Folder name
+
+More human readable Id of the data.
+
+Keywords - mapping to a controlled vocabulary to follow hierarchy
+
+Apply style sheets for rendering of science metadata
+
+Ability to refresh mapped drive, based on change in filter.
+Add readme document if drag to the desktop
+
+Could be a game changer
+
+First stop interaction
+
+Comments about existing information - annotations would be helpful
+
+Issue of depositing in the drive vs through MN needs to be figured out.
+Drive would be great for single, potential un affiliated PI.
+
+Configurable default to show with or without annotations.
+
+Potential use into the drive for citations.  Drag file into endnote
+
+Cdl use of metadata in directory listing - spec John K has.   Tagging
+directory type.  Nomasday tool?
+
+Pair tree break into smaller directories.  They aren't friendly to users.
+
+================= Session #4 (Tamaya) ==================
+
+ * Why doesn't the archive.txt show up for all items? 
+   * DV: some items are the actual data files (not metadata), so they don't have abstracts
+ * How practical is it to filter on licensing features?
+   * DV:  it would be good if there were categories of licenses instead of plain text explainations 
+     * And to see who the sponsor of the project was, along with grant #
+ * How often is the view refreshed?
+   * DV: any time the OS requests a browsing operation -- it's fairly frequent
+ * authentication?
+   * DV: not supported yet, but if you have a CILogon certificate, it will work with this
+ * Can see this being utilized in the library community building up virtual collecitons
+ * In that get request, it would be nice to know where the downloads have come from
+ * how does this compare to NFS/AFS? 
+   * it's similar, but at a higher level (connecting to DataONE objects, rather than individual filesystems)
+
+
+
+
+

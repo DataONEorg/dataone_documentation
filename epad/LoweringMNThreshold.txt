@@ -1,0 +1,73 @@
+Lowering the threshold for MN implementation
+
+
+This is a suggestion for a set of changes to the DataONE architecture  that would lower the complexity of MNs; which would then lower the  threshold for third parties to become MNs; which would then help in  maximizing adoption of DataONE. The changes would also create an  architecture that would be more intuitive both for developers  implementing clients and for end users. 
+
+
+Lowering complexity
+
+In the current DataONE architecture, the REST interface that must be  implemented by MNs is designed to support two separate types of  connections: CNs performing synchronization and clients creating and  retrieving science objects and metadata (such as logs). The suggestion  is to remove some of the functionality in the REST interface that  relates to connections from clients. Specifically, to remove the  functionality that allows clients to search for new content directly on  MNs, read system metadata, read statistics and read logs from MNs. Seen  from the point of view of the end user, this does not remove any  functionality from DataONE as all of the functionality is also available  on CNs. 
+
+
+A more intuitive architecture
+
+These changes would lead to an architecture that would have less  potential for causing confusion among developers and end users. The  reason is that, for some tasks in the current architecture, a client may  accomplish roughly the same thing in two different ways (by querying a  CN or querying an MN), but the results from each may be subtly  different. This requires end users to evaluate the information the  client is providing in the context of how the information was obtained. 
+
+
+REST interfaces
+
+What follows is an overview of the affected REST calls, specifically  what the suggested changes are and what the effects of the changes would be. 
+
+
+MNRead.listObjects() 
+
+Limiting listObjects() to be used only by CNs for synchronization. 
+
+The current architecture focuses on providing search functionality  through CNs, but provides a second avenue for clients to discover  objects, which is to run queries directly against MNs, using the  listObjects() interface. CNs use this interface for synchronization.  When used by CNs, the interface should yield a complete list of objects  that are new or have had their System Metadata updated since the last  sync. The implementation for that functionality should be relatively  simple for most MNs. However, when this interface is accessed by  clients, it must provide a list that is filtered according to the  permissions of the DataONE subject running the client. To perform this  filtering, MNs must implement fast systems to determine how each of  their science objects are affected by the DataONE permissions of the  subject. As an example, an MN may contain millions of objects, of which  some fraction should be visible to the subject who makes the call. The  MN has to instantly find out how many of its objects match the subject’s  permissions so that it can provide a correct value for the “total” value  in the returned ObjectList. The total designates the total number of  objects on the MN that are visible to the subject. When the client  starts retrieving sliced ObjectLists, the MN must repeatedly evaluate  the permissions of the subject against the permissions on the science  objects to return a correctly sliced list that contains correctly  filtered objects. Creating this functionality and having it be fast  enough for real time use by a client may be a challenge for many MNs.  Limiting listObjects() would remove the need for this functionality on MNs. 
+
+Because there are few filtering options on the listObjects() interface,  it will be hard for clients to narrow down the search to the objects of  interest. Clients could instead connect to a CN and perform the search  there, with a much richer search interface. If a client wishes to find  objects that reside on a given member node, it can simply add that as a  filtering criteria on a CN based search. 
+
+By limiting the interface to CNs, some of the other filtering  capabilities in the interface can be removed as well, further lowering  the MN implementation threshold. 
+
+Removing the option of accomplishing essentially the same thing in two  different ways would make the architecture more streamlined and  potentially less confusing for developers and end users. 
+
+
+MNCore.getLogRecords() 
+
+Limiting getLogRecords() to be used only by CNs for synchronization. 
+
+The same issue with filtering by subject permissions on  MNRead.listObjects() apply to this interface. However, filtering on this  interface may be even more challenging because there are potentially  many log records associated with each object. 
+
+As with MNRead.listObjects(), the signature on this call can also be  simplified if it is limited for use only by CNs. 
+
+Log records obtained via the MN interface include only events on the  object held by that MN and exclude events related to replicas of the  object on other MNs. To obtain a complete set of events related to a  given object, the client would have obtain a current list of replicas  for the object and would then have to connect to each of the MNs that  has the object, retrieve the events, and aggregate them. It would be  more logical for the client to make a single call to a CN to retrieve  the complete set of events for a given object. 
+
+To provide this interface for use by clients, MNs must maintain log  records for all time. If the interface is limited to use by CNs, MNs  could store only the events that have occured since the last sync. And,  since MNs would not have to run queries against the logs, the MN could  chose to store the events in a more opaque fashion in a kind of buffer  instead of indexed in a database. 
+
+
+MNCore.getObjectStatistics() 
+
+Removing getObjectStatistics(). 
+
+This interface allows a monitoring service to create statistics that  show changes in number of objects over time. It should be simple for MNs  to support it, but CNs have all the information required for generating  this statistic, so the interface could be removed from MNs. 
+
+Also, while the interface is accessible to end users, it is not really  of use to them. The interface provides information that relates to the  total number of objects on the server, while end users would be  interested in objects that are actually available to them. 
+
+
+MNCore.getOperationStatistics() 
+
+CNs would be able to supply this information as well. It would be  derived from the logs. 
+
+
+MNRead.getSystemMetadata() 
+
+This interface is required for synchronization. However, the interface  is also provided for general use by clients, and the functionality  required for synchronization is much more limited than the functionality  required for use by clients. 
+
+To support the use of this interface for synchronization, MNs only need  to store the “skeleton” System Metadata objects that are provided by  clients when objects are created. After synchronization, the skeleton  System Metadata XML document is no longer needed by the MN. Some of the  information in the skeleton System Metadata object is required by the  MN, but the MN must store that information in a database so that fast  queries can be performed against it. The remainder of the System  Metadata is simply opaque data that MNs must store so that it can be  provided through this interface. 
+
+The System Metadata provided through this interface is not  authoritative; the information may not be as complete or as current as  the version of the System Metadata that is available from CNs via the  equivalent CNRead.getSystemMetadata() interface. So this interface  causes System Metadata to have to be considered in the context of its  provenance. 
+
+To keep System Metadata on MNs closer to the state of the authoritative  System Metadata that CNs have, an interface would have to be added to  allow CNs to push updates to MNs. But MNs do not need the data, so  there’s no other reason to push it to MNs than to enable them to provide  it through this interface. And the equivalent interface, which provides  the authoritative copy, is already available on CNs. 
+
+So, removing this interface would lower the threshold for MNs, create a  more streamlined architecture where there’s only one source for System  Metadata and remove a potential source of confusion for end users. 
+

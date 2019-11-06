@@ -1,0 +1,54 @@
+Maintenance Discussion
+
+
+Things to maintain (and minor/evolutionary enhancements):
+
+- CN Infrastructure
+  - 1.4 Release - https://redmine.dataone.org/issues/5533 (from our meeting re: MPC our goals may change for 1.4)
+      - Dublin core support for MPC (qualifieddc)
+        - https://dataone-test.pop.umn.edu/mn/v1/node
+      - Replica auditing (periodic verification of replicas, dev complete)
+      - Libclient connection management (defer to version 2.0)
+      - Log Aggregation bug (defer)
+      - Mercury UI (complete)
+      - d1_log_aggregation refactor for single master mode (defer, goal to move to separate server from CNs)
+      - 
+
+  - 2.0 Release
+
+- Member Node software stacks
+  - GMN (Dave/Mark)
+  - Metacat (Jing/Chris/Ben?/Matt)
+
+- Investigator tools. These will require planned refreshes over time (e.g. annual updates for OS / JVM / security / etc)
+  - R plugin
+      - Matt and ROpenSci?
+  - Libclient (java, python)
+      - Maintenance team
+  - CLI
+      - Maintenance team
+  - Morpho
+      - Needs release; thus needs resolution of authn issues
+  - ONEDrive
+  - ONEMercury
+      - Maintenance team, usability team
+  - "Metacat UI" search interface
+      - Can be pointed to production now, see test data at https://dev.nceas.ucsb.edu 
+          - not production, looks like test data
+
+- Documentation (primarily to ensure docs are available, and to provide docs for procedures, operations activities)
+    - Architecture 
+    - Operations
+    - ask.dataone.org? (all on the project)
+- Hardware
+- Other 
+    * redmine, subversion, git, git, (emphasize other areas), Splunk, Nagios, etherpad
+
+Clarification: Tasks associated with routine MN onboarding are primarily covered within MN Wrangling.  Goal: keep MNW's as self-sufficient as possible and have a couple people as key bridges between the MNW and maintenace and development teams.  Use ticket system (redmine) for tracking maintenance-related MN onboarding tasks.
+
+MN onboarding support: new formats, new indexing rules will need support from Maintenance group
+what  about certs? (will there be someone on the MNW who can do certs, or  will we need to have help from someone on maintenance team?)
+
+Resource assignment (initial pass): https://docs.google.com/spreadsheets/d/1y_24pGrI2s_f1NP-UbRza--qx4bKg33h4-QCPE6c1Kk/edit#gid=0
+
+

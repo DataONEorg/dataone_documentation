@@ -1,0 +1,239 @@
+Participants:
+Paolo, Ilkay, Dan, Manish, Biva, Anand, Shawn, Lei
+regrets: Saumen
+
+Last week's actions:
+==>  Saumen (coordinator) to work with Anand and Biva to implement the relational schema of the SPS
+(Manish to consult)
+
+Broader  goals:
+1-  translate your CM to a relational model
+2- implement  the relational schema on some public server (mySQL)?
+3-  write code logic to map local provenance traces (each of the three  "lands") onto the common schema
+4- show  ability to query "end-to-end" provenance across two traces seamlessly
+
+Weekly Reports:
+
+* Anand:
+1) Coded in java, to extract each piece of data from the input OPM/XML trace, wrap them in a file and upload to the ftp server  for a general SDS reference.
+==> problems with asserting equivalences; file not in RDF
+2) Coordinated by Saumen and in communication  with Biva, we created, and gave feedbacks and suggestions on the SPS.
+3) Created the dry run mapping from SDF native provenance trace to  modified SPS.
+4) Trying different methods to assert the  local-global data reference equivalence mapping in the shared trace.
+
+* Biva
+
+Was able to upload data to ftp server
+Paolo: equivalences local-ids <=> global-ids are stored with SPS 
+
+put the assertions in the trace  itself and map this equivalence assertion from the trace to the SPS (say 'isEquivalent'  relation).
+
+
+
+ 1) Coordinated by Saumen and together with Anand created the SPS with three level of information:        
+   * work flow
+   * run 
+   * collaboration
+  2) Created a dry use case for the SPS in 1)
+  3) Created a dry uses case for the revised version of SPS 
+  
+* Saumen
+- Developed SPS relational  schema
+- Coordinated the schema development  effort
+- Defined the scope for the  collaboration interface
+   
+
+  * Manish summarizes creation of SPS model
+  * Paolo notes that wf-land is missing, collection structure missing, question: how is this different from OPM?
+  
+  Paolo, Bertram arguing to "bring back" wf-land, data-land, etc
+  requirement for DataONE
+  current schema just OPM
+  
+  ==> Previous schema (with wf land):
+   http://groups.google.com/group/datatol/web/sps_20100711.pdf
+  
+  This one is a more complete version:  
+  http://datatol.googlegroups.com/web/collaborative_provenance.pdf
+    
+    
+Paolo:
+    Native Taverna provenance has much more than the OPM trace,
+    e.g. the "wf-land", data-land etc.
+    
+
+Bertram suggest to use the names from the techreport:
+
+proc = Taverna.processor = Kepler.actor
+proc_exe = Taverna.activation = Kepler.invocation = OPM.process
+
+user = OPM.agent
+
+used = DToL.read
+was_generated_by = DToL.write
+
+OPM.was_triggered_by = DToL.i-dep
+OPM.was_derived_by = DToL.d-dep
+
+data = OPM.artifact
+
+publish
+retrieve
+    
+* Bertram's question:
+  
+  &A, *B --> [PLUS] --> C
+  
+  NEXT ACTIONS:
+  1. finalize "benchmark" queries (mentors)
+  2. revise SPS schema (Anand, Biva, Saumen, Manish?, Shawn? Paolo? Bertram? Ilkay?)
+  -- adjust names: (i) use DToL names, (ii) list OPM synonyms in parentheses (see above)
+  -- have layout reflect "wf-land" (almost empty!?), "Trace/OPM-land", "data-land", "collab-land"
+  -- various fixes 
+      -- proc vs. proc_exe (remove run_id in proc?)
+      -- retrieve.user_id (?)
+      -- data.run_id (?)
+      -- data requires duplicate copy for each retrieve record (?)
+      -- data supports references to actual data ?
+      -- run_id removed from used, was_triggered_by, was_generated_by, was_derived_from
+      -- give meaningful definitions of attributes (what information they represent)
+      -- add constraints for "fusing" run provenance relations (was_triggered_by, etc.)
+      -- SB: Do we really need to store global and local ids? Can local ids be converted to global ones at upload time? (Note this might solve "fusing" problem as well)
+==> Shawn to coordinate call with Anand, Biva, Saumen, Manish, ...
+      
+  3. implement SPS schema
+  
+  4. describe native to shared provenance schema mapping
+  Anand: Kepler Provenance Recorder has a spreadsheet 
+  Biva: Taverna
+  Saumen: Kepler/COMAD
+  
+  5. implement native to shared provenance schema mapping
+  
+  
+  --------------- 2010/07/14---------------
+  Functionality of "collaboration" 
+  1. registration 
+  2. publish
+  3. retrieve
+  
+  user:-
+  user_id              //login id 
+  user_name        //login name
+  
+  run:-
+  run_id PK (sys gen)
+  local_run_id Varchar(64)     //native from trace
+  creater_id                          //who created the trace
+  publisher_id                       //who published the trace
+  run_date                            //when the wf was run.. it is expected that publisher would  
+                                          //provide that - optional
+  publish_date                      //sys gen
+  trace_file                           //optional -- URL or BLOB
+  workflow_name                  //optional
+  workflow_system               //optional
+  workflow_file                     //optional -- URL or BLOB
+  
+  invocation:-
+  invocation_id    PK                   //sys gen
+  run_id                                      //ref to run
+  local_invocation_id      var         //optional     
+  invocation_occurence  INT        //??
+  actor_type                               //type, class
+  actor_name                             //name, actor_id
+  
+  data_artifact:-
+  data_artifact_id             PK    //run_id + ":" + local_data_artifact_id
+  local_data_artifact_id             //??
+  run_id                          
+  name                                   //label, name  -- optional
+  type                                     //s, path/url    -- optional
+  value                                   //respective value based on type
+  global_url                             //optional -- captures the "publish" 
+  
+  invocation_input:- 
+  invocation_id               PK
+  data_artifact_id            PK
+  data_role
+  time_no_later_than
+  time_no_earlier_than
+  time_clock_id
+  
+  invocation_output:- 
+  invocation_id               FK
+  data_artifact_id            PK
+  data_role
+  time_no_later_than
+  time_no_earlier_than
+  time_clock_id
+  
+  invocation_dep:-
+  from_invocation_id
+  to_invocation_id
+  
+  data_artifact_dep:-
+  from_data_artifact_id
+  to_data_artifact_id
+  
+  retrieve:-
+  ?????
+  
+  What to do next:
+  (1) modify the schema as per the discussion (except retrieve table) -- Saumen (both ERD and DDL)
+  (2) create the schema "DToL" on your local pc/laptop (mysql)
+  (3) write your own scripts to load your traces to the agreed schema
+  (4) discussion about "retrieve"; when we nail this down, then include this to implementation.
+  
+  
+  LocalArtifactCopy (
+    localArtifactId
+    localPublishingRunId
+    copiedArtifactId            FKEY
+  )
+  
+
+
+//COMMENTS
+data_id = "10"
+data_id ="r1:20"
+
+<inputWorkflow>
+
+<Data label="xyz" type="image" > /home/manish/proj1/data1 </Data>
+<Data label="abc" type="image1" > /home/manish/proj1/data1 </Data>
+
+</inputWorkflow>
+
+
+  data_artifact_id = local_data_artifact_id + run_id
+  
+
+  //dublin core -- to get std meanings for things: 
+  http://dublincore.org/documents/dces/
+  
+    ......
+  <Data label="input1" type="StringToken" class="ptolemy.data.StringToken" id="175" objectId="21">/Users/dey/DToL/comad2/comad-exp/workflows/demo/DTol/addition/input1.txt</Data>
+  
+  
+  <a:Artifact rdf:about="http://taverna.opm.org/t2:ref//3123868a-40ad-42c8-9f3c-7fb3112651e7?db5d8f4c-b49a-4ab0-b108-c0d3bb703620">
+
+<rdfs:label>http://taverna.opm.org/t2:ref//3123868a-40ad-42c8-9f3c-7fb3112651e7?db5d8f4c-b49a-4ab0-b108-c0d3bb703620</rdfs:label>
+</a:Artifact>
+
+    
+artifact id="_a2">
+  <value xsi:type="xs:string"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">reference.hdr</value> 
+  </artifact>
+    
+    
+  (i) 
+  data_artifact_id = "1"
+  read (to get the data_artifact_id), write
+  
+  local_id = 10
+  
+  (ii)
+  local_data_artifact_id
+  run_id
+  write
+

@@ -1,0 +1,365 @@
+Please provide your feedback here.....
+http://epad.dataone.org/AHM2011-ToolFeedback-Summarized
+
+http://mercury.ornl.gov/pilotcatalog2
+
+http://mercury.ornl.gov/pilotcatalog
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Consolidated Notes – ONEMercury Sessions (Miriam Davis, miriams@utk.edu)
+ 
+-        Items Present for 3 or More Groups
+-        Search
+o           User/uses questions
+o           Language issues
+o           Cosmetic issues
+o           Funcionality Issues
+-        Results
+o           Language issues
+o           Cosmetic issues
+o           Funcionality Issues
+-        Likes
+ 
+Items Present for 3 or more Groups
+-        Relevance/index rank/stars (5, see Results, language)
+-        Saving searches, how? (4, see Search, functionality)
+-        Find Similar Data (4) (Results, functionality)
+-        Filters (4) (Results, functionality)
+-        E-mail/bookmark/RSS/Exporting search results – how?: (3) (results, functionality)
+-        Date issues (3) (Results, functionality)
+ 
+ 
+Search
+ 
+User/uses questions:
+-        Need to clarify who users are.  Also who initial users are vs. later users in later versions.  This matters in terms of how simple the search needs to be and whether you need to do one simple thing really well immediately, or do you need all the bells and whistles in version one?  
+-        Need feedback from actual users.  Who is this?
+-        For broad audience term “filter” is not useful, do filtering on results, but for sophisticated audience having simple search and having to filter results wastes time.
+-        is it mobile friendly?
+ 
+ 
+Language issues:
+-        Need mouse over or popup help per search item (2)
+o   Filter is difficult to determine.  What does Content Type mean as a drop down box.  
+o   Improve language for overlaps/encloses.  Not clear what this pertains to.
+-        Change "selected query (not editable)" to something more user friendly like "Your search so far" or "what your'e searchign for" 
+-        “toggle advanced options” could be better worded to “Show/Hide Advanced Search Options” or “Show/Hide Details” or something similar
+-        Jargon = “Toggle”, “boolean” “operator” “wildcard” better simply stated as examples or with roll over mouse
+-        Instead of 'Content Type'  use the Terms "Restrict to" oor "Only Include" then have checkboxes or something.
+ 
+Cosmetic issues:
+-        you don't want to make people search for teh "search" button (2)
+o   move “search” button closer to the search box, between the search box and the results/page box.
+-        “Show query details” to toggle the Selected Query (Not Editable) on/off.  
+o   (2) Very useful feature to some users. Confusing or unneccessary to others. 
+-        move the Content Type drop down choices up to tabs of their own, one for each.  
+-        Move “toggle advanced Options” to to be more centered under the search box
+-        Bright yellow of “Toggle Advanced Search” draws eye and makes user think this is the button for executing search.  Search button is too far from search field.
+-        Take text above search bar elsewhere
+-        Branding issues:
+o   ONEMercury with globe in “O” currently looks like “Globe NE Mercury”, not clear that Globe is O. 
+o   OneMercury is a metadata clearinghouse used and provided by dataone.  change the "The DataONE ClearningHouse is a powerful resource for scientists, allowing them to share and access informaton".
+o   what is the context of the tool. Search! Not Mercury...
+o   Make sure it’s clear that ONEMercury = “search for data”
+-        Drop downs for geographic search.  Not clear that “select from list” is context dependent to USA or WORLD.  Looks like it’s three choices.  1) USA, 2) WORLD, 3) Select from list.
+-        Make “place” box bigger.
+-        Link coordinates visually to the color of the box.
+-        Simple search Interface needs to be simpler (2) (see language issues for search)
+-        Is the clear the query prominent enough?
+ 
+ 
+Functionality:
+-        Saving searches, how? (4)
+o   Can you cut and paste query to re-run it?
+o   Like the RSS reader and search function (2)
+-        Map issues:
+o   map is clunky, not intuitive (2)
+o   What does “=” sign on map mean?
+o   Should be able to move box by dragging it
+o   a useful feature would be a boundary overlay, like Saskatchewan.
+o   maybe click/hide the map to show or hide it
+-        questions about integration of tools btn OneDrive and OneMercury for example.  What happens if I click on Get Data, do I go to my DataONE Drive?  - only some users
+-        on search drop down lists include directions on how to select more than one choice.
+-        Are ontologies are used?  How is the search actually returning results?
+-        Help Search? (kind of hidden)
+-        When you land on search page, advanced search options are shown as well as “Toggle Advanced Search” button so it is not clear that you are already looking at the advanced search functions and that options such as Fielded Search, Date and Geography are advanced search options.
+-        On the home page the tools will need to have explanation as to their use (?)
+-        Is the site instrumented for data use? are statistics gathered and analyzed for usage? 
+-        What date is being searched on in the date field of search?
+-        Would like ability to upload researcher’s own shape file or polygon
+-        Geography
+o   Potential redundacy in geographic search options.  USA would be taken care of by including ALL STATES in the state drop down list.  WORLD would be taken care of by “All countries” in list.
+o   Need ability to choose non-adjacent geographic locations like that have same  habitat (Southern California and South Africa) or Mexico and Conneticut for spring migrants.
+o   Need ability to select more than one choice from both dropdown boxes (via Ctrl + Click).
+o   Bound the box by Eco-regions, Rainforests, which ecoregion standard to choose?
+-        Any way to do a subsearch within the Search without having to go back to initial search page?
+-        maybe have a popout div that will resubmit the form.???
+o    
+ 
+Results
+ 
+Language issues
+-        Relevance/index rank/stars (5)
+o   Index rank means relevance, but this is not clear.
+o   Stars are not meaningful
+o   questions about criteria for relevance stature, should be based on number of publications resulting from data (came up in 3 out of 4 groups)
+-        Does mercury highlight the search terms?
+-        Will people understand the difference between author and origininator.  
+-        DataProviders should be renamed to Member Nodes.
+-        Pubdate - going out for a date?
+-         
+ 
+Cosmetic issues
+-        could the stuff below the filters tab and above the results list be condensed real estate wise?
+-        star ranking
+o    - what does it mean?  like amazon?  and i wouldn't have thought to click on it for the explanation.  use a different icon, or elevance bar.  
+ 
+Functionality
+-        Find Similar Data (4)
+o   perhaps should be "find similar "records"
+o   Buttons are in different order when you click on a search for find similar data button.  Find similar data has a bug.
+o   Find Similar data should appear exactly as the original search results page.
+o   Original results show up in top of “find similar data” should be “You searched for _____ “  below are records similar to -------
+o   What are the criteria for a hit in find similar data?
+o   Want filters on results from find similar data
+-        Filters (4)
+o   people want to be able to see all teh filters at once and know what they all are, this would get them to the results they want faster
+o   might be useful to have a "what's new" filter, so if you have searched for this before you see the newest results first (new to DataONE)
+o   add a scroll bar to the long list of data providers (2)
+§  this prevents needing to put it on left instead of with rest of filters
+o   under the filters could the lists be drop downs that would fill themselves in so you don't have to go down a long list.  or type the first few letters to jump to that result
+o   hide/show filters
+o   Semantics - you want term extension, synonyms, related terms , march up a hierarchy of related terms, so the idea of organized ontologies but theyre often domain specific.  how do we determine what domain a set lives with?  what if a daa set can belong to two different domains ?
+-        E-mail/bookmark/RSS/Exporting search results: (3)
+o   How?
+o   Not clear that “email” button does this.
+o   Export button better than bookmark.
+o   Confusion over whether search results or query being e-mailed, book marked, RSS’d etc. 
+o   maybe use mouse overs over the tabs e-mail, bookmark, and rss feed tabs on teh results page to answer the question everyone has
+-        Date issues (3)
+o   Dates and how they are parsed is a problem.  Even with a simple interpretation of a single integer as the year, the date fields can be very poorly formated.  Maybe create a limit to years that are understood to be interpreted.
+o   There is a date, but what is is the date of?
+o   Publication date and observational timerange.
+o   Is there a preference for Pub vs content date.
+o   If you choose pub data on search, then in results it should be publication date in results.
+o   Date translation and metadata records in sorting issues.forced to attribute more precision than is there in the first place.
+-        Order of results (2)
+o   Not clear what order the results are in by default.
+-        Need Help button. help link.
+-        map the query as a one drive mount, nice to have that click/option.  
+-        also have a button to link to R, "cut and paste to get this data in R"
+-         “Return to Search” really is “Refine Search” / there is no Clear Search/Start Over button (2) 
+-        how does the list of "keywords" get associated with teh results?  
+-        a pop under survey after you have used the tool
+-        is there a way to download all the results, or do you hvae to click each one?  mayabe we can have like a create a shopping cart type thng with check boxes.  
+-        Missing metadata impact on results (3)
+o   maybe be an option include/exclude records with/without or with/without author geographic data otherwise if you do a search on geography many pertinent records may not show up.  
+o   Can you search for datasets for which fields are missing.  Not all accesspoints in the index are presented in the initial search page. So if a dataset is present that a research knows only a single accesspoint, it may not be presented for searching against.
+-        Zotera exported data is not preserving the Author Name,  We need to confirm that DataONE fields equal Zotera fields.
+-         
+ 
+Likes
+-        All search on one page (not three tabs as earlier)
+-        idea of using the RSS reader with search functions (2)
+ 
+ -------------------------------------------------------------------------------------------------------------------------
+ 
+EtherPad Feedback
+
+"Toggle advanced options" should be defaulted to NOT displaying those options.
+Maybe "show/hide advanced options" rather than "toggle"
+    Agree with this
+
+On pilot2 reduce the size of the logo so it doesn't take up as much of the entry screen
+
+Q: (Servila) Can we upload a polygon list instead of a bounding box or a manually entered polygon?
+
+Q: Can we add DataONE branding? A: see pilot catalog 2 for what may be.
+
+A short "man page"-like interace on how to wrangle the Mercurry interface woud be good. Since it is not intuitive for all researchers --- yet
+ 
+Mail link is a mailto: link that is not so useful for everyone. If I could get and export link as well.
+
+Question am I trying the save the query or the result set. so "Export search result" (and XML format would be good)
+Also provie a button to use query to do an appropraite ONEDrive mount and to make available with ONE R client plugin/package
+
+Clicking on the "Email" link the search result data goes into the "To" box. It should go to the body and email subject can also be provided. 
+
+for saved queries, when I repeat the search,  I would like to see new results highlighted. (Giri had an answer that I failed to capture)
+
+Map is clunky, some minor improvements would help. A. Changing more like openlayers based. ...
+
+Don't make people scroll down to hit submit. a: you don't have to.
+
+If a data provider is listed, a global search on the data provider should not return a null set.
+
+Advance search option has multiple options: use of expand/collapse these options would be better so that scrolling could be avoided. 
+
+Are there any semantics behind this? A: minimal semantic capabitlies now. So some biocompleixty catalogs are used to add additional keywords to searchs.
+
+Q: how to add Semantic functionality
+        term expansion
+        synonyms
+        use organized ontologies but that these are domain specific
+            so we probably need to assign a primary domain for a data set and then use that to pick the appropriate ontologies
+
+Comment: also add a clickable select to turn on semantic conept mapping search and show the tree and nodes
+
+Metrics: collect usage statistics on search, refinement. Also do a pop-under survey request so that you can gather data from users at the end of their search.
+
+Seems like most web sites have 5 star levels (plus half levels).  Is there a reason for 10? - ours goes to 11! - Nigel Tufnel
+
+What is "Mercury"? Can you expect your users to associate Mercury with search functionality? I would never make that leap!
+
+Raw notes taken during 10/18 OneMercury feedback:  
+
+
+Session 1
+
+Providing enough search capability: too simple or too complex
+each data will be described by Metadata that refers to data.
+toggle advanced options.
+How difficult would it be to provide rollover help links for each area of ?
+Move toggle advanced Options to to be more centered with 
+move search closer to the search box, results/page 
+Help Search? (kind of hidden)
+Rollover hints. More prominent Help link up at top
+the Dataone clearing house... text should be moved to a less prominent area.  Search box should be the focus.
+Show details/Hide details instead of toggle.
+
+The O with the world inside  reduces the readabliltiy of the ONE looks like NEMercury, not OneMercury
+OneMercury is a metadata clearinghouse used and provided by dataone.  change the "The DataONE ClearningHouse is a powerful resource for scientists, allowing them to share and access informaton".
+On the home page the tools will need to have explanation as to their use.
+what is the context of the tool. Search! Not Mercury...
+x Visually emphasize that select from the list is from the USA.  change the select text (instead of select from list, say, select from state or select from county)
+How to you compare disconnected areas?  you can select multiple places.
+The List Areas in select lists and toggling needs improvement.
+The drop down list only selects one, but what aboout selecting multiple regions. 
+Link coordinates visually to the color of the box.
+Improve the text of Overlaps and Encloses to be clearer.
+Place text box.  
+Text box should be a little wider.
+Is the site instrumented for data use? are statistics gathered and analyzed for usage? 
+Interface needs to be simpler.
+Filter is difficult to determine.  What does Content Type mean as a drop down box.  
+Instead of 'Content Type'  use the Terms "Restrict to" oor "Only Include" then have checkboxes or something.
+
+Is the clear the query prominent enough?
+Show query details to toggle the Selected Query (Not Editable)
+Does mercury highlight the search terms?
+some one said it was too distracting.  snippets.
+There is a date, but what is is the date of?
+Publication date and observational timerange.
+Is there a preference for Pub vs content date.
+If you choose pub data on search, then in results it should be publication date in results.
+In the date field on search results, need to specify.
+Help button. help link.
+
+Search results. accurate  
+
+_Session 2
+
+will you be able to upload polygons or shape file? a researcher will want to use their own, not yours.  
+ not in this version, but good idea.
+ 
+why would casual users want to see query?
+  to see how their search is being built and to document what they got for a certain search
+  
+two people liked the idea of using the RSS reader with search functions
+why is Filter by Data Provider on left and other filters on the top (note takers question)?
+is there any need to DataONE brand the results page?  it is so on the new prototype
+star ranking - what does it mean?  like amazon?  and i wouldn't have thought to click on it for the explanation.  use a different icon, or relevance bar.  
+to export all the results, the main way to do this is by e-mail, but make sure it works for all users, or copy link, or an export button, add to zotero, etc.  am I trying to save the query or the result?  export search results, in RDF XML format.
+might be useful in results to have a "what's new" filter, so if you have searched for this before you see the newest results first (new to DataONE)
+map the query as a one drive mount, nice to have that click/option.  Great idea, I don't know how.  
+also have a button to link to R, "cut and paste to get this data in R"
+answer to question on results page was the users liked it a lot.
+any ambiguities with what is presented?  how it works/what it means?
+search page:
+map is clunky, not intuitive, what's the = sign mean, can I move the box by dragging?  hard to get a good organized efficient search
+a useful feature would be a boundary overlay, like Saskatchewan.
+maybe click/hide the map to show or hide it
+you don't want to make people search for teh "search" button
+add a scroll bar to the long list of data providers
+under the filters could the lists be drop downs that would fill themselves in so you don't have to go down a long list.  or type the first few letters to jump to that result
+can you search for a data identifier?  yes
+can you have more than one search window open at a time and do independent searches?  No
+is it mobile friendly?
+could the stuff below the filters tab and above the results list be condensed real estate wise?
+hide/show filters
+can you refine your search after you see the results or only start over?
+any semantics beyond this?  how does the list of "keywords" get associated with teh results?  what's the low hanging fruit?  you want term extension, synonyms, related terms , march up a hierarchy of related terms, so the idea of organized ontologies but theyre often domain specific.  how do we determine what domain a set lives with?  what if a daa set can belong to two different domains ?
+what statistics can be collected?  number of times does a search, number of times a user refines the search, number of times a user is referred elsewhere.  
+a pop under survey after you have used the tool
+is there a way to download all the results, or do you hvae to click each one?  mayabe we can have like a create a shopping cart type thng with check boxes. 
+
+
+Session 3  Bound the box by Eco-regions, Rainforests, which ecoregion standard to choose?
+Are ontologies are used?  
+If you perform a search are the new ones on top, How is the query sorted? default is relevance.
+Index Rank means relevance. Seems confusing.  Maybe change Relevance.
+Need popup help tags per item. 
+Any way to do a subsearch within the Search without having to go back to initial search page?
+maybe have a popout div that will resubmit the form.
+instead of return to search maybe name it, refine search.  There is no new search button that clears the form.
+
+maybe be an option, show the fact that some records do not have geography and will not be in gis searches, but maybe allow for those search criteria to be excluded from the set?  so search to sets with geographic data to the supplied search and for those results without  gis information will be included ...
+
+Buttons are in different order when you click on a search for find similar data button.  Find similar data has a bug.
+Find Similar data should appear exactly as the original search results page.
+Dates and how they are parsed is a problem.  Even with a simple interpretation of a single integer as the year, the date fields can be very poorly formated.  Maybe create a limit to years that are understood to be interpreted.
+Will people understand the difference between author and origininator.  DataProviders should be renamed to Member Nodes.
+Zotera exported data is not preserving the Author Name,  We need to confirm that DataONE fields equal Zotera fields.
+Can you search for datasets for which fields are missing.  Not all accesspoints in the index are presented in the initial search page. So if a dataset is present that a research knows only a single accesspoint, it may not be presented for searching against.
+Date search for collection date. in pilotcatalog2  may be messed up.
+Reducing the gap between finding something and using is good.  Integrate our tools. 
+
+Session 4
+
+on search drop down lists include directions on how to select more than one choice.
+Change "selected query (not editable)" to something more user friendly like "Your search so far" or "what your'e searchign for"
+Is there a way to store queries that  you've done?
+ 
+what's being e-mailed or bookmarked or RSS'd - the results or teh search query?  (every group commented on this)  can be done by bookmarking the results, which includes your query, entering into URL then going back to Return to Search, but who would know that?
+ - maybe use mouse overs over the tabs e-mail, bookmark, and rss feed tabs on teh results page to answer the question everyone has
+ 
+questions about integration of tools btn OneDrive and OneMercury for example.  What happens if I click on Get Data, do I go to my DataONE Drive?  - only some users
+Pubdate - going out for a date?
+The stars - after 5 use a number like "10"
+Is this within the new DataONE website structure, or is it its own whole thing?  user will be able to seamlessly go back and forth.
+should search allow boolean operators or not, be even simpler?  there may be an even simpler search possible
+- most users now are using Simple Search and then use filters on results page
+people want to be able to see all teh filters at once and know what they all are, this would get them to the results they want faster
+move the Content Type drop down choices up to tabs of their own, one for each.  
+questions about criteria for relevance stature, should be based on number of publications resulting from data (came up in 3 out of 4 groups)
+find similar data button - popular topic!  based on the title and keyword fields of the record you clicked this button on.   perhaps should be "find similar "records" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

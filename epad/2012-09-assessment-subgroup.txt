@@ -1,0 +1,257 @@
+2012--09 Assessment Subgroup
+At DataONE AHM meeting, ABQ
+
+2012-09-18 3 - 5 PM
+
+Participants: Read, Grant, Birch, Tenopir, Green, Bilder, Sandusky
+
+Charge to sub-groups:
+1. goals for sub-group (projects for this meeting)
+a. complete the draft of the educator / scientists' follow-up 
+b. strategies for reaching other stakeholders in the DM ecosystem (review stakeholder list; prioritize other audiences we should get to (e.g., policy-makers: mix of Vice Chancellors of Research, campus CIOs, Librarians, department heads / campus curriculum committes at individual institutions))
+c. understand early adopters which other services / projects researchers are aware of (e.g., figshare, DataONE, DataCite) and why they use these services (ask to survey their users)
+d. writing / reporting priorities for data already collected / analyzed
+e. schedule and prioritize the other follow-up surveys
+
+2. tasks for this meeting: description and timeline
+3. ongoing tasks
+4. deliverables by thursday
+5. who else needs to be involved
+6. id recorder / facilitator / reporter
+
+Item a: complete the draft of the educator / scientists' follow-up
+
+Draft document: https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/Scientists-and-Educators-Survey_9_17_12.docx/view
+
+Ask someone (from CDL?) to demo figshare to the DataONE community?
+
+Pursue figshare as a possible DataONE MN?
+
+Review and refine the scientist / education survey instrument. Include a 'skip' to gather information from those who also teach.
+
+Q. 1: should we provide an  option "n/a" or a means to indicate that someone else teaches it (e.g. a department staff member; a library staff member).
+
+Grant: ask separate questions about 'students in class' and 'students particpating in your research'; do your ugrad students required to take a research methods course; if yes, is metadata management included in the methods course?
+
+2012-09-19 8:30-10:00 AM
+CE WG plenary
+
+10:30 - Noon
+Finishing the revision to the scientists' / researchers' follow-up survey.
+
+Reminded that the follow-up should very closely match the baseline survey in design (questions, wording) to ensure commensurability
+
+Re-visited the education questions: just ask a couple of questions that will give us enough data to position further inquiry into teaching and learning as a part of the renewal proposal.
+
+Birch / Tenopir: compare baseline survey instrument with follow-up to ensure that the instrument design, wording, sequencing of survey questions are the same (or, as close to the same as possible).
+
+Birch / Tenopir: verify with Strasser & colleagues that we can drop the educator question about which MD standards they teach. We suspect they may not need a follow-up for that question.
+
+Distribution strategy:
+- send to institutional champions
+- sent to Elsevier authors, a nice international group, but the response rate there was terrible. If we *don't* reuse this channel, it's methodologically fraught. We'll re-use this list, but use a separate survey instance so we can isolate these responses.
+
+New topic: getting at early adopters of open data / data reuse systems (figshare, DataCite, DataONE, open wetware, open notebooks, https://notebooks.dataone.org/)
+
+http://www.figshare.com
+
+Figshare allows people to upload data, figures, and other research materials.  The site will assign a DOI after something is uploaded.  Currently this is done for free. They have approximately 187,000 DOIs assigned since June 2012. Metadata doesn't look so good. Data seems to be widely interpe
+
+Questions:
+
+Why do people choose Figshare?  What is useful about the site?  What information are people willing to contribute beyond just charts and illustrations?
+need a sample of what is on FigShare; has someone already done this so we don't have to.
+
+Look at figshare for example of 'elevator speech'
+
+Currently funded by Digital Science.  Sustainabily question: what will happen if the founder moves on?  Answer - DOIs moved to Cross?
+
+Other early adopter sites like DataONE and DataCite? Open wetware? (there are now 1300 links on open wetware to DataONE)
+Preliminary work: What % of the stuff on Figshare is really "data and datasets" not figures, tables or screen? Ask Geoff how to find out
+
+What do we want to ask/find out:
+-- is your stuff private or public?
+--What type of information do you upload to figshare? (choose from figures, tables, datasets/data, articles, methods, failed experiments, etc?--look at their categories)
+How frequently do you upload stuff? Do you ever change/update what you have previously uploaded?
+-)
+--Which of the following reasons led you to upload? motivation (categories: I want people to cite my stuff citation, I want my stuff to be preserved/saved into the future, figshare gives my stuff a unique identifer/DOI, I need a place to put stuff, figshare allows me to put things that wouldn't be available to others otherwise, my institution or someone I work with suggested I put stuff here; I uploaded data because a journal publisher required data deposit related to my article; because it makes it easily discoverable; because  it's cool; because it's free; I'm experimenting to see what its about;  i don't have any other place to put my data; a disciplinary repository to which i can submit my data; i don't have a local /institutional repository to which i can submit my stuff; because it presents my data effectively,  other)
+--What  type of information do you download/use from figshare that has been  contributed by others (same categories)  If yes to at least one:
+--How useful have you found the things contributed by others (all, some, part)
+--If you've downloaded data from figshare, how did you select the items you downloaded (name of researcher/submitter; insitutional affiliation of researcher/submitter; presence/ quality of metadata; license; topic / discipline; (see figshare interface to id more possible cues)
+If  no on all download questions, why not? (don't need it, don't trust  quality, not my subject area, not enough information of interest to me
+
+--how likely are you to use figshare in the future? (extremely likely to extremely unlikely)
+
+--Do you put your data in multiple places? 
+If yes, give quartiles of their stuff of their output sent to more formal mechanisms vs. sent to figshare
+
+--what are the characteristics that you look for in a place to deposit your data? (discoverablity; easy to use interface;ease of form fill in for metadata; flexible licensing, ease of deposit process; trust in the repository managers; has been around for many years; reputation; 
+
+--repurpose barriers questions from the scientist survey. For the data/datasets you don't upload to figshare, why not (check all that apply)?
+                I put the data in a different system (specify)
+               q Lack of funding
+               q Lack of standards
+               q People don’t need them.
+               q There is insufficient time to make them available.
+               q There is no place to put them.
+               q They shouldn't be available.
+               q Sponsor doesn't require it
+               q Don't have the rights to make the data public
+               q I would lose control of the data
+               q I need to publish first 
+               q I have insufficient skills 
+               q Other (please specify[DMD1] )
+
+If you selected other, please specify               
+--demographics, age, subject discipline, workplace (type of institution), geographic location
+
+Get survey out before the end of the year.
+
+
+--could also do interviews (their true identities are on the site)
+--need to put surveys and interviews into the IRB
+
+
+Follow up: Ask U&A and SC members who would like to work on this?
+
+Would need to contact people in Figshare; can we do a survey? Can we publish results? Would they provide us emails or better yet, can we trigger a survey for people who log in.
+Unit of analysis is the individual 
+
+Are there other general archives that we want to contact in the future?
+ICPSR (has a new section where anyone can upload) (Ellie?)
+Hubzero
+Could also do similar surveys with member node contributors sometime?
+Bilder: use LinkedIn's '% of profile complete' notion to encourage / shame people to provide better metadata
+
+Are researchers putting figshare in as part of their data management plans?
+
+Do researchers use other similar systems as part of their data management plans / strategies.
+
+DataCite
+
+Unit of analysis is the participating data center
+
+or look to see if there are other archives we might want to survey
+Spinoff project to understand data science and multiple initiatives
+
+ORCID: another locus of early adopters.
+
+b. strategies for reaching other stakeholders in the DM ecosystem (review stakeholder list; prioritize other audiences we should get to (e.g., policy-makers: mix of Vice Chancellors of Research, campus CIOs, Librarians, department heads / campus curriculum committes at individual institutions))
+Scientists bl, educators bl 2011: fu in spring 2013 (Ben and Carol T)
+Academic libraries and librarians bl: 2012 (Bob S., Ben and Carol T working on)
+Federal libraries and librarians: bl2012 (draft)  Carol H and Miriam B continuing
+Data managers: bl2012 (Ellie and Maribeth working on one article; Suzie and Ben on another); Ben is doing FU indepth of data managers
+fu for bl2012 not before 2014
+
+Other stakeholders:
+***--scientists who are early adopters (through figshare) (2012/2013) (Geoff Bilder will help make connections; Todd Suomela is interested, ask larger UA/SC group if anyone is interested/wants to take the lead; see notes above)
+--policy makers (define, subset) (legislators at various levels)
+**publishers (commercial and NFP, including professional societies) (Carol T. will contact Brad Fenwick, Elsevier's new academic liaison who is interested in working with DataONE); desk research to see which publishers are involved with Data management, including with Dryad
+--citizen science groups (PPSR: 2012)
+--citizen scientists (citizen science.org at cornell: could work with them to reach portals that have lots of participants, could we survey them)
+***--State libraries--relationship with environmental departments; do datasets have to be deposited with state library; COSLA (chief officers of state library agencies) Peggy Rudd of Texas chairs the research committee of COSLA www.cosla.org. quick survey to them; a phone call to John Bertot regarding Broadband Plan (BTOP) implementation and impact on data management (increased capacity) (Denise could coordinate the contact with COSLA and Bertot) (this could be a way to get to state level policy makers or relationship with state libraries). Is there an agency/department in state government responsible for data management? Also where is environmental data gathered, stored, preserved, used/reused at the state level? Broadband impact? Could id legislators interested in broadband.
+Questions for COSLA
+Definition: Data sets of interest (e.g., science data - biologic, health, environmental, population/demographic, transportation data collected by a state agency)
+
+Does your state library agency have a formal relationship with state government agencies that collect and report data about programs, services, initiatives, etc.?
+If no, do agencies in your state deposit data elsewhere?
+If yes, where?
+Do state government agencies have data management plans?
+Is there a requirement that state government agencies deposit data sets with the State Library?
+If yes, are the data sets publically available?
+Are the data sets findable (Discovery)? Where?
+From which state agencies are data deposited with the State Library?
+Does the State Library require upon deposit/create for the agency meta data?
+
+Does your state library agency have a data management plan for depositing and/or storing state government data sets?  
+If yes, is it available online?
+Can a copy be shared?
+Calendar established 2012-09-20 at AHM
+
+--k-12 educators (Dania Bilal, Kimberley Douglass, etc grant proposal)
+--students (k-12)
+--students (college)
+--think tanks
+
+c. understand which other services / projects researchers are aware of (e.g., figshare, DataONE, DataCite) and why they use these services (ask to survey their users) See above
+
+Finalize the 'educator' questions for the FU survey of scientists / researchers.
+ 
+
+Do you feel you are covering these things in sufficient depth;  
+- Data life cycle Yes, thoroughly (I wouldn't add any more) / Yes, but there is more I could add/Yes, minimally/ / No, but I should add more / No, and don't plan to add more  / No, I don't cover this
+- Data life cycle
+- Quality control 
+- File management
+- Metadata generation
+- Workflows
+- Protecting data
+- Data archiving & preservation
+- Data re-use
+- Meta-analysis
+- Citing data
+
+Do you supervise or work with research students outside of the classroom?
+Y (get next question)  / N (skip next question)
+
+When you are working with your research students outside of the classroom, which of the following do you help them learn?
+Yes / No
+- Data life cycle
+- Quality control 
+- File management
+- Metadata generation
+- Workflows
+- Protecting data
+- Data archiving & preservation
+- Data re-use
+- Meta-analysis
+- Citing data
+
+
+2) Which of the following topics do you cover in your classes? 
+ 
+in an undergraduate course / in a graduate level course / in other types of courses / I don’t teach this topic 
+            
+Data   life cycle  
+
+Quality control: making sure that data are accurate and   there are no missing values or errors  
+
+File management: types of files, file naming (such as   assigning descriptive file names that indicate spatial and/or temporal   information about the data 
+
+Metadata   generation: descriptive   information describing data characteristics and software used  
+
+Workflows: detailed description, flow chart, or   computer script of how raw data were transformed into final results  
+  
+Protecting data: backing up data, creating multiple copies in multiple   locations
+ 
+Data archiving & preservation: strategies for long-term accessibility of digital   information
+ 
+Data re-use: using data that was collected for one purpose, for a new   or different purpose
+
+Meta-analysis: statistical synthesis of results of separate studies
+Citing data: how to give attribution and credit for data
+Other data   management topics (please specify) 
+  If you selected other, please specify           
+
+
+
+d. writing / reporting priorities for data already collected / analyzed
+see https://docs.google.com/a/uic.edu/spreadsheet/ccc?key=0Am8rDNhFX-BkdE1OaGl4M2phSXZjLU1ENUpySjZLN2c#gid=0
+
+
+e. schedule and prioritize the other follow-up surveys
+
+
+Questions from SC/UA sub-plenary:
+Q. is state stakeholder study only going to focus on legislattion? Fish & wildlife needs will be very different from legislative needs.
+A. will get at whatever variety of domains and agencies that involve the state library as part of their data management efforts. We've been struggling to find a way into the world of policy makers, thinking that we know about the state libraries, and can use that as a back door to other specific populations.
+Q. what is figshare? why do we care to study it?
+A. understand it; understand and articulate the diffs b/t figshare and DataONE; evaluate it as a potential MN
+
+
+Ecosystems subgroup: how can D1 effectively engage w/ academic and federal research ecosystems? ID the administrative actors who influence data management practices.
+
+
+
+
+

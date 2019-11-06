@@ -1,0 +1,62 @@
+..meta::
+  :keywords: DataONE, CCIT, 20110302, VTC
+
+DataONE Developer Call - 2011-03-02
+===================================
+
+
+:Attendees: Chris Jones, John Kunze, Ryan Scherle, Paul Allen, Mark Servilla, Rebecca Koskela, Roger Dahl, Robert Sandusky, Matt Jones, Dave Vieglais
+
+
+
+Agenda and Notes
+----------------
+
+1. Summary of the review and general update on CI status
+
+The demos (.mov files): https://repository.dataone.org/software/allsoftware/demos/
+
+Report: https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/D-ONE-report%20-2.pdf/view
+
+2. Citation information. It would be helpful to identify the set of fields required to support citation managers and generation of citations in various formats for data and data packages held in DataONE. Also useful would be identification of a common format that such information can be provided for a dataset, so for example, given an identifier, we can return a "citation document" that can be easily loaded into the various citation managers. We have partial support for this process using COinS and the Mercury search interface.
+
+From John: 
+Regarding item 2, folks may be interested in previewing the recently
+approved DataCite consortium's kernel metadata spec:
+
+   http://datacite.org/schema/DataCite-MetadataKernel_v2.0.pdf
+
+A number of services, including EZID, are supporting the DataCite kernel.
+
+- Lots of overlap with existing metadata documents / standards
+- Can we leverage the content already in the system metadata
+- For new commers - can recommend a standard or two
+- Use the data citation "white paper" (see Bob Cook) as basis for the elements to be supported
+- Output format?
+- Ensure that necessary elements are present in the Mercury Index
+- Publication date may be difficult to support in some cases, need to have specific details on which value to use when exact publication date is not available
+
+Actions:
+- Formalize list of elements that must be supported and optionals
+- Update Mercury index to ensure that these elements are available in the index
+- Identify the output formats that need to be supported and implement them
+
+Overlap of functionality of core services such as ezid and udfr with the roles of the CNs. Plan to have brief presentations about the core services at the developer meeting in two weeks (16 March 2011) to initiate evaluation of whether such services can be rolled into the CN service layers or as additional services that are supported on the geographically distributed platforms offered by CN installations.
+
+
+3. Search. We need to formalize the search APIs. Right now there's a single method "search" which accepts a query string and a query type which can be one of "path" (for Metacat path queries) or "solr" for searching against the Mercury SOLR backend. There's no (DataONE) mechanism for indicating which fields should be returned (i.e. structure of response), nor is there a mechanism for introspection - discovery of fields available for return, or the range of values that might be present for a field.
+
+- Continue exposing the existing service APIs until there's a compelling reason for DataONE to define their own API for supporting search.
+- ensure the existing API endpoints are advertised in the registry infomration for the nodes
+- ensure that the documetnation provides references to the underlying search interfaces and how to interact with them (e.g. point to existing SOLR and lucen documentation).
+
+
+4. Status updates on the CUAHSI-HIS MN (Jeff) and Dryad MN (Ryan) software stacks
+
+Dryad MN ready for testing. To discuss with Rob on how to bring into the integration testing suite.
+
+5. AOB
+
+None.
+
+

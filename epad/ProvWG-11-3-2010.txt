@@ -1,0 +1,471 @@
+WEDNESDAY Nov. 3rd, 2010
+SUMMARY NOTES:
+
+Attendees:
+Bertram Ludaescher, Paolo Missier, Steve Kelling, Saumen Dey, David Koop, Ewa Deelman, Yogesh Simmhan, Ilkay Altintas, Shawn Bowers
+
+Mark Servilla, John Kunze, Bill Michener, Line Pouchard
+
+- Opening by Bill Michener with an overview of DataONE for new attendees
+- review of provenance models associated to workflow management systems, with contributions from VisTrails, Kepler, Pegasus, Taverna, Trident, Karma
+- review of state of the W3C Incubator Group on Provenance in the Semantic Web, as well as of the Open Provenance Model
+- overview of the DataToL summer of code project and its outcomes
+
+All of these overviews provided a baseline and starting point towards the development of a common provenance model (DOPM) that is suitable for DataONE, as described below.
+
+A brainstorming session on potential areas of interest and use cases for workflows and provenance followed, with the contribution of Steven Kelling who offered further insight into the eBirds activities, through an extended EVA talk.
+
+ACTION ITEMS:
+* Provenance WG membership; add: 
+-- CCIT member(s)
+-- DataConservancy member (suggestions!?)
+-- DataONE user representative(s) (Steve Kelling!?)
+
+* Update charter (members),
+-- establish collab space (mailing list, document space ==> DataONE drive!?)
+-- setup telecon schedule
+
+* Upcoming meetings:
+(1) ~ 6 months: Provenance WG (Bertram, Paolo) and Scientific-wf WG (Ewa Deelman) to organize joint workshop 
+(maybe Spring? Location: TBD, maybe West Coast?)
+==> develop agenda w/ input from DataONE (maybe DataConservancy) use cases
+(2) ~ 1 year: at next DataONE AHM (Provenance WG meeting)
+
+* Explore funding opportunities w/ ProvWG focus
+
+* Plans for technical developments:
+
+(1) Develop DOPM (aka "DOPIUM"):
+the DataONE Provenance Model (or DataONE OPM):
+-- conceptual model, adding missing OPM pieces:
+   (collections, packaging, sys-level properties, wf-evolution, identifiers, ...)
+-- protocol for storing, sharing, using provenance (CRUD+ ?)
+
+(2) Paper on DOPM for a provenance venue or relevant journal (FGCS?)
+
+(3) Develop technical spec, with CCIT, based on (2)
+
+(4) Apply for Summer of Code project (or similar) to help CCIT develop (3)
+
+
+
+* INTERNAL NOTES *
+
+
+=== Overview Session (8-10am) ===
+* WG Introduction and overview (Bertram, Paolo)
+-- update on DToL 
+-- update on XG Provenance Incubator 
+
+DataOne Overview:
+-- 3 comps - MN, (through libraries, agencies, universities), Coordinating Node (in 3 locations: UCSB, UNM, ?), and Investigator toolkit (Java, python, R), It also has a webpage with a google like search (based on Mercury) for the existing data. 
+--  going intl next year?
+-- DataOne dry run environment
+-- Supported by NSF. 
+-- Envisioned as virtual DC
+-- Various working groups working together (Provenance, EVA, etc)
+-- EVA reported yesterday
+-- WG would propose in workshops focused on the proposed topic
+-- Since mid 2009 the D1 started: design done, prototype done: details are available on the website (300 pages doc)
+-- 1st public release by 1Q of 2011
+-- looking to add more functionalities
+-- rich in functionalities in the next version
+-- self-sustaining (!)
+-- WG is best if with real product in mind (?)
+
+------
+PBertram welcomed us.
+----
+-- oulines today's schedule
+Session 1: overview of different provenance concepts
+Session 2: be on the same page to avoid confusions and not reinventing things
+Session 3: meet with CCIT members
+
+-- Record P, but what you want to do with it?
+-- query, visualize...?
+-- data is produced by WF systems. 
+-- What is a WF? wiring together complex computation pipeline (does not have to have fancy WF tool like Kepler. It can be just some scripting)
+
+Update on SoC: DataToL
+-- diff scientists collaborate, usee different WF system
+-- a paper has been published, welcomes all to take a look
+-- Bertram showed the ABC usecase
+-- AB is collaborating sharing data artifacts and C is able to look the lineage 
+-- 
+
+Shawn hawn added that this WG is looking to capture provenance from the WFs
+
+Mark asked if any protocol has been developed: 
+-- not yet
+-- OPM is available
+
+Paolo: requested all to introduced
+All: introduced.
+
+* Paolo: update on prov incubator group (focus on prov on the web): the charter
+-- provide state of the art understanding
+-- web architecture
+-- roadmap for prov in the Semantic Web
+Products to date:
+-- use cases for prov were collected
+-- 30 use cases
+-- consolidated them into 3 use cases (?)
+-- defined the requirements based on it
+what is prov? (lots of confusions)
+-- form of meta-data to promote trust
+-- Bertram mentioned that there should also be other notions of it as well.
+-- verify and authenticate users
+Prov vocabs:
+-- showed different groups defining vocabs (OPM, Dublin Core, etc)
+-- This has been a W3C WG started 10/18/2010 and should define the scope of prov
+-- it is really web centric (not prov centric)
+-- like to inform Scientists using prov information (even though it may not be supported by the charter!)
+-- During SoC 2010 it was understood OPM is not sufficient
+-- have doubts on the timeline to deliver things for D1
+-- Shawn: are they extending OPM?
+-- Bertram: approach prov to some key people in data conservancy to get new use cases
+
+naming in OPM/interop provenance
+    the common ID problem -- choice of naming scheme in OPM is out of scope
+    but, John Kunze's EZID naming scheme is adequate in this context
+
+* Trident, OPM (or similar) -- Yogesh
+-- started 4 years
+-- OPM 2003 
+-- loose def of prov to know root of data changes
+-- OPM tried to generalize the model beyound WFs
+-- A <-- P (used), P <--A (wasGenBy), Ag <-- P (wasControlledBy), P1 <-- P2 (wasTiggeredby), A1 <-- A2 (wasDerivedFrom)
+-- the solid arrows (D1-D2) are there because there are broken arrows (P-D)
+
+Bertram: OPM is silent on data artifact identification
+John: EZID (http://n2t.net/ezid) is to identify everything. These IDs could be make global by adding prefixes.
+Yogesh: resolving IDs was not in focus of OPM. 
+John: ID is based on a codification scheme separated by /. 
+All: losing of IDs while sharing
+
+-- Trident (from Microsoft) used OPM.
+-- Trident has it's own shema and there is mapping from Trident to OPM
+-- Karma is another where OPM is being used. From the execution env the provs are being collected by the Karma model. it's a two layer model. it does not have the knowledge of the WF.
+
+
+* Vistrails provenance -- David
+-- VisTrails and it's prov model
+-- origin of prov: authencity of art
+-- automate the prov capture as much as possible
+-- prov in computational sc: reproducability is one of the goal
+-- systematic capture --> model -->
+-- WF can be just straight code. 
+-- www.vistrails.org: a set of versions are available
+-- crowslabs.org: facilitate collab like myexperiment
+-- Vistrails offers change-based prov
+-- tracks WF versions along with execution details
+-- it captures both wf versions and actor versions by only capturing the changes made
+-- it does not optimize the changes made: if mistakes and later corrections are in versions, they would be there forever.
+-- 
+-- SAHM: capturing data and merge them
+-- qucikly be able see the model results. build wf with controlled data sources and then run different models and then compare the models
+- controlled data sources helped the WF systems to quickly fetch the data and prepare the synthetic data
+Bird Migration:
+-- VisTrails supports R
+-- initialize global, subset data
+-- generate animated map
+-- prov is imp to know where data came from
+
+- manage workflow data along with their provenance
+- link computations to data: what computations generated this data?
+
+EVA  DataOne WG
+    SAHM project - SW for automated Habitat modelling
+        from Java to workflow to improve rapid prototyping
+        workflow modules from existing code using python wrapping from Vistrails
+        very controlled dataset environment
+    Bird migration project
+        VisTrails supports "R source"
+        VisTrails good for parameter sweep in this project
+    general concerns
+        parameter exploration
+        Visualisation an important data output
+
+
+Paolo: what is there for Prov in Bird Mig?
+-- if WF is able to execute in parallal env, grid env. provenance does not know about this. does it need to know? 
+BL One of the key questions:
+- "what are the observables for provenance when the worklow runs in a cloud env?"
+
+One imp consideration: bias and detectability of data, confidence level: validating user. how to capture this in prov? identity mgt of the ground troop.
+
+The system captures the density and the path, but the specific specie name is captured by the ground troop. 
+
+WF is strong with data mining: analysis an visualization.
+
+* Pegasus, Grid-wf provenance (or similar) -- Ewa
+-- WF lifecycle 
+-- creation, planning, scheduling/execution, reuse
+-- Pegasus Mapper: WF abstraction
+-- DAGMan : wf executor
+-- DAX : WF def in XML
+-- data movment by the system
+-- what to record?
+  -- algo (design, papers, version)
+  -- exe env
+  -- s/w
+  -- runtime env
+-- event log: what's going on
+-- for each job: execution details are captured, env variables
+-- exe trails -- stat on how many job submitted, success
+-- A WF may 1m tasks. hard to keep track of...
+-- Why provenance?
+  -- huge data volume
+  -- reduce prov information
+  -- execution locally (put the data close to process)
+  -- leverage VM tech for later use
+-- How often prov data is examine?
+  -- instead of saving all intermediate, save the computation descriptions (only for critical processes)
+  -- re-execute as needed
+  -- scientists would have to define which prov to store
+-- pipeline-centric PoM
+-- WHIP bundle (70% to 90% compression is possible)
+-- Need to develop a query mechanism on WHIP
+-- 
+
+
+=== Session 2 (10:30-noon) ===
+
+* Getting on the same page w.r.t. provenance: 
+- what are observables, MoCs, assumptions made by the various systems
+- starting from OPM and the DToL schemas/observables, what is the vocabulary we can use to communicate ideas?
+(wf schema level objects, run/provenance/trace level objects, data lineage vs workflow evolution, ...)
+
+
+Additional notes on Ewa's Pegasus report
+
+    Pegasus has abstract vs concrete workflow
+        DAX is the spec language for abstract WFs
+            users can decide to register intermediate data products
+    observables that are recorded as part of provenance:
+        - algorithms
+        - exec environment
+        - SW
+        - runtime
+           -  code invocation and all available associated details
+           - all variable values
+    generates stats on runs for future performance prediction
+    visualisation of executions
+    provenance in action for astronomy apps (image montage)
+        saving all interm data is not feasible
+        requires scoping down the class of apps that really require provenance, namely:
+            - self-contained
+            - no specialised HW required
+            - data from well-known sources
+            - leverage VM technology, so you can make images of the entire env
+        hybrid strategy for making  provenance scalable: re-exec vs save intermediate results trade-off
+            - how often do people examine provenance records?
+            - idea: save the computation description rather than the intermediate data
+            - this works well whenever you can keep the image around
+            - the decision on extensional vs intensional is currently  made by the scientist
+    work with WHIP (Triana) and Paul Groth -- 70/90% compression on real datasets
+    future work
+        query mechanisms on provenance
+        store / exec trade-offs
+        exposing pipeline provenance as OPM 
+            may not be feasible?
+
+
+* Kepler Provenance I (provenance recorder, workflow execution server?) -- Ilkay
+-- WF lifecycle:  Build, Share, Run, Learn
+-- based on prov there is lot of imp on "Learn" phase
+-- prov: to know how the results are created
+-- there are many use provs: FT, validation, etc
+-- Prov steps
+  -- data collection (WF design, WF execution)
+  -- data usage : analysis (publication related prov, citation mgt, social data analysis: network analysis)
+  -- data usage : query and browse
+-- Prov recorder in Kepler is configurable
+-- save prov at both atomic and composite level
+-- placeholders to capture evolution
+-- recording needs to be done at diff system level
+-- wf level
+-- code level
+-- h/w level 
+-- Query in CAMERA also allows at all these levels
+-- it's collaborative env
+-- GIS based interface
+-- user finds a data and take to the Data Cart and that goes to the user workspace
+-- there is different user and group workspace
+-- it supports to collect prove
+-- allows chaining of different wfs 
+-- a wf can be on various paths
+-- current version CAMERA 2.0
+-- CAMERA supported WF are shared through a public space
+-- The mapper provides global ids for any input/output data before storing into the semantically-aware DB.
+-- Analyze user collab
+-- these data could be used to show the funding agency to show how valuable the project is. no of publications, data sharing, etc
+-- Collaboration types: data, wf, run
+-- questions to answer:
+  -- what data artifacts were used to produce a specific data artifact?
+  -- who all are using a specific data artifact?
+  -- more.
+
+additional notes (Paolo):
+Kepler (Ilkay)
+    focus on
+        reproducibility as the goal and the big problem
+        fault tolerance
+    provenance should be accessible from external systems
+    phases
+        - provenance data collection
+        - provenance data usage
+            the engineering view
+            analysis
+                publication-related provenance
+                citation management
+                    ref: Dryad
+    provenance recorder is configurable
+        what is recorded
+        which format
+    relational schema is evolving
+    provenance recorded at multiple levels
+        workflow level
+        code level through adapters
+        HW level
+    recording / query APISs
+        extensible to new models
+    CAMERA: env + genomic data -- collab env
+        users run private analyses that they can later make public
+        this could be a shared space for DataONE
+        WFs as part of CAMERA
+            CAMERA-supported workflows: multiple Kepler WFs orchestrated within CAMERA
+            user-built WFs run in a sandbox
+                no provenance is saved for these
+next steps: provenance queries applied to SNA
+
+
+* Kepler Provenance II (COMAD, provenance storage, querying, browsing) -- Shawn 
+-- interested in efficiently store prov and query
+-- WF uses and produces many collections of data
+-- BLAST would take one collection and produce many collections. Motiff would take each of these collection and produce many other collections
+-- most of Kepler MoCs is agnostic of data collection
+-- COMAD: actor takes a collection (structure) and updates it based on it's "read scope" as needed and pass it to the next actor
+-- In Kepler the number AlignWrap is fixed: 4 instances. Not flexible.
+-- MoP for COMAD
+  -- input and output are data collection
+  -- actor might add, delete a node 
+  -- prov keeps diffs of these collection
+  -- at the invocation level
+  -- prov is collection in a trace file as an XML
+  -- trace file includes both data and provenance
+  -- how to store this trace into a RDB and serialize it?
+  -- The Prov Browser allows to see ddep, idep and combined as DAGs
+  -- It provides a facility to query prov data. QLP (Query language for Prov) is used. it provides to build query on the results of the earlier query.
+
+additional notes:
+Kepler (Shawn)
+    motivation for collection-oriented processing: many services (life sciences) naturally produce collections, and data pipelines must be able to deal with them
+    hence, the COMAD model
+        read scopes for each actor defined by XPath-like expressions
+    provenance in COMAD
+        (see slides...)
+
+=== Lunch === 
+
+=== Session 3 (1-3 pm) ===
+- Elicit and understand DataONE needs for workflow-oriented provenance (need CCIT participants for this!)
+- Identify existing and new science use cases
+- Start: What could be next steps for the WG?
+
+DataOneSoC DataToL project update:
+--  
+
+* Taverna provenance and myExperiment -- Paolo
+-- Taverna : data pipeline based MoC
+-- WFs are designed by scientists
+-- data-driven cmputational model
+-- myExperiment: 
+  -- REST API
+  -- RDF metadata with various ontologies
+  -- Linked data with URIs
+-- What is MoP?
+  -- collection supported: balance list
+  -- PROVENIR ontologies to describe the schema
+-- what can be done with Prov?
+  -- not all processors are of interest: hide
+  -- hide granularity
+  -- query time depends on WF graph not Prov graph
+  -- arch: refer to the slide   
+-- How this could be used in D1?
+  -- would Taverna be used in D1?
+  -- by complementing other WF model 
+
+Lessions from EVA (Steven) 
+-- 7 proposals were submitted
+-- combined with your own research interests
+-- 
+
+Suggestions:
+-- We should have one end-user in the group.
+-- G8 support collaborative research
+-- Use Cases (domain and projects)
+  --  ref. to Prof. Bertram's note (DropBox)
+-- Data quality should be one interest area
+-- EVA would start another project
+
+-- Steven' suggestions:
+  -- Don't use a EVA as a use case
+  -- SAHM is one potential use case
+  -- Physical ecology/ chemistry is another area
+    -- Contacts: Weng Keen Wong, Tom Dietrich, Oregon State
+  -- SNA would tie into Carole Tenapir's WG
+  -- In KNB there over 20,000 (?) data sets and the data quality of these data sets are varible. Having  quality assuarance using provenance would improve the usage. 
+  -- there should be a generic matrix for data quality and another using provenance. 
+  -- Data sharing and publication ref of Dryad could be used as a model
+  -- Implementing provenance on the member nodes could be interesting
+  -- Data discovery functionalities beyond Mercury (may be develop a Google like model: -rank). The rank of both the data what is being searched, used, and the user should be considered.
+  -- 
+
+Shawn: D1 provenance store should be such that the above features would be available. it is not imp where data and provenace stores, the operations on provenance would be quite different than the same on the actual data.
+
+Ilkay: What is to be added to the provenance model/schema to be able to check quality of the data and what data qualities could be used in provenance?
+
+Ewa: is interested in the paper and ...??
+Steven: Data Conservancy has developed a set of use cases. Prov WG should make use of those use cases as they are aligned with D1. 
+Yogesh: how to get those use cases?
+Steven: could show some of them related to Data Conservancy
+
+=== Session 3 (3:15-4pm) ===
+- (Cont'd): Planning of next steps for the WG
+- When (and where) shall we meet again? (to avoid thunder, lightning, and rain...)
+
+Steven:
+-- Focuson EVA group
+-- lot of data exploration and visualion
+-- collecting data from various obse
+-- data sets with the diffreent formats
+-- huge volume of data
+-- different observational data model were used
+-- huge data volume were required to be loaded into low cofig mc
+-- point polygon were required to be solved
+-- 40 papers after publishing the data
+-- this project on 7th year
+-- run these models: very parallel
+-- create sub-groups
+-- single processor was taking long time
+-- using Terra Grid it took less time
+-- that helps D1 to realises the need for proper arch by pushing data near to the processing nodes
+-- data volume grows beyound expected (exponential)
+-- needs tools to analyse data grid from different angels to get the different approximations to try to get various insights which are there hiden in data.
+-- Individual file sizes were low and huge numbers of those made up TB data
+-- earlier years' data were reffered to identify treands
+-- Zoom-in/out were used in analysis tools
+
+
+Now, what we want to focus on?
+--ref to Prof. Bertram's note 
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+Scratch pad for discussion regarding IDCC Workshop
+
+Teleconference 2014-02-06 
+Bruce, Dave, Laura, Amber, Rebecca
+
+Follow-on meeting:  http://epad.dataone.org/2014-02-13-IDCC-workshop
+
+
+From Chris:  
+The workshop at NCEAS was very much a hands on activity where we walked through the process of installing Metacat on virtual machines. This required extensive preparation - we built something like 12 VMs that were all setup ready for metacat install (dependencies etc), and walked through the install button clicking. This required a VM host and consistent user environment for accessing the VMs which could be done at NCEAS, but would be challenging at an independent location.
+
+Overall, I felt that workshop was good, but didn't really provide much for folks to take home, since they'd be looking at the install directions anyway when installing Metacat, and the hard part is actually getting the environment setup for the install.
+
+I suspect we could provide a very effective experience through a combination of presentations and discussion about the process for MN setup for a couple of specific examples. Amber and I talked on this a bit yesterday, and one thing that may work well is to do a simple survey of attendees - basically why they are interested, the types of data they are working with, their existing repository solutions, needs for a new solution and so forth. Out of that, I expect we could get a couple of scenarios that we could step through basically what it would take to get setup, and this would be basically working through the MN documentation / installation workflow, and nailing down a few of the particularly challenging aspects (e.g. certificates). This would, I expect, get folks up to speed on the big picture and sufficient detail so they could more efficiently work through a real installation in their environment.
+
+So the agenda might look something like (assuming four segments to the day):
+
+1. Overview of DataONE, all the pieces, how things work, metadata standards, investigator tools.
+
+2. Big picture step through of MN installation process, tailoring it a bit to align with a couple of scenarios drawn from the survey material.
+
+3. Focussing on details about some of the steps and some of the operational requirements such as immutability
+
+4. More details as necessary on difficult topics such as certificates and identity management, supporting different metadata formats, dealing with changing content over time.
+
+Does that seem reasonable to everyone? The overall goal would be that folks would leave having a pretty good understanding of what it takes to get a Member Node setup, and a good general understanding of DataONE and it overall goals.
+
+This is of course all just a suggestion for discussion.
+
+Draft Program (As Initially submitted)
+8:30 am           Welcome, introductions 
+8:45 am           Introduction to DataONE 
+- at least half of the participants have not been directly involved with DataONE, so good introduction is important.
+9:15 am           Member Nodes, Identifiers, and the DataONE Service Interface 
+10:00 am         Break
+10:15 am         Overview of the Investigator Toolkit and use of Member Nodes
+10:45 am         Member Node implementation process and documentation 
+12:00-1:15 pm            Lunch
+1:15 pm           Member Node implementation: examples and hands-on
+- certificates - what they are and how they are used in DataONE
+
+2:45 pm           Break
+3:00 pm           Member Node implementation (continued)
+4:15 pm           Questions and discussions
+5:00 pm     Dismissed
+
+Program (revised) (incl time for Qs during each slot so presentation time about 2/3 of listed)
+8:30 am (Bruce)     * Welcome and Introductions (20 mins)
+8:50 am (Bruce)     * Introduction to DataONE (40 min) -- much of this from RSV slides
+   * some of the MN value proposition and ITK user value proposition
+9:30 am (Amber)    * Data and Data Management (30 min); lead into  - much of this from education workshops
+   * variations in practices
+   * reuse
+10:00 am BREAK (15 min)
+10:15 am (Chris) * Identifiers and metadata (30 min)
+   * best practices (including immutability)
+10:45 am (Dave) * DataONE infrastructure (75 min)
+    * MN, CN, ITK
+    * Service interface
+    * how does it all work (synchronization, harvesting, replication)
+    * role of certificates (server, client)
+12:00-1:15 pm LUNCH
+1:15 pm   * More on Member node value proposition (also in intro) (15 min) maybe hit this here: http://www.dataone.org/benefits-becoming-member-node
+1:30 pm * Process of becoming a Member Node (* consider sub groups based on survey?)
+    * Use the info from the web site
+    * types of stacks, selecting a stack
+    * integration with existing stacks
+    * examples or demo work
+    * MN Forum and other means of communication
+3:00 pm BREAK
+3:15 pm  (resume MN process discussion)
+4:00 (Amber) * Ongoing participation in DataONE
+    * MN Forum
+    * DUG
+    * Other community activities
+    * ITK Development
+4:30 * Questions and discussion (encouraged throughout)
+
+
+Pre-work -- need to survey the intended participants for what they want out of the workshop, and what they're looking for from DataONE.
+
+Pre-work - check table arrangements and request classroom if not too late
+
+Send out intro video before the workshop (maybe with the survey). Have as a link at the end of the survey so it doesn't bias our survey :)
+
+Frame agenda (at least intro) to use the information that's presented on the web site for becoming a member node -- we have an established vocabulary, let's make sure that we use that.  http://www.dataone.org/member-node-deployment-process and the other, higher level stuff.
+
+Discussion of types of member node stacks, how to select a stack.
+
+Comments about certificates
+
+Participants:
+
+Clifford Anderson (??)       Dr        United States ( http://www.library.vanderbilt.edu/scholarly/  and http://discoverarchive.vanderbilt.edu/ )
+Luke Sheneman (NKN)        Dr        University of Idaho / Northwest Knowledge Network
+Nicole Kaplan (PPSR)       Ms        Natural Resource Ecology Lab- CSU ( http://sgslter.colostate.edu/person.aspx?id=KAPLN )
+Laura Rezende (???)       Dr        Federal University of Goiás (http://gestaodainformacao.fic.ufg.br/pages/41188  http://www.dcc.ac.uk/sites/default/files/documents/IDCC14/211Rezende_queiroz_idcc_14.pdf )
+Richard Kelley (???)       Dr        University of Nevada (http://www.rkelley.net/) Research Asst Prof in CSE
+Birte Christensen-Dalsgaard (???)       Dr        Royal Library (http://www.kb.dk/en/kb/organisation/dir/)
+Mary Whitton (DFC)       Prof        UNC Chapel Hill
+Hyoungjoo Park (PhD student)        Miss        University of Wisconsin - Milwaukee (https://www4.uwm.edu/sois/people/profiles/parkh.cfm )
+Cheryl Thompson (???)       Miss        University of Illlinois ( http://www.lis.illinois.edu/people/phd-students/cheryl-thompson )
+Mary Linn Bergstrom (???)       Ms        UC San Diego Library ( http://libraries.ucsd.edu/locations/se/staff/mary-linn-bergstrom.html )
+Edward Flathers (NKN)       Mr        University of Idaho
+David Bloom (VertNet)       Mr        VertNet ( http://vertnet.org/about/team.php )
+Eric Kansa (???)       Dr        Open Context & UC Berkeley (http://www.ischool.berkeley.edu/people/faculty/erickansa)
+
+SURVEY QUESTIONS:  (Amber to do survey monkey, send out Friday 7 Feb w/deadline for responses)
+What was your motivation for attending this workshop? 1) General information 2) Information on establishing a Member Node 3) Technical support for establishing a MN
+
+Open-ended: what do you expect to learn/achieve in this workshop?  [this is so close in intent to the above question, I'm not sure if it should even be a separate question... maybe just include an open-ended option in the above?]
+
+What types of data do you work with?
+
+What kinds of metadata are you using?
+
+What's your How much experience do you have with DataONE?
+
+How much experience do you have with data management in general?
+
+When are you looking to implement a DataONE Member Node?
+a) next six months, b) later this year, c) sometime in the future, d) no specific plans; just want to learn about DataONE
+
+What operating systems are you most familiar with?  X Windows   X Mac   X Linux [this should probably be check boxes]
+
+Will you have a laptop at the workshop?  X Mac   X Windows   X Linux   X No laptop [probably radio buttons]
+
+How familiar are you with command line commands?  [Very Familiar -- to -- Not Familiar scale]
+
+Please explain. ( e.g., familiarity with Mac Terminal commands, Windows command prompt, Linux commands on a remote server?)
+
+Have you set up a web server before?  If so, which ones? Linux/Apache? Windows IIS? Mac Web Server? [text box question]
+
+Meet again next Thursday 3:30pm EST https://www1.gotomeeting.com/join/431042865
+

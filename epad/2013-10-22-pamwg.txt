@@ -1,0 +1,309 @@
+D1MWG Meeting Notes -- Albuquerque, Oct. 2013 -- Albuquerque, Oct. 2013
+
+John Kunze, Jane Greenberg, Nassib, Greg Janee, Rebecca Koskela, Angela Murillo, Nicholas Digiuseppe, Margaret O'Brien, Damien Gessler
+
+Overview:
+From history, its really hard to come up with standard, change by committee is ugly, costly, slow, ex. Dublin Core 
+- everyone has highly divergent local practices
+- we ended up with the Metadata Universe
+
+Vision:
+One dictionary, one namespace
+- crowd sourced plus lightly supervised canon
+- strong terms rise, weak terms decline
+- wikipedia, stack overflow
+
+SeaIce: http://seaice.herokuapp.com/
+- classes of terms: vernacular, deprecated, canonical 
+- we want to get into a discussion of hueristics (how many votes would move something from vernacular to canonical)
+- right now we have a depreciated  
+- how do we need to make sure we don't loose good terms that are rare
+
+Questions from Semantics group aboout levels.
+- there could be multiple levels, but we're trying to keep it simple
+
+Bold ideas:
+- cross domain, one namespace, 
+
+how do we prioritize preloading it?
+- one problem is that ever term has to have an owner
+from Nassib: we're going to have to deal with orphan terms anyway, could we use this same idea
+From Jane: could an owner be a community, such as Darwin Core
+- we don't want a community very jealously guarding something
+Damien just add every term in the dictionary
+Nicholas, put stuff in, let it be dormant, who wants to own it.  Can ownership be transferred
+John - keep in mind Meritocracy
+Daimine - could use wikionary, annotate on top of basic words
+
+What is the difference between a metadata dictionary and a natural language dictionary
+- 
+
+We need an FAQ before we do a public rollout
+
+Intended usage:
+- important to be up for grabs 
+- important to put hte provenacne in there
+
+Damien's comments:
+- move to phrases or compounds of words that appear in science but not in dictionaries (syntagmatic relationtions)
+- how do you load things up
+- text mining to load thigns up
+
+Problems with ontologies, challenging to use, labor intensive
+most ontologies are axiomatic
+if it's in an onotology than it's important, MARC and OAI show small use of properties
+We are in a start up phase, no logs, twigs
+Wordnet consideration
+Nicolas summer project Ontology Coverage, use synonyms to infer relationships.
+- Every x is a y, but not every y is an x
+- reciprocal relationships
+SeaIce has relevancy for the metadata community
+Taling about metadata terms.
+any community talking about metadata could benefit from this application
+what does creator mean?
+LTER commuity could beneift, EML, creator issue
+Greg - how can we show value added.
+
+John  - mentioning Murile's work, how often a term is used, this could show value.  Provenance of the term.  Koolaid?  
+
+jane - hearing/getting a sense of 3 possible pre-pop ideas
+- Pre-load of exicting standard, anything from Darwin Core, wikidictionary, to WORDnet
+- get metadata community hoping
+- shwoing added value
+
+a 4th idea.. oprphaned terms that have wide applicabilty 
+alternaitve hierarchy
+
+Gorden confernece:
+
+replace death by committee, who is going to be voting:  http://www.grc.org/programs.aspx?year=2012&program=diffrac
+
+Stack overflow.
+
+Line - engaging a DataONE community.
+
+FAQ brainstorming
+•Who: everyone describing data, all domains – curators, researchers, developers
+•Why should I contribute?  because you are empowered to change terms you don’t like or add terms that don’t exist; to avoid shoe-horning ill-fitting metadata into a the wrong bucket; see ask.dataone.org 
+•Why are you doing another namespace if there are too many namespaces?
+•Why?  because no one has taken full advantage of social technology for metadata
+•Why?  to reduce cost, increase quality and speed and responsiveness
+•Why?  you have a problem with this, then engage and fix in
+•What if I’m happy with my existing standard? Great.
+
+-----------------------------------------------------------------------------------
+Wednesday - 10/23/2013
+page shortening
+FAQ draft 1
+Name Change
+UI Policy publishing
+
+issues list, to do, and design document
+https://github.com/cjpatton/seaice/issues
+https://github.com/cjpatton/seaice/wiki
+https://github.com/cjpatton/seaice/wiki/TODOs
+
+Greg - will be working on the About page
+Rest group - working on FAQ page
+
+Questions we need to be able to answer
+
+Why SeaIce
+ * because no one has taken full advantage of social technology for metadata
+ * to reduce cost, increase quality and speed and responsiveness
+ * to strengthen interoperabilty infrastructure
+
+Why another crowdsourced vocabulary? 
+ * 
+
+How is this different from the other crowdsourced vocaublaries I've heard of? (SemanticMediaWiki, ISOCat)
+ * consider a matrix showing what is/is not there.
+ * we need a list of features/categories for the matrix
+ * https://rd-alliance.org/groups/data-foundation-and-terminology-wg/wiki/candidate-applications-term-gathering-effort.html
+ * 
+
+Why are you doing another namespace if there are too many namespaces?
+
+ * This is not another name space
+ * We are creating an alternative approach to term vetting/metadata standards that doesn't require a namespace
+
+
+Why participate?  
+ * You have a problem with a term, then engage and fix in
+ * To investigate or explore terms that might be useful or better/more appropriate to your work 
+ * To make your data more interoperable within and across communities (we don't want to be overkill w/interop.  we may also want to select another word).
+
+Who: 
+ * Everyone engaged in any aspectof the data life-cycle (curators, researchers, developers)
+ * All domains – 
+
+
+Why should I contribute?  
+ * To participate, to have voice, to share your expertise
+ * To enalbe greater interoperability (<-- may not need to restate, b/c interop. is key to get at the top., but leaving for now)
+ * Contribuiton leads empowered to change terms you don’t like or add terms that don’t exist; to avoid shoehorning ill-fitting metadata into a the wrong bucket; see ask.dataone.org 
+
+What if I’m happy with my existing standard/terms? Great
+ * If you add it in, more people will become aware of your usage and can work with your terms in the same context. 
+ * We are not trying to take your term use/understanding away, rather we provide a venue for greater sharing across multiple domains
+ * 
+What is interoperability? What types of interoperabity does SeaIce promote:
+ * Semantic interoperability (lables of a property, and meanings--human readable)
+ * Marchine interoperabilty by use of PID
+ * 
+
+How?
+
+How do I make an account?
+ 
+How do I propose a term?
+ 
+What should I do if I feel like a term is inaccurate?
+ 
+Why would I vote up or vote down a term?
+
+
+Name candidates
+jgGJ •Crow
+•lexica
+•Vocab-u-like, 
+•terms/meta-u-like 
+•Vocab 
+GJ•jg AM TermStable or TermStabler
+•ResearchDictionary 
+•MetaVocab MeVo (Metadata Vocabulary) 
+•CrossWords PPD (jgPeople-powered dictionary) AM
+•MetadataZoo AstroZoo (a metadata dictionary for all domains from astronomy to zoology) 
+•Encyclopaedia metadata Universal Lexicon 
+•The Hitchhiker's Guide to Metadata (Don't Panic) 
+•Metadata: the collection The Book of All Metadata (BAM)
+•Metadata: a New Hope The Researchers' Lexicon 
+•Vocab-u-like 
+•Metadata-R-Us
+ * jg Terms-u-like
+• MetadataBook 
+•A Brief Listing of Metadata Metadata World 
+•MyVocabulary VocabStarter eDictionary 
+GJ •Collaborative Terminology Refinement
+GJ •Collaborative Terminology Definition and Refinement
+AM jgGJ •Term Wrangler
+sb jk Mictionary
+sb jgAM GJ jk Metadictionary
+jgnn jk Dublin Mantle
+sb Meta-refinery
+•Tamaya Core
+AM sb jg Term-i-nator
+
+Round 1 candidates
+Crow
+TermStable or TermStabler
+CrossWords PPD (People-powered dictionary) 54
+Terms-u-like
+Terms-r-us
+Collaborative Terminology Refinement3
+Collaborative Terminology Definition and Refinement
+Term Wrangler 
+Mictionary
+Metadictionary 321235
+Dublin Mantle3
+Meta-refinery2
+Terminator 11114
+Wordinary3
+Termometer
+Termology
+Terminalia
+Wordplay
+Wordsworth222144
+
+
+Round 1 winners
+Collaborative Terminology Refinement
+CrossWords PPD (People-powered dictionary)
+Dublin Mantle
+Metadictionary
+Meta-refinery
+Terminator
+Wordinary
+Wordsworth
+Commonology
+
+
+
+
+Parking Lot
+•pre-loading strategy (seeding) to make the vocabulary compelling
+•engaging metadata community X
+•what unique value does SeaIce bring?
+•orphaned terms that have wide applicability 
+•can we add value by letting usage stats surface in the dictionary
+•possible incentive:  peer recognition for contributing
+•heuristics/algorithm for classifying as canonical
+
+action items
+- wordsmith 'about page' (john)
+- email/communicate w/DLF (jane, inquire)
+- streamline FAQ w, w, w, w, w, how (?? Angela, Greg,, next steps ?)
+- get a better sense of ranking, as is, and should be. (we need to understand what is there now, where we want to go). We are likely going to get this questions.(nassib?)
+- bring new SeaIce names to the bar/other groups (all, who will collate?)
+- finess paper submit to DC proceedings (jane)
+- matrix of functionalities that SeaIce has, could have, comparison doc. ?
+- new members, etc.(Stephen, Viv, etc.)
+- question of asking DataONE for support, given RDA link
+
+MEETING on Oct. 24, 2013
+Early AM, reviewing slides
+talk about algorithm, autoamted, ranking.
+
+other things
+- SWAP look at 
+- Bring Chris into a meeting
+- Before we break/meeting ends, we need consider schedule.
+- Nassib - jane / Michelle could gather insight into algorithm
+- IDCC
+
+Greg - working on FAQ, looked at Stack overflow, they empahsis the effect, outcome of voting, not how to/what it is
+
+term voteing, how to figure out algorithm for transfer from vernacular to cannonicat.
+
+jane - hotel status, gold, silver, platinum, how the point system works
+
+spotlight temr of the day, people's who terms are hanging out int he vernacular owner take responsibility
+-- stay into the system
+
+- chris - present in spriit, needs to be all automatic
+- number of approaches
+- if a person hows, they need a way to market
+- conflict between automtic approaches and ownership
+- urban dictionary, fairly primvitive you can upvote and down vote your term
+- Greg - notification of cheats - can you mark my .. as extra important.
+- sending something back to the community, empowerment
+ 
+Susan's reporting -
+Metadictionary, winning one
+New word - Termanatrix
+searchin for the something like crosswords is confusing
+other terms fun
+PP.. etc., too confusing.
+
+Yelp
+Angies list
+Facebook example
+Google, voting up + down
+
+Muriel's frequency stats, but likely separate...
+
+Angela:  Is there a way to incorporate how much a term is being used?
+It is difficult to count this accurately.
+
+Chirs' work
+computeing consensus score
+--people voting up/down
+computing reputation score
+
+bting up a possible ...
+
+temporary adhocs 
+
+Trying to figure out time... 
+
+

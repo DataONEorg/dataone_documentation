@@ -1,0 +1,116 @@
+Notes for Provenance paper meeting (Sep 1 at 14:00 PST)
+
+Some papers shared by Matt (and a few more) are in a private Mendeley group (allows pdf sharing): http://www.mendeley.com/groups/1377483/workflow-review-paper/
+
+Some relevant papers that have already covered this topic (from Matt):
+
+ For background, there have been related perspective pieces already published.  See for example:
+
+Accessible Reproducible Research. Jill P. Mesirov Science 22 January 2010:  Vol. 327 no. 5964 pp. 415-416  DOI: 10.1126/science.1179653
+There's also the executable papers effort that happened this year (http://www.executablepapers.com/). We should figure out what we want to say that is different from the existing pieces.
+
+And here's another one that is of much relevance, defining a Reproducible Research Standard (RRS): http://www.stanford.edu/~vcs/papers/LFRSR12012008.pdf
+The published version of that whitepaper is here: http://dx.doi.org/10.1109/MCSE.2009.19
+
+
+Meeting on 09/01 @ 1400
+--------------------------------------
+
+Some thoughts on what's different in this effort compared to the other similar reviews (above):
+Most of these articles call for wfs to be embedded in a paper (e.g. executible papers). Little mention is made of including them as separate entities that are themselves products worth sharing. 
+The Ecology and Evolution crowd is particularly unaware of the utility of wfs (We could potentially write this in an ecological venue but most are closed-access).
+
+
+Bertram/Duncan: doc book package.
+DataONE R demo: indirect identifiers makes the script portable.
+
+Would want to discuss both SW systems and traditional analysis systems that can be considered workflows too (e.g., R)
+
+RSS
+
+Multiple levels of granularity
+    -- black box: data in, process, data out
+    -- more detail: data in, process 1.. n; data out
+
+Discuss taxonomy or levels of hierarchy in granularity. Adding additional details in the provenance hierarchy enables a wider community to participate.
+
+Incentives; what do people get (in addition to better science reproducibility)
+   -- better citations (open access papers get cited more)
+   -- where is the tradeoff in investment (better preservation versus more research)?
+   -- 
+
+GitHub analogy; great community forming; but one in a series (CVS, SVN, Hg, Git, etc), but migration must be continuous.
+
+Analogy with dat aarchiving/migration/bitrot issues; hard enough with data, much harder with process/algorithm;
+
+Practicing scientists are able to follow the statistical algorithm but not always the implementation. 
+
+Motivations for paper:
+    -- audience -- spread word to audience that hasn't heard, awareness of workflow efforts
+        -- why would people
+    -- arguments about data; excitement about sharing data; white's project; 
+    
+ Awareness of wf systems is much more pevalent among molecular biologists since they have been forced to interact with Genbank for a good period of time. With other fields this is all very new.
+    
+Target audiences:
+    Ecologists
+    Evolutionary bio
+    ...
+    
+Need to choose an appropriate journal; candidates (goal to target open access journal?):
+   PLOSBio (perspectives)
+   PLOSCompBio
+   Frontiers in E & E (review) http://www.frontiersinecology.org/
+   Ecological Informatics (too techy, not open -- Elsevier)
+   TREE
+   AREES
+   BioScience
+   Maybe a computational journal?
+       Ecological Modelling (Elsevier)?
+       Ecological Applications
+       
+  
+  ------------------------  ------------------------  ------------------------  ------------------------  ------------------------  ------------------------  ------------------------
+  
+  # Notes for meeting on 09/07
+
+Paper Outline & Focus
+Larger goal: Introduce the concept of workflows to practicing scientists (i.e. people who should be using/reusing workflows but aren't for various reasons).
+Audience: The broader scientific community but with a focus (examples and use cases) from the eco/evo community. Address the point that molecular folks have been forced to acknowledge and use wfs since the establishment of NIH mandates.workflows provide a way to interact with public domain data that are increasingly being made available (e.g. dryad).
+
+Topics: 
+Intro to open-science 
+ - Brief discussion re: greater acceptance 
+What are workflows?
+ - Formal workflow systems
+ - Ad-hoc workflow systems (more common)
+ - Scripting systems as wfs (e.g., R, Python, Perl)
+ 
+workflows capture complete scholarship (papers just share the end result) of how to genera 
+
+Why workflow sharing is not all that similar to data sharing
+ - Constant need to migrate
+ - Process/algorithms are much harder to archive and reproduce than data.
+   - So what level of granularity should we document?
+                - Black box approach (much easier, harder to reproduce). examples in literature? or use cases where documented algorithms would be useful.
+            - Fine grained approach (greater reuse but harder to document)
+
+Reproducible Research System (RRS) = Reproducible Research Environment (RRE) +  Reproducible Research Publisher (RRP). The idea of the executible paper.
+
+Why aren't workflow systems more widely discussed, shared and reused?
+ - Incentives to share
+                 - Better citations (evidence is inconclusive)
+                -  Reusability of wf components that perform common tasks leads.
+ - Disincentives to sharing
+
+Recommendations
+Need for wfs to gain interactivity of R, R to gain provenance etc from wfs
+
+Journals to target
+To stay in the spirit of the article (and open science in general) we should publish someplace that permits open access.
+
+If the two of you are also attending the DataONE all hands meeting in October, maybe we can have a draft that we can discuss in person at that time?
+
+
+  
+

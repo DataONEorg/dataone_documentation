@@ -1,0 +1,209 @@
+DataOne Research Meeting 2: 05/31/2011
+Present: Bill, Rebecca, Richard
+
+Don't worry about this. 
+Richard's Agenda:
+ * Need to get more examples.
+ * Keep the blog updated. 
+ * Should send out emails on the Kepler Mailing List, other mailing lists - direct emails to webadmins (SciencePipes)
+ * Yahoo Pipes? Other business pipe systems? Are those out of our scope?
+ * Criteria for workflows - exaclty what are we looking for?
+ * Sparql for myExperiment - we have a language to search the workflows there
+ * Finish the workflow languages sheets
+ * Added more reading on Mendeley
+ * Book Flights
+ * Open Knowledge Conference? in Berlin? is this a possibility?
+ * Mentor program for next week. 
+ * I should go through the Pegasus Documentation again
+ * Visual analysis an issue? How are we going to deal with non-visual workflows.
+ * Applications for workflows: http://pegasus.isi.edu/applications.php
+ * Compile a list of the amount of example workflows
+
+-----
+Meeting:
+Richard: Covered the previous week, progress. For the most part, this was just a reiteration of my blog, which can be seen at http://notebooks.dataone.org/workflows
+
+Then, we talked about what to do for the next week, with some questions from Rebecca about the scope of the project and what we're doing. 
+
+To do this week (the majority of the meeting - I didn't take down notes by hand, which may have been a mistake, as these are fairly minimal. Will not do that next week, having compared the differences.) 
+
+ * Sparql - Richard should become familiar with all of the information on myExperiment, but should find a way to randomly select workflows, as well as getting overall stats for which workflows are the most used, etc. This should ideally lead to an understanding of which workflows to look at, as well, instead of just the most-downloaded ones. 
+ * Richard will grab 6-10 Kepler + Taverna + Others - to look at complexity. 
+   * He'll look over these, run them himself, and see how they work. Then, we'll go over them next week to see if we can come up with any interesting things regarding their classification and complexity. He'll try and grab ones with images, as those will be easier to go over in the group call.  
+ * We'll then pick out a dataset, and the next month will be analysing and looking at that dataset. This will be the main information part for the publication. So, what we need to do is decide what we're going to be looking at based on the example workflows, and then go from there. 
+ * Bill is going to talk to SciencePipes, to see if we can have access to the workflows that they have on the Amazon server (internally.) This shouldn't be an issue, and might help us, just as David at myExperiment seemed keen on helping us out. 
+ * It would be useful to come up with a template for workflows, the deviations from which will help classify ones in the future. For instance, what about the number of branches? Or the level of recursion? This will be similar to wetland ecology, which uses classifications for streams. Also, qualitative differences - is there a difference between little use and more use? Or is it only publication and documentation?
+
+That's a pretty long work week, so we left it at that. Next week, the meeting will be at:
+
+11pm Beijing; 4pm Edinburgh; 9am Mountain Time on Wednesday 8th
+
+We're going to be reviewing not only the workflows which Richard will select and look at before then, but also the two papers suggested by David on myExperiment. 
+
+Richard to Call Karthik and Bertram and tell them this, modify the workplan, and get things going. 
+
+End of call.
+
+§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+DataOne Research Meeting 2: 05/25/2011
+Present: Bill, Richard, Bertram, Karthik
+
+DataOne Research Meeting 2: 05/25/2011
+ * BL: We should not just focus on Kepler, Taverna, but also other programs
+ * BM: Interests: 
+   * the what, how, and why of tools for scientists, and how we can develop tools. 
+   * For instance, ecological niche modelling - lots of QA/QC, just to do a single experiment, and it would be nice to understand how complex these are in order to develop them further. 
+   * Would like to analyse workflows by: 
+     * Data Input
+     * QA/QC steps
+     * external models
+     * iterative loops
+     * recursion
+     * subject matter (bioinformatics? ecology?)
+ * Karthik - Experienced with models in R. 
+   * Would like to develop a laundry list of workflow dimensions, to find weak points across systems. 
+   * high cost of reuse, train others in what was done;
+   * interest in making wfs more accessible to ecologist
+
+Richard update: looking at MyExperiment, Kepler, Taverna, Vistrails, 40 papers found
+
+ * BL: So, we’re going to look at the workflows out there (such as those on myExperiment). If so, we have to focus on a few aspects:
+   * Users: 
+     * What kind of users?
+     * What are they trying to do?
+     * Do they need hand-holding? How accessible are the systems?
+     * Do they include R, or other external programs? How do they do this?
+     * Are they using the same workflows, or constantly reinventing the wheel?
+   * Workflows:
+     * plumbing - data management, not the actual science workflows
+     * use of shims
+     * similar workflows, like the niche modelling types
+     * Are the ones which do the ‘real’  work different from the others?
+     * Is it 1-of-a-kind?
+     * software development (those in production mode at the moment)
+   * Depository systems:
+     * Kepler Depository has some example ones, especially in packages, which could be mined
+     * Find more examples
+     * library of the Kepler project, which has a limited user interface
+     * myExperiment is still the largest. 
+     * BL: “people might not want to share their workflows”
+     * Useful in identifying users: would be worth
+       * working with them directly
+       * using the kepler mailing list (and others) to contact people
+       * Some groups in Camera in San Diego, Davis which have in-house Workflows that we could ask for
+ * Documentation: myExperiment, Kepler site training
+   * Develop list of criteria (some above.) 
+   * BM has access to 1-2 page description of six work flows, and a summary article on workflow usage.
+   * Brainstorming workflow usage
+   * (Email the fellow interns with a status update, as per the mentor plan)
+   * Heather is making a lab notebook (wordpress)
+   * Make three excel sheets: 
+     * Users
+     * Workflow languages (share with Karthik)
+     * workflows themselves
+   * Do the relevant reading loaded onto Mendeley
+ * BL: What’s out there? What is the state of the art? R-scripts? Shell scripts? (Vistrails?)
+   * workflows without calling them? is that too out of scope? What’s the outcome predicted for this project?
+
+Richard: Asking on MyExperiment/Taverna, Kepler lists
+Bertram: asking around to gather relevant wfs (CAMERA/UCSD, UCD, ...)
+Bill: start categorizing wfs along different dimensions
+short summary article on wf usage
+
+ * BM: Don’t want to start too broadly. Non-published work - how usable is that?
+ * KR: Identify weak points - some are better, what gaps are there, examples of non-working ones might be relevant findings?
+ * Richard leads analysis:
+   * randomly chosen subset?
+   * x amount of environmental ones, as well (not just bioinformatics)
+     * This will be covered more in another call
+   * what ones are used (how complex they are)
+   * What would analysis entail?
+
+
+Karthik to think about how a survey might look like, strengths & weakness of wf systems
+meeting in Tennessee: group doing "R workflows" 
+Some of these workflows come from the remote data analysis and visualization group (e.g. Eden) http://rdav.nics.tennessee.edu/
+   * draft outline for short synthesis paper?
+   * higher levels, strengths + weaknesses of programs (…and then suggestions)
+     * goal of use, amount of use...
+   * Note: ‘less formal ones’, two weeks ago in U Tenn at Nimbus - workflow systems in R - can these be gotten?
+   * useful direction to take for next meeting
+
+(Bertram: Mining workflows; also check with Pãolo what has been done there)
+(Bertram: Taverna paper by Ulf et al; link-in to Sven's stuff)
+ * BL: Provenance repository internship going on as well - on avergage, 30% of workflows are shims. 
+   * subsetting, translation, transformation - useful infromation.
+
+Bill: annotated bibliography
+Karthik: created a group on Mendeley on scientific workflows
+
+Logistics:
+* Google Docs, Dropbox, Mendeley
+* Public Notebook
+
+ * Write up synopsis for communications to the public
+ * Make a public drop-box folder
+ * Email out to everyone the hours for next week (16:00 GMT/ 11:00 EST, 31-05-2011)
+ * Fill out the mentor program for the next two weeks
+ * 29th-30th July in UC Davis (Buy Flights - 28th evening). 
+
+End of call.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+week 1:
+
+1) gain familiarity with myExperiment, Kepler, and Taverna
+2) do literature search on science workflows and think about how to categorize workflow steps/processes
+        a) data input
+        b) data transformation
+        c) QA/QC step
+        d) embedded workflows
+        e) specific analyses and visualization steps
+3) examine 6-10 workflows and characterize the processes entailed in the workflows
+
+Next steps:
+
+1) design data collection protocols for study based on input from mentors
+2) perform pilot study on 10-15 workflows to ascertain appropriateness of protocols and modify as necessary
+3) begin data collection with X # of randomly selected workflows from myExperiment
+4) plan analysis strategy
+5) commence writing paper
+        a) methods
+        b) introduction
+        c) results and discussion
+
+Karthik to draft an outline for a review paper  analysing existing workflow packages and look at strengths and weaknesses. The article could also make recommendations to the research community.
+
+05/20 Notes
+
+Three sites to get familiar with.
+
+kepler website
+number of workflows in there that are exemplars
+why, what, how
+
+taverna - more for bioinformatics
+
+myExperiment - where all the workflows get deposited (may be a kepler one somewhere?)
+- from the UK, may 
+- web portal - place to store workflows
+        - seek and deposit (documented to some extent), how to download, # of times used, comments as well
+        
+Poster that looked at the scientific process at a meeting a few years ago
+- steps that were part of the analytical process
+
+QA/QC - examine outlier (xy plot or something)
+whole ray of analysis steps
+
+Bertram: data integration, semantic stuff scientist bioinformatics
+Rebekka - bioinformatics
+Bill - ecology, oceanography
+
+Date retrieved, amount used, seen, etc.
+
+
+Translate Google Doc into the Mentoring Plan
+
+

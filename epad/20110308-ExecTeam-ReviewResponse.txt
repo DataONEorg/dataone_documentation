@@ -1,0 +1,175 @@
+CyberInfrastructure - Panel Recommendations:
+ * The semantic problem is key. It would help if the team could show how this is being done in the upcoming months on a case-by-case basis. How are the synonyms, hyponyms, polynyms which will exist in the thousands, being resolved? 
+
+Support  for semantic search and semantic integration are important targets for  the ongoing development of DataONE infrastructure and are targeted for  implementation following roll out of the initial core infrastructure towards the end of 2011.
+
+The  Mercury infrastructure for search already provides support for  inclusion of multiple thesauri, which provides a basis for end-user  searching and searching through the OpenSearch API interface that is  part of the SOLR and Lucene engines upon which Mercury is based.   DataONE has also been working with BioPortal and has a test  implementation of their ontology repository.  We are working on using  the repository itself as a useful tool for the DataONE community, as an  specialized type of information repository about relevant ontologies and  thesauri.  We will use some of these semantic information sources  moving forward to enable semantic search, both for synonyms, broader  topics, and narrower topics.  The semantic search can also be used to  expand the existing "More like this" functionality that exists in  DataONE. As with other aspects of this project, DataONE cannot possibly  generate all of the potential ontologies that are needed, but DataONE  can work with the communities that are generating them, use the ontology  repository to highlight the areas which need coverage and where  ontologies are in conflict for the definition and organization of  concepts.
+
+ * Different parameters need different facets (or attributes) to be discoverable. Semantic interoperability, cross-discipline DataONE lifecycle data management nomenclature and faceted search resolvers could enhance data discovery.
+
+Discovery of available facets  and the range of values represented by those fields is valuable to  clients as it provides circumscription information for the set of  records being examined. The Mercury web interface and other components  such as the FUSE file system driver rely heavily on the faceting  capabilities of the SOLR and associated Lucene indexes that are  populated using system and science metadata objects. Introspection  services for discovery of facets and the range of values they represent  are available through the SOLR interface which in turn are to be exposed  as part of the DataONE APIs. Ease of access to enumerated values from  indexed fields is important for basic quality control operations such as  building and verifying controlled vocabularies which can in turn  provide more reliable association with terms defined in domain  ontologies.
+
+ * Develop user-friendly graphical user interfaces (GUI) APIs to overlay current systems administrative command-line functions for broader impact and use.
+
+ We recognize the importance of graphical interfaces for usability and  they will be part of the public deployment.  The development process  requires that the underlying functions first be built and tested.   Command line interfaces are by far the most efficient means for  developers to work in a test-driven development best practice.  Those  command line interfaces will also be important to a significant user  segment focussed on automation of data access and manipulation.  
+
+As  the core services stabilize  and resources become available, additional  attention is being directed  towards the design and building out of  graphical user interfaces for various adminsitrative and user tools with  the general goal of  increasing the audience to which such tools will  be useful.  Much of that work remains to be done, but is made much  simpler by having a robust and well-tested set of API's. Usability   assessment will be an important part of all user interface design work,   especially for the more widely disseminated investigator toolkit   components.
+
+Staffing and Project Management - Panel Recommendations:
+ *  Find ways to backup the development and operations staff.  
+
+DataONE is initiating joint-development with other projects as appropriate. For example,
+a meeting has been scheduled for USGS developers and the DataONE developers to
+discuss a joint development approach related to the USGS CDI Data Uploader tool and the DataONE Investigator Toolkit. The anticipated outcomes are: 
+1.) Identify components needed for each applications 
+2.) Identify resources required 
+3.) Identify resources available for required components 
+4.) Develop a joint development time line 
+5.) Establish project working relationships
+
+Another strategy for dealing with this issue is to make sure that documentation is kept current so there will be minimal effort to add new developers to the project.
+
+ *  Find ways to compensate for the inherent unreliability of the ‘volunteer’ members. 
+
+This  is a risk that DataONE has already identified.
+
+Risk #105: Member time constraints -- "stretched too thin"
+Scheduling of tasks needs to consider the amount of time that can be contributed by various project participants, and care should be taken to avoid the mistake of equating enthusiasm with actual availability.
+Mitigations:
+ * Obtain institutional support
+ * Obtain additional funding for support
+ * Plan our activities in advance (i.e., the strategic plan)
+ * Don’t overly rely on member (volunteer) contributions for critical path items
+ * Choose members carefully
+ * Clearly outline time expectations
+ * Maintain open communication
+ * Work from strategic plan to load – balance overtime
+ * Load–balance among working group members 
+ * Ask people to operate outside their comfort zones (but within their skill set) when tasks are important
+ * Realistic expectations
+ * Check-in regularly
+
+In addition to these mitigation strategies, we also ensure information generated by volunteers is captured so the knowledge is not lost if lose the volunteer. This also serves to give recognition to the volunteers.
+
+Volunteers are not necessarily unreliable.  Some of the working groups have chosen to have members for one or two meetings rather than the life of the working group. These members are chosen for their expertise to address specific topics.  The goals of working groups may change with time and charter.  It would, therefore, be appropriate to transition in or out individual members of working groups.
+
+ * Adjust development schedules accordingly.
+
+We agree that project management consists of attempting to achieve the goals of the project while managing the classic triple constraints of cost, time and scope. We have four risks on our Risk Register related to this:
+ * Risk #50 - Feature Creep
+ * Risk #52 - Unrealistic timeframe or schedule
+ * Risk #105: Member time constraints -- "stretched too thin"
+ * Risk #120 - Lack of funded DataONE staff to perform tasks
+
+The existing mitigation strategies for these include reducing the scope or increasing the time to get the work done.
+
+Network Coordination - Panel Recommendations:
+ * A DataNet  federation approach was articulated by the PIs of both  projects.   Promoting education, assessment, socio-cultural practices,  and training  at professional meetings; governance involving data  management,  archive and preservation, were presented as part of the  plans of each  project.  A recommendation is to formalize the federation  plan, along  with an emphasis on sustainability that would be included in  the  project execution plan for the remaining 3-5 years of the projects. 
+
+See response below under DataNET Federation
+
+ * The project team should consider formalizing the schedule for expansion of the Member Nodes. This could be done via a matrix in which the next members are listed by inclusion schedule and categorized by metrics that would illuminate why they are trying to add this member and not another member. This would help in spanning as broad as possible a member spectrum putting the system through additional tests.  It may also help them rationalizing the expansion schedule. 
+
+NEED A RESPONSE FOR THIS ONE _ HOW TO GET A MATRIX IN LESS THAN ONE DAY
+
+
+Strategic and Longer Term Planning - Panel Recommendations:
+ * Plans for the DataONE network should include the development of procedures for logging and recovery, as is done for distributed database management systems. 
+
+We  agree.  Logging and recovery are a core part of the DataONE design and  API.  A part of our testing plan for Member Nodes and Coordinating Nodes  includes handling network segmentation, abrupt loss of a node, and disk  failures.  While we have not exposed all of the 
+
+Extensive  operation logging and reporting capabilities are part of the DataONE  service interface design and are intended to support core service  monitoring and overal infrastructure state of health reporting as well  as reporting on content access for individual users, by Member Node, and  through other facets.
+
+Support  for transactions in the federated DataONE infrastructure varies, though  in general operations are designed to be sufficiently granular so that  they fully complete or fail, so that objects or operations are always at  a defined state. Sequential operations such as the synchronization of a  Member Node with a Coordinating Node keep track of state at a level  suffciently granular that should the overal process fail due to network  outage for example, the overall operation will continue from the last  valid step in the process. 
+
+ * The DataONE team stressed the importance of the DataNet federation and the need to work and collaborate for both common technologies and  sharing the scope. In other words, avoid duplication and work to complement each other. Some technical aspects were presented, such as authentication and authorization, semantic issues, replicating each other, and collaborating on educational aspects. It would help if the team could formalize this through some sort of a collaboration plan, to which the next DataNET partners could be added. 
+
+See response below under DataNET Federation
+
+ * Curriculum development – the current approach is collaborative and still in its early stages. Define learning objectives for the MSc. and PhD programs to support DataNet goals.  
+
+These learning objectives have been defined for four current DataONEeducation activites: The ScienceLinks PhD program; the Data Curation Education in Research Centers (DCERC) awarded in collaboration with the Data Conservancy; Information Sciences courses at the University of Tennessee and the Summer Environmental Information Management Institute run at the University of New Mexico.  
+
+For example, the ScienceLinks PhD program the outcomes are defined as:
+Six doctoral graduates who will 
+ * become science data and information educators responsible for preparing the next generation of  science librarians, data, and information/communication specialists
+ * be effective science data and information researchers
+ * become leaders in the science data and information community, accustomed to merging science practice, research, and teaching/learning  
+ * be experienced in writing interdisciplinary grant proposals and participating in science data/information research projects that include roles for librarians as  active partners
+ * who will form an expanding network of science librarians, data, and information/communication specialists who support scientific advancement and innovation
+Development of science data and  information curriculum
+ * for the PhD students, including two 1-hour seminars that focus on “hot” topics in science data and information issues 
+ * by the PhD students in conjunction with their faculty and science organization mentors to build courses that will be part of their teaching repertoire as LIS science educators 
+Development of a model of active science and data librarianship that combines the best of research, teaching, and professional practice and that incorporates from an early stage large national science data initiatives and science organizations.
+
+Goals / Objectives for the Information Sciences courses include:
+ * Understanding of the field of environmental informatics and the challenges that exist; 
+ * Knowledge of information standards and practices as they are applied to emerging environmental science issues;
+ * Ability to develop and implement an environmental science monitoring program with emphasis on the information,computational, and geospatial challenges; 
+ * Understanding of geospatial  standards, concepts, and terminologies; 
+ * Understanding of semantic principles, practices, standards, and applications; 
+ * Application of project management concepts and principles within the field of environmental informatics.
+
+Outcomes from one session of the three week Graduate Summer Insitute include:
+Knowledge:
+ * Students will evaluate multiple potential approaches for analyzing and visualizing data
+ * Students will identify critical components necessary to present their results to a variety of audiences. 
+Skills:
+ * Students will load data into an analytical program and run key commands to summarize, visualize, and evaluate the data.
+ * Students will prepare presentations that clearly summarize their analyses.
+ * Students will effectively analyze and visualize a dataset.
+ * Students will critically review research presentations and provide constructive feedback to colleagues.
+Attitudes:
+ * Students will appreciate the importance of critical thinking, both for analyzing their research data and evaluating results presented by others.
+
+
+ * Plan on potential educational use of the data early in the project.  There are implications for the metadata requirements that need to be accommodated during the implementation of the storage and access plans.
+
+Current Graduate Courses and Workshops include practical application of search and retrieval processes for the utilization of existing data sets within targeted research exercises.  These queries will be reliant on associated metadata, and stress the importance of well-documented data. Inclusion of NEON’s Education Director, and others whose work involves substantial involvement in education, in the CEE Working Group helps to ensure that education applications are regularly discussed. Structured feedback from workshop sessions will be provided to the CCIT.
+
+Following the public release of DataONE, we are planning additional workshops with educators, scientists and DataONE partners focused on analyzing data for ecological purposes.  In preparation for this, we are exploring the feasibility of engaging a graduate intern to develop data driven exercises. These exercises would be expanded into educational modules flexible enough to suit various educational levels.
+
+
+Assessment - Panel Recommendations:
+ *  The panel recommends that assessment be done comparatively.  An example data reuse project should be attempted by two groups: one using DataONE and one using another tool kit. The Project investigators could then measure how much time and effort is needed to ingest new data or how difficult it is to use the existing APIs for data access.  
+ 
+The Usability and Assessment Working Group, in conjunction with EVA Working Group, will design a test comparing the processes and procedures for data ingest and data access using DataONE and at least one other system.  
+ 
+The test will present a set of realistic, but controlled, tasks to environmental scientist subjects to complete. Their familiarity with the systems and with similar data related tasks will be measured in a pre-task questionnaire. The steps they take and time needed to complete the tasks will be recorded, as will their interactions with the system during the tasks. A post-task questionnaire will measure their perceptions of the ease of use and success of the tasks with the 2 systems. To control for learning, half of the subjects will begin their tasks on DataONE and half will begin on the alternate system. 
+ 
+This test will compare the systems using the following metrics:
+1.     Time required to do set tasks
+2.     Ease of use (perceived ease measured through post-task questionnaires, plus observed ease measured through monitoring keystrokes and reactions captured during the tasks)
+3.     Success at completing the tasks (perceived success measured through post-task questionnaires and system success judged by the researchers)
+4.     Perceived value of each system (measured by post-task questionnaires)
+ 
+Timeline: Task design: 2011 and first quarter 2012; Pilot testing: second quarter 2012. Test and analysis: third and fourth quarters 2012.
+
+ * The metrics are not comparative and the panel suggests that metrics of  this type be added. The assessments based on these metrics will then  constitute publishable scientific results that can have an impact that  will persist beyond the lifetime of the Project. In this regard the team  should seek coordination with other DataONE projects to perhaps develop  a common list metrics that can be applied across DataNet.
+
+See response below under DataNET Federation
+
+
+DataNET Federation
+The following three recommendations have been grouped together because they all relate to the DataNet federation.
+
+Network Coordination - Panel Recommendations:
+ * A DataNet  federation approach was articulated by the PIs of both  projects.   Promoting education, assessment, socio-cultural practices,  and training  at professional meetings; governance involving data  management,  archive and preservation, were presented as part of the  plans of each  project.  A recommendation is to formalize the federation  plan, along  with an emphasis on sustainability that would be included in  the  project execution plan for the remaining 3-5 years of the projects. 
+ 
+Strategic and longer-term planning - Panel Recommendations:
+ *  The DataONE team stressed the importance of the DataNet federation and the need to work and collaborate for both common technologies and  sharing the scope. In other words, avoid duplication and work to complement each other. Some technical aspects were presented, such as authentication and authorization, semantic issues, replicating each other, and collaborating on educational aspects. It would help if the team could formalize this through some sort of a collaboration plan, to which the next DataNET partners could be added. 
+
+Assessment - Panel Recommendations:
+ * The metrics are not comparative and the panel suggests that metrics of  this type be added. The assessments based on these metrics will then  constitute publishable scientific results that can have an impact that  will persist beyond the lifetime of the Project. In this regard the team  should seek coordination with other DataONE projects to perhaps develop  a common list metrics that can be applied across DataNet.
+
+The DataONE Cooperative Agreement calls for
+ A.  Kick-Off Meeting. During the first year of the project, NSF will host a DataNet program kick-off meeting to identify mutual interests and  opportunities for the federated development of shared scientific interests, technological challenges, and community engagement goals. The attendance of Key Personnel from each of the projects is required. The  structure of the kick-off meeting and subsequent semi-annual Program Review meetings will enable DataNet awardees to share best practices, explore solutions to shared  problems, develop a shared governance structure across DataNet sites and  facilitate the development of interoperable technical solutions and  standards. Exceptions to required participation must be approved
+by the NSF Program Director.
+
+A DataNet Federation Kick-Off meeting would be an ideal venue for 
+ * Formalizing the federation plan
+ * Creating a collaboration plan
+ * Setting common metrics for the federation
+
+DataONE would be happy to work with NSF and the Data Conservancy to draft an agenda for a DataNet Federation Kick-Off meeting.
+

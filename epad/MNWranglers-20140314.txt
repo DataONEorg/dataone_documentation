@@ -1,0 +1,74 @@
+Member Node Wranglers 
+    Fridays at 10:00 am Alaska
+                    11:00 am Pacific
+                    12:00 noon Mountain
+                    1:00 pm Central
+                    2:00 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+14 March 2014  (it's pi day)
+                                                      
+Attending:  Bruce, Dave, John, Rebecca
+
+Regrets:  Amber
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+        New MNs announcements? -  
+       * GOA awaiting news item review from GOA folks - Laura to ask Matt
+       * Dryad - turned on 2/22/14; announced today!!
+
+
+        1.5    Current MNs
+       * eBird Update: see content from email from Steve 02/18 in epad:
+                    http://epad.dataone.org/MNWranglers-20140221
+                      after further review, it looks like there is nothing to address;   perhaps he was just "documenting" so there would be no question about   their dataset (replacing with all + current rather than adding a   separate dataset with just current)
+                    Laura to check DOIs on the 2012 dataset and 2013 dataset (related to the whole immutability issue)
+                     FOLLOW-UP:  The DOIs are unique for the 2012 and 2013 datasets.  The  2012 data has been deleted.  :(  This is a case where it would have been really nice to have replication turned on and have a replica of the  2012 dataset preserved out there somewhere.  Something to consider in the future.  2012 data is included in the 2013 dataset, but the specific version of the 2012 data that a user may have previously accessed is no  longer available.
+                    (see how NPN does data too)
+                     FOLLOW-UP:  NPN has 6 datasets for years 2008-2013.  Each new year's  worth of data will be in its own dataset, i.e. a separate dataset for  2014.
+
+        2. Status of upcoming MNs
+        
+        Future
+       * Australia (4286): next meeting 3/27/14.  Bruce working on the draft MOU.  PY6 is realistic estimate of when we could have them online.
+
+     * Y5Q3
+       * Gulf of Alaska DP (3531) -  see above
+       * GLEON (3422)   - Chris working an issue with Aaron Stephenson; we think Aaron has a   Java/SSL configuration issue, Chris will help as he can.  Side note:  Aaron leaving for a different job this month.
+       * USGS ScienceBase (4002) -  MOVED TO BACKLOG - Mike says ScienceBase and NWRC might work better when slender node is available
+       * LTER-Europe  (3232) - Awaiting approval from David Blankman re: news item.  Laura to get with David.
+       * EDAC (3221)    -  EDAC to go ASAP after Dryad; draft news item sent to Rebecca for input from interested parties; Rob is working with Soren to ensure final fixes are done and they are ready to load certs and move to production
+       * U  Illinois Chicago (3213) - Chris and Bob pick up after CN.   MOVED TO BACKLOG - Bob says they expect to have a new sys admin in May,  so it seems more likely that we won't see significant development  before the end of this PY
+       * PPBio  (3748)   - difficulty replicating between metacat instances at INPA and LNCC;   David Dias and Ben L working; draft news item in progress, Matt: firewall issues; Laura email Debora
+From LT epad from Matt:
+PPBIO (Program for Planned Biodiversity) MN still working on connectivity issues at LLNC; they discovered firewall issues today; Ben Leinfelder @ NCEAS is continuing to work with them.
+       * SAEON (3205)    - they  have migrated their server to their national office; need to   upgrade  Metacat; need some assistance from DataONE; Matt has responded   (Looking at next week - week of 10 March - and availability of Chris to  upgrade.)
+       * NKN (3238) - Ed has re-registered in the sandbox and things appear to be working ok
+
+     * Y5Q4
+       * EU BON (3964) - We  are going to start with a MN at the Sierra Nevada Global Change  Observatatory (4296); they can begin working with DataONE at the end of April.  (EU BON MOVED TO BACKLOG)
+       * DFC  (3532) -  Chris has been working with Lisa Stillwell and Mary Whitton answering questions
+       * MPC  (3708) - Actively working re: metadata formats, etc. Laura ACTION to touch base and see what's going on up there. - no response a/o 3/14
+       * ORNL   "slender nodes" (RGD (4248) and EDORA (4247)) -  next meeting 3/19/14,   Jim Green working, Chris et al. supporting (debugging wrt certs)
+
+
+        3. Old action items
+             
+        4. Not-high profile issues
+     * Newsletter MN profile of NPN - Alyssa reviewed and returned, forwarded to Amber
+     * Dryad 5th anniversary piece for the newsletter - ready for review/edit with Amber
+     * Laura working with Roger on redmine ticket generator
+            
+        5. Around the room
+     * Laura - all that stuff above
+     * Rebecca - nothing new
+     * Bruce - nothing else
+     * Dave - nothing from me either
+       * CN - found some issues during load testing, fixing them, testing again
+       * dashboard next - Skye pre-working 
+     * John - no ma'am
+

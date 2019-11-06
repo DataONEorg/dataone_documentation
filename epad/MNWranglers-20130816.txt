@@ -1,0 +1,63 @@
+Member Node Wranglers (Fridays at 10:00 am AK/11:00 AM PDT/12:00 MDT/1:00pm CDT/2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+
+16 August 2013
+
+Attendees: Rebecca, Laura, Suzie, Bruce
+
+Regrets: Dave, Amber, Matt
+
+Agenda: 
+        1. High profile issues
+     * Documentation:  working with Rob to flesh out MN deployment checklist - high priority -  Laura working on the Plan phase, Rob on Develop.  Laura and Bruce to meet next week to decide what deliverables will look like.
+                  
+        2. Status of MNs 
+     * Y5Q1
+       * NKN  (3238) - meeting 6 August: Luke Sheneman has what he needs to be moving  forward (install GMN s/w stack, work with Chris Jones to get  certificate, work with Ed about assigning identifiers to individual  files, follow-up meeting 29 August
+       * EDAC (3221) -  Soren says they still have the question about what kind of science metadata to present:
+         * Basically:
+                        > Our test science metadata includes the distribution links to all of the formats of the dataset that are available.
+                        > That includes downloads and services that aren't part of our D1 collection.                
+                        > So pointers to data that isn't versioned (and other representations of the science metadata that wouldn't be versioned).
+                        > The resource map URIs always just point to the D1 objects, though.
+                        > What we've never been clear about is whether that's an issue. It seems to be for some people, so we were just going to include the D1 link to the cached and versioned D1 data object and a link back to NM EPSCoR. But then no one knows about the services, etc. I can go either way (no D1 links, all D1 links, both sets of links); it is not a difficult thing to do on our end. 
+                        Bruce: if this works that they aren't making a special metadata for their D1 presentation, it will be ok, but we're not sure that it will work that way
+                        Rebecca (and Laura): we don't want Soren to have to create science metadata that won't be used any other place
+       * Kansas (3188) - Rob/Roger should be able to provide an update
+       * SEAD (3521) - a/o 8/8/13, NCED verifying their metadata; Inna says as soon  as NCED has verified all their metadata, they  will be ready to move to production.  
+       * NPN (3186) - schedule meeting w/o 26 August
+     * Y5Q2
+       * ILTER-Europe (3232) -  revisit when Matt is available
+       * Dryad (3118) - see immutability of metadata, when dataset/paper are initially submitted, the DOI, journal volume/issue, etc. info are not known; after publication the metadata is changed to reflect this new knowledge; this issue has been/is being addressed
+       * iEcolab (3219) - Ben in conversation with them
+       * DFC (3532) - ask Dave to talk with Reagan Moore, (iRODS)
+       * iPlant BIEN (3234) - iRODS
+       * U Illinois Chicago (3213) - a replication node only to begin with, metacat or GMN;  are we ready to move this up in the priority list?  should be able to copy s/w from CN, lean toward metacat (as an easier implementation), ask Dave which person on CCIT can help with this; Bruce will 1) talk to Bob re: metacat/GMN, 2) get with Chris to see who is best CCIT person to help
+       * USGS Topo Maps (3525) - last check-in with Mike Frame they were working on DOIs for 60K+ maps, hoping to pick back up Sept/Oct; have question out to MF re: will topo maps be a standalone MN or will that data be folded into current USGS MN
+       * PPBio   (3748) - a/o 8/8/13, working with Debora to identify everyone on their end who needs to be involved, plan to set up a GTM to begin process
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting (Carol going to Taiwan in October)  also a Matt-thing
+       * AOOS   (3531) - From Matt:  This is for a project I have working with AOOS, and we have deployed a Metacat instance that is in testing.  The node is located here for now:  https://evos.nceas.ucsb.edu/evos.  Several things need to happen before this node goes production, including: 1) rebrand the site as AOOS;  2) move the node to a stable AOOS address; and 3) get signoff from the AOOS folks that they are ready to have it go live.  Ben and I have managed this server thus far, so it should be straightforward to bring this node up once the ducks are in a row.  revisit when Matt is available
+       * SAEON (3205) -  From Matt: Ben has worked with these folks consistently, and   helped establish a Metacat node there in Cape Town, but we need to follow up with them to get it done.  They seemed amenable when we have spoken in the past.  revisit when Matt is available
+
+     * Product Backlog (in redmine)
+         * Which of these potential MNs can we target for implementation this PY?
+         * Not just backlog, need to look at creating a "flip a switch" metacat installation (see Robert Waltz's documentation); also want to get GMN installation to a point where both of these can be more readily implemented without relying so much on CCIT support; see "MN in a box"
+         * OpenDAP vs DSpace - which is next MN stack we can bring to fruition? More data of immediate value to D1 in OpenDAP, almost all of this data is geospatial in nature; much larger set of data in DSpace, strategically important; however, we might get more bang for the buck if we go for OpenDAP first
+         * Identify, if we had a DSpace stack for example, who would be good candidates for this; 
+         * Bruce: how hard is it to make D1 work with OpenDAP, is anyone from CCIT working on this?  Chris B might be a good person...
+         * if we can get Dryad going (resolve immutability issue), it might be possible that DSpace would be a better candidate for MN in a box
+         * Suzie: if we don't meet our numbers by end of PY5, we need to be able to show that we have these potential MNs that are committed and will be online by Y6Q2.
+         * Bruce: will check into CDIAC and ARM
+
+     * Discussion about new statuses for MNDeployment redmine tickets to try to align with the flowchart phases (plan, develop, deploy, operate)
+
+        3. Old action items
+     * MN Google Map (Amber/Laura/Bruce) - we've gotten lat/long coordinates for MNs, Bruce/Laura are updating status for MNDeployment redmine tickets, depending on redmine status, MN will show up on Google map as a different color for plan/develop/deploy/operational status.  (view needs to be better controlled, what needs to be done and where it lies in the priority list)  Suzie: we have a GIS grad class this semester, maybe it would be helpful to see if his students can help with this
+
+        4. Not-high profile issues
+     * MN  Personas - talk about mtg w/AmberO 8/15/13 - we don't know if AmberO will be changing her GA activities from DataONE to the usability lab, so  in the meantime we are working on getting the existing MN persona drafts in a good state for "storage" until it is appropriate to up the priority on this activity
+   
+        5. Around the room
+
+

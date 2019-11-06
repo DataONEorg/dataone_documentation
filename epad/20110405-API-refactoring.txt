@@ -1,0 +1,43 @@
+Tier 1: Public read, no Authn/Authz
+Old APIs: MN_crud, MN_replication, MN_health
+New APIs:  MN_core, MN_read
+Methods:  MN_core: ping, getCapabilities, getStatus, [getObjectStatistics], [getOperationStatistics], [getLogRecords] 
+MN_read: get, getSystemMetadata, listObjects, describe, getChecksum, synchronizationFailed
+
+Tier 2: Read/Resolve with Authn/Authz
+Old API: MN_authorization, MN_authentication
+New API: MN_auth
+Methods: MN_read MN_core + login(*), logout(*), isAuthorized(*), setAccess(*)
+
+Tier 3: Write (create, update, delete), possibly limited support for data types
+Old API: MN_crud
+New API: MN_storage
+Methods: MN_auth + create, update, delete, 
+
+Tier 4: Limited Replication target (specified data types)
+Old API: MN_replication
+New API: MN_replication
+Methods: MN_storage + replicate
+
+Tier 5: Replication target, any data types
+Old API: 
+New API:  
+Methods: MN_replication (no additional methods)
+
+
+
+Coordinating Node APIs and Methods
+
+CN_crud    get
+CN_crud    getSystemMetadata
+CN_crud    resolve
+CN_crud    create
+CN_crud    reserveIdentifier
+CN_crud    assertRelation
+CN_crud    log
+CN_crud    getChecksum
+CN_crud              listFormats
+CN_crud              getFormat
+CN_query             search
+CN_authentication    login
+

@@ -1,0 +1,452 @@
+Notes for Sprint 2013.6-Block.1.3
+=================================
+
+
+Robert
+------
+ * 20130227
+   * CN approval tool is working now
+     * tried to enable it to work not just against localhost
+     * involves the HazelcastClientFactory, would like to pass in all IPs for a cluster since it needs to connect to the IP running d1-processing
+     * however, indexing needs to connect to the specific IP (localhost)
+   * Installed approve tool on production
+   * UNM LDAP wasn't receiving LDAP syncrepl updates - restarted slapd in sandbox
+   * Will be getting back to STAGE2 buildout environment
+ * 20130225
+   * Testing out approval tool, some VM trouble
+   * Started on another task for buildouts, make them more transparent, add in a localnetwork option
+   * Will use Sandbox for approval tool testing
+ * 20130222
+   * Discussed Dryad issues with Ryan
+     * identifiers are not coming through with unique timestamps
+     * wrote an email to address this
+     * will use sandbox for Dryad testing
+     * sent them the test certificate
+ * 20130220
+   * reviewing dev env for Dryad
+   * possible reinstall / update of MNs in dev environment
+   * Will run as single MN in dev
+   * Need to update all environments to current released version dev, stage-1, and sandbox
+   * Will spend a little time on the node registration tool
+   * Will need to a deployment of 1.1.2 to production if Dryad is to be in production
+   * issue is java upgrades with bouncycastle security dependency. Currently, we control java upgrades so it is less of an issue, but when we upgrade to OpenJDK Java 7, we will be able to receive auto-upgrades from Ubuntu.
+ * 20130218
+   * sync'd ORC objects synchronized in production, index update as best as possible
+     * can add to RR
+   * Will roll out ONEMercury in production with Skye, Chris
+   * Will look at cn-stage-orc-1 ServiceFailure
+   * Working on task where SystemMetadata are equivalent across CNs (content)
+     * Working on a script for this
+ * 20130213
+   * cn-stage-2 env is back up - sync was not working properly
+     * re-sync'd, all looks good
+   * Working on stats from the CNs
+     * 99% of GETs came from 4 IPs
+     * KNB got > 1M hits in 7 months? Is this realistic
+     * Need logs from 
+       * LTER: Mark Servilla- Robert will contact Mark with sql script
+       * PISCO: Mike Frenock - Ben will contact
+       * [DONE] ESA, SANParks: Ben will run these queries
+       * CDL, ONEShare: Mark Reyes - Robert will run Log
+       * ORNLDAAC, USGSCSAS: Giri - Robert will run Log
+       * CLOAKN: Robert will run Log. CLOAKN is misconfigured contacting Kevin Webb
+ * 20130211
+   * cn-unm-1 is upgraded and in the process of being re-indexed.
+   * will query CN's to discover read count
+   * Upgrade of the cn stage 2 environment
+     * cn-stage-unm-2.test.dataone.org should be wiped and rebuilt. 
+     * cn-stage-orc-2.test.dataone.org will be added to cluster and will replicate content when it is ready(dependent upon a travelling Matt amd certificates)
+     * keep replication off until Chris gets MNs sorted out
+   * Will work on log statistics for Dave
+   * Will reinstall cn-stage-unm-2, scrub, and re-sync
+
+Skye
+----
+ * 20130227
+   * XSD location for Dryad 3.1 is published (but same namespace as v3) =(
+   * Finished adding COINs tag support to ONEMercury
+   * Looked at UCSB production performance for Solr (and stage-2)
+     * perhaps obsoletes filter needs to happen earlier?
+   * Will be rewriting how results page writes queries against Solr (optimization)
+     * May have to deal with same-origin ploicy
+   * Doing other query performance benchmarks
+   * cn-stage-orc-2 index is behind, will re-index
+   * Looking at OpenSearch implementation
+ * 20130225
+   * Working on CN work for Dryad
+     * need object format for Dryad v3.1
+   * Will work on speeding up ONEMercury (loop optimization)
+   * Will work on COINS tag optimization
+ * 20130222
+   * TODO: assign 3567 to John Kunze
+   * Added Dryad metadata mappings
+   * Worked on ONEMercury XSLT for Dryad metadata
+     * Hard to test without a Dryad test system
+     * May need to manually upload Dryad test docs to a demo MN
+ * 20130220
+   * FYI: production USGSCSAS content not resolving
+ * 20130218
+   * Worked on Mercury rendering
+     * Will want to rewrite metadata views (EML view is being troublesome)
+     * Pushed ONEMerc onto both cn-stage-2 machines
+     * Need to tag, update control file, build, push it out
+     * Worked with Robert on cn-orc-1 index catch up (behind by 30)
+     * Empty resource maps on ORC (but have content on the other CNs)
+     * Can register Dryad
+ * 20130215
+   * Updated ONEMercury on the stage2 env
+   * Dealt with IE rendering issues for new dataone.org look
+   * Emailed Ryan to register Dryad into dev
+   * COINS tag work: metadata detail view needs work to support COINS tag (for 1.1.1 patch)
+   * Looking at the production logs - some empty resource map documents in production
+ * 20130213
+   * ONEMerc changes are now on dev: https://cn-dev-unm-1.test.dataone.org/onemercury/
+   * Indexing on cn-unm-1 has finished, some errors (a dozen or so). Will look into these.
+   * UNM can come back into the round robin
+   * Will map Dryad 3.1 schema fields to the Solr index fields now that Ryan has solidified it
+   * Worked on COINS tags in ONEMercury
+ * 20130211
+   * ONEMercury UI tasks
+     * https://redmine.dataone.org/issues/3561
+     * new DataONE CSS theme work
+     * Will send citation layout
+   * Indexing on cn-unm-1.dataone.org, 50% done
+   * Some content is not resolving, will get a list of pids, will create a ticket
+     * Need to figure out why they're missing (like DAAC, incorrect fmtid, didn't deprecate old objects)
+     * CN administrators should archive them on the CN
+
+
+Ben
+---
+ * 20130227
+   * Working with Matt on Morpho demos, made sure packages created in R were loadable in Morpho
+   * Will build RC installers today
+   * Working on CILogon IdP for production
+ * 20130225
+   * Morpho now allows importing client certs downloaded directly from CILogon
+     * non ECP-enabled providers
+     * Google
+   * Prepping Metacat 2.0.6 for release - minor bug fixes in support of Morpho 2.0 release
+     * mn-demo-5 now has 2.0.6 pre-RC from trunk installed
+   * Jing added ability to manually enter access rules for DN that is not yet registered in the CN identity service
+     * useful for MNs that are not part of the federation yet 
+     * or for identities that are not yet registered
+   * Tested LDAP-CILogon identity mapping for Morpho "owner" search with good results.
+   * Tagged d1_common_java 1.1.1 and d1_libclient_hava 1.2.1 to fix the "/tmp" file creation bug.
+     * Pulled into Morpho and Metacat
+   * Planning Metacat 2.1 w/ MNQuery SOLR support
+     * Design stories, architecture.
+ * 20130222
+   * Working with Mike Frenock wrt identity mapping
+     * Recommending a solution for PISCO
+   * Morpho
+ * 20130220
+   * Incommon and CILogon - need to sign up as a member to enable ECP in a production environment
+   * Production ECP installation is blocking final release of Morpho
+   * Mapping of legacy accounts is a significant challenge
+   * Move forward with testing the whole process with an RC in test environment 
+ * 20130215
+   * Working with CILogon wrt DNs, special characters, etc to have smooth logins for KNB
+   * Worked with Matt on Morpho refinements
+   * Will be upgrading the portal software to their 2.0 release
+ * 20130213
+   * Moved 2 sandbox MNs to STAGE2
+   * Worked with Jing on revision history issues in Morpho (save to network vs save locally)
+   * Will work with Matt on ECP bug
+ * 20130211
+   * DONE: Produce KNB read stats from 01Jul2012 on in SQL
+   * Made Morpho configuration UI changes
+   * Will help with STAGE2
+
+
+Rob
+---
+ * 20130227
+   * Returned from leave
+   * Working on live searches for testing R client. Found a Bug.  
+     * Searching for 'Kelp' will not return any results.  
+     * SSL Peer exception (why?) possible that MNs are not passing back intermediate certs?
+     * Java Lib Client can not get a MN object from KNB while can resolve using browser.
+ * 20130220
+   * added new WebTester v1.1 build containing three new tests:
+     * Tier2 - testSystemMetadataChanged
+     * Tier1 - testResourceMapParsing
+     * Tier1 - testContent_Checksum_Size_Consistency 
+   * Found bug in dataDryad - https://redmine.dataone.org/issues/3599
+ * 20130218
+   * R client packaged, ready to release
+     * CRAN, or just releases.dataone.org (CRAN doesn't like documentation warnings)
+       * got all warnings to go away
+     * Will finish up the overview document
+       * created d1_client_R/GettingStarted.txt
+     * Webtester work: had to restart last week
+       * Looking at garbage collection, using parallel, if time, will try to crash it to be able to test different configurations
+   * Vacation end of the week
+ * 20130215
+   * Reviewed R client with Matt
+   * Goal to get all warnings to go away before submitting to CRAN
+     * documentation warnings only at this point
+   * Release: today, but will reorganize SVN tree first
+ * 20130213
+   * Branched libclient_java - 1.2.0 is in maven repo now
+   * Worked on R issues - logging output is lowered now
+   * Waiting on feedback from Matt
+   * Working with data frame objects, asDataFrame() from CSV
+     * can't fully read the scimeta to understand data types (measurement scale, units)
+   * Documentation
+     * in good shape
+     * TODO: Create a high level 'how-to' document for first time users
+ * 20130211
+   * Needs input from Matt, Bruce, etc. on the demo
+   * Will work on branching and tagging libclient
+     * done.
+   * Working on data typing for asDataFrame() method
+     * postponed until next version
+
+Roger
+-----
+ * 20130227
+   * Taking time off from ONEDrive to work on KU GMN instances
+     * Want to populate the MN from a backend db, working on an example for them
+ * 20130225
+   * Working on ONEDrive, code cleanup wrt caching strategies
+   * Consider persisting the cache - look at shove (layer above pickle)
+ * 20130222
+   * Finished up changes for GMN installation, checked into svn
+   * Will be working on ONEDrive, will work with Chris
+     * Priority: get ONEDrive functional enough for the Usability group to assess it
+ * 20130220
+   * Worked on GMN production instances (non-debug mode)
+   * Worked on polishing instructions, will add to 1.1.1 release
+   * PyPI deployment can be sticky
+ * 20130218
+   * Found a PyPI package issue for dataone packages wrt certificate creation
+   * Looking at GMN systemMetadataChanged() call
+     * asynchronous script wasn't being fired
+   * mn-orc-2 is on 10.04, mn-unm-2 is on 12.04
+     * GMN needed to be modified to support Python 2.6 and 2.7
+     * paths differ across ubuntu distros, so tmux installs doesn't work so well. Installed separately
+ * 20130215
+   * Installed GMN on production servers (mn-unm-2, mn-orc-2)
+   * Updating install for Ubuntu 12.04 LTS (mn-unm-1)
+     * postgres is now 9.x (config files are different paths)
+     * python defaults to 2.7, need 2.6 installed
+ * 20130211
+   * Looking at ONEDrive tickets
+     * will be tied to search index improvements
+   * GMN status page stats are available, send to Robert
+   * Work on GMN production nodes at mn-orc-2 and mn-unm-2
+
+Chris B.
+--------
+ * 20130225
+   * ORC LDAP firewalls should be dealt with
+     * Subnets are punched through the firewall, so need to firewall at the VM level
+     * Will continue work on Dokan
+ * 20130222
+   * Port 389 firewall issue, still waiting for UNM hosts
+   * Dokan: implemented open() and read(), still having issues on Windows
+     * Possibly create blacklist to force it to ignore opening some files
+ * 20130218
+   * Network issue not resolved with OIT
+   * Dokan: implementing calls, having minor path issues
+   * First pass done this week
+ * 20130215
+   * Implementing Dokan drivr for ONEDrive
+     * mounts, not functional yet
+     * restricted to 32-bit python on Windows
+     * need to translate FUSE calls to Dokan calls
+     * uses py filesystem - may be good to merge both drivers to use this
+ * 20130213
+   * ORC network upgrades today, 10pm to tomorrow morning
+     * Take ORC out of the RR
+       * coordinate with Robert on start/stopDaemons scripts
+     * Shut down services, bring them back up in the morning
+   * Testing Ansible 1.0
+     * supports arbitrary-depth playbooks, don't need Chris' fork now
+   * ONEDrive 
+     * working on Dokan executable and python bindings
+
+Dave
+----
+ * 20130225
+   * Working on Demo movies, presentations
+   * ORC ldap looking better
+ * 20130222
+   * RSV prep
+ * 20130220
+   * Ongoing preparations for review
+   * Discussion with Mike Frame on usability meeting in May - focus on ONEDrive, plus 2 other components (DataUP?) 
+ * 20130218
+   * ONEShare_test isn't generating identifiers, John is working on it
+   * also ONEShare_test isn't sync'ing in stage2. Needs to be fixed.
+   * 
+ * 20120215
+   * Firewall at ORC may be an issue
+   * Stage2 content needs to be more diverse - Chris
+   * KU MN will come up next week
+   * Dryad: need to run tsts (Rob)
+ * 20130213
+   * Worked on COINS tagging with Skye
+   * RSV prep, presentations
+   * Will work on architecture docs
+
+ * 20130211
+   * RSV information by COB on Wednesday
+     * Documentation, reports, overview, etc.
+     * Get presentations don as well
+       * CI Overview
+       * Demonstrations prep for Prov WG demo
+       * Step through Mercury, clarify story - Skye working on UI
+       * DataUp screencasts
+         * requires STAGE2 env up
+       * R demo - Matt, Rob, Bruce
+       * Morpho demo - Ben, Matt
+       * Kepler demo - Matt
+       * Object use stats from Robert (log access, log records)
+
+Matt
+----
+ * 20130222
+   * Uploaded R client to CRAN
+     * feedback: put libraries into a separate package
+     * change how our Apache license is documented in the package
+   * TODO: create ticket for splitting R packages, Chris will work on this
+   * Presentations
+ * 20130215
+   * Worked with Rob, R
+   * Ben, Morpho
+   * Kepler demo - Jing is working on the workflow with Sarah
+   * Will get sign-off wrt ONEMercury changes
+   * ONEDrive status slides are needed
+ * 20130213
+   * Working on demos for the RSV
+     * working from etherpad in the CCIT
+
+Chris J.
+--------
+ * 20130227
+   * Troubleshooting Dryad impl with Ben, Robert, Skye, Ryan
+   * Worked with Mike Frenock and Ben on PISCO authentication issues
+   * Working on enabling ServiceMethodRestrictions in Metacat
+     * Updating ServiceMethodRestrictions for production replica targets
+     * Still trying to decide what the white list of subjects will be since the node list of potential source nodes is dynamic. May just need to hard code the list and periodically update it as MNs are approved
+       * Look into using a group instead of a list
+     * Will plan to manually update the node documents before these changes are incorporated into Metacat
+   * TODO: write up an email to Ryan re: schema location, versioning, etc.
+   * TODO: add dryad v3.1 object format
+ * 20130225
+   * Worked on d1_client_r packaging
+ * 20120222
+   * Troubleshooting Dryad MN issues
+     * conferenced with Robert, Ryan on remaining issues
+     * Analyzed issues wrt dryad identifiers with Skye - url-encoding, wrong ids in system metadata, etc.
+     * Ryan said that, for now (the RSV), an updated science metadata document at /object/{pid?ver=timestamp} will continue to return bytes from /object/{pid} since they are not persisting the previous version. He plans to change this, but not by the RSV
+   * Updated watchazel to Hazelcast 2.4.1 for replication monitoring. Installed in stage2, working fine
+   * Coordination for the CLOAKN to EBIRD + AKN member nodes.  Probably should discuss this a bit
+   * Updated d1_cn_approve_node tool to use Hazelcast 2.4.1. Need this to approve replication nodes in production.
+ * 20130220
+   * Produced Member Node stats for Dave with Skye's help with Solr stats
+   * Updated the Object Format List in all test environemnts.  Will do the same in production if all looks good
+   * Analyzed CDL resource map aggregation problem, assigned to John/Mark
+     * https://redmine.dataone.org/issues/3596
+ * 20130218
+   * TODO: https://redmine.dataone.org/issues/3584
+   * Dealt with SSL issues on stage2 MNs
+   * Loaded more KNB content into Stage2
+   * 
+ * 20130215
+   * STAGE2 prep: 
+     * Populating the mn-demo-9 MN with content from:
+       * PISCO - ran out of disk space, had to restart migration
+       * ORNLDAAC - minor issue with ORE formatId handling, java OOM issue with large dataset transfers
+       * CDL - in progress, but am troubleshooting deserialization of CDL OREs
+     * Renamed mn-demo-{1,2,9} to be more readable in ONEMercury
+       * troubleshooting issue with LDAP replication of the node names
+       * https://redmine.dataone.org/issues/3580
+   * Activated replication in STAGE2, am testing a few objects
+   * Refactoring some of the migrator code to differentiate migration from MNs vs CNs
+ * 20130213
+   * Modifying the ContentMigrator tool to move content from MN to MN, not just CN to MN
+   * Worked with Ryan, Ben, Skye on Dryad resource map issues - date modified changing
+   * Coordinated with CDL to register ONEShare Practice repo into stage2
+   * Discussions with Ben/Matt re: developer hiring plans
+   * Worked with Ben on migrating MNs from sandbox to stage2
+   * [DONE] TODO: remove ORC from the production RR
+ * 20130211
+   * TODO: Move 2 sandbox replica targets
+   * Will work with Ryan, Skye on Dryad
+     * Dryad science metadata schema is a moving target
+
+
+
+Discussion Topics
+=================
+ * Stage2 member nodes
+   * GulfWatch (evos.nceas.ucsb.edu/evos/d1/mn) - ben
+     * [DONE] Will be resynched by cn-stage-2
+     * [DONE] Will NOT be a replica target since this is slated for production use eventually
+   * ProvWG (rename to KNB Stage) (mn-demo-9.test.dataone.org) -chris
+     * Will house some KNB scimeta content (~1k) harvested from the cn-stage environment
+   * ONEShare Practice (soon, M. Reyes) - chris
+     * Will be a source node for content from DataUp demos
+   * mn-demo-1 from sandbox (ben)
+     * [DONE] Rename/re-register as "DataONE Replication Server 1"
+     * [DONE] Will be a source node for LTER CGE scimeta
+     * [DONE] Will also accept replica content from other MNs
+     * [DONE] Set all knb-lter-gce content (3704objects) to use demo1 as the auth/origin member node
+     * [DONE] Removed all replication status entries from the SM
+     * [DONE] Set serial version to 1
+     * [DONE] on the SANDBOX CN, set this node to approved=false
+     * [DONE] Register in the cn-stage-2 environment when available
+     * Needs to be approved for sync
+   * mn-demo-2 from sandbox (ben)
+     * [DONE] Rename/re-register as "DataONE Replication Server 2"
+     * [DONE] Will be a replica target
+     * [DONE] Clear the content to be a fresh v2.0.5 Metacat install
+     * [DONE] unapprove in sandbox env
+     * Needs to be approved in node list on cn-stage-2
+ * Use the ContentMigrator to migrate content from mn-stage-ucsb-1 to mn-demo-9 -chris
+   * query only public EML 2.1.0
+   * use the cn-stage-unm-2 cert
+   * 1K
+
+ * ONEMercury UI changes
+ * Talk about MN.update()
+
+Future Development
+==================
+ * New MN stack, like the 'Slender Node'
+ * Mutable content support
+ * ITK - Morpho and web and others
+ * CN modularity - possibly pull indexing and ONEMercury off of the CN VMs
+
+
+DRYAD Implementation Issues
+===========================
+
+
+We found that the DataONE Identifier (DOI + timestamp) string was not used consistently.
+
+1) Timestamp is missing from <identifier> in the systemMetadata documents:
+
+ * http://dev.datadryad.org/mn/v1/meta/http://dx.doi.org/10.5061/dryad.12?ver=2011-08-02T16:00:05.530-0400
+ * The <identifier> element only has http://dx.doi.org/10.5061/dryad.12, while it should have http://dx.doi.org/10.5061/dryad.12?ver=2011-08-02T16:00:05.530-0400.
+
+2) the BaseUrl of the node xml found at http://dev.datadryad.org/mn/node  should be https://dev.datadryad.org/mn instead of https://dev/datadryad.org/mn
+
+3) listObjects() "count" parameter is not respected: http://dev.datadryad.org/mn/v1/object?count=0 (returns 20 objects)
+
+4) Checksums on the ORE documents change 
+        Maybe just for this record? Reproducible on other ORE docs?
+    For example: 
+        http://dev.datadryad.org/mn/v1/meta/http%3A%2F%2Fdx.doi.org%2F10.5061%2Fdryad.12%3Fformat%3Dd1rem%26ver%3D2011-08-02T16%3A00%3A05.530-0400
+        
+        Alternates between:
+            <checksum algorithm="MD5">8ce9e5ea2efd775a81ed5eaf54e92928</checksum>
+            <checksum algorithm="MD5">32fb6ab675112f3537055b37f874353</checksum>
+
+5) the identifier, checksum and formatId in the object list is different than found in the SystemMetadata when a getSystemMetadata (/meta) call is performed
+
+6) [OPTIONAL] We recommend that in the DryadDataPackage and DryadDataFile DC xml dcterms:hasPart, dcterms:isPartOf and dcterms:identifier should use the DataONE PID (i.e., the DOI + timestamp construct).  But, since the content of the SciMetadata will not impact DataONE, other than for indexing, those values could be anything reasonable.
+

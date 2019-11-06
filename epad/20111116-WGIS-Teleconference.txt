@@ -1,0 +1,100 @@
+Integration and Semantics Working Group
+Teleconference 11-16-2011
+
+
+Connection information:
+ 
+1.  Please join my meeting, Nov 16, 2011 at 11:55 AM MST.
+https://www1.gotomeeting.com/join/639320480
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (213) 493-0600
+Access Code: 639-320-480
+Audio PIN: Shown after joining the meeting
+Meeting ID: 639-320-480
+
+Proposed Agenda:
+----------------------------------------
+
+
+Attendees:  Jeff Horsburgh, Carl Lagoze, Damian Gessler, Carlos Rueda,  Natasha Noy, Eric Stephan, Luis Bermudez, Hilmar Lapp, Mark Schildhauer
+
+1.  Introduction of Carl Lagoze (Horsburgh/Lagoze)
+
+2.  Report from the DataONE All Hands Meeting (Horsburgh)
+(from Rebecca: the next All Hands Meeting will be September 18-20, 2012 (Mon, Fri are travel days - the location has not been chosen yet - maybe Santa Fe or somewhere in
+Colorado - events are posted on the DataONE website on the events calendar)
+
+ * ONEMercury - a Mercury-based data discovery client for DataONE - http://mercury.ornl.gov/pilotcatalog2/
+   * Line is currently working on adding some semantics to Mercury (to be reported at AGU)
+
+ * ONEDrive - a file system browser client for data discovery in DataONE
+   * The drive source is located at: https://repository.dataone.org/software/cicore/trunk/itk/d1_client_fuse/
+   * Dave Vieglais is the main contact for the ONEDrive (Ryan Krois from USGS was working on the Windows Version, but is leaving USGS)
+   * ONEDrive uses the SOLR index that sits behind the Mercury Search Interface to provide the file system metadata (i.e., the folder structure)
+   * Basically, any fields of the SOLR index can be expressed as folders in the system heirarchy (unique values in the field are used as subsequent subfolders of the field)
+   * For example, the "keywords" field in the SOLR index shows up as the subfolder "keywords" at the root of the ONEDrive. Subfolders of the "keywords" subfolder are the actual values of the keywords field.
+   * This means that improvements (such as using a controlled list of terms rather than free-text keywords) to the values reported in the keywords index field of SOLR will also show up in the ONEDrive folder structure, and will also benefit the Mercury search interface.
+   * This means that improvements (such as using a controlled list of terms rather than free-text keywords) to the values reported in the keywords index field of SOLR will also show up in the ONEDrive folder structure, and will also benefit the Mercury search interface.
+   * Thesaurus structures could also be utilized by either storing the thesaurus terms directly in the SOLR index or by post processing on the client side. e.g. perhaps the narrowest terms can be stored in the SOLR index record, and the client (ONEDrive) creates the folder hierarchy dynamically by traversing progressively broader terms to the root.
+   * THere here is likely plenty of fodder in there for quick fixes / improvements by the semantics group, and I think that where possible, improvements to the index documents in SOLR will have the biggest overall impact to users since those adjustments will apply to all tools that utilize the search index (e.g. Mercury and ONEDrive).
+
+   * Hilmar: We have no idea how we will provide recomendations without specific use cases or a definition of the specific audience for the tool
+   * What we do needs to be integreated and interweaved with what the CCIT does
+   * We would like to reverse the process of providing imput - our working group would like to provide input before products emerge instead of after the fact
+   * Would like to see a way forward - need a better model for how our working group works with CCIT
+
+3.  Review of our last quarterly report (Horsburgh)
+
+
+
+4.  Suggestions for a “Data Integration” milestone/deliverable for our group (Horsburgh/Lapp)
+
+ * Hilmar has suggested that perhaps we need a milestone that puts us on a path towards de-siloing the data from DataONE member repositories
+ * This should be one of our tasks as a group
+ * Identify a science use case and use it as an example
+   * We do have a Post Doc and could use that position as real reources to get work don done
+   * DataONE is on the hook for quick prototypes, can we focus on incremental advances?
+ * Are we failing at our mission if we are only able to provide input downstream?  Do we need to change our mission?
+ * We should lock our mission with reality
+ * Persona documents developed by DataONE were comprehensive and generally good - plus already developed
+
+5.  Description of a potential hydrology/ecology use case (Schildhauer)
+
+
+ * This potential direction could be contradictory to our previous discussion, but focuses on some short term activities that focus on creating/demonstrating incremental advances
+ * Hydro/Eco use case emerging from presentations at the Environmental Information Management Conferend: motivated by many of members on D1 ISWG and SONet/JWG ODMS WG's sharing interests in semantics, and focus on hydro data:
+   * Semantaqua work of Deborah - hydrological, water quality use case with a semantic prototype
+   * CUAHSI HIS has developed CI for h ydrology that is in need of some semantic enrichment
+   * Open Geospatial Consoritum Hydrology Domain Working group and need to exercise/test OGC's O&M semantic capabilities in an "interoperability experiment"
+   * LTER Site - Santa Barbara Coastal Ecosystems: water quality in local watershed and impacts on near-shore ecosystems
+   * Juvenile salmon migrations in the pacific northwest:  stream and riverine water quality and substrate characteristic impacts on reproduction and survivorship
+   * Confluence of interests 
+   * Bring in domain researchers to help us define research questions and issues with getting and integrating data
+   * Knowledge representation issues just for data discovery
+   * Integration of vocabularies across scientific domains
+   * Have identified regions where all of the pieces could come together
+   * We might even be able to get some support (people, etc.) from OGC?  Can we link with Hydrology Domain Working group to ccreate an interoperability experiment?
+   * Our domain science backgrounds are diverse, but we share common interests so this may not be too high aiming
+
+   * A lot of participants in the current D1 semantics and Integration WG + SONet are dealing with aquatic/hydrologic data (CUAHSI, NCEAS, LTER, OGC HDWG, OGC O&M, ECOTRUST, RPI/SemantAqua)
+   * We are also all interested in semantics so we want to look at how how semantics can inform/improve the process of getting and integrating all of the data needed to to interdisciplinary studies
+   * Interested parties having existing data holdings
+
+   * How can we apply and refine and semantic technolgoies to acheive integration
+   * Cen we do this using existing DataONE member nodes (e.g., existing data holdins of DataONE)
+   * Can the EVA working group and thier experiences be used as an example of a use case
+
+   * There are not a lot of examples that are end to end
+   * Deborah's Semantaqua example does this well - she had a paper on this in the EIM conference proceedings
+
+6.  Update on status of Post Doc position (Horsburgh)
+
+ * Currently we have 3 applicants
+ * Deborah will be at AGU and will advertise there - is anyone else going?
+
+7.  Update on status of our Working Group Charter
+
+8.  Update on DataONE website Content for our Working Group
+
+

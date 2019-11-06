@@ -1,0 +1,77 @@
+Hi DataONE devs,
+We are in the midst of planning our "v2" API and want to solicit your opinion on what to call the updated System Metadata type.
+Please add comments to the existing options and add your vote to the running tally below.
+Thanks!
+
+The current plan has us extending the existing v1.SystemMetadata type to add the seriesId field. 
+Things we know:
+ * The new v2 type will be in the v2 namespace for both the types schema (http://ns.dataone.org/service/types/v2.0) and the Java package (org.dataone.service.types.v2)
+   * RN: I have to argue that we made a conceptual mistake by attaching "version" semantics to the modified SystemMetadata datatype.  While it is springing into existence in v2 of our API / architecture / namespace, "v2" is a misleading label for what it is, where it can be used, etc.  It does not "obsolete" the existing SystemMetadata datatype, but is in fact a different entity, albeit structurally very similar to the existing one.  It is an alternate.
+   * DV - agree with Rob. Since V2 is not backwards compatible with V1, it is by definition, a new service. However it is verson 2.0 of the DataONE API, so the naming convention is correct, the implementation should treat it as a new service.
+ * The XML serialization of the new v2 type will use the same element name (<systemMetadata/>) so that only the namespace needs to change
+   * RN: as per the argument that version semantics should not be used, and insofar as the namespaces are used side-by-side, we should reconsider whether reusing the same element name is appropriate
+   * DV: Same name is good. The context will need to be clear for implementors (is this a V1 or V2 instance?)
+
+Things we want feedback on center around the ease of using both versions of the System Metadata objects in code.
+ * TR: you need to consider the API Interface classes in this decision, and not simply the object types.  I assume they will be duplicated?  Mixing them will be highly confusing and make for some pretty ugly code.
+ * RN: can we assume any relationship between v1 and v2 SystemMetadata will be defined?  If so, we can leverage abstraction and to make either of the below choices easier to use.  Subclassing allows us to use "instanceof" which favors the second option (V2 in the class name).  A method or empty interface to differentiate between v1 and 2 concrete instances is neutral to the two options.
+ * RN: do we need to support two SystemMetadata classes in Java, or can we have an unversioned SystemMetadata class that supports 2 serializations (v1, v2)? It seems like a lot of overhead (new interfaces, redefined methods, etc) just to support an additional optional field.   The application needs to know what version the node it is communicating with supports, so maybe libclient can handle the alternate serializations.
+
+What will the new System Metadata type be called? Options seem to include:
+ * org.dataone.service.types.v2.SystemMetadata -- http://ns.dataone.org/service/types/v2.0/SystemMetadata
+   * Pros:
+     * Keeps the type name the same with no version semantics in the class name
+       * RN: it's not clear what the advantage is from a developer POV if it makes knowing whether you are working with the right type of object unclear.
+     * Keeps the same consistent naming between serialization element and the type
+     * Keeps the consistent naming convention for methods like MNRead.getSystemMetadata()
+     * Existing client code can be easily refactored by just changing the import line and leaving all other references to the SystemMetadata class intact (V2 support will require both classes be implemented, so requires code duplication and modification using fully-qualified package names)
+   * Cons:
+     * Requires fully-qualified references be used when mixing v1 and v2 SystemMetadata objects in code, which can be confusing
+     * More substantial client code refactoring required to add support for v2 SystemMetadata use because of name conflicts
+       * RN: because our service interfaces are versioned, I imagine separate implementation classes for v2, and I imagine limited occasions where name conflicts
+       * (RPW- Disagree. If we keep the import statements at the top of any java class depending upon SystemMetadata the same, and we need to reference v2 classes of SystemMetadata, then we fully qualify the v2 name space at the instantiation level within the class.  Its not any more substantial than adding in a differently named type,  for example: org.dataone.service.types.v2.SystemMetadata mySystemMetadataV2 = new org.dataone.service.types.v2.SystemMetadata(); vs SystemMetadataV2  mySystemMetadataV2 = new SystemMetadataV2()).  The string is longer but the refactoring effort is essentially the same.
+         * RN: I don't think refactoring will be limited to duplicating classes and changing v1 to v2 in the namespace.  Don't our v2 methods need to handle v1 systemMetadata?  
+     * Existing client code must be duplicated to add support for SystemMetadata and SystemMetadataV2 classes, both of which are required in implementations of the V2 specification (RPW- how is this also not a Con of the org.dataone.service.types.v2.SystemMetadataV2 ?  We are not extending V2 from V1 in either case.) 
+     * Fully qualified class names for method parameters will be required in our Javadocs, reducing their readability.
+
+   * Vote count: 1,1(TR), 1 (DV), 1 (CJ)
+
+TR: It is my opinion that this would be a good time to refator the common projects as well and start applying stricter quality control (e.g. peer review before each commit, policies to favor constructor injection over static singleton factories to allow unit testability etc.).  I think the following would be a more useful structure:
+   * dataone-auth (server side authentication rules - requires ws-client)
+     * dataone-ws-client (clients to the MN and CN services)
+       * dataone-api (bindings and interface definitions only)
+       * dataone-common (utilities with no dependencies - may not be needed)
+   * RPW - separating out bindings and interfaces from the other utilities/mime-multipart packages. the only other gotcha is the configuration settings. We have a desire not to have too many components to maintain. One the other hand, If we separate out the code that frequently changes from the mostly stable code, then we reduce the amount of regression tests we need to perform when changing the 'common' features.
+   * RPW: Tim mentioned that we should start using builder classes which makes good sense and is another reason to separate out the Core types/Interface definitions from a higher-level utils component.
+
+
+ * org.dataone.service.types.v2.SystemMetadataV2 -- http://ns.dataone.org/service/types/v2.0/SystemMetadataV2
+   * Pros:
+     * Easily import and use both classes without using their fully-qualified name throughout the code that references them both
+     * Ability to easily referenece both classes in the same methods without using fully qualified package names
+     * Reduced confusion in code
+       * Makes it clear at a glance which version is used in code that imports one of the versions (RPW- Disagree.  This point only refers to visual inspection of strings/Readability.  Applying the heuristic that any declared variable identifier in the v2 namespace must have V2 attached to the end of the identifier name seems to be a better solution to me for readability.  Hiding the fact that any systemMetadata identifier either comes from V2 or V1 by import statements at the top of a class will still cause confusion when reading code that uses a simple identifier named 'systemMetadata' (which is the standard through out much of our code currently. So either way, our identifiers of our variables will need to clearly indicate the version of the type class used)
+     * Increased legibility (RPW- Disagree I don't understand how the typeface for the characters we use will effect this problem at all. Just don't write in cursive :) Maybe you meant Readability? http://en.wikipedia.org/wiki/Readability . Regardless, my point under 'Reduced confusion in code' applies here as well. Readability may suffer either way if we do not maintain a standard of how we compose of identifiers of the variables.  For instance, in either case if we identify our SystemMetadata by 'x'  then later in the code while reading, we will have no idea what class the variable identifier 'x' refers. Our conventions for dataone should alway include a V2 at the end of variable identifiers for any variable declaration from v2 namespace.)
+     * Keeps the consistent naming convention for methods like MNRead.getSystemMetadata() (RPW- How are we maintaining consistency here as benefit to SystemMetadataV2?  v1.MNRead.getSystemMetadata() and v2.MNRead.getSystemMetadataV2() VS  v1.MNRead.getSystemMetadata() and  v2.MNRead.getSystemMetadata(). Seems like the latter is more consistent.)
+   * Cons:
+     * Not technically required
+       * Redundant to use v2 in the class name and the package name
+       * RN: this doesn't seems to make a strong lever, since coders do a lot of things that aren't required to increase the readability and thus maintainability of their durable code.
+     * More substantial client code refactoring required to upgrade to v2 SystemMetadata use
+       * TR: anyone looking to support both has this burden anyway
+       * RN: readability trumps refactoring effort.  Besides, the logic for v2 methods will likely need to change anyway, to accomodate the target node's ability to handle v2 methods, so the actual mechanics of replacing SystemMetadata with SystemMetadataV2 (edit>find and replace) is relatively light in comparison to scanning each method implementation.
+   * Vote count: 0.5* 
+     * (*RN: as much as I like keeping version details out of names, we don't seem to be able to make use of abstractions to hide this complexity, and I don't see any convincing cons to this option, while there are serious cons with the other option that don't resolve over time (Javadocs, perpetual need to use fully qualified class names).  see below for what I think is a better variant of the different classname solution.
+
+
+ * org.dataone.service.types.v2.SeriesSystemMetadata -- http://ns.dataone.org/service/types/v2.0/SeriesSystemMetadata
+   * Pros:
+     * Naturally stands side-by-side with SystemMetadata in code and documentation
+     * Descriptive
+     * Avoids need for fully qualified class name in code and documentation
+     * Promotes clarity in method names
+   * Cons:
+     * Potentially steals the name of a future SystemMetadata-ish datatype that describes a series.
+     * similar client refactoring effort as using SystemMetadataV2
+   * Vote count: 0.5 (see V2 option above)
+

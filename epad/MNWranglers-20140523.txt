@@ -1,0 +1,78 @@
+Member Node Wranglers 
+    Fridays at 10:00 am Alaska
+                    11:00 am Pacific
+                    12:00 noon Mountain
+                    1:00 pm Central
+                    2:00 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+23 May 2014
+                                                                           
+Attending:  Laura, Amber, Skye, John, Rob, Rebecca
+
+Regrets:  Dave, Bruce
+
+See the Google doc for notes from the f2f MNW on 5/15/14 - need the link? ask Laura
+
+Agenda: 
+
+Laura and Amber to talk prior to next MNF re: who's presenting at the DUG 
+
+        1. High profile issues (or current items of interest)
+        
+                CN fix (tidy process)? Dave says it's done! (well, almost)  ORNL-DAAC is showing updated data as expected.  Laura to check on Dryad's data.
+                What about the glitch with CDL?  (related to their cert issues related to the heartbleed virus)
+                We temporarily turned off harvesting of CDL so that we could restart harvesting of everything else.
+                
+                MN Dashboard  (Drupal team = Chris Allen or Isis)  
+                Can go whenever Skye (Skye does not have admin privileges on prod drupal cms) is available to point the "current member nodes" page to the new dashboard.  Not critical, but for consistency, awaiting LTER update of their MN description in their node document (poked Mark).  Changes to Prod Dashboard content need to be communicated to the Drupal dev team - through redmine tasks?
+                    http://www.dataone.org/preview-of-current-mns
+            This is in reference to content that was formerly pulled from the node document (i.e. MN description) - so we need to communicate content changes to the Drupal team (right now the only content that I know of that needs to be populated is LTER's description) TFRI?  eBird?  Rebecca can change this content.  Amber is showing EDORA as an upcoming MN.  Done.
+            email Chris Allen to ask that we point the "current member nodes" to the dashboard - this needs to be a redmine ticket.  the dashboard is becoming the MN landing page - not just the 'current MNs' page (that link will remain)
+            email Rebecca with descriptions for LTER, eBird, TFRI
+            
+(Hold off on this until everyone present)
+                Purpose of MN Description Document (past and future) - past: identify data holdings (type, volume, etc.), operations, to aid in MN development.  future: ???  
+        
+
+        
+        1.5   Current MNs
+                Everything looks ok right now.
+                
+        2. Status of upcoming MNs
+    
+     * Y5Q4
+       * LTER-Europe  (3232) - News item approved; Laura/Amber to coordinate move to production/announcement
+       * EDAC (3221) -  Soren says EDAC is ready to go; email in to Rob inquiring actual status (flurry of activity before AHM); Laura/Amber to coordinate move to production/announcement.  
+       * DFC (3532) -  Chris has been working with Lisa Stillwell and Mary Whitton answering questions
+       * MPC (3708) - registering in sandbox
+       * ORNL MNs (RGD (4248) and EDORA (4247)) - moved to "testing", MNDDs/logo for EDORA and RGD received from Bob; Jim is registering both in staging
+       * GLEON (3422) - a couple datasets out there in their sandbox MN; next steps: convince folks to contribute their data; need a decision re: whether it's better to have a MN with little data (for now) or hold off until they have more data - Laura to contact Corinna - it might be helpful to go ahead to production even with little data
+       * PPBio (3748) -  After moving their server to LNCC, they have decided to revert to the original location in Manaus.  When this is accomplished, we expect to move quickly.
+       * NKN (3238) - Ed says they are up and running in sandbox. He had some questions we addressed at the MNF last week.
+       * SAEON (3205) - We are planning to work with Alex to upgrade their metacat, awaiting response from them re: when in May will work for them.
+
+    Future
+       * TERN Australia (4286): Met with Alison/Amber at AHM to work on education/outreach items (draft MOU scope item C);  some changes in funding down under.    
+         * Hope to meet with Nikki Thurgate when she's in the states, perhaps around DUG; working on scope items A and B in particular, meeting again in June.
+       * IARC   (International Arctic Research Center) (4700) - meeting next Weds with Jim Long and Mike Frame to discuss GeoNetwork questions.
+       * EU BON -- Looking to deploy a test MN in the next 6-9 months. 
+
+        3. Old action items
+             MN Documentation - MN Deployment and MN Ongoing Operations - holding
+             
+        4. Not-high profile issues
+     * Redmine ticket generator - plan to apply to IARC and ???
+       
+        5. Around the room
+        Amber:  the dashboard will be the landing page (currently benefits of becoming a member node);  current member nodes page will become the dashboard.  Practice in dev Drupal; Amber can create a redmine ticket requesting that Chris move dashboard to production
+        John: question: is "file uploads" not the right title on the y-axis??  
+            Skye:  suggestions for what it could be??
+            Maybe we can look at this in our usability testing at the DUG, talk with Rachel, cy Mike and Carol
+        Rebecca:  the "tidy process" has highlighted some issues with our "process" - especially how we move things to production, how we communicate status, etc.
+        Rob:  nothing today
+        Skye:  nope
+        
+        
+

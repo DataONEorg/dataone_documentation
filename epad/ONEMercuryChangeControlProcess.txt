@@ -1,0 +1,24 @@
+ONEMercury Change Control Process
+
+This document defines the parties and process by which change requests to the ONEMercury search interface will be requested, implemented, and approved.
+
+Stakeholders:
+Rebecca Koskela
+Amber Budden (lead stakeholder)
+Dave Vieglais
+
+Developer Resources:
+Skye Roseboom
+
+Process:
+
+Change requests will originate through the stakeholders.  These changes may be filtered through usability assessment groups and other sources but actionable change requests will originate from the stakeholders.  
+
+A story should be added to redmine to capture the requirements and/or issues pertaining to the change.  All stakeholders should be placed as 'watchers' of the story.  (I am not sure how to do this in redmine yet.  I see how to add myself as watcher but not others.)  This may require an email to be sent to each stakeholder - making them aware of the pending change request.  If a change requests contains multiple logical units, these features can be sub-divided into redmine tasks under the parent story.  Next the change request should be approved by each stakeholder.  The redmine story itself can be used to 'pass' the story around between stakeholders - by assigning the story to each stakeholder in turn - to sign off on and pass along (assign) to the next stakeholder.
+
+After approval for the change is agreed upon by all stakeholders, the story should be assigned to a developer resource to begin implementation.  At this time the desired release should/can also be specified - if known.
+
+Once the feature has been completed by the develeoper resource, the lead stakeholder should be re-assigned the task for review.  This may trigger a round of modifications and review in order to refine the modification/new feature to a point where the stakeholder is happy with the change.  Final approval from all stakeholders interested should then be obtained (possibly using the redmine assignment to pass the issue around as for initial approval) so the modification/new feature can be scheduled for release in an upcoming version.
+
+From our discussion, it sounds like Amber will be the lead stakeholder for ONEMercury and responsible for the 'first-line' review/refinement cycle with the developer resource.
+

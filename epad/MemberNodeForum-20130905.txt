@@ -1,0 +1,70 @@
+Member Node Forum - 5 September 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 19 September, 3 October, 17 October
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307   (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,   -20130530, -20130613, -20130627, -20130711, -20130725, -20130808, -20130822
+
+Attending:  John Cobb, Laura Moyers, Bruce Wilson, Amber Budden, Mark Servilla,Greg Gollberg, Mike Frenock, Rob Nahf
+
+Regrets:  Dave Vieglais
+
+Action items from last time:
+
+
+Agenda:
+
+0. Welcome new attendees - introductions
+    
+1. Network-wide update and issues affecting MN's as a whole
+Bruce: none that I'm aware of, new minor revision coming along; CCIT meeting coming up week of 9/22/13
+   
+2. Open issues:  MNs please add anything you would like to address here.
+
+ * Mike's (PISCO) upgrade to new version of metacat - how's it going?
+   * Mike:  "interesting" - worked through indexing issues on test, put in production last Monday, getting info messages for failed ID calls when indexing fails, latest from Ben is that Mike should re-index.  Generates very large amounts of log file traffic.  20K indices, fails on 1100 of those.  manually reindexed; got another 600 failures, not overlapping with first set.  Info level messages, saying something else needs to be indexed first.  Mike manually indexing precursor.  Messages coming from the resource maps; saying data or metadata file isn't indexed. Bruce to ask Ben et. al. about this issue.
+ * PPBio - Debora Drucker was planning to meet with the Brazillian folks to give a general overview of DataONE and how being a MN could benefit them and us, and I haven't gotten back with her yet to see how that went (Laura)
+ * 5 MNs in progress for Y5Q1: EDAC, SEAD, UKansas, NPN, and NKN (updates?)
+   * Greg (NKN): Luke's been working on standing up the stack, making progress.  Next meeting 9/12/13 at 2p EDT.
+   * NPN: Next meeting 9/11/13 at 3p EDT
+   * Rob (EDAC): last week they had a question about the service links in their data, and they've decided to strip those out; we want to encourage them to get into testing.  
+     * Question: do we normally test a production instance in staging, then move to production?  
+     * Bruce: yes
+
+3. Feature requests/opportunities for collaboration:
+        Mike: working with MatLab on someone else's PC, running into problem that MatLab runs off older versions of Java, which don't work with DataONE; 
+        Laura: is anyone else wanting to use MatLab
+        Bruce: is on the ITK list but lower down in priority list
+        Greg:  there are some of our researchers who will want to use it
+        MIke:  in the newest version of MatLab, some small conflict with two jars with same name, easy enough to fix by commenting out one of those
+        Rob/Mike: conversation about OLD versions of MatLab, etc. which causes things to not work together
+        
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+        LTER (Mark): successfully launched staging test for Pasta GMN; best to replicate LTER data to another MN before the existing MN is deprecated; holding while we wait for this to happen and for new version of metacat
+        PISCO (Mike): see above; working on deprecating the metacat side when the new one's indexing issues are fixed
+        NKN (Greg): working on cleaning up some metadata for more datasets to be added to our collection
+
+OTHER INTERESTING THINGS: 
+
+contact points: 
+NEW EMAIL contact: mninfo.dataone@gmail.com    - This email monitored by DataONE staff.  I think we might migrate to  this being the primary point of contact for MN questions so we can keep a  better handle on issues/resolutions.
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Upcoming deadlines:
+
+
+

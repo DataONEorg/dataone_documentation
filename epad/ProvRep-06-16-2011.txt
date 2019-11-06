@@ -1,0 +1,78 @@
+DataONE Provenance Repository ("GoldenTrail") Telecon
+
+Present: Bertram, Shawn, Michael, Saumen
+
+This call: http://epad.dataone.org/ProvRep-06-16-2011
+Previous calls: 
+http://epad.dataone.org/ProvWG-06-07-2011 
+http://epad.dataone.org/ProvRep-06-01-2011
+
+
+AGENDA:
+
+* Status update from Michael, Saumen
+* Next steps
+
+TODO: 
+* Need to fill in the Google Doc for project management ("GoldenPlan"),
+in particular link to notes from meeting, other documents (photos, etc)
+-- need to move notes over from wherever they are now, to the spreadsheet, focusing on 
+(1) use cases (including: getting a hold of the sample traces)
+(2) architecture (at least a strawman)
+This will then allow us to define
+(3) Work Breakdown Structure (WBS)
+
+From Paolo:  I suggested looking at / building  workflows to be used as testbed basically "play Alice the scientist"!
+
+NOTES:
+
+Updates:
+-- Michael
+    -- Looked at code worked on last year, as well as the model
+    -- Worked with neo4j, wrote some tests to work on it, transitive traversals
+    -- Created a dummy workflow/trace graph, transitive data dependency queries
+    -- Read the project histories paper
+    -- Created google code site and added to the Golden-Plan spreadsheet
+-- Saumen:
+    -- Conceptual model for d-opm
+    -- Basic model w/ workflow land and some part of context land
+    -- Have not reviewed in detail, may be some things missing
+    -- Ready to discuss with others
+    -- Looked at Graphviz, ERWin, etc. for ER modeling
+    -- Ended up using powerpoint
+    -- Bertram: Put the "ascii" version or a link to the model in the spreadsheet
+    -- Worked w/ Michael on going over last years code
+    -- Two versions of neo4j (embedded and "server" mode)
+
+- Bertram: started "Golden-Plan" (=google spreadsheet)
+    -- Two tabs: Architecture-ER and DOPM-ER
+    -- Mainly to jot down entities w/ descriptions
+
+Action Items: 
+  -- generate traces, "Play Alice"
+  -- update Golden-Plan spreadsheet
+  -- use Mendeley
+  -- Saumen will contact Lei to find see if ppod is or can be ported to current version of Kepler
+    -- Backup plan: Just use the ppod release
+  -- Shawn will contact Ilkay about Camera workflows
+  -- Michael and Saumen: Migrate use cases from Davis meeting to spreadsheet
+  -- Develop minimal version of registration and query API
+    -- Just for run level provenance
+    -- be planning for context information (Agent, When, Workflow)
+    -- simple mockup (powerpoint) of application for exploring run-level provenance (Tim's use case)
+    -- start implementing minimal model and api's 
+
+Grand Vision:
+ -- Develop the DOPM conceptual model with all lands
+ -- Define the set of operations (Query API) needed for "run-level" provenance (project histories)
+    -- Start by developing the set of questions based on the Tim's simple use cases (black box runs)
+ -- Implement simple Query API over DOPM model to answer the queries for "run-level" provenance (Tim's use case)
+ -- Incrementally extend Query API and implementation as we develop more use cases (deeper levels of provenance)
+-- Do similar thing for Registration API
+    -- Start by defining an API for Tim's use case
+    -- Incrementally extend with deeper levels of provenance
+-- Example Application that leverages the APIs, Model, Repository, etc.
+    -- Simple web application that allows a user to "explore" the database, but using the Query API
+    -- E.g., set of drop down boxes/forms on left hand side, and display on right hand side
+    -- Possibly also using graphviz for some simple visualizations
+

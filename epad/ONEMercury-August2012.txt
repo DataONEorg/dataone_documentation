@@ -1,0 +1,219 @@
+Attendees:
+Bill Michener, Rebecca Koskela, Matt Jones, Bruce Wilson, Dave Vieglais, Bob Cook, Giri Palanisamy, Mike Frame
+
+ONEMercury Discussion
+
+Question about how often indexing happens:
+Synchronization process needed to be stopped due to some problems - right after production release, synchronization wasn't happening for awhile without bringing down the CNs. Patches have been applied and now are back in operational mode so synchronization is working again. If it's not working now, it should be working shortly. May take several hours to complete.
+
+"Known" Issues
+
+ * No single code repository for ONEMercury code
+Required extensive modification on internals - using mainly the user interface of Mercury
+Had to make a lot of changes to handle system metadata and CN framework. Hazelcast messaging system, location of metadata files, how to harvest metadata before it goes to
+indexing.  Parsing code is pretty much new. Related to question on definition of "Originator" -
+PI being mapped to originator; 
+ONEMercury tightly tied to CN code so needed to be able to make changes quickly. It didn't make sense to get write access to the Mercury code repository. 
+Not an ideal situation since code is being modified in both repositories now - 
+From Mercury perspective, have a read-only repository. Are thinking of putting the code
+in a github repository.  Merging will be tough.
+DataONE is using subversion and plans to continue this.
+How is Metacat working with DataONE? DataONE developers have write access to the Metacat repository. Have done 4 releases.
+Updates to UI (Mercury) should be able to handled in a similar manner.
+Developers could create ORNL account and then would be able to both read/write 
+after repository moved to the open research network. 
+
+In the past, using non-ORNL accounts on systems hosted at ORNL was difficult, which is part of why the svn repository for Mercury at ORNL was set up to use ORNL UCAMS accounts and denied write access to people outside ORNL.  This has changed, particularly if the repository is put out into Open Research.  There are multiple options available if a common svn repository for all of Mercury is desired.  There could be one repository hosted at an external location (which likely would not use se DataONE identities), a repository could be hosted at ORNL and use either XCAMS or even DataONE LDAP.  Mercury could move to using the DataONE svn repository as the master.  A key challenge is the level of effort involved in merging the two branches of the underlying source code.  
+
+Post-processing: picking up the rules of the various metadata standards; D1 not using the
+Mercury indexing code
+The CN have sets of parsers and different rules for the various metadata standards
+
+Resource map documents make things more complicated-
+    Actually, I think they make things simpler, in that they represent a common standard (ORE) for how to represent data packages, which are currently not handled in a standard way in the various communities; ORE is simpler than the current diversity that's out there
+
+Would be good to have rules for extracting information from different metadata standards
+    We do have these rules; documented at link below; problem is figuring out what the rules and mappings are in less-well documented alternative
+
+Is there a document that describes how extract properties out of the various different metadata standards for Mercury? Do have a document outside of the source code.
+    -- This is the analogous page on how DataONE does indexing:
+         http://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html
+
+
+ * Extraction of information from disparate metadata sources and aligning that information in a semantically consistent manner is challenging and something that must be performed through progressive refinement.
+   * No control over what is actually entered into the metadata documents and even when there is good control by Member Node operators over the consistency of metadata provided by contributors, the policies for metadata terms varies across institutions. So even the same field in the metadata may contain content semantically incompatible with entries from other MNs, simply because of the policies of each organization
+     * Originator is an example of a field that has rustratingly variable content.
+
+ * Nature of modifying existing code base rather than starting from scratch
+
+ * Authenticated search is not currently handled
+
+ * Multiple usability opportunities for improvement (see last usability report starting on line 48 below)
+
+ * Data availability: 
+   * Metadata may contain link to actual datasets but users would not know that to find data, they need to view the Metadata and follow the links; however results are mixed, even for one MN (LTER)see
+     * http://metacat.lternet.edu/das/dataAccessServlet?docid=knb-lter-fce.171.5&urlTail=PHY_Rondeau_002.v4 {this takes you to http://metacat.lternet.edu/das/lter/login.jsp and requires a login}
+     * http://gce-lter.marsci.uga.edu/public/app/dataset_details.asp?accession=GEL-GCEM-0508c {takes you directly to the data} 
+     * http://www.konza.ksu.edu/konza/datasets/knzdsdetail.aspx?currMenu=18&datasetcode=NSW01 {takes you to the home page for Konza Prairie and there is no clue on this page of where to find data}
+     * 
+
+
+Minor issue:
+ * ORNL DAAC member node shows a few data products with zero data files; this issue was addressed and fixed at ORNL over two weeks ago.  ORNL DAAC MN should be re-harvested indexed more frequently (weekly?, nightly?)
+
+
+Indexing Process - would be good to take advantage of the rules used by Mercury
+D1 can use the configuration information
+
+User Interface - changes to functionality is difficult in ONEMercury
+
+Discovery & use of DataONE data - overlaps with activities from Semantics, CCIT, Metadata/Prov, UA Group, and S&G Working Groups. This is a cross-cutting issue where ONEMercury, ONEDrive, Inv. Toolkit are all affected/involved. 
+
+Modis data requires data subsetting to be implemented -
+How MNs can expose their subsetting systems/services
+
+What is expected from Mercury?
+Look at processing rules - ways to move these into D1
+
+Proposed Solutions
+
+
+
+
+
+
+Agreed Upon Actions:
+
+
+
+
+
+
+
+Usability Issues:
+
+Preliminary Issues Found in ONEMercury
+ 
+During the DataONE Users Group (DUG) meeting and the Earth Science Information Partners’ Conference held in Madison, Wisconsin from July 15th – July 20th, we conducted a usability test evaluating DataONE.org and ONEMercury.
+ 
+For this study, 26 participants completed a series of tasks using the DataONE.org and ONEMercury websites.  The researcher continues to analyze all of the data collected and expects to have the results by the All Hands Meeting in September.  
+ 
+The researcher has been able to identify features that caused or could cause critical issues for user engagement with the ONEMercury site.   Some of the issues have already been communicated to the Cyber Infrastructure Team (e.g., Bookmarking, Place on Map, and Originator) and have been either addressed or the features have been disabled.  This initial report works to address the preliminary issues that were continually identified as problematic throughout the usability testing. 
+ 
+Below, you will find a presentation of screenshots and descriptions of the issues discovered. 
+ 
+ONEMercury Interface – Member Nodes Filter
+ 
+
+ 
+Issue:  In the “Member Node” filter box there are acronyms used that may be confusing for users, specifically “MN” as Member Node is clearly spelled out for LTER, but not for PISCO.  Several users questioned whether “MN” referenced Member Node or Minnesota.
+ 
+Recommendation:     Clearly define or write out “MN” and other potentially ambiguous acronyms (SANParks, PISCO, LTER, ORNL DAAC).
+ 
+
+ 
+ONEMercury Interface – Map Refreshing
+ 
+
+ 
+Issue:  This screenshot was captured in Google Chrome (Mac OS), but the blank map has also been replicated in Mozilla (Mac OS and Windows OS) and Safari (Mac OS).  When the user loads the ONEMercury interface (either by clicking the link from the DataONE site or by directly inputting the url), the map does not load initially and a white area is rendered. To display the map correctly (in this instance), the user would either have to refresh the page or work with the map features (e.g., zoom) to have the map render.
+ 
+Recommendation:     Ask if the Cyber Infrastructure team can evaluate the map feature and see if there is a technical problem causing the maps to not load consistently in all browsers.
+ 
+ONEMercury Interface – Map Features
+ 
+
+ 
+Issue:  There were a few issues with the map that were repeated throughout the testing, some of these include questions related to using the bounding box and how to exit the bounding features.  There were users who thought the black parameter of the map’s image was the bounding box.  Similarly, there were general issues with how to use the features.
+ 
+Recommendation:     The help box for the mapping feature was lacking and should be more descriptive as to how to engage with its features.  There could also be hover over options for each box, so that they may serve as a clue to the user.
+ 
+ONEMercury Interface – Place on Map
+ 
+
+ 
+Issue: The “Place Name” feature does not work in any browser tested (Mac/Win Firefox, Mac/Win Chrome, Safari, or IE).  
+ 
+Note, since the usability testing was conducted (in July) this feature has been removed from the search interface.
+ 
+ONEMercury Search Results – Filter by Originator 
+ 
+
+ 
+Issue:  Several users commented on the ambiguity of the term “Originator” in relation to “Author” and “Member Node.”  They had to spend time to determine when and how to use Originator filters and how they varied or should be used within the system.  A help menu with explanation of each filter and how to use the filters may have been helpful in this case.
+ 
+Note, the “Filter by Originator” filter has been removed and the “Filter by Member Node” has been moved up to this section.
+ 
+
+ 
+ONEMercury Search Results – Filter by Project
+ 
+
+ 
+Issue:  Some of the metadata standards may not have a “Project” field (e.g., FGDC), this may be problematic for users filtering by project who do not understand metadata standards and which clearing houses are using which metadata standards.  In essence, if they “Filter by project” from the start, they may not realize that they are excluding data sets that could relate to their query, but are unavailable due to a lack of “Project” field.
+ 
+Recommendation:     This issue is a bit more difficult to resolve, perhaps an explanation in a help menu or help window could prove beneficial, but the researcher believes this should be a point that is discussed by the Usability Assessment group.
+ 
+ONEMercury Search Results – Relevance Stars
+ 
+
+ 
+Issue:  Many users (exact number still being determined, but was reiterated several times) expressed confusion over the use of stars.  When you hover over the stars, a “hand” cursor appears that seems to suggest that the stars were “user generated” like other frequently used systems (e.g., Amazon products or Netflix user ratings about the quality of a product).
+ 
+Recommendation:     Evaluate the utility of the relevance feature, especially related to what feature is used to convey relevance. The Usability Assessment team should discuss if there is a better way to convey relevance or if this is a feature that could be disabled.
+ 
+
+ 
+ONEMercury Help – Relevance
+ 
+
+ 
+Issue:  “Relavance” is misspelled; it should be “Relevance.”
+ 
+Recommendation:     Correct misspelling and then consider better explanation of the Relevance feature and its utility within this site.
+ 
+ONEMercury Interface – Data Set (0)
+ 
+
+ 
+ (Close up)
+ 
+Issue:  Seeing “Data Files (0)” confused several users. They assumed that upon seeing “Data Files (0)” the zero indicated that there was no data set available for this record and several indicated that they would skip over this record and proceed to finding one that had a data set available.  Also, several asked for a way to filter by those Data Sets that were available.
+ 
+Recommendation:     This issue has more of a technical issue regarding the systems capability with display the available data sets, because of where they are house or stored. This should be an issue that is further discussed with the Cyber Infrastructure Team to see if a solution can be found.
+ONEMercury Interface – Data Package Files Download Popup
+ 
+
+ 
+Issue:  Users do not have the option to download the Data Set(s) and Metadata files as a complete “package”.  The user is expected to download the Data Set and then return for the metadata.  Not having the option to download all of the files related to a data set may be problematic for users, especially if they download multiple unrelated data sets and later try to match the data sets with the appropriate metadata record, but are unable to do so because the Identifiers (file names) vary greatly.
+ 
+Recommendation:     Having the option to zip the files together as a “package” would be beneficial for this system’s users.  This functionality will be especially important if there are multiple data sets available for the user to download (e.g., Data Set (2) or Data Set (3)).
+ 
+ONEMercury Interface – “Return to Search” versus “Back”
+ 
+ 
+
+ 
+                   (Close up)
+ 
+Issue:  The arrangement of the buttons was problematic for several users.  Participants mentioned that they expected “Return to Search,” to return to the “Search Results.”  When they returned to re-evaluate the metadata record and its Return navigation buttons, they were able to discern that “Back” would take them to the “Search Results,” but it was not always their initial or first response or path chosen.
+ 
+Recommendation:      Rephrasing the buttons (e.g., having “Back” read “Return to Search Results” and “Return to Search” read “Search”) or reordering them (i.e., switching the order of Data Files, Return to Search, and Back) could prove beneficial to how efficiently users engage with the site.   This may be an issue that is evaluated with further usability tasks and testing or discussed by the Usability Assessment team.
+ 
+ONEMercury Results – Opening “View full metadata” in a new tab
+ 
+
+ 
+Issue:  A few users “right clicked” on the “View full metadata” button with the expectation that they could open the metadata record in a new tab (so that they could keep the results in a tab and compare multiple metadata records at once).  Opening the record in a new tab was not a presented option.
+ 
+Recommendation:     This additional functionality should be further evaluated or discussed to see if this should be offered.  Perhaps the Usability Assessment team can discuss this and if needed additional usability testing could be done related to this issue.
+ 
+Help Menus
+ 
+Issue:  While many users did not engage with the help menus (other than the one related to relevance), the researcher noticed that there are issues with the information communicated in the help windows.  In general, the help information was found to be lacking in clarity, depth, and relation to the site and its function’s described purpose.
+ 
+Recommendation:     The help menus should be further evaluated, reviewed and then the content should be improved to better serve the site’s users.
+
+
+
+

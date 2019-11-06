@@ -1,0 +1,114 @@
+
+
+10/26/11: All issues in this epad that were still relevant have been set up as tasks under story 1906.
+
+
+MNCore.getLogRecords()
+http://mule1.dataone.org/ArchitectureDocs-current/apis/MN_APIs.html#MNCore.getLogRecords
+
+- fromDate is a mandatory argument. I think it should be made optional. It seems odd to have this one argument be mandatory. Having it mandatory means that users must supply some "very old" date if they want to iterate over all log records by date and if they want to query on some other parameter. Also, having it optional would better match listObjects, where the corresponding parameter is optional.
+
+-   Should add something to the docs saying that the returned results are limited to events associated with objects to which the subject has read or higher access.
+
+Q:   The LogEntries returned by the call include a field for the name of  the  member node. But the CN or the client will know which MN it is   retrieving the logs from, so it seems unnecessary to include that   information in each LogEntry. Can we remove it?
+
+No. Keeping the name means the CN can stream stuff to disk and process later.
+The CN could easily add some metadata to the files.
+
+- fromDate is "greater than" and toDate is "less than or equal". I think it would be more logical to have fromDate be "greater than or equal" and toDate to be "less than".
+
+- I don't think NotAuthorized is a valid response for getLogRecords() because anyone can call it (though they may receive an empty Log).
+
+
+MNCore.getStatus() → StatusResponse
+
+- Is NotAuthorized a valid response?
+
+
+MNCore.getCapabilities() → Node
+
+- Is NotAuthorized a valid response?
+
+
+MNRead.get(session, pid) → OctetStream
+
+- "the checksum of the bytes retrieved must match the SystemMetadata.checksum recorded in the  Types.SystemMetadata if the object is science data". I think we can take out the "if the object is science data" part because the checksum needs to match regardless.
+
+- CN_crud.get() has changed names.
+
+- "Returns: Bytes  of the specified object. For data objects, this will be the actual  bytes of data. For metadata objects, this will be the representation of  the object as provided by the Member Node." "metadata" is science metadata, right? And the behavior is the same as for science data, so I think we could just say that "Returns: Bytes of the specified object". And maybe add a line saying that this call is used both for science data and science metadata objects.
+
+
+MNRead.describe(session, pid) → DescribeResponse
+
+- "The principal indicated by token must have read privileges on the object, otherwise Exceptions.NotAuthorized is raised." getSystemMetadata() should have this line too.
+
+- I think we should remove this call and channel clients through getSystemMetadata(). The system metadata is a light weight object and I think that in most cases, the client will want the additional information that is stored there.
+
+
+MNRead.getChecksum(session, pid[, checksumAlgorithm]) → Checksum
+
+- I have not noticed the checksumAlgorithm parameter until now. Is it new-ish? GMN holds only one precalculated checksum for each object and returns it with this call. To support checksumAlgorithm, an MN will have to either store checksums for all possible algorithms or calculate them on the fly. Calculating them on the fly could put a lot of stress on the server. Having the parameter makes things easier for clients, and harder on MNs. I'm not sure if the tradeoff is a good one.
+
+- If InvalidRequest is returned, it can contain a list of algorithms that the MN supports. This could enable a system that the MN and client could use to automatically negotiate to find an algorithm that they both support. If we wanted to do that, we would need to define the type for the list of checksum algorithms. But one problem with that type of approach is that I think that, with MNs and clients supporting arbitrary algorithms, they would tend to gravitate towards a lowest common denominator. That is, if there is an algorithm that both clients and nodes must support, why would they implement any others?
+
+
+MNRead.listObjects()
+
+- We should have the date time span parameters be named the same across all the calls. listObjects() uses startTime and endTime. I prefer the fromDate and toDate parameters used in getLogRecords().
+
+- Is NotAuthorized a valid response?
+
+- Remove / fix outdated examples.
+
+- There's an example for doing a search against the CN. That should probably go into the CN API docs.
+
+- I suggest that we remove the text about a future "orderby" parameter.
+
+- Semantics for endTime should be changed from "less than or equal" to "less than".
+
+- replicaStatus has a default of true. This makes it impossible to retrieve an ObjectList that is not filtered on replicaStatus. Other parameters, such as startTime, don't have a default. So when they are left out, there is no filtering done on that parameter. I think we should do the same with replicaStatus, so that leaving it out would return a list that contains all objects, regardless of their replicaStatus.
+
+
+MNAuthorization.isAuthorized()
+
+- I don't think we need convenience methods for canRead() / canWrite(). I think that isAuthorized(sesssion, pid, 'read') is clear enough as a representation for canRead(session, pid).
+
+
+MNStorage.create()
+
+- CN_crud.reserveIdentifier() has changed names.
+
+- The vendor specific implementation note about wrapped/managed mode should be moved to the GMN docs.
+
+
+MNRead.synchronizationFailed()
+
+- The REST URL is /error. How about changing it to /error/sync, so that we keep the /error namespace available for additional uses in the future.
+
+
+
+
+
+Boolean return type that can only return "true":
+
+- How about we change this to a type called "success"? The new type would not be a true/false type. It would be a type that, when instatiated, contains no user data. It would be represented with a 200 OK and be returned only upon successful completion of the call. And, as now, failures would be returned as exceptions.
+
+
+Exceptions.NotImplemented
+
+Q: Given the tier system, is this exception still relevant for many of the calls where it is listed as a possible return value?
+
+Yes.
+
+Q: Does an MN have to recognize all the calls that are in higher tiers than it implements and return NotImplemented for them?
+
+No.
+
+Q: NotImplemented is listed as a possible return value for the calls in the core api. Should we remove that?
+
+No.
+
+NotImplemented provides a mechanism for progressive buildout of a MN service. Even though a MN may return NotImplemented for almost any method, tier conformance is not considered to be complete untill all methods in that tier (and core) are fully implemented.
+
+

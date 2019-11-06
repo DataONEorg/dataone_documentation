@@ -1,0 +1,83 @@
+10.26 FLST (Uszkoreit)
+
+Speech Translation pipeline
+
+Ambiguity: "At some point, you need to realise how bad it is. Then you need to lose that fear."
+    - Phonetic (homophones)
+    - Orthographic (homographs)
+    - Lexical (homonymy)
+    - Logical (tautology) ## Not really, this is a joke.
+    
+    ***Ambiguity as a pathological example (*see the German sentence example on the slide*) can exhibit both lexical, and syntactic, and anaphoric ambiguities.
+    - Note that syntax doesn't know that 'islands on the weekends' is ambiguious. 
+    ## I think syntax doesn't know that it's *not* ambiguous, right? Or that 'islands on the weekends' is an unlikely interpretation
+        ##I think whether or not this sentence / phrase is ambiguious is not really due to its syntax. To determine that it's ambiguious (or un-ambiguious), one needs more than syntactic knowledge (##maybe, that's why getting into the Ling. Competense topic....)
+        
+==> Competence vs. Performance:
+
+Linguistic competence: it's implicit, finite-state of knowledge(?) (ex. first lang. acquisition).
+
+Piraha <-- language without recursion near linguists. 
+
+==> Computational Complexity of Human Language
+
+Chomsky Hierarchy (http://en.wikipedia.org/wiki/Chomsky_hierarchy )
+Typ 0: untractable languages, very difficult to computationally analyse.
+     (Untractable/Intractable: http://en.wikipedia.org/wiki/Computational_complexity_theory#Intractability ) 
+Typ 1: Context-sensitive language
+Typ 2: Context-free languages (in the PS tree, going from right to left..example can be Turkish, and another one Russian (*as far as I know*), but Russian is completely irregular, so there is no right-to-left / left-to-right, etc..., more difficult to analyze.
+Typ 3: regular languages: ## they are very regular :D
+Grammar can be expressed in regular expressions
+
+Topicalisation - phrase movement to the front. In Chinese you get topicalistion, with a particle, and not movement. 
+     Ex: Kim likes bagels <==> Bagels like Kim.
+
+    Pullum - showed that context-free proofs were wrong, that we're only mildly context free.
+
+Cross-Serial Dependencies (*long distance dependencies*)
+ Ex: (in Dutch) ...dat Jan de kinderen zag zwemmen
+                        ... that Jan the children saw swim
+                        '...that Jan saw the children swim' 
+            ## this is same in Turkish syntactically. However, it's even closer to the Swiss-German examples (*see the next slide*) because specific verbs require specific noun cases.
+    # "Swiss German is impossible because they don't like immigration"
+
+Bambara - Mali - to give emphasis, they repeat full stretches of languages. (http://en.wikipedia.org/wiki/Bambara_language ) 'ww' language = not context free. 
+
+The chomsky hierarchy has survived in comuter science quite well. The computational power needed to parse chomsky should go up exponentially with length - but we know that this is not the case for humans. 
+
+Syntactic Phenomena that make parsing harder:
+ * Right-extraposition: He invited those people to the party on the occasion of his 40th birthday [...] who had already come to his 35th birthday party.
+
+Probabilistic parsing: It's very much the case that probability is used along with syntax to parse.
+
+Hard-to-understand Sentences:
+    In mud eels are, in clay are none. ##Apparently grammatical - not to me, at all, because 'are' doesn't have the meaning 'exist' for me (Richard). ##Haha, we know what color you're! :D ##Aye, but the colors will be lost when I transcribe this. 
+    ## The sentence is actually from a nursery rhyme, see http://www.mamalisa.com/?t=hes&p=1823 - supposed to sound like Latin when you read it fast ##I thought maybe it was Shakeasperian or something (augh..never can spell that right).
+    
+    Yes, we have rules, and we can do parsing - but our expectations, the probabilities we assign, gets us the wrong readings. 
+    
+Humans' produce sentences incrementally. 
+
+===
+
+Language Technology!
+Some cool notes on why LT is the best. 
+
+20B€ in the world in speech technology, same in translation
+50% is in Europe
+500.000 translation profs in Europe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

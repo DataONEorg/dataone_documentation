@@ -1,0 +1,274 @@
+Discussion on Authn / Authz - Matt, Mark, Dave
+
+
+Architecture docs: http://mule1.dataone.org/ArchitectureDocs-current/design/Authentication.html
+
+Mark's notes: https://docs.google.com/document/d/10dSiRLy8XasCgtzjQT_cDcuMluF6vKU5TsZdRqqjJDQ/edit?hl=en&authkey=CLCAiYMI
+
+LTER access control rules summary: https://spreadsheets.google.com/ccc?key=0AvmNJnP7eHevdGFzdWJORE14ZWs0NFowX1ZRZkd1V3c&hl=en&authkey=COi89YkO#gid=0
+
+
+TASK 1483: getAuthSession() should probably only be exposed to Member Nodes to minimize potential for spoofing by through abusive clients.
+
+ 
+What certificates are we going to accept? only CILogon? What other certificate roots should we trust? 
+
+
+Using LDAP for group management - the DN would be a DatONE generated ID that is used to define a record that contains other attributs that indicate the alternate identities of other users.
+
+NO: Requirement: Need to track level of assurance for identity providers, implies that we need to be able to verify the level of assurance provided by an identity provider
+
+What are the levels of assurance required by the community? e.g. supporting openID for authn provides a very low assurance that the user is that identity.
+
+Setting access policy requires good identity assurance.
+
+Access rules. What really needs to be supported for the communities. LTER is quite liberal perhaps due to mode of operation (mostly metadata). PISCO is perhaps opposite extreme - many datasets are restricted access.
+
+NCEAS groups tend to have more complex write access rules, also often not publicly readable.
+
+KNB - no use of deny directives. -> Removed deny directive from access policy for DataONE.
+
+DAAC? "A set of internal processes"
+
+Dryad? Need to check with Ryan on the mechanisms for authentication, access control. Lkely to be a highly curated model.
+
+Groups  - regstered users can define groups within the DataONE realm. How does this interplay with groups defined outside of the DataONE domain? 
+
+Need to translate access control rules from each external / MN system into the DataONE model, and vice versa. 
+
+How to deal with changing nature of identities and their access permissions? This is part of data curation, and should be handled by the respective Member Nodes and their data curators.  Note this implies that there are data curators.
+
+Data use policies and licensing issues indicate who has responsibility for managing the access control if the origial data owner / creator changes affiliation.
+
+Next Steps:
+- Still a lot of design work to be completed before implemetation commences. Especially sequence diagrams for how things work together.
+- Some technology / tool evaluation that needs to be done. e.g. grouper
+
+Technologies to evaluate:
+1. grouper
+2. OpenLDAP multimaster
+3. Review access control policies
+4. Requriements review
+
+OK 761: Users can specify authorization rules for data objects, science metadata objects, and process artifacts separately
+767
+TASK 1472 -768 - how to deprecate ownership of some object
+TASK 1471 -769: Member nodes need a special curator role
+TASK 1472 -795: revocation - through access policies. requires a curator / administrator / SU role on MNs
+Replication of access control information. e.g. locking down LDAP servers behind firewalls
+NO: Privacy issues - group members visible to everyone?
+
+NO: Support ability to use encryption to ensure restricted access from untrusted MNs - encrypting content to be unreadable by untrusted MNs / clents
+
+TASK 1473: In abscence of rules (Need to establish the default set of permissions in absence of additional roles) - owner read,write, no other read.
+
+TASK 1474: Given that we have a new account method, we need to have an account verification method to ensure people are who they claim to be.
+
+delete: 
+NO: xxx: Sensitive data that is encrypted is generally not replicated except possibly to
+avoid risks of leaks of that information (confused)
+
+STORY 1475: notification infrastructure design required for xxx: Need process for data consumer to request authorization for an object
+
+TASK 1470: Need a listUsers and listGroups methods : 
+xxx: Need ability to create index of users so that clients can use that list to
+assign access control rules, and ability to look up Identity for particular users
+
+TASK 1480 (STORY 1476): xxx: Should have a user profile page to review/revise a user’s own identity, group, and
+other Identity information - a place to add identities, set contact info, etc
+
+NO: Unsupportable requirement: xxx: Nodes need to be able to assert minimum LOA re: who has write access - basically, if you need secure storage, then this is the wrong place to store data.
+
+NO: 
+xxx: May have need for ‘Deny’ permissions on access for convenience (but probably
+lower priority)
+
+NO: This is not in scope for DataONE:
+xxx: Should be able to deposit content with embargo, but should be able to grant
+anonymous access tokens for access to the data without the owner knowing who it
+was that had access (use case for anonymous peer review in Dryad). Some implications for logging - don't log identity of attempted accessor
+
+TASK 1481: redundant: xxx: Should groups be able to own objects?
+
+NO: Can't meet this: 
+xxx: Member nodes should be able to restrict data access by individuals on Dept of
+Commerce Embargo lists at high LOAs – possibly determine that we won’t support
+this, but rather that we state these types of objects must not be uploaded
+
+NO: Not supported (ip address will still be logged): xxx: Anonymous access will be allowed for for publicly accessible objects
+
+NO: Difficult to support (recursive query): xxx: Can groups contain groups, and at what nesting depth?  Yes, one level.
+
+NO: (Nope) xxx: ID and access control should work in all geopolitical jurisdictions
+(UI issue) xxx: ID and access control should comply with universal design standards
+
+762: User identities can be derived from existing institutional directory services. Attribute transfer / translation rules and trust issue for the operation. Can perhaps genreate a proposed mapping, then have the users verify the suggested mapping. This is really a MN implementation issue.  DataONE will only see D1 AccessPolicy documents.  Not sure there is a task here for us.
+
+TASK 1482: Need a mechanism to collapse two DataONE accounts into one.
+
+---
+
+Prep for CILogon call
+
+- Review notes, architecture docs etc
+- Perhaps the issue of brining in other federations into the CILogon infrastructure
+- Need a library that we can use for interacting with CILogon
+
+=============
+
+Friday - 2011-04-08
+
+Implementation Q's
+
+- Grouper ( http://www.internet2.edu/grouper/ ) - stable and widely used. LIGO is using for example
+
+- Distributed session management
+
+- Identity management / mapping. Leaning towards replicated LDAP. Common solution, so seems sensible and safe. qualifier: dc=dataone,dc=org
+ - how to verify identity? Incommon provides an assertion that Matt == Matt, but other systems vary by identity verification
+ - TeraGrid vets PIs, and PIs can vet their students, etc. -- WebOfTrust
+ - CoManage project possible for Identity Management? http://www.internet2.edu/comanage/  https://spaces.internet2.edu/display/COmanage/Home
+ 
+ -- Discussed the pros/cons of SAML vs X509 for transporting session details
+     -- really are the same; short lived certs can carry all of the attributes we need
+     -- would have advantage of not needing any further login, attributes carried via TLS channel client cert
+     
+TODO: modify two-phase certificate login to use SSL client authentication using the X509 client cert instead
+    -- this really raises the question as to why we have a separate session management service, when CILogon really could be the session manager
+    -- the main downside is how hard it is to get a CILogon certificate into client control due to the InCommon redirection issue for desktop apps (less of an issue for web apps)
+    
+- Access control rules (consistency with other communities?)
+
+
+===========================
+Comments from J. Basney regarding architecture docs and conference call discussions -- see email on 2011-04-08:
+
+[We talked about this on the call...] On the Authentication.html page,
+there's an ePPN example of "mbjones@NCEAS" but I think best practice is
+for "scope" in the ePPN "user@scope" format to be a registered domain
+name, to arbitrate for name collisions, so I think a better ePPN example
+would be "mbjones@nceas.ucsb.edu". For two more examples, my ePPN values
+are "jbasney@illinois.edu" and "jbasney@idp.protectnetwork.org".
+
+One thing to be aware of is that ePPN values are not always the same as
+people's email addresses, i.e., we can't expect people to know what
+their campus ePPN value is, and they may get confused that it's
+different from their email address.
+
+ePPN Reference:
+http://middleware.internet2.edu/eduperson/docs/internet2-mace-dir-eduperson-200806.html#eduPersonPrincipalName
+
+-----
+
+Regarding CILogon Subject DNs, the "/DC=org/DC=cilogon..." string
+representation is just one option. It's the OpenSSL "oneline" format.
+The RFC 2253 format is another option for displaying Subject DNs, and I
+think that option is more common for LDAP environments, so you might
+prefer that one. I added OpenSSL examples for displaying the different
+string formats here:
+
+http://www.cilogon.org/cert-howto#TOC-Displaying-Certificate-Subject-DNs
+
+So for example the following two forms of my CILogon Subject DN are
+equally valid:
+
+/DC=org/DC=cilogon/C=US/O=University of Illinois at
+Urbana-Champaign/CN=James Basney A122
+
+CN=James Basney A122,O=University of Illinois at
+Urbana-Champaign,C=US,DC=cilogon,DC=org
+
+-----
+
+Do you have any requirements for users to be able to switch between
+different "roles" (for example, to escalate privileges for rare
+operations)? In the grid world it's common to have roles defined like
+"software administrator" and "production manager" where I only sign in
+to the "software administrator" role when I need rights to update
+software installations, and I only sign in to the "production manager"
+role when I need to submit project job runs, but otherwise my usual
+logon gives me a base set of permissions that doesn't allow those
+things. In DataONE, maybe SAML assertions for MN administrators should
+only assert membership in the "MN administrators" group when explicitly
+requested, i.e., when the administrator needs to perform an operation
+that requires elevated privileges. This might bring more complexity than
+needed, but I wanted to raise it as something to consider. Another
+option is to have different usernames for different functions (i.e.,
+"jbasney" versus "jbasney/ADMIN").
+
+-----
+
+As we discussed on the call, I don't think you need/want a custom
+"2-phase handshake" protocol for validating certificates. Just use the
+certificate in the SSL handshake that's part of HTTPS. In Java on the
+client side you should be able to just set a few system properties
+before initiating the connection:
+
+System.setProperty("javax.net.ssl.keyStore",
+                  "/home/example/usercred.p12");
+System.setProperty("javax.net.ssl.keyStoreType", "pkcs12)";
+System.setProperty("javax.net.ssl.keyStorePassword", "password)";
+
+Then on the server side, the Java SSLSession.getPeerCertificates() call
+will return the authenticated peer certificate chain on which you can
+call X509Certificate.getSubjectX500Principal() to get the authenticated
+certificate subject. Let me know if you want more details on that for
+Java or other languages.
+
+-----
+
+Matt's question about MyProxy on the call got me thinking... I think you
+could use MyProxy as the DataONE AuthN Service and issue short-lived
+"DataONE" certificates (based on either LDAP passwords or CILogon
+certificates) instead of AuthTokens. You could have MyProxy query LDAP
+and insert attributes into the certificates it issues, avoiding the need
+for a call-back later for attributes in a SAML assertion. Then DataONE
+Client Applications could use standard HTTPS with certificates rather
+than defining/implementing a new AuthToken scheme (avoiding the concern
+about misuse of AuthTokens by rogue MNs).
+
+Of course I'm biased in favor of MyProxy, but it's widely-used, stable
+software that issues standard RFC 5280 certificates, and of course I'd
+help you get it to do what you need.
+
+Note that the MyProxy protocol
+(http://grid.ncsa.illinois.edu/myproxy/protocol/) isn't a REST protocol.
+I don't know if that's a deal-breaker. You could always put a REST
+protocol in front of it, like Philip Kershaw did
+(http://pypi.python.org/pypi/MyProxyWebService)
+
+-----
+
+Overall I'm still a bit confused about the different identifiers
+(principals, PIDs, tokens) in the design. You might want a section in
+the specification devoted to explaining the relationships between the
+different types of identifiers (unless it's already there and I missed
+it). As one specific example, in the Authorization.html doc it says,
+"Principal identifiers are strings that are found transported in the
+subject field of an identifying certificate produced from the
+authentication system." Does that mean they can't be ePPN-type
+identifiers? What about X509SubjectNames in the saml:NameID (i.e., found
+in a SAML assertion rather than an X.509 certificate)?
+
+-----
+
+As I said on our call, I recommend Grouper
+(http://www.internet2.edu/grouper/) very highly, and I think we can
+learn from how LIGO is using Grouper with LDAP. It'd also be good to
+check with Ken Klingenstein about using COmanage
+(http://www.internet2.edu/comanage/) for user/group management. Scott
+Koranda is the Grouper expert on the LIGO project, so we might want to
+pick his brain at some point. He's working with the Internet2 folks on
+Shibboleth, Grouper, and COmanage for LIGO via an NSF award
+(http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1032468).
+
+Here are links to Scott's presentation's at last year's I2MMs:
+http://www.internet2.edu/presentations/spring10/20100428-ligo-koranda.pdf
+http://www.internet2.edu/presentations/fall10/20101104-idm-ligo-koranda.pdf
+
+-----
+
+End comments by J. Basney
+
+===============================
+

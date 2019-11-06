@@ -1,0 +1,124 @@
+NEON Data Services Working Group (DSWG) Meeting 1
+------------------------------------------------------------------------
+November 22, 2010 12:00 pm Pacific
+
+Participants
+---------------
+Jones, Peet, Hutchison, Schimel, Aulenbach, Ruhl, Vieglais, Gardiner, Palanisamy, Griffith, Burek, Parsons, Domenico, Habermann, Greenlee, Sangil, Guralnick, Erickson
+
+Notes
+--------
+
+Background discussion
+-----------------------------
+
+Schimel -- overview and status report on NEON
+
+    -- Vision of NEON: provide env inf on critical questions, in most usable possible way
+    -- sites selected for representativeness, applicability to grand challenge questions
+    -- flow from sensors, people, through qa/calibration, through publication to user communities
+    -- substantial number of data sets come from outside the observatory
+    -- user model: science/education/decision maker using NEON information as seamlessly as possible
+        -- data from PIs, or LTER, or federal Inv and monitoring programs
+    -- about 120 high-level data products in initial incarnation (539 variables)
+        -- annual summaries
+        -- through assimilation models that produce gridded products across entire nation
+    -- observatory is about information, and making that information usable
+    -- DSWG is at heart: standards for products, how to capture provenance, assess usability of data
+        -- goal to make data as interoperable as possible for 539 variables spanning atmosphere to genomics
+    -- what are the key standards, best practices
+    -- what are the early, mid, and late project implementation priorities
+    -- now NEON is looking to move from proposal phase (8000) pages to working with community to make operational decisions
+    
+    Questions:
+        Haberman: what is relation between 120 products and 539 variables
+            539 are the level 1 data variables
+            120 are the level 4 data products, assimilate the 539 variables
+        Mike: how many domains? RS to genomics? How many domains are we talking about
+            Schimel: less than a dozen, on the scale of 'atmospheric science'
+        Followup: how many schema are we dealiing with? 
+            Schimel: grist for the committee, but probably 4-6?
+    Jones: NEON familiar enough
+        Haberman: familiar enough to get started
+    
+    Griffith, Vieglais, Sangil 
+    
+    Scope of work discussion
+        -- review document on wiki
+        -- how extensive are the external data?
+            -- DEM, MODIS, 
+            -- need provenance and full attribution for those
+            -- about 40 data sets
+            -- mainly in category of land use
+        -- also products they want to interoperate with -- not a strong handle on what these are
+        
+        -- parsons: how related to LTER data?
+            -- schimel: 
+                1. NEON to LTER as a provider to LTER sites -- should be easy to use in the LTER context as possible
+                2. NEON data activities will continue several products started at LTER, complementarity
+                    -- most NEON data are 'observational', whereas a lot of LTER is on manipulative, process studies
+                    -- needs interoperability
+            
+        -- what are the high-priority target communities?
+            -- list isn't discrete
+            -- lots of communities at various levels of organization
+            -- disease and microbial ecology as partners, sometimes already part of LTER, others not
+            -- item for the group: what communities do we see as discrete and that should be addressed
+        -- could address it as different levels of interoperability
+            -- for some groups, metadata-only interoperability
+            -- for other key domains, deeper levels of integration
+            
+        -- parsons: also identify other community portals that would be relevant, and distribution mechanisms [not so much the portals as the protocols and metadata standards that different portals use. In other words let those portals that want the data or metadata come get it]
+
+        -- user communities: who prioritizes them?
+            -- schimel
+                -- first community is scientific research community
+                -- others, such as decision makers are 2nd, 3rd, or 4th, etc.
+                -- educators at a variaety of levels (further out on the scale)
+                -- committees advice on segments of research community would be most useful
+                -- don't necessarily focus on education targets, etc, yet in the priority list
+                    -- citizen science may be higher on the list
+        
+            -- does GIS provide a crosscut across community?
+                -- possibly, but there are other paradigms (e.g., bioinformatics, girdded modeling, assimilation modeling, process study investigators focused on time series) also should be considered
+                
+        -- pete Ruhl: who else should NEON interact with?  e.g., ESIP, 
+        
+Initial deliverables
+-----------------------
+    -- Target user communities
+        -- focus on researchers
+        -- what are their current practices, activities -- we should produce a synopsis/overview of the landscape
+        -- pick a few to understand in greater detail
+    -- Metadata standards
+    -- Data standards
+    -- Provenance approaches
+        -- persistence of availability of data sets
+        -- citability of data sets (getting e.g., a DOI)
+    -- Data distribution protocols
+        -- services that NEON should support (e.g., OGC, OPeNDAP, etc)
+    -- Data Portals and aggregators
+    -- Recommended partnerships and interactions (e.g., ESIP, others) for standards, etc. (in each of above sections)
+        -- leverage existing activities (e.g., DataONE work on data citation)
+    
+Meta-considerations re: deliverables recommendation
+    -- need to highlight tradeoffs in above to help NEON with decisionmaking
+
+    -- Sangil: would like to see biographies for the committee
+      -- Wiki section for "Why am I here"
+      
+    -- Sangil: has NEON started talking to target early data consumers-- what do they expect in terms of consuming data?  A process to evaluate current metadata & data standards on the light of consumer expectations.
+    
+Action items
+---------------
+* Jones: doodle for future meeting times (standard slot, 3rd week of each month)
+* Jones: load notes to wiki
+* Jones: enumerate deliverable items on wiki
+* Aulenbach: help work out connectivity issues for the wiki
+    -- contact Steve Aulenbach at NEON directly for your NEON DSWG wiki logon credentials 
+        -- 720.746.4855 
+        -- saulenbach@neoninc.org
+* All: review the deliverables and make expansions/comments in preparation for next meeing
+* All: review background data products for next meeting
+
+

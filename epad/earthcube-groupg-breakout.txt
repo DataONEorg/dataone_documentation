@@ -1,0 +1,22 @@
+Group G agreements on approach
+--------------------------------------------------
+
+1. Start with a collaboration MOU that identifies conceptual committement to a set of guiding principles
+    -- need to be defined, start from existing like DataONE Partnership agreement, Amazon framework example
+    -- principles like: commit to providing data through a particular set of web services
+
+2. Create a federated set of resources that agree to community-shared web service interfaces
+    -- e.g., DataONE web services, OGC web services, etc.
+    
+3. Ensure data resources have effective metadata for reuse and sharing
+
+4. Ensure some set of models relevant to the problem have sufficient metadata to allow them to be used in a larger workflow
+    -- e.g., service description for execution in wf engine
+    -- e.g.,  wrapper for local execution in wf engine
+
+5. Evaluate set of workflow engines that can be applied to the domain problem
+
+6. Generate requirements for next stage of integrative science 
+    -- e.g., new components, new engines, additional software needed
+
+

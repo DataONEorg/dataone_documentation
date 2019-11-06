@@ -1,0 +1,60 @@
+View Service plans
+==============
+
+MN View Service
+--------------------------
+GET /views
+[MNRead|CNRead].listViews() -> Types.ViewList
+
+Displays a list of usable themes for rendering science metadata content, 
+and marks the default theme. [Note: While this may be eventually a useful API call, 
+it is so far not prototyped, see https://projects.ecoinformatics.org/ecoinfo/issues/6029. 
+The returned ViewList type is undefined at the moment.]
+ * Punt on this until there is a schema change?
+
+GET /views/{theme}/{pid}
+[MNRead|CNRead].getView(theme, pid) -> Types.OctetStream
+
+Renders the science metadata document using the given named theme string. 
+If the theme string is not recognized, renders the science metadata using the default theme. 
+Note that the return type of Types.OctetStream requires that the consuming client has a priori knowledge of the theme being returned (like HTML).
+ * Response headers should include the correct mime-type of the resource
+
+
+CN View Service
+--------------------------
+Same API as MN View service.  Different behavior, in that the CN doesn't hold copies of data, and so should point at MNs and other nodes as identified by resolve for downloading data.
+ * Needs to be added to the CN stack once the APi is documented
+
+Issues
+-----------
+* Optional or required? Extended method. Optional.
+* Which Tier? Tier 1 pre-req.
+* Download linkages: how to best incorporate resolve()?
+    * On MN, link to local view/get services
+    * On CN, link files to resolve(), and if a Auth MN package service exits, link to that
+* How to use the view service URL in applications like MetacatUI
+
+XSLT stylesheets for views
+----------------------------------------
+ *  Transformations from heterogeneous metadata schemas
+   * {EML|FGDC|ISO|Dryad|etc} --> Common XML model --> Styled HTML by theme
+   * For DataONE, the Solr search schema is currently the Common Model (but not in XML), and of a subset of fields
+
+
+Data package service
+--------------------------------
+https://redmine.dataone.org/issues/4686
+* Data package service: Useful to have. Authentication support necessary. Possibilities:
+  * Server generated zip / bundle / bag (perhaps size limited)
+  * Proxy service for bag / zip generation
+  * Package description that is processed by a client app
+ * For now, the CN will not offer a full package download.
+ * If all components are available on a single MN, and the MN supports the package API (BagIt), the CN will render a direct link to the MN's package service with the pid to be packaged
+ * http://dataprotocols.org/data-packages/
+ * 
+Define as:
+GET /packages/{packageType}/{pid}
+MNRead.getPackage(pid, packageType) -> Types.OctetStream
+
+

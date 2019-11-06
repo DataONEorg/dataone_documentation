@@ -1,0 +1,77 @@
+USA-NPN (USA National Phenology Network) - DataONE Member Node kickoff meeting
+
+24 July 2013, 2pm EDT, 1pm CDT, noon MDT, 11am AZ/PDT, 10am AK
+
+        1.  Please join my meeting.
+        https://www1.gotomeeting.com/join/606200417
+ 
+        2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+        Dial +1 (805) 309-0010
+        Access Code: 606-200-417
+        Audio PIN: Shown after joining the meeting
+ 
+        Meeting ID: 606-200-417
+
+Attending:  John Cobb, Alyssa Rosemartin, Lee Marsh, Laura Moyers
+
+Regrets:  Bruce Wilson
+
+Redmine ticket: https://redmine.dataone.org/issues/3186
+
+Agenda:
+    Introductions
+        Laura -  MN coordinator for DataONE (UTK)
+        Alyssa - AD/IT coordinator for USA-NPN  (sit in Tuscon, AZ)
+        Lee - s/w developer for USA-NPN (sit in Tucson, AZ)
+        John - MN coordinator for DataONE (ORNL)
+        
+    Where we are now
+        Lee: went to DataONE workshop 9/2011, learned about s/w stack for metacat instance, etc.; things seem to be working well, but don't have an LDAP server set up yet (authentication service)
+        John: new version of metacat came online with ability to publish out of metacat an interface that will work with DataONE API
+        Lee: in 2011 it looked difficult but in the past couple weeks Lee was able to install and it worked very nicely
+        John: see IRC  http://irc.ecoinformatics.org/  
+        Lee: plan is to get an LDAP system installed  ?? do we need a CILogon to work with this??
+        John: needs to be authentication between node and D1 CN, D1 issues an authentication ticket to recognize/validate MN
+        Discussion of tiers:
+       * Tier 1: read only  (NPN thinks this is where they wish to operate)
+       * Tier 2: authentication needed (needs sign-in of some sort - see CILogon)  D1 created an interoperable authentication/logon mechanism
+       * Tier 3: willing to allow replication of my data at another MN
+       * Tier 4: willing to host replication from other MNs
+        Lee: when was decision made to go from original design to tiered concept
+        John: it's been a long time, version 1 of DataONE (released last July 2012) has the tiered concept
+        Alyssa: we think we want to operate at tier 1
+        John: another question - what data do you want to publish? 
+       * decide what data to publish
+       * create persistent identifiers (DOIs)
+       * metadata
+        Alyssa: we think we'll have one dataset that's historic wildlife data, others by year
+        Lee: DOIs, option to use generated numbers as long as they're unique
+        John: yes, we're trying to create long-term archives with immutable, persistent identifiers
+        Lee: I think there are organizations that create PIDs, Bruce knows about this
+        Alyssa: we'll work on PIDs/DOIs with Bruce
+        Lee: "live" data with data submitted by citizen scientists (i.e. Nature's Notebook)
+        John: decide when to publish the data - yearly? monthly?  and how to package it.   DataONE recognizes this issue in more than one MNs operations
+        
+        John: with streaming data or frequently updated data, can have the "latest and greatest" data with a given DOI, recognizing that the contents of that DOI
+        
+        We looked at the flowchart:
+        http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html
+        
+        We're in the Develop phase: establish a test system
+        John: <a good discussion of the testing process>  first test phase is more of a "are you alive?" (heartbeat), next steps look at data/metadata, etc.; then staging (make sure everything is "pretty" before we go production);  
+        ACTION:  John to send "welcome" email to Alyssa, Lee
+                
+        Laura:  it appears that we are at the "establish a test system" step
+        
+        Alyssa: due date (as in redmine) of 10/31/13 seems reasonable 
+        
+        John: probably need to set a follow-up meeting to ensure that Lee has everything he needs to move forward
+        ACTION:  Laura to check Dave and/or Ben for availability
+        
+    Next steps
+        ACTION:  John to send "welcome" email to Alyssa, Lee: Complete
+        ACTION:  Laura to check Dave and/or Ben for availability for follow-up meeting
+        Laura to send MNF info to Alyssa and Lee
+        Laura to send summary email related to "welcome" letter to all involved
+

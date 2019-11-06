@@ -1,0 +1,292 @@
+Notes for Development Block 2.4
+===============================
+
+Previous epad notes: http://epad.dataone.org/2014-14-Block-2-3
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+Sprint Planning
+~~~~~~~~~~~~~~~
+ * CN Consistency wrap-up (running)
+   * http://epad.dataone.org/cn-audit-systemmetadata-design
+ * Certificate replacement on production
+ * Operating System Upgrades ( https://redmine.dataone.org/issues/4466 )
+ * CCI 1.2.6 Release ( https://redmine.dataone.org/issues/4461 )
+   * d1_common_java release
+     * https://redmine.dataone.org/issues/4474
+   * d1_libclient_java release
+     * https://redmine.dataone.org/issues/4475
+ * Dashboard Final wrap-up, Release 1.0 on the website
+ * Spatial indexing support in search and log aggregation
+ * Automated MN ticketing in redmine
+
+
+Skye
+------
+ * 20140414
+   * Production index rebuild post op
+     * pushing through some docs that did not process due to ucsb issues
+     * investigating current counts for correctness
+     * pushing in some ORE that did not index initially - referenced items missing at initial index time
+   * D1 Dashboard UI refinement
+     * 'final'? review tuesday.
+     * Waiting for MN approval for final release.
+   * CCI 1.2.6
+     * Need to push index, mercury changes to branch
+     * Enter and fix a couple index bugs (removing archived invalid ORE docs)
+ * 20140416
+   * D1 Dashboard UI review
+     * Small mostly text/language tweaks
+     * Need to automate some parts for easy updates by amber or dataone.org maintenance.
+     * Test in IE Explorer
+   * Indexing
+     * HZ Identifier Set giving odd results causing items to be missed in indexing
+       * Monday last week - size was 461391
+       * Yesterday        - size was 462671
+       * /object          - size is  462932
+       * New Index: https://cn-unm-1.dataone.org/cn/v1/query/solr/?rows=0&facet=true&facet.field=datasource&facet.field=formatType
+       * VS
+       * Prev Index: https://cn-orc-1.dataone.org/cn/v1/query/solr/?rows=0&facet=true&facet.field=datasource&facet.field=formatType
+   * Indexing
+     * Unit tests are breaking
+
+
+Rob
+---
+ * 20140425
+   * d1_integration tests - refactoring code 
+     * 
+ * 20140423
+   * Working on improvements to d1_integration tier testing as it relates to testing Metacat (a tier3 node) for the OS upgrades.  
+     * will need to add option to specify the testing environment the node is registered to in order to both provide the MN the right CN client certificate, and also to give better test results for methods that will differ in their response depending on their tier.
+ * 20140418
+   * CCI 1.2.6 release - branches created, and build artifacts
+     * 
+ * 20140416
+ * CCI 1.2.6 release - minor complexities related to releasing tags:
+   * incomplete unit tests for new features / classes:
+     * completed unit tests for Comparators, made conformant to the contract and recommendations for behavior
+     * created testcase for ChecksumUtil class
+   * d1_test_resources in trunk introduced java classes related to features in CN components unrelated to this release, so I'm merging a resource from trunk to latest branch to avoid creating a new branch for d1_test_resources, and having to review new java code.
+ * Member Node integration tests:
+   * helping Jing test mn-demo-11, uncovered shortcomings with testing related to using the right CN client certificate for the node. 
+ * Member Node support - need to follow up with them.
+ * 20140414
+   * CCI 1.2.6 release
+     * d1_common_java: waiting for testing of DateTimeMarshaller timezone pattern to finish
+     * d1_libclient_java: will refactor the systemmetadata comparator names to use full datatype names
+     * will make branches of each for testing by CN components. 
+
+Jing
+ * 20140425
+   * Upgrade cn-dev-orc-1 to Ubuntu 12.04.
+   * Branched the cn-build-out and started to modify dependencies. I need to talk with rob how to build the debian packages.
+   * Tested the morpho 1.10.2 installer
+ * 20140423
+   * Work with morpho for minor release
+   * Worked with ecogrid and kepler
+   * Talk with Chris about the cn upgrade
+   * MN description change
+ * 20140421
+   * Worked with Rob about the web tester.
+   * Install windows 7 and developement tool as a VM. Use that t test morpho
+   * Worked on my mac machine since macports was broken.
+ * 20140418
+   * Fixed a solr index issue in mn node.
+   * Upgraded Metacats to 2.4.1 on mn-stage-ucsb-1,2 and 3.
+   * The mn-deom-11 was jointed to the stage env
+   * Run web tester against Metacats which are ubuntu 10.04 and 12.04. They have the almost identical failure.
+ * 20140416
+   * Worked the mn web tester with Rob
+   * Wrote a story for cn update https://redmine.dataone.org/issues/4708
+   * Tested ecogrid service on Ubuntu 12.04, tomcat 7 and java 7.
+   * Upgrade a member node to Ubuntu 14.04
+ * 
+ * 20140414
+   * Started the web tester.
+   * Started to work on CN test on Ubuntu
+
+
+David
+-----
+ * 20140425
+   * ORC hosts are still receiving VMware patches and Heartbleed fixes
+   * Once this is complete, load balancing hosts, then begin work on Splunk deployment server
+ * 20140423
+   * Migration work on ORC VMs
+     * C is being moved to a new spot in dataone orc vm racks right now
+     * looking at a possible upgrade to VMware 5.5 on our hosts, so may be temporarily shuffling the VM deck further
+     * Seeing some minor load balance issues, will work on balancing loads after VMware upgrades complete
+ * 20140421
+   * Prep work on VM hosts for upcoming ORC hardware upgrades
+     * need to remove all VMs from one host in preparation for a hardware move and load balance amongst remaining 3 hosts
+   * Splunk:
+     * deployment server buildout
+     * upgrades to some other components
+ * 20140414
+   * Generated new Splunk SSL certs, rolled out across Splunk instances (indexer, site forwarders, universal forwarders on CNs/MNs)
+
+
+Chris
+-----
+ * 20140425
+   * Troubleshoot CN auth issues on cn-unm-1
+     * We had duplicate certs hashed - fixed.
+     * See https://redmine.dataone.org/issues/5137
+     * assigned https://redmine.dataone.org/issues/5132 by robert
+   * DNS changes on all VMs
+     * See https://redmine.dataone.org/issues/5136
+   * Metadata creation for DataONE view service w/ Isis and Chris A.
+   * TODO: continue troubleshooting sync issues for EDORA and DRYAD MNs
+   * TODO: revoke old certificates
+ * 20140423
+   * Packaging work with USANPN content
+   * Rebuilding cn-stage-orc-2
+   * talked through #4708 with Jing
+   * mn-*-1 cert troubleshooting
+ * 20140421
+   * Emails to TFRI and CLOEBIRD re: cert installs
+   * Cert generation
+     * Installed client certs on the production CNs
+ * 20140418
+   * Continued certificate swapping work
+   * continued MN support: USANPN, GLEON, EDORA, DRYAD
+ * 20140416
+   * Certificate generation for Heartbleed response
+   * Working on the CLOAKN to CLOEBIRD nodeid transition
+   * Continued work on USANPN objects
+   * Dashboard review
+   * TODO: mn-demo-11 certificate
+   * TODO: Review ticket #4708
+   * TODO: add metrics docs into the metrics epad
+ * 20140414
+   * MN support and theming MN setup
+     * Figured out SSL issue in creating content on database-unm-1
+     * Apple changed the curl binary on Mavericks, doesn't honor -E and --cacert flags
+
+
+Robert
+------
+ * Looking at hzIdentifiers, http://epad.dataone.org/cn-audit-systemmetadata-design, line 875
+ * http://epad.dataone.org/cloakn-to-cloebird
+ * fixed cloebird, skye reindexed
+ * Chris has given the green light to start the postTidy process. Will need Dave to help with RR.
+ * postTidy has run into several issues, wrote some additional code to handle issues
+
+Peter
+-----
+ * added geohash support to object index via d1_cn_index_processor
+   * Lauren will start testing the use of geohashes in MetacatUI for spatial search and for mapping coverage counts
+ * testing log aggregation changes on cn-stage-orc-2
+ * 20140423
+   * switched to cn-dev-ucsb-1 for testing
+ * 20140425
+   * done with development for adding fields to log aggregation solr index
+   * almost done with updating log aggregation docs
+
+Topics
+~~~~~~
+d1_common_java and d1_libclient_java CN testing tickets
+ * Comparators need to be fixed (equals needs to be implemented correctly) - not an issue.  
+ * 
+
+hzIdentifiers set in production is rising in count
+ * listObjects() shows a greater number than the hzIdentifiers set
+   * Robert will be running a repair that will show what pids aren't in the hzIdentifiers set
+   * Check the default ISet behavior WRT evictions
+
+Setting up CN testing
+ * discuss hzProcess spin up
+
+-----------------------------------------
+Log Download/Read Stats:
+
+Totals log events / all types:
+UCSB : 8292349
+ORC  : 9024904
+UNM  : 8446041
+
+Total Reads after 2012-06-01:
+UCSB : 1923647
+ORC  : 2427288
+UNM  : 1916534
+
+Total Reads after 2012-06-01 from each CN (using ORC log as source):
+UCSB :         17
+old UCSB IP : 200763
+ORC  :      80560 
+UNM  :      34077
+---------------
+      314654
+
+ORC total reads after 2012-06-01 minus reads from 3 CNs:
+2112634
+
+Reads after 2012-06-01 using each MN /mn/log/ 
+ESA      :    6083
+KNB      : 4345372 (break down by IP using CN log events)
+LTER     : 1016389
+CDL      :   30711
+PISCO    : 1060805
+ONESHARE :     280
+GOA      :   10633
+KUBI     :    2885
+DRYAD    :       0
+eBird    :     338
+-------------------
+           6473496
+
+MN reads after 2012-06-01 minus CN reads:
+6158842
+
+TFRI     :   cert error -- curl: (35) error:14077458:SSL routines:SSL23_GET_SERVER_HELLO:reason(1112)
+USANPN   :   cert error -- curl: (60) SSL certificate problem, verify that the CA cert is OK
+SEAD     :   ignores request params
+SANPARKS :   ssl error
+ORNLDAAC :   ignores request params
+USGSCSAS :   not working
+KUBI     :   curl: (35) error:14094418:SSL routines:SSL3_READ_BYTES:tlsv1 alert unknown ca
+
+
+From the KNB Metacat db:
+knb=# select ip_address, count(event) as cnt from access_log  group by ip_address, event order by cnt desc limit 10;
+   ip_address   |   cnt   
+----------------+---------
+ 128.111.220.51 | 4516880
+ 128.111.84.5   |  876901
+ 128.111.220.17 |  243439
+ 128.111.220.54 |  157336
+ 67.195.111.36  |   74374
+ 128.111.242.54 |   57444
+ 66.249.73.198  |   55009
+ 160.36.13.150  |   51113
+ 129.24.124.215 |   32313
+ 128.111.36.80  |   31025
+
+
+--------------------------------------------
+Observed oddities with index/object/resolve
+
+Pids with no object path, no content on some servers, resolve
+https://cn-orc-1.dataone.org/cn/v1/query/solr/?q=id:knb-lter-hfr.127.9 (exists)
+https://cn.dataone.org/cn/v1/object/knb-lter-hfr.127.9 (does not exist)
+https://cn-unm-1.dataone.org/cn/v1/query/solr/?q=id:knb-lter-hfr.127.9 (does not exist)
+https://cn-unm-1.dataone.org/cn/v1/object/knb-lter-hfr.127.9 (exists)
+[ INFO] 2014-04-15 06:53:09,902 (IndexTaskProcessor:isObjectPathReady:250) Object path for pid: knb-lter-hfr.127.9 is not available.
+
+https://cn.dataone.org/cn/v1/query/solr/?q=id:peggym.1108.100  (exists)
+https://cn.dataone.org/cn/v1/object/peggym.1108.100  (does not exist)
+https://cn-unm-1.dataone.org/cn/v1/query/solr/?q=id:peggym.1108.100 (does not exist)
+https://cn-unm-1.dataone.org/cn/v1/object/peggym.1108.100  (exists)
+[ INFO] 2014-04-15 06:53:12,514 (IndexTaskProcessor:isObjectPathReady:250) Object path for pid: peggym.1108.100 is not available.
+
+
+
+CN Upgrade dependency issues: Jing
+ * Solution: build the unstable channel on Jenkins, using 12.04, TC 7, Java 7, pull from the branch Jing created (vs trunk)
+
+MN.systemMetadataChanged() API documentation and impl discussion: Rob
+Testing MN.getLogRecords()
+
+
+

@@ -1,0 +1,67 @@
+DUG Call
+Thursday Mar 24th 2011
+
+Attending: Amber, Bill, Rebecca, Bob, Richard
+Regrets: Dave
+
+Conference Dial-in Number: (712) 775-7100
+Participant Access Code: 128383#
+
+Agenda:
+
+1) Meeting theme
+
+Dave V: The Principal Investigators Toolkit (ITK) is the primary mechanism through which users will interact with the DataONE infrastructure, and as such it is important that the components we are adding are relevant to the needs of the user community. The CCIT has previously identified a number of targets for inclusion into the ITK, though I do not believe that list has not been exposed to more detailed scrutiny of the broader community. It would be worthwhile having some sort of DUG review of the ITK components and perhaps adding / subtracting a few. Having a prioritization of the list would be worthwhile, and such prioritization should also consider the evolving capabilities of the DataONE infrastructure over time. Also important is to consider the resources that might be available to work on different pieces of the ITK.
+
+Bob S: The first meeting had a lot of focus on member nodes, so it would be useful to get perspectives from the community regarding the interfaces scientists and data managers would most frequently be using. It would give us the opportunity to do some demos, some usability testing and/or focus group-style prototype evaluation and requirements elicitation. Documenting users' ideas would be of great benefit to the CI side of the project. Another possible focus topic could be the semantic integration issues. Both ITK-as-interface to DataONE and semantic integration were recommended as areas of focus by the NSF review panel, and the DUG meeting is an opportunity to engage the community on both issues.
+
+RH: Allows us to consider not only the individual scientist but also the support provided by the institution - librarian, data manager
+
+BM: Presentation on status on DataONE, Q&A, etc
+
+Cross over with ESIP already exists with some members of the DUG. Ensure that invitees are also aware of ESIP meeting but need to check on permissions for attending ESIP.  Idea for dinner meeting is relationship between ESIP and DataONE.  Look into ESIP attendee list. 
+
+2) Stakeholders groups to invite
+
+RH: Domain scientists, librarians
+
+LT support for not restricting invitees to ESIP participants and using accomodation at a second hotel if neccesary.
+
+Data managers, development partners.  Follow up with CCIT about appropriate parties.
+Targeted list: ESIP list, development partners from CCIT, librarian community,
+
+3) Mechanism for recruitement
+
+RH: Solicit pairs of applications to support post-meeting communication within an institution
+From LT Call: Open call with apply to join is one possibility.  
+
+May be too early for an open application give public release isn't until end of 2012
+Data curation community funded by MLS (PhD candidates etc) might be worth inviting.  Hybrid of open call and self nomination.
+
+RH & BS to create list of groups / individuals to invite within 2 weeks.  AB to look into ESIP participants.
+ESIP contact for AEB: Karl Benedict (kbene@edac.unm.edu )
+
+4) Travel grants
+
+From LT Call: Don't have the funds for 60 people so may have to come up with travel grants for a set number of people.  Probably need to approach this on a case by case basis. Should there be an application process for travel grants?  Recommendation to do this as well as require a report afterwards.
+
+Concern regarding overhead of administering process.  Shouldn't be perceived as competitive.  "Support for travel may be available, please contact XYZ" to provide maximum flexibility to DataONE in being able to increase participation.  Emphasize 'partial' support.  Request 'feedback' as opposed to a formal report.  Or, get buy-in in another way.  Eg.  ask those that receive funds to participate in a focus group etc.
+
+
+
+To do:
+Create potential membership list -google docs 
+ * Bob & Richard - targeted list
+ * Amber from ESIP list
+ * Attendees from first DUG meeting
+Start to draft agenda
+ * Get time available from ESIP
+ * Intro to DataONE & status of DataONE in general and the ToolKit
+ * From DataONE perspective, what do we want to get from the meeting? - from Dave, a prioritization of the tools for the ToolKit
+ * Expose the group to the process of adding Member Nodes (~.5 - 1hr)
+ * Schedule another call for 4/25 @ 5pm EDT/3pm MDT/2pm PDT
+
+
+
+
+

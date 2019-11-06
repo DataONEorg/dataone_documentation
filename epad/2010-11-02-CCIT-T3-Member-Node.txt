@@ -1,0 +1,68 @@
+This pad is for Track 3, Discussion of Member Nodes and how to enable member node types for the public release.
+
+Current/Potential Member nodes:
+
+1) Generic Member Node (MN as file system)
+Generally divorced from the operation of the member node itself, looks at file system.
+
+MN-MN synchronization not working. Authentication and authorization not included.
+
+ * &&&&&  Need to resolve what the ORNL DAAC member node looks like for public  release.  What is the native implementation of the DataONE MN structure  that points to the DAAC.  This does tie into the Mercury MN concept and  may be a way to expose the data
+ * Relates  to the question for a MN that has anonymous ftp as the data  distribution mechanism and how it relates to the DataONE get function?  
+
+2) Metacat
+Provides proxy calls to the Metacat REST API
+
+ * Need  to get the Metacat 1.10 release out.  There are backdoor ways of  getting data into metacat that wouldn't result in the data getting out  into DataONE system metadata.  The Member node functionality is part of  the release.  &&&& Consider how this should be switched  or configurable in terms of how the Metacat MN implementation would be  configured.
+
+3) Fedora Commons
+Proof  of concept code.  Waltz has some notes (&&&&&) that  can be referenced here to stand up a more robust and well-designed  implementation, based on a direct proxy, for something of order 80  hours.  Based on the CN proxy stack.
+ * Applies to Data Conservancy interaction.  
+ * Would this be another read-only MN?  What's the level of support for the Create, Update, and Delete operations?  
+ * Assumes  a Dublin Core science metadata, but this should be configurable so that  a MN can expose a different metadata stream.  What do we consider as a  package?  View that each stream is it's own object, but how do we look  at other forms of packaging or collection management.  
+ * How to deal with the idea of multiple metadata streams.  ESDORA expects to publish as GCMD DIF, ECHO, ISO, DC.  
+ * Fedora  -- an object is a data stream.  A granule could have multiple different  data streams.  How are these exposed in DataONE.  Focus on the simple  case 
+ * &&&&&  Robert Waltz to flesh out and link to the documentation for the mapping  and the list of cases/data to be mapped.  
+
+4) Dryad native
+Read  interface available and working; some clarification needed.  Issues are  around some things that may need to be clarified in the architecture  docs.  
+
+Issues  to be resolved: How to handle the search filters for the list objects  MN call.  Search functionality is at the CN level (list objects).  
+
+ * What  does need to be done for something to communicate with a CN?  Is there a  checklist and is there a set of tests that can be run?  Do all  arguments have to be respected and all methods implemented?   &&&&& Need to write some type of a tool to exercise  the API's for a candidate MN, which would be useful as part of the  regression testing.  OAI testing suite does this sort of thing.  ?????  Do we have the concepts of levels of compliance?  Does this make sense?   Is there a minimum set of MN functionality that must be implemented and  some things that are optional or which can be implemented later to  become a MN with a few extra stars in the listing?  Look at Metacat  integration and unit testing and see how to handle the authentication  with this.  Chad has some thoughts around how this testing could be  built from the Metacat MN testing.  
+ * Compute  nodes would be a different level or type of node.  Not all nodes will  have compute capabilities or will have different types of compute  capabilities.  Probably do need to define node issues.  
+ * Some  nodes may not be able to accept replicas of information from other  places, so not testing those aspects of that sort of MN makes sense.  It  is still valuable to have a MN that will contribute data, even if that  node does not participate in the replication aspect of D1.  
+ * Log functionality -- Is this part of the current targeted deployment?  What needs to be returned from the /log calls?  
+ * Science  metadata -- GMN has the METS format metadata for Dryad.  Current Dryad  implementation uses something closer to the native format?  How do they  change this over and use a new metadata format in the system.  Need to  be able to construct the mapping (shredding) methodology.  Currently a  manual process (Robert W.)  XML  schema defined for the Dryad science metadata format? There *should* be  a schema available when the Dryad service becomes available. Process:  add schema to metacat, add schema to format registry, define the xpath  extraction rules for the mercury indexer.
+ * ????  When there are changes to the architecture, how do MN's get notified of  the changes, what's the period in which both formats are supported,  what's the process for migration of the member node?  Subject of  discussion.  Also need to be able to know what versions of MN are out  there, how long before the CN is able to deprecate and then drop for  some previous version of MN. The MN status query asks the question of  the MN for the version of the API that the MN asserts it's compliant  with.  &&&&& Need to add the information in the node  schema for the API version that the node assert compliance.  
+ * As  a related question, is there a sandbox CN that a MN can use for testing  of the implementation?  CCould this sandbox CN be an appliance to allow  for some internal testing?  Dave: Getting the testing functionality  working will help this a lot, so that a candidate MN or a developing MN  can run/request a full set of regression test. 
+ * Related  issue -- for the CN's, we need the ops release, the stable release, and  the tip release.  Testing can be done against each of these, depending  on the purposes.  
+ * &&&&&  Issue that Dryad doesn't version the science metadata.  Need to  determine how this is handled, and this may be a major issue for other  implementations that's not seen in an initial analysis of the mapping  between DataONE and a candidate member node stack.  
+
+5) Merritt (and related CDL efforts)
+How  would we make Merritt a MN (more an API mapping issue).  Merritt does  API and cmd line first; UI follows.  Should be able to do a mapping,  similar to above, mapping D1 CRUD REST API to the Merritt CRUD API.  Could be useful to look at how the mapping to Merritt is different from  the mapping to Fedora Commons.  What does this provide as a  generalization to how the D1 REST API maps generally?   &&&&& John Kunze and Dave Vieglais to follow-up on  this and see what the implementation looks like.  Use this to make an  assessment of the level of effort for implementing a Merritt MN.  
+
+6) Bioportal (ESSP)
+Idea  is that ontologies are a "data" item and that this could be a different  type of member node.  Simplifies (at least in the short term) that we  don't have to refactor the CN infrastructure.  Another exercise in REST  mapping.  What is the appropriate science metadata for an ontology.
+ (do we start at the root level of the Xml or do we subset the Xml ontology at narrower levels)
+
+7) MyExperiment
+Similar  to above, idea of a member node that primarily stores workflows.  Is a  workflow a data object (and how does this relate to the packaging). What  is the proper science metadata to describe a workflow?
+
+8) Mercury Native
+Requires  some extensions to Mercury (including Authentication) and asking the  question of whether partnering to other tools are more appropriate.   Mercury is mostly about metadata, assuming that the metadata has links  to the data itself, often in the form of an FTP link and/or other  service links.  
+
+
+Two questions that we need answers to for the public release:
+
+1) UIC example -- I want to participate and I want to provide services and resources to be a replicating MN
+
+2)  I have some data sitting out on a file system, how can I install some  software and be a MN (DSpace and Fedora are obvious thoughts).   Desirable having a worked example of how to publish data through a  greenfields MN implementation.  For someone who wants to be a services  MN, can we provide something like an appliance, with instructions on how  to configure this.  Another option is an RPM or a config/make/install  package (could be a deb package).  
+
+How to be a member node: deployment plan draft: https://repository.dataone.org/documents/Projects/cicore/MemberNodeDeploymentTemplate/html/index.html
+
+See also http://epad.dataone.org/you-want-to-be-a-member-node  
+
+Some  of the process of registration as a MN needs further defintion and  work, including some of the tests for validation of the MN  implementation.  
+
+

@@ -1,0 +1,57 @@
+ESIP Identifier Testbed
+-----------------------------------
+
+See: http://wiki.esipfed.org/index.php/Interagency_Data_Stewardship/Identifiers
+
+MODIS Data: http://dx.doi.org/10.5060/D4CC0XMZ
+
+Four types of IDs described:
+
+1. UniqueID
+   Pointer to given object regardless of location
+   
+2. Unique Location
+   Pointer to location of an object
+   
+3. Citable
+   Identifer that can be used in a citation
+   
+4. ScientificallyMeaningfulID
+    Pointer to a scientifically menaingfule data object, which is invariant even if the format or representation of the data set changes
+    
+
+Recommendations:
+-----------------------------
+   DOI for citation IDs
+   UUID for unique identifier
+   
+
+Naming granules that are part of larger packages
+-----------------------------------------------------------------------
+1) Unrelated IDs
+2) Name granules relative base id of containing package
+     doi:10.5060/D4RN35SD/baird1929090101
+     ----------------------------------/-------------------------
+     base identifier              / local identifier   
+3) Base id with partial redirect (using suffix path resolution)
+
+
+Resolution -- what does it mean?
+------------------------------------------------
+According to IDF: Resolve = redirect to landing page
+According to Apache: Redirect to resource, but any form based on content negotiation
+For DataONE: Resolve = find multiple locators for object bytes
+
+
+Questions
+---------------
+ * Persistence is a social or maintenance issue
+ * Example of using opaque IDs to ensure persistence (avoiding social stigmas)
+ * Role of signaling in persistence -- identifier schemes have different expectations of persistence
+     http URIs
+     doi URIs
+     UUID URIs
+* Issues with authority
+    * with DOIs, the naming authority can be changed on the resource owner
+
+

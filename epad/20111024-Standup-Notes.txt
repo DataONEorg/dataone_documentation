@@ -1,0 +1,75 @@
+2011-10-24
+
+Matt
+----
+ * Changed schema
+ * email is not in the node, context subject is (and is stable).  email can be looked up using identity manager
+ * Working on implementing Java JCS to enable caching in d1_libclient_java
+
+Roger
+-----
+ * Returned from vacation
+ * Will work on schema updates today in the python stack
+
+
+Rob
+---
+ * New laptop, dealing with getting Eclipse Indigo spun up under OSX Lion
+ * Will work on #1864
+ * Will work on moving d1_libclient_java forward with schema changes
+ * Will upgrade stack to 1.0.0
+ * Discussion on group management
+   * Mechanism for MNs to sync local identity dbs to D1 identity db
+   * Work needs to be done here, but needs to be thought through
+
+Chris & Nick
+------------
+ * Working on upgrading cn-dev-2 testing environment, just got sudo access
+ * Problems with LDAP initialization were solved, dc=dataone,dc=org tree is working
+ * Once set up and decoupled from cn-dev-1 ldap, will continue testing MN replication
+   * Metacat, REST-service, Process-daemon reinstalled
+   * Metacat not initializing correctly, tracking down hazelcast connections
+   * ReplicationManager not instantiating, again - hazelcast connections
+ * Will use demo1-4 as replication sources and targets
+ * Nick needs access to the demo machines, chris will send demo pw
+
+2011-10-25
+
+Robert
+------
+Change NodeRegistry API to include an email address of responsible party of the Node being created
+  - decide where this information will be stored (most like LDAP)
+  - decide how the email information will be accessed(???)
+  - added verified boolean to Person
+Modify d1_common_java to 1.0.0_shapshot level
+Modify all POMS to be 1.0.0_snapshot level
+Assist with replication tests
+Finish Packages for Mercury and Indexer
+- update Mercury installer package
+- Solr package should be added in cn-core
+- create Indexer package
+Write up story about decision regarding server client certs
+
+Roger 
+- update lib_common_python to match V1.0.0 schema, including unit tests
+- update lib_client_python to match changes to v1.0.0
+- correct issues recorded for GMN
+
+- I will be finishing up the schema 1.0.0 changes to the python stack today.
+- Q: Dave, do you know when you will be adding the serialVersion to the APIs?
+- Idea to discuss: Give serialVersion 0 a special meaning, which is to update the current sysmeta version, whatever version it is. Use case: When you want to create new access policy without regard to what it was before.
+
+
+Dave 
+- working through clean up of search index generation, coordinating with Giri and others for Mercury revisions
+- add API revisions for supporting sysmeta revision
+- need method to updateSystemMetadata on MNs, will be PUT /meta
+
+Rob
+- add task regarding formatid label, and update API documentation (#1893)
+- after common_java update to schema 1.0, update libclient_java to 1.0, also after Matt's libclient checkins
+- add InvalidToken to syncFailed method definition (d1_common_java) 
+- work on the big d1_integration "complete test suite" tasks
+
+
+

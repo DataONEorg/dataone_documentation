@@ -1,0 +1,42 @@
+Mercury UI Changes Discussion 10 Oct 2012
+=======================================
+
+Overview
+--------
+All of the changes that were discussed during the 2012 AHM have been captured on two etherpads.  The first deals with short-term usability issues identified by testing during the ESIP conference. The second addresses future UI ideas - more long-term functionalities and considerations for new DataONE tools, apps, etc
+
+1)https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/usability-subgroup-ahm-2012/DataONE%20UA%20Sub-group%20Break%20Tuesday%20Wednesday%20Sept%2018%2019%202012.txt/view
+
+2) http://epad.dataone.org/20120920-UI-Design
+
+The issues identified in (1) above are being converted into redmine tasks under the general story documented at https://redmine.dataone.org/issues/3318
+
+Notes on specific items during the meeting
+------------------------------------------
+ * Mapping changes
+   * create a ticket for ranjeet to swap out map UI to remove openlayers
+   * See the GMap-only example at http://mercury.ornl.gov/lpdaac/
+ * Sorting criteria
+   * remove the member node sorting - people didn't understand it
+ * Help changes and help text will be worked on by MaryBeth and Lisa after UI changes - create tickets for this too
+
+
+Process going forward
+---------------------
+ * Ranjeet, Skye, and Chris will enter redmine tickets on Wed 10/17/2012 at 1:30 ET
+ * Once all issues are entered into redmine, Ranjeet will look over the tasks and determine what he can work on given DataONE time allocation. Need to check with Bob Cook and Rebecca
+ * Ensure that Rebecca and Amber are consulted for UI changes
+ * Have UA team, Rebecca, Amber, etc. review mockups as well to be sure we captured the decisions in the AHM meetings
+   * Use a mockup when appropriate, some redmine tasks don't require it
+     * Basic search
+     * Advanced search
+     * Help pages
+   * Use mockup notes to link back to the redmine tasks
+
+ * Schedule ONEDrive and Morpho reviews with UA team once those products have a stable release
+   * shoot for late November/ early December
+
+HEY LOOK AT YOUR EMAIL - I KNEW I DID SOME SCREEN MOCKUPS at the MEETING - I sent them to you all...
+
+
+

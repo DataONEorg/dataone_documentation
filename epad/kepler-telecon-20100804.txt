@@ -1,0 +1,27 @@
+Kepler Leadership team call: 2010-08-04
+
+Participants
+-----------------
+Jones, Altintas, Ludaescher, McPhillips
+
+Discussion items
+--------------------------
+0. Kepler 2.1
+    -- https://kepler-project.org/developers/teams/build/kepler-2.1-release-roadmap
+    -- reviewed tasks for 2.1, no major changes other than the issue of time estimates
+    -- will try to get devs to enter time spent and time remaining on each task for 2.1
+
+1. Where do we tell other contributors to publish modules?
+    -- contributors in poland that have modules
+    -- some people might have their own license
+    -- see new feature request for 2.2
+
+2. Save workflows as kar vs. add module info in xml
+    -- save as kar is easiest course in GUI, save only saves as KAR
+    -- still need to be easy to use bare xml files, both at command line and GUI -- open menu allows opening both xml and kar files
+    -- commandline still supports both xml and kar
+    
+3. Kepler 2.2
+    -- should add new list of repositories for MM to search, or alternate way for MM to load 3rd party modules from outside Kepler repository (target Kepler 2.2)
+    -- rest of discussion on 2.2 delayed until next week
+

@@ -1,0 +1,128 @@
+Attendees: Amber, Carol, Bruce, Bertram, Bill, Dave, Rebecca, John Cobb, Hilmar, John Kunze, Deborah, Mike
+
+Regrets:  Trisha Cruse, Steve Kelling, Viv Hutchison, Bob Cook, Suzie Allard, Matt Jones
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+Call Information:
+
+Conference Call Number: (866) 804-6831
+This brings you to our conference call line - next press 1
+The conference number is: 20885#
+
+Will also use the epad: http://epad.dataone.org/20110916-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2011-09-16
+ 
+1.   CI Status (Vieglais)
+General goal of having CNs ready to go this week - this is looking good. Will start integration testing as soon as a couple of bugs are squashed.
+Couple of MNs are up and running and a couple of CNs will be up and running this afternoon.
+After integration testing will deploy the CN software stack on production servers.
+In good position for EIM meeting the end of the month.
+
+
+2.   Summary of Sustainability & Governance WG Meeting (Michener)
+Productive meeting in Oak Ridge this week:
+
+
+Major progress:
+
+a) Reviewed and revised Marketing Plan and associated action items and performance metrics
+
+b) Reviewed "Brochure approaches" 
+ Came up with a generic brochure - will turn drafts over to professional person to do
+ the final version.  In addition will need some FACT sheets that focussed on some of
+ our key stakeholders: scientists, librarians, and funders.  Made significant progress on
+ the MN Fact sheet at the meeting. The FACT sheets would accompany the generic
+ brochure.  
+ 
+c) Focus on activities of the public release
+Identified target venues for media (listserves, magazines, journals, organizations, and people)
+Have a student at UNM (Grace Lerner) who will be involved in this.
+Public release will be in December to accomplish milestones, however, the media release
+will be done January 17, 2012 to a broad community.  Draft media release will be done in advance, perhaps with coordination with NSF.
+
+Enumerated the products and services that will be available at public release. This will be reviewed at the face-to-face LT meeting.
+
+Cost tracking spreadsheet was put together - will be a key component of business plan
+
+d) Identified relevant sources of revenue for the business plan as well as the different methods (fee for service, membership fees, etc).  This will be put into a document for review by LT, EAB and the DUG down the road.
+
+e) Spend time developing draft agendas for LT, AHM and the EAB meetings (next agenda topic)
+
+f) Thought about the membership of the WG - small group right now so group endorsed the idea of bringing in MacKenzie Smith (MIT/Berkeley - DSpace) and John Cobb (technical expertise).
+
+g) Coming up with WG estimation (+ Bruce Wilson) of key deliverables for 2012, 2013, and 
+2014 (remainder of the grant). Again, this will be reviewed at the face to face meeting in October.
+
+h) Also worked on names for services with input from technical team.  Don't want to disenfranchise developers of existing tools so taking a lead from  CDL/UC3, for example adds a prefix to an existing tool name.  So for the search interface -
+ONEMercury (where the ONE is our logo with the globe), ONEDrive
+This would be viable way of naming the tools and services without losing the history of
+the development effort.
+
+All in all, an extremely productive meeting!
+
+3.   Agendas for LT meeting at AHM, AHM, EAB (Michener/Koskela)
+ * https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/2011_0913_oak_ridge/2011Oct17_LT_Agenda_v2.docx
+
+ * https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/2011_0913_oak_ridge/AHM_AGENDA_2011Oct18-20_ver2.docx
+
+Time for WG reports - lightning round for WGs to do updates after breakfast on Wednesday - 8:00 - 8:30
+Need to think through the mechanism for the lightning round
+Also need the agendas from all the WGs to be included in the AHM agenda
+
+Or Dave and Amber doing CI and CE WG summaries on Tuesday morning
+(more in favor of the previous suggestion)
+
+? is there any option for remote call in? for leadership meeting?
+Possibility of Skype but does depend on how well the network is working -
+
+ * https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/2011_0913_oak_ridge/EAB_AGENDA_2011Nov10_v2.docx
+Amber: I'd like to call in remotely for that part (and perhaps other parts e.g. the website) - whether Stephanie is able to lead of not.  Also, can we add an update on the DMPTool to the CEO list?
+
+4. Report back on proposed PPSR co-lead Andrea Wiggins
+
+5.   Around the Room
+
+Carol: ACRL (academic libraries division of ALA) will distribute the academic libraries survey in the next couple weeks. It will include a request to also distribute the librarians survey. Federal libraries and librarians surveys are out now and data managers now ready.
+
+Amber: Attended S&G remotely this week, worked on slide development for SC11, building database of editing/writing needs for new website (to be sent out early next week), confirmed DataONE booth rental at ESA 2012 in Portland, Orgeon Aug 5-10th. Exploring plone photo album capabilities based on charge from S&G to create an image library of DataONE generated and used images. Preparing for EIM.
+
+Bruce: Attended parts of S&G this week.  Some work on data packaging and an OAI-ORE envelope for an ORNL DAAC dataset.  The idea is to come up with at least one well-annotated OAI-ORE envelope that demonstrates and comments on the packaging for a moderately complex data set.  This one has the same data with three different representations (ESRI Shapefile, ESRI interchange, and CSV), as well as a couple of companion files (additional documenatation), and the science metadata in two different formats.  Will be working next week to get the operating system install and other next steps for the ORC hardware.  I will also be on vacation Thursday and Friday next week, out of general contact.  
+
+Bill: Call with Jennifer Schopf at NSF who is now transitioning to EarthCube.  She would like us to send in our statements of interest on the web site ASAP as invites will be decided sooner rather than later.
+are those individual statements of interest or is there an idea to do any jointly?
+EC webstite now up at <http://earthcube.ning.com/>
+Almadena Chtchelkanova?
+
+
+
+Bertram: ProvenanceWG invitations about to be sent out. New members to represent expanded scope (Galaxy, R in addition to traditional scientific workflow systems: Kepler, Taverna, Vistrails...). Shift at the AHM will be from D-OPM model to infrastructure and tools.
+Also, I got a small NSF-IIS proposal funded (2 grad students) to work on "EULER: A Logic-Based, Provenance-Aware System for Merging Scientific Data under Context and Classification Constraints".
+Finally: ProvWG needs to connect with "DataCite" folks and other "data identification gurus" (John, Dave, ...) as this will be important for our D-OPM model.
+
+John K:  On track for CDL MN rollout. NCAR signed on as an institutional EZID customer.
+
+Deborah: News:  Giving a keynote at the Square Kilometer Array meeting in Wellington NZ next week (will miss next week and following week calls).  Will be at EIM day 1 Sept 28 (only) – a few working group members there.  1/3 of wg at linked science and iswc the week after all hands.  Have one candidate for postdoc – could use more.   
+I am the PI on the newly award IARPA FUSE for RPI – Foresight and Understanding on Scientific Exploitation.  Will be responsible for provenance and explanation.
+Requests/Questions: Need questions answered from last week submission to Rebecca, Bill. Is there a prov wg member on the W3C standards group? 
+Bertram: Yes, Paolo Missier is co-lead of ProvWG and he's on the W3C Provenance group as well.
+ (I am working on the formal model subgroup but not on the overall calls).  Is there any plan for D1 at AGU?  Questions from last week unanswered: 
+  Our working group had decided at our meeting in July that since we had 2 f2f meetings this year and one was recent and since we did not expect to have the post doc on board in oct, we would not do a f2f in oct at the all hands.  If however we could get a subset to come to the all hands meeting, would they receive their honorariums and travel and lodging support given that 2 f2f meetings have already happened this year? And does it make a difference if they did not attend one?  (for example, I attended the first f2f remotely and did not receive either an honorarium or travel and living support for meeting 1). 
+ And if people came for just 2 days, is there a preferred 2 days (other than Monday).
+ Bertram: According to agenda, main WG days are Wednesday and Thursday
+note - I teach on mondays and since I have already had to cancel or cover or reschedule 5 of the 14 weeks, i can not miss any more so i can not join the leaders meeting on monday.
+if it is other than 1-4 on monday eastern time, i could call in if that helped.
+Additionally,  I will be at day one (9/28) of the EIM meeting in Santa Barbara – are there opportunistic meetings that we should try to have on wed lunch?
+and finally, is there any movement on homework or a white paper start for earth cube?  (is there any plan to do any kind of joint statement of interest or are they all individual?)
+
+great on dinner - i could do tuesday or an early dinner on wed (but leave wed night at 7:30)
+
+John Cobb: Nothing to add
+
+
+Rebecca: nothing other than please register for AHM if you haven't 
+
+

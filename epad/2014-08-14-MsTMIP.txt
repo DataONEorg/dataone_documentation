@@ -1,0 +1,80 @@
+ August 14, 2014 Teleconference
+ Provenance and Semantics Discussion with MsMTIP Team
+ 
+Debbie Huntzinger, Christopher Schwalm, Josh Fisher, Steve Aulenbach, Yuanyuan Fang, Bertram Ludaescher, Paolo Missier, Dave Vieglais, Matt Jones, Chris Jones, Dan Ricciuto, Xixi Luo, Deborah McGuinness, Yaxing Wei, Santonu Goswami, Ben Leinfelder
+
+not available:  Mark Schildhauer
+ 
+Agenda
+ 
+1.   Status:  Bob
+    released MsMTIP model output:  
+    
+Data repository:
+http://nacp.ornl.gov/mstmipdata/
+           
+2.  Semantics:  Yaxing and Christopher
+ 
+Required variables
+http://nacp.ornl.gov/MsTMIP_variables.shtml
+ 
+Harmonize data files
+mapping showing relationship between the provided variables and the requested / required data file
+            https://docs.google.com/spreadsheets/d/17YAXpj1gu0g8Wi2SyNu90bUgy9OFALLQMlnK9DmE-BI/edit#gid=0
+
+Use Cases:
+
+A. Given a concept defined in an ontology, identify datasets/granules that contain variables that match that concept.
+    -- exact match?
+    -- partial match?
+    -- goal is for people unfamilair with MSTMIP to locate measurements from a larger corpus of DataONE data that has overlapping but not exactly the same types of data
+    I would like to see two grounded examples,  so perhaps measurement xx - fill in the xx, find granule yy  (and then it would be nice to know why dataset yy might be hard today to find)
+
+B. Given a variable that appears in a granule, find other datasets that have the same granule as defined in a conceptual sense by alignment with ontologies
+
+C. Classify model output variables according to the models (i.e, their embedded assumptions on real-world processes) used to produce them, and be able to differentiate the structural characteristics of the models used to output the variables (e.g., which components of NEE constitute any particular model output)
+
+Deborah -- also need driving evaluation questions to determine if use cases are met
+ 
+Clarification about some concepts
+- data set and granule: In the MsTMIP, each variable produced in a simulation by a model is put into one netCDF file. We call it a granule. A data set is a set of granules. We call the whole MsTMIP output data repository a data set.
+- simulations: MsTMIP defined 5 global simulations (RG1, BG1, SG1, SG2, and SG3). These simulations are different configurations of model runs. For example, BG1 needs a changing N-deposition input and SG3 uses a constant N-deposition input. See http://nacp.ornl.gov/MsTMIP_simulations.shtml for details.
+Open question: can we characterize MsTMIP simulations and simulations defined by other MIPs so that their definitions can be represented in a consistent framework?
+
+D.  Looking for data that can be used to address the question:  How would or did Above-ground-biomass change in the period 1950s to 1990s due to changes in relation to environmental drivers (N-deposition, fires, land use change)?
+    -- Slightly less ambitious: Which data sets have a measure of Above-ground biomass change along with one of several drivers (N-deposition, fires, land use change)?
+    Put this question in different scopes, it can be very different.
+   
+   
+3.  Provenance
+
+Types of uses cases related to provenance (maybe next call?) 
+-- "outward facing": how do I document (e.g. in my papers, or data products), what I did?
+=> show data lineage, workflow provenance etc.
+-- "inward facing": I can't figure out what combination of inputs & params I used to generate this plot!@^%$  Help!
+=> organize my "project histories"
+
+Other opportunities: provenance/history can refine the semantics of a term: e.g., the "NEE that was produced according to workflow W1", ... 
+
+Based on analysis of model outputs
+    
+example analysis of MsMTIP model output (N.B., albeit with an earlier version):
+
+Huntzinger,  D. N. et al., The North American Carbon Program Multi-scale synthesis  and Terrestrial Model Intercomparison Project - Part 1: Overview and  experimental design, Geosci. Model Dev. Discuss., 6, 3977-4008          doi: 10.5194/gmd-6-2121-2013
+http://dx.doi.org/10.5194/gmd-6-2121-2013    see Fig 5 and Fig. 6
+
+Zscheischler et. al, 2014  Impact of Large-Scale Climate Extremes on Biospheric Carbon Fluxes: An Intercomparison Based on MsTMIP Data. Global Biogeochemical Cycles   28, 585-600.  doi: 10.1002/2014GB004826. 
+http://dx.doi.org/10.1002/2014GB004826
+
+
+Misc Notes:
+Email from Deborah:
+Xixi has made an attempt to map the 45 variables in a provided spreadsheet. Someone with domain knowledge will need to check it
+I think we need to have some driving evaluation questions that for us exercise the semantics and for Bertram exercise the provenance. Do we have those?
+Thx
+
+
+Goal: 
+To have well elaborated use case (ideally to cover both Semantics and Provenance) before the coming AHM. 
+
+

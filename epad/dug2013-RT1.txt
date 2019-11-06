@@ -1,0 +1,139 @@
+DataONE Users Group
+Jul 7th - 8th 2013
+Chapel Hill, NC
+
+Roundtable 1: Data Management (Operational)
+
+Participants: Sherry Lake, Andrew Sallans, Amber Budden, Matt Jones, Benjamin Branch, Regan Moore, Deborah Drucker, Myrica McCune, Dan Phipps, Bob Sandusky, Laura Moyers, Michelle Hayslett, Barrie Hayes, Felimon Gayanilo, David LeBauer, Ward Fleri, Vida Djaghouri, Thu-Mai Christian, Hilary Davis, Danianne Mizzy
+
+Talking points / Guiding Questions
+ * What are the main challenges?
+ * What solutions currently exist?
+ * What contribution can / should DataONE provide in this landscape?  How can that be best achieved?
+
+Main Challenges
+ * Time (available to researchers)
+ * Short-term and long-term goals
+ * Storage
+   * inadequate amounts
+   * with permissions
+   * with access fo rmultiple institutions
+   * cloud problematic for state institutions
+   * policies
+ * Adoption/prioritization
+   * DM buy-in
+ * Policy compliance
+ * Data quality and assurance (QA/QC)
+ * Lack of expertise
+   * researchers
+ * Standardization versus customization
+   * data formats
+   * data delivery
+ * Ethical and privacy issues
+   * Issues with the privacy policy changing in middle of the "game"
+ * Data rescue (for orphaned data)
+ * Collaboration
+   * Issues with tenure and promotion conflicts
+ * Data "ownership"
+   * Responsibility for managing data
+   * Chain of custody (e.g., students need to hand off data)
+ * Regulation
+ * Dark archives: who curates data that is no longer 'claimed'
+ * Intellectual property 
+   * International differences in laws regarding data
+   * Commercial data
+ * Ongoing tasks
+   * During project execution
+     * versioning
+   * After handoff to a repository
+     * e.g., media migration, format migration, etc.
+ * Risk management
+   * Manage data as an asset of an institution
+ * Geospatial issues
+   * Re-engineering of data, modeling of data
+ * Data collection/acquisition
+   * Sensor software stacks
+   * Proprietary technologies
+   * Heterogeneity of formats, schemas, etc.
+ * Lack of data interoperability
+ * Communications issues
+   * Between libraries and researchers
+ * Metadata
+   * Conflict of time interests between producers and consumers
+ * Money (or lack thereof)
+
+Solutions
+ * Education
+   * best practices
+   * think ahead to when you will be a data consumer (what will you need)
+   * think ahead to where you will deposit your data
+ * Automate systems
+   * Automatic metadata creation
+   * Makes it more efficient, reduces time conflicts
+   * Embed best practice in workflow
+   * Have instruments automatically produce metadata in data streams
+   * Use workflow software (e.g., Taverna Workbench, Kepler, etc.) for automation
+ * Create {Funder/Journal/Student} Mandates for data/metadata provision
+   * Increases participation
+   * Requires agreement on best practices that are mandated
+ * Create Best practices
+   * Vary with domain
+ * Use collaboration software (e.g., HubZero)
+   * Can help in embedding standards and best practices in collaboration environments
+ * Break down institutional walls to collaboration
+   * Align research agendas and institutional agendas
+ * Create clear institutional policies
+   * Inform institutions of the need for clear policies
+ * Shared data sharing and authorship policies for collaborators
+ * DM Operational plan which is more detailed than the two-pager in the proposal
+ * Work with data sharing "champions"
+ * Collection building software
+   * DSpace, Fedora, iRods, Metacat, GMN, DataVerse, Omeka, etc.
+ * Create interoperability among repository platforms
+   * iRods
+ * Include funds for DM in grant budgets
+   * Also focus on mechanisms to reduce costs
+ * Incentives for (better) data management
+   * Subsidized storage for good behavior
+ * Evaluation and assessment
+   * Which projects are doing "good" data management
+
+DataONE contributions
+ * Money?
+ * Building best practices and training resources
+ * ** Exemplar cases/case studies of projects doing DM well (and poorly, yikes!)
+   * Show impact that it has
+   * e.g., DataONE "Data stories" showing impact
+   * Ability for commentary on the case studies/forum
+   * * Show code and data (extracts) as part of case studies
+ * * Work on shared investigator tools (ITK)
+   * Can produce good practice
+   * Can produce good metadata
+   * Tools are the hooks between researchers and DM practice
+ * Reach out to private groups like companies
+ * Cyberinfrastructure for interoperability among "MN"s
+   * MN connections
+ * Advocacy
+   * Promotion of Investigator Toolkit tools
+   * Dissemination
+   * Policy issues
+   * National support for infrastructure
+   * Help community respond to requests for comments on national policies, etc.
+ * DataONE Case studies showing societal relevance of DM
+   * e.g., climate change, etc.
+   * showing broader impacts of data management
+ * Provide forum for shared solutons to DM issues
+   * Work with similar groups: Duraspace, Open Repositories, Digital Library Foundation (DLF)
+ * ** Provide Registry and evaluation of tools
+   * Provide ability for users to provide tool evaluations (+1, comments, reviews), searchable, dynamic
+     * Like a DataBib/R3Data for tools
+   * Libraries and research groups can use to evaluate approaches
+ * * Provide file formats and metadata standards recommendations
+   * Pros and cons of each
+   * Crowdsource feedback on these as well
+
+
+
+
+
+

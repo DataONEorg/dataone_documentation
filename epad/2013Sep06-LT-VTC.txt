@@ -1,0 +1,239 @@
+Attendees: Suzie, Rebecca, John Cobb, Amber, Carol, Steph, Bruce, Bob, Matt, Dave, Bertram, Viv
+
+Regrets: Bill
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Sep 6, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/428888657
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (805) 309-0033
+Access Code: 428-888-657
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 428-888-657
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+
+Dear Leadership Team,
+
+Here's a preview of upcoming agendas for the Leadership Team meetings - all are directed towards preparation for submitting the
+renewal proposal and planning for the All Hands Meeting in October.
+
+
+
+September 6: Community Education & Outreach plans for year 5 and Core for years 6-10 (Amber)
+September 13: CI WG plans for years 6-10 (Dave)
+September 20: Sustainability & Governance WG in years 6-10 (Trisha, Bill)
+
+Rebecca
+
+
+We will also use the epad: http://epad.dataone.org/2013Sep06-LT-VTC 
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-09-06
+
+1.  CI Report (Dave)
+Nothing significant to report - no outages; making progress on the CN stack release; will include some minor changes to indexing and laying the way for the dashboard; hope to show a quick demo of the dashboard at next week's meeting (will show content but not downloads because not implemented yet)
+Basic debugging and documentation going on now; will be a meeting of the MN documentation next week to make sure flow and content is there
+Plans for the CCIT meeting - will do one MN installation based on the documentation
+After the CN software updates and dashboard will move on to series identifiers and some significant changes to the CN stack
+From an operational point of view, everything working fine
+
+
+2.  Open Science Consortium to endorse their concept of open science badges (email from Bill)
+
+Concern whether this will do anything or not - 
+How much time is needed for this?
+
+Would open science badge apply to us?  Isn't this more for publications? We could be the respository but we're not in the publication business
+
+Where would the badges appear?  on the web site ? on search results?
+   "Badges are awarded to published reports of empirical research and can be part of the peer review process for publication or conducted post-publication."
+   
+ What is/are being badged - the paper or the data?  
+ 
+ How would DataONE promote the idea of badges?
+ 
+ Endorse what they are doing - a place for people to deposit data but we would not be awarding the badges
+ 
+ If have data in DataONE repository and access is open, 
+ 
+ Would like clarification of what it would mean to support badges.
+-------------- INVITE ----------------
+
+
+Amid  a variety of concerns about the quality of scientific practices, there  have been many calls for greater transparency and, simultaneously,  recognition that there are few incentives for individual researchers to  be open with their data, materials, or research process.  
+
+One initiative that has broad interest is  establishing a means to incentivize sharing of data, materials, and  research plans.  To facilitate this initiative, the Open Science  Collaboration (OSC) has developed badges and guidelines for journals to  award them for Open Data, Open Materials, and Preregistration.   The  badges and guidelines are linked here: http://bit.ly/17aJRrf
+
+This is an invitation for your organization to  consider endorsing the badges and guidelines.  Right now, the OSC is  accumulating a list of endorsements from organizations that are  stakeholders in the scientific process in some way.  
+
+Endorsement simply means that the organization  supports the use of the open practice badges described in the link  above.  It doesn't require organizations to use them in some way, though  this is welcome if relevant!  
+
+We expect to launch a publicity campaign on or soon after October 1st  for the badges.  If your organization is interested in endorsing them,  it would be great to have confirmation by then.  Of course, you will be  welcome to add your endorsement at any time.
+
+If you have any questions, comments or want to discuss the badges and possible endorsement, I would be happy to do so.  
+
+Finally,  the badges will have the greatest impact if there is broad, strong  support by organizations and journals upon official launch.  If you know  organizations or journals that might be interested in being in the  charter group of endorsements and adopters, please let me know or go  ahead and initiate conversation with them yourself to see if they are  interested.  
+
+Best wishes,
+
+Brian
+
+
+===================================================================
+3. COOPEUS - Meeting in Madrid (Sep 18-19)
+Meeting in Boulder (Sep 25-27)
+RK will attend the Boulder mtg
+
+
+4.  Community Education & Outreach plans for year 5 and Core for years 6-10 (Amber)
+
+CEO for remainder of Yr 5
+*1. Hands-on education components to accompany Education Modules
+ * Deliverable: Set of downloadable lesson materials (with accompanying data) for a 20-30 minute exercise associated with each of the current education modules (as appropriate)
+ * Impact: Increased utility of current materials; facilitate DM education in the community; supports DataONE workshop activities; Contributes to DataONE recognition as a leader in DM education
+ * Needs: 0.05 FTE AB, 0.1 FTE content creation/editing.
+ * Status: Activity focussed within CEE. 3 complete. Achievable across remaining WG meetings with editing / integration into public website.
+
+*2. Build up capability of DUG - work with group to become more sustainable
+ * Deliverable: Large DUG membership, engaged DUG community; core steering group; DUG driven events/activities.
+ * Impact: Build DataONE community and awareness; Build a DataONE advocate community; Increases reach of DataONE; Populates DataONE with potential contributors
+ * Needs: 0.1 FTE AB, 0.02 FTE RK, 0.01 FTE web, 0.05 FTE DUG Chairs, 0.05 FTE DUG Comm, $15k (presenters costs) and meeting costs
+ * Status: New DUG structure initiated at last meeting. Engagement of new Steering Committee high priority over Fall. Increased visibility required (see below for information).
+
+*3. Increasing the number of MN - making sure the materials are on the web site
+ * Deliverable: Revised MN section of website with increased MN branding (MN incentive), MN metrics (MN incentive, public information) and clear workflow materials for MN participation (public information, MN recruitment)
+ * Impact: Builds DataONE community; Emphasizes the collaborative network nature of DataONE; Information / Education resource for users of DataONE
+ * Needs: 0.5 FTE LM, 0.05 FTE AB, 0.02 FTE RK, ?? CCIT, 0.02 Web
+ * Status: MN dashboard beta design created. MN materials??
+
+4. Get screencasts online (demos, tutorials)
+ * Deliverable: Set of screencasts to provide users with instructions to help them use the DataONE tools successfully.  
+ * Impact: Increased use of DataONE; Community Education
+ * Needs: 0.1 FTE scripting, 0.1 FTE screencast generation, 0.01 FTE web.  $$ for screencast software (range 0 - $700)
+ * Status: One script written as test case for time requirements.  Process: identify the tools to be presented, seek expert advice on content, script the screencast, produce, post, review and update as needed.
+
+*5. Website - make sure all materials are on the website
+ * Deliverable: A user friendly, up-to-date, informative website providing access for services, data, tools, information about DataONE and educational resources.
+ * Impact: First point of contact with DataONE so high visibility resource, increases community awareness, provides community education, increases access to content, enhances collaboration and partnerships, supports multiple stakeholder communities, available to multiple domains ..
+ * Needs: 0.5 FTE Web Dev, 0.25 FTE AB, 0.02 FTE RK, $$ Backup/Hardware, $50k consultant
+ * Status: Ongoing maintenance / enhancement.  Consideration of restructure (Yr 5 or Yr 6-10?)
+
+*6. Summer Internship program
+ * Deliverable: 4 students annually to work on projects that align with DataONE WG activties and/or other DataONE programs focussing on DataONE holdings and tools
+ * Impact: Supports/improves tool development, brings content to DataONE, rpovides research support to DataONE WGs, reaches next gen scientists / users, builds awareness of DataONE
+ * Needs: 0.1 FTE Admin, 0.25 FTE mentoring, $10k/intern
+ * Status: Currently active 
+
+Is this an area that might be augmented with REU's? (jwc)
+
+7. Explore grant opportunities for educational projects
+No further info at this time.
+
+8. Complete assessment work
+Covered in Aug 23rd meeting by UA
+
+9. Sociocultural WG - complete work on policies and ask.dataone.org
+Covered in Aug 23 meeting by SC
+
+
+Year 6-10 Core Activities:
+Outcome from Planning Meeting Discussion
+
+Core indentified as (rank in parenthesis):
+ * Maintaining active MN community (1)
+ * Maintain active DUG community (3)
+ * Grant writing (not to be included in proposal) (3)
+ * Internship program (5)
+ * Website maintenance and enhancement (6)
+ * Webinars (8)
+ * Online education resources (9)
+ * Help Desk (10)
+
+Also core: 
+ * SGWG support (to be covered Sep 20)
+ * U&A activities, project evaluation (covered Aug 30)
+
+Non Core identified as:
+ * Collaboration activies (2)
+ * Screencast materials (7)
+ * Enhancement of best practices database (11)
+
+Resources Required for Core Activities (FTEs $$):
+MN Community:
+0.5 FTE LM, 0.05 FTE AB, 0.02 FTE RK, ?? FTE CCIT
+DUG Community:
+0.10 FTE AB, 0.02 FTE RK, ?? FTE MC, $15k presenter costs, $1k materials, $$ meeting costs
+Website:
+0.5 FTE Web Dev, 0.25 FTE AB, 0.02 FTE RK, $$ Backup/Hardware, $50k consultant
+Webinars:
+6/yr, 0.02 FTE AB(coordination), 0.05 FTE speaker time, 0.005 FTE AB/web (post production)
+Online Education:
+0.02 FTE admin (edit/review/plan), 0.08 FTE content updates, 0.01 FTE AB/web
+Help Desk:
+minimum level (ask.dataone.org) 0.05 FTE AB, 0.05 FTE RK, 0.05 FTE DV
+
+Some Activities in detail:
+Webinars:
+(What is necessary to do the webinar series - platform, identifiy volunteers to define optimal format (ex. ITHAKA, ARL), define duration & frequency, identify topics (DMPTool, D1 services, ORCID ID, etc)
+
+Overview:
+Webinar offered once every 2 months (6/yr).  Topics to include use of DataONE tools such as ONEMercury, ONE R, etc. and collaboratively developed tools such as DataUP and DMPTool.  Attendee and community surveys can be used to prioritise pre determined list of potential webinar topics.   Webinars will be 1 hour in length (30-40 min presentation; 20-30 min Q/A session).  Webinars to be recorded and available for viewing afterwards.  Colaborate with partners to advertise related webinars and reduce duplication of effort (e.g. DMPTool).
+
+# FTEs to accomplish activity & deliverable
+Deliverable: 6 webinars per year 
+FTE Time: 
+ * 0.02 FTE/yr coordination (schedule speakers, promotion, follow-up); 
+ * 0.05 FTE/yr DataONE associated speaker prep/delivery; 
+ * 0.005 web dev (post announcements and presentation ppts to DataONE website)
+
+Webinar Software
+Adobe Connect ~$40/month for up to 25 participants or 32c/min/attendee for larger groups.  Have webinar capability but also e-learning should we go down that route int he future.
+GoToWebinar ~$99/month for up to 100 participants.  Bundle bc of GoToMeeting?  GoToLearning is seperate.
+Cisco Webex ~$99/month ($79 for annual) for up to 100 participants but can turn on/off by month.
+
+
+DUG Engagement
+(How to make it easier for people to become members of the DUG; Problem to resolve - 2 forms at ESA, one for DUG and one to be added to mailing list.  Goal is to get as many people as possible to join the DUG)
+Current
+ * No existing process for public to self-subscribe to DUG (or any other mailing list)
+ * DUG Membership Form is on DUG page and asks multiple questions (name, inst, email, research environment, position type)
+ * DUG form entries need to be manually entered into system by admin for them to be on the mailing list
+Proposed Future
+ * Visibility: Place 'Join/Subscribe' link on home page
+ * Ease: Reduce the required fields to simply name and email
+ * Awareness: Respond to subscribers with an email that welcomes them, provides a link to the DUG documentation (charter - so they know what they have joined).
+ * Metrics: The above email can also contain a link to a voluntary form that collects the extra information about domain etc.
+ * Efficiency: Automate the process of subscription to the DUG mailing list (challenging?), automate the welcome email response (simple), automate the survey form into a database (simple if done as a google form)
+
+Question for consideration: Should the DataONE community (mailing list) be synonymous with the DUG?  Do we need to retain a distinction?
+
+
+5.  Around the room (all)
+Amber - 
+ * Succesfull meeting at Intecol.  Martin Donnelly (DCC/DMPTool), Kristin Vanderbilt (Sevilletta LTER/CEE WG) and I presented a workshop on data management.  ~80 attended. Good questions and feedback. Had multiple discussions with members of the BioVel team and they are interested in collaborating on a workflow that utilizes data extraction from DataONE.  Poster Session was also well attended.
+ * CEE welcomes Tom Langen, a new member to replace Josh Tewkesbury.
+ * AGU session received 18 submissions and we have been allocated an oral and poster session.  Carly, Karthik and I are admins and have made preliminary assignments on the two session types.  Feedback on oral session presentation order appreciated (http://bit.ly/17VIiE6)
+ * September is newsletter month.  Be on the lookout for an email from me :)
+
+Steph: Tom Langen accepted our invitation to the CEE working group and will be at AHM. I need to leave this call at 10:20-ish, and probably won't be on the call next Friday (travel)
+
+Bob:  Next week, we are conducting a series of Webinars on Best Practices for Data Management in two parts:  Part 1: Tabular data and Part 2:  Geospatial Data.  Webinars will use Adobe Connect, based on material developed collaboratively with ORNL DAAC, USGS (Viv), and DataONE.  Audience is ~200 participants from NASA Terrestrial Ecology list serves, with a foucs on early career scientists.
+
+Bruce: We've made good progress on the tool for handling logs for systems, following a decision to go back and do a complete redo of the proof-of-concept installation. We've made some changes to the redmine page for tracking MN implementations (https://redmine.dataone.org/rb/master_backlog/mns).  Next couple of weeks are focussed on MN documentation (reference Dave's comments) and working with MN's that are working on coming on-line (particularly Northwest Knowledge Network, USA-NPN, and EDAC).  I'm most of the way back from a family need the past 2 weeks.  
+
+Carol: Nothing new this week.
+
+Viv: Making progress on effort to develop 3 Data Management Video modules (USGS/BLM/DATAONE (Bob, Carly)) ---- processing video interviews of scientists portion and conducting the narration of slides this month. Trying to finish by end of September. 
+

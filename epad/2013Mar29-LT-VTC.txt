@@ -1,0 +1,92 @@
+
+ 16-18Attendees: Amber, Bruce, Suzie, Dave, Steph, Bill, Matt, Viv, Bertram, Deborah
+
+Regrets:  Rebecca, Mike Frame, Bob Cook
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Mar 29, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/938573000
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (630) 869-1013
+Access Code: 938-573-000
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 938-573-000
+
+ We will also use the epad: http://epad.dataone.org/2013Mar29-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-03-29
+
+1) CI Update (Vieglais)
+- Development effort and prioritization document being developed
+- MN deployment work. MN deployment checklist documented
+- Correcting some issues wrt consistency across the CNs. It's a minor problem with no information loss, but something that needs to be corrected.
+- Looking at launching ask.dataone.org: Comments or thoughts on whether it should be just for technical questions or for all questions directed at DataONE?  The format lends itself to questions that have a discrete answer, but isn't targeted at long discussions.
+-- All Q's, ordered by vote: https://ask.dataone.org/questions/scope:all/sort:votes-desc/
+-- Just MN Q's: https://ask.dataone.org/questions/scope:all/sort:activity-desc/tags:membernode/
+Action: Make available via website next week.
+
+2) CEE Update including Summer Internships (Budden)
+Application period open for 3 weeks and then extended a futher 4 days.  41 applicants across 9 projects.  Range of applicants per project was 3-13.  Deadline for mentor recommendations is Monday at which time the Internship Committee will review the full set of recommendations and make decisions across the program.  Internship accouncements will begin on Wednesday.
+Newsletter out.
+DUG angenda online, hotel reservations at the group rate available and registration form coming shortly.
+
+2a) Change in Co-Leads of CEE WG (Budden)
+Due to changes in the federal government following sequestration Viv will be less able to commit to her CEE responsibilities and has chosen to step down.  Amber will help with co-chair responsibilities until the next in-person meeting where a replacement will be solictited.  This will be done in person vs over email as there are a couple of new members and it would be beneficial for everyone to meet and discuss project acitivities in advance of nominate a new co-chair.
+
+3) RDA (Michener)
+
+Upcoming RDA Baltimore meeting during September 16-18.
+Mark Parsons is the coordinator for the US (under Fran Berman at RPI).
+Last meeting in Sweden was comprised largely of presentations with only 3-4 hours total devoted to Working Group activities.  To date, only 2 Working Groups have been approved via an RDA black box process.  One is heavily focused on PIDs and John Kunze is participating in that WG.  Another WG is somewhat related.  Bill and Rebecca will report back on a periodic basis about RDA developments.
+
+4) Around the Room
+
+Deborah:
+- We are preparing for our f2f meeting at NCEAS April 16-18 .  This will include participation from Vieglas and hopefully LTER
+- We have nominated Margaret O'Brien as a new member of our working group.  Margaret is the Information Manager for the LTER Santa Barbara Coastal 
+(SBC) Ecosystems site, managed out of UCSB.  She has strong domain and 
+informatics knowledge about ecological and environmental data, spanning 
+both freshwater and marine systems.  She also has strong interests and 
+expertise in metadata standards such as EML, as well as involvement with 
+several related semantics efforts (SONet, Semtools) for environmental 
+data. Margaret has already assisted the D1 Semantics Working Group by 
+participating in conversations about our developing "eco-hydrological 
+use case", and has lately provided us with data, metadata, and expert 
+insights into advancing this use case.
+- Resolved on this call - the leadership team approves.  Deborah will send an invitation message to Margaret
+- We had a paper accepted at a web observatory workshop that will be presented at WWW this spring on our hydro-eco use case and its support for web observatories
+- We are interviewing candidates for the summer intern projects - there are at least a few very strong candidates
+- The next working group regular call (April 4) is reflecting broader participation - the next call will have CUAHSI brief the group on related topics.
+- I forgot to mention - should we submit a session proposal to agu
+http://fallmeeting.agu.org/2013/scientific-program/session-proposal-guideline/
+
+Steph: CEE WG 'data stories' project almost ready to put initial stories on the website
+
+Bertram: Just back from EDBT/ICDT/BigProv in Genoa, Italy. BigProv (co-organized by Paolo and myself) was productive. Also had ad-hoc meeting of multiple WG members who were on site (James, Khalid, Saumen, Paolo, Bertram). Next week, some are back together at TaPP in Illinois. Now planning Spring WG meeting. Options: at SIGMOD/PODS/SWEET in June? Or else in May at UNM or elsewhere (NCEAS)? A couple of candidates for internship; leaning towards a local person; other strong candidate probably going to EVA.
+
+Suzie: 
+- Holly Mercer, associate dean of the UTK Library, has officially become a member of the SCWG to replace Maribeth Manoff who had to step down. She will be attending the joint WG meeting.
+-  We are finalizing our plan for the SC-U&A working group joint meeting.  Attendance has been complicated by sequester since that is limiting attendance by those from federal agencies. For some the key is whether this is classified by NSF as a working meeting or a conference. To meet this challenge we are looking at how to reorganize our agenda to better foster virtual attendance.
+- Bruce, Holly and I met with the UT Associate Vice Chancellor of Research about planning and implementing  the UT data repository.
+- next week headed to UNC for the DataNet user requirements meeting put together by Reagan Moore's group. 
+
+Bruce: not much to add beyond what Suzie said.  Working my way through the interns and a few applicants for the DataONE GA position at UTK for 2013-2014.
+
+Viv; nothing to add this week
+
+Dave: 
+- PRAGMA24 meeting in Thailand last week. Lots of interest in DataONE. Reaffirmed Taiwan TFRI plans to install MN, some issues identified wrt unicode translation during update. Important working group oriject on science based policy decision making, focussed on forest management. Test case in Borneo, but plans to expand to a general approach for the Pacific Rim. Data management is a critical part of the process, and DataONE seen as a good candidate to help with this.
+- iDigBio (biodiversity collections digitization coordinator) very interested in DataONE as an archive mechanism. Potentially large volume of information (images), multiple terrabytes.
+- VertNet (vertebrate collections) looking at sustainability options and looking to DataONE as a mechanism for persisting snapshots of collection databases. 
+
+Amber: 
+Discussion with NESCent about building DM workshop for their scholars.
+Joint DataNet presentation at AAG in 10 days.  Have not attended this meeting before. If anyone has experience that they could pass on that would be appreciated.  (Dave/Matt - I will want to catch up on ESRI/NOAA discussion in advance of meeting and status of DataNet interoperability / collaborations).
+  -- Unfortunately those discussions have stalled; both ESRI and NOAA became somewhat less enthusuastic when they learned about two of our requirements, mainly that they need to report accesses and that we require immutability of data and use of versions to identify changed objects.  I'm still hoping they would want to come back to it, but it will require more evangalism on our part.
+

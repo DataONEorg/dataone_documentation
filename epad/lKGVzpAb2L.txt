@@ -1,0 +1,86 @@
+
+Dear Provenance WG participants:
+
+Thanks for agreeing to participate in inaugural meeting of the DataONE WG on Provenance!
+Below you find the tentative agenda. Chance are you're on it! 
+
+We would like to start our day tomorrow with short presentations (approx. 10 min, anywhere from 1-10 slides or so) to get on the same page and understand what the different perspectives re. provenance (and the system capabilities!) are. The following questions provide some guidance on what we'd like to hear about:
+
+* What kind of provenance does your system support?
+-- What are the "observables" (provenance events) that your system captures?
+-- That is what is your "model of provenance"?
+* What can you "do" with provenance in your system?
+- (record, query, visualize, share, ...) 
+* Do you have concrete, preferrably scientific use-case that require provenance?
+- Are these implemented already?
+* How could we use your system / approaches to add value to DataONE (via this WG)?
+
+Here is the *tentative* agenda, with suggested topics that we assumed participants would be able (and like!) to talk about.
+
+Slides (again: anywhere from 1-10 or so) would be great, but don't have to be fancy..
+ The meeting should be quite informal and educational we hope.
+
+
+* DRAFT AGENDA *,  WEDNESDAY Nov. 3rd, 2010
+
+=== Overview Session (8-10am) ===
+* WG Introduction and overview (Bertram, Paolo)
+-- update on DToL 
+-- update on XG Provenance Incubator 
+
+* Kepler Provenance I (provenance recorder, workflow execution server?) -- Ilkay
+
+* Kepler Provenance II (COMAD, provenance storage, querying, browsing) -- Shawn 
+
+* Pegasus, Grid-wf provenance (or similar) -- Ewa
+
+* Taverna provenance and myExperiment -- Paolo
+
+* Vistrails provenance -- David
+
+* Trident, OPM (or similar) -- Yogesh
+
+=== Session 2 (10:30-noon) ===
+
+* Getting on the same page w.r.t. provenance: 
+- what are observables, MoCs, assumptions made by the various systems
+- starting from OPM and the DToL schemas/observables, what is the vocabulary we can use to communicate ideas?
+(wf schema level objects, run/provenance/trace level objects, data lineage vs workflow evolution, ...)
+
+* We probably do not want to get into this business (TMI, TLT)
+- http://www.w3.org/2005/Incubator/prov/wiki/Provenance_Vocabulary_Mappings
+
+=== Luncheon: State of the Birds (Steve Kelling) === 
+- This talk should have interesting workflow and provenance use cases!
+
+=== Session 3 (1-3 pm) ===
+- Elicit and understand DataONE needs for workflow-oriented provenance
+- Identify existing and new science use cases
+- Start: What could be next steps for the WG?
+
+=== Session 3 (3:15-4pm) ===
+- (Cont'd): Planning of next steps for the WG
+- When (and where) shall we meet again? (to avoid thunder, lightning, and rain...)
+
+
+Bertram, Paolo
+
+
+
+Prov-WG: 
+Bertram Ludäscher <ludaesch@ucdavis.edu>,
+Paolo Missier <pmissier@cs.man.ac.uk>, 
+Shawn Bowers <sbowers@ucdavis.edu>,
+Ilkay Altintas <altintas@sdsc.edu>, 
+David Koop <dakoop@cs.utah.edu>,
+Eva Deelman <deelman@isi.edu>,
+Saumen Dey <scdey@ucdavis.edu>,
+Yogesh Simmhan <simmhan@computer.org>
+
+
+DataONE:
+
+Dave Vieglais <vieglais@ku.edu>,
+"Bruce E. Wilson" <wilsonbe@ornl.gov>,
+Matt Jones <jones@nceas.ucsb.edu>,
+

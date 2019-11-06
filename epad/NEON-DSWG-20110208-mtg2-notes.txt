@@ -1,0 +1,101 @@
+NEON Data Standards Working Group (DSWG) Meeting 2
+---------------------------------------------------------------------------------
+February 8, 2011 10-11am Pacific time
+
+Participants
+-----------------
+Jones, Aulenbach, Palanisamy, Habermann, Peet, Greenlee, Vieglais, Griffith, Domenico, Spiess
+
+Discussion
+----------------
+1. Review agenda
+2. New members
+       -- Emery Boose, Harvard Forest LTER Site
+       -- David Tarboton, CUASHI
+3. NEON user communities
+ * NEON staff have begun discussions on this topic, and I am hoping they can provide us with a synopsis
+ * We should then choose a few initial high-priority target communities for our recommendations
+ * Scientific research community -- data products for wide variety of communities
+   * as well as established scientists, NEON has a focus on engaging early-career faculty, students, postdocs, faculty at principally undergraduate institutions
+   * to date, have noticed users don't fall into the traditional sub-disciplines
+   * 2010 survey done with Ecological Society of America (ESA) and American Institute of Biological Sciences (AIBS), identified top-level categories/topics
+     * climate change
+     * invasive species
+     * land use change, landscape ecology, spatial ecology
+     * biodiversity and evolutionary ecology
+       * does this include phylogenetics?
+     * ecosystem ecology
+     * bioclimate and remote sensing
+     * earth system and ecological modeling
+   * Wendy Gram: common interest in exploring new techniques to studying these topics
+   * want to reach university personnel at research universities and undergrad focused universities
+   * Griffith: does biogeochemistry fit in the categories?
+   * Palanisamy: should also be thinking about data standards
+
+4. Metadata
+ * What standards should NEON use to describe and disseminate their data products to these various communities of practice?
+ * What rationale and criteria are best suited to helping NEON choose from the many metadata options?
+
+    -- Habermann: Need to group the standards, many were biological, many were very specialized
+        -- some standards for discovery
+        -- 19115 broad, generic, not as specialized as e.g., MAGE (http://www.mged.org/Workgroups/MAGE/mage.html)
+        -- not sure which users would use standards for gene sequences
+     -- San Gil: 19139 is XML for 19115 -- don't need both
+         -- MIEMS changed to new name, group with genetic group of standards
+         -- should group them
+      -- Habermann: ISO 19* family should be considered as a whole
+          -- agrees with Parsons that 19115 can be mapped to other standards like DC
+          -- Viv Hutchison and Mies (sp?) has translation from BDP to extensions for ISO 19115 -- but not a part of the North American Profile
+          -- FGDC recently endorsed the whole ISO family as standards, so most people are going to use the ISO standards and ignore the NAP
+          -- we probably should not worry about the NAP, as FGDC is moving away from it
+    -- Palanisamy: ISO 19115-2 will have BDP conversion
+    -- Habermann: need ability to extend the standard, which was dropped from NAP
+    -- Palanisamy: will be doing a detailed mapping from BDP to 19115-2 for NBII metadata clearinghouse records
+          -- initial conversions were lossy bcse not all fields were there at first, but now includes more of the fields in 19115-2
+    -- Habermann: one big hole from BDP to ISO 19115 will be in entities and attributes, but new versions will include that. New ISO will include support for more entities.
+        -- of the standards on the list, could group as:
+            -- ISO 19115, WaterML, EML, should be high priority
+            -- discovery mappings to things like DIF, DC are more straightforward
+            -- heavyduty biological standards (e.g., MIMARKS, formerly known as MIENS)
+    -- Greenlee: 3 groups seems good
+    -- Dryad: https://www.nescent.org/wg_dryad/Metadata_Profile
+    -- Greenlee:
+        -- would want to add TIFF, GeoTIFF, other spatial data standards
+        -- how do we avoid conflicts between what's in the data and what's in external metadata
+        -- wants to be sure metadata that is external sticks with data        
+    -- Jones: will also have discussion on data standards
+        -- identifier standards are also critical to maintaining persistence
+    -- Habermann: at discovery level, all of the standards have the same content (DIF, DC)
+        -- some go 'deep', like BDP adding taxonomy
+    -- Jones: taxonomy is critical, high-level discovery information
+    -- Aulenbach: will have soil metagenomics products that are produced
+    -- 
+    http://wiki.neoninc.org:8080/download/attachments/4653227/MultipleDialects.png
+    -- Ben Domenico: be sure to carry forward data standards discussion
+        -- how important is it to carry metadata along with data structures
+        -- important in the NetCDF world
+    -- Greenlee: is ISO 19115 sufficient? Not sure.  His community mainly uses NetCDF and CF metadata; uses GCMD and FGDC & DC for discovery
+        -- wouldn't feel comfortable with current recommendations
+        
+Action items
+------------------
+* Steve Aulenbach: will track evolving user communities and report back
+* Dave Vieglais: will try to send baseline assessment results from DataONE
+* Habermann: will provide pointers to ISO
+* Matt Jones: will schedule next call for 3-4 weeks, will rotate calls across week to try to hit different committee members.
+
+Pre-meeting contributions from those who will miss the meeting
+---------------------------------------------------------------------------------------------
+Mark Parsons:
+---------------------
+    -- Users: You should try and get representatives from diverse user types, though. Modelers and observationalists, biogeochemists and community ecologists, etc.
+
+    -- Metadata: I also reviewed the metadata list and have nothing to add. I suspect ecological folks will have specific requirements like EML, but I think as a baseline NEON should support ISO19115. If you do that, mapping to other standards like DC, Darwin Core, and DIF should be easy.
+    
+Emery Boose
+--------------------
+    -- Metadata recommendations should be as simple, flexible, and easily mapped to community standards as possible.  We have no idea what community standards will be in 10 years, much less 30 years.
+    -- For most core NEON datasets, project and attribute-level metadata, once defined, should remain relatively constant.  The challenge may be to map appropriate provenance metadata to individual data values (instrument parameters, data processing and QA/QC scripts, revision history, etc).
+    -- NEON will need a solution to the problem of versioning streaming data, along with an appropriate metadata standard.
+    -- EML would be most useful.
+

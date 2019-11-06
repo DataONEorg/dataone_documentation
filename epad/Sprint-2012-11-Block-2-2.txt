@@ -1,0 +1,116 @@
+StandUP 3/21/2012
+
+Skye.
+
+New Dataone skin in mercury, mostly stylesheet and html clean up.  test indexing and mercury. 
+
+Andy.
+
+couple of issues with cli deployment. new issue in python 2 with unicode issues.
+
+Chris.
+
+working on the sandbox sync and repl errors.  Issues with sax parsing in EML. Knb datastore may not have correct eml or schema validation.  known good eml documents to ensure sync is working without those kinds of problem.  couple of issues with setting replication status.  lastly, need to get GMN in the mix. working with Roger to push content towards GMN.
+  There maybe problems due to bogus EML data in 
+
+Ben.
+
+  There maybe problems due to bogus EML, maybe an issue in transfering the EML from MN to CN endpoints. Need to isolate the issue into one of the components.
+
+Roger
+
+  Stress testing.  Ready to point it to an MN in the sandbox.  What limitations, type of object, should be considered legitimate.
+
+
+Rob.
+
+  Working on caching issue for CNs, where D1Client holds a static nodelist for looking up basurls unless a noderef is not found. committed changes to trunk.  caching issues:  we have multiple ways of caching node lists, may want to make that uniform down the road. For today, looking to how to be helpful towards current release, otherwise will "look towards the future" wrt libclient capabilities.
+
+Robert.
+
+Testing synchronization. Fixed a bug . Found an issue with identifier manager regarding use of special characters in a qeury string.
+
+So priorities:
+
+1, Synchronization must work as expected for all valid content
+available on MNs. Copies of science metadata must be pulled to the CNs
+and be retrievable.
+
+* Need to test on dev or other localnet machines, EML that fails on sandbox and also test out other standards for sciMetadata (like FGDC) 
+
+
+2. Indexing should work for the majority of content pulled to the CNs.
+There may be some instances of EML (or perhaps other formats) that the
+indexer has trouble with. These should be identified and parsing rules
+modified as necessary
+
+* Limited to Metacat MNs currently since only EML is supported. To include FGDC, need to point Skye to old code that has xpath rules in them.  Start conversation with Dryad, do not know what format they will be sending us. [Let's use cn-dev for this work until sandbox issues are resolved]
+
+3. The Mercury UI is closely tied to #2 and must show only public
+content and "show full metadata" needs to work for all indexed science
+metadata.
+
+* Works for EML.  Strategy should work FGDC, but not tested.  Have not tested the ORE resource maps.  Needs ORE testing on development.  EML on demo node, there is a class that needs to be run and it will create an ORE association. Pretty easy.
+
+
+4. Replication. This is a lower priority because it's not so visible,
+but is recorded as a deliverable at public release. Replication needs
+to work for all content that is recoded through the synchronization
+process. Replication between Metacats must work since this is
+necessary for early MNs participating in the public release.
+Replication to GMN is also really important because that helps us
+verify the APIs are operating as expected.
+
+* Metacat replication between CNs appear to be working, maybe there is a permission issue in setReplicationStatus() on the final call to set 'COMPLETED' but we have seen Metacat MN-MN replication is ok.
+
+5. Log aggregation is initially less visible than the other services,
+but is important especially for MN operators and data contributors.
+Ideally, log aggregation should also be useful to us for tracing
+content access. To that end, it seems that we did omit a fairly
+obvious use case for log aggregation, which is the ability to retrieve
+log info for a PID (assuming appropriate permission). I suggest adding
+another parameter to the CN to support matching the start of PIDs -
+see the bottom of the pagehttp://mule1.dataone.org/ArchitectureDocs-current/apis/CN_APIs.html
+for some brief notes on this.
+
+* adding in new features should be reconsidered
+* log aggregation still needs a lot of testing.
+
+6. Client tools. The CLI is a great start down this road. We need to
+exercise it, use it for testing access to content, adding content etc.
+It provides a convenient platform that we can add operations / tools
+that can assist with debugging and verification of operations. I have
+also pulled together a few bash + xmlstarlet based scripts under
+d1_client_bash that are limited but may be helpful when debugging.
+
+The general timeline, or order of things, is:
+
+1. Provide access to the sandbox environment for the LT. I think we
+can actually do this pretty much right away. It will take a while for
+folks to poke around and get a feel for the Mercury UI, but you can
+pretty much guarantee they will search and try to download content
+through Mercury, For this we only need a small number of records (100
+or so), but they should be real content.
+
+2. Add in the DAAC MN. It is tier 1 so should work. If not Jim Green
+and Giri will need to be notified.
+
+3. Increase the number of records from KNB. Should try to expand to
+the whole number of records.
+
+ * reasonable to expect to make it this far, this week.
+ 
+4. Gather feedback from LT and figure out how to incorporate suggestions.
+
+* probably this milestone by close of week.
+ 
+5. Update to the next RC, including changes from 4 where possible.
+
+* possibly this  weekend.
+
+6. Broader audience review (whole project)
+
+7. Update as necessary
+
+8. Release when everything appears in order.
+

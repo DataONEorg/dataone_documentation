@@ -1,0 +1,32 @@
+getLogRecords()
+
+- make fromDate optional.
+
+
+getObjectStatistics()
+
+- Change time parameter to fromDate and toDate, both optional.
+- Change the description to specify that the dates refer to the object creation dates.
+  - No - the dates refer to time the operations was executed. e.g. a request could be made for a list of get() operations for the last week on a particular object or objects of a particular format.
+
+
+getOperationStatistics()
+
+- Change time parameter to fromDate and toDate, both optional.
+- Change the description for time (now from/to) to specify that the dates refer to the dates of the events which the operation statistics are based on.
+- Change eventTime to objectFromDate/objectToDate, both optional.
+- The description of eventTime does not currently match the field name, since the description is about filtering on objects. When the name is updated from event to object, the description will be correct.
+- Change the example from using time_ge / time_lt to using the new format.
+
+
+listObjects()
+
+- Change the description of toDate to have "less than", not "less than or equals".
+- Change the description to specify that the dates refer to the object creation modification dates.
+- Not implemented in GMN, but I suggest that we make this change: Change startTime / endTime to  fromDate / toDate, to match the other APIs. I prefer “from/to”, but  other options are start/stop and begin/end. The current start/end seems  like it’s slightly  mixing terms.
+
+Misc:
+
+- Remove stuff about orderby from listObjects() description.
+- 
+

@@ -1,0 +1,115 @@
+Attendees: Rebecca, Mike, Viv, Kimberly (for Suzie), Bruce, Carol, Dave, Bertram, John Kunze, Bob
+
+
+Regrets: Amber, Bill
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Oct 19, 2012 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/761310840
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 289-0015
+Access Code: 761-310-840
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 761-310-840
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2012Oct19-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-10-19
+
+1) CI Update (Vieglais)
+Lots of meetings this week! Restarting fortnightly meetings of the CCIT. This week started with the MN checklist, including what testing should be done.  For stable MNs, like 
+Week after next will be discussion on immutability.
+Face-to-face meeting tentatively scheduled for first week of February.
+Synchronization testing is holding up release of 1.1.0. Hoping for next week.
+EDAC implementation is ready for testing - new implementation so will need extensive testing. Exciting deployment because of content as well as a new MN software stack. Will also be a test of the documentation since developer worked from documentation to implement this MN.
+Some of the developers are starting to work on the ITK rather than just core infrastructure piece.
+
+ARC GIS work at USGS - how to tie in with the ITK - Mike will follow up with Dave.
+
+2) CE Update (Budden)
+
+Who is planning on attending AGU?  It is intended to have a DataNet meeting while there.  If you are interested, please let me (Amber) know which days you will be attending.
+Bob:  I'll be at AGU from Tuesday through Thursday (Dec 4, 5, 6)
+Mike: I will not be there...
+Deborah will be there  - tues - friday
+
+Had an enquiry about forwarding some open positions to our community (data miner and data consultant) from Andrew Sallans (UVA, DUG co-chair).  We had talked about a job board as one possible community value during our sustainability conversations.  At present, we would only have the option of using the list serve (either community (everyone) or DUG members).  We have only used these for DataONE business or promotion of DataONE related events (e.g. the conference Bertram and Paolo are organizing).  Should this request be sent out va a list serve?  Should we develop guidelines on what our list serves can be used for?  Does the LT have an opinion on the latter?
+
+community@dataone.org should be the correct list for broadcasting to all those monitoring and participating in the DataONE project.
+
+task for Dave - generate list of mailing lists and provide brief descriptions of each.
+
+Sorry not to be on the call - I will read the epad for feedback or you can send me an email.
+
+
+3) Supplement with XSEDE (Cobb)
+
+Looking to submit 10/26
+
+Details from 10/16 call at <http://epad.dataone.org/20121016-XSEDE-suppl-disc>
+General Idea:
+
+Deploy UVCdat on one or more XSEDE resources.
+        Nautilus has indicated interest
+        Depository EVA-2 model inter-comparison data
+
+Science case:
+        Currently Jorge Poco (NY-Poly) has developed a workflow that works on a single machine that takes hours per 2 years. We woudl like to deploy this on an XSEDE resource and conduct a 10X long study (20 years) We have global data (and sometimes more refined North America data). We have several contributions from data providers. Mostly these are static once they are deposited.
+        
+        The work goal is to depoist the data into an appropriate MN
+        replicate to a MN runnign on an XSED resource
+        Perform the computation
+        deposit the analysis result onto a DataONE MN and replicate as needed
+        Possibly iterate on the anlysis with more data, and what if analyses
+        
+In principle the output could be used as input for climate assessments and ongoing work, particuarly carbon cycling. 
+
+Bob believes that Dead Williams at LLNL wil lbe very favorably pre-disposed with NSF/DataONE using UVCdat work in this manner. He encourages data re-use and welcomes collaboration.
+
+The hope/goal would be to establish this as a standing effort. Including
+1) Providing standing on-demand analysis/vis service
+2) Providing a permanent method for DataONE/XSEDE to interoperate
+3) Create a semi-permanent DataONE Science Gateway on XSEDE
+
+There is also a cross-link between provenance work and this effort, particularly batch data product development at scale. This was one of the use cases discussed by the Prov WG.
+
+We also considered a deployment of e-Bird data as a online/on-demand visualization tool resource. Not sure how to integrate it at this point.
+
+Some more deta
+
+4) Around the room
+
+Bruce -- Met with UTK OIT this week.  We will see a brief outage of the ORC nodes some time over the next 1-3 weeks as we hook up to a more capable firewall and do some upgrades.  This should not be an impact to end users, other than when we're done, we'll have higher throughput available.  We've also resolved a couple of process problems with OIT and I'm in the process of drafting a more formal SLA with OIT.  
+
+Bertram: Paolo and I talked re. prioritization of R vs Prov-Explorer; we will send you a note shortly. In other news: Victor got a paper on the current ProvWG provenance model accepted for WORKS'2012 (November in Salt Lake City). We're also organizing a "BIGProv" workshop at EDBT next year.
+
+John Kunze:  working with UNM on setting up a stage ONEShare server and working with MSR developers on remaining DataUp validation errors.  All this is in the service of getting the ONEShare member node's data quality high enough to turn on harvesting by CNs.
+
+Bob:  nothing to report
+
+Mike: Carol, Suzzie and I meet last week related to the Data Managers Assessment. We are working on summarizing the results. Also, we have a UA Working Group Call scheduled for December.
+
+Mike: USGS is looking at writing an internal proposal related to PI Toolkit integration into USGS ArcGIS data stores. We are working now to identify internal USGS GIS and Pyton resources to participate. Will coordinate with Dave. 
+
+Mike: Probably already reported last week (October 8th week), but we did have a good meeting with Chris Jones and developers related to ONE Mercury UA changes, tracking, etc. 
+
+John Cobb: Nothing additional to report
+Carol: Nothing this week, other than what Mike has said above.
+
+Viv: Decided on the next CEE WG meeting to be  May 7-9 in Santa Barbara. Also, will be nominating 2 people to add to the CEE group for the LT to review soon. Once approved, we hope to have new members attend the May meeting. 
+
+Deborah:  I will be at AGU as will the semantics postdoc Patrice.  Patrice will be giving an IGNITE talk on our hydro-eco use case
+? who is going to ISWC?  Deborah will be there as will i think at least 3 from the semantics working group (and one of us (Line Pouchard) is co-organizing a workshop on linked data for science )
+

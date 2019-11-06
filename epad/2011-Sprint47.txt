@@ -1,0 +1,32 @@
+Notes from Week of 2011-11-21
+=============================
+
+
+Major activities remaining for public release:
+
+1. Replication operational across GMN and Metacat
+
+2. Additional fields populated in index
+
+3. Debian packaging of CN components
+
+4. Setup of VMs at ORC, UCSB
+
+
+5. Verification of production MN status for:
+
+  a. KNB
+
+  b. Dryad
+
+  c. ORNL DAAC
+
+  d. USGS (formerly NBII)
+
+  e. Merrit
+
+  f. SANParks
+
+  g. AKN (optional)
+
+

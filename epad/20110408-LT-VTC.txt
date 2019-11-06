@@ -1,0 +1,97 @@
+Attendees: Rebecca,  Carol, Amber, Matt, John, Bertram, Dave
+
+
+Regrets: Bob Cook, Mike Frame, Suzie Allard, Viv, Steph,
+
+
+http://epad.dataone.org/20110408-LT-VTC
+ 
+Very short meeting unless others have agenda items!
+
+  Agenda for 2011-04-08
+
+
+1. Update on DataONE Summer Internship program (Budden)
+
+As of 9pm Thursday:
+110 (now 123) applications / expressions of interest / enquiries
+73 applications (resume)
+Of these, 39 (now 44) are eligible and 17 are complete (now 22)
+Of the eligible applications the distribution across the projects is as follows
+Project:       1,2,3,4,5,6,7,8,9,10
+Applicants: 15,5,4,7,4,9,3,2,4,2 
+
+Previous applicants are eligible to apply and this acts neither for them or against them in the selection process.  
+
+Mentor evaluation:
+* Provide mentors with template, showing name, project name, student names.
+* Mentors fill out eval with word processor of choice, upload to Plone.  
+
+
+Proposed Schedule:
+  -- References due: close of business Monday West Coast time
+  -- Mentor review due: close of business Wednesday West Coast time
+  -- Materials available to internship group on Thursday 8am EST for evaluation
+  -- internship group meets Thursday evening to make decisions
+  -- Decision announced Fri
+
+Internship Group:
+rkoskela@unm.edu bwilsonwilsonbe@ornl.gov visiontjv@bio.unc.edu aebuddenaebudden@dataone.unm.edu vieglaisdave.vieglais@gmail.com jonesjones@nceas.ucsb.edu
+
+Mentors group:          kdougla2@utk.edu
+         hlapp         hlapp@nescent.org
+         koskela         rkoskela@unm.edu
+         bwilson         wilsonbe@ornl.gov
+         goble         carole.goble@manchester.ac.uk
+         cook         cookrb@ornl.gov
+         sandusky         sandusky@uic.edu
+         piwowar         hpiwowar@gmail.com
+         frame         mike_frame@usgs.gov
+         hutchison         vhutchison@usgs.gov
+         pan         pany@ornl.gov
+         michener         wmichene@unm.edu
+         altintas         altintas@ecoinformatics.org
+         vieglais         dave.vieglais@gmail.com
+         manoff         mmanoff@utk.edu
+         daigle         daigle@nceas.ucsb.edu
+         allard         sallard@utk.edu
+         tenopir         ctenopir@utk.edu
+         vision         tjv@bio.unc.edu
+         palanisamy         palanisamyg@ornl.gov
+         waltz         rwaltz@utk.edu
+         ludaesch         ludaesch@ucdavis.edu
+         jones         jones@nceas.ucsb.edu
+         missier         pmissier@cs.man.ac.uk
+         
+2. Member Node Subgroup Status (Wilson)
+    
+https://docs.dataone.org/member-area/documents/member-node
+Notes from today's discussion are here:  http://epad.dataone.org/20110408-MN-subgroup
+Member Node tiers: http://mule1.dataone.org/ArchitectureDocs-current/apis/index.html#node-tiers
+
+Bruce will make sure the tiers from the Architecture Document are in the documents for the MN subgroup.
+
+Cobb: In the "beating the dead horse" category: I do not see in the documents clearly where it is pointed out that a criteria for MN selection is scope/effort impact on DataONE and CCIT in particular. I think we understand this to be the case, but I'm not seeing it in the candidate documents that we have now.
+
+3. Around the Room 
+
+Cobb: Chris Jordan is interested in having a short DataONE invited talk at TG'11 talking about the CI technology for DataONE implementations/operations. I thought this was a great idea and said I would discuss it with the LT. Fly in the ointment. TG'11 overkaps the Santa Barbara CCIT meeting. Advice?
+
+Dave: NSF DBI "VertNet" recommended for funding ($2.2M/3yr) - some prose about "integration with DataONE services" in there.
+
+John K: Gave a talk at CNI (Coaltion for Networked Information) meeting this week in San Diego on the subject of our "data paper" pilot, including a first stab at mocking up what a standardized data paper cover sheet might look like, borrowing heavily from an ESA data paper (slide 9): http://jak-desktop.ad.ucop.edu/specs/data_paper_cni_201104.pdf .  Generally well received, but no one knows if the scientists will hate it or love it.  Comments welcome. :-)
+
+Carol: Suzie gave a presentation at the University of Massachusetts to science librarians, who are interested in DataONE developments, particularly best practices and how libraries can help with data management. Mike, Suzie, Maribeth and I are making progress on a draft agenda for our May U&A and Sociocultural WG meeting. Hope to send a draft to members next week. 
+
+Rebecca:  Attended the Global Registries Meeting in Denver last week. It was led by Jeremy Frumkin, Monica Omode,  and Vic Lyte
+
+Amber: Have been busy with internship applications. Currently at the CEE WG meeting at NCEAS. Some great ideas / work coming out of this meeitng including building an education strategy.  SC11 workshop propsal deadline has been extended to next Friday and Scott Jensen (Indiana) has been compiling materials.  Best Practices agenda nearly finalized.
+
+Bill: At a tri-state mtg of NM, NV, ID and Idaho (FRAMES-NBII) and NM (EDAC) are very interested in devleoping MNs.  Wish to adopt ISO metadata standard.
+
+Bertram: Preparing letter of ref. for Saumen Dey (SoC project #8) who volunteered last year (and yes, he walks on water :) We just heard that his SSDBM'2011 paper was accepted. It is about ProPUB, a framework and system to publish "customized" data provenance, reconciling user requests with publication policies. A prototype is under development.
+Also: last quarter was teaching at D1/LT call time; better this quarter.
+
+Bruce: Getting ready to do evals of internships.  Also working on the member node process.  
+Need to schedule time(s) to do the teleconferences for the DataONE internal audience.  Suggestions?
+

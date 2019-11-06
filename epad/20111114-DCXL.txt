@@ -1,0 +1,36 @@
+Notes from 2011-11-14 on DCXL
+=============================
+
+Attending: Dave, Carly, John, Trisha
+
+Agenda
+
+- (Dave) comments from D1 advisory board members on project
+  - forward any issues to Bill to be forwarded appropriately
+
+- general status of DCXL
+
+the cloud and DataScope
+
+- DataScope is a tool that already works with Excel
+  - can we leverage this to speed implementation without being tied into cloud only implementation?
+  
+
+What does DataONE need:
+
+- High quality metadata
+- Deposit data and metadata directly to DataONE,, i.e. support of the MN APIs
+- Need a MN for prototyping against, must be a Tier 3+ node
+- Importing content into Excel
+- Consider interactions with R. e.g. organize data in Excel, then export to R - export tool will identify errors with the export
+- Output from plugin should / must be "R friendly" - also generally a better archive format.
+
+- Authentication - is there a Microsoft identity provider for InCommon?
+
+-- Dave: look for vaguely remembered template library for excel
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+Participants: Matt, Ilkay, Bertram, Tim, Shawn
+
+Agenda items
+---------------------
+1. No cost extension
+2. Kepler Workshop (Why, Who, When, Where)
+3. Other Issues rolling over from previous conf call:
+    * Future funding
+    * newsletter
+    * outreach
+
+Notes
+---------
+1. Bertram is ready submit the NCE
+2. Ilkay overviewed the workshop proposal that she sent out
+   http://www.iccs-meeting.org/  June 4-6, 2012
+   http://www.iccs-meeting.org/iccs2010/workshop-list.php
+   
+    Some concern over venue not reaching domain scientists
+    AAAS is an alternative: http://www.aaas.org/meetings/  16-20 Feb, 2012
+    
+    A. Venue?
+        a) AAAS, b) ICCS, c) other venue, d) one of our institutions, e) I don't like the choices
+        Bertram: b; Tim: b; Shawn: b; Ilkay: b; Matt: e; 
+        Decision: ICCS
+        
+    B. Papers or no? Possibly not required? What are paper topics? Extended abstracts?  Papers would probably make the conference more traditional research oriented.  Decision: Abstract only, selection for relevance.
+    C. Target audience: domain scientists that don't use kepler, versus those who do already,
+        versus Kepler developers
+        yes a. domain scientists
+        yes b. technologists at the interface with science (we can personally invite some of these people, e.g., iPlant, NEON, etc)
+        no   c. workflow researchers/engineers
+    D. Could retarget the 3rd session at large-scale CI projects (iPlant, OOI, NEON, etc)? Could be tutorial; kepler on server;
+    E. Focus on Kepler or workflows in general?  Decision: focus on Kepler
+    
+    Goal: get more people using Kepler, broader scientific buy-in
+    
+    TODO: Ilkay: confirn that we can have a workshop with only abstracts at ICCS, email LT the results
+    TODO: Ilkay: Rewrite workshop proposal to reflect new schedule below
+    
+    Next meeting: Oct 5th, 2012 if we have info needed
+    
+WORKSHOP Planning
+---------------------------------
+
+TITLE: New Advances in Kepler Scientific Workflow System and Its Applications
+
+A scientific workflow is the process of combining data and processes into a configurable, structured set of steps that implement semi-automated computational solutions of a scientific problem. Kepler is an open-source, cross-project collaboration to develop a scientific workflow system for multiple disciplines, providing a workflow environment for scientists, in which they can design and execute workflows. Kepler Scientific Workflow System supports the design, execution, and management of scientific and engineering workflows through dedicated capabilities including provenance management, run management and reporting tools, integration of distributed computation and data management technologies, ability to ingest local and remote scripts, and sensor management and data streaming interfaces.
+
+The Kepler software is developed and maintained by the cross-project Kepler collaboration, which is led by a team consisting of several of the key institutions that originated the project. Primary responsibility for achieving the goals of the Kepler Project reside with the Leadership Team, which works to assure the long-term  technical and financial viability of Kepler by making strategic decisions on behalf of the Kepler user community, as well as providing an official and durable point-of-contact to articulate and represent the interests of the Kepler Project and the Kepler software application. However, the future goals and plans for the project are shaped by the interest and requirements by a large community of contributors and users.
+
+This 1.5 day workshop aims to bring researchers and developers contributing to Kepler together with informaticians and computational scientists using Kepler in order to communicate newest advances in Kepler and facilitate new development and collaborations. The workshop will consist of three main sessions with topics including but not limited to:
+
+1. Kepler tutorial (Day 1, morning):
+
+This tutorial provides a comprehensive introduction to scientific workflow management and features hands-on exercises using the Kepler scientific workflow environment (http://kepler-project.org). This tutorial is intended for an audience with an informatics or computational science background and some information technology training. No programming knowledge is required. This tutorial will explain what scientific workflows are, how computational scientists can benefit from using a scientific workflow system, and show how to construct and run scientific workflows through a set of hands-on exercises. Specifically, attendees will learn about:
+ a)      Foundations of scientific workflow design and management
+ b)      Use cases, requirements, and importance of scientific workflows
+ c)      Demonstrations of real-world scientific workflows (using Kepler)
+ d)      Installation of Kepler environment and its related services
+ e)      Workflow construction from existing Kepler library components
+ f)       Import/creation of new workflow components (actors) from: (i) existing actors by composing them, (ii) web services, (iii) legacy applications,e.g., via a shell commands), and (iii) third-party tools and scripting languages, e.g., Matlab, R),
+ g)     Advanced features: e.g., the operation and management of workflows at runtime, automated data provenance management, advanced data movement and distributed execution.
+
+2. State-of-the-Art Kepler Applications and Domain Specific Requirements (Day 1, afternoon):
+   -- Kepler for Scientists {and Students}
+
+This half a day session will cover examples of existing usage of Kepler and aims to facilitate an understanding of usage of Kepler across scientific domains. Topics include but not limited to:
+ a) Kepler workflow applications and their requirements
+ b) Requirements from existing and potential Kepler communities
+ c) Kepler user environments, including portals
+ d) Results from scientific research using Kepler
+ e) Best practices
+ f) Kepler in education
+
+3. Newest Technological Advances in Kepler (Day 2, morning):
+  -- Kepler for Cyberinfrastucture Projects
+
+This half a day session focuses on the newest research and development in Kepler regarding all steps in the workflow lifecycle from design and publication to execution and reporting. Example topics for this session include:
+ a) Data Intensive Workflows and Data-driven workflow processing
+ b) Workflow composition
+ c) Workflow execution optimization
+ d) Provenance
+ e) Workflow execution in distributed environments and the cloud
+ f) Fault-tolerance and recovery techniques
+ g) Workflow scheduling and monitoring
+
+
+Alternate proposal for schedule
+---------------------------------------------
+Day 1: Scientific usage
+Morning: Application examples (success stories)
+Afternoon: Basic Kepler tutorial -- GUI focused
+
+Day 2: CI project usage
+Morning: CI Project success stories
+Afternoon: Server-side tutorials
+
+
+We solicit submission for Sessions 2 and 3 through the ICCS submission system... [[AND SOME MORE TEXT ON THE SPECIFICS OF SUBMISSION...]]
+
+

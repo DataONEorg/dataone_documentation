@@ -1,0 +1,380 @@
+
+EVA Products:
+Santos et al. 2013, http://dx.doi.org/10.1109/MCSE.2013.15
+
+Poco, J., A. Dasgupta, Y. Wei, W. Hargrove, R.B. Cook, C. Schwalm, E. Bertini, and C. Silva. 2014, in press.  SimilarityExplorer: A Visual Inter-Comparison Tool for Multifaceted Climate Data, EuroVis.
+
+Evaluate authorship: Poco, J.,  Dasgupta, A. W.H. Hargrove, Y. Wei, R.B. Cook, E. Bertini, and C. Silva. In review b.  Visual Reconciliation of Alternative Similarity Spaces in Climate Modeling, submitted to Visual Analytics Science and Technology (IEEE VAST).  This last article looks at model output and model structural information.
+
+evaluate authorship:  Dasgupta, A., J. Poco, Y. Wei, R.B. Cook, E. Bertini, and C. Silva.  In review-a An Exploratory Study of Visualization Design For Climate Data Analysis, submitted to IEEE Trans. Vis. Comput. Graph.
+
+Posters:  
+1. A Critical Evaluation of Visualization Design for Terrestrial Biosphere Model Inter-Comparison
+2. SimilarityExplorer: A Visual Inter-comparison Tool for Multifaceted Climate Data
+
+
+SimilarityExplorer Discussion:
+Yuanyuan: To better understand physical processes, separate seasonal cycle, interannual variability, and trend in the temporal correlation plots in the pair-wise matrix view.
+an interactive web-based tool that is very helpful in terms of the type of analysis that climate scientists need: http://www.esrl.noaa.gov/psd/cgi-bin/data/getpage.pl
+
+Yao: Allow users to specify the time range of exploration and to choose spatial area of interest
+
+Steve: Augment the views with meta-information: temporal information reflected in the views, what pre-processing were performed, etc.
+
+Next steps: give users more flexibility to explore complicated data (involves intensive data processings); add possible mining (e.g. computer clustering functions) to assist science discovery
+
+Kathe: Raise some science questions, translate them into possible data visualizations, then determine what types of data processings are required.  Kathe has a more complex suite of analyses that she uses routintely.  We need to compile these types of analyses and see about adding to SImilarityExploritory Tool
+
+Jorge: Talked about data pre-processing script and input data format
+
+Yaxing: Automatically highlight the symentrical cell if one cell is selected
+
+Steve: Export visualization into a publishable format (currently SVG is supported); Yaxing: add customized labels?
+
+Yaxing: Magnitude is currently missing here, we only show correlation
+
+Yao: See how spatial correlation change over time
+
+Yaxing: See how temporal correlation change across regions
+
+Steve: In parallel coordinates view, get rid of the time axis
+
+Steve: SimilarityExplorer, a more generalized tool or a more scenario-focused one
+
+===========
+[Model Structure Visualization Discussion]
+
+Kathe: does model structure include number of pools, transfer fractions, ...?
+Debbie: what is the best way to characterize model structure
+Christopher: Unsupervised clustering from either side (model output and structure)
+Yaxing: Any science questions we can ask against this tool? 
+Debbie: When looking at different data, bring only related characteristics in scope
+
+[Authorship and MsTMIP fair use data policy]
+Debbie: include in paper only figures that are already published
+Debbie: Hide model names and use M1, M2, ... instead?
+Aritra: Real data and real usage scenarios gave very positive feedbacks of those papers from reviewers
+Debbie: MsTMIP data policy needs to be followed if real Mstmip data is involved and offer authorship to modelers. The bottom line is we need to inform modelers the papers we are working on.
+
+[Paleon]
+7 models, some overlaps with MsTMIP
+Nested model attributes; not too much data yet
+
+Model Structure is described in the following paper:
+10.5194/gmd-6-2121-2013
+  
+Need to know more about the output data used in the Visualization Reconciliation Tool (is it SG3 or BG1?)
+ 
+Improvements in the paper:
+Pick a subset of the model structure factors
+User interactions with the weights
+Toggle off groups, if they didn’t contribute to the trends
+ 
+Authorship
+            Add Christopher and Debbie as authors
+            Have them review and provide input to the ms
+ 
+Vis ms
+            Replace figure 11 and 12 with other data
+            
+Replace with generic model names
+            TBM 1
+And parameter A, B
+ 
+Make the executable code available to the group to play with, contribute ideas
+            Jorge and Aritra
+
+
+
+[Joint Prov-EVA Discussion]
+    using Prov Tools in the EVA activities
+        for DataONE Phase 2--have an 18 month window
+MsTMIP-- Debbie and Christopher
+    Phase 1
+        processing  of model output into standard formats, doing QA/QC and then analysis
+        Global simulations -- protocol is fixed but some models don't do some of the 
+    Phase 2
+        will need to track model inputs and model outputs
+        will be smaller number of models
+
+Digital Objects need to have an identifier
+    file or granule level (Project, Model, Simulation, and Variable) probably needs an identifier, e.g. MsTMIPv1-ModelX-Global-SimY-VarZ
+    combination of objects will define MsTMIP Release #1
+    Steve Aulenbach uses this method within GCIS / NCA
+
+MsTMIP versioning
+- At some point, MsTMIP needs to release bundled model output version X to the broader user community. The bundle metadata needs to clearly capture what model-simulation-versions are included in a bundle.
+- MsTMIP project, internally, needs to keep track of the evolving of each model output, how they changed from version1 to version4, what changes have been made in a new version.
+
+Need to define what the provenance record looks like -- Steve Aulenbach's "pile" of information
+    input data, code for various steps, etc.
+    
+GCIS / National Climate Assessment -- Steve Aulenbach
+http://www.globalchange.gov/
+http://data.globalchange.gov/
+
+Back-end
+postgress database
+Perl coding
+available as an API
+GCIS has a triple store
+SPARKL endpoint
+
+
+Plan
+ * post-doc working with Debbie and Christopher to capture the steps they take in processing, checking and analyzing the data
+ * generate standard data product, wiht versions
+ * MatLab--has some add ins for Provenance
+        
+Provenance tasks:   some are tied to the CI of DataONE
+        need to carve out effort for the MsTMIP PRovenance activity
+
+paper in GMD on Provenance 
+Best practices in terms of provenance and data management to better support modeling and intercomparison activities
+Target at one or more science paper whose figures are all tracable&reproducible and their provenance&backend data are searchable and accessible from DataONE
+
+Actions
+1.  Summer Intern interacting with MsTMIP
+2.  Revise Job Description for Provenance Post Doc, to capture MsTMIP activities
+3.  Plan for DataONE Phase 2 
+    WBS, work plans, and teleconferences
+3.  GMD Paper on Provenance Best Practices
+    Organize by 'level'
+    -Tools to generate figure provenance (templet from National Climate Assessment)
+    -Script version control
+    -Model meta-data for terrestrial biogeochemistry
+    Organize by 'example'
+    -MsTMIP
+    -Paleo
+    -??
+4.  
+
+Wedneday Afternoon
+
+Similarity Explorer
+    improve the tool
+    encourage the use of the tool in Research
+    - quality check
+    - this tool is more of an exploration tool. if writing papers, it needs to be more focused
+    - the same model, compare between different simulationsmulations
+    - Taylor diagram (use a multi-model mean as reference), linear regressions, scatter plots, histograms, Q-plot, P-values, R-square, slope (trend), bias
+    - Integrate SimilarityExplorer into Vistrails/UV-CDAT (will require a lot of reengineering)
+    - Customize SE for different scenarios (?)
+    - SE is basically a visualization tool, very specific for some users/needs (what are these?)
+    - Allow users to pick the years and see interannual variability
+    - SE's advantage is its easiness and efficiency to help users to explore data
+    - Convert SE into a Web-based tool
+
+    - establish a stats plug in for Similarity Explorer
+    integrate provenance into the tool
+    
+Kathe Toddd--Brown's ideas 
+- Additional measures: slope and intercept w/ R2 and p-values, Taylor score
+- New plots: Quartile / quartile, paired scatter plot, histogram, taylor diagram
+- Constructed variables: residence time, water use efficiency
+- Fitted statistlcial model (Reduced complexity model)
+- compare similarity between output variables; compare similarity between input driver variables (e.g. CO2) and output variables (e.g. NEE) (this will focus more on trend than correlation)
+- 
+
+Next 2 months:
+- Tutorial for using SE and how to prepare data for SE (along with sample scripts)
+- Extend SE to include visualization besides correlation (trend, bias) 
+- Improve the spatial aggregation method to consider area of grid cells
+- Besides LTM, include Anomaly
+- Select different years
+- User-defined spatial regions
+
+Usability
+ * Select decadal mean, decades, years, for LTM, choose which years to average
+ * when highlighting a cell on one side of the matrix, then automatically highlight the cell corresponding to that on the other side of the matrix.
+ * TaylorDiagram, Pair-wise Scatter plot
+ * For MDS plot, consider 
+ * Consider changing the units to gC/m-2/year  (allow users to choose among common units)
+ * Bug: parallel coordinates hover label is not consistent with selected regions
+ * Remove month/season axis, use a selection box instead
+ * Allow users to label graphs (e.g. give a title) when exporting to SVG 
+
+
+Action Items:
+- Update the line charts (Figures 11 and 12) in the critiques paper to use non-MsTMIP data
+- Develop a webpage for SimilarityExplorer & other tools with download links for source code and executable code and screenshots under MsTMIP website
+- 
+
+Wednesday Afternoon (after break)
+Color Maps
+ 
+Colorbrewer web site
+            Nice selections of color scales 
+            Divergent
+            Gradient
+            Categorical
+ 
+Hard to have an optimal color scheme for multiple models
+            Some large parts of the scale have the same color
+            
+ 
+Color Maps:  Surveys
+    survey about amount represented by different maps:
+        visual estimation of a quantity
+        order maps based on the quantity
+        which maps are similar, which maps are different
+        which map has the most carbon fluxes
+        which map has the highest / lowest average temperature
+    need a data set displayed in an unexpected way -- e.g., Pangea
+        maybe fuzz the data
+    
+
+Perceptually-balanced rainbow colormap: http://mycarta.wordpress.com/2012/12/06/the-rainbow-is-deadlong-live-the-rainbow-part-5-cie-lab-linear-l-rainbow/
+
+
+
+Thursday Morning Discussion with Prov, Semantics, and CCIT
+
+Place the MAST-DC holdings into a Generic Member Node
+            Will have identifiers
+            Can restrict the metadata viewing to only those who have permissions
+ 
+Focus activities on Anna and Debbie’s groups
+            Matlab code
+                        Maybe convert to python or a generic Matlab
+ 
+Have a meeting soon, perhaps in Flagstaff, to plan the activities 
+            
+Driver data:
+            Provenance is in Yaxing’s paper
+            Details of how the models used the driver data, linked to model output
+            
+Thursday morning (after break)
+
+Future activities of EVA
+    2-pager description - broad, multiple ideas
+    based on tools that we've developed from EVA
+    based on Visualization techniques for figures and maps
+    
+     Broader Impacts for proposals:    educational component for how to visualize data
+        TIEE
+        Webinars
+        EOS
+        Training workshops
+
+Ideas: 
+    Obs4Mips
+    tools
+    improve clarity and effectivenss of charts / maps:  focus on a climate or terrestrial biosphere modeling
+        empirical studies of visualization
+    
+collaborators
+    Kathe
+    Bill
+    
+
+target agencies and calls
+    Foundations:  Sloan, Moore, 
+    NASA, NSF, DOE
+http://www.sesync.org/opportunities/data-modeling-ses-2
+
+Schedule
+    two months for a 2 page description
+    
+
+Ideas for NASA AIST 2-pager
+
+Main idea : visualization and analysis of earth system models and benchmarking with data
+
+(benchmarking = comparison of models with observations and data products (interpolated or derived from observations))
+
+Two use cases:
+1) Metamodel analysis/comparison
+
+2) Model development (tweak and run again / see model improvement)
+- introduce provenance to document what is changed
+- use visualization to optimize parameters sets in the simulation
+
+Pie in the sky:
+3)  Data Integration or model inversion (Monte Carlo Markov Chain, Bayesian Nested Sampling) parameter distribution visualization tied to simulation results
+- integration of data sets from DataOne repository
+
+Tasks for product: 
+-maps, scatter plots, histograms
+-generation of novel variables (ie turnover time = carbon stock/outflux)
+-statistical models (one pool decomposition/vegetation model, simplified GPP)
+-script/data management (provenance)
+-benchmarking, and comparison measures (correlations, bias, trends, R2, log-likelihood)
+
+Deliverables:
+-software to do tasks (DataOne Provenance and EVA team?)
+-integrated benchmarking data (DataOne repository)
+-best practices for maps etc.(DataOne EVA)
+-meta information for model comparison (DataOne Symantics and Provenance)
+
+This could be used as a platform for data integration to include in a second step
+
+Communities
+    - Terrestrial Carbon Cycle (i.e., MsTMIP, RECCAP, TRANSCOM, iLAMB etc)
+    - Air quality and air pollution transport: i.e., HTAP, http://www.htap.org/
+    - Chemistry and climate coupled model, i.e., ACCMIP, http://accent.aero.jussieu.fr/ACCMIP_metadata.php
+    - Climate: i.e., CMIP5 (not sure why this is Climate vs ESM)
+    - Earth System Models: i.e., C4MIP ?CMIP5?
+
+
+EVA Actions (end of workshop):
+1.  For two papers in review:
+   * Evaluate authorship: Poco, J.,   Dasgupta, A. W.H. Hargrove, Y. Wei, R.B. Cook, E. Bertini, and C.  Silva. In review b.  Visual Reconciliation of Alternative Similarity  Spaces in Climate Modeling, submitted to Visual Analytics Science and  Technology (IEEE VAST).  This last article looks at model output and  model structural information.
+
+   * evaluate  authorship:  Dasgupta, A., J. Poco, Y. Wei, R.B. Cook, E. Bertini, and  C. Silva.  In review-a An Exploratory Study of Visualization Design For  Climate Data Analysis, submitted to IEEE Trans. Vis. Comput. Graph.
+Jorge and Aritra:
+    - remove mention of MsTMIP models (replace with M1, M2, etc, and anonimize variables; review MsTMIP description in papers and expand, because of this new approach)
+    - replace Figures 11 and 12 with new data (regional synthesis?)---Yaxing to provide data by June 2
+    - Debbie had some comments on the Vis Design paper
+    - add Debbie and Christopher to authorship  
+    - when we receive the comments, send to all authors  
+
+2.  Papers / presentations / posters for the DataONE quarterly report
+    - CCSI SAB poster -- Yaxing
+    - software expo -- John Cobb
+    - Webinar to demonstrate Similarity Explorer -Bob
+    
+    ?
+    
+3.  Make similarity explorer executable code available  (Yaxing and Yan)
+    - provide on MsTMIP Web site
+    - provide some explanation of input data (what scenario is used?)  (ok to use in an exploratory mode??) link to the policy
+    - provide tutorial / Webinar
+ 
+4.  Make "Vis reconciliation" tool  executable code available  (Yaxing and Yan)
+    - provide on MsTMIP Web site
+    - link to data policy
+    - explain structural data and model output data -- which scenarios are displayed?
+    
+5.  MsTMIP team needs to expand model structure info to include continuous properties (number of pools, etc.)   
+
+6.  Summer Intern activities:  Yan
+    - assist with the tutorials for SimExplorer and VisReconciliation
+    - summarize functionality of the http://www.esrl.noaa.gov/psd/cgi-bin/data/getpage.pl
+     - develop list of user suggested changes to two tools --- SimExplorer and VisReconciliation
+     -update EVA wiki with material from Workshop
+     
+7. ORNL DAAC to archive structural data
+    who are the authors?
+
+8.  set up MsTMIP model output for Provenance tasks in DataONE Phase 2
+    - plan - capture requirements for MsTMIP, DAAC, and DataONE
+    - develop structure for MsTMIP data, with temp-DOIs (~10; data set level) and object identifiers (~file level)
+    - set up TDS
+        - extract metadata from netCDF files in TDS
+        - compile additional metadata for data files to meet ORNL DAAC and DataONE
+    - set up Mercury for MAST-DC
+    - set up MAST-DC MN for DataONE
+    
+
+
+
+GMD Paper on Provenance Best Practices
+    Organize by 'level'
+    -Tools to generate figure provenance (templet from National Climate Assessment)
+    -Script version control
+    -Model meta-data for terrestrial biogeochemistry
+    Organize by 'example'
+    -MsTMIP
+    -Paleo
+

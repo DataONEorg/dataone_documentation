@@ -1,0 +1,138 @@
+DataONE Users Group
+Jul 7th - 8th 2013
+Chapel Hill, NC
+
+Roundtable 5: Outreach / Education   10:50a-12:00p
+
+Participants: Bob Sandusky, Sherry Lake, Ward Fleri, Thu-Mai Christian, Benjamin Branch, Barrie Hayes, Michele Hayslett, Dan Phipps, Inna Kouper, Vida Djaghouri, Dean Walton, Danianne Mizzy, Todd Vision
+
+Talking points / Guiding Questions
+ * What needs for outreach/education exist in the community (beyond DataONE)?
+ * What solutions currently exist?
+ * What contribution can / should DataONE provide in this landscape?  How can that be best achieved?
+
+Needs:
+
+ * Develop curricula for longer term courses; 1/2 credit, 1 credit, or 3 credit Data Management, Data life cycle
+   * data consultancy training or mentorship to help IS students learn how to lead these classes
+ * Data ownership issues (people from students to PIs need help)
+   * distinguish between different groups of stakeholders
+ * Take IS students out of the IS department and into the field where they may learn from researchers and researchers may learn from them.
+   * internships
+ * National Assessment of Educational Progress for K-12 - Technology and Engineering Literacy Assessment (TEL)
+ * Next Generation Science Standards (NGSS)
+ * at MS/HS level, teach data management/digital curation
+   * call it STEM, it will be fundable
+ * students collect data, but really don't know what to do with it
+ * Draft a position paper; use of core curriculum doesn't leave a lot of time for data management education
+ * Integrate data management into aspects of the curriculum
+   * might be easier to implement than adding additional training/education for DM
+ * Data Life Cycle intersection with Scholarly Communication and repository awareness
+ * At graduate level, consider analysis and visualization training (i.e. how to communicate data analysis, etc.)
+ * Library needs to decide how to manage information literacy (technology, data, etc.) - transliteracy
+ * Supporting software training
+   * People who may know about DM may need to know how to better use tools available to them (Adobe Illustrator, etc.)
+   * communicating
+ * Awareness: people don't know that they have needs
+   * survey for small groups
+   * interviewing researchers about their research and along the way introducing DM topics (time intensive)
+   * promote citizen science and informatics
+   * RFP/RFA needs to have a requirement for a DM plan (i.e. requirements from funders)
+   * open dialog
+   * guidelines for DMP evaluation:  teach reviewers how to understand/review DM plans (Johns Hopkins developing a rubric to help evaluators rate/understand DM plans)
+ * Metrics on pipeline (workforce), technology change impacts
+   * ensuring skills exist in the community to accomodate change
+ * Understanding value of the workforce (administration values individual contributions)
+   * local (institutional)
+   * national
+
+Existing initiatives:
+
+ * UK's Digital Curation Center curriculum and roadshows  http://www.dcc.ac.uk/
+   * basics of data management (Data Curation 101)
+   * roadshow run by DCC
+ * Software Carpentry
+   * mostly US/Canada but some international
+   * roadshow on campus
+   * franchised
+   * instructors can be local
+   * http://software-carpentry.org/
+ * School of Data
+   * self-paced
+   * online modules for various tools
+   * http://schoolofdata.org/learn/
+ * NASA - taking datasets and subsetting them down for use on K-12 level
+ * Mantra - online training for librarians for DM
+   * http://www.ed.ac.uk/schools-departments/information-services/about/organisation/edl/data-library-projects/mantra
+ * Lynda.com - similar to Software Carpentry
+   * commercial 
+   * any software
+   * higher education +
+   * online self-paced tutorials
+ * IMLS has funded data/information literacy courses
+   * Minnesota/Cornell/Purdue online (see Dean Walton's research)
+   * UMass eScience
+ * ESIP Shortcourses
+   * http://wiki.esipfed.org/index.php/Data_Management_Course_Outline
+   * "finished" products are:
+   * http://commons.esipfed.org/datamanagementshortcourse
+
+Role that DataONE can play in education/outreach:
+
+ * Link from DataONE to some of the available tools mentioned above
+ * DataONE as an advocate for data sharing, interoperability
+ * Case studies
+   * power of interoperability/synthesis
+   * digestible success stories (positive outcomes)
+   * individual researchers' positive impacts 
+   * video of actual people
+   * standardizing data stories, coordination (template? standards?)
+     * categorize existing case studies
+     * RDA engagement interest group
+   * Opportunities for Data Exchange (ODE) - EU effort
+ * Advocate for A vs B (open source/corporate)
+   * assessment role
+   * provide information rather than a recommendation from DataONE
+ * Examples of good practice
+   * packaged with software materials, MN materials, etc.
+   * 'Dryad Lab' as an example of identifying datasets that can be scaffolded into a part of an undergrad course
+   * Data Driven Learning Guides (
+ * As alternative to 1- or 3- credit classes, make available plug-and-play modules
+   * research
+   * compliance
+   * include grading rubrics in addition to the instructional material
+ * MOOCs
+   * identify appropriate pedagogy frameworks
+   * identify content
+ * DataONE currently provides 10 modules for data management, self-paced
+   * thought about moving to a more online environment
+   * certification/badges at completion
+ * Training
+   * researchers
+   * librarians
+   * data managers
+   * policy makers
+   * journal editors
+   * grant administrators
+   * office of research
+   * K-12?
+   * undergraduates
+   * citizen scientists
+
+VOTING RESULTS
+
+Case studies - 7
+Plug and play modules - 6
+Advocacy data sharing - 5
+Examples of good practice - 1
+Data set packaging for training - 1
+Credit for training via DataONE - 1
+
+Audiences
+    librarians - 8
+    office of research/grant administrators - 6
+    policy makers - 1
+    undergraduates - 1
+    researchers - 3
+    
+

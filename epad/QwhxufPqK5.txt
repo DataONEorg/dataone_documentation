@@ -1,0 +1,47 @@
+Rules for AccessPolicy
+
+Owner:
+
+- Each object has exactly one owner.
+- The owner always has all permissions on the object.
+- Public subject can not be owner (?)
+
+
+Object creation, create():
+
+- The subject that creates an object becomes the owner.
+- Public subject can not create objects.
+- An AccessPolicy object is optional.
+- If no AccessPolicy is provided, no permissions are set on the newly created object.
+- If an AccessPolicy is provided, the effect is as if, in a transaction, the object was created without an AccessPolicy and the AccessPolicy was specified in a second step with setAccessPolicy(). If the implicit setAccessPolicy() call fails, the entire transaction is rolled back and Exceptions.InvalidSystemMetadata is returned with a description of the issue that was found in the AccessPolicy.
+
+
+AccessPolicy update, setAccessPolicy():
+
+- Only the owner and any subjects with changePermission can call setAccessPolicy() on an object. Other subjects will receive Exceptions.NotAuthorized. 
+- Public subject can not call setAccessPolicy().
+- The owner can not be specified in any AccessRules for the object. It would not make sense since we have only “allow” rules and the owner already has all permissions. If the owner is specified in an AccessRule, Exceptions.InvalidRequest is returned.
+- To modify an AccessPolicy, for instance to add permissions for another user, a read-modify-write cycle is required. The client downloads the SysMeta for the object, extracts the AccessPolicy, modifies it and calls setAccessPolicy() with the new object.
+- Any AccessRules that duplicate existing AccessRules for the object are silently ignored.
+- Any duplicated AccessRules within the AccessPolicy are silently ignored.
+- If more than one AccessRule is set for a given object and subject, only the most permissive rule is used. The other rules are silently ignored.
+- An access rule implicitly includes the less permissive rules: execute > changePermission > write > read.
+- Example: An AccessPolicy that specifies changePermission and write for a given object and subject is intepreted as a single rule for changePermission. The effective permissions then become changePermission, write and read.
+
+
+Transfer of ownership:
+
+It may be desirable for the owner of an object to transfer ownership to another subject, after which the original owner would have no rights associated with the object.
+
+A use case for this would be when a subject leaves his position and wants to hand everything over to a successor.
+
+
+Questions / issues:
+
+- If an embargo is in place, should setAccessPolicy() be allowed?
+- Our definition for Rights Holder is “The Subject that has full control over the access control rules for an object.” I think the name Rights Holder is a bit confusing. To me, it seems like Rights Holder would the name of the legal entity that holds the Copyright, and not a DataONE subject. How about renaming rightsHolder to owner?
+- Currently, the submitter and rightsHolder values are provided by the client. I think these should be provided by the MN, and be based on the subject in the session in the certificate.
+- Should setAccessPolicy() reject unneeded rules? For example, a policy that allows read for Public and another subject or a policy that allows read for a subject and the group the subject is in.
+- Can someone close their DataONE account? If so, what happens with objects that are owned by the subject?
+- Support for transfer of ownership into the "Public Domain"?
+

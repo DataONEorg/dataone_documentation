@@ -1,0 +1,1188 @@
+#persist
+
+Audit design docs: http://mule1.dataone.org/OperationDocs/20131126_cn_audit_design/cn_systemmeta_audit_activity_diagrams.html
+
+Race condiditons when the listeners starting up. the 1.0.1 diagram a race condition.
+
+Static state as a list of pids needing processing and 
+
+
+TODO: remove Active Node Check
+ (race conditions, so just set it in node.properties)
+
+
+
+Potential changes to Metacat to access PostgreSQL tables:
+ *  Factor out DB service layer into metacat-core to access (CRUD) tables?
+ * Can we include the metacat.jar as a dependency and access IdentifierManager to manipulate tables?
+ * Should we modify the REST interfaces to allow (unpublished) access to PostgreSQL tables, bypassing hazelcast?
+ * 
+ * 
+
+Completion of MergeSystemMetadata and the comparison of systemMetadata
+    needs extensive testing
+        place the SystemMetadata Testing class in d1_common_java, place it org.dataone.service.types.v1.util
+        test each of the public and protected methods in MergeSystemMetadata.
+        
+        => determineAscendentSystemMetadata method is non-deterministic when encountering 'tying' situations:
+         - 2 of 3 with the highest serialVersion: which wins?  Looks like currently the first in the list.
+         - 2 (or 3) of 3 with the latest mod-date when serialVersions are all the same: again, first in the list will win.
+         
+         what are the implications?  
+     * If we model that latest mod date breaks the tie when all 3 have the same version number, then it follows that we should do the same if only 2 of the 3 have the latest serial version.
+     * the likelihood that 2 or more sysmetas sharing the same serialVersion and modDate but having differing other values is very, very low - the only legitimate way is recording 2 different version-incrementing changes independently in the same millisecond.
+     * this could also happen is if a change to systemMetadata happens but the serialVersion is not incremented (which would be a bug)
+     * 
+    
+Stubs for AuditJobControllerImpl, AuditJobImpl
+
+Create a Logging Class for important messages
+
+
+
+AuditMessageTopic
+    -> AuditMessage
+       |
+       -> WorkflowState
+AuditJobMessageListener 
+    -> WorkingState - add in a lock
+    -> DequeMessage
+    -> AuditMessageJobManager
+        explanation: single thread managing the single threads of the jobs, should control the 'State' of the AuditMessageJobs. Needs to be able to stack the AuditJobMessageListener requests, needs to be able to handle out-of-sync requests.  
+        -> DequeMessage
+        -> WorkingState
+        -> AuditMessageProcessorFactory
+
+On Commit to db. We cannot recover from a failure, must note it and move on to the next pid.
+
+1st rule: We do not edit Metacat. We only use funtionality as provided. 
+2nd rule: If metacat does not provide functionality we need, we create it in d1_cn_audit.
+
+
+If there is a conflict in the future, repair interface with a method called mend. logging of exceptional states and conflicts to a log file. ok for replica policies. obsolets and obsoleted by we are putting in pointers to other objects, if we have to choice between two attributes, we may have to 
+
+Needs an AuditMNWarningLogger Class
+     Logger logger = new Logger();
+     implements a warn method output should conform to a csv 
+         warn mnId ','+ pid ',' + Message
+
+The AuditMNWarningLogger class will be added to other cn audit classes in addition to typical java logger. 
+
+AuditLog
+1st output 3 documents sent from getSystemMetadata call, write them out to filesystem, write out the mergedSystemmetadata file.
+
+
+========================================================================================================
+Lets make a simpler process than the d1_cn_audit project,  We call it DataONE Tidy SystemMetadata
+cn-unm-1 (since it is down already)
+
+(strawman)
+Requirements:
+============
+1. preserve original copies of discordant sysmetas (audit trail)
+2. report the changes and where each value originated
+3. succeed on all 3 CNs or rollback all.  (CN-ORC = CN-UCSB = CN-UNM)
+4. AccessPolicy of Metacat nodes are not clobbered.
+
+
+(Strawman)
+Considerations / Dynamics
+=====================
+1. staleness of data, because MN's are still live
+2. code complexity vs. capability
+3. data transfer speed & server speed limits (and robustness of MNs)
+4. Metacat independent AccessPolicy-setting bug
+5. AuthoritativeMN conflicts in systemMetadata between KNB/PISCO, KNB/LTER, etc.
+6. external deadlines
+
+
+Conceptual Areas  (please: keep as concise list - don't add details)
+=============
+1. sysmeta harvesting
+2. sysmeta processing & reporting
+3. update CNs
+4. prevent future split-brain problems
+(5. patch metacat-based MNs to keep accessPolicies in sync)
+
+
+Design Proposals
+==================
+1. sync CNs in isolation, (don't pull AuthMN sysmeta), don't call dirtySystemMetadata at the end.
+   - MN operators would be free to call CN.setAccessPolicy (or any other methods) afterwards (before would be ok, too)
+     to make sure their systemMetadata values are preserved.
+     Cannot turn on replication until access policy are repaired from each effected MN.
+
+2. sync CNs in isolation, then overlay AuthMN AccessPolicy (all Tiered nodes), cache original AuthMN sysmeta after the fact
+ - for complete access policy fix, all docs from effected MN must be tested/repaired -- not just docs that need CN repair)
+ - would allow replication to be turned on immediately after repair completed.
+
+3. for all Tiered nodes, use AuthMN in sysmetaProcessing as the ascendent systemMetadata, and modify repair methods to
+    effectively prioritize CN values for certain fields (replicaList, serialVersion, for example).
+
+* non of the proposals involve pulling system from non-AuthMNs (Replicas)
+* props. 2 & 3 would allow the AuthMN sysmeta to be cached as part of the audit trail
+
+ACTION: Implement design #2
+
+
+Sysmeta Processing Design for design #2:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+required inputs: 
+    1. all sysmeta from all CNs
+    2. sysmeta of all objects known to CNs from the AuthMN (to be queried for by the processor)
+
+outputs:
+    1. resulting systemMetadata && change report
+    2. 
+
+foreach PID in DataONE (from master PID list)
+{
+      1. merge CN sysmeta (track if changes were made)
+      2. get AuthMN NodeReference from resulting sysmeta 
+      3. download AuthMN's sysmeta for the pid
+      4. apply authMn's AccessPolicy to the resulting sysmeta from step 1 (track if Access Policies are different)
+          -  resultingSysmeta.setAccessPolicy(authMN.getAccessPolicy())
+      5. if the new resulting sysmeta is different from CN version, submit resulting sysmeta as update to CNs
+}
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+I. Generate Master SysMeta table from CNs
+----------------------
+a) source PIDs from 3 CNs, only (one row per pid per CN)
+ * requires CN{1-3}DAO.listPids(pageNum, pageSize)
+
+b) for each (CN)
+    call CN{1-3}DAO.getSystemMetadata()
+    insert into HarvestSystemMetadataTable (HarvestCacheDao.saveSystemMetadata())
+
+c) kick off merge for PID when PID harvest happened on all 3 CNs, regardless of return (null, success, not found, etc.)
+ * Spawns a Runnable CNMergeJob of some sort, sends to MergeExecutorService
+
+II. Calculate NodeRole (uncertain if we need this step)  (goes away)
+---------------------------------
+Problem:  Some replicas may be reporting themselves as Authoritative Member Nodes.  Consequently multiple copies will present themselves as the authoritative copy.  Need to determine which Member Node is the true Authoritative Node in order to determine the 'role' of each copy of a system metadata document.
+
+Solution:   When multiple member nodes present as the authoritative member node, the Coordinating Node replica (assuming they agree) will be consulted as to which Member Node is the true Authoritative Member Node.  If the Coordinating Nodes do not agree, an error must be logged and the Authoritative Member Node cannot be determined.  Consequently not all replica/copy 'roles' will be able to be determined.   The effect on further processing will be:  ??
+
+Possible Implementation:
+    select AuthoritativeMemberNodeId, count(*)
+      from HarvestSystemMetadata
+    where NodeType = CN group 
+    and PID = XXX
+    by  AuthoritativeMemberNodeId;
+
+    if (count(*) > 1) {
+        select HarvestId, SerialVersion, lastSystemMetadataUpdate  from HarvestSystemMetadata where NodeType = CN and PID = XXX;
+        determine the canonical AuthoritativeMemberNodeId from the ascendent SerialVersion, lastSystemMetadataUpdate.
+    
+        select AuthoritativeMemberNodeId
+        from HarvestSystemMetadata
+        where HarvestId = xxx;
+    }
+
+    at this point we have the canonical AuthoritativeMemberNodeId;
+
+    update AuthoritativeMemberNodeId = canonical AuthoritativeMemberNodeId where PID = xxx;
+
+    update NodeRole = AuthMN
+    where PID = XXX
+    and SourceNodeId = canonical AuthoritativeMemberNodeId;
+
+    update NodeRole = ReplicaMN
+    where PID = XXX
+    and NodeType = MN
+    and SourceNodeId != canonical AuthoritativeMemberNodeId;
+
+    update NodeRole = CN
+    where PID = XXX
+    and NodeType = CN;
+
+update AuthoritativeMemberNodeId =  canonical AuthoritativeMemberNodeId
+select 
+
+CREATE DATABASE cn_audit OWNER [someone-- metacat??];
+HarvestSystemMetadata Table
+======================
+HarvestId (unique row id)
+id - PK(PID, SourceNodeId)
+PID
+SourceNodeId  (NodeReference string) Identifies where the systemMetadata was harvested from
+NodeRole  (AuthMN|CN|ReplicaMN)
+NodeType (MN|CN)
+AuthoritativeMemberNodeId
+SerialVersion
+lastSystemMetadataUpdate
+Status (http status [200|4xx|5xx])
+FailureResponse
+CreateDate
+HarvestDate
+Checksum (of the sysmeta of the systeMeta row)  ?? or use string compare between them
+systemMeta  UTF-8 String
+
+
+HarvestSystemMetadataSNAPSHOT Table
+================================
+HarvestSnapshotId (unique row id) (Run #)
+OPERATION (INSERT|UPDATE|DELETE)
+HarvestId (unique row id)
+PID
+SourceNodeId
+AuthoritativeNodeId
+SerialVersion
+lastSystemMetadataUpdate
+Status (http status [200|4xx|5xx])
+FailureResponse
+CreateDate
+HarvestDate
+Checksum (of the sysmeta of the systeMeta row)  ?? or use string compare between them
+systemMeta  UTF-8 String
+
+
+III. Merge the Results (CNMergeJob)
+-------------------------
+a) Apply merge strategies on the CN  sysmeta
+ * pass in cnSysMetaList, get out merged sysmeta
+
+b) summarize merge changes. TBD
+
+for each attribute, where the value[s] came from
+- dateSysMetaMod
+- serialVersion
+- archived
+- obsoletes
+- obsoletedBy
+- replicationPolicy
+- replicaList
+- accessPolicy (overriden by MN in next step)
+serialized to disk for each pid
+
+MergeReport Table (multiple rows for multiple attributes/sources)
+PID
+attribute
+source (urn:node:CN, urn:node:CNUCSB1, urn:node:CNORC1, urn:node:CNUNM1, urn:node:MNXXX)
+
+c) Write to table, requires MergeResultDAO.saveSysMeta()
+
+MergeResult Table
+id -- PK(PID, MergeType)
+PID
+MergeType (CN|MN)
+MergeDate
+RepairStatus (Success | Failure)
+RepairDate
+systemMeta UTF-8 String
+
+IV. Merge the Results (MNMergeJob)
+-------------------------------------------------
+a) Retrieve authoritative Member node's copy of system metadata (determined by Authoritative MN recorded by CN)
+    i) into HarvestSystemMetadata table
+b) Apply Member Node Merge Strategy.
+    i) retrieve previous CN merge result - overlay MN changes on that record.
+c) Log summarization of MN changes.
+d) Write to table MergeResultDao.saveSystemMetadata 
+        - Use MergetResult.MergeType to differentiate from CN Merge result
+
+every facet looked at from systemMetadata
+which source was used to inform the merge version
+
+MergedAttributesResult Table
+    
+        MergedAttributesResultID
+        PID
+        AttributeName
+        MergedAttributeValue
+        MergedResultReason
+        MergeResultId
+        
+        foreign key MergeResult .MergeResultId MergedAttributesResult .MergeResultId 
+        
+     MergeAttributesValuesResultXref Table
+        MergeAttributesValuesResultXrefId
+        MergedAttributesResultId
+        OriginalAttributeValueId
+        
+        foreign key MergeAttributesValuesResultXref.MergedAttributesResultId   MergedAttributesResult .MergedAttributesResultID
+        foreign key MergeAttributesValuesResultXref.OriginalAttributeValueId  OriginalMergeAttributesResult.OriginalAttributeValueID
+        
+   OriginalMergeAttributesResult Table (int MergeAttributesResultID)
+             OriginalAttributeValueID
+             MemberNodeId
+            OriginalAttributeValue
+            
+
+MetacatCopy DB tables
+
+1. merge_systemMetadatata
+2. merge_smReplicationStatus
+3. merge_smReplicationPolicy
+4. merge_xml_access
+
+
+V. Apply CN Update
+------------------------------
+
+a) for each record in MergeResult where MergeType=[CN | MN] 
+    call CN{1-3}DAO.saveSystemMetadata(mergedSysMeta)
+    
+b) Saves to:
+    systemMetadatata
+    smReplicationStatus
+    smReplicationPolicy
+    xml_access
+    
+c) Mark each pid's MergeResult.RepairStatus (success/failure?) and RepairDate = now()
+    
+
+copy the MetacatCopy DB Tables (1-4)  to each CN (into postgres metacat tablespace)
+   
+   UPDATE systemMetadata target
+   SET ...
+   FROM merge_systemMetadatata  source
+   WHERE target.guid = source.guid
+   
+  (process will not perform inserts of missing documents/system metadata, metacat replication will resolve missing docs per CN)
+
+VI. Evict and rehydrate hzSysMeta, inducing re-indexing
+--------------------------------------------------------------------------
+a) Retrieve a list of pids from MergeResult where RepairStatus=success
+b) evict entry from hzSystemMetadata
+c) call get on hzSystemMetadata to effect (re)index
+
+VII. [Optional] Send MNAuthorization.systemMetadataChanged for all merged records
+--------------------------------------------------------------------------
+Do not do this unless all MN Merge (access policy) was pushed to CN db.  Until all access policy with metacat documents have been resolved.  
+  * Run Synchronize before to ensure any changes between harvest and this process are downloaded and incorporated into the CN
+
+  Foreach SysteMetadata in merge_systemMetadatata
+    call MNAuthorization.systemMetadataChanged for each MN replica
+
++++++++++++++++++++++++++++++++++++++
+rough sketch of authNM inclusion / slightly modified logic for mergeSysMeta
+
+https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_audit/src/main/java/org/dataone/cn/audit/strategy/MergeSystemMetadata.java
+
+    NodeList context = <set by the constructor>
+
+    public SystemMetadata mend(Map<NodeReference,SystemMetadata> sysmetaToProcess) {
+
+            NodeReference authMN =  findAuthMN(sysmetaToProcess);
+
+            // if authMN is Tier3 MN
+            if (authMN != null && isNodeTier3(authMN)) {
+                
+                    // keeps everything from the Member Node except the replicaList ?
+                    ascendentSystemMetadata = sysmetaToProcess.get(authMN);
+                    
+                    mergeReplicaList(ascendentSystemMetadata,  sysmetaToProcess);
+                    /**
+                     * Make a list of all replicas encountered.  For multiple replica records for
+                     * the same membernode, choose the one with the latest verification date and 
+                     * status.  (status is the tie-breaker) 
+                     */
+
+                    use_CN_ORC_ReplicaPolicyInfo( sysmetaToProcess);
+                    /** 
+                    * rep policy info =  replicationAllowed and numberOfReplica values
+                    */
+                       use allowed and number from the cn-orc-1 if they exist on cn-orc-1.
+
+                       use  blocked and preferred from 
+                        Use replica policy from cn-orc-1
+
+
+                    if (isReplicationAllowed(ascendentSystemMetadata)) {
+
+                            collateAllPreferred(ascendentSystemMetadata,  sysmetaToProcess);
+                            /**
+                             * The Preferred lists are ordered, and so when merging, the resulting superset
+                             * needs to maintain the original ordering as best it can, and this is done 
+                             * via collating the lists, as in: 
+                             *    [a1,a2,a3...], [b1,b2...], [c1,c2,..] => [a1,b1,c1,a2,b2,c2,...]
+                             *
+                             * The list of the ascendent (target) sysmeta is the first list in the order 
+                             * of starting lists, so in the above example a is assumed to be from the 
+                             * ascendent list.
+                             */
+
+                            mergeBlocked(ascendentSystemMetadata,  sysmetaToProcess);
+                            /**
+                             * Create a superset of blocked member nodes from the different systemMetadatas,
+                             * logging differences between the mergeTarget and the others (additions from 
+                             * the others)
+                             */
+                    }
+
+            } else {
+
+                ascendentSystemMetadata =  determineAscendentSystemMetadata( sysmetaToProcess);
+                 /**
+                 * The ascendent sysmeta is the one with the highest serialVersion and then 
+                 * if more than one at the highest version, the latest modification date.
+                 * In the case of a tie in both criteria, the first one encountered is used,
+                 * and a log.warn is thrown stating multiple suitable candidates.
+                 */
+
+                 useAscendentAuthoritativeMemberNode(ascendentSystemMetadata,  sysmetaToProcess);
+                 /**
+                  * The AuthoritativeMemberNode of the ascendent (target) sysmeta is used in all cases,
+                  * and discrepancies between it and other versions are logged.
+                  */
+
+                useLatestDateSystemMetadataModified( sysmetaToProcess);
+                 /** 
+                  * grafts the latest modification date from all of the sysmetas into the mergeTarget
+                  */
+
+                logicalOrTheArchivedValues(ascendentSystemMetadata,  sysmetaToProcess);
+                 /**
+                  * sets archived flag to true on the mergeTarget if one of the sysmeta
+                  * instances have the archived flag set to true.
+                  */ 
+                  
+
+                  useAscendentObsoletedBy(ascendentSystemMetadata,  sysmetaToProcess);
+                  /**
+                   * Take the ascendent sysmeta's obsoletedBy value, unless null, in which
+                   * case, take the value from one of the other sysmetas.
+                   * If there are conflicting values among the non-ascendents, log an ERROR containing the conflicting pids
+                   * and choose the first non-null value encountered in the sysmeta list (non-deterministic).
+                   */
+
+                   useAscendentObsoletes(ascendentSystemMetadata,  sysmetaToProcess);
+                   /**
+                    * Take the ascendent sysmeta's obsoletes value, unless null, in which
+                    * case, take the value from one of the other sysmetas.
+                    * If there are conflicting values among the non-ascendents, log an ERROR
+                    * and choose the first non-null value encountered in the sysmeta list (non-deterministic).
+                    */ 
+
+                    useAscendentAccessPolicy(ascendentSystemMetadata,  sysmetaToProcess);
+                   /**
+                     * The Access Policy of the ascendent (target) sysmeta is used in all cases,
+                     * and discrepancies (subject-permission pairs not included) between it and other versions are logged
+                     */
+                    
+
+                    useAscendentRightsHolder(ascendentSystemMetadata,  sysmetaToProcess);
+                    /**
+                    * The RightsHolder of the ascendent (target) sysmeta is used in all cases,
+                    * and discrepancies, between it and other versions are logged.
+                    */
+
+
+                    mergeReplicaList(ascendentSystemMetadata,  sysmetaToProcess);
+                    /**
+                     * Make a list of all replicas encountered.  For multiple replica records for
+                     * the same membernode, choose the one with the latest verification date and 
+                     * status.  (status is the tie-breaker) 
+                     */
+
+                    use_CN_ORC_ReplicaPolicyInfo( sysmetaToProcess);
+                        Use replica policy from cn-orc-1
+
+                    if (isReplicationAllowed(ascendentSystemMetadata)) {
+
+                            collateAllPreferred(ascendentSystemMetadata,  sysmetaToProcess);
+                            /**
+                             * The Preferred lists are ordered, and so when merging, the resulting superset
+                             * needs to maintain the original ordering as best it can, and this is done 
+                             * via collating the lists, as in: 
+                             *    [a1,a2,a3...], [b1,b2...], [c1,c2,..] => [a1,b1,c1,a2,b2,c2,...]
+                             *
+                             * The list of the ascendent (target) sysmeta is the first list in the order 
+                             * of starting lists, so in the above example a is assumed to be from the 
+                             * ascendent list.
+                             */
+
+                            mergeBlocked(ascendentSystemMetadata,  sysmetaToProcess);
+                            /**
+                             * Create a superset of blocked member nodes from the different systemMetadatas,
+                             * logging differences between the mergeTarget and the others (additions from 
+                             * the others)
+                             */
+                    }
+            }
+
+        return ascendentSystemMetadata;
+    }
+
+Notes:
+CN-ORC-1 smreplicationpolicy summary:
+
+metacat=# select count(*) as cnt, member_node from smreplicationpolicy group by member_node;
+  cnt  |   member_node   
+-------+-----------------
+ 53063 | urn:node:KNB
+   140 | urn:node:mnUNM1
+ 76123 | 
+
+On ORC:
+metacat=# select count(*) from smreplicationpolicy where member_node not like 'urn%';
+ count 
+-------
+ 76123
+
+Staleness issue impact on this design:
+Pre-fetching MN ssymeta may not work if CN's are in readOnly-mode when MNs call CN.setAccessPolicy(), so ACLs will be stale in the cache, and there's no opportunity to get the MN to resend CN.setAccessPolicy()
+
+We're planning to not up-front mass harvest
+
+PROCEDURES FOR WEEK OF MARCH 12
+
+New code:
+  add in to the tidy job a way to review deletes or successes with warnings.
+  add in new column, add in REVIEW to enumeration
+
+New error: Solved
+ after failed job error because of timeouts, the next exception was 
+  
+
+  WARN  2014-03-11 15:24:08,255 [main]o.d.tidy.merge.MergeExecutorService - fail count exceeded removing job from retry, adding to failedPidSet: aghy.4.2
+  ERROR 2014-03-11 15:24:08,256 [main]o.d.tidy.merge.MergeExecutorService - Job Failed: aghy.4.2
+
+  ERROR 2014-03-11 15:24:08,263 [pool-1-thread-8]o.d.t.c.TidyJobThreadPoolExecutor - afterExecute: aghy.4.2: java.lang.InterruptedException
+  ERROR 2014-03-11 15:24:08,270 [pool-1-thread-6]org.dataone.tidy.merge.MergeJob - Could not open JPA EntityManager for transaction; nested exception is java.lang.IllegalStateException: Pool not open
+
+Continue running increasing large batch jobs
+100
+1000
+10000 (10K run worked - 1.2K SanParks connection problems)
+Test SqlDump
+    1)test first on cn-dev-ucsb-1
+       a) create a .pgpass that contains the metacat user password
+        b) divide current script into 2 separate scripts to run in parrallel
+        c) add a tx command to the end of the script that dumps and transforms the merged database
+        d) select count from current systemMetadata tables, note the #
+        e) run the scripts
+        f) execute the resulting transformed merged sql script
+        g) confirm results by running Metacat and executing d1 API calls against listObjects and getSystemMetadata
+        h) perform database count, confirm that listObjects returned equals to the count from the database query
+        i) restore the original systemMeta tables, perform query against systemMetadata tables, confirm that all record counts equal to the initial counts in d)
+    2) test on cn-unm-1
+        a) select count from current systemMetadata tables, note the #
+        b) run the scripts
+        c) execute the resulting transformed merged sql script
+        d) confirm results by running Metacat and executing d1 API calls against listObjects and getSystemMetadata
+        e) perform database count, confirm that listObjects returned equals to the count from the database query
+        f) restore the original systemMeta tables, perform query against systemMetadata tables, confirm that all record counts equal to the initial counts in d)
+
+CN service testing (after restoring sysmeta tables and turning on the CN services
+===========================================================
+1. listObjects(count=0): does total equal what we copied over?
+2. listObjects(count = total + 100), new total should equal old total
+3. get systemmetadata from different sources, see if they deserialize correctly
+  - get first 50 from each authMN (from merge_result table) and put pids and authmn in .csv
+
+
+FULL RUN
+
+Steps
+1) Prepare for The Full Run of Tidy
+    a) we update all CNs to Read-Only
+    b) we turn off processing and index daemons
+    c) we backup/dump metacat databases (all CN)
+    d) copy all 3 CN source tables to UNM
+    e) confirm ORC is only CN in RR
+    
+2) Full Run on the UNM
+    a) bring metacat down on UNM
+    b) run tidy
+
+3) Confirm initial results
+    a) On UNM, we select the total # of records in the tables to compare after merge has occured, orig tables <= new table
+        1) verify every pid from source is represented in merged output
+              Confirm counts are equal from origin systemMetadata tables and the merged table
+                root@cn-unm-1:/var/log/dataone/d1-tidy# su - postgres -c "psql -d d1-tidy -c\" \
+                > select count(union_sys.GUID) \
+                > from ( \
+                > select  ucsb.guid as GUID \
+                >         from ucsb_systemmetadata ucsb \
+                > UNION \
+                > select orc.guid as GUID \
+                >         from orc_systemmetadata orc \
+                > UNION \
+                > select unm.guid as GUID \
+                >         from unm_systemmetadata unm) as union_sys\""
+                 count  
+                --------
+                 462932
+                (1 row)
+
+                root@cn-unm-1:/var/log/dataone/d1-tidy# su - postgres -c "psql -d d1-tidy -c\"select count(*) from merged_systemmetadata\""
+                 count  
+                --------
+                 462932
+                (1 row)
+
+               Confirm counts are equal from origin systemMetadata tables and the merged table
+                root@cn-unm-1:/var/log/dataone/d1-tidy# su - postgres -c "psql -d d1-tidy -c\"select count(*) \
+                > from merged_systemmetadata m_sys \
+                > where not exists \
+                > (select union_sys.GUID \
+                > from ( \
+                > select  ucsb.guid as GUID \
+                >         from ucsb_systemmetadata ucsb \
+                > UNION \
+                > select orc.guid as GUID \
+                >         from orc_systemmetadata orc \
+                > UNION \
+                > select unm.guid as GUID \
+                >         from unm_systemmetadata unm) as union_sys
+                >         where m_sys.guid = union_sys.guid)\""
+                 count 
+                -------
+                     0
+                (1 row)
+
+                root@cn-unm-1:/var/log/dataone/d1-tidy# su - postgres -c "psql -d d1-tidy -c\"select count(*) \
+                > from ( \
+                > select  ucsb.guid as GUID \
+                >         from ucsb_systemmetadata ucsb \
+                > UNION \
+                > select orc.guid as GUID \
+                >         from orc_systemmetadata orc \
+                > UNION \
+                > select unm.guid as GUID \
+                >         from unm_systemmetadata unm) as union_sys \
+                > where not exists (select m_sys.guid \
+                > from merged_systemmetadata m_sys \
+                > where m_sys.guid = union_sys.guid)\""
+                 count 
+                -------
+                     0
+                (1 row)
+
+    b) manual spot check of records to confirm merge results in metacat
+
+4) Rebuild metacat tables on UNM
+    a) dump 'merged_'  tables from tidy database using CREATE 
+    b) remove 'merged_' from beginning of tables.
+    c) add a header to drop tables 
+    d) add a header to drop indices
+    e) On UNM, Replace metacat systemMetadata tables with the Merged metacat tables to  metacat schema
+     f) dump systemMetadata tables for use on UCSB and ORC
+    g) confirm that there is a drop table line in the Tidy_Dump script
+     h) turn on Metacat on UNM
+     i)confirm CN operations on UCSB (/meta, object list, count)
+        i)confirm results by running Metacat and executing d1 API calls against listObjects and getSystemMetadata, d1_tidy_OK
+    j) turn off Metacat on UNM
+
+5) Copy dump to UCSB
+   a) turn off metacat
+   b) sftp the Tidy_Dump over to UCSB
+   c) run the Tidy_Dump on UCSB metacat
+  d) turn on Metacat on UCSB
+  e) confirm CN operations on UCSB (/meta, object list, count)
+      i) confirm results by running Metacat and executing d1 API calls against listObjects and getSystemMetadata, d1_tidy_OK
+      ii) replace the cn.nodeId on UNM with UCSB nodeId
+      iii) run d1_tidy_OK on UNM against UCSB
+      iv) restore cn.nodeId on UNM to UNM
+
+6) Copy dump to ORC
+    a) switch RR to UCSB
+   b) turn off metacat
+   c) sftp the Tidy_Dump over to ORC
+   d ) run the Tidy_Dump on ORC metacat
+   e) restore hazelcast ports
+   f) restore metacat replication database entries on ORC
+  g) turn on Metacat on ORC
+  h) confirm CN operations on ORC
+  
+      i) confirm results by running Metacat and executing d1 API calls against listObjects and getSystemMetadata, d1_tidy_OK
+      ii) replace the cn.nodeId on UNM with ORC nodeId
+      iii) run d1_tidy_OK on UNM against ORC
+      iv) restore cn.nodeId on UNM to UNM
+  i) restore RR to ORC, remove UCSB from RR
+
+7) Restore Cluster and turn on Metacat Replication on UCSB and UNM
+   a) turn off tomcat on UCSB
+   b) restore hazelcast ports on UCSB
+   c) restore metacat replication database entries on UCSB
+   d) turn on tomcat on UCSB
+   e) turn off tomcat on UNM
+   f) restore hazelcast ports on UNM
+   g) restore metacat replica database entries on UNM
+   h) turn on tomcat on UNM
+   i) force Replication on all three CNs
+
+8) Choose a Master and confirm consistency
+    a) limit RR to one CN, UCSB is 1st choice
+    b) copy over the ORC index to the Master (if UCSB), and restart the solr core
+    c) On all CNS, we run our original process with scripts from november to confirm consistency across all 3 CN
+        we should still do this, but its not an automated process at this point - requires moving files from all three CN to a common location in order to run diff tool over them.
+    d) turn on read/write on Master
+    
+9) Run Post Merge Process
+    a) run postMerge tidy process on UNM (multi-day operation)
+    b) re-index on a Machine not in RR (UNM) (multi-day operation)
+    c) switch RR to the Machine new index
+    d) copy index over to the 1st choice Master and other CN
+ *     rsync --progress --partial file server:file (defaults to ssh transport)
+    e) restart the solr core on both CNs
+    f) restore RR to 1st choice master, UCSB
+ 
+10) Restore full operations
+    a) turn on processing and indexing daemons
+
+
+11) clean up errant  one guid to many docids due to split brain 
+    a) split brain may have harvested the same object on CNs that were split thus causing a single guid to have multiple different docids
+    b) verify counts
+    b) do something to fix multiple docids
+
+
+ verify metacat replication has moved any missing sysmeta documents
+
+
+
+
+
+
+
+
+
+
+
+
+ON ORC /var/metacat/logs
+metacat.log.1:metacat 20140410-17:12:05: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on scimeta_1093.xml for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:14:01: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on scimeta_1105.xml for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:15:04: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on usgs_d_ProtectedAreasDatabaseOfT.xml for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:23:22: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on knb-lter-sbc.74.1 for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:26:58: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on knb-lter-sbc.74.1 for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:30:45: [ERROR]: D1ResourceHandler: Serializing exception with code 404: No system metadata could be found for given PID: http://dx.doi.org/10.5061/dryad.8b3d1/1 [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:31:08: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on knb-lter-arc.10529.1 for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:31:17: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on usgs_d_ProtectedAreasDatabaseOfT.xml for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:31:41: [ERROR]: D1ResourceHandler: Serializing exception with code 404: No system metadata could be found for given PID: http://dx.doi.org/10.5061/dryad.8b3d1/1 [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:31:43: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on knb-lter-arc.10529.1 for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:31:59: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on scimeta_1093.xml for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log.1:metacat 20140410-17:32:17: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on usgs_d_ProtectedAreasDatabaseOfT.xml for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log:metacat 20140410-20:41:33: [ERROR]: D1ResourceHandler: Serializing exception with code 401: CHANGE_PERMISSION not allowed on knb-lter-arc.10529.1 for subject[s]: public;  [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+metacat.log:metacat 20140410-21:00:03: [ERROR]: D1ResourceHandler: Serializing exception with code 401: There is no Member Node registered with a node subject matching CN=urn:node:cnSandboxUNM1,DC=dataone,DC=org [edu.ucsb.nceas.metacat.restservice.D1ResourceHandler]
+
+root@cn-ucsb-1:/var/metacat/logs# egrep 'No space left on device' metacat.log
+edu.ucsb.nceas.metacat.shared.AccessException: XMLAccessAccess.insertXMLAccess - SQL error when insertingxml access permissions for id: ark:/13030/m5fb52gv/2/cadwsap-s5700712-001-main.csv, principal: public:ERROR: could not extend relation base/16852/80653: No space left on device
+
+
+metacat 20140410-19:09:44: [ERROR]: Error while creating systemmetadata record: ark:/13030/m5fb52gv/1/cadwsap-s5700712-001-vuln.csv [edu.ucsb.nceas.metacat.IdentifierManager]
+edu.ucsb.nceas.metacat.shared.AccessException: XMLAccessAccess.insertXMLAccess - SQL error when insertingxml access permissions for id: ark:/13030/m5fb52gv/1/cadwsap-s5700712-001-vuln.csv, principal: public:ERROR: could not extend relation base/16852/80653: No space left on device
+        at edu.ucsb.nceas.metacat.accesscontrol.XMLAccessAccess.insertXMLAccess(XMLAccessAccess.java:429)
+        at edu.ucsb.nceas.metacat.accesscontrol.XMLAccessAccess.insertAccess(XMLAccessAccess.java:342)
+        at edu.ucsb.nceas.metacat.IdentifierManager.insertAccessPolicy(IdentifierManager.java:1290)
+        at edu.ucsb.nceas.metacat.IdentifierManager.updateSystemMetadata(IdentifierManager.java:1246)
+        at edu.ucsb.nceas.metacat.IdentifierManager.insertOrUpdateSystemMetadata(IdentifierManager.java:981)
+        at edu.ucsb.nceas.metacat.dataone.hazelcast.HazelcastService.saveLocally(HazelcastService.java:452)
+        at edu.ucsb.nceas.metacat.dataone.hazelcast.HazelcastService.entryUpdated(HazelcastService.java:434)
+        at com.hazelcast.impl.ListenerManager.callListener(ListenerManager.java:398)
+        at com.hazelcast.impl.ListenerManager.callListeners(ListenerManager.java:334)
+        at com.hazelcast.impl.BaseManager$2.run(BaseManager.java:1402)
+        at com.hazelcast.impl.executor.ParallelExecutorService$ParallelExecutorImmetacat 20140410-19:10:03: [INFO]: response httpCode: 200 [org.dataone.service.util.ExceptionHandler]
+metacat 20140410-19:10:03: [INFO]: rest call info: GET https://cn.dataone.org/cn/v1/node [org.dataone.client.RestClient]
+metacat 20140410-19:10:03: [INFO]: response httpCode: 200 [org.dataone.service.util.ExceptionHandler]
+metacat 20140410-19:10:04: [INFO]: rest call info: GET https://cn.dataone.org/cn/v1/node [org.dataone.client.RestClient]
+metacat 20140410-19:10:04: [INFO]: response httpCode: 200 [org.dataone.service.util.ExceptionHandler]
+metacat 20140410-19:10:04: [INFO]: XMLAccessAccess.getXMLAccessForDoc - SQL: SELECT * FROM xml_access WHERE guid = ? [ark:/13030/m5fb525t/2/cadwsap-s0500004-002.xml] [edu.ucsb.nceas.metacat.accesscontrol.XMLAccessAccess]
+metacat 20140410-19:10:04: [INFO]: XMLAccessAccess.deleteXMLAccessForDoc - SQL: DELETE FROM xml_access WHERE guid = ? AND perm_type = ? [ark:/13030/m5fb525t/2/cadwsap-s0500004-002.xml,allow] [edu.ucsb.nceas.metacat.accesscontrol.XMLAccessAccess]
+metacat 20140410-19:10:04: [INFO]: XMLAccessAccess.insertXMLAccess - SQL: INSERT INTO xml_access (guid, principal_name, permission, perm_type, perm_order, accessfileid, subtreeid ) VALUES (?,?,?,?,?,?,?) [ark:/13030/m5fb525t/2/cadwsap-s0500004-002.xml,public,4,allow,allowFirst] [edu.ucsb.nceas.metacat.accesscontrol.XMLAccessAccess]
+metacat 20140410-19:10:04: [INFO]: Entering getSSLSocketFactory [org.dataone.client.auth.CertificateManager]
+metacat 20140410-19:10:04: [INFO]: Using client certificate location: /etc/dataone/client/private/urn:node:CNUCSB1.pem [org.dataone.client.auth.CertificateManager]
+
+Rollbacks on UCSB:
+metacat 20140410-19:09:44: [ERROR]: Error while creating systemmetadata record: ark:/13030/m5fb52gv/2/cadwsap-s5700712-001-main.csv [edu.ucsb.nceas.metacat.IdentifierManager]
+metacat 20140410-19:09:44: [ERROR]: Error while creating systemmetadata record: ark:/13030/m5fb52gv/1/cadwsap-s5700712-001-vuln.csv [edu.ucsb.nceas.metacat.IdentifierManager]
+metacat 20140410-19:1metacat 20140410-19:47:04: [ERROR]: Error while creating systemmetadata record: ark:/13030/m5d799mq/1/cadwsap-s5000441-002.xml [edu.ucsb.nceas.metacat.IdentifierManager]
+
+
+metacat 20140410-19:10:15: [INFO]: rest call info: GET https://cn.dataone.org/cn/v1/node [org.dataone.client.RestClient]
+metacat 20140410-19:1metacat 20140410-19:47:04: [ERROR]: Error while creating systemmetadata record: ark:/13030/m5d799mq/1/cadwsap-s5000441-002.xml [edu.ucsb.nceas.metacat.IdentifierManager]
+
+Indexing process errors (64) when UCSB postgres went down:  systemMetadataMap.get(pid) returned null:
+
+PID: ark:/13030/m58w3dkj/2/cadwsap-s2210919-001.pdf exists in pids set but cannot be found in system metadata map.
+......PID: ark:/13030/m5bc3x7q/1/cadwsap-s4300637-001-vuln.csv exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m5bz6654/1/cadwsap-s3310038-029.xml exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m5bp0297/1/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m5bg2pgm/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m59z93pf/1/cadwsap-s1502252-002.xml exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m59886jm/1/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m5br8r7b/1/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m5c829hr/1/cadwsap-s2300524-001.xml exists in pids set but cannot be found in system metadata map.
+.PID: ark:/13030/m5b27ts2/2/cadwsap-s5700555-001.pdf exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m59w0dtv/1/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m58k7920/1/cadwsap-s1000040-018-vuln.csv exists in pids set but cannot be found in system metadata map.
+.........PID: ark:/13030/m5cn74hc/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m5cj8f15/1/cadwsap-s3400358-003-main.csv exists in pids set but cannot be found in system metadata map.
+....PID: ark:/13030/m598860f/1/cadwsap-s3910001-016.pdf exists in pids set but cannot be found in system metadata map.
+..............PID: ark:/13030/m5cf9png/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+..PID: ark:/13030/m5b85847/2/cadwsap-s4900551-001.xml exists in pids set but cannot be found in system metadata map.
+..PID: ark:/13030/m5d21z50/2/cadwsap-s4010002-023-vuln.csv exists in pids set but cannot be found in system metadata map.
+...........PID: ark:/13030/m58w3d0x/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m59z94tn/1/cadwsap-s1210013-009.xml exists in pids set but cannot be found in system metadata map.
+....PID: ark:/13030/m5bp01s3/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+..........................PID: ark:/13030/m5b857m3/2/cadwsap-s5000237-004.xml exists in pids set but cannot be found in system metadata map.
+......PID: ark:/13030/m5d50mjf/1/cadwsap-s4900702-001.pdf exists in pids set but cannot be found in system metadata map.
+.................PID: ark:/13030/m59s1r85/1/cadwsap-s1910034-005-vuln.csv exists in pids set but cannot be found in system metadata map.
+PID: ark:/13030/m5959j38/1/cadwsap-s3410001-016.xml exists in pids set but cannot be found in system metadata map.
+.....PID: ark:/13030/m5c53k31/1/cadwsap-s1000469-001.pdf exists in pids set but cannot be found in system metadata map.
+...........PID: ark:/13030/m5cj8dkx/2/cadwsap-s3310038-084-vuln.csv exists in pids set but cannot be found in system metadata map.
+.PID: ark:/13030/m58p5zww/2/cadwsap-s3901229-001.pdf exists in pids set but cannot be found in system metadata map.
+......................PID: ark:/13030/m5bv7gxn/2/cadwsap-s2310010-002-main.csv exists in pids set but cannot be found in system metadata map.
+.PID: ark:/13030/m59s1rk6/1/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+.PID: ark:/13030/m5bg2pjh/1/cadwsap-s3310001-222.xml exists in pids set but cannot be found in system metadata map.
+.PID: ark:/13030/m58w3c1z/1/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+.........PID: ark:/13030/m59k4b7t/1/cadwsap-s5200637-001.pdf exists in pids set but cannot be found in system metadata map.
+......................PID: ark:/13030/m5bc4034/1/cadwsap-s3110042-002.pdf exists in pids set but cannot be found in system metadata map.
+.......PID: ark:/13030/m5902485/2/cadwsap-s4910012-013-vuln.csv exists in pids set but cannot be found in system metadata map.
+..PID: ark:/13030/m5bk1cdn/1/cadwsap-s1009215-001.xml exists in pids set but cannot be found in system metadata map.
+....PID: ark:/13030/m5b56hq3/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+..PID: ark:/13030/m59s1q6v/2/cadwsap-s2400169-002-vuln.csv exists in pids set but cannot be found in system metadata map.
+.......PID: ark:/13030/m5bv7fbm/1/cadwsap-s2710017-007-main.csv exists in pids set but cannot be found in system metadata map.
+...PID: ark:/13030/m59s1qvc/1/cadwsap-s1910186-003-main.csv exists in pids set but cannot be found in system metadata map.
+.................PID: ark:/13030/m5cr5sxw/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+.PID: ark:/13030/m5cc10tq/2/cadwsap-s3310003-004.xml exists in pids set but cannot be found in system metadata map.
+..........PID: ark:/13030/m59k49vg/2/cadwsap-s1900581-002-vuln.csv exists in pids set but cannot be found in system metadata map.
+........PID: ark:/13030/m58w3cb0/1/cadwsap-s3400198-001-main.csv exists in pids set but cannot be found in system metadata map.
+..PID: ark:/13030/m59c6wtr/1/cadwsap-s3301097-004.pdf exists in pids set but cannot be found in system metadata map.
+.............PID: ark:/13030/m5bc3xjr/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+.................PID: ark:/13030/m5cf9pwm/3/cadwsap-s3010001-053.pdf exists in pids set but cannot be found in system metadata map.
+.........PID: ark:/13030/m5bg2nqb/2/cadwsap-s4310012-008-main.csv exists in pids set but cannot be found in system metadata map.
+........PID: ark:/13030/m5930s9r/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+........PID: ark:/13030/m5br8smp/2/cadwsap-s1910098-003-vuln.csv exists in pids set but cannot be found in system metadata map.
+..........PID: ark:/13030/m59k4bd2/2/cadwsap-s5402043-001-vuln.csv exists in pids set but cannot be found in system metadata map.
+........PID: ark:/13030/m5bp01zb/1/cadwsap-s0710004-006-main.csv exists in pids set but cannot be found in system metadata map.
+....PID: ark:/13030/m5cv4gpp/1/cadwsap-s3302081-001-main.csv exists in pids set but cannot be found in system metadata map.
+..PID: ark:/13030/m59023tx/1/cadwsap-s3410029-006.pdf exists in pids set but cannot be found in system metadata map.
+.....PID: ark:/13030/m5cj8cx0/1/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+......PID: ark:/13030/m59c6wrv/2/cadwsap-s3900512-001-main.csv exists in pids set but cannot be found in system metadata map.
+.PID: ark:/13030/m59p30sh/2/cadwsap-s5000055-002-main.csv exists in pids set but cannot be found in system metadata map.
+.....PID: ark:/13030/m59c6wpz/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+....PID: ark:/13030/m58s4pvs/2/mrt-dataone-map.rdf exists in pids set but cannot be found in system metadata map.
+............PID: ark:/13030/m59g5m0b/1/cadwsap-s3900763-001-vuln.csv exists in pids set but cannot be found in system metadata map.
+......PID: ark:/13030/m5cz36m4/1/cadwsap-s4200928-001.xml exists in pids set but cannot be found in system metadata map.
+...........PID: ark:/13030/m5d50ngz/2/cadwsap-s2209035-003.xml exists in pids set but cannot be found in system metadata map.
+...PID: ark:/13030/m5bv7h39/2/cadwsap-s1510038-049-vuln.csv exists in pids set but cannot be found in system metadata map.
+..PID: ark:/13030/m59s1r4c/2/cadwsap-s5700571-001.pdf exists in pids set but cannot be found in system metadata map.
+
+
+
+
+
+
+
+Metacat Identifiers missing from the Hz Identifiers Set
+Each CN reported the same missing PIDs, each CN had the same number of objects
+except for the size of the Object Path Map. Its size varied on each CN.
+
+2014-04-17 01:00:47,908 -- 2014-04-17 01:02:36,760
+Build: 1.0.0-r13648 for nodeId urn:node:CNUCSB1
+Connecting...
+isLocalMember false
+member.hostname 160.36.13.150
+member.port 5701
+isLocalMember false
+member.hostname 64.106.40.6
+member.port 5701
+isLocalMember false
+member.hostname cn-ucsb-1.dataone.org
+member.port 5701
+Connected to: 127.0.0.1:5701
+Waiting for  bit...
+0
+1
+Get identifiers set
+Get size of identifiers Set
+Hz hzidPIDs = 462678
+Get system metadata map
+Get size of HZ system metadata map
+Hz smPIDs = 462678
+Get object Path Map
+Hz Get size of object Path map
+Hz olPIDs = 314492
+Metacat Get size of Metacat Identifiers set
+Metacat midPIDs = 462932
+midPIDs - hzidPIDs  = 254
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.393.41
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5bg2p1s/1/cadwsap-s2701800-001-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-mcm.255.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m53f4p68/1/cadwsap-s5500248-001-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/obfs.319.1
+Metacat DB Pid Missing from Hazelcast: peggym.1162.28
+Metacat DB Pid Missing from Hazelcast: peggym.1162.25
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5c24whg/1/cadwsap-s2010011-004-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5jh3mht/1/cadwsap-s4901223-001-main.csv
+Metacat DB Pid Missing from Hazelcast: resourceMap_PURXXX_015MTBD014R00_20070419.50.4
+Metacat DB Pid Missing from Hazelcast: resourceMap_LBN15X_015MTBD014R00_20050425.50.4
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bnz.117.2
+Metacat DB Pid Missing from Hazelcast: knb.253.5
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bnz.116.7
+Metacat DB Pid Missing from Hazelcast: doi:10.6085/AA/sbclter.76.7
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m55x28zv/1/cadwsap-s1910067-124.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.456.28
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5416w2w/1/cadwsap-s3301642-001-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.111.27
+Metacat DB Pid Missing from Hazelcast: resourceMap_NMBX02_XXXITBDXMSR00_20040321.50.1
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-arc.247.1
+Metacat DB Pid Missing from Hazelcast: www1.usgs.gov_vip_miin_metamiinbdy.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5zc82tg/1/cadwsap-s3410020-054.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-nin.26414.4
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5q81br1/1/cadwsap-s5410002-013.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m59k4brj/1/cadwsap-s3610052-033-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-gce.66.16
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5pg1qqw/1/cadwsap-s5810001-013-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/download.1236.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5kp82mg/1/cadwsap-s1910098-002-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.453.18
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.453.39
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-vcr.47.8
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m56t0kk5/1/cadwsap-s0310008-003.pdf
+Metacat DB Pid Missing from Hazelcast: jimont.113.5
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5v986s2/1/cadwsap-s3600070-002.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.216.39
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/download.1245.1
+Metacat DB Pid Missing from Hazelcast: knb-lter-arc.1618.6
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m58915xh/1/cadwsap-s3700934-006-vuln.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5q81d57/1/cadwsap-s2700624-001-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5765dpf/1/cadwsap-s2000850-001.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5g44qp8/1/cadwsap-s3610049-004.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5891652/1/cadwsap-s1009172-001-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/dpennington.290.1
+Metacat DB Pid Missing from Hazelcast: knb-lter-bes.146.570
+Metacat DB Pid Missing from Hazelcast: esa.107.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5gm8681/1/cadwsap-s1910070-023.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.548.39
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/connolly.196.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m51c1wd0/1/cadwsap-s5000447-001-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/higgins.426.1
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/ecogridreg.20049885110.1
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-hfr.56.4
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5m61j92/1/cadwsap-s3200617-001.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5f76d3d/1/cadwsap-s1910167-009.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5r78drg/1/cadwsap-s2300853-001-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/dblankman.23.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5r49qtf/1/cadwsap-s3310063-005-vuln.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m53j3dd9/2/cadwsap-s1910067-012-main.csv
+Metacat DB Pid Missing from Hazelcast: record602.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m57d2vn9/1/cadwsap-s3410004-016.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m51j990b/1/cadwsap-s3600157-002.xml
+Metacat DB Pid Missing from Hazelcast: resourceMap_CARX00_XXXITBDXHSR01_20081209.50.2
+Metacat DB Pid Missing from Hazelcast: peggym.1161.26
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-fce.41.2
+Metacat DB Pid Missing from Hazelcast: sschen.7.2
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5sf2vsd/1/cadwsap-s0300070-001.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bnz.44.2
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/F1H12ZXW
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.431.14
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5348jsn/1/cadwsap-s1510025-007.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m53778gz/1/mrt-dataone-map.rdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5pn95z5/1/cadwsap-s3610003-029.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5h131g6/1/cadwsap-s4200618-007-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/reichmanj.8.1
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/dblankman.10.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m50p0xvn/1/cadwsap-s2210512-001-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-sbc.1113.3
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m57w6cnv/1/cadwsap-s3610013-009-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-hbr.56.4
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m52807jt/1/cadwsap-s5200510-002-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5hq402p/2/cadwsap-s4810025-002-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bnz.57.8
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5833s67/1/cadwsap-s2701553-001-vuln.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5ns0vcg/1/cadwsap-s3410001-010-vuln.csv
+Metacat DB Pid Missing from Hazelcast: swchung.6.6
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5p26zqj/1/cadwsap-s3710020-022.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5n0157v/1/cadwsap-s1010019-010-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.207.19
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5xs5tt8/1/cadwsap-s3400278-002-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5h995rg/1/cadwsap-s5000462-001.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.196.7
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5gb23vc/1/cadwsap-s0706004-001-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m53f4nvc/1/cadwsap-s2400097-001.pdf
+Metacat DB Pid Missing from Hazelcast: knb-lter-arc.1342.3
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5q81d74/2/cadwsap-s3010022-023-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m57w6cjh/1/cadwsap-s1100527-001.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-cdr.56003.122
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5zk5gd0/1/cadwsap-s1910003-025-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-mcr.1035.3
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5nv9j4q/1/cadwsap-s2702553-001.xml
+Metacat DB Pid Missing from Hazelcast: record355.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5zs2vkq/1/cadwsap-s1910063-003-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5862frx/1/cadwsap-s3900964-001.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/iebasara.134.1
+Metacat DB Pid Missing from Hazelcast: resourceMap_WRK001_024MXTI004R00_20050425.50.3
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5k936dr/1/cadwsap-s3610001-006.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/klr.6.3
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-mcr.16.3
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-mcr.18.1
+Metacat DB Pid Missing from Hazelcast: lus.24.3
+Metacat DB Pid Missing from Hazelcast: doi:10.6085/AA/sbclter.244.4
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-mcm.227.4
+Metacat DB Pid Missing from Hazelcast: resourceMap_SPTX02_XXXITBDXMSR00_19991104.50.1
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/corridor_SRS.8.1
+Metacat DB Pid Missing from Hazelcast: knb-lter-arc.1454.3
+Metacat DB Pid Missing from Hazelcast: knb-lter-pie.141.4
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.458.46
+Metacat DB Pid Missing from Hazelcast: peggym.110096.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m50k28qq/1/cadwsap-s3310038-032.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5t72gmv/1/cadwsap-s4000736-001-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.30.3
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5hd7v22/1/cadwsap-s0400013-002.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/nrs.232.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5mw2g5q/1/cadwsap-s1910142-014.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-vcr.38.12
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5mc90bn/1/cadwsap-s3310001-053.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-nin.6537.3
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-hbr.30.2
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/knb.72.1
+Metacat DB Pid Missing from Hazelcast: resourceMap_ELLXXX_015MTBD009R00_20060924.50.5
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/tao.9024.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5h994zr/1/cadwsap-s3702319-001-vuln.csv
+Metacat DB Pid Missing from Hazelcast: knb-lter-arc.10137.2
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5q81d91/1/cadwsap-s4900890-001.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.471.28
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.153.33
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5959h66/1/cadwsap-s5800831-001.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m54f1qp4/1/cadwsap-s2700713-005-vuln.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5kd1wtp/1/cadwsap-s1910070-011-vuln.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5k937tj/2/cadwsap-s4310027-013.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.161.20
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-ntl.8.5
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/meredith.38.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m59023np/1/cadwsap-s1000217-001-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/mcastillo_cr.3.1
+Metacat DB Pid Missing from Hazelcast: ark:/90135/q12z13g6/1/DemoDataFile2.xlsx
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-vcr.204.3
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-gce.307.11
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m58g8kq5/1/cadwsap-s1510020-003-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/meredith.43.9
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-fce.310.3
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/nrs.146.4
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m52z1503/1/cadwsap-s5000445-001-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/knb.38.1
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/knb2003.94.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5mg7pxt/1/cadwsap-s3410001-133-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5513xsw/1/cadwsap-s4200881-001.pdf
+Metacat DB Pid Missing from Hazelcast: knb-lter-bnz.178.11
+Metacat DB Pid Missing from Hazelcast: record905.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5k937v0/1/cadwsap-s4910012-002-vuln.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m52v2g8r/1/cadwsap-s2702336-002-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-arc.1181.1
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-fce.371.2
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5r2108v/1/cadwsap-s1503310-001.xml
+Metacat DB Pid Missing from Hazelcast: knb-lter-sev.176.56577
+Metacat DB Pid Missing from Hazelcast: knb-lter-gce.242.31
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.379.42
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-fce.248.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5b56jdg/1/cadwsap-s0900636-001.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m55m65jn/2/cadwsap-s4100503-001-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5m32v1j/1/cadwsap-s4010003-007.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/tao.8923.1
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.322.22
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/bowles.115.1
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-arc.1613.2
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.54.38
+Metacat DB Pid Missing from Hazelcast: knb-lter-arc.10236.2
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5r49qfh/1/cadwsap-s0900309-002.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/iebasara.90.2
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m52r3qvm/1/cadwsap-s4810701-005.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/seahoob.92.3
+Metacat DB Pid Missing from Hazelcast: knb-lter-pie.36.11
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5qj7hp7/2/cadwsap-s2910002-003.xml
+Metacat DB Pid Missing from Hazelcast: knb-lter-vcr.189.13
+Metacat DB Pid Missing from Hazelcast: knb-lter-arc.1374.6
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/piscoUCSB.26.1
+Metacat DB Pid Missing from Hazelcast: zoeyeh.25.1
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-cwt.3001.4
+Metacat DB Pid Missing from Hazelcast: http://dx.doi.org/10.5061/dryad.ck2cm?ver=2013-09-26T10:16:45.298-04:00
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-kbs.3.18
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.70.16
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.295.43
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/jones.111.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5xk8dvt/1/cadwsap-s4700568-002-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-fce.192.1
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-fce.267.1
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.252.16
+Metacat DB Pid Missing from Hazelcast: record850.xml
+Metacat DB Pid Missing from Hazelcast: knb-lter-fce.1050.8
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5qv3kjv/1/cadwsap-s1900744-002-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.236.45
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5z60mq0/1/cadwsap-s4800817-001-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.327.48
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.327.17
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/download.1036.1
+Metacat DB Pid Missing from Hazelcast: knb-lter-jrn.20020630.8361
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.9.49
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5736qvr/1/cadwsap-s2300735-002.xml
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m52v2g96/1/cadwsap-s2410010-014-vuln.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5c829fv/1/cadwsap-s3410015-019-main.csv
+Metacat DB Pid Missing from Hazelcast: knb-lter-bes.1900.120
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-hfr.112.8
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5gt5mc8/1/cadwsap-s1010005-007.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-gce.28.28
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5db81j5/1/cadwsap-s0400090-001.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-vcr.121.5
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5cj8dwz/1/cadwsap-s3110023-001.pdf
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.503.43
+Metacat DB Pid Missing from Hazelcast: shiang.20.1
+Metacat DB Pid Missing from Hazelcast: knb-lter-gce.304.20
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.316.53
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5x63ks9/1/cadwsap-s1502757-001-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5ws8s38/1/cadwsap-s4300573-002.pdf
+Metacat DB Pid Missing from Hazelcast: peggym.109757.21
+Metacat DB Pid Missing from Hazelcast: resourceMap_WBYX00_XXXITBDXMSR01_20020227.50.2
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5c82975/1/cadwsap-s3601107-001.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5ww7gnc/1/cadwsap-s1300616-002-vuln.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.339.34
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bnz.178.10
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-gce.235.10
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bnz.349.8
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-cdr.81141.122
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-ntl.37.3
+Metacat DB Pid Missing from Hazelcast: doi:10.6085/AA/cjones.48.1
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m50c4vcz/1/cadwsap-s1510029-014.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5j965v0/1/cadwsap-s1510003-151-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/klr.19.6
+Metacat DB Pid Missing from Hazelcast: resourceMap_CARX00_XXXITBDXHSR01_20071209.50.2
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m57p8xfg/1/cadwsap-s0202552-001.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-gce.234.13
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5v986th/1/cadwsap-s1502750-001.xml
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-gce.11.28
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5p26z1k/1/cadwsap-s3610064-016-vuln.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m55m650g/1/cadwsap-s0900508-001-main.csv
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.507.26
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.386.16
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5kk99gx/1/cadwsap-s5010029-004.pdf
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5mc8zqs/1/cadwsap-s3610008-009-main.csv
+Metacat DB Pid Missing from Hazelcast: ark:/13030/m5qf8stp/1/cadwsap-s1910067-189.pdf
+Metacat DB Pid Missing from Hazelcast: http://dx.doi.org/10.5061/dryad.3g19f?ver=2012-12-12T11:48:15.856-05:00
+Metacat DB Pid Missing from Hazelcast: doi:10.5063/AA/download.1059.1
+Metacat DB Pid Missing from Hazelcast: doi:10.6073/AA/knb-lter-bes.5.31
+hzidPIDs - midPIDs  = 0
+opPIDs = 314492
+Get lifecycle
+Shutdown
+Wait a bit...
+Done.
+
+
+Subsequent Tidy Process Runs
+========================
+
+1) copy and setup clean database
+  a) run the tx_systmeta_tables.sh script
+     i) sudo -s
+     ii) su postgres -c  "/var/lib/postgresql/tx_sysmeta/tx_sysmeta_tables.sh"
+      
+  b) on cn-unm-1 run pg_restore for each transmitted file
+      i) su postgres -c "psql -h localhost -U metacat -d d1-tidy -f dump-cn-ucsb-1-201406162034.sql"
+ 
+     
+2) Full Run on the UNM
+    a) bring metacat down on UNM
+    b) change the tidy properties file to run without mn interactions 
+        i)add into /etc/dataone/d1-tidy/tidy.properties    tidy.merge.strategy.use_mn_accessPolicy=false
+    b) run tidy
+

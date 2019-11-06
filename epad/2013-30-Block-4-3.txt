@@ -1,0 +1,445 @@
+Notes for Sprints in 2013-30-Block-4-3
+======================================
+
+
+David
+-----
+ * 20130802
+   * Met with Bruce
+     * Taking over ask.dataone.org duties
+     * Bruce is working on MN Wrangling, David will assist
+   * Splunk work with Chris
+   * Last week of ugrad
+ * 20130731
+   * Class work
+   * Small problems using Windows on David's Dell machine
+     * Robert may help
+   * Will be meeting with Bruce tomorrow re: schedule
+ * 20130729
+   * Testing a local splunk installation
+   * Will be working on the firewall today
+   * 20hrs/week this week
+ * 20130726
+   * Will work on VM and splunk installations this weekend
+ * 20130724
+   * Local Ansible build at ORC
+ * 20130722
+   * Large commit on all docs for ORC sysadmin
+     * Done to 1.0 point, may add images, etc.
+   * Bruce would like David to work on ask.dataone.org
+
+Rob
+---
+ * 20130809
+   * cut a tag of libclient (1.2.5) with ORE parsing feature
+     * Skye is testing it
+   * Working on documentation with Laura Moyers
+   * We need operational procedures
+ * 20130807
+   * Worked with Laura Moyers on documentation
+     * lots of docs spread out (Ops, Archs, www.dataone.org, etc)
+     * need documentation on adding object formats
+   * Merritt: status on updates of resource maps
+   * Release notes
+     * hopefully can use story text for 'Features' in a Change Log
+     * 'Bug' text for 'Bug Fixes' in the Change Log
+     * will use a redmine query to produce Change Logs (based on categories)
+     * We should have a milestone story for each release
+       * relate other stories back to that milestone story
+   * 
+ * 20130724
+   * commited changes to ResourceMapFactory.parseResourceMap() in libclient
+     * impacts how DataPackage reads ResourceMaps to build the metadata map
+     * allows parseResoutceMap to pick up the isDocumentedBy statements when building the metadata map.  Some resource maps only use isDocumentedBy, not the inverse documents.  
+     * added more real-world resource map examples into d1_test_resources
+   * Working on Merritt ORE issues
+     * researched the option of maintaining a "D1Jena" implementation for RDF/XML in libclient_java.
+     * (in foresite, packages include atom. rdf/xml, rdfa impls, etc)
+     * approach:
+       * The "D1Jena" impl would extend 5 or 6 out of the 10 Jena impl. classes
+       * parseResourceMap() would call the D1Jena impl directly, instead of delegating the choice of impl to OREParserFactory
+ * 20130722
+   * Refactoring ResourceMapParser
+   * Worked with the foresite python parser
+     * Need some help with this - will work with Roger
+       * python -c "import sys; print '\n'.join(sys.path)"
+
+Ben
+---
+ * 20130809
+   * Working on PISCO issues with Mike
+   * Dashboard work
+ * 20130807
+   * Continued work with TFRI Chinese characters in Morpho
+   * Worked on Dashboard prototype
+ * 20130805
+   * KNB upgrade and roll out
+   * Working through redmine tickets
+   * MN followups
+   * iEcolab may be next
+ * 20130802
+   * Prepping Metacat release
+     * Upgrading KNB soon
+   * MN deployment tickets - will be working on these
+ * 20130731
+   * Working with security audit group from NCSA
+     * Focused on CNs and Identity Management component
+     * Touches on MNs
+     * Incident plans - compromise, inappropriate content, etc.
+ * 20130726
+   * Meet with the Cyber security folks re: report
+   * Added bagit download facility to Metacat
+   * can be pushed back into the CNs and other MNs
+   * Some indexing issues of EML
+     * index has some blank fields because it's not following EML references
+
+Chris B
+-------
+ * 20130809
+   * finished resource map testing - incomplete/nested
+   * will commit now
+   * DNS requests
+ * 20130805
+   * Worked with Skye Friday on custom resource map
+     * outdated jar
+     * tested nested resource map
+     * will test incomplete nested resource map (missing documentedby and documents) to determine if full relationship s can since be determined as with falt maps.
+   * Noticed that a resource without at least one isDocumentedBy or documents doesn't not appear in the Map<Identifer, Map<Identifier, List<Identifer> i.e. the second level map doesn't have an entry with the key as the resource and an empty list for it's value. 
+     * Should this be the behavior or should it include the resource in the returned map with an empty list since it is still aggregated by the resource map?
+
+   * David *maybe* out ths week
+ * 20130802
+   * Reinstalled ansible.dataone.utk.edu
+     * Problem with 10.04 - upgrade failed
+     * Set up 12.04 from scratch
+   * Working with David on splunk and ldap
+   * Will work with David on firewall and sshd administation
+   * Resource map testing - working on a nested version
+ * 20130731
+   * SSH keys - still needed from Ben, Dave, Matt, Skye
+   * ORE map work
+     * Dryad resource map
+   * Firewall issue fixed for Skye
+ * 20130729
+   * Splunk: configured with syslogd
+   * ORE map testing in indexing
+     * worked fine on Friday
+     * working on a more complex test
+   * Still need ssh keys for Ansible access
+ * 20130724
+   * Ansible VM is set up
+     * need ssh keys from everyone
+   * Worked with David re: keys
+     * LDAP shell account not set up?
+ * 20130722
+   * Worked with Robert on Ansible
+
+
+Robert
+------
+ * 20130809
+   * Got the 'SimpleConstructorDecorator' coded. While generating some initial tests, determined that the 'NonEmptyString...' Decorators were incomplete and so am refactoring them.
+   * Need to complete refactoring and creating unit tests
+   * Need to work on production node count size problem. stop/restart tc on UNM(?)
+   * need to complete review of Skye's auditing buildout code
+   * Need to complete work on ansible helper script
+   * Add tasks for synchronization to check the objectList Identifier pid against the systemMetadata Identifer pid. Also perform a serialization of the systemmetadata and perform a schema validity check before create/update ops.
+   * need to review logAggregation code change request
+ * 20130807
+   * Reviewed Skye's auditing buildout code - needs a little more review
+   * Worked on JibX decorators
+     * added in validators for simple types (800 char, no whitespace, non empty)
+     * Constructors will need to throw exceptions
+     * Code using these will need to handle exceptions
+   * Ansible training: send Chris SSH certs
+     * see http://epad.dataone.org/Ansible-CN-Usage-Notes
+ * 20130805
+   * Completed work on 2 decorators that insert conditionals:
+     * no white space
+     * max length 800
+     * non empty string
+     * working on unit tests
+     * will work on constructor decorator
+   * afraid.org DNS trouble - Chris will ping nick
+ * 20130802
+   * Upgraded CN Dev machines
+   * Looking at http client in other components
+     * Metacat - has two http client jars
+     * Can we move to Solr 4 + new HTTP client versions?
+   * Ansible machine installed, so Robert has been testing
+     * working on local VM, will now look at the d1 ansible VM
+   * Contiued work on decorator patterns in JibX
+   * TODO: Examining CNs being out of sync
+   * Fixed problematic pids pointed out by Skye
+ * 20130731
+   * Worked on Eclipse/JDT programming for JibX
+     * Good progress on creating conditional, etc.
+     * Will next focus on how to generate constructors
+     * Working toward constructor decorators
+ * 20130729
+   * Researching JibX modifications for JDT/Eclipse
+ * 20130726
+   * Production upgrades went well
+     * Now using Ansible, updates will use Ansible now too
+     * Ansible machine? 
+   * Working on JibX tickets now
+     * whitespace validation in pids, etc.
+   * Time off this afternoon
+ * 20130724
+   * Installing production servers, ucsb and unm first
+   * Minor hiccup in staging last night
+     * stable to stable upgrade, ldapsearch against dc=org failed
+     * circumvented by updating dbian flag to not do that search
+     * ldap.populated flag wasn't set to true
+ * 20130722
+   * Tried completing Ansible install testing in sandbox
+     * minor problem installing LDAP on the *second* CN in a fresh install
+     * Will reinstall old 1.1 version, then do upgrade
+     * Then branch and move to staging hopefully tag today
+
+Skye
+----
+ * 20130809
+   * 1.2.2 release work:
+     * waiting on Chris to roll tests in
+     * waiting on Dryad support, need to scrub dev CNs
+     * Dryad had wrong pid listed in sysmeta objects
+     * Waiting on Merritt and ONEShare OREs updated
+   * Will change ONEMercury to remove 'down' MNs
+ * 20130807
+   * 1.2.2 patch release for indexing, Dryad support?
+   * Rob: need to release libclient for this
+   * Need Ansible training (everyone really)
+   * Getting Dryad science metadata in cn-dev
+     * fixing a pid handling issue
+     * dealing with ONEMercury pid handling issue
+   * Worked on cn-auditing
+ * 20130805
+   * CN auditing is running on cn-dev-unm-1
+   * mod_proxy conflicting with log aggregation
+     * will work on this to today
+   * New dataone-cn-auditing buildout
+   * Will be turning toward indexing
+ * 20130802
+   * Figured out Zookeeper config - needed to open ports 7612, 7632
+   * Writing a shell script to use dynamic IP vs hardcoded
+   * Worked on XSLT on reporting MN auditing
+   * Connecting to Apache: mod_proxy http forwarding instead of AJP
+     * AJP is too slow according to Jetty docs
+   * Monday: work with Robert on OS Core issues
+   * Think about Zookeeper as an alternative to CN comms (vs Hazelcast)
+     * May help distribute log agg messaging
+ * 20130731
+   * Got Solr Cloud running on all 3 dev machines
+     * Ran some tests with auditing
+     * Standalone zookeeper config has some problems
+     * Not communicating across members in zookeeper?
+     * Quorum needs majority for electing cloud leader
+       * Some trouble with this
+     * Will work on the zookeeper config
+     * Most examples embed zookeeper into the servlet container
+   * XSLT on MN audit report
+   * Branching libclient:
+     * Latest is 1.2.4 from June
+     * Can push changes into the branch, but may need Rob's assistance
+ * 20130729
+   * Testing auditing
+   * Configuring Zookeeper today
+   * Task: One CN is out of sync with the other CNs
+     * Robert will delete from the single CN
+   * Dryad schema support for 1.2.2?
+ * 20130726
+   * SolrJ is running
+   * Had trouble with the UNM network
+   * Waiting on results from Merritt re: ORE updates
+   * 
+ * 20130724
+   * Testing auditing today, running on unm-dev-1
+     * need port unblocked for Zookeeper
+ * 20130722
+   * continued work on Solr/Jetty, etc in indexing
+
+Dave
+----
+ * 20130809
+   * Reviewing schedule for project Y5
+   * Evaluating AWS Route 53 for DNS management
+   * Reviewing Splunk
+     * can send:
+       * system logs : disks, cpu, mem, etc (step 1)
+       * CN infrastructure: logs from each service (step 2)
+     * can produce:
+       * usage reports
+     * can be run on multiple servers, one for now
+     * can segregate envs (log on dev, sandbox, etc.)
+     * can do realtime alerts, could replace check_mk and nagios
+ * 20130807
+   * Some Non-D1 work
+   * Working on interactions with Elsevier to publish DataONE content
+     * API addition: /view service
+     * see http://knb.ecoinformatics.org/m/#view/doi:10.5063/AA/knb-csun-usvi.10700 for #view service example
+     * returns an HTML fragment without header/footer HTML
+ * 20130805
+   * Non-DataONE work / administrative
+   * Looking toward ONEDrive next
+ * 20130802
+   * Working through redmine tickets for scheduling
+   * Worked on changelog reporting for tickets/svn
+     * Need to work against tickets for all commits
+   * UNM network outage, need to prepare for this
+ * 20130731
+   * Reports and conf calls...
+   * Will look into Changelog support through Mylyn in Eclipse
+ * 20130726
+   * Continued work on annual and quarterly reports
+   * Continued ONEDrive work
+     * speedy
+   * More from Mike F:
+     * different results per run
+     * ONE CN showing different content
+     * 
+ * 20130724
+   * Working on ONEDrive
+   * Project reporting
+ * 20130722
+   * Tied up with meeting and travel last week
+     * MN dashboard and Log stats are important
+   * Continuing with ONEDrive dev
+
+
+Roger
+-----
+ * 20130802
+   * Wrapping up CLI work
+     * on PyPI now, and installed on a local VM, tested
+     * Will work on reporting downloads of libs from PyPI
+     * Will be out Monday and next
+ * 20130731
+   * Implemented the updateAccessPolicy and updateReplicationPolicy commands in the CLI.
+   * Worked through the documentation. Will be checking it in shortly.
+   * Next: Tag a release candidate of the CLI, d1_common and d1_client, and create a PyPI distribution.
+ * 20130729
+   * Checking in the CLI now
+   * Will work on documentation
+   * Questions on adding ACLs and ReplPolicies
+ * 20130726
+   * Continued work on the CLI check in
+ * 20130724
+   * Looking to wrap up work on the CLI today. In final stages of adding in user input validation.
+ * 20130722
+   * Continued work on the CLI.
+   * Write operations now use the session to create operation objects.
+   * The operation objects are queued and can be viewed and edited.
+   * The queue of operations can then be executed.
+
+Chris
+-----
+ * 20130809
+   * Troubleshooting afraid.org DNS issue with Dave
+   * Working on d1_dashboard
+     * working through UAW requirements docs/ppt/spreadsheets
+     * Working on mockups
+     * Organizing code impl layout with Ben
+ * 20130807
+   * Worked on Dryad scimeta parsing issue in cn-dev
+     * Skye: are we missing any docs?
+   * Dashboard work with Ben
+     * define a model for the report view for cn-log-index
+   * DNS troubleshooting with ns2.afraid.org
+ * 20130802
+   * Metacat deployment work with Ben
+   * Dryad testing
+   * Question about Solr indexing/querying
+ * 20130731
+   * TODO: work on Dashboard story that combines UI and API tickets
+   * Working on Metacat release with Ben
+   * Attempting to test Dryad scimeta sync in dev: 
+     * had some trouble, will work with Robert on d1-processing
+ * 20130729
+   * TODO: add CLI changes to the MN sys meta management ticket
+   * TODO: Test Dryad scimeta
+   * Continued work on Metacat features
+ * 20130722
+   * Coordination on 1.2.1 release with Skye, Robert, Chris
+   * Meeting on Friday re: Ansible-based deployment plans
+   * Working on Metacat tickets
+   * Will be working on DAAC issue, getting an exhaustive list of identifiers with mismatched checksums/byte sizes
+
+
+Other Topics
+============
+
+Last Quarter 2013 Prioritites
+------------------------
+   * Adding MNs
+     * helps with performance report
+   * Adding in a Dashboard
+     * Usage stats, LogStats
+     * Beta by the all hands meeting in Oct.
+     * Content status report (summary stats: counts, public vs private objects)
+   * Documentation
+     * Needs to be polished for all components
+     * A guide, in between detailed API description and high level docs
+       * with examples
+       * Rob and Robert have started this
+       * Helpful to new developers
+
+Ansible Discussion
+------------------
+ * Running ansible requires public certs for admin
+ * Potential separate Ansible VM?
+ * Should we have a shared admin account or individual accounts?
+   * Individual account access let's us know eho's doing installs
+   * 
+
+Dashboard discussion
+--------------------
+Folders containing discussion notes and other products of the subgroup on metrics and statistics
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/metrics-and-statistics
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/metrics-and-statistics-subgroup-ahm-2012
+
+Document highlighting particular metrics and their relative importance
+https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/metrics-and-statistics-subgroup-ahm-2012/metrics-table-from-PMP-ver-05May2012.docx
+ * Cron report
+   * Script that hits the log index with an admin cert
+   * D1 Proposal Metrics requirement
+     * stuff:
+       * total objects
+       * object format type - (or formatType: DATA, METADATA, RESOURCE)
+       * "data packages"
+       * Volume of data available (total size of data holdings)
+     * categorizing / grouping across:
+       * current vs obsoleted
+       * public vs private
+     * Events:
+       * read (get content), everyone
+       * create, everyone
+       * update, administrators, sponsors, DataONE team, MN operators, content creators
+       * delete, administrators, sponsors, DataONE team, MN operators, content creators
+       * (replication failed), administrators, MN operators
+       * (synchronization failed), administrators, MN operators
+
+     * how much is available
+     * how much is being used
+     * show changes over time
+ * Dashboard view
+   * Users
+   * MN Ops
+   * D1 Ops
+   * Sponsors
+   * Client should access a single service
+     * keeps CNs from being inundated
+     * Create a specific group in log aggregation to limit access
+   * Instead of redacting fields from LogEntrys returned, could just set rows=0 if cert == public
+   * Data View
+     * be able to filter by dates (downloads per month, etc., creates per month)
+     * initially show a static time range
+     * Add a 'Total Downloads' column on the 'Data View'
+   * System View
+   * MNDetailView
+     * Slice by usage
+   * DataFilesView
+     * Show usage (downloads) by DATA format type
+     * Show usage (downloads) by time frame
+   * HistoryView?
+

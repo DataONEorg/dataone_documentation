@@ -1,0 +1,123 @@
+Discussion on DataONE support for Dublin Core metadata
+======================================================
+
+Attending
+---------
+Christopher Jones, Skye Roseboom, Dave Vieglais, Matt Jones, Jane Greenberg, Laura Moyers, James Long, Ben Leinfelder, Robert Waltz, Bruce Wilson, Angela Murillo
+
+Conference URL: https://plus.google.com/hangouts/_/nceas.ucsb.edu/dc-discussion
+
+
+Background
+----------
+DataONE has upcoming Member Nodes that would like to use Dublin Core metadata fields as harvested science metadata describing their objects. Should DataONE host a custom schema to accommodate this, or should research communities use them in their own hosted schemas? Should DataONE parse *any* science metadata document, and index DC elements that are encountered as a fallback? We need a short term solution (1 -2 weeks), which will be the focus of the discussion.
+
+The indexed content for DataONE is described in the Content Discovery section of the Architecture documents:
+
+https://releases.dataone.org/online/api-documentation-v1.2.0/design/SearchMetadata.html
+
+The implementation of this uses a Solr search engine, and you can see the list of indexed fields at the CNRead.getQueryEngineDescription() REST API endpoint:
+
+https://cn.dataone.org/cn/v1/query/solr
+
+Agenda
+------
+
+1. Quick summary of email discussion thus far (Chris)
+
+2. Creating a custom DataONE schema
+ * What DC namespace would it target? (full /terms or limited /elements/1.1)
+ * Pros
+   * A minor change from the existing Dryad schema should be easy to parse.
+ * Cons
+   * We'd have to maintain it, possibly for decades (which is hard based on our EML experience)
+   * Not really community-driven
+   * Ball, A. (2009, June 3). "Scientific Data Application Profile Scoping Study Report". Retrieved from http://www.ukoln.ac.uk/projects/sdapss/papers/ball2009sda-v11.pdf 
+     * Page 20, Section 3.6.3 describes the ambiguity of Simple DC and why it is not suited for Scientific MetaData description
+     * Conclusion states that it would take a year of effort to produce an Application Profile
+       * Page 39, Section 7.2 "From work on previous Dublin Core Application Profiles, it is estimated that the development effort required to produce a Scientific Data Application Profile, along with supporting documentation, will be twelve months full time equivalent."
+
+3. Parsing DC fields from any valid XML/XHTML
+ * Pros
+   * doesn't require a specific schema
+   * provides a good fallback
+ * Cons
+   * it would be difficult to interpret context of the DC fields if they are found 'anywhere' in the XML document; its quite ambiguous in many scenarios
+   * Would take considerable effort and time to produce the solution
+
+
+4. Using the Dryad DC Application Profile schema
+ * Pros
+   * Already Supported by DataONE
+ * Cons
+   * has some Dryad-specific fields that are required.  Status and External are two such  
+   * Dryad schema v3: http://dryad.googlecode.com/svn/trunk/dryad/dspace/modules/xmlui/src/main/webapp/themes/Dryad/meta/schema/v3/dryad.xsd 
+   * v3.1: http://purl.org/dryad/schema/terms/v3.1
+
+5. Using an existing DC schema
+ * See http://dublincore.org/documents/dc-xml-guidelines/
+   * http://dublincore.org/documents/dcmi-terms/
+   * http://dublincore.org/schemas/xmls/
+ * Can we use or extend one of:
+   * http://dublincore.org/schemas/xmls/qdc/2008/02/11/simpledc.xsd
+   * http://dublincore.org/schemas/xmls/qdc/2008/02/11/dc.xsd
+   * http://dublincore.org/schemas/xmls/simpledc20021212.xsd
+   * http://www.openarchives.org/OAI/2.0/oai_dc.xsd
+   * http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd
+   * http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd
+ * Pros
+   * Already exists, don't need to be extended for base elements
+   * An existing community already maintains these schemas, and they are well-known
+   * Both simpledc and qualifieddc are lready registered format types
+ * Cons
+   * May not provide all of the elements needed for good indexing in DataONE for MPC
+     * But we don't really have minimum requirements now
+   * defined simple version does not have a spatial field, does not have a place for scientific names.
+
+6. Support DDI directly, which is what MPC really seems to use
+ * http://www.ddialliance.org/Specification/DDI-Codebook/2.5/
+
+7. Register the DataCite Metadata Kernel schema as an accepted type
+ * http://schema.datacite.org/meta/kernel-3/doc/DataCite-MetadataKernel_v3.0.pdf
+ * Pros
+   * Simple Standard that provides more richness and better constraints than the 15 Core DC elements and the DC Terms elements
+ * Cons
+   * Isn't acutally Dublin Core (no terms from the dc namespace), even though they provide a mapping
+   * MPC already supports DC
+ * Other considerations for support:
+   * http://www.dcc.ac.uk/resources/metadata-standards
+   * http://www.dcc.ac.uk/resources/subject-areas/earth-science
+   * http://www.dcc.ac.uk/resources/subject-areas/biology
+     * Why did they decide EML was biology and not earth science?
+
+8. Short term decision for supporting the Minnesota Population Center
+ * Example MPC metadata: https://dataone-test.pop.umn.edu/mn/v1/object/ipumsi_6-3_at_2001.dc.xml
+ * Need to create the indexers for simpledc and qualifieddc formats
+ * We have already registered these schemas as metadata formats in the DataONE object format list:
+   * https://cn.dataone.org/cn/v1/formats/http://dublincore.org/schemas/xmls/qdc/2008/02/11/simpledc.xsd
+   * https://cn.dataone.org/cn/v1/formats/http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd
+
+DECISIONS:
+ * Recommend that MPC uses http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd as a short term fix
+ * Option #2 is not desirable from a long-term maintenance POV, and shouldn't be pursued
+ * Option #3 is a very broad effort, and is difficult to interpret field context, and shouldn't be pursued at the moment
+ * For option #5, we should support the containers for all of these existing schemas as science metadata for the long term
+ * We should also support #6 and #7 in the long term; we could register them now, but not create an index parser until someone starts adding content of that type
+ * TODO: Bruce will write up recommendation for MPC
+ * BEW 2014-08-24: To convert an XML file that used the dataone_dc proposed schema to the qualifieddc schema:
+   * Change the xsi to 
+   * xsi:schemaLocation="qualifieddc.xsd http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd”
+   * Change the containing element from <dataone_dc> to <qualifieddc>
+   * Change the xmlns for dc to xmlns:dc="http://purl.org/dc/terms/"
+   * Change all instances of dcterms: to dc:
+   * Note: the Dryad spec includes dwc:scientificName and we do index that.  It appears possible, using the qualifieddc schema, to include that by adding xmlns:dwc="http://rs.tdwg.org/dwc/terms/" to the namespace declaration for the metadata and then including terms such as 
+     * <dwc:scientificName>Cercis canadensis</dwc:scientificName> 
+
+ * MPC requested timeline:
+     * by August 22 - DataONE indexing system updated to parse DC metadata (based on the mapping Wendy provided yesterday)
+     * by August 22 - Wendy generates DC metadata objects compatible with the updated indexing system
+     * by August 25 - We ingest the metadata into our member node, and it is ingested and indexed in DataONE's test environment
+     * Fabio will be in Italy August 27- September 12 (Our lead TerraPop developer, Alex Jokela, will be handling issues that require our attention during this time.)
+     * By September 22 - Testing complete; any glitches in DC indexing ironed out, metadata vetted and certified for production
+     * By September 29 - Member node moved into production with indexed metadata
+

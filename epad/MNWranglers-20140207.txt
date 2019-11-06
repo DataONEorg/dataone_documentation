@@ -1,0 +1,145 @@
+Member Node Wranglers 
+    Fridays at 10:00 am AK
+                    11:00 AM PST
+                    12:00 MST
+                    1:00pm CST
+                    2:00pm EST) 
+
+https://www1.gotomeeting.com/join/430697153
+
+7 February 2014
+                                                                                                                                     
+Attending:  Laura, John, Rebecca, Dave, Amber
+
+Regrets:  Bruce
+
+
+Agenda: 
+
+        Dashboard:  At today's meeting, we plan to look at the notes taken at the All Hands Meeting and at a discussion in December to consolidate, clarify and prioritize the desired changes to the dashboard.  This should make Skye's job easier as he returns to work on the dashboard.
+        Current dashboard:   http://129.24.63.92/backbone  
+        AHM notes:  http://epad.dataone.org/2013AHM-Dashboard
+        December notes:  http://epad.dataone.org/2013Dec18-Dashboard
+
+First focus:  summary page; colors/fonts etc are maybe half-day activities; deal with the simpler, more straightforward tasks first
+Need to have Skye and Chris meet with us re: these activities
+
+Explicitly define: where does the data come from (logs?), object, dataset, data file, other terminology
+
+Main (summary) page
+ * Chris suggests showing data as of July 2012 forward right now, then  later, when all MNs do their date consistently, we can add the pre-D1  info.  Remove legacy timeframes for now.   Needs to be a discussion among the MNs re: what is the real start date, which would entail some MNs changing their perspective.
+ * High y-axis value should be higher than largest data point.
+ * Remove "summary" button from main page until we get the map page.
+ * Ensure that 2014 shows on the X-axis of the chart.
+
+MN listing below the chart:
+ * On summary page, in MN table, remove the description column, keep the full description in the detail MN page.  On summary page, roll over for short description.
+ * In MN list below chart, we need to better indicate that you should/can  click on a MN row for more information.  Roll-over color is already  there in pale gray, perhaps it should be a different color? 
+   * Resolution to this:  use plum + roll-over = teal for the MN name text, keep the gray highlighting
+   * Need to recognize that this is a link.
+ * Add MN logo to MN table
+ * Under "Node Document" - currently we have a generic document icon.   Change column header to "MN Document" (when you mouse-over, it would  show "Member Node Document"), change icon to a free PDF-specific icon.    See this for various "PDF document" icons:
+ * https://www.google.com/search?q=pdf+icon&espv=210&es_sm=119&tbm=isch&tbo=u&source=univ&sa=X&ei=tumxUv_IOuPUsASg1IDABA&ved=0CC4QsAQ&biw=1176&bih=552
+ * Repository status: up  is a green checkbox, down is an exclamation point  (is it red?), unknown  is a question mark (what color?).  Add a legend  to the hover-over the  Status header.
+
+On MN detail page:
+ * On MN specific page, don't use the gray for text.  Use black (or teal) and reduce font size for the MN short description. 
+ * Replace "home" icon on detail MN page with each MN's logo as link to their home page.  Use the style we use on regular pages.
+ * High y-axis value should be higher than largest data point.
+ * How about rather than previous/next, show the name of the  previous/next  MN, under the current MN detail page title, in a smaller  font on left  show previous MN and on right show next MN.  Some MN names  are long,  some shorter, Skye to look at how to handle.  Short name is the node identifier (like PISCO).  
+ * The "Summary" button functions as  "back" button on the individual MN page.  It should be shown here but temporarily removed from the main summary page until we can flip to the map page.
+
+Metrics math: (maybe?? -  to be checked)
+
+N_objects = N_files + N_MDfiles + N_resource_maps
+
+Each items on the RHS may be current or deprecated.
+
+N_Current_Objects = N_current_files + N_current_fMDfiles + N_current_fresource_maps
+
+Does this capture the idea?
+
+N_Currently N_data_files = 127,335 (includes obseleted content)
+N_MDFile = 104,610 (includes obseleted content)
+
+Date harvested is December and earlier for most MNs - we think we stopped while the CN synch issue is being resolved
+
+[maybe not high priority] Where can I download the data that generates this graph? Pehaps provide a button? (Listening to our own preachin')
+
+
+12.   We need to add a field to redmine for date-online for operational MNs.   (Laura/Bruce)  12/31/13 - DONE.  Field populated for operational  MNs.
+
+---
+
+QUESTION:  Where does the dashboard pull MNDDs from?  The only two MNs for which we don't have a DD are ESA and SANParks, but it looks like we don't have SEAD, NPN and GOA, too.
+ANSWER:  There is a folder containing MN description documents (and one with MN logos) that the dataone website pulls from.  In a previous meeting, we discussed where should be the authoritative source for MNDDs, and we  decided that they should be attached to the MN's redmine ticket.  ONGOING ACTION:  Laura to ensure that MNDDs (PDF) are attached to the redmine ticket.
+
+See also email from Amber to Chris: Date: Tue, Dec 17, 2013 at 3:28 PM; Subject: Re: Member Node Dashboard Review  --- this was probably the basis of the discussion in the 18 December meeting.
+
+Solr index being populated with log records from MNs, so the dashboard pulls its info from MN log aggregation info
+another solr index provides map information
+another solr index provides counts
+
+What is the official start date?  some MNs thought start date referred to THEIR start date (reflecting age of their repository), others considered it DataONE start date (July 2012)
+=================================
+        After this discussion, we can address the below if time permits:
+        
+        1. High profile issues (or current items of interest)
+        
+        New MNs announcements? -  
+       * GOA awaiting press release (Matt reviewing)
+       * KUBI  awaiting press release (in review)
+       * Dryad - PR being reviewed by Todd and Laura W.
+            
+        IDCC workshop 2/27/14 -  
+       * in-house meeting 2/6/14 to discuss survey questions; http://epad.dataone.org/2014-02-06-IDCC-Workshop
+       * registration is closed - 13 registrants
+       * Amber to send out survey today 2/7/14
+       * collaboration area in Dropbox for us to work together on this. 
+                    https://www.dropbox.com/sh/0o7m3448b05m8h7/uLrxcxM5ZI
+
+        1.5    Current MNs
+       * LTER (and KNB) affected by issue of "old" metacat miscategorizing data (archived does not equal deleted), but problem was identified, fix is in progress to be rolled out with Metacat v 2.4 in the next several days.  Mark was very kind at the MNF meeting talking about how responsive CCIT was in helping to identify and solve the problem.  
+                     
+        2. Status of upcoming MNs
+        
+        Future
+       * Australia:  plan for next 3-4 weeks is to work on 1) conceptual  nature of TERN/DataONE collaboration and 2) technical details of  possible implementation (exposing metadata only via TERN and/or allowing  repository(ies) within TERN to be MN(s) in their own right.   NEXT  MEETING:  week of 3 March, Doodle poll out
+       * Multiple  ORNL potentials: met 1/30/14, looking in particular at starting with  two repositories RGD (Regional and Global Data) and EDORA (Environmental  Data for the Oak Ridge Area).  Jim Green is working to develop a  lightweight MN stack (ORNL slender node) that will simplify the  deployment for certain types of MN's, particularly those who manage  curated metadata.  Development/design phase, still need some higher  level discussions re: the content is held outside DataONE (links outside  "the system"). 
+
+     * Y5Q3
+       * Gulf of Alaska DP (3531) -  PR in review (Matt et al.)
+       * FRIM  (4083) - Jing Tao D1 contact, Omar Ali is tech MN POC, currently   installing latest version of Metacat, Jing sent an email to Omar.  No   response yet (1/17/14)
+       * USGS  ScienceBase (4002) - Mike to get back with us  re: when USGS expects to work on the ScienceBase stuff (from their  perspective)
+       * LTER-Europe (3232) -  Per email from Ben 1/23/14, "LTER_EUROPE is registered and just waiting to be "flipped on"."
+         * Update:  Matt: Please ask Ben to check content, but otherwise I think they are  ready to have release materials be developed and turned on in Y5Q2
+         * Email out 1/29/14 to David Blankman and others requesting DD and help with PR. a/o 2/2/14, David is sending DD out for internal review.
+       * Dryad   (3118) -   PR in review (Todd/Laura W), hope to go live/announce prior to RSV;
+       * EDAC (3221) -  EDAC to go ASAP after Dryad
+       * Kansas (3188) -  PR in draft, sent to Jim et al. for review 
+       * U  Illinois Chicago (3213) - Chris and Bob pick up after CN.
+       * PPBio  (3748) - PPBio has moved their server to LNCC (better internet  reliability and more technical resources available) and is making great  technical progress.  Debora sent draft MNDD to Laura 2/6/14 (still working on usage stats, etc.), Laura to draft PR for their review.
+       * Taiwan TERN (3211) - 
+         * Matt: I haven't been in contact with them.  (12/20/13) 
+       * SAEON (3205) -  At MNF 1/23/14, Matt said they've gotten new h/w for their systems and hope they're ready to move forward
+         * Update:  Matt has been in contact and they have moved Metacat to the new server;  we should pursue a Metacat upgrade and DataONE configuration now.
+         * ACTION: Laura to contact Wim Hugo re: DD and their readiness to proceed
+       * NKN   (3238) -  Luke came to MNF yesterday 2/6/14, work on NKN MN has resumed.
+
+     * Y5Q4
+       * EU BON (3964) - Their December meeting has been pushed out to 29-31 January.  
+         * ACTION: Laura to contact Hannu for updates
+       * DFC  (3532) -  
+       * MPC  (3708) - Actively working re: metadata formats, etc.
+
+        3. Old action items
+             
+        4. Not-high profile issues
+             How do people get added to the MNForum mailing list?  If people express  an interest or a new MN is coming online, Laura will ask that they be  added to the list (support@dataone.org, Dave, Amber, Matt).  
+
+            We think the folks at ASU are interested in moving forward.  They have been added to the MNF list, but they were unable to attend yesterday.
+
+
+        5. Around the room
+
+

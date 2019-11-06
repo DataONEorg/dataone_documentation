@@ -1,0 +1,45 @@
+
+DataONE Provenance WG Meeting
+June 7-8, Genome Center, UC Davis 
+
+
+Overview: 
+ * Tuesday 
+   * AM: ProvWG Session I
+   * PM: ProvWG Session II
+ * Wednesday 
+   * AM: ProvWG Session III & Summer Project Session I (joint session)
+   * PM: Summer Project Session II 
+
+
+Detailed Agenda Tuesday
+Suggestion: List *where* we'll be meeting (which rooms in the Genome Center)
+ * 8:30--9am Informal start (coffee & bagels)
+ * 9--9:30am Introductions: ProvWG mission, deliverables, OPM/D-OPM, meeting goals
+   * Suggestion: Make this 1 hour, include outcomes from last summer & last meeting
+   * Maybe Paolo or you give talk from WORKS? 
+   * agree with limiting this to one hour. we can give a /brief/ summary of WORKS but not more than 15'
+ * 9:30--noon: D-OPM = OPM + X. 
+   * Discuss what's in scope, i.e., what is X?
+   * What info, observables are relevant for users of wf system Y? (K,T,V,P, ...)
+   * Suggestion: List some possible extensions already in scope (e.g., collaborative information, unique identifiers and identifier mappings, data collections, wf evolution, actors/actor occurrences/invocations, ...
+   * Suggestion: Focus also on what features (queries, etc.) are enabled by observables, i.e., what can be done with these observables? This is more interesting than just listing a bunch of stuff that can't be (easily) represented in OPM.
+   * where I come from (eScience Central, a cloud-based WFMS) provenance is perceived as a sort of "glorified log", which holds info like exec times of tasks etc. -- to be used for optimization of future runs. I suggest to consider this angle as well 
+ * Noon--1pm: LUNCH
+ * 1--5pm: D-OPM (cont'd):
+   * how to represent X? conceptual schema (draft)
+   * Suggestion: Start with schema from Saumen and others from last year?
+   * Also, what representation technology(ies) should D-OPM support? Relational DB? XML? OWL? JSON?
+
+Detailed Agenda Wednesday
+ * 8:30--9am Informal start (coffee & bagels)
+ * 9am--noon: Next steps on D-OPM, scoping of ProvWG / Summer Project
+ * Noon--1pm: LUNCH
+ * 1--5pm: Summer Project (cont'd)
+   * prototype design, architecture
+
+
+
+Guiding questions / Homework assignments for meeting participants:
+* ... 
+

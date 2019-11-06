@@ -1,0 +1,71 @@
+Leadership Team Meeting October 17, 2011
+
+CI Future Products and Services  
+
+CI Future Products and Services
+July 2012 (end of year 3)  
+ * Data deposit, through DataONE APIs, will be supported (i.e., identity management and authentication will be complete) 
+ * Additional ITK tools - Morpho, ONEDrive,  ArcGIS,  ScienceBase Data Uploader, 
+   * See prioritization surveys at: https://repository.dataone.org/documents/Meetings/20110711_DUG_SantaFe/itk-tool-prioritization-by-lifecycle.pdf , and https://repository.dataone.org/documents/Meetings/20110930_IWS_Santa_Barbara/itk-tool-prioritization-by-lifecycle.pdf
+ * Compute Nodes: mechanism to move data to compute resources, such as XSEDE (formerly known as TeraGrid) 
+ * Refinement on search capabilities - controlled vocabularies, facets
+ * More administrative reporting/statistics - MN on data usage, and PI stats 
+ * Pilot Annotation capabilities - tagging comments on datasets (Objects)
+ * More MNs (goal is 10 MNs total)   
+
+CI Future Products and Services
+July 2013 (end of year 4)  
+ * Improving search through semantics 
+ * Additional services for discovery, 
+ * Subset datasets  capabilities (i.e OGC services, taking advantage of MN services; could also use well-known subsetters for defined formats,e.g. netCDF)
+ * Pilot Semantic integration across datasets may be possible at this point (for limited sets of content, with known formats and structure; limitation includes what ontologies are available)
+ * EVA-derived selected cyberinfrastructure for model-model and model observation intercomparisons
+ * More MNs (goal is 20 MNs total)  
+ * DataNET Pilot Integration 
+ * Excel plug-in will be available May 2013 so should be able to deposit data from it by July 
+ * Additional ITK elements: Workflow tool
+ * 
+
+CI Future Products and Services
+July 2014 (end of year 5) 
+ * More MNs (goal is 40 MNs total by Year 5)    
+ * Additional CN's ?
+ * International MN's/CN/'s ? (ACEAS/TERN is interested and would like to have a discussion this week --?? year 4 goal ??)
+
+
+
+CE Future Products and Services  
+July 2012  (end of Year 3)
+ * Librarians &  Library assessments reports completed 
+ * Data Managers assessment report completed 
+ * Repeat Environmental Scientists survey deployed 
+ * Business plan version 0.8 
+ * RCN & DataNet Partnership established
+ * Data publication infrastructure? 
+ * Library community Engagement Strategy 
+ * Workshops & symposia - Supercomputing'11, ESIP@AGU, IDCC, American Botanical Association? 
+ * Publications submitted for peer-review: Hampton et al, Huang et al
+ * Summer student internships
+ * Data management online learning
+ * Course development module x1 (Huang et al)
+ * Website redevelopment complete and implemented
+
+CE Future Products and Services
+July 2013 (end of Year 4)
+ * Marketing Plan version 2.0 
+ * PPSR (Public Participation in Scientific Research) Working Group survey? 
+ * Educators assessments
+ * Environmental Scientists Assessment Published 
+ * Workshops & symposia - ESA (workshop & symposium), EcoSummitt, 
+ * Goverance Structure for DataONE Evaluation & Recommendation
+ * Summer student internships
+
+CE Future Products and Services
+July 2014 (end of Year 5)
+ * Repeat librarians and data managers assessments
+ * Workshops - Intecol, ESA (workshop & symposium)
+ * Summer student internships
+
+
+
+

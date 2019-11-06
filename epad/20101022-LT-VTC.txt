@@ -1,0 +1,216 @@
+Attendees:
+Rebecca Koskela, Suzie, Carol, Mike Frame, Amber,John Cobb, Bill Michener, Bruce WIlson,
+Todd Vision, Trisha Cruse, Dave Vieglais, Steve Kelling, Steph, Viv
+
+
+Regrets:
+Bob Cook, Matt Jones,
+
+Agenda for 2010-10-22
+
+
+ 1.  Outcomes from the Dimensions in Biodiversity Workshop (Vieglais/Jones)
+ Three-day workshop of about 30 participants organized by Corrina Gries. The purpose was to plan the cyberinfrastructure requirements for the Dimensions in Biodiversity program at NSF. Discovery is a big impediment for work in this area: discovery of data, tools, services.
+ DataONE, or the DataNet program in general are obvious candidates to fulfill this role. Need to increase collaboration with iPlant. Should be a community supported catalog. Data integration was another topic of discussion. Annotation and tagging of datasets for re-use in the future. There will be a report ready for review in about a week. This report will include references to the DataNets and iPlant.
+ 
+ 2.  Summary of ORNL visit (Vieglais)
+ 
+ Dave visited ORNL on Monday and Tuesday of this week. Categories: year 3, cross development with Mercury, Line Pouchard's working group, possibility of interactions between on-going projects at ORNL, for example ESG. Also discussed TeraGrid integration with DataONE. A couple of actions: design phase of a MOU (?). There is an ontology repository set up (http://d1sweb.dataone.utk.edu ). One possibility would be to turn this repository into a Member Node. Next step for Line's group is to finish up charter and submit member list. Mercury is an interesting challenge for continued work with DataONE. 
+ Throttling mechanisms will probably need to be in place in the future for DataONE so as to not exhaust resources. Can learn from ESG and ORNL DAAC.
+ 
+ 3.  EAB Report and the strategy for responding to it; See https://docs.dataone.org/member-area/committees/management-team/documents/leadership-team/eab (Michener)
+ 
+ Sync up with S&G WG and CI group on the reference architecture point at the AHM
+ Will have a full agenda in January; 10 of the board members will be able to make it.
+ Reps from LT are Carol and Bob Cook
+ 
+ 4.  February Review; See https://docs.dataone.org/member-area/committees/management-team/documents/leadership-team/nsf/DataNet%20Proposed%20Agenda%20for%20February%20Review.docx (Michener)
+ Wednesday, February 23
+ 
+Proposed Timeline (totals 8 hours):
+Project Overview (30 minutes for presentation; 30 minutes for Q&A)
+Cyberinfrastructure (2 hours for presentation; 1 hour for Q&A)
+Community Engagement and Sustainability (1 hours for presentation; 1 hour for Q&A)
+Challenges and Mitigation (30 minutes for presentation; 30 minutes for Q&A)
+Future Plans and DataNet Activities (30 minutes for presentation; 30 minutes for Q&A)
+ 
+ 
+Proposed Agenda in More Detail:
+I. Project Overview 
+§  Introduce DataNet team 
+§  Context for this particular DataNet 
+§  High Level Overview of project
+o   Objectives
+o   Project organization 
+o   Project management
+o   Communication
+ 
+The following questions should be addressed in the Project Overview.  
+(#1) With respect to your DataNet project what did you envision (i.e., propose) and what is your progress to date?  Which aspects represent “research” (i.e., risky) vs. CI development?
+(#2) What are some of the critical issues preventing data access, archival, re-use, and sharing that are being addressed by DataNet?
+(#3) What is within scope and outside of scope?
+ 
+II.  Cyberinfrastructure 
+§  Architecture overview
+§  Development and implementation progress
+o   Demonstrations
+o   Research and development
+§  Plans for next 3 yrs
+ 
+The following questions should be addressed in the Cyberinfrastructure section.  
+(#7) What is your definition of preservation?  What are your plans and what have you done to date?
+(#10) How are you dealing with data storage challenges?
+ 
+III.  Community Engagement and Sustainability  (includes education, assessment, outreach, sustainability)
+§  Overview of community engagement and sustainability activities
+§  Progress to date 
+§  Plans for next 3 years
+ 
+The following questions should be addressed in the Community Engagement and Sustainability section.  
+(#6)  What is your definition of sustainability?  What are your plans and what have you done to date?
+ 
+IV.  Challenges and Mitigation
+§  Challenges 
+§  Mitigation approaches
+ 
+The following questions should be addressed in the Challenges and Mitigation section.  
+(#5) What challenges have you faced and are you resolving them?
+ 
+V.  Future Plans and DataNet Activities
+§  Future plans
+§  DataNet Federation activities and opportunities
+§  Where does DataNet fit in the broader landscape?
+ 
+The following questions should be addressed in the Future Plans section.  
+(#4) What are your plans for the next 3 years?
+(#8) How do you envision DataNet projects working together?
+(#9) How do you see your project fitting in with overall NSF and US data management goals?
+ 
+ 
+Possible review questions (submitted to NSF from the two DataNets) include:
+1.      With respect to your DataNet project what did you envision (i.e., propose) and what is your progress to date?  Which aspects represent "research" (i.e., risky) vs. CI development?
+2.      What are some of the critical issues preventing data access, archival, re-use, and sharing that are being addressed by DataNet?
+3.      What is within scope and outside of scope?
+4.      What are your plans for the next 3 years?
+5.      What challenges have you faced and are you resolving them?
+6.      What is your definition of sustainability?  What are your plans and what have you done to date?
+7.      What is your definition of preservation?  What are your plans and what have you done to date?
+8.      How do you envision DataNet projects working together?
+9.      How do you see your project fitting in with overall NSF and US data management goals?
+10.  How are you dealing with data storage challenges?
+ 
+ Homework for NSF:
+ Items to be included in material for panelists
+1.      Executive Summary (each topic to be as short as possible)
+a.      Synopsis (very short) of solicitation (full solicitation at end
+of document.
+b.      Short resume of P.I. and key personnel and list subs working on
+award with short description of each one's duties (1 pgh each)
+c.      Short descriptions of award centering on Milestones and
+Deliverables with timetable for each milestone and deliverable
+d.      Progress to date on key scientific goals and vision (important
+to list these in order of importance) - include risk, and contingency
+plans as well as cybersecurity.  (this is all open to interpretation)
+
+e.      Be specific on availability of prototype for panel for demo
+purposes
+f.      Vision for outyears of this award including educational impact,
+and noting that these two awards are the forerunners for any future
+DataNet program.
+
+2.      How many other pages necessary to discuss c, d, e and f of above
+3.      Supplementary material as necessary - these include all of the
+other components of the award such as, org chart, advisory committees
+(internal and external), important work of the subs,  - meetings are not
+the integral part of your success - journal publications can be used as
+an indicator of progress but it is the successful demo of the prototype
+that is the key factor.  Sustainability  and traceability also need to
+be discussed.
+4.      I know I have not listed all of the components (such as
+including CA and PMP) to be addressed and Mimi and I would like to
+discuss questions that might be asked and how to answer them ahead of
+time in this document.
+ 
+ 5.  Preservation BoF at AHM - who could lead this?
+ Moderated discussion about preservation: John Kunze volunteered to facilitate this discussion - would also be useful to have viewpoint of the libraries
+ 
+ 6.  DUG Agenda
+ 
+ 
+Planning Meeting for DataONE Users Group
+Objectives and Agenda
+
+Meeting objectives:
+ * Provide overview of DataONE and progress to date 
+ * Discuss/propose value proposition and roles and responsibilities of Member Nodes and Coordinating Nodes
+ * Document the process of evaluating, prioritizing and adding Member Nodes
+ * Propose structure and content  of Member Node partnership agreements and related policies (e.g., Service Level Agreements) 
+ * Discuss, propose/revise, and document the value, activities, roles and responsibilities of a DataONE Users Group 
+ * Propose, evaluate, revise, and adopt an organizational structure and charter for the DataONE Users Group 
+ * Develop an implementation strategy for fully standing up the DataONE Users Group
+ * Review meeting progress, action items, next steps and calendaring for future meetings  
+
+
+Agenda:
+
+9 December 2010 8:00 - 10:00 am
+
+(Block 1) Plenary (moderated by Rebecca Koskela):
+
+- Welcome, introductions, meeting objectives, and review of agenda (William Michener)
+
+- Project overview (William Michener)
+
+- Cyberinfrastructure design and implementation plan, progress to date, and future plans (Dave Vieglais)
+
+- Community engagement and education activities (Amber Budden)
+
+- Q&A 10:00 - 10:30 Break 10:30 - 12:00
+
+(Block 2) Value proposition and roles and responsibilities of Member Nodes and Coordinating Nodes (Matt Jones)
+
+-  Round table discussion (moderated by Mike Frame). Discussants include  current representatives from existing MNs and CNs, each of whom provides  a perspective statement prior to broader discussion
+
+- Q&A and discussion (Steve Kelling, moderator) 12:00 - 1:00, Lunch  1:00 - 3:00
+
+(Block 3) Presentation: Establishing the process for evaluating, prioritizing and adding Member Nodes (Dave Vieglais)
+
+- Facilitated discussion (Trisha Cruse, moderator)3:00 - 3:30Break3:30 - 5:30
+
+(Block 4)  Facilitated session to: Propose structure and content of Member Node  partnership agreements and related policies (e.g., Service Level  Agreements) (Mike Frame)
+
+10 December 2010 8:00 - 10:00
+
+(Block 5)  Discuss, propose/revise, and document the value, activities, roles and  responsibilities of the DataONE Users Group (Bob Sandusky, moderator) 10:00 - 10:30Break10:30 - 12:00
+
+(Block 6)  Propose, evaluate, revise, and adopt an organizational structure and  charter for the DataONE Users Group. Presentation and facilitated  discussion (Amber Budden): 12:00 - 1:00Lunch1:00 - 3:00
+
+(Block 7) Develop an implementation strategy for standing up the DataONE Users Group (Rebecca Koskela, moderator)3:00 - 3:30
+
+Break3:30 - 5:30
+
+(Block 8) Review meeting progress, action items, next steps and calendaring for future meetings (William Michener, moderator)
+
+ S&G WG has this on their agenda for the AHM so can be discussed there. Agenda should be mailed out next week. What about the ITK? Is this the right audience for getting requirements for the ITK? An ITK session was also proposed for the AHM...
+ 
+ 
+ 
+ 7.  Round the room (All)
+ 
+ Mike:
+ Usability & Assessment Working Group will be sending out an update/planning e-mail to its working group members later today.  Materials supporting our upcoming Working Group meeting have been uploaded into the DataONE UA Working group folder. 
+Carol: UT post-doc job opening is now posted. Here is the short version:
+Post-Doctoral Research Associate  -Center for Information and Communications Studies-,  Salary DOE&Q - Full Time  -A  PhD completed or near completion in Information Science, Library  Science, Communication, Earth/Environmental Science, or equivalent is  required. Interest in and experience with both quantitative and  qualitative social science research methods and statistical data  analysis. Expertise in statistical methods. Strong oral and written  communication skills required. Desired qualifications are experience  with survey methods, usability testing, user experience testing, and  bibliometrics. Interest or experience in earth or environmental sciences  is helpful.  To apply: Submit a cover letter and CV. Include the phrase  Post-Doctoral Researcher in subject line. Email to: Dr. Suzie Allard,  sallard@utk.edu or Dr. Carol Tenopir, ctenopir@utk.edu.
+
+Steph: working with Carly (postdoc) on potential projects
+John
+Bruce
+Todd: Opportunity for feedback on public face of DataONE
+Trish3212`13o68hrstdjyfkJ:m./a: Ran into Carole Goble and Dave DeRoure at conference and DataONE needs to reach out to international community
+Suzie
+Dave: 
+1. Meeting next week with Filtered Push project at UMass / Harvard Boston (http://mantis.cs.umb.edu/wiki/index.php/Filtered_Push).  Major topic is annotation of data and how FP project can / will interact with DataONE infrastructure.
+2. ADBC digitization HUB proposal (http://www.nsf.gov/pubs/2010/nsf10603/nsf10603.htm) - down to one major player being led by U Colorado. Interesting opportunity for DataONE role to assist with preservation infrastructure. Also some interesting interaction with TeraGrid resources from TACC (Texas).
+Viv: Presented on data management (plans, how to's, metadata, etc) at the Organization of Fish and Wildlife Information Managers (OFWIM) meeting. Slides were a based on the ESA Preparing Data to Share session given by DataONE at the ESA meeting in August. Good reception to the talk -- questions centered around where data management templates could be accessed. A next step perhaps for DataONE to offer...
+Amber:
+

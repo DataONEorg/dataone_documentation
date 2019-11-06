@@ -1,0 +1,412 @@
+Attendees: Rebecca, Amber, Carol, Suzie, John Kunze, Hilmar, Viv, Trisha
+
+
+Regrets: Dave, Mike Frame, Bill, Bob Cook, Bertram
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+Leadership Team starts at the times above; WG co-leads join at
+9:30am AK/10:30am PT/11:30am MT/noon:thirty CT/1:30pm ET
+
+1.  Please join my meeting, Jun 1, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/673107888
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (510) 443-0605
+Access Code: 673-107-888
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 673-107-888
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012Jun01-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-06-01
+
+1) CI Update (Dave)
+
+- Stable packages are currently being built in preparation for  installation on production CNs. A couple of minor issues encountered  that were a bit frustrating but resolved quickly (human error)
+
+- Production CNs are scheduled to be installed tomorrow, Friday in preparation for first rounds of MNs to be deployed next week.
+
+-  Replication issues appear to have been resolved but require more  testing before these changes can be included in the production  environment. I am confident that when we go fully public that the  replication service will be operational
+
+- Many UI changes made to ONEMercury as per requests  from Rebecca and Amber. Refactoring of menu layout pending input from  Chris and Laura
+
+- GMN member node software appears to be passing all tests after a big bug fixing session by Roger over the long weekend.
+
+- CLI includes numerous small updates to improve usability (e.g. meaningful error messages and so forth)
+
+- I'm working my way through documentation with goal of having it available near / soon after the June release time frame.
+
+Overall we are on track with the deployment process,  but still have little to no contingency space until after we get the  KNB, LTER, PISCO, and SANParks data loaded.
+
+Oh - also next CCIT meeting will be August 21-23 at NCEAS (popular vote).
+
+
+2) MN Partnership Agreement (Amber/Bob/Mike)
+http://bit.ly/LOOsFT
+
+Policy details related to DataONE were discussed at the S&G WG meeting. Originally
+had a draft Partnership Agreement (see link above). At the time, had discussed having
+all Member Nodes sign this.  The draft agreement is out of date so needs to be updated,
+and a decision needs to be made about having MNs sign the agreement - if so, then needs
+to be signed before public release.
+
+At the S&G WG, the group decided this was really important.  However, time is short so how
+to go forward?
+
+Trisha asked if UNM consul needs to review this agreement - Rebecca will check on this
+Trisha said UC consul would need to review the agreement before CDL could sign.
+
+John K. would like to see something about preservation in the partnership agreement.
+
+Suzie: At UT, anything with "partnership" in an agreement would need to go through GC
+and this would slow it down. 
+
+Carol: Perhaps in the meantime, having something informal and then work through something more formal.
+
+
+3) Working Group Status Reports
+   {these reports are for annual report so the reporting period is 
+     August 1, 2011 through July 31, 2012 - it is fine to gather the 
+     information from this year's quarterly reports and then add the 
+     new information for this quarter}s!
+-----------------------------------------------------------------------------------------------------------------------
+Working Group: Public Participation in Scientific Research
+Co-chairs: Rick Bonney & Andrea Wiggins
+
+Overall Objective: 
+Identify the scope, scale, and diversity of PPSR data used in scholarly research and barriers to broader use of these data. Provide recommendations for improving quality, quantity, and accessibility of these data; generate recommendations and/for tools to advance integration of data in conventional science.
+ 
+Milestones for next 12 months: (3-5 bullets)
+ 
+o   June 2012: complete data management for PPSR white paper; identify new projects; start identifying sources of funding for WG projects
+o   Summer 2012: Disseminate white paper; extend white paper and data quality paper into peer-reviewed submission/s; write grants as appropriate; initiate new projects; identify opportunities for collaboration with other WG; recruit new WG members; propose and follow up on “data train” system (see April 2012 below)
+o   August 2012: extensive WG involvement in conference on PPSR; likely data collection at conference
+o   Fall/Winter 2012: continue activities from Summer 2012; AHM
+ * set 2013 WG goals
+ * identify top priority venues for disseminating WG products
+ * work on ongoing projects 
+o   Spring/Summer 2013: see above
+ 
+Accomplishments from past 12 months:
+ 
+ * October 2011: 80% completion of white paper/user guide; recruited and transitioned to new WG co-chair
+ * November 2011: provided feedback on PPSR participant persona for SI WG
+ * January 2012: submitted three articles for Frontiers special issue on citizen science
+ * April 2012: held WG meeting
+   * identified potential directions for WG activities
+   * provided PPSR organizer persona for SI WG
+   * developed requirements for a simple KNB data deposit system integrating existing tools (“data train”)
+   * developed demo data mashup from 4 citizen science projects
+   * generated ideas for data collection at PPSR conference
+ * June 2012: Andrea starts as postdoc
+ 
+Products
+ 
+ * Paper on data quality and validation mechanisms presented at IEEE eScience conference workshop on Computing for Citizen Science
+ * Three review papers, scheduled for August publication in FREE special issue on citizen science, included half the WG as coauthors and one member as issue editor
+
+-----------------------------------------------------------------------------------------------------------------------
+ 
+Working Group: Integration and Semantics
+Co-chairs: Jeff Horsburgh & Deborah McGuinness
+
+Overall Objective:
+The mission of the Integration and Semantics Working Group is to guide the specification, adoption, and implementation of semantics technologies, broadly defined, which will enable DataONE to sustainably achieve its objectives for the seamless discovery, integration, and dissemination of Earth observational data.
+ 
+Milestones for next 12 months: 
+ 
+ * Work with our summer intern, Suppawong Taurob, to examine the DataONE ONEMercury discovery client and the set of metadata to be included from the initial DataONE Member Nodes (e.g., the KNB and Dryad) to research potential ways for improving data discovery in the ONEMercury client through the use of semantic technologies.  Suppwong will visit ORNL on June 7-8th to meet with Line Pouchard the primary mentor and others at ORNL.
+ * Create a set of tasks and a mentorship plan for the Post-Doctoral scholar, Patirice Seyed, to correspond with the goals and objectives of the working group.  The initial task will be designed to leverage one or more of the semantic tools and infrastructure at RPI on DataOne data.  
+ * Examine the DataONE ONEDrive protototype and provide recommendations for how semantics could be used to improve the organizational/folder structure.
+ * Develop one or more interdisciplinary use cases (likely combining the hydrology and ecology domains) demonstrating the need for and how semantic technologies can enhance data discovery and integration.
+ * Continue interactions with the Scientific Observations Network (SONet) group working toward specifications and technologies to facilitate semantic interpretation and integration of observational data.
+ * Face to face meetings of the working group
+   * One for the subset of the working group attending the IPAW meeting in Santa Barbara in June
+   * One in the third quarter of 2012 to coincide with the DataONE All Hands Meeting.
+   * Report progress of the working group at the All Hands Meeting.
+ 
+Accomplishments from past 6 months: 
+ 
+ * During the summer of 2011, working group member Hilmar Lapp mentored DataONE summer intern Aida Gandara, who worked on a project called LOD4DataONE (Linked Open Data for DataONE – Integrating loosely structured data into the Linked Open Data Cloud).
+ * Our Post-Doctoral scholar offer has been accepted.  Patrice Seyed is expected to start on June 1, 2012 to assist with working group activities.
+ * Working group members participated in submitting 3 different potential projects to the DataONE summer internship program: 1) Enhancing Semantic Search in ONEMercury; 2) An Information Model for Observational Data within DataONE; and 3) Evaluating the Feasibility of Using Bottom-Up Text Mining Approaches to Complement Thesaurus and Ontology-based Approaches for Supporting Data Discovery.
+ * A subset of the working group led by Line Pouchard was successful in hiring a summer intern, Suppawong Taurob, to work on one of the submitted projects – Enhancing Semantic Search in ONEMercury.  This group is holding regular teleconferences to coordinate Suppawong’s work.
+ * The Linked Science 2012 Workshop has been accepted to be held in conjunction with the 11th International Semantic Web conference, Boston, November 11-15.  Line Pouchard, DataONE Integration and Semantics WG will be the co-chair of the meeting.  Natasha Noy, DataONE wg-is member, is now a member of the organizing committee.  Mark Schildhauer, DataONE wg-is member, is a member of the Program Committee for the Conference.  In 2012, we initiated the idea of a yearly theme with "Tackling Big Data."
+ * Line Pouchard proposed a statement of work "Providing Rich Metadata Annotations to Earth Science Data" to Remote Data Analysis and Visualization (RDAV) a DOE project funded at the University of Tennessee's Center for Remote Data Analysis and Visualization.  As "eyes" of XSEDE, formally Teragrid, RDAV empowers scientists to see and understand massive amounts of data and greatly enhance the nation's capabilities for scientific discovery.  This effort will actualize the collaboration between RDAV and DataONE with Dave Vieglais and John Cobb as DataONE points of contacts.  This research will benefit DataONE in at least three ways: 1) augment metadata for datasets that do not have rich metadata with rich content based on similar reports.  This rich metadata can then be automatically added to existing metadata or be used to pre-populate a metadata editor; 2) the new metadata will improve data discovery as new keywords will be added to the current keyword index enabling retrieval; and 3) the similarity measures used to compare metadata reports can serve as a basis for metadata quality in MN.
+ * Working group members have served on program committees and presented related work at a number of technical conferences including a strong representation at the 2011 Environmental Information Management Conference in Santa Barbara (September 2011), the 10th International Semantic Web Conference in Bonn, Germany (October 2011), the 1st International Workshop on Linked Science in Bonn, Germany (October 2011), and the American Geophysical Union Fall Meeting (December 2011).
+ 
+Products
+ 
+ * Results of Aida Gandara’s summer internship project can be found at https://notebooks.dataone.org/lod4dataone/.
+ * Line Pouchard participated in the Ontology Summit 2012: Ontology for Big Systems and gave a talk, "Linked Science as a producer and consumer of Big Data," Track 4, "Large-scale Domain Applications," 2012-03-08.  In addition, she was a panelist in the final workshop, Gaithersburg, MD, 2012_04_12 & 13.  DataONE was featured in these talks.
+ * Line Pouchard presented her talk "Semantic technologies improving the recall and precision of the Mercury search interface" to the Woods Hole Coastal and Marine Science Center, MA,  2012-02-08.  DataONE was also featured in this talk.
+ * Pouchard, L.C., R.B. Cook, J. Green, G. Palanisamy, and N. Noy, (2011), Semantic technologies improving the recall and precision of the Mercury metadata search engine, Abstract IN31B-1437 presented at the 2011 Fall Meeting, AGU, San Francisco, CA, 5-9 Dec. – this poster featured semantic enhancements to the Mercury search engine that underlies ONEMercury (the primary DataONE discovery client) and will directly benefit DataONE.
+ * Teleconference notes and other materials related to the summer internship project are currently being stored at https://docs.dataone.org/member-area/working-groups/integration-and-semantics/2012-summer-internship. Additionally, a DataONE Notebook will be created for the student project.
+ * Meeting documentation and ongoing notes of regular teleconferences can be found on the DataONE Documents website
+
+Extra from Deborah:
+ * Working group members have been active in standards efforts, in particular the World Wide Web Consortium's Provenance working group, where a recommendation is expected this year.
+ * backup (RPI and PNNL have significant participation including editorship and task force co-leads)
+-----------------------------------------------------------------------------------------------------------------------
+Working Group: Sustainability and Governance
+Co-chairs: Patricia Cruse & William Michener
+
+Overall Objective: 
+ 
+The principal objective of the Working Group is to develop Sustainability and Governance Plans for DataONE, initially focusing on a Marketing Plan and then on a more comprehensive Business Plan (including evaluation of finding options and possible 501(c)3 status)
+ 
+Milestones for next 12 months: 
+ 
+ * Complete collaborative/competitive landscape analysis and cost/benefit analysis from KRDS toolkit
+ * Engage strategic consultant (Kim Thanos and Partners) and hold facilitated 3-day strategic planning workshop for DataONE sustainability
+ * Engage business development consultant 
+ * Complete version 1.0 of the Business Plan
+ * Complete version 2.0 of the Marketing Plan
+ * Expand DataONE marketing efforts in national and international venues
+ 
+Accomplishments from past 6 months: (3-5 bullets)
+ 
+ * Completed version 1.0 of the Marketing Plan 
+ * Held Sustainability and Governance Working Group meeting at the Marconi Center on the California coast 
+ * Grace Lerner (business school MS student) assisted the S&G Working Group in completing a draft Competitive Landscape Analysis
+ * Published report from the Dec 2012 Data Governance workshop in DC in December
+ * Defined specific policies to be created and made available at or near the time of public release
+ * Initiated total cost analysis process
+ * MacKenzie Smith joined the S&G Working Group
+ 
+Products
+ 
+ * Marketing Plan version 1.0 produced
+ * Draft Competitive Landscape Analysis produced
+ * Marketing brochure was produced and passed out at multiple meetings
+
+-----------------------------------------------------------------------------------------------------------------------
+Working Group: Provenance in Scientific Workflows (ProvWG)
+Co-chairs: _Bertram Ludaescher, Paolo Missier, Shawn Bowers
+Date: 5/31/2012   
+
+Overall Objective: 
+The DataONE ProvWG investigates and develops models, techniques, and tools for preserving process specifications (scientific workflows) and their provenance, in particular data lineage resulting from the execution of workflows and workflow-like scripts (e.g., in R).
+
+Milestones for next 12 months: 
+   * Review and release of the current version of “D-OPM”, the DataONE provenance model for scientific workflow provenance ⇒ June 18 ProvWG meeting @ NCEAS (prior to IPAW)
+   * Tool development for D-OPM: provenance repository and query tool (summer internship)
+   * Analysis and prototyping of provenance capture libraries for the R language
+     * possibly with embedded in other scientific workflows
+   * Analysis of joint use case with the EVA WG
+
+
+Accomplishments from past 6 months: 
+   * Recruited ProvWG postdoc Victor Cuevas (hired at UNM, visiting UC Davis)
+   * D-OPM  development:
+     * D-OPM model revisions
+     * RPQ query prototype in PostgreSQL (Michael Wang, MS thesis @ UC Davis)
+     * Web-based UI to load browse, query trace files (Saumen Dey, ProvWG member, PhD student)
+   * Liaison with the EVA WG (Bertram attending EVA meeting April 3-5, 2012, Boulder)
+   * Paolo Missier is PI of a new UK-funded research project to explore issues of privacy-preserving provenance in the setting of dynamic coalitions with limited trust
+   * Dissemination and Outreach
+     * Dagstuhl Seminar on Principles of Provenance: http://www.dagstuhl.de/en/program/calendar/semhp/?semnr=12091
+       * Tutorial on principles and role of Provenance in science
+       * Working on D-OPM revisions (Shawn, Victor, Bertram, Paolo)
+
+Products
+   * DataONE/ProvWG members: D-OPM draft
+   * Saumen Dey, Sven Koehler, Shawn Bowers, Bertram Ludäscher, Datalog as a Lingua France for Provenance Querying and Reasoning, Workshop on Theory and Practice of Provenance (TaPP), Boston 2012.
+   * Paolo Missier, Bertram Ludäscher, Saumen Dey, Michael Wang, Tim McPhillips, Shawn Bowers, Michael Agun, Ilkay Altintas, Golden-Trail: Retrieving the Data History that Matters from a Comprehensive Provenance Repository, 7th Intl. Digital Curation Conference (IDCC), Dec 2011.
+
+-----------------------------------------------------------------------------------------------------------------------
+Working Group: Usability and Assessment
+Co-chairs: Carol Tenopir & Mike Frame
+Date: June 1, 2012
+ 
+Overall Objective: 
+This working group will focus on the research, development, and implementation of the necessary processes, systems, and methods to insure DataONE products and services meet network goals, include appropriate community involvement, and demonstrate progress and achievements of DataONE. 
+ 
+Milestones for next 12 months: 
+·         Assist CCIT by conducting usability testing and providing feedback on public release of DataONE website and initial tools.
+·          Assessments:
+o   Complete administration and analysis of federal libraries/librarians, data managers and academic libraries/librarians assessments.
+o   Revise scientists’ baseline survey and create a follow up assessment.
+o   Review stakeholder assessments by others and make a plan to consolidate results.
+o   Define decision makers/policy makers stakeholder group and prioritize for assessment.
+·         Work with Sociocultural WG on:
+o   Further refinement of DataONE personas and scenarios.
+o   Facilitating internal and external DataONE communication.
+o   Identifying and describe relationships between DataONE, Member Nodes and Coordinating Nodes.
+o   Identifying high priority usage metrics for DataONE to capture.
+o   Identifying and develop high priority documentation for DataONE website public release.
+ 
+Accomplishments from past 6 months: (In collaboration with Sociocultural WG Team Members)
+·         Evaluated existing DataONE and other assessments with regards to tool usage to support science activities.
+·         Created list of recommendations re tools to use throughout data life cycle (from development to implementation to evaluation).
+·         Completed initial digest and analysis of feedback on initial four DataONE tools -collected at 2011 All Hands Meeting.
+·         Worked with PPSR WG to develop citizen science project leader persona.
+·         Completed draft of usage metrics to capture among users and sessions.
+·         Progressed in negotiations re text-mining rights with Elsevier to facilitate tracking dataset reuse (http://researchremix.wordpress.com/2012/04/17/elsevier-agrees/)
+·         Drafted guidelines for policy makers white paper and research paper.
+·         Completed administration  and initiated analysis of assessments measuring current data management and data sharing needs, practices and attitudes:
+1.    Academic libraries
+·         359 sent (ACRL panel of 351 library directors, 8 libraries in the University of California system) 
+·         223 responses received
+2.    Academic librarians
+o   Total number of surveys sent is unknown (UT CICS → 948 librarians at ARL libraries,  19 ACRL library directors → Librarians on their staff,  DataONE member → Librarians in the University of California system 
+o   302 responses received
+3      Data managers
+o   The number of surveys sent is unknown (DataONE members → CENDI, USGS, NatureServe, TNC, PNAMP, and OFWIM, Attendees of LTER, USGS, and IASSIST conferences )
+o   80 responses received
+4      Federal libraries
+o   The number of surveys sent is unknown (DataONE team members → FLICC, USGS, DOI, EPA, DOE, National Archives, CIA, GPO, and SLA MLD )
+o   40 responses were received from library directors 
+5     Federal librarians
+o   The number of surveys sent is unknown (distribution paths were the same as for federal libraries)
+o   60 responses were received from federal librarians.
+·         Drafted follow up scientists and educators assessment instrument.
+·         Identified priority groups for additional assessments (institutional policy makers, publishers, graduate/undergrad students) 
+·         Identified usability / functionality issues from scientist and data managers assessments.
+·         Completed Heuristic analysis of DataONE.org and ONEMercury 
+·         Developed usability analysis strategy that integrates assessment with the work of CCIT including draft script/test questions, participant identification measures and possible venues.
+·         Completed draft documentation for/of:
+·         DataONE Policies and Best Practices documentation.
+·         DataONE Terms and Conditions for Use.
+·         DataONE Use Case Scenarios.
+·         DataONE Executive Summary (2 – 3 pages) and white paper (8 – 10 pages) that provide library and data center administrators with an overview of the DataONE architecture and its relevance to their work.  
+·         general guidelines, potential benefits and requirements for four separate tiers of member nodes (potential and current).
+·         DataONE Five Principles.
+·         DataONE Challenges and Trends.
+·         Drafted communication recommendations to inform Sustainability and Governance WG, Executive Team and DataONE internal communication patterns.
+·         Completed review and revision of WG charter and submitted charter to leadership team.
+·         Nominated two new members of WG and submitted names to Leadership Team for approval.
+·         Co-hosted  Joint SC/UA WG Meeting for May 1 – 3, Knoxville TN.
+ 
+ 
+Products (In collaboration with Sociocultural WG Team Members)
+·         Recommendations for tools to use throughout data life cycle (from development to implementation to evaluation).
+·         Initial digest and analysis of feedback on initial four DataONE tools - collected at 2011 All Hands Meeting.
+·         Six assessment instruments measuring current data management and data sharing needs, practices and attitudes for academic libraries/librarians, federal libraries/librarians,  data managers and scientists/educators follow-up.
+·         Usability analysis strategy that integrates assessment with CCIT.  
+·         Personas for college educator, high school educator, and citizen science program manager.
+·         Draft of DataONE Policies and Best Practices documentation.
+·         Draft of DataONE Terms and Conditions for Use.
+·         Draft of DataONE Use Case Scenarios.
+·         Draft of a DataONE Executive Summary (2 – 3 pages) and white paper (8 – 10 pages) that provide library and data center administrators with an overview of the DataONE architecture and its relevance to their work.  
+·         Draft of documentation describing the general guidelines, potential benefits and requirements for four separate tiers of member nodes (potential and current).
+·         Draft of usage metrics to capture among users and sessions.
+·         Draft of DataONE Five Principles
+·         DataONE Internal Communication Recommendations
+·         Draft of DataONE Challenges and Trends
+ 
+·         Report and Action Items from Joint UA/SC WG Meeting May 1 – 3,  2012, Knoxville, TN
+
+-----------------------------------------------------------------------------------------------------------------------
+Community Engagement and Education Working Group
+Co-Chairs: Stephanie Hampton and Viv Hutchison
+
+Overall Objective: 
+The Working Group is chartered to determine effective means for engaging with DataONE’s stakeholders to improve DataONE technical tools and build community capacity for sharing and using data. This activity requires deep analysis of existing literature in order to make evidence-based recommendations, and thus should lead to peer-reviewed publications that have impact beyond DataONE activity, in addition to guiding DataONE efforts.
+
+Milestones for next 12 months: 
+ 
+April 2012 – Launch sci-fund challenge to provide prize in animation contest [Hampton, Hespanha, Strasser] - http://www.rockethub.com/projects/7472-7-toed-terrestrial-dolphins-bored-to-death
+July 2012 – Launch animation contest [Hampton, Hespanha, Strasser]
+July 2012 – Launch blog to collect success in data sharing stories [Hespanha, Strasser, Hampton]
+May 2012 – Draft manuscript on ethics of coauthorship and data sharing [Porter, Duke]
+May 2012 – Finalize data management modules [Hutchison]
+May 2012 – Data Management Workshop [Hutchison, Strasser, Henkel]
+May 2012 – Survey of ecology instructors ms to be submitted to Ecosphere [Strasser, Hampton]
+July 2012 – Invite new members to All Hands Meeting [Hutchison, Hampton]
+August 2012 – Incorporate feedback from Data Management Workshop into modules, and upcoming ESA activities [Hutchison, Hampton]
+August 2012 – ESA symposium [Hampton, Tewksbury, Strasser] 
+August 2012 – ESA workshop on culture of data sharing [Gram, Hampton, Hutchison]
+October 2012 – Outline graduate course in ecological data management [Porter]
+October 2012 – Locate faculty group with whom to pursue Distributed Graduate Seminar proposal [Vanderbilt]
+September 2012 – All Hands Meeting [All]
+ 
+Accomplishments from past 6 months: (3-5 bullets)
+·       Submitted manuscript to Frontiers in Ecology & Environment [Hampton]
+·       Published editorial on data sharing [Hampton, Tewksbury, Strasser]
+·       CEE Working Group meeting
+·       All Hands Meeting
+·       Revised 12 data management modules to D1 website
+·       Created assessment materials for data management instruction
+·       Presented DataONE info in USGS member node workshop (Hutchison, Frame) 
+·       Presented DataONE info in 2 USGS metadata workshops [Hutchison]
+·       Teaching module submitted to peer reviewed journal, TIEE [Huang, Strasser, Hampton]
+ 
+Products
+ 
+o   10 revised data management modules posted (Hutchison)
+o   Teaching module on parasite diversity and mammal ecology (Huang, Strasser, Hampton)
+o   Manuscript in review on data sharing, at Frontiers in Ecology and the Environment [Hampton]
+o   Editorial published in Frontiers [Hampton]
+o   Draft manuscript on Ecology Instructors’ Survey [Strasser, Hampton]
+
+-----------------------------------------------------------------------------------------------------------------------
+Working Group: Socio-cultural
+Co-chairs: Kimberly Douglass & Suzie Allard
+Date: June 1, 2012
+ 
+Overall Objective: 
+ Maximize the impact of DataONE by understanding the social and cultural context of the scientific data lifecycle.  Facilitate transformations in stakeholders’ data practices and the environments and institutions in which they work. 
+ 
+Milestones for next 12 months: 
+·         Further refinement of DataONE personas and scenarios.
+o   Facilitating internal and external DataONE communication.
+o   Identifying and describe relationships between DataONE, Member Nodes and Coordinating Nodes.
+o   Identifying high priority usage metrics for DataONE to capture.
+o   Identifying and develop high priority documentation for DataONE website public release.
+ 
+Accomplishments from past 6 months: (In collaboration with U&A WG Team Members)
+·         Worked with PPSR WG to develop citizen science project leader persona.
+·         Completed draft of usage metrics to capture among users and sessions.
+·         Progressed in negotiations re text-mining rights with Elsevier to facilitate tracking dataset reuse (http://researchremix.wordpress.com/2012/04/17/elsevier-agrees/)
+·         Drafted guidelines for policy makers white paper and research paper.
+·         general guidelines, potential benefits and requirements for four separate tiers of member nodes (potential and current).
+·         DataONE Five Principles.
+·         DataONE Challenges and Trends.
+·         Drafted communication recommendations to inform Sustainability and Governance WG, Executive Team and DataONE internal communication patterns.
+·         Completed review and revision of WG charter and submitted charter to leadership team.
+·         Nominated two new members of WG and submitted names to Leadership Team for approval.
+- held online meeting to discuss tasks and organize activities
+·         Co-hosted  Joint SC/UA WG Meeting for May 1 – 3, Knoxville TN.
+ 
+ 
+Products (In collaboration with U&A WG Team Members)
+·         Personas for college educator, high school educator, and citizen science program manager.
+·         Draft of DataONE Policies and Best Practices documentation.
+·         Draft of DataONE Terms and Conditions for Use.
+·         Draft of DataONE Use Case Scenarios.
+·         Draft of a DataONE Executive Summary (2 – 3 pages) and white paper (8 – 10 pages) that provide library and data center administrators with an overview of the DataONE architecture and its relevance to their work.  
+·         Draft of documentation describing the general guidelines, potential benefits and requirements for four separate tiers of member nodes (potential and current).
+·         Draft of usage metrics to capture among users and sessions.
+·         Draft of DataONE Five Principles
+·         DataONE Internal Communication Recommendations
+·         Draft of DataONE Challenges and Trends
+ 
+·         Report and Action Items from Joint UA/SC WG Meeting May 1 – 3,  2012, Knoxville, TN
+-----------------------------------------------------------------------------------------------------------------------
+Notes from chat box:
+
+Question from Bertram:
+June 1, 2012
+11:03 Bertram: I will have to leave 10:45am to run to class..
+11:07 Bertram: Question: Software developed during Summer Internships: What's the suggested software license? 
+11:07 Bertram: (also for past projects)
+11:09 Bertram: No rush
+11:09 Bertram: e.g. in other projects, we used BSD-style license
+11:09 Bertram: (e.g. Kepler project)
+
+Andrea: Our discussed an idea for a graphic novel style/animation about "A Day in the Life of Danny the Datum"
+12:06 Viv: http://www.rockethub.com/projects/7472-7-toed-terrestrial-dolphins-bored-to-death
+12:08 Suzie: Helping Interdisciplinary Vocabulary Engineering (HIVE)
+12:08 Viv: http://ils.unc.edu/mrc/hive/
+
+-----------------------------------------------------------------------------------------------------------------------
+

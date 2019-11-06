@@ -1,0 +1,385 @@
+DataONE Metadata Working Group Notes
+September 18, 2012
+
+Attending: John Kunze, Jane Greenberg, (Jane)Jim Regetz, Angela Murillo, Greg Janée, Roger Dahl, Mark Servilla (part-time)
+
+Regrets:  Sarah Callaghan, Tim Robertson, Rob Guralnick (in later), Karthik Ram (in cameo)
+
+
+Sunset: July 2014
+Deliverables:
+1. Tech work plan and schedule
+
+Vision
+"term dictionary"
+One online writeable registry/dictionary with these properties:
+ * Anyone can look up terms
+ * Any part of “metadata speech”
+ * Anyone can propose and refine their terms
+ * Anyone can join the discussion about any term
+ * New terms enter the vernacular (similar to Internet Draft)
+   * slightly riskier to use because all vernacular terms auto-expire  (and archived)
+   * auto-expire means: inactive, but still available via special archival search
+ * Terms that are proven enter the canon
+ * Terms move from the vernacular to the canon by "canonization"
+   * Factors that might feed into the canonization of a term:
+     * usage of term by organizations/institutions
+     * usage of term by datasets
+     * usage of term by registered or otherwise recognized communities
+     * N.B. above can be automatically gathered
+     * N.B. there might not be a hard distinction between vernacular/canonized; rather, terms simply gather evidence of normalcy/usage, and can be scored by that metric
+ * Question: Maybe vernacular/canon distinction should be tossed overboard in favor of simple score (vernacular/canon comes out of old IETF model); or added later if needed?
+     * Reserve a moderator role
+ * Crowd sourced, plus automated help (eg, voting, tracking) plus light moderator role
+ * Strong terms rise, weak terms decline
+ * Aiming for cultural change, gradual adoption with education
+ * Use cases?
+   * where and how and when would scientist interact with registry?
+ * 
+ * semantic relationships??
+   * maintain history of derivations, obsoletes, etc.
+
+Prior Art to Imitate, Learn From, or Adopt:
+ * wiktionary
+ * others (Angela?)
+
+Personas /Audiences
+ * Dryad curator
+ * metadata system builder
+ * scientist entering data in a spreadsheet
+ * Will just Producer and Consumer be sufficient for this?
+
+Use cases
+ * user wants to know what term to use in labelling Excel column header
+ * user wants to let others know what term they use in their domain
+ * API to fetch definitions for help/explanatory text
+ * (possible?) public documentation of local laboratory practice
+ * "need a home for your metadata definition? come on down!"
+ * register a term and you get a URI for it
+ * "minting metadata service"
+ * "show me the version history for this term"
+ * need to be able to cite a specific version of a term
+ * different versions of a term automatically crosswalk with each other
+ * provide a menu of terms from which users (scientists, developers, etc.) can select (a community can select and add restrictions like cardinality, repeatability, etc. in ther system implementation.
+ * help/support community to refine, focus, and reduce redundancy in terms
+ * information scientist develops a profile for community X with guidelines for how to describe procedure Y
+ * scientist refers to terms in table column headers
+ * datasets that use standard term id X could be discovered with "show be datasets that use term X"
+ * "what terms from other vocabularies does this term crosswalk with?"
+
+challenges
+- terms definition scope change
+- we are going for cultural change
+- ** need examples
+- ** 
+
+StackOverflow Model adoption issues
+ * want civil community that is non-intimidating
+ * how do scores for questions and answers translate to terms
+ * how does it compare with, say, Zooniverse and badging for citizen science?
+   * * Rob will give us some names
+ * not open source, but there are a number of clones
+   * * Karthik will send some names
+ * Nassib's statment:  simulate real standards discussion
+ * mentoring role? nurturing? 
+ * incubation phase could have looser rules than the toddler phase
+ * separation of concerns
+   * community principles
+     * eg, reduce needless duplication, civility
+   * technical infrastructure
+
+
+Requirements/Desiderata
+ * low barrier to entry of new terms
+ * low barrier to lookup and export of terms
+ * related features arising scientists "mis-conceptions"
+   * angela's list?
+   * "find all datasets that use the term 'temperature'"
+ * Required fields
+   * human readable label, ie, the word
+   * globally unique concept id, suitable for embedding in a URL
+   * 
+ * Optional fields
+ * concordance functions: links citing data sets that use a metadata element
+
+principles
+- minimality
+- convergence
+- simplicity
+- community platform for vetting
+- reduce artificial duplicate work, not necessary...
+
+Common perceptions of what a registry is: (Lesson: be careful how we talk about it)
+ * a place to register terms and definitions (ontology, content standard, dictionary)
+ * a place to park packages of metadata elements the cohere as, eg, KNB data package
+ * list of datasets
+Should we avoid use of the word "registry" to describe what we want to build?
+Perhaps "dictionary" or "concordance"?
+just for refernece point, here is 11179 ISO standard for metadata registires.  http://metadata-standards.org/11179/.  It is complex, but a refernece point for us
+High level principles
++ public read
++ general purpose, cross-disciplinary
++ public write
++ any parts of speech
++ terms automatically expire
++ blessed terms expire only with manual process
++ tracking term use to understand acceptance
+
+Agenda:
+       
+1. Introductions, culture, and logistics   (John)
+-- Note taker rotation
+  
+2. Overriding goals of the meeting (Jane,   John, WG members)
+  
+4. Review of current task activities
+  
+-- Functional requirements, including registry review (Jane, WG members)
+Functional Requirements for the PAMWG
+ * Low barrier for contributions.
+ * Transparency in the review process.
+ * Collective team review, with rotating   responsibilities among a core team member (Greenberg, et al, 2010).
+ * Voting capacity of all users on the   candidacy of terms submitted and their use.
+ * Collective ownership of any users or   organization (Greenberg, et al, 2010).
+ * Stakeholder engagement in the design and   review process (Murillo, in progress).
+(see draft paper sent...)
+
+--Technical considerations (John, WG   members)
+            
+BREAK -- 3:00-3:30 
+            
+BLOCK 4 -- 3:30-5:00
+            
+4. Angela Murillo, reporting on DataONE   summer internship (Angela)
+  
+-- Reporting, Q&A, and discussionReview   of current task activities, continued.
+  
+5. Discussion of current task activity (WG   members)
+  
+- progress, challenges, next steps
+  
+6. Discussion on how current activities   inter-relate to DataONE and impact beyond DataONE (e.g., DAITF, etc.)
+  
+  
+7. Open discussion, reviewing priorities for   Day 2 (WG members)
+    
+
+Block after lunch on day 2
+- how to deal with the idea that one entry for each term
+- refinement one example
+- qualifications demonstrated via use
+- consider optional qualification
+- could we have mutiple qualification... 
+- only one level down, call it refinement, not hierarchy...
+
+SKETCHING the system
+- the core, we want a represetnation of term editable by a community
+- provide structure for term
+- we don't want to over structure... we want free space for each field
+- how to get the terms in there..
+- seed with terms?  should we upload/put in something like the Dublin Core?
+- careful, we wouldn't want to offend other communities within DataOne
+- start with the unique, the orphan items... 
+- forced cross-walking.
+- reach out to communities where new things are happening... e.g., MBG.
+- ownership (e.g. owning Darwin Core "core" w/in), how can we promote co-ownership
+- distributed viersion control
+- people could tag ... 
+- rfc, if you must "renew", update ...verify identifier
+- w/term-identifier, mutiple and yet persistence, potential for conflict
+- stack-overflow, things converge to an answer, Nassib: converge to an attribute that people have consensus.
+- when it's tagged it gets the uri
+- From Nassib: 
+    1. Community Seeded ---> Vo [MD] = Tag To ---> V1 [MD] 
+    2. Proposed ---> Vo [MD] ----> V1 [MD] -----> V2 [MD] = Tag To
+    - benevolent leaderships (dictatorships?)
+- the creator of a new element can always has the authority to tag a version of the element which automatically assigns it a persistent identifier (question from Jim)
+ 
+Notes from Semantics Group Discussion 3:30 - 5:00pm:
+- We're talking about properties (predicates) and values
+- We want everything open
+- LOD would anticipate relationships
+- Think of it as a menu 
+- Vocabularies that are useful
+- check out BioPortal  (http://bioportal.bioontology.org/) for organic ontology http://sswapmeet.sswap.info/jit/
+- would want some organization/modularization to find information, some detail, some organization
+- will we prepopulate with anything such as sswap, (http://sswap.info/)
+- Damien: ontology alignment (this term in this ontology is the same as this term in other), very difficult,
+
+Suggestion:
+- significant namespace problem, they have a huge amount of effort, for example the gene ontology, there are areas that wlll be out of bounds
+- there are a significant amount of annotation and documented terms that are being used, ex. waterml, SWEET (http://sweet.jpl.nasa.gov/ ) adoped by ESIP (Earth Science Information Partners, http://www.esipfed.org/ 
+- establish a clear connection between certain ontologies, if there's clear alignment that there's some value
+
+What is the semantic group working on and where to the intersections lie (question from Rob):
+- big vision, help data one with semantics, making the services smarter
+- taking a small set of user cases and trying to provide some semantic enablement to make use cases work better
+- Hydro-eco use cases: get water data looking at chemical concentrations for populations, how if we looked at onedrive, what would be the starting point
+- metadata flattened
+- right now people are not getting back the data they want when they search
+
+Action Items:
+- They will send us the current use cases
+- They asked us if we're going to write documentation for new member nodes
+
+Day Three:
+1.Debrief
+- Thinking about concrete examples,
+Jim: 
+concrete example of KNB temperature, tabular data find an attribute name having tempuerature in it.  Many unique definitions, temperature in units, protocol, exx. "temperature in degrees C," "Water Temperatures", "Ambient water temperature".
+Terms + qualifiers (refinements)
+Greg: What, where, how, what units?
+Standard Facets: context meets facets
+- if we use something that have standard qualifiers or facets 
+- beauty of facets we don't have to dig down as much, facets are mutually exclusive things that you can put together
+John:
+things that can jump across the equal sign
+we can allow a building up
+Keywords: context free, they're labels applied
+
+From Greg:
+What if the system asks qualifying questions, ex temperature, the system asks "temperature of what"... etc
+From Jane: 
+Whatever we do is not going to answer every question.
+From John:
+We are regularly going to visit some of the scary areas.  We want to carve off the easy parts and remember what the hard parts look like and 
+
+Scope:
+1. Use cases 
+- A user comes in and want to build there other spreadsheets, column heading meetings to build out dataset
+2. Requirements
+
+Break Out Session (Jane, Nassib, Rob, Angela)
+- A user comes in and want to build there other spreadsheets, column heading meetings to build out dataset
+- you want to come to dataONE to make spread sheet most compatible with existing terms/concepts
+Alpine Pikas
+Measure: temp talus (under) temp talus (surface), slope and aspects of talus (slope and direction), length and width of talus, vegetation (grams and forbes), depth of talus, presence or absence of pikas
+first order: temp (inference, parameture, observation, computation, measure), slope, aspect, length, width, depth, talus
+
+** should be able to buy into a term at different levels
+
+Units: 
+nanometer, kilometer, etc... at some point they have kilometer per second, etc.
+per is a term and a part of speech a conjunction, 
+temperature: The degree or intensity of heat present in a substance or object, esp.  as expressed according to a comparative scale (definition from google).
+
+Stand alone terms might be the easiest ones
+- the low hanging fruit 
+- we might want to build one level out or give some guidance
+
+We're going for universiality and the unique one-offs (ex. status)
+
+Are scientists really using metadata and metadata standards?
+- comes down to "it depends"
+
+What level of interoperability do we want to provide?
+
+Simple usecases:
+- I'm creating metadata and I want to share with my colleagues
+- xyzt: biological object are located somewhere (suggestion of a usecase)
+
+Benefits:
+1. reducing duplication or redundency
+2. helping people not recreate even complicated vocabularies or phrases 
+
+Ex. if we could query temp_under_talus, it would be good if we could query to that level
+
+Proof of concept: 
+
+Day 3: 1-3pm
+From Greg:
+- Not always caled sandards, 
+- example like temperature is an attribute
+- dictionary we're proposing might be able to focus on a dictionary of attribute terms a quasi-ontology
+- might be beneficial down the road once we got this populated
+- focusing on attributes a way to dodge 
+- opportunity because they're not being defined by the metadata standard
+** looking at stuff that's kind of scary like attributes, so maybe this is an opportunity these lables that go in attributes are a little bit like orphans for example EML/Open data doesn't define the attributes 
+- this is an interesting opportunity because it reduces the burden
+- we're providing framework and software infrastructure to apply framework
+- recall the lsit of CF term is an attempt, but its a big long list kind of fixed
+- we're proposing a collaborative community driven model
+
+From Jim:
+- through community discussion, we can find levels of consensus
+
+From John:
+- we probably want to pick a term 
+
+From this meeting:
+Priority Use Case:
+Priority Audience
+
+- if you can provide a user or provider with some way of quantifying effort it is useful
+
+Before we meet next time:
+- A visualization
+- hacking something together
+
+Some participation models:
+Encyclopedia of Life: http://eol.org/
+- it has some participation items
+
+
+List from Rob:
+http://community.gbif.org/pg/photos/view/21610/gbif-vocabulary-server-scratchpads-drupal
+http://vocabularies.gbif.org/
+http://www.hyam.net/blog/archives/643
+http://scratchpads.eu/
+
+Platform choices to hack a demo
+- Stackoverflow, drupal
+
+What to try demo'ing
+- actomic terms
+- ability to vote
+
+audience/user cases (digging deeper)
+- Sally scientists entering column headings, wondering what labels to use for sharing with colleague
+- Charlie curator is a metadata expert interersted in the dictionary and interested in improving it in the same way someone who is interested in wikipedia, for improving the dictionary
+- Charlie curator helping the client (more of an expert use)
+- Sheldon the scientist : a data collection for a long term study
+- Doug wants to resuse data
+- Any agent extends a scheme or has a new need not in existing scheme
+- address metadata boundary cases: support better articulation, mediation
+
+- Could have a long term impact in the way people communicate about terms
+
+For DataONE:
+- it becomes a community resource
+- help set a dataONE best practice to integrate into the data lifecycle
+- can use the use cases to show specific impact to DataONE
+- have use cases be part of data lifecycle
+
+
+Action Items:
+Rob & Angela: Drupal + curatorial module?
+
+Wrap up/Hack #1
+- We will use the Sally 
+- Phone call in about a month and 
+Platform choices to hack a demo
+- Stackoverflow, drupal
+What to try demo'ing (What more do we want to demo)
+- actomic terms
+- ability to vote
+- label (terms)
+- Unique ID
+- Definition
+audience/user cases (digging deeper)
+- Sally scientists entering column headings, wondering what labels to use for sharing with colleague
+Action Items:
+Rob & Angela: Drupal + curatorial module?
+Jim: volunteering to populate "it"
+Jane and Angela: get some students to test the system
+Nassib: will look at stack overflow and open source versions, and BioPortal, OBOE
+Greg: look at the structure of the definitions and a few proposed terms
+Jane:
+
+
+John: Will do doodle for week of Oct 22, for monthly meeting
+
+
+
+
+

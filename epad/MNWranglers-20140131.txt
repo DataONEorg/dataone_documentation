@@ -1,0 +1,103 @@
+Member Node Wranglers 
+    Fridays at 10:00 am AK
+                    11:00 AM PST
+                    12:00 MST
+                    1:00pm CST
+                    2:00pm EST) 
+
+https://www1.gotomeeting.com/join/430697153
+
+31 January 2014
+                                                                                                                                        
+Attending:  Rebecca, Amber, Laura, Dave, Bruce
+
+Regrets: John Cobb, Matt Jones
+
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+        Dashboard:   http://129.24.63.92/backbone  
+Dave said the dashboard is in a fully functional state and can be shown through the test site if need be.  I think this means that we can look at it now and review it based on previous recommendations, etc.  Skye is of course working on CN things right now but afterwards will be freed up to work on the dashboard again.  We need recommendations suggested at AHM (and afterwards clarified) to be implemented prior to RSV.  
+http://epad.dataone.org/2013AHM-Dashboard
+http://epad.dataone.org/2013Dec18-Dashboard
+    It would be helpful to pre-digest and prioritize suggestions for the dashboard - let's plan on focusing on this task at the next MNW.
+        
+        CN synch issue - testing the different pieces of the fix right now, a little work remaining on the application that actually runs the fix, if all tests continue to go well, we expect to start running the fix late next week.  Nothing about this prohibits adding new MNs until the fix starts running.
+      
+        New MNs announcements? -  
+       * NPN announced 1/28/14!
+       * GOA awaiting press release (Matt reviewing)
+       * KUBI awaiting press release (Laura drafting, send to Jim for review)    logo? use the one Dave noted first until KUBI suggests something different.
+       * Dryad - PR being reviewed by Todd and Laura W.
+            
+
+        IDCC workshop 2/27/14 -  as of 1/29/14 7 confirmed attendees with at least one additional (David Bloom - VertNet)
+        workshop announced http://www.dataone.org/news/register-now-dataone-mn-implementation-workshop  
+        Bruce set up a collaboration area in Dropbox for us to work together on this. 
+             https://www.dropbox.com/sh/0o7m3448b05m8h7/uLrxcxM5ZI
+             
+        Amber:  registration closes 2/7/14.  Need contact info for registrants.  Also, we are talking about contacting registrants re: what they need/expect from this session, either survey or an email.   Would like to get Bruce/Dave/Amber/Chris/Laura together next week.
+        
+
+        1.5    Current MNs
+
+                     
+        2. Status of upcoming MNs
+        
+        Future
+       * Australia:   TERN seems committed to participating with DataONE; a draft MOU is in Rebecca's hands; plan for next 3-4 weeks is to work on 1) conceptual nature of TERN/DataONE collaboration and 2) technical details of possible implementation (exposing metadata only via TERN and/or allowing repository(ies) within TERN to be MN(s) in their own right.   NEXT MEETING:  week of 3 March
+       * Multiple ORNL potentials: met 1/30/14, looking in particular at starting with two repositories RGD (Regional and Global Data) and EDORA (Environmental Data for the Oak Ridge Area).  Jim Green is working to develop a lightweight MN stack (ORNL slender node) that will simplify the deployment for certain types of MN's, particularly those who manage curated metadata.  Development/design phase, still need some higher level discussions re: the content is held outside DataONE (links outside "the system").  
+         * discussion about slender node and other types of MNs
+           * The slender node concept provides a gateway service between MN, content, and DataONE.  
+           * if a MN exposes metadata that resides elsewhere, can I still find it via ONEMercury, say?  yes
+           * if I find something I want, will I need a separate login to some other site to access the data?  perhaps, but prob not as the data is identified/accessed by a URL
+           * important to get Usability and Assessment involved here in looking at how discovering/accessing this new kind of data works
+           * The process that Jim Green is working with will periodically go out and confirm that links aren't broken, etc.  These (ORNL's "other" repositories) are very well curated collections.  The link-checking capability is a good selling point (value added).
+           * for these, it is important that we turn off that default "only results with data" on ONEMercury
+         * ORNL potentials will get together again in a couple weeks.
+
+     * Y5Q2 (end date: 1/31/2014)
+       * Gulf of Alaska DP (3531) -  PR in review (Matt et al.), hope to announce early week of 3 Feb. (move to Y5Q3)
+       * Dryad (3118) -   PR in review (Todd/Laura W), hope to go live/announce prior to RSV; Dryad is expected to go to production before the RSV; Ryan registered in stage today (1/31/14), Chris to start synching.  (Yay!) (move to Y5Q3)
+       * EDAC (3221) -  EDAC to go ASAP after Dryad (move to Y5Q3)
+       * Kansas (3188) -  PR in draft (Laura), sent to Jim et al. for review (move to Y5Q3)
+
+
+     * Y5Q3
+       * FRIM (4083) - Jing Tao D1 contact, Omar Ali is tech MN POC, currently  installing latest version of Metacat, Jing sent an email to Omar.  No  response yet (1/17/14)
+       * USGS ScienceBase (4002) - Meeting week of 20 Jan, Mike to get back with us re: when USGS expects to work on the ScienceBase stuff (from their perspective)
+       * LTER-Europe (3232) -  Per email from Ben 1/23/14, "LTER_EUROPE is registered and just waiting to be "flipped on"."
+         * Update: Matt: Please ask Ben to check content, but otherwise I think they are ready to have release materials be developed and turned on in Y5Q2 (move to Y5Q3)
+         * Email out 1/29/14 to David Blankman and others requesting DD and help with PR.
+       * U  Illinois Chicago (3213) - Chris and Bob pick up after CN.
+       * PPBio (3748) - PPBio has moved their server to LNCC (better internet reliability and more technical resources available) and is making great technical progress.  Debora et al. have been working on MNDD, hope to send to Laura week of 3 Feb, then Laura can draft PR for their review.
+       * Taiwan TERN (3211) - 
+         * Matt: I haven't been in contact with them.  (12/20/13) 
+       * SAEON (3205) -  At MNF 1/23/14, Matt said they've gotten new h/w for their systems and hope they're ready to move forward
+         * Update: Matt has been in contact and they have moved Metacat to the new server; we should pursue a Metacat upgrade and DataONE configuration now
+       * NKN  (3238) -  NKN experiencing some reorganization efforts, can pick up DataONE work when the dust settles.   (Luke sent an updated DD 1/30/14)
+
+     * Y5Q4
+       * EU BON (3964) - Their December meeting has been pushed out to 29-31 January.
+       * DFC  (3532) -  
+       * MPC  (3708) - 
+
+        3. Old action items
+             Discussion 1/28/14 re: process/procedure for turning on a MN clarified.  How best to share that Excel spreadsheet (Google Docs? plone? dropbox? repo?)
+             
+        4. Not-high profile issues
+            How do people get added to the MNForum mailing list?  If people express an interest or a new MN is coming online, Laura will ask that they be added to the list (support@dataone.org, Dave, Amber, Matt).  
+            What about the mninfo email address mentioned in the MNF?  It's not currently being used, so we'll remove it from the MNF epads.  The concept is to centralize MN questions/answers.  We'll take a look at this in a few weeks.
+            We think the folks at ASU are interested in moving forward.  
+
+
+        5. Around the room
+            Rebecca: see above
+            Amber: nope
+            Dave: nope
+            Bruce: I'm good too.
+            Laura: see above.
+
+

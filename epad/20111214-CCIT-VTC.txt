@@ -1,0 +1,94 @@
+
+
+.. meta::
+   :keywords: DataONE, CCIT, 20111214, VTC
+
+
+Developers Call - 2011-12-14
+============================
+
+:attendees:
+Bruce Wilson, Dave Vieglais, Ben Leinfelder, Bob Sandusky, Chris Jones, Matt Jones, John Cobb, Mark Servilla, Nick Dexter, Robert Waltz, John Kunze, Roger Dahl, dloy, Ryan Scherle
+
+Call Info
+---------
+
+Topic: DataONE Developers 
+Date: Wednesday, December 14, 2011 
+Time: 4:00 pm, Eastern Standard Time (New York, GMT-05:00) 
+Meeting Number: 625 326 565 
+Meeting Password: michener 
+URL: https://ornl.webex.com/ornl/j.php?ED=188062212&UID=499263062&PW=NYTg3MmZjZWUz&RT=MiMxMQ%3D%3D 
+By Phone:
+Call-in toll number (US/Canada): +1-408-600-3600 
+Access code:625 326 565 
+
+
+Agenda and Notes
+----------------
+
+1. Review of dataonetypes.xsd and impacts to Member Nodes
+
+Notes from last week: http://epad.dataone.org/20111209-CCIT-VT
+
+Change log: http://mule1.dataone.org/ArchitectureDocs-current/changelog.html
+
+- listObjects
+- getLogRecords
+- ping
+- checksums- must support MD5 and SHA-1
+- Identifiers no white space
+  - Need a definitive list of unicode whitespace chars - or verify that standard libs support this 
+- Added ChecksumAlgorithmList (no impact to MNs), but limited to MD5 and SHA-1
+- Added FAILED status to ReplicationStatus
+- Removed Permission.REPLICATE
+- Crontab entry for sync: no longer allowing wildcard for seconds entry
+- Several optional fields in System Metadata: submitter, dateUploaded, dateSysMetadataModified, serialVersion. 
+  - A MN MUST set the values of submitter, dateUploaded, dateSysMetadataModified. 
+  - CNs set serialVerison.
+
+- Web test tool should be updated today
+
+
+Dryad MN:
+
+- some other issues blocking work
+- cleaning up D1 implementation, likely to be complete in next week or so
+- dev target will be updated within a week
+- target for production servers approx mid-late January
+- ORE docs created on submission of new content
+
+
+Merritt:
+
+- Dependent on Metacat work
+- Suitable version of Metacat should be available within a day or so of Metacat availability
+- Stage environment will be available - production takes about a week or so once staging is stable. This is likely to be January sometime: mid-late January
+- ORE docs are created by MN from manifest
+
+
+KNB:
+
+- Remaining issues related to update and integration into DataONE
+- ORE map generation remains an issue
+- What to do with old records from replication channels
+
+
+CN Stack
+
+- Ongoing issues with random errors appearing in Hazelcast
+- Blocking lock not being released at some point
+
+
+2. Review of general schedule for component release
+
+- Component dependencies outlined: http://mule1.dataone.org/ArchitectureDocs-current/implementation/components.html
+
+- Sandbox CNs this / next week
+- Staging within first couple of weeks of Jan
+- Production CNs likely late Jan
+
+Will need a mechanism to purge an object 
+
+Investigator toolkit following
+

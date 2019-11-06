@@ -1,0 +1,281 @@
+Attendees: Rebecca Koskela, Amber, Bob, Bruce, Carol, Mike, Suzie, John Cobb, Stephanie Hampton
+ 
+ 
+ 
+Regrets: Steve Kelling, Bill Michener, Todd Vision
+ 
+ 
+ Agenda for 2010-10-15
+
+1. Review updates to PMP (milestones for year 2)              
+ 
+Scheduled Year 2 Activities 
+Key activities that are currently scheduled for 2009-2010 include:
+Meetings
+·       31 August - 3 September 2010 – Meeting of Sustainability and Governance Working Group (co-chairs: W. Michener and P. Cruse)
+·       6-7 September 2010 – Workshop on Federated Security in Chicago, IL (Chaired by W. Butler)
+·       4-8 October 2010 – CCIT Meeting (Chaired by D. Vieglais)
+·       27 September 2010 – DataNet Partners Meeting at NSF
+        28 September 2010 - DataONE collaboration Meeting at USGS (Michener, Frame)
+·       1 November 2010 – DataONE Leadership Team Meeting in Albuquerque, NM (co-chairs W. Michener, D. Vieglais, and R. Koskela).
+·       2-4 November 2010 – DataONE All Hands Meeting in Albuquerque, NM (Co-chairs: W. Michener, R. Koskela, and D. Vieglais)
+·       2-4 November 2010 – Second Meeting of Usability and Assessment Working Group in Albuquerque, NM. (Co-chairs: C. Tenopir and M. Frame). 
+·       2-4 November 2010 – Second Meeting Socio-Cultural Issues Working Group in Albuquerque, NM. (Co-chairs: S. Allard and M. Manoff).
+·       4-5 December 2010 – DataNet Education Meeting
+·       6-8 December 2010 – International Digital Curation Conference, Chicago, IL
+·       9-10 December 2010 – First Meeting of DataONE Users Group in Chicago, IL
+       17-18 January 2011 - External Advisory Board Meeting in Santa Fe, NM
+       
+Presentations/Demos
+1 August 2010 - Best Practices Workshop, Ecological Society of America Annual Meeting
+https://public-web.dataone.org/content/95th-ecological-society-america-annual-meeting-pittsburgh-pa
+·       1 August 2010 – Demo Prototype Version 0.0 (Year 1 milestone)
+·       1-5 August 2010 – TeraGrid TG10 BoF
+      August 3, 2010 TeraGrid'10 Science Track paper "Migration Phenology Explored through Data Intensive Computation" Steven Kelling, Daniel Fink, Robert Cook, Suresh  SanthanaVannan, John Cobb, Kevin Webb and William Michener Michener.  <https://www.teragrid.org/web/events/tg10/sciencetrack#phenology>
+      August 4  TeraGrid'10 Technology Track  "DataONE:Building  a virtual data center for the biological, ecological and environmental  sciences"  William Michener, John Cobb, Robert Cook, Rebecca Koskela, Dave Vieglais  <https://www.teragrid.org/web/events/tg10/techtrack#dataone>
+      August 31, TeraGrid Quarterly Meeting "Possible TeraGrid DataONE collaboration MOU discussion" John Cobb
+      Nov. 15-18 SC'10 Exhibit floor (ORNL booth) "DataONE Overview"
+·   September 29, 2010 "Impact of climate change on bird migration phenology: An example of Data Intensive Analysis and Visualization" Steve Kelling, Daniel Fink, Suresh SanthanaVannan, Kevin Webb, Robert Cook, John Cobb, William Michener, Claudio Silva, and Tom Dietterich, Oak Ridge National Laboratory Climate Change Science Institute Poster Session.  
+*   February 2011 – DataONE 18-month review
+ 
+Reports:
+·       1 November 2010 – Quarterly report #1
+·       1 February 2011 – Quarterly report #2
+·       1 May 2011 – Quarterly report #3
+·       1 June 2011 – Annual report
+·       1 August 2011 – Quarterly report #4
+
+New Hires: (post-docs, AD for CE)
+
+
+2. Review Performance Metrics
+       
+Performance Metric                        Cumulative     Units      End of Year 1   End of Year 2 
+Size and Diversity of DataONE Data,   Metadata, and Investigator ToolKit Holdings
+            
+Data volume – total size of data   
+holdings in DataONE Member 
+Nodes and Coordinating Nodes)             x                   TB                   0.4                       1
+     
+ Number of metadata records – 
+ quantity of metadata records 
+ held at a Coordinating Node 
+ (Note: the concept of a record
+ may vary across metadata standards)     x                count                  5K                  25K
+     
+ Number of data sets held by 
+ Member  Nodes – (note: may 
+ be less meaningful as an absolute 
+ value because of the immense 
+ variability in data set granularity, 
+ but probably still useful in tracking the 
+ shape of the data accumulation curve)     x                count               5K                   22K
+     
+ Number and types of software tools  
+  included in the Investigator ToolKit          x                 count                 1                     4
+     
+Number of different metadata schemas  
+supported                                                   x                 count                 2                    5
+     
+Performance Metric                        Cumulative     Units      End of Year 1   End of Year 2  DataONE   System Capacity
+            
+ Number   of Member Nodes                      x                 count                3                     6
+        
+ Total   storage capacity at Member 
+ Nodes                                                        x                   TB                   0.5                  3
+        
+Geographic   coverage of Member 
+Nodes – countries covered                        x                  count                 1                    2
+         
+Number of Coordinating Nodes                  x                 count                 3                    3
+        
+Total storage capacity at each 
+Coordinating  Node                                      x                   TB                   0.5                 2
+        
+Geographic coverage of Coordinating   
+Nodes – countries covered                           x                  count                 1                   1
+
+Performance Metric                  Cumulative     Units      End of Year 1   End of Year 2        
+DataONE Usage Statistics
+            
+Number of web interactions on 
+DataONE   portal                                                              Per year            n/a             40K
+         
+Number of DataONE users – 
+(note:   recording of individual 
+IP addresses may be most readily
+ implemented; requiring users to 
+ login to Member Nodes is not 
+ presently required)                                                         count                 n/a                   1K
+    
+Number of downloads of tools from 
+the  Investigator ToolKit                                                Per year            n/a                    n/a 
+      
+Number of metadata catalog searches   
+completed – (note: over time it may 
+also be desirable to assess precision 
+and  recall of incoming searches)                                 Per year            n/a                    10K 
+ 
+Number of DataONE datasets 
+downloaded   annually – (note: this 
+may be straightforward if included in 
+specifications   for Member Node 
+data, impossible otherwise)                                          Per year            n/a                    10K 
+      
+Most frequently downloaded 
+datasets   (top ten)                                                          List                   list                   list
+ 
+Performance Metric                         Cumulative      Units     End of Year 1   End of Year 2 
+Reliability and System Performance
+            
+Uptime (availability) of Coordinating   
+Nodes                                                                              %                     50                     95
+        
+Uptime (availability) of Member 
+Nodes   – (note: tracked if heartbeat 
+is fully implemented)                                                       %                     50                     80
+      
+Server response time for average
+ user  interactions                                                            sec                   10                       3
+        
+Response time of user interface for   
+average user interactions                                                sec                   10                       5
+
+Performance Metric                         Cumulative      Units     End of Year 1   End of Year 2
+Community Engagement
+            
+Number of Baseline assessment of   
+scientists completed                                        x            count                  1                        1
+         
+Number of repeat assessments of   
+scientists completed                                       x             count                                          0
+        
+Number of Baseline assessment of   
+other stakeholders completed                        x             count                                           1
+        
+Number of repeat assessments of other   
+stakeholders completed                                   x             count                                          0
+         
+Performance Metric                         Cumulative      Units     End of Year 1   End of Year 2
+Education and Outreach
+            
+Number of education modules 
+developed   and/or accessible 
+through DataONE                                    x             Curricula,                        0                  4
+                                                                                handouts, 
+                                                                                U-tube, PPT, 
+                                                                                etc                                       
+                                                                                
+Number of times education 
+modules are  downloaded                                         Per Year                       0                  50
+ 
+Number of best practices 
+guides  developed and/or 
+accessible through DataONE                 x                1-pagers                       15                 40
+         
+Number of times best practices 
+guides  are downloaded                                             Per Year                       0                 200
+
+Number of training sessions or   
+workshops offered (e.g., at meetings)                         Handouts,                    0                    3
+                                                                                     PPT,
+                                                                                    virtual
+                                                                                    presentations
+ 
+ Number of workshop participants                            Per Year                       0                  75
+         
+Number of people in DataONE  
+ International Users Group                       x                 count                        25                  50
+        
+Performance Metric                         Cumulative      Units     End of Year 1   End of Year 2x
+Socio-cultural
+            
+Number of proposals submitted 
+to support   DataONE research 
+activities                                                          x                 count                                       1
+        
+Number of students involved in 
+supporting  DataONE research 
+activities                                                           x                 count                                       3
+         
+Performance Metric                         Cumulative      Units     End of Year 1   End of Year 2x
+Sustainability
+            
+Amount of in-kind support 
+generated  annually to support 
+DataONE                                                          x                 FTEs                    2                  3
+        
+Amount of revenue generated 
+annually   to support DataONE                                               $
+          
+Diversity of revenue streams 
+ (including in-kind support) – 
+ e.g., government, private foundations,   
+ commercial for-profit sector, etc.                    x                 count                    2                 2
+   
+Number of projects and partners   
+collaborating with DataONE or 
+leveraging DataONE infrastructure                 x                 count                                       2
+        
+
+
+3. November 1 LT Meeting agenda (http://tiny.cc/g5p68)
+
+4. Round the room (All)
+
+Usability & Assessement Co-chairs developed an Agenda for the All-Hands Meeting in November.   The approach is to continue and complete some of the sub group activities that were began at the last All Hands meeting.   The UA Co-chairs did suggest that a joint sessions with CCIT and other working groups would be held at the All Hands related to the Investigator Toolkit vision.  UA will also be meeting with the Socio Cultural WG at the All Hands.    
+
+UA will be posting the Baseline Assessment Survey results in the DataONE Collaboration area for those interested.   DataONE should figure out where to put this data for public viewing, when it is appropriate.    
+
+UA is beginning to work on the Librarian Assessment.
+
+PostDoc in support of UA is being Announced next week.   
+
+Sociocultural WG co-chairs developed their agenda for the All-Hands Meeting in November.  Potential deliverables were identified during the Sept conference call with members , concentrating specifically on items that will be useful for the DUG in December.   SC co-chairs suggested aligning some blocks with U&AWG and a larger group meeting in Block 9 with S&G WG, and the CE WGs that are in attendance. 
+
+John: EVA proceeding with good results and used most of the allocation on Lonestar
+writing larger allocation for next quarter;
+
+Bob:  Assessement for our Best Practices workshop has been closed.  We had 18 participants respond before the workshop and 11 after.
+
+Dave Vieglais is visiting ORNL on Monday & Tuesday next week to discuss the Coordinating and Member nodes at Oak Ridge, tools, and TeraGrid.
+
+
+From Marratech window:
+[11:00 AM] Rebecca: http://epad.dataone.org/20101015-LT-VTC
+[11:03 AM] Steph joined.
+[11:05 AM] John W. Cobb joined.
+[11:06 AM] John:  I am not hearing anyone but Rebecca - Am I (half) deaf?
+[11:08 AM] Amber Budden joined.
+[11:10 AM] John:  ESP?
+[11:11 AM] Steph:  yes
+[11:11 AM] Steph:  Amber, now you need to turn your mic off
+[11:15 AM] John:  If Perf. metrics will be changed, then we should take the initaitive and suggest what we think are important metrics.
+[11:15 AM] Bruce:  Amen, John
+[11:19 AM] Steph:  yes
+[11:19 AM] Suzie:  yes
+[11:19 AM] Mike:  I won't be there unitl NOON on Monday
+[11:19 AM] Carol:  I'll be there
+[11:20 AM] John:  I'll be there. I've already apologized to the Mad Hatter (my son's Halloweene costume)
+[11:20 AM] Bob Cook:  I'll be there.
+[11:20 AM] Suzie:  i'll be there
+[11:20 AM] Mike:  Thanks...
+[11:22 AM] Bruce:  OK.  And I'll be there as well for LT.  Should arrive around 11:00 PM the night before.
+[11:32 AM] Bruce:  agreed
+[11:32 AM] John:  Welcome!
+[11:32 AM] John:  welcome aboard.
+[11:32 AM] Amber:  thanks
+[11:33 AM] Bob Cook:  Glad you're on board!!
+[11:33 AM] Suzie:  Hooray Amber!
+[11:34 AM] Bruce:  I will send further info, Rebecca, but there are problems with my getting to the user group meeting.
+[11:34 AM] Steph left.
+[11:34 AM] Suzie:  bye
+[11:34 AM] Mike:  Have a good weekend everyone
+[11:34 AM] Bruce Wilson left.
+[11:34 AM] Carol:  bye
+[11:34 AM] Suzie Allard left.
+[11:34 AM] Mike left.
+[11:34 AM] Bob left.
+[11:34 AM] Carol left.
+[11:34 AM] Amber Budden left.
+

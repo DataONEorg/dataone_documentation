@@ -1,0 +1,182 @@
+Understanding Workflows
+08/06/2011
+
+Present: Bill Michener, Rebecca Koskela, Karthik Ram, Richard Littauer
+
+To Do List:
+Richard:
+
+ * Go over the current list of workflows, looking at categorisation. (In Progress
+ * Provide list of workflows by Sunday for others to run. (Not necessary)
+ * Collate Kepler results (if any). (Not many, so far - publications better)
+ * Update the workflows spreadsheet for each workflow, get image for each if not already gotten (In progress)
+
+Bill:
+
+ * Send out an email to SciencePipes
+ * Take a look at the Groth paper, if possible, and wf4ever-project.org
+ * Update Skype Client (If not already done.)
+
+Rebecca:
+ * Download Taverna 2.2.0
+   * 12 June 2011: downloaded Taverna 2.2.0 for Mac and did all updates requested; there's a problem with the databins_with_kegg_id_1197.t2flow - 
+           org.biomoby.shared.MobyException: ===ERROR===
+Fault details:
+[string: null]
+[HttpErrorCode: null]
+Fault string: (502)Proxy Error
+Fault code:   {http://xml.apache.org/axis/}HTTP
+Fault actor:  null
+When calling:
+    http://dev.biordf.net/mobyservices/services/snp2Frequencies
+===========
+
+org.biomoby.client.CentralImpl.doCall(CentralImpl.java:251)
+org.biomoby.client.CentralImpl.call(CentralImpl.java:1560)
+net.sf.taverna.t2.activities.biomoby.ExecuteMobyService.executeMobyService(ExecuteMobyService.java:35)
+net.sf.taverna.t2.activities.biomoby.BiomobyActivity.executeService(BiomobyActivity.java:1307)
+net.sf.taverna.t2.activities.biomoby.BiomobyActivity.access$400(BiomobyActivity.java:60)
+net.sf.taverna.t2.activities.biomoby.BiomobyActivity$1.run(BiomobyActivity.java:694)
+java.lang.Thread.run(Thread.java:680)
+
+I did go directly to Kegg and when using the example value: hsa:7098, there are many entries so the workflow should return values
+
+(R: Interesting! Right, that must be the issue, then. So, we'll go over the other ones tomorrow.)
+
+Although much simpler, the nucleotide_fasta_to_pdb_file._782874.t2flow workflow does work - it translates a fasta entry to protein database (pdb) format (I'll look into that one now)
+
+ * Update Skype Client (If not already done.)
+   * Running version 5.1.0.968 - it says there are no updates and that it is the latest version (R: Great)
+ * Library access for Richard
+   * paperwork to be submitted today
+ * Flights/Conference fee
+   * Conference registration complete; flights also complete
+
+Karthik:
+ * Download Taverna 2.2.0
+ * Continue to mine for references to workflows in papers.
+
+§
+
+myExperiment:
+   * Some issues with Kepler. 17 uploads, by 2 people. One is a dev, the other was a one-time show.
+   * Taverna 1, 2, & RapidMiner are fine
+   * Triana - is around, but there's nothing on myExperiment 
+     * Bill: More than enough just to use T1, T2, RM, and Kepler
+    
+Worth waiting until we email Kepler lists to see if anyone uses it. 
+ - Email Ecolog, Kepler Lists, etc.…
+     - Worth saying that we're not going to post our results to the list (confidential)
+     - Direct users to the workflows website
+    
+Bill: Will send out an email about contacting science pipes
+
+Run through one or two of Taverna stuff from myExperiment
+
+Categorisation: http://epad.dataone.org/xw4frGxC80
+    - Do we do it based on the information which is flowing through the flow, or on the output?                   Or the input? 
+    - How do we characterise them? End up with an excel sheet with toggles
+   * QA/QC steps?
+   * Can you visualise it?
+     * Throughout the process? Only at the end?
+   * Edit it in the middle?
+   * Embedded?
+     * How many are embedded?
+     * Are they embedded?
+     * WHat sort of processes are embedded?
+   * How many databases?
+   * Does it convert the file types?
+   * Does it run stats? Is it doing results itself?
+
+Much of these are dependent on the system - some might not have visualisations in the middle, but only at the end. How do you tell the workflow from the system, in this case?
+
+B: We should be looking for commonalities between Kepler and Taverna etc.
+ * Are there characteristics that we can use to characterise complexity or the types of processes within these?
+ * Are there generic ways to categorise them? If there aren't, then these might just be additional criteria for each system.
+
+Would be worth reading the Groth paper:
+    - Talks about natural language descriptions of workflows
+    - Looked at what the tags were, what the example test was. Information about the steps,
+    about the statements, and how they were organised, and advice.
+    - Ideally, we'd like to codify this information - not just workflow management, how we would describe them to other scientists. 
+    
+Workflow Forever: http://www.wf4ever-project.org/
+    - New project, looking at workflow decay
+    - Looking at the reuse, dropping off, and how are repositories helping
+    - Specifically, how can we build a cyberinfrastructure to keep them together
+    - We're rather dealing with natural language descriptions in order to ease the sharing and use of workflows. 
+    
+We need to strike a balance between Groth and w4ever. 
+Karthik: Did Bertram get Richard in touch with paulo? (Not yet.)
+
+Re-email the Groth and the other paper around. 
+
+Next step is to take some particular workflows, and see how we can use the natural language categories to characterise these. 
+Going through half a dozen would be a good test to see if the methodology holds. 
+K: Don't download more, for now, just go through these and see how it goes before we get more data. 
+
+Workflow 761: Bindata for Kegg http://www.myexperiment.org/workflows/761.html
+    - Img: http://www.myexperiment.org/workflow/version/image/2182/databinswithkeggid.png
+    - KEGG - Kyoto gene database
+    - Goes along, mines the information from various databases,works on that.
+    - Input is a 6/8 letter KEGG ID. 
+    - Richard: haven't been able to get an output
+        - Have everyone install Taverna 2 by next week, try and run some workflows
+        - Random selection (and the example one) all failed.
+        - Bill: Ideally we wouldn't need to run the workflows
+            - R: some inputs we don't have, 
+            - B: some you might need access to databases.
+            
+   * So, this is a complicated workflow; doesn't just convert a geneID
+   * Accesses several databases, with different information in them
+   * Multi- vs. Uni-purpose workflow
+   * Run it with the example one.
+   * Update Skype Client
+   * Three main areas: 
+     * far right - ID for the genes. Goes onto PDB and looks for that.
+     * Far left - looks for SNPS and Swiss probes in another database
+     * Also using Moby, a whole set of programs coming out of Mass
+     * Middle - PubMed, data publication
+   * Doesn't just find information, but also publication
+   * Also translating IDS
+   * Also provides visualisations (pdb 3d images)
+   * Is this a visualisation not just of workflow but of output? Worth checking.
+   * Query mutliple sorces - not processing?
+
+Workflow 161: XKCD http://www.myexperiment.org/workflows/161.html
+   * Gets the URL, current page, img link, download img
+   * Simple workflow, but:
+   * Different inputs - human modified input, vs. hardcoded parts of the workflow itself
+   * How often are there variables you need to define for each workflow?
+     * 33% user made workflow? Possible. Think about terminology.
+   * Branching structure - this is linear, the other is much more complex
+   * What is flowing through is changed here - goes from text to image file
+   * Might be worth taking into account the information being passed along
+     * Just text?
+     * image?
+     * 3d image?
+     * text with a lot of provenance data?
+     * This isn't shown in the workflow, but it could be. 
+   * This is essentially just a retrieve - but there's no new processing
+
+So,
+ * One query
+ * Mult. queries
+ * One processing job
+ * grid processing job
+ * etc...
+
+Start identifying ways to categorise these. Go ahead and document this workflow, others, would be a good way to progress.
+
+Look at workflows on Thursday, Friday. 
+Next meeting go over results, where to go from there.
+Should have Kepler results by then.
+
+Next meeting: Monday 13th 7 PCT, 8 Mountain Time, 15 GMT
+
+Take the images for the workflows, look at them, describe, then build on those descriptions. Will be an iterative project, but once the basic structure is there we should be good to go. Lots of help from Rebecca most likely from the bioinformatics way of looking at things. 
+
+Email Rebecca about flights to Berlin, internet access for after June 26th
+
+End of call. 
+

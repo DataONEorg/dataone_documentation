@@ -1,0 +1,111 @@
+Member Node Forum - 3 October 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 17 October, 31 October, 14 November
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516, -20130530, -20130613, -20130627, -20130711, -20130725, -20130808, -20130822, -20130905, -20130919
+
+Attending:  Laura Moyers (DataONE), Rebecca Koskela (DataONE), Mark Servilla (LTER), Bruce Wilson (DataONE), Amber Budden (DataONE), Mike Frenock (PISCO), John Cobb (DataONE), Dave Vieglais (DataONE), Matt Jones (DataONE), Luke Sheneman (NKN)
+
+Regrets:  
+
+Action items from last time:
+
+
+Agenda:
+
+0. Welcome new attendees - introductions
+    Luke Sheneman - Northwest Knowledge Network (NKN) at U Idaho, standing up data at U Idaho, Idaho National Laboratory; working with researchers to enable them to store their data at NKN in areas of earth sciences, water quality, etc.
+    
+1. Network-wide update and issues affecting MN's as a whole
+
+??? Does Fed Shutdown affect any MN's?  We don't think it does directly, but it may slow things down.  ORNL DAAC is still open for business for "a while" - perhaps 2 months.  
+
+Perhaps this issue (gov't shutdown) is an example of replication of data is a good thing when the primary source is temporarily shut down.  Revisit our replication policy (current default is "no") such that data is replicated just in case.  
+ * Mike (PISCO): might be a good idea; 
+ * Luke (NKN): a good idea; 
+ * Mark (LTER): default to replicate is good, but it needs to be clear that that is the case in the MN agreement documentation
+or maybe default repl=True for collections < "X" GB  (and need to better define "collection")
+
+Luke: what is the background of the decision to default to no
+Matt: it potentially can take up a lot of space to replicate data in entirety; also, very large datasets might not be best replicated via online processes
+John: DataONE needs a mechanism to remove a replica if necessary (i.e. request to scrub)
+
+Matt: is this something we want to work right away
+Dave: allow MNs to update their replication policy as a more immediate response while saving the "default to yes" change for later.  
+Currently, MN would need to change replication policy on each data object.  It would be nice to have an automated process to make this easier.
+
+Mike: what happens next for the replication policy?
+Matt: can draft an email detailing current/new process and get feedback from MN operators and developers list - ACTION for Matt
+John: consider 3 states: replicate, don't replicate, or go with default
+
+Mark: have we been able to successfully replicate LTER data on the KNB node
+Matt: need to check on, don't think it has happened yet
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+ * Any feedback specific to MNs from the CCIT meeting week of 9/22?
+   * MN deployment and streamlining the process was focus of the meeting
+   * 3 big topics
+     * documentation - flow, completeness
+       * look at things from a MN operator POV, identified several things to be changed/updated/simplified throughout all levels of documentation; main things to address are bridging between levels of detail, ensuring that .., creating specific content for specific situations (i.e. metacat installation, etc.)
+     * mutable content vs immutable content
+       * fundamental goal in D1 is to ensure that users are able to do repeatable analysis, meaning data from an analysis is available into the future; what we've been doing so far is MNs cannot change content (changing the checksum for that data entity) - if you want to change content you need to create a new DOI; this concept is often impractical for a MN and adds to data management time/resources; for example, a non-content-critical change to metadata currently triggers creation of a new metadata AND data object
+       * plan to support mutability, create snapshots of all science metadata; trust MNs to curate their data so that scientific data integrity is maintained even if science metadata is changed for a spelling correction, etc.  Currently we say any change is scientifically significant (driving a new DOI for "new" data object); plan is to have MNs curate data for scientific integrity while allowing non-scientifically-significant changes 
+       * See page 15: https://www.jstage.jst.go.jp/article/dsj/12/0/12_OSOM13-043/_pdf for related information/policies re: citation from CODATA
+       * requires further discussion (at AHM) and design
+       * Question from Mike: what do you do if you discover you've got bad data?
+       * Matt: if you obsolete a data package, you can note in the "new" version quality issues, etc. with the "old" version
+     * system metadata management
+       * Currently, CNs hold authoritative copy of system metadata; for MN to make changes, they must ask CN to make changes.  We'd like to have MN hold authoritative copy of system metadata and the CN would pick up changes.  Implications: minor API changes but no schema changes, will simplify MN operations in future.  On longer term schedule for implementation.
+
+   * Question from Luke: how do you police edits to science metadata? what is considered a big edit (scientifically significant) vs what is a little change (spelling corrections)
+   * Dave: D1 could make copies of all science metadata for a given data object
+   * Luke: a version history of sorts
+   * Bruce: ideal world (immutability) vs reality (how some MNs operate today)
+
+   * Matt:  are we talking only about science metadata here or data objects as well
+   * Bruce:  (data changes) USGS updates topo maps and doesn't save previous versions
+     * Matt: this would be an intent change, changing scientific interpretation
+   * series identifiers (concept of an object) is potentially very complicated; i.e. an object would have a series identifier AND its own unique DOI; this might not be the best way to approach this 
+
+   * John: say a MN updates system metadata, pushed to CN, so CN has system metadata and science metadata
+
+   * Luke: is lineage (relationships) between old and new versions of a file available
+   * Dave: is in the system metadata, but is up to the MN (i.e. us the update API call)
+   * Luke: if in a search, can a user see the lineage of a data object
+   * Dave: it's there but kind of hidden
+
+3. Feature requests/opportunities for collaboration:
+
+      
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+ * LTER (Mark): just the issue mentioned above with replication of LTER data at KNB
+ * PISCO (Mike): working a lot with indexing (local and CN) and running into problems with both; query interface with SOLRquery - how do you check to see if index is complete?  Been working with Chris and Ben.
+   * Dave: compare list of identifiers from SOLRquery and within MN (list objects call - from database)
+ * NKN (Luke): certs figured out last meeting, dealing with currently available documentation  doesn't apply to red hat
+
+If you have any other comments/suggestions about anything discussed here, particularly the MN discussions at the CCIT meeting last week, please feel free to post to developers@dataone.org or mnforum@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+contact points: 
+NEW EMAIL contact: mninfo.dataone@gmail.com      - This email monitored by DataONE staff.  I think we might migrate to  this being the primary point of contact for MN questions so we can keep a  better handle on issues/resolutions.
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Upcoming deadlines:
+

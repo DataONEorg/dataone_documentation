@@ -1,0 +1,147 @@
+#persist
+
+
+Testing a DataONE Deployment Environment
+========================================
+
+
+This document outlines what should be done to test a DataONE Deployment Environment. Deployment Environments in DataONE represent a set of nodes working together to implement the capabilities of the DataONE infrastructure. There are four types of environment: Development, Sandbox, Staging, and Production which are described in http://mule1.dataone.org/OperationDocs/environments.html . 
+
+
+Production environment once up and running, seems to call for more of a regression testing model - that is, we don't want to be polluting the repositories regularly with test data.  Which of the tests below could work as regression tests?
+
+
+Test Categories
+---------------
+
+Categories of functionality that need to be evaluated to verify expected operation. Note that in general there will be some overlap between categories.
+
+
+A. Nodes are accessible
+ - a downed node is an acceptable operational state, so while a node being down means any 'higher' level tests against that node will fail or be ignored, it should not pre-empt, for example, synchronization or replication testing for the given Deployment Environment
+
+- Low level tests to ensure that the nodes are running.
+
+- List of nodes for an environment obtained from a node registry doc retieved from a CN, so at least one CN should be operating or a list of nodes needs to be available.
+
+d1_integration allows deployment environment to be determined in 4 basic ways:
+1. using the nodelist of a given CN
+2. providing a NodeList document containing the nodes to be tested
+3. providing the baseURL for a MN - "standalone MN mode"
+4. providing the baseURL for a CN - "standalone CN mode"
+
+(#3 and #4 are in place to allow testing the interface methods against a given node.)
+
+
+- HTTPS running 
+
+- HTTPS certificate OK  (does this relate to F?)
+
+
+B. Software and versions as expected
+
+- What version of libraries are installed on each of the nodes?
+
+
+C. Member Node installation and operation
+
+- Does the MNWebTester report success for the expected tier of fucntionality?
+it has a summary line for the results from each tier.
+
+- (does web tester use the information in the node registry to determine which tests to run?)
+not exactly.  MN web testing is a 'stand-alone' environment - no CN to refer to.  It will refer to the node returned by mn.getCapabilities() instead.  Implementation pending.  (note too, that testing is by tier, while service availability is by service (MNCore and MNRead make up MN Tier1))
+
+- Does the MN trust CNs? (how does this relate to F? remove?)
+and more specifics needed:  perhaps "does the MN accept the CN certificate?"
+
+D. Coordinating Node installation and operation
+
+- Are CN service endpoints operating? (should be all of them)
+
+- HTTPS connections OK?
+
+- Trusted by MNs? (CNs must be trusted by MNs for all operations)
+    (how does this relate to F? remove?)
+
+
+E. Coordinating Node consistency
+
+- Information on CNs should be consistent across CNs when no operation are pending.
+
+  - node registry
+  - format registry
+  - PID list
+  - System Metadata
+  - Science Metadata
+  - Resource maps
+  - Aggregated logs
+  - Index entries 
+
+  - may only be able to test consistency for objects submitted X hours ago, or "yesterday"
+
+F. Authentication and trust relationships
+
+- Can all the nodes that need to, talk with each other?
+
+  - CN to MN
+  - MN to MN (for requesting a replica)
+
+- Are unauth requests denied access as expected?
+
+- Are "restricted" methods only accessible by expected client?
+
+- Are test (dataONE signed) certs trusted in Production Environment? (shouldn't be)
+
+
+G. Synchronization (much covered under E CN Consistency)
+
+- Is synchronization running?
+
+- Is the object count as expected?
+
+- After reaching consistency (no new sync ops), are the object counts as expected for each MN?
+
+- Are object counts consistent across CNs?
+
+
+H. Replication (much covered under E CN Consistency)
+
+- Are replication policies being respected (limiting which nodes can be replication targets)?
+
+- Are there any error messages during replication process over last x hours?
+
+- Are checksums of objects matching across replicas?
+
+- Are access control rules consistent and respected across replicas?
+
+- Are all replicas reported with resolve()?
+
+
+I. Content indexing (per CN)
+
+(Possible to query underlying datastore for valid (not archived/obsoleted) documents (by type) to compare to index value?  Possibly very expensive to do through hz client.)
+
+- Is the number of index entries as expected?
+
+- Is the number of data, science metadata, resource map entries as expected?
+
+- Are obsoleted or archived objects excluded from the index?
+
+- Are the permission entries set as expected?  (sampling?)
+
+- Are the index entries as expected for the different object types? (same as second point?)
+
+- Are there failed index tasks in the index task queue (jpa repo)
+
+- Are there stale (older than a day?) index tasks in the index task queue (jpa repo).  Keeping in mind stale task may be resource map waiting for references to index.
+
+
+J. Log aggregation
+
+- Is the number of log records as expected?
+
+- Are the log record entries matching what was reported from the MNs? (Incredibly resource intensive; maybe subsample)
+
+- Are the aggregated logs consistent across CNs?
+
+

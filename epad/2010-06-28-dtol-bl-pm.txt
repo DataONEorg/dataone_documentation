@@ -1,0 +1,73 @@
+USE CASE
+...
+
+
+MILESTONES:
+   * (M1) Development/tweaking of the demo workflows and execution in (a) Kepler and (b) Taverna.   -- done but they only work in mockup mode (maybe Lei/Daniel/Saumen to do sth about that)
+     * (D1) Executable demo-workflows in  (a) Kepler (2x3) and (b) Taverna (3)
+     *  TO-DO: LINK THEM from the "Deliverables & Products" pages!
+
+   * (M2) Export of provenance information of (M1) from Kepler, Taverna
+     * (D2) Trace files (in XML? RDF?  LOD?) from (a) Kepler and (b) Taverna  runs.
+
+   * (M3) Shared Conceptual Model designed.
+     * (D3) Shared Provenance Store (SPS):  Conceptual Schema
+
+   * (M4) Provenance Store (SPS) implemented and accessible (could reuse an existing e.g. OPM or Linked Data Store)
+     * (D4) Provenance Repository:  Relational (or other implementation) Schema
+
+   * (M5) commit-trace-to-PS implemented for (a) Kepler and (b) Taverna.
+   * (D5) Mapping description from (a)  Kepler and (b) Taverna MoPs to the PR schema.
+   * 
+   * (M6) Execute simple provenance queries against the PS; visualize results.
+   * (D6) Description/explanation of  the demo-provenance queries (e.g. in QLP? or SPARQL?)
+
+DELIVERABLES:
+   * 
+   * SPS architecture &  implementation schema
+
+   * SPS implemented
+   * Schema Mappings (via Datalog)
+   * stitching via OPM artifacts
+   * references to data need to be ...
+   * "owl:same-as" 
+   * Data Identification (common naming scheme)
+   * 
+   * OPM "profiles" (or just annotations)
+Walkthru / Life-cycle
+ * 0 (wf design / development)
+ * 1 bind data and parameters
+ * 2 run wf
+ * 3 publish wf results (i.e., output data)
+ * 4 (publish wf specification) --- may be optional / but may be inferrable
+ * 5 publish input data and params ---  
+ * 6 publish trace
+ * 7 query trace
+ *  
+   * 
+   * 
+   * These should include at least
+     *  "find all sources/sinks in the provenance graphs, reachable from given node"
+     * selected "deep provenance" queries, i.e., spanning multiple runs, multiple users etc.
+     * (see also queries in Ilkay's IPAW paper; especially new Section 3)
+   * (D7) Publish paper(s) on findings
+
+
+SPREADSHEET:
+
+Vocabulary Table
+Glossary
+Conceptual Model
+Storage Schema(s)
+Implementation A
+Implementation B
+
+
+eScience Paper ideas:
+- include distinction: references &D vs actual data *D
+- include in traces a second naming scheme for data identifiers
+
+
+
+
+

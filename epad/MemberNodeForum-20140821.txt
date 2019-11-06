@@ -1,0 +1,85 @@
+Member Node Forum - 21 August 2014
+                                                                                    
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+                                                                         
+       (Occurs every 2 weeks on Thursday 8pm South Africa, 3pm BRT (Sao   Paolo,  etc.), 2pm AMT (Manaus, etc.), 2pm EDT, 1pm CDT, noon MDT,  11am   Arizona  and PDT, 10am AKDT or  Friday 2am Taiwan, 4am Brisbane  AEST)
+  Upcoming meetings 4 September, 18 September, 2 October
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+Attending:  John Cobb, Laura Moyers, Bruce Wilson, Mike Frenock, Tracy Kugler, Corinna Gries, Rebecca Koskela, James Long
+
+Regrets:  Ed Flathers, Mark Servilla, Dave Vieglais
+
+Action items from last time:
+    Update pushed out last week?? 
+        was that this: CCI 1.3.0 is a scheduled release that will upgrade all CNs to use new fields in our solr indices  -- yes, this was accomplished yesterday 8/20/14
+    
+    Follow-up with MPC/TerraPop - Bruce gave Wendy some direction re: DC terms to use in metadata, see difference between description and abstract at MPC and Dryad (we are working off the Dryad DC structure to build the MPC structure), in particular MPC's info in the abstract is actual keywords for full-text searching, but Dryad uses the abstract field for their description; Wendy working; Fabio has sorted out last of the certificate issues and is pushing metadata to the MPC MN in stage.  
+        Meeting scheduled for Friday afternoon, 4p ET, to discuss DC in general and MPC in specific
+
+Agenda:  (changing up the agenda to help flow - suggestions appreciated)  :)
+
+0. Welcome new attendees - introductions: 
+
+
+1. Network-wide update and issues affecting MN's as a whole
+    NEW MEMBER NODE!  The Montana Institute on Ecosystems (IoE) MN was announced Tuesday.  
+        Go here for more information about the IoE:  http://montanaioe.org/
+        For data you could look here: https://data.rcg.montana.edu/gateway/ or search using ONEMercury
+
+    Mike asked how do we know how the solr indices have changed as a result of the CCI 1.3.0 update.  Bruce said he's not sure, will find out; there should be release notes and other notifications made, but we're not sure where this information will be found.  -- Stay tuned  -- Laura will put out an email to today's MNF attendees when we know more details.
+    Mike has a local solr index, so will the changes effected in the update impact Mike's local solr index - Laura to investigate
+    
+    In searching for documentation, we need to ensure that we are looking at the current (or in some cases development or other) version - Bruce, Dave and others working
+    
+    
+2. MN Status (MNs present talk about what's going on in their world):  MNs please add anything you would like to address here.
+    GLEON (Corinna) - added a dataset, gearing up for October meeting
+    PISCO (Mike) - was teaching someone how to load a dataset and ran into an issue: data and metadata went up fine but resource map did not!  will investigate (Ben/Chris are CCIT POCs)
+    IARC (Jim) - will go to sandbox after 9/4/14
+    MPC (Tracy) - see above re: the Dublin Core discussion
+
+3. Feature requests/opportunities for collaboration:
+    Roger Dahl (primarily GMN) is moving to another opportunity - folks who use GMN who had Roger as a POC will have another person to work with, Bruce working.
+    
+    It would be very helpful to have MN POC information available to everyone.  It is available on MN Description Document, but it would be nice to have that information on the MN page on the dashboard.  Laura to note this in new requirements for the dashboard, and in the interim Laura will provide a list to all MN Forum folks.
+    
+    https://www.dataone.org/current-member-nodes#nodes   <-- this is the "dashboard" or more appropriately the "current member nodes" page
+    
+    Jim - what is the largest dataset you can upload via the API to a GMN?  
+    Bruce - we don't know.  Will ask the question on ask.dataone.org (and answer!!) - in the meantime, Jim will try it and see what happens (he has a 1TBish file to try)
+    
+    Mike - how to people typically load data via the API?
+    Jim - I've been following the examples in the documentation, just a few test cases so far
+    John - we want to ensure that DataONE can accept large datasets, working to make sure the ceiling is not too low, this is important to us in DataONE and its MNs as well to the larger data community.  see below for an example of a conference where discussions of this topic would be of interest.
+    
+    http://wssspe.researchcomputing.org.uk/wssspe2/cfp/
+    also journals like Concurrancdy and Computation: Practice and Experience: http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1532-0634
+    
+    Mike - how to the developers get data out there while they're writing code, etc???
+    John - good candidate for a best practices document
+    Laura will ask on the developers list and see what they say and get back with everyone
+    
+    
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't  forget irc.ecoinformatics.org, channel=dataone if you have an urgent  issue.  CCIT folks are always there and can assist you.
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307    (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516, -20130530, -20130613, -20130627, -20130711, -20130725, -20130808, -20130822, -20130905, -20130919, -20131003, -20131017, -20131031, -20131114, -20131212, -20140109, -20140123, -20140206, -20140220,   -20140306, -20140320, -20140403, -20140417, -20140501, -20140529, -20140612, -20140626, -20140710, -20140724, -20140807
+

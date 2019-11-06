@@ -1,0 +1,46 @@
+Nick
+ * Updated d1_libclient_java's MNode with systemMetadataChanged implementation
+ * Updated d1_common_java's Constants to have a RESOURCE_META_CHANGED string to build POST url to MN
+ * suggested changing systemMetadataChange's method signature to systemMetadataChanged(Session, Identifier) to allow a simpler POST /dirtyMeta/{pid} call on the MN more in line with other api functions instead of including pid, dateSysMetaLastModified, and serialVersion in the SimpleMultipartEntity for the call.
+ * Will work with Chris on replication testing to update MN software
+
+Chris
+ * Updated d1_common code with serialVersion additions
+ * added in serial version to replicaton calls and authorization calls in Metacat's CN stack
+ * Finished CN resource handlers for CNReplication in Metacat
+ * Updated d1_common API with systemMetadataChanged() method
+ * Working on adding MN.systemMetadataChanged() in Metacat's MN stack
+ * Will add a new knb.war file into cn-buildout for testing
+ * Will work with Nick on replication testing
+
+Roger
+- Pretty much finished with MNStorage.systemMetadataChanged(), but have not fully tested it yet.
+- Next item my list is to bring the command line client up to date.
+- Will be following up on Tier 3 tests as Rob works with those.
+
+Rob
+- added jump page for the MNWebTester: http://mncheck.test.dataone.org:8080
+- turned on Hudson, and set up a custom nodelist for figuring out which nodes to test.  Currently demo2 and gmn-dev.  Only running MNTier tests.
+- new builds are failing with strange class loading error (only on MNWebTester) - fixed.
+TODO:
+- need to review MN and CN apis against the changelog, and propogate to libclient_java.
+- new integration test for modifiedSystemMetadata()
+- add svn revision to libclient and common java packages.
+- decide on test user to use for testing restricted methods.
+
+
+Ben
+
+  Working on metacat
+
+Skye
+- Reading arch docs - use cases, api.
+- TODO: Dev env. setup.
+- TODO: List page for web tester to discover and list available tests running on server.
+
+Robert
+-Updated LDAP schema with new restriction structure
+-Update Node registry component with new restriction structure
+-Started creating client for updating restrictions (will use perl for personal use)
+-Will update LDIF with sample method restriction for adding formats to format registry so Ben can have sample to use when needed
+

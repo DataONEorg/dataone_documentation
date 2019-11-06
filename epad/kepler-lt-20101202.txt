@@ -1,0 +1,44 @@
+Kepler Leadership Conference Call  2010-12-02
+--------------------------------------------------------------------
+Toll Free Dial In Number:  (866) 205-5235
+Access code:  6657088
+
+Participants
+-----------------
+Matt, Tim, Bertram, Mark, Ilkay, Christopher
+
+Agenda items:
+---------------------
+1. Update: development activities for Kepler/CORE from UCD and UCSD
+     -- David (100% through Sep 2011)
+        -- working on release installers, automating it from the build
+        -- also improvements to the module manager
+        -- used IzPack for win, tarball for linux, dmg for mac 
+     -- Jainwu and Madhu (50% Madhu, 50% Manish, 20% of Jianwu through May 2011)
+         -- helped with 2.2 release on Memory leak problems
+         
+         -- would like to work on integrating provenance systems, and on Kepler itself
+         -- work on making distributed framework more defined and implemented in Kepler
+         
+     -- Aaron
+          -- 3 months, 100 % FTE
+          -- starts next week
+          
+2. Discussion: Kepler 2.2 development update and release plans
+    -- https://kepler-project.org/developers/teams/build/kepler-2.2-release-roadmap/
+    -- http://bugzilla.ecoinformatics.org/buglist.cgi?query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&target_milestone=2.2.0&product=Kepler
+    -- The dates for 2.2 are in https://kepler-project.org/developers/teams/build/kepler-release-roadmap/?searchterm=roadmap
+    -- David will be release coordinator for 2.2
+    -- Feature freeze Jan 15, release Feb 15, depending on estimates of hours by developers
+    
+3. Proposal: Kepler should require Java 1.6 for all platforms starting with the Kepler 2.2 release.  For background, see the discussion thread on this issue on kepler-dev.
+    -- Decsion: require 1.6 -- doesn't drop too many users, simplifies deployment
+    
+Action items
+-------------------
+    -- TODO: Matt will send JDK 1.6 decision to kepler-dev
+    -- TODO: Tim to contact David about estimating bug hours for 2.2 release
+    -- TODO: Ilkay to contact Jianwu, Madhu, Manish about updating bug estimates for 2.2. release
+    -- TODO: Matt to Doodle the next LT call
+    
+

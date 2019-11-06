@@ -1,0 +1,177 @@
+Attending: Bruce (until 1:25 EDT), Carol, Bob, Amber, Bill, Steph, Trisha, Bertram, Dave, Matt, Hilmar, John Kunze, John Cobb
+
+Regrets: Rebecca, Suzie, Viv
+
+1.  Please join my meeting, Jun 22, 2012 at 9:55 AM PDT.
+https://www1.gotomeeting.com/join/515227352
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (630) 869-1015
+Access Code: 515-227-352
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 515-227-352
+
+We will also use the epad: http://epad.dataone.org/2012Jun22-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-06-22
+
+1) CI Update (Dave)
+2) Approval of Partnership Agreement (Trisha)
+ * see http://bit.ly/L8LfjO
+3) Licensing of DataONE Resources (Budden)
+ * see below
+4) Press release and public release (Budden)
+5) Around the room
+
+1) CI Update (Dave)
+Things proceeding well.  4 production MNs registered  KNB, ESA, SanParks, 
+Mercury DAAC.  Process becoming streamlined and these 4 including 2 different types of software stack. Remaining ones - small issue with USGS clearinghouse required quick fix.  Patch complete and in testing so USGS should be up this afternoon.  Dryad progressing rapidly.  Will require some minor changes at CN side, otherwise going well.  In testing stage.  PISCO pretty much ready to go - need installation of latest version of metacat. LTER also progressing rapidly - was postponed during their site review.
+
+Timelline on above MNs: PISCO and LTER are large nodes so may take a few days for all data to upload.  They would be participating early next week but full synchronisation will take a little longer.
+
+Can link to ONEMercury interface from public website on Monday?  Yes, can do.  Now running a production environment.
+
+Some minor issues with CN software stack requiring an update to be pushed out next week.
+
+Beginning to look at 'what's next' on list.  Replication is not currently running as a service right now (not visible to users).  High priority.  Will be moving focus to client tools like R, morpho etc and bringing on more MNs.  Also need to work on documentation.
+
+Hardware / Virtual machine issues at CNs: 
+UCSB - running KVM.  working well.  Oak Ridge and UNM running commerical product (VMWare ESX).  Licensing prevents running same resources (RAM, CPUs, disk size) on all coordinating nodes..... May run into issues down the road.  Fix options - can't install KVM at UNM and possibly not Oak Ridge.   One option, to change license.  Oak Ridge up to version 5 on VMWare which may opening options up.  Bruce looking into this so the issue may be resolved.  UNM also in process of sorting out upgrade.  Bottom line - bc of these limitation we are not utilising the hardware as fuly as possible and as much as we'd like.  So, can either license (which might be expensive), use KVM across the board (may be politically difficult) or re-engineer the software across all CNs.  Needs further discussion.
+
+Bill needs:
+HW specs including purchase information. BEW -- I'll get the ORC info to Bill 
+tracking MN deplyment and statistics (# data products, number of records,...)
+
+2) Approval of Partnership Agreement (Trisha)
+ * see http://bit.ly/L8LfjO
+All have seen and commented on guidelines document.  Document lays out roles and responsibilities of MNs and DataONE.  Lays foundation for a later agreement.  MNs will not be signing the agreement but will represent and information exchange between DataONE (BRAD) and MN.  LT needs to endorse the document to move forward.
+
+Bob:  
+Do we have authentication and authorization in place at this time?  Are they part of the initial release?  Ans: yes, in place.  Service (via CILogon), ID management service, 
+
+[Cobb] A comment: at this point is a good time to review operating proceddures like MN required documentation, assessments, and updating the DataONE security plans.
+
+
+3) Licensing of DataONE Resources (Budden)
+ * see below
+
+Licensing on DataONE.org website - how to license content such as the BPs / STs databases, education modules, primer etc...
+Options (from CC)
+
+[Cobb] So this is for content created by D1 efforts - correct?
+[Amber] Correct
+
+We need to consider whether we want licensing applied across the baord or whether we want diversity of licenses.
+
+If we want a single licenses, maybe chose now or at least at this point have a discussion about what licenses to use
+
+Carol T: also we need to exclude published contenct for example WG work products
+
+Leave software out of this for now and focus on other DataONE resources.
+
+Matt: Have a liberal license to facilitate sharing.  Success if people use our materials.  CC0 or CCBy.  NonCommercial restrictions license can problematic.
+
+Carol: CCBy most appropriate.
+
+Hilmar: CCBy asserts copyright so is more than just asking people to provide attribution.  Should not use the legal system to aserts ethical norms.  If we don't anticipate need for copyright we should release it now.
+
+Cobb: Opinion: There is beauty in simplicity - let's try to pick and use only one license to the extent possible.
+
+Q: CC0 with statement re attribution or CCBy?
+
+Discussion of copyright ownership within working groups.  Implicit understanding that WG activities are for the benefit of DataONE although copyright still rests with individuals
+
+[Cobb typing] Amber proposal: suggestion, "LT recommends that all material on the DataONE Website have a CC0 or CC-By license as default with exceptions by request" and Amber offered to round up the Maverick content that has already been released to the free range without a propoer brand by contacting the WG's 
+
+Matt: is it simplerto take out CC-BY and just go with CC0
+
+Amber to write up discussion and plan of action for consideration. 
+
+Trish: add sentence about how this does not inclide MN data.
+
+No Rights Reserved
+CC0
+
+CC0 enables scientists, educators, artists and other creators and owners of copyright- or database-protected content to waive those interests in their works and thereby place them as completely as possible in the public domain, so that others may freely build upon, enhance and reuse the works for any purposes without restriction under copyright or database law.
+In contrast to CC’s licenses that allow copyright holders to choose from a range of permissions while retaining their copyright, CC0 empowers yet another choice altogether – the choice to opt out of copyright and database protection, and the exclusive rights automatically granted to creators – the “no rights reserved” alternative to our licenses.
+
+Attribution 
+CC BY
+This license lets others distribute, remix, tweak, and build upon your work, even commercially, as long as they credit you for the original creation. This is the most accommodating of licenses offered. Recommended for maximum dissemination and use of licensed materials.
+Attribution-ShareAlike 
+CC BY-SA
+This license lets others remix, tweak, and build upon your work even for commercial purposes, as long as they credit you and license their new creations under the identical terms. This license is often compared to “copyleft” free and open source software licenses. All new works based on yours will carry the same license, so any derivatives will also allow commercial use. This is the license used by Wikipedia, and is recommended for materials that would benefit from incorporating content from Wikipedia and similarly licensed projects.
+Attribution-NoDerivs 
+CC BY-ND
+This license allows for redistribution, commercial and non-commercial, as long as it is passed along unchanged and in whole, with credit to you.
+Attribution-NonCommercial 
+CC BY-NC
+This license lets others remix, tweak, and build upon your work non-commercially, and although their new works must also acknowledge you and be non-commercial, they don’t have to license their derivative works on the same terms.
+Attribution-NonCommercial-ShareAlike 
+CC BY-NC-SA
+This license lets others remix, tweak, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms.
+Attribution-NonCommercial-NoDerivs 
+CC BY-NC-ND
+This license is the most restrictive of our six main licenses, only allowing others to download your works and share them with others as long as they credit you, but they can’t change them in any way or use them commercially.
+
+
+4) Press release and public release (Budden)
+
+Cobb: "Gateway" wording is problematic becuase of a namespace collision with a prominent  subprojct of a subproject of XSEDE <https://www.xsede.org/gateways-overview>
+
+Timeline: Monday - Make weblink active.
+Community email: hold for press release.
+Pre-announcement to team@dataone.org can happen next week.  Ask not to tweet etc.  Include embargo date.  Email team asking not to broadcast following update.
+Press release: 
+
+We need a blrb from a prominent person commenting on DataONE release. Who? suggestions?
+Tony Hey? - I think Tony is a good idea
+head of the US House  Science & Tech committee?? (Raplh Hall. R- Texas, ) Senate? (Jay Rockefeller D- WV)
+Jose-Marie Griffiths, the former NSB member (and now NSB consultant) who led the NSB data report? (Not sure if she can do it, conflict of interest?)
+
+timing: must preced DUG? or wait until immediately preceeding Bill's NSB presentation (or at the same time as NSB meeting)  Bill favors post DUG.  Amber to raise with Bill / rebecca early next week.
+
+
+5) Around the room
+
+Bill: Meeting with NSF on Monday morning so would like any highlights to be sent to him for incporporation into the discussion.  In particular, CI update and also a graphic depicting how we will address the long tail of data (orphaned spreadsheets) - DataUp and ONEShare.
+
+Bruce: There was an upgrade this week of the VMWare infrastructure that hosts the nodes at ORC.  The communication with UT OIT wasn't great, in that we didn't learn about this until after it had happened.  I'm working on improving that communication.  So far, there aren't any problems with the upgrade and it will help with enabling some load balancing of the iSCSI disks.  To the best of my knowledge, there wasn't any downtime of the ORC nodes themselves during this process.  Also, I (finally) got some content to Amber on Finding Data, Contributing Data, and did some work on stuff Heather and Stacy did on Cite Date (and Cite DataONE -- which is relevant to the licensing discussion above).  
+
+Steph: No update. Same stuff as last week - prep for ESA, etc
+
+Bob Cook:  
+Thomson Reuters is announcing a Data Citation Index at the American Library Association Conference next week.  This index, which is analogous to an author’s publication index, will provide expanded measurement of researcher, institutional, and data center research output and assessment. Great news that will encourage researchers to publish data!
+
+Carol: Am finishing up draft of a potential EAGER proposal to do query mining and analysis of data user's needs and the queries they pose to ORNL DAAC and DataONE. Bob Cook, Giri, and Bruce have been involved, as well as me and Suzie and Peiling Wang on our faculty, who is a query mining research expert.  If not ok for EAGER, we'll try to find another place to submit. Also, the UT Office of Research is featuring our involvement with DataONE and collaboration with ORNL on DataONE in the fall issue of their research magazine "Quest."
+Final draft of baseline assessment of academic libraries has been submitted to ACRL, with planned publication by them as a white paper end of summer.
+
+Bertram: Productive 1.5 days ProvWG meeting at NCEAS/UCSB just prior to Intl. Provenance and Annotation Workshop (IPAW) http://ipaw2012.bren.ucsb.edu/index.php/Program 
+Main outcomes: moving forward on a number of fronts:
+- D-OPM model revisions --> adding VisTrails specifics (David Koop, Fernando Chirigati)
+- provenance enabling R (with Karthik Ram)
+- climate modeling use case(w/ Yaxing Wei, ORNL) 
+- summer project: querying provenance tool (using PosgreSQL @ UC Davis, possible SPARQL as well by UK folks)
+-> will use list of "benchmark queries" for provenance
+- receiving new provenance traces from Ilkay Altintas (SDSC)
+- exploring special issue on Provenance and Workflows (out this fall!?)
+-- would include contributions of DataONE/ProvWG members and DataONE Model of Provenance AND outside contributions. Possible venues:
+(i) FGCS (good topical venue), but some might not want to publish with Elsevier!?
+(ii) Open Access publisher (PLoS?) --> funding support for authors?
+- Also: many good interactions with IPAW participants 
+--> interest in DataONE/ProvWG activities (additional use cases, traces, etc.)
+[[Aside: Is Rebecca back Monday/Tuesday? Need teleconference start-up for WG call..]]
+
+Cobb: Nothing additional to add
+
+Kunze: CDL team is working to bring up CDL MN and load the data; also in home stretch on first release of DataUp (formerly known as DCXL) and ONEShare MN
+
+Trisha: I am on vacation starting next tuesday, June 26-July 8th!!!!
+
+Matt: Software Institute planning proposal is looking like it will be funded, and will involve a major role for DataONE.   Bill, Trisha and I will be planning the community activities to design the institute.  Contact me for more details.
+
+

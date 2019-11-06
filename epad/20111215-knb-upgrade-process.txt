@@ -1,0 +1,130 @@
+#persist
+
+Metacat upgrade strategy
+===================
+
+Items needed to be upgraded
+------------------------------------------
+1. Identifier upgrade
+2. Generate access polidy
+3. Generate replication policy
+4. Generate system metadata
+5. Generate ORE maps
+
+Identifier upgrade
+-------------------------
+In general, identifier upgrades happen automatically, and are the joined docid plus rev strings for existing content.  This guarantees uniqueness, and provides a direct correspondence to existing local identifiers.  However, some content may also get DOIs.  How and to whom do we assign DOIs?
+
+Existing content
+    a. Local content (home server = 0)
+    b. Replicated content
+        b1. LTER
+        b2. SanParks
+        b3. PISCO
+        b4. Brazil
+        b5.GBIF
+        b6. Palmyra
+        b7. ESA
+    c. Non-replicating, external metacat servers
+        c1. Taiwan
+        c2. etc.
+
+New content
+    a. DataONE API
+    b. Metacat API
+
+ORE Generation
+------------------------
+We want to generate package descriptions for EML-described data so that the existing EML-sense of a package is maintained in DataONE.  The strategy for this will differ along two axes -- whether the EML is local or replicated, and whether the data is stored in metacat or just referenced via URI.  We also need a strategy for how to handle new content after the upgrade occurs.  See discussion here:
+   http://bugzilla.ecoinformatics.org/show_bug.cgi?id=5522
+
+When to do this upgrade?  1) At upgrade to 2.0.0, or 2) When D1 MN status is turned on?
+   -- Decision: (2) create flag in metacat config, only do ORE gen when metacat is a MN
+   -- as a CN: never generate anything (need a flag for acting as a CN? existing node type field?) (need a CN-side check that new nodes don't register as new CNs)
+   
+Data stored in Metacat (ecogrid URI)
+   -- yes
+Data referenced via other URL
+-- Yes, download & save object if 1) resolvable, 2) matches type
+-- Otherwise, just include URL in ORE map
+
+Existing content
+    a. Local content (home server = 0)
+        -- Decision: generate ORE (assuming conditions above)
+    b. Replicated content
+        b1. LTER (to be MN)
+        b2. SanParks (to be MN)
+        b3. PISCO
+        b4. Brazil
+        b5. GBIF
+            metacatdev.gbif.org/knb/servlet/replication, vs. OAIPMH
+        b6. Palmyra
+        b7. ESA
+        b8. iEcolab (Spain)
+    c. Non-replicating, external metacat servers
+        c1. Taiwan
+        c2. etc.
+      
+New content
+    a. DataONE API
+        -- Decision: do nothing
+    b. Metacat API
+        -- Generate ORE, iff the metacat instance has D1 turned on
+
+Sync seq
+   1. KNB home content
+   2. LTER home content
+   3. SanParks Home content
+   4. KNB replicated content
+       (any OREs that already exist don't get generated for existing MNs)
+       (for other KNB rep nordes, generate ORE maps with KNB as authoritative)
+   5. LTER replicated content
+
+Converting a node from KNB to D1
+--------------------------------------------------
+0. Generate ORE (for all content that doesn't already have it) and sync all KNB content
+1. Turn off LTER knb rep
+2. Register LTER as MN, sync is off
+    2a. (LTER avoid gen of ORE for any for which that graph exists)
+3. On KNB, change Auth MN to LTER for all LTER replicas and ORE maps
+4. Turn on LTER sync
+    -- when CN discovers that an object is a replica, CN triggers sysmetaChanged event at LTER
+
+Generating Replication policies
+---------------------------------------------
+
+Updating access policies
+------------------------------------
+Regarding RightsHolder and AuthoritativeMN, see:
+  http://bugzilla.ecoinformatics.org/show_bug.cgi?id=5523
+  
+Checking if data downloaded is legit
+-----------------------------------------------------
+                                switch (eml-type):
+                                  case text/plain:
+                                    if (isText() && !isHTML()) then archive()
+                                  case text/csv: (or other delimited types)
+                                    if (isText() and isValidCSV()) then archive()
+                                  case text/html:
+                                          if (isHTML()) then archive()
+                                  case application/excel or application/msaccess:
+                                        if (isBinary()) then archive()
+                                  case image/*:
+                                    if (isValidImageFormat()) then archive()  (maybe just isBinary()?)
+                                   ...
+                                  case netCDF:
+                                    if (isNetCDF()) then archive()
+                                  case text/pdf:
+                                    
+                                  ...
+                                  default:
+                                    break;
+
+         alternate
+             if (text/html && isHTML()) then archive;
+             if (!text/html && !isHTML() then archive;
+             
+             
+
+
+

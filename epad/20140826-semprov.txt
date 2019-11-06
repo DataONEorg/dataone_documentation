@@ -1,0 +1,89 @@
+Semantics and Provenance Weekly meeting
+=================================
+
+Date: 2014-08-26
+Participants: Matt, Bob, Paolo, Lauren, Margaret, Paolo, Chris, Dave, Yaxing, Bertram, Mark, Xixi,
+Deborah on epad only
+Ben in Brazil
+Christopher (goto meeting)
+
+GotoMeeting: https://global.gotomeeting.com/meeting/join/398996101
+
+Agenda and notes
+---------------------------
+1. Agenda review, Standup format, guidelines, and meeting schedule
+ * Change to Mondays at 12 pacific so DM can join
+   * Shall we meet on Labor Day, Septmeber 1 at 12 noon Pacific??
+ * Doodle link: http://doodle.com/tez24p3pet4ug3rt
+ * Shared repositories in SVN and Git
+   * I need everyone'sgithub username
+     * mbjones, mobb, csjx, PaoloMissier, vdave, yaxingwei, XixiLuo, ludaesch 
+   * If you don't have an svn account for dataone yet, let me know
+ * SVN Repository: https://repository.dataone.org/software/cicore/trunk/
+ * Design Repository: https://github.com/DataONEorg/sem-prov-design
+ * New github repos in DataONEorg as needed
+ * Tickets in redmine for everything
+   * which redmine (project)?
+   * why not github issues if using github for collaboration?
+     * Good question; Centralization;
+     * TODO: Dave and Matt will research this some more
+ * email list for this group? (sem-prov@dataone.org?)
+   * In progress, Matt will announce; should we use developers@dataone.org too?
+   * make it open subscription?
+   * alternative: use github issues for discussion
+   * Decision: try using github issues, then backup to a mailing list (public sem-prov@dataone.org)
+     * TODO: matt to send email with instructions
+ * Also use github Wiki as needed
+ * Export data out of GoogleDocs and check into the repository
+ * Create wiki linked list of etherpads and Google Docs
+2. Standup around the room (blockers, progress, in 60 seconds or less; write details in here, reference tickets/stories)
+ * Lauren
+   * Progress: some prov in local metacat, indexed and searchable
+   * Next: UI for discovery of derived data sets
+   * Working on: Prov use cases
+   * Blockers: None
+ * Chris
+   * Progress: use cases for prov; 4 simple use cases; looking for feedback, additional named use cases; review of triple stores
+   * Blockers: none
+ * Xixi
+   * Progress: finished MSTMIP 45 variable mapping
+   * https://docs.google.com/document/d/1yUCvniGeGeb--WtAy0Y7r8lFq-HpDNH1ZtzLIr8gveQ/edit#heading=h.pkd3iwoffcut
+   * Blockers: needs feedback on whether the mappings are correct, and which will be used in the future; in particular Christopher S.
+ * Ben: Brazil
+ * Matt:
+   * Next: Codefest provenance and discussions
+ * Bertram:
+   * Progress: some more applicants for postdoc; figuring out whether intl. candidates will be viable
+   * Question: can we only use postdocs or contract someone (e.g. from NCSA?)
+     * Matt: should be discussed with LT and Bill and Rebecca
+ * Mark:
+   * Xixi's list; has issues to be reviewed-e.g. references undocumented measurements such as NEE comprised of "Disturbance_Emissions_(CO2)" (Chris or Yaxing to clarify?)
+   * Progress: possible UIUC master's student for semantics work (paid at UCSB but Bertram as local faculty sponsor?  Student lives near Santa Barbara...)
+ * Yaxing
+   * Progress: work on  'query' to drive semantics development via a use case
+     * SHowed slides on how semantics might clarify the MSTMIP simulations and data
+ * Margaret
+   * Progress: looking for primary production data from LTER
+
+3. Weekly Discussion: Provenance initial use cases
+ * https://docs.google.com/a/nceas.ucsb.edu/document/d/1I0RFtyDo_Pa2tYHPP210Rcxuf62M7M3CCteozXRs6Xs/edit?pli=1#
+ * Please provide feedback, will raise at next meeting
+4. Agenda for the Semantics and Provenance groups at the AHM (Sept 30 - Oct 2, ABQ)
+- aside: when does the meeting end on Thursday? 
+ * TODO: Matt, Dave, Mark, Bertram, Deborah, Paolo to develop candidate agenda
+ * Should MSTMIP group come to AHM? Or just call in?
+ * Currently: 2 hours on Wednesday for Sem/Prov?
+5. From Paolo, re: Phase I provenance code base (informational item)
+ * Victor's (latest) code 
+   * is here:  https://github.com/victorcuevasv?tab=repositories  (ignore the ICSOC paper...)
+   * and here: https://bitbucket.org/provwg/provex/src  which as you can see does not come with a README file :-(
+   * cc: Saumen as I suspect he might know something about items like ProPub*
+   * this should cover the 2012 NSF RSV demo code and beyond.
+ * Tianhong is still working on his noWorkflow provenance analysis code (despite his internship having finished) and promised to deliver it when ready.
+6. Next meeting: Monday Sept 8, 2014 (skip labor day)
+7.  Adjourn
+
+
+
+
+

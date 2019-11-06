@@ -1,0 +1,166 @@
+#persist
+
+Use of DataONE Java Client Library
+==========================
+
+In order to use the DataONE Java Client Library in a project, you should include the jar file with all dependencies.  The easiest manner to do this is by building a maven project and including the following dependency:
+
+        <dependency>
+            <groupId>org.dataone</groupId>
+            <artifactId>d1_libclient_java</artifactId>
+            <version>${d1_libclient_version}</version>
+            <type>jar</type>
+        </dependency>
+
+Where ${d1_libclient_version} is the latest released version.
+
+Make certain that you have include the DataONE maven repository into your maven repository settings:
+
+        <repository>
+            <id>dataone.org</id>
+            <url>http://dev-testing.dataone.org/maven</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+DataONE Property Settings
+----------------------------------
+
+DataONE has implemented the class `Settings <http://dev-testing.dataone.org:8080/hudson/job/d1_common_java/ws/d1_common_java/target/site/apidocs/org/dataone/configuration/Settings.html>`_ to standardize how property files are accessed from our java packages.  d1_libclient uses this class to get configurations related to controling aspects of ssl (client truststore) and http (timeouts), as well as providing a "bootstrap" CN base URL.
+
+The project source contains default/standard property files that the Settings class loads, under the package org.dataone.configuration.  Depending on how you package your application, these files from libclient might be accessible, or might be overlooked or overwritten.  Shade jars in particular overwrite files with the same path when combining packages. 
+
+There are two mechanism you may use to set properties for the client in your project.  The first and preferred way is by creating a configuration with associated property files, and the second is with overriding calls directly from your code.   The latter method is useful for debugging, but is discouraged for normal usage - as it results in decentralized configuration, and possible unexpected behavior if the property is set after the class using the property loads it.
+
+To use the first method, you will need to make certain that you have included a config.xml configuration file and d1client.properties file in your project under the package org.dataone.configuration:
+config.xml:
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Apache Commons Configuration -->
+<configuration>
+        <properties fileName="d1client.properties"/>
+</configuration>
+
+d1client.properties:
+
+certificate.truststore.useDefault=true
+
+If using the second method, ensure that the class org.dataone.configuration.Settings has been imported into the class where the method call has been made.
+
+import org.dataone.configuration.Settings;
+.
+.
+.
+Settings.getConfiguration().setProperty("certificate.truststore.useDefault",true);
+
+
+Use of CILogon and Client Certificates
+-----------------------------------------------
+
+ A user must login to the CILogon service  and retrieve a certificate.  For the testing environment, use the endpoint https://test.cilogon.org/?skin=DataONE .  For production, use the endpont https://cilogon.org/?skin=DataONE.  Obtaining the certificate is a manual step that for now the user must do through their browser.  
+ 
+Their certificate will be valid for 18 hours. It will be downloaded to a standard location (/tmp), and libclient knows to find it there.  If you wish to maintain user certificates elsewhere, the certificate is still valid, but libclient's `CertificateManager <http://dev-testing.dataone.org:8080/hudson/job/d1_libclient_java/ws/d1_libclient_java/target/site/apidocs/org/dataone/client/auth/CertificateManager.html>`_ will need to be told the new location, via setLocation().  ( It is useful to do this if you plan to reboot your machine and wish to retain the copy of the certificate within the 18 hour window for which it is valid. )
+ 
+SSL Validation requirements
+------------------------------------
+
+SSL uses a two-way handshake where both client and service need to trust each other's certificate for the connction to be made.  DataONE services trust CILogon issued certificates, and for certain cases (MN-CN interaction) DataONE issued certificates.  In general, DataONE nodes will trust anonymous clients (no client certificate), allowing the connection, but will throw exceptions with expired or untrusted certificates.  d1_libclient_java calls will fail with exception message "peer not authenticated" if it doesn't trust the service's certificate.
+
+Java relies on Java Security System to mediate the SSL connection.  Most all of the registered DataONE servers d1_libclient_java will interact with (Coordinating and Member Nodes) use certificates signed by a publicly recognized certificate authority that is already known by the Java Security System.  However, some Member Nodes do not have these, and in these instances DataONE acts as the CA, and so your installation will need to add the DataONE public key into the local Java Security Java Key Store. The Public Keys can be added to the Java Key Store by way of the keytool.
+
+The locations for these public keys are as follows:
+
+Dev and Testing
+--------------------
+If you are testing out a client, then you should retrieve the certificates for testing:
+
+https://repository.dataone.org/software/tools/trunk/ca/DataONETestCAChain.crt
+
+and
+
+https://repository.dataone.org/software/cicore/trunk/cn-buildout/dataone-cn-os-core/usr/share/dataone-cn-os-core/debian/_.test.dataone.org.crt
+
+
+You will need to determine where the Java Key Store is located for your installation. It should be named cacerts in the jre/lib/security/ subdirectory of your java install. For instance, /usr/lib/jvm/java-6-sun/jre/lib/security/cacerts
+
+Hence to install the two above certificates, issue this command from the directory where the downloaded certs are located:
+
+keytool -import -noprompt -alias DataONETestCAChain -file DataONETestCAChain.crt -keystore /usr/lib/jvm/java-6-sun/jre/lib/security/cacerts -storepass changeit
+
+keytool -import -noprompt -alias DataONEStarTestCert -file *.test.dataone.org.crt -keystore /usr/lib/jvm/java-6-sun/jre/lib/security/cacerts -storepass changeit
+
+(of course the storepass 'changeit' is the default java password, you may change that password for a more secure system)
+
+Production
+--------------
+Should you be using the tools against production servers, then retrieve the following certificates:
+
+https://repository.dataone.org/software/tools/trunk/ca/DataONECAChain.crt
+
+and
+
+https://repository.dataone.org/software/cicore/trunk/cn-buildout/dataone-cn-os-core/usr/share/dataone-cn-os-core/debian/_.dataone.org.crt
+
+using the commands:
+keytool -import -noprompt -alias DataONECAChain -file DataONECAChain.crt -keystore /usr/lib/jvm/java-6-sun/jre/lib/security/cacerts -storepass changeit
+
+keytool -import -noprompt -alias DataONEStarCert -file _.dataone.org.crt -keystore /usr/lib/jvm/java-6-sun/jre/lib/security/cacerts -storepass changeit
+
+
+Client Properties
+---------------------
+
+If after setting up the above certificates, you are receiving 'javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated' Exceptions, then you can test your client with your issued client certificate by temporarily disabling the client trust manager.
+
+Here's how:
+put this into your d1Client.properties file:
+certificate.truststore.useDefault=false
+
+or in your code, as one of the first actions taken by the application, as follows:
+
+// TODO: remove me after debugging!!!
+Settings.getConfiguration().setProperty("certificate.truststore.useDefault",false);
+
+DataONE strongly recommends not bypassing client trust management except for troubleshooting, as you will leave your application users open to various exploits.  It is the rule more than the exception that a service using https (ssl) has to authenticate itself to the client.
+
+
+When communicating with DataONE services you will need to be sending the appropriately signed certificate.  By default, d1_lib_client will inspect /tmp directory for a certificate downloaded by cilogon. However, the directory maybe set using a configuration setting:
+
+D1Client.certificate.directory=/home/waltz/d1client/certificate
+
+Other Important properties to set
+
+D1Client.CN_URL defines which environment you will be using:
+
+D1Client.CN_URL=https://cn-dev.dataone.org/cn
+
+D1Client.useLocalCache will inform the client whether or not a get operation should try to pull an object from a local filesystem cache or go to a server for the item pulled from a local cache or pulled from a server
+
+D1Client.useLocalCache=false
+
+Servers may return slowly to your request. The default timeout period is 30 seconds. Timeouts may be increased by the following properties, all in milliseconds:
+D1Client.D1Node.get.timeout=60000                                      // default client wide timeout
+
+D1Client.D1Node.listObjects.timeout=60000                        // timeout for listObjects method on MemberNodes and Coordinating Nodes
+D1Client.D1Node.getLogRecords.timeout=60000                 // timeout for getLogRecords method on MemberNodes and Coordinating Nodes
+D1Client.D1Node.get.timeout=60000                                     // timeout for get method on MemberNodes and Coordinating Nodes
+D1Client.D1Node.getSystemMetadata.timeout=60000        // timeout for getSystemMetadata method on MemberNodes and Coordinating Nodes
+
+D1Client.CNode.replication.timeout=60000                          // timeout for all replication methods on Coordinating Nodes
+D1Client.CNode.create.timeout=60000                                 // timeout for create method on Coordinating Nodes
+D1Client.CNode.registerSystemMetadata.timeout=60000  // timeout for registerSystemMetadata method on Coordinating Nodes
+D1Client.CNode.search.timeout=60000                               // timeout for search method on Coordinating Nodes
+
+ D1Client.MNode.create.timeout=60000                              // timeout for create method on Member Nodes
+ D1Client.MNode.update.timeout=60000                             // timeout for update method on Member Nodes
+ D1Client.MNode.replicate.timeout=60000                          // timeout for replicate method on Member Nodes
+ D1Client.MNode.getReplica.timeout=60000                      // timeout for getReplica method on Member Nodes
+ 
+Miscellaneous settings:
+CNode.nodemap.cache.refresh.interval.seconds
+
+

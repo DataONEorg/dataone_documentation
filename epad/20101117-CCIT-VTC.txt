@@ -1,0 +1,201 @@
+These notes have been comited to subversion at https://repository.dataone.org/documents/Committees/CCIT/20101117_CCIT_VTC.txt
+
+DataONE Developer Call - 2010-11-17
+===================================
+
+:Attendees:
+  Giri Palanisamy, Rebecca Koskela, Robert Waltz, Jeff Horsburgh, Rob Nahf, Chad Berkley, Mark Servilla, Bruce Wilson, Bob Sandusky, Paul Allen, Matt Jones, Ryan Scherle, Dave Vieglais
+
+:Actions:
+
+  - (Laura) Ensure that the current version of DataONE logos, graphics, etc are available in subversion
+  - (Matt) Check on availability of University resoruces for CCIT meeting for July 2011
+  - (Everyone) Make note of any additional attendees beyond CCIT + developers that should be invited to the CCIT meeting. This includes potential participants from Data Conservancy
+  - (Everyone) Review security plan document and either edit source directly or send comments and edits to Bruce for inclusion in the next version of the document
+  - (Bruce) Prepare revised security plan document, deadline towards end of December 2010.
+  - (Dave) Draft outline of Member Node document in preparation for DUG and assign writing tasks
+  - (Dave) Update the ITK section in the architecture docs, developing towards a stand-alone document
+  - (Matt) Prepare request for bids for the storage hardware for UCSB
+  - (Bruce) Prepare request for bids for the storage hardware for ORC
+  - (Dave) Prepare request for bids for the storage hardware for UNM
+  - (Dave) Review the hydroplex dev site and 
+  - (Trisha, Amber, Rebecca, Dave) Prepare an index document that contains links to the various docs for the DUG and store in subversion and link to it from plone.
+  - (Roger) Prepare brief document describing installation of GMN as a standalone member node service
+  - (Matt) Update Metacat docs with DataONE specific changes
+  - (Dave) Ensure these actions are recorded as tasks in Redmine
+
+
+Agenda
+------
+
+1. Dates for next CCIT Meeting: 19 - 21 July, 2011 with travel on Monday and Friday.
+- any working groups to synchronize with
+- Data Conservancy and/or other groups to invite
+
+----
+2. Initiate review and update of the "Security plan" document for February
+
+Please take 10 minutes to re-familiarize yourself with the DataONE Cybersecurity Plan which forms Appendix C of the DataONE Project Management Plan. For your convenience, the excised appendix is available at:
+
+http://mule1.dataone.org/OperationDocs/security-plan.html
+
+Key milestones:
+
+* draft a charter and get it approved as a project document
+* Develop DataONE security policies for coordinating node, member nodes, and data collection providers as part of their DataONE Partnership Agreements
+* Develop DataONE acceptable use policy and appropriate user access acknowledgement format
+* Draft the initial DataONE cybersecurity plan.
+* Plan for annual assessment and revision to include, for example, a DataONE wide security incident response contact list and a DataONE wide security incident playbook
+
+Year 2 milestones:
+
+- include implementation of these policies
+- incorporate security plans into partnership agreements
+- include authentication and authorization strategies / infrastructure descriptions
+
+Actions:
+
+- Need to include security plans in the Member Node partnership agreements
+  - Keep Amber and Trisha informed of this
+
+- Bruce will lead the revision process
+
+
+----
+
+
+3. Preparations for the DUG meeting, 9-10 December.
+
+Draft outlines for:
+
+* Member Node documentation (Overview for people that may or may not be technical, but interested in deploying a member node)
+
+See http://epad.dataone.org/you-want-to-be-a-member-node for some content.
+
+Overview
+ * What is Dataone
+ * What is a member node
+ * Why be a member node
+ * How much does it cost?
+ * What happens if I need leave?
+ * What the heck is Shibboleth?
+ * What are the options and plans for installing a Member Node? (Matt)
+   * Installing GMN vs. installing metacat vs. implementing my own interfaces
+   * Other node types that may become available (Dryad, Fedora, Merritt)
+
+ * How do dataONE service interface alter / affect my current workflow for data and metadata ingestion?
+
+Operations
+ * Types of content
+ * Security (Mark)
+ * Capacity
+ * Connectivity
+ * Testing
+ * Data model and Metadata standards supported by DataONE
+ * 
+Service agreements
+
+Implementation Docs
+ * Metacat
+ * GMN
+
+APIs
+ * Implementation guidelines
+ * Methods signatures
+ * REST interfaces
+ * Serialization
+
+Actions:
+- Put all documents into a single location where interested parties can review content, prefer subversion
+- Generate an index of these documents, place the index in the DUG meetings folder.
+
+-----
+
+* Investigator toolkit documentation
+  -- expansion of: http://mule1.dataone.org/ArchitectureDocs/itk-overview.html
+Overview
+ * About DataONE
+ * Basic client interactions
+ * Higher leval operations
+Tools Available
+ * Comand line
+ * R
+ * ...
+APIs
+ * Implementation guidelines
+ * Method signatures
+ * REST interfaces
+ * Serialization
+ * Python library documentation
+ * Java library documentation
+
+
+List of MN relevant DUG documents from Trisha:
+
+
+1.  Process to add member node (now a ppt).  This is something that describes the workflow for adding a MN
+Responsible: Amber or Rebecca
+Status: turn ppt slide into a text document, but add an illustration if
+necessary
+
+2.  2-page on the document on Member nodes.  This is an overview document on what it means to be a MN
+Responsible: Mike Frame
+Status: in process - work with Allison, Rama, and Lisa Zolly to complete. Needs to have DataONE template.
+
+3.  Summary description - slide 
+Responsible: Bill
+Status: complete, but needs to have DataONE template
+
+4.  DataONE Member Node Registration - part of the application package 
+Responsible: Bob
+Status: complete, but needs to have DataONE template.
+
+5.  Sample registration 
+Responsible: Bob
+Status: complete, but needs to have DataONE template.
+
+6.  Service Guidelines 
+Responsible: Mike and Trisha
+Status: in process, but needs to have DataONE template.
+
+7.  Strategic criteria for standing up a member node (this came out of
+our Oakland meeting)
+Responsible: Trisha 
+Status: complete, but needs to be woven into the 2-pager
+
+8.  Member node technical documentation ... 
+Responsible: Bob, Mike, and Dave 
+Status: not yet started
+
+
+----
+
+4. Any Other Business
+
+Hardware purchase:
+
+- General comment that hardware purchased should ideally be equivalent at each institution to minimize compatibility issues for operation of Coordinating Node software stacks. Member node functionality may be somewhat more flexible, and may benefit from some heterogeneity in the long run (perhaps after the public software release)
+- Q. Can we get a successful bid from one institution and use that as a sole source justification for the others?
+- Go ahead with preparing request for bids from each institution. 
+
+----
+
+5. Around the room
+
+John Kunze - some resources may have become available to assist with implementation of a Merritt Member Node.
+
+Mark Servilla and Jeff Horsburgh have met with Randy Butler and Jim Basney to further discuss interaction with CILogon; requirements for a DataONE branded CILogon interface were acquired; a better understanding of how CILogon works is now documented in a UML sequence diagram; a plan is now forming to develop both a DataONE client and authentication service prototype for testing the CILogon interface and the generated certificate; a report and the sequence diagram will be forth coming. https://docs.google.com/Doc?docid=0AfmNJnP7eHevZGNxcHJzYjNfMTA1c21iYzhjaGM&hl=en&authkey=CJCVr-cB
+
+Sandusky & Allen working on final draft of animation script.
+
+Matt Jones: Continued discussions with UCSB about renovations of North Hall data center for placement of CN equipment, and shorter-term solutions for the interim until North Hall is ready.
+
+Jeff Horsburgh:  I have a student named Ravi that is working on exploring opportunities for creating a DataONE member node out of a CUAHSI HIS HydroServer.  THe main piece he is working on now is figuring out how to map the DataONE member node CRUD API to the existing web service APIs on HydroServer.  This will also require addressing how to handle streaming time series data. hydroserver.codeplex.com
+
+Paul Allen: Steve Kelling is promoting the possibility to Avian Knowlege Network stakeholders of adding the AKN as  a D1 member node.
+
+Chad: Need to work out hudson problems.  It's not adding dependencies correctly
+
+6. Close. Next call will be Wednesday, 1 December, 2010, 16:00ET.
+
+

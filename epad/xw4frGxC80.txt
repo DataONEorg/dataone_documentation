@@ -1,0 +1,55 @@
+From: Scientific workflow management and the Kepler system
+
+knowledge discovery workflow
+wrapper - visualisation of search results
+actor - independent components which communicate with each other only through the channels indicated
+directoy - overall executor of the workflow
+composite actor - collapses details into an abstract component
+
+automative/reengineering workflow
+
+high-performance data/computing workflow
+
+Requirements:
+• Access
+• Service composition
+• Scalability
+• Detached execution
+• Reliability
+• User-interaction
+• Smart re-runs
+• Smart semantic links
+• Data provenance
+• Intuitive GUI
+• Workflow granularities
+
+§
+
+
+Worth keeping in  mind:
+   * static vs. dynamic aspects
+   * text vs. visual
+   * provenance
+   * interconnects
+   * access
+   * manipulation
+   * sharing
+   * reuse
+   * evolution
+   * recursion
+   * lifecycle
+   * human integration?
+    
+What I want to look at more closely:
+ * How do we analyse a flow? Do we look at the nature of the information being passed through it? viz, is it data that has been gathered or is it actual scripts? Is it static, or is it dynamic data? how does the content determine the nature of the workflow?
+
+
+. Common elements or stages in scientific workflows are acquisition, integration, reduction, visualization, and publication
+
+Other important functions include support for workflow execution monitoring, for recording and querying provenance information, for workflow optimization (e.g., exploiting dataflow and concurrency information for parallel execution), and for fault-tolerant execution. 
+One can distinguish data provenance, i.e., the processing history of data, and provenance information describing the workflow evolution, i.e., the history of changes of a workflow definition and the parameter settings used for a particular workflow instance.
+
+Data provenance is an account of the derivation of a piece of data in a dataset that is typically the result of a database operation on an input database. There are two approaches for computing data provenance [2]: annotation-based versus non annotation-based approaches. In annotation-based approaches, provenance is captured by propagating annotations (i.e., extra information) from input to output along database transformations. Hence, the provenance of an output data can typically be determined by analyzing the associated annotations. In contrast, non annotation-based approaches do not carry along extra information. Instead, the provenance of an output data is in the determined by analyzing the database transformation, as well as the input and output databases.
+
+Workflow provenance refers to the record of the history of the derivation of some dataset in a scientific workflow. The amount of information recorded for workflow provenance varies, depending on application needs. For example, workflow provenance of a scientific result may include details about the type and model of external devices used, as well as the versions of softwares used for deriving the result.
+

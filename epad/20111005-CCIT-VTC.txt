@@ -1,0 +1,137 @@
+Developers Call - 20111005
+==========================
+
+:Attendees: Rob, Matt, Chris, Bob S., Ryan, Nick,  Bruce, John K., Robert, Dave
+
+Conference URL: https://ornl.webex.com/ornl/j.php?ED=182582897&UID=499263062&PW=NNzgyNWZjMThl&RT=MiMxMQ%3D%3D
+
+Agenda
+------
+
+1. Quick CI update and summary from Implementors Workshop held last week in Santa Barbara
+
+- CNs. Development CNs have sync (ok, bug fixes almost in place), replication working (almost). 
+
+Indexing currently crude but functional. Service interfaces operational.
+
+- MNs. Metacat, GMN good shape. Web Tester available at:
+
+  http://mncheck.test.dataone.org:8080/MNWebTester
+
+  Additional tests and capabilities are being progressively added as they
+  become available. Tests are shared with the integration tests of the
+  continuous build environment.
+  
+  - need to remove the example URLs form the test page
+
+  - Merrit MN - some issues getting the datasets exposed. Will be running tests to verify operations.
+
+- Clients
+
+  Command line client in Python works OK, though is definitely not an end-user
+  tool (good for developers).
+  
+  R client reads fine. Auth pieces in place, need to add support for resource maps. Add convenience methods to lib_client for getting the documented and documentedBy targets.
+
+- Hardware - general target of about 3-4 weeks to start deploying CNs
+  - UCSB about 70% installed
+  - UNM - 
+  - ORNL - vmware licenses available
+     - Need netid for Dave, Nick, Matt for accessing console
+  - Nick B or Bruce will draft doc describing the storage config
+
+
+2. Preparations for the AHM
+
+Website content. Some documents need to be written and made available for
+  addition to the web site (www.dataone.org).
+Bruce: I'll take the lead on this.  My plan is to put the files in https://repository.dataone.org/documents/Projects/public_website/documents/2011-10-redesign-ccit-content/ as they get developed.  I'll write in HTML, but without any real styling, which will get handled by the CSS in the Drupal site.  
+  
+Data>Citing Data and DataONE
+- Citation information for data derived from DataONE searches
+
+Data>Contribute Data
+- Description of how to contribute data to DataONE.  May also choose to link to some best practices.
+
+Data>Find Data
+- Landing page with information about the ONEMercury search software.  This will provide info in advance of public release and a landing page when coming back form the CN ONEMercury page.  Clicking on ONEMercury takes you to the mirror webpage hosted on the CNs being developed by Giri.  BEW: Some revision proposed here.  ONEMercury is a search interface and the one we'll have at this point.  Amber and I proposed to rename this as Find data, and would be a landing page with information about how to find data.
+
+Data>Workflow Integration
+- ?? Link also to pertinent Software Tools and Best Practices?  BEW: This should describe the ways that DataONE supports the scientific process and the use of a workflow to enable scientific reproducibility.  It goes beyond, but does include links to workflow software.
+
+Products>Investigator Toolkit
+Page about what the Toolkit is and with links to the toolkit elements.  
+
+
+Tuesday afternoon "hands on" activities. Goals were to have ONEMercury
+  (mercury on CNs), Zotero / Mendeley (using coins tags exposed by Mercury
+  UI), R-plugin, and ONEDrive (the FUSE + Dokan file system driver).
+  
+  Status of these:
+  
+  - Mercury: Available as pilot, disconnected from the CNs. Issues are: 
+
+    - Code provided for Mercury is not a complete project project and several
+      dependencies need to be updated.
+
+    - SOLR index is currently presenting an incomplete list of fields for
+      Mercury. Updates are in progress, with rough values fairly straight
+      forward to make available
+
+    - Integration with CN services is incomplete. The changes necessary should
+      be fairly straight forward and can be completed quickly once a stable
+      build environment is available
+
+  - Zotero / Mendeley: Dependent on fields from the SOLR index. These are
+    being populated, so tags can be generated once the Mercury UI is available
+    and operational on the CNs. Two fallbacks - a) rely on content in the
+    pilot catalog for demonstrations. b) Setup coins tags on the testing
+    search interface.
+    
+    Lead: Perhaps Giri? + (Miriam, 
+    
+
+    Merge this with Mercury
+
+  - R: Read OK, write status - being worked on. Demonstration will likely be
+    quite simple (read and write data - perhaps data packages as well if
+    resource map parsing functionality is available) and command line
+    oriented. 
+
+    Read should be available, perhaps have the packaging available.
+    Lead: Matt for half, Chris for the other half, Bob S for observations
+
+
+  - ONEDrive: In the process of being updated to align with changes to the
+    python common and client lib. Basic functionality will be available, as
+    viewed at the review way back in February. Dokan version for Windows
+    should be available. Data package presentation is dependent on OAI-ORE
+    resource map documents being available for all data packages, otherwise
+    just individual granules can be shown.
+
+    Lead: Dave, Ryan
+    Work to be done on representing packages.
+    Important to show interaction with desktop apps.
+
+
+  - CILogon work flow should replace the Zotero / mendeley part. This would be a nice hands-on session since all that is required is a web browser.
+    Lead: Ben, Bruce
+
+Important to have a community person involved with observations.
+
+  
+Wednesday Schedule
+
+  - Preparations for public release. Scope, date, schedule, assistance for
+    component review, testing.
+
+
+Thursday Schedule
+
+  - Major goals for 2012 - 2014:
+
+    - Improving discovery
+    - Additional MNs
+    - Data services
+    - Larger systems integrations (TG, USGS ScienceBase, etc)
+

@@ -1,0 +1,220 @@
+Members:
+
+Ryan, Mike, Mary Beth, Lisa, Rachael, Rama, Sky, Chris, Ranjeet, Ahrash
+
+Scoping for Sub-group:
+ * What should the combined group accomplish?
+ * What should the two smaller groups accomplish?
+
+Note: CCIT/developers will not be around Wednesday 1pm-3pm, possibly more
+
+TUESDAY:
+ * Review Usability Pre-Results (Tues)
+
+WEDNESDAY:
+
+ * Prioritizing results of ESIP testing (Wed morning)
+   * those that can be corrected in time for the reverse site visit
+   * those that are targets for years 4 & 5
+   * those that are targets for the next grant proposal (this is the larger information architecture thing....)
+   * those that aren't worth fixing
+ * Create/design solutions for issues uncovered at ESIP (Wed morning)
+   * Potential FAQ
+   * One Mercury
+     * Help Documentation
+     * Results
+     * Search
+   * Redmine Tickets & Process 
+
+ * What products are being assessed? Time Lines for Assessment (
+   * ONEDrive
+   * ONEmercury
+   * 
+ * Establish mechanism for followup usability testing (Wed Afternoon) 
+   * getting feedback from "real users"  (focus groups, surveys/contacts from users of ONEMercury)
+   * more detailed UI work (e.g., analysis focused on geographic searches in ONEMercury)
+
+FIG Share Review
+
+ * Semantic presentation (Wed. Afternoon) - Get someone from Semantics to do walk-through for UA Group
+
+THURSDAY:
+
+ * User interface (complete redesign); outsourcing (Thursday Morning)
+   * This needs a full process -- we may not have time to do it this week. We may only specify how DataONE should handle it over the longer term.
+   * What is not in ONE Mercury that is needed
+   * How to enable/faciliate others to develop UI
+   * What does the "new" UI need to contain (Functions, Capabilities, etc.)
+   * Other systems with which DataONE can interoperate
+ without requiring them to be Member Nodes (follow some of the DataONE API, but not necessarily available for replication or require them to re-engineer their back end system....another type of Member Node that doesn't currently exist?)
+     Does DataONE Issue call for Proposal for UI Development? or build everything in-house?
+     Existing Design may have been built with the Generic User in mind - Possible solution would be UI based on User Types or Stakeholders?
+     
+
+THURSDAY AFTERNOON:
+ * Summary Presentation/broad UA/SOCIO Group
+
+----------------------------------------------------------
+List of usability issues from DUG/ESIP
+----------------------------------------------------------
+
+DataONE.org Findings:
+
+1. Elevator Speech
+2. How to Participate. Wanted Role based definitions (individual vs institutional participation)
+3. Jargon (DataONE, Member Node, Coordinating Node, DUG, Cyberinfrastructure)
+4. What is DataONE was difficult to Understand
+5. Contact form -- needs to be obvious who this will go to (developers, administrators, webmaster, etc)
+6. Whole Presentation of DataONE - Marketing Issue, What does DataONE want to be seen as - Is it behind the scenes, What is the User Group, S&G Group issues.
+
+SEE DUG & ESIP User Findings & Recommendations
+URL:  https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/DataONE_website_feedback.docx/view 
+
+ONE Mercury Search UI:   simple | advanced
+We should consider creating static wireframes to test these interfaces before we implement changes.
+Show/Hide button for Advanced Search: doesn't show/communicate current state
+We aren't necessarily communicating that the search is on metadata, not the actual data. When we give option to "search only results with data," it may not be clear that the search is on metadata.
+Consider making "showing results as data" option post-search as a filter or ordering mechanism, rather than a pre-search filter.
+
+Remove hint for Boolean operators
+
+1. CLEAR ALL BUTTON - Several users forgot what they put in and the initial values were held and gave them results they had not anticipated. Users have to clear each section individually. Clear All button actually exists, but it is at bottom of screen as hyperlinked "Selected Query (Not Editable)", which is obtuse. 
+Recommendations:
+ * Co-locate 'clear all' next to the Search For text box.
+ * Create a clear distinction between basic search area and advanced search area. Add spacing above the Show/Hide Advanced Options button. (maybe '+/- advanced search '  link instead of Show/Hide Advanced Option button in order to save real estate)
+   * Another option is to place a tab interface between Simple & Advanced
+   * Use a toggle box of Simple vs Advanced
+   * Main page is simple search while Advanced search options become a part of filtering performed on results page
+ * Remove only results with Data, move to results page as a filter or ordering pref
+ * Remove hint for Boolean operators, add help/clear buttons below 'Search For' text box
+ * Simple Search disappears when 'advanced search'  is clicked, advanced search is pre-populated with terms entered into the simple search.
+ * Clearly present different states of search: display Advanced/Simple
+ * Mouse over help on advanced search to describe which  fields are available in the advanced search
+<<Addressed by recommendation for modified layout>>
+2. MAP UI does not wrap across the International Date Line; it's difficult to search across the entire Pacific <<urgent to be fixed; see geographic search section below>> addressed in redmine ticket
+3. Help menus: language is based on buttons and fields, not processes. How to Use it and Step by Step, Diagrams - Did not think it was useful
+Recommendations:  ticket added to redmine to capture help redesign.
+ * This needs to wait until after the interface is redesigned
+4. Advanced Search Date Search box: Date entry: the fields allows invalid dates to be entered. Rather than displaying an error, it simply gives zero results
+ * Validate entered Dates <<addressed>> addressed in redmine task
+5. Query at the top of the Page was difficult to see    added to redmine, regarding reworking query area
+6. Navigation of the geographic search feature -- creating/clearing bounding boxes, inability to change specific latitude/longitude after a bounding box is drawn (help menu doesn't explain this well) <<Addressed; see Geographic search section below>> addressed in redmine geo search ticket
+7. Search results should include map - longer-term vision/DataONE 2.0 interface
+8.Place name search doesn't work - this was removed after July testing  addressed in redmine geosearch ticket
+9. Two search buttons (top and bottom) - <<should be OK>>
+10. Searches that return only metadata -- DataSet (0) - <<addressed>>
+Recommendations:
+ * Create a link to the view full metadata record  page on the title
+ * Remove ''View Full Metadata' button.
+ * Rename Data Files button to 'Download'
+ * On Full Record Display Page, Indicate # of Data Sets by providing a 'Get Data' Box and place inside the Box the contents of the Download button dialog. Also add a 'Goto' link to include Online Distribution Fields that are referenced via link to external URLs
+addressed in redmine
+
+11. Inconsistency in use of "Data Package Files" for titles - <<addressed>>  fixed, panel being removed from detail view anyways per previous suggestion
+12. Identifiers differ between data file and metadata - longer-term solution, not addressed (this is controlled by the end user's client)
+13. Need a zip-n-ship - longer-term vision/DataONE 2.0 interface (needs to be added to the API)
+14. Cannot right click on View Full Metadata to open in a new tab (because it's a button)<<addressed>> addressed in redmine 3322
+15. Title of dataset is not clickable <<addressed>>- addressed in redmine 3322
+16. TODO: Issue of NOT Remembering what record you are on in Search Results UI - Potential Numbering Record Results - <<addressed>>  adding redmine task, but issue needs some clarification on how this should work.
+17. Stars for relevance ranking -- confusion about the meaning of a star and HOW TO USE Stars? <<addressed>>  addressed in redmine
+ * Recommendation: remove the relevance stars completely <<addressed>>
+18. Sorting by member node -- Node names are not the same as their URN - <<addressed>>
+19. Users don't know what type of content each MN contains (they generally don't care to filter/sort by MN) <<addressed>   sorting by member node name will be removed as it does not appear to be a needed option
+20. Metadata rendering -- EML vs FGDC - <<addressed>>  addressed in redmine
+Recommendations: 
+ * Make these pages more similar
+ * don't include the "EML" or "FGDC" at the top of the page 
+21. FGDC -- once you go into a tab, you cannot go back to "view all"  addressed in redmine with previous issue
+22. No way to save/print metadata from the "view full metadata" page  addressed in redmine
+Recommendation: 
+ * Print button should be present. It might be useful to have a "print view" that doesn't include the DataONE logos, menus, etc. (this could benefit from some more user testing)
+23. Metadata records -- "Return to Search" vs  "Back" buttons <<addressed>>  Issue added to redmine, needs some discussion on how will work, including multitab interaction (mutltiple browser windows in use).
+24. Search results should allow use in visualization tools (this is a feature of some MNs, but not the OneMercury) longer-term vision/DataONE 2.0
+25. Creation of bounding box -- sometimes jumps to a new area <<addressed>>  addressed in redmine ticket
+26. TODO: General screen layout <<addressed>>  Need details before adding to redmine.  possible addressed by other issues.
+27. Spelling out acronyms in the Member Node filter on search interface (e.g., Pisco MN) <<addressed>>
+28. "Only results with data" checkbox is confusing <<addressed>>
+ * Recommendation: reword this -- possibly reverse the meaning and reword to "Include results with metadata only"
+29. Add tooltips for buttons on the map <<addressed>>  addressed in redmine / switch to google maps
+30. Downloading data (links are not evident when viewing metadata page)  addressed in redmine task 3322
+ * Recommendation: All fields that may contain links to data should be grouped together near the top of the page. (See Issue 10 as well) - <<addressed>>
+31. Downloading data (descriptions of items in the download dialog box) - <<addressed>>  addressed in redmine
+ * Recommendation: Size  column should be "human readable", not just a total number of bytes
+
+Potential Pop-up Survey about Interest in DataONE & UI
+
+Eyetracking testing during Tuesday's poster session (9 testers):
+
+3 questions:
+- find information on how to participate in DataONE
+- find information about best methods for how to cite data
+- find dataset(s) on organic carbon in soils for Latin America
+
+- user expected thumbnail map image of data to be in the results
+- some degree of difficulty in finding data about "how to get involved" in DataONE. One challenge may have been that users didn't necessarily know what stakeholder group they were representing as searchers of this information.
+- issue of some information being available only through PDFs. Some didn't realize (or not quickly) that PDFs were opening in new tabs. Some had challenges navigating back and forth from open PDFs to website.
+- inconsistencies with dropdown menus; some disappear quicker than others, some have mouseovers, some don't
+- split b/w users who searched for best practices: some went to resources, some to Data->cite
+- search for data - some used map, some used keywords and no map. only 2/9 got results
+- map problem of resizing bounding box and not being able to click off map and drawing box w/i a box instead. some others did not have this problem.
+- for navigating across site, several users repeatedly returned to homepage to then navigate somewhere else on site, rather than using Javascript dropdown menus. (Homepage displays all categories at once.)
+
+
+
+SEARCH PAGE RECOMMENDATIONS:
+
+DEFAULT SEARCH:
+- Simple text box search with SEARCH button to right
+- Beneath text box is text hyperlink ADVANCED with hover-over that further explains functionality ("by map, by date, by field")
+- Clear | Help hyperlinks in lower right
+- Get rid of "only results with data" checkbox - this can be a post-coordinate refinement of results
+- Get rid of "limit results by __ per page" - this can be a post-coordinate refinement of results
+
+ADVANCED SEARCH:
+- will be a NEW search. If content exists in the simple search textbox and Advanced search is selected, the content in the simple textbox is CLEARED and the page refreshes to the Advanced search page (opening in new tab or new window is risky because many test users have missed seeing new tabs and windows for other DataONE functions). Clearing the simple text box will ensure that no search parameters are carried over behind the scenes into the Advanced Search)
+<<Rama disagrees wih this recommendation; his belief is that the simple search parameters should be carried into advanced search, but remian visible there>>
+- fields in order: Fielded Search, Search by Date
+            Geographic Search
+            Member Nodes
+ - include validation of dates entered and issue warning if invalid        
+- Fix Member Nodes dropdown to spell out member node acronyms and abbreviations
+- no need to include "MN" or "Member Node" in list of names
+- in Help file for this section, give a brief scope description for each Member Node to guide users who are interested in specific science areas but who may not be familiar with the scope of holdings of individual MNs
+            
+
+
+RESULT PAGE RECOMMENDATIONS:
+
+- remove yellow stars indicating relevance
+- number the results 1-10, 11-20, etc. so that users going back and forth between summary results page and full record page can more easily remember which records they've already viewed. Also, hyperlinked titles should change from purple to blue once they've been visited.
+- Change the Order results by "Date" to "Start Date", which is what is actually happening in the sort but is not communicated by the label (There are 4 possible date parameters: by start date, by end date, by data publish date, and by metadata publish/update date, so we need to be explicit about which one is actually in play). 
+- "RETURN TO SEARCH" takes user back to search interface s/he was using immediately prior to results page
+
+- Hyperlink Title to the FULL METADATA record (see Individual Record View below)
+- Get rid of the different views by metadata schema/standard (no EML View, FGDC View, etc.)
+
+For the list of abbreviated results:
+- DELETE BOTH VIEW FULL METADATA AND DATA FILES buttons. Users will click on hyperlinked metadata title to go to full record.
+ * we are trying to address confusion of Data Files (1) / Data Files (0) by pushing users to view the metadata record itself. We will highlight the data availability/access at the TOP of the metadata record
+
+
+INDIVIDUAL RECORD VIEW (NEW):
+At the top of the full metadata record:
+
+ * If a Data Package File exists, show the contents at the top
+   * this is no longer a pop-up window, but expands within the context of the metadata record page to show all files (just as they appeared before - file name, format, size, download hyperlink)
+   * convert the data file sizes to human readable sizes (users found rapid mental conversion of file sizes difficult)
+ * TODO: Ask Dave/Matt about this. If no data package files exist, show "DATA LINKAGE" with hyperlink to the Data Linkage extracted from the metadata beneath and displayed here at the top
+   * (label it as "data linkage" so that we're not making any promise/indication that it is going directly to data rather than a landing page)
+
+
+GEOGRAPHIC SEARCH:  Redmine ticket has been created to capture the updates for the geographic searching interface area.
+ * Look for a new plug in software package if possible; if not, make the following changes
+ * Ensure mouse-over help is available for each of the buttons
+ * Make it possible to move rectangles or polygons after they have been drawn; this functionality should be similar to the way drawign objects in Power Point work
+ * Ensure selection objects (rectangles, polygons) work when international dateline passes through them
+
+
+
+
+

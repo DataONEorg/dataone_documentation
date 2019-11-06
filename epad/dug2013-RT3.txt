@@ -1,0 +1,247 @@
+DataONE Users Group
+Jul 7th - 8th 2013
+Chapel Hill, NC
+
+Roundtable 3: Data Documentation / Preservation
+
+Talking points / Guiding Questions
+ * What are the main challenges?
+ * What solutions currently exist?
+ * What contribution can / should DataONE provide in this landscape?  How can that be best achieved?
+
+July 8, 2013 9:30-10:40 AM EDT Courtyard Marriot Chapel Hill: Winston
+
+
+Possble topics: (spitballing at this point)
+1: Documentation to support use of multiple archives/collections
+2. Different roles of documentation at different points along the Data Lifecycle
+3. Preservation challenges in the face of format techology churn
+4: Preserving discoverability: the problem of metadata dynamics over time
+5. Documentation and preservation issues in the age of derived data products and automated workflows
+Items from Dean's 7/5 e-mail
+
+Conduct a poll on the definition of Data Documentation and Data Preservation
+
+Why groups want to be DataOne nodes?
+What are the current practices for these issues?
+What are suggested resources in the absence of published best practices?
+What are common barriers to documentation and preservation?
+What types of requests do you get for documentation and preservation?
+How are people learning how to document and preserve data?
+What do people need to know to preserve data?
+
+Can we create a template for Data Preservation? What information is needed for that?
+
+Why should we document and preserve data and how do we market the concept?
+
+How can DataOne help?
+
+
+Discussion: Documentationa and  Preservation
+
+What spurs attendance:
+- to learn best practices and options?
+- DataONE persepctive - all ears
+
+Tools:
+    FGDC metadata editor from USGS
+        "it's pretty good"
+    ARCGIS interactions: choose FGDC and/or ISO tool and then you get a template
+        coverage - good. Prompts thought
+        
+            How long will data be used?
+            Who gets to use it
+            How to contact data generator?
+
+Q: How do you choose which standard to use?
+
+A: Often dictated by customer/funder.
+    "We required to use ... a specific taxonomy"
+
+Other tools:
+    Oxygen (used for FGDC - an XML editor)
+        leads through the process
+        straightforward tool
+        chosen based on tool comparison based on user interface preference?
+        developed a FGDC template as input.
+        
+Q: What other tools did you examine?
+    some other USGS tools - there are many to choose from.
+    
+    
+The reason we are interested in how to choose stds. is that in a DataONE usrvy we found a lot of variability in user's choice of stds. or even the creation of project specific (non-)standards.
+
+The existence and choice of standards in an educational opportunity.
+
+How to take advantage of that?
+
+Dean: I often use USGS GIS models in order to give examples of how to see and use metadata stds.
+
+Researchers sometimes don't take the time. 
+    Being able to show what is available and that it is easy to use.
+    
+Barrier: "getting the metadata" is hard. It is not trivial. Expecially for ownership issues and sharing policies.
+
+Comment: open access high-levle policy directives are helping to counteract inaction/inertia.
+
+Customer/funder can use a "stick" to reach higher levels of compliance.
+
+
+review
+
+we have some tools and standards.
+
+Morpho is a tool for dooing data documentation.
+Morpho is a good template for creating EML.
+
+Question: which metadata stds to use? EML, FGDC, ....
+    which to choose?
+    interoperability?
+    automation "ability ot suck up informaiton easier"
+    
+What do you use to store data:
+    We use GStore
+    
+    we are migrating from FGDC is OSI 19115
+    
+    Migration fomr one stadnard to another  is less difficult than adopting the a standard for the first time.
+    
+    EML has been extended to use Geographical information.
+    
+    Question: How 
+    
+    WE have cautionary tail about prior projects.
+    
+        examples - long term environmental projects.
+        
+            We find that people do no even preserve the headers on the spreadsheet.
+            
+            Manual, undocumented cross-walking is painful 
+            
+Perhaps a "worst practices" document on data preservation things to not do.
+
+
+We are wokring on an EPSCOR data. For the current round (looking back) all PI's hired graduate students. Formats and metadata vary by student. The average time to finish the metadata for en effort is 2-3 weeks. But if we could bring everyone together we could finish this in 2-hours.
+
+One solution for LTER was to offer at induction a course for new students. Instruction.
+NCEAS also does soemthing like this.
+
+UNM offers a course on this  
+coveres metadata, DB's
+Many grad students take that course.
+    It was well attended.
+
+Things that dataone could do?
+Best practices/ worst practices
+Long or short class similar to recent UNM institute
+Training video
+
+Q: IS video better than PPT?
+A: yes. nobody 
+
+We have a trailer in Villes Caldera
+
+Length is 5-10 minutes
+Perhaps parse an one of content into 5-10 minute intervals
+
+Preservation:
+
+We have talked about current data storage.
+
+For EDAC we get new data.
+5 years ago, NSF did not require data archiving. Only by 2007 were data archiving activities required.
+
+The situation is changing.
+
+What is the experience learned from migrating metadata standards from EDAC FGDC --> ISO whne viewed as a preservation activity.
+
+Soren Scott has the firsthand experience. WE don't yet have lessons learned, but there are experiences.
+Some infomation is no longer available. 
+ISO is more expansive
+Some information is not correct. Guessed but unknown is a better answer than unguessed
+
+Archival formats versus external archive management . I.e. handing off to archival entities.
+
+Does data need to be in arhcival formats or just archived?
+
+How can dataONE help?
+
+Promote libraries as a local source of data documentation and preservarion support.
+
+USGS provides good tools and information.
+
+Suggestion: DataONE do a workshop to discuss long-term preservation to develop strategies and spread information.
+
+Comment: the archival formats issue may still be open. I.e. we may have a format but have difficulty maintaining SW that can be used for retrieval.
+
+Difficulty in capturing workflows in a preservation environment.
+
+Example: One model was run with large output. It had to be stored at an HPC center. The data was too large to store in the normal acrive. When the student left, the data did not make it from short-term storage at HPC center into a curated preservation environment.
+
+We do not have good guidance on de-accession in order to promote preservation. We cannot keep all of the data, how do we intelligently winnow down to what can/should be preserved?
+
+On the other hand, accumulating raw data as a "root source"
+
+Barriers:  8 noted
+
+- Practioners are unfamiliar with standards - their utility, which to choose. (FGDC and ISO discussed)
+
+- Metadata entry too time-conusming and can be a frustrating scavenger hunt
+
+- Short term team members diminish long term preservation (students leave and we lose data)
+
+- Multiple people working on the same project lead to dfficulties capturing
+
+- Lack of inclusion in any curriculum - one never learns it
+
+- Unaware of what needs to happen to promote preservation
+
+- How to preserve dynamic content/workflows.
+
+- How to think about deaccession/ data set reduction in order to promote longer term preservation of a distilled set of most important data elements. ("It's too big to save it all, but we don't want to lose everything" or "Its too hard to migrate all of the data in a native/raw format, but we can preserve high-fidelity summarized information."
+
+
+Solutions:
+
+- Providing standards
+
+- Educating about standards/awareness raising
+
+- Assistance in choosing appropriate tools and template development
+
+- Getting PI engagement to push for standard adoption and use
+
+- Customer/Funder requirement can spur action (using the stick)
+
+What Can DataONE contribute:
+
+- short training videos
+
+- tutorials and examples
+- worst practices 
+
+- promoting knowledgeable support groups that can help projects (ex, libraries)
+
+What can we do to remove the barriers?
+- education
+- highlighting/creating templates
+- requirements from NSF, etc
+- start projects to create tools and other outcomes to address issues (ex, DMPtool)
+- Other actions needed to address some of the issues - not yet solved
+
+- It would be good to create templates with required fields to promote conformity
+    - create structure
+    - use stick
+    - provide assistance for when how to complete is uncertain
+    - accomodate necessary diversity
+    - need to address the fact that making it harder may lead to people failing to complete - strike the balance.
+
+Attendance names:
+Dean Walton
+John Cobb
+Rebecca Koskela
+Ismael Calderon
+Christopher Eaker
+Su Zhang
+Antonio Saraiva
+

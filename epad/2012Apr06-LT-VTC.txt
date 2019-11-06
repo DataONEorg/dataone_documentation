@@ -1,0 +1,90 @@
+Attendees: Rebecca, Carol,Bruce, Bill, Trisha, Viv, Bertram,  John K., Steph
+
+Regrets: Dave Vieglais, Hilmar, 
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Apr 6, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/561144049
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (636) 277-0130
+Access Code: 561-144-049
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 561-144-049
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012Apr06-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-04-06
+
+1) CI Update (Dave)
+
+I will not be able to make the LT call on Friday due to some travel
+related issues. A quick summary of progress:
+
+As you recall, last week the plan was to continue testing in the development environment and bring the sandbox into a single CN mode for the LT to evaluate. Testing the concurrency issue on the development environment last Friday through Monday we were unable to reproduce the problem. Hence we resumed testing on the sandbox on Tuesday to see if the issue was indeed resolved (there were several minor issues corrected on the development environment, these fixes were transferred to the sandbox). Further testing on the sandbox revealed that the problem did still exist in the sandbox environment (which is running on the newer hardware).
+
+At that point, it was decided to bring online the stage environment (a more stable version of the sandbox, meant for evaluating releases) in single CN mode for the LT to evaluate ONEMercury and so forth. This was necessary so that we could continue debugging the problem encountered on the sandbox (since it was not reproducible on the development environment). Setting up the stage environment requires a few new VMs to be installed, which has now been completed and the stage environment is being brought online, and should be ready on Friday.
+
+Testing of the Mercury MN reveals a few minor issues that need to be resolved, and Jim Green is working with Rob Nahf and Giri to resolve those problems.
+
+In a nutshell, the stage environment is being brought online for LT evaluation. Debugging continues on the sandbox and development environments.
+
+- Dave V.
+
+Also - the URL for the stage environment is: https://cn-stage.dataone.org
+Please report issues using RedMine: https://redmine.dataone.org/
+(Make sure you login - see upper right-hand corner - white "Sign In" in black strip
+Click on Operations - will see a tab for New Issue on that screen
+
+
+2) Update from Bill (travels, etc)
+
+Bill traveled a lot! Three trips:
+Costa Rica - met with OTS and Smithsonian Tropical Research Institute. STRI just had informatics budget cut so no longer able to become MN until budget restored. Costa Rica needs some time. Have invited them to send someone to the DUG - may not happen until next year.
+Brazil - Creative B meeting (joint European/ US effort) - established work plan for next 3 years; about 2 meetings each year; next meeting is in July in Copenhagen.  Dave will attend that meeting - topic biodiversity standard. Coincides with DAITF
+Australia - TERN - loose federation of ACES and 6 other organizations (remotely sensed data, atmospheric data, soils data, land use data, eco-informatics in general) Current focus is on a small portion of Australian scientists - suggested that they borrow and adapt the DataONE Primer on Data Management. TERN was funded for 3 years and need to meet their milestones.  Three sites that use Metacat as their basic framework so opportunity for MNs. Heard comments that they were having troubles with Metacat and hadn't had feedback from NCEAS so perhaps Matt could investigate this. Gave date for DUG and have some names of people to invite.
+
+Our best strategy is to get as many US MNs as possible, then go after other countries.
+
+Met new program officer, Dane Skow.  He was at Argonne Lab and had been involved with TeraGrid and will be there for one year. We need to schedule another review for this fall - identify some dates that would work for DataONE. Will do a Doodle poll to see availability for a reverse site visit. Don't really want to do this until we have an actual public release.
+
+We are getting lots of interest in new MNs so have scheduled a call on April 18th - unfortunately this is same day as USGS/DataONE Workshop so may not have government perspective. 
+
+3) Around the room
+
+Bertram: Attended EVA WG meeting in Boulder, CO. Will have some use cases for ProvWG coming out of the EVA group. Probably have one EVA member join the ProvWG meeting at UCSB.
+
+Carol: We've made offers to 2 of 3 of our DataONE GTAs, Bruce is selecting the 3rd with John Cobb's input. Ben Birch will be with us for one more year, the others will be new students. Also, we are sending admittance letters to 8 new master's students for our IMLS SciData grant (Suzie is PI, I am co-PI) to start in August.  I am heading to Florence next week and will talk about the D1 libraries survey in addition to some other things at an international meeting of academic and national librarians and publishers.  SocioCultural and U&A WG meeting first 3 days of May in Knoxville, agenda is being finalized and a majority of members will be there.
+
+Steph: submitted CEE WG manuscript to Frontiers: 
+Hampton, S.E., C. Strasser, A. Batcheller, W. Gram, C. Duke, J. Tewksbury, and J. Porter.Big data and the future for ecology. Submitted to Frontiers in Ecology and the Environment.
+Carly's ms is ready for review, survey of ecology professors that shows they don't teach data management in courses. 
+Planning CEE WG meeting this month in SB, 25 April.
+
+Viv: Working on logistics for DataONE-USGS workshop in Denver. 30+ people attending either via webex or in-person. Also, signed onto the EarthCube Expression of Interest Letter thru ESIP for Data Management Trainging and Workforce Development. (Bill's name was listed as well). Also, working on logistics for the Data Management Workshop for grad students in SB in May. (waiting for Amber's return to find out about registration numbers). Organizing a call of the presenters in the coming weeks - Doodle Poll is out. Steph and I will be working on the CEEWG agenda soon for the upcoming end-of-April meeting in SB. 
+
+
+John K.: Our DCXL project (with MS Research) is developing both an Excel add-in and a web service.  Where the web service should be hosted is a question we need to answer; in the short term it needs .NET (C#, Windows server), which is fairly awkward fit in CDL's infrastructure.  Comments about whether it would be ok if MS hosted it (Azure)?
+
+Also, what do people think about DataONE setting up a special-purpose MN that with low-barrier, storage-limited subsidized user accounts for easy deposit of DCXL (and other) data?  Sort of like Slideshare for data.
+
+Trisha: at CNI this week; Digital Preservation Network - Developing dark archive for 3 bodies of content: books, journals; media; research data - Diverse infrastructure - James Hilton leading the charge & working with Internet 2 people, Univ MI, Stanford, etc
+Bill, Trisha, Andrew Sallans to talk to James Hilton next week
+Conference at NCAR on data citation and a group (Cook, Parsons, Strasser, Kunze, Cruse) is interested in submitting a proposal to NSF GEO -- in response to dear colleague letter on data citation.
+
+Bruce: Nick Dexter (working on sys administration for DataONE) has received a important
+fellowship so looking for a replacement
+
+Rebecca: DAITF and ICRI 2012
+
+Bill: Heather moving on so need a new DataONE post-doc (email from Todd) - LT feedback should be provided asap
+
+

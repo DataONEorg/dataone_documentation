@@ -1,0 +1,47 @@
+Workflow Meeting - June 21
+Karthik, Richard, Rebecca, William
+
+Rough notes.
+
+RL: SPARQL not going well for me. Going to talk to Karthik about it June 22.
+RL: <link to June 20 meeting> Still working on PDF. Mining literature for works that cited Kepler. 
+
+<dropbox fiddling>
+
+- Best to use Word, rather than LaTeX, for typing it all up
+
+RL: Will need David on this project, unless Karthik and I can really get to grips with Sparql
+
+Sparql entirely tier 1 metadata, nothing involving the actual workflows.
+
+Bill getting back to us on any other hypotheses that we should look into.
+
+Might have to do tier 2/3 manually. Should only take 5-10 minutes each. Could do around 300 Taverna.
+
+Taverna1: 600, T2: 600
+
+100 hours
+
+Three weeks left of data collection. See how much you can get this week: 30 hours for workflow getting, 10 for research.
+Have to put a cap on things - worst thing that could happen is have lots of data but nothing written. 
+
+
+Look at how Kepler is being used outside of myExperiment, and integrate that with this study
+
+Download the other 600 papers that site SWAKS. Go through them quickly, but that's not the main focus.
+
+Be cognisant of which fields are numeric or not in excel. Might need to be exported to CVS. KR: That shouldn't be a problem. Can give a run down as to how to convert .xls to .sql to R. 
+
+Use SPARQL / numeric identified on it to get initial corpus to mine. 
+http://rdf.myexperiment.org/sparql?query=PREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0D%0APREFIX+mebase%3A+%3Chttp%3A%2F%2Frdf.myexperiment.org%2Fontologies%2Fbase%2F%3E%0D%0APREFIX+mecontrib%3A+%3Chttp%3A%2F%2Frdf.myexperiment.org%2Fontologies%2Fcontributions%2F%3E%0D%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0D%0ASELECT+%3Fworkflow+%3Fct_title%0D%0AWHERE{%0D%0A++%3Fworkflow+rdf%3Atype+mecontrib%3AWorkflow+%3B%0D%0A++++mebase%3Ahas-content-type+%3Fct+.%0D%0A++%3Fct+dcterms%3Atitle+%3Fct_title+%0D%0A++FILTER+regex%28%3Fct_title%2C%27^taverna%27%2C%27i%27%29%0D%0A}&formatting=HTML%20Table
+
+three nights in California - 28,29,30th
+
+we could tease apart differences between taverna 1 and taverna 2 - would be interesting to look at differences in complexity
+look at some taverna 1 ones. 
+
+Monday talk at 4pm
+
+send bank details to rebecca
+send slides for the conference on thursday. 
+

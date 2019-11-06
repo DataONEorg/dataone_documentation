@@ -1,0 +1,47 @@
+D1MWG Meeting Agenda and Notes
+Attending: John, Jane, Greg, Nassib, Angela, Karthik
+Regrets: Viv, Sarah,
+
+1. recap of outcomes from AHM
+    (also possible CrossRef help)
+       ** ? ask Geoff Bilder or other CrossRef rep to join the group
+       ** ? let Stephen Richard join (btw)  -- or let him join email list w.o. joining the group?
+               *  set up a discussion list  separate from WG list for PPSR folks, students, etc?
+
+2. recap of outcomes TDWG (caught up with Rob Guralnick, Tim Robertson)
+       to do: post slides
+
+3. voting on the name.  (jane's view... folks, SeaIce is sticking... i'm not kidding!)
+       John:  explore short names: YAMS, M4S, M4T, ... what about others
+
+4. updates/status reporting 
+- FAQs (Greg, John, all)
+- About page (John, others... status)
+- Deploying to heroku:   Thanks, Nassib!
+  https://devcenter.heroku.com/articles/git
+      AWS? scale up and scale back eg, during demos
+      !    Karthik: will look into ballpark prices
+- Development Priorities:
+    ** Greg: how to populate it to start with?  Need it to have more gravity before rollout.
+            John:  work with PPSR people to get relatively jargon-free terms in?
+    !       John:  Dublin Core to start with also?
+    ** Nassib: how can the system work if we're doing nothing with reputation?
+     !  Nassib: I will work on this
+    ** Karthik:  good to have an API at least for search, ranked
+    ** John: way to view cluster of terms with, eg, for PPSR
+- Ranking Algorithm (Nassib)
+- ! Comparison matrix (Angela)
+- DLF (John/jane)
+- PPSR - (jane)
+  ! Jane to summarize for our group
+- Provenance, Semantics, any follow up (John?)
+
+5. New ideas
+- Liasoning w/another metadata community (**Viv, perhaps a place for you to jump in?)
+- Action items to continue work - (Greg's point about progress when we worked independently and in smaller groups)
+- other ideas
+
+6. outstanding business
+
+7. Around the room
+

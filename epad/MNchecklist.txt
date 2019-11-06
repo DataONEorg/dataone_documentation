@@ -1,0 +1,63 @@
+I hope you can make this meeting tomorrow, 11 April, at 12:30p Eastern, 11:30 Central, 10:30 Mountain, 9:30 Pacific, and 8:30 Alaska, to discuss where we are in creating an overall MN procedure.
+
+http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html (lovely)
+NO- look here--->
+http://mule1.dataone.org/OperationDocs/member_node_deployment_2/mn_checklist.html
+
+https://repository.dataone.org/documents/Committees/MNcoord/How%20to%20Become%20a%20Member%20Node.docx (not-so-lovely)
+ 
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/185925609
+
+Attending: Rebecca, Dave, Amber, Laura, Matt, Chris, John
+
+Rebecca: look at terminology re: testing, staging, since those things may mean something different to different audiences
+
+We used to think that there would be more Metacat nodes, but in reality it looks like we are having more custom stacks.  Will a user know from our info if they are going to need a custom stack or not?  Decision in DEVELOP - if custom will need development test, if not can move to DEPLOY.
+
+Chris: it would be nice to have a single online or printable document to go to as a prospective MN.
+
+Need ONE document made publicly available on dataone.org MN webpage, high level with click-through to details on mule1
+
+Also need detailed info internal to the project (all those details!)
+
+Matt - have one detailed document, indicating what info is public/private 
+
+ACTION:  Matt, Chris and Laura to work on merging the two documents, identify what is internal/external.  Then everyone review.  Plan is to have available by MNW mtg Friday 4/19/13.
+
+PLAN
+1 - MN expresses interest  --- determine feasibility
+    see all those documents to review, INCLUDING partnership agreement, service level guidelines
+2 - MN initiates process (was applies)  --- join the DataONE federation
+ * obtaining a DataONE identity through docs.dataone.org gives redmine access to redmine, and allows the MN op to download their DataONE generated SSL certificates
+3 - MN/DataONE collect MN info - an abbreviated version of MN desc doc, i.e. minimum information needed to proceed, to be entered in redmine  (LM-ensure we all know what info is required - a contact sheet - can be used to build the MN desc doc later)
+4 - DataONE MN Wranglers evaluate proposal
+5 - An agreement is reached (was approve/decline/defer) 
+ * this is more of a concensus than an approval, although some edge cases will be a disapproval
+6 - (was partnership agreement, service level guidelines --- move to DEPLOY-mutual acceptance)
+7 - (was MN description document --- move to DEPLOY-register in production)
+8 - Pre-implementation activities
+    select the tier
+    plan the implementation (metacat, custom stack, etc.??)
+
+DEVELOP  (build=develop)
+ - custom code required?  (see pre-implementation activities) - if you don't need custom code, go directly to DEPLOY
+ * re-label this to be "Can use existing MN software?"
+ - establish a test system
+
+ - development iteration
+ - development test
+
+DEPLOY
+Rebecca: we may need to re-word 'Register in staging', and 'Test in staging' - this term may not be familiar with potential Member Node operators
+ - Register in staging  --- change to deploy in staging??
+ - Test in staging
+ - Register in production
+    MN description document
+ - Mutual acceptance - both parties agree to what was reviewed early on in the process
+
+OPERATE
+ - Announcement
+ - Ongoing production operations
+ - Participate in MN Forums
+

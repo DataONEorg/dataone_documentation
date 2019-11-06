@@ -1,0 +1,107 @@
+Participants:
+
+Weekly Reports [PM: structure in "good news" / "bad news" ] 
+
+* Anand:
+- report 5:  http://groups.google.com/group/datatol/web/weekly-report-5?_done=%2Fgroup%2Fdatatol%3F
+- report 6: http://groups.google.com/group/datatol/web/weekly-report-6
+
+developed pub-app, from Kepler native trace to local SPS db
+run table
+integrated data uploader code with SPS code
+populated invoc tables
+use DOM parser for analysis(/reading) OPM trace
+dump in local DB
+most challenging part was solved: filling out ddep and idep table
+wasn't there in the trace; "tricky coding" to capture this --> document this [BL]
+replace local with shared DB 
+uploaded into global DB
+FPC-A, FPC-B published
+
+* Biva:
+- report:  http://groups.google.com/group/datatol/web/the-taverna-api-client?hl=en
+- incomplete dependencies: http://groups.google.com/group/datatol/browse_thread/thread/b32de6182f27d612
+
+code is ready but testing on the actual data has detected glitches in the trace data.
+code extracts info from native traces as objects and 
+now some glitches have been identified having to do with detecting data dependencies from the used and wasGeneratedBy dependencies found in the trace
+challenge/issue: outgoing collection --> incoming collection: some mismatch!?
+
+Shawn: "identifier problem" -- how solved?
+Gid --> Taverna-wf W(Lid) 
+Who keeps the Gid ~ Lid association?
+
+Bertram: 
+1st Suggestion:
+Have a "hand-shake place", i.e., the input ports of W: X1, X2, ..., Xk
+After download the data into X_i, ask the wf-system:
+"Give me the *internal* id of e.g. X_2 ?" 
+
+2nd Suggestion:
+built global id into the (binary) data
+"tatoo" the gid into the shared data itself
+
+3rd Suggestion (Saumen):
+separate meta-data file
+
+Paolo suggests also to consider Research Objects as a way to bundle data and metadata (the tattoo) in some standard way.
+
+Paolo:
+Download: Gid ~ Local-FilePath
+When used in Taverna: Local-FilePath ~ Internal-Id
+
+* Saumen: 
+- report/summary:  http://groups.google.com/group/datatol/web/saumen-07262010?hl=en
+- Stiching Traces, Automated: http://groups.google.com/group/datatol/browse_thread/thread/718d70047fa83dee?hl=en
+
+COMAD part (all?mostly?) done
+collab UI?
+went through the steps: Alice's traces, then Bob's execution (in COMAD)
+uploading the trace
+using the tool 
+Benchmark queries
+
+Discussions: 
+
+Last week's Next Actions:
+
+0. Looking at the benchmark queries, finalize DToL Schema of SPS (focus on what you need NOW; not for future versions)
+==> Anand, Biva, Saumen to interact tightly (daily calls?) 
+https://docs.google.com/document/edit?id=1IopffnHOwPk6v-Pyp_BGQeR3wcSknGFL34EUKpq05Xk&hl=en&authkey=CNnsqdIF
+1. Deploy global SPS database (Anand, Biva, Saumen) --> help from Daniel Zinn
+2. Finish upload of traces (Kepler, Taverna, COMAD) to the local SPS
+3. Upload  local traces to global SPS
+4. Answers as many queries as possible from "benchmark queries"
+4.1. conceptually analyze what queries can be answered.
+4.2. exact SQL queries/stored procedure to answer the queries
+4.3. result of SQL queries against test trace
+
+NEXT ACTIONS (wrap-up and post-DToL..)
+==> Mentors to check Saumen's stiching proposal
+
+Alice ~ Biva
+Alice, Bob ~ Anand
+Alice, Bob, Charlie ~ Saumen
+
+- Grande Finale: Demo-cast!
+1. Alice runs Wf_A  --- Biva 
+2. Alice publishes trace (including data) --- Biva
+3. Bob finds Alice's data --- 
+4. Bob imports Alice's data into his workspace/wf-system
+5. Bob runs Wf_B(some of A's data)
+6. Bob uploads his trace
+7. (workaround) Bob links to Alice's data 
+8. Charlie queries Bob's sources, finds that Alice's wf was also used...
+
+
+
+
+
+
+
+
+
+
+
+
+

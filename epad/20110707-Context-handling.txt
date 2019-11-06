@@ -1,0 +1,37 @@
+Context 
+=======
+Context (and configuration) is important to get right to both:
+a) allow easy testing of multiple non-production contexts
+b) prevent tests from accidentally hitting the Production environment
+
+While sensitive operations in the production environment will be protected by authorization,  a consistant / logical separation of contexts is also important as an added confidence level towards that goal
+
+
+Starting points:
+1. Context is a set of nodes interoperating  / communicating with each other: an environment
+   (examples:  PROD, DEV, SAT, UAT)
+2. In the java packages, context is managed via the Settings class (located in d1_common_java)
+3. The Settings class aggregates property files from different packages into a structured Configuration
+    object, and acts as a single point of entry for use of these properties.
+4. The concrete representation of the context (set of nodes that interoperate) is the NodeList, which is maintained on the CNs.
+5. Each CN maintains a local copy of the Nodelist that is consistent with the other CNs in the same context
+
+
+
+
+6. D1Client uses Settings to get the baseurl for the CN that will provide its context.  By default it should point to the designated production CN (cn.dataone.org). 
+    - we need to be able to override that value for integration testing, and probably only for integration testing.
+    
+    
+a) the Settings class has to reside in d1_common_java in order to be accessible to all packages for use
+(d1_integration needs all packages to use Settings, so that it can apply overrides if necessary.
+
+b) want to set D1Client default to null if d1_integration package is detected.
+
+
+options:
+1).special handling of d1_integration config.xml files by Settings class
+2). define a generalized override behavior that works for d1_integration, but also other packages
+3), a hook into Settings that allows prepending configurations to list
+         (d1_integration would use these special methods in Settings to apply overrides)
+

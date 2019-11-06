@@ -1,0 +1,151 @@
+Member Node Forum - 7 August 2014
+                                                                                    
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+                                                                         
+      (Occurs every 2 weeks on Thursday 8pm South Africa, 3pm BRT (Sao  Paolo,  etc.), 2pm AMT (Manaus, etc.), 2pm EDT, 1pm CDT, noon MDT, 11am   Arizona  and PDT, 10am AKDT or  Friday 2am Taiwan, 4am Brisbane AEST)
+  Upcoming meetings 21 August, 4 September, 18 September
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+Attending:  Laura Moyers, Amber Budden, Dave Vieglais, Mark Servilla, Ed Flathers, Jim Long, Tracy Kugler, Rebecca Koskela, Ryan Scherle, Bruce Wilson, Bob Cook, Ranjeet, Yaxing Wei, Jim Green, Bertram Ludaescher, Mark Schildhauer
+
+Regrets:  
+
+Action items from last time:
+    Follow-up with MPC/TerraPop - in progress - working on providing Dublin Core "wrapper" information to Tracy/Wendy
+        DC elements vs DC terms - see Wendy's email (offline)
+        Intent is to have DDI metadata in the data package with format-type NOT metadata for the time being; the metadata to begin with will be Dublin Core for indexing/searching purposes, until we develop rules for DDI metadat.  Plan to add format type in registry for DDI metadata, when the data is synchronized, it will say "we don't have rules for DDI yet" and it won't be indexed by the DDI metadata.  When data is synchronized, it will see the DC metadata, for which we have (will have) rules, and indexing will occur.  Indexing can be completely independent of the synchronization process.  
+        Example: data package will consist of parts: data (or not), DDI metadata, DC metadata, resource map (associates metadata with data)
+
+Agenda:
+
+0. Welcome new attendees - introductions: 
+    Jim Long (IARC) - writing middleware to move data from GeoNetwork to a DataONE GMN, currently on a VM there at Alaska.  (Python scripts to move ISO 19115 info to the GMN - this will help other GeoNetwork folks when they begin working with DataONE.)  Roger Dahl is the main POC for GMN.  Laura and Jim to collect information about the IARC, types of data, etc.  Get with Mark and Roger re: assisting Jim in his implementation.
+    Jim - what does testing our node mean?  A lot of testing of the GMN itself has been done, so it comes down to testing content, configuration, certificates, etc.  Starting off at tier 1; for tier 2 and above, need a server certificate (can get one).
+
+1. Network-wide update and issues affecting MN's as a whole
+    Nothing happening - everything ok
+    Update being pushed out next week, supporting indexing
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+
+3. Feature requests/opportunities for collaboration:
+
+    
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+    LTER (Mark) - earlier this week started the transition from metacat MN to the PASTA GMN, running some tests before moving to production; addressing the issue of what happens to deprecated/archived content from the metacat MN - who is the authoritative MN? (at meeting 8/6/14, it was determined that we could keep the "old" content with the new LTER GMN as the authoritative MN)
+    NKN (Ed) - certificate transfered from old host to new one, spent some time with checksums, hope to stand up MN in sandbox this week and next week; current plan is to have NKN in production by 31 Oct (end of Y6Q1)
+    Dryad (Ryan) - error with date fields - being addressed, looks like Dryad is dropping the time stamps which affects the representation of the dates; assigned to a developer and prioritizing; been working on future planning the past few weeks, especially upscaling the Dryad MN re: operations, data, etc., also looking at whether to stay with DSpace long-term
+    MPC (Tracy) - see above, also some questions about the testing process - what's involved, who's in charge  :)  Basic process is building a process that has to support multiple services.  First testing is with the webtester (looking at API calls, etc. - move of a "unit test" concept), then put it into one of the full testing environments (stage, stage-2, sandbox) where we run more complete integrated testing (more like "system testing"  (Laura sent link to testing documentation to Tracy 8/7/14)
+
+======
+
+Follow-on meeting about the ORNL simplified member node stack (RGD and EDORA) and the MsTMIP work (provenance/semantics issues)
+    - Bob Cook, Ranjeet Devarakonda, Jim Green, Yaxing Wei, Bruce Wilson, Dave Vieglais, Rebecca Koskela, Bertram Ludaescher, Mark Schildhauer, Chris Jones, Laura Moyers, Mark Servilla, Ryan Scherle, Ed Flathers
+    
+    RGD and EDORA - FGDC schema and ....
+    MsTMIP - generate a Mercury instance for Ms-TMIP, which would become a MN, demonstration of provenance and semantics activities; metadata hierarchical (Bob showed some slides from a presentation MsTMIP_MN.pptx which detailed the hierarchy) - much conversation about structure, future plans (I'll have to rely on Bob et al. for details)
+    
+Backup information from email:
+From Ranjeet’s email message of July 18:
+ 
+Current Design Tasks:
+1. Chris will enable the harvesting for RGD and EDORA in stage. ORNL will setup a new service for production environment and register for prod. certificates.
+Chris:  Please send new production certificates
+ 
+ 
+New Design Tasks (this happens in parallel with current design tasks):
+1. ORNL MN will add direct reference (URL's) to the data objects inside the Resource map files. The new example RM is attached.
+This has been completed.  Chris, Is the example ok?  See attachment from Ranjeet’s note.
+ 
+Sub tasks:
+- ORNL MN will try new design with EDORA records.
+is the example RM ok?
+- ORNL will make sure all data links are valid at the time of building the resource maps.
+DONE
+ 
+2. ORNL will NOT create system metadata for the data objects, as ORNL MN doesn't have the actual data and so can't create checksums or file sizes.
+Please let us know if this is ok.
+ 
+3. DataONE CCIT team will make the necessary changes to the ONEMercury to enable download buttons based on these newly created RM’s.
+Has this been implemented?
+ 
+ 
+Actions from Chris’s email of July 31:
+ 
+Updating DataONE resources (identifiers, obsoletes, dateSysMetadataModified) in Stage Environment
+ 
+1) Edit each of the XML science metadata documents such that they validate against the FGDC schema ;2) Assign new identifiers and system metadata for these documents, and add them to the MN; 3) In the new system metadata, set the obsoletes field accordingly, and in the old system metadata, set the obsoletedBy field accordingly; 4) Set the dateSysMetadataModified field accordingly for both documents, and optionally set the archive field for the old documents
+ 
+•      Jim will report on new code that he has made.  •      Will be tested on Thursday morning (July 7)
+ 
+Once 2, 3, and 4 are completed then item 1 will take effect.
+ 
+ 
+Question for Dave:  Why is DataONE validating metadata records against FGDC? Against which FGDC substandard??  CSDGM (Content Standard for Digital Geospatial Metadata)???  Please provide the validator URL so that we can test our records.  Thanks!
+ 
+ 
+ 
+On Jul 31, 2014, at 2:13 PM, Robert Cook <cookrb@ornl.gov<mailto:cookrb@ornl.gov>> wrote:
+ 
+Hi Dave and Chris,
+ 
+The note from Ranjeet below summarized our July 17 teleconference and identified some actions that will move us forward in EDORA and RGD.
+ 
+Any comments on Ranjeet's summary?
+ 
+Have you been able to do any of the actions?
+ 
+Thanks!!
+Bob
+ 
+On Jul 18, 2014, at 1:42 PM, Devarakonda, Ranjeet <devarakondar@ornl.gov<mailto:devarakondar@ornl.gov>> wrote:
+ 
+Hi Dave and Chris,
+ 
+Please let me know if any of these needs to be changed.
+ 
+Current Design Tasks:
+1. Chris will enable the harvesting for RGD and EDORA in stage. ORNL will setup a new service for production environment and register for prod. certificates.
+send new production certificates
+ 
+ 
+New Design Tasks (this happens in parallel with current design tasks):
+1. ORNL MN will add direct reference (URL's) to the data objects inside the Resource map files. The new example RM is attached.
+This has been completed.  Is the example ok?  See attachment from Ranjeet’s note.
+Sub tasks:
+- ORNL MN will try new design with EDORA records.
+is the example RM ok?
+- ORNL will make sure all data links are valid at the time of building the resource maps.
+DONE
+ 
+2. ORNL will NOT create system metadata for the data objects, as ORNL MN doesn't have the actual data and so can't create checksums or file sizes.
+Please let us know if this is ok.
+ 
+3. DataONE CCIT team will make the necessary changes to the ONEMercury to enable download buttons based on these newly created RM’s.
+ 
+Has this been implemented?
+
+
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't forget irc.ecoinformatics.org, channel=dataone if you have an urgent issue.  CCIT folks are always there and can assist you.
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307   (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,  -20130530, -20130613, -20130627, -20130711, -20130725, -20130808,    -20130822, -20130905, -20130919, -20131003, -20131017, -20131031,  -20131114, -20131212, -20140109, -20140123, -20140206, -20140220,  -20140306, -20140320, -20140403, -20140417, -20140501, 20140529,  -20140612, -20140626, -20140710, -20140724
+

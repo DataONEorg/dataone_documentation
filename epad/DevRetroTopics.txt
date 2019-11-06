@@ -1,0 +1,61 @@
+Retro Session Topics (1pm PT, 2pm MT, 4pm ET)
+
+A place to drop ideas for retro topics.   Also a place were we can organize and schedule retro session presentations.
+
+(TODO: Investigate and try methods for recording screen cast of retro)
+
+https://plus.google.com/hangouts/_/event/DataONERetroMeeting
+
+Topics:
+
+Ryan 
+ * GIT development process
+
+Skye
+ * SOLID -  11 April 14 - 2pm mtn.
+   * Resources
+     * http://www.codeproject.com/KB/architecture/OOADTutorial/OOAD.pdf
+     * http://www.hanselminutes.com/145/solid-principles-with-uncle-bob-robert-c-martin
+     * http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf
+     * http://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445/
+
+ * Spring data JPA
+ * JMS
+ * Spring MVC/REST
+ * Backbone JS
+ * Search Index Component Review
+
+Robert
+ * Splunk
+ * Hazelcast (prereq)
+ * Portal (ask Ben)
+ * Spring Framework/Dependency Injection(prereq)
+ * LDAP/Node Registry/Identity Service
+ * CN Rest Service
+ * Synchronization
+ * LogAggregation
+ * Debian Packaging/CN Buildout
+ * Ansible/Build Orchestration
+
+Ben
+ * Portal discussion April 25 May 2 (4 EDT, 2 MDT, 1 PDT)
+
+Robert & David
+ * Splunk discussion May 9th (4 EDT, 2 MDT, 1 PDT)
+
+Lauren
+ * D3 JS - May 23 (4 EDT, 2MDT, 1 PDT)
+
+Roger
+ * The D1 Python stack (can be broken into multiple sessions)
+ * Clean Code, Agile Software Craftsmanship, Robert C. Martin
+ * Replication Tester
+
+
+Rob
+ * D1 Integration / WebTester / Context Awareness
+ * TDD
+ * Archiva (still learning)
+ * 
+
+

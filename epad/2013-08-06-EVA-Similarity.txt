@@ -1,0 +1,14 @@
+2013-08-06 EVA Similarity Telecon
+
+Attendee: Bob, Bill, Aritra, Yaxing
+
+
+MDS Projections: http://hendrik.strobelt.com/StressMinAritraWeb/
+- Show all 4 models on the track plot 
+- Use lines to connect all time steps of each model 
+- Use statistics tools to test if any pair of the model combinations are siginificantly different or not 
+
+tSNE: t-Distributed Stochastic Neighbor Embedding
+
+Get some initial story-telling map/plot to use in Debbie's AGU presentation about MsTMIP results
+

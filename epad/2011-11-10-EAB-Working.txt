@@ -1,0 +1,882 @@
+
+DataONE Executive Advisory Board November 10-11, 2011 
+Palomar Hotel, Washington, DC
+
+Action Items:
+1) Web-site
+    Retthink some web-site design issues -see Risser's comments
+    Explictly state the goals of web-site layout (pr versus search acces, .. and use that for flow-down requirements
+2) Look into some security issues
+    rogue nodes
+    getting an assessment
+3) Discuss Auth(z,n) policy and policy development
+4) How will authn/z and MN policies evolve as MN count scales up? as user count scales up?
+5) Implement a "suggestion box" function in time for rollout
+6) coordinate release with NSF
+7) Present "impact metrics" to EAB (in addition to activity metrics presented at this meeting)
+8) For Librarian survey who were the tarets Bid Brian get it? Who at UCSD was contacted/responded?
+9) Think thorugh the architecture issues for growing CN's - inside DataONE and as a collaobration with other proejcts
+10) Think about adding commercial experience to S&G WG
+11) Think aboout collecting a best practice documents about how to manage quality varaibility in contributoray data, especialy citize science/PPSR
+12) Some sotry needs to be made w.r.t. to iRODS
+13) ORNL should try to engage realted DOE projects
+
+Attendees:
+Bill Michener
+Berrien Moore, University of Oklahoma
+Liz Lyons, Digital Curation Centre, University of Bath
+Brian Schottlaender, UC-San Diego, U librarian
+Martha Maiden, NASA-HQ, Eart Science Data Systems
+Bruce Wilson
+Dave Viegleis U. Kansas
+Stephanie Hampton 
+John Cobb
+Rebecca Koskela
+Rob Pennington
+Paul Risser, University of Oklahoma
+Alan Blateky
+Cliff Lynch, Coalition for Networked Information
+Erika Hwang
+
+Arriving later
+Tony Hey - Microsoft
+Nancy Grimm, Arizona State University
+Kevin Guthrie, ITHAKA
+
+Discussion:
+
+Th. Morning prior meeting
+
+
+&&&&& CCIT needs to develop an idea for the CI real estate in the upper right corner of DataONE home page
+&&&&& use data link on DataONE web site needs to link to the ITK page
+
+Th. Afternoon main agenda
+
+
+Berrien Moore: Many discussions are going and some are Darwinian. U. Ok is part of south central DOI Climate Science Centers (This along with Hawaii) Berrian also commented on  the NW center role and their collaborations with DataONE as an example  of the kinds of collaboraitons that are desirable
+
+Alan 
+"Darwinian evolution" of datanet program.
+
+We will be making a Blue Waters announcement today or tomorrow. WE are proceeding with it. It isgoing to be a Cray (not IBM) .
+
+Upside down CI: Pick out a science driver that is 5-101 years out and come back.  
+
+Upside down CI - science pull not CI push. 
+
+Have to preapre HPC strategy for NSB in three weks.
+new Bio AD came back conercenred with data.  Multiple working groups on data.  Issue in many different directorates.  
+
+We had to refocus Datanet .
+
+Rob Pennington: NSB task force on policies for data sharing.  Expecting recommendations in the not to distant fucture.  Provide guidance to NSF on directions around data.  Follow up from 2005 NSB report.  Sharing of information in pubs also an issue.  What are the policies NSF should pursue and how should NSF encourage data sharing and publications more available (federally funded research).  Shouldn't have to pay $K for subscriptions.  
+
+Another group looking at the effects of data management plans and their effects.  Mostly composed of program officers.  
+
+Third level is CF21 (http://www.nsf.gov/pubs/2010/nsf10015/nsf10015.pdf) of levels looking at data (NSB, Program officers, researchers/users).  
+
+Three levels of activity
+AD's talking about how to make NSF pubs available
+workshops with program officers 
+CIF21.
+
+Datanet is within CIF21.
+We  anticipate having a revised soliciations this year for FY2012. They  will look similar to the last set. We want usable CI at a very  fundamental level. It is not neessarily do the research to produce the  CI, but it is produce the CI.
+
+Reference NSF datanet and interop PI meeting in January.  Looking to expand this just beyond the PI's for these specific programs, bring in researchers and projects from around the world, specifically including EU.  Bring them into the governance process. 
+
+"Data does not stop at the national borders"  Climatologists have known this for years, but the politicians are a bit slower to recognize.  Heading towards somethign that looks like IETF (similar to what Bill heard earlier).  
+
+I was very pleased with the outcome of the Charrettes.  Sees lots of commonality in needs identified in the charette.  3 of datanet awardees represented.  D1 definitely there in force.  
+
+130 geoscientsts were present in the same room. Instead of a speaker talking to a room, everyone was contributing.
+
+Expected to producte a set of challenges, milestones, and science cases.
+
+We got about 14 white papers from newly assembled groups
+
+Instructions to attendees and anyone in geo or related fields on what the process is going forward for EAGER, idealabs.
+
+Three datanet awardees were represented at the Charrette
+
+OSTP put out two RFI's on data regarding data sharing and public access to publicly funded data in publications
+http://federalregister.gov/a/2011-28621  (data)
+http://federalregister.gov/a/2011-28623 (publications)
+
+For joint data project with EU, EU side of the call is due on the 23rd.  Information for US collaborators should be coming out soon.  
+
+Alan working with a group out of G8 putting together a global data policy framework/global data infrastructure.  How do we do things from a global perspective?  
+
+Berrian: M/T this week, meeting with NOAA on 4D weather cube (FAA and NOAA need).  Colleagues from Washington saw the charette as being a broader topic.  Possibility to do something around weather cube 40 variables, 5 minutes, 1 km resolution.  Could this be something that's a part of the EarthCube process.  Broader context is important, not just looking at weather, but including surface, atmospheric science, etc.  
+
+2 assumptions in Earthcube: geo community is culturally ready; technology is there.  Surprise that geoscience community is this aggressive about what earthcube could/should be.  That first step has been a strong sense from NSF perspective.  USGS has indicated interest, as has NOAA.  63% of the people said needed data outside their science area to do science.  
+
+Martha: NASA would like to help ith interagency efforts. We have been wokring to help that effort for a while.
+
+Alan:  Yes. NASA has a large set of data and long history of data management
+
+Q: Brian: please explain the new datanet recalibration
+A: We expect to fund smaller projects and have a cluster portfolio strategy, inclduing contributory projects
+
+Alan: we need concrete deliverables.
+We also have 3 levels of data
+
+
+
+Rob: Original datanets were highly focussed, and expensive. Will fund more datanets, want stronger partnerships to work with these.  Sounded like wanting to get more skin in from the other directorates.  datanet has gone from an intellectual exercise to one of how to get feet on the grounds.  Deliverables and real concrete results.  Also seeing data in 3 levels:  
+
+a) Smart bits (data and enough compute power to do something useful with them -- a step beyond dumb storage).  Enough there to be useful scientifically.  Not exclusive to academic or commercial sides.  Some could come from very large consortia and companies.  Should be transferrable as institutions change.  
+
+b) Access and policy. Curation goes here.  Go through this level to confirm that you have access to the data.  
+
+c) Users of that format: scientific.  Data enabled science.  
+
+Smartbits  - i.e. not dumb storage. Bits with enough computing avaiailbe to . We  don't consider this as the exclusive domain of the academic or  commerical side. The physical componet chouls not be tied to geogrpahy  or specific 
+
+next level: policy :  curation,  access 
+
+3rd level :user level - data enabled science
+
+New CISE solicitation from CISE for data analytics - new data tools  - ~ 20M$/y
+
+Will split things in these.  Datanets will be in the lower two components.  Will be seeing from CISE in 2-3 weeks a new solicitation for data analytics as a new aspect of computer science.  23-30$M/yr.  OCI partnering with CISE on this.  Rob: NC proposal is one component of getting the datanets to work together.  Overall consortium could take 2-4 years to get real scientific impact.  Can't continue to fund 5 different workflow projects.  Same thing for data.  Can't do so much of the letting 10,000 flowers bloom.  Challenge for community when NSF has to pick some winners and losers in narrowing down the number of players in this space.  Martha: NASA has swung a bit the other way.  
+
+Alan: INteroperabiltiy is a bad word; many meanings to many people.  OK for sharing data, but in terms of one standard is just something that doesn't work.  
+
+Rob: "We funded this technology as an exemplar"
+
+Alan "We can no longer fund 5-7 workflow paradigms. Same for data." "we can no longer let a thousand flowers bloom?"
+
+
+Martha: NASA has swung the other way a bit lately.
+
+ALan" interoperability is not the right word
+
+Liz: Can I bring in another word - "incentivizing" How do you bring in the users.
+
+Alan: by having a sicence engagement 
+
+Rob is looking into dta citation.
+
+Alan: We want to give credit for data in NSF bio's.  Publication of data has come up in many different forums and giving credit.  Brian: was mentioned at Berlin-9.  
+Brian: publication of "Data Qua Data"
+
+Looking at NSF perspective, would be nice if DOI was linked back to funding sources.  Liz: Institutions getting credit is also useful and desirable.  Also an issue for how do institutions get changed to give credit for data.  
+&&&&& BEW Note: Discussion of institutional ownership and responsibilities for data ties back into identity management.  Who owns the rights to the data is a key issue.  If a user leaves an institution, do they lose the rights to own/manage the data that was collected while they were there.  The historic practice for many NSF programs is that the PI owns the data.  But NEON would see this quite differently -- NEON owns the data.  
+
+Liz: How will institutrions envisage the data publication creidt (in addition to/opposed to individuals)
+
+Rob: that is a tougher problem. Esp. tenure reviews
+
+Rob: The other thing is that the data management plans have had a surprising effect on the  institutions. They did not realize that they owned the data.
+
+ALan: We are alsolooking at the work force and asking how to we create the "data carers"
+
+Cliff: Are you aware of things that ca nbe done to look at what youare getting in in thefirst year of data plans.
+
+Rob: That is a topic that we have beeen talking about. It is interesting/complicated. Are universities looking at DMP's that are included in the proposals
+
+Rob one thing is that the university has the DMP conversation when the award letter comes.
+
+Nancy: It woudlbe important for the universities to have the carrots to make this happen.
+
+Discussion of the role of the DMP for universities.  Some universities create infrastructure to enable this.  Could be a lot more done.  Most univeristies simply check that a DMP is there as part of the proposal.  Aren't looking at what the obligations are associated with this DMP.  Tools like the DMP tool are of great interest.  A few universities are looking at the DMPs to see what would be a good DMP and to help profs write these.  Even fewer are looking at how to provide the infrastructure.  Hard to find a mechanism for "store forever".  And how to deal with the curation, when a significant fraction of the data is write once, read never.  Question is what are the different models for supporting data within domans and between domains.  How do to this in a sustainable fashion. 
+
+This is why tools like DMPtool are of great interest to NSF. It isan aggregated that can provide a survey across many DMP's
+
+Alan: storage forever is not the right answer.
+
+Rob: What are the different models for supporting data within the different domains and across domains.
+
+Paul: some problems will be addressed by a combination of commercial and public data.  Waht's the future for combining commercial and public data?  How will we deal with things where the public data becomes commecially valuable?  Rob: Commercial enterprises can host both types of data.  NSF would love to see publicly funded data used commercially.  One thing for DataONE to figure out is how to enable the synthesis of data, across this. 
+
+
+Paul: The value of data is an interesting question, including the fact that dta may have open and commercial data at the same time or at different times.
+
+Rob: If NSF
+
+Tony: Has NSF given thought to what license would be preferred for data publishing.
+Rob: No.  There are a range of outcomes for licences for software, same will be true for data.  Generally not something that's been explitly addressed.
+
+Liz: question about capacity. DatONE is involved in training, is thatthe model that NSF is assuming will be sprad?
+Rob: training is critical.
+Liz in UK we have <missedit> training centers.
+Alan: Yes we need that, including more than just data.  How do we make sure we have the people needed for 5-10 years down the road.  
+
+Nancy: we do have a few igerts, but they are not sustained.
+
+Rob: So there have been a few small steps in that directions.   <lots of acronyms> program dear colleague letter that just came out.  NPS and OCI?  Focused on workforce aspects of computational and data enabled science and engineering.  
+we have issues some program descriptiosn but not specific solicitations.
+
+Berrien: Itwould help if you could speak directly about dataone nd its relationship to the landscape in which they are lodged and what will happen to that landscape.  What is the landscape now and what activities will take place over the next 12 months?
+
+Rob: We have 4-5 datanet awardees at the moment. We will bring thme otgether in Jan. at PI meeting. We hope that a RCN proposal will come out 
+
+Put the people in the room together and see how they work together.  Don't want to force a particular paradigm.  One award on Technology (NC).  Two in SBE that are different from DataONE, but similar precises.  Will depend on the community to find a way to come together and come to NSF to say that "this is the mechanism" that the community wants to use to work together.  That will drive future awards.  Don't want to predefine the structure.  Build it and they will come doesn't work in CI.   Alan: expects DataONE to play a role in earth cube.  How leverage the DataONE expertise.  Expect similar things from BIO in 5-6 months.  Hard to justify continuing a datanet award if the projects aren't key components of these sorts of activities (like earth cube).  
+
+we have one in technology in NC
+we have 2 in SBE
+we have dataone
+we have other awards in NSF that have some similarities
+
+We don't want to predefine an outcome in terms of structure
+
+Alan: and also Earthcube will play a role and maybe adidtional projects. Maybe something out of bio in 5-6 months.
+
+Berrien, it would be good if other advsory boards or subsets of board could participate in Jan. mtg in order to better understand.
+
+Rob: our expectation is that these communities are ready to come together. Ther were 100 challenges developed by researchers
+
+Tony: "flat is the new doublilng". OCI has historically spent a lot of money for HPC. How do you balance continuing (and groing) HPC and growing data.
+
+Alan: what is we do not have enough $ to buy a critical mass of computing, then what?
+
+Rob: unlike HPC where OCI
+
+ALan: GEO will be paid 80-90M$ from Geo
+
+Tony: that'swhat we did with eScience programme. We catalyzed it
+
+Alan: HPC can solve some problems. They have capacity.
+Alan: Large data is a strange beast. ransportation is tough. maybe put computing with data. Maybe look to clouds
+
+Rob: We hope that the funding profile for data will be different than HPC
+
+Alan: data sustainability is tough, espeically with only 3 year awards.
+
+Tony: there is a creer path outside of academis for people with these skills (data, analytics)
+
+Liz: what about interagency?
+
+Alan: There is a big data interagency working group. Creates excitement. But there is probalbmy not going to be any money.
+Alan: Big data working group at whitehouse, working across all agencies.  Lots of excitement, but no new money.  Rob: but not well connected to the social sciences side of things.  OK within NSF, but not as much outside the foundation.  
+
+Rob: within NSF social sciences have a good record with data.
+
+Alan: we need to impact decisions for public policy and this is data.
+
+Rob: we asked Charrette two design issues: 1-Architecture. 2-Governance.  Sustainability and Governance go hand in hand.  ??? don't we have a Sustainability and Governance Working Group?  BEW -- Yes.  
+
+Rob: you want a structure that outlasts any project/program/ and even program officer
+
+Rob: sustainability and governance go hand-in-hand. We want ot provide continuity for the ressearchers. This is very different than thinking for NSF 2-3 years ago. Our committee of visitor made this very clear in terms of program management components.
+
+Rob: For example the new DataNet awards ae 5 years with 5 year renewal options
+
+Alan the average NSFgrant is 0.75 M$ for 3 yrs
+
+Berrian: January Datanet and InterOP meeting conflicts with American Met Society meeting.  
+
+Tony: Meeting in London last week on the Alliance for Permanent Access.  Martha Anderson from US was one of the few US representatives.  issed where she was from.  Martha Anderson LOC NDIP program.
+
+Tony: are there otherthings we could do to help OCI?
+Rob: a couple. One is if you had any thoughts or suggestions in the data area. For example socio-cultural. Fro exmaple in how to make people aware of and the importance of data.
+
+Rob: Any particular concepts or thoughts for recommendations in the data area, either sociocultural (how to help NSF shape the process of making people more aware of the need for data, the need for people who understand the data, and the need for those people to get recognition) or suggestions on how researchers in the data space can work successfully with different companies and industries.  The data cost a lot to generate, has to hae some value.  that's not a primary considraiton for nsf to date, but that's changing.  What opportunities might exist for partnerships with companies.  How to incentivise partnerships with companies.  What options might there be for new programs within NSF for doing more with partnerships.  Connections to industry and business are coming out of director's office as a priority.  New types of collaborations and partnerships ($1-5M).  Another international program on building collaborations around science.  How can we parlay the DataONE track record into this.  NSF is short on examples, prototypes and expertise.  Nancy: sustainability research network would be an example (preproposal due in December).  Case could be made that part of a sustainability activity would have to be the integration of data resources.  
+
+Bill: Proposal requested from NSF for training institutes that is for big projects, focussing on sustainability of those projects.  How to help people develop the skills for business plans.  
+
+******REVIEW OF THE DATAONE ROLLOUT *****
+
+Bill will do a distinguishd lectureer talk at NSF in the Spring.
+Kelvin Droegemaeier has asked for a NSB update
+
+introduction of three news datanets:
+
+Q: Liz: Is there something that the board could do to help with the unfortunate misunderstanding in the name of the NC datanet?
+<discussion>
+
+Q: is NSF/OCI aware of these concerns?
+A: yes.
+
+Q: Do we kow what Data Conservancy got dinged for?
+A: not completely. Theye were asked to focus on their user base in astronomy and some innovative engagement work. Carl Lagosi is now joingin ataONE. They retained support or JHU library and support for snow and ince data center and some unfunded engagement with Woods Holls, but that has ceased.
+
+Tony: you should raise the naming unpleasantness at hte RCN meeting.
+
+Nancy: Consider working on parallel RCN's with other countries as part of the overall RCN proposal.  Can we do something that lets more international participation happen?  
+
+At Earthcube there were many people who comments "isn't DataONE already doing this?"
+
+
+Q: What is the next step after the Earthcube charrete?
+A: we wrote white papers. NSF is going to look through those.
+
+Q: (Nancy) could data net host many of the Easrtthcube efforts?
+
+rebecca: The middle was left out in the discussion between the grand plan and "what can you do in 2 years"
+
+Q: What will i-LMAB produce?
+
+Comment: Lyon: There is a possible parallel with SAGE (???) model building. They are looking at disease models that are built from distributed data.
+- potential for some overlap with one of the new DataNet projects - next EVA project may be a collaboration across DataNets with participants from SAGE.
+- SAGE: ? http://www.jisc.ac.uk/whatwedo/programmes/mrd/clip/sagecite.aspx
+
+
+**** REVIEW OF DATAONE INFRASTRUCTURE  ROLLOUT ****
+
+**** Website ****
+
+Some question about how website layout helps uninitiated users understand importance
+
+Liz: distinguis "search" for "search websites" and "search data holdings"
+
+Kevin: discussion on use of front page real-estate and whatit implies. Dividing focus on function versus PR/informative content
+
+Brian: We did some eyetrackker work and it may be that the eye starts in the upper left. BEW: in left to right reading cultures, for what that's worth.  
+You are devoting a lot of real-esate to pretty pictures. Brian to send the slides about eye tracker work to Rebecca.  
+
+Cliff: What aobur personalization? - but perhaps this is too early to get feedback on usability of different parts of the web-site
+
+Paul: spoke of some work where people were working to get part of their content onto other people's web site.  What has been done to make it easy for DataONE partners to be able to consume parts of our web site and be able to use it (embed it) in other sites and reuse content.  Think about this in the context of how Google maps are reused.  Do we have the equivalent of web parts that can provide DataONE content to partners, such as member nodes, supporting agencies, and other partners?  
+
+Kevin: is there a brief document that describes the goals for the redesign?  What sorts of measuremnts or key indicators are there for success in the web site redesign.  Rebecca: No, we don't really have that document.  Use this overriding guidance to allow people to make assessments of whether the redesign meets those goals. 
+
+**** Review of CI (Vieglais) ****
+
+A couple of questions coming in on nomenclature.  Liz was not familiar with NBII.  Tony asked about where eBird is within the member nodes.  Berrian and Brian weren't familiar with Merritt.  
+
+&&&&& CUAHSI misspelled in Dave's slides.  
+
+Nancy didn't understand what was intended by saying that we had a Mercury mn stack.  Might not have been particularly clear on what a Member node stack means.  Could be good if someone got a chance to discuss with her at dinner.  
+
+Kevin: How does Morpho "help" scientists?  
+
+Tony: What platform are users using (Mac, Linux, Windows?)
+
+Nancy: What's the ... on the "Platform Release in 2011" slide?
+
+Nancy: Why is CUAHSI considered software?  (c.f. comment above about needing to clarify what a MN stack means, particularly for a non-technical listener).  
+
+Tony: What is required to integate R
+
+Tony: What is neede to get the Excel inteface working? Give me a heads up if there is anything stupid.
+
+Nancy: Is there anything we decided to not do with respect to security?  
+
+Cliff: Positive comments regarding using CI Logon.  Look to get a paper written on how we approached security.  Consider bringing David Rosenthal in.  Class project for penetration testing?  Cliff was aware of some examples where that was done.  
+
+Nancy: all good, but what have you not done?
+
+Cliff: A good problem to follow-up on is how to handle a rogue node.
+David Rosnthal is a good resource for this - David Rosenthal.
+
+[BEW] Trust regarding member nodes.  Currently we know each other.  That's not scalable.  Consider looking at Moxie Marlinspike's discussion on SSL next.  
+
+Liz: Will policy stuff (slide 16) be considered in separate part of the agenda?  Cliff: These are fundamental questions.  Best we will be able to do is to document an initial practice and then put governance structures in place to be able to adjust those practices over time.  Defining user expectations and knowing those (for privacy) is a significant issue.  Paul: How will this play out as we get to dozens of member nodes. Will some be excluded based on these policies?  Need to be clear on what our positions are for the issue of the policy drivers.  BEW IMO, we've defined these positions, at least in terms of how the CI is structured.  But, need to make sure those positions are clearly documented and understood across the organization.  Example of differences of perspective on privacy at AHM.  
+
+Cliff: How long do we keep the logs and what gets logged?  Some libraries have decided to not keep logs in order to not be ordered to disclose what they do not have.  
+
+Liz: will policy issues be covered elsewhere in the EAB agenda?
+A: no? but I agree we should try to cover it.
+
+Cliff: it strikes me on slide 16 that all but thefirst bullet are fundamental issues and the best hope is to define a problem and evolve a solution as part of governance as it evolves over time.,
+Liz: the key phrase is user expectations.
+
+Paul Risser: How will this evolve as you get to dezone and dozens of member nodes?
+A: Good question.
+
+Cliff: some  issues are subtly difficult. For exmple logs. Libraries try to protect patron anonymity by deleting logs early (or not keeping them)
+
+Bill: some interest is coming not from prospective MN's but rather data one users group participants who are looking for best practices on sharing data.  DataONE is helping to break new ground on a number of technical and sociocultural issues for data interoperability.  When data centers are silos, many of these policy issues aren't as critical.  
+
+Cliff: What's the profile for the user base for R?  What do people use besides this?  
+
+&&&&& Future scenario.  Can we create a link from a Mercury search result that enables a user to "open this result set in my DataONE Drive"?
+
+
+Q: Liz: going back severa lslides you sid that Proenance was not worked out completely?
+A: for R
+
+Cliff: as I look at this drive thing , I am struck that this could have some very nasty scaling things. And it gets me into the general performance issue. I can readily see some of these tools regularly leading to some spikes in network traffic that we need to know and understand.
+
+Paul: As these data sets get largger and larger, will we create a consulting firm on the front end? There is a busiens dimension and a philosophical
+
+Paul: Are there wasys that this system that could prevent the misuse of data.
+
+Q: Hey: How much total data will be represented by 100K data sets. 
+A: it will be in terabtyes
+
+Q: How many files?
+A: a few millions
+
+Cliff: how will this affect the computaitonal resources that you
+You want some tools and stats on how to get usage and flows across these systems
+
+A: We have done theoretical calculations of boundary conditions We have done some stres testing. But the real test is when we get to release when we will have less control of usage.
+Being able to scale things quickly isreally important.
+Our big limitation will be implementing a new coordinating node.
+
+CN functions:
+Identify resolution
+identify replication
+ingest indexing (bursty busy)
+
+Question we are concerned about is how much can we support on unctrolled network.
+
+Cliff: you can ask for hlpe with i2.
+
+Q: Hey: Have you thought about using cloud resources in an appropriate way?
+A: some. we hope to do more and hope it 
+
+Q: Liz: have you got training programs tee'd up?
+a; see tomorrow.  but yes
+
+iz: timing is the real issue
+
+Berrein: You should have a well displayed and well functioning "suggestion box" at rollout.
+
+
+Marketing plan: (reading tonight)
+    - messaging briefs
+    - venues for distribtuion pp.20-24
+    - review marketing plan metrics- revie wmarketing plan metrics
+
+    
+**** Day 2 discussions ****
+
+
+Bill: Presentation on sustainability.
+
+Cliff: Is your (Bill's) Perceptions of NSF change in sustainability model (that we may be able to get support from NSF beyond year 10) due to NSF recognizing that it's easier to run services, rather than dole out money in small amounts for PI's to buy services. 
+
+Martha: for things like the data lifecycle, it's probably easier and more efficient for the government to just run the data services.  And the reason it went from marginal costs for data to free is in part due to the costs of processing payments.  
+
+Some general discussion about the different types of 501 organizations.  Liz was not particularly familiar with the nomenclature, as these are largely US designations.  
+
+
+Cliff: When yo utalk to libraries, yo uare really speaking to the institution as a whole. The librararies are the point of contact
+
+Kevin: A huge amount of prrogress on envisioning  "what it is" The one thing that is missing is that it doesn't fill out the circle. MArketing is more than creating "bookmarks"  it needs to show how it impacts users. Show what you are going to do and how it will impact the community. How will the marketing plan capture the incetives of the various constituencies. How do you make the case and how do you measure progress on making that case.
+
+
+Kevin: I think the issue is that success is dependant on a network effect. You need to explicitly state and capture that.
+
+Brian: I agree with Cliff that the institutional context is lacking. The message starts with "a DataONE library" but this term is never defined.
+
+Brian: secondly, the expression of a library is very homogenous. The plan currelty talks about libaries in search of CI services. It is not clear how the message would apply to a library with existing CI services
+
+BEW: Riffing on Brian's comments.  The CI is set up very intentionally to be friendly to both bringing in new CI and adapting to existing CI.  How well does the marketing information reflect this?  We very much want to be able to work with both existing centers, with a strong CI presence already, and institutions (maybe like UTK or even smaller universities) that don't have an existing strong CI to support something like an instutional repository.  Also think about how to frame the arguments of benefits.  There were a number of things that were clearly of benefit to the ORNL DAAC.  Does the DataONE marketing materials reflect the benefits that I saw for that kind of an organization?  
+
+Paul: Also ask the question about how does DataONE help DAAC - i.e. look in the other direaction and ask how DataONE hlpes the higher order organizations.
+
+Martha: Let me question that. As a NASA person with purview over the ORNL DAAC. I think it is a useful to NASA. IT is a sort of adding a WARP to the WOOF so to speak. The Oak Ridge DAAC is the plave where out sattelite observations eist and they have done a lot of work to set a high bar where they are useful to users.
+It is clearly a win-win there
+
+Paul: let me clarify: Does DataONE disappear or does it become part of the service plan of all organizations.
+
+Paul: to Clarify: what if DataONE existed  as part of DAAC instad of as a separate entity?
+
+Nancy: the other model is that it may move in the other direction because it could evolve to where no=one sees DAAC and only see DataONE.
+
+Liz: for me it is thinking about utility infrastructure. The questio nis DataONE the unseeen infrastructure. OR if you flip it around is it that the MN's become the unseen infrastructure.
+
+Bruce: as a former MN manager. It is a question of recognition.  BEW: It is essential IMO that the MN's get recognized, given the vital role that they play in the curation of data, supporting end-users, and in the overall understanding of the relevant science domain.  If DataONE becomes relatively transparent plumbing, that's not necessarily bad, so long as we can maintain sustainability by other means.  If the MN's become transparent, we run the risks of an unsustainable ecosystem.  Those MN's are also crtical for achieving this networking effect.  In this sense, the Apache Foundation becomes an interesting model.  We don't necessarily know who's running Apache web server or any of the other tools that the Foundation drives forward.  It is the content that the "member nodes" (organizations that use Apache web server) which is important.  
+
+Liz: can we look at the 4 messaging briefs. Are there any gaps?
+
+
+Nancy (and others) is there any incentive on getting higher quality data,  measuring higher quality data, promoting quality improvement.
+
+Bill: we have quality variability
+
+Berrien: That is why provenance  is important.
+
+Kevin: DataONE provides an infrastructure and then MN's and members provide information and annotation.
+
+Bill: We are implementing "myexperiment and that will hae provenance.
+
+Nancy: (perhaps repeating something Cliff said) Universities are starting to understand that they "own data" does DataONE provide visibility for universities to know where to go. Are institutions using libraries in that way? (as a point of contact)
+
+Nancy: DMP is a good thing, but there is a have and have not issue and DMP rqsuirements need to not add more impediments. Adding tools to help u's cliamb the cruve to get in.
+
+Kevin: Inadverant markeitng slogan on p. 17 "keep-up-to-data"
+
+Liz: moving on toe taret venues:
+
+Liz: Q: Are the targets intended to be US only.
+A: no, but it reflects the  knolwedge base that developed the draft
+
+Nancy: There are journals and newsletters here, but it does not contain web-sites. I.e. links 
+
+
+(John asks: "which keywords do we buy?)
+
+
+Bill: Listservs?
+
+Nancy: ESA has a blog  (different from ecolog)
+
+Martha: So other sites have links on their sutes to enrich their site.
+
+Cliff: You have govenrment as well. Get on NSF's roating top site
+
+MArtha: Science Fridays
+
+Nancy: NCAnet - the new network climate assessment network 
+
+Tony: AAAS (is this different than Science)
+
+Brian: the marketing venues are very materials irented. I didn't see a section so association and society meetngs.
+
+LIz: So I see professional associations and societies.
+
+Things like meeting like AAS and AGU.
+
+Martha
+There are items that are looging for 
+ex: Earthzine with J. Pearlman
+Britiish mag: International innovation
+
+[John wonders: what about the Chronical of higher ed as well since Cliif says libraries are the university/institutional entry point?]
+
+Kevin: The thing that it seem to me was that it was shotgun oriented, and this is not innappropriate. But in addition, try to identify the thought leaders in this area. For example who are the key editors on key journals. I.E> where are the high multiplier people?
+
+
+LIz: now on to metrics discussion.
+
+LIz: Q are you trying to measure activities or impacts?
+A: Bill: Both, WE want to have 2 sets of metrics. The impact metrics are not shown here, but are things like adoption.
+
+Kevin: How can you separate the two? Analogy the guys giving away papers on the subwy.
+
+KEevin: So given activity metrics, what are the goals? 100 or 1000?
+For exmaple: i you have a social strategy then a measure would be number of followers. Now where is the link between the "follower" metric and how it has positively affected behavior. I.e. did the social activity create an editor writing an editorial.
+
+Martha: track users by IP or registration/login. NASA wanted registration but user community did not want it. for NASA because 1/3 of our data is FTP we cannot track our users. DataONE can do cookies (Feds can't)
+
+Kevin: users will reg. if there is a benefit from reg. Then you do mareting for the grop
+
+Nancy: that is the rub.
+
+Kevin: the result should be default no.
+
+Berrien:  Ido not see where we are judging whether we are judging what we are trying to accomplish. We are measuring proxies. I would like to see somewhere in here where are scientists acknowledges DataONE utility.
+
+Berrian: your number one constituent is envrionmental scientists and associated students. I would like ot see a metric that measures that.
+
+Kevin: Marketing and value proposition needs to be heavily embedded into everything an organization does.  Brochures is just a tip of the iceberg.
+
+Liz: perhaps at the next EAB meeting we could talk about the impact metrics as well.
+
+Cliff: thin kin terms of internal branding
+
+
+**** Businees plan
+
+Brian: What is the assessment activity for librarins (in process) and who is involved in it.
+A: from usability WG led by Mike Frame and Carol Tenopir. The idea is to get the current sense of the community w.r.t. to data sharing and a sense of the needs of of the community. Get a sense form the community.
+
+Brian: I did not see the survey request. Did it go to someone else in my org. I'm not sure.
+
+Kevin: a great metric is the number of executed MN agreements 
+
+Liz: are metrics covering skis, citations metrics, and recognition. Or is it focused on tools or is it more broad?
+
+Kevin: what about CN"S do yo ujust consider them in the bag?
+A: yes in the bag.
+
+Kevin: will you have  more CN's in the future?
+A: interesting question. There will be real benefit to have CN's on differernet continents. Australia is interested and it makes sens for several reasons.
+
+Kevin: I was surprised about the lack of the CN's.
+
+Cliff: You may want a careful think about how to grow CN's and what the level of control.
+
+Bruce: there is a trust difference between MN's and CN's
+
+Cliff: There is a big difference between you are going to site a CN in Australis and are you going to coordinating CN's with multiple CN's. Think thorugh the architecture.
+
+&&&&& Need to address the issues from an architectural perspective about what it means to have a coordinating node that's not fully trusted.  Looking at this from a fundamental architecture perspective.  IMO, this is something we recognized up front, and a deliberate decision for how the overall architecture is structured.  We should make sure that this issue is address in a form of a response back to the EAB.  Perhaps start with Kevin and Cliff for an initial response to see if this floats.  
+
+Martha: you may think you are minimizng risk by maintaining control, but survivability may improve with diversity.  Referenced back to the start of EOSDIS and the idea of working through a central contract.  At the start of EOSDIS, the idea was that all DAACs would be running the same software stack, which would be built by Raytheon.  It was a pretty classic waterfall implementation project collapse, which is discussed some in a 1997-ish NAS report on the DAACS (http://www.nap.edu/openbook.php?record_id=6396).  
+
+
+Competitive Landscape:
+
+
+Kevin:  Earlier we talked about the cost of writing checks as a reason for agencies to fund in larger blocks. But there are other models
+
+Cliff: I think your point about being sensitive to not be competing with your partners.
+
+Paul: so it seems complicated in two senses. Becoming commercial is also an option. Think about 2 options. Over the top an NCAR model and then also member fees.
+
+Martha: I think it depends on how much NSF takes responsbility for this funding. NSF has taken the step inot hte landscape of saying that data is important - data-drive science.
+
+Berrien: so NSF 
+
+Martha so how reliable is their commitment?
+
+Kevin: it strikes me that you do not have any business people on the S&G committee. You migh twant to have some commercial types.
+
+Liz: Are you looking beyond environment?
+A: yes. for example ICPSR, array of DAACs
+
+Liz are you looking beyond the US?
+A: yes.
+
+Nancy: strikes me as an oddmarket. your main constituency are researchers and academic environment
+
+Martha: Having innovative partnerships with IBM, Google, is useful. you can use their clouds and they get content. Federal data are open and Federal data are open and cannot be copyrighted.
+
+
+Revenue Generation Question:
+
+Q (bill) are there other cateogries?
+
+A: 
+Training
+consultancy
+also commercial
+
+Services (to a lot of diffrent players  services to scientists, servicesto scientists, services to MN's, ...)
+
+Kevin: what aoubt advertising? Some fields it works.
+
+Nancy: thinking about publishing. Societies used to exist on membership fees ot finance publishing. But there is the rise of for profit publishing. For the ESA we required data deposition in coordination with publishing Are there opportunities in that route?
+A: Yes and no. First we don't want ot compete with our member nodes. Specifically DRYAD. PLOS nad ecology publish via DRYAD
+
+Analysis of prices and cost models that the market/community will bear.
+
+Cliif: these are basic questions. besides single.multiple sreams issue, you should also consider how much some streams can pull you off focus.
+
+Cliff come up with a ball-park estimate of how much you need to do what you really need to do. I.E. ask questions about what size of an organization you want to be. Do oyu want world domindation 1 M$/yr niche, copmletion and exit as a strategy.
+
+A: Oour strategy was to start with  " the VW model" -minimal needs. The ask what it takes for the "Toyota Avalon" and then ask what it takes for a "wolrd domination" plan.
+
+Martha: But each model has a different architecture. So that modeled has to be fairly settled out.
+
+Liz: I think agility is really important
+
+Kevin: but you have to generate a goal to shoot for
+
+Kevin: there are two types of diversity: diversity by he number of things of similr types and the number of different types
+
+Kevin: With greate diversity you are not a slaveto guides of your single funder.
+
+Tony: DO you think that the community is going to pay?
+A: All of the above.
+
+Tony: Where does it come form?
+A: They could write it into their grants
+
+Nancy: For some NSF requirements we are starting to see questions about how things will work if there is not budget for it. I expect to see soon a differentiation between good and bad data plans.
+
+Liz: if you put more many in data sustainability than more science
+
+Martha: This could be a dataone opportunity in that DataONE could satisfy DMP reuqirements effiicently
+
+Question 5: Unerstand cost now and into the future
+
+Liz: Have you had a discussion abotu being green? There is a cost in being green, but has it been included in your thinking.
+
+Nancy, there is a new CISE initiative to understand green computing. In particular in computing there are a lot of rare earths.
+
+Martha: There is a "cloud first" initiative
+
+There are also issues of accuracy of computing/storage.
+
+Kevin: where is the costof the core team? 
+
+Liz: One possible elephant in the room is that you are trying to grow when budgets are flat or declining.
+
+Brian: in a constrained budget, yo might wantot make sure that thre are not others providing these services and might you get elbowed out?
+
+Paul: Perhaps get a government sector business plan example. What we ahve hear is different thean a commerical busienss plan. I think we are constraining ourselves to a NSF model, but there are many other models. Maybe take these ideas to a business consultant.
+
+Bill: can anyone suggest a next step.
+
+Brian: One convential way to explore this is to issue a RFP or an RFI to invite people ot suggest a way to develop a business plan.
+
+Berrian: I do think that this may be a little narrow. "How would Steve Jobs approach this."
+
+Cliff: there is a tendancy to get too formal with business planning and get too comprehenize lists of possible funding. I think that it can cause people to get to copmlex and lose track of the few couple of viable funding options. How big of an operation do you want to be? How big of an operation do you have to be?
+
+Kevin: that's what buesiness planning is "rigorous commonsense". This is not a comprehensive enumeration and evaluation of options.
+
+Tony: How does this compare to say the business model of ITHAKA?
+
+Kevin: WE have done busienss plans on "how to support" {JSTOR, FEDORA, ...}. We have thought through the issues for several example. 
+
+Tony: "I just wonder about the value of developing a business plan for a case where there is no business"
+
+
+**** Community engagement ****
+
+Cliff: There is a good amount of  work on qualifying the value and quality of data. Trying to capture some of that practice. We need to capture someof thatdesign quality.
+Cliff: I'd be happy 
+
+MArtha: Have you looked at GLOBE - for children science
+
+Bill: There are two views of citizen science one part looks toward hat can you do to contribute to science and the other is what can you do as an outreach exercise?
+
+PPSR meeting prior to ESA - importance of being there
+
+lots of interest in the animation site (http://www.xtranormal.com/)
+
+Impact metrics
+
+Berrien: Citation index would be important
+
+Metrics:
+
+Blll: can we track changes in slopes of citations before adn after dataone integration/collaboration
+
+Cliff: progress in data citation will not help in this effort b/c dataone will not be a primary identifier
+
+Berrien: parse the difference between "DataONE" and "a DataONE system"
+BerrienL locate sometbody in Europe in order to understand the joint NSF/EU effort.
+
+******Really good comments about metrics and measuring impact rather than straight numbers that may or may not address the impact - I think this is something that needs to be considered for all our metrics - getting to the impact rather than focusing on pure numbers of this and that
+
+*** CI & CE Planning for 2012 and 2013
+
+Advanced Search
+The global change master directory has a good list of keywords. 
+
+&&&&& Is there a way to get the funding source (award number) included as a defined aspect of the metadata?  Similarly, is there a way to parse the funding source in the publications?  Would be helpful for tracing back to an award to help program officers be better able to gauge impacts.  Tru Dat!
+
+Berriena: In this data slicing - where does geospatial fit in? If you wanted to search in a GIS context.
+
+
+looking at EDAC at UNM as a MN. Karl Benedict is active in ESIP and with Greg Gollberg.
+WE are also looking taht the FRAMES USGS MN.
+
+Brian: Dan Greenstein - researchers don't deposit, they publish - referring to the work that Phil Bourne is doing to establish a data publication (work came out of a Workshop)
+
+Bill: Are there other jazzy low hanging  fruit
+
+Martha  NASA has a metadata catalog, ECHO. If it were queried intelligently on the client side, it would provide a way to access all DAACS (or even more of NASA EOSDIS?)
+
+USGS nodes: NBII Metadata Catalog, NKN (Northwest knowledge network), 
+
+possible USGS nodes: NKN (Northwest knowledge network), 
+
+Bill: ESIP has paid off dividends in spades.
+
+Bill, I'm sure thre are NOAA and DOE share some interests
+
+Martha:Ken Kasey (sp?) NOAA NODC
+Barrien: what about the NCDC folks
+
+Tony: I think that you are going to have to deal with iRODS. You're going tohave to explore that.
+
+They have credible agencies saying how great iRODs is.
+
+Dave: perhaps interoperability. iRODS as a MN.
+
+Berrien: I would ask ORNL to talk with DOE site.
+
+ESG
+CDIAC
+ANL some images
+LBL - Rosio
+
+New members of EAB:
+
+Nancy: How aoubt NGO's?
+
+Pangaea - http://www.pangaea.de/
+
+Dates for next Board Meeting (2012):
+
+October
+ARL - week of the 8th
+week of 15th looks good
+UCAR Board Mtg - week of 15th
+
+November
+week of 12th looks good
+Educause 6-9
+Supercomputing 10-16
+Thanksgiving 22-23
+
+
+Options: 
+Washington, DC easy to get to
+Phoenix
+LA -
+San Francisco - conversation with Livermore or Berkeley
+San Diego
+North Carolina
+Annapolis, MD - Environmental Synthesis Center (SESYNC)
+=========================================================
+
+Wrap-up
+
+Berrien: We've had a great meeting - the DataONE team has come together and has made great progress!
+
+Only concern is  - are you ready for success?  You've been in R&D mode but now be
+in education of the community mode. 
+Transistion to support while still evolving and developing a product.  
+
+BEW: reference back to recent discussion at AHM for LT on what sort of user support capabilities we can potentially put in place.  End user support is an issue.  
+
+Surprises will happen - with change come opportunities
+
+New phase is a different mindset - will have users depending on services and support
+
+Key issue from Liz is making sure that we have clear conflict resolution mechanisms, particularly with our various partners.  
+
+
+*** CLOSEOUT ***
+
+Closeout.
+
+You are in a good position
+
+you are right where NSF 
+
+You are now on the threshold of going public going operations.
+
+Our only concur is are you ready for success.
+
+You have bee in the R&D mode and you have been in the development and Community ed mode.
+
+Now there is a prototype and thecommunity is informed thatthis is coming. And now you have to make a transition to going publicbut at the same time you are still lreally evolving and developing a product.
+
+SO the management of this success will be sporting.
+
+We have great confidence in the team but we want ot make sour theta you are ready for it.
+
+We had two probing discussions with Bill. we are satisfied that you are ready.
+
+Frank conversations at the time level to ask the questions of do we have it right will be needed.
+
+We need to look at the time veruss effort.
+
+You will have many things coming at you in addition to your current development.
+
+you have to recognize it and be ready for it.
+
+Surprises will happen.
+but with change i opportunity.
+
+Liz: 
+It's a different mindset. You have to approach it with a service delivery ethic because you will have users depending on your services. You want ot build a user base and they will have expectations. Users can chose to use or not use your services. You want to develop a loyal and sticky user base. You hwnat users to come back and tell others to use DataONE.
+
+You need have auger support structure.
+
+It is both a bug fixing discipline, but it is also a support effort such as helping a user with a DMP tool
+
+And because DataONE is a distributed services, you will need to have good relationships with your partners.
+
+You will have surprises. When they are not nice surprises you need to have processes in place in order to address problems. You need to have conflict resolution that can be resolved smoothly.
+
+you need to manage user expectations
+
+Manage expectations
+You don't want to oversell or undersell - or maybe undersell a bit
+
+Think about the labor that your products and services.
+
+A Hearty congratulations as well.
+
+Bruce: we also need to manage expectations that may have been created by others.
+
+We will come to the DUG in June.
+
+Request that the board be informed for the soft and hard rollout. 
+
+

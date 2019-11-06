@@ -1,0 +1,165 @@
+Standup Notes for Development Block 2014-4-Block-1-2
+====================================================
+
+previous epad: http://epad.dataone.org/2014-2-Block-1-1
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+
+Skye
+------
+ * 20140122
+   * CN data repair tool design review/discussion
+   * Initial DAO (JPA Repository) work for MergeResult and RepairCache tables/objects.
+   * https://redmine.dataone.org/issues/4230
+ * 20140124
+   * Wrapped up new repositories impls (playing with spring config a little to create a repository factory)
+   * Wrapped up postgres datasource - need to integrate with SystemMetadataDaoMetacatImpl if being used in d1-tidy - cn_common
+ * 20140129
+   * Post Merge processor impl and test
+   * Reviewed NPN search index results in production
+     * No packages appear in results
+       * They have archived all their ORE docs...
+ * 20140131
+   * SystemMetdataDao interface and impl cleanup
+   * SystemMetadataTidyDao testing and impl cleanup -- continued...
+   * Started wiring up dependencies in Main class for spring configured object repositories.
+   * Annual Review meeting Feb 5 (wed)
+     * Will need to take time to prepare review prior to wed.
+
+
+Rob
+----
+ * 20140122
+   * CN data repair tool design review/discussions
+   * fleshing out MergeJob / MergeReport / ChangeRecord classes for merging systemMetadata in tidy project
+   * facilitating EDAC / GSTORE node final testing
+     * 3 items to address
+     * might need to make production certificate for them
+       * make ticket, assign to Chris
+ * 20140124
+   * spending time to facilitate resolution of final EDAC issues
+   * cleaning up processing code (MergeJob, MergeStrategy, etc.
+     * error handling (job failure)
+     * handle case of only 1 CN sysmeta
+ * 20140127
+   * continuing on merge job processing
+   * responding to iRODs maven issue
+   * following up with EDAC
+ * 20140129
+   * same...
+ * 20140131
+   * tidy project
+     * unit testing merge strategies
+     * adding in back-up strategy for missing-authMN-sysmeta handling 
+     * adding in job status to MergeReport
+   * year-end review paperwork
+
+
+
+David D
+-------
+
+ * 20140131
+   * Splunk test environment web cert problem cleared up, https access to indexer good, will build out to forwarder this weekend
+     * next, building prod field extractions into test for tweaking, testing apps/Splunk 6 for changes/updates/improvements
+   * Looked at LDAP sync issues w/Bruce using Splunk to mine available past slapd log entries
+     * see https://redmine.dataone.org/issues/4246 for details
+     * will investigate further, but Robert's push/pull comments (see redmine ticket) might be worth looking into
+     * will need to build slapd logs into splunk to get ongoing data
+       * initially, slapd was filtered out due to debug message spam
+
+ * 20140129
+   * Working with cbrumgard on Splunk web certs for test environment
+   * Will be looking at task 4246 with Bruce this afternoon
+
+ * 20140124
+   * BLOCKER: Splunk web certs causing trouble, will possibly need to rebuild for .test.dataone.org
+     * DONE: forwarder-to-indexer traffic encrypting properly
+   * editing/updating Splunk config docs
+   * TO DO: send data from test CNs into Splunk test environment
+   * TO DO: building field extractions and transforms from prod into test for future tweaking
+
+ * 20140122
+   * Splunk test environment almost complete
+     * need to get .dataone.org URLs for test boxes
+   * Updating latency notes
+   * Meeting w/Dave tomorrow to go over using CheckMK/Nagios
+
+Jing
+---------
+ * 20140124
+   * Fixed some bugs on the file-based authentication
+   * Use a central user management url to replace the ldapweb.cgi url in all skins
+   * Continue to work on the configuration.
+ * 20140122
+   * Working the configuration of the new authentication mechanism.
+
+
+Roger
+-----
+ * 20140231
+   * Back to doing stress testing of GMN.
+ * 20140229
+   * PyXB installation issue is caused by incompatibility between latest version of pip and the PyXB setup.py file.
+ * 20140227
+   * Working on PyXB installation issue discovered by Luke.
+ * 20140224
+   * Setting up the D1 component stress tester to run GMN through thorough stress tests to make sure that the changes to concurrency and blocking did not break anything and to check that deadlocks (probably more likely with the new implementation than it was with the old) are handled correctly.
+ * 20140122
+   * Working on #2437: Evaluate moving to database based locking.
+   * Implementing core changes in GMN related to locking. Current method is deprecated in Django. New method allows me to remove a bunch of code related to locking and all the internal REST APIs used by the async services in GMN. It also enables users to use any Apache MPM and configuration that they like. The previous version was fragile as it required the Worker MPM with a specific configuration.
+   * Should be done today.
+   * Plan on starting work on ONEDrive after meeting with Dave tomorrow (Thu 1/23).
+
+Robert
+ * 20140129
+   * Extended several concurrent classes to allow Executor Service to return callables, and tested
+ * 20140127
+   * Researching how to extend Java provided Executor Services to manipulate
+ * 20140124
+   * USANPN only has one object that cannot be retrieved that should be retrievable
+     * have not considered that NPN could be harvested independantly on two different  CNs, need to verify that no conflicts will happen when joining back into a cluster
+   * Created a MergeExecutorService but need more details about return objects and interfaces before going forward with testing.
+ * 20140122
+   * working on the ExecutoreServices for the Tidy Project
+   * confirm USA UPN node all systemMetadata is avaible on cn-orc-1, and all sci metadata.
+ * 201401242
+
+Chris
+-----
+ * 20140131
+   * Working on Transaction support in SystemMetadataDaoMetacatImpl
+   * MN support: Luke @ NKN, Ryan @Dryad
+   * Prep for IDCC
+ * 20140129
+   * Refactor of SystemMetadataMetacatImpl to be able to pass in data table names and the data source
+   * Helping Dryad with registration
+   * Working with GLEON on Metacat setup
+ * 20140127
+   * Working with Ryan on Dryad stage and production registration
+   * continued DAO work in the Tidy project
+     * Refactoring d1_cn_common DAO interface to accommodate the needs of the Tidy project (searching all CN tables cachedhed on one controlling VM)
+Topics
+------
+
+USA NPN production re-harvest?
+
+Bulk transfer of system metadata for Tidy CNs? 
+ * Changed design doc for this
+
+ANNOUNCEMENTS
+NPN
+GOA
+
+APPROVAL
+LTER-EUROPE (APPROVAL)
+KU (APPROVAL)
+
+REGISTRATION
+DRYAD (NEW REG)
+
+
+
+
+

@@ -1,0 +1,79 @@
+ VegX/Vegbank discussion
+---------------------------------------
+
+Participants: Peet, Lee, Jones, Schildhauer, Regetz
+
+
+Agenda
+-----------
+1. Status of VegX
+2. Status of BIEN work
+3. Status of VegBank
+4. Work on Vegbank import/export of VegX
+
+
+Discussion
+----------------
+1. VegX -- moderately stable; overall structure is fine; implemented at NZ Landcare Rsrch; fine tuning now
+    -- reasonable point for implementation (1.4.1 schema is most recent?)
+    -- Bob to send manuscript of VegX
+    -- still may be changes for supporting repeated surveys
+
+
+2. BIEN: tried to implement a relation framework that imports/exports VegX
+    -- hoped this would be a couple of years of effort, but student moved on after 2 quarters
+    -- some pains during creation of OR mapping
+    -- scarcity of VegX documents, even those from LandCare were invalid
+    -- LandCare NZ implementation is a subset of the full VegX
+    -- Need to build a valid test corpus of VegX documents
+    -- Need clarification on things like geospatial fields in the VegX schema
+    -- iPlant will contribute $50K for a year to advance the BIEN database (maybe 2 years)
+    -- Susan and Nick may be also drafting another proposal for iPlant work
+    -- also working with iPlant on world-clim style data resource
+    -- our concensus is that focusing implementation on extending VegBank would make sense
+    -- SVN URL for BIEN work  https://code.nceas.ucsb.edu/code/projects/bien/
+
+
+3. Vegbank:
+    -- New server is up and running on VM at NCEAS
+    -- Migrated to the new server virtual machine: vegbankvm.nceas.ucsb.edu = vegbank.org
+    -- a development virtual machine also exists: vegbankdev.nceas.ucsb.edu/
+    -- People that I don't know are loading data here and there.
+    -- Loading is still a bit awkward, some of the post-processing (generating keywords and denormalizations) are not working smoothly.
+    -- Loading data is still too complex - people can't just load simple data in a simple way on the website.
+    -- Export of .csv files can download over 10K plots at one time (~1K before)
+    -- refactoring necessary for downloading? to eliminate memory-bound limitation
+    -- rebuilding website by ant still a bit problematic - permissions issue - need to restructure .war file
+    -- Lee funded to maintain VegBank at approx. 10% FTE ongoing
+        -- and to load data in at 1.5 months
+
+
+4. VegX import/export
+    -- VegX and VegBank schemas are compatible at a high-level, need a detailed comparison
+    -- talk to Brad -- he may have done a more detailed comparison
+    -- VegX may have explicit fields for items that are in user-defined fields in VegBank
+    -- Two implementation paths:
+        -- custom loader
+        -- external XML-to-XML conversion
+    -- Would a simple import/export be sufficient to BIENs needs?
+        -- They probably don't want to see classifications
+        -- Would want additional geospatial features (which was motivation for PostGIS/GeoDjango architecture)
+    -- Simple occurrence data may be more simply represented than how co-occurrences are in VegBank
+        -- Could also use new UIs in VegBank to deal with individual occurrence searches
+    -- Could some of the restructuring result in features that aren't wanted in VegBank per se
+    -- Would this be deployed within the current VegBank, or as a new BIEN3 extension and deployment?
+    -- Branding itself could be an issue....
+    -- Governance of the resource would need to be worked out too...
+        -- current governance of VegBank is via ESA veg panel
+        -- what is the governance of BIEN? Missouri? iPlant?
+
+Action items
+------------------
+    -- TODO: Michael Lee: find definitive most recent version of VegX (on TDWG wiki?)
+    -- TODO: Michael Lee: will start doing  model comparisons and starting on VegX/VegBank XML conversions
+    -- TODO: Bob and Mark to discuss BIEN desire to extend VegBank to support VegX and BIEN needs
+            -- involves statement of work for BIEN activities
+    -- Next meeting: Conference call March 15, 2011 @ 12:00 pm pacific time (3pm eastern)
+
+
+

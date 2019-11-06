@@ -1,0 +1,122 @@
+Notes for Sprint 2012.23-Block.3.4
+==================================
+
+Date Range: 2012-05-06 to 2012-05-19
+
+
+Core Pieces
+-----------
+
+Schema
+- documentation updates for node information
+
+
+d1_common
+
+
+libclient
+
+- #2744, CNode client not respecting session param
+
+
+CN Services
+-----------
+
+Node Registry
+- Node References
+- LDAP security
+- Change notification
+
+
+Synchronization
+
+- interaction with updates to node registry
+- delete existing replicas on create
+
+
+Replication
+
+- Rate limiter
+- Bootstrap replication after synch with no replication service running
+- Audit process
+- Delete content
+
+
+Log Aggregation
+
+
+Portal
+- blocked by 2744
+
+Packaging
+
+
+Mercury UI
+
+
+Metacat
+-------
+
+Issues outstanding for release?
+Process for deployment (esp considering LTER delays)
+
+
+GMN
+---
+
+#2743 
+
+
+Mercury
+-------
+
+- Content not accessible through get()
+- Not returning exceptions in expected form
+
+
+Production VMs
+--------------
+
+CNs:
+- verify access to necessary ports
+  - open 5666 for NRPE
+  - configure basic system and service monitoring
+
+
+
+03/14/2012
+
+Chris
+  Replication tasks were not being created Friday. Typo, easy fix. Replication tasks are being created.  Batch runs on Friday showed possible issues on GMN, Roger was looking into it. Metacat issue in using unresolvable external schema locations, still needs to be resolved. See https://redmine.dataone.org/issues/2759
+
+  750 batch run.Target nodes quickly get overwhelmed in sandbox.  If replication policy is unfulfilled, (due to unavailable nodes with too many pending requests), the request needs to be deferred until time when processing is available. This is implemented now, and will be tested today.  All testing in Sandbox.
+  
+  Some Hazelcast issue with listeners. Dave was not able to connect a client and add listener. I will have a look at this as well.
+
+
+Andy
+  Plugin to Nagios. Autoconfiguration. Need to determine what to monitor on Hazelcast and other components, system status.
+  Connect to cluster, queue size. 
+  
+Ben
+  Portal is good. Libclient changes impacted portal but it is now working.  Staging needs to be configured for 3 CN servers. Working through a story to get Staging setup correctly. PISCO server needs to be registered and testing against Sandbox.
+  
+Robert:
+  Updated Hudson to keep max of 60 days worth of builds for dev. 3 builds for stable, and some other values for smaller builds.  We need to make certain in the future to add in max values so that we don't run out of space on dev-testing. 
+  Further tests on the nodeApproval tool revealed an error/bug in registration.  Register was working a couple weeks ago, so it is probably a simple fix.  Will update my local network MNs and test registration, etc with metacat implementation.
+  Holding off on my commits until I get get clean tests.  Will move to dev after my local network machines operate as expected.
+  
+Skye:
+    Network is dropping me so updating now....
+    Ongoing replication auditing work.  Trying to unit test as much as possible.
+    Ocassional one-merucuy UI updates.
+    Scheduling summer intern visit to kickoff project next week.
+    Available to help with public release issues.
+
+Rob: 
+  Friday. libclient bug/oddness. typing up final notes on subject composition (2688). SubjectInfo for certificates. 3 out of 5 certificates are still usable.. Maybe create new ones???  Matt will send to Rob needed certs for testing. Future focus: if changing subjectInfo changes them a lot, then have a mechanism to generate certs. Matt: easier to generate individual certs than intermediate authorities. 
+  Webtester- ready to get a stable candidate
+
+Matt:
+  Certificate creation. NodeId is now set. How to get accounts in portal?  Look for getting a release out on Wednesday.
+

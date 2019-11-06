@@ -1,0 +1,141 @@
+Attendees: Amber, Bill, Mike, John K., John C., Dave, Stephanie, Suzie, Deborah, Todd, Carol
+
+
+Regrets:  Rebecca, Bob
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+We will also use the epad: http://epad.dataone.org/2013Sep27-LT-VTC 
+ 
+1.  Please join my meeting, Sep 27, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/145551040
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (626) 521-0013
+Access Code: 145-551-040
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 145-551-040
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+Agenda for 2013-09-27
+
+1.  CCIT Meeting Report (Dave or Amber)
+
+Three day meeting at NCEAS
+Raw notes from the meeting captured at: 
+https://repository.dataone.org/documents/Committees/CCIT/20130924_CCIT_SantaBarbara/20130924-CCIT-Agenda.pdf
+Major topics included:
+ * Overview of current state
+ * Review and revision of plans for Y5 and Y6 - Y10
+ * Streamlining the process for installing a MN
+   * Creating VM copies of GMN and Metacat to make it much simpler to evaluate and possibly install production node
+   * Documentation layout / navigation
+   * Follow through MN install, highlighted some issues with doc layout and finding important pieces.
+   * Documentation - really need specific docs for typical installation use cases. Currently lots of "if this, then do that" which makes it difficult to get an overall picture of the process for a typical type of installation.
+   * Two day MN install workshop tentatively planned for early 2014, perhaps in conjunction with IDCC
+ * Dashboard design review
+   * Integrated design of all web services is important: dashboard, search, identity management, reporting, workspace
+   * Close iteration of implementation with design feedback seen as critical for efficient impementation
+ * Slender Node design. Initial target will be OAI-PMH providers
+ * Discussion of plans to support two significant changes intended to address concerns raised by potential member nodes:
+   * Transfer of system metadata control to MNs
+     * requires some fairly disruptive changes to both CNs and MNs
+     * Likely to be a significant lag between updates available and fully deployed
+   * Supporting mutable content
+     * Move towards supporting insignificant changes to content. Edits deemed as not scientifically important by a MN will be supported.
+     * Continue support for immutable content as well
+     * 
+Q: (BIll) streaming content?
+Q: (Bill) is MN workshop a 2-day event or cn it be  1-day event?
+
+2.  Sustainability & Governance WG in years 6-10 (Trisha, Bill)
+
+The overall goal of the working group is:
+ 
+-  put in place a governance structure that supports and grows DataONE’s community and services
+-  develop policies and procedures that support and furthers DataONE’s mission
+-  implement a business model that sustains DataONE’s community and services
+ 
+The Sustainability and Governance will achieve the following by engaging a diverse set of working group participants that represent the views of DataONE’s stakeholder community.   There are many existing, new and emerging organizations and initiatives (RDA, DataCite, Fedora Commons, Digital Preservation Network, etc.) that can shape DataONE’s sustainability and governance activities.  Working group participants will bring the views and expertise of many of these groups, along with the DataONE community (via DUG) and will provide a path for DataONE to contribute to and leverage community initiatives.   The participants will also help assure that DataONE’s activities are in line with other community practices.
+ 
+Proposed Participants:
+Co-chairs, W. Michener; P. Cruse
+1.       Robert Cook, Environmental Sciences Division, Oak Ridge National Laboratory (national labs, government agencies, researcher)
+2.       Mike Frame, Core Science Analytics & Synthesis, U.S. Geological Survey (government agencies)
+3.       Abby Smith Rumsey, Director, Scholarly Communication Institute (independent consultant, scholarly communication)
+4.       MacKenzie Smith, University Librarian, University of California Davis (Libraries, dspace, ARL e-science)
+5.       Thorny Staples, Director of Research and Scientific Data Management at the Smithsonian Institution, Office of the Chief Information Officer (Fedora, museums, government agencies, libraries)
+6.       Sayeed Choudhury,  Associate Dean for Research Data Management at Johns Hopkins University;  Hodson Director at Digital Research and Curation Center, JHU;   Senior Presidential Fellow at Council on Library and Information Resources (libraries, RDA, datanet)
+7.       Mark Parsons, Managing Director, Research Data Alliance/U.S. at Rensselaer Polytechnic Institute (RDA, ESIP, researchers)
+8.       Kaitlin Thaney, Director, Mozilla Science Lab   (private sector, figshare (formerly))
+        Mozilla has a unique persepctive on sustianability success. I don't know how/whether  Thaney is aware/involved.
+9.       Dr. Simon Hodson, Executive Director, CODATA (international perspective, codata)
+10.   Steve Morales, Project Director, Digital Preservation Network (libraries, preservation)
+11.   Mary Vardigan, Assistant Director, ICPSR, and Director, Collection Delivery (social science data)
+12.   Puneet Kishor, Project Coordinator for Science and Data, Creative Commons (data, policies)
+13.   Amber Budden, University of New Mexico (ex officio)
+14.   Rebecca Koskela, University of New Mexico (ex officio)
+15.   Dave Vieglais, University of Kansas (ex officio)
+ 
+Specific activities include:
+-  evaluate existing governance structures (eg HathiTrust, ESIP, GEOSS, etc)  and propose a DataONE governance structure and bylaws in year 4.  (year 4 ???)
+-  Evaluate, leverage, modify, and deploy existing community policies that support DataONE’s mission
+-  Evaluate, leverage, modify, and deploy a business strategy that will support DataONE’s community and services
+-  Hold a constitutional convention to engage DataONE’s community to formal review of governance structure, supporting documents, and business strategy
+-  Hold a balloting procedure at the constitutional convention that will propose DataONE’s future activities.
+-  Compile the output of constitutional convention into a solid governance, business and activity plan that ensures DataONE’s future viability
+
+
+3.  CEE Activities 
+Newsletter has most of the content, still missing a few pieces (CI and PI).  Hope to complete it on Monday/Tuesday for distribution.  (Question for Dave: is there a website detailing the Academia Sinica workshop? (need it for the events list)) http://taibif.tw/en/opendata2013/en/home
+Today is the final (business) day for feedback on the DUG charter.  Thus far we have received feedback from two individuals - none of it sufficiently critical to justify another community wide review.  Assuming nothing else comes in, the editorial changes will be adopted on Monday Sep 30th and updated online.
+Attend CCIT this week.  Main interactions with CCIT were concerning representation of MN material on the public website.  Reviewed / discussed the dashboard presented to the LT a few weeks ago and also the content for other pages.  Plan to have the content up in advance of the AHM / White paper although the dashboard may not be ready at that time.
+White paper writing put on hold briefly but back on it yesterday / today.
+
+
+4.  Proposal progress and Q&A's
+UA/Socio met and drafted potential tasks, descriptions, milestones. 
+
+(JWC) Q: Terminology question: are we planning for years 6-10 or yr 1-5 in this next proposal? (nomenclature) - [Mike - (Mike Frame) )we treated it as 6-10 - used words like "continue... ongoing .... next phase.....) 
+(JWC) OK - sounds good. we probably need ot make sure we are uniform in this convention.
+
+(JWC) Q: If/When should we do satisfcation assessments of production MNs?
+
+5.  Miscellaneous:  
+
+a) MN meeting in conjunction with IDCC
+Bruce following up on this potential workshop 
+
+b) Itaka sustainability course (Rebecca and Mike?) - Deadline for applying to the course if Sept. 30th.
+
+Announcement - says 20 Attendees
+
+- Trisha is interested in attending. 
+- Mike - I did apply for attendance from both the USGS and DataONE perspective. 
+Rebecca also applied from the DataONE perspective (GREAT) 
+(Amber) Will there be a limit on DataONE attendees?  I would be interested but obviously it woud be of greater value for RK or TC to attend for DataONE.
+
+
+c)  Georgia sustainability workshop (Suzie)
+Dates: Fri 11th / Sat 12th October (travel on Thusday 10th)
+
+d) Open badges endorsement?
+
+
+'Rounds the room:
+
+Cobb: nothing from me.
+
+Suzie : http://www.clir.org/about/news/pressrelease/imls-grantIMSL awarded research grant for next year to go over the management plans for Fed Agencies.
+
+Carol: unfortunately IMLS did not fund our grant on measuring the value of data services in libraries. Thanks to all who volunteered to be on it. May resubmit later.
+
+Deborah - nothing now
+

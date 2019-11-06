@@ -1,0 +1,112 @@
+Attending: Amber, Bill, Mike, Suzie, Bob, Matt, Dave, Bruce, Viv, Steph, Carol,Todd Vision
+Regrets: John Cobb, Deborah McGuinness, 
+John Kunze  and Trisha Cruse (fighting fires at home)
+
+
+1.  Please join my meeting, Sep 28, 2012 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/842365369
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (630) 869-1015
+Access Code: 842-365-369
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 842-365-369
+
+Agenda:
+1) CI update -- Dave  (including projected MNs to be added by next quarterly report at the end of October and the mid-February to April review)
+2) Licenses (follow-on discussion and decisions) -- Amber
+3) other
+4) Around-the-room
+
+Agenda:
+1) CI update -- Dave  (including projected MNs to be added by next quarterly report at the end of October and the mid-February to April review)
+Two major things occuring right now.  Working on getting replication sorted out.  Service to be fully operational by in tie for next report. Strategy set up, major time constraint is testing process.  Other major thrust is additional support for ITK.  5 tools listed as desirable for review: Morpho, ONEDrive, R client, DataUp, ONEMercury.  In process right now of finalising design and implementation.
+
+In process of digesting feedback received during AHM - a lot of feedback on ONEMercury.
+
+Other major aspect is addition of MNs.  2 new ones coming on soon - ONEShare and AKN.  ONEShare is ready - just needs a switch flipped comcurrent with DataUp (Oct 2nd).  Some internal MNs to be deployed to support replication: 2 GMN and 1 Metacat. 
+
+Longer term aspects of MN deployment: a lot of potential targets and a lot of communication with them.  Challenging to keep up to date with all this.  Ties in with discussion from last LT meeting - having a small group to coordinate efforts.  What was the conclusion from that discussion?  JC mentioned, but how are we moving forward with this?
+
+Bill: Agreed on a small group with JC likely lead. RK has been working with BC to get paperwork done for JC. 
+
+Bob: Getting subaward amended for ORNL - likely Nov start date.  50% time from Nov 1 to Aug 1.
+
+Bill: Who was on the group?  BRAD, Suzie, Mike, Matt?  Has it changed?  Suzie happy to continue.
+
+Discussion about status of EDAC and Brazil MNs.  Matt to meet Brazil group following ISEI as part of a workshop.  Bill favors more MNs in advance of EAB meeting.
+
+Could potentially use the Biocomplexity thesuarus - Spanish, Portuguese, English exist.. Might help...
+
+Planning CCIT meeting around the end of January in prep for reverse site visit.
+
+Group to be composed of JC (lead), BRAD, Suzie, Mike, Matt.
+
+2) Licenses (follow-on discussion and decisions) -- Amber
+
+
+“The Leadership Team recommends that all material published on the DataONE.org
+website be made available under the terms of CC0. If Working Groups feel that
+retaining copyright and a (more restrictive or not) license for reuse is required for
+a product, WG leads should submit a license recommendation and rationale to the
+Leadership Team for review.”
+
+Bob:  change "review" to "approval"??
+
+One concern: federal employees cannot sign copyright docs but CC0 is not copyright.  
+Todd  suggests using Public Domain Mark for government amployees and others  who don't have copyright to waive.  Functionally the same as CCZero to  end users, but the creator does not need to approve its use.
+http://creativecommons.org/publicdomain/mark/1.0/
+
+Mike: In accordance with 17 USC §10571, works prepared by government employees as part of their official duties are not subject to copyright protection in the U.S. In accordance with 17 USC §10571, works prepared by government employees as part of their official duties are not subject to copyright protection in the U.S. So, a very good source for government related Copyright came from this Interagency Working group across Feds on Copyright:
+http://www.cendi.gov/publications/04-8copyright.html  
+
+Concern: inability of some DataONE empliyees/participants to sign this agreement due to copyright being owned by the University or corporation
+
+Silly Question - are the products developed under DataONE not covered in the Agreements or the Overall COOP with NSF - this was probably already covered in earlier discussions? 
+
+Action: Amber to work up document explaining DataONE position for University employees to take to approrpiate council if they feel there is any conflict re signing a waiver.  This will be distributed to LT for review and the to all WG leads and current web contributors, as well as placed on the public website and on plone.
+
+3) Other
+
+
+4) Around-the-room
+
+John Cobb:
+1. HUBbub2-12 <http://hubzero.org/hubbub/2012/> 
+    117 attendeed (up from est. of 100) Indianapolis, IN 9/24-25
+    Presented invited talk on DataONE
+    Centered around HUBzero technologies
+    Idea: consider lesons from HUBzero as DataONE considers UI/eser experience discussion
+    Interesting presentations
+        Michael Witt, Purdue Librares presented a univeristy repository, PURR, with over 400 projects <https://research.hub.purdue.edu/>
+        Noshir Contractor - social science assessment of various collaboration  experience and impact on scientist output. Example result: proposal success rate increases when you propose with prior co-authors but goes down when you propose with those you cite.   (mcguinness' group at RPI works with Nosh's group on this - we are exploring these ideas in science pulication settings and also exploring fo analysis of correlations)
+        David De Roure presentatio on Myexperiment. slides at <http://www.myexperiment.org/packs/335.html> - the rise of social machines
+        Nancy Wilkins-Diehr - Science Gateways and the Democraization and Accelertion of Science OCI SISI institute grant. <sciencegateways.org> Desriptive overview at <http://www.youtube.com/watch?v=4ziEt0LRxEA&feature=youtu.be> 
+        
+2. Nice thoght provoking article. Sustainability issues associated with a non-profit/not-for-profit project - Rasberry PI <http://www.wired.com/opinion/2012/09/raspberry-pi-insider-exclusive-sellout-to-sell-out/?utm_source=Contextly&utm_medium=RelatedLinks&utm_campaign=Interesting>
+
+Mike Frame:
+
+Related Activity - NBII.gov will be turned off on Monday morning entirely. Any FAQs or Help related to the Program will be housed on USGS.
+
+Steph: Workshops at ESA 2013 for CEE WG - joint workshop with PPSR on data management (Wendy, Andrea); Morpho/DataUp hands-on (Carly, Steph); writing editorial for BioScience on ESA "growing pains" session (response to D1 NSF program officers' request)
+
+Suzie:  
+Presented a paper on the data practices of Turkish environmental sciences at an information management conference in Turkey which was focusing on eScience.  Had a good conversation with Tony Hey.  
+
+Also was  an invited presenter at the Data Curation Profiles Symposium at Purdue which was headed up by Jake Carlson.  Chuck Humphries was there and privately had a lot of questions about DataONE's progress. He's still very interested in what we are doing.  Helen Tibbo from UNC Chapel Hill said that her UNC iRods team had presented a small proposal to NSF to bring together socio-cultural representatives from each datanet project to talk about how we can share and coordinate some activities. She was expecting to be successful and plans to invite me and Carol.  This came up in the discussion about how to utilize DCPs in the future and there was a very positive reaction to DataONE assessment/sociocultural activities especially regarding how the DCPs were used as one source of data for developing the personas and scenarios. 
+
+Carol: Next joint sociocultural-U&A meeting is likely to be April 29-May 3 in Knoxville. Will verify soon.
+
+Viv: nothing to add
+
+Bob:  nothing to add
+
+Todd: interest in co-promotion with Dryad (a booth, etc) at the British Ecological Society meetings, this year or especially next (http://www.intecol2013.org/)
+
+Matt: nothing this week
+
+Bruce: Nothing else to add.
+

@@ -1,0 +1,144 @@
+Attendees: Rebecca, John Kunze, Bertram, Matt, Bruce , Steph, Amber, Bob Cook
+Regrets: Mike Frame, Bill, Suzie, Carol, Trisha, Viv, Dave
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Jun 8, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/973079400
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0601
+Access Code: 973-079-400
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 973-079-400
+
+GoToMeeting®
+Online Meetings Made Easy™
+We will also use the epad: http://epad.dataone.org/2012Jun08-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-06-08
+
+1) CI Update (Dave)
+
+
+DataONE CI Status - 20120608
+============================
+
+Summary
+-------
+
+As  of 18:30 ET, all software components necessary for public release have  been tagged as release versions. All services are expected to be  available except replication, which is now targeted for version 1.1 of  the infrastructure.
+
+Coordinating Nodes are partially installed, delayed  by dependency on the release version of Metacat, which was tagged today  (Thursday).
+
+The first round of Member Nodes:  KNB, PISCO, ESA, and SANParks have passed testing and are ready for  installation. LTER have completed the site review and are progressing  rapidly with preparations for installing a release version of their  Member Node.
+
+The second round of Member Nodes: Merritt, Dryad,  USGSCSAS Clearing House, and DAAC are progressing with compliance  testing. Merritt is waiting on the release version of Metacat. Member  node operators indicate on schedule for installations next week.
+
+Proposed Schedule with Notes
+----------------------------
+
+Week of 28 May
+Major goals: 
+- Code freeze
+- Finalize testing
+- Deploy production CNs.
+
+Current Status: 
+- Code reached final RC status
+- CN deployment prepared but not operational
+   Further explanation:
+   The delay was caused primarily by the complexities associated with  making a new full release of Metacat. I think we will be able to  continue with the existing schedule unless there is some problem with  loading the KNB, PISCO, SANParks and or ESA member nodes. Any problems  there will likely have a significant effect simply because of how long  it takes to load the content from those nodes.
+   
+- First round of MNs in testing state.
+- Second round of MNs in final stages of development
+
+Week of 4 June
+Goals: 
+- Deadline for incorporation of non-critical services / changes in CNs (e.g. Mercury UI tweaks, portal adjustments)
+- Deploy production CNs (deferred from previous week)
+- Deploy metacat MNs
+
+Current Status: 
+- Release tags for all CN components created
+- Production CN installation progressed as far as possible with delays brought on by finalization of the Metacat release
+- First round of MNs at final stage of testing (overall process takes several days)
+-  Version 2.0.0 of Metacat was released 20120607. Completion of CN  deployment, CN deployment sanity checks, then release deployment of MNs  is underway.
+
+Matt: completion of CN deployment should be done by end of today; Will start with the KNB MN on Monday - will do this one all by itself; if successful then can potentially do others in parallel - estimate for loading KNB(?) - Pisco has 93K objects (and is the largest) and estimate for it is 40 hours
+
+Still have a few problems from the testing of other MNs
+
+Week of 11 June:
+Goals: 
+- Deploy remaining MNs
+
+Observations:
+-  Process for deployment of initial round of nodes is not expected to be  complete until towards the end of the week. Second round deployment will  follow, but depending on those nodes passing tests for API compliance.
+
+18 June:
+Goals:
+- Operation testing and final changes, operational but not announced.
+
+25 June:
+Goals: 
+- Announce availability
+
+2) Preservation and Metadata WG charter (John Kunze)
+
+Lots of feedback on the charter - John has updated the charter and distributed it by
+email  (RK will also put copy on docs site). They are also reviewing the membership
+list and replacing 3 of the librarians with people from other domains.
+
+--2--a--
+OCI is encouraging DataONE to submit EAGER proposals
+    need to be passed to a Program Manager for blessing
+    NSF has some year end money
+    
+    
+3) Someone from CCIT to attend DataNet PI meeting in MN in July (Koskela)
+    Please note that a "PI" meeting will tentatively be held July 26-27 in  Minneapolis.  We    would ideally have 2-3 people attend (Rebecca, Bill,  plus Dave, Matt, Bruce, or someone else who can represent the CCIT)
+ 
+ Dave should be able to represent the CCIT at the meeting, but am happy for someone else to take his place if they desire.  Bruce will serve as a back-up to attend.
+    
+    
+4) Around the room
+
+Matt:
+CCIT/Devs discussed need for MN docs on the public web -- particularly the steps to becoming a MN beyond the general description that we have up there now.  Is the MN prioritization group willing to help draft that with technical details from the CCIT?  Or who else could help?
+Matt would like to review the flowchart of the process of becoming a MN - Amber will send it to him
+MN description documentation needs to be done by next week so that it can be approved by the LT and filled out by current MNs
+Amber: These are the MN docs that used to be on the site and need review.   If CI are available to provide a technical review that would be helpful:  https://docs.dataone.org/member-area/planning-for-dug/dug-general-documents/member-node-documents-final-versions
+11:39 Amber: The MN subgroub will be doing the grunt work :)
+
+Bob:
+Working with the Earth Cube Brokering Group, providing ORNL DAAC as a source of data via OAI, THREDDS, and OGC services.  In additiion, providing a use case for data discovery / access associated with the DataONE EVA climate activity.
+
+Bertram:
+Working on D-OPM in preparation for ProvWG meeting June 18th in Santa Barbara.
+Would like to extend meeting to morning of June 19th (IPAW starts after that).
+Going to attend "the other" (non-IPAW) Provenance Workshop (TaPP) at Usenix in Boston next week to present a paper on workflow provenance.
+
+John K:  Going to the DataCite strategy meeting next week to discuss a) approaches to required metadata, b) CC0 requirement, and c) data center quality.  We find that DataONE is pushing the current data citation model.
+    NB:  ORNL DAAC is also having some difficulties with DataCite xml and documentation.  Suggest that documentation be spiffed up.
+
+Bruce -- Chris Brumgard has started working through ORNL as a sysadmin and possible help with the developers, taking on work that Nick Dexter was doing.  He's about 15 hours/week in June, full-time in July, and then will be a graduate assistant at 20 hours/week starting in August.  
+
+Amber - Teaching at EIMI this week.  Going well and now motivated to build a database of free data visualization software.  DataONE has written a letter of support for the Animal Diversity Web RCN-UBE, along with NCEAS, Dryad, NESCent. Had an enquiry from digimorph.org.  They are interested in building a voxel repositroy and networking it with other datasets.  They are talking to Thompson Reuters but I am hoping that they will come to the DUG to explore being a DataONE MN.  At EduSummit in ABQ next week.
+
+Steph: no updates
+
+Rebecca:  DataONE year - begins August 1st and ends on July 31st
+Qtr 1: Aug-Oct (Quarterly report due Nov 1)
+Qtr 2: Nov-Jan (Quarterly report due Feb 1)
+Qtr 3: Feb-Apr (Quarterly report due May 1)
+
+Annual report (Aug-Dec) due: June 1
+
+Qtr 4: May-Jul (Quarterly report due Aug 1) 
+
+

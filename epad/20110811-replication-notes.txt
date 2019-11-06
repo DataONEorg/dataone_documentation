@@ -1,0 +1,89 @@
+Replication Notes
+-----------------
+See: http://mule1.dataone.org/ArchitectureDocs-current/design/UseCases/09_uc.html
+ 
+Replication of objects should be queued at the time the event occurs (CREATE, UPDATE, DELETE), and also on a scheduled basisin case event-based replication misses an event.  However, this hinges on how frequently the CN becomes aware of an event.
+ * Will MNs notify a CN of an event?
+   * MN can inform a CN, but not implemented yet
+
+ * Will CNs poll MNs for logged events only? If so, what frequency?
+   * Runs in a crontab-like function using quartz, every 2 minutes currently
+   * Frequency is configurable by a member node (see the <synchronization> element in the node class)
+
+Replication Authorization: 
+NOTE: all references to "token" below should really be "session"
+B = receiving member node (where the content is to be copied to)
+A = providing member node (where the content is currently located)
+ * How will replication be authorized? Node-level certificate/SSL handshake?
+   * CN makes replication request
+   * Receiving node needs to know where the it originates from
+   * CN must request both ends of the replication request
+   * Create a group with all of the Tier 4 member nodes
+   * need to add MNReplication.allowReplicate() on the replication node, called by the source node
+     * pass in pid for object, target Subject
+     *  
+     * XXX0. CN calls A.allowReplicate(token, subject, pid)
+     *  
+     * 1. CN calls B.replicate(CNtoken, A, pid)
+     * 2. B calls A.getReplica(Btoken, pid)
+       * 3. A calls CNReplication.isReplicationAuthorized(Atoken, subjectFromBtoken, pid, Permission.execute)
+         * other possible names: isSubjectAuthorized(), isReplicationTarget(), isReplicationAuthorized()...
+       * 4. if (yes) A returns data to B
+       * 5. B calls CN.setReplicationStatus
+       * add in 'REPLICATE' permission (actually just use Permission.execute)
+   * Replication get() logging should be logged differently than a regular get()
+   * Should evaluate the Subject from the certificate. To evaluate, ReplicationService needs to track Subjects for each ReplicationTask it queues.  In IRC, we decided Types.Node needs to be modified to add a Node.Subject field, which is the value used to compare to.
+   * We'll need two Hazelcast replication structures, and will also rely on a shared Synchronization/Replication Object Lock:
+     * hzReplicationTaskQueue (this will be polled)
+     * hzPendingReplicationTaskMap (this contains replication tasks that have been initiated, but not completed, and will be the source for finding ReplicationTasks that match a given Node.Subject)
+     * hzObjectLock (a shared structure used to lock pids during SystemMetadata updates)
+   * Possibly pass in a key (random string/subject string) that repl nodes verify
+ 
+Event-based replication for a given object:
+ 
+On create() or update(), check the SystemMetadata's ReplicationPolicy for:
+   * numberOfReplicas < count(CN.listNodes())
+   * Nodes listed in preferred list exist
+ 
+Rank the target replication nodes based on:
+ * SystemMetadata for the given object with it's:
+   * ReplicationPolicy
+     * blocked list
+     * preferred list
+     * required list (is this defined?)
+     * number of replicas as a minimum
+     * replication allowed
+     * (also, how to handle replicas that are externally maintained; set replication allowed to false, and min replicas to 0)
+     *  
+     * Decision: use only preferred and blocked lists; try to put a replica on all preferred nodes, plus any additional nodes needed to hit the min replicas
+       * preferred > minimum : hit all preferred nodes, even if greater than minimum.
+       * preferred < minimum : meet preferred and fill with more
+       * preferred == minimum : stop at preferred & minimum
+       * preferred - down < minimum : meet all available preferred and fill with extra
+   * Replica list (location, status)
+ * Node rejection of a replication event
+   * Once rejected, always rejected? Depends on the exception
+ 
+ * Initiate replication from the top of the list until the minimum number of replicas is created
+ * Need an internal timeout after the replication is initiated for a given node
+ * Create a ReplicationFailed exception
+   * messages:
+     * Replication denied
+     * Replication timed out
+     * ...
+ 
+Node-based polling:
+ * If a node drops, use it's object list to evaluate whether or not each object's replication policy is fulfilled.  If not, queue the object for replication
+ * This requires a short list of objects on a given node.  This may require a filter on the CN listObjects() method.  We would need to pass in a NodeReference to get a list of objects on the given node. Question: Can we add a filter parameter to CNRead.listObjects() that filters by node id so we can produce that list efficiently?
+   * Query solr index via mercury
+   * Query metacat systemmetadata table
+ 
+Question about ReplicationPolicy implementation:
+ * Should we replicate to numberOfReplicas only, or numberOfReplicas + 2 (or 3)? But not more? - Rationale: since the more replicas there are, if a node drops, there is significant overhead on the CNs to update all of the references to the replica node
+   * initially stick with numberOfReplicas
+ * How long is too long for a node being down to initiate replication of all of the objects that were stored on that node? One week of downtime?
+   * We need a notification step (email to the node manager)
+   * Downtime for maintenance, a few hours, a few days
+   * resolve() need to be updated to consider the status of each node
+
+

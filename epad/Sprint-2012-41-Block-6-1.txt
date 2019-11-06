@@ -1,0 +1,468 @@
+Sprint-2012.41-Block.6.1 Notes (07Oct2012 to 27Oct2012)
+=======================================================
+
+Topics to discuss
+-----------------
+ * CCI-1.1 Release
+   * Focus on Query API release
+   * Release d1_replication via single CN operation
+   * Trim down the redmine milestone [1]
+   * Determine the stage and production upgrade process
+     * Role of snapshots?
+     * Shut down stage services to create snapshots (TC, LDAP, etc.)
+       * Takes a lot of time
+     * Backups of production are trickier
+       * LDAP dump
+       * SQL dump
+       * Solr indices?
+       * Schedule a discussion on production backups with Nick, Chris B. etc. (Chris)
+   * Estimate a release date
+ * Work through the Redmine tasks
+   * CCI-1.1 trimming first
+   * Deal with the backlog for previous sprints
+Changes to the dataoneTypes.xsd schema (discussion lower in the epad)
+   * Query Types
+   * ObjectFormat
+     * now has mime-type, but there's a compatibility issue with MNs using an older version, same namespace
+     * Now that we're in production, not changing the namespace will break systems using the old file with the new namespace
+   * It's important to provide mime-type during object downloads from a usability perspective
+   * Solutions:
+     * Schema change, all MNs, CNs, clients need updating
+     * Add mime to fmtid lookup in libclient (getMimeType()) <-- decided to do this for now
+     * Add API call CN.getMimeType()
+
+Ben
+---
+ * CILogon stuff looks straight forward - still working on this, not officially 1.1
+ * Morpho
+   * discussed Morpho plans with Matt, Jing, Derik for Evos project in Nov 29,30th in Anchorage
+   * worked on file saving so it's not dependent on the identifier for writing - DONE
+   * will work on revision tracking now, will be working with Jing's rev template
+   * implementing revision management code Wed 10/17 Fri 10/19?
+     * initial switch to use RevisionMananger, DONE, now testing upgrade procedure (Mon 10/22)
+   * Jing continued on file management code, will start on D1 layer of code
+   * Ben isolated manual parsing of identifiers to get revs, abstracted into methods
+ * working with SAEON replication with SanParks
+   * last resort is to remove replicas we house and force re-replication (permission issues, not missing documents)
+ * Added maven source plugin for d1_common and d1_libclient (Derik/Jing requested it)
+ * DOIs are still not registered with DataCite, working with John K.
+   * Got feedback from John (again). Can work on massaging the entries (again). Will probably not do _everything_ he asked us to change - Still pending (Mon 10/22)
+ * Working with Derik on Kepler actor that uses the D1 API
+   * how will certs be handled in Kepler?
+   * Always an issue with CAs that are not alredy trusted by client (even some commercial). See below for libclient_java work that deals with this.
+ * Worked on metacat pathquery performance issues - looks fixed. one more edge case to deal with. DONE
+ * Working with Rob on libclient CA cert handling / design
+   * managing cert files across projects
+   * Derik should be able to use libclient without much config
+   * Can load the default cacerts keystore, or add another keystore
+   * lib_client will read a chain pem file and add the certs to the in memory keystore
+   * Derik can probably be beta tester on this Mon/Tues
+ * For advisory board meeting in 6 weeks, shoot for saving/opening datasets from Morpho
+   * query will take longer
+ * Working on iterator bug in HazelcastService (ISet) - can't duplicate the bug locally
+   * chris and Ben will continue to troubleshoot this
+ * Using mime type lookup file in metacat now
+ * Morpho refactor with Jing, using the libclient
+
+
+Robert
+------
+ * Will start work on #3042 and #2606
+ * Reviewed Bug #2934: replicaVerified timestamp issue
+   * Changed Category to metacat from d1_synchronization after tests
+ * refactoring some testing for cn_rest_service
+   * Stuck in refactoring.
+   * maybe bug in updateGroups - cn subject is not able to call updateGroups
+     * cn.updateGroup() does not check for CN admin user as caller and will fail if not called as the owner of the group.
+   * Done
+ * review results of Log Aggregation test from Friday on Stage
+ * review Staging and schedule snapshots
+ * Worked on schema change issues with jibx
+   * QueryEngine, etc. re-inserted into the schema
+   * Able to generate classes
+   * worked on extending the schema - somewhat successful
+     * how to extend ObjectFormatList in xsd with the new ObjectFormat?
+   * Will delete Query* classes from the v1 schema
+ * Fixed date timestamp issue in #2934
+ * Staging run of logAggregation only retrieved 10% of log records from mn-stage-ucsb-1 before failing
+   * created test program, high latency with query to metacat with 2m records
+   * current logAggregation algorithm needs to be more fault tolerant
+   * created a second test program to analyze another mechanism to harvest log records, 92% reduction in processing time
+   * Working on Story 3349: Log Aggregation needs to be more fault tolerant
+     * Task 3351: Integrate new harvesting procedures in to LogAggregatorTask
+     * Testing 3351
+ * Dealing with local env cert issues, testing log aggregation and others
+ * Successfully using new libclient
+ * Changed certificate generation manager
+ * Not ready for branching today.
+   * scripts to [semi-]automate branching
+ * 
+
+
+Skye
+----
+ * Finish mercury update for obsoleted, solr migration
+ * Working with Rob on auth filters for Solr (read + write perms)
+   * Possible reuse Util libraries
+ * Mercury UI changes for social links
+ * Questions on namespaces
+   * New versions of all types? No
+   * Index parsing library uses namespaces in the types
+     * Should just see the new types in the new namespace
+ * Noted log4j cut/paste error
+ * Refactored Solr auth logic to derive person identities to use AuthUtil in d1_common
+ * Testing the new schema, updated Solr classes and the rest service
+ * Will test Solr migration
+   * Ran this on ORC, UCSB in dev, worked well
+   * Working on UNM index now
+ * Working on AHM feedback for Mercury UI with Chris/Ranjeet
+ * d1_replication review
+   * working on replication queuing
+ * Met with Chris, Ranjeet on ONEMercury UI stuff
+   * worked through UI tickets from AHM
+ * worked with Roger on Solr facet fields 
+   * filter on returnable and searchable field for facets
+   * trailing / on queries - needs to hit the collection
+   * queries will be restricted to GET (for now)
+   * Use apache <Limit> directive to restrict POST
+ * d1_integration troubleshooting with Rob
+ * replication toggle in process daemon
+ * Replication results:
+   * "wildly" out of synch tables between CNs (UCSB).
+   * Every run has had an issue (sysMeta tables not synched). They are synched by hz listeners, so if they are not in the same cluster, there is nothing to "hear"
+   * d1_synch stopped prematurely during a run (~1k/20k). Probably communication issues with UCSB.
+
+Rob
+---
+ * Integration tests for Query API - done
+ * D1Url additions - more flexible - done
+ * Question: Use javax DataStore in libclient?
+   * Possible compatibilty issue with R?
+   * will check with Matt whether or not changing the D1Object.getData() return type from byte[] to InputStream will negatively affect anything.  (InputStream is more user friendly in the long run).
+ * Added Commons Lang jar to libclient, foresite dependency on 2.1, lib is now 2.6
+ * Worked on DataSource in D1Object in a new branch
+ * Looking at JCS issue in libclient - idea of 'grouping'
+ * cleaning up tickets
+ * merged v1.1 schema types into the trunk, left out RejectedTypes
+ * libclient work:
+   * deprecated methods in libclient (without Session param) should be removed in v2
+   * ultimately the API can't change until v2, but bugs should be addressed
+ * suggestion: handling CA certificates in libclient
+   * worked with Ben on this, worked on impl
+   * Geotrust RapidSSL CA cert is added (from resources dir), and other D1 certs
+   * however, property adds an auxillary location for the CA cert (/etc/dataone/truststore)
+   * certs in this directory get loaded into the trusted keystore
+   * do we trust both dev and production CA certs in one release of libclient??
+   * In testing, connection isn't working with RapidSSL cert at the verification level
+     * Ensure that you have the complete chain:
+     * https://repository.dataone.org/software/tools/trunk/ca/DataONETestCAChain.crt
+ * Worked on webtester against version 1.1.0
+ * Finished configuration and update of the CertificateManager
+   * http://mule1.dataone.org/OperationDocs/DataONE-Java-Client-Library-HowTo.html?highlight=how
+ * d1_client_r work:
+   * getting tests to pass before this
+ * Troubleshooting libclient web tester tests - reverted apache library
+ * Dealt with web tester bugs
+ * Updated libclient documentation
+ * Back to the R client work
+ * d1_libclient_java
+   * cache support: stable
+   * datapackage class: incomplete, should not hinder CI-1.1 release. Can continue working on it post-CI-1.1
+   * Plan to meet later today for packaging design: Matt, Rob, Ben, Roger
+
+Roger
+-----
+ * Add support for Query APIs
+ * Still working on faceted search
+ * Updated d1_common_python to 1.1
+ * Using the Query API calls
+ * Moving the searches in ONEDrive to the Query API
+ * Working on the pyxb generator to handle groups of schemas
+   * moved query methods, etc.
+ * Schema changes and pyxb class generation
+   * Adding additional types is easy
+   * trying to extend types from v1 to v1.1
+   * had to massage the bindings generator
+   * not able to give a name to the base bindings file
+   * work around is to generate bindings in two steps - v1, then v1.1
+   * v1.1 is complete in d1_common_python, d1_common_java
+     * plan to create a new d1client class for v1.1derived from d1client with v1
+ * ONEDrive continued work
+   * started plantuml class diagrams
+   * refactored to handle different corner cases caused by broken paths supplied by the user. Now displays sensible error messages in filenames under the broken path.
+   * need to consider ORE graphical representation (folder metaphor) and related issues
+   * Matt has write-up on using BagIt for organizing content
+ * ETA for checkin of ONEDrive with faceted search: 10/22.
+   * Checked in now, working on faceted search
+   * Next step: support for resource maps
+     * refactor ORE support out of command line interface and into d1_libclient_python to be shared
+ * ObjectFormat look up implemented in libclient.
+ * TODO: packaging design, back to ONEDrive, ObjFmt lookup in GMN
+
+Chris B.
+--------
+ * Looking into Ansible as opposed to Puppet/Chef (based on recommendation from Nick)
+   * working in local VMs
+   * base VMs running Ansible
+     * can be used as a parallel shell
+     * will work on documentation with Nick on mule1 operations doc area
+   * Is there a way to combine Ansible views across VMs within D1?
+   * Simpler than puppet and chef
+     * Push based
+   * No client daemons
+     * SSH
+   * Simple configuration
+     * Yaml based configuration file
+     * No ruby code
+   * Ready to start working on playbooks for DataOne software stack
+   * Installed playbooks on cn-dev-orc-1, testing
+
+   * Reset cn-dev-orc-1 to test latest playbooks
+   * Non-ncurses version of dataone software?
+
+ * Meeting with OIT (UT IT department)
+   * Discussed some managment issues.
+   * Network Changes (In about two weeks)
+     * Few hour outage (at the most)
+     * week of October 29th - tuesday to Thursday
+       * Will need to coordinate outage with DataOne
+     * New firewall
+     * New IPs
+     * Updating the DataOne DNS
+       * Temporarily maintain the old nic interface so those IPs will still be good while DNS catches up
+     * Clean up the external firewall rules
+       * Remove the per host firewall rules and replace with a general set of rules for the subnet of the hosts.
+   * I now have netreg access for DataOne so I can pre-generate mac/IP address for hosts  
+   * Possible VMWare 4->5 upgrade
+     * 2+ TB drives will be possible (No more merging multiple disks with LVM)
+     * Small outage per vm for migration
+     * Upgrade will likely be done during the network outage
+
+   * Waiting on Firewall ruleset
+   * VMWare going to 5.1 next week, so pushing that back to next thursday
+ * OIT host upgrades this week WO 10/29 (thurs/fri).
+   * Thurs: just bioportal, ansible test. nothing critical. Test on upgraded box and network.
+     * Do cn-dev-orc-1 first as a test.
+   * Friday: migrate all other DataONE VMs. Then switch them to the new network. No firewall rules except for those that are running on the indiv. VMs.
+   * NEW IP ADDRESSES (tues, 10/30)
+     * arrange with UNM to make firewall changes there
+     * reconfigure other CNs
+       * manually? using debian?
+     * RR DNS updated
+ * Ansible
+   * Playbooks working
+   * Just about have entire CN software stack deployed
+   * Not currently specifying which version of packages to install.
+     * TODO: specify version for every package (as group)
+   * superior to puppet
+
+
+Bruce
+-----
+ * UTK OIT will be doing VMWare 5.0 -> 5.1 early in the week of 10/29. Plan is to move DataONE systems directly to 5.1, rather than the intermediate 5.0 step.  We're probably doing the VMWare and network changeover (to the 10 GB firewall, with IP address changes) at the same time, to get these completed before the overall infrastructure upgrade.  
+ * I am planning to do some testing and work with COinS and the Mendeley & Zotero tools.  No tickets on this yet, but this may inform some work in upcoming sprints.  I'll probably also look at Papers with this, as that's an emerging tool in this space.
+ * USA NPN MN deployyment, will use Metacat stack
+
+Matt
+----
+ * working on R Client this week
+ * discussions on namespaces, types, and service endpoints
+ * Will work with Rob on R client code
+   * Worked with Rob on R client, R programming model
+   * Will continue working with rob
+ * Nick Brand is transitioning hardware from CNSI (no UPS) to UCSB North Hall location
+   * Plan: schedule the day after the advisory board meeting through February 11th
+     * furniture services scheduling
+     * North Hall staff scheduling
+     * Holiday time would be ideal
+     * Fairly extensive outage, 4 of 5 physical hosts
+
+Dave
+----
+ * schema is now up to date for documentation
+   * need to verify structure changes (like ObjectFormat)
+ * Working on statsd docs for using it
+ * Fixed Nagios monitoring scripts, in trunk, for dataone-cn-os-core
+   * rules in os-core to turn off openvpn
+   * will add ufw rule for port 6556
+ * Working on watchhazel
+   * Turned out to be cumbersome so leveraging statsd + graphite service with light weight hazelcast monitoring tool
+ * Will commit changes to os-core for nagios changes  to the trunk
+   * Finishing off changes - complicated to tease out
+   * changed firewall rules for nagios
+ * Added docs for monitoring code
+ * Quarterly report work
+ * EDAC MN implementation will be coming online and needs testing (EROS Data Analysis Center)
+   * written in python
+   * Roger can help with testing
+   * science metadata will likely be EML
+ * Will start diving into ONEDrive impl
+ * finishing off quarterly report
+ * Java security assessments
+ * Documentation for Bill and Rebecca
+ * Changing UNM firewall to work on VMs remotely, requires Java applet-based VPN
+   * Applets are disabled in Mac OSX due to security, etc.
+ * Looking at Hazelcast source for ISet.iterator()
+
+
+Chris
+-----
+ * d1_replication testing of outstanding requests causing stasis
+   * https://129.237.201.114/graphene/example/sandbox-replication.html
+ * Added an internal audit of pending replicas
+ * Worked with usability group on Mercury UI tickets and changes
+ * worked with Skye, Ranjeet on Mercury UI ticket creation, will continue Monday
+ * worked with Skye on d1_repl algorithm strategies for processing queued tasks
+   * made a change to the DAO layer to interpret 'pending' as outstanding requests, not queued tasks
+   * testing this change in sandbox
+ * Get CN sync ticket to Ben
+
+
+Jing
+----
+
+
+
+
+
+
+Supporting schema changes discussion
+------------------------------------
+
+Note: DataONE ultimately provides interoperbility mechanisms
+1) Type Definitions
+2) Service Definitions
+
+Premise:
+We won't add/change Types in the v1 schema
+We won't change APIs in the v1 services
+We will add APIs to the v1 services
+
+Proposal 1
+-----------
+Create new schema namespace (v2 schema?), only contains new types or changed versions of old types
+ -- new versions of old types can extend old types
+ -- import old types as needed for extension/restriction
+ -- http://ns.dataone.org/service/types/v2
+ -- REST endpoint: /cn/v2/
+     examples: /cn/v1/formats              --> Types.ObjectFormatList (v1)
+               /cn/v2/formats              --> Types.ObjectFormatList (v2)
+               /cn/v1/search/solr/{query}  --> Types.ObjectList (v1)
+               /cn/v1.1/search/solr/{query}--> Types.OctetStream (v1.1?)
+               /cn/v1/query/solr/{query}   --> Types.OctetStream (v1)
+
+(Note: We had a discussion between use of v1 vs v2. There are complexities of functional relatedness that may be solved by considering them totally separate releases, meaning duplicate all methods.. incompatibility with mixing and matching versioned methods)
+
+Proposal 2
+----------
+Add functions only to client tools (libclient) -- i.e., don't standardize formally yet 
+Only add a API service for /cn/v1/query/solr/{query}      (query())
+Don't implement            /cn/v1/query/{queryEngineType} (getQueryEngineDescription())
+Don't implement            /cn/v1/query                   (listQueryEngines())
+
+- Enables required functionality without changing the schema
+
+Proposal 3:
+----------
+Create new mapping functions. MN will call CN to obtain mapping from ObjectFormat to MimeType.
+
+Proposal 4
+----------
+No changes made to D1 at all; any system that needs formatid/mime type does it themselves. (doesn't solve QueryEngine additions)
+
+Proposal 5
+----------
+Create a separate (but not v2) schema for query types
+http://ns.dataone.org/service/queryTypes/v1 or
+  <-- preferablema
+http://ns.dataone.org/service/bolt-ons/v_1_1
+
+- create new schema
+- regenerate code bindings
+- can new classes be placed in the same v1 package (java)?
+- Python - can pyxb route to the appropriate structure?
+
+Will generate:
+
+org.dataone.service.types.v1.{Class}
+org.dataone.service.types.v1.1.{Class} ?
+org.dataone.service.types.v1_1.{Class} ?
+
+example:
+org.dataone.service.types.v1.ObjectFormat
+org.dataone.service.types.v1_1.ObjectFormat <-- extends the former
+
+
+
+Two kinds of changes
+1. Add new types
+2. Change existing types
+     org.dataone.service.types.v1.ObjectFormat
+     org.dataone.service.types.v2.ObjectFormat
+
+
+Current proposed changes:
+1) QueryEngine types
+2) ObjectFormat extension
+
+Issues to address to support multiple type namespaces
+1) New schema documents will import the v1 schema
+2) How will class generation work with jibx and pyxb when refering to 2 namespaces
+ * class generation is only part of jibx functionality. It is possible to produce our own classes independent of the schema and use jibx purely for marshalling/unmarshalling data structures
+3) The CN will need to send v1 types to MNs that only support v1 types
+
+
+
+
+
+
+
+
+
+
+
+
+[1] The following tasks can likely be excluded from the CCI-1.1 milestone:
+https://redmine.dataone.org/issues/3305
+https://redmine.dataone.org/issues/3253
+https://redmine.dataone.org/issues/3110
+https://redmine.dataone.org/issues/3084
+https://redmine.dataone.org/issues/3062
+https://redmine.dataone.org/issues/3061
+https://redmine.dataone.org/issues/3056
+https://redmine.dataone.org/issues/3043
+https://redmine.dataone.org/issues/3042
+https://redmine.dataone.org/issues/3024
+https://redmine.dataone.org/issues/3023
+https://redmine.dataone.org/issues/3022
+https://redmine.dataone.org/issues/3010
+https://redmine.dataone.org/issues/3000
+https://redmine.dataone.org/issues/2968
+https://redmine.dataone.org/issues/2967
+https://redmine.dataone.org/issues/2944
+https://redmine.dataone.org/issues/2922
+https://redmine.dataone.org/issues/2840
+https://redmine.dataone.org/issues/2833
+https://redmine.dataone.org/issues/2804
+https://redmine.dataone.org/issues/2778
+https://redmine.dataone.org/issues/2743
+https://redmine.dataone.org/issues/2679
+https://redmine.dataone.org/issues/2661
+https://redmine.dataone.org/issues/2606
+https://redmine.dataone.org/issues/2605
+https://redmine.dataone.org/issues/2487
+https://redmine.dataone.org/issues/2403
+https://redmine.dataone.org/issues/2253
+https://redmine.dataone.org/issues/2175
+https://redmine.dataone.org/issues/2014
+https://redmine.dataone.org/issues/2012
+https://redmine.dataone.org/issues/2001
+https://redmine.dataone.org/issues/1866
+https://redmine.dataone.org/issues/1855
+https://redmine.dataone.org/issues/1559
+https://redmine.dataone.org/issues/1553
+https://redmine.dataone.org/issues/1551
+https://redmine.dataone.org/issues/817
+
+
+

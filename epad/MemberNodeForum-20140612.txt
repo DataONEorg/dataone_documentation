@@ -1,0 +1,99 @@
+Member Node Forum - 12 Jun 2014
+                                                                                    
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+                                                                         
+    (Occurs every 2 weeks on Thursday 8pm South Africa, 3pm BRT (Sao Paolo, etc.), 2pm AMT (Manaus, etc.), 2pm EDT, 1pm CDT, noon MDT, 11am Arizona  and PDT, 10am AKDT or  Friday 2am Taiwan, 4am Brisbane AEST)
+  Upcoming meetings 26 June, 10 July, 24 July
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+Attending:  Laura Moyers, Debora Drucker, Ed Flathers, Corinna Gries, Dave Vieglais, Mark Servilla
+
+Regrets:  Bruce Wilson, Amber Budden, 
+
+Action items from last time:
+    none
+
+Agenda:
+
+0. Welcome new attendees - introductions: 
+
+1. Network-wide update and issues affecting MN's as a whole
+ * CN issue (tidy process) - complete (yay!), everything seems to be back to normal, CDL looks to be ok now (they had some issues after the heartbleed mess)
+
+ * New MNs coming soon:  EDAC (Earth Data Analysis Center) and LTER-Europe - these two MNs have begun harvesting and are awaiting final verifications before formal public announcement
+
+ * New current member nodes page (aka "the dashboard")
+   * http://www.dataone.org/current-member-nodes
+   * There had been some issues with delays in loading the page with some browsers.  These seem to have been resolved.  There was a script that seemed to take a long time to load with Drupal, changed the script location and works much better.  Also, if we used https protocol, some things were being loaded from secure location and some from insecure location, and Firefox would block the non-secure locations.  
+   * 
+Corinna noted LTER's # of data files compared to # of metadata files.  :)
+
+2. Open issues:  MNs please add anything you would like to address here.
+ * MN Operations documentation - on hold
+   * I'd like some suggestions from MNs - what do you need to know as an operational MN?  Some ideas have been:
+     * How do I temporarily take my node down?  How do I notify the community when I need to do this?
+     * How do I temporarily suspend harvesting of my data?
+
+
+3. Feature requests/opportunities for collaboration:
+ not today
+
+    
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+NKN - Ed - ran into a bit of a problem with their MN, in the process of reinstalling, trying to work with Redhat (there are known issues with this, related to version support, etc. - LM); keeping notes to pass on to Roger
+    Dave - talked with Roger about generalizing instructions a bit, as in a general Linux installation
+    Ed - the instructions have been good, it is Redhat that didn't come with some standard SSL stuff, but we've sorted it out.
+    
+GLEON - Corinna - organizing workshop (Quebec) for October, looks like a lot of people interested, plan to ask for a few early adopters to go through the process in August or so to demonstrate at the workshop how wonderful DataONE is.
+    Dave - are we planning to have the MN (GLEON) up and running at the workshop to have folks upload their data there?
+    Corinna - yes; plan is to have sandbox MN available at workshop, when successful roll to production
+    Dave - any idea of the kinds of data we expect?
+    Corinna - yes, mostly spreadsheets, 
+    Dave - will they have metadata to go with it?
+    Corinna - that's what we will be working on during the workshop; use online interface to get data in and maybe some folks use Morpho as well; really want early adopters to gauge their reaction to the process
+
+    ALSO:  Corinna working on proposal for another MN (biodiversity database); need for a snapshot of data behind published papers (i.e. with Symbiota)
+        data is in Symbiota (spreadsheets, images, etc.) - this data can be edited, updated, etc. at any time
+        data snapshot taken when paper published, this snapshot could be deposited in a DataONE MN (existing or new), linked to paper
+
+PPBio - Debora - server at INPA running, must address certification issue - need a trusted CA (Certificate Authority); 
+    Dave - is there anything DataONE can do to help with the certificate issue?
+    Debora - not currently, will let you know if so
+    
+LTER - Mark - upgraded to Ubuntu 14.0.4, working with Roger; hope to be able to move to the PASTA GMN when these associated upgrades are accomplished; the # data files/# metadata files
+    registered for DUG meeting, can present at MN showcase (Laura to send slide template)
+    LTER description - Mark to work on, maybe when LTER has moved to the PASTA GMN, depends on timing
+
+
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+ESIP SUMMER MEETING - JULY 8-11, 2014 IN COPPER MOUNTAIN, COLORADO  
+     DUG is Sunday 7/6 and Monday 7/7, co-located with the ESIP meeting.
+     Registration is now open:
+         http://www.dataone.org/dataone-users-group
+     Deadline for hotel reservations is 5 JUNE - not sure if the deadline was FIRM (you MAY still be able to get the DataONE rate)
+     We'll have a MN showcase similar to last year's - would you like to present and share a little about your MN?
+   * so far, NPN and KNB are presenting - anyone else?  We'd love to hear from lots of folks.
+   * LTER, PPBio, GLEON, NKN (possible update)
+
+MN workshop at Open Repositories (Helsinki) in June -  happening now!  Workshop was Monday
+
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't  forget irc.ecoinformatics.org, channel=dataone if you have an urgent  issue.  CCIT folks are always there and can assist you.
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry), -20130321, -20130404, -20130418,   -20130516,   -20130530, -20130613, -20130627, -20130711, -20130725,   -20130808,   -20130822, -20130905, -20130919, -20131003, -20131017,   -20131031,   -20131114, -20131212, -20140109, -20140123, -20140206,   -20140220, -20140306, -20140320, -20140403, -20140417, -20140501, 20140529
+

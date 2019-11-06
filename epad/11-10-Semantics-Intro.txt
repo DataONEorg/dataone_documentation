@@ -1,0 +1,360 @@
+11.10 Semantics II
+http://www.coli.uni-saarland.de/courses/msc-prep-11/page.php?id=slides
+
+Idioms
+  By definition non-compositional
+  The degree of non-compositionality varies
+  In some cases, we can understand the motivation of some idioms (source), as in "let one's hair down"
+
+Lexical Semantics
+
+Polysemy vs. Monosemy
+  Words with multiple related meanings. 
+  Zeugma test = "I didn't buy his car, or his argument" 
+  
+  ## Considered "#" wrong, but debatable if it really sounds funny. 
+  ## '*' marks linguistic ungrammaticality and '#' an ill-formed derivation. 
+  
+### I often use ## to indicate notes, as well. ## = notes. 
+  
+Polysemy: Related senses of the same phonological word
+Homonymy: Unrelated senses of the same phonological word
+Sometimes homonuyms are distinguished from homographs
+    Homonyms: talk - torque (or to/too/two)
+    Homographs: ear (of corn) - ear (body part)  can be differently pronounced, too, like wind (breeze) vs. wind (wind-up toy)
+
+Etymology: Homo- (same) -nym (name). 
+
+Synonymy: Have the same (ish) meaning
+    Extensionally and intentionall equivalent
+    Paraphrases
+    tap/faucet (example) - can be used as paraphrases for one another
+    
+Hyponymy: dog is a hyponym of animal
+Hypernym: animal is a hypernym of dog
+
+is-a is the arrow graph you use to schematically represent this. 
+
+Troponymy: loosely speaking, this is hyponym for verbs. 
+    The relation between two verbs where one conveys a meaning which is a particular case of the meaning of the other. For example, to amble is a troponym of to move.
+        (A worked out theory for this is Gordman --Mikos)
+        
+Antonyms: Opposites, basically. 
+    Three classes: complementary, gradable, relational:
+ * Complementary Antonyms exhaustively divide a conceptual domain into two mutually exclusive compartments.
+        If one holds, the other must be false
+            true/false
+            dead/alive
+            etc.
+    Complementary predicates give rise to predications that are Contradictions
+        Mostly verbs/adjectives
+        Verbal complementaries oftenhave a joint relation to a third presupposed predicate
+ * Gradable Antonyms: rich v. poor, fast v. slow
+        On a scale - we don't have a strict domain
+        mostly adj.
+        domain not strictly bisected, intermediate terms (eg neither long nor short)
+        middle of region/default value usually is not lexicalised
+        For gradable antonyms, it holds that less of one is more of the other, 
+        e.g. less short  equals more tall, whereas less dead == more alive doesn't work
+
+        degress of some variable propertty (from 0 to infinity)
+        terms relative to type of entity (small for elephant, etc.)
+        Often not a lexicalisation for the middle value - average height. 
+        
+    Opposites V: 
+        [...slides online...]
+        
+WordNet:         http://wordnet.princeton.edu/
+   * Lexical resource created at Princeton
+   * Organises English vocab. in syn(onym)sets and connects these sets via various types of relations
+   * Very widely used in comp. ling. 
+
+Causative/Inchoative/Stative (http://en.wikipedia.org/wiki/Inchoative_verb)
+    Basically, these are a change of state
+    x CAUSE y to BECOME z
+     * kill.v. - die.v. - dead.a
+     * dry.v - dry.v - dry.a/dried.a
+     * moisten.v - moisten.v - moist.a
+
+Meronymy (Part) - Holonymy (Whole)
+    toe is part of a foot (transitivity: if toenail is part of toe, it's part of foot, too)
+    tire is part of a car
+    test: an x is part of a y; a y has x/xs
+    Physical objects & regions in physical space: the part whole relationship is very clearly transitive: if x is part of y, and y is part of z, then x is part of z.
+    Most discussions of meronyms are restricted to examples of Ns denoting physical objects. Can other parts of speech stand in a part-whole relationship?    
+
+Portion/Unit extractors:
+    head of cattle, lump of coal, etc.
+
+-er/-or (agent-like participant): observer, rider, negotiator 
+-ee (undergoer-like participant): employee, signee 
+observe watch - observation, observatory 
+observe comply/adhere - observance
+
+Encoding: start with concepts or things and asks how people talk about them (onomasiology)
+Decoding: start with words and looks for their meanings (semasiology)
+Dictionaries traditionally take the decoding view
+In theory, doing a full lexical analysis from an encoding point view should lead to the same result as doing it from a decoding point of view
+
+Modeling meaning relations (Katz)
+Relation to syntactic and morphological processes (see below, Levin)
+View on human conceptual structure (Jackendoff) <-- Also referred to as Lexical Conceptual Structures (LCS) - popular in the eighties. 
+
+Modelling lexical relations:
+    Spinster is a hyponym of woman
+    A lexical item P can be defined as a hyponym of Q if all the features of Q are contained in the feature specification of P, e.g. spinster contains all the attributes ofye woman, plus "unmarried"
+
+Katzian Decomposition:
+
+Preliminaries
+Assumptions recursive semantic rules semantic compositionality
+Semantics works as follows give specifications of meanings of lexical items
+give rules showing how the meanings of lexical items combine into larger and larger units do this a universally applicable metalanguage
+Dictionary bachelor N
+a (human) (male) [one who has never been married] b (human) (male) [young knight serving under the standard
+of another knight] c (human) [one who has the first or lowest academic degree] d (animal) (male) [young fur seal without a mate in the
+breeding season]
+
+Projection rules: how to combine meanings
+we amalgamate lexical entries moving up the tree main constraint on the amalgamation are selectional restrictions
+colourful ADJ a (colour) [abounding in contrast or variety of bright colors]
+< (physical object) or (social activity)> b (evaluative) [having distinctive character, vivideness, or picturesequeness] < (aeshtetic object) or (social activity)>
+
+Cognitive Semantics
+       (Moving away from Katzian decomposition. This is more functional vs formal linguistics - cognitive is more functional). 
+ * key assumption: there is no separation of linguistic knowledge from general thinking or cognition
+ * cognitive semantics is aligned with functional linguistics, in distinction to formal syntax/semantics where
+ * language is seen as an autonomous cognitive faculty, encapsulated from other cognitive abilities and distinct levels of linguistic analysis are also assumed to be encapsulated (e.g. autonomy of syntax)
+ * as a consequence, in cognitive semantics meaning is more encyclopaedic
+ * no strict semantics-pragmatics division different units of analysis: syntax has meaning
+ * interest in grammaticalization (how grammatical items such as auxiliaries develop)
+
+Other languages: Mayan
+    X -                         Y
+    mountain.n-poss    head.n.
+    
+    In these languages, preps. are identical or very similar to body parts. A cognitive approach would be interested in the process of grammaticalisation. 
+ 
+ * denies tenets of objectivist semantics (truth and reference systems)
+   * that meaning is based on truth and reference
+   * that truth consists in the correspondence between symbols and states of affairs in the world 
+   * that there is an objectively correct way to associate symbols with things in the world
+ * holds that we have no access to reality independently of human categorization and that the structure of reality as reflected in language is a product of the mind
+
+Central concepts:
+   * metaphor, metonymy 
+   * image schemas 
+   * mental spaces 
+   * perspective, viewpoint, focus, figure/ground
+
+##Moin: Why don't they just talk together and figure it out?
+##Palmer: Good question. [...] discussion on flaws in the field. 
+
+Active Zones
+    If an entity participates in a situation, often certain parts of it are more involved in it than others.
+    There are some clear cases where there is no active zone: The Earth moves around the Sun.
+
+But in most others, a closer look reveals that an understanding of an active zone is needed (see pictures)
+ * cigarette in mouth (is really between lips, not like food in mouth...)
+ * brush in glass jar 
+ * beer in the fridge
+What are applications of the concept of active zones? 
+## "There must be some in cognitive linguistics"
+
+Generative Lexicon:
+    Main idea: There are different components of meaning that are manifested in different ways in different lexical items. 
+ * Observation: contrastive v. complementary ambiguity 
+   * I walked along the bank of the river —Bill robbed a bank. (Contrastive ambiguity)
+   * Mary had a little lamb —I don’t eat lamb
+   * John crawled through the window —The window is closed 
+   * I painted the door —Sue came through the door
+
+So, under this approach, we talk about different roles, which are part of the word. 
+
+   * Constitutive role: what the entity is made of (see lamb example) 
+   * Formal role: factors pertaining to the entity’s perceptual identification (shape, size, etc.)
+   * Telic role: purpose of the entity (door, window - opening)
+   * Agentive role: how was the entity created, or what brought it about
+
+Limitations of generative lexicon ideas
+ * the four roles are not always equally important (toy mostly telic)
+ * not readily applied to natural kinds: what is the agentive role of hydrogen?
+ * some aspects of entities are not readily subsumed by the four roles (safe beach)
+ * even some of the canonical four roles do not always seem to be filled (good mountain [to climb])
+ * 
+## No implementation so far? Not much. 
+## Implementation by Richard: http://www.burntfen.net/merecat/?p=447
+
+##Alexis Palmer knows James Pustejovsky - the main generative linguist in lexical semantics - and says he's a pretty nice guy. Good to know. 
+## http://scholar.google.co.uk/scholar?q=pustejovsky&hl=en&btnG=Search&as_sdt=1%2C5&as_sdtp=on
+
+Syntax-Semantics Interface
+ * How tight is it? What can you learn/infer from the one about the other?
+ * Distributional hypothesis (“You shall know a word by the company it keeps” Firth 1957)
+   * if words occur with similar words in a window of context, they are likely to share some meaning 
+   * if words occur in the same kind of syntactic contexts, they are likely to share some meaning
+ * Clustering of verbs into groups (syntax → semantics)
+
+Levin's word classes (As well as Rappaport Hovav - they've done a lot of work together)
+ * Example: touch - hit - break - cut 
+   * cut-verbs: chip, clip, cut, hack, hew, saw, scape, scratch, slash, snip 
+   * This set of verbs is grouped because its members participate in particular syntactic alternations
+   * Carol cut the bread —Carol cut at the bread (Conative alternation) 
+            ## Conative alternation: Changes the object NP into a PP (http://www.ilc.cnr.it/EAGLES96/rep2/node10.html), is therefore somewhat tied to the structure "at"; 
+            ## "tried to cut the bread / break the twig" is not conative alternation
+     * Carol cut the bread —*The bread cut. (Causative/inchoative alternation)
+   * Carol broke the twig —*Carol broke at the twig (Conative alternation) 
+     * Carol broke the twig —The twig broke (Causative/inchoative alternation)
+ * “The lexical knowledge of a speaker of a language must include knowledge of the meaning of individual verbs, the meaning components that determine the syntactic behavior of verbs, and the general principles that determine behavior from verb meaning.” (Levin 1993:11)
+
+Support Constructions
+ * Support: the governed, not the governor is the semantic heavyweight
+   * a Please extend my thanks to your family. 
+   * b The chancellor will make an announcement tonight. 
+   * c The mayor gave a speech at the opening ceremony.
+   * d The house was on fire. 
+   * e The painting is in possession of the museum.
+ * Test: what is e.g. sentence (a) about, extending or thanking?
+    Take functions in quite  alot of constructions in this form, as well. The complement tells you more about the verb than the verb intself. 
+    Mikos: In WordNet, it doesn't work like this. Is there a database that has this sort of construction?
+    AP: I don't know of one. FrameNet doesn't quite do it. A lot of the support constructions were specifically not annotated. 
+    
+This is something that should be left for Pragmatics and Discourse. 
+Meaning Beyond Words
+
+Thematic Roles, Semantic Roles
+What are the roles of the entities in the situation being discussed?
+ * Agent, Patient, Location, Source, Path, Goal, Instrument, Location, Beneficiary
+   * [Sue Agent] hit [Fred Patient] 
+   * [Bill Agent] put [the book Patient] [on the table Goal]
+ * Predicates, esp. Verbs, and Thematic role grids 
+ * Linking of Thematic roles and Grammatical roles
+##We're interested in the relations, and the participants, but mostly in the semantic structure: who is doing what, given a sentence? 
+##How exactly do we want to link these? I think these examples are pretty clear. Labelling is easy. What isn't is linking across the syntax-semantics interface, or to do this automatically.
+
+Problems with Roles
+ * Distinguishing roles 
+ * The roles don’t all co-occur, so a flat list is misleading
+ * How many roles do you need, how far do you need to stretch definitions?
+   * Your car is similar to mine in color. 
+   * We overestimated the cost by 20%.
+##We want to know, for any given predicate, how many roles there might be, how to define them, and how complex this might be. 
+
+Proto-Roles
+    (help assign roles in unclear cases)
+    
+    Proto-agent (prototypical agent) 
+   * volitional involvement in the event or state
+   * sentience (and/or perception) 
+   * causing an event or change of state in another participant 
+   * movement relative to another participant
+
+ * Proto-patient 
+   * undergoes change of state
+   * incremental theme 
+   * causally affected by another participant stationary 
+   * relative to movement of another participant
+
+Linking thematic roles to grammatical functions
+ * In sentences with Subject and Object, link participant with most proto-agent properties to Subject
+ * In sentences with Subject and Object, link participant with most proto-patient properties to Object
+ * If more than one participant qualifies as Subject/Object, then it will be possible to use either as Subject/Object
+ * Non-discreteness: proto-roles do not classify arguments of a verb exhaustively; a given participant can have both proto-agent and proto-patient properties
+
+Another approach is that of Frame Semantics.
+##For any given expression, we are using this based on our knowledge of a situation that this expression corresponds to. For instance, commerce events that have to do with buying or selling. We expect certain participants, goods, price, location, etc. 
+ * Semantics of understanding: what does a speaker have to know to use an expression competently?
+ * Concepts analyzed as profiles viewed against a Base/Domain
+ * Similarity to scripts in AI (Schank and Abelson)
+ * FrameNet: a computational lexicography project based on frame semantics
+
+Frame Semantics
+ * Semantics of understanding: what does a speaker have to know to use an expression competently?
+ * Concepts analyzed as profiles viewed against a Base/Domain
+ * Similarity to scripts in AI (Schank and Abelson)
+ * FrameNet: a computational lexicography project based on frame semantics
+
+##FrameNet is based on this - an inventory of defined semantic frames. 
+FrameNet
+## FrameNet: https://framenet.icsi.berkeley.edu/fndrupal/
+## Wiki: http://en.wikipedia.org/wiki/FrameNet
+## Josef Ruppemhofer (http://www.coli.uni-saarland.de/~josefr/index.html) would be the person to talk to (about FrameNet) at CoLi.
+ * Studies how concepts are expressed (encoding view) Groups words that evoke the same background knowledge
+ * Analyzes the players and props in the situations and relations it studies
+ * Roles are defined per frame; generalization happens through frame relations (e.g. is-a)
+
+##The problem is coverage. There was an aim to cover a wide range -- so what we get is a nice corpus that does not follow the distribution of normal text. 
+
+##Milos - anyone tried to learn it?
+##AP - Yes. Lots on this. Saarbrücken is one of the key places for this. There's a German FrameNet - the SALSA project (http://www.coli.uni-saarland.de/projects/salsa/page.php?id=index ) -- that does this. Lots of work on semi-superivsed and unsupervised approaches. 
+
+
+Tense, Aktionsart, and Aspect
+
+ * Tense: location of a situation with respect to a reference point (past, present, future)
+ * Lexical Aktionsart/situation type: internal temporal nature of the situation
+ * Grammatical aspect: grammatical focussing on components of the internal temporal nature of the situation
+
+ * Static: is the situation dynamic or static? 
+ * Durative: does the situation last for some time? 
+ * Telic: does the situation culminate in a goal/result state?
+
+Situation Types
+(Not transferable)
+## Wikipedia has a simplified chart (http://en.wikipedia.org/wiki/Lexical_aspect ) that leaves out the static property.
+
+Aktionsart ≠ Aspect
+## Aktionsart = German for "type of action"
+   * I ate candy all afternoon. (Activity) 
+   * *I ate the candy all afternoon. 
+   * *I ate candy in an hour. 
+   * I ate the candy in an hour. (Accomplishment)
+
+Modality
+    Modality comprises linguistic devices that serve to realize commitment to, or belief, in a proposition.
+ * Epistemic modality: commitment to, or belief in, the proposition
+ * John went home. 
+ * John didn’t go home. 
+ * It is certain that John went home. 
+ * It is probably that John went home. 
+ * It is likely that John went home. (Uncertainty)
+ * It is possible that John went home. 
+ * John went home for sure. 
+ * John definitely went home. 
+ * Maybe John went home. 
+ * Possibly John went home.
+
+##There's a lot of stuff on wikipedia about this. And it's beautiful in other languages. Look at Navajo if you want to have fun. Alternatively, ask Richard to describe Llárriésh for you. 
+
+Evidentiality
+ * What is the source of information for a speaker’s (level of) belief in a proposition?
+   * I saw that he was very annoying. 
+   * I heard that she was very annoying. 
+   * She’s very annoying, so they say. 
+   * I’m told she’s very annoying. 
+   * It seems she’s very annoying. 
+   * Allegedly, she’s very annoying.
+ * In some languages, evidentiality must be marked obligatorily. ##Tibetan
+
+##End of Lecture. Lots of slides not covered, but they will be covered later in the Pragmatics bit later. 
+##Lots of references 
+ * Bergen, Benjamin K. 2004. The psychological reality of phonaesthemes. Language 80.290-311. 
+ * Cruse, Allan. 1986. Lexical semantics. Cambridge: Cambridge University Press.
+ * Croft, William and Cruse, Alan. 2004. Cognitive linguistics. Cambridge: Cambridge University Press. 
+ * Dowty, David. 1991. Thematic Proto-Roles and Argument Selection. Language, Vol. 67, No. 3. 
+ * Fillmore, Charles J. 1985. Frames and the semantics of understanding. Quaderni di Semantica, Vol. 6.2: 222-254. 
+ * Firth, J.R. 1957. Papers in Linguistics 1934-1951. London: Oxford University Press. 
+ * Levin, Beth. 1993. English Verb Classes and Alternations. Chicago: The University of Chicago Press. 
+ * Rosch, Eleanor. 1975. Cognitive representation of semantic categories. Journal of Experimental Psychology,
+
+Resources and Contact:
+ * WordNet: http://wordnet.princeton.edu/
+ * Inventories of semantic roles along with annotated corpus data
+ * FrameNet: http://framenet.icsi.berkeley.edu PropBank: http://verbs.colorado.edu/ mpalmer/projects/ace.html
+ * original author of these slides: josefr AT coli.uni-saarland.de
+ * current present of the slides: apalmer AT coli.uni-saarland.de
+
+
+## Not directly related, but there used to be a course on the semantics of tense and aspect (http://www.coli.uni-saarland.de/%7Esaurer/lehre/SemRaumZeit/tense-and-aspect.htm ) - has a short introduction to the topic.
+
+

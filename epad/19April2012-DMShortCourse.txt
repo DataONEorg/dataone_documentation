@@ -1,0 +1,125 @@
+
+
+
+
+
+
+DataONE Data Management Workshop
+May 23-24, 2012
+Santa Barbara, CA 
+
+AGENDA (v4)
+
+DataONE Data Management Workshop
+May 23-24, 2012
+Santa Barbara, CA
+ 
+Workshop Goals: 
+1) Provide an introduction to data management concepts and best practices 
+2) Gather feedback from each lesson from students in order to assess effectiveness
+Presenters: 
+Viv Hutchison (USGS), Carly Strasser (UCOP), Heather Henkel (USGS), Nancy Hoebelheinrich (NSIDC), Mark Schildhauer (NCEAS)
+ 
+AGENDA
+Day 1
+ 
+9:00 – 9:45               Welcome and Introductions (Viv) 
+9:45 – 10:45             Introduction to Data Management (Viv)
+10:45 – 11:00            BREAK
+11:00 – 11:30              Data Sharing (Carly) and Advertising your Data (Nancy)
+11:00 – 12:30          Data Management Plans and Tools (Carly)
+                                    - HANDS-ON: Write a Data Management Plan
+12:30 – 1:30             LUNCH
+1:30 – 2:00               Data Entry Manipulation (Carly)
+2:00 - 2:30               Quality Assurance/Quality Control (Carly)
+2:30 – 3:30                   - HANDS-ON: Data Organization Tips for Your Dataset 
+3:30 – 3:45               BREAK
+3:45 – 4:45               Analysis and Workflows (Mark)
+4:45 – 5:30                      - HANDS ON: Demo of Sample Data to Analysis Environment             (Additionally, participants with their dataset in CSV format can 
+                                    use their  dataset)
+6:00                           Group Dinner (optional)
+ 
+Day 2
+ 
+9:00 – 10:00             What is Metadata? (Viv)
+                                 The Value of Metadata (Viv)
+                                 Writing Quality Metadata (Viv)
+10:00 – 10:30               - HANDS-ON: Writing a Metadata Record for Your Dataset
+10:30 – 10:45           BREAK
+10:45 – 12:00               - HANDS-ON: Writing a Metadata Record for Your Dataset 
+12:00 - 1:30             LUNCH
+ 1:30 – 3:00          Data Citation (Nancy)
+                                      - HANDS-ON: Create a Dataset Citation for Your Data
+                                     - HANDS-ON:  Create a Citation for Data From Other Researchers
+3:00 – 3:15           BREAK 
+3:15 – 4:00           Protected Backup and Data Preservation (Heather)
+4:00 – 5:00              Review of course material; Survey; Comments
+5:00                     Adjourn
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+WIll try to paste the applicant information here:
+Stage                   Subject                                        Institution
+PhD Candidate    Geography                                  UC Santa Barbara
+PhD Candidate    Environmental Systems               UC Merced
+PhD Candidate    Ecology / Evolutionary Biology    UC Irvine
+PhD Candidate    Environmental Systems               UC Merced
+Assistant Prof      Ecology, Evolutionary Biology & Behaviour    Michigan State
+Researcher (Masters level)    Aquatic Ecology        BLM/USU National Aquatic Monitoring Center
+PhD Candidate    Forestry                                        Northern Arizona State
+PhD Candidate    Ecology                                        UC Davis
+Masters               GIS                                               Maryland / Smithsonian
+PhD Candidate    Geography                                   UC Santa Barbara
+Early stage (1 yr) Postdoc    Civil Environmental Engineering    University of Illinois at Urbana-Champaign
+PhD Candidate    Ecology                                          UC Davis
+Masters Candidate    LIS                                            University of Tennesse
+Late stage (4 yr) Postdoc    Hydrology                       Dept. of Land, Air and Water Resources
+PhD Candidate    Geography                                     UC Santa Barbara
+PhD Candidate    Agriculture                                      UC Santa Barbara
+
+(Stacy's comments below for us to review)
+Prior to workshop:
+ * Online survey to evaluate perceived norms and personal practices related to each workshop theme
+   * Example – QA/QC:    
+   * Based on your experience, how much effort do researchers in your field typically invest into ensuring or data quality (e.g. checking for errors during data entry, using statistical and/or graphical approaches to identifying outliers or erroneous values)
+     * Researchers in my field don’t do anything to ensure data quality --> researchers in my field have adopted cutting-edge practices and technologies to help ensure data quality
+   * How much effort do you personally invest into ensuring the quality of data you collect or checking the quality of other data you work with?
+     * I don’t do anything to ensure or check data quality à I have adopted cutting-edge practices and technologies to help ensure data quality
+   * Please describe procedures you implement and/or technologies you use to ensure or check data quality.
+   * 
+During workshop (after each segment):
+ * Online or paper survey with a segment focused on the most recently presented workshop theme
+   * During this session, we presented the following as best practices:
+     * …
+     * …
+     * …
+   * Do you foresee obstacles to implementing these best practices in your work? How difficult do you think it will be to overcome these obstacles?
+     * I am already doing this + Likert scale ranging from ‘may require some work to implement, but no serious obstacles’ to ‘insurmountable obstacles’ + not applicable to my work
+   * Please provide more information about the serious obstacles that you see to implementing these best practices in your work.
+ * 
+At end of workshop:
+ * Online survey with a segment focused on each workshop theme
+   * Based on your experience, how much effort do researchers in your field typically invest into ensuring or data quality (e.g. checking for errors during data entry, using statistical and/or graphical approaches to identifying outliers or erroneous values)
+     * Researchers in my field don’t do anything to ensure data quality à researchers in my field have adopted cutting-edge practices and technologies to help ensure data quality
+   * How much effort do you personally invest into ensuring the quality of data you collect or checking the quality of other data you work with?
+     * I don’t do anything to ensure or check data quality à I have adopted cutting-edge practices and technologies to help ensure data quality
+   * Please describe any changes you plan to make in your efforts to ensure or check data quality based upon things you’ve learned during this workshop.
+   * 
+Ideas for pre-assessment from UCBoulder survey
+•       Briefly describe your research. 
+•       How long have you been conducting this type of research? 
+•       Can you tell us a little about what sort of data your research produces? 
+•       How is the data stored and accessed after it is produced? 
+•       Who has access to this data? 
+•       Does your department/lab have procedures in place for the preservation of researchers’ data in the event they leave the university or pass away? 
+ - Expectations?
+

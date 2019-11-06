@@ -1,0 +1,131 @@
+Attendees: Amber, Carol, Mike, Dave, Bill, Matt, Steph, Trisha, John Kunze, John Cobb, Bruce
+
+Regrets: Bob Cook, Rebecca, Todd, Viv, Suzie
+
+
+http://epad.dataone.org/20110401-LT-VTC
+ 
+ Let me know if you have other items for this week's call 
+
+  Agenda for 2011-04-01
+
+1. Joint space at ESA with Dryad - deadline end of April  (Budden/Michener)
+Booth cost: $900 or $1100, Table cost: $500  {if approved add to S&G WG agenda}
+Cost of materials likely exceeds to the cost of the booth quite considerably.  Bill has connections...
+Have a design that lets us use a modular system, switching things in and out.  Support from LT.  S&G to work on marketing costs / details.   MF: I'll bring some sample booth layouts we have used in USGS and NBII for past booths/exhibits to the S&G meeting. 
+
+2. Update on DataONE Summer Internship program (Wilson)
+Briefing and  feedback on the timeline and responsibilities for  reviewing & awarding the summer internships, including report  the number of eligible/ineligible applications so far received.
+~21 applications. 
+Applications will close on Friday.  Will cull those that are not eligible (Rebecca, Amber, Todd, Bruce).  Rest will be placed on Plone site for review by LT and Mentors.  Need to create a system that allows for comments / discussion.  Several very good candidates on the pool.
+Last year, 60% applications were in the last week.
+Rapid trun around time required on evaluations.  April 8th deadline for applicants.  April 15th when they are informed about the project.
+
+3. Outreach Plan (Budden)
+    https://docs.dataone.org/member-area/committees/management-team/meetings/2011/2011apr01/outreach_plan_2011.03.30.docx
+Developers meeting: Webinar format makes sense but concern that this takes from neccesary CI activities.  Is there someone else that can work on these screen casts?
+Internal means that running something that is not fully 'polished' more acceptable.  CCIT felt that development demos were not sufficient by themselves and need voiceover / background.  This should be an activty taken on by CE to aoid challenges of technical language etc.
+Running a webinar without supporting online materials would be faster but still takes away from CI activities.  Online materials useful for those that are unable to attend / new to the project.
+Have a presentation site on plone that has the NSF materials in order that the internal group can self discover.
+A basic representation of NSF materials would not be a great time constraint is the additional editing / polishing is not required.  This is something that can be done for a longer term outreach goal - perhaps quarterly webinars.
+For CI to do some demos, May would be better than April.  Bruce would be able to commit some time to reduced strain on Dave and Matt.  In this scenario, working through the screen casts would be sufficient.  Primary edits would be to insert slides shown in parallel into screen casts, Matt will do some of this.
+Carol interested in being engaged in the CE webinar but need to check calendar.
+
+The website will need to undergo revision in preparation for public release.
+
+    
+Summary
+·      Goal:  Communicate status and plans of DataONE
+·      Material:  Based on presentations, screencasts, and demonstrations made at the NSF review (February 2011) and updated as appropriate
+·      Audience:  the people who attend the AHM along with those on the DUG (total of potentially 100 people; actual audience will be smaller)
+·      Communication method:  Webinars (3 or 4), post Webinar schedule and presentation material on DataONE Web site (Plone, some selected “public” material on Drupal site), and short email invitation
+·      Timeframe:  April, May, and June 2011
+
+4. Around the Room 
+
+MF: I still owe Dave and Matt a draft agenda on the USGS/DataONE Developer workshop on April 26, 27th in Denver.   I'll get out a draft list of topics next week.   
+
+Matt: Getting inquiries (via Bertram) from the Biodiversity Information System of Colombia (which is the GBIF node for Colombia).  They have created a metadata standard (BIS) in spanish that is used through a network of nodes in Colombia, and a metadata server (Cassia) to build a network.  They have some interest in the DataONE project, and I am continuing to follow up.  I will add them to the list of potential MNs.
+
+MF: So, I know some things about Cassia - developed at Humboldt.   Some issues related to sharing, IABIN has several metadata records "locked" up in the system and we can't seem to get them to even export out data from it for re-hosting by IABIN.   IABIN also looked at running a Cassia version, rehosting, etc.   I'd suggest we tread carefully.   
+
+
+John Cobb:
+1) SC11 Tutorial proposal ongoing - Rececca K. ,Amber B. , John C. Hope to submit on Friday
+2) TRAC allocation starts today, inclding storage and VM's on TeraGrid for pilot.
+
+
+Carol: The eyetracker has arrived and we are setting it up in our usability lab. Hope to have it ready to go mid-April. So far 13 students have participated in usability tests of public catalog; faculty and grad students will be next.  Carole Palmer, UIUC/Data Conservancy and Mary Marlino, NCAR/Data Conservancy, are exploring the idea of a DataNet education-focused meeting in the fall at NCAR. This will bring our joint graduate student grant together with others in the 2 DataNets who would like to talk about higher education teaching ideas. They'd like to know if DataONE would like to participate/partner.
+
+Dave: Nothing to report except general progress on CI activities. Good progress being made on authentication / authorization challenges by Matt and Mark.
+
+Trisha: It looks like the MS Research contract for the Excel add-ins will be finalized today (with luck and a prayer). 
+We have completed the requirements for the DMP Tool, Phase 1 and the first round of wireframes have been completed. 
+
+Steph: working on agenda with Viv for CEE WG meeting next week; will talk more with Amber about whether/how to incorporate any sort of screencasting scripting sort of stuff. Went to the Natural History Network workshop meeting last week; shared lots of info about DataONE with about 40 people there. Cons Biology Institute Databasin folks interested in how they might interact with DataONE... Tosha Comendant... http://consbio.org/
+
+MF: USGS and IABIN have also been having interaction with DataBasin specifically.IABIN, through WorldBank, is also providing funding to them.
+MJ: DataBasin would be a great MN I think
+
+Bruce: Working on the siting for the DataONE equipment at ORC (need to get with John C on this further).  A significant chunk of this week is still dealing with various ORNL urgent challenges, including RSA fall-out.  Also, some work on data packaging examples being done, using the Baseline Survey data set, using OAI-ORE.  See https://repository.dataone.org/documents/Projects/DataPackaging/Examples/ for the files.  Comments and discussion welcome.
+
+John Kunze: A short crawl of data.gov is complete.  We'll do a more extensive (36 hour) crawl soon.  Not sure how relevant it will be as most of it is social science data.  OTOH, "loss of data.gov" has a certain ring to it if we're trying to call attention to what DataONE is trying to do.  We plan to put the crawl up on Merritt which we can then expose via our MN-to-be.
+
+Bill: JISC meeting on Research Data Management was a big success with much talk and interest in DC and D1.  I initiated talks with UK Environmental Ministry about establishing D1 MNs there.  We have subsequent meeting scheduled for December  in UK to go into moire depth.
+
+Amber: Planning for Citizen Science Workshop in May going well.  Their charter will be in front of the LT April 22nd.  Meeting with the DMP Tool group this afternoon to work out agenda for their part of the Best Practices meeting in May.  Planning for that meeting going well with a lot of material preparation required in advance.  Carly Strasser (NCEAS postdoc) working on a lot of this.
+
+
+[9:58 AM] Mike Frame joined.
+[10:00 AM] Dave Vieglais joined.
+[10:00 AM] Matt Jones joined.
+[10:01 AM] Bill Michener joined.
+[10:01 AM] Steph joined.
+[10:02 AM] Trisha Cruse joined.
+[10:03 AM] John Kunze joined.
+[10:03 AM] John W. Cobb joined.
+[10:03 AM] Dave:  http://epad.dataone.org/20110401-LT-VTC
+[10:04 AM] John:  How much for the 2 story booth with a Jacuzzi?
+[10:05 AM] Mike:  So, it's half the 900 or half the $550 I'm guessing...
+[10:05 AM] aebudden: yes, 1/2 of those numbers
+[10:06 AM] Mike:  I say we do IT
+[10:06 AM] Bruce Wilson joined.
+[10:06 AM] John:  yes
+[10:06 AM] Trisha:  yes
+[10:06 AM] John:  yep
+[10:06 AM] Steph:  yep
+[10:07 AM] Steph:  swag!
+[10:07 AM] Trisha:  bumper stickers
+[10:07 AM] Steph:   
+[10:15 AM] John:  Maybe a "FAQ" on plone site hat points peolple to "timestamp mm:ss" on mov<insert URL>
+[10:16 AM] Mike:  I liked Bob's proposal and approach - "internal"
+[10:18 AM] John:  Consider internal as "public release beta"
+[10:40 AM] Bill:  Steve clone....
+[10:43 AM] Mike:  Correct...
+[10:43 AM] Mike:  Same for USGS is true
+[10:43 AM] Carol:  Tim Bryne at OSTI is in charge of content/design of data.gov. You might contact him.
+[10:44 AM] Trisha:  he is going to be at the cdl in about a month
+[10:44 AM] Mike:  Carol, I think he might be science.gov?
+[10:44 AM] Carol:  He gave a talk last week on data.gov and told us he was it
+[10:45 AM] Mike:  So, guys there is alot behind the data.gov from an Agency perspective.
+[10:45 AM] Mike:  At one point they said they'd take "anything - even Excel files whether they were data or not".
+[10:45 AM] Mike:  For the longest time, we manually had to provide data (Ask Viv about this mess)...  
+[10:46 AM] Mike:  So, I guess I'm saying I'd be careful reading to much into this in terms of lack of funding/support...
+[10:50 AM] Matt:  TNC
+[10:51 AM] Bruce:  is there a tape of that discussion?
+[10:53 AM] Steph:  Yes, I should podcast my description of a Member Node, that would just be great!
+[10:54 AM] John:  link to RSA woes article <http://www.nytimes.com/2011/03/19/technology/19secure.html>
+[10:57 AM] Bill:  Thanks all!
+[10:57 AM] Steph left.
+[10:57 AM] Carol:  Bye
+[10:57 AM] Bill Michener left.
+[10:57 AM] John Kunze left.
+[10:57 AM] Dave Vieglais left.
+[10:57 AM] Mike:  Thanks Ambur for running the meeting
+[10:57 AM] Trisha Cruse left.
+[10:57 AM] John W. Cobb left.
+[10:57 AM] Matt Jones left.
+[10:57 AM] Mike Frame left.
+[10:57 AM] Bruce Wilson left.
+[10:57 AM] Carol left.
+

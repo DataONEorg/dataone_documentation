@@ -1,0 +1,15 @@
+Notes and thoughts from Tianmu Zhang's read-through of DataONE Architecture documentation
+
+1) In use case 1 (http://mule1.dataone.org/ArchitectureDocs/UseCases/01_uc.html) the IsAuth(token,GUID,READ) goes to an authorization API at a node.  In use case 20 (http://mule1.dataone.org/ArchitectureDocs/UseCases/20_uc.html) and later, the IsAuth(token,resultset) goes to an Authorization API at the Coordinating node, which then passes the token to an IsValidToken(token) call.  Why does use case #1 not make the call to IsValidToken? 
+
+2) In use case 36 (http://mule1.dataone.org/ArchitectureDocs/UseCases/36_uc.html), Can the Object Store extract the object locations and just send the location to the CRUD API, instead of retrieving the system metadata and forcing a later step to be able to parse the metadata?
+
+A: Yes, this would be possible.  The assumption, however, is that we want to return all of the system metadata as part of the request.  This enables the retrieving code to be able to look at a number of things, like the modification date/timestamp and the hash of the object. The hash is important for verifying that the copy retrieved from a location is true.
+
+3) Can data creators make informed decision and consent before the processing of his or her science data set. For example, would application clients of MNs require users who want to acquire (except the normal "read" action) data sets to fill out a corresponding digital form stating reasons for acquiring and potential resultant publications before CNs release token. 
+
+4) In terms of identity management, digital identities are transferable accross node boundaries once their corresponding token are issued. I wonder do we want to consider a more restrict or tailored TTL for particular types of data packages when their are transmitted across different autonomous systems (could be individual MN or CN, or a combination).
+
+5) Apart from revocation mechanism, is there somehow a degradation or promotion mechanism. For example, principals have commensurate levels of privilege of  access (while data object also have its own permission levels), would it be a good way to establish a manual or auto system check of the privilege allocations at regular intervals to avoid mis-matching (sometimes data permission or roles of corresponding personnal could change to some extent: both scientist and node adminstrative staff)
+ 
+

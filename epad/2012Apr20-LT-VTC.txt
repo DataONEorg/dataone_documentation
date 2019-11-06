@@ -1,0 +1,125 @@
+Attendees: Rebecca, Bruce, Amber, Carol, Bob, Deborah, John Cobb, Trisha, Bertram, 
+Mike , Bill, Suzie, Matt, Hilmar, Dave, John Kunze
+Regrets:
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Apr 20, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/276791065
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (267) 507-0010
+Access Code: 276-791-065
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 276-791-065
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+
+We will also use the epad: http://epad.dataone.org/2012Apr20-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-04-20
+
+1) CI Update (Dave)
+USGS MN Implementation Workshop this week.  Several technical challenges: biggest being network connectivity. CILogon service was offline when trying to use. Didn't run into issues related to DataONE s/w - did have issues with configuration. Need good documentation for this to guide people through the installation process.
+
+Outcomes: Fort Collins group went away keen on becoming a MN. Policy issues of becoming a MN need to be resolved in order to move forward. Giri's group also excited about moving forward and also group from Florida. Should USGS have 1 MN for whole organization or multiple MNs? Use existing Clearing House MN and put data there as one possibility. Talking to EROS Data Center also. View this workshop as the first step in bringing on more USGS MNs.
+
+Infrastructure overview: comments were due on Monday (only received a couple of comments). Will be advertising to a larger audience.
+Still have a problem with replication of content from MN. 
+
+Big things that remain to be done: 
+Bringing documentation up to date before public release
+Bringing the R-client up to date
+
+Metacat and GMN in good shape
+Mercury MN implementation does require a code review because of some performance issues that should not be happening
+
+Make changes to the sandbox environment then push out to staging environment
+No decision on number of CNs at this point
+
+Evaluate the situation this week and try to make a decision on whether or not to go with
+1 or 3 CNs for the public release.
+
+
+2) MN Prioritization Call (Bill)
+     For notes, see: http://epad.dataone.org/2012Apr17-MN-Prioritization 
+     
+     Purpose of meeting: How best to prioritize Member Node selection
+     Motivation: Lots of interest by various projects in becoming MNs and advice of EAB that we get as many MNs up and running ASAP
+     
+     MNs versus adding to client tools: EAB suggestion is to get a critical mass of stakeholders
+     Tools also important
+     Example of CUAHSI: want to be able to use resources most effectively
+     Is there a priority list of tools? This could be dependent on the community (examples, R, MatLab, also geospatial tools) 
+     https://repository.dataone.org/software/allsoftware/demos/implementation_ws_2/itk-tool-prioritization-by-lifecycle.xls
+     
+     May be time to revisit the project's milestones - 
+     
+3) Update on meetings/courses (Rebecca)
+Summer Interns: down to 6 projects (RK to check with Heather on creating lab notebooks for this summer's interns) Email will be sent to mentors reminding them to create mentoring plan and setup face-to-face meeting with summer intern
+
+Rebecca and Bill able to come up with funds for an EVA Post-doc to assist Claudio Silva with visualization and EVA activities, in coordination with CCIT
+
+4) Budget Update (Bill/Rebecca)
+NSF would like to attend the DUG meeting in WI, the AHM, and possibly with one of the Coordinating Nodes.  Bill to meet with NSF in May. Will have discussion of timing of reverse site visit - trying to push it out to January/February time frame.
+
+
+5) Around the room
+
+From Bob (and Matt)
+Two activities for the LT and Usability & Assessment Group sometime in Year 4.  This idea is based on discussions with Matt.
+1.     Convene an external expert CI group to evaluate the DataONE CI as a platform for linking outside tools and services and for adding new DataONE services (Matt).  Provide suggestions for future development.
+2.     Convene an external group of scientist to evaluate the usefulness of DataONE data and services to facilitate research (Bob).   Provide suggestions for future development.
+   
+Bruce: One applicant for the UTK Graduate Assistantship was late getting his application submitted, due to a family emergency.  That application has been received and I will be doing reviews this afternoon.
+
+Trisha: I have been working with an IMLS funded project called DataBib out of Purdue University.  Here is a description "Databib (http://databib.lib.purdue.edu/) is a software platform, information resource, and community that helps people identify and locate repositories of research data.  [and incremental additions are announced tw:@Databib]Users and bibliographers create, enhance, and curate records that describe data repositories, and this registry of information can be searched and shared or otherwise integrated with other tools."  Databib would like to work with DataONE to expose their repository list.  I let Michael Witt (PI) know that I would work with DataONE leaders on this front.  
+
+Mike Frame: 
+
+Some additional information related to the USGS DataONE workshop are below:
+
+Presentations are available at: https://my.usgs.gov/confluence/display/dataone/Workshop+Presentations
+
+USGS DOI Service, via ezid, was discussed and had considerable interest from the attendees.  
+
+Potential USGS MNs, based on those attending, would be from USGS EROS, USGS Wetlands Research Center, Invasive Aq. Species, USGS Science Base (which would include Geologic data, USGS Pubs, regional data from CO/WY/MT), and USGS Climate Science Centers (NKN will probably be first. 
+
+Discussion and Need to develop a "What would it take to be a MN?" was brought up by participants. Used as references some of the past documentation (DataONE+MN+Technical+Doc+2010+Dec03.pdf), but really need a How to Guide - which has both Technical & Policy related information. 
+
+Member Node presentation can be found at: 
+https://docs.dataone.org/member-area/documents/presentations/DataONE%20and%20USGS%20-%20DataONE%20Workshop%20April%202012.pptx/view 
+ 
+Year 1 - 3
+Year 2 - 6
+Year 3 - 10
+Year 4 - 20
+Year 5 - 40 
+
+John K: Working on DCXL metadata and API methods for depositing data and generating identifiers.
+
+Suzie:  Was on a panel at Translational Research 2012 (http://www.translationalsciencemeeting.org/ ) about Data Sharing.  The panel included Ken Pietra, Associate Dean, Clinical &Translational Research,  U Michigan and Dan Ford, Vice Dan for Clinical Investigation, Johns Hopkins School of Medicine.  The community recognizes need for data sharing but feels there is cultural barriers particularly for junior investigators.   I reported on the scientist baseline (they saw it in PLoS One) with particular attention on those who identified medicine as primary discipline. Also was asked for more general comments about areas such as data citation.  Most data sharing issues are similar to ur community although there are some unique issues related to biospecimens.  There are indications that there is a new initiative coming down from the funding agency for all 60 CTS centers to be better linked particularly in terms of facilitating data sharing. 
+
+Suzie interesting. Did Pietra mention the March 1 SeWHIP meeting <http://www.sewhip.org/data-symposium-2012>. Brian Athey from UofM was there talking about clinical research at UofM. I (JWC) gave an overview that included heavy mention of DataONE results, including the survey results  (fm suzie, same color)No he didnt mention that, but we had lots of audience discussion to deal with after so didn'thave much time to talk. We are working very actively with UCSF CTSI <http://datapub.cdlib.org/?p=92> and we are building out Merritt for a datashare infrastructure so it seems like this is a really good space to watch. The one person that we work with on this front is Mike Weiner and he is a rockstar of science and is passionate about this space and is happy to be a voice.I agree.  On the education front --In the poster session there were many posters on RCR training programs, but very little about data management.  The exception was the center at UCincy that has a very active data management focus -- began a program in Jan2010 and have added 3 DM positions and certified a couple other folks in DM. 
+
+
+Carol: Last week I presented for the first time some of the academic libraries baseline data. This was at a meeting in Fiesole, Italy with about 100 invited participants from libraries and publishers internationally. Am now working on the report for ACRL on this assessment  (with Ben Birch.) Bob Sandusky and I are working on writing up the academic librarians baseline survey, for presentation at IFLA in August. 
+Sociocultural and U&A Working group meeting in Knoxville May 1-3, plans are progressing well.
+
+Deborah: 
+Interview with a high potential post doc candidate on Monday.
+Contemplating a one day opportunistic meeting the day before IPAW (during the tutorial day).
+I gave an invited talk on Linked Data as an enabler for team science yesterday at a Science of Team Science meeting in Chicago.  http://www.scienceofteamscience.org/workshops .  Many were interested in semantics and interoperability issues and I notice suzie’s comments about translational research – a number of CTSA participants were at this meeting and asking about how they can leverage linked data and ontologies more.
+In a project Deborah/RPI is doing with USGS, her contact mentioned a new dataone citizen science postdoc joining.  Deborah would like to keep up with what that postdoc is doing in case there is an opportunity to leverage that work with RPI’s USGS efforts.  RPI is working with USGS as an extension of our semantically-enabled environmental monitoring – particularly water quality monitoring and now how it can help the job of a resource manager who may need to address issues including potential impacts on endangered species.
+Jeff is in charge of getting the next wg call set up - There will be some follow-up actions with the USGS Woods Hole group related to the USGS CMSP. Also, our Office in USGS CSAS is working with RPI on a USGS Data Integration/Semantic projects - Janice Gordon is our lead from my team. (from Mike Frame, USGS)
+Great - Mike - you and I should follow up - dlm@cs.rpi.edu
+
+John Cobb: XSEDE conference deadline is April 25 - how will DataONE be present there? CFP at <https://www.xsede.org/web/xsede12/participate> Confernce is July 16-20 in Chicago
+
+

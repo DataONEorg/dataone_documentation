@@ -1,0 +1,118 @@
+- February review
+
+- Public release towards end of 2011
+
+- Issues of data package representation in client APIs
+
+- Relative importance of ITK vs other activities
+  - Timing of ITK functionality release wrt public release. e.g. data deposition
+
+In Place now:
+
+- Libraries: java and python
+- R plugin (based on java)
+- FUSE DataONE file system 
+- CLI (python)
+- test pieces (using the java and python libraries)
+
+Target Apps:
+-  Excel (easy since work will be done by MS - need to have someone from  CCIT engaged in the project  John K., ensure that DataONE APIs are  priority)
+
+- Matlab - C, C++ extensions. Also support for Java, python
+- IDL - perl, Java (two way calls?)
+- Vistrails - Python
+- Kepler - Java
+- Taverna - Java
+- Trident - MS .net
+- SAS
+- Hydrodesktop? specifically a client for CUAHSI - based on open source GIS platform, so could be extended for DataONE to enable access to content outside of hte CUHASI HIS
+
+- GBIF IPT (Java, has extension points) Some issues on the data model
+- Morpho - Java, though serialization may take a bit of work (but easy, about 1wk)
+- Metavist - Java app. Does it support extension points / plugins? (Giri will research)
+- Other NBII activity with Drupal based metadata management tool - PHP
+- Variable tagging tool developed by Andrew (Line's student)
+- OGC clients, spatial subsetting tools
+  - Question on how to include OGC tools in the DataONE infrastructure (APIs?). DataONE exposes metadata and the get() methods. Perhaps interacting through DAAC and/or Mercury interfaces
+- Cassia
+- GeoNetwork (also candidate as MN)
+- ArcGIS (python)
+
+Some opportunity for extending workflow tools for integration with HPC environments. Question on whether this is a role for DataONE services - perhaps unlikely.
+DataONE could perhaps help with staging the data- user can adjust the replication policy of the data of interest so that it is migrated to the HPC nodes as directed by the CNs
+
+- Resolve could be amended to include additional services beyond the simple get - e.g. various OGC and subsetting operations
+  - Resolve -> node list -> node registry -> services available from nodes (beyond the basic DataONE services)
+    - There are existing registries of services - should investigate these
+      - GCMD, NBII web catalog service, 
+
+Policy for adding content through create()
+- add raw content
+- add package (includes sci meta + n * data)
+
+- Member node dashboard for showing state of membernodes + data + 
+
+Now prioritize for limited resources
+- Tools that cover the whole data life cycle. Do we want to add another analytical tool or flesh out the R tool for complete demonstration?
+
+- Should focus on completing the R tool to support complete data life cycle for the public release
+- Good chance that Excel plugin / tool will be developed in time for public release (need to track this)
+
+- Metadata editing / generation tools should also be a high priority
+  - Morpho also brings some of the other prototyping activities (semtools)
+    - Active work on internationalization
+  - Metavist brings a big community of users, though some migration towards the Drupal tool
+  
+Data Life Cycle steps
+1. Acquisition. Excel data entry; field based data entry; sensor network
+- Excel
+2. Documentation (annotation)
+- Morpho; web based tools; (perhaps Excel plugin?)
+3. Deposition
+- Morphol web based tools; (perhaps Excel)
+4. QA
+- R
+5. Analysis
+- R
+- Kepler (has infrastructure for remote access to content)
+  - Easier to DataONE enable
+- Vistrails (requires extension for server based data)
+  - More relevant to EVA group, perhaps requires more work for DataONE interaction
+- Taverna
+6. Visualization
+- R
+- WF similar to Analysis above, Vistrails further along with Viz.
+7. Preservation (curation, format migration, version control, provenance)
+- workflow tools (provenance)
+  - common provenance models across WF tools kepler, taverna,  ..
+  - Requirement to deposit "trace files" in DataONE
+- jhove (characterization, not format migration)
+8. Citation
+- Zotero, EndNote, Mendelay;
+   - Feature added to Dryad to export citation format.  This could tie into the search system?
+   - Support appropriate markup (microformats, rdfa, ...) in search results pages
+   http://www.zotero.org/support/dev/making_coins
+9. Disposition, decomission
+    - Closest in DataONE is a takedown order.
+
+February Demonstration 
+What needs to be done for R demo?
+- Start with a cool science demo - "here's what we did"
+- Follow on with how it was done.
+- Only example now is the EVA work, but it didn't use D1 infrastructure, but did use R
+  - Build on this be exemplifying R extension to show how the EVA workflow could be performed  through R using the DataONE extensions
+
+- current state: interaction with D1 available, but prior knowledge of appropriate content is required.
+- Several tasks / stories in Redmine related to what needs to be done for R
+
+There needs to be some interaction between the search and discovery interfaces and the analysis tools. For example - user discovers interesting content through the mercury search interface - how to easily transfer these results to an R analysis run
+
+Demo workflow:
+Search for interesting data -> ID
+Take ID and load into R
+Do something interesting
+Store result / analyysis back to 
+
+
+
+

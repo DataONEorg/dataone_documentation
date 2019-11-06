@@ -1,0 +1,170 @@
+Attendees: Amber, Rebecca, Bill, Dave, Bertram, Mike Frame, Carol Tenopir, Bob Cook, Bruce, Suzie, Deborah, John cobb (1:23 EDT), Todd, Trisha
+
+
+Regrets: Viv Hutchison
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Jul 27, 2012 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/626277153
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (773) 897-3015
+Access Code: 626-277-153
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 626-277-153
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012Jul27-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-07-27
+
+1) CI Update (Dave)
+Announcement was made this week by NSF and partners. Averaging 120 new unique visitors since announcement - 100 yesterday. There have been no issues with up time with CNs. A few issues internally that won't affect end user. Seeing some inconsistencies across the CNs. The major focus of activities has been the inconsistencies. Are also rebuilding the test environment with the CN. The dataone.org certificate expired and bought a new one for the test environment so is separated from the production environment. 
+Next steps in development include fine tuning ONEMercury and then will work on version 1.1 of the infrastructure. This may release in September. The CCIT is meeting in August in Santa Barbara and will work on the schedule then.
+Dave is working on a FAQ/Fact sheet for the infrastructure - quick start on the technical information.
+Next MNs: Dryad, most likely AKN
+Network issues? Looking at the results of network traffic among the CNs and impact of using the VPN; May have to purchase some VPN-dedicated hardware 
+
+2) Update on Reverse Site Visit & next proposal (Michener)
+
+Summary of NSF-DataONE Meeting: July 19, 2012 at NSF
+Present: Bob Chadduck, Irene Lombardo, Bill Michener
+The discussion focused on the upcoming Reverse Site Visit and proposal submission.  Timing  of all activities were based on back tracking from when the award would be made and all the steps leading up to the completion of the Cooperative Agreement and other critical path actions.  The timetable agreed upon is as follows:
+1.     Reverse Site Visit (RSV) – to take place between mid-February and mid-April, 2013.  Bill is tasked with determining a set of suitable dates for the DataONE team and presenting those to Bob, Dane, and Irene. DataONE may:  recommend possible reviewers, topics, and team participants, and must provide a detailed list of COIs. The RSV will be 1.5 days in length with a possible verbal report back to DataONE at the end of day 2.
+2.      Proposal – The proposal will be submitted as an unsolicited renewal proposal with a due date of November 10-15, 2013 (exact date to be determined).  
+3.     Cooperative Agreement (CA), Project Management Plan (PMP) and Project Execution Plan (PEP) – February to March 2014 is the time frame for initiating discussions with NSF DGA to reach agreement on content and format of the CA, PMP, and PEP.  
+4.     Package processing by DGA must be initiated by early to mid-May, 2014.
+5.     Renewal would be scheduled for an August 1, 2014 start date to avoid any lapse in funding.
+DataONE is also tasked with reviewing the existing CA for any errors that we would like to see rectified, as well as any suggestions for amendment. 
+
+Was any guidance on the renewal proposal? It's up to us, NSF recognizes that continuation of core services was at the top of the list. May have to cut back on some WG activities and concentrate on the core WGs to meet the $10M.  Can also put together a plan of other potential funding opportunities. At this point they have not specified any other requirements.
+
+
+3) Report from DUG (Budden)
+49 pre-registered. 40 signed attendees. 69 members at present, last year was 56 (13 new members).  Enquiries coming in so that number is increasing.
+Should consider a cost for registering next year
+ESIP did not see a decline in their attendance so not sure why there was a decline in the DUG attendance
+Majority of people went to the ITK breakout and MN breakout (only a couple attended the CE breakout)
+There was alot of interest in becoming a MN. Several repositories may be able to be brought on easily. Tier 1 but supporting replication - this will require refactoring some code in the infrastructure.
+Andrew Sallans (vice chair) led this meeting because Richard Huffine (chair) was unable to attend. Talked about having DUG emerge as more autonomous organization.
+
+Mike - sorry my mic didn't work - We will need to figure out how to track MN requests to come online. Sort of this issue we have discussed before...
+New MNs are supposed to be a joint CI/CE activity. 
+That's great - forum, MN supporting each other!
+Requests need to be collated, managed and prioritized. Workflow diagram that Mike provided is a good starting point for this. Redmine as a tool to track the incoming requests.
+The description document is triggering technical questions that Amber can't answer so would like to meet with Dave to figure out how to respond to these questions. Dave is looking at making the interface to Redmine easier to use so that we can track requests through the process. Amber, Dave, and Rebecca will meet on this topic next week.
+
+
+4) Newsletter name (Budden)
+49 responses.
+Top choices:
+DataONE Dispatch (14 votes)
+DataONE Newsletter (13 votes)  (boring but not offensive)
+ONE News (11 votes)
+ONE Letter (8 votes)
+DataONE Network News (8 votes)
+
+DataONE News <-- winner
+
+Dispatch US Dictionary.com definitions:
+  
+verb (used with object) 
+1. to send off or away with speed, as a messenger, telegram, body of troops, etc. 
+2. to dismiss (a person), as after an audience. 
+3. to put to death; kill: The spy was promptly dispatched.  <---- o o     -jwc
+4. to transact or dispose of (a matter) promptly or speedily.        0
+
+World English Dictionary:
+
+dispatch  or  despatch  (dɪˈspætʃ)  — vb  1. to send off promptly, as to a destination or to perform a task 2. to discharge or complete (a task, duty, etc) promptly 3. informal  to eat up quickly 4. to murder or execute!!! 
+
+— n  5. the act of sending off a letter, messenger, etc 6. prompt action or speed (often in the phrase with dispatch ) 7. an official communication or report, sent in haste 8. journalism  a report sent to a newspaper, etc, by a correspondent 9. murder or execution 
+i.e. St. Louis Post Dispatch - a well resepcted newspaper
+
+5) Around the room
+
+Rebecca: DataNet PI meeting in Minneapolis
+Attendees: Margaret Hedstrom (SEAD), 
+                  Steve Ruggles, Tracy Kugler, Cathy Fitch (TerraPop)
+                  Reagan Moore, Mary Whitton (DFC)
+                  Bill Michener, Rebecca Koskela (DataONE)
+Notes from meeting: http://epad.dataone.org/DataNet-PI-Meeting-26Jul2012
+
+NSF visit to ORNL/UTK Sep10 - Bob (ORNL) and Suzie (UT-K) will be Rebecca's contacts for the visit
+
+Bob Cook
+-Working with NASA (and Andrew Sallans, UVa) to add DMP requirements for their Terrestrial Ecology solicitation.  They request that a 2-page DMP be submitted in the proposal (not part of the 15 page limit) do you want to add the final product to the DMPTool? OK -- we will work with Andrew to load NASA content.
+
+
+Mike Frame
+- Working with CDL for a potential agreement to support some small amount of support from USGS to DMP tools and related activities. Hoping to have this in place by the end of the Fiscal Year. 
+
+- Usability & Assessment Working Group meeting today at 3pm ET. Agenda is:
+
+Status of Assessments 
+Usability Assessments at ESIP Summary 
+Update on DataONE Release 
+DataONE DUG Update 
+Upcoming UA Working Group meeting in September 
+
+- I gave a DataONE Presentation at the GBIF North America Meeting this past week in DC. About 20 participants present. Need to continue to work on GBIF contributions to DataONE. Dave has invited Tim Robertson (GBIF IT) to CCIT and is now involved in Proverance WG. SO this should help with determing how best to include GBIF related data (specimen data) into DataONE. 
+https://docs.dataone.org/member-area/documents/presentations/DataONE%20Overview%20-%20GBIF%20NA%20July%2023%202012.pptx/view 
+
+- I will be providing a USGS and DataONE talk at the International Geologic Congress in Brisbane Australia on August 6th. 
+
+
+Carol Tenopir: Mary Beth West is working on writing up a report on the DUG and ESIP usability testing. She'll get a summary of most important issues to Rebecca quickly and then finish a fuller report. Mary Beth and Lisa Zolly did a great job with the usability assessments!
+
+Trisha Cruse
+The DMPTool partners met this week at UVA (Virgina?) to discuss governance and sustainability issues.  We decided to form a yet to be named Alliance to build an open community around data managment issues.  Our plan is to launch the Alliance this fall/winter at conferences/meetings. We are working with a foundation for funding to build out the tool further. We are hopeful that we will receive funding to develop outreach and training materials for DMP. 
+
+We are formally launching DataUp Sept. 18 and will have the DataUP website up mid-august.  On release the code will be available, the web application will be available, the add-in, and documentation (technical and user). Also -- We received additional funding from MSR for DataUp activities. 
+
+We recieved funding from JISC to replicate the EZID infrastructure in the UK -- the idea is that if the service goes down here we can rely on the UK.
+
+We are excited to work with USGS (potentially) on DMP issues.  
+
+A CDL team will be meeting with BiSciCol and Moorea Biocode project at UCB to discuss the use of EZID, Merritt, DataUP, and DMP.  The idea is to work with them to deposit data so it can be exposed via dataone. It would be great if Dave could join this conversation.
+
+Amber: Public release went off relatively smoothly though a number of last minute requests / communications from NSF.  Getting good coverage in the twitter / blog-verse.  Lots of web email enquiries coming in post public release.  Need to determine a workflow / solution for these.  Many are DUG related.  
+DataONE Best Practices are now included as links within the DMPTool for all users.  
+Working on the newsletter and preparing for ESA booth and workshops.
+
+Dave: Discussions with group on Moorea Biocode Project and Ocean Sampling Day for strategies to utilize DataONE infrastructure and to integrate with resources / holdings at NCBI (National Center for Biotechnology Information), and EBI (European Bioinformatics Institute). Possibility of using this as a basis for the next EVA working group, as a pragmatic evaluation of DataONE and its support of the data life cycle. 
+
+Mike - Dave this also might tie nicely with BarCode of LIFE efforts in US and Canada - they are also involved in GBIF of course. 
+Yes, good point. Need to keep things manageable though to start with.
+
+Deborah McGuinness: 
+*Presented Linked Open Data and Next Generation Science as the keynote at the Earth System Information Partners summer meeting (July 18, 2012 Madison Wisconsin).  (Mentioned our DataOne Working group use case)  and had numerous discussions in follow up for semantic science data integration
+*Presented Semantic Assistants and the Information Revolution  at the Next Generation Information Experiences Invited Panel at the Microsoft Faculty Summit  (July 16, Redmond, Washington)
+*Working with NCEAS, SBC LTER, SONET, CUASHI to refine initial use case integrating selected water data to show off a vision of semantic  search across some DataOne content motivated by LTER researcher questions.
+*Working with SEAD to discuss and identify  leverage points (McGuinness/Myers)
+
+
+John: Cobb: Some work with various DIBBS proposal groups vis-a-vis extending impact of DataONE into other science disciplines and to search for some (probably modest) funds in to DataONE. I'd be happy to expand comments, particularly if there are DataONE issues are such as self-competing or COI.
+
+Bertram: Nothing new this week (summer project and ProvWG humming along nicely).
+
+Bruce Wilson: Gave a presentation to the ORNL Research Library staff on DataONE.  This was a very positive response, and we're looking at some issues with how the research library can help with data management here at ORNL for researchers.  There are some changes to the ORNL post-doc program coming up, and I volunteered that Bob Cook, Suzie Allard and I could contribute to some training for post-docs on data management.  [Suzie:Definitely!]
+Good idea! - jwc
+
+Todd: It's good to be back. 
+ * We are pushing on this end to get Dryad's metadata indexed by ONEMercury.  (Also issues with our metadata in DataCite currently being worked on).
+ * I attended the DUG, which was very well organized.  Kudos to the team!
+ * Heather Piwowar is working on 3 articles from her DataONE research: one on a deep analysis of the citation boost for papers with/without shared gene expression data, one on the missing sociotechnical pieces for tracking data citations (building on work of 2010 summer interns) and one on patterns of reuse for 1000 datasets from 10 different repositories.  
+ * Heather will transition off of DataONE and onto a Sloan grant supporting total-impact starting in August. Recruitment of a new postdoc has not yet started in earnest, but will soon.
+ * UNC submitting a BigData IGERT proposal (through the DICE group).  It's a very competitive, so I'm not counting our chickens, but it would provide a good source of trainees for internships.
+ * 2011 summer intern Aida Gandara planning to present her work at the Linked Data in Science workshop. 
+
+Suzie: OUr three DCERC students funded by IMLS completed their summer internship at NCAR. One of the students will be doing her academic year internship at Ashville NOAA working under supervision of Nancy Ritchey. We also have a cohort of masters students coming in with a science data focus -- 8 are funded by an IMLS grant and the other 5 are paying their own way.[Mike - Suzie - this is great! Great accomplishment]   Also both incoming doc students are interested in science information/communication. One, Reid Boehm, was an ESIP summer fellow and her idea was funded.  These two students are funded by our college.
+
+

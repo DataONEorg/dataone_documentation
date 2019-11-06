@@ -1,0 +1,14 @@
+Architecture Migration Process
+
+DataONE intends to maintain backward compatibility of its service API as long as feasible.  In practice that means support a limited number of previous versions. 
+Motivation: 
+There's a recognized need to understand how both CNs and MNs migrate to newer versions of the architecture, and especially how to design the mechanics of verisioning to minimize extra work at time of migration.  Specifics include:
+
+1. schema versions
+
+2. 
+
+Implementation considerations:
+Java: jibx support for multiple schema versions:
+JIBX creates class files from dataoneTypes.xsd that are part of the d1_common_java jar.  What is JIBX's ability to support multiple versions in this regard?  Currently the following are in a one to one relationship:  d1_common_java.{version}.jar, set of dataoneType classes, (jibx bindings), D1_schema version, d1 architecture.
+

@@ -1,0 +1,63 @@
+Member Node Wranglers (Fridays at 10:00 am AK/11:00 AM PDT/12:00 MDT/1:00pm CDT/2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+
+30 August 2013
+
+Attendees: Rebecca, Dave
+
+Regrets:  Bruce, Laura, Amber
+
+Agenda: 
+        1. High profile issues
+        Documentation - Rob has developed a high-level flowchart-y thing intended for the public website:  https://docs.google.com/document/d/1YVEyFrqZPclr_tzhLtzYdW8tdu-fVeVQ-8yeHYhH9xc/edit
+        It is the same information as what we are updating in mule and would probably link to mule for the detailed information.  It's beautiful.
+        See the current flowchart: http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html and down at the bottom there is a link to the working copy
+        
+        Dave will meet with Chris, Rob and Laura next week to make sure all the pieces are in place for the documentation - he agrees that it's looking good!
+        
+        Bruce: email out to Dave, Matt, Chris re: OpenDAP
+        As Dave mentioned in LT call, he has developer with OpenDAP experience will be able to evaluate how much effort would be required to develop an OpenDAP MN software stack
+        
+      This is as far as Dave and I went on the agenda - can be resumed from here next week  
+        2. Status of MNs 
+     * Y5Q1
+       * NKN   (3238) - Luke has been away; before he left he had downloaded GMN and started installing, to pick up again now that he's back; Ed Fl is working on PIDs; Chris to provide them a certificate; meet again 11 Sept to follow-up
+       * EDAC  (3221) -  From MNF 22 August: EDAC is evaluating options  for  supporting multiple data formats / representations of the same  content.  DataONE can "kind of" support this by presenting links that are  cited  in the science metadata (e.g. link to access same data through a  WCS /  WFS service available on the EDAC server)
+       * Kansas (3188) - From MNF 22 August: KU node is joining stage testing - in process of issuing and configuring certificates
+       * SEAD   (3521) - a/o 8/19/13, NCED verifying their metadata; Inna says as soon  as NCED has verified all their metadata, they will be ready to move to  production.  
+       * NPN (3186) - Lee is having difficulty with the LDAP - can see users but won't authenticate; Ben and Lee to resolve; meet again in a couple weeks
+     * Y5Q2
+       * ILTER-Europe (3232) -  Ben L lead.
+       * Dryad (3118) - 
+       * iEcolab (3219) - Ben in conversation with them
+       * DFC (3532) - ask Dave to talk with Reagan Moore, (iRODS)   Rebecca said at meeting with NSF 8/22/13 Reagan said that  interoperability within 6 months, asked for someone in DataONE as POC  (that would be Dave), to discuss when Dave's here.
+       * iPlant BIEN (3234) - iRODS
+       * U Illinois Chicago (3213) - From last time: 
+         * Chris Jones is the primary contact point for CCIT
+         * Bruce will 
+           * 1) talk to Bob re:  metacat/GMN, leaning toward metacat
+       * USGS Topo Maps (3525) - a/o 21 August, Mike Frame to check and get back with Laura - hadn't heard anything a/o 30 August
+       * PPBio  (3748) - a/o 8/22/13, Debora is planning to meet week of 26 August with  all the Brazilians to talk about DataONE (what is it, etc.), and after  they've had a chance to talk amongst themselves we'll all "sit down"  together
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting (Carol going to Taiwan in October)  also a Matt-thing
+       * AOOS  (3531) - See Gulfwatch Alaska.
+       * SAEON   (3205) -  From Matt: Ben has worked with these folks consistently,   and   helped establish a Metacat node there in Cape Town, but we need  to  follow up with them to get it done.  They seemed amenable when we  have  spoken in the past.  revisit when Matt is available
+
+        3. Old action items
+            Laura to check into AKN/eBird tickets (3560 and 3209).  in progress 8/26 - regarding URN, Steve Kelling says CLOAKN is NOT the right name to associate with the current MN (eBird).  Previously, we had said (at least amongst ourselves) that it would be really nasty to try to change the URN on a MN.  We probably ought to have a separate meeting, maybe with the eBird and AKN folks or maybe just us and then with them, to try to sort this out.
+        
+        4. Not-high profile issues
+        
+     * To talk about when Dave's here: 
+                Rebecca:  at NSF meeting, Reagan said that he expects DFC interoperability within 6 months, asked for someone in DataONE as POC (that would be Dave)
+                Bruce: OpenDAP
+     
+         Rebecca: what is the status of the issue where some MNs think they have  more products than what DataONE shows?  Is it resolved?  (USGS and ORNL  DAAC have had this issue where they think they have more data products  than we see in DataONE.)
+        John: there are redmine tickets which track this issue
+            ... looking at tickets....
+        Seeing a lot of tickets which show "new" are probably resolved but ticket hasn't been updated.
+         ACTION: follow up on tickets that may not be necessarily assigned to us  - BIG job - let's talk about this again when Dave's with us.
+        
+        5. Around the room
+
+

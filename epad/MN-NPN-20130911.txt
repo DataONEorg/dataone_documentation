@@ -1,0 +1,86 @@
+USA-NPN (USA National Phenology Network) - DataONE Member Node follow-up meeting
+
+11 September 2013, 3pm EDT, 2pm CDT, 1pm MDT, noon AZ/PDT, 11am AK
+ - previous meeting epads:  http://epad.dataone.org/MN-NPN-20130724, http://epad.dataone.org/MN-NPN-20130801, http://epad.dataone.org/MN-NPN-20130828
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/354096720
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (213) 289-0010
+Access Code: 354-096-720
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 354-096-720
+ 
+ 
+Attending:  Laura, Dave, Lee, Bruce, Ben
+
+Regrets:  
+
+Redmine ticket: https://redmine.dataone.org/issues/3186
+
+Agenda:
+
+Lee update current status:  Ben and Lee working closely; NPN MN up, metacat up, issue with adding data to metacat (??); Lee needs some backup with trying to sort this out.
+Ben:  Lee had thought it was something with how cookies were being generated; a session is started with authentication, then another session is started somehow and the authenticated user is not recognized.  
+Lee:  Two different apache settings for http and https; no unusual mods installed; if you log in via https (only way to get in) then try to do things via http, another session will be started, but the https session still works
+Bruce:  general assumption with D1 is that we are always a https; put a rewrite rule in so that if someone tries to go in via http it bumps them over to https. c.f. http://wiki.apache.org/httpd/RedirectSSL
+Lee:  if you manually access via https, cookies are maintained; but can't upload through morpho
+Ben:  are you using https w/morpho?
+Lee:  yes - oh, no, maybe not - get "peer not authenticated", 
+Ben:  I've been skipping morpho and using a direct data entry/upload route
+Lee:  how do you add datafiles via the interface?
+Ben:  webform on top of the metacat API; 
+
+
+Issue could be due to the need to add the DataONE root certificate to the trusted certificate store.  Need to make sure this issue is addressed in the MN documentation.  Also need to look at adding a recipe for adding data via the D1 web interface/command line tools. This provides a way to do a unit test on the functioning of the MN instance, and isolate out issues that could be due to the client (like the trusted root certificate issue).  Also having some other unit tests to enable MN developers to debug would be useful.  
+
+Example URL from GTM chat session for a login
+https://mynpn-dev.usanpn.org/knb/metacat?action=login&username=cn=Ben,dc=npn,dc=arizona,dc=edu&password=XXX
+
+Ben:  when I use https, I don't get a permission failure, it goes a little further; not sure why it is forcing secure ??
+(NPN has a self-signed cert on their MN; will have  a "real" cert when in production)
+Lee:  could be some sort of setting that I'm not aware of; seen similar behavior on Drupal site running apache on different server; will try to start a new session there, too; it's like once you have the anonymous cookie from http, it's like the secure https cookie never existed; Drupal adds an "s" to the beginning of the cookie name for the https cookie; 
+Ben says cookies from http and https have same name in our current example
+
+Ben:  you plan to use https, right?
+Lee:  yes  BEW -- good to be https always to avoid credential theft (e.g. FireSheep)
+Ben:  wherever you're running morpho, have cert and add cert to Java truster
+
+Trying to validate but doesn't trust itself - generates an error message like this:
+schema_reference.4: Failed to read schema document 'https://mynpn-dev.usanpn.org:443/knb/schema/eml-2.0.0/eml.xsd', because 1) could not find the document; 2) the document could not be read; 3) the root element of the document is not
+
+Working in staging environment
+Ben:  what's your general plan for content in dev/staging instance and production instance
+Lee:  try to get it to work in dev/staging (data, metadata)  (i.e. small amount of data)
+Bruce:  NPN database continuously updated, anticipate "new" data file monthly (?)
+Lee:  we have FGDC metadata, needs to be revised, only recently generated a valid EML format, would like to support both formats
+Bruce:  automated process looks like take existing EML doc and update specific fields; columns of data won't change, but rows will (as you add data)
+Ben:  if you're using morpho, create a new package and document the structure of the data; 
+Lee:  someone else in the office has used morpho to create EML; can verify/validate that and see if it works properly
+Ben:  are you going to be doing a db dump, or is it just metadata records
+Lee:  there will be some data
+Ben:  useful to have both data and metadata to check operations (is the format correct, does metadata match the data, etc.)
+Lee:  upload metadata and data file and make sure it works
+Ben:  let me know if you have any questions, etc.;  morpho shows you what the bare minimum is for metadata creation
+
+Lee:  are there extended definitions in the EML schema
+Ben:  there are different modules, so it might look like there are different extension, but is just diff modules
+
+
+    Recap:
+   * NPN wishes to operate at tier 1 and that they are in a position to establish a test system.
+   * Based  on NPN's "live" data status, we think we'll have one dataset that's historic wildlife data, others by year.  Alyssa said they'd work on PIDs/DOIs with Bruce.
+   * Alyssa indicated that the due date shown on the redmine ticket of 31 Oct 2013 is reasonable.
+
+    Follow-up:
+   * Last time, Lee said the LDAP server was a holdup.  Current status: 
+   * NPN to decide how often to publish/update and what scheme provides the best value to NPN and NPN data users.  Current status: probably going to be yearly
+   * DOIs:  there was some discussion about how to create them (EasyCite? EasyID?)  as well as the immutability question (i.e. when a data set is updated on  a monthly/quarterly/annual basis, the "new" dataset needs to have its  own unique DOI).  Current status: looking at EasyID as an option  
+
+    Questions from NPN that DataONE can address?    
+
+
+

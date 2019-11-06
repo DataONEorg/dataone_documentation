@@ -1,0 +1,260 @@
+AccessPolicy and AccessRule questions and suggestions
+
+
+-  The doc for AccessRule says that permissions are cumulative. E.g.,  write implies read. Still, it’s possible to set multiple permissions in  an access rule. Is this needed?
+     We've dithered about this -- needs more discussion.  Assigning write  permission without read permission is strange, as is changePermission  without write (obviously once you have changePermission permission, you  can change it so you have all permissions).  In Metacat, we used  hierarchies to check multiple rules at once and reduce the number of  checks needed by assigning an integer value for each permission (1=read,  2=write, 4=changePerm), so that checking for write is perm >= 2  [rather than (perm=='write' || perm=='changePerm')]. Numeric comparisons  are much faster than string comparisons in most dbs.
+That makes sense. For changePerm, do you store 2 + 4 in the table or only 4?
+
+canRead = (PERMISSION & 1 == 1)
+canWrite = (PERMISSION & 2 == 2)
+canChange = (PERMISSION & 4 == 4)
+I asked because I was wondering if they're automatically counting canWrite as canRead + canWrite, etc. If they are, it's not necessary to use a bitmap for the permissions.
+
+- How about renaming CHANGE to MODIFY.
+    -- I've actually considered renaming 'WRITE' to 'UPDATE', which is  really what it signifies (the permission to call update() on a PID).
+I  agree about renaming WRITE to UPDATE.
+OK
+
+-  The Permission object contains enumerated values, READ, WRITE,  CHANGEPERMISSION and EXECUTE. Do we need “PERMISSION” appended to the  CHANGE value?
+     -- I prefer it because it makes it clear that one is allowed to change  the permission on the resource, in addition to the resource itself.  If  it were just 'change', it would be easily confused with 'write'.  
+I  misunderstood, and thought "CHANGEPERMISSION" was permission to change  an object.  How about renaming  CHANGEPERMISSION to CHANGEPERMISSIONS?  Since I was  confused, other's may  be too, and the "S" makes its  meaning more clear  (to me anyway).
+
+I actually think that CHANGEPERMISSION is a bit bogus since granting anyone permission to change the permissions does not limit their access at all (since they can then change the permissions to anything). I would suggest removing CHANGEPERMISSION from the permission list. Is it potentially more damaging for a user to alter the content of the object (WRITE) or adjust the permissions of an object?
+
+~~~~
+
+- AccessRule can contain an unlimited number of principals, permissions and resources. So if an AccessRule with 10 principals, 10 permissions and 10 resources is submitted, 1000 allow rules must be checked and created if they don’t exist. Do we want it to be possible to set so many permissions at once?
+    Yes, we do.  There are many use cases where scientists will want to set access to a few groups of users. Using set-evaluation should make this a fast check -- certainly don't implement it as a loop, right?
+I'm using a loop for creating the allow rules. Each "allow" is a row in a table that joins a principal up with an object and holds a permission. But the check is fast, a select with a join.
+Ugh. I've always preferred posix style file permissions. Much simpler to evaluate - one owner, one group per object. Permission testing takes a known amount of time. 
+Arbitrary depth of principals etc is going to be a problem down the road. 
+I think we need very clear use cases demonstrating the requirement for more complex access control rules.
+The most demanding use case will be listObjects, where you can't afford to traverse the entire object collection linearly, and have to use a hash on the subject or group (if they're different)
+
+Rambling on groups...
+We have 4 bits of information, the combinations of which are:
+
+Perm   R W E C    Role
+0                 Nobody
+1      X          Viewer 
+2        X
+3      X X        Editor
+4          X 
+5      X   X      Analyst
+6        X X
+7      X X X      Owner, Manager, Root
+8            X
+9      X     X
+10       X   X
+11     X X   X
+12         X X
+13     X   X X
+14       X X X
+15     X X X X
+
+So given any arbitrarily complex set of permission and access control rules, the evaluation will come down to one of these 16 cases.
+
+In the example below, Alice and Bob are both members of #3. Charlie and David are members of #1.
+
+So there's a maximum of 16 groups to track per object, though each group may contain any number of users. If we remove the CHANGE permission, then there's 3 bits or 8 possible combinations. One of those can be the default (0), so that leaves 7 groups. This can be probably be further reduced - e.g. does EXECUTE without READ make sense?, WRITE without READ?
+
+ObjectID, PermissionID, GroupID
+A         3             AB
+A         1             CD
+B         3             AB
+B         1             CD
+
+GroupID  UserID
+AB       Alice
+AB       Bob
+CD       Charlie
+CD       David
+
+
+Multi valued columns
+ObjectID, Viewer, Editor, Analyst, Owner
+A         CD      AB
+B         CD      AB
+
+
+For system metadata, no need for principals to be recorded in accessPolicy as principals can always be members of a group:
+
+<accessPolicy>
+  <groups permission="1">
+    <group>CD</group>
+    ...
+  </groups>
+  <groups permission="3">
+    <group>AB</group>
+    ...
+  </groups>
+</accessPolicy>
+
+This would mean permission control would become primarily a group management issue at the object level with potentially less churning of systemmetadata with changes to access control.
+
+
+
+- An AccessPolicy can contain unlimited number of AccessRules. This does not seem necessary when an AccessRule can contain an unlimited number of principals, permissions and resources.
+    They are used for different things.  Within an AccessRule, all permissions apply to all users and all resources.  If you want different users to have different permissions, you need multiple rules.  For example, I need two rules to say "Alice and Bob have read and write access to resource A and B, but Charlie and David only have read access to A and B."
+Got it!
+
+
+- How about changing AccessRule to hold a single principal, rule and resource, and use the fact that AccessPolicy can hold multiple AccessRules to specify multiple allow rules in one call?
+    Just makes it more verbose -- ie, more XML to express the same info.  I prefer it as is.
+I agree now.
+
+
+- The setAccess call takes PID and AccessPolicy as arguments. The PID argument specifies that the AccessPolicy applies to that PID, but the AccessPolicy holds AccessRules that can list an unlimited number of PIDs. How should the apparent conflict be handled?
+    -- Good question -- needs to be resoved.  Either setAccess applies to a single PID (in which case the resource should match the PID, and there shoudl only be one), or setAccess applies to more than one resource, in which case the PID should be removed from the method params.  I had it in there so that it was a REST-like operation on a resource, but it would probably be more efficient.  Either way, the 'changePermission' permission is needed on all resources listed or else the whole operation should fail. Also, I've gone back and forth about including the resource in the rule at all -- its nice to be able to pass a single call that changes multiple resources at once, but it isn't very RESTful.
+I think the best thing would be to take the PID out of the setAccess argument list and have setAccess be an operation against the collection.
+
+
+- An AccessRule holds an ulimited number of Permission objects. A Permission holds one or more actions. It seems a bit confusing to me to have a set of actions named Permission because a set of actions is not really a permission as I see it. A permission is more like the whole access rule. How about changing Permission it to Actions, or having an AccessRule hold the actions directly and simply call the field, “allow”?
+    -- In 0.6.1, Permission is a simple string enumeration of values.  I don't know where these actions you describe come from -- I don't see them in the current schema.
+We have used the term "action" in the AccessRule and Permission docs. I thought it was also used in the description of events (log records), but I checked now and it's not used there.
+
+
+- The AccessPolicy contains AccessRules and these are named “allow”. How about renaming AccessRule to Allow. This way, we can have an AccessPolicy object that contains Allow objects named allow. And if we change AccessRule to hold only a single permission, we then have a set of objects called allow that each specify a single allowed action (with multiple actions implied since actions are cumulative).
+    -- Because there is the possibility of extending the language to include 'deny' rules as well.  We initially had these, but I eliminated them for simplicity -- there may be a case for adding them back in the future, so its good to make that easy by explicitly typing the current rules as allow rules.
+I understand & agree.
+    
+
+
+
+ObjectFormatCache Methods
+-------------------------------------------
+
+getObjectFormatIdentifier(String idstring)::ObjectFormatIdentifier
+getObjectFormatIdentifier(ObjectFormatIdentifier id)::ObjectFormatIdentifier (verify ObjectFormat exists)
+
+getObjectFormat(String idstring)::ObjectFormat
+     -- direct get(String)
+getObjectFormat(ObjectFormatIdentifier id)::ObjectFormat
+     -- (get(id.getValue())
+     
+DONE 1) back out ObjectFormat* changes in Metacat (Chris)
+   -- Metacat should compile against jar libclient & common files in metacat 
+
+DONE 1a) copy 0.6.1 branch changes to trunk and 0.6.1 tag (Matt)
+
+2) modify metacat to use 0.6.1 build (Matt)
+    -- really involves just checking in new 0.6.1 jars, fixing issues with Principal
+   
+DONE 3) create 0.6.2 branch (dataoneTypes.xsd) (Matt)
+  -- copy trunk (0.6.1) to 0.6.2
+  -- rename ns declaration
+
+4) locally change  d1_common, libclient should compile from as is (after repointing to branch) 
+   - metacat will not compile
+   
+5) Add ObjectFormat* changes to types in branch 0.6.2
+
+6) Modify Metacat and CN to add in OF service etc
+ 
+7) tag 0.6.2, commit d1_common & libclient changes, all should build
+
+Notes on adding Object Format service to D1 0.6.2
+----------------------------------------------
+
+ * Added ObjectFormatIdentifier and ObjectFormatList to dataoneTypes.xsd, and changed ObjectFormat into a ComplexType, committed to 0.6.2 branch of the schema.
+
+ * Modified d1_common_java to use new schema:
+   * jibxConfig.xml points to 0.6.2, adds new types
+   * buildDomain.xml uses new schema
+   * pom.xml set to 0.6.2-SNAPSHOT
+   * created D1_COMMON_0_6_2 branch
+
+ * Tests fail because of new generated classes:
+   * ObjectFormat.convert() is deprecated
+   * Causes a d1_common_java dependency on d1_libclient_java
+   * Tests need to change to use ObjectFormatCache.getFormat()
+   * Commented out tests until ObjectFormatCache is complete
+     * ObjectFormatTest.java
+     * ValidateSamplesTestCase.java
+   * ObjectFormatTest, ValidateSamplesTestCase need to be rewritten to use ObjectFormatCache. Should these be moved to integration tests since they now rely on d1_libclient_java?
+
+ * Moved objectFormatList.xml to d1_common_java 0.6.2 branch resources
+ * 
+
+
+Notes on Metacat Test results
+-----------------------------
+    [junit] Running edu.ucsb.nceas.metacat.MetacatProfilerTest
+    [junit] Running edu.ucsb.nceas.metacat.dataone.CrudServiceTest
+    [junit] Running edu.ucsb.nceas.metacat.dataone.MetadataTypeRegisterTest
+    [junit] Running edu.ucsb.nceas.metacat.dataone.SystemMetadataManagerTest
+    [junit] Running edu.ucsb.nceas.metacat.restservice.ResourceHandlerTest
+    [junit] Running edu.ucsb.nceas.metacat.util.MetacatPopulatorTest
+    [junit] Running edu.ucsb.nceas.metacatnettest.MetaCatServletNetTest
+    [junit] Running edu.ucsb.nceas.metacattest.AccessAPITest
+    [junit] Running edu.ucsb.nceas.metacattest.AccessControlTest
+    [junit] Tests run: 9, Failures: 2, Errors: 0, Time elapsed: 373.341 sec
+    Failing a permissions test.  Need to examine further.
+
+    [junit] Running edu.ucsb.nceas.metacattest.AuthLdapTest
+    [junit] Tests run: 2, Failures: 1, Errors: 0, Time elapsed: 0.154 sec
+    Fixed.
+
+    [junit] Running edu.ucsb.nceas.metacattest.BuildIndexTest
+    [junit] Running edu.ucsb.nceas.metacattest.EventLogTest
+    [junit] Running edu.ucsb.nceas.metacattest.IdentifierManagerTest
+    [junit] Running edu.ucsb.nceas.metacattest.InlineDataAccessTest
+    [junit] Running edu.ucsb.nceas.metacattest.InternationalizationTest
+    [junit] Running edu.ucsb.nceas.metacattest.MetaCatQueryPerformanceTest
+    [junit] Running edu.ucsb.nceas.metacattest.MetaCatServletTest
+    [junit] Tests run: 15, Failures: 2, Errors: 0, Time elapsed: 1.657 sec
+    Failed bcse it has hardcoded LDAP account
+    uid=john,o=NCEAS,dc=ecoinformatics,dc=org for use in tests, which don't
+    exist in my directory.  Refactored test to use test.mcUser from the
+    properties file. Fixed.
+
+    [junit] Running edu.ucsb.nceas.metacattest.MetaCatURLTest
+    [junit] Running edu.ucsb.nceas.metacattest.NonAsciiCharacterTest
+    [junit] Running edu.ucsb.nceas.metacattest.OnlineDataAccessTest
+    [junit] Tests run: 12, Failures: 1, Errors: 0, Time elapsed: 37.75 sec
+    Failed with a foreign key error, but this was probably due to not clearing
+    the db from aborted test runs.  Tried again and it passed.  Need to check,
+    but probably ok.
+
+    [junit] Running edu.ucsb.nceas.metacattest.PropertyServiceTest
+    [junit] Running edu.ucsb.nceas.metacattest.QueryGroupTest
+    [junit] Running edu.ucsb.nceas.metacattest.QueryResultBuilderTest
+    [junit] Running edu.ucsb.nceas.metacattest.QuerySpecificationTest
+    [junit] Running edu.ucsb.nceas.metacattest.ReaderWriterTest
+    [junit] Running edu.ucsb.nceas.metacattest.ReplicationServerListTest
+    [junit] Running edu.ucsb.nceas.metacattest.SQueryTest
+    [junit] Running edu.ucsb.nceas.metacattest.SchemaRegistryTest
+    [junit] Running edu.ucsb.nceas.metacattest.SitemapTest
+    [junit] Running edu.ucsb.nceas.metacattest.SubTreeTest
+    [junit] Running edu.ucsb.nceas.metacattest.UploadIPCCDataTest
+    [junit] Running edu.ucsb.nceas.metacattest.VersionTest
+    [junit] Running edu.ucsb.nceas.metacattest.client.MetacatClientTest
+    [junit] Tests run: 21, Failures: 1, Errors: 0, Time elapsed: 339.781 sec
+    Failing document comparison after read, bcse document is missing newline. I
+    thought this had been taken care of. 
+
+    Matt: I never checked in the pom.xml that has the change you need:  (change RC1 to RC2)
+    so it reads:
+                    <property name="utilities-tag" value="tags/UTILITIES_1_1_0_RC2" />
+    (I'd check it in now, but I'd have to deconfigure some of the properties I changed for
+     testing on my local install.  Probably easier for you to type the change).
+    I made the change, and the new utilities.jar fixed the problem.  When building the knb.war for the buildout, we need to be sure that the new jar is included.
+    
+    [junit] Running
+    [junit] Running
+    [junit] Running edu.ucsb.nceas.metacattest.harvesterClient.HarvestLogTest
+    [junit] Running
+    [junit] Running edu.ucsb.nceas.metacattest.harvesterClient.HarvesterTest
+    [junit] Running edu.ucsb.nceas.metacattest.restservice.MetacatRestClientTest
+    [junit] Tests run: 17, Failures: 11, Errors: 0, Time elapsed: 3.225 sec
+    These fail because the service is no longer registered, and all of the
+    RestClient classes need to be removed.  Added @Deprecated in code, need to
+    revisit to remove it all.
+
+    [junit] Running edu.ucsb.nceas.metacattest.service.XMLSchemaParserTest
+    [junit] Running edu.ucsb.nceas.metacattest.service.XMLSchemaServiceTest
+
+
+
+
+

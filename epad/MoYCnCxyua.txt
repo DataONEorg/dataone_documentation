@@ -1,0 +1,19 @@
+http://epad.dataone.org/MoYCnCxyua
+
+Friday Aug 1 OSS Topics @ RENCI
+ * Geoanalytics Conceptual Framework
+   * http://renci.org/wp-content/uploads/2014/07/0314WhitePaper-Geoanalytics-FINAL.pdf
+ * Buffer – Bash Navigation
+   *  
+ * Curl in Bash
+ * Top -> Mac / Windows / Linux
+ * Python – For what
+ * How to repeat open source configuration upon departure from class
+   * E.g. online instructions somewhere
+ * Explain what different Python packages are, when to use which and why
+   * Jeff says…
+ * Will PC break as a function of too many and/or incorrect installs
+ * When data is too large for R
+   * When to switch between R and Python when, e.g. memory limit is a constraint
+A: If it doesn’t work on laptop, switching won’t typically help, otherwise not sure
+

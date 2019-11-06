@@ -1,0 +1,34 @@
+What is a Member Node?
+- functional requirements for member nodes
+
+- Different levels of MNs: not all are the same
+  -- Some 25 different requirements identified
+
+Member nodes represent diverse communities
+Serve particular community
+Mechanisms for maintaining their data
+Member nodes as data supplier
+Member nodes as data replication targets (storage providers)
+Some level of service quality agreement
+
+Member nodes must provide:
+- Data, metadata
+- system metadata (generated or derived)
+- Persistence, uptime guarantee
+(- Ephemeral nodes - eg the grid computing nodes)
+- authentication, authorization policies (may be anything from completely public through to restricted
+
+Requirements for participation as a Member Node
+
+What are the responsibilities of a MN?
+
+What is the V.P. for a MN?
+
+Criteria for MN selection-- prioritization
+
+Policies / agreements
+
+MN Use Cases    
+                        Illustrate how data centers will operate as a DataONE member node
+                        How will users interact with member nodes?
+

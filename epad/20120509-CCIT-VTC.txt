@@ -1,0 +1,128 @@
+.. meta::
+   :keywords: DataONE, CCIT, 20120509, VTC
+
+
+Developers Call - 2012-05-09
+============================
+
+:attendees: Dave, Matt, Andy, Ben, Bob S., Bruce, Jeff, Mark, Rob, Ryan, Skye, Chris, Rebecca, Roger, Robert
+
+
+Call Info: 
+
+1.  09May, 2012 at 16:00  EDT.
+https://www1.gotomeeting.com/join/727082329
+
+2.  Use your microphone and speakers (VoIP) - a headset is
+recommended. Or, call in using your telephone.
+
+Dial  1 (805) 309-0014
+Access Code: 727-082-329
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 727-082-329
+
+
+
+Agenda and Notes
+----------------
+
+* General update on DataONE CI development and overal schedule
+
+- APIs
+
+  - Schema
+  - API definitions
+  - Java and python implementations
+
+- Implementations
+
+  - CN Stack
+  - Metacat MN
+  - Generic MN
+  - Mercury MN
+  - Dryad MN
+  - ITK: 
+    - client libraries in java and python
+    - Command Line Client (CLI)
+    - (later) R-client
+    - (later) DataONE Drive
+
+
+- Environments
+
+  - Development: highly volatile, used for development purposes, running trunk
+  - Sandbox: more stable than the development environment, running trunk
+    https://cn-sandbox-unm-1.dataone.org/onemercury/  (current one-mercury version)
+  - Staging: more stable than sandbox, running (primarily) stable packages
+    - https://cn-stage.dataone.org/
+  - Production: operational infrastructure. Tight management, only stable packages.
+
+
+- Timeline for deployment (approximate)
+
+  - Final testing of unstable / trunk development stream
+  - Generate stable packages
+  - Install production CNs
+  - Start bringing on MNs
+
+
+* Discussion on the process for bringing online initial set of member nodes
+
+
+Member node tester: http://mncheck.test.dataone.org:8080/d1_web_test_site-v1/list
+- tests all tiers 1-4, except those methods that require interaction with CNs
+
+- would be helpful to have this integrated into development stream 
+- These are all junit tests so should be fairly easy to integrate with build environment
+
+
+Member Nodes to bring online in first round:
+
+http://mule1.dataone.org/OperationDocs/membernodes.html
+
+Three or more "replication target" nodes co-located with CNs
+- Metacat and GMN based
+- Approx 2TB space available for each (license and OS limitation), goal is to have 16TB each.
+
+- KNB (Metacat, tier 4)
+- PISCO (Metacat, tier 4)
+- LTER (Metacat, tier 4)
+- SANParks (Metacat, tier 4)
+- ESA (Metcat, tier 4)
+- Merritt (Metacat, tier 1)
+- Dryad (Dryad, tier 1)
+- DAAC  (Mercury, tier 1)
+- Clearing House (Mercury, tier 1)
+
+General process will be to bring on the nodes with already replicated content (i.e. KNB, PISCO, LTER, SAN, ESA) first, followed by other nodes.
+
+- Bring on native content first, followed by content that has been replicated to the node
+- Synchronize first, then turn on replication
+- Synchronization runs at about 1-2 seconds per object (< 100,000 / day)
+
+
+Metacat V2 
+  - some issues with existing data (e.g. metadata validation issues due to new parser libraries etc)
+  - What are the expectations for successful replication + sync? Ans: All valid content synced and replicated
+  - Verification of replication, synchronization will be challenging due to the large numbers of objects to be checked
+  - Need an audit mechanism e.g. align identifiers recorded by CN with identifiers reported by MN
+
+- Test using valid content, large numbers (10's of thousands of objects that are known to be good)
+
+Dryad MN
+- major changes in development process, led to delays on implementation
+- working on bringing things inline fairly soon
+- Some review of packaging / ORE generation required
+
+
+* Scheduling for possible CCIT meeting sometime within the next three months.
+
+- Venue options
+
+- Dates to avoid
+
+- Possible dates:
+
+
+

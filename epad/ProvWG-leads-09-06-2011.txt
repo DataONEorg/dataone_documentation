@@ -1,0 +1,136 @@
+http://epad.dataone.org/ProvWG-leads-09-06-2011
+
+Present: Bertram, Paolo
+
+* ProvWG call:
+==> draft job description
+- provenance repository, combo of DToL and GoldenTrail
+- working with Kepler, Taverna, Vistrails, Galaxy, R? 
+- liaison with CCIT
+
+* DOPM report & slides 
+D-OPM model editing:  http://wb.mysql.com/
+http://en.wikipedia.org/wiki/Entity-relationship_model#ER_diagramming_tools
+
+- Motivation, Use Cases, Goals (cf. DCC abstract):
+-- Importance of "wf-land": trace cannot be understood (well) w/o link to workflow (higher level)
+
+rationale for "workflow-land", from the submitted IDCC abstract:
+scientists may find it difficult to explore provenance traces unless they can relate them to the original experiment design from which they were derived. Thus, a specification of the experimental process, i.e., the set of workflows involved, must accompany the traces if scientists are to carry out effective curation. 
+
+-- Focus in the sci-wf and provenance communities on single runs ("intra-run provenance")
+-- But inter-run provenance crucial
+-- Importance of "data-land"
+-- DataCite (connection to John Kunze's WG)
+
+--> data-ids solve some stitching problems (at the WF level); probably not within
+==> Paolo: eScience Central --> captures "outside provenance" only, thus is a good candidate for taking up data citation standards [=> Paul Watson] 
+
+DataONE view:
+http://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html#creating-citations-from-index-fields
+ESIP view:
+http://wiki.esipfed.org/index.php/Interagency_Data_Stewardship/Citations/provider_guidelines
+
+
+-- data structures (nested collections, etc)
+
+-- Use cases:
+-- FPC (oldies but goldies, simple use case)
+-- pPOD (inter-run provenance, COMAD)
+-- eBird (previous EVA use case: citizen science, visualization, use custom code & Vistrails for animations of analysis results)
+-- Bob Cook's new use case for EVA 
+===> need to find out more
+-- Leon Osterweil/Lori Clark (http://laser.cs.umass.edu/people/ljo.html): Harvard Forest ecology use case
+
+
+- Technical aspects:
+-- OPM is just focusing on "trace-land";
+-- 
+
+Agenda & Goals of ProvWG Meeting:
+- Review foundational use cases (e.g. science pubs with links to provenance), scope, WG charter:
+==> are we missing something? 
+
+- Why contribute, why use repository??
+-- baseline: he lonely researcher. benefits for individual ("collaboration with myself"). 
+-- step 1: virtual collaborations but restricted to homogenous workflow community. benefits for the local community
+-- step 2: a common provenance model extends the virtual collaboration to heterogeneous workflow communities. The world gets bigger for everybody
+Help establish data quality as a motivator? 
+
+- Is there any good case / example to link system X with system Y? (say Pegasus & Vistrails)
+- key is to find domains that are common to different workflow communities
+- ex.: eScienceCentral <==> Taverna (chemical engineers on both sides; collaborating this way). Currently using OPM only -- D-OPM would be useful already! 
+
+[eScienceCentral: cloud-based infrastructure, has a wf engine, talks to Taverna via plug-ins
+opportunity to show "DOPM in action"
+http://www.esciencecentral.co.uk/ ]
+
+
+- Provenance Toolkit: -> built on top of the provenance repository (GoldenTrail) + stitching capability (DataToL)
+- implement common functionalities on a common model.
+ 
+-- what ops make sense to work with provenance? 
+-- import into wf-sys, export from wf-sys, load into db, query, visualize, stitch, (selectively?) publish 
+-- interop through file formats
+
+- Provenance Exchange Format
+-- OPM
+-- D-OPM
+
+Provenance as a form of metadata --- what is metadata good for anyway? 
+
+Not just a common model: best practices for mapping own provenance to D-OPM to ensure interop
+- see earlier note on Kunze's WG on common identifiers space
+
+- Give us your traces (and models of provenance!?)
+ ... Kepler, Taverna, Pegasus, Vistrails, Galaxy, R, ...
+
+- "Benchmark Questions"
+
+- Architecture of ProvRepository
+
+Invitation Draft:
+* ProvWG has been working on D-OPM ...
+
+
+INVITATIONS:
+
+Note: participant list at UCD June 2011:
+   * Bertram Ludaescher (UCD) -- L 
+   * Paolo Missier (Newcastle) -- L
+   * Shawn Bowers (Gonzaga) -- M
+   * Yogesh?? Simmhan (USC), 2nd day -- M 
+   * Saumen Dey (UCD) -- M, S 
+   * Michael Agun (Gonzaga) -- S  (Shawn?)
+   * Ewa Deelman (USC), 1st day -- G, M (to be confirmed)  
+   * G Leon Osterweil (UMass) -- G, N (Harvard ecology/provenance use case!?)
+   * G Lori Clark (UMass) -- G, N? 
+   * Anand Sarkar (UCD) -- G
+   * Jim Myers (RPI) -- G, N?
+   * Michael Wang (UCD) -- G, V
+   * Sven Koehler (UCD) -- G
+   * Tim McPhillips (2nd day) -- G
+
+Action Items:
+-  D-OPM graphical [Paolo]
+- draft invitation itself (make it compelling :) [Bertram]
+- Job description / ad text, talk with D. McG [Bertram]
+- draft D-OPM story [Shawn]
+
+- invitation list:
+-- Juliana (or proxy)
+-- Ewa (Pegasus)
+-- Yogesh? (check first interest)
+-- Lee (Leon)
+- Khalid (Taverna - UK)
+- James Taylor (Galaxy)
+- Duncan Temple Lang (R)
+- Ilkay (BioKepler)
+
+
+
+- D-OPM "report"
+- ProvWG mailing list
+
+
+

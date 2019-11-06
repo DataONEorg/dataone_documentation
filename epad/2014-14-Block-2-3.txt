@@ -1,0 +1,266 @@
+Notes for Development Block 2.3
+===============================
+
+Previous epad notes: http://epad.dataone.org/2014-12-Block-2-2
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+Sprint Planning
+~~~~~~~~~~~~~~~
+
+ * CN Consistency wrap-up (running)
+   * http://epad.dataone.org/cn-audit-systemmetadata-design
+ * Finish Dashboard v1
+   * Plan dashboard release (tags)
+ * Operating System Upgrades ( https://redmine.dataone.org/issues/4466 )
+   * Jenkins is running 12.04, OpenJDK 7 (http://jenkins-1.dataone.org:8080)
+   * Upgrade development boxes
+ * CCI 1.2.6 Release ( https://redmine.dataone.org/issues/4461 )
+   * d1_common_java release
+     * https://redmine.dataone.org/issues/4474
+   * d1_libclient_java release
+     * https://redmine.dataone.org/issues/4475
+
+
+
+Skye
+------
+ * 20140331
+   * Dashboard UI refinements, review today
+     * https://redmine.dataone.org/issues/3875
+   * SOLID Retro Friday
+ * 20140407
+   * Dashboard UI refinements
+     * Working on section below node list for display of:
+       * upcoming nodes
+       * replication nodes
+       * will review with amber
+   * Will start working on 1.2.6 release issues for indexing,mercury
+ * 20140409
+   * Dashboard UI refinements
+     * Reviewed with Amber, Rebecca
+     * Planning review in MN Wrangler meeting Friday
+   * Looking at index refresh performance
+     * Loading items into map, pid-by-pid seems to take just under 1 sec to create index jobs
+     * When items are in the map, can create 10-20 jobs per sec.
+ * 20140411
+   * SOLID RETRO TODAY AT 4ET
+     * resources and links: http://epad.dataone.org/DevRetroTopics
+   * Observed UCSB crash out of disk space
+     * UCSB down immediately caused throughput on hz system metadata to double
+   * Began work on a index job blaster with parrallelized job generation
+     * Concerned that reads trigger n-1 system metadata writes across system where n is number of CN.
+     * Many reads beget many more writes...
+
+Roger
+-----
+ * 20140404
+   * We had a productive meeting on the deployment tickets.
+   * Laura is doing major changes that we decided on at the meeting.
+   * We determined that the Member Node Deployment Checklist and the Deployment Tickets are two sides of the same coin. As a result of that, we're bringing notes from the existing tickets into the Checklist and then refactoring all the Deployment Tickets to have the same structure and contents as the Checklist.
+   * Ongoing work on ONEDrive.
+ * 20140402
+   * Ongoing work on ONEDrive.
+   * Must go back and look at dependencies in the Python stack. Fabio Trabucchi found another mismatch.
+ * 20140331
+   * Returning to ONEDrive dev.
+
+Rob
+----
+ * 20140411
+   * out sick for a couple of days
+   * 
+ * 20140407
+   * Operating System Upgrades: jenkins: copied over all jobs from Hudson.  Imported "trunk" jobs.  A couple problems:
+     * d1_auditing_java failing, trying to compile with java v1.3? 
+     * may be a problem with the maven installation on jenkins-1.  It seems to be using an older maven-compiler-plugin 2.1.2
+   * CCI 1.2.6 Release
+     * DateTimeMarshaller timezone changes on hold in testing.
+     * reviewed the independent review of d1_common_java, assigned some tasks, fixed a couple bugs.
+ * 20140404
+   * set up apache-archiva on jenkins-1.  It's a local maven repository with UI.
+     * maven.dataone.org
+   * d1_common_java tagging - blocked by testing of DataTimeMarshaller time-zone changes.
+ * 20140402
+   * Jenkins: 
+     * troubleshooting / fixing maven-antrun issues
+     * have successful d1_common_java, and d1_libclient_java jobs
+     * still need to set up IRC notification, maven repo (?), email notification on jenkins-1
+   * d1_common_java - review of independent review, assigned a couple tickets
+   * CCI 1.2.6: somewhat blocked by date-time marshalling testing
+ * 20140331
+   * Finished working on some Tidy "dump" tests
+   * EDAC 
+
+David
+-----
+ * 20140411
+   * RAID controller and NVSRAM update complete on ORC SAN2
+     * Migrations of non-prod and non-critical datastores in progress
+   * Splunk released a patched version to take care of Heartbleed vulnerability last night
+     * updated Splunk instances across all machines
+     * need to build new certs for Splunk and deploy
+ * 20140409
+   * ORC SAN issues
+     * After tweaking vDisk load on SAN2, SAN began reporting optimal conditions again
+       * "Well, I guess it's working now" isn't good enough, so going to do some more work on it, starting with updating RAID controller firmware
+       * Live update w/o shutting down servers connected to SAN2 vDisks risky, so migrating SAN2 load to SAN1 beforehand
+   * Splunk hazelcast logging/alerts
+     * built a crude alert to ping on explicit close messages, will talk to Bruce about how to make it more robust later today
+       * probably won't happen until after tidy/consistency fixes
+ * 20140407
+   * Splunk config cleanup finished
+     * need to build out datastore for archived data and configure that
+     * need to build out deployment server to steamline updates and config changes in the future
+   * SAN error at ORC persisting
+     * might need a firmware update, might be a symptom of upcoming RAID controller failure - OIT says contact Dell, gathering support data and contact info now
+     * want to make a backup of cn-orc-1 to the other SAN as soon as it's feasible
+   * Building a dummy CN VM at ORC to test ansible on 12.04
+
+ * 20140402
+   * Remaining Splunk forwarders in place
+     * Need to clean up some obsolete configs
+   * SAN error at ORC - had to reset some settings on our datastore manager
+ * 20140331
+   * Splunk forwarders built into MNs
+     * still have a couple that I need sudo access for - will discuss in standup
+   * Wrote up documentation for how Splunk now handles incoming data and how to build a new forwarder into Splunk
+   * Splunk indexer was complaining about low disk space last night, needed a fix
+     * Cloned VM to larger datastore, expanded the vDisk, then expanded the suffering LVM partition in Linux
+   * Talked to Bruce re: OS updates non non-prod boxes @ORC - he wants security  patches in place soon after they go live; for non-security patches, get  w/whoever manages that at UNM/UCSB and mimic what they're doing
+   * TO DO:
+     * Get sudo access for remaining forwarder builds, build out remaining forwarders
+     * Clean up obsolete Splunk configs
+     * Clean up Splunk docs
+     * Get to work building Hazelcast alerts
+
+Matt
+----
+ * 20140331
+   * Working on DataONE proposal to build metadata quality tools
+
+
+Chris
+-----
+ * 20140411
+   * New certs for: Cornell, Dryad, TFRI
+   * Check UCSB cert
+   * Revoke client certs
+   * Move UCSB into the RR, take ORC out
+   * Write ticket for Metacat write on every put()
+ * 20140409
+   * Finished Metacat install 
+ * 20140407
+   * Continued MN support: GLEON, USANPN, DRYAD
+   * Metacat installation for view service work
+   * VM upgrades in production MNs
+ * 20140404
+   * Continued MN support for GLEON, USANPN
+   * MN Forum discussions
+   * MN deployment tickets meeting/planning with Laura, Roger, Rob
+ * 20140402
+   * MN support for USANPN, EDORA, GLEON
+   * Dashboard meetings
+   * Working on VM for Isis, Chris
+ * 20140331
+   * Troubleshooting GLEON resource maps
+ * VM spin up work
+
+Peter
+-----
+ * 20140402
+   * built CN local env on Ubuntu 10.04.4 and have cn-process-daemon.jar ready to deploy on cn-sandbox-ucsb-1
+   * drafted outline for log aggregation documentation
+ * 20140331
+   * building a CN local development environment in order to build jars with the update to log aggregation code - this will be installed and tested on cn-sandbox-ucsb-1
+
+
+Dave
+----
+
+ * 20140331
+   * Working through upgrade of DataONE documentation system to replace plone
+   * Working through code review of d1_common_java
+ * 20140402
+   * Administration work
+   * Continuing with alfresco document server config
+   * DSpace and OPeNDAP moving into Tier1 MN implementation work, will need to setup independent stage test environments
+ * 20140407
+   * Significant new workload related to grant renewal process.
+
+Robert
+------
+ * 20140331
+   * Completed Testing and started a Run of d1_tidy on cn-unm-1
+
+
+Jing
+------
+ * 20140407
+   * Set replication test between my local machine and mn-demo-11. But the test failed. I am shooting on it
+   * The registry has an issue - can't login. Working on it right now
+ * 20140402
+   * Made HTTPS connection work on apache of Ubuntu 12.04
+   * Made Morpho work with the Metacat on Ubuntu 12.04
+   * Most of JUnit test of Metacat worked on Ubuntu 12.04
+   * Upgrade mn-demo-11 to Ubuntu 12.04
+   * Connect the owners of the docids which have white spaces  
+
+
+Tim Robertson (GBIF):
+trobertson@gbif.org
+---------------------
+Exploring a new Java implementation of a tier 4 Member Node that sits on Hadoop and HBase
+ * 20140411
+   * Early stages of exploration only so far
+   * Current progress:
+     * Skeleton project set up
+       * Maven, Dropwizard, Hadoop CDH4
+     * Core D1 java libraries reviewed
+     * Decision made not to use the core Java Interface
+       * Does not fit too nicely with Jersey JSR-311 annotations
+       * Keeps code much cleaner
+     * Decision made to use custom HBase persistence layer.
+       *  Gora was used first, but dicsounted because it does not have Hive support
+       * Datanuclues is an option that could be explored, but requirements look very basic, so probably not needed
+     * SSL and Certificate based Auth "working" (e.g. Principle can be read from the certificate) - now trying to understand the actual D1 authentication
+     * Multipart Form data wired up - can do /object POST and /object/{pid}  through API using CURL, where data is stored on the Hadoop DFS 
+   * Next steps:
+     * Design HBase tables for the metadata
+     * Design Hadoop DFS for the file system storage
+     * Decision to be made: Should all files go to HDFS or small ones to HBase, larger to HDFS? 
+     * Tidy code, get ready for a DataONE code review.  Excite people by showing eBird SQL in sub 120seconds for generic queries, get a buddy to commit to it (Kyle at GBIF? + others?).
+
+
+Topics
+~~~~~~
+ * 20140411
+   * UNM Power outage
+   * Chris/Jing CN|MN Webtester discussion
+   * Jing/Skye discussion on indexing fields (fileId)
+   * Robert/Peter discussion on log aggregation issues
+   * Discussion on libclient comparators
+   * retro @4 ET: http://epad.dataone.org/DevRetroTopics
+
+ * 20140409
+   * Reindexing performance
+     * loop over hzIdentifiers
+       * get(pid) from hzSysMeta
+     * create jobs in batches of 1000 (13-16 minutes) (1 per second)
+       * 10-20 per second if sysmeta is loaded into hzSysMeta
+     * Run a multi-threaded call to getSystemMetadata(pid) (Dave)
+     * Determine where the bottleneck is:
+       * check on Metacat's systemmetadata table (Chris)
+       * check on timing of SQL select from within Java 
+       * check on timing of hzSystemMetadata.get(pid) call (which pulls from backing store)
+       * check timing of hazelcast caching of backup copies on each CN
+       * evaluate disk i/o issues with debug logging on/off (Robert)
+       * evaluate log files for SQL calls (INSERT, UPDATE, DELETE) (Robert)
+       * check to be sure Metacat indexing is turned of in metacat.properties (Chris)
+       * change Metacat logging to millisecond precision in DEV (Robert)
+         * indexed guid column
+   * LTER MN switch
+   * Geohash use in log aggregation
+     * will schedule a mtg today
+
+

@@ -1,0 +1,22 @@
+Abstract for Open Knowledge Foundation Conference in Berlin, June 30/July1st: 
+
+Workflow Classification and Open-Sourcing Methods: Towards a New Publication Model
+Richard Littauer, Karthik Ram, Bertram Ludaescher, William Michener, Rebecca Koskela
+
+Various tools, such as Kepler [1], Taverna [2], Vistrails [3], and many others have been designed in order to allow for scientific workflows to be created, executed, and shared among scientists and laboratories. Scientific workflows are typically used to automate the processing, analysis, and management of scientific data. By providing front-end visualistions and adaptations of shell scripts and manual steps, it is easier for scientists to do their work, especially when integrating grids and parallel processing or external databases. Furthermore, workflows provide a way of tracing provenance and methodologies to help foster reproducible science and the publications of executable papers. 
+
+However, there have been few studies done looking at how these workflows work, how to classify them according to their perceived function, where existing workflow systems fall short, and how the process of creating, executing, and sharing workflows can be improved. For example,  as much as 30% of workflow components have been assessed to be so-called data conversion shims [4]. This large percentage and the difficulty of developing custom shims suggest that workflow design technology can still be improved. Also, several studies run on the same data came up with different results, which suggests that open data alone does not lead to reproducible science [5].
+
+In order to promote open discourse and access to scientific methods as well as data, as part of the Data Observation Network for Earth [6], we are analyzing a wide variety of workflow systems and publicly available workflows.  We are developing a way of categorizing workflows based on their complexity, types of processing steps employed, and other factors. The goal is to develop new and significant understanding of how the scientific process can be enabled and advanced using science workflows. In particular, the research being done looks at the use, complexity, and user-base of the most common workflow programs. Much of our work is being done by using open-source repositories of existing workflows, such as on the repository site myExperiment. It is hoped that understanding of the processes behind and the use of workflows will lead to greater contribution of workflows into the public domain [7]. We will present out initial findings. 
+
+References:
+
+[1] Kepler Project. http://www.kepler-project.org
+[2] Taverna. http://www.taverna.org.uk/
+[3] Vistrails http://www.vistrails.org/
+[4] Cui Lin, Shiyong Lu, Xubo Fei, Darshan Pai, and Jing Hua. 2009. A Task Abstraction and Mapping Approach to the Shimming Problem in Scientific Workflows. In Proceedings of the 2009 IEEE International Conference on Services Computing (SCC '09). IEEE Computer Society, Washington, DC, USA, 284-291. DOI=10.1109/SCC.2009.77 
+http://dx.doi.org/10.1109/SCC.2009.77
+[5]Coombes, K. R., Wang, J. & Baggerly, K. A. Microarrays: retracing steps.Nature Med. 13, 1276–1277 (2007).
+[6] DataONE. http://www.dataone.org
+[7] DataONE Workflows Project.  http://notebooks.dataone.org/workflows
+

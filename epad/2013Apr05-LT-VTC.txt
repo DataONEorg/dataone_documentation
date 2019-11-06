@@ -1,0 +1,119 @@
+Attendees: Bruce, Rebecca, Amber, Bob, Mike, Dave, Todd, Steve K,Bertram, John Cobb, Deborah (a little late)
+
+Regrets: Suzie, Steph, Matt, Viv
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+ We will also use the epad: http://epad.dataone.org/2013Apr05-LT-VTC if participants can get to it.
+ 
+1.  Please join my meeting, Apr 5, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/770013729
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (510) 443-0605
+Access Code: 770-013-729
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 770-013-729
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+If you have items to add, let me know.
+
+Agenda for 2013-04-05
+
+1) CI Update (Vieglais)
+Things are moving forward as expected right now.  Working on support of immutablilty.
+Member Node deployment document (technical) has been drafted (http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html)
+Large amount of time required to bring up new MNs - looking at ways to make the testing
+more transparent and providing information back to the testers.
+
+Still confusion on the definition of immutable content - came up again with DSpace implementation. This keeps coming up and is in conflict with the early requirements of DataONE. The approach of many repositories say they provide immutability but it isn't the same definition as DataONE. The SEAD project also uses a DSpace implementation (other than Dryad) - was not intended to track versions.
+Todd volunteered to setup a meeting with the DSpace developers.
+
+I'd suggest that we have discovered conflict in stakeholder's need concerning mutability.
+Some repo's want something different than hard-core preservation folks assume.    
+
+from Matt Jones email from earlier this week (Monday) in regard to ESRI and NOAA / NODC:  
+"The CCIT has had an extended discussion about this over the last year that culminated at the last CCIT meeting, and have come up with a solution to the immutability issue that satisfies both use cases (true provenance/citability, and mutability).  Dave is working on writing up the modifications to the architecture now, and we are planning on implementing this to add some flexibility for nodes. That said, this change has far reaching implications throughout our services, so it will likely incur changes throughout all of our software, including MN, CN, and ITK.  So, the change will take a lot of work, especially to get all of the deployed systems changed."
+
+The crux of the problem really boils down to what is done with old versions. It depends on the size and volume of the content. A few revisions a month not a big deal but if more than this it does become a problem. The problem isn't just size - could also be a problem if the metadata changes
+
+Does this mean that a DataONE operated MN may become the copy of record for prior versions?
+
+Mike - So, are just changes in ID Scheme, ie. what is happening with the CSAS MN, considered immutable?
+Incorrect identifiers can be "tweaked" so some situations could be fixed this way.
+Maybe a management component could be added to the process of addin MNs - one way to catch situations before the MN goes live. This refers back to the testing procedure for new MNs mentioned above.
+
+2) CEE Update including Summer Internships (Budden)
+Registration for DUG is now available online so please register and also make your hotel reservations. Amber is working on the CCE WG meeting agenda with Stephanie. 
+Internship offers went out on Tuesday. Project 9 ended up being the project that was dropped.
+All the rest of the projects had first choice applications. Four positive responses so far - they have until next Tuesday to respond.  Second choice candidates haven't been notified one way or the other (unless they sent email). They will be notified next Tuesday. Next steps: rest of the paperwork and then setting up the face-to-face meeting.
+
+AAG meeting next week - 3 DataNets will be represented (DFC, TerraPop, and DataONE).
+
+Email from Nancy Hoebelheinrich at ESIP asking if want to be part of an evaluation of educational resources - no money involved but materials would be evaluated.
+
+3) Member Node Update (Cobb)
+
+SEAD MN progress - looking to be ready for review presentation by 4/11
+SEAD node is being registered in staging environment
+Preparation for SC & UA WG meeting (and DUG) MN activities
+    MN Personas development
+    
+Other items to add? (I was out of the office a bit this week including missing the MNF call yesterday)
+
+4) Reminders (Koskela)
+
+Upcoming meetings:
+EUDAT/DataONE meeting: at LANL 4/15, in Albuquerque: 4/16-17
+Proposal Writing Workshop - Albuquerque, NM (May 14-16)
+
+Next quarterly report due May 1st so April 19th LT meeting will have WG reports
+Need all updates on workshops,meetings,publications, etc
+
+5) Around the Room
+Suzie: The DataNet Federation users' requirement meeting is Sunday-Tues in Chapel Hill. It is being organized by Helen Tibbo and Cal Lee.  Regan Moore will be there.  Other attendees include Scott Brandt (Purdue), Ann Zimmerman (michigan), Catherine Fitch (Minnesota), TA Kugler (Minnesota), Mary Whitton (RENCI), Karl Gustafson (RENCI) and Kimberly Douglass (virtually). We are sharing project overviews, methods, results, lessons learned and potential collaborations in teh future.
+
+Suzie/Mike - Planning for UA/Socio Working group still continuing. We are trying to also figure out how to support some virtual participation this year, especially for Govt. Attendees who are unable to attend due to Sequestration. 
+
+Bob:
+EVA subgroup (Aritra Dasgupta is the lead) has prepared a paper evaluating current visualization approaches for carbon model output.  It is for an IEEE Vis workshop and the draft is called “An Exploratory Study of Usage For Climate Data Analysis.”  
+
+John C. : Attended 5th U. MAss/  New England Area Libraries eSceince symposium. Participated in panel.http://escholarship.umassmed.edu/escience_symposium/2013/
+
+Amber: Attending the DataUP meeting at NCEAS this week - with Dave.  Dave/Carly working up revisions to a grant application for further development activity.
+General goal will be to work towards a web application to get cross-platform capability. Lots of effort put into the user interface.
+
+Mike: FYI, USGS is having some of our Scientists look at using DataUP for its research. Right now, interest from Water Researchers, Bio will begin in the next few weeks. USGS also would prefer a USGS based ONEShare hooked is some feedback we've already heard... Other thing heard was USGS scientists said, what about Access support - interesting thought really.......
+
+Deborah: it may make sense to look at dataUP and the needs/desires from RDA  (i could connect you if desired -i presume dave v might talk to mark parsons)
+
+Deborah:  
+- Interoperability and Semantics Working Group welcomes our new member - Margaret O'Brien (from SBC LTER)
+- Preparing for F2F meeting at NCEAS next week along with a preparation meeting with LTER  
+- is anyone else going to the leadership in science policy  meeting next week? 
+ http://cra.org/ccc/spi
+Deborah is attending in Georgetown on Thurs and Friday (11-12)
+- presented our platform for our hydro-eco use case to usgs on a telecon  (contact dalia varanka)
+- sent in camera ready copy of our WWW Web Observatory Meeting paper on the hydro-eco use case platform as a web observatory operational specification.  Paper led by our postdoc Patrice Seyed
+
+Bertram: Nothing new (Paolo at TaPP'2013, presenting D-PROV).
+Trying to decide on date & place for ProvWG Spring meeting.
+
+Steve: nothing new from me although our book chapter  Estimating Species
+Distributions—Across Space, Through Time, and with Features of the Environment
+Steve Kelling, Daniel Fink, Wesley Hochachka, and Ken Rosenberg
+Robert Cook Theodoros Damoulas Claudio Silva William Michener
+IN:
+Malcolm Atkinson, Rob Baxter, Peter Brezany, Oscar Corcho, Michelle Galea, Jano van Hemert, Mark Parsons, and David Snelling. THE DATA BONANZA: Improving Knowledge Discovery for Science, Engineering and Business.
+Number ISBN 9781118398647. John Wiley & Sons Ltd., 2013.
+
+Todd: preprint w/ Heather P on data reuse just posted to PeerJ PrePrints https://peerj.com/preprints/1/  People may also be interested in the launch of NPG's data journal: http://www.nature.com/scientificdata/  (Figshare and Dryad are repository partners). Karen Cranston at NESCent is preparing a data management module to be used by Software Carpentry (http://software-carpentry.org/) - should be in touch with those of you who have developed researcher-oriented workshop materials.
+
+Bruce: Working on reviews for DataONE grad student applicants for CI grad student position at UTK.  
+
+
+

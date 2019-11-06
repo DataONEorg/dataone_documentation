@@ -1,0 +1,389 @@
+Notes:  DataONE Metadata Working Group/ Meeting Outline, Chicago, June 3-4, 2013
+
+June 3, 2013
+8:30 AM-9:30 AM full breakfast
+-      Round-the-room hellos (let’s do this as folks get settled w/coffee, etc.)
+ 
+9:30 AM-11:00 AM meeting/work time (John/Jane) (10 min.)
+-      Good morning, logistics re: reimbursement, note taking (Angela) etc. 
+-      WG vision (brief!) : develop prototype, goal is to build proof of concept, web-based, software service, no login, public dictionary.  Evolving community needs, rapid and affordable.  Reduce the need to go out to namespaces, minimize expensive crosswalks.  We are not doing linked data.   Three distinct terms/classes: vernacular (unstable), canonical (stable/unchanging), and archival (stable/but possibly obsolete). For more details see: http://epad.dataone.org/2013-06-03-d1mwg. 
+
+-      Meeting goals (John and Jane) (20 min.)
+1.     Flesh out technical plan (John)
+Break out structure, go into more detail in technical break out.  Short term goals, things you can accomplish over summer.  
+
+2.     Produce 3 solid use cases ready for verification, sketch other work (Jane/Angela)
+Good momentum in New Mexico.  Were thinking about different types of users, scientists, data curators. Thinking we will emphasize the scientists, have two or three solid use cases of scientists.  Then one data manager and one system developers.  
+
+Google doc: https://docs.google.com/document/d/1LOtqBaVATIdIOXJuwH3On9enQvJfApT_rbVbNY_PZY8/edit (but request access from Angela if you can't open link).
+
+3.     Support PAMWG-intern Chris Patton (John*/Jane)
+We have Chris for 9 weeks.  There will be room if we want to do more.  
+Link to Chris' blog: https://notebooks.dataone.org/general/week-1-precise-metadata-ontology/
+
+4.     Explore grant options (Jane*/John)
+We have a variety of comments to work on proposals.  The goal is to do a demonstration.  Looking for ways to support efforts.  If we can get a demo that would be a good way to push us forward.  The goal would be to support a student or postdoc, or programmer.  Possibly Sloan, RCN.  
+
+5.     Target selected scholarly and scientific venues for sharing progress (Jane)
+If we've presented or given a paper.  Let us know if you've mentioned this work so we can cite it.  
+
+Around the room, general updates (30 minutes)
+1.     Everyone – share your news!
+§  E.g., John/DataONE,
+We're in the last year of funding.  We have 13 months left.  Will not change our group much, since it is self-sustaining.
+EZID: we've gotten permission to offer a free EZID account to the D1MWG if we want to.  
+Just beginning phase of working with JISC.  
+RDA PID Information Types WG working with EZID on metadata peculiar to information objects of different types.
+Need emerging for "unstructured metadata" (excellent idea. We should talk more about this - KR)
+
+Angela
+ * ESIP:  http://www.esipfed.org/meetings,
+Every year look at software, Ramada?
+Angela/Sarah conducted a survey of ESIP members about data sharing, access, trust, 60 respondants.  Metadata came up a lot in the survey.
+
+Jane
+ * RDA/CAMP-4-DATA:  http://dcevents.dublincore.org/IntConf/index/pages/view/camp-4-data-cfp; 
+Looking for short papers, position papers, and demos.  We could consider submitting something to this.  
+ * Survey on CV use:  http://ils.unc.edu/mrc/survey-for-controlled-vocabulary-users-httpbit-ly11xicj7/
+Posted survey on listserv on controlled vocabulary use.  For linking the datanets, a master's student project.    
+ * MTSR conference -- Greece:  http://ils.unc.edu/mrc/call-for-papers-mtsr-2013/
+Pretty highly ranked, but will be a good place to submit papers.  There is a breakout session on data. June 20th deadline. 
+
+Sarah
+ * CHARMe http://ensembles-eu.metoffice.com/charme/index.html
+Annotating datasets and linking, new project recently kicked off.  Lots of international partners
+ * Metafor Use cases for climate models http://metaforclimate.eu/trac/wiki/use-cases
+Very controlled/structured way of collecting data for climate models 
+Metafor controlled vocabularies http://metaforclimate.eu/trac/wiki/ticket/198
+ * Cmip5 questionnare http://q.cmip5.ceda.ac.uk/
+ * OpenAIRE - EU project/infrastructure for collecting publication metadata  (expanding to include datasets linked to papers) http://www.openaire.eu/
+ * NetCDF Climate and Forecast (CF) Metadata Convention http://cf-pcmdi.llnl.gov/ and standard names http://cf-pcmdi.llnl.gov/documents/cf-standard-names/ 
+
+Greg:
+Faculty survey: put out survey to all faculty and researchers, about 1/3 responded, not many surprises.  Very wide spread, not isolated.  Researchers view themselves as personally responsible.  Viewed a collaborative and shared activity (external repository, collaborators).  Depts differ, some have a lot of external funding, some dont.  Some are very inward looking.  Others organs relying on campus.  A certain lack of awareness about metadata.  Researchers are increasingly under mandate, not just NSF, many funding agecies putting requirements.  
+
+Karthik:
+Building links to APIs to various metadata sources.  Not worrying too much about having high quality metadata, taking what they can give us. 
+http://ropensci.org (lots of new metadata libraries coming online).
+e.g. https://github.com/ropensci/rmetadata
+
+
+
+2.     Dictionary specific
+§  Technology + Building the dictionary (John/Karthik/Chris/Nassib/Jim – if connected)
+Meeting Chris and Karthik last week, with Chris's skillset, python.  Will be making software repository, we will need a name.  
+
+§  Use cases (Jane/Angela/Greg/Sarah/Rob –if connected)
+
+-      Open discussion on agenda, planning, setting the day (30 minutes)
+We need to think about validating our use cases, non-english speaking people.  Scope of use case work, scientists, and how a user of web interface might interact with system.  
+
+11:00 AM-11:30 AM break
+ 
+11:30 AM-1:00 PM meeting/work time (1.5 hours, or take ½ hour more for discussion)
+-      Tech group
+-      Use case group http://epad.dataone.org/mf6ZOptvbN
+- Jane/start w/a agenda:
+- Angela/ESIP: http://wiki.esipfed.org/index.php/Earth_Science_Collaboratory and https://docs.google.com/document/d/1LOtqBaVATIdIOXJuwH3On9enQvJfApT_rbVbNY_PZY8/edit?usp=sharing
+- Sarah/Metafor http://metaforclimate.eu/trac/wiki/use-cases/template
+- Greg/questions 
+
+- Review notes from New Mexico meeting, Sally scientiets, Doug data
+- Sarah raise question about including curators, that is a real value of the dictionary
+- Some discussion follow about scientists, what we know, don't know, likely many just know how to label, and will not look-up, but could be possible .. w/cultural change
+Greg asked -- do we really know that scientists want to look up label for excel spreadsheet.
+
+ESIP, angela reviewed process, how case studies worked out.
+
+Sarah show us the template...  http://metaforclimate.eu/trac/wiki/use-cases/template
+
+Greg --
+One hindrance is that, to even try out this idea, we would need a user community to evaluate it.  Would/could DataONE be such a community?  I  
+don't know, but in any case I brought this concern up earlier.   
+However, the more I've thought about this idea, the more I come up  
+against a more fundamental question: Where does metadata come from?   
+We can guess where technical and other auto-generated metadata comes from... but what about human-created metadata?  How does this metadata enter the ecosystem?  Via what tools?  At what points in the data lifecycle?  I don't think I've ever heard this question asked before, or at least, I don't know the answer.
+
+
+1:00 PM-2:00 PM lunch
+ 
+2:00 PM-4:00 PM meeting/work time
+-      2-2:30 Regroup/connect as group/continue working separately (vote)
+
+Nassib:
+Term is entire element, is there always some kind of unique identifier or key, or does it only get that later when its a canonical term.  
+
+
+-      Continue working in tech. and use case group
+§  Plan strategy for reporting/facilitating discussion for afternoon session
+ 
+4:00 PM-4:20/4:30 PM break
+ 
+4:30 PM-6:00 PM Reporting from each group and open discussion
+-      Use case - All (30 to 45 min.)
+-      Tech group - All (30 to 45 min.)
+
+
+
+-      Discuss day 2 priorities/plan
+-      Time permitting, discuss grants, dissemination, etc. (briefly)
+7:00 PM group dinner provided in the hotel restaurant
+9:00 PM continued discussion for those up for it
+
+June 4, 2013
+
+8:00 AM-9:00 AM full breakfast
+ 
+9:00 AM-10:30 AM meeting/work time
+-      A look ahead for today
+-      Epiphanies, dreams
+-      Post-Use Case options
+1.     Exemplary web UIs
+2.     Direct testing
+3.     Tame user community testing
+4.     Follow-on grants
+5.     Pre-populating the Metadictionary (seed terms)
+ * Domains, quantity, mechanics, politics
+6.     What sort of license needed for contributions?
+    Contributions themselves probably need to be CC0-- how could system work otherwise?
+
+Greg's questions:
+ * should the dictionary contain terms for terms in standards?
+ * if so, what are the implications? eg, 20-30 instances of temperature and chlorophyl
+ * what if there are no terms?
+Karthik: don't worry about that yet
+ * if we seed the dictionary with terms, will they be authorless? Would they be grandfathered in? Users claim orphan terms before they expire? 
+ * One possibility is that we proceed as planned for now, but once this effort starts to take some shape, import existing terms. It would be just as easy then as it would be to do right away.
+ * what about a slow start with small community testing?
+
+Seeding the vernacular and the canonical portions?  eg, deliberately put weak terms in canonical to watch them get deprecated?
+
+Use-case/Interaction, etc. group
+1. Pre-populating the Metadictionary (seed terms)
+2. Tame user community testing
+3. Direct testing
+4. Exemplary web UIs
+5. Follow-on grants
+
+Pre-pupulation.
+Greg -- big question in his mind. Many standards, with committed user communities. CF has active community, same thing for lost of other communities. Do we want buy-in.  
+Jane/Sarah -- not yet, 
+Sarah don't want to show something to potential user communities that isn't very good (i.e. a bit naff), folks will take a look and say..why do I need.  We bring them in when we have something to offer them.  Let's start by identifying an orphaned communities.
+Angela -- a communitiy that pulls from a lot of different standards.  
+New scientists on the long-tail
+connection between use case and pre-population...
+thinking of multiple communities. Greg's example with benzine (CF term tendency_of_atmosphere_mass_content_of_benzene_due_to_emission_from_agricultural_production)
+
+Jane poses the key question:  Is there a need for this, are we barking up the wrong tree.
+Are we going to send up with super-duper-enhanced Dublin Core/DataCite
+
+Sarah -- her community is well defined by a very good controlled vocab.
+
+Angela -- asking, what happens when term is not there, Sarah says add; Angela, what about a scientist wanting to do interdisciplinary research.  How to they cope.
+
+sarah frog example, studying, professor gets big grant, students register properties.  then antoher prof./group, studying newts.
+
+Frog example: Imagine a PI who has just been awarded a grant to build a research group to study frogs. The research group uses the dictionary tool to create a shareable database of terms and definitions for their frogs (species, location terms, weather terms etc). Another research group, who happen to be studying birds that eat the frogs Google for information about the frogs and discover the frog dictionary, which they can use and can propose adjusted definitions for common terms and can add new definitions for the frog-eating birds. 
+
+We're produciing a dictionary creation tool which will enable any community to get together and define and identify terms, which will then be made public and Google-able, and so potentially provide a key location for a community to coalesce around and  standardise their terms/definitions.
+
+We need to find someone who's just been awarded a grant and has students/postdocs and needs some help with dealing with data and metadata. Can get them/their researchers to use the dictionary in exchange for help with managing their metadata.
+
+Orphan community or community who has to pull from a lot of different standards.  We need to have a community who doesn't already have a set standard.  
+
+Do a little prepopulation in general group (Dublin Core), datacite, generic, covers everything. Then we could append on ecological terms, climate terms, physics, etc. Could take roots out of CF
+
+We don't want to be competitive, we want to be complementary.  We need to interact with other schemes somehow.
+
+**Voting -- where does this come in?  How could we demonstrate it.
+-- what are we voting on?  yes/no, ten votes becomes cannonical, 10 votes, +/-, term could be frozen.  Are all votes created equal.
+**Orphaned items.
+
+
+Action items for pre-populating the dictionary.
+- John/Jane talk with Dublin Core
+- Angela--conact Rob and Jim, science starting-out idea, share Sarah's Frog example.  
+- Getting oprhaned items in (how to do?).
+
+
+
+-      “Hello, world” first stab at the software
+
+github.com/cjpatton/seaice
+
+ 
+10:30 AM-11:00 AM break
+ 
+11:00 AM-12:30 PM meeting/work time
+-      continue break out groups
+ 
+12:30 PM-1:00 PM lunch
+ 
+1:00 PM-2:30 PM meeting/work time
+-      prototype progress and discussion
+-      voting
+-      pre-population:
+Pre-population can be used to illustrate voting mechanism
+Pre-population by seeding the canonical part, adding orphaned terms, getting newly
+
+Discussion on voting
+
+A "term" is a data structure centered around a unique concept, with components that include
+ * concept identifier 
+ * term string
+ * definition
+ * examples
+ * community contact info
+ * community score
+ * flag indicating term type, eg, relationship vs non-relationship
+ * inter-term relationships (deferred)
+
+A term is owned by a single person; the term string and definition can be edited only by that person.  However, comments can be added by anybody, and the owner may revise a term based on comments.  Terms can be voted on by anybody in trinary fashion: positive (like), negative (dislike), or neutral/no opinion (no vote).  A vote is intended to reflect an opinion on the entire term (the term string and the definition).  There are 3 identifier states: vernacular, canonical, deprecated.  A fourth state, dormant, can be inferred from the passage of time and last updates/usage/votes/etc.  Voting can move a term from one state to another (details TBD).  Terms never disappear, but their state (in particular, being deprecated or dormant) may affect if and where they appear in search results.  (see also, Jane's notes below on voting, see the ***VOTING, below)
+
+brief discussion on approach to add terms/pre-pop.
+1. basic cannonical
+2. orphaned (possibly?)
+3. frog example--newly minted sci. 
+
+In the venacular 
+
+voting --> venacular
+voting --> cannonical
+voting --> depracated
+    venacular --> cannonical
+    cannonical --> depracatied
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(****VOTING, see also Greg's discussion above--blue).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Discussion about reputation, elders, how to determine.  
+sarah: If we want to get PIs invested in this, they need to feel they have 
+seeding reputation introduces politics.
+
+In this pilot phase we are just tinkering with numbers.
+Keep scores of PI hidden.  We are tweaking things.
+On the other hand if you want to keep people engaged.. let them see their score going up. [We agree that reputation scores should be public to encourage participation].
+If someone downvotes your term, we may not see certain things. Once you cross a threshold.
+
+How does a term go from one status to another.  Somewhat autoamtic solution.  Brought to attention of elders/experts, contribute to decision.  Hold/go forth... make some determination. Maybe there's a form they visit?  Set threshold values based on the size of the community?
+
+Sarah-thinking we need a purely mechanical way.  Doesn't think the other way will work.We don't want to be spamming users with high reputation as this will stop them engaging. (It's hard enough getting people to peer-review papers, what we'd be asking the "elders" to do would be peer-review definitions)
+
+Karthik's ideas:
+-----------
+Allow people to become moderators after certain threshold of points. These folks have clearly demonstrated an intent to be valuable members of the community. They can have powers to clear flags (e.g. delete spam flagged by others), delete derailing comments etc. up [chris]
+
+threshold A →  pushes vernacular to canonocal
+A canonical term with x votes (where x > threshold_to_canonical) can become deprecated if it drops to a  low_threshold from negative voting.
+
+---------
+
+// Karthik
+Thresholds define how terms move from:
+vernacular →  canonical (rises about y%)
+canonocal →  depercated (drops below x%)
+"Elders" have greater power/force to push in either direction. Plebs can gain enough votes from participation that they could one day also become elders. 
+
+// Nassib
+I think the decision to move a term from vernacular to canonical status can be prompted and/or informed by scoring thresholds, but I wonder if there should be a manual human input into the process.
+
+// Chris
+We're defining the flow of terms from the vernacular, to the canon, to deprecated. This is entirely numerical. Users may cast an up vote or downvote on any term OR definitoin. The value of your vote is based on your reputation. Reputaiton is determined by the number of terms you've contributed and value of the terms (likely some other stuff to present spoofing)
+
+Each term begins in the vernacular with a score of 0. 
+Vernacular -> Canon. If a vernacular term has a score of N, then move it to the canon. 
+Canon -> Deprecated. If a canonical term drops to a score of M, where 0 < M << N, then deprecate it. 
+Vernacular -> Deprecated. If a vernacular term drops to a score of L with L < 0 - M, then deprecate it. 
+
+Values L, M, N are threshold values based on the size of the community (could correlate with percentiles.) 
+
+There should be distinctions in the rights/responsibilities of community members in different percentiles. (karthik) 
+
+Term cycle: 
+The user opens a term for voting. 
+Discussion and voting. 
+Doesn't reach canon, the author can make edits and reopen for voting (score = 0) 
+
+
+jane
+KISS -- keep it simple stupid.
+Make it basic, with points.
+Allow people to have status, or more points for voting.  I am not sure how to give people higher voting power without becoming political.  I'm not comfortable with this, but realize the need.  I would say expereince.  How about elder/nomination or collective voting of others to a person of status?
+
+
+
+// Angela
+Terms rise or fall based on the voting.  If they rise above a certain threshold they automatically become part of the canonical.  If they fall below a certain threshold they become dormant.  However, all terms are always available for search and are not deleted.  A community of elders will have seeded reputations.  People can become moderators who show a certain amount of service to the community through voting, adding terms, editing, etc.   
+
+
+// Sarah
+Reputation points are awarded to users who participate in the community (by up/downvoting, writing terms and definitions etc.)
+To start, we will need to give domain experts more reputation points than newbies, though as the community matures this will matter less.
+Once a term has got enough upvotes to pass a threshold it should be promoted to canonical
+Once a term has got enough downvotes to go below a threshold, it should be demoted to deprecated
+If a term has no activity on it it stays where it is, but will be moved lower down in the search rankings.
+I suggest that we have a page somewhere on the site where the terms with the biggest movement (up or down) are listed - a "most active terms" page
+We need to freeze the terms before they can be voted on - each new version of a term starts the voting again, so there's no carryover of votes from previous versions. 
+
+
+// John
+Nassib prefers deprecated rather than dormant because it suggests guidance to potential users of the term.
+Elders are simply users with seeded reputations (senior practitioners start with higher reputation).
+
+Vernacular terms with scores that rise above H automatically pass to pre-Canonical, which means the owner(s) are auto-emailed notice of impending Canonicalization and therefore a freeze.  If nothing happens by the deadline, the terms become Canonical, else the owners asked for more time (in a manner TBD).
+
+Term scores that fall below L automatically automatically pass similarly to pre-Deprecated.
+
+// Group
+
+Terms rise or fall based on the voting. [am] Reputation points are awarded to users who participate in the community (by up/downvoting, writing terms and definitions etc.) 
+
+To start, we will need to give domain experts more reputation points than  newbies, though as the community matures this will matter less. [sc]  Allow people to become moderators after certain threshold of points; they can have powers to clear flags (e.g. delete spam flagged by others), delete derailing comments etc. [kr]
+
+Domain experts are selected by nomination [jg], with N nominations given to each user [sc] who reaches a minimum status. [jk]
+
+ Each term begins in the vernacular with a score of 0. [cp]  A term is owned by a single person; the  term string and definition can be edited  only by that person.  However,  comments can be added by anybody, and the  owner may revise a term based on comments.  Terms can be voted on by  anybody in trinary  fashion: positive (like), negative (dislike), or  neutral/no opinion (no  vote).  A vote is intended to reflect an opinion  on the entire term  (the term string and the definition).  There are 3 term statuses:  vernacular, canonical, deprecated. [gj]
+
+Proposed  terms can have a comment period to avoid frequent changes biasing  votes. Once a comment period is completed, the term defintion is  "frozen" for another period when votes can be cast. There will still be  time for revisions (e..g similar to final revisions after a paper  acceptance). At this point it goes into canonical or just stays around  for further votes. Can drop back into comment and discussion mode if  need be (term proposers choice).  e.g. Term
+    [ put term up for vote]
+    [ Remove term from voting/send back to discussion].
+
+//
+
+#  Karthik:
+Proposed terms can have a comment period to avoid frequent changes biasing votes. Once a comment period is completed, the term defintion is "frozen" for another period when votes can be cast. There will still be time for revisions (e..g similar to final revisions after a paper acceptance). At this point it goes into canonical or just stays around for further votes. Can drop back into comment and discussion mode if need be (term proposers choice).
+
+e.g. Term
+    [ put term up for vote]
+    [ Remove term from voting/send back to discussion].
+
+
+2:30 PM-3:00 PM break
+ 
+3:00 PM-4:30 PM meeting/work time
+-      summary and next steps
+-      to do by end of July
+  + live prototype, heroku-hosted
+  + downloadable source on githb
+  + service specification document
+  + ask Rob and Jim and Tim about
+     * finding student testers
+     * musts and donts of the UI experience
+  + all D1MWG members to have accounts and test
+
+-      next batch of “to do”s after July
+  + looking for funding to finish
+     * commenting, voting, relations, NLP discovery
+  + another F2F meeting?
+  + presentations, papers
+  + liaisons with others, eg, RDA
+
+-      next teleconference 17 June 2013
+
+
+
+
+
+
+
+

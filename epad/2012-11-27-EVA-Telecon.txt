@@ -1,0 +1,86 @@
+#persist
+
+EVA Working Group Teleconference
+
+Please use the following numbers:
+Toll Free Number:  866-703-9626 
+Pass Code:  767574 
+
+Participants:   Aritra Dasgupta, Jorge Poco, Dave Vieglais, Yaxing Wei, Bob Cook, Bill Hargrove, Dave Vieglais, Shi Shi Liu, Rosie, Steve Aulenbach, Claudio Silva, Christopher Schwalm, Paolo, Vineet Yadav
+
+Not able to attend: Forrest Hoffman, Debbie Huntzinger, Jim Randerson, Anna Michalak, Peter Thornton, Bertram Ludaescher, 
+
+
+Meeting Agenda:
+(1) plans for the EVA Working Group over the next six months (10 minutes)
+(2)  Short Presentation via WebEx:  Jorge Poco, NYU - Poly grad student "Analyzing / visualizing output from Terrestrial Biosphere Models using UV CDAT" (20 minutes)
+(3) UV-CDAT discussion (10 minutes)
+    - usability
+    - additional analysis / visualization functionality for model output 
+(4) plans to expand UV-CDAT functionality to include benchmarking (10 minutes) 
+(5) other items?
+
+
+Meeting Notes:
+
+(1) plans for the EVA Working Group over the next six months (10 minutes)
+ 
+DataONE Post-Doc:  Aritra Dasgupta
+Intern:  Jorge Poco
+ 
+EVA 
+1.     add functionality for model intercomparison
+ * based on data from the North American Carbon Program Regional Synthesis and MsMTIP
+ * look at interannual variability, spatial differences in carbon sources and sinks
+ * a priori clustering of models based on their structure – algorithms used to represent various ecosystem processes.  Do models that have similar structure behave similarly (and behave differently from those that have a different structure)?
+2.     add benchmarking functionality to UV-CDAT
+ *  gridded observations – treat similar to model output
+ * use ILAMB and MsTMIP benchmarking algorithms and scoring embedded in UV-CDAT
+ 
+ 
+Meetings / Telecons
+ * November 27 – this telecom 
+ * Early January teleconference – UV-CDAT and planning for the EVA Brooklyn meeting
+ * January 22-23, NYU-Poly, Brooklyn
+   * Logistics:  Room block at the Brooklyn Marriott is being finalized
+ * February 7-8, MsTMIP workshop in Albuquerque
+ *  Monthly – bimonthly teleconferences
+ *  Perhaps a July 2013 Working Group Meeting
+ 
+(2)  Short Presentation via WebEx:  Jorge Poco, NYU - Poly grad student "Analyzing / visualizing output from Terrestrial Biosphere Models using UV CDAT" (20 minutes)
+ 
+code for UV-CDAT with some features added by Jorge will be available for download in about a month
+
+UV-CDAT Project website: http://uv-cdat.llnl.gov
+
+ 
+(3) UV-CDAT discussion (10 minutes)
+Usability
+ * UV-CDAT can access data from local desktop or from server (FTP/HTTP/OPeNDAP/DataONE)
+ * Claudio's group is working on parallelization of VisTrails workflow, which should speed up processing
+ 
+additional analysis / visualization functionality for model output 
+    
+ * K-means clustering -- can be added
+   * part of a JAVA package that is integrated with VisTrails / UV-CDAT
+ 
+ * add basic analysis capabilities through VisTrails workflows
+   * base level analysis modules within VisTrails:
+     * common analysis capabilities like subsetting, regridding, units conversion, etc
+     * Build modules to wrap UDUNITS functions (for units conversion)      
+     * better handle CF-convention (preserve/propagte CF metadata through                      CDMS functions)
+
+ * Add benchmark analysis modules which can be readily used in VisTrails workflows to handle CF-compliant data files
+
+ * Model Structural Characteristics
+   * easily toggle the inclusion or exclusion of model structure characteristics and how they influence the clustering of the outputs
+   * turn on/off selected model characteristic components, changes shall be reflected in visualization interactively
+   * may be useful to determine which model features / characteristics are critical 
+ *  
+ 
+(4) plans to expand UV-CDAT functionality to include benchmarking (10 minutes) 
+ 
+ 
+(5) other items?
+Acton:  Cook to send out a poll for the next teleconference (early January)
+

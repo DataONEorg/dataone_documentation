@@ -1,0 +1,110 @@
+Discussion on Coordinating Node Migration to Single Master Mode
+===============================================================
+
+Present: Chris, Dave, Robert, Ben, Skye, Peter
+
+Scope: Discuss the impact of running in a single-CN mode using the current architecture on each CN component. The goal is to flesh out procedures for a failover event, and to discuss additions/changes to the current architecture to handle the failover.
+
+Potential Topics (with some needing greater time for discussion)
+----------------------------------------------------------------
+
+ * Impact on sync
+   * Will monitor node.properties prop
+     * If active-master node is set to the current node, processing is enabled
+     * If passive-master node is set to the current node, processing is disabled
+     * Changes to the node registry need to be messaged across components
+   * On harvest of an MN, pids are queued in a hazelcast IQueue (shared among 3 CNs)
+   * Procedures for manually switching CNs
+     * Similar to: http://mule1.dataone.org/OperationDocs/coordinating_node_deployment/upgrade.html
+     * Put the active CN into CN-REST read-only mode (passive nodes are already CN-REST read-only)
+     * Shut down processing
+     * Verify that passive CN(s) have the same content
+       * What system metadata changed?
+       * Record the timestamp that a split brain event occurred
+       * Evaluate which pids changed in the active node since the split brain event
+         * persisted sysmeta and object bytes
+     * Change active/passive properties
+     * Change the RR
+ * Reserve Identifier
+   * Uses LDAP replication
+ * Impact on authentication
+   * Authentication db (storing certs to session cookies) runs on one CN
+   * db is on the CN with the first IP listed in node.properties
+   * An outage of the auth db would require a transfer of the db to another CN
+   * Portal properties would need to be re-initialized to change to the new active CN postgres server
+   * Medium term solution is to implement replicated portal dbs
+ * Impact on repl
+   * replication monitors storage cluster hzSystemMetadata map for changes
+   * Queue management via hazelcast. if queue is lost then pids are evaluated 2 weeks later.
+     * How/why does that happen? in 2 weeks?
+   * Use the replication.ACTIVE property to turn two CNs off from replication
+ * Impact on indexing
+   * Indices are independent, so no real impact
+   * Perhaps safest is to copy the index over during a failover scenario?  (if underlying datastores are consistent)
+     * Also possible to generate list of pids to index from activity log of times when cluster was broken/fractured/down.
+   * There's risk if the storage layer (metacat & hazelcast) are out of sync across CNs, but the index exposes objects that aren't stored on the new CN
+   * When we detect a split brain scenario, we need to keep a log of timestamps/pids that get changes to help in recovering 
+ * Impact on log aggregation
+   * Same as above
+   * We record dateLastAggregated, so we could reharvest from that point
+ * Impact on ONEMercury
+   * No change when running in single CN mode
+   * In a failover scenario, switching to another CN:
+     * Portal sessions need to be maintained
+     * We rely on the indices to be in 'sync' as best as possible
+ * Impact on DNS
+   * Auto failover script should be implemented, but manually triggered based on <some alert>
+     * CN upgrade
+     * CN failure / outage
+     * Split brain requires investigation, but doesn't really require a failover unless it is a symptom of some other failure (e.g. bad nic)
+ * Performance/Load considerations
+   * potentially move independent (batch) services off of the CN
+     * Solr index population
+     * Auditing processes
+     * log aggregation harvesting
+ * When a CN starts up, how can it check if another 'active' CN is already running?
+ * alternatives to single master
+   * keep multi-master and add hazelcast merging (Roger)
+ * functional labels for CN nodes - these will be used to distiguish roles for each CN and will appear in source code/documentation/announcements, etc
+   * master/slave
+     * maybe not appropriate because implies control relationship
+     * not PC (seriously)
+   * Active/Passive
+     * The Active node is the primary node that receives reads and writes from the internet, the passive nodes only receive updates from the Active Node
+     * Mysql uses the 
+   * primary/replica
+     * more accurate in describing CN roles, at least for log agg
+     * confusing with our current use of "replica"
+   * primary/secondary
+     * more PC but less precise
+   * single-homing, multi-homing
+ * CN roles, behaviors
+   * for "primary" CN
+   * for "secondary" CN
+ * how many CNs should "online"
+   * one primary, one secondary? two secondaries?
+ * how are CN members informed who is the primary
+   * LDAP entry?
+     * what would this be called?
+   * properties file entry?
+     * what property file
+     * what property names
+ * CN roles, behaviours for log aggregation
+   * possibly different behaviors than for other CN responsibilities
+     * is "different" acceptable or should all CN funtions follow one architecture?
+   * for "primary" CN
+     * processing jobs are not distributed, i.e. scheduled on one CN and executed on another
+     * only primary CN will perform harvesting
+     * primary may "recover" from any secondary during startup
+       * new, starting primary may have been offline or secondary
+   * for "secondary" CN
+     * will only sync from primary (pull log records)
+       * will not sync log records from another secondary
+     * will only "recover" from primary during startup, but this may be acceptable because syncing will happen on a regular basis (every hour?)
+ * what is the procedure to "failover" to a secondary?
+   * monitoring state from multiple locations
+   * switch DNS via API call after a determined (consensus?) outage event
+
+Roger: I won't be able to attend this meeting but I have a question: Instead of changing to Single Master can we add merging policies to Hazelcast? As far as I understand, the CN sync issues weren't due to a problem with Hazelcast. The issue was just that it's not possible to have an "Eventually Consistent" concurrency model such as ours without implementing conflict resolution. See the conflict resolution section here. http://en.wikipedia.org/wiki/Eventual_consistency
+
+

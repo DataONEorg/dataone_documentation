@@ -1,0 +1,68 @@
+Kepler LT conference call
+===================
+
+Aug 10, 2011
+
+Participants: Jones, Ludaescher, Schildhauer, McPhillips, Altintas, Brooks
+
+Agenda and Notes:
+---------------------------
+* K/C final report (end of August), due 90 days after (end of November)
+    -- Bertram: will organize and compile report overall
+    -- All: send pubs
+    -- Ilkay: survey of projects using Kepler; also individual users, especially PhD students
+        -- use form on plone site
+    -- Ilkay: should compile scientific pubs arising from Kepler
+    -- Matt: compile download stats over time
+    
+* Dependency problems with build/module system
+    
+* Ilkay's items
+   -- release plans
+      -- Derik working on Kepler 2.3 release, and reporting modules release
+      -- Need to plan 2.4 release
+          -- Ilkay: should plan on including 'redirect; code in 2.4
+          -- Include sensor-view support
+          -- Ilkay: theme to bring other communities in
+     -- how do we manage the release process? coordinate via the release roadmap pages for each release
+         -- note that the release page dates are out of date
+         -- update this:   https://kepler-project.org/developers/teams/build/kepler-release-roadmap
+         -- how do we decide which bugs get fixed in the releases?
+             -- especially considering the lack of funding?
+         -- release manager: good, but also need a mini release team
+             -- Tim: release team should control when a release is ready
+             -- Tim: part of the problem is that our developers are not users, so don't always have the same perspective as users
+         
+  -- more outdated stuff on the web page:
+  https://kepler-project.org/developers/management
+  (Bertram, Mark: K/LT terms expired)
+  -- broken links: 
+  ---- https://kepler-project.org/developers/teams/build: Build and Release Team Charter (https://code.kepler-project.org/code/kepler-docs/trunk/teams-and-wg/2-teams/build-release/kepler-build-release-charter.doc) 
+  
+* Support issues
+    -- need to do a better job supporting users as requests come in
+    -- assignments were working reasonably, but we need to stay organized
+    -- bug handler/triage:
+    -- @NCEAS: Matt, Derik, Jing
+    -- @Ptolemy: Christopher
+    -- @Davis: Lei, Sean
+    -- @UCSD: Ilkay, Dan, Jianwu
+    -- rather than having individuals sign up, instead have groups sign up each week
+    -- triage person to identify what is really wrong, follow through to completion
+    -- reminder person: Matt
+    
+* Funding projects update
+  -- UC Davis: FilteredPush project with Harvard University uses Kepler for "curation workflows"  (1 FTE: postdoc)
+  -- USCSB/Cornell: Science Pipes for Education with ESA (~ 0.75 FTE engineer for 14 months) 
+      -- working with a bunch of scientists to build educational workflows for science classes
+  -- UCSD: bioKepler/NSF ABI (1.5 FTE through end of 2014)
+  -- UCSD: DISCOSci/NSF CDI (0.5 FTE through end of 2103)
+  -- UCSD: CAMERA/Moore F. (0.5 FTE through end of 2012)
+
+Issues to roll over to next conf call:
+* Future funding
+* newsletter
+* outreach
+* Bertram, Mark: K/LT terms expired
+
+

@@ -1,0 +1,15 @@
+Metacat 1 HZ             <--> SystemMetadata <-->          Metacat 2 HZ
+port 5701                                                                                  port 5701
+    /|\                                                                                                /|\
+     |                                                                                                  |
+    \|/                                                                                                \|/
+ SystemMetadata                                                            SystemMetadata
+    /|\                                                                                                /|\
+     |                                                                                                  |
+    \|/                                                                                                 \|/
+Batch Process HZ Client                                             Batch Process HZ Client
+port 5701                                                                               port 5701
+    |                                                                                               |
+Batch Process 1 HZ     <--> Distributed Executable <--> Batch Process 2 HZ
+port 5702                                                                                  port 5702
+

@@ -1,0 +1,215 @@
+Notes for Sprint 2012.27-Block.4.2
+==================================
+
+Date Range: 2012-07-01 to 2012-07-14
+
+Standup notes from 2012-07-02
+=======================
+
+Everyone: triage redmine sprints, will review this Friday
+
+Robert
+---------
+Preparing for 1.0.2 CN release; ready to tag and release late today or early tomorrow.
+
+Working with Ben/Chris on Friday, discovered bugs in updateNodeCapabilities, created a couple bugs in hudson. One bug is trivial, the other may not be.
+
+cn-orc-1 failure over the weekend. Worked with Chris B to bring server back up to production status.  
+
+
+Rob
+-----
+Have set up Hudson jobs for testing whole environments, as well as exemplar member nodes.  At this point, most runs are failing some tests, for example, in sandbox, the usgs member nodes all have identifier encoding failures that usually are related to tomcat / apache setup (trailing backslashes).  
+-- The unanswered question /  issue is how to communicate problems back to the development team in an effective way. is IRC enough? email to coredev?  automatic redmine tasks.
+
+
+
+Ben
+-------
+-- PISCO approval still outstanding; getting NotFounds on every document; could be use of ProxyPass instead of JkMount
+-- ORE Maps troubleshooting for LTER; seems to be out of memory errors
+-- Will look at long startup time issue with shared ID map
+-- new release Morpho needed for EML 2.1.1 compatibility
+
+Andy
+--------
+ * Push updated documentation.
+ * GMN install documentation (stopped @ cert install)
+ * Looking @ the "next" thing to do (DV's ideas: R client, cert mgmt, ...) 
+
+Chris B.
+------------
+-- taking over for Nick Dexter at UTK
+-- bringing VMWare cluster up to date, updating software, confirming configuration (e.g., firewall, etc)
+
+Skye
+--------
+   Starting to work on 1.0.3 tasks/issues.  
+       Daemon log file rollover.  
+       Still work to be done in indexing and ONEMercury for Dryad.
+       ONEMercury UI issues
+   Ready to test 1.0.2 tasks in sandbox when deployed.
+  UNM very slow to repsond -- CPU seems pegged
+  Asked Ben to look into issues with ORE doc replication: https://redmine.dataone.org/issues/3038
+
+  
+Roger
+----------
+7/2/12: Have narrowed mn-unm-1 performance issue down to something that is related to the server itself. Still investigating.
+7/6/12: Performance issues were not due to server. It just seemed that way because there was no single, or even a few, points of low performance. Instead, many operations take longer than expected. Performing incremental improvements.
+
+Matt
+-------
+-- work with Andy on getting R client released
+-- prepare for DUG demos and presentations
+  
+
+Standup notes from 2012-07-06
+=======================
+
+Everyone: triage redmine sprints, will review Monday
+
+Ben
+------
+Working on DOI registration
+Issues with CNs not syncing
+
+Roger
+---------
+-- Working on performance issues in GMN; finding lots of small issues that add up, no major issues
+
+Skye
+-------
+  --Finished off some outstanding ONEMercury UI changes for 1.1 release.  Will install in cn-dev for review.
+  --Working on being able to change search index fields dynamically.
+        -backup solr core to make changes, index and swap into live index.
+  --Also looking into what it would take to move search index, ONEMercury to separate machine from CN.
+
+Andy
+-------
+ * Learning R
+ * Trying to get the SSL handshake working for d1_client_r
+
+Chris B.
+------------
+-- wokring on updating VMs and confirming firewall settings
+-- need to discuss 2 of the nodes with Robert
+-- automatically updating the DataONE software on various nodes
+    -- Matt indicates that these changes need to be coordinated with the Dev team
+    -- Also, production machines really should not be touched without going through Chris/Robert/Dave/Matt
+
+Robert
+----------
+-- applied 1.0.2 updates on Tuesday, issues with HZ
+    -- cascaded to replication issues
+    -- identifier table has entires that are not on other machines
+    -- will need to discuss with Ben how these tables are populated
+    
+Rob
+------
+(as of friday)
+- refactored CN tier tests by implementation component (metacat, identity manager, etc.)  so that we can set up Hudson jobs per component, and only the responsible people get notifications. 
+    --set up jobs for Dev environment
+    --not yet for sandbox
+    -- still only notifying me
+- looking into a more fine-grained notification approach (parse junit failure reports w/ a script and sending notifications through the script).
+- created test for the production listObjects problem.
+
+(sorry, phone died! and don't have internet for EVO)
+I'll be on IRC shortly 
+
+-- Concensus is that dev test failures don't necessarily become bugs; often in flux; needs interpretation to decide - ok so I'll keep Hudson as the coordinator of notifications.
+-- Staging is more appropriate to possibly decide a bug should automaticaly be created; needs more discussion
+     - yeah I agree. I can start an email thread or schedule a meeting / conversation?
+
+Matt
+------
+-- oriented Andy on R client
+-- some testing of CN upgrade issues
+-- worked with Ben to decide how to do DOI registration
+
+
+Tracking production errors
+----------------------------------------------------------------------------------------------------------------------
+BEFORE in the replication logs on UCSB
+replicate.log:knb 2012-07-06T17:27:48: [INFO]: docid: autogen.2012070321075979802 
+replicate.log:knb 2012-07-06T17:27:48: [INFO]: ReplicationHandler.handleDocInXMLDocuments - Local rev for docid autogen.2012070321075979802 is -1 
+replicate.log:knb 2012-07-06T17:27:48: [INFO]: ReplicationHandler.handleSingleDataFile - Try to replicate data file: autogen.2012070321075979802.1 
+replicate.log:knb 2012-07-06T17:27:48: [INFO]: Getting url stream from https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=getdocumentinfo&docid=autogen.2012070321075979802.1 
+replicate.log:knb 2012-07-06T17:27:48: [INFO]: ReplicationService.getURLStream - Before sending request to: https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=getdocumentinfo&docid=autogen.2012070321075979802.1 
+replicate.log:knb 2012-07-06T17:27:48: [INFO]: ReplicationService.getURLStream - After getting response from: https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=getdocumentinfo&docid=autogen.2012070321075979802.1 
+replicate.log:knb 2012-07-06T17:27:48: [INFO]: ReplicationService.getURLContent - After getting response from: https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=getdocumentinfo&docid=autogen.2012070321075979802.1 
+replicate.log:knb 2012-07-06T17:27:48: [INFO]: Getting url stream from https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=readdata&docid=autogen.2012070321075979802.1 
+replicate.log:knb 2012-07-06T17:27:48: [INFO]: ReplicationService.getURLStream - Before sending request to: https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=readdata&docid=autogen.2012070321075979802.1 
+replicate.log:knb 2012-07-06T17:27:49: [INFO]: ReplicationService.getURLStream - After getting response from: https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=readdata&docid=autogen.2012070321075979802.1 
+
+
+ERROR on UCSB
+knb 2012-07-06T17:27:49: [ERROR]: ReplicationHandler.handleSingleDataFile - 1 Failed to write data file autogen.2012070321075979802.1 into xml_documents from cn-unm-1.dataone.org/knb/servlet/replication because No guid registered for docid autogen.2012070321075979802.1
+knb 2012-07-06T17:27:49: [ERROR]: ReplicationHandler.handleSingleDataFile - Failed to try wrote datafile autogen.2012070321075979802.1 because No guid registered for docid autogen.2012070321075979802.1
+knb 2012-07-06T17:27:49: [ERROR]: ReplicationHandler.handleDocList - error to handle update doc in xml_documents in time replicationReplicationHandler.handleSingleDataFile - generic exception writing Replication: No guid registered for docid autogen.2012070321075979802.1
+edu.ucsb.nceas.metacat.shared.HandlerException: ReplicationHandler.handleSingleDataFile - generic exception writing Replication: No guid registered for docid autogen.2012070321075979802.1
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.handleSingleDataFile(ReplicationHandler.java:686)
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.handleDocInXMLDocuments(ReplicationHandler.java:1406)
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.handleDocList(ReplicationHandler.java:1276)
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.update(ReplicationHandler.java:274)
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.run(ReplicationHandler.java:139)
+        at java.util.TimerThread.mainLoop(Timer.java:512)
+        at java.util.TimerThread.run(Timer.java:462)
+
+
+
+In the KNB logs on UCSB
+knb 20120706-17:54:45: [INFO]: docid: autogen.2012070321075979802 [ReplicationLogging]
+knb 20120706-17:54:45: [INFO]: rev: 1 [ReplicationLogging]
+knb 20120706-17:54:45: [INFO]: ReplicationHandler.handleDocInXMLDocuments - Local rev for docid autogen.2012070321075979802 is -1 [ReplicationLogging]
+knb 20120706-17:54:45: [INFO]: ReplicationHandler.handleSingleDataFile - Try to replicate data file: autogen.2012070321075979802.1 [ReplicationLogging]
+knb 20120706-17:54:45: [INFO]: Getting url stream from https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=getdocumentinfo&docid=autogen.2012070321075979802.1 [ReplicationLogging]
+knb 20120706-17:54:45: [INFO]: ReplicationService.getURLStream - Before sending request to: https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=getdocumentinfo&docid=autogen.2012070321075979802.1 [ReplicationLogging]
+knb 20120706-17:54:46: [INFO]: ReplicationService.getURLStream - After getting response from: https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=getdocumentinfo&docid=autogen.2012070321075979802.1 [ReplicationLogging]
+jknb 20120706-17:54:46: [INFO]: Getting url stream from https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=readdata&docid=autogen.2012070321075979802.1 [ReplicationLogging]
+knb 20120706-17:54:46: [INFO]: ReplicationService.getURLStream - Before sending request to: https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=readdata&docid=autogen.2012070321075979802.1 [ReplicationLogging]
+knb 20120706-17:54:46: [DEBUG]: ReplicationServlet.handleGetOrPost - Action "test" accepted for server: cn-unm-1.dataone.org/knb/servlet/replication [ReplicationLogging]
+knb 20120706-17:54:46: [INFO]: ReplicationService.getURLStream - After getting response from: https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=readdata&docid=autogen.2012070321075979802.1 [ReplicationLogging]
+knb 20120706-17:54:47: [ERROR]: ReplicationHandler.handleSingleDataFile - An error occurred in replication.  Please see the replication log at: /var/metacat/logs/metacatreplication.log [edu.ucsb.nceas.metacat.replication.ReplicationHandler]
+knb 20120706-17:54:47: [ERROR]: ReplicationHandler.handleSingleDataFile - 1 Failed to write data file autogen.2012070321075979802.1 into xml_documents from cn-unm-1.dataone.org/knb/servlet/replication because No guid registered for docid autogen.2012070321075979802.1 [ReplicationLogging]
+knb 20120706-17:54:47: [ERROR]: ReplicationHandler.handleSingleDataFile - An error occurred in replication.  Please see the replication log at: /var/metacat/logs/metacatreplication.log [edu.ucsb.nceas.metacat.replication.ReplicationHandler]
+knb 20120706-17:54:47: [ERROR]: ReplicationHandler.handleSingleDataFile - Failed to try wrote datafile autogen.2012070321075979802.1 because No guid registered for docid autogen.2012070321075979802.1 [ReplicationLogging]
+jknb 20120706-17:54:47: [ERROR]: ReplicationHandler.handleDocList - An error occurred in replication.  Please see the replication log at: /var/metacat/logs/metacatreplication.log [edu.ucsb.nceas.metacat.replication.ReplicationHandler]
+knb 20120706-17:54:47: [ERROR]: ReplicationHandler.handleDocList - error to handle update doc in xml_documents in time replicationReplicationHandler.handleSingleDataFile - generic exception writing Replication: No guid registered for docid autogen.2012070321075979802.1 [ReplicationLogging]
+edu.ucsb.nceas.metacat.shared.HandlerException: ReplicationHandler.handleSingleDataFile - generic exception writing Replication: No guid registered for docid autogen.2012070321075979802.1
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.handleSingleDataFile(ReplicationHandler.java:686)
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.handleDocInXMLDocuments(ReplicationHandler.java:1406)
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.handleDocList(ReplicationHandler.java:1276)
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.update(ReplicationHandler.java:274)
+        at edu.ucsb.nceas.metacat.replication.ReplicationHandler.run(ReplicationHandler.java:139)
+        at java.util.TimerThread.mainLoop(Timer.java:512)
+        at java.util.TimerThread.run(Timer.java:462)
+
+FROM UCSB:
+root@cn-ucsb-1:/var/metacat/logs# curl --cert /etc/dataone/client/certs/cn-ucsb-1.dataone.org.pem --key /etc/dataone/client/private/cn-ucsb-1.dataone.org.key "https://cn-unm-1.dataone.org/knb/servlet/replication?server=cn-ucsb-1.dataone.org/knb/servlet/replication&action=getdocumentinfo&docid=autogen.2012070321075979802.1"
+
+ <documentinfo><docid>autogen.2012070321075979802.1</docid><docname>autogen.2012070321075979802.1</docname><doctype>BIN
+</doctype><user_owner>CN=urn:node:CNUNM1,DC=dataone,DC=org</user_owner><user_updated>CN=urn:node:CNUNM1,DC=dataone,DC=
+org</user_updated><date_created>2012-07-04T00:00:00.000+00:00</date_created><date_updated>2012-07-04T00:00:00.000+00:0
+0</date_updated><home_server>cn-unm-1.dataone.org/knb/servlet/replication</home_server><public_access>0</public_access
+><rev>1</rev><accessControl><access authSystem="knb" order="allowFirst" id="resourceMap_judithk.1030.6" scope="documen
+t">
+</access></accessControl></documentinfo>
+
+
+on UNM
+knb 20120706-18:28:25: [WARN]: No SystemMetadata found for: autogen.2012070321075979802.1 [edu.ucsb.nceas.metacat.replication.ReplicationService]
+
+su postgres -c "psql -d metacat  -c \"SELECT *  FROM  systemmetadata where guid like 'resourceMap_judithk.1030.6'\""
+return 0
+
+root@cn-unm-1:/var/metacat/logs# su postgres -c "psql -d metacat  -c \"SELECT *  FROM  identifier where docid like 'autogen.2012070321075979802'\""
+            guid            |            docid            | rev 
+----------------------------+-----------------------------+-----
+ resourceMap_judithk.1030.6 | autogen.2012070321075979802 |   1
+(1 row)
+
+cn-synchronization.log:[ INFO] 2012-07-04 04:08:00,281 (TransferObjectTask:createObject:538) Task-urn:node:SANPARKS-resourceMap_judithk.1030.6 Created Object
+
+

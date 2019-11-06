@@ -1,0 +1,16 @@
+Shared spreadsheet: https://spreadsheets.google.com/a/epscor.unm.edu/ccc?key=0At7xDQH2gn9ndFlCRkRVZEh5VkZOLXkzZlNwNU1vcGc&hl=en#gid=0
+
+the old link for it (short-term reference purposes only) ....
+ https://spreadsheets.google.com/a/ecoforge.net/ccc?key=t_w-VL4At4Hw2wSGX4HcQlQ&hl=en#
+
+
+
+Articles:
+Benchmarking : http://www.brianfrankcooper.net/pubs/ycsb.pdf
+Managing User Identities in Globally Distributed Directory System: https://www.redhat.com/f/pdf/summit/SummitDirServerIntro.pdf )
+design considerations (trade-offs): http://guide.couchdb.org/editions/1/en/consistency.html
+Eventually Consistent: http://www.allthingsdistributed.com/2008/12/eventually_consistent.html
+
+
+through listing of distributed data stores, with some key information: http://nosql-database.org/
+

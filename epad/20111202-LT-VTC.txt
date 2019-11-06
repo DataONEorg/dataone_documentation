@@ -1,0 +1,180 @@
+
+Attendees: Rebecca, Dave, Amber, Suzie, Carol, Mike, John Kunze,Trisha, John Cobb, Matt
+
+Regrets: Bill (meeting in Netherlands), Hilmar, Bruce, Stephanie, Bob Cook
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+1.  Please join my meeting, Dec 2, 2011 at 10:55 AM MST.
+https://www1.gotomeeting.com/join/280375137
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (510) 443-0602
+Access Code: 280-375-137
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 280-375-137
+Will also use the epad: http://epad.dataone.org/20111202-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2011-12-02 
+1.  CI Status (Vieglais)
+2.  EarthCube Charette (Vieglais/Koskela for Michener)
+3.  Response to the OSTP RFI (Vieglais for Michener)
+4.  External Advisory Board Meeting (Koskela/Vieglais)
+5.  ESA Workshops (Budden)
+6.  Around the Room
+
+1.   CI Status 
+Email before Thanksgiving was last CI update
+CNs: had replication and synchronization working but testing has exposed some contention issues; did some refactoring and testing again; if new patch to a library works will move into integration testing next week
+Search index is also being refactored right now (wasn't fully scalable)
+MNs: Mercury MN appears to be functioning; need to verify a few things
+Metacat is working - main concern is when Metacat is functioning as a MN a few issues with moving existing content 
+Dryad - currently not operational (was working before Thanksgiving) - checking with Ryan
+Merritt- tested and ready but need to know how often to synchronize- have a stage instance and a production instance; data from water reports are showing up; 
+Using web tester to verify nodes
+Making some changes to the schema yesterday and these changes will have to cascade through the system (implications for CNs rather than MNs); about ready to freeze the documentation  (Are the changes to the Schema in the System Metadata?)   Answer: some are
+AKN- progress going great, need to update their Metacat version
+Hardware: continue sitting up virtual machines - next is secure communications
+ORNL H/W behind schedule because of some network cards delivered with the machine were inadequate; also some VM licensing issues (think these are resolved)
+UNM - good here; CN configured; still a concern about access to large storage by the virtual machines
+ITK: MercuryONE in great shape, waiting for the search index mentioned above
+Right now running Mercury instance at Oak Ridge - once search index is sorted out as well as the interface, then will run on all CNs - this will be one of the final steps
+Is the style sheet matching the DataONE web site?  Dave will check on the rendering of the metadata records; can the style sheets be reused - should be able to
+
+
+2.   EarthCube Charette 
+Interesting event and lots of discussion about what EarthCube should be
+Process was to get a large (~200 ) number of people together to discuss what is needed
+Brainstorming sessions about what is impeding the geosciences community
+
+Opinion: The problem with re-hashing is that for those for whom it is not re-hashing - they think they are inventing it.!  (Mike - I definetly agree from the USGS Perspective for the days I attended via the Webex).  USGS is very supportive though of the effort and trying to work closely with NSF on the Programs Future.   
+
+
+followup Q? What will EC be doing at AGU? Oh! here I found it in my e-mail morass:
+<begin quite>
+EarthCube at AGU
+
+The EarthCube team will be attending the American Geophysical Union Meeting in San Francisco Dec 5-9 (http://sites.agu.org/fallmeeting/ ).  Cliff Jacobs will be presenting as part of two sessions:
+
+   TH15G. National Data Infrastructure for Earth System Science, Monday 6:15-7:15 PM; Room 2008 IN54A. Advances in Multidisciplinary Information Systems II, 4:15-4:30 PM; Room 102
+
+If you would like to meet up with someone from the team at the meeting, please send us email at EarthCube@nsf.gov.
+<end quote>
+
+3.   Response to the OSTP RFI 
+
+http://www.gpo.gov/fdsys/pkg/FR-2011-11-10/html/2011-29166.htm
+
+OFFICE OF SCIENCE AND TECHNOLOGY POLICY
+Request For Information: Public Access to Digital Data Resulting from Federally Funded Scientific Research
+
+ * "provide recommendations on approaches for ensuring long-term stewardship and encouraging broad public access to unclassified digital data that result from federally funded scientific research"
+
+Preservation, Discoverability, and Access
+
+    (1) What specific Federal policies would encourage public access to and the preservation of broadly valuable digital data resulting from federally funded scientific research, to grow the U.S. economy and improve the productivity of the American scientific enterprise?
+    (2) What specific steps can be taken to protect the intellectual property interests of publishers, scientists, Federal agencies, and other stakeholders, with respect to any existing or proposed policies for encouraging public access to and preservation of digital data resulting from federally funded scientific research?
+    (3) How could Federal agencies take into account inherent differences between scientific disciplines and different types of digital data when developing policies on the management of data?
+    (4) How could agency policies consider differences in the relative costs and benefits of long-term stewardship and dissemination of different types of data resulting from federally funded research?
+    (5) How can stakeholders (e.g., research communities, universities, research institutions, libraries, scientific publishers) best contribute to the implementation of data management plans?
+    (6) How could funding mechanisms be improved to better address the real costs of preserving and making digital data accessible?
+    (7) What approaches could agencies take to measure, verify, and improve compliance with Federal data stewardship and access policies for scientific research? How can the burden of compliance and verification be minimized?
+    (8) What additional steps could agencies take to stimulate innovative use of publicly accessible research data in new and existing markets and industries to create jobs and grow the economy?
+    (9) What mechanisms could be developed to assure that those who produced the data are given appropriate attribution and credit when secondary results are reported?
+
+Standards for Interoperability, Reuse and Repurposing
+
+    (10) What digital data standards would enable interoperability, reuse, and repurposing of digital scientific data? For example, MIAME (minimum information about a microarray experiment; see Brazma et al., 2001, Nature Genetics 29, 371) is an example of a community-driven data standards effort.
+    (11) What are other examples of standards development processes that were successful in producing effective standards and what characteristics of the process made these efforts successful?
+    (12) How could Federal agencies promote effective coordination on digital data standards with other nations and international communities?
+    (13) What policies, practices, and standards are needed to support linking between publications and associated data?
+
+January 2, 2012 deadline (maybe January 12th)
+Worth doing something on this - UCOP is putting something together and Trisha will share with LT; USGS is also going to respond and will tie to DataONE activities; good for multiple groups to respond
+
+
+4.   External Advisory Board Meeting 
+See email attachment from Bill sent 11/17/11
+
+Good feedback on Marketing, Business Plans.   Stressed that these efforts need to be integrated into what all we do.  
+
+
+5.   ESA workshop proposals (Amber)
+Deadline  Dec 1st. Will run sessions similar to last year; wksp for junior  scientists on data management and special session on data management  planning.  For the workshop we have asked for 5 hrs on Sunday afternoon.  We requested the morning (1.25 hours) for the special session. Potential for ORNL DAAC will underwrite the costs of student workshop and DataONE will underwrite the DMP session.  We should look at getting some support from USGS also for the session (Mike, Viv will look into this) 
+
+6.   Around the Room
+
+Mike  (18Nov2011-from email) - Related to the UA WG - I sent out re-invite to all of  our Team Members since we had said in our Charter we had 2 year terms.   We did also discuss at our last meeting if WG members miss more than 2  or 3 meetings in a row, we will not re-up their WG Term.   So, the only  remember who I sent a "thank you for supporting and contributing to  DataONE note" was to Rebecca Shapely.  UA & A WG has two openings right now.
+
+Carol  (18Nov2011-from email) - Mike gave the U&A WG update. Other update is that  the ACRL libraries survey is now live (at last!) and the federal  libraries and librarians and data managers surveys are still live with  help distributing from LANL librarians, Viv and Lisa Zolly from USGS,  and Bonnie Carroll (CENDI).  Also anyone who works in an academic or  federal library and would like to distribute the librarians survey  please let me know.
+
+Suzie  (18Nov2011-from email) - Call for Papers: Data-Intensive Collaboration in Science  and Engineering Workshop at CSCW 2012, 11 February, 2012 in Seattle, WA
+Full details: http://www.dicose.org/
+
+The SCWG is having a virtual meeting next week. We will be approving our charter changes, making nominations for the two open positions that resulted from members stepping down, and outlining our activities between now and the joint UA/SC WG meeting in May in Knoxville.  The member node group with combined membership from UA/SC has been meeting and produced deliverables.
+
+John Cobb (18Nov2011):
+Action Items:
+    - follow-up steps with DFC - interetest in interoperability with DataONE
+    - follow-up steps with SEAD - intrested in interoperability with DataONE
+    - Follow-up with Phil Blood on XSEDE integration with NSF supercomputing centers
+SC11:
+    - Tutorial on Monday Afternoon SEAD and DataONE "Big Data means your metadata must work <http://sc11.supercomputing.org/schedule/event_detail.php?evid=tut128>.  60 attendees. several interested questions from the audience. Combined  slide deck is at ??? 
+{ACM has the rights to the tutorial so we can't distribute - RK}. In addition, we opened an e-pad <http://epad.dataone.org/20111114-SC11-Tutorial-M13-Metadata> during the meeting for participants to give input/feedback during the tutorial. 
+    - DataNet and EarthCube Bof Th. afternoon: Rob Pennington, Jennifer Shopf, Reagan Moore, Rebecca Koskela, Beth Plale
+    - Vendor brief with Garth Gibson, Brent Welch, and Doug Savchenko (John Cobb and Rebecca Koskela attending)
+    - Discussion on creation CI interoperaiblity between DataONE and XSEDE
+    - Had a good chance to corner and chat with Peter Honeyman about DFS WG instantiaion.
+    
+    Related to DFC: Matt Jones had a chance to initaite a conversation with Reagan Moore at Earthcube Charrette. This led to a discussion that included John McGee to explore setting up a iRODS based MN at RENCI. Rebecca mentioned that on the Dias for the BoF Reagan mentioned again a desire for interoperability.
+    
+    
+Bruce (02Dec2011) from email: 
+* New network cards for the ORC computers to resolve an unanticipated throughput issue have been ordered and should arrive next week.
+* Berrien Moore is visiting ORC tomorrow; Mike Frame, Carol Tenopir, Suzie Allard, John Cobb, Giri Palanisamy are handling (Bob and I are both gone).  He's interested in discussing the central region USGS climate center interactions with DataONE, including possible member node status for that climate center.
+* Nick Dexter has been working with Dave on getting the ORC nodes operational.  I defer to Dave for an update on that.
+* I've got some issues to resolve with the UTK invoice, which I'm working on this morning and expect to have an update to Rebecca and Anna later today.
+
+Bob (02 Dec 2011 - from email) 
+Next week is AGU, with an ESIP, NOAA, NASA, Data Conservancy, and  DataONE jointly sponsored Workshop on Best Practices and two talks on  DataONE.
+
+Two weeks ago we held the first of our new EVA Working Group meetings in  Santa Barbara.  I'll get a report out in the next week as well as a  schedule for our next meeting.
+
+Bertram (02 Dec 2011 - from email)
+Just a brief update from me, since I might not be there during the call (or only sporadically).
+
+* Postdoc hire: We have fewer than I expected candidates, but some reasonable ones.
+With the end of the quarter this week (finals week next week), I  finally get to set up times for phone interviews etc. More on this over  the weekend / early next week.
+
+* Paolo and I  had a phone call with Yolanda Gil. She's doing some interesting work and  we're going to invite her to our ProvWG telecons. THese are also being  set-up with the rest of the ProvWG.
+
+Amber - WG and other web content still needed (see http://bit.ly/mYN3Mo).  MN FACT sheet and brochure complete. Summer DUG meeting preparation beginning (Jul 15-16, Madison, WI). 
+BTW, EAB mentioned that some EAB members would like to also attend DUG.
+
+John K: http://is.gd/4RNf98   "First database-derived ‘Data Paper’ published in journal:
+Peer-reviewed description of Indian bird dataset published through GBIF sets precedent for data-sharing incentives.  The first-ever peer-reviewed paper derived directly from a biodiversity metadata document has been published in the open-access ZooKeys journal..."
+
+Matt: Tomorrow is the International Open Data Hackathon: http://www.opendataday.org/
+  -- Matt, Mike, Viv, Dave: Still planning for DataONE/USGS meeting week of Apr 16.  Potential 1 day of the week will focus on the USGS Climate Science Centers (CSC) to follow-on some of the work began earlier this year.   
+  -- Talking with NEON about becoming a MN and other collaborations, planning a meeting with NEON next spring  
+
+Trisha: Cruse, Piwowar, Cook, Kunze, Parsons, Strasser are working on an EAger proposal that will create tools and augment tools for creating and tracking data citations.  Keep your fingers crossed. 
+in first 2 weeks of DMPtool, we have had 500 users. WE have 25 people using Shbboleth login to tool.
+Planning meeting Jan 23-24 of the partners to plan the next development phase, what to do? how to get resources? Governance structure for DMPtool'ers?
+
+Mike: Lisa Zolly will be coming from USGS to this planning meeting.   Most likely I can't attend (travel limitations)
+
+Workshop at IDCC
+Delivering post-graduate research data management training
+A number of recent projects in the UK and US have addressed the gap in postgraduate training for PhD and other post-graduate students in research data management and planning. Among the projects which have produced deliverables over the last year are:
+   * Research Data MANTRA at the University of Edinburgh, UK
+   * DATUM for Health at Northumbria University, UK (with DCC and DPC support)
+   * DataTrain at the University of Cambridge, UK
+   * DaMSII (Data Management Skills and Support Initiative), DCC & RIN
+   * Data Observation Network for Earth (DataONE), an NSF-funded collaborative project, USA
+Workshop contributors from these projects will lead delegates through a narrative and interactive programme covering the breadth of available generic and discipline-specific materials; tips for developing original course materials; licensing and repurposing learning objects; engagement with University post-graduate programmes; and delivering course materials to the target audience.
+

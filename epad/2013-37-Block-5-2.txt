@@ -1,0 +1,333 @@
+Devevelopment Block 5.2
+=======================
+
+To discuss:
+ * 20130911
+   * SSL connection for splunk requiring a passphrase for the certificate
+
+Sprint Planning
+---------------
+Development priorities spreadsheet:  
+
+Hangout for 2012-09-13:  https://plus.google.com/hangouts/_/b3afeead3b239ed5807cc3d3ffc3796ae80887e2
+
+Hangout for 2013-09-20
+https://plus.google.com/hangouts/_/14e1378b3e4231a9c0f25ed17cae6648402ba7bb?authuser=0&hl=en
+
+ * Main goals for sprint
+   * Log Reporting is high priority
+     * Dashboard prototype (Chris)
+       * Local Solr prototyping tool (Skye) https://redmine.dataone.org/issues/3976
+         * 20130918
+           * Skye
+             * Placed task in 'testing' - ready for other devs to try out.
+         * 20130916
+           * Skye
+             * Checked in prototype tool, improved documentation.
+             * Need to talk to Chris about using.
+         * 20130913
+           * Skye
+             * Implemented doc downloading and indexing.
+             * Polishing, documenting.
+       * Create a solr wkt generation field 'well known text'. (Skye) https://redmine.dataone.org/issues/3977
+         * 20130913
+           * Skye
+             * Not started yet - need details on how it should work.
+     * Log index service enhancements (Robert)
+   * System Metadata Management (crosses multiple sprints)
+     * Present decisions re: MN API changes at CCIT (Chris)
+     * Plan CCIT discussions on each touched components (Dave, Chris)
+   * ORE Map indexing changes to be deployed
+     * blocked by Merrit node - Merrit MN has updated their ORE docs in production. No longer blocking.
+     * blocked by requirement to validate on synchronization (Skye, Robert) https://redmine.dataone.org/issues/3972
+       * 20130918
+         * Skye
+           * Reviewed redmine 3972 with Robert on Monday, updated with review notes.
+           * Sent to Robert for second review
+       * 20130913
+         * Skye
+           * Implemented solution, sending to Robert for review
+   * Member Node documentation (Rob, Dave, Chris) https://redmine.dataone.org/issues/3678
+     * 20130920 (Rob): have access to dev dataone.org site, and will be transferring the existing HL docs to there. 
+       * meeting with Chris Allen and Isis (web design team) to orient them to what we are looking for and determine how to work with them.
+   * ITK developer documentation (Roger, Rob)  https://redmine.dataone.org/issues/3971
+     * 20130920 (Rob):
+       * transferred document to dev dataone.org site
+       * meeting with web design team to determine how to split it apart and make more presentable.
+     * (Rob) Created first draft of guide at https://docs.google.com/document/d/1ufYQhEXeH22483Q8MkX-_aHWVdOprl-2vQfLhZDNP2Q/edit?usp=sharing
+       * needs review and added links
+       * mostly general principles, not much library usage  
+     * second draft with links to arch docs mostly done
+   * Preparation for CCIT meeting (Dave)
+     * 20130918
+       * Skye
+         * Preparing replication-auditing / solr 4 small presentation.
+       * Dave
+         * Pruning activity for CCIT meeting
+     * 20130916
+       * Getting back on track after outage last week
+     * 20130913
+       * Draft agenda getting close
+       * Bob Sandusky preparing VM for metacat MN install
+       * Blocker - connectivity due to storm
+   * Monitoring of production infrastructure
+     * Splunk deployment and communications (David, Chris B.)
+   * ITK tool development, supporting core D1 API
+     * Morpho identity management (Jing)
+     * Windows packaging of CLI (Roger)
+   * (PID whitespace checking in JIBX and d1_common_java - defer to next dev block)
+   * (Replication auditing - defer to next dev block)
+   * Infrastructure Release (CCI-1.2.2) (skye)  https://redmine.dataone.org/issues/3866
+     * 20130918
+         * Skye
+           * Installed on ucsb-1
+           * Index still running / building on 9-18
+       * 20130913
+         * Skye
+           * Updated stage-2 env with staging build updates for cn-index and one-mercury
+           * Moved completed index from cn-stage-unm-1 to orc and ucsb.
+           * Tested released features of 1.2.2
+           * Ready to roll into production.
+   * Maintenance Items
+     * mn-unm-1
+       * 20130918
+         * boot almost full, purged old kernels to make space
+         * performance testing of NFS mount - read: 925KB/sec, write: 2.34MB/sec
+     * Hudson
+       * 20130918 - problem is with the postgres jar, doing some manual massage
+       * seems to be working ok but notify Dave as soon as any irregularity is noticed. (Still problematic)
+       * Will be disabling the "purge maven repo" task. Manual trigger only. (Done)
+     * Redmine 
+       * Overhaul of issue categories, mostly complete but a few tickets need to be manually adjusted with category reassignment. Dave is writing up descriptions of each category.
+
+
+ * Current Activities (listed by what everyone is currently working on)
+   * Infrastructure Release (CCI-1.2.2)
+   * Dashboard prototype for review at CCIT
+   * CLI windows distribution
+   * Ansible clear path for next steps
+   * Organizing documentation (releases.dataone.org site)
+   * Member Node registrations
+     * Documentation ready for CCIT
+     * MN Web Tester
+   * Splunk configuration and setup (system log reporting)
+   * Identity management for legacy KNB accounts (blocker for Morpho)
+   * Node replication policy support (node registry)
+   * ONEDrive development
+
+
+Skye
+ * 20130911
+   * rebuilt stable with jibx at release version 1.1.1
+ * 20130909
+   * Hudson builds aren't working
+   * Stuck with Ansible installs
+     * re-installed openjdk on cn-sandbox-unm-1
+   * PISCO MN is down
+   * Spoke with Rob, Robert Friday on process review
+
+
+Roger
+ * 20130920
+   * Have ONEDrive working in Windows.
+   * Working on Windows installer for ONEDrive.
+ * 20130918
+   * Done adding the Windows specific code paths to the CLI. The only real difference now is that command completion with tab doesn’t work in the Windows version. I think that is a "won't fix".
+   * Added a page to the documentation that describes how to set up the CLI on a Windows machine (from PyPI) and make a stand alone installer for it. That page also describes how to install the CLI into an existing Python environment.
+   * Found that the API changes in Foresite broke data_package in d1 client, and fixed that.
+   * Decided to jump directly over to doing the same for ONEDrive, so that’s what I’m working with now.
+   * Still waiting for KU to get the test certificate installed for their Member Node. Chris made the cert for them last week and they got back on Monday, I think it was, and said they would install it in the next couple of days.
+ * 20130911
+   * Have CLI working in Windows.
+   * Still working on installer.
+   * Waiting for CJ at KU to get back. He's looking into certificate installation for their new MN.
+ * 20130909
+   * Working on Windows installer for DataONE CLI.
+   * Working with CJ to get KU MN into final testing.
+
+Rob
+ * ITK developer guide
+   * have first version up in dev dataone.org and will work with web design team to make presentable.  Liking the Mendeley way of presenting, so will use as a model.
+ * MN onboarding process guide
+   * waiting for decision on where to put the overview document, whether to have 2 (high-level and mid-level) or combine into one and move mid-level content into detail pages.
+ * Node Replication Policy support-postponed to later sprint
+   * will start in on extending the node registry code to store NRP in LDAP
+ * Web tester adjustments-work on as able while working on guides
+   * split out content-tests from API tests
+   * split out required tests from non-required tests.
+   * allow finer-grained control over which tests to run.
+
+Chris B.
+ * 20130920
+   * Ansible
+     * Tested upgrade script and pinning
+     * Finishing revising playbooks
+       * Need to decide on version for packages like apache (collection)and jdk
+     * Working on speeding up debconf with async and parallization.
+     * Accelerate? 
+       * Need a constant port to use? Ans: 2022
+         * Open only to the ansible box? Yes
+   * Deploying rsyslog configuration for splunk on orc nodes and configuring the splunk forwarder and indexer for these nodes.
+   * Briefed Bruce on security measures dicussed on Wednesday.
+     * Will be bring an iron key usb stick to CCIT meetings
+   * CCIT virtual presence details for David and me???
+
+ * 20130918
+   * Packaged certificate information into sysadmin directory
+     * Encrypted private key, wild card cert, two CA certs in a tarball with pgp encrypted
+     * Instructions in README.
+ * 20130916
+   * Believe I found the issue with the dataone-cn-index-audit package.
+     * Problem in the postinst script
+     * Sent Robert a report and I'm waiting for package to be fixed.
+   * Ansible 1.3 release on Friday!!!!
+     * Tested the new accelerate method
+       * Average of 4 minute installation for Dataone-cn-os-core
+       * No password for sudo
+ * 20130913
+   * Tested Apt pinning with install playbooks
+   * Having issues with the upgrade all playbook
+     * apt update=dist force=yes is failing becase force isn't being specified.  I believe this is an error in the apt module
+     * /usr/bin/apt-get dist-upgrade also fails due to dataone zookeeper packages.  
+   * Worked with David on Splunk issues. 
+   * Encrypted dataone prod key
+     * Do we want to store it somewhere?
+ * 20130911
+   * Finished pruning dependency tree for ansible playbooks.
+   * Debconf is slow.
+   * Testing apt pinning against dist upgrades.
+   * Going to test complete reinstallation of cn-dev-orc-1 with David.
+   * Worked with David on encrypting splunk forwarder.
+     * Passphrase for private key?
+
+ * 20130909
+   * Worked on Ansible transport options
+     * fastest is zero-mq
+     * requires non-ubuntu PPAs
+     * Ansible 2.3 will use accelerate, replacing fireball ...
+     * Installations: ~ 9 minutes
+   * Deb-conf uses up the time (waits before committing actions)
+     * Total time: TBD
+     * Will remove openjdk dependency
+   * Finished pinning dataone packages (in /etc/apt/preferences.d)
+     * working on a test harness for this
+   * Updating the update scripts with pinned packages
+   * Continuing work on pinning non-dataone dependencies
+   * Helping David set up a DataONE VM
+   * DNS entry for splunk
+
+Robert
+ * 20130920
+   * Working on Task #3886: Testing on localnet machines, setup is giving me troubles
+   * Need to review code changes in sync
+ * 20130918
+   * Working on Task #3886: Beginning testing on localnet machines
+   * Meet  with Skye (?) this afternoon to re-review code changes in synchronization.
+ * 20130916
+   * Working on Task #3886: Filter the d1-cn-log index based on a public role
+   * Meet with Skye this afternoon to review code changes in synchronization and dataone-cn-index-audit debian postinst script 30 minutes after standup ends.
+ * 20130911
+   * rebuilt the sandbox environment, wiped old packages, re-installed new packages
+   * Working on Task #3886: Filter the d1-cn-log index based on a public role
+
+ * 20130909
+   * Worked with Skye on Friday re: dependencies and openjdk
+   * Working on log index authentication code
+   * Continued work on CN UNM 1 - need to chat with Ben
+     * will up the logging level
+
+Dave 
+ * 20130909
+   * Administrative / proposal prep
+   * Hudson debugging
+     * Hudson build issues are intermitent
+     * seems to get stuck on larger jars
+     * UNM issue is problematic (intrusion prevention?)
+     * May move hudson or jenkins to a new machine off UNM
+
+Jing
+ * 20130920
+   * Made the ldap-dev server with the dumpped entries from the production server work
+   * Made the user management work on the demo of dev2.nceas
+   * Minor bugs fix.
+ * 20130918
+   * Finished a new feature for handling the request about forgot the username
+   * Tested the ldap service and fixed some bugs
+   * Continue working on the Synchroize the accounts from the KNB production ldap server to the test server.
+ * 20130916
+   * Finished the confirmation process.
+   * Continue to work on replacing hard-coded organization list in the templates.
+   * Some minor bugs fixed and testing.
+   * Synchroize the accounts from the KNB production ldap server to the test server. 
+ * 20130913
+   * Finished to store the account in a temporary area.
+   * Finished to send an email to the user.
+   * Continued work on the confirmation process.
+ * 20130909
+   * Continued work on the LDAP registration
+     * test LDAP installation at UCSB
+   * some Metacat indexing issues
+   * Potentially work on OpenDAP stack
+
+Chris
+ * 20130920
+   * Continued work on spatial indexing script
+     * creating GeoTIFF versions of the distribution data
+   * Meetings
+ * 20130918
+   * Continued work on spatial indexing script
+     * https://redmine.dataone.org/issues/3978
+     * need to discuss ranking strategies after standup
+     * http://goo.gl/Npe0rr
+   * Tickets for splunk forwarders this morning
+   * Discussion with Dave re: mutability changes scheduling
+ * 20130916
+   * Continued work on spatial indexing script
+     * https://redmine.dataone.org/issues/3978
+ * 20130913
+   * no blockers, working on spatial summarization script
+   * created KUBI test cert
+   * redmine categories with Dave
+   * TODO: VMs for splunk forwarders at UNM and UCSB
+   * TODO: Email Rebecca and Amber re: web access
+   * TODO: DNS RR coordination with Skye today
+ * 20130911
+   * Continued work on the data distribution map / heatmap display
+     * https://redmine.dataone.org/issues/3946
+     * working on a server-side script to produce a JSON output for heatmapjs
+   * TODO: Story development for milestones
+   * Worked on MN documentation with Rob, Dave, Laura, Bruce, etc.
+ * 20130909
+   * Solr 4 migration considerations
+     * log index will need to be migrated
+     * seach index needs to be migrated
+     * indexes would need to be modified
+     * Would need to migrate replication to Solr cloud
+     * Will need to eval replication in Solr cloud vs hazelcast
+   * Set up heatmap design discussion for Wednesday
+
+David
+ * 20130920
+   * See 0918 - still in progress
+     * UCSB forwarder space is up, but I don't have sudo access (thanks Chris B.)
+ * 20130918
+   * Splunk:
+     * building rsyslog forwarding structure for other boxes at ORC
+     * waiting for space for Splunk forwarders to be carved out at UNM and UCSB - will begin forwarder builds for those locations when that is complete
+ * 20130913
+   * Splunk: testing new forwarder-indexer arrangement
+     * [servers] -> 1 forwarder per site -> main indexer
+     * all forwarders to be built on .dataone.org URLs to eliminate issues with web interface certs
+     * GOOD NEWS: setting up forwarders this way is working with DataONE wildcard SSL certs
+     * BAD NEWS:  data connections between forwarder and indexer still not currently able to be encrypted w/SSL
+       * password issues between SSL certs and PWs found in repository files - need to figure out which PWs actually correspond and/or get new PWs somehow
+         * (testing a fix - Wed. afternoon)
+
+Matt
+ * 20130918
+   * Planning to finish testing on Gulfwatch Alaska MN today
+   * ORCID discussion over email with CTSC folks
+ * 20130916
+   * Gulfwatch Alaska MN hopefully will be up this week
+   * Meeting with OPeNDAP on Thursday to discuss mods to support MN status
+

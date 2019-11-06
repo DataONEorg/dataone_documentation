@@ -1,0 +1,156 @@
+DataONE All hands Meeting
+September 20, 2012
+
+Topic - User Interface & Design Break-out Group
+
+Attendees: Ryan, Skye, Robert, Ranjeet, Rachael, Lisa, Mary Beth, Ram, Mike
+
+Group Purpose:
+
+The Group was established to look at beginning the brainstorming process for the User Interface of the Future for DataONE. This includes considering the Data Life Cycle, DataONE Persona's, feedback from the Usability Tests Performed, and other known relevant work ongoig in the community. 
+
+Group Approach:
+
+The Group used the following approach during this break-out session.
+
+1. Participants from CI/CE were broken up into groups of 2 People.
+2. Each Group identified various Functionalities/Capabilities that they view UI of the future should include.
+3. Each Group identified sites/tools/applications that they thought DataONE should consider in their future Design.
+4. The Groups of 2 worked for 1 hour.
+5. Each break-out group product is listed/described below. 
+6. A Summary (remove duplicates) list of Functionalities/Capabilities will be developed after the All hands Meeting by Mike Frame
+7. The entire Working Group got back together after 1 Hour to focus on "The Process DataONE should consider" in designing/implementing/protyping UI of the future.
+
+The Results of the Break-out Groups is contained below:
+
+Major Functionalities/Capabilities Identified AND URL's of Interest to Consider identified by each Breakout group (Group of 2):
+
+Break-out Group: Rama/Ranjeet:
+
+Lifecycle:
+1.     There should be tool for PI from DMP tool to choose an appropriate match for their data
+2.     Need a simple form for PI’s to enter the kind of data and choose a MN which fits the best. It will make things easy for MN as well.
+3.     Interface for MN to ingest data from different projects. Some acknowledgment that ingest was successful
+4.     Its PI’s responsibility of quality of the data. MN’s responsibility to look at the integrity of the data 
+5.     Need UI for the scientist and MN’s to make the metrics visible. 
+ 
+Functionalities/Capabilities UI:
+6.     Autocomplete feature for the Simple Search or any other field
+7.     Data files (0) needs to be addressed. Why is it even there? PI will not very pleased. It should at least point to the MN. It should point to the Master directory location of what’s there in MN. Otherwise point to GCMD for example.
+8.     Advanced Search should have a controlled vocabulary (auto complete?). We should have something short fields should be present. Abstract should be there in free text search? May be not.
+9.     Put the full name of the member node not an abbreviation.
+10. Member node locations on the map. If MN’s want to depend only on the D1 for discovery
+11. Able to draw multiple bounding boxes on the map. Also, changing sizes or moving bounding boxes.
+12. Better gazetteer list with US cities?
+13. Give better capability for temporal granule search. Useful for people to know what granules they are downloading.
+14. We need to facilitate looking at granules of large datasets. We need to be able to support large datasets in general. 
+15.  External visualization tool integration. Example: SDAT tool integration from the search results. 
+16.  Some MN’s have subsetting capabilities. If there’s a feature available it should be made visible.
+17. We need to make all services provided by the MN’s visible and available. Example: If there’s a WMS link in the metadata, then we should be able to extract it out and make it visible to the user. 
+18. Make an inventory of services available from all CN’s and MN’s. That way they can be reused. Find services: example- GCMD http://gcmd.nasa.gov/. Any organization should be able to register their services in D1. 
+
+Break-out Group: Lisa/Ryan
+
+Functionalities/Capabilities:
+
+SEARCH - audience: research scientists, future research scientists (undergrads learning how to use data)
+- more dynamic search (re: real estate search websites with sliders, pre-coordinate filtering)
+- easy entry path from DataONE.org to ONEMercury for end-users to get a 100,000 foot view of the scope of ONEMercury's holdings
+- ability to see geo-snapshot of the data
+- potential collaborative filtering tools (viewers of this dataset also viewed….) to help with discover of other potential data of interest
+- citation clustering (people cited this dataset in these papers; people cited this dataset alongside these datasets)
+- mediation of synonymy for user-supplied search terms
+- gazetteer function
+- expose parent-child relationships among data (this dataset is part of a larger collection) that allows users to move across relationships
+- do we want collaborative reviewing/ranking of and commenting on datasets in DataONE by (registered) users? Could Member Nodes choose to opt out if we do? If they already have their own capabilities for this, would those be suppressed or ignored in favor of DataONE's capabilities, or replicated? Many test users were interested in ranking capabilities, but would they use them in practice?
+- tools that will allow data deposited via templated/normalized forms to be viewed together
+- subsetting tools (e.g. DataVerse) for datasets
+- compute clusters/compute services directly connected to data that would allow temporary storage and computation of very large datasets of interest (prevents me from having to directly download VLD to my machine). Brokering access for users to submit algorithms without needing direct access to the data itself. Algorithm runs, data returned, and then all data purged to make space for next large processing task (e.g. MIREX service for music corpus…article on D-Lib by Stephen Downie, and Indiana University Data Capacitor)
+
+
+
+SUBMISSION OF NEW DATA: audience: research scientists, data managers, citizen science project managers, librarians
+- for potential data providers unaffiliated w/a member Node, a view of who potentially might take my data to host (appropriate scope, affiliation, access, regs) - decision tree or help tool to determine likely deposit points
+- Member node or DataONE could build/make available collaboration space that could facilitate manipulation/cleanup and then finally transfer of data at the appropriate time to a repository that could be a conduit to DataONE (the step that comes before DataUP)….**like ORNL's ARM system**
+- auto submission from in situ tools such as smart phones/iPads with embedded metadata and geo-location tools. DataONE could build framework that partners like eBird could modify for specific purposes and provide (eBird might already have this….DataONE could generalize it for other uses). The data would still need to be QA/QC'd before publication into ONEMercury, so it would still need to go to a member node.
+- templates - develop templates for types of data that should accompany studies - forms for collecting their data and what they use as storage mechanism (e.g. Excel). Many studies collect same/very similar data, but do so in unique ways (different column headers, ordering, in spreadsheets). Example is Specify for museum collections that forces them to collect data in same way to facilitate exchange. Normalize entity/attribute metadata. Would exposing data dictionaries help to facilitate template development?
+
+
+PUBLICIZING DATA: research scientists, data managers, project managers
+- once I've deposited my data in a Member Node, whom do I tell about it and how? Dryad is hooked to Twitter, so new deposits are automatically pushed to Twitter when published. FIG Share does this via Facebook. Eurekalert is used at NEScent to announce major papers.
+- dashboard for Member Nodes regarding metrics/statistics on usage (most popular datasets), dead linkages, sectors accessing records, etc.
+
+
+
+Break-out Group: Rachael/Skye
+
+Idea: Social Network View of Scientist and their connections with colleagues, papers, projects, citations, datasets.
+Features: 
+ * Integrate with citation services
+ * Integrate with DataONE datasets
+ * Export citation not just journals but datasets
+ * Get notifications when scientist uploads new datasets or gets cited)
+ * Links to his collaborators and their datasets, people who cite him, other datasets he cites, organizational relationships
+ * My personal account (my bookbag, my field notebook) to collect favorite datasets, scientists, documents, citations
+ * Direct message other scientists or broadcast messages (maybe leverage twitter or other message services.)
+ * See who other scientists are following
+ * Send out job listings and apply for jobs
+ * Add scoring for how open your data use protocol is, how many times your data is downloaded
+ * Filter people out of your searches or network (Bruce's idea)
+Example websites:
+ResearchGate, Google Scholar profile page (ex. Steven Gaines), Social Network Archival Context site, Facebook
+
+Idea for Search interface:
+-Integration of total-impact metric data with search result display.
+
+Break-out Group: Mary Beth/Robert
+
+Evaluation of Figshare
+Discovery and Management Tool
+· Clean interface design
+· Simple to understand
+    o   Clean, easy to understand instructions (e.g., picture/image to show dragging file to       folder)
+    Web Sharing Options: Twitter, Facebook (perhaps for future, could also add LinkedIn)
+    Provides numbers of "Views"
+    Will provide citations in the future (e.g., how many people have citated the data set)
+    Provides content type media players to view some images provided by the researcher
+    Created DOI for records uploaded
+    Has a QR code fro each record; when you share on Facebook - it shares QR Code
+ 
+New UI for Contribution
+ 
+Do we supply a tool or do we expect the scientist to create and upload their metadata?
+ 
+· Define what would be a generic standard enough to use and then we would need a controlled vocabularies/ontologies
+   o   Provide a default editor
+   o   Upload their own information 
+        §  Thumbnails (upload their own); content type media players (from upload researcher)
+        §  Map with geospatial  (GIS tools)
+        §  Controlled vocabulary
+        §  Dates
+        §  Author
+        §  Prefilled out copyright policies
+· Visibility of System Status: Feedback to user as far as activity, to know that the computer is thinking (upload status bar)
+ 
+Visualization Tools
+ 
+· Example: Google Trends (more for analysis)
+· Example: Google books Ngram Viewer (trends in Google Books) – time and reference to certain tools (more for analysis)
+
+Ideas and potential process for DataONE new UI development:
+1. Formation of Focus Groups
+    Who, How, and When?
+    
+    
+2. Contact Commerical Providers of web-scale discovery systems, get them interested in data as a DATA SOURCE - Potentially Make the DataONE metadata catalog available. 
+    - OCLC: World Cata Logcal
+    Serial Solutions: Summon
+    Ex Libris: Primo
+    Ebsco: Ebsco Host
+    
+    
+3. Propose 2 2013 Summer Interships to get a student from top UI/Viz Institutions.
+
+4. Potential Follow-on UA/Socio Meetings further investigation 
+
+

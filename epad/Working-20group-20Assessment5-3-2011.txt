@@ -1,0 +1,1234 @@
+  Assessments Sub-Group: U&A and Sociocultural Working Group
+  May 5, 2011
+  Library and Librarians Surveys:
+  The Library survey is sent to directors of libraries to get official library policy and practices regarding all aspects of Research Data Services (RDS). The Librarians survey is sent to individual librarians to get their opinions, experiences, and perceptions regarding RDS. The intention is to capture information that will inform DataONE on the barriers and needs of libraries regarding all aspects of the data lifecycle. Results will help DataONE understand what types of education, training materials, and technical support and design considerations will assist the library communities. Work began on the 2 surveys in summer 2010 with the DataONE internship program, led by mentors Bob Sandusky and Suzie Allard.
+  Tenopir presented preliminary results from the library and librarians surveys. The initial surveys were targeted to 105 academic research libraries that are members of the Association of Research Libraries and science, data, and subject specialty librarians that work in those libraries.  These surveys were launched April 15, 2011 and will remain open through June. 
+  The first tasks for this subgroup are to: 1) adapt the questions of the library and librarians surveys for an extended audience, 2) expand the list of prospective participants in academic and government (federal and state) libraries.
+  To reach additional academic libraries we will collaborate with the American Library Association (ALA), Association of College and Research Libraries (ACRL) to reach other academic libraries and librarians. They have a directors list as well as subject sections, so they can help us reach the directors with the Library survey and individual librarians with the Librarians survey. Denise will follow-up with ACRL to request assitance in distributing the surveys.
+  For government libraries, the Federal Library and Information Center Committee (FLICC) survey section will be contacted to help reach federal libraries and librarians. Lisa will follow-up with FLICC to request assistance in distributing the surveys. For state libraries, the Chief Officers of State Library Agencies (COSLA) Research and Statistics Committee chair, Peggy Rudd in Texas. Denise will follow-up to request assistance in distributing the surveys.  
+  The goal is to get the extended academic surveys and the government variations out in May and June 2011. Revised Word versions of the survey instruments are available on the dataone.docs site in the May 2011 working group folder. Results of both the Library and Librarians surveys will be presented at the October DataONE All-Hands meeting, with publication in a peer reviewed journal targeted for late 2011. At that time Denise will contact American Libraries Direct to see about wider distribution of the results.  The data set from the surveys will be deposited in a DataONE member node at the time of publication.
+ These  surveys focus on libraries and librarians in North American (Canada and the US). The Parse Insight survey focused on libraries, publishers, and scientists in Europe. After the North American surveys are complete, the Working Group will explore the possibility of expanding these surveys internationally.  Denise will follow-up with ALA International Relations Office to see about IFLA assistance in distributing surveys more broadly.
+ 
+  
+  Next stakeholder baseline assessment: Data Managers
+  
+  It was decided that the next group to be surveyed will be Data Managers, because they represent a logical next step in understanding the data lifecycle. Many of the issues and questions asked in the scientist and librarians baseline assessments were repurposed for the Data Managers. Going from data generators (scientists) to data handlers (librarians and data managers) and, later, to data consumers (educators/public policy makers) is a natural progression in survey execution.
+  The  draft data manager survey instrument is available on the dataone.docs site in the May meeting folder. The results of this survey will help answer questions about all parts of the data lifecycle, including what types of data they manage, who they support, disciplines represented, tools and standards used and improvements needed, existence of and support for data management planning, barriers to and incentives for sharing data, and organizational challenges.
+  Demographic questions will allow us to cluster results by full or part time data management, subject discipline, size of organization/agency, educational background of data managers, and geographic location.
+  Results will provide DataONE participants with a clear understanding of the challenges and barriers to data sharing from the perspective of data managers, as well as insights into the data management profession.
+  Data managers located in herbaria, state and federal government, and not-for-profit organizations will be among those being surveyed. Strategies for reaching these data managers include: working through professional organizations including Ecological Society of America (ESA), OFWIM (Organization of Fish and Wildlife Information Managers), American Institute for Biological Sciences (AIBS),  Earth Sciences Information Professionals (ESIP), Natural Sciences Collection Alliance (NSCA), Society of Herbarium Curators, etc. Additional suggestions from the DataONE community are welcome.  When the survey is ready to be deployed Lisa will assist with connecting to these organizations.
+  This survey will be finalized and pre-tested in summer and early fall 2011, with a goal of distribution late fall 2011-2012.
+  
+  Baseline Assessment of Educators:
+  
+  Carly Strasser, post-doc at NCEAS, is leading an assessment of undergraduate educators. Middle and high school (grades 6-12) educators will be another stakeholder group assessed, starting in 2012.  We began brainstorming about the educators assessment, including questions to be answered and background resources needed before a survey instrument and frame can be developed.
+•Questions
+–What do teachers do about data?
+–How to teach teachers; how to collect, describe, share data? + software training
+–Provide examples to teachers
+–Do teachers instruct students in metadata standards and searching for data?
+–Do they share with other schools, contribute to other datasets?
+–Is there school media center/librarian and how do they support such activities?
+•Resources
+–Bruce Grant, Cliff Duke, Carl Strasser
+–www.dataintheclassroom.org  & linked to NODE (they have curriculum design)
+–Need to do a meta-analysis of surveys that have already been done
+–Technology-supported inquiry learning (stanford.edu Daniel C. Edelson (Northwestern Uni., IL))
+–National Science Teachers Association
+  
+  Summary
+  Results and data from library and librarians surveys will be distributed to working members for discussion at the October 2011 AHM; draft instruments for the data managers survey will be distributed summer 2011 to members. Results from these surveys and further discussion of developing the educators survey will be on the agenda for the October 2011 AHM.
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    `First Task:
+To Library survey need to make all that apply work for who in the library is responsible for RDS
+Maybe also add specific subject discipline units/librarians as drop down.
+
+Send Library/librarian surveys to Lisa to make sure ok for federal.
+Need head of all USGS libraries and other agencies to fill out library survey and pass on the librarian survey to their staff.
+FLICc--federal libraries and information center committee is a way to contact federal libraries, but it is too high a level (cabinet level) to use as a mailing list. Use their directory of federal libraries.  Need a list of agency libraries, like EPA, USGS, also national libraries like NLM, NAL, FDA. Just send to research libraries. NOAA, National Marine Fisheries, Nuclear Regulatory Commission, National Labs (ORNL, Livermore, Los Alamos, etc.)
+Ask permission to distribute librarian survey through the federal agency director. 
+
+For librarian survey change to all post secondary degree to get subjects; change faculty, students, or staff; eliminate students only questions, change faculty or staff to researchers, staff, or administrators/program managers; change off campus to off site; on campus to on campus. Except consultation questions ask separately about administrators/program managers; researchers and staff.  Take out demographic questions about their university type and number of students. Instead ask: to whom do you report; eg department head, bureau chief, etc.. What is the primary subject discipline of your library? --earth and environmental sciences; social sciences, including...; health/medicine; engineering; education; law; atmoshperic sciences. Secondary check all that apply (NSF's 9 fields of science)
+
+Without research data services by a library, researchers will not preserve data for future use by others. substitute for the question on graduates...
+
+
+Add a question to both this and library survey about their agency: 
+Does your agency... conduct research (yes or no); have a regulatory responsibility (yes or no); inform policy makers, including congress (yes or no); is your agency a primary creator of data?; secondary analysis of others' data; (check all that apply??) does your agency support the provision of data, preservation... is this part of the core mission 
+
+
+Library survey change "other units in your University" to agency
+change academic program to researchers; change other institutions to other agencies
+change faculty, staff, or students TO researchers, staff, or administrators
+Change either on or off campus to either onsite or offsite.
+
+Next steps on library/librarians
+Follow up for ARL--send a postcard
+    a. federal agencies
+    b. Mary Jane Petrosky at ACRL might be willing to sell us their email list for the ACRL survey respondents if we share our findings. It will be the library mailing list, just directors, and send them both surveys, asking them to distribute the librarian survey.  On June 1 the data goes into http://nces.ed.gov (NCES Library Comparison) Denise will help us find the emails.
+    c.MAYBE international
+
+To the plans, future, add a NO without any timeline
+
+SECOND TASK:
+What is the next group we should survey?
+1.    Data Managers (maybe also public policy makers; land managers; resource managers; state and provincial agencies; planners; herbarium (Jean Freeny); GBIF for museums). Lisa can help us compile a list --OFWIM is a good start for state agencies. They are great advocates and do training.  Natural Science Collections Alliance (animal collections)
+    a. Canada and the US first
+    b.  IABIN for Latin America (need to be in Spanish and English) scientists and data managers
+    c. IFLA or EU to get international agencies 
+
+Questions to ask:
+1) what % of time spent on data management; research; training/teaching
+
+Wednesday afternoon:research questions for data managers
+
+Add in the invitation letter what the benefits to them will be, add a question at the end that lets them see results (add address and separate from their answers.) 
+Research data assessment: building an understanding of your data needs
+
+<!-- /* Style Definitions */ p.MsoNormal, li.MsoNormal, div.MsoNormal {mso-style-parent:""; margin:0in; margin-bottom:.0001pt; mso-pagination:widow-orphan; font-size:12.0pt; font-family:"Times New Roman"; mso-fareast-font-family:"Times New Roman";} p.MsoPlainText, li.MsoPlainText, div.MsoPlainText {margin:0in; margin-bottom:.0001pt; mso-pagination:widow-orphan; font-size:10.0pt; font-family:"Courier New"; mso-fareast-font-family:"Times New Roman";} span.EmailStyle15 {mso-style-type:personal; mso-style-noshow:yes; mso-ansi-font-size:11.0pt; mso-bidi-font-size:11.0pt; font-family:"Times New Roman"; mso-ascii-font-family:"Times New Roman"; mso-hansi-font-family:"Times New Roman"; mso-bidi-font-family:"Times New Roman"; color:windowtext; font-weight:normal; font-style:normal; text-decoration:none; text-underline:none; text-decoration:none; text-line-through:none;} @page Section1 {size:8.5in 11.0in; margin:1.0in 1.25in 1.0in 1.25in; mso-header-margin:.5in; mso-footer-margin:.5in; mso-paper-source:0;} div.Section1 {page:Section1;} --> 
+
+You are invited to participate in an NSF-sponsored research study investigating how scientists work.  Your responses will help us better understand how scientists manage their data and will contribute to building better tools and processes for data preservation.
+
+
+
+The questionnaire should take about 15 minutes to complete.
+
+Your participation in this research is voluntary, and you may decline to participate without risk.  While it is useful to be complete in your responses to the survey, you may skip any questions, and you are free to withdraw from the study at any time until your survey is returned (we have no way of identifying your particular responses).  We will not link your survey responses to you in any way, and we ask that you do not put any other identifying information on the survey. This will help ensure that survey responses will be anonymous.  In addition, individual responses will be kept confidential, and information from the survey will only be reported in aggregate.  As such, we do not anticipate that your participation poses any risk.
+ 
+If you have any questions about the study or procedures, please contact Carol Tenopir (ctenopir@utk.edu) or Suzie Allard (sallard@utk.edu).  If you have questions about your rights as a participant, contact the Office of Research Compliance Officer at (865) 974-3466.
+
+    
+
+
+By proceeding to the survey I acknowledge that I have read the above statements and that I am 18 years old or older. 
+
+
+
+1)  What percentage of your work time is allocated to the following activities? (total to equal 100%)
+
+
+       
+Administration
+Outreach
+Policy   support
+Research
+Training/Teaching
+Data Management
+Other ___________________________________       
+If you   selected other, please specify:
+
+
+2)  Which one of the following best describes your primary work sector?
+
+               m Academic
+               m Government
+                   State/Provencial
+                   Local/Regional
+                   Multi-agency/sector
+                   Federal/National
+                   Multinational
+               m Commercial
+               m Non-profit
+               m Other (please specify)
+
+               
+If you selected other, please specify               ______________________________________________________________________
+
+3)  Which one of the following best describes the primary subject discipline of the data you manage?
+
+               m Atmospheric science
+               m Biology
+               m Business
+               m Ecology
+               m Education
+               m Engineering
+               m Environmental science
+               m Geology
+               m Hydrology
+               m Medicine
+               m Physical sciences
+               m Psychology
+               m Social sciences
+               m Other (please specify)
+
+               
+If you selected other, please specify               ______________________________________________________________________
+
+4)  Which terms best describe the type of data you manage (check all that apply)?
+
+               q Abiotic surveys (soils, microclimate, hydrology, etc.)
+               q Biotic surveys
+               q Data models
+               q Experimental (involving some degree of manipulation)
+               q Interviews
+               q Observational (no manipulation involved)
+               q Remote-sensed abiotic data (including meteorological data)
+               q Remote-sensed biotic data
+               q Social Science Survey
+               q Other (please specify)
+
+               
+If you selected other, please specify               ______________________________________________________________________
+
+5) How  much of the data you manage are deposited?
+
+5b) and available to others through the following?
+
+
+
+
+        
+none
+        
+some
+        
+most
+        
+all
+            
+on   my organization’s website
+on   the principal investigator’s website
+through   a national network
+through   a regional network
+through   a global network
+        
+m
+        
+m
+        
+m
+        
+m
+            
+on   my personal website
+        
+m
+        
+m
+        
+m
+        
+m
+            
+other
+        
+m
+        
+m
+        
+m
+        
+m
+    
+
+
+Survey is 25 % Completed
+
+
+
+ 
+
+
+
+6)  If the data you manage are not available electronically to others, why not (check all that apply)?
+
+               q Lack of funding
+               q Lack of infrastructure
+               q Lack of standards
+               q People don’t need them.
+               q There is insufficient time to make them available.
+               q Not sure where to put them
+               q They shouldn't be available.
+               q Sponsor doesn't require it
+               q Don't have the rights to make the data public
+               q Other (please specify)
+
+               
+If you selected other, please specify               ______________________________________________________________________
+
+7)  The following group of statements relates to how you collect and use research data. Tell us how much you agree with each statement using the following scale: agree strongly, agree somewhat, neither agree nor disagree, disagree somewhat, disagree strongly. 
+
+
+
+
+       
+ 
+        
+agree strongly
+        
+agree somewhat
+        
+neither agree nor disagree
+        
+disagree somewhat
+        
+disagree strongly
+            
+I am   satisfied with the process for collecting my research data.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I am   satisfied with the process for searching for my own data.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I am   satisfied with the process for cataloging/describing my data.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I am   satisfied with the process for storing my data during the life of the project   (short-term).
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I am   satisfied with the process for storing my data beyond the life of the project   (long-term).
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I am   satisfied with the process for analyzing my data.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I share my   data with others.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Others can   access my data easily.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I am   satisfied with the tools for preparing metadata.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I am   satisfied with the tools for preparing my documentation.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+    
+
+
+8)  The following group of statements relates to how your organization is involved with your data. Tell us how much you agree with each using the following scale: agree strongly, agree somewhat, neither agree nor disagree, disagree somewhat, disagree strongly.
+
+
+       
+ 
+        
+agree strongly
+        
+agree somewhat
+        
+neither agree nor disagree
+        
+disagree somewhat
+        
+disagree strongly
+            
+My   organization or project has a formal established process for managing data   during the life of the project (short-term).
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+My   organization or project has a formal established process for storing data   beyond the life of the project (long-term).
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+My   organization or project provides the necessary tools and technical support   for data management during the life of the project (short-term).
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+My   organization or project provides the necessary tools and technical support   for data management beyond the life of the project (long-term). 
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+My   organization or project provides training on best practices for data   management.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+My   organization or project provides the necessary funds to support data   management during the life of a research project (short-term).
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+My   organization or project provides the necessary funds to support data management   beyond the life of the project (long-term). 
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+    
+
+
+9)  The following group of statements relates to your views on the use of data across your research field. Tell us how much you agree with each using the following scale: agree strongly, agree somewhat, neither agree nor disagree, disagree somewhat, disagree strongly.
+
+
+       
+ 
+        
+agree strongly
+        
+agree somewhat
+        
+neither agree nor disagree
+        
+disagree somewhat
+        
+disagree strongly
+            
+Lack of   access to data generated by other researchers or institutions is a major impediment   to progress in science.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Lack of   access to data generated by other researchers or institutions has restricted   my ability to answer scientific questions.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Data may be   misinterpreted due to complexity of the data.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Data may be   misinterpreted due to poor quality of the data.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Data may be   used in other ways than intended.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+    
+
+
+ 
+
+
+
+ 
+
+
+Survey is 50% Completed
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+10)  The following group of statements relates to data sharing. Tell us how much you agree with each using the following scale: agree strongly, agree somewhat, neither agree nor disagree, disagree somewhat, disagree strongly.
+
+
+       
+ 
+        
+agree strongly
+        
+agree somewhat
+        
+neither agree nor disagree
+        
+disagree somewhat
+        
+disagree strongly
+            
+I would use   other researchers' datasets if their datasets were easily accessible.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I would be   willing to place at least some of my data into a central data repository with   no restrictions.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I would be   willing to place all of my data into a central data repository with no   restrictions.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I would be   more likely to make my data available if I could place conditions on access.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I am   satisfied with my ability to integrate data from disparate sources to address   research questions.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+I would be   willing to share data across a broad group of researchers who use data in   different ways.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+It is   important that my data are cited when used by other researchers.
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+            
+It is   appropriate to create new datasets from shared data. 
+        
+m
+        
+m
+        
+m
+        
+m
+        
+m
+    
+
+
+11)  Is each of the following conditions a fair exchange for the use of your data or a fair exchange for the use of other people's data?  
+
+
+
+       
+ 
+        
+For others to use my data
+  
+  
+  
+        
+To use other people's data
+            
+ 
+        
+yes
+        
+no
+        
+yes
+        
+no
+            
+Co-authorship   on publications resulting from use of the data
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Formal   acknowledgement of the data providers and/or funding agencies in all   disseminated work making use of the data
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Formal   citation of the data providers and/or funding agencies in all disseminated   work making use of the data
+        
+m
+        
+m
+        
+m
+        
+m
+            
+The   opportunity to collaborate on the project (including, for example,   consultation on analytic methods, interpretation of results, dissemination of   research results, etc.)
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Results   based (at least in part) on the data could not be disseminated in any format   without the data provider's approval.
+        
+m
+        
+m
+        
+m
+        
+m
+            
+At least   part of the costs of data acquisition, retrieval or provision must be   recovered.
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Results   based (at least in part) on the data could not be disseminated without the   data provider having the opportunity to review the results and make   suggestions or comments, but approval not required.
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Reprints of   articles that make use of the data must be provided to the data provider.
+        
+m
+        
+m
+        
+m
+        
+m
+            
+The data   provider is given a complete list of all products that make use of the data,   including articles, presentations, educational materials, etc.
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Legal   permission for data use is obtained.
+        
+m
+        
+m
+        
+m
+        
+m
+            
+Mutual   agreement on reciprocal sharing of data
+        
+m
+        
+m
+        
+m
+        
+m
+            
+The data   provider is given and agrees to a statement of uses to which the data will be   put.
+        
+m
+        
+m
+        
+m
+        
+m
+    
+
+
+12)  What metadata do you currently use to describe your data, if any (check all that apply)?
+
+               q DC (Dublin Core)
+               q DwC (Darwin Core)
+               q DIF (Directory Interchange Format)
+               q EML (Ecological Metadata Language)
+               q FGDC (Federal Geographic Data Committee)
+               q ISO (International Standards Organization)
+               q OGIS (Open GIS)
+               q metadata standardized within my lab
+               q none
+               q Other (please specify)
+
+               
+If you selected other, please specify               ______________________________________________________________________
+
+13)  Do you have the sole responsibility for approving access to your data?
+
+               m Yes - for all my datasets
+               m Yes - for some of my datasets
+               m No
+
+14)  If no, what additional approvals would be necessary?
+
+               
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+ 
+
+15)  Which of the following best describes your primary funding agency?
+
+
+               m Federal/national government
+               m State/regional government
+               m Local government
+               m Corporation
+               m Private foundation
+               m Other (please specify)
+
+               
+If you selected other, please specify               ______________________________________________________________________
+
+ 
+
+
+ 
+
+
+Survey is 75% Completed 
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+16)  My primary project funding agency requires me to provide a data management plan.
+
+
+               m Yes
+               m No
+               m Don't know
+
+17)  Which of the following do you use to access data (check all that apply)?
+
+
+               q LTER (Long-tem Ecological Research Network)
+               q ILTER (International Long-term Ecological Research Network)
+               q NEON (National Ecological Observatory Network)
+               q NBII (National Biological Information Infrastructure)
+               q DAAC (A Distributed Active-Archive Center)
+               q GBIF (A Global Biodiversity Information Facility)
+               q SAEON (South African Environmental Observation Network)
+               q TERN (Taiwan Ecological Research Network)
+               q An organization-specific system
+               q Other (please specify)
+
+               
+If you selected other, please specify               ______________________________________________________________________
+
+18)  Please share any additional comments, questions, or suggestions about your use of data. 
+
+               
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+ 
+
+19)  My current position is:
+
+
+               m Administrator
+               m Assistant Professor
+               m Associate Professor
+               m Professor
+               m Graduate student
+               m Undergraduate
+               m Lecturer
+               m Post-doctoral fellow
+               m Researcher
+               m Other (please specify)
+
+               
+If you selected other, please specify               ______________________________________________________________________
+
+20)  Which of the following countries is your primary place of employment?
+
+
+               m Afghanistan
+               m Albania
+               m Algeria
+               m Andorra
+               m Angola
+               m Antigua and Barbuda
+               m Argentina
+               m Armenia
+               m Australia
+               m Austria
+               m Azerbaijan
+               m Bahamas
+               m Bahrain
+               m Bangladesh
+               m Barbados
+               m Belarus
+               m Belgium
+               m Belize
+               m Benin
+               m Bhutan
+               m Bolivia
+               m Bosnia and Herzegovina
+               m Botswana
+               m Brazil
+               m Brunei Darussalam
+               m Bulgaria
+               m Burkina Faso
+               m Burundi
+               m Cambodia
+               m Cameroon
+               m Canada
+               m Cape Verde
+               m Central African Republic
+               m Chad
+               m Chile
+               m China
+               m Colombia
+               m Comoros
+               m Congo
+               m Costa Rica
+               m Côte d'Ivoire
+               m Croatia
+               m Cuba
+               m Cyprus
+               m Czech Republic
+               m Democratic People's Republic of Korea
+               m Democratic Republic of the Congo
+               m Denmark
+               m Djibouti
+               m Dominica
+               m Dominican Republic
+               m Ecuador
+               m Egypt
+               m El Salvador
+               m Equatorial Guinea
+               m Eritrea
+               m Estonia
+               m Ethiopia
+               m Fiji
+               m Finland
+               m France
+               m Gabon
+               m Gambia
+               m Georgia
+               m Germany
+               m Ghana
+               m Greece
+               m Grenada
+               m Guatemala
+               m Guinea
+               m Guinea-Bissau
+               m Guyana
+               m Haiti
+               m Honduras
+               m Hungary
+               m Iceland
+               m India
+               m Indonesia
+               m Iran (Islamic Republic of)
+               m Iraq
+               m Ireland
+               m Israel
+               m Italy
+               m Jamaica
+               m Japan
+               m Jordan
+               m Kazakhstan
+               m Kenya
+               m Kuwait
+               m Kyrgyzstan
+               m Lao People's Democratic Republic
+               m Latvia
+               m Lebanon
+               m Lesotho
+               m Liberia
+               m Libyan Arab Jamahiriya
+               m Liechtenstein
+               m Lithuania
+               m Luxembourg
+               m Madagascar
+               m Malawi
+               m Malaysia
+               m Maldives
+               m Mali
+               m Malta
+               m Marshall Islands
+               m Mauritania
+               m Mauritius
+               m Mexico
+               m Micronesia (Federated States of)
+               m Monaco
+               m Mongolia
+               m Morocco
+               m Mozambique
+               m Myanmar
+               m Namibia
+               m Nepal
+               m Netherlands
+               m New Zealand
+               m Nicaragua
+               m Niger
+               m Nigeria
+               m Norway
+               m Oman
+               m Pakistan
+               m Palau
+               m Panama
+               m Papua New Guinea
+               m Paraguay
+               m Peru
+               m Philippines
+               m Poland
+               m Portugal
+               m Qatar
+               m Republic of Korea
+               m Republic of Moldova
+               m Romania
+               m Russian Federation
+               m Rwanda
+               m Saint Kitts and Nevis
+               m Saint Lucia
+               m Saint Vincent and the Grenadines
+               m Samoa
+               m San Marino
+               m Sao Tome and Principe
+               m Saudi Arabia
+               m Senegal
+               m Seychelles
+               m Sierra Leone
+               m Singapore
+               m Slovakia
+               m Slovenia
+               m Solomon Islands
+               m Somalia
+               m South Africa
+               m Spain
+               m Sri Lanka
+               m Sudan
+               m Suriname
+               m Swaziland
+               m Sweden
+               m Switzerland
+               m Syrian Arab Republic
+               m Taiwan
+               m Tajikistan
+               m Thailand
+               m Togo
+               m Trinidad and Tobago
+               m Tunisia
+               m Turkey
+               m Turkmenistan
+               m Uganda
+               m Ukraine
+               m United Arab Emirates
+               m United Kingdom of Great Britain and Northern Ireland
+               m United Republic of Tanzania
+               m United States of America
+               m Uruguay
+               m Uzbekistan
+               m Vanuatu
+               m Venezuela
+               m Viet Nam
+               m Yemen
+               m Yugoslavia
+               m Zambia
+               m Zimbabwe
+
+21)  If your response to question #20 was "United States of America," also indicate your primary state (or US territory) of employment.
+
+
+               m Alabama
+               m Alaska
+               m Arizona
+               m Arkansas
+               m California
+               m Colorado
+               m Connecticut
+               m Delaware
+               m D.C.
+               m Florida
+               m Georgia
+               m Hawaii
+               m Idaho
+               m Illinois
+               m Indiana
+               m Iowa
+               m Kansas
+               m Kentucky
+               m Louisiana
+               m Maine
+               m Maryland
+               m Massachusetts
+               m Michigan
+               m Minnesota
+               m Mississippi
+               m Missouri
+               m Montana
+               m Nebraska
+               m Nevada
+               m New Hampshire
+               m New Jersey
+               m New Mexico
+               m New York
+               m North Carolina
+               m North Dakota
+               m Ohio
+               m Oklahoma
+               m Oregon
+               m Pennsylvania
+               m Rhode Island
+               m South Carolina
+               m South Dakota
+               m Tennessee
+               m Texas
+               m Utah
+               m Vermont
+               m Virginia
+               m Washington
+               m West Virginia
+               m Wisconsin
+               m Wyoming
+
+22)  What is your age?
+
+
+               ____________________________________________________________
+
+23)  Gender
+
+               m Male
+               m Female
+
+ 
+
+
+
+Your survey is now complete.
+
+
+
+Thank you very much!
+

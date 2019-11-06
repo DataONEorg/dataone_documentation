@@ -1,0 +1,131 @@
+Member Node Wranglers
+    Fridays at 10:30 am Alaska
+                    11:30 am Pacific
+                    12:30 noon Mountain
+                    1:30 pm Central
+                    2:30 pm Eastern
+
+Please note new GTM info, also:
+   * https://www1.gotomeeting.com/join/698027049
+
+15 August 2014
+                                                         
+Attending:  Laura, Rebecca, Bruce, Dave, Mark
+
+Regrets: Amber 
+
+
+Agenda: 
+
+        1. High profile issues (or current items of interest
+        
+        MPC and Dublin Core - concern about creating a MPC-specific DC standard (is that appropriate, who maintains it, etc.), much discussion about how we can best meet MPC's immediate needs and still allow for future realignment (with DDI)
+        GEO schema: https://schema.org/geo
+        Can combine elements from GEO and dublin core into the "recommended" schema
+        Keep this development in GitHub - DataONE and MPC can collaborate
+        Spatial data is very important; identify required vs optional fields to allow current/future indexing
+        MPC's CCIT POC TBD 
+        
+(Previous discussions)
+   * MPC  Progress - still working on getting DC information to Tracy et al.   BEW: need to resolve the container question and propose specific fields  that should be mapped to the indexing. 
+     * Need  for Fall review. No developer access in Sept. They need some  clarification [sorry lost phrase??? -jwc] concerning Dublin core  components. They are starting with GMN implementation.  Plan to have Roger Dahl as a CCIT POC
+     * Dave: the other side of the DC issue will need discussion with MPC. Probably involve Skye as well.   Dave to look at an initial Schema (based on OAI_PMH) for DC.  Bruce to  look at initial mapping of DC elements to DataONE index.   
+     * Tracy sent an email Tues outlining a proposed schedule to enable MPC to have a fully functional MN by their October review, continuing review based on other things in development schedule, etc.
+
+   * Issue  discovered during LTER's transition from metacat to PASTA GMN - metacat  EML for both sysmeta and science metadata is parsed out and stored in a database, but when it is reconstituted from the CN, it does NOT look the same as the original.   Mark, Roger, Chris, Ben (?) looking into this from two perspectives: 
+     * what  to do for the LTER metacat data which we want to incorporate into the  GMN LTER MN to retain "authoritativeness" or ownership of the data, and 
+     * what causes this in the first place, as this is potentially a Big Deal.
+   * metacat versions prior to 1.9 would shred the EML and store in RDB, 1.9 forward does not do that
+   * IF... this issue is LTER only, a simple way forward would be to harvest (meta)data from the CNs and dump it in the GMN ... maybe... Roger is looking at this right now
+
+        1.5   Current MNs
+                 Dryad listObjects issue, see https://redmine.dataone.org/issues/6010 
+                     Laura to check with Ryan before MNW
+                   
+                LTER transitioning from metacat instance to PASTA GMN; 
+                    The PASTA GMN is behaving nicely in stage.  There are issues, however, with the old metacat data we are trying to bring over (see above).
+                
+        2. Status of upcoming MNs
+     
+     * Y5Q4 (awaiting input from MNs to determine a more realistic schedule)
+       * USCarolina (3689) - awaiting response  (ask about metadata, considering DC)
+
+     * Y6Q1
+       * ORNL MNs (RGD (4248) and EDORA (4247)) - per email conversations with Chris, Ranjeet, Jim, meeting 8/7/14; Chris/Ranjeet et al. working to resolve last issues related to FGDC, etc.
+       * MPC (3708) -  see above, looking at what we can do to help meet their desired schedule (Dave/Bruce comment?)
+       * DFC (3532) - Lisa doing development and running WebTester.  Next step - get DFC in development environment.  Bruce ping Chris and Lisa on status.
+       * UIC (3213)   - they're  having a project prioritization meeting next week, will  have  a better  idea of schedule for next 3 months after that; Bob is OOP until next Tuesday (8/19) - will ping him again then.
+       * PPBio (3748) - MNDD/logo submitted, Listed on public website as upcoming
+       * NKN (3238)   -  at MNF yesterday, Ed said they were able to use their "old" certs from  the previous ubuntu MN (new is redhat); plan to have NKN in prod by 31  Oct.
+       * IARC (4700)  -  We've got Jim in contact with Mark and Roger - working
+
+     * Y6Q2
+       * GBIF (4730)   - development  paused while GBIF does their annual planning; thinking about working  with Atlas of Living Australia (VERY early discussions).   
+         * MoC on hold until after Phase 1 closeout and Phase 2 initiation efforts are done --- Discuss the MoC request from GBIF.   Mark, Laura, and Rebecca to work on this MOU/MoC.  Tim R out on  vacation until 8/18.  Rebecca now has access to draft of letter.
+       * Sierra  Nevada Global Change Observatory (4296) - Antonio visited Mark 8/14
+         * Here is my basic understanding of their operation:
+         * 1. They use a (out-dated?) version? of Metacat to store EML metadata only; no data objects within Metacat
+         * 2. They have roughly 500 data packages
+         * 3. They do use KNB to store some of their EML; how much, I don't know
+         * 4. They are also a member of the EU LTER and plan on interoperating with their EU LTER Metacat (this is the site managed by David Blankman)
+         * 5. They export their EML into two other formats: one is INSPIRE, which is an ISO standard of some sort; the other is a proprietary format used for governmental use
+         * 6. They would definitely like to become a MN; not sure if they want to use Metacat as their software stack or investigate other options
+         * 7. Not clear at what tier level they would participate
+         * 8. Their timeline is undefined, but they would like to target this Fall
+       * GLEON (3422) -  Nothing new.  passed the MNDD template on to Corinna - she will pick up when she gets back in August
+       * Montana State University Institute on Ecosystems (IoE) (3687) - Ready to announce, in final review
+         * FOR DISCUSSION: related to the conversation below about when to show a MN as "upcoming" is when to show status as "in review", etc.  This is all related to reworking the MN implementation-final steps document we worked on previously as well as the redmine ticket generator.  
+
+     * Y6Q3
+       * SAEON (3205) - Chris or Mark will be able to help Alex at SAEON.
+
+    Future
+       * TERN-Australia - Rebecca and Bruce working on wording of MOU - On hold for MOU until PEP is complete. Might have Allison at AHM.
+       * FigShare - Bruce is POC
+       * NODC - revisit, target for next 18mos (Bruce/Matt) - Bruce to talk with Ken Casey
+
+
+        3. Old action items
+               MN Documentation - MN Deployment and MN Ongoing Operations - Laura to  do  this  -- working on identifying needs and best methods to address  those  needs, including ask.dataone.org, documentation in mule1 or on   dataone.org, etc.
+
+             
+        4. Not-high profile issues
+        
+             Process for end-of-implemention (when/how to indicate a MN is  "upcoming" on the dashboard, etc.) - Laura and Amber - we had previously  decided that when a MN goes into stage testing, it is appropriate to  show them as an upcoming MN.  However, in redmine we don't currenty have  a status indicating what stage a MN is working in.  We have a "testing"  status, so we had thought we'd use that - when a MN changes status to  "testing", we can show it as upcoming.  We still need to explicitly  define the process and who does what when, and try it out on the next  MN(s) in the queue.
+            Amber: maybe list them on web as "upcoming" when we go to staging -- but we need a redmine state to show that staging has started.   Dave to look and see if can notify Amber and Laura (and Bruce?) when  there are changes to the stage and production node lists. Need a redmine state to show that staging has started.
+            
+            (Was under Current MNs related to SANParks, CDL, etc.)
+            LT  to address Memorandum of Understanding (re: operations and service expectations) between DataONE and MNs  -  is there anything I (LM) can be doing to move this along, draft something up, pull out the work previously done, etc.?? (Rebecca, Mark, & Laura have been tasked with this and will begin work week of 8/11)  -- or maybe not.  Wait a bit until Phase 1-Phase 2 transition over?
+
+       
+        5. Around the room
+        Rebecca - nothing today
+        Bruce - see above
+        Mark - not here for two weeks  (alternating weeks for LTER and DataONE)
+        Dave - no
+
+  
+
+
+Tickler (things to revisit periodically)
+
+   * DUG discussion re: increased MN involvement with DataONE - distribution list to Rebecca 8/1/14  - when is a good time to get this out to the field?   Action: document still needs to be cleaned, but not clear  which  edits  are to be accepted.  Bruce to work with Laura to get a  finalized  version  of this document ready for Bill to send out.  Target  sending  this out after PEP is completed.   Defer  action on this until end of August and  revisit  this in terms of available cycles. Put this as an action at LT for AHM if it hasn't been dealt with before then.  
+
+Purpose of MN Description Document (past and future) 
+      Intent is to describe the (potential) MN, identify the   types/quantity/formats of data they hold, - perhaps we need a    "friendlier" format, perhaps an interview process;
+      Workflow: should this information (MNDD) be collected at the beginning   of the process, or is the way we've been doing it lately (after the   fact) a new way of doing business??  Also consider if  this information   gathering (form or interview) is the best use of resources for those   potential MNs who may or may not become a MN if implemented as a first   step.  Possibly change the workflow? Is a pdf the best way to view the   information?
+    Next steps:  Laura to come up with alternative(s) to current MNDD - content is good, but format/mechanism needs some work.  
+    Another thing: Laura and Amber to look at workflow for last stages of implementation, test with EDAC  too late for that, need to pick another one.
+    Also -- how does the MN DD relate to: 
+                    the node document:  https://cn.dataone.org/cn/v1/node  - developers have/create this information (node registration, see updateNodeCapabilities)
+                    and redmine??    <--- work with redmine as mostly-authoritative source
+      Could a spreadsheet be a viable solution?  Maybe.  A database would   work.  In any case, some information is appropriately "private" -  how    would we handle that?
+                
+
+Revisit the default "only results with data"   checkbox to unchecked; plan is to move the   checkbox from search page   to results page but remain checked by default, initial draft in   development environment.
+               
+Bob's feedback about the dashboard - he suggested a count of MNs on the dashboard (MNs, RNs), probably/maybe an easy thing to do a count of MNs and RNs and display
+                
+
+
+

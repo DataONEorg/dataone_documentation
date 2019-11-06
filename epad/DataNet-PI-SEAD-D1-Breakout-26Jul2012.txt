@@ -1,0 +1,44 @@
+Attendees: Margaret Hedstrom, Bill Michener, Rebecca Koskela
+
+Discussed similar collaborations with DFC - are there also similar collaborations
+with SEAD?  For example, would SEAD be a potential MN?
+
+Some future MNs for DataONE are DSpace, Fedora and federal agencies
+SEAD is trying to figure out the appropriate repositories for the valuable data. They
+are 9 months into the project. Have been working with University of Illinois and their
+repository. Announcement yesterday of DuraSpace Incubator supporting VIVO
+
+SEAD: Possibility of just providing the metadata in DataONE?
+They are ingesting one repository because it is sunsetting. Haven't found a permanent home for the data yet.
+
+CUAHSI Observational Data Model : the DataONE Semantics Working Group is looking at this
+SEAD discussing whether or not to support this in their Active Content Repository (ACR)
+How far should they go to provide analysis tools to the community? They do have a mapping from the ODM to the ACR.  This may be another item for collaboration.
+(3 different DataNets working with CUAHSI)
+**This may be a good case study for the partnership to tackle
+
+SEAD had a post-doc working on this for a couple of months and is an ongoing discussion with the developers; also working with Praveen Kumar
+
+Community Engagement: SEAD doesn't have much in this area because of funding cuts - were advised by NSF to postpone those activities until after the prototype was done
+
+Margaret's idea for RCN: focus on long-term sustainable plans for the DataNets
+
+Propose doing a workshop at SESYNC with the DataNets and the various governmental agencies, European collaborations, etc rather than using RCN funds
+
+Crowd sourcing activities is another area to look at - SEAD: student, post-doc or assistant professor finds relevant data, massage, improve it - way to save the value added data
+"social curation" - more focused than crowd sourcing
+
+DataONE adding more MNs
+How small can a MN be? 1000 to 500M data products in the existing MNs
+
+How users interact with DataONE?
+At tier 1, discover data and then download it
+At tier 4, discover data, download it, do something with it and then upload the data product
+
+Bill meeting with archeology community next week - grand challenges in archeology that would be supported by new cyberinfrastructure
+
+Summary:
+ * Common interest in DSpace & Fedora MNs
+ * Collaboration with CUAHSI (actually 3 DataNets: DFC, DataONE, SEAD)
+ * Social curation
+

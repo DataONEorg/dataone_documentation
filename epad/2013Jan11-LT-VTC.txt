@@ -1,0 +1,95 @@
+Attendees: John Cobb, Steph, Rebecca, Suzie, Dave, Bertram, Amber, Bob, Mike, Carol, (Viv)
+
+Regrets:Todd, Bruce
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+1.  Please join my meeting, Jan 11, 2013 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/179926776
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (636) 277-0136
+Access Code: 179-926-776
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 179-926-776
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2013Jan11-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-01-11
+
+1) CI Update (Vieglais)
+Big topic: version 1.1 release - in progress right now; created the release and in the process of doing the final testing in the staged environment - once this is complete will deploy in the production environment - expensive with respect to cpu utilization so things may run slowly for a couple of days.
+The hardware move at UCSB to the new rack space completed successfully - many thanks to Nick Brand! DataONE services were uninterrupted except for MN services at UCSB.
+
+There was an interesting issue with the DAAC MN this week - some incorrect information was added to some metadata content before sync with CN. Result was that some MN content was incorrect.
+The content that was added needs to be deprecated and added again. These issues may be ongoing and do consume developer resources. Resource map documents were fine but the system metadata describing the resource maps indicated that they were data objects and not resource maps.
+Lessons learned: need to ensure that member nodes understand the types of information (metadata) that needs to be transmitted to the CN.  Also may want to develop some code that tests in real time the quality of the information transmitted from the MN to the CN. 
+possibily a test ingest in the future along with a interaction discussion with (new) MN's before the first ingest.
+Starting to do demonstrations during developer calls to get broader input to the development of interfaces and tools.
+
+2) CE Update (Budden)
+Planning process for the DUG - Response to survey has been low so far 
+Press release of Sloan Foundation funding for the DMPTool2 - please send feedback to Amber if you have comments on the release
+Working with Laura to get MN documentation uptodate on the web
+
+Globe.gov - saw DataONE poster at ESIP and Amber has call scheduled with them next
+week
+
+
+3) Summer Internship Program (Budden)
+Suggested Timeline: (evaluation milestones need to be added to timeline)
+ * Feb 25th – application period opens
+ * March 15th – deadline for applications
+ * April 5 – notification of acceptance
+ * May 27 – program begins
+ * July 26th - program concludes
+ * Oct 1-3rd – AHM
+Potentially able to fund 8 students.  
+Current evaluation committee: Amber, Rebecca, Todd and Bruce (Dave and Matt on internship listserve)
+Request internship project ideas by Feb 4th.  Need following information: mentors (primary and secondary), project summary, expected outcomes, prerequisites, desirable skills.  See http://www.dataone.org/internships for example.
+
+4) Reverse Site Visit (Michener)
+ * we will receive charge to panel approximately 1 week in advance of the RSV
+ * approximately 6 people will be allowed in room at any given time; others will be shuttled in and out
+ * the RSV will last 1.5 days and will take place during Feb 27, 28 and/or March 1 
+ * Bob Chadduck has offered to review and comment on alternative ideas for the renewal period (ie Yrs 6-10); the followon proposal must contain a mix of sustainablity activities as well as new added value
+ * lastly, be careful in engaging with EarthCube as they are not yet funded and there may be little or no funding for travel reimbursement
+
+5) Around the room
+Steph: we hired a undergrad intern Jessica Bragg, communications major, to help with "data stories" project with Stacy: https://docs.google.com/document/d/1aHcqViAlAzVvL5dp84ctCMCAEuSmTbaEuvkRkOrRY5U/edit; Carly's Ecosphere paper is published, on the lack of undergrad exposure to good data practices in ecology: http://www.esajournals.org/doi/full/10.1890/ES12-00139.1; NCEAS just about to announce call for applicants for 3-week summer training in ecological synthesis, not a D1 thing but definitely will design to be complementary and hopefully of interest to D1 community
+
+Bruce (via email):
+Will be in another meeting this week, and I may miss next week due to being at USA-NPN. 
+
+I don't have anything to report, other than I'll be at USA-NPN next  week, with work on the MN part of the agenda for the visit.  More  details next week on that.  I'll send a report if I'm not able to be at  the telecon.  
+
+Bill: off to International Digital Curation Conference meeting that takes place next week on M thru W; note that Mark Parsons is the newly hired Director for the Research Data Alliance.
+
+Mike: Thanks to DataONE for Tweeting and announcing on DataONE.org about USGS Challenge. 
+
+Suzie: UA -SC WG May meeting: Only two have identified that they cannot attend. Planning underway.
+Working with John and Bob on selecting appropriate masters students for MN and DAAC based projects.  These students are making a three semester commitment to these experiences. They are funded through a grant from IMLS focusing on science data.  
+
+
+Carol: Suzie and I are working on a grant proposal to IMLS, that is a requested revision to one not funded last year that furthers work on research data services in academic libraries. Bill, Trish, and others are on the advisory board. Collaborators are ARL, ACRL, and University of Illinois. Due Feb 1.
+
+John Cobb: Working with Laura Moyers and others on new MN coordination efforts. Suggestions and help are appreciated.
+
+Viv: Getting ready for presenting with Bob Cook and Bill at the "Data Mgmt Practices for Early Career Scientists" Workshop in ABQ Feb 3 at the North American Carbon Program Investigators Meeting.  Also, presenting metadata workshop later this month in Anchorage at the Alaska Marine Conference and will include DataONE information.
+
+Steve: Nothing new from me. 
+
+Bob:  Nothing new
+
+Bertram: ProvWG tool/demo development in full swing. Panic mode settling in ;-)
+More seriously: we had some of the undergrads walk away, so we're trying to make amends. But we should be OK. Victor is picking up the pieces.
+
+

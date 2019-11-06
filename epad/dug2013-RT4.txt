@@ -1,0 +1,69 @@
+DataONE Users Group
+Jul 7th - 8th 2013
+Chapel Hill, NC
+
+Roundtable 4: Data Managment Planning
+
+Participants:   Bob Downs, Andrew Sallans, Chris Eaker, Greg Golberg, Hilary Davis, Su Zhang, Reagan Moore
+
+
+Talking points / Guiding Questions
+ * What are the main challenges?
+ * What solutions currently exist?
+ * What contribution can / should DataONE provide in this landscape?  How can that be best achieved?
+
+Need to keep in mind that data management plans should be prepared with an understanding that the plans should be able to be implemented.
+
+Proposed plans often are done way before a project is awarded funding, and not as well thought out as after being funded.  Need to then revisit what the plans are and how to operationalize the data management plan to meet the project objectives.
+
+What are the main challenges?
+ * What the objectives are.
+ * What technologies are available.
+ * What resources are available.
+ * What the community wants and needs.
+ * NKN example
+   * resources needed to sustain research throughout the project
+   * place where the data is going to persist forever, but this isn't part of the project funding very often, how to pay for long-term curation and preservation of data
+ * * Sustainability of data management for operation
+ * Estimation of costs
+ * Finding examples of what's good and what's not good, based on funding or not
+   * was the DMP part of the review evaluation or not
+   * expectations are a moving target from agencies
+ * Lagging institutional policies
+   * conflicts between different institutions and state laws with collaborations
+ * Requirement of broader impacts and bringing in more communities for accessing data leads to broader DMP scope which leads to more project costs 
+
+What solutions exist?
+ * Leadership community
+ * Research Data Alliance (https://rd-alliance.org/) and their examples of how data centers are working effectively, and working on lots of issues around data management and policies in particular.
+   * An international group, US, EU, Australia right now
+   * Looking at policy issues, PIDs, metadata, access to data, publishing data, etc.
+   * Some consensus among scientific community around guidance for projects/practices in this area
+   * Second meeting is in Washington, DC in September
+   * Members of community could propose new group to focus on particular problems
+ * NKN example
+   * leased out equipment right now, helps with short term storage, balancing of data across newer and older equipment
+ * Storage cost models for preservation
+   * Princeton
+   * San Diego Supercomputing Center - roughly 1/3 to each of equipment, operations/management, replaceable media
+   * agency subscription model
+   * Digital Preservation Network
+
+What contribution can / should DataONE provide in this landscape?  How can that be best achieved?
+ * DataONE serving as value for projects by taking on broader impact through data sharing and preservation, data subsetting, data reuse, demonstration of how the research is enabling new science
+ * Provision of metrics back to original data depositor/entity as a means of demonstrating how the data/project had an impact to the funder
+ * Exemplars for funders and fundees to see what worked, what is good, etc. to help guide the conversation
+ * * Trying to seek endorsement from the funders or via third party
+   * Have DMPTool group provide model of review and exemplars, guidance to review groups and funders
+   * Will be interesting to see what the impact of the May OSTP memo has upon this
+ * * Find way to fill gap between practice and perception/expectation for DMPs
+   * Data Management is a moving target
+ * * Figure out what would be needed to demonstrate compliance with DMP
+   * Example of checking at UNC Odum Institute for LOCKKS (Jon Crabtree) and IEDA DMPTool for NSF GEO
+   * External assessment of the workflow for reporting back to agency on effectiveness and success with broader impacts
+   * USGS Climate Science connection of project metadata record back to project, they have a template for this for reporting
+
+
+
+
+

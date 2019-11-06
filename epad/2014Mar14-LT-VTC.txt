@@ -1,0 +1,118 @@
+Attendees: Rebecca,Carol, Matt, Bruce, John K, John C, Dave, Suzie, Trisha
+
+
+Regrets: Bob, Amber, Deborah
+
+
+9am AK/10am PST/11am MST/noon CST/1pm EST
+
+We will also use the epad: http://epad.dataone.org/2014Mar14-LT-VTC 
+
+1.  Please join my meeting, Mar 14, 2014 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/667175232
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0622
+Access Code: 667-175-232
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 667-175-232
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+
+Agenda 14 March 2014
+   * CI Status (Vieglais)
+On going issue with CN Synchronization: final stages of testing; doing test runs on the order of 10,000 objects; current schedule is for next week if final bugs sorted out; will be a long run so scheduled for next weekend
+Chris trying to push out new Metacat on CN in preparation for CN synchronization
+
+New DNS- moving to Amazon service (route 53); easier to make changes for production environment; one disadvantage is it is a paid service (pennies a month - on DV's cc right now)
+Scheduled CCIT meeting: June 24-26 in Santa Barbara - need headcount to reserve rooms; meeting geared
+to winding down current activities and planning for next phase
+Dave has been working with Chris on remaining activities - mainly maintenance activities in preparation for phase 2 of project
+Winding up discussions on mutability and metadata objects
+Member Nodes: 
+Dryad, KU, Gulf of Alaska, NKN
+
+EDAC is in testing and should be next  - important because they have lots of content
+
+IDCC Workshop: very successful with active audience for the most part (just a couple of "visitors") - turned out to be an audience interested in technical details (12 at some point, 6 stayed for whole day - IDCC had ended so was a travel day for some)
+Laid some good groundwork for people earlier in the process of becoming a MN - good foundation for the Helsinki workshop and the webinars 
+
+Next up: Bruce doing a talk in Crete first week of April
+Next workshop: Helsinki at Open Repository  in June
+
+
+   * CE Status (Budden)
+Internships: Applications due on Tuesday.  Please promote - we have less than a dozen applicants TOTAL so far.  Anticipate a rush this weekend but more promotion is needed.
+Newsletter: Awaiting pieces from Bill (he is aware), Dave (he is aware), Me (I am aware).  received pieces from Bob, Laura, Dryad - many thanks.
+? question - is there a place where we can see who has applied?  i think previously you had a spreadsheet link.  i am wondering if i need to round up more applicants still or if i am covered.
+IDCC workshop went well (covered already by Dave?)
+ESA abstracts are all in for the three ignite sessions - thanks everyone.
+Abstract submitted to LITA for a 1-hour presesntaiton / QA on MNs.
+No other significant status updates.
+
+   * Result of RSV (Michener)
+
+It went well.
+We have no official response back.
+
+Cobb notes: Things at NSF may start to settle into a normal ops mode. Senate approved new Dir. this week.
+
+   * Risk Register (Koskela)
+
+Please review the risks assigned to you - update/reassign/close as needed
+redmine risk register: https://redmine.dataone.org/projects/d1risk/issues?query_id=30
+Spreadsheet of risks by person assigned to: http://bit.ly/PAPPBi
+[I had a login problem with the link above, but if  Ioged in to Redmine navigated to the risk projects, I could see them - YMMV - jwc thanks John this worked] (yes, need to login to redmine before you can run the query or see the risks assigned to you) (when I try to log in to redmine it says I am not authorized to view this. Carol )
+
+Allard:1 #109  closed it. 100% done for this 5 years
+Budden:4
+Cobb:3 - all three now updated.
+Cook:2
+Cruse:1
+Frame:3
+Hampton:1
+Hutchison:1
+Jones, M:1 #53 should be lowered to 'Low' probability due to mitigation. Hazelcast was a dream (i/d say liklihood is high and impact medium -- i.e. it causeed problems but didn't knock us offline.)
+Kelling:2
+Koskela:17
+Michener:3
+Tenopir:2 #127 changed to 30% with scientist baseline data added to Dryad
+Vieglais:14
+Vision:1
+Wilson:2: no changes recommended
+
+
+   * Around the Room
+
+Cobb: nothin' mo' to add
+something interesting to Note: Released/publicsize Pew report on Public perception of Libraries http://www.pewinternet.org/2014/03/13/library-engagement-typology/ (mostly talking about public libraries, academic/research libraries does not seem to be the focus.)
+
+Bruce -- Will be going to the EU BON meeting first week in April.  They wanted someone from DataONE there for training about repository interoperability.  So, I'll reprise about an hour or so of the IDCC workshop, as well as possibly participate in writing a paper about interoperability.  We have a telecon scheduled with about 150 people from EPA involved with data management on March 27th.  We had a good telecon with TERN and it's on my plate to draft the next version of a "MOU" (which might be a simple letter of agreement).  The point is agreeing on what's success and involving as few lawyers as possible.   
+
+Oh, and HAPPY PI DAY!!!! 
+
+Matt: Want to restart conversations with NODC about becoming a MN, as the GoA MN wants to replicate to NODC.  NODC's submission processes would be significantly streamlined if replication were possible.  I have a dev on another project that could contribute to this work.
+
+PPBIO (Program for Planned Biodiversity) MN still working on connectivity issues at LLNC; they discovered firewall issues today; Ben Leinfelder @ NCEAS is continuing to work with them.
+
+Working with Ted Habermann on DIBBS proposal with DataONE as a partner. Several other MNs are involved too (ORNL, EDAC, KNB) as well as potential MNs like NEON.
+
+RK: problems with docs.dataone.org - Matt: essentiallly system is at end of life so only Kepler and DataONE left on it
+Dave: working on a replacement (alfresco) that should be available by the time of the All Hands Meeting. TC: UC Berkeley uses alfresco for a project called Research Hub and they have had good success with it.  It is available to the whole campus.
+
+Carol: Scientists/educators survey is now closed with over 1300 responses; Academic libraries follow-up was deployed this week, as was State Libraries/policy makers baseline.
+N=1380 !
+
+Suzie: (1) This week I was a panelist on an NSF webinar which is part of the series on Long-Term Observing Management and Governance hosted by the Arctic Observing Networks.  The panel focused on information sharing and communication as related to long-term observations of the environment and socio-economics.  It is recorded and available. I was contacted from being a member of the DataONE team. (2) I have been named to the LJ Academic Board as a "thought leader" to help the editorial team look to the future and develop appropriate content. Another chance to keep our work in front of the larger library community. (3) I was invited to an NSF workshop on trust  and we will be sending two doc students — both Reid and Frances will  have a poster discussing work Carol and I have been doing on scholarly trust in the e-environment particularly related to scholarly publications and Frances will be also have a poster on the issue of trust in scientific resources with a project titled "The high cost of secrecy: the tenuous relationship between secrecy and science." (4) DCC formally announced the release of "How to Discover Requirements for Research Data Management Services"  coauthored with Angus Whyte and DataONE prominnently mentioned. Available at http://www.dcc.ac.uk/how-discover-requirements
+
+John K: nothing to add
+
+Trisha: I attended a BRDI (Board on Research Data)  http://sites.nationalacademies.org/PGA/brdi/index.htm meeting in DC earlier this week on sustaining public repositories... good meeting, good conversation.  NIH, NSF, OSTP, DOE, USGS, etc. were in attendance. Takeaway was that there is no easy answer and a bunch of challenges.
+
+

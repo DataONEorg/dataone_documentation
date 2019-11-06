@@ -1,0 +1,110 @@
+Attendees: Rebecca, Bruce, Amber, John, Matt, Dave, Deborah, Bob, Bill, Bertram, Viv
+
+Regrets: Todd, Steph, Suzie, Mike
+
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+We will also use the epad: http://epad.dataone.org/2013Sep20-LT-VTC 
+
+September 20: Sustainability & Governance WG in years 6-10 (Trisha, Bill)
+
+
+1.  Please join my meeting, Sep 20, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/228858880
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (510) 201-0301
+Access Code: 228-858-880
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 228-858-880
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+ 
+Agenda for 2013-09-20
+
+1.  CI Report (Dave)
+
+ * Preparations for CCIT meeting. Main topics include:
+   * Streamlining member node participation
+   * Schedule alignment for Y5
+   * Details on a number of technical threads
+ * Discussions with James Gallagher and Dave Fulker about OpenDAP as a member node
+   * Next steps are basically scoping activities, select target repositories that might be able to assist.
+ * Progress with dashboard
+   * Reviewing options for showing the spatial coverage of data as described by metadata
+ * Infrastructure v1.2 in process of being deployed
+   * Includes new resource map parsing that removes or reduces likelihood of malformed resource maps appearing in DataONE, but triggered regeneration of some ORE docs such as those produced by Merrit. That problem resolved, but in the process, the old content was deleted. This issue - the one of immutability or longevity of content is one that requires education on the part of repository operators.
+   * CCIT needs education on running a data center in addition to the item above
+   * Indexing is taking awhile to be completed
+ * CTSC Meeting in Arlington coming up at start of October (what is CTSC? Center for Trustworthy Scientific Computing at U. Ill Chambana - Basney, Butler, ...)
+
+2.  Sustainability & Governance WG in years 6-10 (Trisha, Bill) - postponed
+
+3.  Report on NSF meeting (Bill)
+Bill and Rebecca met with Bob Chadduck at the RDA meeting in Washington, DC.
+
+Q: timing for submission given this?(jwc) same as before - 15 pg with 5 page of achievements white paper due on - oct 21st
+
+
+ 4.  RDA reports from those attending (Bill, Rebecca, Trisha, John K, John C, ?)
+ 
+ From Rebecca:
+ Report back from the Metadata Standards Directory Working Group & Metadata Interest Group (Co-chairs: Jane Greenberg, Rebecca Koskela, Keith Jeffery (UK)
+• Meeting room full (>50) – lot of interest
+• Product: directory of metadata standards for research datasets
+• Purpose: reduce reinventing the wheel and improve best practice
+• Plan
+ * –Define ‘to be’ metadata standards directory
+ * –Note ‘as is’ especially DCC directory (http://www.dcc.ac.uk/resources/metadata-standards)
+ * –Document gaps and requirements
+• Not just human readable / useable
+• Mappings and convertors documented fully for interoperation
+• Need access to experts on each standard – social network of community
+• Evaluation of standards by community comment
+ * –send questionnaire / survey of meeting attendees to improve specification of the ‘to be’ directory (1 mo)
+ * –meantime improve DCC coverage
+•Generate form (Jane Greenberg team with DCC team) (3 mo)
+•> 50% of attendees said they would contribute input (6mo)
+–And generate use cases for use of the proposed directory (9mo)
+ 
+At RDA 2nd plen this week, spoke with Jeroen Rombouts at TUDelft. He works with a institutional repository for many of the Free Universities. He is interested in identifying discpline specific portals to publish appropriate subsets of the repository to increase awareness and dscoverability - possible new MN.
+Many other non-DataONE interesting stuff for me. 
+(Following Wilbanks presentation, I am now drinking from Blue solo cups ) <http://www.slideshare.net/wilbanks/rda-plenary>
+ 
+ Deborah: question to rda attendees - is there a thought about how dataONE best interacts with rda?       
+ 
+Should be members of appropriate WGs and IGs
+ Bill is on the Technical Advisory Board (TAB) for one-year
+ John Kunze is running for one of the slots on the TAB get involved link: https://www.rd-alliance.org/get-involved.html
+ https://rd-alliance.org/node
+ 
+  5.  Proposal progress and Q&A's
+  
+
+  6. Around the room
+  
+  Rebecca: in Boulder next week for COOPEUS meeting (Sep 25-27)
+
+John Cobb:  Reminder: There *>WILL<* be a Member Node Wrangler meeting following the LT call today. (I'm not sure the notice got through the interwebs yet )
+
+Matt Jones: Great OPeNDAP conversation with Dave Fulker, James Gallagher, and others.  They are enthusiastic about participating, and it looks like we may be able to both adapt OPeNDAP to utilize the DataONE API and work with them on new features re: data subsetting and aggregation.  We identified JGOFS and NODC as potential member nodes that would use OPeNDAP, and Dave Fulker will be contacting them about this.
+
+Deborah – Semantics 
+·        Announced working group co-leadership change at last WG meeting last week.  The working group thanks Jeff Horsburgh for his co-leadership and welcomes Mark Schildhauer as the new co-leader.  (Deborah McGuinness will remain as co-leader).  Jeff will continue his participation on CCIT and still participate as possible in the group.
+·        Postdoc Patrice Seyed collected additional publications to be added to the DataONE publications list.  The working group list is up at https://docs.google.com/document/d/1B3vwTJEoO5Td0pdun6cccFE-xI1jK7EO9pVQK8XgrGQ/edit?usp=sharing
+Patrice Seyed will represent the working group and dataone at the EUDAT meeting next week in Barcelona.  Seyed and McGuinness submitted a position paper to be discussed at the meeting
+
+Bob:  nothing new to report this week
+
+Amber: Working on the newsletter, working with DUG chairs to establish the structure of the new steering group, charter revisions etc.
+
+Viv: 1) Amber politely reminded me to get a move on with my part of the proposal writing - will be working on that in the coming days. 2) Headed to the Data Information Literacy Symposium hosted by Purdue University Monday and Tuesday next week - presentation will include information on DataONE data management modules, workshops, etc. that relates to educational needs for new researchers.  
+
+Bertram: nothing new this week (will be at EUDAT next week as well, reporting on ProvWG strategies; getting ready for AHM/ProvWG meeting)
+

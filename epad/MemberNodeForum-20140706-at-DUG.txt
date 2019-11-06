@@ -1,0 +1,197 @@
+Member Node Forum - 6 Jul 2014
+                                                                                    
+This is a special face-to-face meeting of the Member Node Forum, held at the 2014 DataONE Users Group meeting at Copper Mountain, CO.
+
+Normal bi-weekly meetings are held every 2 weeks on Thursday  8pm South Africa, 3pm BRT (Sao Paolo,  etc.), 2pm AMT (Manaus, etc.),  2pm EDT, 1pm CDT, noon MDT, 11am  Arizona  and PDT, 10am AKDT or  Friday  2am Taiwan, 4am Brisbane AEST
+
+We have a standing GoToMeeting:
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+                                                                         
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+=======================================================================
+
+Session 3, 11:10-12:30b
+
+Agenda:
+
+0. Welcome new attendees - introductions: 
+
+Reagan Moore, PI of DFC - Interested in sites for distributed data, layering the DataONE MN API on top of the iRods software stack
+ * Looking for feedback on policies/best practices on publishing packages in DataONE via iRods collections
+ * Which data collections / objects from the existing iRods communities would be appropriate for inclusion in DataONE?
+
+Mike Frame, USGS - Goal is to publish data from different USGS groups uniformly to DataONE. Desire to use same processes as Government Open Data workflows that are in use in USGS.
+
+Wendy Thomas - MPC
+ * Using the DDI metadata standard, which should be supported by DataONE
+   * DDI captures the data lifecycle
+ * Need to iron out the issues of mapping the DDI model to the DataONE model
+   * How much detail should go into the OAI-ORE records?
+
+Nicki F. - Australian reasearch network (TERN)
+ * International perspective:
+   * Licensing - how does DataONE treat licensing issues? (Creative Commons)
+   * People will share their data more readily if they are assured nations will respect the license
+ * Using semantic/ontological search within TERN, and their internal system doesn't implement the DataONE API. Using Metacat to bridge the gap. Perhaps there should be discussion on implementing the API directly?
+
+Felimon Gayanilo - Texas A&M - GCOOS system architect
+ * Using the OpenDAP protocol to serve data
+ * Data are cataloged at IOOS.us
+ * Would be good to get the 10 regional OOS's to publish data via DataONE
+ * Promoting open science and open data
+   * Licensing: data must be shared without restriction 1 year after collection (GCOOS policy)
+ * Metadata issue: many PIs don't provide appropriate metadata, using a review process to define core elements needed (regardless of metadata format)
+   * Are concentrating on ISO 19115-2
+   * Developed an open metadata editor - open to the public
+   * Use OpenID - would like to use this across DataONE?
+   * Subsetting is challenging
+     * Works with OpenDAP/THREDDS, but is not universal
+
+Matt Nielson - USGS
+ * National repository for biogeographic data
+
+Jim Myers - SEAD
+ * SEAD provides value-added services if PIs add metadata to their data
+ * DataONE should prepare for richer metadata (than just science metadata)
+   * provenance
+   * dublin-core publishing elements
+   * packaging and data granularity is a big issue, tracking, as well as annotation/commenting from researchers
+   * 
+Patrick West - Rensselaer Polytechnic Institute
+ * Working on provenance capture within OpenDAP protocol
+   * also, 'pingback' to allow derived dataset users to 'attribute' back to the source
+ * Potential MN (or multiple MNs) like Deep Carbon Observatory
+ * Provide tools and ontologies to help visualize datasets (tool group in ESIP)
+
+Nancy  Hoebelheinrich- Knowledge Motifs LLC; also working with RPI on ToolMatch service for ESIP 
+ * Identifying collections for particular visualization tools (Nancy should be consulted during Data Services effort for DataONE)
+ * defining terms for visualization across domains (mapping, gridding),
+ * looking at dataset provenance as well
+ * potential for collaboration / linking between DataONE's tools list, but also data collections via ESIP's data catalog that is being built, called DSTCCP:  Decision Support Tools Tools Catalog and Community of Practicefo90r Climate Change http://commons.esipfed.org/node/1462
+
+Soren Scott - EDAC MN - New Mexico EPSCOR
+ * currently research products of the last round of EPSCOR research
+ * Plan to use DataONE replication to replicate data to other EPSCOR states (NV, ID)
+
+Lynn Yarmey - NSIDC (BEW: NSIDC is a NASA Data Center, peer to ORNL DAAC, with a long history of collaboration between these two).  
+ * Co PI on Arctic data center
+ * biological data, oceanographic data
+ * metadata brokering software - harvesting (8 repositories being harvested)
+
+Corinna Gries - GLEON
+ * Openly sharing data is challenging
+ * Datasets need to be a citable unit
+ * Subsetting of huge data streams is a challenge
+
+Jamin Raigle - Systems Administrator UNM
+
+Bob Sandusky - UIC
+ * replication member node
+
+MF - General comment - Metadata can contain a number of services that could then address different metadata standards, services that exist at the MN Institution. DataONE probably needs to look at how to expose these MN services (some of the Data Services in Phase 2 will address this) in Discovery process
+
+In response to DataServices Registery - should also include services in Metadata to take advantage of those services within MN on some of their datasets. DataONE just needs to figure out how to "invoke" those services at various stages during search, discovery, and viz.
+ 
+1. Network-wide update and issues affecting MN's as a whole
+NEWS:
+
+The Member Node dashboard was officially announced last week:
+    http://www.dataone.org/news/new-dashboard-provides-real-time-information-dataone-exposed-content
+The "dashboard" is now the landing page when a user goes to the Member Nodes page at the DataONE website (www.dataone.org):
+    http://www.dataone.org/current-member-nodes
+
+-----
+
+Welcome new Member Node LTER-Europe!  David Blankman is the primary point of contact.  You may have seen the public announcement last week:
+    http://www.dataone.org/news/lter-europe-european-long-term-ecosystem-research-network-joins-dataone
+For information about LTER-Europe, check out their website here:
+    http://www.lter-europe.net/
+
+-----
+
+Welcome new Member Node EDAC!  Soren Scott is the primary point of contact.  The public announcement went out Monday, 23 June:
+    http://www.dataone.org/news/earth-data-analysis-center-edac-joins-dataone
+and for more information about hte Earth Data Analysis Center at UNM:
+    http://edac.unm.edu/
+
+=====================================================
+
+Session 4, 1:30-2:50
+
+
+Agenda:
+
+0. Welcome new attendees - introductions: 
+
+Greg Golllberg - Northwest Knowledge Network,
+Andrew Sallans - Center for Open Science, not planning to set up a MN (but hoping for connection to DataONE systems in future for submission and consumption)
+Dan Valen - product specialist at Figshare
+Chris Eaker, University of Tennessee
+Debora drucker, EMBRAPA, INPA, Brazil
+Tracey Kugler, MPC
+Karl Benedict, formerly EDAC, now Research Data Services, UNM
+
+Extensive discussion of the series ID concept and how things work with multiple MN's having copies of the same data.  The gist is that if the identifiers and checksums are the same are the same, the second node coming in will be recognized as being a copy (replica) of the first.
+
+Some concern about what happens if the data are the same (identical checksums) but the identifiers are the same.  Bruce to write a story for Redmine about creating a report (potentially part of the dashboard?) of hash collisions with differing identifiers.  Given the probabilities of a happenstance hash collision (even with MD5) it is likely that two files with the same checksum are the same file.  
+
+Discussed V2 of API coming out.  Member nodes will need to upgrade when this comes out.  Bruce and Laura to work out the tracking for this and providing information to MN's about what will be involved in doing the upgrade. MN's will be able to stay at V1 of the API for "a long while".  Key elements of V2 are the series identifier and shifting the authority for system metadata from the CN to the MN.  
+
+Question about what's coming up with provenance tracking.  Paolo Missier and Bertram Ludaescher key people working on the provenance working group.  The work being done here is being mapped out.  Based on Prov proposed W3C provenance traces (see http://www.w3.org/TR/prov-dm/ and http://www.w3.org/TR/2013/NOTE-prov-overview-20130430/ and http://vcvcomputing.com/provone/provone.html).  Key aspect of our work is making this provanance data searchable.  
+
+1. Network-wide update and issues affecting MN's as a whole
+NEWS:
+
+The Member Node dashboard was officially announced last week:
+    http://www.dataone.org/news/new-dashboard-provides-real-time-information-dataone-exposed-content
+The "dashboard" is now the landing page when a user goes to the Member Nodes page at the DataONE website (www.dataone.org):
+    http://www.dataone.org/current-member-nodes
+
+-----
+
+Welcome new Member Node LTER-Europe!  David Blankman is the primary point of contact.  You may have seen the public announcement last week:
+    http://www.dataone.org/news/lter-europe-european-long-term-ecosystem-research-network-joins-dataone
+For information about LTER-Europe, check out their website here:
+    http://www.lter-europe.net/
+
+-----
+
+Welcome new Member Node EDAC!  Soren Scott is the primary point of contact.  The public announcement went out Monday, 23 June:
+    http://www.dataone.org/news/earth-data-analysis-center-edac-joins-dataone
+and for more information about hte Earth Data Analysis Center at UNM:
+    http://edac.unm.edu/
+
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+PPBio - SSL certificate issue: browsers don't support certificates issued by the gov.br CA
+MPC - DDI metadata alignment with DataONE is the next challenge
+EDAC, NKN - identifiers: replicas at different institutions that are out-of-band replicas (from the D1 perspective).
+
+3. Feature requests/opportunities for collaboration:
+
+
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+
+
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't   forget irc.ecoinformatics.org, channel=dataone if you have an urgent   issue.  CCIT folks are always there and can assist you.
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307  (note typo on year-sorry), -20130321, -20130404, -20130418,    -20130516,   -20130530, -20130613, -20130627, -20130711, -20130725,    -20130808,   -20130822, -20130905, -20130919, -20131003, -20131017,    -20131031,   -20131114, -20131212, -20140109, -20140123, -20140206,    -20140220, -20140306, -20140320, -20140403, -20140417, -20140501, 20140529
+

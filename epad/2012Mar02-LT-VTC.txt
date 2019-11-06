@@ -1,0 +1,108 @@
+ Attendees: Rebecca, Amber, Bruce, Hilmar, Trisha, Viv, Hilmar, Bill, Steph, Steve Kelling, Mike, Carol, John Cobb,Matt
+
+Regrets: Dave Vieglais, Bob Cook,
+
+
+1.  Please join my meeting, Mar 2, 2012 at 10:55 AM MST.
+https://www1.gotomeeting.com/join/333856473
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (832) 999-1000
+Access Code: 333-856-473
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 333-856-473
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Will also use the epad: http://epad.dataone.org/2012Mar02-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-03-02
+ 
+1.  CI Status (Vieglais by email)
+ CI Status Update, 2012-03-02 
+
+== Summary ==
+
+There are three environments being used for the release of the infrastructure: Development, Sandbox, and Release. The development environment contains the very latest, potentially unstable or broken software. The Sandbox contains our latest release candidate. The
+release environment is the operational infrastructure. Each of these environments is a complete setup including member nodes, coordinating nodes, and client tools. As such, each requires a number of virtual machines and numerous software components to be installed and configured. Despite being largely automated, the process to install an updated component can involve a significant amount of time simply because of the number of items that need to be managed. The issue is compounded when there is a change required at a very low level in the system, since in such cases it is necessary to update all the
+dependencies as well.
+
+Both the development and sandbox environments are deployed, but have known issues. The release environment is not deployed beyond virtual machine installation (ready for DataONE components to be installed).
+
+We expect to have the Sandbox environment ready for testing next week. This was supposed to happen earlier this week, but the time required for performing the updates was underestimated.
+
+Once the Sandbox environment is updated to the latest release candidate, we will request feedback from the DataONE project members. Suggestions for change will be progressively incorporated into the development environment to create a new release candidate. That new
+release candidate will be reviewed once again. If no changes are needed, then we can progress to a release deployment.
+
+We should consider that the DataONE infrastructure is advertised as providing stable archive services for reliably accessing data and metadata from participant member nodes. If this consider this to be a core value of DataONE for the community, then we can not advertise the
+infrastructure if there is uncertainty in performance and stability.
+== Timeline ==
+
+Today:
+Should have Development environment running with latest snapshots. We should also have the Sandbox environment installed with the latest RC.
+
+Week of March 5-9:
+- Advertise availability of Sandbox to the DataONE leadership team plus CCIT for review during next week.
+- Incorporate suggestions in the Development environment (trunk) in preparation for next RC.
+
+Week of March 12-16:
+- Build out and advertise next RC for review. Incorporate changes if necessary.
+- Build out release environment
+
+Week of March 19-23:
+- Update release environment as necessary
+- Target public release on that Thursday, the 22nd
+
+The upshot is that any significant issues identified during RC evaluations takes about a week to get incorporated into a full environment - going through the process of fixing the issue (coding), testing, and deploying. Minor issues can be corrected more quickly, within a day if interactions with other components are minimal.
+
+Would be good to put the press release out on a Tuesday so target April 10th (while Amber is on vacation in Japan)
+Soft announcement at CNI meeting (April 2-3)? Trisha hoping to go but not confirmed yet
+
+
+2.  Sociocultural WG charter update and new members (Allard/Koskela)
+ * SCWG charter — updated to reflect new deliverables and some wording clarified
+https://docs.dataone.org/member-area/committees/management-team/meetings/2012/2012mar02/SCWG Charter 1.10.12.docx
+ * Nominations results:  
+   * We had three people elect to leave the group: Chuck Humphrey, Helena Karasti, and Scott Tomlinson.
+   * Attached is a list with the SCWG members' top three choices and our "backup" choices"
+https://docs.dataone.org/member-area/committees/management-team/meetings/2012/2012mar02/SCWG Nominations.docx
+
+3.  Around the Room
+
+Bruce -- With thanks to John Cobb for making and pushing the nomination, Nick Dexter was recognized this week as the NICS/JICS Distinguished Employee for March, 2012.  This is nice recognition for the outstanding work Nick has done in getting the ORC node set up, as well as some nice recognition for DataONE in the ORNL Computers and Computational Sciences Directorate.  
+
+Mike: will send email to get meeting with Dave and Matt to work on agenda for USGS/DataONE in April 
+
+Trisha: I will be attending the RDAP conference in N.O. and will have a poster and will be sure to include DataONE.  John Kunze and I and other CDLers met with Thorny Staples, Smithsonian yesterday and we are looking for ways to collaborate and DataONE came up a bunch.  CNI is hosting a data management meeting and I am hoping to attend.
+
+John:
+Data Symposium in Milwaukee yesterday. Good dataONE receptions. Sylvia Spengler sent her best as did Cliff Lynch. Ian Foster is interested in deploying Globus Online on DataONE to assist for needed file transfer, particularly large, hi-bandwidth needs. I will upload the presentation slides soon. The eBird EVA example was well received.
+Line Pouchard is beginning a  task working with the RDAV analysis center (http://rdav.nics.tennessee.edu/). She is framing a SOW and could include dataONE oriented  tasks. She will be contacting Dave Vieglais to confirm that the SOW is aligned to DataONE needs.
+
+Steph: visited with CUREnet, a NSF RCN of undergraduate focused faculty who implement research experiences into undergrad courses, typically data-intensive exercises, with collaboration and sharing among universities - there was widespread interest in D1, so I re-engineered my talk to focus more on D1. A great group, led by Erin Dolan at UGA, for connecting with primarily-undergrad institutions, enthusiastic instructors doing data-intensive work. Paul Allen from Cornell was also there.
+Editorial published: 
+Stephanie E Hampton, Joshua J Tewksbury, and Carly A Strasser. 2012. Ecological data in the Information Age. Frontiers in Ecology and the Environment 10: 59
+http://www.esajournals.org/doi/abs/10.1890/1540-9295-10.2.59
+
+
+Viv: Working on pulling together a DataONE workshop in May --- progress this week in getting trainers to confirm. So far, Carly Strasser, Heather Henkel, Lisa Zolly, Viv, and Amber are confirmed. (Bob is interested but could only get there by Wed afternoon). Viv/Trish - if we finish early can we stay on to talk about this? (yes from TC)
+
+
+Amber: Rebecca and I called in to a Internet2 Net+ Microsoft meeting yesterday.  Little utility in terms of discussing DataONE but when profiling Microsoft tools, they had great things to say about the DCXL project and the blog / website being maintained by CDL.
+
+Hilmar: NSF has awarded a new 4-year grant to Dryad. See http://blog.datadryad.org/2012/03/01/nsf-provides-further-support-to-dryad/
+
+Bill: at the Rio meeting of Creative B with Bob Cook - focus on biodiversity data (16-20 attendees); will be a series of 5 meetings; need someone focused on biodiversity (Mike Frame, Dave or Matt)
+July 2-4 in Copenhagen; they will cover one DataONE person at these meetings. Data governance will be topic of the 4th meeting and DataONE may host that meeting in Santa Fe or Albuquerque (spring 2014)
+
+Matt: Met with NEON. The meeting was productive -- we learned a lot about the current plans for NEON, and I think they now have a good idea of our plans and approach to building a large, interoperable federation of data repositories.  Given that the urgency of the construction schedule just increased a lot for NEON, we agreed that it would be good to explore a concrete collaboration after they make some progress on constructing their initial sites.  We've agreed that it would be profitable to pursue three major areas of collaboration, including 1) having NEON expose their data as a Member Node in DataONE for interoperability with other relevant repositories; 2) working out a shared approach to publication of continuous streams of data like those that are being produced in NEON, and 3) ensuring that we have compatible visions for data citation practices and the assignment of globally unique identifiers (NEON will contact Bob Cook and other D1 members working on Data Citation whitepapers/standards; they want to be sure that ESIP/DataONE/etc are all compatible with their recommendations).  We also discussed some of the ongoing DataONE/NEON collaboration on community engagement and education (e.g., this summer's ESA workshop being organized by Steph Hampton, Viv Hutchison, Amber Budden, and Wendy Gram), and that there are certainly going to be additional opportunities for collaboration in this area.
+
+Ultimately, we decided that we would touch base again at the July DataONE Users Group meeting (some NEON staff will be there), and then we will have a joint session in September at the DataONE All Hands meeting to decide on a concrete path forward.
+
+Carol: Nothing this week.
+

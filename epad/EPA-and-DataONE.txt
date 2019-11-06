@@ -1,0 +1,58 @@
+EPA and DataONE
+
+Informational meeting 7 January 2014, 1:00p EST
+
+1.  Please join my meeting, Jan 7, 2014 at 1:00 PM EST.
+https://www1.gotomeeting.com/join/282547033
+
+2.  Join the conference call:
+Call in #: 866 299 3188
+Code: 4017829655
+
+Meeting ID: 282-547-033
+ 
+Bruce’s slides at:
+https://www.dropbox.com/s/5aj07eldkdwesd5/DataONE%20Intro%20for%20EPA%202014-01-07.pptx
+
+Attending:  Bruce Wilson, Jeff Hollister, Amber Budden, Dave Vieglais, Laura Moyers, Mike Galvin, Gerry Laniak, Mike Frame, Ken Laws, Ann Vega, Kerry Burch
+
+Bruce shared a DataONE overview (slides above).
+
+From http://www.dataone.org/: 
+Data Observation Network for Earth (DataONE) is the foundation of new  innovative environmental science through a distributed framework and  sustainable cyberinfrastructure that meets the needs of science and  society for open, persistent, robust, and secure access to  well-described and easily discovered Earth observational data.
+
+Supported by the U.S. National Science Foundation (Grant #ACI-0830944)  as one of the initial DataNets, DataONE will ensure the preservation,  access, use and reuse of multi-scale, multi-discipline, and  multi-national science data via three primary cyberinfrastucture  elements and a broad education and outreach program.
+
+ORNL DAAC is the Oak Ridge National Laboratory's Distributed Active Archive Center - the ORNL DAAC MN currently operates at Tier 1 (read only).  An EPA MN might want to operate at Tier 1, similar to DAAC.
+
+DataONE is sponsored/funded by the National Science Foundation - cooperative agreement with the University of New Mexico.  Other institutions such as UC Santa Barbara, University of Tennessee-Knoxville, University of Illinois-Chicago, NC State University, University of Kansas, etc. are involved in DataONE.  DataDryad (NCState) is involved, as is ESIP (Earth Science Information Partners), etc.  
+
+There are 3 Coordinating Nodes at University of New Mexico, ORNL/UT (Oak Ridge Campus), and UC Santa Barbara.
+
+Does DataONE use any ontologies or related-terms search functions to help a user find like-data?  We have the beginnings of such like-term searches.  We have a Semantics Working Group working on this issue; we hope to enable more semantics-based searching capability in the 2nd 5 years of DataONE, should we be funded as we hope.  
+
+The bulk of DataONE's funding is from NSF and we do have some funding from other entities such as MicroSoft, etc.  We have a Sustainability Working Group looking at issues of how DataONE becomes a self-sustaining entity.
+
+The first phase of the DataONE project ends 1 August 2014.  We have a reverse site visit at NSF in February.  We are optimistic that the second phase of DataONE will be accepted and funded at a level that will allow us to complete vital tasks as we've planned.
+
+What are benefits to DataONE and EPA of a partnership?  Ask the question: how does DataONE help/improve EPA's data management operations?  what is the best way to collaborate?  
+
+Why USGS is Participating:
+1.) Additional Outlet for USGS Data
+2.) Provides additional Earth Science Data to USGS Researchers
+3.) Adopting DataONE Tools (i.e. ONEDrive, DataUP) into USGS Environment
+4.) Re-purposing some of the DataONE Education/Outreach (Training Modules, Assessments of Sciencest needs, Citation practices, etc.) in USGS
+5.) We in USGS are also the lead in USGS/DOI for Open Data in Government and various standards, practices, tools, etc. being promoted by DataONE are very much in align with those goals. 
+
+If there are more questions related to USGS and DataONE, just send me an email at mike_frame@usgs.gov. 
+
+Jeff asked Mike to talk about USGS's experience with becoming a MN.  USGS involved with DataONE from the beginning.  Data management, tools for researchers, etc. are issues faced across USGS (and others!) - working with DataONE provided resources to help deal with these issues and provided access to other DataONE partners.  Last year's governement mandate for open data has provided the impetus for USGS to take advantage of many of DataONE's support systems.
+
+DataONE provides Data Management Best Practices, education, DMPTool, Investigator ToolKit, and other functionality beyond data discovery/delivery.  
+
+HPC data sets can be huge; EPA's climate change data can fall in this category (huge) - how does DataONE deal with extremely large datasets?  See the State of the Birds report - required significant HPC resources and generated large datasets (currently stored at Cornell Lab of Ornithology).
+
+Next steps?  have a DataONE person meet (physically/virtually) with EPA group(s)?   
+
+Ann suggested the ORD Scientific Data Managament Community of Practice.  I can follow up with her and Lynne Petterson (who runs that) about scheduling
+

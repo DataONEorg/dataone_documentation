@@ -1,0 +1,162 @@
+Introduction to Debian Configuration Changes in dataone-cn-oc-core
+-------------------------------------------------------------------
+
+Overriding Goal- keep all the properties that are defined in debian templates file in an xml file.  Allow for ansible and debian installation processes use the same configuration information.
+
+
+Overriding concern- debian config logic:  postinst logic should produce the same output as it previously did though the structure of the script will change dramatically.
+
+
+
+Implentation Ideas:
+
+ * Debian templates and questions will be maintained in an Xml file that conforms to a dataone maintained schema. The schema defines a structure in which templates are separate from their instantiation as questions.
+
+ * The template questions that need input should have empty values for their keys, including CUSTOM, ip and hostname. Empty values may also indicate a derived value. A derived value is one that can be found by querying other fields, possibly multiple fields.
+
+ * at the end of the postinst script, set all the seen flags to false so that the xml configuration files will repopulate the deb backend db upon upgrade. )r if ansible performs the configuration. the values in the xml configuration file will be ignored.
+
+ * postrm script can be edited to check for purge call, if it is called then wipe all values from the deb backend db.
+
+ * The template file is now recreated fully within the xml configuration file.  The template file will need to be maintained and reflected within with XML file.
+
+ * always requery for the cn.keystore.password and ldap.password
+
+ * all environments will be represented in the xml configuration. even CUSTOM.  CUSTOM questions will be empty to prompt user for input.
+
+
+
+There may be conflicts during upgrade. upon update, each question from the xml file should be checked against the value in the backend databbase. If a value has been previously assigned through the configuration xml file to the db backend, then the new value in the configuration xml file should overwrite the debian backend.  If the value was input from the user and the value in the db backend database is different from the xml template file, then the user inputted value should be set as the default and the user prompted again.  If the value was inputted from the user and the db backend database is the same as the xml template file, then the field should have the 'user input' flag removed and the xml template file value is once again the default.
+
+********************************* Modifications ********************************
+** in the xsd figure out a way to derived key and keyref from a parent tied to the template type, so as to provide nonambiguous validation
+**
+** Create a flag that indicates the source of the value.  the source maybe user input, maybe derived, maybe xml template default value. flags are booleans.  
+** Is there a need between determining the need of intended source use and actual source use.  The templates should show the intended use of sources for each 
+** template while each question should have the correct values based on the instantiation of the template.
+**
+** Create a new template for the cn.hostname.  Currently in the scripts the user of hostname -f should be deprecated in favor of pulling the values from the backend db.
+********************************************************************************
+
+If there is a conflict between what is in the template and what is in the db backend file, then prompt the user for input. 
+
+
+Potentially Unanswered Concern:
+Have a way to force asking questions. Maybe fill out default values from the xml or the debconfig db, if user wants to force the questions to be asked.
+
+The  user should always have a way for each environment to force  questions  to be asked.  The user's response always take priority over  what is in  the xml configuration file or the db backend database. 
+       INPUT priority question
+              Ask debconf to prepare to display a question to  the  user.  The
+              question is not actually displayed until a GO command is issued;
+              this lets several INPUT commands be given in series, to build up
+              a set of questions, which might all be asked on a single screen.
+
+              The priority field tells debconf how important it is  that  this
+              question be shown to the user. The priority values are:
+
+              low    Very  trivial  items that have defaults that will work in
+                     the vast majority  of  cases;  only  control  freaks  see
+                     these.
+
+http://manpages.ubuntu.com/manpages/lucid/man7/debconf-devel.7.html
+
+How does a debian installer become a control freak? THERE IS A DEBIAN PROPERTY THAT CAN BE SET.
+
+
+Implementation Notes:
+---------------------
+The dataone-cn-os-core/cn.installed template has been removed. There was no functionality tied to it and it was being set in the postinst script- a debian no no.
+
+The procedure of ftp'ing the server certificate's private key into one's home directory and keeping it there, then assigning cn.server.privatekey.filename to the absolute path of the key in a user's home directory, and then letting postinst copy the file into /etc/ssl/private has been deprecated.  The private key should be moved from one's home directory into /etc/ssl/private before installing the cn packages.  Private keys should never be maintained in a home directory. They should be installed into the correct system configuration directory, assigned appropriate permissions and deleted from one's home directory.
+
+ dataone-cn-os-core/cn.context.label is a derived value from the context attribute of the environment element
+
+ dataone-cn-os-core/cn.iplist is a derived value from all the ip attributes of the machine elements in this environment
+ 
+ dataone-cn-os-core/cn.hostnamelist is a derived value from all the hostname attributes of the machine elements in this environment
+
+ dataone-cn-os-core/cn.nodeids is a derived value from all the question element values with a key of cn.nodeid that are children of the machine elements in this environment
+ 
+ Concerning the templates with the strings:
+ replication.certificate
+ replication.privatekey
+ client.certificate  
+ they used to have full paths for each of the properties and had a suffix of .filepath on the end of them- such as cn.replication.certificate.filepath.
+ 
+ These questions now are divided into two different templates. One is the directory path to the certificate/key, the other is the filename of the certificate/key.  The reasoning being that the directory paths are unique per environment while the filenames are unique per machine.  Keeping the path at the environment level reduces redundancy of information and the filesize of the xml file. The full filepath can be determined by concatenting the directory path to the filename.  
+ 
+ Another odd issue is that the client certificate is found in the key directory because the PEM file contains both the certificate and the key. However, the replication cert and key are divided into the two different directory locations.
+ e
+cn.server.publiccert.filepath and cn.server.privatekey.filepath will be changed.  They will now be named cn.server.publiccert.filename and cn.server.privatekey.filename respectively.  The initial intent was for these files to be uploaded to a user directory and then have the installation process copy them to the correct system directory.Since these files should not be maintained in a user directory, the values as stored the database will be incorrect for future upgrades. I think we should make the directory paths a constant in postinst - SSL_CERT_DIR already is a constant and used.  It should be part of the dataone install instructions to copy the server key/server certificate/client cert + key and replication cert + key to the correct /etc directories and remove them from a home directory.
+ 
+Overview of template changes:
+  Additions:
+    dataone-cn-os-core/cn.client.certificate.dir
+    dataone-cn-os-core/cn.client.key.dir
+    dataone-cn-os-core/cn.hostname
+  Modification:
+    dataone-cn-os-core/cn.server.privatekey.filename from dataone-cn-os-core/cn.server.privatekey.filepath
+    dataone-cn-os-core/cn.server.publiccert.filename from dataone-cn-os-core/cn.server.publiccert.filepath
+  Deletions:
+    dataone-cn-os-core/cn.installed
+    dataone-cn-os-core/cn.client.certificate.filepath
+    
+The templateType in the xsd  is an abstract type to show that there is a relationship between templateQuestionType and templateFieldsType. This type has become  superfluous unless attributes become common between the two types again.
+
+Scripts should be idempotent, or they should produce the same results if executed once or multiple times with the same parameters.(http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html)
+
+
+Use of set -e in postinst script
+   grep  will be executed in a subshell. grep will return a failure if no  matches occur.  All grep should be using in the middle of pipes with the  output evaluated with awk, or grep should be evaluated in a  conditional.
+ Due  to idempotency, ldapadd will succeed the first time the sript is run  but fail the second time. Therefore, a pipe to 'exit 0' will be added to  any call to external ldap commands and output redirected to the log  file,   other external commands will need to be examined to determine if  exit codes unexpected return a non-success status for what we would  consider a non-fatal condition.
+ 
+A problem: Postinst should not be used to prompt user quesitons while config should not modify the filesystem.
+
+From the Debian Policy Manual 
+"Packages   which use the Debian Configuration Management Specification may  contain  the additional control information files config and templates.   config  is an additional maintainer script used for package  configuration, and  templates contains templates used for user  prompting.  The config script  might be run before the preinst script  and before the package is  unpacked or any of its dependencies or  pre-dependencies are satisfied.   Therefore it must work using only the  tools present in essential packages.
+...
+Any  necessary prompting should almost always be confined to the config or  postinst script.  If it is done in the postinst, it should be protected  with a conditional so that unnecessary prompting doesn't happen if a  package's installation fails and the postinst is called with  abort-upgrade, abort-remove or abort-deconfigure."
+http://www.debian.org/doc/debian-policy/ch-binary.html#s-maintscriptprompt
+
+From the Debconf Programmer's Tutorial
+Note: These questions are asked by a separate config script, not  by the postinst, so the package can be configured before it is  installed, or reconfigured after it is installed. Do not make your  postinst use debconf to ask questions.
+...
+Note:   Note that the config script is run before the package is unpacked. It   should only use commands that are in essential packages Also, it   shouldn't actually edit files on the system, or affect it in any other   way."
+http://www.fifi.org/doc/debconf-doc/tutorial.html#AEN113
+
+From the  Debian Developer's Reference
+Debconf  is a configuration management system which can be used by all the  various packaging scripts (postinst mainly) to request feedback from the  user concerning how to configure the package.  Direct user interactions  must now be avoided in favor of debconf interaction.  This will enable  non-interactive installations in the future. 
+http://www.debian.org/doc/manuals/developers-reference/best-pkging-practices.html#bpp-config-mgmt
+
+from debconf-devel(7) man page
+ The config script can be run in one of three ways:
+     
+      1. If a package  is  pre-configured,  with  dpkg-preconfigure,  its  config  script is run, and is passed the parameters "configure", and  installed-version.
+      2. When a package’s postinst is run, debconf will try  to  run  the  config  script  then  too,  and  it  will  be  passed  the  same  parameters it was passed when  it  is  pre-configured.  This  is  necessary   because   the  package  might  not  have  been   pre-configured, and the config script still needs to get a chance to  run. See HACKS for details.
+      3. If  a package is reconfigured, with dpkg-reconfigure, its config  script it run, and is passed the  parameters  "reconfigure"  and  installed-version.
+...
+The   config  script should not need to modify the filesystem at all. It just  examines the state of the system, and asks questions, and  debconf  stores  the  answers  to  be  acted  on  later  by the postinst script.  Conversely, the postinst script should almost never use debconf to  ask  questions,  but should instead act on the answers to questions asked  by the config script.
+http://manpages.ubuntu.com/manpages/lucid/man7/debconf-devel.7.html
+
+Decision:
+Unfortunately, either we cannot use an external xml file during the configuration (due to the constraints upon use of the config script), or we break the debian policy of trying not to use postinst script to ask template questions.  Since the goal is to merge default ansible and debian configuration settings insto a single maintainable file, the config script of debian will be removed and postinst will appropriate its functions.
+
+IMPLEMENTATION LOGIC
+--------------------
+
+Instead of the long main block of logic that guide executiong, the code should be organized along procedural lines. Code is restructured into bash functions. Functions should use local variables where possible. Functions should help to modularize the various tasks of postinst into distinct code blocks of related functionality. All Global variables will be maintained at the top of the script, followed by various task centered functions, followed by the main function.
+
+In the postinst, the xml debian configuration file will be parsed  by the the postinst script. Postinst's first choice will always be to find the xml  debian configuration file  online.  If it is not available (for whatever  reason), it will parse  the file that is installed after debian package is unpackaged.  If the  debian xml configuration is found online, it will  overwrite the the xml  file installed in /etc/dataone by the debian  packaging. If the xml config file is found online, the postinst script will attempt to download the xsd and validate the xml file with it. Otherwise, the file is checked for wellformedness.
+
+The templates section of the xml file  will be parsed into two associative arrays.  The key of an associative array will be the key of the template. For associative arrays holding flags, The value of the array will be a space separated list of booleans that can be used to create a second array representing the default flags.  These values are needed during each iteration of questions in order to determine update logic as well as set the debian backend db defaults upon initial installation.
+
+The debian backend will also be queried to determine the state of the database.  If the questions have their 'seen' flags set to false, then the xml templates section will be used to determine how to populate the backend database.  If the 'seen' flags are set to true, then the values from the backend database are used for postinst values.
+
+If the xml templates section populate the values used in postinst, then the values may be detemined in 3 different ways. The questions portion of the xml file representing the environment and machine of the node being installed will have values filled in for a variety of questions. The questions that the template section mark as configured will use the value as represented in the xml file. If the template indicates the question is user-entered, then the user is prompted for the value.  If the template is marked a derived, then each question has a unique formula for determining its value based on other question values.
+
+Create and reconfiguration logic differs from ugrade logic. During create and reconfigure, all the components are configured- apache, bouncycastle, certificates, check_mk, java keystore, the node properties file, openldap, tomcat and ufw.  The  upgrade logic will only execute those component configuration methods if certain values are altered from the previous values.  For example, if the template 'dataone-cn-os-core/cn.iplist' changes from one version to the next, then the node properties file and ufw will be reconfigured along with openldap.  But, openldap must always be reconfigured for every update since the password is wiped after each installation and re-entered during every upgrade.
+
+If values are changed in the xml debian configuration file, but no other logic has changed in the package, the debian package should be able to be reconfigured instead of re-installed and have the new values reflected in the configuration.
+
+
+

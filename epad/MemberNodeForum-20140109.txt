@@ -1,0 +1,99 @@
+Member Node Forum - 9 January 2014
+                                                                                           
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 23 January, 6 February, 20 February
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307    (note typo on year-sorry), -20130321, -20130404, -20130418,  -20130516,   -20130530, -20130613, -20130627, -20130711, -20130725,  -20130808,   -20130822, -20130905, -20130919, -20131003, -20131017,  -20131031, -20131114, -20131212
+
+Attending:  Laura Moyers, John Cobb, Amber Budden, Bruce Wilson, Ryan Scherle, Dave Vieglais
+
+Regrets: Matt Jones
+
+Action items from last time:
+
+Follow up on Coordinating Node issue - much work in the past several weeks to resolve
+
+Current status is the fix is being finalized; expect coding done by Tuesday next, hope to be run and done by Friday.  It's a complex issue comprised of fixing the "mess" as well as identifying the originating problem and correcting that so that we don't have the problem again.  
+
+Agenda:
+
+0. Welcome new attendees - introductions
+
+1. Network-wide update and issues affecting MN's as a whole
+
+CN synch issue (see above); otherwise everything else is good. 
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+ * Any news on Bug 6183: https://projects.ecoinformatics.org/ecoinfo/issues/6183 
+CNodeService API calls don't honor authoritative MN certificates
+    Week of 18 Nov, word was that this was fixed in Metacat but we hadn't been able to move fix to production.  Jing updated status of ticket to "resolved", but that may have only been in dev.
+    RESOLVED and in production. 
+
+ * (From  11/14/13 MNF meeting - Kevin Webb):  Issue with "only results with data" checkbox in ONEMercury search - currently defaults to checked;  see  redmine ticket https://redmine.dataone.org/issues/4144.
+
+3. Feature requests/opportunities for collaboration:
+
+IDCC MN workshop: Thursday Feb 27th, San Francisco, CA.  In conjunction with  the International Digital Curation Conference (Tuesday and Wednesday of that week).  People at prospective MN's interested in getting involved with DataONE are encouraged to attend:  
+
+ * For details of the DataONE workshop and the other workshops, see http://www.dcc.ac.uk/events/idcc14/workshops%20
+
+ * For more information about the IDCC conference and registration, see: 
+    http://www.dataone.org/news/register-now-dataone-mn-implementation-workshop
+    
+    No cost for the workshop itself.  You don't have to be registered for the conference ($$) to attend the workshop.  Deadline for registration: 7 February 2014
+
+FEEDBACK REQUESTED FOR THE DUG MEETING ---
+
+    We would like feedback from MN Forum members regarding what they would like to see at the DUG and how they would like to be involved.  Everyone seemed to like the MN Showcase last time.  What else would be important at the DUG?
+
+ESIP SUMMER MEETING - JULY 8-11, 2014 IN COPPER MOUNTAIN, COLORADO  
+DUG is Sunday 7/6 and Monday 7/7, co-located with the ESIP meeting, plans for lodging, etc. still in process.  
+
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+
+Dryad (Ryan) - talked with developers before the holiday break, they are working with server issues and haven't had a chance to check out current 
+    Ryan has an issue with the test node - when run register script, wanting him to submit a .pem file with a cert and a key, all Ryan has is the cert.
+    We provide cert and key; Ryan received cert from Rob Nahf on June 24.
+    Key through CILogon, used to authenticate with CN
+    We provide certificate for the node, the key is required to authenticate with the CN (one time thing).
+    Plan is to move dev instance to stage environment, run some testing there soon (Chris/Rob?) in preparation for the move to production.  
+
+http://mule1.dataone.org/OperationDocs/member_node_deployment/registration.html#obtain-a-client-side-certificate
+
+Dave will send Ryan an email with details.  
+
+
+JaLTER (Japan Long Term Ecological Research Network) interested in working with DataONE.
+
+
+If  you have any other comments/suggestions about anything discussed here,   please feel free to post to developers@dataone.org or  mnforum@dataone.org.
+
+
+OTHER INTERESTING THINGS: 
+
+DataONE survey to build understanding of data needs. "You   are invited to participate in an NSF-sponsored research study, in  which  the DataONE (Data Observation Network for Earth,  www.dataone.org)  organization is investigating how scientists work.  Your responses will  help us better understand how scientists manage  their data, which will  then allow DataONE to better serve their data  management needs. The  questionnaire should take about 20 minutes to  complete" https://utk.co1.qualtrics.com/SE/?SID=SV_aWxuyT94cZBsBb7
+
+contact points: 
+
+NEW EMAIL contact: mninfo.dataone@gmail.com  - This email monitored by DataONE staff.  I think we might migrate to  this being the primary point of contact for MN questions so we can keep   a better handle on issues/resolutions. 
+
+This isn't being used currently - most of the time we (MNs) just email the person we know or who we're working with.  
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't forget irc.ecoinformatics.org, channel=dataone if you have an urgent issue.  CCIT folks are always there and can assist you.
+

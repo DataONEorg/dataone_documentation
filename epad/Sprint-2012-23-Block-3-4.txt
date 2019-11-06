@@ -1,0 +1,128 @@
+
+Sprint-2012.23-Block.3.4 Notes
+==============================
+
+ * Production CN buildout discussion at the bottom of the epad
+
+
+ * Andy
+   * Tagged and branched 
+     * Will delete this tag, add documentation, and re-tag
+   * DataONE-Common
+   * DataONE-Client
+   * * DataONE-CommandLine <-- use this one
+   * Adding documentation using sphinx
+
+ * Roger
+   * Work on d1_python package - meta package for checking out all python packages with an overiview, explains dependencies, etc. Aimed at developers.
+   * 
+
+ * Alice
+   * work on CNodes log data visulization-get the number data from the cn/v1 log record and display it to a feature
+   * learing some js graphic libraries and try to use one kind of  JQuery Visulization Plugin to test the data display
+
+ * Jing
+   * Worked with Ben to test the Metacat 2.0.0 release
+   * Replication between Jing's local server and Ben's server
+   * Ran tests, all passed
+   * Ran Kepler against the production Metacat
+   * Minor issue with Kepler and using denyFirst rules - changed to allowFirst, seems to not affect functionality
+   * More testing on Kepler
+   * Will also work on Morpho design/documentation (move to next week)
+   * work on production releases
+
+ * Skye
+   * Worked with Robert on ServiceMethodRestriction ldif for getLogRecords and scripting for install.
+   * Replication testing with Chris - issue in MMP handling in MN.
+   * Working with Alice on metrics application, working in cn-dev env
+
+ * Rob
+   * building a web tester using the new v1.0.1 libclient
+   * reworking the getLogRecords tests to handle the differing access restriction implementations.
+   * Working on Mercury performance issues with Jim/Giri, slicing, etc.
+   * Expanding tests from what is happening with Mercury
+
+ * Matt
+   * Removed private keys from svn -- need to not check those in
+   * Need to remove old CA from all nodes
+   * worked with Ben to review Metacat before tagging
+
+ * Robert
+   * Worked with Skye to define the needs for getLogRecords revision in Solr.  Produced and tested ldif file to add ServiceMethodRestriction. need the java code new requirement.
+   * Examined issues with CN Production Release Candidates.  Apache was not able to connect to Tomcat AJP on two of the servers.  After stopping and starting postgresql, slapd, tomcat and apache multiple times, it magically started to work.
+   * Scrubbed Production CNs due to paranoia from last bullet point. Also LDAP was not populated correctly during Release Candidate. Production CNs have differences in their base (non DataONE related) package deployment.
+   * cn dev still has the old dataone ca in java cacerts. Need to be scrubbed from java cacerts.
+   * Note that  new star certs are only located in 1.0.0 release branch of dataone-cn-os-core and not in trunk. We still want to use former * cert in trunk until July.
+   * Need to edit formats population script so that it can perform updates as well as inserts
+
+ * Chris
+   * Worked with Skye to troubleshoot replication, finding:
+     * CN --> MN.replicate() causes NoHttpResponse in D1Client, potentially due to prematurely closed connection
+     * MMP parsing exception of SystemMetadata, perhaps due to truncation from the closed connection. Tracking this down
+     * D1Client calls closeIdleConnections() (deprecated) in finally block of each API call.  Determining if this affects the running connections at all
+   * Working on CN deployments
+     * created Metacat DN in the D1 LDAP, testing in Sandbox using the stable channel
+     * had problems with Apache and the correct SSL certs
+       * Needed to install the newer (not expiring in July) key
+ * Ben
+   * Tagged Metacat 2.0.0 release.
+   * Working with Mark Servilla to set up his test MN (urn:node:mnStageLTER)
+     * MN web tester needs updated certificates signed by DataONE Test CA
+   * Where is a good place to define MN deployment instructions/FAQ (esp regarding certificates and CAs for MN)?
+   * cnStage synchronization of mnStagePISCO seems stable - unfortunately if the process is interrupted the only recourse is to reset the last harvest date for the node and reprocess all 93K records (I estimate there are ~10k that still need to be harvested).
+   * We should determine the mechanism for informing DataONE team when a MN needs a new object format included./ni
+   * Will create redmine stories/tasks for each MN deployment and dole out tasks as appropriate.
+
+Production Environment Deployments
+-------------------------
+
+ * CNs
+   * Installation considerations
+     * change java keystore password
+       * Needs to be performed before apt-get install
+     * change LDAP admin password
+       * Performed during installation, needs to be same across all LDAP instances.
+     * change metacat postgresql password
+       * Performed post installation by hand in metacat.properties or during metacat admin setup
+     * insert dataone_cn_metacat.ldif into first CN for Metacat DN
+       * uses cn=dataone_cn_metacat,dc=dataone,dc=org DN
+       * change this:
+         * ldap://ldap.ecoinformatics.org:389/
+       * to
+         * ldap://cn-[orc|ucsb|unm]-1.dataone.org:389/
+       * Performed post installation by hand, need to change in metacat.properties or during metacat admin setup
+     * coordinate LDAP serverIDs (UCSB:1, UNM:2, ORC:3)
+     * add all to productionPW.txt
+     * remove certs from home directories of Matt and Robert (currently owned by root, high restrictions on access)
+   * after apt-get install, before setting metacat replication, add the formats to one of the machines using our perl script. So that replication will be tested.
+   * copy into /usr/local/bin the start/stop daemon scripts
+   * start up daemons
+
+
+ * Institutional MNs
+   * KNB - new server (on host-ucsb-5 currently "mn-ucsb-3.dataone.org" will be "knb.ecoinformatics.org")
+   * ESA & PARC- new server
+     * VM installed (on host-ucsb-3 hardware currently "mn-ucsb-2.dataone.org")
+     * uses apache under separate virtual hosts
+   * PISCO
+   * LTER
+   * SANParks - same server (jing?)
+   * 
+ * MN web tester
+   * Rob building a webtester corresponding to v1.0.1 release of libclient_java
+   * fixed the "no-return" problem the mercury guys were experiencing 
+   * Installed on https://mncheck.test.dataone.org:8080
+   * 
+   * 
+ * CLI and documentation
+   * hold off on final release tag until CNs are deployed
+   * use CLI to exercise the CN API as a check (not adding content presumably?)
+   * 
+   * 
+   * 
+ * Replica target MNs
+   * on hold for now as replication is worked out
+
+
+
+

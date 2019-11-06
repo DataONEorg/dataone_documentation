@@ -1,0 +1,43 @@
+
+1.  Possible plan to help EVa! with SOTB'12 computing campaign
+    A. There is a full call on June 6 to discuss in detail in context of EVA and CLO
+    B. Our idea (Cobb and Dexter)
+        i. TG D1 MN operationsl
+        ii. Running a stable D! stack, possibly pre v1.0 but opeational stable enough to support this pilot effort
+        iii. Maybe have AKN MN active at Cornell in time
+        iv. compute on TG
+        v. Use TG MN and D1 stack to transfer data:
+            a. from TG DFS to TG D1 MN (using TG DFS's - DC-WAN and/or Albedo)
+            b. from TG D1 MN to AKN MN (or direct to Cornell)
+            c. backup contingency, direct file transfer from TG data store to Cornell, but this is backup not main plan
+
+2. This raises a design issue for D1 stack.
+    - There may be shared data and metadata across different MN's of which D1 needs to be aware.
+    - Different MN's may point part of their data holdings to the same storage via
+        - shared storage
+        - common mounting of WAFS
+        - Common access of other wide area data retrieval (WebDAV, ...)
+    - Some MN's may share metadata
+    - Later MN's may contain datasets already in D1 and the later MN's may be more "authoritative" ex. NASA GSFC comes 
+        in as a MN and it may have the record copy of much data provided by existing DAAC MN's
+    - Holder of Record copy of data may change over time (especially for orphaned data ex. data.gov
+
+3.  How to respond to this?
+    - Elucidate use cases
+    - Modify  D1 Stack to accomodate, inclding probably additional (optional?) arguments to one or more of the MN service API's
+    - Some possible user cases discussed by Cobb and Dexter
+        - Different MN's on the same VM and sharing the same data store and data path. Some data on CRUD appears automatically in both MN's
+        - More than one MN presents data from a common source so the MN's data is "synched" in some sense
+        - If MN's share *ALL* the same data and metadata than this is not the use case, rather that is a distributed MN clone
+        - "MN collective" A set of MN's may, in total, provide a collective complete collection but that collection is not completely represented in a single MN. Perhaps the entire collective is a single "MN" or perhaps each member of the collective is a MN but the entire set provides some completeness. Ex's including LTER and KNB and even at large scale, the collection of all of the NASA DAAC's.
+        - Perhaps we should also be thinkign about MN "hierarchies or as Robert Watlze suggests "MN federations"
+
+4. Possible soln. (first staring guess by Dexter and Cobb)
+    - Mod of D1 API's
+    - It is not possible to simply "adapt the backed implementation" since many issues span the intern MN interaction and the MN-CN interaction.
+        - I.E.  functional semantics such as 
+            - Noting that a given collection will automatically have updated metadata across more than one MN.
+            - Noting that fundamental data operations (CRUD) one the data store at one MN may imply the same operation at other MN's because of synch'd data stores or DFS/WAFS mounts.
+            - realizing possible unexpected locking scenarios where one MN may lock the data record  on another MN because of implicit sharing./
+    - Avoiding these cases with explicit replication is probably not the desired solution because of implied functional degradations in storage capacity and transfer throughput.
+

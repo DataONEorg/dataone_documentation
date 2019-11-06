@@ -1,0 +1,64 @@
+Member Node Wranglers  - please note time change to half-past the hour
+    Fridays at 10:30 am Alaska
+                    11:30 am Pacific
+                    12:30 noon Mountain
+                    1:30 pm Central
+                    2:30 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+6 June 2014
+                                                                          MEETING CANCELLED - updated info next week
+Attending:  
+
+Regrets:  Rebecca, John, Amber, Bruce
+
+Agenda: 
+
+NOTE:  New meeting time at least through the end of July - 2:30p Eastern
+
+        1. High profile issues (or current items of interest)
+        
+                MN Dashboard - discussed load time issue 5/30/14, Dave is putting in a ticket to resolve
+                Last week's notes:
+                         The dashboard is in production and we have a news item ready to  release, but there have been some difficulties with load time and  incomplete loads. 
+                         We (Bruce, John, Laura) tried pulling up the dataone.org site, and the  dashboard, with varying results using Chrome, Firefox, IE, Safari
+                        Dave will put in a ticket for this
+
+  http://loadimpact.com/load-test/www.dataone.org-a252eb65d9c769a361cd4ed449151ebd
+  
+
+(Hold off on this until everyone present)
+                Purpose of MN Description Document (past and future) - past: identify data holdings (type, volume, etc.), operations, to aid in MN development.  future: ???  
+                
+        1.5   Current MNs
+                 CDL's synchronization is still turned off - Laura to ask Chris about CDL's current status
+                
+        2. Status of upcoming MNs
+    
+     * Y5Q4
+       * LTER-Europe  (3232) - News item approved; Laura/Amber to coordinate move to production/announcement  - Whoops!  issues with no resource maps, Chris assisting
+       * EDAC (3221) -  Soren  says EDAC is ready to go; email in to Rob inquiring actual status  (flurry of activity before AHM); Laura/Amber to coordinate move to  production/announcement.  Have a note in to Rob inquiring as to current status.  Last we spoke, harvesting has begun and he was doing those final checks.
+       * DFC (3532) -  Bruce has corresponded with Lisa; following up
+       * MPC (3708) - registering in sandbox - Laura needs to touch base.
+       * ORNL MNs (RGD (4248) and EDORA (4247)) - moved to "testing", MNDDs/logo for EDORA and RGD received from Bob; Jim is registering both in staging; in meeting 5/29/14, 
+       * GLEON (3422) - Corinna  was at the MNF yesterday; she's coming to the DUG; it may take some  selling to convince other folks involved with GLEON management that it's  a good thing to participate with DataONE (was DataONE participation a  deliverable on their contract?)
+       * PPBio (3748)  -  After moving their server to LNCC, they have decided to revert to  the original location in Manaus.  When this is accomplished, we expect  to move quickly.
+       * NKN (3238) - Ed was at the MNF yesterday; working right along
+       * SAEON (3205) - Chris is working with Alex to find a time when they can upgrade their metacat
+
+    Future
+       * TERN  Australia (4286): Met with Alison/Amber at AHM to work on  education/outreach items (draft MOU scope item C);  some changes in  funding down under.    
+         * Hope  to meet with Nikki Thurgate when she's in the states, perhaps around  DUG; working on scope items A and B in particular, meeting again in  June.
+       * IARC   (International Arctic Research Center) (4700) - Jim, Mike, Tim and Laura met this week to discuss GeoNetwork questions; Jim to start serious development week of 6/2/14
+       * EU BON -- Looking to deploy a test MN (probably Sierra Nevada) in the next 6-9 months. 
+
+        3. Old action items
+             MN Documentation - MN Deployment and MN Ongoing Operations - holding
+             
+        4. Not-high profile issues
+     * Redmine ticket generator - plan to apply to IARC and GBIF
+       
+        5. Around the room
+
+

@@ -1,0 +1,50 @@
+Kepler LT Call -- 20100825
+----------------------------------------
+
+Present: Jones, Ludaescher, McPhillips, Schildhauer
+
+Discussion
+----------------
+
+1) Overviewed last call's discussion of how to proceed with release 2.3 prioritization
+   -- some consensus that focusing on one or more science areas is appropriate
+   -- deciding which area would be critical
+      -- environmental metagenomics
+      -- camera
+      -- waters
+   -- allows us to get a head start on SI2 example workflows
+   -- need to revisit this topic (see action items from minutes in previous meeting)
+   -- Matt will try to schedule a 1/2 day meeting on this in the next 2 weeks or so
+   
+2) Annual report
+   -- due Aug 31, 2010
+   -- Bertram and Tim will organize, and send requests for specific sections
+   -- all will need to contribute publications
+
+3) Filtered Push project: re: collections and observations data and annotations
+   -- GBIF invited paper re: future of informatics
+   -- Macklin and Morris
+   -- Kepler is written into the proposal in one potential scenario
+   -- possible connection to semtools as well
+   -- also see connection to BIEN taxonomic work
+      -- http://www.iplantcollaborative.org/leaflet/2010/08/20/the-iplant-leaflet-10-03#tnrs
+   -- want to be sure this project helps move Kepler forward, and that we leverage work on other projects
+   
+4) KAR format changes
+   -- Bertram: points out the LT discussed this previously and had some agreement that moving to KAR was the right direction
+   -- Matt: overviewed the rationale for using KAR as the standard save format
+   -- Bertram: also need to highlight differences of 'Save', for e.g., 'Export...', etc
+   -- Tim: really need to discuss this issue with Christopher and other LT members present
+   -- Mark: shouldn't delay current release trajectory, but should consider for next release
+   -- Bertram: possible that we could add an 'Export' menu item that makes it clear the resulting file format won't always work, but continue with our plans to make KAR the format for saving workflows as default
+   -- aside: we really need better attendance at LT meetings, so need a new model for how to acheive this
+       -- possibly move to less frequent meetings that are longer and with more formal decisions and a formal agenda that is agreed on ahead of time
+       -- also need to address timeliness of these responses, in face of requests for feedback
+       
+5) SI2: panelists have met, waiting on decisions
+
+6) Next meeting: next week, Sep 1, 2010
+     -- add to agenda to discuss new format for LT calls
+     
+
+

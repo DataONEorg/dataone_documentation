@@ -1,0 +1,460 @@
+14 September 2011
+Day 2 S&G WG Meeting, Oak Ridge, TN
+
+CI Products Ready at Public Release (December 2011)
+ * 3 Coordinating Nodes (CNs)
+   * synchronization,indexing of content (metadata), replication, identity management, monitoring, logging (logs are aggregated by all CNs)
+   * tightly coupled with CNs is the search interface ("the thing to be named")
+   * user interface for identity management probably won't be done at public release
+   * logging in is a challenge - authenticating against CILogin is challenging - redirected to home institution; download certificate to install on your machine; working on a proxy to download the certificate for you but not sure this will work with the search interface at this point
+ * Dryad, DACC, KNB, Merritt, USGS BioClearinghouse,Matt's list of Metacat-based MNs, 1 or more Mercury-based Member Nodes (MNs) (6-9 MNs)
+   * 4-tiers of MNs
+     * 1 - public access (Mercury-based MNs) DAAC, USGS
+     * 2- support for access control; public & private content - possibly Dryad
+     * 3-enables content to be written using DataONE API
+     * 4- bit-level preservation (acts as replication target) - KNB and possibly Merritt
+   * Generic MN (supports Tier 4) - not currently being used at any MN but used along with CN
+   * Compute MNs in prototype phase - probably not ready for public release
+ * Investigator Toolkit (ITK)
+   * "the thing to be named" search interface
+   * For MN developers:
+     * libraries and documentation
+     * command line tool
+   * R plug-in
+     * Given identifier for data package, can download data directly into R
+   * DataONE drive
+     * Treats services in DataONE as a network drive - have support for Linux, Mac, & Windows
+   * Zotero and Mendley citation generator
+   * all tools will be read-only at public release
+
+Core infrastructure that preserves your data
+
+CI Products at August 2012 and August 2013
+
+August 2012
+
+ * Data deposit will be supported (ie, identity management and authenication will be complete)
+ * Additional ITK tools - Morpho, workflow tools
+ * Compute Nodes: mechanism to move data to compute resources, such as TeraGrid
+ * Refinement on search capabilities
+ * Additional MNs (meeting performance metrics)
+ * More administrative reporting/statistics
+ * Excel plug-in will be available May 2012 so should be able to deposit data from it by August
+ * Annotation may be possible at this point
+
+
+August 2013
+
+ * Improving search through semantics
+ * Additional services for discovery, be able to subset datasets
+ * Semantic integration across datasets may be possible at this point (pilot project)
+ * More MNs (goal is 20 MNs)
+
+CE - Education Outreach Training December 2011
+ * Best Practices Database (DB)
+ * Tools DB
+ * Education modules
+ * Best Practices Primer
+ * Environment Scientists, Library surveys complete
+ * DMP Tool (NSF(in general), 11 directorates), USGS climate (possible Jan)): generate, edit, share, publish Data Management Plan
+ * DataONE website vs 2.0
+ * Past training workshops
+ * EIM training course
+ * Marketing plan, brochure, poster, banner, ppts
+ * Data repository DB
+ * EVA - State of the Birds Report
+ * DataONE publications
+ * Summer Intern program
+ * DUG
+ * MN documentation, guidelines, support packet
+ * Excel work that Carly is doing
+ * Usability reports on web site
+
+August 2012
+ * Librarians & Data Managers assessments
+ * Repeat Environmental Scientists surveys
+ * Business plan version 1.0
+ * RCN & DataNet Federation
+ * Data publication?
+
+
+August 2013
+ * Marketing Plan version 2.0
+ * PPSR (Public Participation in Scientific Research) Working Group survey?
+
+This will be used in marketing and business plans. Will also be incorporated into the annual report.
+
+Public Release Activities
+ * Press releases V2 for key institutions - Jan. 17 2012
+   * Takes a couple of months so should generate a draft at LT meeting at Tamaya
+ * Near term release? announce
+   * publicity on education modules
+ * New release of website
+ * Do Announcement in mid January on Tuesday
+ * Strategic briefings, agencies - 
+   * BioEco;News sections of  journals - AGU newsletter EOS, Frontiers in Ecology & the  Environment, Bioscience, Science News, Nature News, HPC Wire, ESIP
+ * Web Ex (monthly/quarterly)
+ * Brochure
+ * ID media outlets
+ * Documentation:
+   * End-user (Mike has someone in his office in Denver)
+   * standard template
+ * Animations / Videos 
+   * Search using "the thing that needs to be named" by end-user
+   * DMP Tool video
+ * Coordinate with NSF
+ * Create a Media Kit - Offical Name, Logo's, Brochure (Trisha)
+
+Announcement of DataONE Release:
+
+May want to consider doing a DataONE demo / release at the ESIP Federation Meeting first week of January in Washington, DC
+
+Lists:
+ * EcoLog
+ * Ecoinformatics.org
+ * ESIP Federation
+ * AGU ListServe for Informatics Group
+ * HPC Wire (cold contact: michael@taborcommunications.com)
+ * ACM (cold contact: rosenbloom@acm.org)
+ * IEEE-CS (cold contact: mmccall@compputer.org, h.goldstein@ieee.org, e.guizzo@ieee.org)
+ * ISGTW  (cold contact: dan.drollete@isgtw.org, miriam@fnal.gov)
+ * BioDiversity Commons
+ * Internet2
+ * CNI
+ * ASIS
+ * ASIST
+ * DLF - Digital Library Federation
+ * DCC - Digital Curation Centre
+ * iAssist
+ * LTER
+ * ALA
+ * SLA
+ * DataCite
+ * Science News
+ * TDWG
+ * GBIF
+ * USGS CDI
+
+
+
+Journals & Newsletters: (and some contact points)
+ * BioScience
+ * Frontiers
+ * EOS
+ * Nature News (emma Marris, Emma Marris e.marris@gmail.com, wrote the Nature News article as a freelancer)
+ * Science, news section (cold contacts: science_editors@aaas.org)
+ * Science News: (cold contact: editros@sciencews.org)
+ * NYT markoff@nytimes.com (but I hear that Markoff is slowly handing off this beat to a new person) lchang@nytimes.com
+ * NPR cjoyce@npr.org, jpalca@npr.org
+ * LTER News Letter
+ * USGS Access
+ * Register (ashlee.vance@theregister.co.uk)
+ * Government Computing News- GCN
+ * Federal Computing week - FCW (cold contact: {zyskowski,ryasin}@fcw.com
+ * Infoworld (cold contact point: {ed_scannell,eric_knorr}@infoworld.com)
+ * ziff Davis (cold contacts:  {chris_preimesberge,jeff_burt,scott_ferguson,chloe_albanesius, Mark_Hachman}@ziffdavis.com
+ * Chronicle of Higher Ed
+ * CNET (cold contact point: dan.ackerman@cnet.com, atephen/shankland@cnet.com, michael.kanellos@cnet.com)
+ * Bloomberg
+ * Wired
+ * Info World
+ * Popular Science (cold contact etter@popsci)
+ * Discover Magazine (cold contact point: editorial@discovermagazine.com)
+ * First Mondays
+ * DLib
+ * NSF News contact: Lisa-Joy Zgorski
+ * EPA Research
+ * NASA 
+ * IDC
+ * PLOS
+ * CODATA
+ * CodeLib
+
+Other:
+ * DNR
+ * OFWIM - State Data Managers
+ * UC Research
+ * VP of Researcher at Institutions
+ * EduCause (cold contact: nhays@educause.edu)
+
+Strategic Briefings:
+ * NSF PDs
+ * BioECO
+ * OSTP
+ * EAB - Possible Webex 
+ * Schmidt Family foundation / 11th hour:  check with Berrien Moore, who knows them well
+ * DUG - Possible Webex
+ * USGS Briefing - Kevin Gallagher, potential USGS Director
+ * DOE - Wanda Ferrel, Lucy
+ * EPA
+ * SLOAN, GBMF, MSR
+ * Mellon
+ * Library of Congress 
+ * NARA - Bob Chaddick
+ * Smithsonian
+
+Action: S&G Group send emails, ListServ addresses, contact information to Trisha, Rebecca   
+
+Cost Tracking Discussion:
+Costs in addition to costs in 
+ * https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/2011_0913_oak_ridge/CostEstimates.xlsx
+ * https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/2011_0913_oak_ridge/CostTracking.pptx
+
+Hardware Refresh:
+ * 3 Years (potentially 6 years - out of Warranty)
+ * Possible 5 Year Refresh of CN Hardware 
+ * Budget Flat for Hardware Expense ($250K more+ Growth)
+ * Space Fees 
+ * Network, Phone, Webinar 
+
+Personnel:
+ * Office & Administrative staff
+ * Executive Team (Leadership: ED, 2 AD's, PI)
+ * Hardware Procurement
+ * Issue Tracking of Developers 
+   * Status quo
+   * Enhancements 
+   * Releasing in January, should be able to get a better Estimate to Bug Fixes, resources required.   Need to make sure Metrics are in place.
+ * Staff Time required for "Refactoring" - Progressive Improvement - Upgrades based on new OS, etc.
+ * Web Support - Add new content; maintain old content; Refresh Site (3 or so years)
+ * Proposal Development (Development Officer)
+ * Reporting/Project Management 
+
+DUG Support
+ * How will it be sustained?
+ * Maybe assign 1 person to support
+
+Working Groups Support:
+ * Participants Costs
+ * All Hands Costs
+
+EAB:
+ * Participant Costs
+ * Coordination
+
+CE EOT (Education, Outreach, Training):
+ * Promotion
+ * Briefings
+ * Materials
+ * Marketing
+ * Conference participation 
+
+In-Kind Costs by Participants
+
+Facilitating Deposition to MNs
+
+Page Fees for Journals
+
+NEXT STEP: Look at using the Cost Containment Spreadsheet to capture the costs
+
+Meeting Planning:
+
+Leadership Team Agenda Topics for October: (RK & WM to revise, in particular times [10 lbs of potatoes in 5 lb sack])
+ * CI Update with focus on What's available in December 
+ * Review Evaluation Process for CI (1 hour)
+ * Review Action Items for Public Release (1 hour)
+   * Press Release 
+     * Content
+   * Strategy
+ * Calendaring (30 minutes) WKM
+ * August 2012, August 2013 (& 2014) - Planning for Future Products and Services (1.5 - 2.5 hrs)
+   * Potential Funding
+   * Revisit Performance Metrics, Milestones
+ * Web site Update and maintenance process (1 hour) -- during LT call
+ * Earth Cube & RCN Planning (2 hours) WKM
+ * Update on DataNETs (15 minutes) WKM
+ * EAB - Share Agenda, Planning (30 minutes) -- do during regular LT call this week.
+ * Budget review of UNM and sub awards (especially use of any carryover) WKM
+ * 
+
+
+
+All Hands Meeting Agenda Topics:
+ * Targetting Public release of DataONE
+ * Solicit Feedback on Web Site (via posters)
+ * Plenary
+   * DataNET Update
+   * CI Update
+   * CE Update
+   * DUG Update
+   * Strategy for DataONE Jan 17 Release 
+ * Ending Plenary
+   * Working Group Update 
+   * Calendaring
+ * Tuesday Afternoon
+   * Feedback
+     * Determine the breakout structure & demos (driver, facilitator, recorder for each)
+       * Website
+       * DataONE drive
+       * R-plug-in
+       * Search interface
+       * MN 101
+       * (Documentation)
+       * (Anything with a user interface)
+       * 
+   * 15 Minute Overivew
+   * 30 minute activity
+   * 15 minute feedback 
+
+   * Working Group Planning
+ * Tuesday Evening
+   * Intern poster session
+ * Wednesday - All Day
+   * Working Group Meetings
+
+
+EAB Meeting (November):
+
+1/2 Thursday
+1 full day on Friday
+
+Location: Washington DC
+
+Agenda Topics:
+
+Day 1: Thursday 
+
+Noon: Lunch
+
+1 pm  Introductory Session: ( 15 min - Berrien)
+
+ * Welcome and Introductions 
+ * Review of Agenda
+
+1:15 Updates and News (30 min - Bill)
+ * Update on NSF, DataNet, and DataONE
+ * Overall Review of DataONE Roll-out 
+
+1:45 Review DataONE Infrastructure for Rollout (Rebecca, Dave, Matt, Bruce)
+ * Web site (15 minutes - Rebecca)
+ * CI (Dave, Matt, Bruce - 1 hour)
+   * CN/MN status 
+   * Investigator toolkit
+     * Search interface
+     * R-plugin
+     * DataONE Drive
+     * Mendeley and Zotero
+     * Command line interface
+     * Developer tools
+
+3:00 Break
+
+3:15 Review DataONE Infrastructure for Rollout (continued)
+ * Next steps for CI development (Dave)
+ * Q&A and feedback (All)
+
+4:00  Review of Community Enaggement, Education and Outreach Products (_____)
+ * Best practices primer and database
+ * Tools database
+ * Repository database
+ * Education (learning) modules
+ * Discussion and feedback (All)
+
+5:00 Wrapup for day and review of tomorrow's agenda
+
+6:30 Meet for walk to dinner
+
+6:45 Dinner at _________________
+
+ 
+Day 2: Friday
+
+7:30 am Breakfast
+
+8:00 am Review Marketing Plan (sent previously to Board)
+ * Introduction to Marketing Plan (Trisha or Bill - 15 minutes)
+ * Discussion with Board (45 minutes)
+   * Receive feedback on Marketing Plan, Brouchure, Press Release
+   * Identify ListServes, journals, people, newsletters for rollout announcements
+
+9:00 am Reveiw Business Planning approach
+ * Where we think we are going with the Business Plan (Trisha or Bill - 20 minutes)
+ * Discussion (40 minutes)
+   * Targeted Questions related to Sustainability Options
+     * Key Targets for Sponsorship?  (NSF, USGS, NASA)
+     * Do we need a Business Consultant and What would they do?
+     * Review and receive feedback on possible funding models
+     * Strategies we can follow to reduce costs (e.g. open source, DUG&ESIP connection) ?
+   * Possible Next Steps 
+
+10:00 am Break
+
+10:15 Review and discussion of CI & CE-EOT Planning for 2012, 2013, 2014  (1.5 hour -  _____)
+
+11:45 Calendaring (15 min - Berrien/Bill)
+
+Noon Lunch
+
+1:00  Briefing by Alan Blatecky (NSF) (1 hour)
+
+2:00  EAB Meeting with PI (30 minutes)
+
+2:30  EAB Executive Session (2 hours)
+
+4:30 Close-out (30 min - Berrien and Liz and Board) 
+
+
+
+
+
+Action Item: Bill, Rebecca Draft EAB, LT, AHM Agendas
+
+ 
+
+
+Milestones & Performance Metrics:
+
+From DataONE PMP:
+
+1.) In-kind Support
+
+
+2.) Generated Funding
+
+
+3.) Diversity of Funding
+
+
+4.) # of projects/partners using DataONE
+
+Goal:
+
+Attract Attention
+Attrack Users
+Atrack Supports
+
+Demonstrated by (If Successful):
+
+ * Volume of data holdings
+ * # of MNs
+ * # of Data Products
+ * Financial & Technical Growth
+ * Publications that cite D1
+ * # of meeting
+ * # of conference booths
+ * Page rankings Google, Bing, etc.  
+ * Website  usage over time
+ * Increase in citation rates
+ * Referrals - From DataONE to ORNL (MNs) and vice versa
+
+Action: Trisha to review Performance Metrics for Marketing Plan relevancy.
+
+
+Add "how to link to DataONE website" to communications portion of public website - how to link or how to cite?
+
+Develop Process for Updating Marketing Plan:
+
+
+Strategy:
+ * S&G would update the marketing plan based on the Development and Release of Products cycle - new services.  
+ * Potentially every meeting of S&G, review Marketing and Business Plans due to their criticality
+ * Change in Marketplace - new models of marketing
+ * New Communities
+ * Responding to new opportunities (i.e. "large") 
+
+
+
+
+
+
+

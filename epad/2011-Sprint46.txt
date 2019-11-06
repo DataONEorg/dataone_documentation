@@ -1,0 +1,342 @@
+Notes for week of 2011-Sprint 46 (14-Nov - 18-Nov)
+==================================================
+
+:Backlogs: https://redmine.dataone.org/rb/master_backlogs/d1
+
+.. contents::
+
+
+Monday
+------
+
+Status of Components
+~~~~~~~~~~~~~~~~~~~~
+
+Type schema
+
+- 1765, 1767
+- defining administrator roles from a member node perspective to update information on a CN. 
+  - e.g. trusted user per member node to update capabilities
+  - add administrator subject to node document
+
+- Implementation of administrative roles for CNIdentity methods
+
+- Add Exception type schema, separate from the dataonetypes.xsd. It's a shared message so really should be defined here.
+
+- checksumAlgorithmList needs to be defined? Research if this is an issue.
+
+Documentation
+
+  Architecture 
+  
+  - 1961, 1983, 1985, 1986, 945, 82
+  - Some adjustments required, especially bringing the use cases up to date.
+  
+  - Several small changes to be made for consistency (recorded as tickets)
+  
+  - Should change Exception InvalidToken to InvalidCredentials
+
+
+  Operations
+
+  - Needs extensive updating (Dave)
+  - VM setup for both VMWare and KVM
+  - CN installation update
+  - MN certificate generation recipe
+  - CN operation notes
+  - Contact info for VM admins
+
+
+d1_common_java
+
+- checksum issue? Perhaps a case issue with name of checksum algorithm
+- Correct representation of the checksum value (case)
+
+d1_libclient_java
+
+- review to verify optional parameters are.
+- some exception refactoring
+- some methods that take an exception but don't raise InvalidToken
+- some methods that don't raise InsufficientResources
+
+- higher level resource map support
+
+- no mechanism to listGroups? 
+
+- (Dave) Verify use case requirements for isGroup and isPublic and add these back in if necessary
+
+
+d1_common_python
+
+- checksum issue? Perhaps a case issue with name of checksum algorithm
+- Correct representation of the checksum value
+
+
+d1_libclient_python
+
+- higher level resource map support
+
+
+d1_processing
+
+  Hazelcast 
+  
+  - security of communications between CNs for hazelcast. Need to work on this when VMs are available.
+
+  LDAP
+
+  - ticket #1819
+
+  - Add nodeApproved to the type schema. 
+
+
+  Synchronization
+
+  - Seems to be working
+
+  Replication
+
+  - replication task should be asynchronous on CNs to avoid timeout issue
+  - compare subjects convenience method in cn_common
+  - need to regenerate certificates for the DEMO machines
+
+  - (Dave) Need to determine whether production MNs will use a DataONE cert.
+
+
+rest_service
+
+  - common and libclient libraries need to be updated to common versions
+
+
+
+indexing
+
+- Update task generator to listen to hazelcast and utilize spring data for storing tasks
+- Add rules for extraction of remaining properties from science metadata
+- update test cases for rule application
+
+
+log aggregation
+
+- initial design and review
+
+
+Mercury
+
+- Blocked by indexer updates
+- Verify operation of UI, especially sci meta rendering
+
+
+MN Web Tester
+
+- need a way to show the service versions (now able to show the version of the client libs)
+
+- would be helpful to show version info on the webtester page
+
+- need to re-add tests against symbol subjects - put into Tier3 create as subtests
+
+
+
+Metacat
+
+- Are tests passing?
+
+- DEMO4 - failing on no-certificate tests. InvalidToken returned
+
+- Will a MN ever support write operations with Public user ID? No.
+
+- update with no-certificate gives service failure
+
+- Delete with no certificate gives NotAuthorized
+
+
+GMN
+
+- no-certificate test returns NotAuthorized
+
+- getChecksum
+
+
+CLI
+
+- documentation to be completed.
+
+
+R-Plugin
+
+- probably issues related. 
+
+Tuesday
+-------
+
+Chris
+- Issue with setReplicationStatus authentication
+
+Rob 
+- tier 4 tests
+- business logic for obsoletes / obsoletedBy 
+- Need a sequence diagram for update() operation
+
+Skye
+- refactored MN web test service page to use manifest files, falling back to jar name scraping
+- started design of the CN version check
+  - web apps = knb, 
+
+Ben
+- mn tester for metacat
+- deleting stuff - removing the system metadata record
+
+Robert
+- multipart message problem, probably due to not using correct request object
+
+
+Wednesday
+---------
+
+Chris 
+- bugs in cnode service
+- call on getSystemMetadata not returning consistently
+  - possibly a locking issue?
+
+Roger
+- CLI work, continuing to cleanup
+
+Ben
+- metacat integration tests
+- onto tier 4 tests
+- xsl for rendering the REST endpoints, e.g. https://cn-dev.dataone.org/cn/v1/node
+
+Nick
+- working with Chris
+- hardware config / installation work
+
+Rob
+- continuing with tests
+- issues with access policy, to do with comparators
+
+Skye
+- CN version reporting tool
+- d1_process_daemon tool
+
+Robert
+- CNRest service
+- Debugging PUT operations not having complete request object
+- 
+
+Thursday
+--------
+
+Skye
+----
+ * research on the shade plugin
+ * shell script route or java route for reporting different portions of jar dependencies
+ * determining what the input should be (war/jar manifests, etc)
+   * cn.war
+   * d1_process_daemon.jar
+   * knb.war
+ * Robert: look at the cn/d1_cn_tools  sub directory
+
+Roger
+-----
+ * finished command line client
+ * starting on stress testing for any MNs
+
+Robert
+------
+ * worked on params proxy issue, we hadn't run into this issue before (only proxying GETs)
+ * creating a wrapper for the wrapper to handle mime-multipart portion
+ * modified Subject to add compareTo(), which obviates CertificateManager.equalsDN()
+ * will be committing CN changes to subversion and will be upgrading cn-dev, potentially cn-dev-2
+   * changes to ldap
+
+Rob
+---
+ * finished the MN web tester, latest version is up
+ * are we implementing user validation? (check for symbolic user validation)
+   * need to create a test account that has the validation flag set, and one not set for testing
+   * test users should be registered in the D1 identity system
+     * one verified, one not
+ * need CN certificate in the tests for replication
+ * need MN certificate different than the source
+   * to test Tier4, we can have the MN tester call:
+     * MN.create()
+     * CN.create() immediately after (to bypass sync)
+       * restrictions need to be in place for calling this
+       * need to allow create and registerSystemMetadata to be exposed through cn_rest_proxy functionality
+ * needs to review CN API and make tests for these calls (big job)
+
+Ben
+---
+ * metacat trunk is testing Tiers 1-3 with blue/yellow success
+   * Tier3 test requiring a CN cert is being ignored for now
+ * Will continue work on Tier4 testing issues
+   * (discussed sanbox/cert issues for tier 4 tests)
+
+Chris
+-----
+ * Continued troubleshooting replication
+   * resolved setReplicationStatus() problem, can be successfully called
+   * resolved isNodeAuthorized() problem, can be successfully called
+   * still getting timeout issues in the roundtrip transaction even though the first call 
+     to replicate() is asynchronous. Will track this down today
+   * hazelcast problems were likely a configuration issue: on redeployments, the configuration defaults to an internal cluster (for MNs), need to be sure it is set to connect to the D1 cluster every time we redeploy a CN
+
+
+when replica is in state of completed, then we want to call the audit membernodes. anytime accesspolicy changes audit membernodes
+
+Rob
+---
+CN architecture questions:
+ - is assertRelation() deprecated? 
+     ** Found the deprecation note in documentation. :-)
+ - does pid in setOwner get passed in on the url path, or in the message body?  (architecture and method in conflict).
+ - do subjects get passed in as their string value or as the object itself?
+ - is status still a parameter of cn.listSubjects()?  in the code, not the docs
+ - 
+
+
+Friday
+------
+
+Chris
+
+- Round trip ok, but setReplicationStatus problem. Works with curl, but failing in sync / repl.
+  - problem with case of enum value, sending "COMPLETED", expecting "completed"
+- tmieout issues may still be a problem - e.g. when auth fails
+- Need to add a GMN instance
+- More MNs and various replication policies
+- More CNs
+
+Skye
+
+- version reporting for web apps - cmdline display
+- strategies for jar dependcies
+
+Roger
+
+- updating stress tests for current architecture, especially certificate stuff
+- updated checksum comparison
+- need to verify replica information is supported by the CLI
+
+Rob
+
+- working on cnode API - seeing inconsistencies between client code and docs.
+- perhaps use echo test 
+- issue of how to do effective replication tests. Need a sandbox setup with CN and MN involved.
+
+Ben
+
+- working with replication testing
+
+
+Replication test environment:
+
+CNs: cn-dev.dataone.org, cn-dev-2.dataone.org 
+MNs: gmn-dev.test.dataone.org, demo1, demo2
+
+- Generate test IDs for the test data
+- Need test corpus for replication data - data size x replication policy 
+
+
+
+

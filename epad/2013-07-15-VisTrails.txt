@@ -1,0 +1,70 @@
+Attendees: 
+Colin Talbert, Jeffrey Morisette (USGS)
+Fei Du (U of Wisconsin)
+Aritra Dasgupta (NYU-Poly)
+Bob Cook, Yaxing Wei (ORNL)
+
+
+Agenda & Notes:
+
+1. Round-table
+
+2. Introduction to the DataONE EVA summer intern project (Yaxing)
+
+3. Current progress of the intern project
+
+    3.1. Visualization Techniques (Aritra)
+    matplotlib for bar/heat chart, TDB for bubble chart
+
+    3.2. IMIF package and example workflows (Fei)
+        3.2.1. Show case the modules and help document
+        
+        3.2.2. Show case example workflows
+    
+Q. A lot of users are using Windows, make the IMIF package working on OS beyond Linux & Mac
+
+4. VisTrails work at USGS (Colin)
+TBs of data to deal with, use subset 
+PyGDP package and GeoDataPortal package are available from github
+My VisTrails package is available from:
+https://github.com/ColinTalbert/GeoDataPortal
+
+The CIDA package is:
+https://github.com/USGS-CIDA/pyGDP
+
+
+R is involved in the workflow execution as an independent application
+Interactive Viewer developed by Colin
+Multiple-thread execution of workflow
+Module suspended state to enable multi-thread and asynchronous execution
+SAHM source is available at:
+https://github.com/ColinTalbert/sahm
+the attempt to integrate ModuleSuspended is on branch:
+SAHM_1_1_moduleSuspended
+
+PyQt for dispaying and interface
+
+BaseMap in matplotlib to allow background map overlay:  Colin's wrapping on top of BaseMap. Colin will share this package.
+My code is at:
+https://github.com/ColinTalbert/VisTrailsBaseMap
+
+cartopy, IRIS package in sci-py stack, similar to BaseMap package
+check out: http://pyvideo.org/video/1990/iris-cartopy-python-packages-for-atmospheric-a
+it looks like it is built to handle CF metadata.
+
+5. Challenges (Fei, Yaxing)
+    5.1. Simultaneous execution of VisTrails modules
+    ModuleSuspendedState in Colin's package
+        
+    5.2. Parallelization and performance
+    Colin used some parallel packages in R to handle distributed processing
+        
+    5.3. CF-metadata preservation
+        
+    5.4. Integrate 3rd party Python libraries (e.g. GDAL) to interoperate with CDMS2 library coming with UV-CDAT
+    Write data back to disk to exchange content ...
+    GDAL library is included in VisTrails binary package. You can customize your own VisTrails binary package to include certain 3rd party libraries. You don't have to recompile. 
+
+6. Discussions and future plan
+
+

@@ -1,0 +1,54 @@
+#persist
+
+Notes on LTER MN Transfer to New Software Stack and New Content Approach
+========================================================================
+
+
+Present: Chris, Dave, Ben, Mark, Jing, Robert, Roger
+
+
+Summary
+-------
+ * All older content at the LTER MN will be set to archived
+ * The content has been replicated to the KNB MN
+ * New content in the GMN-PASTA instance will be synchronized
+ * Content in PASTA will have non-related identifiers (non-related to previous Metacat objects)
+
+
+Issues to resolve
+-----------------
+ * Which node will be authoritative?
+   * ~49K objects replicated to KNB, ~700 failed
+   * Need to set LTER replica status to INVALIDATED for all objects
+   * DECISION: LTER will remain the authoritative node
+ * Will there be an obsolescence chain?
+   * Issue: DataONE only supports linear obsolescence, but there's not a one-to-one correspondence from a given old science metadata object and a new science metadata object
+   * Building obsolescense after the fact may be feasible
+   * DECISION: Initially, there won't be a chain, but may be revisited
+ * How to set objects from Metacat MN to archive?
+   * Use Metacat as soruce of object PIDs
+   * DECISION: Use BASH script or similar to call CN to set as archive
+
+1. Turn off sync
+What to do if you need to change the baseURL and reharvest all content.
+1. Update baseURL and disable Sync on node via MemberNode call
+    a. Set new baseUrl in node
+    b. Set synchronization off in node
+    c. call updateNodeCapabilities on the CN from the MN
+
+2. Confirm baseURL has changed (administrative procedure on CN)
+    a. Notify CN Admin
+    b. confirm that d1_processing daemon's synchronization reflects the change (baseUrl and synchronization boolean)
+        1) check the synchronization log file. 
+        2) Hazelcast notifications will cause Synch Schedule Manager to reschedule node's harvest (deleting it from quartz scheduler)
+    c. CN Admin will update last_harvest date on the node
+
+3. Turn on sync via MemberNode call
+    a. set syncrhonization on in node
+    b. call updateNodeCapabilities
+4. Check Synchronization process
+    a. Notify CN Admin
+    b. confirm that d1_processing daemon's synchronization has picked up the change
+        1) check the synchronization log file. 
+        2) Hazelcast notifications will cause Synch Schedule Manager to reschedule node's harvest (adding it to quartz scheduler)
+

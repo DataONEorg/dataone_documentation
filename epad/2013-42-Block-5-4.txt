@@ -1,0 +1,321 @@
+Development Notes Block 5.4
+===========================
+
+Last Block etherpad: http://epad.dataone.org/2013-39-Block-5-3
+
+
+What is "Archived"?
+
+Definition in SystemMetadata schema: "A boolean flag, set to true if the object has been classified as archived. An archived object does not show up in search indexes in DataONE, but is still accessible via the CNRead and MNRead services if associated access polices allow. The field is optional, and if absent, then objects are implied to not be archived, which is the same as setting archived to false."
+
+Operationally (de facto) in DataONE - content that is archived is:
+- not in the search index  (as per the design)
+- not retrievable through get():  (as per MN actions)
+
+also see the final comment in: https://redmine.dataone.org/issues/3667 - 
+
+What is behavior of resolve()?
+What is behavior of getSystemMetadata()?
+What happens if an object is referenced in a data package, but is archived?
+If we add an archive flag to the search index, how do we update the index with legacy content that has already been archived?
+Should CN delete() be exposed? Or rather, who is authorized to delete stuff?
+
+Note: that this is really a part of a much larger issue of provenance. Obsoletes, obsoletedBy, archived, delete operations should all be recorded with a reason, who did the operation, when it was done. To properly support this requires a graph storage mechanism with a suitable graph query language, for example, a triple store that supports SPARQL. 
+Note: Running a multi-master triple store that is real time consistent across three locations and achieving usable perfomance is an unsolved problem.
+
+Use cases:
+1. Get all elements of a data package (even if parts are archived)
+ * an observation: once you have the resource map, you have the identifiers for all package members (and even URLs), so problem solved, assuming the resource map is resolvable. So the use case can be conceptualized to: find the resource map(s) for a given identifier (data or metadata).
+
+
+
+2013-10-14 Notes
+Dashboard
+
+ * How to get data from aggregation into the dashboard?  
+   * Generate a CSV file? Also generate JSON file that will be pulled into the dashboard from a static endpoint.
+   * Create a new SOLR index / core / endpoint
+ * Release schedule:
+   * 
+
+
+
+Sprint Planning
+---------------
+Milestones / Significant Events: AHM Meeting, Renewal Proposal Submission
+
+ * MN deployments
+   * (Rob) EDAC is planning to rollout another patch release of EDAC with D1 changes around Oct. 7.
+   * Ryan requested for new test sync/index of dev.dryad MN - will do early this week. (Skye)
+   * Chris will work with Bob Sandusky on the UIC deployment
+   * Chris to follow up with Stephen/John re: Merritt revision archiving
+   * SEAD is registering in production
+   * KUBI is in testing in stage
+   * USANPN is in testing in stage
+ * MN Documentation (Rob)
+   * met with web-site team to try to 'formalize' layouts (to abstract the content and separate it somewhat from the layouts).
+     * it's a somewhat heavy-weight solution in the context of getting something done for the AHM.
+   * planning on draft release for external reviewers on 10/17
+     * will deploy to the main site
+     * using the 'stand-in' graphics, although will probably be replaced in the future. 
+   * web-content successfully deployed to http://www.dataone.org/benefits-becoming-member-node
+   * mn_checklist and sub-pages:
+     *  updates are in-progress on Dev & Testing phases
+ * Dashboard release (Chris, Skye) ( https://redmine.dataone.org/issues/3875 )
+   * Incorporate feedback from CCIT meeting
+ * Log reporting / log agg anonymous stats enabled (in staging) (Robert)
+ * Splunk monitoring (David, Chris)
+   * Blocked by VM allocation at UNM
+ * ITK tool development/Morpho
+   * Blocked by InCommon membership of the KNB auth system (Matt working on this)
+ * CCI release 1.2.3 -- https://redmine.dataone.org/issues/4025
+   * Plan is to release 1.2.3 week of Oct 14-18 (Robert will do the full stack upgrade)
+     * Foresite ORE parsing in indexing (work complete)
+     * Foresite ORE validation in sync (in testing)
+     * Anonymous Log Endpoint responses on CNs (in testing)
+     * logAggregation bug fix for hazelcast exceptions/split brain problem (in testing)
+     * Optimization of log queries against MNs (in testing)
+     * Bug fix in ONEMercury to properly url encode '?' and '&' when they appear in identifiers (skye, in progress)
+     * Metacat endpoint change (in testing)
+     * CORS support for the dashboard in production cn-os-core DONE. (Chris)
+
+ * Report of downloads per object format per month (data/metadata) (Robert)
+   * Number of GETs per month by object format per MN since DataONE production deployment
+   * Filter out CN activity
+   * First pass: total number of GETs per month per MN  since DataONE production deployment.
+
+ * Maintenance Items
+   * cn-unm-1 object counts out of sync. Logging level at debug. Out of parity by 30. Need to examine metacat log files.
+   * Plan UCSB CN and other MN downtime for server migration to the North Hall Data Center, plus subnet change
+   * Merrit and ONEShare pid archiving: https://redmine.dataone.org/issues/3980
+     * Can be corrected by MN operator(s)?
+
+
+Robert 
+ * 20131018
+   * releasing 1.2.3
+ * 20131016
+   * working on staging of 1.2.3
+ * 20131014
+   * Report of downloads per object format per month has expanded in scope. re-writing.
+ * 20131011
+   * KNB Not rescheduled in logAggregation. Maybe a bug in logAgg that after a certain # of failures of a Job it is not rescheduled again.
+   * Report of downloads per object format per month is being tested on stage, if successful then will roll out to prod.
+ * 20131009
+   * Checked in Code. Will need to clean it up and test it against staging. No other system provides enough data to test against.
+   * SEAD node needs some edits. * in seconds of sync schedule. Causing deserialization of nodelist to fail (in d1client).
+ * 20131007
+   * total number of GETs per month per membernode for the object format types since DataONE production deployment.
+     * The code is biased to download log records from the CN. If the total records for a timeframe (down to a diurnal interval) is not equivalent, then the log records will be pulled from the MN.  The object format for an object is pulled by issuing CN.describe instead of raiding the postgres db.
+     * The code will be reused in the logAggregation auditing thread.
+   * KNB log aggregation is taking a long time due to numerous timeouts. I retry to get same log records 5 times when timeouts occur before moving on. There may be descrepancies in knb's log agg.
+   * Saw Ben made changes re: metacat context on trunk. Completed my changes as well.
+
+
+Chris J
+ * 20131018
+   * SEAD review/rollout
+   * Working on the UIC MN with Bob
+   * Dashboard changes
+   * mn-stage-ucsb-1 permgen memory troubleshooting - fixed.
+ * 20131016
+   * No real blockers, slow deploying metacat
+ * 20131014
+   * Review of mutability doc
+   * enabled CORS in cn-buildout
+   * dashboard progress
+     * met with Skye
+     * maps progress - plotting by scaled symbols at this point
+     * cosmetic changes
+   * SEAD MN registering in production
+   * Working with Bob re: UIUC MN
+ * 20131011
+   * PhenoCam meeting in Boulder
+ * 20131009
+   * MN support
+     * Worked on Merritt issue write up
+     * Coordinating with Lisa Stillwell @ RENCI for iRods REST impl
+   * Worked on KNB log aggregation timeout issue
+     * Consistent 3:45 wait before apache logs request, immediate result from TC
+     * Need to discuss this with Robert, Ben, others
+   * Worked on registering existing KNB/PISCO replicas
+     * Trouble with synchronzation - KNB TC couldn't keep up
+     * TRacking down this issue - not sure if it's related to the /log issue
+   * Working on dashboard code
+   * Working on quick presentation for NEON meeting tomorrow
+ * 20131007
+   * More MN support
+     * cert downloads and password problems for Lee Marsh USA NPN
+     * tracking down KU sync issues - looks like EML validation issues
+     * D1 REST service impl help for Lisa Stillwell at RENCI for iRods
+   * Back to dashboard work today
+   * NEON meeting in Boulder later this week (Thu)
+   * Will look in the logs KNB
+   * Contact Merritt re: pid archiving
+
+David D
+ * 20131016
+   * Splunk
+     * Apache rollouts
+     * Pulling data from splunk from last Friday's host crash
+   * Ansible
+     * testing scripts w/Chris B.
+ * 20131011
+   * Splunk
+     * Testing an Apache non-error log forwarding method, when confirmed good and tweaked to fit Splunk source naming conventions, will begin rolling it out
+ * 20131009
+   * Ansible CN deployment training/tweaking w/Chris B.
+   * Splunk:
+     * Rolling out splunk to UCSB non-prod
+       * (pending sudo access or workaround)
+     * Apache log forwarding
+ * 20131007
+   * Splunk
+     * built syslog forwarding into non-prod UNM CNs
+     * working on getting Apache logs forwarded
+   * Training on Ansible/CN building with Chris B. later this week (Tuesday and later)
+
+
+Rob N
+ * 20131014
+   * MN documentation:
+     * have basic navigable member node pages on the dev site.  
+     * LT will need a draft available for external review by Thursday (10/17)
+     * focusing on navigation and content density, and for a couple pages, graphics and layout.
+ * 20131011
+   * put together a (multi-) site map for the documentation at: https://docs.google.com/drawings/d/1eh4SCTsqzmsQToSMCxS8hHEPuXTxP2K-omR_8bBsW1w/edit
+   * adding content on the dev web site: http://129.24.63.92/member-nodes-revised
+   * requirements page for being a member node have been simplified due to discussions about mutability.
+ * 20131009
+   * more work on MN documentation on the website
+     * adding deployment options pages
+   * EDAC finished their release and node is still passing web tests.
+ * 20131007
+   * consensus made on MN landing page
+   * will be building out from there. 
+
+Roger
+ * 20131018
+   * Finished up this round of work on GMN and the dependency tree.
+   * On Monday, we are going to do a fresh install of GMN on KU. 
+   * Working on Foresite related bug in the Python resource map library.
+ * 20131016
+   * Working on various GMN issues in preparation for a fresh install at KU.
+ * 20131014
+   * Did #4071: Add setup of robots.txt to GMN installation instructions
+   * Adding tests for recent changes to GMN access policy.
+   * When tested, will tag, then work with CJ at KU to get them onto latest version of GMN.
+   * Will work on ONEDrive caching this week.
+ * 20131011
+   * Fixed 3 tickets that Chris added after examining the data from the KU node.
+   * #4032: Set the HTTP Content-Type appropriately for KUBI objects
+   * #4033: Evaluate KUBI MN.getLogRecords() authorization policy
+   * #4062: Verify trusted certificates on the KUBI MN
+   * Not sure how to deploy.
+   * To discuss:
+     * robots.txt policy for MNs.
+ * 20131009
+   * Have working Windows installer for ONEDrive.
+   * Making progress on documentation. Hoping to finish it today.
+ * 20131007
+   * At the same spot as Friday. Slight progress with ONEDrive.
+
+Chris B
+ * 20131007
+   * Testing and Training David on Ansible.
+ * 20131009
+   * Performed training on Ansible with David
+   * Discovered a few issues with fresh installs
+     * Ubuntu 10.04 has an outdated version of pip that will not work with ansible's pip module. 
+       * Required for the installation of a package required for the accelerate method.
+     * Fresh installs of dataone-cn-os-core are failing due to debugging from the dataone-cn-os-core package.
+ * 20131011
+   * Writing playbook for self signed certs for dataone installation
+   * Fixing the ldap playbook with default debconf for some of the packages.
+   * Helping David with rsyslog conf for apache
+ * 20131014
+   * Spent Friday recovering from a failure on the dataone-d server
+     * Looks like a software glitch in vSphere
+     * Splunk VM failed to migrate and got "stuck" so it had to be rebooted.
+     * Puppet-server, splunk and mn-orc-2 were affected and were rebooted.
+ * 20131016
+   * Going to have David test my ansible playbooks on dev again.
+ * 20131018
+   * Working on the firewall playbook.
+
+Dave
+ * 20131014
+   * Draft content preview for Elsevier
+   * Proposal work
+   * Preparations for AHM
+ * 20131014
+   * Proposal work
+   * Preparations for AHM
+ * 20131011
+   * Proposal work
+   * Preparations for AHM
+ * 20131009
+   * Proposal stuff
+   * Newsletter text
+   * Mutability text
+ * 20131007
+   * Proposal stuff
+   * Newsletter text
+   * Mutability text
+
+Jing
+ * 20131018
+ * Finished the solr index upgrade process
+ * Fixed a bug that metacat/metacat-index couldn't control the debug level
+ * 20131014
+   * Working on the upgrade process of metacat-index
+   * Help to trouble shooting of Gulfwatch node.
+ * 20131011
+ * Skye and I identified a bug in d1 solr schema for sorting author. Adopt a new version schema in the metacat solr index.
+ * Working on the upgrade the existing solr home to the new version.
+ * 20131007
+   * Took Friday afternoon off
+   * Continue to work on Morpho - bugs fixing
+
+Matt
+ * 20131007
+   * Working on LDAP & DNS replicas
+   * Working with Nick on moving all VMs to North Hall Data Center
+   * Working on D1 remewal proposal this week
+ * 20131014
+   * LDAP replicas are now in place (ldap1, ldap2, ldap3)
+   * DNS -- propose that we move to either Rackspce or Amazon
+   * Metacat bugs: open file descriptors. Ben will release 2.2.1
+   * Gulfwatch meeting tomorrow in ANC re: their MN
+
+Skye
+ * 20131018
+   * D1-Dashboard
+     * graph view - tick guidelines, axis labels, layout updates.
+     * working on caching summary data to improve performance.
+ * 20131016
+   * Preparing for CCI 1.2.3.  Merged updated for index-processor and one-mercury to release branch.
+   * Dashboard layout,polish.  Created some button groups, trying different layouts
+ * 20131011
+   * Found issue with dryads sysmeta dateModified.  does not appear to be xsd-date format.
+   * Testing oneMercury fix for pids with embedded url characters. (https://redmine.dataone.org/issues/4080)
+ * 20131014
+   * Found bug in ONEMercury pid encoding working with dryad pids - ?, & embedded in pids needs url encoded in js.
+   * Progress on dashboard
+     * retrieving and graphing download / read events from aggregated log service
+ * 20131009
+   * continuing work on dashboard
+     * Log Node Summary data model for showing d/l
+     * Also work on NodesView.
+ * 20131007
+   * d1-dashboard work
+     * summary timeline, complete
+     * download summary timeline in progress
+   * Spec'ing out changes to ResolveSolrField (fileID, dataUrl schema fields) for MN mode of index.
+     * With Jing, Ben, Matt.
+
+
+Discuss
+ * Dryad time stamps
+   * Propose we table this issue until after CCI 1.2.3 - not a blocker - doesnt cause errors in production.  Really about correctness of system metadata validation/parsing... (skye)
+

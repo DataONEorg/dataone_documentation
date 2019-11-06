@@ -1,0 +1,184 @@
+Notes for Development Block 3.1
+===============================
+
+Previous epad notes: http://epad.dataone.org/2014-16-Block-2-4
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+Sprint Planning Block 3.1
+-------------------------
+ * CCI 1.2.6
+   * Tag and release d1_common_java (1.2.0), d1_libclient_java (1.3.0), d1_test_resources (1.2.1) done
+   * ONEMercury and d1_index features
+   * Deployed into production, search index building on cn-unm-1.
+ * VM Operating System upgrade testing
+   * Fully move to building on Jenkins under 12.04
+   * Document the Jenkins installation and configuration in the operations docs
+   * Schedule meeting Friday to discuss blockers
+     * webtester tests need updating
+ * CCI 1.3 preparation (to be released during Block 3.2)
+   * Incorporate Solr search and log aggregation changes into the CN stack
+   * Incorporate JibX extensions into d1_common_java, release it
+   * Incorporating HTTPClient 4.3 into libclient (affects CN stack)
+ * Tag d1_dashboard 
+   * (Tagged, Deployed on dataone.org).
+ * ONEDrive completion for AHM
+   * Shoot for a beta release for the AHM
+   * Improved caching locally for performance
+   * Representation of a Data Package for scientists (future minor release, address at AHM)
+ * CCI 1.3 preparation (release during Block 3.2)
+
+Sprint Planning for Block 3.2
+-----------------------------
+ * VM Operating System upgrades
+   * (Schedule this in CCI 1.2.7, fall back to CCI 1.3.1)
+
+David
+-----
+ * 20140509
+   * Finished post-5.5 load balancing at ORC
+   * Prep work for Splunk retro
+ * 20140507
+   * Work on Splunk deployserv
+   * Load balancing at ORC; all hosts (finally) updated to VMware v5.5
+   * Prep work for Splunk retro
+ * 20140502
+   * Continuing work on splunk deployment server
+   * Broke up splunk hazelcast alerts into one for each environment
+   * /boot directories filling up on a couple of VMs, had to clean out old linux images
+   * Finished off a couple of old tickets
+     * checked jsvc log rotation - working
+     * set up security updates on ORC non-prod
+
+ * 20140428
+   * Building Splunk deployment server
+
+Roger
+-----
+ * 20140507
+   * Hoping to finish up ONEDrive today.
+ * 20140502
+   * Continued work on ONEDrive. Should have it running by Mon or Tue.
+ * 20140430
+   * Continued work on ONEDrive.
+   * 
+
+
+Skye
+---------
+ * 20140430
+   * Worked through majority of cci 1.2.6 issues
+     * Need to test the fixes in release candidate environment (sandbox)
+     * Working on apache exposing /solr raw endpoints.  Need to close.
+ * 20140502
+   * Tested CCI 1.2.6 issues in cn-sandbox.
+     * Closing off raw solr endpoints.
+   * Ready to begin tagging and installation into cn-stage-1 (stable channel).
+ * 20140507
+   * Deployed 1.2.6 to production, search index re-building
+   * working with chris allen on some javascript/jquery for website
+   * ON PTO Thursday/Friday
+
+Chris
+-----
+ * 20140509
+   * PTO Monday-Wed
+   * MN support with EDORA, RGD
+   * Met with 
+ * 20140502
+   * Meetings
+   * Cert troubleshooting for SC MN
+   * Question: can we get CNs into read mode while tidy post-merge runs?
+   * will be taking PTO Monday/Tuesday
+ * 20140430
+   * MN support for SC
+   * Finished stylesheet work on EML --> Dryad for sample content
+   * Finished styleshhet fixes for EML --> BDP
+   * MN support for EDORA
+   * work with Jing on CN buildout
+
+Dave
+----
+
+ * 20140430
+   * Completing actions required for NSF / renewal proposal
+   * Preparing agenda etc for AHM
+
+Peter
+ * 20140430
+   * closed out tickets regarding log aggregation updates
+   * looking into d1, metacat services calls and corresponding entries made in access_log
+ * 20140507
+   * add formatType field to event log Solr index
+   * add support for FGDC document types when indexing geohash values into the systemmetadata Solr index
+   * working on documentation for using geohashes to be linked to architectural docs for event log index and sysMetada index
+
+Matt
+----
+ * 20140430
+   * Discussing NODC as a MN again with Ken Casey
+   * Continued work w/ ROpenSci on making the R Client native rather than dependent on Java
+
+Rob
+---
+ * 20140509
+   * Member Node Support: helping EDAC register their node.
+   * d1_libclient & d1_common: preparing a couple slides for the AHM containing status, suggested improvements, requests.
+   * 
+ * 20140507
+   * working on creating self-contained release packages for d1_common and d1_libclient (java) to deploy to releases.dataone.org
+   * troubleshooting Jenkins-1 reverse-proxy (Jenkins app self-diagnosed bad reverse-proxy)
+   * discovered some redmine features we should be using (sprint-sharing, release-sharing) as it relates to independent d1_libclient and d1_common releases.
+   * EDAC user name approval - ran into issue with the "group" subject they want to use as the administrative contact.  
+ * 20140502
+   * d1_common_java release: 
+     * found a file resource leak in d1_common_java, want to fix in branch before tagging see (https://redmine.dataone.org/issues/3369)
+     * fixing in trunk as well.
+   * re: HTTPClient version, found source of the behavior change between 4.1.3 and 4.2.x - how the ConnectionManager closes idle connections and choses which ones are idle.  It is likely a behavior change related to use of a deprecated class, so not sure if we can get it resolved.
+   * EDAC blocked by production Portal
+
+ * 20140430
+   * worked with Ben on the restricted HTTPClient issue.  Setting up integration tests to test latest 4.2 release (4.2.6), and latest 4.3 release (4.3.3).  Ran into issue with 4.3.3 release related to a known issue with not setting the 'host' header.  Trying to chase down whether we need to code a workaround in libclient (RestClient.doRequest)
+     * Ben committed dependency change in libclient and common (4.2.3) in trunk
+   * worked with Robert on Jenkins-1 machine and web-server configs.
+   * some Member Node support
+   * Continued work on d1_integration test modifications.
+
+Robert
+ * Working on Tidy
+ * Running LogAggregation
+ * Working on Jenkins
+   * Dave found a fix for the xmlstarlet problems, need to reformat xlst templates throughout dataone-cn-os-core
+   * wrote a script for installing ldap on jenkins-2
+ * Friday's 
+Topics
+------
+
+Rolling out index from cn-unm-1 to orc, ucsb.  Timing with tidy, dns
+    Steps:
+        1. Go Readonly across CN
+        2. Stop tomcat on CN that is out of DNS RR (orc/ucsb)
+        3. Copy solr search index data files to solr core
+        4. Start tomcat, wait for startup
+        5. Bring CN back into DNS RR and remove other CN from DNS RR
+        6. repeat steps 2-4 for CN
+        7. Restore CN into DNS RR
+        8. Turn off Readonly across CN
+
+
+--------------------------------------------
+Observed oddities with index/object/resolve
+
+Pids with no object path, no content on some servers, resolve
+https://cn-orc-1.dataone.org/cn/v1/query/solr/?q=id:knb-lter-hfr.127.9 (exists)
+https://cn.dataone.org/cn/v1/object/knb-lter-hfr.127.9 (does not exist)
+https://cn-unm-1.dataone.org/cn/v1/query/solr/?q=id:knb-lter-hfr.127.9 (does not exist)
+https://cn-unm-1.dataone.org/cn/v1/object/knb-lter-hfr.127.9 (exists)
+[ INFO] 2014-04-15 06:53:09,902 (IndexTaskProcessor:isObjectPathReady:250) Object path for pid: knb-lter-hfr.127.9 is not available.
+
+https://cn.dataone.org/cn/v1/query/solr/?q=id:peggym.1108.100  (exists)
+https://cn.dataone.org/cn/v1/object/peggym.1108.100  (does not exist)
+https://cn-unm-1.dataone.org/cn/v1/query/solr/?q=id:peggym.1108.100 (does not exist)
+https://cn-unm-1.dataone.org/cn/v1/object/peggym.1108.100  (exists)
+[ INFO] 2014-04-15 06:53:12,514 (IndexTaskProcessor:isObjectPathReady:250) Object path for pid: peggym.1108.100 is not available.
+

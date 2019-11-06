@@ -1,0 +1,191 @@
+Attendees: Rebecca, Bob, Bertram, Carol, Steve Kelling, Bruce, Viv, Steph, John Cobb, Suzie
+
+Regrets:  Bill Michener, Amber Budden, Matt Jones, Hilmar,
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Mar 30, 2012 at 10:55 PM MDT.
+https://www1.gotomeeting.com/join/660409729
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (312) 878-3072
+Access Code: 660-409-729
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 660-409-729
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012Mar30-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-03-30
+
+1) CI Update (Dave)
+
+2012-03-30 CI Status Update
+
+Summary
+The DataONE cyberinfrastructure as planned for the public release functionality, is fully operational except for an issue with mirroring of content between Coordinating Nodes. This issue is significant in that it prevents a state of inter Coordinating Node consistency from being reliably achieved. The problem is being diagnosed, and at the current time is appears to be an issue with a third party library that is being used for communications between Coordinating Nodes. See "CN Mirroring" below.
+
+At this stage, it appears the best way to proceed is to drop down to a single Coordinating Node. The infrastructure will appear to end users to continue to operate normally, the only difference being that all interactions will be through a single CN instead of being spread across the three CNs. Proceeding in this manner will enable ongoing testing in parallel with further diagnosis and correction of the issues observed with reliable content mirroring between the CNs.
+
+Post release: Next big steps for development activities focus on client side stuff and also on improving search / discovery by progressive refinement and augmentation of the indexing process. Data integration (in a semantic sense) is also a priority, but not feasible in a production sense until we have both very stable services and client tools available.
+
+Services
+The DataONE platform relies on a number of core services that together implement the cyberinfrastructure functionality addressing the requirements of the project.
+
+DataONE APIs
+The APIs define the service endpoints for communication between nodes and clients participating in the cyberinfrastructure.
+Status: Stable, complete.
+
+Synchronization
+Synchronization is the process where Coordinating Nodes recognize new or changed content on Member Nodes, and process that content so that the Coordinating Nodes obtain a copy of the System Metadata, and a copy of the Science Metadata or Resource Map if appropriate.
+Status: Stable, fully operational, but see "CN Mirroring". There is an issue observed with retrieving old content from the KNB where the science metadata is no longer valid due to bug fixes in the XML parsing libraries (i.e. validation errors were not detected in older versions of the libraries but are in the current versions). Hence some content available in KNB is rejected by CNs as the science metadata is not valid according to the schema.
+
+Replication
+Replication is the process where Coordinating Nodes request Member Nodes to retrieve a copy of an object so that the number of copies in the DataONE system conform to the requested number of replicas.
+Status: Stable, appears to be fully operational, but see "CN Mirroring".
+
+Authentication
+The Authentication Service utilizes the InCommon system to generate client side certificates augmented with additional identity and group information for DataONE users that enables secure access to DataONE services such as content creation and alteration of properties such as access control rules.
+Status: Stable, operational, though usability and possibly some functional changes required.
+
+Access Control
+The Access Control services define who is able to read or modify content that is added to the DataONE system. Access control is core to all services and appears to completely operational, though there are many combinations of rules and update sequences that continue to be fully tested.
+Status: Stable, operational. Full integration testing is ongoing. Operational, but still of some concern, is the timely propogation of a change in access control rules (e.g. making an object publicly readable or vice-versa) to all replicas of an object.
+
+Log Aggregation
+The Log Aggregation service runs on the Coordinating Nodes and retrieves access log records from Member Nodes, combining them in a manner that enables generation of summary reports for content contributors, node operators, and other stake holders.
+Status: Implemented, but requires further testing in an operational environment. Especially important is ensuring appropriate evaluation of access control rules for log records.
+
+Indexing
+The Indexing Service generates an index that is used to assist with content discovery. The service parses the various metadata formats added to DataONE, providing a common view across the different formats. The Indexing Service is necessary for operation of the ONEMercury search user interface.
+Status: Stable. Existing metadata format extraction rules will require some fine tuning, additional metadata formats to be added over time.
+
+Search
+The Search Service runs on the Coordinating Nodes and provides a programmatic mechanism for client tools to search the DataONE holdings. It uses the same index as the ONEMercury user interface.
+Status: Stable. Currently provides access to only publicly readable content. Full support for authenticated access to restricted content is prototyped, but requires further testing and evaluation before integration to the Coordinating Nodes.
+
+CN Mirroring
+Coordinating Node mirroring is a service (actually several services) ensuring all system state (system metadata, science metadata, node statuses, user identities, etc) is mirrored between the CNs. There are four mechanisms being employed for implementing this service, each chosen for the type of content being mirrored.
+
+LDAP configured in multi-master mode is used primarily for tracking node registration and status.
+Hazelcast is the primary, low latency mechanism for messaging and transfer of system metadata between the CNs. Reliable operation of this service is critical to maintenance of state between the CNs
+
+Metacat replication is used for transferring science metadata and resource maps between coordinating nodes. This mechanism has a higher latency than the other mirroring mechanisms, but is appropriate for the larger sized content being managed.
+
+Finally, standard Postgres single master replication with failover is used for transferring user session state between the CNs when accessing the CNs through the portal pages (used for authenticating, identity verification, identity mapping).
+
+Status: Unstable. There appears to be an issue with the Hazelcast system. As yet it is not determined if the issue lies with our pattern of use of the system (which is similar to published examples) or if there is a problem with the Hazelcast implementation (i.e. a bug). If it is a problem with the Hazelcast library, then unfortunately there will be some significnat refactoring required as it will be necesary to upgrade to the next major release of that library (the 2.0 series), since the Hazelcast developers are no longer doing any fixes on the 1.9 series which is being used by the CNs.
+
+Q: Was Hazelcast in specific and reliance on 3rd party contributed SW listed in our risk register? Generic 3rd party SW is there but not specific SW/libraries
+Good. So I guess in the next update we will change its liklihood to "high(est)"
+Updating Risk Register is now on my ToDo list - RK
+
+Sandbox environment: 
+
+- ONEMercury  https://cn-sandbox.dataone.org
+- Logon Portal  https://cn-sandbox.dataone.org/portal
+
+Important: these urls will be up and down for the next few hours while the environemnt is being reconfigured.
+
+
+Discussion:
+
+- Single CN vs wait for multiple CN
+
+Procedure: 
+- Continue with evaluation of the sandbox environment using a single coordinating node deployment
+- In parallel continue debugging the issue with hazelcast in the development environment
+- Ideal is that testing of user oriented tools will complete along with fix of Hazelcast issue so that release can be made with full suite of CNs. Fallback is to do a release with a single CN.
+
+
+
+Software
+
+Metacat MN
+Fully operational. Probably ready for cutting a final release.
+
+GMN MN
+Fully operational though some minor issues remain that do not affect operation within the DataONE environment.
+
+Mercury MN
+Operational, requires further testing.
+
+Dryad MN
+Operational, requires further testig.
+
+CLI
+The command line client provides a tool for low level interaction with the DataONE services. The CLI is operational, with additional functionality and features being added on a regualr basis.
+
+R Client
+Updated to work with the current API and service versions. Operational as something between proof of concept and a usable tool, will require further work before general deployment is feasible.
+
+ONEMercury
+Operational. Some UI tweaks required, especially for rendering metadata documents. Access to only public content is fully implemented. Providing access to restricted content requires some significant changes to ONEMercury operation and will not be a feature for the public release.
+
+Hardware
+All hardware located at the three centers is fully operational with no known issues.
+
+So maybe a list of scope items that we re through over the fence until after this release:
+1) CN synchronization (before or after 1.0)
+2) Other ACLs besides public (only applies to web serach)
+3) what else?
+
+2) Internship update (Rebecca)
+
+ * Publish (data) or Perish: Best Practices for Creating, Reviewing, and Publishing Data Products (Bill Michener, Bob Cook) : Karina Kervin
+ * Enriching the Content of the DMPTool for the DataONE Community (Andrew, Carly, Sherry): Rachel Mandell
+ * A Portable Web Application for Data and Metadata Submission - dropped
+ * Querying Scientific Workflow Provenance (Bertram, Paolo, Shawn): David Payne
+ * Data Usage and Citation Visualization (Heather, Skye): Pei Chu
+ *  Evaluating the Feasibility of Using Bottom-Up Text Mining  Approaches to Complement Thesaurus and Ontology-based Approaches for  Supporting Data Discovery (Stacy, Mark): Barman Das
+ * Enhancing Semantic Search in ONEMercury (Line, Giri, Natasha,Jeff ): Paul (Suppawong) Tuarob
+ * An Information Model for Observational Data within DataONE (Mark, Debra, Carl, Hilmar):?????
+ * Components of Successful Metadata Registry Frameworks (Jane, John, Joan): Angela Murillo
+ * Developing a DaaS  (Data as a Service) view of DataONE - dropped  : <
+
+Interns will be notified by April 4th (most before) and asked to return an acceptance form.
+Next step is to set up face-to-face meeting with mentor(s) and intern.
+
+Viv: What is the main difference between DataONE and EarthCube?
+
+DataONE is funded and soon will have v1.0 Earthcube is still being formed. (John)
+interoperable?
+Earthcube is GEO DataONE is OCI/BIO - somewhat different NSF tribes (not a science distinction)
+It is not either/or - take both 
+Many people working in Earthcube are not working for DataONE
+Bob:  EarthCube/NSF has funded a few EAGERs (short term high risk projects) to further define the EarthCube system.
+
+Suggest that we post a paragraph on the DataONE website that outlines the similarities and differences between the two. 
+
+3) Around the room
+ Steve: Nothing new from me
+ 
+ Bertram: Nothing much other than getting ready for EVA meeting next week; then plan ProvWG meeting pre-IPAW in Santa Barbara.
+ 
+ Bruce -- nothing new from me.  
+
+Steph: Carly has a draft of her ms on data management in undergrad ecology education - survey of ~50 intro ecology profs. We are targeting the journal Ecosphere
+
+John Cobb: Nothing new at this time (heading off to Suzie's for a piece of a Fried taco featuring "Pink Slime"! Yum!
+
+BTW: Most are proably already aware: OSTP BigData event yesterday at <http://live.science360.gov/bigdata/> - interesting to hear. webcast promised in another day.
+Note the DataONE related data citation Earthcube EAGR was promoted by Suresh at this confab
+Carol: Nothing new from me.
+
+Suzie:Presentation at the RDAP conference went well. Key items: (1) Carol Meyer and I were back-to-back and we fit well. Also had a chance to answer a lot of questions, which based on my comments about what I did with DataONE were mostly socio-culturally/ assessment oriented.  (2) Reagan did come to my posters to specifically ask about our release and whether he could get more information about our tools so he can be sure he builds interoperably in his work. He was "happy to hear" we would be releasing in April.  (3) Reagan sent us the spreadsheet that Illya is developing based on a Spark grant for EarthCube; the idea is that it is recording key info about architecture of many projects.
+Purdue has a list from a spark grant listing data archive <http://databib.lib.purdue.edu/> 
+  I forwarded that to Rebecca to send on to appropriate team members. (4) I also was asked, and accepted, an Advisory Board position on a A.P. Sloan funded project at CLIR — A post doctoral program in Data curation. It will be announced next week at CNI.  (5) Paul Uhlir, Director of the Board on Rsearch Data and information at NAS also touched base to ask about continuing education programs etc. I put him in touch with Mike and Amber. I am also exploring what UT may be able to do to help deliver a librarian oriented piece since several were asking about that. (6) Paul Uhlir was also interested in getting involved with the EU proposal that he says DataONE is involved with.
+
+Bob:  nothing new
+
+Viv: Nothing super exciting this week ;)- just working on details for the DataONE - USGS Workshop; trying to get students for the DataONE Data Mgmt Workshop in May in SB (http://www.dataone.org/data-management-short-course); will be getting the presenters together soon to talk about teaching logistics. If leadership team could help with advertising for the May workshop, that would be appreciated. 
+
+Rebecca: DataWebForum is being pushed by NSF (Allan Blatecky) and Chris Greer (NIST). e-mail to follow
+

@@ -1,0 +1,105 @@
+EVA Subgroup on Visualization Techniques
+June 27, 2013 at 12 noon EDT
+
+------------------------------------------------------- 
+To join the online meeting 
+------------------------------------------------------- 
+1. Go to https://edss.webex.com/edss/j.php?ED=209086072&UID=1405568547&PW=NZDQ1MTgzMmZk&RT=MiMxMQ%3D%3D 
+2. If requested, enter your name and email address. 
+3. If a password is required, enter the meeting password: 20130627 
+4. Click "Join". 
+------------------------------------------------------- 
+To join the audio conference  
+------------------------------------------------------- 
+888-551-7631 
+pass code: 7813231 
+------------------------------------------------------- 
+
+Participants
+Jorge, Steve, Yaxing, Anna, Claudio, Fei Du, Bill Hargrove, Christopher, Enrico Bertini, Bob Cook
+
+Agenda
+1. Introduction  - Bob
+2. 2 examples of how visualizations can be improved - Aritra
+3. Plan and schedule-- Aritra
+4.  Discussion - all
+5.  Next call
+6.  Next Face-to-Face meeting
+we will adjourn just before 1 pm EDT
+
+
+Telecon Notes
+1.  Introduction
+    http://epad.dataone.org/EVA-Vis-Critique-2013-05-30
+
+2.  2 examples of how visualizations can be improved - Aritra
+Set of slides
+
+3.  Plan and Schedule
+
+Plan for the IEEE Transactions on Visualization and Computer Graphics (TVCG) Paper   
+1.  Taxonomy of design problems developed from 100 to 200 images from TBM community
+        have evaluated 106, need another 100 or so images:  check with Steve A., Forrest, and Bill Hargrove (map curves?).
+        Bill: More thoughts on conception nature of comparison
+        Enrico: Visualization used for communication and exploration purposes
+        
+            who:  Aritra and Jorge with Claudio and Enrico
+            methododolgy: partially described in Sect 2.1  of the vis paper??? 
+                using general design principles to evaluate the images
+                 expand Sect 2.1 to fully describe the method for applying general vis  design principles and how they were used to evaluate the images
+                
+                Talk with Anna and Forrest  and ??? to get more images
+                 Compile a database of images with: intent, problem description, recommendations, communications between us and scientists
+                
+2.  Need to have 5 or so figures of a diversity of types derived from the Taxonomy of Design Problems (Step #1 above)
+            include complexity of the image as a contributor to the diversity
+
+3.  Identify the problems and redo the images with our solutions 
+    already have re-done two images (from March Vis paper)
+
+4.  Discuss the problems and the re-done figures 
+                    with the EVA group
+                    
+5.   survey the community to see if those improvements are suitable
+                 how do we plan to present this in the manuscript? make a plan, which will guide our discussion with scientists and usability survey         
+
+6.  develop guidelines / conclusions 
+            state general visualization design principles
+            present best practices originating from this paper
+            include some info about good images found during the initial steps (Step 1 above)
+
+The InfoVis paper plus reviews will be a good starting point for the TVCG paper.
+
+Schedule
+The schedule that we discussed for completing this paper was basically a couple of months July and August to do the main work and prepare a draft and a month September to do a careful internal review of the paper.
+
+4.  Discussion
+
+Steve: keep activities well bounded, climate scientists; next phase (after successful completion of this activity) consider working with managers (eg, land managers); third phase perhaps consider conveying this type of information to decision makers
+
+Actions: 
+1). New image examples to be collected: Bill, Steve, Anna, Christopher, Forrest, ...
+2). Compile a document of current images with our (e.g. Aritra's) understanding of the messages that authors wanted to convey and share within this EVA group. Allow anyone to comment and provide feedbacks.
+
+Aritra Dasgupta <dasgupta.aritra@gmail.com>
+
+5.  Next call
+    Week of July 22
+    please indicate days / times for which you are not available
+    Christopher: all times work, 9-3 Arizona time
+    Steve: Monday 11-12, Wednesday 10-12, Friday 11-12, Mountain time <g>
+    Bill H.:  I'm out on *vacation* all week, sorry.  Could possibly phone in though ...
+
+6.  Next Face to Face Meeting
+    September?
+    Venue?  Oak Ridge
+                    Bay area
+                    Boulder?
+                    other
+    Claudio: end of september
+    Anna:  first week of Sept will be away
+    Steve: generally open in sept
+    Bill: Sept 26-29 will be away
+    Christopher: teaching a lot in Sept, but may work (I need to be in FLG the week of 16-18 for sure).
+    
+

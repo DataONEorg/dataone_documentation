@@ -1,0 +1,83 @@
+Toll Free Number:  866-703-9626 
+Pass Code:  767574 
+
+
+Agenda
+
+1. NSF  Review:  short script for the long movie showing UV-CDAT functions (Jorge)
+    Yaxing will add information about the graphs / maps and their interprestation 
+    
+2.  EVA subgroup activities (Aritra)
+
+
+3.  UV-CDAT code availability
+    linked to LLNL repository and containing Jorge's work
+    
+    UV-CDAT 1.2.0 official release doesn't "fully" include the functions that Jorge developed.
+    Next
+    
+    UVCDAT Video tutorials:
+    http://uv-cdat.llnl.gov/wiki/VideoTutorials
+    http://uv-cdat.llnl.gov/presentations/
+    
+    next release in April, will include both Jorge's and Aritra's functionality
+    
+
+
+
+
+
+From our Workshop:
+http://epad.dataone.org/2013-01-22-EVA-Wkshp
+
+
+EVA Subgroup Activities
+1.  machine learning and visualization interactions
+     Forrest Hoffman, Bill Hargrove, Jorge, Harish, Claudio, Vineet, Arthur, Christopher, Bob
+
+startup again in April, 
+use existing tools
+
+
+2.  Evaluation/Review of visualization techniques for climate community experts
+     Aritra leads, with volunteers
+         Anna, Debbie, Steve, Yaxing, Dan Ricciuto, Forrest, Claudio, Bob Cook
+
+list of figures (~50) and their advantages / disadvantages
+develop a set of questions about the figures / maps
+
+bring the group together for discussions (teleconference)
+
+Chris Field with Anna at Standford has a IPCC library for generating IPCC plots. 
+http://dge.stanford.edu/people/cfield
+
+March 31 (for review)
+conference in October 2014
+IEEE Vis
+http://ieeevis.org/
+
+has an abstract / outline and the list of figures
+
+
+
+3. A working group/focus group/proposal on the visualization needs for multiple-dimensional  Scaling
+    metric and non-metric
+
+place a group of (1) models or  (2) models and observations in the same phase space for intercomparison
+
+    potential method for looking at ILAMB processes
+    
+    Vineet, Debbie, Bill Hargrove, Anna?, Jorge, Claudio
+    
+    
+4.  (Day 2) Expand on the DataONE Provenance-Workflow (VisTrails) demo  (Yaxing et al) to show DataONE tool & infrastructure integration
+lead by Prov / Workflow Working Group, tie in to the EVA WG
+Bertram and Yaxing and Colin
+link to Brokering approach (Stefano Nativi, Italian National Research Counsil)
+
+
+5. (Maybe) a paper focusing on the visualization needs of policy makers.
+    need to engage resource managers / social scientists to identify types of analysis and visualizations
+
+    Anna, Arthur, Debbie, Bill, Steve Aulenbach, Jeff Morisette (??), 
+

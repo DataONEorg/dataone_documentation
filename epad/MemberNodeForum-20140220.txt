@@ -1,0 +1,72 @@
+Member Node Forum - 20 February 2014
+                                                                                           
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+
+  (Occurs every 2 weeks on Thursday 4pm BST (Sao Paolo, etc.), 3pm AMT (Manaus, etc.), 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan, 5am Brisbane AEST)
+  Upcoming meetings 6 March, 20 March, 10 April
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307  (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,  -20130530, -20130613, -20130627, -20130711, -20130725, -20130808,  -20130822, -20130905, -20130919, -20131003, -20131017, -20131031,  -20131114, -20131212, -20140109, -20140123, -20140206
+
+Attending:  Laura Moyers, Mark Servilla, Ed Flathers, Ryan Scherle, Alyssa Rosemartin, Adam Brin, Rob Nahf, Amber Budden, Bruce Wilson
+
+Regrets: John Cobb
+
+Action items from last time:
+
+Agenda:
+
+0. Welcome new attendees - introductions: 
+    NKN - Ed Flathers - 
+    NPN - Alyssa Rosemartin - 
+    Digital Antiquity - Adam Brin - archaeology repository
+
+1. Network-wide update and issues affecting MN's as a whole
+    CN issue - testing the solution, waiting until after the Reverse Site Visit (early next week) to move to production
+    Update on Metacat upgrade - Ben is working on rolling out the upgrade this week, includes propagating access policies correction
+      
+2. Open issues:  MNs please add anything you would like to address here.
+    none identified today
+
+3. Feature requests/opportunities for collaboration:
+    Ed (NKN)  - 
+    LTER information managers colocated at the ESIP meeting, too
+
+FEEDBACK REQUESTED FOR THE 2014 DUG MEETING ---
+      We would like feedback from MN Forum members regarding what they would  like to see at the DUG and how they would like to be involved.   Everyone seemed to like the MN Showcase last time.  What else would be  important at the DUG?  DUG committee meets 1st Tues of month, so comments to Amber will be passed on then.
+
+ESIP SUMMER MEETING - JULY 8-11, 2014 IN COPPER MOUNTAIN, COLORADO  
+    DUG is Sunday 7/6 and Monday 7/7, co-located with the ESIP meeting, plans for lodging, etc. still in process.  
+
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+    LTER (Mark) - metacat right now, affected by a recent issue (CN and other metacat-related issues); metacat upgrade should correct some data synchronization issues; when the metacat stack is stabilized, LTER can migrate to the PASTA GMN
+    Dryad (Ryan) - very nearly a production MN (hooray); Ryan to register with production, may be able to flip the switch today or tomorrow
+    NPN (Alyssa) - data through 2012, then added through 2013; working just fine
+    NKN (Ed) - MN s/w installed and working on a pre-production host (sandbox); next steps: need to make changes in local data cataloging system to support DataONE data needs (including checksums and DOIs at file level) - using UUIDs as identifiers; for checksums, MD5 is supported
+    EDAC (Rob) - in stage currently and want to do a bit more testing
+    Digital Antiquity (Adam) - has a Java question, Rob can help - looking at the documentation and other MNs' implementations; is there a way to test that we've implemented the client correctly?  Rob says yes, can send link to webtester and other test services
+        --- new MNs can all benefit from "Becoming a Member Node":  
+                http://www.dataone.org/member-node-deployment-process
+            and for more details:
+                http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html
+            Note mule1 has a lot of architecture and operations documentation.
+        (CDL microservice model)
+
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't forget irc.ecoinformatics.org, channel=dataone if you have an urgent issue.  CCIT folks are always there and can assist you.
+

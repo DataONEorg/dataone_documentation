@@ -1,0 +1,16 @@
+Tracking any issues, bug, feature requests, changes observed during the MN workshop held in Denver USGS on 2012-04-18.
+
+
+- Authentication through CILogon represents a single point a failure. Alternatives should be available to generate client certificates that include a mapping to existing user credentials.
+
+- Need a webform on the portal to help with registration
+
+- *really* need to way to verify what credentials are being used when calling a node (e.g. echo session -> returns subject + subject info)
+
+- Need notification of node registry entry changes to give processing a kick
+
+- Quota management is important for earlier adopters - need to be able to limit the amount of space that will be utilized for replication on a MN
+
+
+
+

@@ -1,0 +1,101 @@
+..meta::
+  :keywords: DataONE, CCIT, 20101201, VTC
+
+DataONE Developer Call - 2010-12-01
+===================================
+
+:Attendees:
+  Paul Allen, Roger Dahl, Bob Sandusky, Bruce Wilson, Dave Vieglais, Ryan Scherle, Matt Jones, John Kunze, Mark Servilla, Chad Berkley, Rob Nahf
+
+:New Actions:
+  - (Mark): Check on Ken Klingensteins PPTs from the Fed Sec workshop for SAML examples. 
+  - (Dave): 
+
+
+Agenda
+------
+
+There are two major, somewhat inter-related topics that could benefit from some discussion: security (authn, authz) and search.
+
+0. Preservation meeting in Chicago
+- Agenda coming out soon
+- work at writing narrative, technical assessment perhaps later in conjunction with CCIT
+- No real documentation / strategy for preservation have been formally described for DataONE
+- For Jan/Feb need a good story for the review process
+- Ryan may have a microphone that we can borrow (contact on Friday if necessary)
+- 
+
+1. General discussion and update on Security: Authentication and Authorization
+
+* Authentication prototyping plans and status
+  - https://repository.dataone.org/software/AuthNPrototype/
+  - Branding for CILogon - minimally logo and color 
+  - Graphics at https://docs.dataone.org/member-area/documents/copy_of_graphics
+
+  - Developing a prototype web service that will accept a CILogon cert for verification and generate DataONE specific token for passing around between nodes / method calls
+  - Evaluate PASTA approach for token content
+  - Is SAML overkill, or is there to be a DataONE specific structure
+  - Could also be a library that generates a token locally rather than a service
+    - More scalable than relying a more centralized service
+
+* Structure of authentication token
+  * Principal identity
+  * Time stamp
+  * Authentication source / provider
+  * Groups?
+
+Example of PASTA Auth Token:
+<authToken> 
+    <userCredentials> 
+        <userId type="distinguishedName">uid=mservilla,o=LTER,dc=ecoinformatics,dc=org</userId>
+        <password encryption="AES">LJ7LKS(#NLS@VS56LK$</password>
+        <roles>
+             <role>ADMINISTRATOR</role>
+             <role>INFORMATION MANAGER</role>
+        </roles>
+        <groups>
+             <group>CLIMATE STUDY</group>
+             <group>KBS</group>
+        <groups>
+    </userCredentials> 
+    <ttl unit="seconds">90384592342</ttl> 
+</authToken>
+
+Need to define Groups in DataONE. (One advantage of a login service might be that it could populate a token with group membership information)
+
+- May be able to collapse roles and groups into one 
+- When are attributes injected into a certificate? At the cert request being sent to CILogon?
+- Sequence diagram: https://repository.dataone.org/software/AuthNPrototype/trunk/CILogonAuthN.png
+
+- Is CILogon able to inject any additional attributes into the certificate?
+- What does the SAML assertion actually contain? (Ken Klingenstein's presnetation at the Fed Sec workshop had some examples)
+
+- Could also lookup group information at the authorization stage - but this increases the number of service calls significantly
+
+* Authorization
+  * Rules to be expressed
+  * Serialization of rules
+
+Matt has been drafting some notes on this: http://mule1.dataone.org/ArchitectureDocs-current/design/Authorization.html
+
+- Can gain a lot of efficiency in authz checking by controlling at the service method call level
+
+* Implementation approach
+  * Current suggestion of four phases is perhaps too fragmented
+
+
+2. Search and discovery discussion (Not covered during call - defer to next discussion)
+
+* Query syntax that should be supported
+
+  * Currently "SOLR"
+  * CQL support?
+
+* Introspection
+
+  * List of fields and their types
+  * Distinct terms for a field (and counts)
+
+* Scaling search with authorization
+
+

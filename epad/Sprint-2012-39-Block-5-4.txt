@@ -1,0 +1,370 @@
+Sprint-2012.39-Block.5.4 Notes
+==============================
+
+Roger
+-----
+ * Working on ONEDrive. Semantics group may eventually provide input, but for now focusing on display based on searching multiple facets
+   * hard-coding some facet values for now, but will later discover them
+     * date range
+     * geo
+     * etc
+   * Now working on facet-based search, by end of the week will try /query on cn-dev-unm
+     * To the point where ONEDrive can use /query on cn-dev-unm-1
+     * testing with cached data
+   * Initial plan for faceted query may not work. Can't include matching object counts
+   * All fields in Solr can be facets, so we need to determine which ones should be facets
+     * perhaps 20% of terms would be good facets (like, size may not be good ...)
+   * configuration file will define canned searches, then apply faceted searches on top of that
+ * Query API availability is a bottleneck
+ * Setting up an Eclipse dev environment for test GMN against the java libclient
+   * m2eclipse doesn't seem to be searching the .m2 repository for dependencies
+   * need to add jar dependencies into the pom
+ * Worked on bug with Jing on multiple returns of pids
+
+Robert
+------
+ * Working on Bug #3043 - admin access for updateNodeCapabilities()
+   * ready for stage
+ * Will soon work on updateNodeCapabilities() wrt hazelcast dependencies
+ * Starting on Bug #2605 - node registry bug
+   * ready for dev testing
+ * Starting on Bug #2403 - node registry bug
+   * crontab fields validation
+ * Worked on #3276 - cn /query rest endpoint
+   * refactoring rest tests to deal with failures better
+   * ready for dev testing
+ * Adding additional tests into node registry and rest service to deal with newly discovered bugs
+ * Starting on Bug #3000 - group auth/equiv id on cn admin list
+   * working on group subject auth bug - reject? only use non-group subjects in node certs?\ The node property subjects identifies subjects as the X.509 Distinguished Name in the certificate issued by D1.  We should not use the subject field in node as a way to allow group administration.
+ * Harvesting log records from knb stage
+   * ran into authentication error
+ * Should I include a story about updating to HZ 2.0 and experimenting with SSL?
+
+
+ * Need assistance on data inconsistencies between UCSB and UNM/ORC
+   * xml_docs and xml_revs tables have differences
+     * on UCSB i find docids + rev in xml_revisions table that are in xml_documents table on UNM/ORC and vise versa
+     * a few dozen or so
+     * https://redmine.dataone.org/issues/3264
+ * Need assistance with PISCO in staging
+   * Chris will contact Mike
+ * Need assistance in Staging use the KNB
+   * ask Ben for help if needed
+ * Need to start processing on Production machines, keep log aggregation turned off for now
+ * Upgraded Dev environment. FYI: metacat on cn's are at 2.0.5
+ * Added documentation for using LibC lient
+   * http://epad.dataone.org/DataONE-Java-Client-Library-HowTo
+
+Ben
+---
+ * SANParks/SAEON GIS download bug (fixed)
+ * Morpho refactor - consolidate Metacat calls (ongoing)
+   * still refactoring
+   * tackling identifier handling within Morpho wrt revision managment in Morpho while still supporting new pids for D1
+   * Jing is going to work on Id/file-releated Morpho subsystem - on going discussion with him on that aspect of the refactor (going well)
+ * Morpho design - ongoing discussion about class diagram: https://repository.dataone.org/documents/Projects/cicore/architecture/api-documentation/source/design/morpho/images/morpho-class-diagram.png
+   * Refining local filesystem model with Jing here
+ * Current Morpho refactoring work not contingent on D1 libclient features (yet).
+   * D1Object and D1Package will be simpler
+   * Facade methods in D1Object introduce complexity, so we're keeping it simpler
+   * Perhaps moving these methods into D1Client? or a utility class?
+   * Avoid obfuscation in D1Client
+   * Now, identifier and file management code
+ * Working on Metacat search issues with LTER folks
+   * Have not resolved the long-query issue LTER is seeing - still on my todo list.
+ * CILogon folks would like us to use v2 of the service - will look at this
+   * removed some transaction storage reuirements
+   * they don't provide out-of-box storage for private keys, etc.
+   * They will provide suggestions on dealing with it
+
+Rob
+---
+ * Reviewing WebTester results with Dryad folks.  Need to update a few tests to make more informative.  Down to the last, hopefully, bug fixes.
+   * We need to add product jars on releases.dataone.org - Ryan doesn't have access to a stable jar, so Rob is pointing him to Maven for now
+ * Working on re-design of D1Object / DataPackage with Ben & Jing:
+   * open questions:
+     * where to place the "doing stuff" methods currently in D1Object (that act as a facade)
+     * What other functionality to simplify DataONE interaction is needed?
+     * Should these ITK-only classes be part of d1_libclient_java?  their frequency and causes for change are independent from the rest of the functionality (handling https communication) so probably yes.
+ * Implementing the Query api in d1_common_java and d1_libclient_java
+   * repointed d1_common_java trunk to v1.1 schema in the repository
+ * Will add integration tests for MNQuery functioanlity once stable
+ * Will merge the new Types changes into the trunk
+ * Working on bug reported by Jing on serialization, getting different pids with ORE docs
+   * solved.
+ * Doing some design work with Dave regarding an ITK libclient, will hear back
+ * Will review Robert's libclient developers usage document
+ * Worked on bug with Jing on serialization bug (insertRelationship() was not inserting the relationship into the map)
+   * created unit test to continue to exercise the scenario
+ * Need to hear back from Matt, Dave regarding libclient facade methods
+   * D1Object.download()
+   * D1Object.create(), etc.
+   * Do we remove these, or are they planned in the design?
+     * Matt had added them for the R client, is nuetral about it
+   * D1Object.doSomethingMethods() are a bit misplaced
+     * create() driven by correct sysmeta doc
+   * In python, there's an mn client and c1 client, as well as a d1client
+     * java libclient d1client may implement the convenience method
+   * Rob will put together a strawman proposal on locating convenience methods
+   * DataPackage refactor - lazy loading of data bytes
+ * Looking at d1_client_java configurations - in a jar only (Settings)
+   * which is the overriding properties file? documentation is important
+   * do we include default config files in the jar? defaults to production env, but may need to point to development envs first
+ * 
+Dave
+----
+ * Adding optional API for MNs for Data Services
+   * includes slicing, querying, mapping, etc
+   * Would be nice to expose an API in a generic way
+   * Advertising an available service is easy, but describing how to interact with a service
+   * Potentially point to a WSDL document, but clients need to be able to support WS* essentially
+   * Potentially look at: http://www.infoq.com/articles/rest-discovery-dns
+   * Potentially expose a ServiceList service, so MNs can only advertise a restricted list (likely vetted by the MN community)
+ * For Query, possibly pull the Types out of dataoneTypes and into another schema
+   * Simplest: add in MNQuery calls, call them optional
+   * Ben: Remember, we can use NotImplemented if a given MN doesn't implement an API
+   * example: usgs wms spatial subsetting
+ * Updated redmine, new backlogs UI. good performance
+ * working on watchhazel
+ * talking with DPN folks re: data access. 
+   * We should be thinking about dark archives
+   * perhaps getArchive(pid), returms the object after a longer time period (say 24 hours)
+   * Data Preservation Network (DPN) 
+     * pitched as DM plan addition as a 'one off fee', provides archive
+     * natural fit for D1 to index content
+
+For now, we'll use MNQuery: an optional, non-tiered API
+
+20121003:
+- Updated redmine to v1.4.2 (tried 2.x but plugins like backlogs not ported). Performance issues appear to be resolved.
+
+Members of dataone-sysadmin
+# dataone-sysadmin, Groups, ecoinformatics.org
+dn: cn=dataone-sysadmin,ou=Groups,dc=ecoinformatics,dc=org
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: uid=jones,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=brand,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=dahl,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=jgreen,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=waltz,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=rnahf,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=bwilson,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=cjones,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=leinfelder,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=dexternc,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=sroseboo,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=tao,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=cbrumgard,ou=Account,dc=ecoinformatics,dc=org
+uniqueMember: uid=vieglais,ou=Account,dc=ecoinformatics,dc=org
+cn: dataone-sysadmin
+
+ * worked on Nagios configuration
+ * check_mk package needs manual install on each machine
+ * Need to verify port 6556 is open on target being monitored
+ * Switching to check_tcp HOST 22 instead of check_ping for all hosts (fast and works nicely)
+ * installing statsd - really simple metrics collector and viz
+   * will provide an instrumentation panel
+
+
+Matt
+----
+ * Looking at R client possibly this week
+ * Eval'd DataUp codebase
+   * there's a desire for D1 to take the code on
+   * C# code is fairly minimal
+   * 30 classes or so in the plugin
+   * processing is being pushed off to the Azure Cloud service
+   * need to fix EML generation immediately (is John tackling this?)
+ * Started working on R client - changes to install slowed things down a bit
+   * working on DataPackage class through java
+   * SSL exceptions, etc.
+   * using 1.1-SNAPSHOT of libclient
+ * NODC/ESRI conference call on exposing an MN
+   * geoportal-based MN
+
+Chris B.
+--------
+ * OpenVPN setup on native VM hosts (redmine #1826)
+   * enabling SSH access on native hosts for VPN - performance testing?
+   * This can be rejected. HZ 2.0 will probably address
+ * Snapshotting to offsite node
+ * Puppet tests
+   * Nessus
+   * Matt: Nick is transitioning from puppet to Chef for ease of config
+ * Bioportal
+   * DNS entry: Ontologies.test.dataone.org
+   * Talked with Bruce, will be in touch
+ * worked on cn-dev-orc-1 ssh connection issue - deny daemon blocked conns based on login failures
+
+
+Skye
+----
+ * Worked on a jsvc daemon issue
+ * Added solr-common, solr-tomcat into dev, no longer using the ppa location
+ * Updated FGDC indexing logic - test data was different than production data. Fixed
+ * Will work on query API endpoints
+ * May expose the solr search index to Google - exposed as a google sitemap
+   * back and forward links within the sitemap
+   * will take some research
+ * Analyzing indexing logs on production - will be using hzPeek to see the hzObjectPathMap
+ * cn-rest trunk build is failing
+ * Working on Query API CN endpoints
+   * XSL stylesheet to transform QueryEngineDescription should go in dataone-cn-rest at /cn/xslt
+   * Trying to find a location to store queryEngineList field data - looks like node.properties on the CN will be an appropriate location
+ * Working on QueryEngineDescription on the CN - https://cn-dev-unm-1.test.dataone.org/cn/v1/query/solr/
+ * d1_cn_rest_service apt package problems, manually installed on unm for now
+ * testing schema changes when a description engine gets updated
+ * Propose removing a field from QueryEngineDescription field - 'sortable' - may be too specific to solr
+ * ONEMercury keyword parsing cleanup
+   * alternate spelling, plural/non-plural
+   * we're not normalizing on case of keywords (ocean, OCEAN, oceanProcesses, 'OCEAN > TEMPERATURE')
+     * how should these be indexed and displayed
+     * Dave: use a unit test against the keyword corpus to test keyword returns that match the same concept
+       * algorthims are needed to normalize textual forms of a concept
+ * Do we add obsoletes/obsoletedBy fields into the solr schema for 1.1?
+   * Need to work on schema migration anyway - but it's not critical
+ * Add resource maps to Mercury data download table? No for now
+ * Trying to deal with solr index links for internally embedded data in EML. Have the identifier oint to itself?
+ * Moving indexing off of the CN presents issues with access to data bytes on the FS
+   * VMs would be on the same Host box? Could potentially mount the same FS via NFS? or SAN?
+ * Testing stage for 1.1 - at 1.0.4 now.  We need to figure out the backup strategy.
+ * 
+
+ Link to some notes about ONEMercury issues from the AHM:
+ https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/usability-subgroup-ahm-2012/DataONE%20UA%20Sub-group%20Break%20Tuesday%20Wednesday%20Sept%2018%2019%202012.txt/view
+
+
+
+Chris
+-----
+ * Working on d1_replication - tuning code to more efficiently process system metadata events
+   * evaluated the idea of listening to a separate topic (not hzSystemMetadata)
+   * discussed issues of centralizing topics in the hzstorage or hzProcess clusters with Ben
+   * decided that we don't actually gain much by not listening to system metadata
+   * will continue to listen to hzsystemMetadata, code will change slightly to process the events more efficiently
+   * Working with Dave on instrumenting MN node status counts so we can visualize task calls to MNs and the resulting status counts.  Some nodes are responding better than others, and so having the status states plotted over time will be useful for troubleshooting.  dave's modifying watchheazel to enable this.
+   * runs of 10K replicas are successful, but slow
+   * run of > 100K: ran into some MN problems
+     * generation of system metatadata stopped at 23K
+     * ran out of disk space a few target MNs
+   * Hit a stasis point in replication processing due to excessive oustanding requests
+     * looking through the logs to trace the stuck pids
+     * d1_sync also was stuck (not enough MN comm threads). Added the othe CNs in without repl, and the hzSync queue was drained, but sync was short 30ish pids
+   * will be modifying the mnReplTask code to try to deal with outstanding requests
+ * troubleshooting production CN issues:
+   * nagios configuration issues
+     * nick fixed it last week, added check_mk scripts
+     * dave will debug why email alerts aren't working
+       * one type of failure should go to the dev group
+       * other classes will be sent to a smaller group
+       * determine which pieces can be instrumented without putting too much load on the CNs
+   * devs need to define metrics in terms of reasonable endpoint hits
+ * Worked with Skye, Dave, and Roger to flesh out the search API endpoints
+   * http://mule1.dataone.org/ArchitectureDocs-current/apis/CN_APIs.html#module-CNRead
+   * 
+ * Writing and prioritizing tasks in redmine post-AHM
+ * Worked with Jing to troubleshoot potential MNode and/or GMN bug. Needs discussion.
+ * Sent an email to Mike Frenock about getting the PISCO stage node working again - waiting to hear back
+ * Coordinated with usability group to address Mercury UI issues - meeting next Wed
+ * 
+
+Topics discussed post AHM
+-----------------
+
+ * Core Services
+   * Replication
+     * efficient event handling
+   * Log Aggregation
+     * status - deployed on production machines and usable
+     * GET /log from MNs is serial
+     * writes to each CN is parallel (threadpools)
+     * need to turn it on and try it out, will do this this week
+     * d1-processing is currently turned off on all CNs
+     * need to deal with high load on cn-ucsb-1
+       * we can't determine what the CN->CN replication status is until the ucsb load comes done
+       * kill check_mk_agent processes
+       * restart xinetd
+     * add in PISCO into the stage env
+   * Auditing
+     * d1_auditing
+     * Nagios
+   * Indexing
+     * Skye is tracking down issues in production with object paths (off by 100) or so
+     * FGDC keyword indices are wrong, and will need some work
+     * Results from Semantics Group at AHM
+       * Improve keyword generation
+       * Dave generated a list of keywords by pid for group
+         * https://repository.dataone.org/documents/Meetings/20120918_AHM_Albuquerque/MetadataCorpus/
+       * exercising the API isn't obvious, need examples in uses cases
+         * Starting with simple stuff - search, resolve, get
+       * The semantics use case may be a bit narrow
+       * Suppawong's project only worked against known keywords
+       * A data service that provides a hierarchical term service would be useful for search term expansion
+       * It may improve recall, but not necessarily precision
+       * Use cases could be geared towards particular searches
+   * Monitoring
+ * Search API (for 1.1 release)
+ * Mutability of objects
+   * After AHM discussion, needs more review WRT Metacat
+ * ITK
+   * CE Working group notes:
+     * planning to create tutorials with screencasts (working examples)
+   * Morpho
+     * relies on new Search API
+   * ONE R
+   * ONEDrive
+     * Semantic working group support
+     * structured keywords would be provided
+     * discussed drafting an ontology, and where to store it
+     * may initially look like synthetic solr indices
+     * Patrice will be coding up a demo pretty quickly
+     * Mark Schildhauer is keen on enhancing ONEDrive with better navigation
+     * this should also be exposed in other ITK tools
+   * ONEMercury
+     * usability changes
+     *  http://epad.dataone.org/20120918-UA-priorities
+       * triage of issues in terms of user interface layout
+         * simple search
+         * advanced search
+         * results/filtering
+       * looked at how to make discovery better by improved tools (UI)
+         * figshare: simple, low entry bar
+       * support for provenance-based search
+       * Will be adding provenance info into resource maps
+   * UI Design
+     * http://epad.dataone.org/20120920-UI-Design
+   * PPSR WG
+     * wanted simple visualization tools for Citizen Scientists
+       * specific example is 'integration' with Google's fusion tables
+       * what is a possible timeline for these 'quick look' tools (end of funding?)
+     * looking to have embeddable objects from DataONE regarding Data Management best practices
+       * tutorials, primers, overviews, etc.
+       * written content
+     * still looking for possible member nodes for their community's projects.  
+     * looking at adopting a "data management maturity model" (similar to Carnegie Mellon's capability maturity model) possibly in collaboration with DataONE, to provide other communities a quality measure for citizen science data. 
+   * Metrics
+     * http://epad.dataone.org/20120920-UI-Metrics-Statistics
+     * At discovery phase, need to design
+     * log aggregation needs some kind of open access endpoint (before February)
+   * Metadata WG
+     * stack-overflow style crowd-sourced keyword service
+ * MN deployments
+   * We're focusing on:
+     * Dryad
+     * ONEShare
+     * SAEON
+     * ...
+   * We'll need to also focus on:
+     * CUAHSI (Consortium of Universities for the Advancement of Hydrologic Science, Inc.)
+     * IRIS (Incorporated Research Institutions for Seismology)
+     * NCAR (National Center for Atmospheric Research)
+     * NEON (National Ecological Observatory Network)
+     * LDEO (Lamont-Doherty Earth Observatory)
+     * BCO-DMO (Biological and Chemical Oceanography Data Management Office)
+     * University of Delaware Disaster Research Center
+     * The University of Colorado, Boulder Natural Hazards Center
+     * Texas A&M Hazard Reduction and Recovery Center
+   * Exposing the above MNs would be in support of a White House initiative to make "natural hazards data" accessible, an NSF priority. We'll hear more from Dave on this.
+   * http://safety.data.gov
+

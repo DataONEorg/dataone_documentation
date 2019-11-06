@@ -1,0 +1,99 @@
+2011-09-06 Evaluation of CI Component Status
+
+
+Schema
+TODO: - Remove the query type (this is just a parameter to a method)
+- (review this) Possibly add "version" attribute to serialized reponses? Review notes from CCIT meeting - schema will be static, changes will likely be only additions that can be added through each separate schemas.
+- add a CN method to list checksum algorithms, and indicate preferred checksum to be used
+  - Need a type for a list of ChecksumAlgorithm
+
+
+Architecture Documentation
+- Need to update docs with recent changes to schema, and deprecated methods. Enums need to be clearly documented.
+- check that getchecksum has a session parameter
+
+common java
+- up to date with schema
+
+common python
+- needs to be updated (after query type change)
+
+libclient java
+- deprecated methods need to be removed
+- query type params need to be updated - probably some constants to add to common_java
+- client side certs appear to be working, needs verification
+- need to add functionality to change subject (within a process thread) for testing purposes
+
+libclient python
+- deprecated methods need to be removed
+- query type params need to be updated - probably some constants to add to common_java
+- client side certs, appears to be working
+
+CN MEtacat
+- need a "superuser" for CN operations, set through a client side certificate
+- create a DN that can magically create certificates and is member of the Metacat "administrative group"
+
+LDAP schema
+- up to date with schema changes (enum removal)
+- need to apply to cn dev
+
+Identity manager
+- should be current
+TODO: - need a plan for populating the user accounts (e.g. web interface for registration, ...)
+
+CILogon interactions
+- service for CILogon to call to get the session info to add to the certificate.
+- could initially be as simple as just using the certificate subject as the "list" of subjects for the session
+- for now - just use the subject of the certificate as the "list of subjects" expected in the session. MN process to retrieve session can create the session from the certificate subject (getSubjectDN) if the session infomration is not available in the certificate.
+
+
+CN rest
+TODO: review implementations and a) check method coverage; b) check method implementation
+- Likely a few things in metacat that are not yet proxied.
+
+
+CN IPC (hazelcast, inter-component calls)
+- UC 06 and 09 updated to reflect using HZ for system metadata access
+- Need to design mechanism for processes / CNs that die mid operation
+- NodeMap already currently exists (partly) with ldap backing store. Not a complete representation of the node objects
+- Persist the system metadata in metacat (HZ backing store)
+- Who is the HZ process owner? Create a separate service
+
+synchronization
+- lots of testing. 
+- Interactions with other systems (e.g. cn rest, metacat, replication, synchronization, ...)
+- Current problem with create() failing
+
+replication
+- methods stubbed out, working through implementations
+- design getting close 
+
+Indexing
+- Getting close to complete
+- Somwhat blocked by svn access to the mercury code base
+
+Mercury (UI)
+- need to catch up with Giri and Jim on genral status of this
+- Possibly use a filter in tomcat to handle the authorization addition to the SOLR request
+
+Integration test data
+- add some test data that can be used for evaluating tier 1 tests
+- tier 2 tests require common subject for access control evaluations
+- update the eml2* series system metadata
+
+Integration tests
+- moving on to tier 2
+
+GMN 
+- access control appears to be working
+- general updates rquired for schema changes
+
+Metacat
+- updates for schema changes
+
+Mercury MN
+- reworked - upgrading from 0.5.1 to 0.6.4
+- issueswith jibx encountered
+
+
+

@@ -1,0 +1,131 @@
+Attendees: Rebecca, Suzie, Bill, Viv, John C, Amber, Mike, Bob, Stephanie, Steve, Matt, Bruce, Deborah, John K
+
+
+Regrets: 
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+ We will also use the epad: http://epad.dataone.org/2013Apr26-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+1.  Please join my meeting, Apr 26, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/391415584
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (805) 309-0010
+Access Code: 391-415-584
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 391-415-584
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+
+Agenda for 2013-04-26
+
+1) CI Update (Vieglais)
+
+Working through some issues on the CI side:
+Going through backlog of existing issues and identifying items that need to be done before the end of the project. Taking longer than expected to get sorted out - large list and Dave's travel schedule. Hope to have the prioritized list ready by next Friday.
+
+Specific activities: General maintenance of systems at UNM that didn't cause any down time.
+Lengthy discussion on Monday on content immutability - series identifier that points to the most current version seems agreeable to everyone on the call. Working through on details now because new scheme needs to work with existing MNs and MN content.
+
+Coordinating Node updates - trying to reduce the amount of time to do updates on CN; want to be able to push out small changes more frequently rather than large updates. Pushing out an update to CN has been a manual process and want to use scripting instead.
+
+Will focus on ONEDrive at the joint UA & Sociocultural WG meeting next week. Hard to visualize large numbers of files 
+
+Member Nodes: have been working on some content that was added to the DAAC so that ONEMercury can show it was a data package and not a data file. Pointed out the need for the system to notifiy MN operators when there is an issue with indexing or syncing MNs.
+Root Cause:  MN System changed metadata without notifying CN of the change.  
+Actions:
+Need better documentation
+Need to have CN checking / reporting
+
+Matt: Metacat 2.0.6 was released this week.  Mainly bug fixes and a few display changes.
+
+Case Study: MN System metadat a changed without CN notification of change. Led to some synchronization issues (USGS-CSAS & DAAC): We need to be more resilient and have better reporting mechanisms.
+
+2) CEE Update  (Budden)
+Sent email to mentors with comments from the mentors on the Mentoring document. Amber is also working on the Student Notebook site so that all the blogs are being consolidated into one place to make it easier for the site to be updated.
+
+
+3) Member Node Update (Cobb)
+- Ongoing prep for SC&UA mtg next week in Knoxville 
+Main objectives:
+        Obtaining 8-12 MN Persona Drafts
+        Reviewing documentation for clarity of communication:
+                Ext MN web description
+                Procedure/Process for MN recruitment/development/deployment
+        Scoping of MN stand-up assessment and evaluation
+        Open discussion on lidentifying/locating MN recruitment/development/deployment bottlenecks
+
+        side considerations:
+                SC&UA is a cross-cut of DataONE, but is not complete set of MN "care-abouts"
+                
+
+-SEAD support of NSF Review 
+        Beth Plale seemed pleased on 4/19. Anyone else have anything to add?
+        DFC had their RSV on Wednesday, 4/24- went well; Jane Greenberg (co-lead on Preservation & Metadata WG) presented work on HIVE with students who work with both
+DataONE and DFC
+    RSV panel liked that the collaborations were natural, not forced.
+
+4) Around the Room
+
+Bob
+Holding a workshop on Best Practices for Data Management at the NASA Terrestrial Ecology Science Team Meeting on May 2 in La Jolla, CA.  At this time, 22 participants are registered.  This is a joint ORNL DAAC and DataONE Workshop:
+http://cce.nasa.gov/meeting_te_2013/side_mtg.html
+
+
+John Cobb:
+Attended ARN2 Envision the future of regional network - Big Data last week <https://www.mcnc.org/envision/program>. Regional networks (i.e. "GigaPop's") asking the question of how to be of service to their communities w.r.t. data intensive areas
+
+Good discussion.
+Opps: some of 27 ARNs as local centers of expertise and Tier4 MNs (similar to compute node proposition)
+Mark Johnson, workshop co-chair interested in attending and presenting at DUG.
+Beth Plale also attended and spoke to RDA and was well received (esp. "IETF-like" part)
+
+
+Mike: Good discussions this week related to next Weeks UA/Socio Cultural working group meeting. We've done another Agenda vision and also had a good call with CI related to a startegy for ONEDrive UA work for next week. 
+
+Mike: Richard Huffine last day in USGS is today. Should look at what this means to DUG. (Not sure it will mean very much.  I will check in with him). Where will he go?  Seems to be going to Private Sector - Publications/AI Organization (Not sure if it is Proquest/CSA or where)...
+
+Mike: USGS Kevin Gallagher was visiting some NSF Program Directors and I provided him some input on USGS / DataONE and encouraging CISE to continue to support efforts like DataNET and DataONE specifically.  
+
+Great Mike!!
+
+Bill:
+Had 3-day long meeting with EUDAT at both Los Alamos National Lab where we gave a joint symposium and another mtg in Albuquerque where we went into detail about architecture, community engagement and working group activities.  Spent some time thinking thru possible collaborations.  Also attended 2 day CREATIVE-B meeting where we reviewed commonalities and differences among different biodiversity platforms and planned for a followup mtg in Santa Fe in the fall (Oct) that will focus on legal "interoperability" issues.
+
+For proposal workshop: do some brain storming on MN light or policy changes that would make it easier to bring on MNs
+
+Steph: Nothing new this week
+
+Viv: Funded through USGS Community for Data Integration (CDI) to create some online combo video/slides data management training modules. Work has begun on this, with 3 DataONE participants on the team (Bob Cook, Carly Strasser, and Viv). Final products will be completed by end of September. Anticipate the material will be appropriate for posting to the DataONE website. :) Content: 1) Why do data management; 2) data management planning; 3) how to prepare data to preserve and share.
+
+Deborah:  
+- Completed our working group  F2F meeting at NCEAS .
+- Our new working group member from LTER joined the meeting as did Dave Vieglas and 2 other visitors (one from CCIT (Leinfelder) and one from community outreach (Hespantha) and postdoc from NSF Interop SONET (Adams)
+- Postdoc Patrice presented an overview of our working group for the EUDAT meeting
+- Deborah attended a Leadership in Science Policy meeting in DC held by CRA
+
+Bruce: The GA position to work with CI from UTK has been filled for next year.  We're working on bringing this student (David Doyle) on-board as a summer student employee (probably 3/4 time) to give him time to work with Chris and get up to speed on the DataONE infrastructure.  David has strong writing skills, and working on some of our documentation is one place where he could be particularly effective.  On a different topic, I'll be at the UA/SC WG meeting next week.
+
+Amber: preparing for UA/SC (acronym expansion?) meeting next week.
+
+Suzie: ditto -- preparations for UA/SC meeting
+
+John K: Attended NSF Day at UC Davis yesterday, a chance for NSF to tell potential researchers how NSF funding works.  Essentially no mention of data management issues (except when I asked).  Did remote EUDAT presentation on the metadata working group's work April 17.
+
+Rebecca: The proposed Metadata WG for RDA (http://rd-alliance.org/)  that Jane Greenberg, Keith Jeffery, and I are leading now has official Interest Group status with Mark Parsons as our RDA liaison. We are doing a workshop in September in Lisbon and can now add RDA to the call for participation.
+?? question - is there a page where we can get more info on the interest group and also for all the working groups?http://rd-alliance.org/working-groups/current-candidate-groups/
+
+Matt: nothing additional 
+
+Steve: 294 species in one day - set NA record (at the lab) - made around $800-$900 
+
+Todd: nothing new to report
+

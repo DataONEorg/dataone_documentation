@@ -1,0 +1,118 @@
+Attendees: Rebecca, John Cobb, Carol, Amber, Steph, John Kunze, Matt Jones, Bertram, Hilmar,Dave
+
+Regrets: Suzie Allard, Bill Michener
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, May 11, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/594902880 
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (805) 309-0011
+Access Code: 594-902-880
+Audio PIN: Shown after joining the meeting
+Meeting ID: 594-902-880
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012May11-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-05-11
+
+1) CI Update (Dave)
+
+Devil is in the details - progressing on finalizing the CN stack.  A couple of things are still in testing. In parallel with testing are proceeding with the configuration of the virtual machines for the public release. Items this week are small but irritating and have caused some delays. 
+Rate for bringing MNs online will take awhile because variable
+There have been a couple of issues with the Mercury MN implementation.  Need these issues to be addressed quickly so may need Bruce or Bob to assist in making this happen. 
+Dryad MN is progressing rapidly now.  There is a new version of Dryad now so need to bring this up to date with the newest version of the DataONE softare.
+Are progressing 
+
+Timeline:
+Will be slow because it takes time to get the content - still have the problem with bringing all the Metacat content online - may have a problem bringing LTER content online because of their review (2.5 week delay for them)
+
+CNs first
+Then ???
+http://mule1.dataone.org/OperationDocs/membernodes.html
+Amber requested that the tier be added to this document (tier of MN not tire capaiblity of SW stack)
+Note: need to mod ORC site from ORNL Bldg 5200 to UTK Campus SMC
+NOTE: first column is node a possible index since "TERN" is multi-valued - namespace collision in column 1
+
+Had planned on doing Metacat nodes first but will need additional discussion
+
+Progressing out backlog of issues and will do the public release as soon as possible
+
+Autonomy of the MNs has added to the delays
+
+Priority list gives list of deployment "phases" although MN deployment may not be exactly at the same time due to the distributed nature of the project.
+[Note: some lower prioirty MN's may come in earlier as a "early finish" item] so a priority 2 REP* node may come up before a lagging priority 1 node ... right?]
+
+
+idea: add a column to the node list (at above URL) showing "date released"
+
+Metacat
+All four simultaneously:
+ * KNB
+ * ESA
+ * Pisco
+ * SanParks
+Then couple of days to a week to load data - then would get the identifiers from DataCite through CDL
+Replication nodes could be brought up the same time as the CNs
+
+
+2) MN prioritization team (Bill/Rebecca)
+      Exec team plus Suzie Allard (accepts), Mike Frame (accepts), Matt Jones (accepts) & John Kunze (accepts)
+       (if they agree to serve)
+       
+3)  DUG - some funding available so need strategy for who to invite with
+      funding (potential MNs?) (Bill/Amber)
+ 
+Possibilities: MNs, including international 
+Matt: LTER Europe group (ILTER) - David Blankman (8-10 sites), possibly someone from the Science community
+Amber: Australia  (Jim Deed, from the Ecoinformatics and Ausplots Facilities; someone from the TERN central portal group, which might be Siddeswara Guru or Michelle Teis)
+- potential issue is that Australia wants a CN and this might be a technical issue of adding a CN outside of the US (bandwidth issues, etc)
+XSEDE - timing not good because is same week as their conference in Chicago
+
+Conservation International
+NEON - Steve Berukoff or Bob Tawa
+ IRODS people - 
+ DataNets will be invited                     
+      
+4) Review press release (Amber)
+https://docs.dataone.org/member-area/documents/marketing-materials/public-relations/Draft%20DataONE%20Press%20Release%2005092012.docx
+
+Would like changes by Monday, May 14th
+
+5) Around the room
+Rebecca:  Time for review of risk register.  Need the top ten risks for annual report and for updating the Project Management Plan - if risks are missing, please add; if need updaing, please do so
+
+Annual report is due 90 days before the end of our project year (ours ends July 31, 2012) The
+90 days puts it right at the time of the 3rd quarterly report so we have permission to delay a bit.  I would like to submit the annual report at the beginning of June so that we don't get caught in the activities of closing out the fiscal year at NSF.  For the annual report, I
+need the usual list of presentations, papers, posters, synergistic activities, grants, etc.
+I will also need reports from the Working Group Leaders for all Working Groups.
+
+Post-doc status:
+Provenance WG: Victor Cuevas has been hired and has arrived in Davis, CA
+UNM post-doc: Completing paperwork for Andrea Wiggins (will remain located in NY)
+Semantics WG: Offer made and waiting for reply (reply needed by May 14)
+EVA/Visualization: waiting for description from Claudio Silva
+
+
+Matt:  CEE is trying to set up a blog for DataONE, wants to call it "DataONE Coffeehouse".  I proposed that the main 'notebooks.dataone.org' site be repurposed, and the intern blogs stay as a subset of this.  Any objections to having the main DataONE blog called 'DataONE Coffeehouse", at the address 'coffeehouse.dataone.org'?
+
+Sensor tools workshop went extremely well; lots of good focus on Kepler for sensors; people were enthused about the integration of Kepler, DataTurbine, and the CUAHSI tools.  General call for us to do it again.  We are conducting a post-workshop survey to determine what people thought went well and not.
+
+Amber: Nothing to add.
+
+Bertram [can't talk and heading to class] Sending out invitations, logistics for ProvWG meeting June 18th @ UCSB/IPAW. Victor has started (still finalizing tons of paperwork.. *sigh*). Will have a provenance graph query system soon (based on another's MS student's work). Uses PostgreSQL plus recursion... 
+
+Carol: Nothing this week.
+John Kunze: nothing to add.
+
+John Cobb: Nothing to add today.
+
+Steph: CEE Working Group has exceeded fundraising goal in first week of #SciFund, for video contest prize moeny - we have $540 (goal set at $330) - the more funds we raise, the higher the prizes...
+

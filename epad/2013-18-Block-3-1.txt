@@ -1,0 +1,339 @@
+Notes for 2013.18-Block.3.1
+===========================
+
+Skye
+----
+ * 20130510
+   * Releasing ONEMercury
+     * Will delete 1.1.2_RC2 tag with CSS change
+     * Had to deal with a Solr bug - that's fixed now
+     * ESRI support is in now
+     * Mercury supports UTF-8 now
+   * Auditing reporting meeting
+     * Would like to expand Event enumeration, typing as string would break backwards compatibility
+     * May use a separate index if the change breaks backwards compatilbility
+     * Model it with the agg log schema
+   * Production rollout
+ * 20130508
+   * Working on auditing
+   * Working with Solr/Jetty for upgrading to Solr 4.x - possibly use Jetty for indexing?
+ * 20130506
+   * Lucene conference was good
+   * learned a good deal about Solr, etc.
+   * Solr 4.x has memory improvements, processing improvements: would like to upgrade
+   * Back to auditing
+
+Roger
+-----
+ * 20130510
+   * Working on ONEDrive to describe hierarchical files
+   * strarted d1_workspace_client, may become part of libclient
+     * simple, recursive structure (models folders)
+ * 20130508
+   * design specs for ONEDrive and ONEMercury/other web UIs
+     * security considerations are interesting
+     * looking at OAuth
+ * 20130506
+   * U/A meeting: came up with ONEDrive solutions
+     * ONEDrive will work in coordination with a web search UI like ONEMercury
+     * storage of queries or objects in ONEMercury, assigned to a folder
+     * design work needs to be done on designing a REST API for storing collections (workspace concept)
+   * Will add to architecture documentation
+
+David Doyle
+-----------
+ * Reading, getting a handle on tools and software
+ * Finals for the semester
+ * Will probably work on documentation
+
+Chris B.
+--------
+ * 20130510
+   * David Doyle is going to be replacing Chris
+   * Will work on debconf stuff over the weekend
+     * Robert: are deb packages ready? Some errors in the buildout
+ * 20130506
+   * Becoming familiar with foresite
+   * Working on debconf flags
+
+ * 20130503
+   * Familiarizing himself with ORE for indexing work
+ * 20130501
+   * Ansible templating issue fixed - using newest 1.2 version now
+     * site fact module can be used now
+     * waiting for packages from Robert
+     * Robert wants flags set (not just in debconf), so those will need to be integrated into the Ansible module
+   * bioportal VM has been compromised
+     * rooted due to unchanged base root password (brute force ssh attack)
+     * installed bind, httpd
+     * isolated issue, no ldap. no d1 passwords.
+     * VM was basically unmaintained, which caused the issue really
+     * Will save VM disk
+   * Will work on debconf modules for flags above now
+   * Will work on Ansible documentation, system architecture
+   * New student coming on in June, will train this person
+ * 20130429
+   * Ansible work - found a bug that is a blocker
+     * setting a map of maps for debconf entries
+       * templating system isn't expanding it
+     * Trying Ansible 1.2 - should be fixed
+     * Not working with DataONE buildout packages yet
+
+Rob
+---
+ * 20130510
+   * Working on very large resource maps, will write up a summary in the architecture docs
+   * Will be recommending a nesting solution first
+     * shouldn't affect indexing
+   * When serializing resource maps, Jibx does a lot of validations per iteration, which is a performance hit (6 minutes)
+   * Deserializing is quick (6 seconds)
+ * 20130508
+   * Working on aggregations and data packaging requirements
+     * Updated packaging documentation, Dave will review
+       * changed MUST to SHOULD wrt aggregation URIs following hash URI form, due to existing resource maps that do not follow hash URI form
+       * added requirement that references (URIs) to other data packages must resolve to a resourse map (since we can't guarantee that agg. URIs resolve.
+       * added section on resource map validation
+       * added section on how to reference other data packages
+       * added section on very large packages with performance statistics
+   * Continued work on ORE parsing
+     * large maps ( > 10K triples) take 5 minutes to serialize, 5 sec to deserialize
+     * dealing with NPEs during deserialization (triple with null subject?)
+     * Nesting relationships: can possibly only use unidirectional predicates for 'aggregates'. Can infer the inverse.
+     * Question: do we need the identifier statement?
+       * the impact: if we don't use it and also remove requirement for isDocumentedBy and isAggregatedBy, can make the resource maps 1/3 the size, and take 50% of the time to serialize.
+ * 20130506
+   * Working on resource maps
+ * 20130503
+   * Working on nesting resource maps
+     * ORE spec: can aggregate aggregations, but the resource maps are distinct
+     * {resourceMapURI}#aggregation - having links to the aggregation needs to be consistent
+     * also, we may be able to infer transitivity across aggregations
+     * If aggregation ids need to be unique, we'd need to check this in DataONE (d1_sync?)
+     * TODO: decode if we'll aggregate resource maps or aggregate aggregations
+   * worked on various sized resource maps
+     * up to 10K triples, 30K gave OOM exceptions using the foresite library in libclient_java
+ * 20130501
+   * figured out the reasoning setup - needed to feed in the ORE schema.
+     * building it into ResourceMapFactory in libclient_java
+     * will cache the ORE model in libclient_java
+     * need to set up tests that make sure that reusing the cached model doesn't cause problems.
+     * TODO: will need to support nested packaging in libclients' DataPackage classes
+ * 20130429
+   * Working with the OWL Reasoner in foresite
+   * Understanding the different rasoners for RDFS, OWL
+   * Question: mutability and namespaced identifiers
+     * What are the requirements for citation wrt DataONE?
+
+
+Robert
+------
+ * 20130510
+   * Was able to get a buildout fully run
+   * Worked with Skye on log event management
+     * If Event types become strings, MN event types
+     * Changing the Event enumm to string would break libclient v1 compatibility
+     * Talked about an index for exception reporting
+ * 20130508
+   * Debugging the buildout packages - making sure it builds and installs correctly
+   * Discussion with Skye re: log aggregation Solr index to store auditing events
+ * 20130506
+   * Working on debconf packaging
+     * Finished config script work on Friday
+     * Now finishing up postinst (template names have changed, merging differences and removing redundancies/obsolete code)
+   * Spent last week in the U/A meeting
+ * 20130503
+   * Survived the week
+   * Good meeting with the U/A group
+     * MN issues - good feedback
+   * Will continue on packaging code - should be able to finish up today
+ * 20130501
+   * U/A meeting
+   * Need a few more hours on packaging work
+     * doing work in github until it can build properly
+ * 20130429
+   * CN Packaging
+     * debconf reading, debian documentation is conflicted with the use of config
+     * Will reduce the amount of prompting
+   * Prepping for U/A meeting
+
+
+
+Chris J.
+--------
+ * 20130510
+   * Discussion with Rob on ORE maps
+   * Metacat work and meeting with Ben, Matt, Jing
+   * Review of ONEDrive summary that Roger is working on
+     * We need to discuss the APIs needed for UIs, along with the Log Stats API
+   * Review of buildout and release with Skye for ONEMercury changes
+     * Tagging: immutable tags can be 'difficult' when a minor change is discovered
+       * But, tags should be immutable, so:
+       * Proposal: Let's tag as: COMPONENT_NAME_vX.X.X_RCX, and once we are released, tag as COMPONENT_NAME_vX.X.X
+   * Further editing work on the sensor best practices document
+   * Will be out Tue, Wed, Thu of next week
+ * 20130508
+   * Working on System Metadata Management architecture docs
+   * Worked with Skye on auditing
+   * Upgraded CNs with Ben
+   * Priorities organization with Dave
+   * 
+ * 20130501
+   * Metacat-specific work
+     * troubleshooting the CN-CN replication issues #3740
+     * working on system metadata managment propposal
+     * Will work with Ben on CN upgrade of Metacat installations
+     * Replica target nodes: need to deprecate nodes in the same
+   * 
+ * 20130429
+   * bash scripts for updating and registering nodes
+   * documentation for the above
+   * http://mule1.dataone.org/OperationDocs/member_node_deployment/node-registration-update-script.html
+   * Requirements and documentation for system metadata management proposal
+
+
+Matt
+----
+ * 20130503
+   * security team CC
+   * Will be at the UNM DataONE planning meeting for the next round
+     * what do we need to do in the next 5 years from a technological perspective
+     * send comments to Dave and Matt
+     * May end up writing leveraged grants to continue the D1 CI
+ * 20130501
+   * Spent some time on the CN-CN replication issues
+   * Patched Metacat with LEFT JOIN SQL query
+     * will go into 2.0.7 on the CNs
+
+Ben
+---
+ * 20130508
+   * Potential PPBIO Member Node. Interest from "dvd" on IRC yesterday (new info manager there in Brazil). https://redmine.dataone.org/issues/3748
+   * Where do we send people to contact D1? John Cobb
+   * Involved in the security audit planning in June
+   * Working with CILogon and portal code; delegation of certificates has changed
+     * Need to target this for a CN release
+ * 20130506
+   * Upgraded stage CNs to Metacat 2.0.7
+     * We had a few objects that didn't Metacat-replicate correctly, due to conflicting autogen ids
+     * Ben had written a script to clean up id mappings on each CN, which we'll use
+     * Will be upgrading the production CNs today
+   * Will be working on CILogon work this week
+ * 20130503
+   * Will be upgrading the CNs in stage and production
+     * We will only be turning off Metacat-tied services
+     * Will go through the round robin procedures
+     * Database dumps are the big time sync - a few hours of upgrade work
+ * 20130501
+   * Working on the Metacat 2.0.7 release branch, testing now (building via Hudson)
+   * Unstable and stable channels are using 2.0.7 now
+   * Need to update Authentication documentation
+
+Dave V
+------
+ * 20130510
+   * Working on tagging architecture docs
+   * Developer resources doc
+   * Product/Component dependencies
+   * Working through scheduling for products, especially CN stack version plans
+   * Pondering high level design for ONEDrive and other ITK product interactions with portal
+ * 20130508
+   * At PPSR meeting (lots of interesting high volume citizen observation projects)
+   * Working through dependencies, updating component docs 
+   * Goal is to have:
+     * list of all products
+     * dependency between products 
+     * activities for each product
+     * scheduling / ordering of activties for each product
+     * overall scheduling
+ * 20130506
+   * Reviewed resource map docs
+     * usefulness of aggregations
+       * points to a concept of a collect
+       * resource map is the instantiation of the concept
+       * content negotiation determines resource map serialization
+       * D1 is most interested in the conceptual collection - serialization aside
+     * Data collections should really be referenced by the aggregation id
+       * For now: reference the resource map, but recommend future use of referencing the aggregation
+       * Behaviour will need to be backwards compatible so that existing RMs that do not follow the recommendation are still properly interpreted by DataONE service.
+ * 20130503
+   * Good workplan for ONEDrive from the U/A meeting
+   * Will be cleaning up ask.dataone.org
+   * Initial call with Jim Basney, CILogon security audit
+     * Ben will be POC for technical issues
+ * Formalizing ONEDrive workplan
+   * Tweaking ask.dataone.org a bit
+   * Initial call with CTSC for security audit
+     * Focus on high level architecture and implementation
+     * Unlikely to reach code review level of detail
+ * 20130501
+   * At Usability group meeting
+   * Evaluating ONEDrive UI design and next steps
+     * may present ONEDrive at DUG meeting in July?
+   * Bob Sandusky will be at a DSpace meeting next week
+
+
+
+Discussion on ORE parsing in libclient
+--------------------------------------
+ * ResourceMapFactory now exposes new methods:
+   * deserializeResourceMap(InputStream is, boolean useReasoners)
+   * returns an inferred (or not) resource map
+
+Nesting DataPackages to keep 'em short.
+see  http://www.openarchives.org/ore/1.0/datamodel#ore:isDescribedBy
+RemP describes AggregationP
+AggregationP aggregates MD-All
+Aggregation aggregates ChP1, ChP2, ChP3, ...
+
+RemChP  describes AggregationChP1
+D1 isDocumentedBy MD-All
+D2 isBlahBlahBlah 
+
+  <rdf:Property rdf:about="http://www.openarchives.org/ore/terms/aggregates">
+    <rdfs:label>Aggregates</rdfs:label>
+    <rdfs:comment>Aggregations, by definition, aggregate resources. The ore:aggregates relationship expresses that the object resource is a member of the set of Aggregated Resources of the subject (the Aggregation). This relationship between the Aggregation and its Aggregated Resources is thus more specific than a simple part/whole relationship, as expressed by dcterms:hasPart for example.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart" />
+    <rdfs:domain rdf:resource="http://www.openarchives.org/ore/terms/Aggregation" />
+    <rdfs:range rdf:resource="http://www.openarchives.org/ore/terms/AggregatedResource" />
+    <owl:inverseOf rdf:resource="http://www.openarchives.org/ore/terms/isAggregatedBy" />
+    <rdfs:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
+  </rdf:Property>
+
+D1 Indexing:
+https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_common/
+https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_generator/ (Skye's work for doing the indexing, work queue indexer)
+https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/ (Task executor)
+
+
+Stage CN Upgrade Notes
+----------------------
+- Remove from RR: orc, unm (DONE, cj)
+- Stop processing: orc, unm (DONE, brl)
+- Stop Tomcat: orc, unm (DONE, brl)
+- pg_dump: unm, ucsb (DONE, cj)
+- /var/metacat backup: unm, ucsb, orc (DONE, cj)
+- fetch latest debian packages unm, orc (ubuntu-stable)
+- install dataone-cn-metacat: unm, orc (DONE, brl)
+- Configure upgrade DB from 2.0.5 to 2.0.7 using Metacat admin screen: unm (DONE), orc (DONE)
+- [NOTE: remember to restart Tomcat after configuration is complete.]
+- Add RR: orc, unm (DONE, cj) 
+- Remove RR: ucsb (DONE, cj)
+- Perform Metacat upgrade steps as above: ucsb (DONE, brl)
+- Add RR: ucsb (DONE, cj)
+
+Discussion on Authentication for ONEDrive/Web
+---------------------------------------------
+
+Discussion on CI Prioritites
+----------------------------
+
+Dependency graphs: http://mule1.dataone.org/ArchitectureDocs-current/implementation/components.html
+Components List: https://docs.google.com/spreadsheet/ccc?key=0Ai3ryhJR2IgZdEwwTDhnai01UXN1RlRoUWtkOFNyZVE#gid=0
+Affected Components per Project: https://docs.google.com/spreadsheet/ccc?key=0AjusEcfJ75HCdGJKd05NemctcjVoU18yNFZyeHVJdWc#gid=0
+
+
+ * TODO: Change hudson to build d1_portal before d1_mercury_common to ensure the dependency is met (Skye)
+ * Some libraries don't have the DataONE maven repo listed as a location (Sonatype only)
+ * TODO: Create dependency graphs for each of the cn-buildout components to simplify the graphs (Dave)
+ * TODO: deprecate 2 repl member nodes (Chris)
+

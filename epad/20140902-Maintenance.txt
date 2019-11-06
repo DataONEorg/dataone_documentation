@@ -1,0 +1,78 @@
+Maintenance Discussion 9/9/14  ---> go here: https://epad-2.dataone.org/p/0140902-Maintenance
+
+Attendance: Dave, Chris, Matt, Rob, Skye, Mark, DavidD, Laura, Jing, Robert, Ben
+
+Dave:
+- New epad instance: epad-2.dataone.org (don't use that domain name, it will be switched to epad.datoane.org, old etherpads will )
+- also working on finding a place to put everything at docs.dataone.org
+
+Matt:Prov group using github, DataONE team (if not on it, let Matt know to be added)
+
+Mark:
+Doodle poll (http://doodle.com/fcthfwhcthduyr9b) for Release Management Procedures either this Thurs or early next week (Mon or Tues) - still need folks to enter their best times in the poll.
+
+Chris:
+ * Working on ORNL Mercury schema support in stage, then production
+ * Updating the object format list in stage, production
+
+
+David:
+- Issues with OIT migrating VMs to do some maintenance but hadn't put them back where they belonged; David adding mechanisms to monitor things like this to ensure smooth transitions when things are moved about
+- Security updates (?) at the ORC, some will require restarts
+- Splunk inputs had been causing problems, fixes made, working on rolling this back out to prod
+
+Skye:
+    CCI 1.4
+        Regression tested on sandbox
+            ~2 million log events on system with 5k objects
+            (prev regression testing in sandbox showed 3.5 million log events for 5k objects)
+        Ready to deploy into stage
+        Release Notes added to wiki page
+        MPC content
+            ORE: Identifiers with no 'documents/documentedBy' relationships do not appear in data structure created by foresite parser encapsulation - https://redmine.dataone.org/issues/6369
+            
+
+======================
+Maintenance Discussion 9/2/14
+
+Attendance: David, Rob, Skye, Mark, Chris, Robert, Laura
+
+- CN Infrastructure
+  - 1.4 Release - https://redmine.dataone.org/issues/5533 (from our meeting re: MPC our goals may change for 1.4)
+      - Dublin core support for MPC (qualifieddc)
+        - https://dataone-test.pop.umn.edu/mn/v1/node
+      - Replica auditing (periodic verification of replicas, dev complete)
+      - Libclient connection management (defer to version 2.0)
+      - Log Aggregation bug (defer)
+      - Mercury UI (complete)
+      - d1_log_aggregation refactor for single master mode (defer, goal to move to separate server from CNs)
+      
+      Components to release for CCI 1.4
+   * cn_common
+       * d1_cn_common, dataone-cn-common buildout
+     * Replication:
+       * d1_replication, d1_replication_auditing
+     * Process daemon
+       * d1_cn_process_daemon, dataone-cn-processdaemon
+         * (to support replication, replication auditing)
+     * Indexing:
+       * index-common, index-generator, index-processor, index-tool, d1-cn-index (buildout)
+     * One-mercury:
+       * mercury-common, mercury-ui, d1-mercury (buildout)
+
+
+TODO:
+    Discussion about migration to new maven repository:  maven.dataone.org
+    Is it ready to use?
+
+Release Management Procedures
+    To help streamline forward planning of releases:
+    Release backlog - issues that are complete but not released and how to schedule next release features. Release Backlog is a 'Target Version'
+    'Target version' has traditionally been our Sprint Blocks.
+    Look into enabling "releases" feature in backlogs http://www.redminebacklogs.net/topics/releases.html
+    Open up redmine for administrative tasks.  
+        milestone
+    'Product Version' is open text field - allows new product versions to be added ad hoc (Should we consider this the CCI Release Version (Major + Minor + Patch), or the version number of the software product to be released. What is the product version of data corrections?)
+    'Milestones' have been CCI Major + Minor release goals, or other significant goals to reach.
+    Action: Mark will work with Dave to schedule a meeting to discuss above (target sometime week of 9/8)
+

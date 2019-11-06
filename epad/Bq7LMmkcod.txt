@@ -1,0 +1,132 @@
+** Provenance WG Meeting**  Wednesday 
+
+Overall Theme & Goals:
+- alignment of the WG efforts to the DataONE objectives and technical architecture
+- refine existing/define new use cases (e.g. collaborative workflow provenance) 
+
+Block 1:
+* Update on Data-Tree-of-Life (DToL) Summer Project
+-- includes DToL use case: collaborate provenance (https://sites.google.com/site/datatolproject/)
+* Overview  of provenance models/capabilities of workflow systems
+-- lightning talks: 10min each: Kepler, Pegasus, Taverna, Vistrails
+
+Block 2:  
+* Discuss DataONE-related use cases, starting from DToL/collab. provenance (see above)
+* How to provenance-enable the DataONE architecture, and why (towards an architecture for DataONE + Provenance Infrastructure)
+
+Block 3+4:
+Detailed planning of next WG activities  (in view of reporting to the plenary session on Thu)
+
+
+
+
+Wednesday, 2010-10-03
+---------------------
+
+:Block 1: (two streams)
+
+A) Investigator Toolkit. Applications to be targeted (esp. for February
+   review). Web interface UI design.
+
+B) Data modeling and packaging. 
+
+   Outcome: plan for mapping between or working with data packaging in the
+   DataONE architecture.
+
+
+:Block 2: (two streams)
+
+A) Working with embedded identifiers
+
+B) Data Citation
+
+
+:Block 3: (two streams)
+
+A) Authentication technology implementation
+
+B) Project operations and administration. Web site, servers, doc management.
+
+
+:Block 4:
+
+A) Authorization and access control
+  
+* Technical implementation for scalability
+* Access control rule compatibility across systems
+* Consistency of role definition
+
+B) ...
+
+:BOF: Hardware budget planning
+
+* Storage for high capacity member nodes
+* CN computational and storage capacity
+* Supporting infrastructure (network, backup, power)
+
+
+Thursday, 2010-10-04
+--------------------
+
+:Block 1:
+
+* Evaluate the existing working group structure, and reconfigure as necessary
+  to align with major research topics / unknowns identified during previous
+  two days. 
+
+  Outcome: List of "mini" working groups, more tightly focussed than previous
+  WG definitions.
+
+
+:Block 2:
+
+* Develop WG mini-charters from Block 1. Paragraph or so describing what needs
+  to be done, deliverables, major milestones, participants. 
+
+  Outcome: set of charters (at least late draft stage) for guiding WG
+  activities and composition for next 12-36 months.
+
+
+:Block 3:
+
+* Revisiting schedule and detailed dev plans, tie in WG charters
+
+* Calendaring for meetings
+
+
+:Block 4:
+
+* Closing, plenary. Summaries from meeting.
+
+
+---------- 
+
+Notes past here
+
+
+* Implementing authentication, authorization, and identity management (two
+  blocks), focus on prototype impl.  Focus on authorization implementation aspects.
+
+* Integrating output from Bertram's group (two blocks)
+
+  - reports from each technical working groups
+  - helping other working groups getting started
+  - synopsis from joint wg on semantics (Matt)
+
+* Data modeling and packaging - how to map this into the DataONE data model or adapt / change DataONE to work with more granular models
+of data collections
+
+* General update on related topics / projects (perhaps over dinner)
+
+* Investigator Toolkit.  Need to invest time in developing some nicer tools for compelling demonstrations (esp for Feb target)
+  - define roadmap for prioritizing apps / tools for integration
+
+* User interface for data discovery, search and delivery
+  - semantic search topics 
+
+* (related to delivery above) Integration / working nicely with existing systems.  For example EML URLs point to some data set - how to take those URLS and make them
+behave as identifiers in the DataONE context
+
+
+
+

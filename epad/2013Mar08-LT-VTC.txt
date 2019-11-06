@@ -1,0 +1,128 @@
+Attendees: Rebecca, Suzie,Bruce, Matt, Bill, Dave, John K, John C, Viv, Bertram 
+
+Regrets: Bob Cook, Amber, Deborah
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET 
+
+Using GoToMeeting again - it's back up
+
+
+1.  Please join my meeting, Mar 8, 2013 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/163349416
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (267) 507-0007
+Access Code: 163-349-416
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 163-349-416
+GoToMeeting®
+Online Meetings Made Easy®
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+ We will also use the epad: http://epad.dataone.org/2013Mar08-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-03-08
+
+1) RSV (Michener)
+
+Very successful RSV! Panelist thought we did a great job. CISE Director (Farnam Jahanian) and Alan Blatecky were there for beginning. as well as Bob Chadduck
+Other ANSF ttendees: Mark Suskin ACI - dpe. director, Silva Spengler, Irene Lombardo, and ???
+
+38 questions handled over the evening.
+Another 14 questions provided Friday morning.
+Answer (revised) due Tuesday March 5.
+
+Reponses to be used in panel report - are now awaiting the report from the panel. Probably will take a couple of weeks before we see this.
+Bob took Bill aside and said great job - will work with us on the next proposal. After the May proposal workshop (in ABQ), should have a couple of alternatives to give to Bob for review.
+Bill asked to return to NSF to give presentations to NSF directorates as well as OSTP and other agencies (addressing Holdren memo).
+
+Congrats to all - developers, those at review, those on phone and everyone else that contributed!
+
+Other projects (DataNets) are scheduled for their 18-month reviews in April (around the 18th)
+at NSF. They need to demo their prototypes as well as other portions of their projects.
+RDA launch happening soon - what is the best way to contribute to other projects (resources are slim) - There is no funding associated with RDA from NSF (exception is funding that went to Fran and Mark)
+EarthCube viewed as a 10-year investment for cyberinfrastructure - still hard to get your head around this project. Announced project director positions at NSF this week - so 100% turnover so far.
+Bill, Rebecca, Jane Greenberg, John K will be going to the RDA meeting in Sweden.
+
+2) CI Update (Vieglais)
+
+We're in an unwinding phase (after RSV) - developers are cleaning up odds and ends: couple of changes being added into the R-client (better discovery of data); working on Morpho (authentication process); continuing to work through backlog (changes to indexing and search capability - if browser understands OpenSearch, will automatically add DataONE); changes to MNs - hazelcast msg service. 
+Working on scheduling and prioritization (Dave, Matt, Chris) - when complete, will run this by the LT.
+Discussion during the MN Forum - heard feedback from MNs that hard to find path to getting questions answered.  Will be streamlining Redmine, improving documentation, and something similar to StackOverflow website - Dave setup a prototype of this and will share URL when ready to go. Will require an effort to get this populated with questions and answers to those questions.
+
+Independent products will now be on their own timelines - this should help with more frequent releases since will be separate from the CN releases - this is what happening in the priorization process
+
+What does the prioritization process mean - how many more MN stacks will be released? 1, maybe 2 - decision hasn't been made yet. Options are DSpace (how much science data available at DSpace potential MNs), OpenDAP (widely used and data available here), iRODS (politically appropriate - falls between DSpace and OpenDAP {DV opinion})
+
+Strategy is important - should also try to have estimate of the technical difficulty for each
+The list of things to do is longer than the time available 
+
+3) Elsevier opportunity (Vieglais,Cook)
+Bob brought the opportunity with Elsevier to the attention to DataONE. Call last Wednesday - one approach is the one that is happening with ORNL DAAC - repository maintains links to the article with data in their repository.  This can be challenging and with DataONE would be even more challenging across the various DataONE MNs.  Another option is the approach with a standards body - the author of the article adds in the identifier to the data items that are relevant to the article. This would be a much more tractable approach for DataONE.  Would need to make sure the identifiers continue to be resolvable. Changes would include a landing page when a user clicks on an identifier, that provides information about the data object (something more human readable than pure XML). 
+Next steps: discussion with LT - (which is why on agenda)
+Concerns: this label will be perpetual - if DataONE goes away, this would be a problem for the author of the article and the user searching for information
+Money? 
+Convention - and nothing unique to Elsevier so could work well with other journals also
+Issues with respect to citation -
+How about a Best Practices for citation?  (rather than a unilateral decision with Elsevier - shouldn't we get more people involved in the conversation - TotalImpact (or whatever their name is)) "Impact Story"
+Different groups are looking at citation so check with them to see what the possibilities are before going with a proprietary vendor.
+There are some details need to be discussed - for example, what identifier should be prepended - DataONE may not always be the most appropriate.
+
+Should also consider what it means to cite a dataset and who is getting credit? Matt's preference is more like a bibliographic citation.
+
+Would the landing page contain the author information?
+
+Dave: Suggestion: have link in paper point ot the bibliographic section of hte paper which would contain a full biblio entry(including author) which would alos have a link to a landing page and/or dataset.
+
+Landing page versus direct data link: human readability versus machine/workflow usability.
+Make sure identifier available in bibliographic citation and landing page.
+
+Action Items:
+1) Make contact with  total impact group
+2) Investigate further the extent of work required
+3) Develop a DataONE best practices on data citation, particularly interested in getting bibliographic tracking for data citation
+4) Perhaps fold into Socioculteral Working Group efforts
+5) When something firms up, rediscuss where appropriate (LT, ...)
+
+4) Around the Room
+  
+Deborah:  I will not be on today.  
+We are in the process of planning our next working group meeting at NCEAS during the week of April 15.
+We (Patrice and Deborah and Mark ) provided slides for the RSV and Matt did a great job presenting and answering questions.  
+Deborah is interested in finding out more about the elsevier opp
+
+John C. 
+- MNF call on Th. - good discussion, expe with SEAD and PISCO. Some summary
+      - Need: efficient tehnical to technical contact ot resolve MN deployment and testing issues
+      - MN's also interested/willing to use REdmine to track issues - will do.
+      - Action Item: create some FAQ-like  links to help with development and testing
+      - A question about versioning: Version of DataONE SPI vs. ITK tools
+      - Questions about proper repository location for DataONE extensions to often used tools (e.g. R) AI: create some location in repo or DataONE web-space with pointers to SW versioning and repository location for non DataONE tools with DataONE extensions
+      
+- Need to follow-up with EDAC. WE are not coordinating well enough yet.
+- XSEDE TEIS inquiry - to followup
+- NSF Sys acq proposal collaboration
+
+Bertram: getting ready for BigProv meeting at EDBT/ICDT 2013 (Genoa, Italy):
+https://sites.google.com/site/bigprov13/  http://edbticdt2013.disi.unige.it/ 
+There will be several ProvWG members attend the various events and we'll have an ad-hoc meeting there. ProvWG members have  a couple of papers there: 
+- ProvenancePublisher (Saumen's PhD Workshop paper)
+- Querying Provenance with RPQs (Saumen, Victor et al) at GraphQ workshop. 
+At BigProv we have two key notes (one apps-centric from health industry, one technology centric).  Also part of BigProv: ProvBench: collection of provenance traces. 
+ProvWG members also have papers at TaPP (Lombard, IL) https://www.usenix.org/conference/tapp13 
+- D-PROV short paper by Paolo et al,
+- ProvAnalyzer by Saumen et al.
+- ReproZip by Fernardo et al
+
+Suzie: nothing this week
+
+Matt: Discussions with CILogon regarding how to handle authentication with international particupants that typically have non-Latin characters in their names (particulary Taiwan and Brazil as upcoming MNs).  This impacts Morpho logins as we are deciding how to encode these user names.  Once the IdP stuff is worked out, we should be able to cut the Morpho release.
+
+Viv: Waiting to see what kinds of impact "sequestration" has on my DataONE work....like no travel....grrr....
+

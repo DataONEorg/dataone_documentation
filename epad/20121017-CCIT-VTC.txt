@@ -1,0 +1,125 @@
+2012-10-17 CCIT + Developer Conference Call
+===========================================
+
+
+Attendees:John Cobb, Bruce Wilson, Chris Jones, Dave Vieglais, Matt Jones, John Kunze, Mark Servilla, Chris Brumgard, Ben Leinfelder, Skye Roseboom, Roger Dahl, Ryan Scherle, Robert Waltz, Ranjeet Devarakonda
+
+
+Agenda and Notes:
+
+
+1. Member Node deployment
+
+What aspects of a member node must (should) be verified before adding to a production environment?
+
+- API calls and messages pass syntax checks (at the appropriate Tier for the new MN)
+
+- Content of messages and metadata is OK?
+    - Meaningful system metadata field content
+    - ? Validation of science metadata (gets validated on sync as of now)
+    - Verify MN ID generation strageties and insure that there is no ID collision
+
+
+- Behavior of the node is OK? e.g. access control rules are properly interpreted, or a request to perform a replication task is carried out as expected
+    * on replication check -- can this be done without putting the system into the production environment?  As a related question, should the new MN go through the staging environment before going to the production environment, particularly if this is a known MN stack (e.g. Metacat)?  Certificates are an issue in both places. 
+
+
+- BaseURL correct
+
+- (non automated) check that admin and off-hours contact (if listed) works
+
+- HTTPS OK
+    - MN trusts CN when making calls to CN
+    - "" when CN making calls to MN
+    - is the CA being used widely trusted?(We need to generate a DataONE method for listing "trusted CA's"), and this needs to be dynamic.  May also want active work to look at certificate revocation lists.
+    - Is it reasonable to require that the MN has commercial (vs self-signed) certs?  Consensus is no, though there is cost for some types of certs.  but, if they can't budget for the certs, what does that say for the long-term viability of the MN?  There is an angle that the people at the MN may not have the institutional pull to get the certificate, since that requires someone to sign the cert at the organizational level (issue for SANParks).  Could also be an issue for .gov entities at different levels. Could DataONE provide a D1 cert as our own trusted CA.  
+    - Note that to the extent FISMA applies, there is a lot of paperwork headache associated with a Certificate Policy and Certificate Practices Statement.  ??? Do we have any form of a certificate practices statement? 
+    - MN-MN and CN-MN is a challenge with self-signed certificates.  A DataONE signed cert addresses this problem, and would also address the issue for DataONE client software using the DataONE stack.  Things that use the browser (like ONEMercury) would use the browser's trusted CA list, which is difficult for us to insert the DataONE root cert into this.
+    (JWC: Q: is a MN has a self-sign cert, do you introduce service problems with third party use-MN transactions in Data-ONe is user's browser "looks down" on self-signed certs?)
+
+- Or more generally, check for network connectivity and route
+
+- Is there a test set of CRUD operations that could be done as std. tests? (beyond "real" MN data transactions.
+    - Restated: We need a "flow" test for content generation process
+    - Validation of data and logging returns (actually do a retrieve operation, make sure that this delivers  data and that the log calls return the appropriate data)
+    - Would like to be able to put the production server into the stage environment, test all of the flows (CRUD operations), restage the production environment at the MN, and then clean up the stage environment.  Consider this as a sandbox environment, rather than stage, designed to be wiped.
+    - most important for any new mn stack or significant changes to an existing MN stack, or unusual configuration.
+    - Test the deployment workprocess dev->staging-> prod. (I.E> how to not lose data when deploying)
+    - Related question -- how tho handle when a MN moves tiers.  Example was a Tier III to Tier IV node.
+    -Q: How do the tests vary depending on MN tier?
+
+
+- Object formats
+
+- Assessment of the subjects used for rights holder, access control rules
+
+- CN science metadata XSLT for new science metadata types (jwc: is this a separate test for different types of science MD?)
+
+- CN indexing for the type of metadata
+
+- Check for ORE documents
+
+- Generate a list of object formats in use by the MN
+
+- Verify MN ID generation strageties and insure that there is no ID collision
+
+- Some set of stress tests that give an indication of when to expect MN/CN failures from stress.
+
+
+2. Ongoing spot checks on MN operation?
+
+- Detect tier / API changes -> execute verifcation suite
+
+- certificate expiration dates
+
+- Why not some form of continous integration testing with holdback for system/network intensive testing (whole catalog inventories, stress tests, failure case handling, ...)
+
+- If it tough to test services that modify the collections (test replication, test insertion, ....) since this would/could pollute the collective, test insertion, ....) since this would/could pollute the collective
+
+- maybe implement a "learning organization" approach in that we add checks/tests as part of lessons learned when we address operational problems.
+
+- CN error log accumulation?
+
+- Nagios check on listObjects 
+
+
+3. Responding to a Member Node or content take down request
+    * Cover this in the cyber action/incident response plan
+    * MemberNode delete functionality?
+    * Need to be able to reverse the archive flag
+
+- Need a workflow for "delete" operation on the CN
+  - identifier should persist (and maybe point to a "this thing is gone" content)
+  - content can be removed
+  - Completed delete operations will be irreversable (unreconverable) since the use case that drives this need is to expunge information that cannot legally exist within DataONE
+  - Only small circle of admins should have access to delete functionality.
+  - MN.deleteReplica, CN.reallyDelete
+  
+- Possible workflow upon takedown requests
+    - hit archive upon takedown request (Is this irreversible -- idea is that this is something that should be reversible while we investigate what needs to be done with the content)
+    - investigate
+    - if needed, delete (DataONE needs a delete function)
+    - lessons learned
+
+- Bigger question (BEW) we need project internal playbooks for incidents/occurances
+    takedown notice
+    malware on MN
+    cyber-sec incidents
+
+- Larger policy and notification issues
+    - Whose permission do we need internal to DataONE and at each site when we take these actions. (and need to act fast)
+    - who to notify is a MN goes down: PI-Michener, LT, CCIT, NSF, ...
+
+4. Safari web browser initial interactions with ONEMercury / CNs, client side certificate issue.  Is there a more user friendly solution than saying "press escape"?
+    * ? is this all Safari (desktop and mobile)??  BEW -- works OK on an iPad, so my hypothesis is that this is just desktop Safari.  Note that I do have certs installed on the iPad, used for Boxtone for management of the device and for VPN connections.
+    * BEW: on my desktop, I have certs installed.  I get a dialog box asking me to pick a cert. The two I tried (my PGP cert and my Entrust cert) don't work.  Hitting cancel in the dialog box cancels the operation.  You have to hit <esc> to get the dialog box to just go away.  
+
+
+5. Possible CCIT meeting "early 2013". Goal being to prep for reverse site visit that is anticipated for sometime late Feb through April. 
+
+Maybe end of Jan. at a location convenient for Winter travel.
+    possible conflicts:
+        Matt: ISEES mtg at NCEAS in SB last week of Jan. (mid week)
+        FWIW: 1/21/13 is a US Federal holiday (MLK BDay)
+
+

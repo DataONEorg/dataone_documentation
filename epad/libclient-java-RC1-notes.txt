@@ -1,0 +1,58 @@
+
+d1_libclient_java release candidate 1
+
+For review
+---------------
+1. connection management strategy:
+for expediency, we've adopted a somewhat primitive strategy for managing HTTP client connections - basically limiting the connection to the individual method calls.  The immediate consequences of this is relying on the closest business logic layer (D1Node, CNode, MNode)  to consume the message body (reading and closing the response's inputstream), and also close any idle connections afterwards.  
+
+The entire sequence of relevant actions is:
+- consume the inputstream
+- close the inputstream
+- release the connection (tells the connection manager the caller is done with it)
+< possible TCP states are ESTABLISHED, CLOSE_WAIT >
+- close the connection (from the client side)
+- 
+
+
+True or Exception scenario
+ D1RestClient client = new D1RestClient(originatingNodeSession);
+
+                try {
+                        InputStream is = client.doGetRequest(url.getUrl());
+                        if (is != null) 
+                                is.close();
+                } catch (<appropriate exceptions> ) {
+                finally {
+                        client.closeIdleConnections();
+                }
+                return true;
+        }
+        
+        does throwing an exception close the inputstream?
+        
+        httpClient deep in it's guts aborts the connection if exception is thrown:
+   from defaultRequestDirector      
+                 return response;
+
+        } catch (ConnectionShutdownException ex) {
+            InterruptedIOException ioex = new InterruptedIOException(
+                    "Connection has been shut down");
+            ioex.initCause(ex);
+            throw ioex;
+        } catch (HttpException ex) {
+            abortConnection();
+            throw ex;
+        } catch (IOException ex) {
+            abortConnection();
+            throw ex;
+        } catch (RuntimeException ex) {
+            abortConnection();
+            throw ex;
+        }
+    } // execute
+    
+    others are DataONE exceptions...
+    
+    ExceptionHandler filterErrors -> deserializeAndThrowException()
+

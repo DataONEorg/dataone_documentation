@@ -1,0 +1,117 @@
+XSEDE and DataONE - conversations
+
+8 May 2014, 10am EDT
+
+1.  Please join my meeting, May 8, 2014 at 8:00 AM MDT, 10: AM EST
+https://www1.gotomeeting.com/join/680105504
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0604
+Access Code: 680-105-504
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 680-105-504
+
+Tentative agenda ideas:
+
+1)      Introductions
+2)      Discussion of use cases for the potential collaboration: flesh out the previous use cases, identify new use cases
+ 
+In a previous teleconference with Chris Jordan and Victor Hazelwood, we had discussed the following use cases:
+ 
+1)      DataONEcould become a resource or a service within XSEDE.  XSEDE would provide compute cycles to DataONE scientists who would use the XSEDE resources with their DataONE data
+2)      XSEDE would provide storage space and support to individual scientists in DataONE who want to make their data available to the DataONE community.  These scientists would be able to share their data through DataONE.
+--------------
+
+Attendees:  Rebecca Koskela, Dave Vieglais, Line Pouchard, Laura Moyers, Suzie Allard, Bruce Wilson, Chris Jordan, 
+
+Explore avenues where XSEDE and DataONE may work together, share infrastructure, etc.  
+
+Introductions:
+Line Pouchard (DataONE), currently at Purdue
+Rebecca Koskela, Executive Director for DataONE
+Dave Vieglais, Director of Development and Operations at DataONE
+Bruce Wilson, U Tennessee, DataONE
+Laura Moyers, U Tennessee, DataONE
+Suzie Allard, U Tennessee, DataONE
+Chris Jordan, Data Collections and Management Group, data services lead for XSEDE
+Bill Michener, PI for DataONE
+
+Line had met previously with Chris J and Victor H in March.  See lines 23-24 above.
+
+Chris:  what XSEDE may do regarding providing data to DataONE is similar to what they do with iPlant (collaborative data collection/management activities - iplant can dispatch jobs into XSEDE directly)
+2nd model of collaboration with XSEDE: Open Science Grid where XSEDE users can request an allocation on OSG through the XSEDE systems
+
+Dave:  we've been looking at the possibility of providing computing capabilities to DataONE users; currently DataONE is more focused on data repository activities, but it would be great to provide more services related to computing capability. eg enable reserach content to be developed and pushed back to long-term storage
+
+Bruce:  XSEDE and DataONE may work together - to date DataONE has smaller (volume) data, while XSEDE has more big data, we may be able to collaborate bringing big data and smaller data together to solve big problems
+D1 is a source for lots of relevant information about long-term preservation of data, and best practices for small data.  How do these practices apply to large data where you can't preserve everything? 
+
+Chris:  training activiites? documentation?
+
+Bruce:  some, but also consider tools (ex: R) which might translate from small to big data or vice versa
+
+Chris:  resource called Wrangler (deployment planned for next year) targeted at data analysis, storage, and management tasks; very small in compute capability relative to Kraken but 1Tb/sec in I/O, 100 nodes.  Wrangler is focused on tasks such as data analysis, data storage.
+
+Bruce:  there are many activities that don't require the computing capability of Kraken, say, but are more than an individual workstation may handle, so Wrangler may be a good medium.  The right place to look is for scientific problems in the middle range, such as teh ones in iplant and the bioinformatics community.
+
+Chris:  XSEDE has historically focused on supercomputing but the plan for the future is to be more active in other non-HPC activities
+
+Bruce -- possible short term project: What does a good DMP look like for an XSEDE project and can we work with CDL to have these kinds of templates/examples part of the DMPTool?
+Other valuable resources in D1 would be to determine the appropriate policies
+
+Line:  combine DataONE's expertise in data management with XSEDE's "mid-range" computing capability.  So far we discussed two kinds of collaboration: at the policies/training/documentation level, and with tools such as the DMP and R.
+
+Chris:  there is a formal mechanism for other entities to work with XSEDE as a service provider; perhaps DataONE can be registered as a service provider as a first step in this collaboration (Victor Hazelwood would be the person to help us do this).  There is a service provider forum - great opportunity for DataONE to learn more about other service providers, identify possible use cases, opportunities to collaborate on workshops, etc.;   The service provider forum is a monthly phone meeting and f2f perhaps a couple times a year.  A represntative is designated to participate in the forum, learns about community needs, policy decisions, what other sites are doing, etc...
+
+Key is to have sufficient knowledge of each other to identify how we can best work together.
+
+What are some other things from DataONE that would be of interest to XSEDE (i.e. DMPTool, Investigator Tool Kit)?  Main benefit of using the DataONE API is that there is a consistent API across the tools in the Toolkit
+
+Line:  Are there other potential areas for collaboration that we haven't talked about yet?
+Dave:  Yes - depending on the use cases we identify.  Another we haven't talked about yet is something we'll be putting out soon - registration of data manipulation services, data subsetting, etc. where we may allow users to obtain a subset of data from a Member Node based on a data manipulation service available at that MN.
+
+Chris:  earlier conversations with John Cobb and others were along the lines of XSEDE functioning as a Member Node of sorts; as we've matured this may be a more viable opportunity for DataONE and XSEDE
+
+Dave:  what is XSEDE's user cost recovery model?
+
+Chris:  XSEDE is NSF-funded, but there is peer-review, etc.
+
+As part of DataONE's long range sustainability program, we are looking at this (user-paid participation, etc.).  As we work together and move into the future of both XSEDE and DataONE becoming self-sustaining, we can identify business models that would work with our operations.
+
+Chris:  XSEDE is open to becoming a MN if that makes sense for DataONE (related to visualization, analysis, etc.).  Ideally this would be driven by use cases (i.e. not "just because").  
+
+Line:  would it be beneficial to have some of XSEDE's data products available via DataONE (climate data, etc.)
+
+Dave:  availability of large datasets (such as climate change data) would be beneficial to researchers, but until we have data subsetting available, it would be difficult for users to access that data
+
+Line:  we need to identify scientific use case(s), and how do we prioritize our collaborative efforts?
+
+Chris:  climate simulation, meterological simulation, earthquake - these would be most likely to have data relevant to broader scientific community (i.e. discoverable via DataONE)
+
+Line:  GABBS project?  https://purr.purdue.edu/projects/geodibbs/view
+
+Dave: There is a notion in XSEDE of consistent services for access to the different types of resoruces.  What standards are being used for describing these services?
+
+Not much in terms of standards.
+
+ACTION ITEMS:  
+    Chris:  talk with Victor to get DataONE involved as a service provider
+    Laura/Dave: provide Chris some information re: Member Nodes
+    Pursue use cases (both XSEDE and DataONE)
+
+1. RE DataONE as a SP - what is allocatable? How does DataONE integrate with XSEDE's work processes both in the current XSEDE incarnation and in future XSEDE formats.
+
+What is meant by "allocatable"?  A resource that some proportion can be assigned to a peer-review allocation process.  Researchers can request resources for their efforts.
+
+2. Can we identify  a specific XSEDE allocated project/community that would commit to engage? Can we temp iPlant Chris?
+
+iPlant may be an example of how XSEDE and DataONE may collaborate; there should be some info in the SP Forum documentation (if not there, Chris can send us info)
+
+3. A good exercise would be to utilize something Like Gordon to do large scale DataONE syntethic data products. I.E. what if we loaded all DataONE objects into Gordon as a triple store and then <poof> some magic occurs (we need something a little more specific on the magic part,
+
+(that is, replicate all of DataONE's "holdings" at XSEDE) - development of semantic searching (future) would benefit from XSEDE's greater computing capability (or more precisely would benefit from XSEDE's or others large data graph processing engines with large in-memory footprint)
+
+
+

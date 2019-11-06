@@ -1,0 +1,80 @@
+Member Node Forum - 19 September 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 3 October, 17 October, 31 October
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307    (note typo on year-sorry), -20130321, -20130404, -20130418,  -20130516,   -20130530, -20130613, -20130627, -20130711, -20130725,  -20130808, -20130822, -20130905
+
+Attending: Amber Budden, Bruce Wilson, Dave Vieglais, Greg Gollberg, Kavitha Chandrasekar, Mike Frenock, Rebecca Koskela, Laura Moyers
+
+Regrets:  
+
+Action items from last time:
+    Laura to follow up with Debora Drucker from PPBio - last conversation with Debora, they were trying to get everyone "together" as they are spread out, many in the field, etc.
+
+Agenda:
+
+0. Welcome new attendees - introductions
+    
+1. Network-wide update and issues affecting MN's as a whole
+    Nothing going on right now.
+    CCIT meeting coming up week of 9/22/13; if there is anything that any MNs would like for Bruce to bring up at that meeting, let him know here/now.
+   
+2. Open issues:  MNs please add anything you would like to address here.
+
+ * Mike's (PISCO) upgrade to new version of metacat - how's it going re: the indexing problem?  Also, how about the MatLab playing well with DataONE issue?
+   * 20K record index difference between local node and CN index, Mike correcting
+   * MatLab and D1: Java version issue, can change version in MatLab but causes its own set of problems
+     * Dave: which version of Java
+     * Mike: ver 1.6 in "newer" MatLab, even older for the 2008-2009 versions of MatLab
+     * Mike documenting, Chris (et al) have access to it
+     * Dave: we have plans to move to current version of Java in the next several months, which may compound this issue
+     * Mike: hasn't seen any issues on Macs, just PCs and Linux which uses own version of Java
+
+
+3. Feature requests/opportunities for collaboration:
+
+Mike: one thing I'm seeing with the indexing thing is too many open files errors; is there any information available on how to run this new version of metacat
+Dave: we do make changes on CNs to enable them to handle the volume; will check with Chris to see what settings are  (Dave to get back with Mike)
+Mike: do CNs run something against MNs every weekend (or otherwise) that might be causing errors
+Dave: they shouldn't be; are you having problems?
+Mike: last two weeks have had tomcat go down and had to restart it on Monday morning
+Dave: no, shouldn't be any difference on the weekends
+
+Greg: we might have something of interest as we get closer to production, working with colleagues at UNM, might have something to share 
+
+        
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+ * 5 MNs in progress for Y5Q1: EDAC, SEAD, UKansas, NPN, and NKN (updates?)
+ * UKansas (Dave): waiting for them to install certificates so they can participate in testing environment, will check with Rob to see if there are any issues
+ * NKN (Greg): s/w stack installed, certificate issues resolved, next steps are to configure the server/db/files on their installation; need unique identifiers (Ed Flathers is working, we think it's done); potential issue is difference between how NKN authenticates and how D1 authenticates
+ * SEAD (Kavitha): going ahead with metadata files we have now and move to production; will get in touch with Chris tomorrow/Monday
+ * NPN - met last week, progressing well; had been experiencing problems with authentication http vs https, Ben helped sort out, good discussion of "how it's supposed to work" conceptually
+
+ * PISCO (see above)
+
+
+OTHER INTERESTING THINGS: 
+
+contact points: 
+NEW EMAIL contact: mninfo.dataone@gmail.com     - This email monitored by DataONE staff.  I think we might migrate to this being the primary point of contact for MN questions so we can keep a better handle on issues/resolutions.
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Upcoming deadlines:
+
+
+

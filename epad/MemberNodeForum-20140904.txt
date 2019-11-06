@@ -1,0 +1,95 @@
+Member Node Forum - 4 September 2014
+                                                                                    
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+                                                                         
+        (Occurs every 2 weeks on Thursday 8pm South Africa, 3pm BRT (Sao Paolo, etc.), 2pm AMT (Manaus, etc.), 2pm EDT, 1pm CDT, noon MDT, 11am Arizona and PDT, 10am AKDT or Friday 2am Taiwan, 4am Brisbane AEST)
+  Upcoming meetings 18 September, 2 October cancelled due to All Hands Meeting, 16 October
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+
+Attending:  Laura, Chris, Mark, Robert, Amber, Jim, Hays, Bruce
+
+Regrets:  Corinna
+
+Action items from last time:
+    
+ * Mike asked how do we know how the solr indices have changed as a result  of the CCI 1.3.0 update.  Bruce said he's not sure, will find out; there should be release notes and other notifications made, but we're not sure where this information will be found. 
+   * When we do an upgrade, we put notices out to the operations distribution list, and in future we will have a wiki page that will highlight changes
+     * https://redmine.dataone.org/projects/d1/wiki/Production_Status_Log
+     * https://redmine.dataone.org/projects/d1/wiki/Cn_1_4_0_release
+ * Mike has a local solr index, so will the changes effected in the update impact Mike's local solr index (a metacat index)? - Laura to investigate
+   * No, there is no impact to local solr indices as a result of the CCI 1.3.0 update.
+    
+ * In searching for documentation, we need to ensure that we are looking at the current (or in some cases development or other) version - Bruce, Dave and others working
+   * I'll keep this in the background for future reporting
+      
+ * Folks running a Generic Member Node need a new CCIT POC as Roger Dahl is leaving for another opportunity 
+   * Mark has worked with Roger and will come up to speed on GMN, Dave is also a GMN POC for the time being
+
+ * It would be very helpful to have MN POC information available to everyone.  It is available on MN Description Document, but it would be nice to have that information on the MN page on the dashboard.  Laura to note this in new requirements for the dashboard, and in the interim Laura will provide a list to all MN Forum folks.
+ * https://www.dataone.org/current-member-nodes#nodes   <-- this is the "dashboard" or more appropriately the "current member nodes" page
+   * see here for MN POC info:  
+               https://docs.google.com/spreadsheets/d/1EABCKup__lLTQ9we2B2_iiXZmsEHN5bLgpVZbgtPhuw/edit#gid=2145575531    
+   * also see this redmine ticket which will collect suggestions for enhancements to the dashboard: 
+               https://redmine.dataone.org/issues/6334
+
+ * Jim - what is the largest dataset you can upload via the API to a GMN?  
+       Bruce - we don't know.  Will ask the question on ask.dataone.org (and answer!!) - in the meantime, Jim will try it and see what happens (he has a 1TBish file to try)
+   * other than potential network constraints (slow connections, unstable networks, etc.) that might abort a large file upload, there isn't a known constraint on size of DATA object uploads; there is, however, currently a 1GB limit on METADATA files going through metacat.  There has been some discussion about removing that limit for the DataONE API.  
+   * here's the link to the question/answer in ask.dataone.org: 
+               https://ask.dataone.org/question/114/how-large-a-dataset-can-be-uploaded-to-a-generic-member-node-gmn-via-the-dataone-api/
+   * Tim Robertson at GBIF said he's been able to upload 0.5TB (wow)
+    
+ * Mike - how to people typically load data via the API? (Mike does a batch process he created in-house)
+    Jim - I've been following the examples in the documentation, just a few test cases so far
+   * Tim Robertson said he creates certificates on his system, tells his dev MN to accept those certs, and uploads data via the API.
+    
+ * Mike - how to the developers get data out there while they're writing code, etc???
+    John - good candidate for a best practices document
+    Laura will ask on the developers list and see what they say and get back with everyone
+
+Agenda:  (changing up the agenda to help flow - suggestions appreciated)  :)
+
+0. Welcome new attendees - introductions: 
+    Hays Barrett - EDAC, maintaining the EDAC Tier 1 MN which will go away when they have the Tier 4 MN up and running; manage track 1 and track 2 EPSCoR data, pulled automatically from the NM EPSCoR portal; create scripts to find new data files added to EPSCoR repo and determine where they should go in DataONE (which repo, like the new Tier 4 MN)
+        have some DNS issues with the new MN; trying to get into sandbox
+        - any data we add to MN in sandbox, does it move to next stage?  No, data does not propagate from one environment to the next.  Would probably be good, though, to wipe out sandbox data before moving to stage.
+        - is there documentation that describes how to go from one environment to another?
+            there is this: http://mule1.dataone.org/OperationDocs/member_node_deployment/mn_checklist.html which is at a pretty high level.  There is probably some more detailed info available that I can't lay hands on right now
+        - At NM EPSCoR, there are individual sandboxes for each developer, there is a stage environment which is pretty much like production (not necessarily all the data, for example), there is a production environment
+
+1. Network-wide update and issues affecting MN's as a whole
+    CCI 1.4.0 upgrade in the near future -
+      - provides indexing support for Dublin Core and ORNL Mercury metadata schemas
+      - fixes minor replication inefficiencies on the CN if objects slated for replication can't be found on the source MN
+    upgrades at UTK - shouldn't impact anyone (downtime on Friday (tomorrow))
+
+2. MN Status (MNs present talk about what's going on in their world):  MNs please add anything you would like to address here.
+LTER (Mark) - synchronized info from PASTA GMN to staging, but getting old metacat data is problematic (metadata on CN and from MN do not appear the same - related to older version of metacata??); Chris and Ben have been looking at it (this metadata not generated by CN or MN calls); Mark to set up a time to talk with Jing, Chris, Ben and whoever else is interested week of 8 Sept
+
+IARC (Jim) - has ISO19115 metadata, which DataONE currently can't index, but it is much preferred that we work on that (to index the ISO19115 metadata) rather than using Dublin Core (which is a more minimal metadata).  Need definitive namespace of the schema that IARC is using.  GeoNetwork has an OAI-PMH endpoint, requires at least a DC metadata.  
+    Is DC sufficient for indexing?  Yes, but that (indexing) isn't the only goal of metadata - we want to allow researchers to search on metadata as well, so we want the richer metadata if at all possible.
+    GeoNetwork provides an ISO editor which can create an HTML document.
+
+
+    
+If you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+
+contact points: 
+ * Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+ * Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't forget irc.ecoinformatics.org, channel=dataone if you have an urgent issue.  CCIT folks are always there and can assist you.
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516, -20130530, -20130613, -20130627, -20130711, -20130725, -20130808,  -20130822, -20130905, -20130919, -20131003, -20131017, -20131031, -20131114, -20131212, -20140109, -20140123, -20140206, -20140220, -20140306, -20140320, -20140403, -20140417, -20140501, -20140529, -20140612, -20140626, -20140710, -20140724, -20140807, -20140821
+

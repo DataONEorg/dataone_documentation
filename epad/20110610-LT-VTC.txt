@@ -1,0 +1,141 @@
+Attendees: Rebecca, Amber, Bob C, John K, Suzie, Bill, Matt, Steph, Todd, Steve, Dave, Viv,Bertram
+
+Regrets: Bruce Wilson, Mike Frame, John Cobb (ex post facto)
+
+epad: http://epad.dataone.org/20110610-LT-VTC
+Agenda for 2011-06-10
+
+1. Report from PPSR WG (Budden)
+Met at end of May in Syracruse; evening and morning were DataONE activities; charter that was modified by LT was accepted but did some word smithing on charter. Those that attended agreed to serve on the WG. Would like Kevin Crowston as ex-officio member of WG
+
+Working on the citizen-scientist personna
+Survey on data management practices of citizen scientists and want to publish this as a paper
+
+Rest of the week went well - 3 to 5 action items from the WG. Jake Weltzin is too busy to
+continue as co-lead beyond the October AHM. One potential candidate is Andrea WIggins but
+she's working on her degree so not sure that she could be co-lead right now.
+
+2. Status of webinars from NSF Review demos (Wilson)
+Community is growing so it's important to get the status of DataONE out to everyone - it's
+important to get the message out even if April and May have passed. 
+Content is there - need a script and audio voiceover for putting on web but not needed
+for the webinars
+
+3. Status of Member Node group (Frame)
+Have had 2 meetings; assignments for next call but next call hasn't happened yet
+x
+4. Response to Data Conservancy Life Sciences Group (Michener)
+
+Paddy had gotten in touch to look at overlap with D1 and DC with respect to biodiversity
+data. There will be joint DataNet call with NSF on June 16 and Paddy wants to bring
+a team to Albuquerque on June 24 to discuss the items below. Had suggested a video
+conference but their preference is a face-to-face meeting.  Others could join via polycom
+or something similar.
+
+---------------------------- Original Message ----------------------------
+Subject: Agenda for D1 and DC (Life Sciences)
+From:    "David Patterson" <dpatterson@mbl.edu>
+Date:    Wed, June 8, 2011 5:11 pm
+To:      wmichene@unm.edu
+--------------------------------------------------------------------------------
+Hi Bill
+
+I'd like to move towards agendas for the phone call on the 16th and our  proposed visit on 24th.  That is, can we work out areas of common  interest / synergy for DC Life Sciences Group and DataOne, and then  decide how best to deal with them.  Specifically, are there areas in  which we should be co-operating, or others that are best pursued  independently.
+In respect of the trip, I am currently planning to bring the whole team  (myself, Anne Thessen, David Shorthouse and Dima Mozzherin), because  opportunities to collaborate may exist at any level.  But, given that it  will put a significant dent into our productivity, I'd like to be  reassured that this meshes with your own thinking about the visit.
+So, although scope is being actively discussed, we are likely to be active in the following:
+John K provided another data point: gave talk to astrophysics publishing group about EZID
+and though they are part of DC, are interested in some of the D1 infrastructure
+
+1. The most significant development is a proposal to develop  Biodiversity Data Management Services as an instance of Data Conservancy  at MBL.  The instance will rely on an architecture and core services  developed at JHU, while we at MBL will focus on specialist services  appropriate to biodiversity data (see below).  The scope of the target  data would be data in which the identity of the taxon is important.  There is a clear overlap of interest with DataOne (as well as with  phylogeny, comparative biology, etc.etc).  I believe we would wish to  act as a repository, to provide discovery services (based on taxonomy)  for data held at BDMS and remotely, and to transform data readying it for re-use.
+Not sure what this means - implies using DC infrastructure to store data and provide access to it. 
+
+May be an opportunity to further explore the role of DC services within the context of DataONE (acting as a member node? acting as a service that can be leveraged by DataONE, e.g. indexing taxonomic information?)
+
+Another interpretation is that they are looking for feedback on these mini-projects - are they
+worth pursuing or not?  These projects may be more "one off" projects rather than something to be integrated into either DC or D1.
+
+2. Production of a paper on Data Issues in the Life Sciences(Anne Thessen and myself), this is part our responsibility to communicate the  datacentric vision to rank and file biologists).  The paper will be  based on http://dataconservancy.org/sites/default/files/Data%20Issues%20in%20the%20Life%20Sciences%20White%20Paper.pdf.  We could for example provide a talk or a short summary dealing with  the principle insights, although I suspect there may not be too much that is unfamiliar.
+Again not an integrative review 
+Suggest to Anne that they get Carl involved with the review of this paper - he hasn't been so far -- Carl has knowledge of the SONet/JWG work on observations
+
+ 3.  Data Cultures.  Given the breadth of the life sciences, we need to  better understand current data practices and expectations among our  constituents. This helps us to know what changes will be needed in order  to achieve what drives DataNet. We have recently co-operated with  colleagues in Germany and have received responses from over 800  practicing biologists on their current data practices.  One paper from  this will be published soon. This information will guide us and our colleagues in Carole Palmer's group in Champaign as to what is needed to  chart a course towards a more data-intensive biology. Again, we (Anne Thessen) could speak to this survey.
+ Similar to #2
+ I would suggest a phone discussion among DC (Thiessen, Palmer) and folks in the Sociocultural WG (Heather, Carol, Carly, etc) so that there is mutual awareness of each other's activities - Todd
+ Carole Palmer and I talked at the last workshop we attended. She has a specific way of approaching the topics based on her prior work, and is interested in exploring how we can coordinate some activities. --Suzie
+ 
+4. Cross data set query example.  We wanted to demonstrate to NSF that  it was realistic to set up an environment that could answer questions  using information from more than one source.  We (David Shorthouse) did  so in response to a real question (Will this proposed ice road to serve oil  exploration in northern Alaska impact on any endangered species?). He  produced an application (http://128.128.175.111/) that used a map-based interface to interact with data from GBIF, IUCN, Flickr, and local  agency data bases.  The 'cross' part was achieved by using georeferencing and names to link data in different databases  (georeferences and names are two examples of what Mike Rippin calls key integrators). We may or may not be pressured to vacate work on  georeferencing, although I see a revamped interface as helping clients  to discover datasets of relevance to clients, whether the data are held  by ourselves or elsewhere.  We'd be interested in hearing if DataOne  would value a further investment in this interface.
+Not clear what infrastructure is being used - is this a "one-off" solution or something that could be expanded to a larger community - again a question of reusability - URL is password protected
+Join between some snow/ice data, rare species of animals - all put on google map
+There's no model behind this - again, looks like a "one-off" implementation
+If it were a generic tool for extracting georeferences from metadata standards, it could be a useful component of the Investigator Toolket. Not clear that's where they are going with this, though. - Todd
+
+ 5. Names-based infrastructure.  We are developing a names-based  framework for indexing and organizing biodiversity related data.  This  is linked to our interest in the Global Names Architecture.  The primary  goal of this investment is to help manage information about taxa.  We want to  automate the integration of data on the same taxa when the databases use  different names, we want to prevent clashes when the same name is used  for more than one taxon; and we want to use hierarchies (Whether  taxonomic or phylogenetic) to drill down or to aggregate data.  This is  probably the area of greatest investment. We are active in building a  global names index, reconciliation services, a name and taxonomy editing interface, all of  which we propose to make publicly available along with an initial large  scale editable classification that can be used for managing data.  We  are also building tools that will recognize and discover names in data  sources, so that we can catalog names usages. D Patterson, D.  Shorthouse, D. Mozzherin.
+
+Complicated group of partners (at least a dozen, e.g., GNA, TNRS, taxonconcept.org, EOL, etc.) - not unified in how they all want to proceed; 
+Could be a huge time sink - better to support any emerging standards and lend a hand  when appropriate but not a good time to invest DataONE resources
+It is not clear what the role of Paddy and his group is in this project
+
+6. Much of the remnants of the data of 250 years of research are  embedded in the traditional literature.  Along with the Biodiversity  Heritage Library, we value tools that will scale to the challenge of  extracting data from the half billion pages and get it moved into a database environment that  will foster their re-use.  To participate in this process, we are  exploring collaborations with Arizona (Hong Cui) in the area of Natural  Language Processing and associated machine learning (Anne Thessen)
+Not clear what DC is focusing on here - what is the interaction between BHL and DC?
+Need further clarification
+
+7. DC emphasizes the re-use of data. We are pretty sure this will draw  us towards the atomization of data and its transfer to the linked open  data world in the form of RDF.  We suspect that it will take a long time  before we are in a position to use this environment for scientific analyses,  but are of the view that we can move into this space by using the RDF  pool for other purpose - such as data-discovery.  A simple example, an  interface
+might represent a dataset that has information on species with images of  those species.  An interface then shows images of all taxa that we know about.  The interface uses the classification structure to let a user  narrow the taxonomic scope, in which process pictures of now irrelevant taxa  will disappear. That is, the interface enables a kind of taxonomic  faceted searching, eliminating datasets of little interest.  The process  ends with a shortlist of relevant datasets.  Services of this nature  need not be limited to data held by DC (BDMS) but could be applied to  data held elsewhere (GenBank,TreeBase, DataOne, LOD etc.)
+Great topic -
+Suggestion from Todd: perhaps something that the summer intern could work on
+Again, need more information
+Could include Carl in this conversation to serve as bridge between DC & D1
+Is there a role for the Semantics WG? Possibly, but not sure what the role would be beyond gathering more information
+
+Are there additional issues we should be thinking about, or are there some we should delete from the list?
+Need more information from Paddy before going ahead with this meeting- availabilty on
+the 24th June for video conference
+Matt: depends on time, flying then
+Todd: flying in morning available in afternoon
+Dave: yes
+
+I trust this all makes sense
+Paddy
+___________________________________
+David J Patterson
+
+Senior Scientist, Marine Biological Laboratory
+Senior Taxonomist, Encyclopedia of Life
+Life Sciences Lead, Data Conservancy
+7 MBL Street,  Woods Hole,  MASS 02543, USA.
+
+5. Around the Room 
+
+Mike Frame:
+Carol and Mike are doing a briefing on the Scientist and interim results of the librarian assessment to UC Librarians.
+
+Todd:
+Attended ACCI (NSF Advisory Committee on Cyberinfrastructure) earlier this week.  Tony Hey and Elizabeth Lyons also on the committee. Focused on NSF followup of the recommendations from the 6 recently submitted task force reports, available here: http://nsf.gov/od/oci/acci/acci_main.jsp.  Much discussion (and some confusion) about the role of DataNets, particularly as a way to approach the huge gap in data curation capacity.  NSF is developing a 10-yr strategic framework for cyberinfrastructure called CIF21, which I only have as a PDF, so am sending around via email.  The major point at which I diverged with the NSF plans & ACCI recommendations is how to structure the new Computation and Data Enabled Science and Engineering program within the foundation - there is a risk in the plans of disenfranchising those who do not do 'big science'.
+In other news, we've started discussions with Thomson Reuters about indexing Dryad metadata in their new data service.  Hopefully we can leverage this work for DataONE and DataCite down the road.  (And I'd be interested to learn if/how the new DataCite developments are going to affect EZID).
+
+Amber: 
+DUG: DUG meeting fast approaching.  We have 41 people indicating their intention to attend.  13 of whom are DataONE presenters / moderators, 10 are travel award recipients, 9 are from ESIP.  22 non responses, mainly invites to 'new' potential members.  Hotel logistics have been challenging due to different room block rates with DataONE and ESIP and multiple hotels being used by both organizations.
+EIM: Teaching last week at the UNM Summer Institute went well.
+ESA: Brochure information submitted to ESA for summer meeting.  We have a booth shared with Dryad for the duration of the meeting and 1 page (shared with Dryad) in the brochure.
+Summer Internships: Interns have been active in providing weekly updates and projects appear to be going well.
+
+Bertram: Provenance Working group: Held ProvWG meeting at UC Davis, Tuesday & Wednesday this week (participating: Paolo Missier, Shawn Bowers, Ewa Deelman, Yogesh Simmhan, Saumen Dey, Michael Agun, plus some locals/visitors). Progressing on "D-OPM". Questions/dinner talk about DataONE: What is DataONE doing? Tools, services, developments not evident from web site!?
+Internship summer projects updates: Provenance Repository Project (aka "GoldenTrail") and Workflow Analysis (w/ Bill) progressing. More details in the reports / web sites.
+Emails by interns to mentors@dataone and interns@dataone, yes? Yes. 
+
+
+Matt: Working with EVA-TG group on staging setup for TG runs to feed data into DataONE; planning on submitting an ESIP poster, contemplating whether it should be on DataONE.
+
+Bob:  One thing:  Fleshing out the EVA - Climate list of participants, through a number of interactions.
+
+Viv: Working with mentee on making data management learning modules available on DataONE. 
+
+Suzie: Finishing hire of new post-doc, Miriam Davis.  She should be starting in July.
+
+Steph: nothing new to report
+
+Dave: nothing to report
+
+John Cobb: (After the meeting) The EVA1/CLO/eBird/STEM team had a coordination call today discussing this year's eBird clustering computations. project prgoresses.
+
+

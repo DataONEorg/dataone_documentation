@@ -1,0 +1,154 @@
+Investigator Toolkit Breakout
+2012-07-15 DUG Meeting
+Matt Jones & John Kunze & Carly Strasser
+
+There is a running list, developed informally, of 86 different tools used by researchers and data managers.
+
+Discussed community effects in how the list of potential ITK tools were presented to and prioritized by the groups who participated in those informal discussions.
+
+Portal is very traditional (Space/Time/Keyword) - suggestions for improvements are welcome
+
+Bob Sandusky - libraries are using canned indexes that are not yet searching for data (is this a place for schema.org?) Examples: OCLC, WorldCat Local, Summon
+And, Google is intentionally *not* indexing datasets
+    - A few libraries trying to work out how to gather up dataset metadata for discovery, e.g. UW-Madison "Forward" effort
+    
+
+Matt - need to engage data providers early in the life cycle. They may not be ready to share data at that time.
+
+Don't spend more time developing lists of tools, you may have plenty of information on which tools.
+
+Hack-a-thons: Identify tools people are really using, to build out tools or prototyping, and to write documentation.
+
+Try to engage folks from some of the specific high-priority tool development teams (Microsoft, ESRI, OPeNDAP, ...). This can get in-kind help on development.
+
+NESCent hack-a-thons:
+- community members propose hack-a-thon themes
+- organize the event
+- open call for participation (not invitations)
+- try to enage non-coders (power users) to 'ground truth' the design and development; sometimes even work on documentation
+- the follow-up effort following a hack-a-thon can be significant to finish something up; sometimes utilize internships to complete the finishing touches
+
+Challenge: how can we get tool input from investigators themselves, not just developers?
+
+Need mechanisms for assessing both tool and data usage
+
+Use metrics? altmetrics?
+
+Morpho - Data Management Tool? 
+ * Useful for small number of datasets (<5) people that create one dataset / year
+ * supports multiple keyword vocabs
+ * data and metadata are mixed in EML
+ * FGDC and ISO exports (configurable)
+
+Morpho development areas: which should DataONE prioritize
+1. Identifiers
+ * DOI's via EZID, UUIDs
+2. Search
+3. Metadata Standards
+ * EML converted to FGDC
+4. Local storage packaging
+
+Habermann: should we even be helping investigators create MD? Or is it better to have a MD expert mediate the creation of high-quality metadata. Creating tools leads to 'capability loss' (the tools limit the expressivity of the MD standard).
+
+Paradigm shifts in scientific practice: in the old days, we did our own stats, now we use statisticians. We may need to take the same approach with data management: don't expect the researches to know / do all of it. We shouldn't expect researchers to 
+ * Problem with this is that researchers w/o knowledge will inevitably make decisions within what they perceive as their domain that will seriously damage downstream data (re)use and preservability. There's a base level of knowledge they can't get away from.
+
+In small science, we can only get the implicit knowledge about the meaning of data from the scientists - the metadata beyond the basic discovery MD.
+
+Is priority to upload to DataONE or to get small scientists help with managing their own datasets prior to upload - to capture the implicit contextual knowledge (Vision).
+
+Afternoon session
+
+DataONE-R
+Wrapper code to help R programmers use/create uniquely-identified data living in DataONE.
+
+Issues (and which of these are critical for release):
+1. Need support for data packages
+    (of heterogeneous data/file-types that together form a single "dataset" object)
+    
+2. Need support for identifier generation
+
+3. Need support for search
+    "what do you search for in an analytical environment?" not sure how metadata search would be used
+
+4. Need support for semi-auto science MD generation
+    e.g. metadata templates, changeable scriptably
+    problem is how to auto-generate metadata for multiple, largely repetitive data runs
+
+5. Dealing with intermediate data products issues
+  Design decision early on that objects are immutable, and PIDs cannot be re-used. But computational systems can create a lot of intermediate objects. Tension between DataONE as archive - which is the current model & design - and as a place to cache intermediate objects.
+"Don't want to be in the business of archiving intermediary data products that nobody thinks are important [long-term]."
+Can't currently use DataONE as workspace during projects because DataONE assumes that everything that hits its servers should be archived.
+
+6. Adding support for provenance tracking (being addressed by the provenance WG through its prov model development, so likely a later development target.)
+
+Vision: R culture is such that releasing something incomplete should be fine.
+Jones: Agree; we can get this done in about 4 weeks.
+
+Kunze: archive / preservation systems sometimes get used as content management systems; what is intended to be a final needs some tweaking, represented by a few subsequent deposits with corrections. (And sometimes CDL gets requests for CMS.)
+
+Recommendations:
+- continue to build and support DataONE-R
+- take a release early & often approach and leave some of the problems for later
+- stick with using Java library as backend to R client
+- consider Matlab as an additional tool
+
+Do a few tools well rather than spreading resources too thinly. Reference implementation, so that several communities (Python, Matlab, etc.) can get in on the game?
+- Python and Java libraries are important
+
+
+DataUP
+
+Facing "ugly truth" that researchers know very little about good data management. Have to reach them where they live and work -- which means Excel!
+
+DataUP will exist as Add-in (Windows Excel 2007+ only) and Web-based application (new UI), that works with any OS, different spreadsheet software.
+
+Requirements
+ * best-practices check
+ * metadata generation
+ * citation generation
+ * posting data to a repository
+
+Beta releases TOMORROW (July 16)! Public release Sept 4.
+
+OneSHARE
+
+Repository network, available to "anyone anywhere."
+
+At first, will accept deposits only from DataUP (spreadsheets/CSVs).
+
+To do:
+For attribute MD, it might be good to reference a URI.
+Add more repositories
+- modify to get a PIDs to support deposit into other repositories
+Add more MD schemes
+Build community
+
+Written in .net, but open source
+Depends upon some Web services running on Azure (this will be OK for a while because MS will support it)
+
+Open question: How should relationships between repositories and PID providers be managed?
+
+Use of DataUP by researchers may lead them to move toward best practices with XL. How can DataUP be an opportunity toward improved DM practices more generally?
+
+Can the properties in an Office document be utilized? Or set up a template based on important common values for projects with many files.
+
+Waide: can this be considered as an alternative to Morpho as an EML editing tool? Also he thinks this tool would appeal to users even without the deposit step.
+
+Make it possible to select a range of cells for the data set MD as you can for the parameter MD.
+
+All interactions with the add-on can be done through the wizard I/F or direct editing (if you're using the Web app, it's all wizard-driven)
+
+DataUP summary
+1. feature list
+2. how much should DataONE invest in development
+3. how can we build a community to support DataUP after Microsoft moves away?
+
+Several voices support it as a 'gateway drug' for data management.
+Lack of Mac support is troublesome in academia.
+Degree to which Web application might be the best place to invest. MS is more likely to invest more work here.
+See what the uptake of the initial release is before committing to invest our resources.
+Some people like the idea of something that looks like an add-in but relies on the Web app for functionality.
+
+ONEDrive (didn't get to this during the breakout session)
+

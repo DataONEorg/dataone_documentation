@@ -1,0 +1,140 @@
+Understanding Workflows Meeting - July 23rd 2011
+Karthik Ram, Bill Michener, Richard Littauer
+
+
+Tasks for upcoming week:
+--------------------------------------------------------------------------------------------------------------
+- Drop David de Droure another line
+- Continue to fine-tune the graphs. 
+- Identify the most important plots; rewrite the regression function in R for the sake of looking at the R square for those.
+- Load these graphs into a powerpoint for going over on Friday.
+- Group the results by hypotheses.
+- Generate half a dozen meaningful plots for Monday for the conference deadline.
+- Write a 500 word abstract with Bill for the DCC. 
+- Run regular expressions on tag names, 'example' workflows, etc. 
+- Figure out the myExp. terminology (views, downloads, etc.)
+- Run stats using the dates. 
+- Coordinate concerning travel plans for Friday. 
+
+Next talks:
+--------------------------------------------------------------------------------------------------------------
+- Monday morning - Karthik, Richard - Dates in R
+- Monday afternoon - Bill, Richard, ___ - Abstract for DCC
+
+Links:
+--------------------------------------------------------------------------------------------------------------
+Dropbox: https://www.dropbox.com/home/DataOne%20Workflows
+DCC Call for Papers: http://www.dcc.ac.uk/events/idcc11/call-papers
+
+Minutes:
+--------------------------------------------------------------------------------------------------------------
+RL: Update from this week I guess. I perfected the scraping script to get more information off of myExperiment. Last week I was able to get most of the information on workflows, but this week I edited it because I realised I should be able to get more off of the website: the amont of processors, beanshells, outputs, names of these, and then the embedded workflow information - the names of those, how many, their descriptions - names of the beanshells, types, etc. All of these are for the Tavernas. I got these off of the website, cleaned up the code a bit more. I've uploaded those into the SQL, and I've been mining those. I have around 116 graphs now, and I've started a long R document with all of the code for this. I've started going through the database of reading that we have, haven't finished that, it always takes longer to do this than one expects. I sent a message to David de Roure about the views and downloads information, and haven't gotten a response back yet.
+
+KR: Did you ever get ay response back from him about coauthoring?
+
+RL: No, not from the response on coauthor. So, I guess I'll drop him another line today. I also figured out what I would like to mine from the database. So that's what I've been doing, as well as moving internationally - I am now in DC. So, that sound alright?
+
+BM: Yes, sounds like good progress. So you say you have a number of graphics that you've already produced and so on.
+
+RL: Yes, they're here. https://www.dropbox.com/home/DataOne%20Workflows. So, still working on these. I only just got boxplot() working. 
+
+KR: Did you look at the other two plots with zero combined against the rest?
+
+RL: Not yet. Where are those [///]. Ok, I see those now. I see the R code for it. Bill, I also installed SQL manually on my computer because I pretty much wasted an entire day because of workers in my flat who cut off my internet and so on, so I just installed it myself on my computer, which was much easier than I thought it was, and I've been using that instead of Karthik's server. 
+
+BM: Looks like we'll have a lot to look at next week. 
+
+RL: Some of these are doubles, because I'm not sure - some are boxplots, some are point plots. Not sure which is best. 
+
+KR: One more thing to do is to identify the most important plots that you've made, which are the most essential, and then rewrite the regression function in R for the sake of looking at the R square, because that is something we're going to have to look at, instead of just looking if the line is good or bad.
+
+RL: Yes, I'd be happy to do that. If you helped me out with the code for that.
+
+KR: yes, I can give you an example for that.
+
+RL: Great. Yes, there's a lot of graphs here (a bit too many). I put all of the information into T1, t2, Rapid miner, and then others, instead of all in separate databases.
+
+BM: Good idea about prioritising these, Karthik. There are tons, and I think you Richard should be more able to know which are better.
+
+RL: I'd be happy to comment them each in the R script? Does that sound like a good use of my time?
+
+KR/BM: Not sure about that. KR: We won't have a chance to look at that before the meeting. What would be useful is if you just put all of these into a powerpoint, and then just grouped them by workflow. Then we can just go through them in Berkeley and systematically decide where to go from there. Just one graph per slide.
+
+BM: Ideally, grouped by the Hypotheses, as well as the individual information which you gleaned which may be more generic, which we may not have any hypotheses about. 
+
+RL: That sounds good, great. 
+
+BM: It might be good to accelerate this somewhat. I don't know what your schedule is, but... if there are a half dozen meaningful plots which would be of general broad interest, then i can go ahead and get an abstract submitted for the 25th.
+
+RL: I'll see how much work I can get done this weekend for Monday, then. I'm with my sister in DC but I have the office to myself, I'll try to see how much I can get done. 
+
+BM: Ones that have high-level information about workflow use and reuse. If you were going through, if there were half a dozen that tell an interesting story, I can down select a couple of those and put them in the abstract that gets submitted. 
+
+RL: That sounds good. It's also good because it means that we don't have all of the results analysed yet, so the rest of everything can go into the publication.
+
+BM: Yeah. 
+
+RL: How long is the abstract?
+
+BM: I'll have to look it up, but I'm sure it's not more than a couple of hundred words or so. I'll take a look at that, as well. I'm a bit tied up right now, but it'd be nice to get something in. [RL later: 500 words for presentation, 1000 for practice track. http://www.dcc.ac.uk/events/idcc11/call-papers]
+
+RL: Monday I've set aside entirely for this, so I hope to just work through the day, so if you want to get on skype and talk then it would be good.
+
+BM: I have a couple of meetings - 11-12 MT.
+
+RL: I'll be free all day, so just keep me updated, I'll be able to talk. I'll be free until around 6ET. Then I have to go to Charlotte. 
+
+BM: You get in [to CA] on thursday?
+
+RL: Thursday night, yes. 
+
+BM: I'll be there Thursday morning at the california digital library in Oakland. Let's see - was I supposed to check into a room at the motel?
+
+KR: Yes, but if not, there's a back-up option, so we should be ok. 
+
+BM: I'll get someone here on top of that now.
+
+KR: If they don't have a projector at the hotel, I can bring one down. My office is a mile from the hotel, so it should be easy to grab one.
+
+BM: If you're sure, I have a lightweight one that's tiny. 
+
+KR: Well, one's available.
+
+BM: I'll plan on bringing that unless I email you and see that it's been checked out by someone else. So, I don't want to take up too much time here. Richard, what are the key highlights so far?
+
+RL: We still need to see what views v. downloads means. I did another one which looks at the amount of community on myExperiment - by adding up the credits etc., it can be shown that the more one talks about some workflows, the more they're downloaded. so myExp. is working as a social network, as opposed to just being a repository. 
+
+BM: I like that, interesting.
+
+RL: length of description seems to help, although I'm not sure how much. Complexity helps downloads, as well, which is interesting. I still want to run some regular expressions to see, for instance, if WFs with the word 'example' in the title are downloaded more or not.
+
+BM: Can you say anything yet about the dates? Are they getting more complex? 
+
+RL: Still working on that, high on my list. Figuring out how to do the date is next.
+
+KR: Dates are easy to handle in R. You can do that once you have the data off the database. If you want to work on that, let me know, I'm not free until Sunday afternoon.
+
+RL: Great, Maybe monday morning we can work on that together. There's another thing I found, about versions. For Taverna, the amount of versions really means that it is downloaded more. 
+
+BM: I wonder if that is not correlated with the fact that as a workflow gets used, then people think it might be nice to add this, so...
+
+RL: It's not a perfect proxy, but it might say that the more complex, the more adapted to its functions.
+
+KR: There's a lot of circular arguments. More versions means more active - more thought out, more feedback. That might be driving the use of that workflow, not just the versions.
+
+BM: i think we're on the same page there. That might affect it as well.
+
+RL: Yes, it's not uninteresting - the amount of work put into a workflow means more comes out of it.
+
+KR: I'll try to throw an outline together for the meeting, for the review paper, so I'll have a couple of PP slides for the work below. I don't see any value in sending that out beforehand, but that's the update on my end. 
+
+BM: Sounds good. We'll have at least a couple emails go around before the meeting, and I'll talk to you on Monday then. 
+
+RL: Great. KR monday morning, BM monday afternoon. 
+
+BM: Great, sounds good. See you all next week.
+
+-
+
+
+

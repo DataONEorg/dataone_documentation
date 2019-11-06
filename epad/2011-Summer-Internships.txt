@@ -1,0 +1,114 @@
+
+Project Descriptions:
+
+ * Subsetting and Publishing “Dynamic” Scientific Datasets
+ * Developing Online Learning Modules Related to the Best Practices throughout the Data Lifecycle
+ * Tracking the reuse of 1000 datasets
+ * Accessing and analyzing environmental data in the classroom
+ * Understanding how scientists analyze data
+ * How Much Ecological Data is Out There?
+ * Scientific Workflow Provenance Repository and Publishing Toolkit
+ * Integrating loosely structured data into the Linked Open Data cloud
+ * Best Practices for Data Management for “Public Participation in Science and Research” Projects 
+ * Developing Video Animations for DataONE Community Engagement
+
+
+
+Subsetting and Publishing “Dynamic” Scientific Datasets
+
+The Avian Knowledge  Network (AKN) is a federation of bird monitoring  datasets, the largest  and most dynamic of which is eBird. Datasets such  as these, that are  constantly being edited and expanded, are challenging  to incorporate  into the DataONE framework because of the way they are  currently  published. This project involves researching issues around  dataset  subsetting and duplication to recommend a publishing approach  that  works for “dynamic” datasets. Implement that strategy by migrating  the  AKN repository to a DataONE–integrated Metcat deployment, making AKN   into a DataONE Member Node. Produce a case-study article that captures   the implementation process that could act as a guide to future Member   Nodes making similar efforts.
+
+Primary mentor: Paul Allen (Cornell)
+Secondary mentor(s): Kevin Webb (Cornell)
+Qualifications/skills needed: metadata mapping; high level programming language (e.g., Perl, Java); SQL; shell scripting
+Skills to be learned: data repository implementation; scientific data organization and publishing
+
+Developing Online Learning Modules Related to the Best Practices throughout the Data Lifecycle
+
+DataONE is developing  online learning modules designed to educate DataONE users in various  aspects of the data lifecycle. This project involves: 1) researching and  acquiring software that can produce high quality online learning; 2)  developing online learning modules using pre-prepared power point slides  produced by the DataONE Community Engagement and Education Working  Group; 3) adding content about data management 4) participating in a  workshop hosted by DataONE to refine and add additional content to  educational modules (July, 2011)
+
+Primary mentor:  Viv Hutchison (USGS NBII)
+Secondary mentor(s):  Stephanie Hampton, Carly Strasser (UC Santa Barbara-NCEAS)
+Qualifications/skills needed: a science data management background: familiarity with aspects of the data lifecycle; ability to quickly learn new software; some work in development of educational materials helpful
+Skills to be learned: creative ways to educate a varied audience on data lifecycle; familiarity in use of chosen software used to develop online learning modules; collaboration techniques with dispersed working group. 
+
+
+Tracking the reuse of 1000 datasets
+
+We believe that openly archiving raw data facilitates valuable reuse.   Can we measure this?  What contribution does data reuse make to the  published literature?  Who reanalyzes data?  For what?  Does this vary  across disciplines and repositories?  These questions are the focus of  an exploratory study, "Tracking data reuse: Following one thousand  datasets from public repositories into the published literature."  In  this internship you'll work directly with Heather to collect, extract, annotate, and analyze data to explore these important questions.  See http://bit.ly/cPsek0 for more info on the project.
+
+Primary mentor:  Heather Piwowar (NESCent)
+Secondary mentor:  Todd Vision (UNC and NESCent)
+Qualifications/skills needed: Self-starter, determined,  enthusiastic, willing to keep a research notebook up-to-date openly  online.  Experience with statistics, the academic literature, PubMed,  ISI Web of Science, Python, R, and blogging would be helpful.
+Skills to be learned: Research methods, research  data collection, text extraction from the scientific literature, keeping  an open science research notebook, communicating research results
+
+
+Accessing and analyzing environmental data in the classroom
+
+A graduate student intern will create an educational module for use in undergraduate classrooms – the module will be designed to teach basic principles in ecology or environmental science using data that are publically available through the DataONE network. The student will work with mentors to choose appropriate data sets, questions and analyses, and create a simple program to access and analyze the data in R.  The student will create documentation that accompanies the exercise, potentially in multimedia formats, to train instructors to use the exercise in classrooms.
+
+Primary mentor:  Stephanie Hampton (UC Santa Barbara-NCEAS)
+Secondary mentor(s):  Carly Strasser (UC Santa Barbara-NCEAS), Amber Budden (UNM)
+Qualifications/skills needed: Basic background in ecology or environmental science, and statistics is necessary. Experience implementing statistics in a scripted statistical package such as R, Matlab or SAS is necessary. Experience with online training materials and multimedia presentation – e.g., screencasts - is useful.
+Skills to be learned: The student will hone skills in statistical analysis, programming in R, working with large data sets, and creating teaching materials. The student will gain a well-rounded perspective on the importance of all aspects of the data life cycle in environmental sciences, and build a diverse professional network with leaders in environmental informatics and data-driven environmental science research. 
+
+Understanding how scientists analyze data
+
+Scientists use a wide variety of tools and techniques to manage and  analyze data.  However, to our knowledge no one has taken a systematic  look at how scientists do their work.  In this project, we will examine a  large number of the scientific workflows that have been constructed.   We will develop a way of categorizing workflows based on their  complexity, types of processing steps employed, and other factors.  The  goal is to develop new and significant understanding of the scientific  process and how it is being enabled by science workflows.
+
+Primary mentor:  William Michener (UNM)
+Secondary mentors:  Rebecca Koskela (UNM), Bertram Ludaescher (UC Davis)
+Qualifications/skills needed: Self-starter, determined, enthusiastic, willing to  keep a research notebook up-to-date openly online.  Experience with a  modern programming language, statistics and data analysis, and R would  be helpful.
+Skills to be learned: Kepler and Taverna workflow languages,  research methods, research analysis, keeping an open science research  notebook, communicating research results. A peer-reviewed publication is  envisioned.
+
+How Much Ecological Data is Out There?
+
+No one is certain how much ecological data exists, or how this amount compares to the volume of data currently housed in repositories such as KNB. It would be useful to determine this for designing infrastructure, but also as a call to arms for ecologists to start sharing this “dark data”. For this project, we will develop a method for estimating the amount of ecological data being generated, with a focus on “small science” projects. Initially this project will involve brainstorming about the best way to estimate such a complex figure, and the intern will then be tasked with producing the estimate using the decided upon methods. Potential methods for estimation may include sampling publications, surveying scientists, or exploring existing databases. We foresee that results from this project will be highly cited since such an estimate is useful for discussions about data sharing, data reuse, and repository development in Ecology.
+
+Primary mentor:  Carly Strasser(UC Santa Barbara-NCEAS)
+Secondary mentor(s):  Stephanie Hampton (UC Santa Barbara-NCEAS)
+Qualifications/skills needed:  Applicants should be graduate students, have a strong background in the field of ecology or environmental science, and have statistics experience.  Experience using computer scripts for data retrieval would be helpful, along with programming experience in R and/or MATLAB.  The intern will need to be creative and excited about tackling complex problems
+Skills to be learned:  The student will be exposed to topics in data management, reuse, and archiving, and will learn to work with ecological databases. They will learn to work collaboratively on complex problems with several members of the DataONE team, and have the opportunity to write a peer-reviewed publication with the potential for high citation rates.  Particular skills related to computer scripting, statistics, and data mining will be specific to the methods determined by the student and mentors.
+
+Scientific Workflow Provenance Repository and Publishing Toolkit
+
+ Scientific workflow systems are increasingly used to automate scientific computations and data analysis and visualization pipelines. An important feature of scientific workflow systems is their ability to record and subsequently query and visualize provenance information. Provenance includes the processing history and lineage of data, and can be used, e.g., to validate/invalidate outputs, debug workflows, document authorship and attribution chains, etc. and thus facilitate “reproducible science”. 
+
+We propose to develop (1) a provenance repository system for publishing and sharing data provenance collected from runs of a number of scientific workflow systems (Kepler, Taverna, Vistrails), together with (2) a provenance trace publication system that allows scientists to interactively and graphically select relevant fragments of a provenance trace for publishing. The selection may be driven by the need to protect private information, thus including 
+hiding, abstracting,  or anonymizing irrelevant or sensitive parts. Part (1) will be based on a DataONE-extension of the Open Provenance Model (D1-OPM) and leverage an earlier Summer of Code project. In particular, the provenance toolkit  includes an API for managing workflow provenance (i.e., uploading into and retrieving from a data storage back-end). Part (2) will implement a new policy-aware approach to publishing provenance, which aims at reconciling a user’s (selective) provenance publication requests, with agreed upon provenance integrity constraints. For an existing rule-based backend, a graphical user environment needs to be developed that lets users select, abstract, hide, and anonymize provenance graph fragments prior to their publication.
+
+Primary mentor: Bertram Ludaescher (UC Davis)
+Secondary mentor: Paolo Missier (Newcastle University)
+Qualifications/skills needed: For Part (1), applicants should have experience in SQL and Java or a scripting language (e.g., Python or Perl), and for Part (2) programming of GUIs with Rich Internet Application (RIA) technologies (e.g., GWT) is a plus.
+Skills to be learned: Collaborative open source software development using state-of-the-art languages and tools (databases, workflow systems, interactive information visualization).
+
+Integrating loosely structured data into the Linked Open Data cloud
+
+The  Linked Data conventions describe four principles that allow data of any  kind and from any online source to form a global interconnected web of  data. These four principles are: i) Name every "thing" that has some  data or information associated with it;  ii) use HTTP URIs to do so;  iii) provide useful information or data in Resource Description  Framework (RDF) format to someone looking up such URIs; and iv) within  information provided this way, link to other common "things", such as  points or axes of reference, and use common vocabularies to attach  meaning to links wherever possible.  These seemingly simple principles  have nonetheless been highly effective in facilitating the creation of  large, globally distributed, and constantly growing aggregations of  Linked Open Data (LOD).  In this way, Linked Data provides a unversally  applicable framework for machines and users alike to integrate, navigate, and discover data by following links that are semantically of  interest.  
+
+However, trying to apply the Linked  Data principles to data holdings of non-specialized digital  repositories, such as DataONE and many of its member nodes, is  challenging.  These data are often highly heterogenous, and not natively  expressed in RDF, or a format structured enough that would lend itself  to automatic conversion to RDF. Instead, they are typically represented  in formats that are either loosely structured in an ad-hoc manner (such  as spreadsheets), or according to one of a myriad of formats output by  instruments or analysis programs.  It is thus not clear what the  universe of "things" to name is, what are common points or axes of  reference, what kinds (semantics) of links are needed, and how data  archived in this way can be exposed in RDF such that the conversion can  be automated, yet is still useful for science-motivated discovery and  integration.
+
+The idea of this project is to develop an exploratory prototype, and  practical recommendations resulting from it, for how the heterogeneous  and loosely structured data held in non-specialized DataONE member nodes  can be exposed to the Linked (Open) Data cloud. The approach would  consist of obtaining a sufficiently representative sample of data sets  from DataONE's initial 3 member nodes (Dryad, KNB, and ORNL-DAAC), and  using them as instance data for which to define the RDF predicate  vocabularies, domain ontologies, resource URIs, and conversion  mechanisms that are necessary to create a LOD representation of these  data.  This representation can then be uploaded to, navigated, and  queried in either one of the web-based LOD browsers (such as URIburner),  or for example in a local installation of OpenLink Virtuoso.    
+
+Primary Mentor: Hilmar Lapp (NESCent)
+Qualifications/skills needed: Knowledge  of RDF and one of its widely used serializations (XML, N3).   Familiarity with either C or Java programming, or a scripting language  that has good support for RDF and OWL, will be needed. Familiarity with  Linked Data, and experience with metadata vocabularies and domain  ontologies in RDF and OWL will be very helpful.
+Skills to be learned: Designing  and executing an exploratory study through all phases. Identifying and  communicating alternatives and their advantages and drawbacks.  Developing practical semantic web resources for existing instance data. 
+
+Best Practices for Data Management for “Public Participation in Science and Research” Projects 
+
+The D1 CSWG is working to organize and develop best practices for management of data and information for the increasing number of local, regional and national projects that focus on “Public Participation in Science and Research (PPSR),” also called Citizen Science projects.  The 2011 CSWG intern will assist in the inventory and description of data practices for PPSR projects, based on the response from an earlier survey conducted as part of the CSWG.  The goal of the intern project is to develop a metadata description for key aspects of the data held by each group, and make this info available back to the CSWG as a small database.  The intern will then help identify and document best practices for data management by PPSR projects, assist in vetting the best practice documents across the PPSR community, and work with CSWG to make the best practices available via the D1 website as well as other outlets.  Products will include a suite of best practices for data management by PPSR projects; in addition, the intern will be encouraged to give a formal presentation at a scientific, data management or PPSR conference or meeting.  Local work preferred, at Tucson or Ithaca, though remote work would be possible for outstanding candidates (though one trip for an organization meeting would be required). 
+
+Primary mentor:  Jake Weltzin (USA National Phenology Network, Tucson, AZ)
+Secondary mentor:  Rick Bonney  (Cornell Laboratory of Ornithology)
+Qualifications/skills needed:  Undergraduate or graduate student or equivalent; simple database management (e.g., MS Access) skills preferred; public engagement; writing; organization; small project management 
+Skills to be learned:  Metadata management; best practices template; database management; communications and outreach; project management 
+
+Developing Video Animations for DataONE Community Engagement
+
+Description: DataONE wishes to develop a set of video animations to help explain DataONE's value and capabilities to a range of audiences. Several topics have been identified for these short animations, a couple of storyboards have been developed, and one animation created. The intern(s) will work with the mentors to continue building this set of animations according to the principles of universal design.
+
+Primary mentors: Paul Allen (Cornell Laboratory of Ornithology)
+Secondary mentors: Amber Budden (UNM) Will Morris (Cornell Laboratory of Ornithology)
+Qualifications/skills needed: Applicants should have strong visual design skills and a high level of expertise in development of digital animation. Expertise in communicating scientific information to a variety of audiences is desirable.
+Skills to be learned: Video / animation development in a distributed organization; science communications.
+

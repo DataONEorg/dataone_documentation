@@ -1,0 +1,113 @@
+Color Codes
+
+ORANGE - Steps 
+Purple: Who is responsible
+Green: what documents we need to develop
+
+How to become a MN
+Steps:
+ * 1)  Read MN material on website Potential MN's, MN section (devil is in the details)
+
+ * 2)  Contact DataONE via ticket system which generates auto-response Potential MN's add MN information to "contact us" (log ticket in redmine)
+
+ * 3)  Assign Ticket to DataONE Contact person Amber's Minions Laura to set up
+
+ * 4)  Receive a response from Amber, providing contact information for an individual  Amber's Minions  (log response in redmine
+
+ * 5)  Complete MN description document Potential MN's with DataONE Contact person (note may iterate this step) MN Description Document (logged in redmine)
+
+ * 6)  MN DataONE Sub Team Evaluate MN Description Document MN Eval Team Evaluation Document based on MN principals (http://epad.dataone.org/2012Apr17-MN-Prioritization) and include recommendation and include a prioritization 
+
+ * 7)  MN DataONE Sub Team makes recommendation (Priority) to DataONE Leadership Team MN Eval Team recommendation is part of Evaluation Document 
+
+ * 8)  Leadership Team makes decision  DataONE Leadership TeamRecommendation form updated and logged in redmine
+
+ * 9)  Amber communicates back and the ticket is closed and resolution documented 
+
+ * 10)  Open new ticket for future activity canned email (communication via email and logged in redmine -- this is a new ticket) Amber
+
+ * 11)  Member Nodes Status Page - Updated on DataONE Site for MNs that have had an affirmative response from the Sub Team following submission of the MN description document DataONE Ops Group Public status page based on MN Description doc (example that might be similar - XSEDE resource page at https://portal.xsede.org/resource-monitor)
+   * DataONE ops DB (feeds DataONE Main page and "to be" DataONE dashboard)  descriptive information culled from MN description
+   * MN Description DataONE ops DB (feeds DataONE Main page and "to be" DataONE dashboard) descriptive information culled from MN description
+
+ * 12)  Agree to DataONE Service Level Guidelines Pending MN's, Service level guidelines (sent to Potential MN and logged in redmine)
+
+ * 13)  Sign DataONE Partnership Agreement - Terms & Conditions; Privacy Pending MN's, and  DataONE Executive Partnership agreement (send and sign and log)
+            draft:  https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/20100831_sg_oakland/mn-and-cn-materials/DataNet%20Partnership%20Agreement%20-%20USGS.doc/view
+ * 14)  If not already a Member, Become a Member of DUG Pending MN's,and DUG DUG charter
+
+ * 15)  Provide Additional Training Materials as Necessary DataONE (who?) Training (documenation, etc) materials
+
+ * 16)  Establish Sandbox for "potential" MN (done by MN with CI support) Pending MN's,and some support from CCIT for LDAP etc. documentation on how to use sandbox
+ * Comment on above bullet from Rebecca: needs to consult with CI about staging vs. sandbox for MN's apart from initial DataONE V.10 release.
+
+ * 19)  Join MN Operational Group - Regular Calls Pending MN's,  DataONE MN Ops team charge for MN Ops group
+
+ * 20) Decision to move from Sandbox to Staging agreement with Pending MN's and MN Ops team email sent and logged in redmine
+
+ * 21)  Move "potential" MN to Staging for Testing, Evaluations (involvement of CCIT) Pending MN's, CCIT, DataONE MN Ops team 
+
+ * 22)  Validate "potential MN" against Test scripts/processes/criteria Pending MN's, CCIT, DataONE MN Ops team
+
+ * 23)  "potential" MN participate in Testing in Staging Pending MN's, CCIT, DataONE MN Ops team develop scripts (literally) for MN testing
+
+ * 24)  Joint "sign-off" to Production by MN's and DataONE Pending MN's Principal and DataONE Executive (including subsidiary "go" recommendations)  Develop checklist and MN and DataONE sign-off is recorded by email and logged 
+
+ * 25)  Ticket established to move to Production MN Ops team
+
+ * 26)  Move to Production Pending MN's, CCIT, DataONE MN Ops team
+
+ * 27) Show case on DataONE Site, Communications Methods Amber and minions
+
+ * 28)  Communicate New MN  (i.e. ListServ Announcement, Press Release, Twitter, etc.) Amber and minions
+
+ * 29)  Auto Publish (Restricted Access for MN's and Public Statistics) and Auto Provide Monthly Statistics, Data usage, Metadata, Up/Down, Volume, etc. back to now onboard MN DataONE MN Ops team  template for administrative reports
+
+ * 30)  MN Operations Continue (Regular Call, Monitoring, etc.)  DataONE MN Ops team
+
+
+
+Tasks/Actions:
+ * Link 'contact form' to redmine ticket system Laura A.
+ * Review current set of documents   MN Subteam  (= BRAD, John Kunze, Suzie, Mike, Matt) morph to AD, John Kunze, Suzie, Mike, Matt, plus the CI liaison
+ * Prepare 'canned' email responses for general enquiries Amber 
+ * MN Description template  revised based on MN Tiers & Types of MNs (Data, Computing, etc.) MN Subteam
+ * Identify CI person to liaise with Amber on technical MN issues Amber and Dave 
+ * DataONE MN Sub Team Defined:  Amber and subteam
+   * Responsibilities
+   * Time Frame for Response
+ * DataONE Process to evaluate MN Description Form against the Principles  MN Subteam 
+ * Publish & Approve principles MN Subteam
+ * Create MN Status Page - Current MN, Data Holdings, #'s, and pending MNs (develop specificiation, design, create, deploy) CI person, John Cobb, Amber, and Laura 
+ * Publish the MN description on the DataONE MN Section Amber
+ * Review Partnership Agreement Rebecca
+ * Review / revise MN Current Priority List in relation to the principle document LT 
+ * Complete this Process and Documents for Current MN's (Pending release) MN Subgroup
+ * Draft documentation for How to USE DataONE Sandboxs CCIT
+ * Develop Sandbox and Migration Scripts for Validation & Check-lists for moving through stages of Deployment CCIT
+ * Define MN Ops group and stand up BRAD
+ * Depict Process in Flow Chart Diagram Amber and Grace
+
+Existing Locations on Member Node induction documents (scattered throughout the DataOne Universe) 
+ * Public Website: http://www.dataone.org/member-nodes   (and links below)
+ * DUG Meeting packet with MN MN documents: https://docs.dataone.org/member-area/planning-for-dug/dug-general-documents/member-node-documents-final-versions/DUG_Packet_2010Dec03.pdf/view
+ * Process to Establish a Member Node: https://docs.dataone.org/member-area/planning-for-dug/dug-general-documents/member-node-documents-final-versions/MNProcess2010Dec03.pdf/view?searchterm=member%20node
+ * Etherpad meeting on MN prioritization:  http://epad.dataone.org/2012Apr17-MN-Prioritization
+ * Current MN Priorities - http://mule1.dataone.org/OperationDocs/membernodes.html 
+ * CCIT deployment prioritization and MN URI definitions: http://mule1.dataone.org/OperationDocs/membernodes.html
+ * USGS Partnership agreement draft 2008: https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/2010_11-sustainability-and-governance-meeting/agreements-background-information/DataNet%20Partnership%20Agreement%20-%20USGS_pac.doc/view?searchterm=partnership%20agreement
+ * https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/20100831_sg_oakland/mn-and-cn-materials/DataNet%20Partnership%20Agreement%20-%20USGS.doc/view
+ * Member Node Service Guidelines Draft: https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/20100831_sg_oakland/mn-and-cn-materials/Member%20Node%20Service%20Guidelines.doc/view?searchterm=partnership%20agreement
+ * DatONe MN fact sheet: https://docs.dataone.org/member-area/documents/marketing-materials/marketing-materials/DataONEMNFACTSheetFormattedDec1.pdf/view?searchterm=partnership%20agreement
+ * ...
+ * Search from "Member node"  https://docs.dataone.org/search?SearchableText=member+node
+ * 
+ * 
+ * Items discovered and added to this list post MN breakout:
+ * Dave V. points to: https://repository.dataone.org/documents/Projects/cicore/MemberNodeDeploymentTemplate/html/index.html
+ * MN breakout at 201109 SG mtg (Oak Ridge) http://epad.dataone.org/SGWG-20110913-MNfactsheet
+ * ...
+ * Search from "Member node"  https://docs.dataone.org/search?SearchableText=member+node
+ * 
+
+

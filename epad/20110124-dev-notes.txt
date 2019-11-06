@@ -1,0 +1,108 @@
+Target Funtionality
+
+Demo 1. Search for interesting data (i.e. stuff that will be used in Demo 2).
+
+Need:
+- MN content available
+- MN synchronize
+- The search UI (i.e. mercury)
+- Retrieve identifiers from search interface - manually or through Zotero
+- MN.listObjects()
+- MN.getSystemMetadata()
+- CN populate search index
+
+
+Demo 2. The EVA demo. 
+This involves an investigator downloading data from DataONE into R and executing the scripts to generate a distribution map. 
+Bonus is to publish that back to a Member Node
+- about 20sec to run
+- single distribution generated
+- need to science metadata describing the output
+
+- R plugin, retrieve content given list of IDs
+- R scripts produce some output
+- Create science metadata for output
+- Store output back to member node (KNB) - part of the next demo
+
+Need:
+- R script to get content given a list of identifiers
+Execute the experiment
+Visualize the output.
+- resolve()
+- get()
+- R environment
+
+
+Demo 3. Basic process of a researcher adding content to a Member Node with some discovery 
+
+- Add content to DataONE using client. Ideal = Morpho, minimum = CLI
+- Verify content available on Member Node
+- Verify content available on > 1 Member Node
+- Content available in search index
+- Add discovered content to Zotero
+
+- emphasize that content is being pulled from multiple sources and metadata formats
+
+Need:
+- Morpho able to add content to KNB node using existing mechanisms or prefereably through DataONE interface
+- create() operational on MNs
+- CLI able to execute create()
+- synchronization, resolve, search interface
+
+Demo 4. 
+- Turn off a member node and show that the content is still retrievable
+
+Need:
+- MN replication
+- Notification that replication has completed (log messages)
+
+
+Jan 16-22
+
+- Close core functionality bugs
+- CN-CN replication
+- Synchronization operational
+- ITK CLI and R plugin
+
+Jan 23-29
+
+- CN reserveID
+- Content indexing for search
+- MN-MN replication operational
+- COINS support for Mercury completed (Zotero)
+- Prepare initial versions of demonstrations
+
+- User scenarios story outlined
+- PPT presentations outlined
+
+Jan 30-Feb 05
+
+- Bug fixing for core services
+- Demo preparations and cleanup
+- Complete writing tasks
+
+Feb 06-12
+
+- Feb 07: Submit documentation to NSF including:
+  - five page overview
+  - fifteen page detail
+  - Project management plan
+  - Cooperative agreement
+  - Architecture documentation
+- Final versions of demos sorted out, with bug fixes
+- Prepare screen captures of demo activities
+- Final versions of powerpoints prepared
+
+Feb 13-19
+
+- No development activity on demo machines
+- Prepare final versions of screen captures of demonstrations (videos)
+- Practice presentations
+- Practice demonstrations
+
+Feb 20-26
+
+- Feb 22: Bill + Sayeed provide overview
+- Feb 23: DataONE review
+- Feb 24: Response to panel questions
+

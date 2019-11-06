@@ -1,0 +1,132 @@
+
+Assessments Group = BreakOUt 1 (Tuesday May 1 3:30 - 5pm)
+Tasks:
+1. Baselines currently out (what do do now, including decisions on getting more responses, publication strategies)
+a. Fed Librarians (1 publication comparing with fed libraries, define federal libraries, refer to fedlink site) Publish with lots of caveats and improve distribution strategy plus survey for follow-up in 2-3 years; tracking down and reaching population was a problem, fire walls, military, consider in future using phone calls, reaching them at conferences?
+b. Fed libraries (ditto a, comparing with fed librarians) Carol Hoover volunteers to do whatever it takes to build a good response base for follow-up. Carol Hoover will draft, Carol Hoover will be lead author and will identify venue. Co-authors will be Ben Birch, Carol Tenopir, Miriam Blake. Send data for a and b in excel to C. Hoover. To be finished this summer. Publish in a journal with full data analysis and then publish a short version in a newsletter that points to the full version.
+Put on future agenda, how to make the follow-up better.
+
+c. Academic Librararians, IFLA paper for ARL subset, article on full data set in College  and Research Libraries? (Bob Sandusky, Carol T., Ben, Maribeth??, Suzie Allard)
+d. Academic libraries - ACRL (Carol T., Ben, Bob Sandusky, Suzie Allard, Denise Davies?)  (  (closed, report to be published by ACRL this summer; shorter version for D-Lib (?), with later a version comparing to academic librarians (combined JASIST). All 3 done this summer.
+
+e.  Data managers (Ellie, Ben, Kimberly, Carol T.) (presentation at IASSIST; paper in IASSIST Quarterly??; later compare to other project (Miriam) and submit to the science information management community. Ben send dataset to Ellie.
+
+2.  follow - ups for scientists and academic educators
+
+review what we did at all hands 
+
+3.  new baseline groups (prioritize and decide how to reach and what to ask)
+- chief information officers, academic computing, office of research or
+office of science (DOE), publishers, policy makers of various types , students, citizen scientists? (low priority, PPSR)
+
+Which of the following topics do you cover in your classes?
+
+Carol T. needs to check with Mayer Amin on distribution to the Elseiver experts product list.
+
+Wednesday:
+
+User Tasks for Usability subtasks:
+Scientists
+1. Find a data set that they have deposited or that someone else has deposited.
+2. Generate a well formatted citation for a dataset
+3.  Control access to their own data (options for who can use it/see it; how long an embargo, etc.) (if possible test different ages/stage of careers)
+4. Easily find terms and conditions for use of that dataset; and allow follow-up
+5. Download a data set into common formats (excel, R, etc.)
+6. Find teaching/training materials that  I could incorporate into my course (data lifecylce, commonly used metadata standards, workflows, etc.)
+7. Tasks/use scenarios vary based on subject discipline of researcher
+, e.g. human subjects for social science researchers and medical),   Use tasks but also different users--task list may be static, but  different users by discipline, workplace, age/point in your career
+
+8. being able to filter by type of data easily, geographic scope, time period
+9. ability to easily find software requirements needed to view/analyze the data
+10. being able to reach contact/owner of the data; promoting collaboration and sharing, building sense of community and 
+10a. trust in the quality of the data and that the system is secure, reliable, long term, safe
+11. being able to get help about system
+12. know enough about the dataset/data context from the descriptive summary so they can determine if this is relevant (in metadata, but also abstract description, also links to papers, further reports)
+13. If I want to deposit data, how does DataONE lead me through the process of depositing data to a member node (assuming I don't know about the member nodes)?
+14. See tools when I need them, at the point in my workflow when it makes sense (not every task, but common tasks like submission, metadata, downloading)
+15. Feedback/progress bars
+16. Addressing motivational issues--what's in this for me, why should I deposit data, no cost, citations, etc. Overcoming barriers. This could be a website task, value proposition of dataONE (should be immediate and prominently displayed)
+17. Ability to state returns for reuse of your data; make it clear what is the function/rules of a member node and what is DataONE--clarifying member node terms of use and how a member node differs from "dataONE"
+18. Accomodations for institutional requirements (customizable like the DMP tool)
+19. Setting up an account, capture profile information  that will help me, ownership properties, usage statistics  (Probably for future testing, won't be available for a while).
+
+
+Task 3 - New stakeholder groups
+
+Google doc timeline: https://docs.google.com/a/uic.edu/spreadsheet/ccc?key=0Am8rDNhFX-BkdG1ZYkJ5TndsckItZmhDdVNSOFpxNnc#gid=0
+
+One definitation of policy makers must be #1 priority of new group:
+
+PRIORITY 1. Institutional Policy Makers:  CIOs and Research Offices (who do IRB and compliance issues, data security, data management) . Triangle on campuses and agencies of library, IT, research/science offices. NSF might be interested in institutional response to NSF mandates. Separate surveys for federal agencies and academics??
+
+chief information officers (they are a type of policy maker, top level of IT in the organization, sometimes also over or under the library) (unit of analysis would be one per organization, representing the organizational policies; ask if they are collaborating with the library, research functions, DOE has a list of these folks (Carol H. has a list for DOE, she could try to identify for other federal agencies like USGS, NASA, EPA, Dept of Interior, Commerce, etc.), Educause may have this for academic CIOs for all types of academic institutions. 
+ academic computing (may be under a CIO)
+PLUS heads of office of research (every university has one, how do we reach them? Vice-Chancellor level. Check to see) or office of science and other offices (DOE research labs), could identify a contact.
+
+Based upon Crowston & Bilder's presentation on project patterns and "wills", we might include questions to VCRs policies around project takeovers and project terminations are handled within institutions.
+
+PRIORITY 2. publishers (elsevier, springer, wiley are 3 biggest in world, Taylor & Francis next, ACS, ESA, RSC, others who publish in environmental sciences??journal editors/publishers that make mandates, policies or requirements about data (PLoS, Nature, Science, AGU) might be considered a type of policy maker for their authors. Dryad.  Some say they aren't going to do it: Society for Neuorscience. What do publishers see as they role? Heather Piwowar will contact authors of articles in journals that have policies for data sharing 2011. Heather contacted journal editors for 8 journals. Also with Nick Weber published in l-pub looked at policies . Carol talk to Mayur and Michael Mabe about possiblity. Also ALPSP
+Evaluating data citation and sharing policies in the environmental sciences†
+Nicholas M. Weber1, 
+Heather A. Piwowar2,
+Todd J. Vision3
+Article first published online: 3 FEB 2011
+DOI: 10.1002/meet.14504701445
+
+Heather A Piwowar, Wendy W Chapman (2008)  A review of journal policies for sharing research data   In: Open Scholarship: Authority, Community, and Sustainability in the Age of Web 2.0 - Proceedings of the 12th International Conference on Electronic Publishing (ELPUB) June 25-27 2008, Toronto Canada  
+ 
+ From Heather study of authors: 
+http://studyonimpactofjournaldatapolicies.wordpress.com
+list of journals:
+http://studyonimpactofjournaldatapolicies.wordpress.com/about/methods/
+
+studies of journal policies:
+http://www.asis.org/asist2010/proceedings/proceedings/ASIST_AM10/submissions/445_Final_Submission.pdf
+http://elpub.scix.net/cgi-bin/works/Show?001_elpub2008
+
+PRIORITY 3: graduate students in earth and environmental sciences
+
+
+3.legislative policy makers. Kimberly will create a diagram.  Need to carve out a small piece, start with lit review and content analysis. Maybe on a regional level, southeastern?  What does the term policy maker mean?  Kimberly and Theresa are working on white paper on high level US civil servants under legislator level. Kimberly may be interested in defining policy makers in more detail. Also how federal agencies promote policies (restrict to environmental-related connected to economic development, property values ,  Survey probably not feasible/reasonable. Case study, lit review, content analysis, survey/focus groups of participants at targeted conferences (like at NCSL). Don't start with legislators. Case study of a champion. 
+
+At U.S.  Federal level: members of congress, people who sit on specific committees like House Science and Technology Committee, also congressional staffers (like chiefs of staff),  
+At State, county, city level (these are more accessible). National Council of State Legislatures. More interesting than federal?? Executive branch better to reach than legislators.  Would be interesting to see what they collect for the federal government and what they collect for their own uses. Interoperability with other state agencies plus other states. What policies they have re: data? Have in place? Planning? Could first do a content analysis of rules and regs already out there. How do they work with universities? Maybe pick a couple topic areas or types of data and follow the linkages. For example, water quality data. Maybe treat as an issue (endangered species, water quality, across state boundaries). Do states interact at all with citizen scientists? And could ask from citizen scientist point of view.  rules and regs content analysis for every state? Does this require another grant? Grad students? 
+Advisory committees (especially at federal level) have some policy making authority. EPA has several. Scientific implications come through them. Board members are appointed like volunteer experts, what are their data needs, supposed to be neutral and balanced. Like study committees. Need data and may be data creators. A staff person for each agency would work with the committees. 
+Different layers of data--administrative/fiscal layer; stats; research (collect and use)
+Can reach them through International Council of Mayors?, 
+Other local/regional entities (like MTAS, CTAS) Ellie could check to see if there is a way to reach them nationally.
+Limit to US for now.
+(CIOs are another type of policy makers as are funding agencies), SUBSET: Legislators:  UN, EU, IMF, World Bank, U.S. federal legislators, state legislators, county, city, etc.; Policy makers at local or state level that are flow down from federal laws, EPA officers/departments in states, counties, cities
+Data generators, data users (for example people who use or generate data in response to these). Thersa and Kimberly's area. 
+Also records managers?, legal departments?,
+
+4. policy makers type: Funding agencies who make mandates (literature review?)
+ 
+ NIH? 
+
+5. students: middle and high school; 
+college undergraduates; 
+graduate students
+
+6.citizen scientists? more important in some areas than others (for example birds, NPN) (low priority?). PPSR knows who they are?
+
+7. k-12 educators Bilal may do these
+
+
+8. Scientists as researchers and teachers DONE; followup sometime in DataONE Year 4: #1 priority
+
+9. ARL librarians follow-up (ARL's e-science institute happened this year so things may change) FY year 4 or early in 5
+
+THURSDAY NOTES
+
+Need regular communication for each of the specific assessment projects that we have set up. Conference calls of an hour every month at a regular time just for the assessments group. First one a few weeks before the AHM. Schedule right after IFLA in September 6 11am edt, 10am cdt, 9am mdt. Either Go to Meeting or Google Plus (Ben and Carol will look into and verify). Miriam send reminder, invite to: Ellie, Ben, Bob S., Kimberly, Youngseek, Carol H., Carol T. Block out one hour. 
+
+CT talk to Mike Frame and Miriam about full U&A WG phone calls twice a year in between meetings. Meetings of the full group plus friends. 
+
+Carol Hoover will present the Assessments sub-group report today.
+
+Other stakeholder groups: what we hope to find and first thoughts:
+
+
+
+

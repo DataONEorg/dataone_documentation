@@ -1,0 +1,127 @@
+#persist
+
+20120919 - AHM Discussion on Mutability of content in DataONE
+=============================================================
+
+
+Issues:
+
+- DataONE relies on checksums computed on individual objects as a mechanism for verifying consistency following transfer and over time
+
+- Any changes to any object with an identifier already registered in DataONE are rejected
+
+- To change content, it is necessary to create a new copy of an object, with a new identifier. The fact that the new object obsoletes an existing object is tracked in the system metadata.
+
+- Content often changes on a member node to correct minor issues such as:
+
+  - spelling mistakes
+  - punctuation
+  - references to external entities that may change names, e.g. PLoS to PLOS
+
+  Currently, such changes in DataONE require registration of a new object, new identifier, etc
+
+- Data files that have content appended. e.g. Species observed at some location - more could be added over time.
+
+See http://www.nlm.nih.gov/pubs/reports/permanence.pdf (per John Kunze) for an NIH definition of persistence definitions, particularly in Appendix A (page 8).
+
+- Substantive updates to metadata.  Use case:  USA-NPN is looking at using Morpho and Metacat to publish finalized datasets.  The citation can go to the data or to the collection.  They have some basic metadata for these datasets, and it's likely that the data will be published with the basic metadata and that they'll then go back over time to improve the metadata.  The data won't change, but the metadata will get updated.  That new metadata file will need a new identifier (that's easy enough to do), which then means that the collection gets updated.  Currently, that means that the collection will get a new identifier.  The desire is that USA-NPN would be able to roll-up all of the citations for the data set.  And from a user perspective, it seems reasonable that the two different collections (old vs improved metadata) would have the same citation so that users could more easily see that two different papers cited the same data.  But, depending on how the metadata is updated, that change may well be scientifically significant and change how the underlying data is interpreted.  
+
+Related use case: A user submits a data set to Dryad before an article is published.  Dryad assigns an identifier to that data and creates the metadata record that describes this data set so that this identifier can be used in the article.  The article gets published, and we now have an identifier for the article.  The metadata for the data set now needs to be updated to include the newly available article identifier.  
+
+
+Crossref 
+ - if the edit alters interpretation, then a new identifier should be created.
+ - metadata collection is primarily for "backup" to rebuild mapping to an item if the mapping is lost and the DOI creator is no longer available/cooperating
+
+ - two different types of identifier - one for an exact revision, another (the citation identifier) for the concept of the object - "essentially the same thing"
+ 
+ * Concept: DataONE is an archive.  If something is mutable, then there's no really good way to replicate this and deal with the archive.  The immutable thing that DataONE might handle is the descriptor for the stream, since replication of the stream itself is not something that's likely feasible within DataONE.  
+ 
+ * Within the hydrological community of practice is it's considered acceptable to go back and update the data to adjust for calibration or other kinds of corrections.  Citations include date that something was downloaded.  That's only useful to see if two people are using identically the same data.  
+ 
+ * Point: A goal is to ensure that we are making things easy for researchers, both now and into the future.  
+ 
+ * One approach is separating the work identifier versus the specific instance identifier, separating out the issue of citation to represent the concept of the data stream and the issue of citation for pure scientific reproducibility.  
+ 
+ * Reminder of the proposal to include a "citation identifier" as a metadata attribute.  
+ 
+If we consider the idea of an identifier pointing to a stream object, so that id12345 points to the stream of data which is the bald eagle observation data, then we need to think about how invocation of that identifier (e.g. /get/id12345) works to retreive something.  The likely expected behavior is that /get/id12345 retrieves the current value of the stream at a point in time.  If that invocation happens, is it possible (desirable) to assign an identifier to that particular invocation.  Some data providers may be able to retrieve identically the same bits for a different invocation given the original invocation identifier, while other providers would not be able to retrieve the same bits given an invocation identifier.  
+
+As an example, it would be technically feasible for the ORNL DAAC to use an invocation identifier to return the same MODIS subset as a previous invocation (even taking into account replacements of tiles due to reprocessing).  It would be easier to return a "similar" set of bits which does the same subset operation over the same period of record, but which returns the data from the most recent sets of tiles.  To date, there has not been a large call for being able to exactly reproduce the results of a previous subsetting operation. This is a bit different from the data stream, in that this is really a service, rather than extracting the current stream values.  But, stream data will often be associated with services, since it's common that for a stream, users will want to retrieve some subset (typically a temporal subset) of the stream, rather than the record from all time.  
+
+Following this a bit further, suppose that a data stream identifier exists, what happens to the last version of that stream when the member node ceases to exist? 
+
+Following the idea that for a stream, the identfier points to a service description, if we treat this as essentially a form of science metadata, which is mutable, it does mean that changes to this service descriptor, such as changes to the URL for the endpoint, would be a versioned change to science metadata.  However, how does this support one of the key desires for DataONE, which is to allow access to the bits of data?  The PPSR folks, for example, have primarily streaming data, and part of the value proposition they want out of DataONE is the use of the visualization tools (ITK).  Which means that the bits of the stream have to be accessible from DataONE calls. This means there needs to be some way for these MNs to deliver content in response to a get() call, so they need an identifier for a particular chunk of data.
+
+Motivations for wanting a static identifier
+ * Tracking how many people have retrieved the what is labeled as a 'dataset' or collection.
+ * Citing consistency
+ * Discovery of a stream of data.  In a search, it would be desirable to return one record for the eBird population data for bald eagles, rather than multiple records for each different snapshot of this data.  Should there be a way to make snapshots of data (particularly ones that are single use) as "inactive"
+
+Use cases
+ * Collection level identification
+ * Rapidly collected (streaming) data
+ * Substantive changes of data values
+ * Minor metadata updates (as described above)
+
+Decisions:
+ - It's "tractable" for a single object to have two identifiers -- one at the immutable/granular level and one at the citation level
+ - D1 should support mutability of science metadata.  Where is the line in the sand for this, as certain types of files (including EML and Darwin Core) can contain both data and metadata (e.g. in a [CDATA] block.  
+ - D1 should support streaming data, at least at the level of "a reference to the stream", but not necessarily a copy of the entire stream. Potentially via dataone science metadata record.
+ - D1 should provide guidance via best practices document to the MN community as to the conditions when science metadata should be assigned a new identifier.
+
+ Persistent -- continuing firmly or obstinately in the face of difficulty or opposition.  
+ 
+?? How to support the idea of long term support versus getting the most current data? 
+ 
+What is the impact of allowing mutable content into DataONE for replication, etc?
+What is the opportunity DataONE takes by including it?
+
+For updates to science metadata, could manage this through a diff operation, such as the RCS algorithm, where we maintain the current version and the diffs needed to generate the previous version (of the metadata).  
+
+Memento protocol for retrieving versioned data.  By H. van de Sample at LANL.  
+
+Comment from Geoff Bilder re CrossRef: They had very loose metadata rules early on.  His suggestion is to err on the side of making it easier for people to participate until we have a track record and can point to the consquences of problems, in order to have the opportunity to continue to exist and improve the system quality later.  
+
+
+
+API to support Minor Revisions to Science Metadata
+
+General goal is to provide minimal support for patching science metadata so that Dryad for example can be brought on as a member node. Process is to allow a MN to update a copy of science metadata on a CN, the CN would preserve a copy of the metadata and accompanying system metadata in a revision control system so that the previous version can be recovered if necessary.
+
+#MN.Update(session, pid, object, newPid, sysmeta)
+#if pid == newPid
+#  
+
+
+
+CN.PatchScienceMetadata(PID, Metadata, systemMetadata)
+- Check authorization for update
+- Check PID to ensure Object is of Type ScienceMetadata
+- current version of sysmeta and science metadata are copied to some archive
+- existing copy of science metadata is updated in Metacat (HOW???)
+  - replace xml tree in database
+  - replace copy of metadata on file
+  
+  OR
+  
+  - Create new document in metacat via the old metacat update method call
+  - update identifiers table to point to new revision #
+  - notify other Metacats (xml_documents and xml_revisions table will replicate, but identifiers table will need replication)
+  - potentially audit changes of identifiers/systemMetadata tables in identifiersAudit/systemMetadataAudit tables
+
+- checksum of science metadata is updated to new value
+- How to notify other CNs that this is a science metadata update???
+
+- notify replicas of new content - re-replicate
+
+
+
+
+
+
+
+
+
+
+

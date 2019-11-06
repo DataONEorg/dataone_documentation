@@ -1,0 +1,403 @@
+2010-11-02
+CCIT Breakout
+Block 2: Tuesday, 10:15-12:00
+
+MN Progress
+Current:
+- MetaCat
+- Generic Member Node; an i/f to other repositories, used for Dryad and DAAC
+Coming:
+- Native Dryad
+- Fedora
+- Google App Engine
+
+Authn & Authz big topic / target for this meeting
+
+MN documentation for DUG
+- draft docs on what it means to be a MN; some implementation details to give to potential MN managers / organizations
+
+CN Status: 
+to do: A&A (authn & authz) and MN replication
+
+ITK Progress
+- Java and Python libraries
+- simple client tools in each lang
+- tools for infrastructure testing
+Web I/F by Mercury
+- Tools: R, e.g.,
+Future foci:
+- Data packaging abstraction
+- consistency in libraries
+- documentation for DUG
+
+Nov 2-4 AHM goals
+- DUG prep
+- NSF review prep
+- MN implementations
+- A&A
+- Data packaging
+- ITK design, components
+- CN implementation (incl. technology selections)
+- Review WG topics / structure
+- Public release process (software release management)
+- Security plan
+
+Feb. 2011 DataNet review
+5 page exec summary
+15 page document
+PMP, architecture, etc as appendices
+Presentations with strong CI emphasis, demos
+
+Timeline for Feb. 2001 DataNet review preparations
+Nov. 4: document TOC
+Jan 17: drafts for EAB review
+Feb 7: final copies of docs to NSF
+Feb 23-24: DataONE presentation and QA
+
+Questions and comments on the NSF document outline:
+C. Matt: tasks w/in CI need to be parsed out to other WGs
+Q. Line: What does "work this into the dialog" mean? Activities and contribs of WGs will be woven into other sections, not as standalone WG sections
+C. Randy: emphasize that DataONE is leveraging existing technologies and projects and not reinventing the wheel in terms of many CI functions
+C. Dave: creating this document will serve our project well in addition to serving NSFs need, particularly in advance of the public release
+Q. John C: how can the rest of us help? Dave, Matt and Bruce can coordinate volunteers and delegated tasks.
+
+Discussion of the agenda:
+Matt: rearrange parallel sessions; move A&A discussion sooner in the agenda so it doesn't get skipped. The revised agenda follows:
+
+=============
+
+Review Document Outline
+
+* CI - Dave,Bruce,Matt (Note: As John notes, CI is an overloaded term that
+  means many things to different people. Need to make sure that this section
+  covers that entire waterfront so that reviewers will see their definition of
+  CI)
+  * Design, reference architecture diagrams (Bruce - diagrams, following ESDIS)
+  * Usage scenarios that refer back to the architecture diagrams
+
+(We have - system diagrams + software diagrams. 
+Perhaps useful to have something in line with OAIS )
+
+Link to OAIS reference architecture: http://public.ccsds.org/publications/archive/650x0b1.pdf
+by the way, a point that may be worth emphasizing for the review is the extent that we adhere to the archive and curation micro-service idea in order t ouse small modular services in order to be able to scale further. This is in comparision to a large, all encompassing single system that risks being found to be rigid in architectural composition and/or scalability.
+
+Also, just for completeness, the DataONE architeture noodled out bhy the CCIT can be found by drilling down in the repo starting at 
+https://repository.dataone.org/documents/Projects/cicore/architecture/
+
+
+
+  * HW, SW development and implementation timeline (Gantt chart, key deliverables, products)
+
+Randy suggests that the document outline be organized along the functionality provided by the infrastructure, and then the crosscutting services provided by functionality. Talk about the problems we're working on, not the technology we're building.
+
+Here's a restated document outline just before lunch:
+
+3. Functions implemented by dataONE architecture
+3.1 curation and preservation
+    - (many of the desing choices fall under this category)
+    - LOCKSS approach
+    - Persistent identifier framework
+3.2 Search and discovery
+    - impoved access and discoverability of data / resources
+3.4 Privacy and access control on a national/global scale
+3.5 Integration with investigator tools
+    - Supporting the full data life cycle
+
+4. Collaborations
+4.1 DataONE and Data Conservancy
+4.2 Teragrid
+4.3 Filtered Push
+
+NSF: here's what the reviewers will look at during the review:
+Vision
+Milestones
+Delivery and timeframes
+- science / community engagement
+- technical detail
+- prototype demo
+
+--> Dave V., Bruce W, and Matt J will develop the full TOC
+--> CCIT Review the TOC, at a minimum and welcome to contribute more
+
+  * Security
+  * Technical sustainability
+  * Deployment
+  * Curation and Preservation
+  * Policies, SLAs
+  * Metrics, assessment/feedback
+  * Collaborations
+  * DataONE-Data Conservancy coordination
+  * TeraGrid
+  * Filtered Push
+  * Investigator Toolkit
+  * Working Group Activities - work this into the dialog
+
+  * Functionality implemented by the architecture - table form, prehaps in appendix
+  Capture the mapping between products, design goals, a
+    - CNs
+    - MNs
+    - ITK
+  
+
+
+
+
+Use existing system diagrams and architecture documents. Should also ensure we reference and present DataONE in terms such as those used by OAIS.
+--> High level reference architecture diagram
+--> Bruce W will do diagrams, following ESDIS 
+
+
+NSF comments: it's difficult to find knowledgeable reviews, so care in phrasing of our project is important to make it easier for less-knowledgeable reviewers provide a fair review. 
+NSF Perspective - this document must speak to an audience that may not have the technical expertise that we have.  Half of our review panel may not have expertise, so we need to phrase this document so that it can be read and understood by reviewers who don't have the technical expertise (highly qualified but in different subject areas).
+
+Must hook the reviewers with the 5 pages of the exective summary.
+
+
+=============
+
+Agenda for 2010-11-02 AHM (CCIT)
+================================
+
+
+:Last-Modified: 2010-11-02
+
+
+Tuesday, 2010-11-02
+-------------------
+
+:Block 1:
+
+* (Vieglais) Plenary session. Overview of CI status and high level plans (about 20 min)
+
+
+:Block 2: (CCIT + Developers + WGs)  Tuesday 10:30 - noon
+
+* CI Development plans and timeline for next 12+ months
+
+* Main topics for the February review
+
+* Review of agenda for meeting
+
+* Goals: Assignments for the February review; shared understanding of the
+  project trajectory and important aspects that need to be addressed in the
+  short, medium and long term. To be revisited and adjusted at the end of the
+  meeting.
+
+
+:Block 3: (two streams) Tuesday 1:00 - 3:00
+
+A) MN technical implementations (Fedora Commons, Dryad, Metacat, high
+   capacity). 
+
+   Goals: Documentation of issues, next steps for additional MN technologies
+   to be integrated.
+   Location: Large room
+   Moderator: 
+   Attendees: Cobb
+  http://epad.dataone.org/2010-11-02-CCIT-T3-Member-Node 
+
+B) Data modeling and packaging. Note - some overlap with ITK design
+
+      Outcome: plan for mapping between or working with data packaging in the
+      DataONE architecture.
+   Location: Large room
+         Moderator: Matt Jones
+      Attendees: Bruce
+
+
+
+:Block 4: (two streams) 45min Tuesday 3:15 - 4:00
+
+A) MN Compute nodes, integration with Teragrid, ESG. 
+
+   Goals: Develop plan for implementing "MN-like" functionality that can
+   leverage computing resources such as available through TG, ESG and perhaps
+   cloud computing environments.
+   Moderator: 
+    Attendees: Cobb, Wilson
+
+B) Authentication
+  Initial discussion of authentication methodologies
+   Moderator: 
+   Attendees: 
+
+
+Tuesday, 4:00 - 5:00, 
+:BOF: Member Nodes, including Sustainability and Governance WG participants
+MN Policy, API documentation, participation documentation. Documentation
+   required for public web.
+
+   Goals: Outline of user / administrator / implementor oriented
+   documentation for Member Nodes. The final document should include
+   everything needed to build and deploy a Member Node
+
+
+Wednesday, 2010-11-03
+---------------------
+
+:Block 6: Wednesday 8:00 - 10:00 
+
+A) Investigator Toolkit. Applications to be targeted (esp. for February
+   review). Web interface UI design.
+
+   Goals: Define a couple of demonstrations that can be targeted for the Feb
+   review; identify applications that should be targeted for the public
+   release time frame
+   
+   Attendees
+
+B) MN - MN replication. Trust, policy, identity of content. 
+
+      Goals: Major issues to that need to be addressed for MN-MN replication.
+      Design of interactions.
+      
+      Attendees: 
+
+C) Provenance and Workflows Working Group 
+
+* Update on Data-Tree-of-Life (DToL) Summer Project
+
+  - Includes DToL use case: collaborate provenance (https://sites.google.com/site/datatolproject/)
+
+* Overview  of provenance models/capabilities of workflow systems
+  - Lightning talks: 10min each: Kepler, Pegasus, Taverna, Vistrails
+
+Attendees: 
+
+:Block 7: (three streams) Wednesday 10:30 - noon
+
+A) Working with embedded identifiers
+Attendees: 
+
+B) Data modeling and packaging continued.
+Attendees: 
+
+C) Provenance and Workflows Working Group
+
+* Discuss DataONE-related use cases, starting from DToL/collab. provenance
+  (see above)
+
+* How to provenance-enable the DataONE architecture, and why (towards an
+  architecture for DataONE + Provenance Infrastructure)
+  
+  Attendees
+
+
+:Block 8: (three streams) Wednesday 1:00 - 3:00 
+
+A) Authentication technology implementation - CILogon, InCommon
+Attendees: 
+
+B) Project operations and administration. Web site, servers, doc management.
+Attendees: 
+
+C) Provenance and Workflows Working Group
+
+* Detailed planning of next WG activities (in view of reporting to the plenary
+  session on Thu)
+
+Attendees: 
+
+:Block 9: Wednesday 3:15 - 4:00 
+
+A) Authorization and access control
+  
+* Technical implementation for scalability
+* Access control rule compatibility across systems
+* Consistency of role definition
+
+Attendees: 
+
+B) Aspects of Coordinating Node design and implementation
+
+* Technology choices
+* Review of services
+
+Attendees: 
+
+C) Provenance and Workflows Working Group
+
+* Detailed planning of next WG activities (in view of reporting to the plenary
+  session on Thu)
+  
+  Attendees: 
+
+
+:BOF: Hardware budget planning  Wednesday 4:00 - 5:00 
+
+* Storage for high capacity member nodes
+* CN computational and storage capacity
+* Supporting infrastructure (network, backup, power)
+
+
+Thursday, 2010-11-04
+--------------------
+
+:Block 11: Thursday 8:00 - 10:00 
+
+* Evaluate the existing working group structure, and reconfigure as necessary
+  to align with major research topics / unknowns identified during previous
+  two days. 
+
+  Outcome: List of "mini" working groups, more tightly focussed than previous
+  WG definitions.
+
+(All CI)
+
+:Block 12: Thursday 10:30 - noon
+
+* Develop WG mini-charters from Block 1. Paragraph or so describing what needs
+  to be done, deliverables, major milestones, participants. 
+
+  Outcome: set of charters (at least late draft stage) for guiding WG
+  activities and composition for next 12-36 months.
+
+(All CI)
+
+:Block 13: Thursday 1:00 - 3:15 
+
+* Revisiting schedule and detailed dev plans, tie in WG charters
+
+* Calendaring for meetings (CCIT, developers, technical WGs)
+
+(All CI)
+
+:Block 14: Thursday 3:30 - 5:00 
+
+* Closing, plenary. Summaries from meeting.
+
+
+---------- 
+
+Notes past here
+
+
+* Implementing authentication, authorization, and identity management (two
+  blocks), focus on prototype impl.  Focus on authorization implementation aspects.
+
+* Integrating output from Bertram's group (two blocks)
+
+  - reports from each technical working groups
+  - helping other working groups getting started
+  - synopsis from joint wg on semantics (Matt)
+
+* Data modeling and packaging - how to map this into the DataONE data model or adapt / change DataONE to work with more granular models
+of data collections
+
+* General update on related topics / projects (perhaps over dinner)
+
+* Investigator Toolkit.  Need to invest time in developing some nicer tools for compelling demonstrations (esp for Feb target)
+  - define roadmap for prioritizing apps / tools for integration
+
+* User interface for data discovery, search and delivery
+  - semantic search topics 
+
+* (related to delivery above) Integration / working nicely with existing systems.  For example EML URLs point to some data set - how to take those URLS and make them
+behave as identifiers in the DataONE context
+
+[I moved a big block of text up to about line 100.... - Bob S.]
+
+
+
+
+

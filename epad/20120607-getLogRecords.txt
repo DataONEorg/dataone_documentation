@@ -1,0 +1,40 @@
+getLogRecords access restriction behavior
+===============================
+
+v1.0:
+~~~~
+access restriction - not uniformly implemented.  metacat
+
+
+
+
+LogEntry objects contain sensitive information, such as ip address and user name, that should not be freely available, even though getLogRecords is a MN Tier1 method. Member nodes can either deny access to non-CN callers - returning NotAuthorized in those cases - or redact the sensitive information based on the identity of the caller.
+
+For example, subjectA might only get Log records where she is the rightsHolder (and/or has changePermission), or get all the Log records, but have the IP address and user fields redacted.  
+
+It is recommended that Tier1 member nodes configure this method so that only the CNs in the envrionment can access it.
+
+Higher tiered MNs should compare the client subject against the NodeList (cn.listNodes())
+
+
+
+Testing getLogRecords:
+
+valid returns when client has no certificate or is not a CN:
+1)  NotAuthorized
+2)  redacted LogRecords  / anonymized LogRecords - fake IP addresses that allow aggregation - fake userIDs that allow aggregation
+
+valid returns when client is CN (or admin).
+1) Log object
+->  can now test parameters are working as expected.
+
+What is the proper exception when MN can't get a nodelist from the CN?
+(stale or null nodelist, and CN not responding).
+How to test?
+
+Tests are:  
+
+1) testGetLogRecords_security()
+  - what do I look for in the Log
+
+

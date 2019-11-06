@@ -1,0 +1,109 @@
+
+CN Resource Requirements
+-------------------------------------------
+
+This document provides an overview of estimates of the resources needed to run a CN node. It starts with an overview of the current resource baseline based on the cn-ucsb-1 processes.  We need to add a more realistic estimate under load.
+
+
+Current minimum baseline
+-----------------------------------------
+The development CN instances provide an absolute minimum baseline because they show that majority of processes but with minimal data and no load.  Here's the baseline:
+
+Storage: 
+
+14GB used out of 569G disk available
+
+Memory: 
+
+Total: 6GB used out of 31GB total on machine, + 1 GB used for swap
+
+Memory by major processes:
+
+       Process   VirtualMem (MB)   ResidentMem (MB)       
+        Apache                     1284                            30       
+        Tomcat                   10481                         5472       
+        MySQL                       261                            53       
+        Postgres                     937                            74       
+        Total                       12963                         5629  
+
+Tomcat memory settings: 
+
+    -XX:MaxPermSize=128m -Xms8192m -Xmx8192m
+    
+
+KNB Resource usage (for comparison)
+-----------------------------------------------------------
+
+Storage:
+Metacat XML Documents
+933MB on filesystem for 41482 XML documents, averaging 23Kb/document
+
+Metacat data storage:
+205GB for 33,466 data objects, averaging 6.1MB/object
+
+Postgres DB size
+56GB for 41482 documents + 33466 data objects, averaging 783Kb/object
+
+Memory:
+Total: 3GB used out of 15GB on machine, + 3GB used for swap
+    
+Memory by major processes:
+
+          Process   VirtualMem (MB)   ResidentMem (MB)       
+          Apache                       1129                             30       
+          Tomcat                     21094                          2969       
+          MySQL                            0                               0       
+          Postgres                     6859                           542       
+          Total                         29082                          3541  
+
+
+Crude Projection
+---------------------------
+At these rates, if we project storage linearly out to 100K, 500K, and 1000K documents, and we project memory out as a function ofour needs will be:
+
+                       41K   100K    500K   1000K       
+Storage (GB)     262     632    3158     6316       
+Memory (GB)      28       68      342       685  
+
+Why is Tomcat taking 6GB of memory on the development server? Does this have anything to do with the differences in software stacks being run? 3GB of memory difference seems huge.
+    Yes, probably -- in addition to Metacat, the CN runs mercury under tomcat, as well as the CN servlets.  More servlets = more memory.
+
+Also, even though the Postgres database is much larger in the case of KNB, the difference in the active Postgres process related memory (ResidentMem (MB)) between the two is only 400mb which is small in comparison with the memory usage by Tomcat.
+    Yep, and I suspect the postgres memory usage will not scale with db size, except maybe for indices.  Mainly it will scale with the # of pg processes and size of the global area.
+
+One more point, these numbers seem to be calculated using only VirtualMem (that's how I got the same numbers in the projection for Memory). If this is so, we won't have a good idea of the actual memory footprint of the service as a whole as this is swap and not actually in the RAM. 
+
+In the process table, VIRT = RES + SWAP.  I reported VIRT and RES.  Resident memory usage (RES) is important because it shows what is in memory now.  Virtual memory usage is important because it represents the size of the whole image, and so may be in physical RAM at some points in time when swapped in.  I omitted SWAP because it can be calculated and doesn't tell us any more.
+
+Postgres difference:        542-74      =     468 MB
+Tomcat difference:          2969-5472 =  -2503 MB
+
+This seems to suggest that the difference in deployed tomcat services between DataONE and KNB will have more of an effect on RAM footprint than the first 200K documents.
+Yeah. I think a lot of the difference for Tomcat is that the CN also runs mercury in tomcat, which has a lot of memory for indices and SOLR, etc.
+
+(Postgres difference)/41K files * 200K files    468/41*200=2282 MB
+
+I don't expect PG memory to scale linearly with database size (see above). 
+
+Of course this does have quite an effect on the swap space used on the disk...
+
+Postgres difference:          6859-937        =       5922 MB
+Tomcat difference:            21094-10481   =     10613 MB
+
+For the same 200K documents, you might expect to use 
+
+(Postgres difference)/41K files * 200K files    5922/41*200=29 GB for Postgres
+
+That all assumes linear memory scaling, which I don't think will happen. 
+
+I can't think of a reason the Tomcat service's needs would grow with the # of documents, but if it did... scratch that, I think I can as more and more of the database was being accessed by users...
+
+(Tomcat difference)/41K files * 200K files        10613/41*200= 52 GB for Tomcat on disk. 
+
+And as we approach 1e6 documents....
+
+Postgres mem: 468/41*1000      =    11.4 GB
+Postgres swap: 5922/41*1000    =     144 GB
+can't estimate Tomcat's memory increase due to the difference between KNB and D1CN,
+Tomcat swap: 10613/41*1000    =     258 GB
+

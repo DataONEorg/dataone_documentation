@@ -1,0 +1,69 @@
+CN Purge and Installation Instructions
+cn-ucsb-1, cn-unm-1, cn-orc-1.dataone.org
+
+apt-get --purge remove dataone-cn-metacat dataone-cn-mercury dataone-cn-rest-service dataone-cn-mnsynchronization
+
+rm      -rf /var/mercury
+rm      -rf /var/metacat
+rm      -rf /var/lib/dataone
+rm      /etc/init.d/mn-synchronize
+rm      /etc/init.d/mercury-indexer
+rm      -rf /var/log/dataone
+rm     /usr/share/java/cn-batchscheduler.jar
+rm    /usr/share/java/cn-mercuryscheduler.jar
+rm -rf /var/lib/tomcat6/webapps/*
+rm -rf /var/lib/tomcat6/logs/*
+
+mkdir /var/lib/tomcat6/webapps
+mkdir /var/lib/tomcat6/logs
+mkdir /var/lib/dataone
+mkdir /var/log/dataone
+chown tomcat6.tomcat6  /var/log/dataone
+cd /var/lib
+chown tomcat6 tomcat6/webapps tomcat6/logs dataone
+chgrp tomcat6 tomcat6/webapps tomcat6/logs dataone
+cp /home/waltz/dataone/nodeList.xml /var/lib/dataone
+
+cd /home/waltz/bin/
+./reset
+
+apt-get update
+apt-get install dataone-cn-metacat dataone-cn-mercury dataone-cn-rest-service dataone-cn-mnsynchronization
+(takes a couple minutes)
+
+http://(cn-host-name)/knb/admin
+(make sure all items are configured, including the database)
+    Global - ensure username password
+    Ignore Skins Specific Properties
+    Database Installation/Upgrade - run scripts
+    Geoserver - bypass
+
+/home/waltz/bin/construct
+
+rm -rf /var/mercury/mercury_inst/datanet/*
+
+vi /etc/dataone/mn-synchronize/synchronization.properties
+(edit the string 'NEED_TO_SET'. 
+ each cn has its own mn that it syncronizes, you will have to change that string
+ to appear as the below depending on which cn you are editing
+ cn-ucsb-1 = 'http://knb-mn.ecoinformatics.org'
+ cn-unm-1 = 'http://dev-dryad-mn.dataone.org'
+ cn-orc-1.dataone.org = 'http://daacmn.dataone.utk.edu' )
+ 
+/etc/init.d/mn-synchronize start
+/etc/init.d/mercury-indexer start
+
+ensure that the cert exists
+ls /etc/ssl/certs/_.dataone.org.crt
+
+ http://(cn-host-name)/knb/style/skins/dev/replControl.html
+ 
+ In the 'Servers' box, click 'Add this server'
+(cn-host-name)/knb/servlet/replication
+
+Replicate xml doc To server (1 or 0)? 1
+Replicate data file To server (1 or 0)?: 1
+Localhost is a hub to server (1 or 0)?: 0
+Download certificate from
+(leave empty)
+

@@ -1,0 +1,53 @@
+Coordination Meeting for DataONE, TeraGrid MN, STEM TeraGrid Analyses
+
+This meeting is to provide a status update of progress since the last meeting, detailed at http://epad.dataone.org/20110429-D1-TG-STEM
+
+Attendees: Matt Jones, Daniel Fink, Kevin Webb, Dave Vieglais, Nick Dexter, Theo          Damoulas, John Cobb
+
+
+Agenda
+ * review of target dates:
+   * July 15 - STEM analysis products being deposited dynamically, as analyses are complete
+   * discuss and resolve any blockers at CCIT meeting in July; add check up call to CCIT agenda
+ * status report on action items from previous meeting:
+   * (Kevin  - lead, Daniel, Matt, Paul, Vivek): [June 30] come up with real  metadata template for STEM results; use Matt's first draft created for  the Feb NSF demo
+   * (Daniel  - lead, Dave, Nick, Kevin): [May 31] Draft a document describing  information flow and major components, systems, services and protocols  involved in the interactions
+   * (Matt  - lead, Kevin, Dave?, Paul, Nick): [June 15; needs draft of document  above] Review the R package design and refactor as necessary for  supporting this experiment
+     * Evaluate whether STEM analysis would use R package at all; might be commandline instead
+     * Design packaging/ folder structures etc for pushing content back into D1. Relationships between content elements.
+     * 
+     * How many file
+     * 600 files for each fold for a single species
+     * About 200 files per sepcies per year
+     * For an entire species about 1000 files per species
+     * Species count 200-400 species.
+     * per fold takes ~ 3 hours. across 100 cores
+     * across fold summary is ~ 1 hour more 
+     * Q: What is the network connectivity between Lonestar output storage adn the Tg-D1 node. It is currently 1 gbs today andwill move to 10 gbs this summer
+     * note: today lonestar is predicting about a 6 hour queue wait for a 5 hour 100 node job (https://portal.teragrid.org/group/tg-portal/hpc-queue-prediction)
+     * Q: What is the average file size (uncompressed, and compressed)?
+     * 
+   * (Dave):[June 15] Design and implement setup staging implementation of D1 infrastructure
+   * (Paul): schedule regular (monthly) checkin of this group
+     * June - first/second week
+     * July - during CCIT meeting
+     * August - TBD
+ * new issues to solve?
+ * new action items?
+   * Mount filesystem for intermediate data transfer (Nick)
+   * Goal for July CCIT meeting: get all development scripts working to create EML and upload data and metadata to dataone development nodes (Kevin, Daniel, Matt)
+   * Production runs will start in beginning of July -- try to get EML generation finished by the time these runs start so that we have what needs to be archived later
+   * June 30 - Quick Follow-up meeting before CCIT conference
+
+Notes:
+
+Cobb:
+Update: Progress on DataONE Member node implementation on TG and  mounting filesystems - Perhaps Nick can brief in my abscence
+
+AI: (cobb) Create a sicence gateway for this effort and associate it with the active allocation.
+
+Note: TeraGrid is undergoing transition form TeraGrid to "XSEDE" as the programmatic successor. Hopefully not too much will change
+
+Issue: planning the flwo from computation to depostition into D1 and transport to CLO . This is probably a topic to discuss.
+
+

@@ -1,0 +1,394 @@
+Twitter sharing during the meeting @DataONEorg #SCUAwg
+
+Usability and Assessment / Sociocultural WG meeting
+
+May 1st 2012
+
+Block One
+
+1)  Carol Tenopir – introductions
+          Two goals – bring everyone up to date.  Identify what 2 WG can do.
+2) Mike Frame – Priority Tasks
+- 4 – 5 topics for subgroup work
+
+3) Update on DataONE since All Hands Meeting, roll outs, EAB, other DataONE WGs (Amber Budden)
+Web site is out (for a few months now) was coupled with
+
+move to production in Mid may for CI
+
+some functionality has been increased from initial plan. This delayed release. We decided to enhance authentication beyond which was planned.
+
+o   ONEMercury and other tools
+§  Development environment
+§  Sandbox environments – CI Team testing functionality
+§  Staging environment = DataONE provides feedback, not public.  This is where we are now.
+§  Production environment – Mid may anticipation
+Production will be done quietly fo a soft release to allow work with interface 
+
+One of the challenges has been integration of three coordinating nodes. Previous staging site was done off of one coordinating node. Now we are operating off.
+
+External Advisory Board: We have had a board member transition. Rosio Alvaraez had to step aside. Chris Greer is joining the EAB.
+The meeting in November.
+
+EAB wants us to get as many MN's on board as fast as possible.
+Think about issues of quality and quantity.
+Some MN's will require help but others will be ready to go.
+
+Next meting has not been scheduled.
+
+Other Working groups:
+EVA working group met this month. They have initiated a new project. 
+their previous work (EVA1) was avian geo distribution. That project reached a close. The purpose of EVA is to showcase projects that are possible.
+This year's project is to highlight progress with iLMAB.
+EVA runs thematic projects per year. (3 meetings)
+
+PPSR met 2 weeks ago, 
+o   working on white paper, developed persona of project administrator, pre-meeting at ESA, they are still in initial stages of WG
+
+Community engagement met later. is working on a white paper. They are working on an project administrator persona.
+http://dataone-sc.wikispaces.com/Personas
+
+
+Community Engagement and Education. They would like to have a dataone blog. 
+They also want to have a competition to develop videos on data management. "why data management?" c.f. SciFund challenge on rocket? site. So the CEE put in a crowd funding project for a prize for the effort.
+
+UG meeting will be this Sumer in Madison WI, co=located with ESIP. 
+DataONE WG meeting begins on Sunday July 15.
+
+Rama: comment: since you mentioned ESIP and the data management course, there is a course that the ??? members are developing as well.
+Amber: Yes Rebecca and I have been in touch with Kimberly ??? about getting the materials to fit together. We are 
+
+Kevin: I was curious whether the feedback from NSF was positive and whether we are on course for a renewal.
+Amber: We are in a quiet period as NSF focuses on new Datanets. Rob Pennington is no our program officers are Dane Skow and Bob Chadduck. The question about the release timing was resolved with the increased functionality. NSF is focusing on integration and collaboration with the other datanets.
+We are likely to have a reverse site meeting this fall.
+
+Q: Suzie: can you mention european initiatives?
+Amber: Lifewatch has been running. They are still not up and running.
+
+Q: Carol: Can you describe the new datanets
+A: NC (Datanet Federation, iRODS, Reagan Moore), Michigan (Margarate Hedstrom - SEAD), Minnesota (Terra Populus)
+
+Q: Heather Piwowar: Was DataONE involved in OSTP event.
+A: Cobb: It did not seem to be featured.
+A: Bruce Wilson: Rebecca and Bill are working on this.
+
+Suzie: Our short course and the longer course are very , very needed. DataONE is filling a definite void there.
+
+Amber: Short course is being run this month at NCEAS. When we announced Succinct (sp?) (the new ecological analysis center) announced that they would like to fully fund it next year.
+
+4) Kevin Crowston:
+bit/ly/D1Personas (http://dataone-sc.wikispaces.com/Personas)
+Not much has changed except we have a proposed citizen science leader persona (from the PPSR group)
+note: the data lifecycle changed so we need some re-work
+
+Q: Geof: How did data lifecycle change impact personas?
+A: Kevin The change that happened was the addition of a planning stage. We need to add discussion of planning to the scenarios. 
+
+Kevin: We would like feedback on how the personas are being used.
+
+Goal for meeting: make needed editorial changes; think about a dissemination plan
+
+Ideas:
+1) Use personas as a means to talk about datanet interoperability
+2) Kevin:  also used personas as material from which to build posters to communicate more concretely
+3) Suzie: I have been using them as I teach. They have been great as an instructive
+
+
+Bob Sandusky: Our library just went through a program on electronic library's and how to reach current users.
+
+
+5) Kimberly Douglass: Member Node Subgroup
+Discussing issues of new member node stand-up.
+We put together a detailed outline that combined sevearl pieces of information found at various points on the project web-site. We tried ot synthesize the information, including links across the DataONE site in order to rpovide a cohesive document about the Member nodes
+
+Allison Specht: Metrics & Statistics subgroup
+Tier 1 member node: public data repository; public data only; no access controls; moderate availability level; uses Tier 1 API
+Tier 2 member node: entry of authenticated user; log presence, use, responses of member node (including authentication), delivery of data
+Tier 3 member node: authenticated user with write access to contribute datasets; public and restricted data
+Tier 4 member node: responsbiility to back up their own and possibly other Tiers' data
+
+CCIT WG will revie
+
+Amber Budden: (Block One):
+Resources:  Website and Data management tools:
+    Website:
+            Overview of homepage, including revolving photos and ONEMercury (public release)
+            upcoming:  right bottom side, all relevant data links
+            "Participate"--non-registered users; mechanisms of the site on how the general public can get involved with DataONE.
+            New on site:  DataONE Video concerning how to get involved and how to deposit information (more infomercial than tutorial); YouTube presentations concerning DataONE
+            "Products"--best practices; Data Life Cycle; searchable links by life cycle step.  Eventually may become a hierarchical structure.  Information on different software tools and some of the software have reviews or pros/cons.  The reviews were put together by a group of individuals/users at a workshop last year.
+            Investigator Toolkit:  Now accessible and some that are upcoming, but information about all is now up.
+            Communication page:  Twitter feed and other social media links.  Newsletter will eventually be the forefront once public release is initiated.  
+            Usability testing:  There isn't a specific area of interest, but a general overview of the web site is necessary.  There have been some problems with breadcrumbs, where as some infrequently visited sites are hard to revisit.  
+            The tab "Products"  is questioned, as it seems as if there are more "resources" than products.  AB--a nod to NSF, as here are the final products (which are the resources). Kevin: suggestion to do AB random testing of interface on the website to see if people click on links under "products" more or less than "resources"
+            Mike Frame:  funnel more comments on website interface, suggestions etc. through him.  Plan to do testing this week.
+            
+            Software Tools Catalog:  call for cataloging of software and more information on how to add to the software tools catalog.  However, because the software can be categorized in more than one area, it is not being cataloged any longer.
+            "Publications" tab:  DataONE Publications; DataONE type issues written by DataONE team members, but also citations by non-team members (this is how DataONE has gotten into the press).
+            Heather: We should list data publications in the DataONE publications list. (Eat our own cooking).  There are already some available on Dryad.  
+            Rama: Why list a link to the DOI on the pub list rather than the DOI itself. Geof: style guide says the DOI should be listed in the bib. as a URI. (rather than a current URL which may dissipate over time) We may need to change a Drupal template to get this done.
+            
+Can change the format of the citation in Drupal by going to the admin then the module for that entry.  You can customize the citation there.
+Participation - can register for DataONE Users Group here
+Member Nodes - what they are, benefits, who current member nodes are.  How to become a MN (fact sheet generated by MF and others) 
+
+Geoff:  Who is the audience?  Why do I (as a researcher) need this?  Where is that on the website?   The "Why do you care" part should be more prominent.  And BRIEF!  Added this as issue https://redmine.dataone.org/issues/2685 in ticket tracking.
+"We will help you not loose your data and then not get any future funding and die unhappy"
+i.e. we need a concise paragraphs of "why care" about DataONE
+perhaps for each persona.  This could be in the rotating screen section.
+
+Personas could be feaured on website also.  Help people see themselves and how'd they use it.
+
+MN Question:  Market for institutions that do not have data (libraries) that perhaps want to contribute storage capacity.  (MF:  yes, the MetaCat software can help with these institutions (libraries) and DataONE is ready to enable this service.
+    What is a MN: refers just to the software.  Member Node Organizations:  2 types: repositories and storage facilities that translate the DataONE service software.  
+    
+    DataONE should be at library professional meetings to advocate for new Member Nodes, even those that don't have repositories yet, but want to.
+    - contributory member node community that would include
+        SW packaging maybe a VM)
+        Instructions for how to install and operate
+        Contacts and "How To" to integrate into DataONE as a replica target/source
+        Guides for how to integrate into the DataONE Communities and resource points.
+        (Bring this item to S&G discussion)
+    
+    DMP Tool
+      - released around AHM.  Tool to help with requirements of generating a data management plan.  Covered NSF, NEH, IMLS, adding more and more of the funding agencies.  Tool operates by leading user through a series of questions based on agency directorates.  Institutional log in if you are at any of the listed institutions.
+      Choose type of plan to create.  Prompts you for sections to complete.  The help screen will actually help walk you through completing your data management plan.  The resources will also be customized based on your institution's language and/or special guidelines, or specific texts that your institution requires one to include in data management plan.  Only available if your institution has logged in and uploaded that info.  A single individual at each university has the authority to do that.  Can export the plan but only via .rtf. format.  Can only share through URL at this point, but in the future, there will be a way to share the plan.    There may be a way to eventually do data management plans to the community to show a successful plan OR to have exemplars...More institutions are coming online in the future.  It will be free to the individual but institutions will probably have to pay for service (this is in process/discussion).  Live online now.  Usability testing done through UVA.  
+      Are metrics being collected?--Yes, monthly, about usage of this particular tool.  Heather: publishing metrics about use of DMP tool may be useful to the community.
+      
+      The Short Course:
+          Data Management Short Course, based on the educational modules.  14 modules that can be downloaded and completed.  Provides training for researchers and provides feedback to the developers of the course/tools.  Targeted to grad students and post-docs, mulch-disciplinary areas should provide good feedback.
+
+
+Documentation - challenge in communication between CE and CI (diff languages, CI very busy getting release done), feedback delayed from CI on what CE has developed.   One hesitancy is that the documentation will change as we move forward.  CI will approve documentation two weeks AFTER live release.
+- Terms and Conditions doc - going to be reviewed and feedback provided, top of list for review, try to get out concurrent with or shortly after release.
+= currently no FAQ right now.  Intentional, but currently nothing to populate it with.  We know it's needed.  Difficult to preemptively determine those questions.  We've been compiling all the "contact us" questions we've been  getting to help us with that.  It's the soft public release that won't include this documentation, but it WILL BE THERE for the full public press release phase. 
+
+Geoff Bilder - how do we close the loop?  how do we go  beyond "recommendations" for best practices to "certifying" people as those who have done it right as per DataONE.  What constitutes adherence to this?  How do I audit an existing project?  how do I prove that I'm doing my work according to these guidelines?
+    Researchers self-auditing and help to audit the repository.  
+    Repositories auditing other repositories.
+    "become a MN web page"--it is not clear.  What does it mean to be a MN?  What is the expectation?  What are the requirements?*  (There was a procedural documents on a prior web site, but it wasn't carried over to the new site because the procedure may change as things are further developed).  There should be a short paragraph on the site stating some of the answers to these questions.*
+   
+   Suzie - could the DataONE principles serve to address this need?  Been reviewed by Bill M.
+   
+   Ahrash - What's the capacity of DataONE to respond to requests from new MNs?  
+   Alison - it backfired in Austalia.  We got very frustrated.   
+   
+
+   
+    
+Block 2 - CI update (John Cobb and Bruce Wilson) (presentation slide set to be posted on plone)
+
+Current status: significantly behind where we wanted to be.  May 14 is the current release point.  URL - http://cn-stage.dataone.org
+Command line interface available for testing.  Need Python.
+Documentation is thin - see URLs in presentation posted to docs area.
+Suzie is currently working on translating technical documentation into more general language for public posting to the website.
+Confusion about the meaning of accounts.
+ * DataOne internal accounts  (for project members), end users won't have an account here
+ * In Common Identity Federation
+   * used to access DMP Tool
+   * federation of 250 universities that provide identity and login infrastructure
+   * This identification/account can be used by many users to access resources such as DMP tool.
+   * any google account works
+   * Request: for exemplars of federated identity (login with Facebook, OpenID, etc)
+Testing -
+ * Search portal
+ * Documentation (needs from non-CI perspective)
+   * Requests for feedback on critical needs, what looks good, and any errors or inconsistencies
+     * focus on public face of website, particularly any inconsistencies
+ * Identity portal
+Bug Reports
+Ticket system: redmine - CE and CI working to coordinate this process.
+Request: suggestions for how to manage bug reports.  Kevin: possibly recruit members of the user group to do triage on bug reports.  Bruce: also working on self-support.  Kevin: look to open source groups for ways to manage process.  Bruce: book Art of Community, John Bacon (sp?)  Kevin: a discussion board and inspiring community to contribute to answering questions.  Bruce: possibly could be enabled within Drupal.  Current concern is editorial requirments and need to find moderators. 
+Fixed known issues - being worked and soon to be deployed.
+Other known issues.  https redirect, login bounce back, full metadata link missing "visited" color
+Demonstration of the current search interface.
+Question: (Kevin) we talked about downloading the citation
+A: IF one downloads Zoero then it works. The Mendelay interface is a bit more kludy. But there is missing an helpful for "How do I". We don'thave bibtex, only works with tools that support COinS.  IT would froms the search results page but not te record detail page. Not sure why
+
+Dealing with bug issues:
+If .you want to see a list of current issues being worked on, see:  https://redmine.dataone.org (works for anyone with a DataONE login) 
+
+If you find a problem, FIRST do a BRIEF search in Redmine to see if it's already been worked on.  You can click WATCH if you want to be alerted when it's fixed.  To submit new issue, NEW ISSUE, give description -->  if you can't use this or run into problems with it, send e-mail to Bruce Wilson,  bwilso27@utk.edu
+
+Bruce will sumit a pdf doc of these steps to plone site for this meeting 
+
+Identity provider demonstration.
+Demonstration of "equivalent identities" - identity mapping.  Use case - student at one university graduates and then moves to another job but may still need access to data deposited as an instiution.  There is a need for a discussion and/or training for repositories about identity mapping and appropriate access (read, write, modification)  Institutions span a variety of needs that may conflict with user needs.  Some institutions want high security (only access to current employees, e.g. ORNL) or a very light touch (e.g. KNV, it's your data so you should be the one to manage it).  Kevin: perhaps a set of common cases should be suggested.  A mucky situation that needs thinking about.
+
+
+BLOCK THREE - Briefings on subgroup topics:  status to date and deliverables from this meeting.
+
+A.  FAQs, Other Documentation and Effective Communication across DataONE (e)
+Other Documentation:(cleaning up and clarification based on feedback)
+    Terms and conditions
+    Principles document
+    Communication Plan
+        White paper for sustainability and governance
+    FAQs--ID and write a few, depending on time; DataONE culture and integration of that culture in institutions that are interested in DataONE
+
+B.  Assessments Group
+(Carol Tenopir has a PowerPoint)    
+What was promised and presented to NSF:
+    Year 3:
+        Scientists Baseline
+        Library Policy Baseline
+        Librarians Baseline
+        Policy Maker Baseline (needs to be done)*
+        Scientists Follow Up (needs to be done)*
+        Educators Baseline (needs to be done)*
+        * will be focus of subgroup work at this meeting.
+    Stakeholders:
+        Data Mangers--have data; DataONE members; 80 responses (from those who self-identify as data managers)  Ellie will be making a presentation at IASSIST conference.  Rama sent the data managers to all the data managers at NASA (Mentioned that the JASIST community would be interested in this research.
+        Public Officials
+        Publishers
+        Libraries/Librarians--have data; Distribution to DataONE members; Federal libraris: 40 library directors and 60 librarians(don't know what our population size is; we need to know if the response rate is adequate.  List of fed libraries http://viewshare.org/views/FRD/directory/ indicated 1015.  Not all are research oriented but many more than we got data from.
+            Academic Librarians--ARL and ACRL were given the surveys:  Bob Sandusky--paper presented at IFLA; What is the backgroud, what do they like to do?  What do they hope they would do? (example of the instrument)
+            Academic Libraries--Measurement is the actual library; ACRL distributed to these libraries; 223 responses.
+            Sampling of results for Library/Librarians survey:
+            25-45% offer these services now or plan to
+            ACRL institutions:
+                AA, BA, PhD; AA colleges offer less/PhD colleges offer more (data services)
+            Consultative Services
+                35-65% offer these services; 20 for RDS % have technology that support RDS; staff development skills
+                Same pattern of results, institutions offering doctoral degrees provide more services
+            63% of libraries collaborate with Research Data Services; 23% provide opportunities for staff to develop skills related to RDS; 5% develop policies and procedures associated with RDS (CIOs (Chief Information Officers) need to be reassessed as stakeholders. Technology divisions often are responsible for and/or thinking about data and research data services.  This may also be true for Offices of Research).  A triangle that needs to be considered (CIOs/Academic Computing, Vice Chancellors for Research, Libraries)
+        Citizen scientists--need to break up the group
+        Students/Teachers
+        Scientists--have data and a publication in Plos ONE;  Data available in Dryad;  Baseline completed in 2011
+    
+Bob Sandusky: (has powerpoint.  Make sure it gets uploaded to plone)
+ARL  Librarian Survey:
+    Research Data Services (RDS)-- Most not involved, some occasionally involved, fewer integrally involved.
+        Attitudes:  RDS are important:  want to cross tab with age/role of librarian to see if there is a correlation 
+        Motivation to come engaged in RDS:  patron request; job responsibility; institutional requirement.  Library directors need to be made aware of librarians' motivations to learn RDS are related to pressure from their institution.
+        Bruce Grant - suggests comparing scientists' baseline vs. librarians baseline by institution.
+
+C.  Usability Testing (Mike Frame, from Power point already on Plone site)
+    Strategy
+        Who, what, when, how
+        Develop script, questions, approach
+    Wednesday:   Script refinement, development, UA Testing
+    Thursday:  Summation/ Results/ Wrap Up
+ Goal = test dataone.org and various components that exists today.
+
+POLICY MAKERS:
+    Defining "policy makers" has been an ongoing challenge.  need to finally tackle it.  Looking at executive branch:  advisory committees; 
+Policy Informatics Network out of ASU, community of academics and research scientists using modeling to set policy
+
+D.  Metrics and Statistics--Allison Specht has PowerPoint
+        Finish the diagram of tiers of users
+        Descriptions of CM and MN and hierarchy of the nodes
+        metrics to the users/ metrics to the supplier of the user
+        
+        Why Metrics:
+            sustainability
+        Measures:
+        Static Measure:
+            Counts, hits, number of users, volume of data available and used
+            cost benefit analysis (insuring right tools/staff)
+        Dynamc Meausres:
+            How much of these services are used?  How often?
+            Where will the metrics be collected?  CN or MN?
+            User Support/Help Desk
+        Usage Metrics
+            Transmission information
+                Citation through DOI
+    Who has access to the metric information and provide feedback?   
+            
+
+**********************************************************************************
+            
+Subgroup participation:
+Assessments - Carol T, Carol H, Todd, Bob S, Youngseek Kim, Ben B , Ellie, Miriam D
+Policy makers white paper - Kimberly, Theresa
+Usability Testing - Rachael, Lisa, Robert W, Mike, Maribeth, Denise
+Metrics - Rama, Lynn, Denise, Alison, Heather, Amber, Bruce, Carol H.
+FA.Qs - Amber, Todd, Suzie, Miriam Bam B, Maribeth, Bob S, Theresa, Ahrash 
+Personas - Kevin, Ahrash
+Identify and Rights - Ahrash, Lynn, Geoff, Kevin
+
+****************************************************************************************
+
+Report out all subgroups NOTES May 3, 2012
+
+DataONE data principles SCWG
+(5) data environment is dynamic and requires evidence-based decision-making about practice and governance
+Challenges and trends - top sociocultural issues impacting DataONE:
+
+ * advantage of reuse, collect data - stories
+ * evidence from outside DataONE community that proves this
+ * planning for future "uptake" at the institutional level. Work in parallel to educate, create outreach materials, answer questions about adoption ....role of usability testing in this.
+
+Communications (SCWG)
+internal communication, including MN - information transfer issues/challenges
+1. implement a task management system to track quetions and action items from the WGs
+2. designate one or more liaisons to facilitate internal communications (exclusive of IT/development tracking)
+3. increase access/participation to Leadership Team (LT) meetings 
+4. task working groups (WGs) to help support new member (individual and member node) participation.
+
+Metrics
+server log event attributes (data, user, session)
+(Alison's flow charts)
+content on DataONE website should mirror the flow chart detail - deposit data, use data (public user and member)
+individual metrics, interaction metrics, infrastructure metrics, user services)
+object, users and services) 6 data components (chart)
+
+manditory metrics in deliverables to NSF (02/07/11 report), all hands October 2011 meeting notes
+prepared summary table and marked by 4 categories of data collection and analysis.
+
+citation analysis question - data reuse construct needed
+
+data usage and citation visualization - student intern summer 2012
+
+
+Theresa Pardo
+Determinants of publications of scientific data in open data initiatives (student paper)
+ 
+Sharing data enrich and promote the progress of research and generate knowledge
+Data sharing – category, challenges, literature
+Likelihood to share (lower cost, greater likelihood)
+Dataone data used , visualizing the access pattern
+Disconnected cluster indicates that a majority only access one database
+Interface for depositing irrelevant – it is about behavior, trust in the system
+Motive for data publication in open data initiative –theory of planned behavior
+Intention correlates with action of sharing datasets, legal context impact, significance of organization support for sharing datasets, strong indirect impact of reward to the action of sharing through the intention.
+
+**********************************************************
+"watchers"  ONEMercury
+
+asynchronous communication for WGs and subgroups
+
+*************************************
+policymakers white paper
+highlevel administrators, federal agencies
+economic investment
+risk-reward analysis of investment
+
+*************************************
+
+policymakers white paper
+
+highlevel administrators, federal agencies
+
+economic investment
+
+risk-reward analysis of investment
+
+ 
+tool of economic investment – user survey data feed into evidence of value
+EPA, USFS, USDA
+ 
+Assessment subgroups
+Librarian surveys, data managers survey – prioritize new stakeholder groups for upcoming surveys
+Policy makers are being targeted; publishers; graduate/undergrad students
+Categories of questions for institutional decision makers (plan, collect, assure, …..)
+How to locate a data set, and other questions
+ 
+ Wanda Dole study on interaction between campus chancellors and library for research support....get citation (Denise)
+ 
+
+
+
+
+
+

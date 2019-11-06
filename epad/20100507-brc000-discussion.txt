@@ -1,0 +1,55 @@
+= Moving forward with BRC000 =
+
+2010-05-07
+
+Present: Dave, Greg, Aimee, Dave, CJ,  Jim
+
+Background: Two drives have failed on the BRC000 cluster frontend.  This means the root filesystem for the system is unrecoverable, and so the OS needs to be re-installed.  
+
+This discussion is to verify the applications that need to be run on the cluster and based on that information select an appropriate action for resoroting the system.
+
+
+== Applications being run on the cluster ==
+
+ * LM - mysql, python, cherrypy, apache, openmodeler, lots of spatial libs
+
+ * Sun grid engine
+
+
+== Options for moving forward ==
+
+ 1. Do nothing - decommission the brc000 cluster and utilize existing resources
+ 
+ 2. Patch the brc000 cluster, bringing it back to basically the same configuration as before
+ 
+ 3. Adapt existing / soon to be purchased hardware to add sufficient capabilities to match the needs of the various projects
+ 
+ 4. Purchase new hardware (approximately $40-60k for equal or better capabilities, e.g. a couple PowerEdge R900's with 4x6 core processors, 128gb ram, 1tb drive space)
+
+
+== Resolution ==
+
+ * Rebuild with latest version of Rocks.
+
+ * Also add some new nodes
+   - cost estimate
+
+ * Buy some new drives
+   - 5x147gb for FE, Fujistu
+   - drives for compute nodes?
+  
+ * Install OS
+   - download and burn cds
+   - install FE
+   - attach drive array
+   - install compute nodes.  May require setting bios / different drive configurations on each node.
+   - setup user accounts (use NHM credentials ?)
+
+ * Install LM software dependencies
+   - new MySQL
+   - python >= 2.6
+   - spatial libs
+   - openmodeller
+   - etc
+  
+

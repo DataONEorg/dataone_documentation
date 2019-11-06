@@ -1,0 +1,102 @@
+Planning and follow-up for Member Node-related topics at the 2013 DUG (JWC/LM)
+
+DUG2013 - 7-8 July 2013 at Chapel Hill, NC
+Member Node breakout, sessions 3 and 4 (Sunday 1:00p-2:20p and 2:40p-4:00p) (80 minutes total, repeating with different audience)
+
+see also https://repository.dataone.org/documents/Committees/MNcoord/Coordination_Work_Area/DUG_2013_prep/ for old PPTs, new PPT, reference documents, etc.
+
+- updated MN flowchart:  https://repository.dataone.org/documents/Committees/MNcoord/Coordination_Work_Area/DUG_2013_prep/Update_MN_process_flowchart.pptx
+
+DUG Objectives and Outcomes
+
+Breakout Sessions
+
+Member Nodes (36/62)
+Matt Jones, John Cobb, Laura Moyers
+Joint presentation and discussion by CI team lead and a new MN lead, offering insights into processes and experiences.
+
+Structure:
+   * Follows on from MN showcase so ind. MNs won’t present.  Short process presentation by MN team, group discussion.
+Objectives:
+   * Inform attending members of what starting a MN is actually like, from the mouth of a new MN lead
+   * Clarify the start-up process (present workflow), total costs (ie. infrastructure, staff, etc.), effort, etc. of MN
+Desired Outcomes:
+   * Enroll new MN opportunities, support existing ‘in progress’ MNs
+
+
+Do we want to talk about MN-in-a-box and slender nodes in the breakout session?  ask dave.
+
+Use a lot of this ppt (Dave's/Matt's from last year's DUG):
+
+https://repository.dataone.org/docuements/Meetings/20120715_DUG_Madison/20120715_MemberNodes.pptx
+
+talk about tiers
+
+This is the source for the MN deployment checklist in mule1:
+https://repository.dataone.org/documents/Meetings/20130228_Reverse_Site_DC/Final_Slides/06_CI_Infrastructure_2013RSV.pptx
+https://repository.dataone.org/documents/Projects/cicore/operations/source/member_node_deployment/mn_checklist.txt
+
+Existing MNs
+    documentation, Q/A
+    testing
+New MNs
+    value proposition
+    MN s/w stack - existing and to-be-built
+    replication options
+Both
+    MN workflow
+    communication venues (MN Forum, redmine, Ask.dataone.org, developers list, repo, 
+
+Matt said:  Dave and I have both presented 'How To" talks for  potential MNs at last year's DUG and ESIP meetings, so feel free to  reuse some or all of those slides (although they would need to be  updated for our new MN checklist chart and the terminology we use there. 
+
+
+
+MN Showcase:  Session 2 (10:20-noon) (100 minutes)  (our initial presentation should be no more than 10 minutes)
+    What is a MN?
+    Role of MNs in D1
+    MN synergy
+    science impact
+    data critical mass 
+    node overview (intro showcase MNs)
+    --- MNs present ---
+    future MN activities
+    think about science use cases/synergies
+
+
+Recollection of comments and questions from MN showcase:
+
+Karl Benedict: EDAC is interested in dynamic data services
+
+EDAC has 180 Gb of metadata for 0.5 M records
+
+Good question about apportioning credit. Consensus emerged to be generous to list various value-added services suc as metadata augmentation, presevervation, discovery, aggregation. This is in addition to attribution of content creation (usually via DOI). Conclusion fmor the room was to allow all of this dressing to be discoverable and reportable to stakeholders (funders, managers, .. )
+
+Need for "data aggregators" in particular to be able to brand their contributors' data.  NKN, KNB, EDAC, SEAD are all networks of networks, so it is important for these in particular to be able to indicate original source (for example, NCED is a "contributor" to SEAD, so perhaps the metadata and/or data download should indicate NCED, SEAD and D1 for complete attibution.
+
+SEAD and EDAC both mentioned multiple access points to their data; i.e. DataONE, existing modes, and perhaps future access points (CUASHI??).
+
+Filemon Gayanilo from Harte Research Insititute at Texas A&M - Gulf of Mexico Research Initiative: Information and Data Cooperative, https://data.gulfresearchinitiative.org/  GRIIDC may want to become a MN
+
+Added Debora Drucker from Embrapa (deboradrucker@gmail.com) to MNF list, she may not be able to make the next meeting 7/25
+
+Some comments from MN Breakout summary (Mon 8:30a):
+    Andrew: more discussion and need for information on COSTS, time/effort required to implement and maintain a MN
+    Matt: costs vary by the type of MN
+    
+    Dave: was there a discussion of tiers?
+    Matt: not really, other than the overview of tiers
+    
+Some action items from DUG:
+    add MNF info to website
+    add MNF to D1 calendar (see Amber), ensure correct GTM info
+    add all communications channels available to website (perhaps linked, not too up-front)
+    follow-up with Filemon (GoMRI/GRIIDC)
+    
+Other action items prompted by DUG
+    create standard template of information to send out to MNs as they begin process:
+        communications: MNF, developers list, redmine ticket #
+        MN description document
+        MN deployment flowchart and checklist <-- checklist needs to be high priority!
+        
+
+

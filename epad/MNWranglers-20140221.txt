@@ -1,0 +1,89 @@
+Member Node Wranglers 
+    Fridays at 10:00 am Alaska
+                    11:00 am Pacific
+                    12:00 noon Mountain
+                    1:00 pm Central
+                    2:00 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+21 February 2014
+
+Attending:  Laura, Amber, Rebecca, Dave
+
+Regrets:  Bruce (maybe)
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+        New MNs announcements? -  
+       * GOA awaiting news item QUESTION:  Since GOA's been online a while now, and we've announced 3 MNs since they came online, is it appropriate that we do a formal announcement?  I don't want GOA to feel slighted, but ...
+         * yes, announce them, maybe/or not do in conjunction with a "new MN roundup" highlighting everyone who's come online since the first of the year
+         * Matt is having GOA ppl look at new item.
+       * KUBI flipped and verified; announced 2/20/14  Yay!
+       * Dryad - registered 2/20, awaiting Tomcat server restart and Metacat upgrade
+         * Metacat update hasn't passed testing yet, but the Tomcat server is being restarted now.  
+         * Can flip the switch on Dryad as soon as Tomcat finishes and announce Monday morning.
+
+        IDCC workshop 2/27/14 -  
+       * in-house meeting 2/6/14 to discuss survey questions; http://epad.dataone.org/2014-02-06-IDCC-Workshop; http://epad.dataone.org/2014-02-13-IDCC-workshop 
+       * collaboration area in Dropbox for us to work together on this. 
+                    https://www.dropbox.com/sh/0o7m3448b05m8h7/uLrxcxM5ZI
+
+        1.5    Current MNs
+       * Metacat upgrade (problem noticed by LTER/KNB) - Ben working, may roll out this week (get current status Friday) - Dryad needs this, too.
+       * eBird Update: email from Steve 02/18
+
+Bill, Amber and John,
+Today we published the eBird Observational Dataset to DataONE. This dataset is formatted in EML. I've notified people at GBIF VertNET, Map of Life and the AKN that they can access the data from DataONE.
+The eBird observational dataset (EOD) contains primary species occurrence data defined as a record of a particular taxon in a particular place at a particular point in time. eBird data consisting of location, date, and species are provided in the EOD to ensure that they can be integrated with other observational data and natural history collections data for estimating patterns in biodiversity. The EOD 2013 can be openly shared.
+The published version of the EOD contains more than 150 million observations, a 50% increase from last year. Data are from every country and include records for more than 98% of all known bird species. 
+We suggest that you replace the existing eBird EOD 2012 with the current EOD 2013 and NOT try to append older versions. This is because the eBird dataset is very active and constantly revised. 
+For more information on eBird and our data management strategy please see: 
+http://www.journals.elsevier.com/biological-conservation/editors-choice-monthly-selections/january-the-ebird-enterprise-an-integrated-approach/
+            ACTION:  Laura talk to Steve.
+                     
+        2. Status of upcoming MNs
+        
+        Future
+       * Australia (4286): meeting 3/4/14; plan for next 3-4 weeks is to work on 1) conceptual nature of   TERN/DataONE collaboration and 2) technical details of  possible implementation (exposing metadata only via TERN and/or allowing repository(ies) within TERN to be MN(s) in their own right.
+       * Multiple ORNL potentials: working specifically on RGD (4248) (Regional and Global Data) and EDORA (4247) (Environmental Data for the Oak Ridge Area) right now.  Meeting again 3/5, in the meantime they are working on code to be put in subversion.  (developer is Jim Green)
+
+     * Y5Q3
+       * Gulf of Alaska DP (3531) -  see above
+       * GLEON (3422) - Ready to go; need to review the checklist to make sure all items have been completed - Chris working an issue with Aaron Stephenson
+       * USGS  ScienceBase (4002) - Mike to get back with us  re: when USGS expects to work on the ScienceBase stuff (from their  perspective)
+       * LTER-Europe (3232) -  Per email from Ben 1/23/14, "LTER_EUROPE is registered and just waiting to be "flipped on"."
+         * Draft news item sent to David Blankman 2/19/14
+       * Dryad (3118) - see above
+       * EDAC (3221) -  EDAC to go ASAP after Dryad; draft news item sent to Rebecca for input from interested parties; will get back to you after RSV so by end of next week (2/28)
+       * Kansas (3188) - see above (happy dance)
+       * U  Illinois Chicago (3213) - Chris and Bob pick up after CN.
+       * PPBio  (3748) - difficulty replicating between metacat instances at INPA and LNCC; David Dias and Ben L working; Laura to draft news item
+       * SAEON (3205) -  Ben has been talking with them; I need to find out about them upgrading Metacat and contact Wim Hugo re: DD and their readiness to proceed
+       * NKN   (3238) -  work on NKN MN has resumed. Luke is transitioning to a different position at NKN; Ed Flathers picking up.
+
+     * Y5Q4
+       * EU BON (3964) - Their December meeting has been pushed out to 29-31 January.  
+         * ACTION: Laura emailed Hannu for updates, no response as yet
+       * DFC  (3532) -  
+       * MPC  (3708) - Actively working re: metadata formats, etc. Laura ACTION to touch base and see what's going on up there.  
+
+        3. Old action items
+             
+        4. Not-high profile issues
+     * For next newsletter, profile NPN.  (Laura)
+            
+        5. Around the room
+     * LITA forum November 2014 (email forwarded by Amber) - do we want to participate from a DataONE perspective, perhaps a MN implementation workshop?  Proposals due Monday, 24 Feb.  Cannot indicate who you are in the proposal.
+       * tools, educational materials 
+       * member nodes
+       * suggest an afternoon session
+       * Bob Sandusky is willing to draft something up (which aspect: tools/ed matls or MNs)
+       * Dave available to help and Amber working on a proposal for Monday
+     * Rebecca - nothing else
+     * Dave - no
+     * Amber - no
+     * Laura - redmine subtasks in the last steps of implementation added for MNs going right away or very soon (KUBI, EDAC, LTER-Europe, GLEON (soon)).  Have realized that some steps can be consolidated into one redmine subtask; can indicate progress on the task and still know what's going on.  Hopefully this will help everyone communicate where MNs are in the process.
+

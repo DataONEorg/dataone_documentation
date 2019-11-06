@@ -1,0 +1,140 @@
+Member Node Wranglers 
+    Fridays at 10:00 am AK
+                    11:00 AM PDT
+                    12:00 MDT
+                    1:00pm CDT
+                    2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+
+11 October 2013
+
+Attendees:  Laura, Bruce, John, Dave, Amber, Rebecca
+
+Regrets:  
+
+
+Agenda: 
+        1. High profile issues (or current items of interest)
+        
+        Issues with test environment (webtester)- It is a current problem. An unknown hangup is currently occurring. If it contnues to be a problem for EDAC testing then we need to address it with increased focus. Alternatives for EDAC
+        1) Soren can run an instance locally
+        2) Fix the $%^# thing.
+        Need to schedule some maintenance to ensure it works effectively (sooner rather than later).
+        
+        (Big picture) - how many MNs-in-planning/developing/testing can we support at one time?
+        Do we think we can handle 5ish, or does it depend on the individual MN?  Depends, since a metacat instance should be easier to manage than someone doing a custom install.  Anticipate the iRODs effort will be significantly greater than others.
+        SEAD - production cert issued this morning.  
+        Q: when a MN goes to production, does Amber get notified?  we need to get a press release and other info to Amber, preferably before the MN goes prod.  Need to include a step in checklist that includes this CEE step.
+        
+        Even if MNs go production in close proximity, consider issuing separate press releases.  (There is an impact associated with a "bigger" release (MN1 and MN2) as opposed to "smaller" releases.)  Go with separate releases.
+        
+        We have 14 MNs (11 MNs with content and 3 RNs; RNs don't add content)
+                
+        Documentation - Rob  working on MN landing page on website; desired before AHM; 
+
+http://goo.gl/3PDjFK
+Need to prioritize the public website area - want it next week.  We want it released next week (on public website).  People can still look at it and provide feedback.  
+
+MN personas - 3 complete/nearly complete, overall project on "back burner", can hold content for future use
+        
+        Immutability - immutability solution(s) related to possibly having <=6 new MNs from ORNL; see meeting 10/10/13 (http://epad.dataone.org/2013-10-10-ORNL-MN )  Solutions will take some time to implement (perhaps early next year Feb-Mar).  However, we can look at situations where we have metadata pointing to data held elsewhere; there are difficulties with URLs breaking, etc., so the relationship between science metadata and the (broken) URL.  ORNL can help guarantee that the URLs they would be pointing to will be live, but from a D1 perspective there may be other MNs that cannot make that guarantee.  
+        Options:
+            make new MNs exposing metadata but no data
+            or - make changes to allow some mechanism connecting to (live) URLs
+            or - extend resource map structures linking to 3rd party content or create a proxy object
+            
+            Next upgrade opportunity at AHM.  Immutability - nail down selected solution and identify how to implement solution.  Content held by 3rd party resources - discuss and resolve.
+       
+       From Dave:    
+  https://docs.google.com/document/d/1z8Mr2w1w7LY31ts3di20T7frTbZjpYSSaqGCAHvfdm4/edit?usp=sharing
+  
+        OPeNDAP (Hyrax) member node:  Proposal in process (?) - how to identify potential MNs using OPeNDAP; we have resources available in D1 to fund OPeNDAP compatible stack, challenge is to frame the requirements so that it will be compatible working outside the university funding process/structure.   Scope potential targets, select a couple for initial release.  There is a lot of diversity in the types of content/activity, so design decisions made to work with OPeNDAP will impact which MNs will be selected/prioritized
+
+        DSpace MN stack - need initial design/scoping, leading to implementation details, can be worked on as well as OPeNDAP
+        
+        Interest in another MN workshop   -- ACTION: Bruce to work with Dave and Matt to see if we can schedule  one (look for 10-ish people to attend) - to be discussed in LT meeting  IDCC meeting in San Francisco meeting in February - depends on whether we have design work done for DSpace and OPeNDAP (a lot of those folks at meeting will use these "platforms").  Is it worthwhile to present a workshop proposal (due 10/21)?  Bruce says is doable; can review/polish at the LT meeting before the AHM.
+        
+        http://www.dcc.ac.uk/events/idcc14/submissions "Workshop proposals should include a title and overview of the workshop, plus any additional information e.g. draft programme, speakers, audience and maximum numbers. The workshops will take place pre and post conference. All workshops must be fully funded. Submissions must use the appropriate abstract template. - See more at: http://www.dcc.ac.uk/events/idcc14/submissions#sthash.8RdBHbBo.dpuf"
+        
+        Please submit an overview of the workshop, including additional information such as
+·      draft programme;
+·      speakers;
+·      intended audience;
+·      maximum number of attendees.         
+        
+        
+       Other candidate locals to present a "Develop your MN" workshop would be XSEDE conference in Summar and SCxy in Novembers
+ 
+        Slender Node - Working on identifying which "new" MNs are running what kind of OAI-PMH as candidates for Slender Node implementation; requires re-initiating contact with some of the Backlog MNs
+       
+34 potential MNs in Backlog, current status “new”
+ * Oregon Explorer (3844) – they are very interested in working with DataONE; next step?
+   * need feedback on Janine's questions (see email), depends on D1 resources available to support, too.  (looks like custom development)  Any contacts with ESRI?  
+   * Dave's looking at some of the Oregon data, similar to the Kansas data, could possibly use same technology/concepts to implement OE...  GMN connection to ESRI portal..?
+ * GLEON (3422) – GLEON meeting in November; Chris current POC
+ *     recent NSF award with part of the SOW being to deploy a MN.  - When fatlane comes back up, search for GLEON in current awards (under DIBBS program I  think) - oh, right, these details are already in the notes in the ticket stream.
+ * MPC (3708) – email out to Tracy et. al. asking best way to put MPC technical folks in contact with DataONE technical folks
+ * Clemson University (3692) – (“contact us”) email out to them inquiring of current interest
+ * National Institute for Amazon Research (INPA) (3691) – (“contact us”) information from Debora re: how INPA relates to PPBio and other Brazilian research/data entities; we currently don’t have a relationship with INPA, but there is potential, especially with PPBio coming along
+ * Digital Library of Vertebrate Morphology, U Texas (3690) – (“contact us”) re-initiate contact
+ * University of South Carolina, Comp Sci Dept (3689) – (“contact us”) re-initiate contact
+The person who contacted us was also a mentor for one of the summer 2013 interns & is a colleague of Line Pouchard - might be a way to follow-up with him
+ * Montana State University (3687) – (“contact us”) re-initiate contact
+ * Movebank for Animal Tracking Data (3686) – (“contact us”) re-initiate contact
+ * National SocioEnvironmental Synthesis Center ( 3685) – (“contact us”) re-initiate contact
+ * Branner Earth Sciences Library – Stanford University (3684) – (“contact us”) re-initiate contact
+ * Purdue University Libraries (3683) – (“contact us”) re-initiate contact
+ 
+      
+       CLARIFICATION/DISCUSSION (maybe not here/now): iEcolab and EU BON and Granada (redundancy of data - multiple MNs holding part/all of an entity's data holdings)
+   * iEcolab "house[s] data from the Sierra Nevada LTER site in Spain" (redmine ticket 3219).  
+   * EU BON is "looking at the Sierra Nevada (Spain) Global Change site as a possible model for others to follow."  (from http://epad.dataone.org/MN-EUBON-2013-10-09)
+   * Sierra Nevada (Granada) could be an independent MN (still very much in conceptual stages with EU BON)
+   * Also - what is the relationship between EU BON and GEO BON?  "The main objective of EU BON is to build a substantial part of the Group  on Earth Observation’s Biodiversity Observation Network (GEO BON)." (from www.eubon.eu) 
+
+       
+       It's  highly likely that the above questions will take up all our time this week.
+       
+        2. Status of MNs
+     * Y5Q1
+       * NKN (3238) 
+       * EDAC (3221) - Monday or Tuesday of next week
+       * Kansas (3188) - needs to do a s/w update, slightly older version of GMN, Roger working with them to update today
+       * SEAD  (3521) - preparing to go to production (registration in progress)
+       * NPN (3186) 
+       * GULFWATCH (3531)
+
+     * Y5Q2
+       * LTER-Europe (3232)
+       * Dryad (3118) - some data didn't pass validation, email out to Ryan for current status
+       * DFC (3532) - Bruce has emailed Lisa 
+       * U Illinois Chicago (3213) - Bob/Chris to implement metacat this month 
+       * USGS Topo Maps (3525) - not a separate MN
+       * PPBio (3748) - meeting 10/8/13
+       * Taiwan TERN (3211) - to be discussed at October ILTER meeting
+       * SAEON (3205) -  moving metacat to more permanent server this month
+
+     * Y5Q3
+       * USGS ScienceBase (4002)
+
+     * Y5Q4
+       * EU BON (3964) - meeting 10/9/13
+       * USGS NWRC (3199)
+
+     * Meeting with MPC (Minnesota Population Center) Monday 9/30/13 at 2:30p EDT to talk about implementing MN there.  - they want to become a MN; they will put their technical folks in contact with Bruce et al to scope out what's involved time/resource-wise to implement; meet again 1st week of November
+
+     * Potential MNs mentioned in previous meetings
+       * Embrapa's DSpace repository
+       * TUDelft (John Cobb spoke with Jeroen Rombouts at RDA Sept 2013
+
+
+        3. Old action items
+         - eBird/AKN
+        
+        4. Not-high profile issues
+         
+        5. Around the room
+
+
+

@@ -1,0 +1,290 @@
+    Notes for Sprint-2012.44-Block.6.2
+----------------------------------
+
+Rob
+---
+   * Working with the ITK layer of libclient - D1Object, D1Client, DataPackage
+   * interface changes, refactoring
+   * improved exception handling
+   * will work with Matt and Ben on a few more design changes
+   * Will remove test CA certs from libclient to avoid mistakenly trusting test servers in ITK clients. DONE
+ * R client
+   * getting tests to pass
+   * dependent on libclient changes
+ * will branch libclient v1.1 and dependencies. DONE
+   * we now have a version 1.1 branch, trunk points at 1.2-SNAPSHOT
+   * removed test CA chain
+   * Also didn't include GoDaddy (which is the old wildcard cert)
+ * Getting back to the R client wrt DataPackage, changes to D1Object
+   * R client tests back to same functionality as before libclient_java changes
+   * Goal: get Matt's demo to work again in time for:
+     * LT meeting Nov. 27 & demo in Brazil (early December)
+   * tests were failing due to create() call, and resolve() on the CN, but d1_sync isn't IS on
+   * reserveIdentifier() is taking a long time
+   * Dealing with R tests, handling S4 lists, slight trouble with list counts - resolved
+   * Need to add in ORE support in R DataPackage - DONE
+   * looking at sync issue in the CN dev env, times 'vary wildly' for object availability using resolve()
+     * 10 hour delays!
+     * 20 minute delays
+     * https://redmine.dataone.org/issues/3402
+   * Tests are now passing, new commits will keep tests passing
+   * Working on the demo, updating R-code in the presentation
+   * Becoming familiar with the R Console
+   * Decide with Matt if we need an MN registered in STAGE2 to work against (CN release 1.0.4)
+   * R demo 2 is done now, look at the EVA demo now?
+     * Matt's working on the EVOS demo, may be pertinent (Kepler workflow via R actor)
+     * Karthik asked: (regarding ONE-R in ROpenSci - can he contribute to a native R client?)
+       * platform-specific binary code can be problematic with rJava
+       * has used rCURL, but cert management may be difficult
+       * Perhaps move the R client code to github to be maintained by ROpenSci folks?
+   * R Client is currently limited by specific CSV delimited format, needs to be generalized
+     * should be a dependency library
+     * getting the science metadata from different services (D1, vs other) is challenging
+   * Can the RClient use d1_libclient_python? Probably more cross-platform
+   * Authentication is somewhat hard-coded to the path, needs to be designed
+ * AccessPolicyEditor class to be in d1_common_java? (not in a utilities package anymore) - done
+   * This class is associated with Types
+   * Will go in d1_libclient_java since it's a particular implementation
+
+Roger
+-----
+ * ONEDrive ongoing work
+   * Recent check in
+   * Fixed unicode handling
+   * Fixed basic flaw related to resolving paths and assigning attributes to path segments
+   * Worked on a debugging project on Friday for ONEDrive
+   * certificate handling, but needs testing
+   * added new method for resolving paths
+   * finished refactor
+   * looking at breaking out ORE handling in the CLI into d1_libclient_python
+     * mostly a thin wrapper around foresite library calls
+     * package impl ends up starting another CLI client, duplicated code
+     * foresite library dependency on rdf, lxml - maybe not appropriate for libclient?
+   * Contacted them about the API, not deliverable apparently
+     * ORE Package == Folder in the UI
+ * Will be addressing a libclient issue in GMN WRT 1.0 vs 1.1 Types classes
+
+Chris B.
+--------
+ * VM upgrade on VM "dataone-a.ucsg.utk.edu"
+ * cn-dev-orc-1 was upgraded
+ * Once the second host is done, will migrate VMs back, same with third
+ * May not have an external firewall?
+   * No, first will have a rule-less firewall
+ * Begin today/tomorrow for the network changes
+   * Each host will be migrated at a time
+   * cn-orc-1.dataone.org is now on dataone-b.ucsg.utk.edu
+ * VMWare 5.1 on all 3 hosts now
+ * dataone-c.ucsg.utk.edu has no VMs at the moment
+ * After upgrades, back to Ansible
+   * Creating sub packages based on dependency trees
+   * All dependencies on the system based on dataone-cn-os-core
+   * Using a custom script tool to generate the Ansible playbooks
+ * For the EVOS project Jing is working on, clone cn-stage-orc-1 to cn-stage-orc-2
+   * Jing will register evos.nceas.ucsb.edu against this CN
+   * delayed due to IP allocation
+   * ticket to add the dataone domain to the OIT netreg system
+   * VM cloned successfully
+ * Admin issues resolved: Chris has console access
+   * netreg access is working
+   * allocated a block of 9 IPs in netreg
+
+ * Ran ansible playbook writer program
+   * Generated all dependencies for CN software as individual playbooks
+     * High level playbooks for main tasks
+     * Individual packages for each dependency
+   * Problem: Ansible currently only supports 1 level import of playbooks so if playbook A depends on playbook B and B depends on playbook C, it won't work. 
+   * Solution:
+     * Short term: Rewrite playbook writer to flatten dependency tree so that high level has all package dependencies
+     * Long term: Contribute to Ansible to allow for infinite dependency playbook recursion.
+       * Forked project and investigating.
+       * Going to contact lead developer for any identified problems. 
+
+Bruce
+-----
+ * Discussion re: OIT challenges
+   * OIT at a disaster planning workshop
+   * cn-stage-orc-2 is on-line (Chris effort)
+   * Procured a Windows system to put on ORNL Visitor network (which isn't behind the Great Firewall of ORNL) to be able to work on some aspects of DataONE without having to deal with firewall issues.
+ * 4th server coming in, going to OIT on November 19, 2012 
+   * Darren ordering rails, NICs
+   * Delivered today - working on getting rails
+   * 2012-11-19: server has been delivered to OIT.  Don't have the rails yet.
+ * Worked on Chris' access problem with OIt (symptoms resolved; some more fundamental issues may remain)
+ * Will bring up a new VM on Monday
+ * May have a look at splunk (free version) for D1 uses
+ * Will get back to COINS work
+   * Looking at Papers now for COINS suuport
+
+
+Skye
+----
+ * Working on replication
+ * Moved processing to UNM, new test run
+ * tables are in sync, so ucsb may be problematic
+ * stale request auditor now calls getChecksum() on the MN to verify the replica
+ * Still seeing replication stall out, suspecting un-sychronized db and hz structures
+   * added debugging to confirm this, will do a run after standup
+ * Possible solution: remove hzReplicationTasks multimap, and use the DAO layer to query the db tables for objects in the queued state
+   * need to consider client-end experience of delays
+   * need to consider performance of each MN (pull vs push)
+   * need to consider workflow needs based on replica location
+ * Removed hzReplicationTasks map (queue)
+   * still seeing 'stale' replicas - tracking this down
+ * Created a Hazelcast client factory in d1_cn_common
+ * Upgraded indexing to 2.4.1-SNAPSHOT
+ * fresh installs in the sandbox env
+   * installed dataone-cn-os-core in the sandbox
+   * got a run of replication in (look at one replica object being out of sync across the CNs)
+   * way better performance on the MNs after Nick's VM fixes
+   * some refactoring in d1_replication
+ * Last run with HZ 2.4.1 worked, but MNs filled up with disk space
+   * New run will use MN prioritization logic that randomizes non-preferred MNs
+ * Will be working on a couple indexing tasks
+ * Request to add dataoneTypes.xsd
+ * Replication test runs
+   * postgresql connection limits hit, perhaps causing out-of-sync records
+   * last run 100% sync'd, checking repl completion
+ * Working on dataone-cn-metacat buildout to insert dataoneTypes.xsd
+   * Chris will  add ticket to cache these schemas in metacat
+
+Ben
+---
+ * Interviews
+ * Point: ORC IP addresses will be changing
+   * Firewall at UNM will need to be reconfigured
+   * Need to get IPs from ORNL folks
+ * Working with Jing on D1 comm layer in Morpho
+   * saving to a test MN
+   * dealing with identifier conflicts
+   * TODO: discuss identifier/revision history across local/network w/ Jing and Matt
+   * Moved *most* Morpho network communication to use DataONE API
+     * Still looking up usernames for access control page via Metacat.getPrincipals()
+     * Still "logging in" and testing connections using Metacat, migrating to cert-based auth
+       * Add KNB LDAP to cilogon as a provider?
+       * needs more discussion
+   * Now constructing D1Objects in Morpho, using dataPackage. Working out the kinks
+   * Morpho --> MN.create() is working with certificate in place
+   * DataPackage creation is working on "Save to Network"
+   * Working on the Morpho login procedure
+     * ECP extension to CILogon is possible, very little support by providers
+     * First pass, set the path to the cert (goal: no metacat API calls)
+ * DOIs for the KNB, LTER, and PISCO should be registered this week - DONE
+   * datacite: http://data.datacite.org/10.5063/AA/WOLKOVICH.3.16
+   * resolver: http://dx.doi.org/10.5063/AA/WOLKOVICH.3.16
+   * need to deal with case sensitivity in identifiers
+     * uh-oh: "Per the DOI standard, DOIs are case-insensitive, and the normalized form is uppercase"
+     * No word on how upper() affects non-ASCII characters
+ * AKN/CLO MN registration
+   * problem with CNs not trusting cilogon. RESOLVED
+   * will copy the correct chain file over to the production CNs - DONE
+   * node is now registered in production, not approved
+   * content will be non-traditional. EML metadata will point to queriable eBird DB for data so there aren't really discrete data products to archive or assign identifiers to.
+     * need to discuss snapshots of the database?
+   * AKN will provide metadata only, no access to data (for now)
+   * concern about publicly available data - Steve Kelling
+   * Kevin is having Metacat start up errors, seemingly out of the blue. Troubleshooting with him on that.
+   * Some minor SSL issues
+   * Training Kevin in XML Schema/EML validation
+ * TFRI (Taiwan Forest Research Institute) test node
+   * working on SSL setup. DONE
+   * need to get a host name vs an IP address for the web server. DONE
+   * there is ticket fo generating server and client certs for their test server: https://metacat3.tfri.gov.tw/tfri/d1/mn/v1/node -- DONE
+   * now registered in cn-stage.test environment. Next step: generate SM and approve the node to harvest.
+   * may move node to cn-stage-2, but for now it's registered in cn-stage
+
+Robert
+------
+ * Working on sandbox d1_sync problems
+   * Suspects HazelcastClient is blocking, no other threads are able to execute I was wrong on that count
+   * seems to be hanging on hasReservation(), it was actually dying in getSubjectInfo with a TLS Connection error, socket was not disconnecting correctly
+     * Testing on sandbox to recreate problem and confirm that the hazelcast client is causing the block
+     * Test on dev, excluding replication, to determine if there may be a link between sync and repl with this issue
+     * Found error indicating LDAP TLS Connection was dropping. Decided pooling of LDAP connections was needed. 
+     * Added in logic to Synchronization and LogAggregation to handle pooling of LDAP resources
+   * subsequent problem is how to manage the thread pool, current logic is to purge any cancelled threads once PoolSize -5 > MaxPoolSize. But if MaxPoolSize is large, then it will take a long time before all cancelled threads are purged.  This may not be an issue, but the logic should be reviewed.  There is also the issue of what to do with the pids of a cancelled thread. Currently, they are reported to the MN as having been cancelled, but it may make sense to re-try for N # of times
+     * modified the logic that calls purge on the threadPool  when the activePool >= core pool size. should get called more often under this condition, especially when there are many jobs running or there are jobs hanging for some reason
+ * ThreadPoolExecutor will place new threads on a queue once the core Pool size is reached. The queue size was not set and allowed for MAX_INTEGER tasks to accumulate on the job queue, modified config for this
+   * will look at the performance in sandbox from this change
+ * Building Hazelcast 2.4.1 for our upgrade on Hudson
+   * hazelcast-spring tests were failing
+   * skipped spring tests to get jars into /maven on dev-testing.dataone.org
+ * working on d1-sync and d1_log_aggregation for HZ 2.4.1 upgrade
+   * distributed topic has changed a bit
+   * spring initialization
+ * Hazelcast integrated my changes into their master copy
+   * cloned master repo and testing, after re-integration into my master failed testing
+ * Reviewing HazelcastClient setup
+ * Looking at failing create()s on the CN - due to possible null sysmeta instances
+   * need to track this down - how could the map have a null entry?
+   * perhaps hasReservation() induced map.get() causes entry with null value?
+
+
+Matt
+----
+ * Working with Rob and Ben on libclient
+ * Interviews - may be making an offer soon
+ * Will work on the R client this week with Rob
+ * EVOS/GulfWatch project
+   * Jing setting up evos.nceas.ucsb.edu in cn-stage
+   * need for stable CN env for external groups to test MNs
+   * Derik has created a Kepler actor to interact with D1 infrastructure
+   * Preparing slides for EVOS demo
+ * Traveling to Brazil for ISEI, working on talks
+   * multiday workshop on DataONE tools
+
+Chris
+-----
+ * hz membership monitoring DONE
+   * working on executable jar via either maven-assembly or maven-shade
+   * assembly may have problems with spring configuration files
+ * For 1.1 release, will check with Nick on LVM snapshots script DONE, committed
+ * Create tickets for new CN sandbox environment. DONE
+   * Dave will set up single-CN at UNM
+ * Revoke the incorrect mnTestGulfWatch certs
+   * need to update all of the CRLs on all servers
+ * Upgraded Metacat to Hazelcast 2.4.1-SNAPSHOT. DONE
+ * Deploying cn-stage-unm-2.test.dataone.org for the EVOS project DONE
+   * vanilla stage install of course doesn't work
+     * working on changes to dataone-cn-os-core for the new environment
+   * dependency problem for solr-common (needs >=2.0 libvelocity-tools-java, has 1.4.3, no libnoggit-java)
+   * troubleshooting errors at /portal
+ * Send Rob iTerm2/tmux email DONE
+ * Look at NodeReplicationPolicy to ensure we have the right exceptions - is InsufficientResources enough?
+
+Dave
+----
+
+20121116
+- working on docs for Bill and Rebecca
+- Still wrapping up mutation doc
+- starting on new ssl debugging / diagnostic doc
+- wrote a datagram to websocket gateway for realtime browser notifications (integrated with statsd for long term stats collection)
+- Working on formalizing member node checklist
+- Indexing etherpad docs to a SOLR instance
+
+20121109 
+- finalizing details on mutbility doc. General approach requires adding an "alternate identifier", most likely to system metadata. The AID would refer to the obsolescence tree for an object family. May be able to get away with only one new method, which would be to resolve an AID -> list of PIDs
+
+- Installing instance of GMN at KU. will be serving up spatial data layers (geotiff), about 200 GB or so.
+
+- Need to setup cn-sandbox-2.test.dataone.org as a single CN environment for MN testing / demo purposes
+
+- Catching up after storm outages etc
+- Writing up mutability proposal
+  - working on mutability documentation
+  2012107 - Still working on mutation docs. Path is clearer, but likely to touch system metadata
+  
+- Docs for Bill and Rebecca
+- Evaluating issues with hazelcast (code review), especially potential latency concerns. Troubling quote (https://groups.google.com/forum/?fromgroups=#!topic/hazelcast/opOY3gC3CUo) from Fuad (one of the Hazelcast bosses):
+  "By the way is not a good idea to have a cluster across WAN. Hazelcast is best suited to run in a datacenter. At least across the datacenters where there is low latency"
+
+  WAN replication is handled by a different mechanism: http://www.hazelcast.com/docs/1.9.4/manual/multi_html/ch09.html
+
+Also relevant:
+  https://groups.google.com/forum/?fromgroups=#!topic/hazelcast/uwHbifnPHOE
+  http://hazelcast.googlecode.com/svn/trunk/hazelcast/src/main/java/com/hazelcast/impl/wan/WanNoDelayReplication.java
+  
+Issue 3375.
+  Looked at 2.4 release and outstanding bugs. There are outstanding defects especially client connection issue. maybe fixed in 2.4.1. They have a tag for 2.4.1. 
+

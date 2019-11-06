@@ -1,0 +1,53 @@
+Use cases
+---------------
+Exchange an entire DB via an exchange file
+Return a result set from a data query in the exchange format
+Synchronize two existing DBs using exchange syntax 
+
+Desiderata
+----------------
+
+Participants; Spencer, Thau, Hutchison, Maffei, Jones
+
+a. Thau: Layered complexity: Baseline of things you can represent, and then layered complexity
+b. Nick: shouldn't be intimidating to domain scientists
+    Andrew: but is it for domain scientists, really?
+c. Readability: important for data longevity, somewhat less so for domain scientists
+d. Domain scientists should be comfortable with the format
+e. Viv: Should be automatically extractable from spreadsheets or whatever
+f. One-off spreadsheet data is part of data for exchange format (but might be difficult)
+g. Types of data to be handled:
+   1) tabular/relational
+   2) raster of data: e.g., vegetation index on plot
+   3) vector data: e.g., bird migration path, geometries of plots or regions (point, line, space)
+       -- sometimes the vector is the emasured value, others it provides context for the measured value
+   4) binary blob: read off instrument, interpreted by specialized software
+   5) image data/audio data (camera sensors)
+h. Andrew: Ability to include a reference to a binary file in an external location (to represent binary information that is part of a row for example)
+i. Nick: Effectively transportable: How transportable should this be?  Are there size limits for transportable chunks?
+j. Thau: Does verbosity matter?   Thau: No. Computers can deal with it. 
+k. Thau: Separation of semantics from data stream in order to avoid duplication (annotation-based approach)
+l. Clear implementation path: Needs to be clear about how to create serializations (not too many options for how to represent the same information)
+m. Needs to be supportable by tools that can mediate interaction with scientists (e.g., conversin tools)
+    -- needs to be supportable by extant tools (no specialized dev needed) (that scientists are already using)
+
+
+Requirement
+-------------------
+Should handle tabular data, both normalized and denormalized to various degrees
+Should be able to package binary streams as part of serialization format
+
+
+Additional comments from afternoon session
+-------------------------------------------------------------
+-- should have demonstrable implementations along the way
+-- Wiezcorek -- extensibility of Darwin Core
+-- localization should be considered as well
+
+Next steps
+---------------
+-- JWGODMS mailing list
+-- next meeting: organized and open, SONet funded?
+-- summarize the Desiderata and Requirements work in a document
+
+

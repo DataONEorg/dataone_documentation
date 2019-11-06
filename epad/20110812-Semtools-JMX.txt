@@ -1,0 +1,85 @@
+OBOE Ontology Extensions Meeting Agenda
+=======================================
+MINUTES
+-------
++-------------------+----------------------------------------------------------+
+|DATE               | August 12, 2011                                          |
++-------------------+----------------------------------------------------------+
+|TYPE OF MEETING    | Ontology Development, Annotations                        |
++-------------------+----------------------------------------------------------+
+|CALL IN            |                                                          |
++-------------------+----------------------------------------------------------+
+|NOTES              | Everyone                                                 |
++-------------------+----------------------------------------------------------+
+|ATTENDEES          | Shawn Bowers, Ben Leinfelder, Chris Jones, Matt Jones,   |
+|                   | Margaret O'Brien, Mark Schildhauer                       |
++-------------------+----------------------------------------------------------+
+
+Discussion topics
+-----------------
+
+1. Modeling entities as specializations of superclasses with added characteristics
+ * This is largely done via intersection (e.g. LivingOrganism AND PopulationSample)
+ * Presents some difficulty when the intersecting 'entity' is more like a characteristic
+   * LifeStage (move this to Characteristic)
+     * FishLifeStage
+       * SmoltStage (value)
+     * MammalLifeStage
+     * AlgaeLifeStage
+     * PopulationSample
+   * SmoltStage AND PopulationSample == SmoltPopulationSample
+     * (SmoltStage is really just a characteristic of a salmonid (actually of any fish))
+     * a 'Smolt' is a salmonid possessing the smolt stage characteristics
+   * Some modeling choices:
+     * SmoltStageFish (just a class)
+     * hasLifeStage property and LifeStage value partition
+     * SmoltStageFish = Fish and only hasLifeStage Smolt
+
+A      E=SmoltStageFish
+Tag#   C=Length
+1      15.1
+2      16.3
+
+B    
+Tag# C=FishLifeStage  C=Length
+1    smolt            15.1         <- conditional annotation assigns E=SmoltStageFish
+2    adult            16.3         <- conditional annotation assigns E=AdultStageFish
+
+
+attribute=color value=red (so, red is an entity?!)
+attribute=lifestage value=smolt (so, smolt is an entity?!)
+
+MeasurementType = FishLifeStageMeasurementType
+    FishLifeStageMeasurementType = 
+       hasEntity only Fish
+       hasCharacteristic only LifeStage
+       hasValue only FishLifeStageValue
+Trick here: how to relate hasLifeStage (obj. prop.) with LifeStage (characteristic class)
+
+Conclusion: model these as classes (Entity), e.g., SmoltStageFish, and later can add additional properties to the ontologiy that clarify why the classes are subclasses, which might be useful in searching; in the meantime, can use the class in annotations, as shown in tables A and B above
+
+2. Using oboe-taxa
+ * TaxonConcept (from DSW) is added
+ * Hear back from Matt re: contacting Rich Pyle
+ * Are specific taxon concepts to be modeled as individuals of TaxonConcept??
+   * TaxonConcept
+     * Genus (Individual)
+     * Species (Individual)
+     * etc?
+   * If so, how do we use 'Species' in OBOE extensions, since we need to subclass it?
+   * If not, what is Species a subclass of? Is it related to TaxonConcept?
+
+Conclusion: We'll use the current scientific names to define species concepts, and will keep equivalence classes that use vernacular names.
+
+3. Added oboe-ecology, oboe-biology
+ * Could use some discussion on the merits of this
+ * What about terms that have more to do with the scientific process
+   * Sample
+   * others?
+ * OWL classes defining 'Organism', 'Fish' etc. are hard to find
+   * Do we want to subscribe to DwC 'IndividualOrganism'? (or at least use similarConceptAsClass)
+Conclusion: 
+oboe-ecology: put habitats here.
+oboe-biology: fuzzy organism names go here, like "Fish", Kelp", "Algae". then subclass these in the extension with species binomials.
+
+

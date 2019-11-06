@@ -1,0 +1,88 @@
+Breakout 2.2
+-----------------
+
+
+Given the vision that you articulated yesterday, and taking into account the discussion at the end of the day, identify a set of milestones and barriers at 3, 5, and 7 years that will lead to or inhibit fulfillment of your vision.
+
+
+General discussion
+-------------------------
+Is it ok to start thinking about how to leverage existing efforts?
+    -- Absolutely, within the scope of those awards
+    -- Kelling: discussions similar to the creation of the DataNet program, and particularly DataONE
+    -- Michener: DataNet is funding baseline infrastructure for federated platform, but additional investments would be useful to specifically apply that to Dimensions of Biodiversity
+    -- Beaman: want specific science domains to drive the requirements for the design of the CI
+    -- 21st Century CI: vision statement from CI community, under which sciences like Biology can function (DataNet, Software Institutes, hardware, etc. come from this vision)
+    -- Michener: DataONE: interoperability framework among existing data centers, libraries, research programs, incipient observatory networks, etc.
+        -- discovery, data replication, preservation, access
+        -- in DoB, add on specific portions of the CI
+    -- Leidner: what is missing from this framework that could be added on?
+        -- data acquisition and metadata acquisition, and annotation tools specific to communities
+            -- e.g., auto-management and generation of metadata in sensor networks
+            -- e.g., domain-specific visualization
+        -- Kelling: discovery, then exploration and interaction with the data sets, then create integrated data set, then ways to analyze/visualize
+        -- Kelling: maintain metadata on all of the workflow steps so that those also can be re-used
+        
+    -- Kennedy: in 10 years, will we still need to be thinking about how to find data
+        -- would discovery be inherent in the system and how it is stored and linked in the system?
+        -- Michener: tools would be available
+        -- Kennedy: still a focus on 'dumb data' that need extensive tooling, or 'annotated' data that more automatically know where they are via extensive cross-linking
+        -- Kelling: also need to be able to find new data sets created from the primary data sets (e.g., secondary or derived data)
+        
+        -- Kelling: workflow toolow tools like Kepler and VisTrails are already trying to maintain a provenance history of the operations on data and derivation history of data
+        
+     -- Leidner: what data, how to create the tools, where is the data going to be, etc.
+        -- need incremental progress in order to maintain support and buy-in and enthusiasm
+        -- for this program, organizing researcher data across biological disciplines first, then add env component, then add an
+        
+    -- Regetz: need a framework/ecosystem for a cohesive community to emerge -- e.g., the way OGC/OSGeo and tools have arisen around a theme
+        -- e.g., a Center, whether it is virtual or not; programmer sabbaticals;    
+    -- Guala: difference between here and AToL is that the task is not clear in DoB; have lots of tools for individual community types of data, but don't have a way to manage the nexus of all DoB data
+    -- Michener: first need to survey what is out there for tools/solutions; then also ask DoB PIs about what problems they face; then 3rd build a community of practice (e.g., ala ESIP for biodiversity)
+   -- Michener: there is also an educational/informational role to engage scientists
+   -- Kennedy: how to expose tools in a way that investigators will know before investing that it will do the job required
+   -- Jones: despite existence of good tools and frameworks, still have a need for integration across these communities, and DoB spans disciplines in ways that challenge our existing notions of integrated access to data
+      -- Kennedy: how to expose tools in a way that investigators will know before investing that it will do the job required
+   -- Jones: despite existence of good tools and frameworks, still have a need for integration across these communities, and DoB spans disciplines in ways that challenge our existing notions of integrated access to data
+   -- Beaman: one of the reasons to bring this workshop together is that the people here can predict issues that aren't immediately obvious to the research community
+   -- Michener: should focus on grand-challenge vignettes that can drive the CI work
+   -- Guala: most things needed by individual projects will reveal the idiosyncratic issues with data access (e.g., no CUASHI in Ecuador, watershed delineation issues across administrative boundaries)
+   -- Regetz: example; phylogentic analysis of climate change on phenology; lots of issues in collating the data; lots of manual data integration; lots of labor in doing names/concepts resolution; writing lots of custom scripts to do these tasks that could be generalized but there are no general tools that can be applied; 
+   -- Guala: some resources will be particularly useful: genbank, a real tree of life, etc.
+   
+Vision from yesterday
+-----------------------------
+A. Federated, interoperable data system for global access with Web-2.0 UI that will promote understaning of what biodiversity is and how it is important to their lives {7, 4, 12, 18}
+B. Training and capacity building globally {5, 8} and improved usability of data lifecycle tools
+C. Suite of tools for the whole data lifecycle: acquire, preserve, discover, analyze, and visualize data; ease of use; cross-domain tools {3, 11, 16}
+D. General Ontology
+    -- A common semantic model of scientific observations that supports semi-automated, ad-hoc data integration that spans the range of biodiversity data, plus the tools for those
+E. Ability to replicate analysis from source data fully through to publication {9}
+
+3 years
+----------
+* Survey existing software tools, integrate with existing infrastructure programs (e.g., DataNets)
+    -- make sure that these frameworks are capable of handling all DoB disciplinary areas
+* Develop frameworks for hardware integration (e.g., linking large repositories with computing facilities)
+* Better acceptance of standards/data norms
+* Virtual center allows for discourse/feedback on data; focus on ability to adapt
+* Development platform; provides a way to move away from one-off, incompatible, community-specific software solutions
+    -- e.g., unified approaches to name resolution
+    -- more than a registry of the tools; need a way to identify common needs and work together in the process of creating integrated tools/platforms; (e.g., ESIP does this in an unfunded way); no one center can do everything for everybody; a "BSIP" (Biological Sciences Information Parnership) is needed
+* Good demonstration projects that show utilization of the tools/standards and motivate additional adoption
+    -- incentives foror adoption should be developed, but also value needs to be shown through improved efficiency/capabilities
+* Workshop and more intensive sustained mechanism to bring together scientists and CI people to identify key needs and gaps (e.g., in 18 months)
+    -- focus on getting descriptions of CI challenges from DoB participating scientists (e.g., CI-based IRCN?)
+* need funding programs to build the CI that arises from BSIP activities (tiered to support some big frameworks, other smaller components)
+    -- ala SI2 and SDCI -- need more of these
+* Expected data deposition is part of all science disciplines in DoB
+
+7 years
+----------
+* Fully realized semantic model of DoB data, tools that can use and navigate/access this
+    -- need a strategy to annotate data in this semantic framework, as its outside of current work practices of scientists
+        -- crowdsource annotations as people work with existing data
+*  Automated and enabling Provenace/analysis chain tools will take a while to develop and deploy
+* Mandatory data deposition is part of all science disciplines in DoB
+* Dedicated workflow infrastructure that is inherently capable of doing data-intensive work through the full data lifecycle
+

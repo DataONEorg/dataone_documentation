@@ -1,0 +1,167 @@
+Sprint Closeout and Startup -- 2010-05-05
+=========================================
+
+:Who: Dave, Robert, Chad
+
+:Note: sprint #5 will continue until the Friday before the meeting in May, i.e. 2010-05-21.
+
+
+Good, Bad, Ugly
+---------------
+
+- Dave - many issues related to external contrstraints on time
+
+- Chad - OK so far
+
+- Roger - seems to be a lot of overhead associated with the process, but generally a worthwhile process.  Discipline is good - forces focus on issues that are designed rather than ad-doc
+
+- Chad - Trac tool overly complicated, confusing interface.  Prefers pivotaltracker.com which has a much nicer interface. 
+
+- Robert - sprint went really well this time.  Need to update trac more often.
+
+- Roger - specifically for this sprint - was a bit more difficult due to unknowns (e.g. timing for Dryad, Giri, etc)
+
+- Robert - need to find a mechanism for better engagement of others - Bruce, Giri, Jim, Ryan
+
+- Roger - completely dependent on Giri for DAAC install so coordination critical
+
+
+
+Goals for new Sprint
+--------------------
+
+Overall goal is implementing Member Node synchronization:  Usecase #06
+
+
+Member Nodes - get(), getSystemMetadata(), listObjects()
+- Dryad MN operational
+- ORNL/DAAC MN operational
+- Metacat server running
+
+
+Coordinating Nodes - get(), search()
+- need examples from Giri and Bruce
+- need updated Mercury build - jar and war files
+- enable mercury indexing
+- complete search mechanism 
+- CN buildout -> cn_service accessible -> integration testing
+
+
+Coordinating Node - support UC06
+- Metacat create() 
+- Task queue
+- Polling of listObjects
+- component to retrieve content given direction from task queue and store in metacat
+- converter from metacat to mercury converter depends on some infrastructure such as a message queue
+
+
+Stories
+-------
+New:
+
+- (Story, 5pt) Setup message queue for MN synchronize process and possibly for triggering the metdata conversion process (i.e. feeding into Mercury indexing)
+
+  - evaluate options for queue - activemq, qpid, ...
+  - Define the installation process for selected library to incorporate in cn_service
+  - define messages
+  - implement tests for messages
+
+
+- (story, 3pt) Design and implement the scheduling component (the scheduler) that add messages to a queue for later processing 
+
+  - based on quartz
+  - configuration options (scheduling etc)
+  - JMS listener will run something that will poll listObjects() (see Story of polling listObject())
+
+
+- (story, 5pt) Design and implement a component that responds to tasks from the scheduler (above) for polling listObjects()
+
+  - able to use the ITK client for this (handling the listObjects call)
+  - maintain state of last time listobjects was called, serialize objects
+  - update UC06 text to flesh out design
+
+
+- (story, 8pt) Design and implement the component that will retrieve content from MN and store in Metacata
+
+  - use client from the java itk library (https://trac.dataone.org/browser/software/cicore/trunk/itk/d1-java)
+  -retrieve systemMetadata from MN based on ID read from messaging queue
+  -parse systemMetadata to discover scimeta or data
+  -if scimeta then store sysmeta and scimeta in metacat
+  -otherwise only store sysmeta
+
+
+- (story, 20pt) Setup a few VMs for integration testing of CNs
+
+  - automatic build of CNs based on SVN
+  - testing of repplication between CNs
+  - at least one MN for testing UC06 interactions
+
+
+- Dave - integration test client essential for this sprint
+
+  - update the stories and tasks associated with ITK client implementation (especially python client)
+
+
+- (Story - pull from project backlog into sprint #5) Update the CN buildout to use the latest available versions of Metacat, Mercury, and CN_service
+
+
+- (story, 3pts) Refactor Metacat to make the CRUD service a singleton (2 hrs)
+
+  - remove the servlet context passed into CRUD service
+  - fix MC REST service client to use mime-multipart encoding
+
+    - fix MC REST service to do API calls instead of servlet calls
+
+
+
+#586 Some work remains - about 1 hr, move to next sprint
+
+#79 - reassign to Waltz.  flesh out details.  Move to next sprint.  Lower priority - implement after UC06
+
+#269 - All tasks move across to next sprint
+  - Dave review documentation for Mercury
+  
+#288 - needs integration test to run it
+
+#346 - completed - close
+
+#565 - reassign to Chad
+
+#262 - Assign to Dave, and adjust tasks (remove 263) 268 - not really part of 262 but required for testing of listObject() - part of general MN testing
+
+#348 - in progress, move forward
+
+#350 - move forward
+
+#352 - increase time and move forward
+
+#591 - move forward - lower priority
+
+#582 - need to prepare some stuff for the May meeting
+
+#536 - move forward. #554 needs to be updated
+
+#605 - move forward
+
+#452 - completed.  close ticket.  
+
+#543 - done
+
+#447 - move forward if necessary
+
+#602 - move forward
+
+#561, 562, 563 - remove.  Duplicates of other ORNL/DAAC related tasks / stories
+
+#593, #594, #595
+
+#337 - move forward, low priority
+
+#331 - move to this sprint
+
+#353 - move into this sprint
+
+#601 - Move to next sprint, add a couple of stories for testing this, but don't refactor the code (i.e. document the outcome and make recommendations)
+  - recommend a test of this in the test harness
+
+

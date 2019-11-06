@@ -1,0 +1,89 @@
+DataONE Semantics and Provenance Weekly call
+======================================
+
+Date: 08 Sep 2014
+GotoMeeting: https://global.gotomeeting.com/meeting/join/434793157
+Participants: Matt, Bertram,Margaret, Ben, Xixi, Lauren, Mark, Steve, Bob, Peter, Paolo
+Regrets:  Deborah (sorry - thesis defense during call)
+
+1. Agenda review/additions
+2. Standup -- progress/tickets/blockers
+ * Matt
+   * Activity: Codefest discussions and code on data packaging and provenance
+     * New Data Package R package http://github.com/ropensci/datapackage in progress
+   * Blockers: none
+ * Chris
+   * Continued work and discussions on use cases
+     * Working on client side API with Lauren, Ben, Peter, Matt
+   * Set up in Matlab locally now and working on importing D1 libraries for use in various use cases
+   * No blockers
+ * Xixi
+   * work on Earth Science Ontology Repository document . (will share the document next week)
+   * putting more ontologies to the Repository.
+ * Lauren
+   * Working on document summarizing the Codefest provenance capture discussion w/Peter
+   * Updated dev.nceas.ucsb.edu to trunk Metacat to test R client insertRelationship() calls to that testing MN
+   * No blockers
+ * Margaret/Mark: spent OS Codefest reviewing terms in existing ontologies related to primary production. finding them lacking structure/defintions that apply to ecology. Finding authoritative defintions.  We reviewed some of Xixi's alignments, and dug into those terms for relevance for MsTMIP and LTER Annual NPP Use Cases. We plan to create ontology of carbon cycle concepts for ecology.
+   * Idea: harvesting wikipedia defs (e.g. via DBpedia); Mark likes them :)
+ * Bertram/Steve/Yaxing/Paolo:
+   * had a first meeting to touch base on a MsTMIP use case (w/ Steve, Yaxing, Paolo, ..) but without Christopher Schwalm :-(  
+   * => we need to get back in touch with him (and jointly with this group)
+   * Also went over the use cases 41, etc (high level). Notes: 
+   * https://docs.google.com/document/d/1IdrmnWECYIn9ikfxSMyOptPGyFmuRN0EmoD80uDdhUg/edit 
+   * Distinction: internally facing and externally facing provenance
+   * Shooting for an "end-to-end" story (but again, need Christopher on board). 
+ * Ben
+     * Will work on semantics use cases
+
+3. Weekly Discussion: Provenance initial use cases
+ * Original Google Docs document: https://docs.google.com/a/nceas.ucsb.edu/document/d/1I0RFtyDo_Pa2tYHPP210Rcxuf62M7M3CCteozXRs6Xs/edit#heading=h.jo35fgb0eoe7
+   * [Bertram: should we have a folder for all the various docs? Say DataONE-CI-docs ?]
+ * https://github.com/DataONEorg/sem-prov-design/issues/5
+   * Use Case 41: Providing/tracking prov information
+   * https://docs.google.com/document/d/1kGrtH0B_sAJIVlociAaklK51024DimtwmzNwJ97goWU/edit
+   * Use Case 42: Examine a derived data set for prov linkages
+   * https://docs.google.com/document/d/1SvmPLEJF8Ev5BWtmPbxCMZY64NUK4JkGE_Q6VuIX_hU/edit
+   * Use Case 43: Search for provenance linkages
+   * https://docs.google.com/document/d/1TJQYRnACNoZv3RysT8TSVq5YpLwEmtadaYGPm1iiuIs/edit
+   * Use Case 44: Reuse/re-execution via prov trace
+   * https://docs.google.com/document/d/1zpKkoTnCj59PYqnmyvEdEt9ORwbo5Jk4QF0b6shClDo/edit
+ * Additional use cases not yet documented are listed here:
+   * https://github.com/DataONEorg/sem-prov-design/issues/6
+     *  Scientists can track, list, and examine script executions and decide which are archived in DataONE
+     *  Scientists can record provenance information about a run in R
+     *  Scientists can record provenance information about a run in Matlab
+     *  Scientists can assert that a given research paper contains data and outputs from particular script runs
+     *  Scientists can find the data and scripts used to produce the outputs for a given research paper
+     *  Scientists can find the data and scripts used by a given person
+ * Bertram: may not have use cases that cover the "internally facing" use cases that are useful to and used by scientists during their experiments/studies
+   * See the 'run management' use case in issue #6, needs to be fleshed out
+ * Mark: for objects that aren't already described, need to add metadata/semantics when uploading them to DataONE
+   * Could potentially use their column labels, etc. to get started on column metadata
+ * Q: will MSTMIP data have metadata with variable metadata?
+   * Bob: probably yes, via a nested FGDC structure
+ * Paolo: Can we get a 'metadata completeness score' for data sets?
+   * Matt: yes, via Habermann/Jones grant to produce metadata completeness assessment tools. margaret can describe what LTER has for EML-pkgs.
+ * Paolo: question about compliance to PROV-O properties
+   * Matt: We are planning to use:
+     * prov:wasDerivedFrom
+     * prov:used
+   * Matt: should we subclass PROV classes to make for example: Dataset Entities, and Script/Code Entities?
+     * Paolo: yes, probably at one level down
+
+Action Items
+ * DONE: Matt: Schedule ontology variable discussion for next week's call
+   * Matt started the agenda for next week here: http://epad.dataone.org/20140915-semprov
+ * TODO: Mark/Xixi/Margaret/Ben/De: prep for next week's semantics discussion; determine what the group needs to help to decide. (https://github.com/DataONEorg/sem-prov-design/issues/7)
+ * TODO: Bertram/Christopher/Paolo: Need to diagram end-to-end story for provenance/semantics, then can map individual use cases to the components to the parts of the diagram (https://github.com/DataONEorg/sem-prov-design/issues/8)
+ * TODO: Ben: Initial list and details of use cases for semantic measurement search features (https://github.com/DataONEorg/sem-prov-design/issues/10)
+ * TODO: Lauren: revise and post diagrams showing our use of PROV-O classes and properties for provenance annotations (https://github.com/DataONEorg/sem-prov-design/issues/11)
+ * TODO: Chris/Lauren/Peter: complete use cases for PROV (https://github.com/DataONEorg/sem-prov-design/issues/5)
+ * DONE: Matt: finish setting up semprov mailing list members
+   * email sent
+ * DONE:: AHM agenda to schedule for next week
+   * Added to next week's agenda: http://epad.dataone.org/20140915-semprov
+
+
+
+

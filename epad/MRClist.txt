@@ -1,0 +1,36 @@
+purple = Carly
+yellow = Trisha
+
+- - - - - - - - - - - - - - - - - - - 
+
+Things we want to establish with MRC/Kris:
+
+Communication
+-how, when, and coordination (does this pertain to announcements of partnership?) -- no, more about how we 
+-is there a private wiki or something for communications, project progress, timelines, etc?
+    do you mean for CDL/UC internal communication? we can use our confluence site for that. for CDL/MRC, we didn't have much success with that last time. They aren't fans of Google docs or dropbox. They prefer sharepoint but can't seem to give us login privilages on their accounts.
+-developer at SDSC is under supervision of Susan Borda
+
+
+Work practices
+1. New developer should be able to contact MRC developers directly
+2. CDL gets credit on all materials, presentations, etc.
+3. Main website for DataUp will be dataup.cdlib.org
+4. MRC to continue paying for Azure
+
+Outputs
+1. All code open source on current bitbucket site
+
+Questions:
+1. Any money agreements? Is MRC paying for anything?
+2. In cases of conflict, where does the final decision making power lie?
+3. Does MRC have any expectations for us? 
+        Meeting attendance
+        check-ins
+        presentations/conferences
+4. Where will web application sit? Who will pay for it? (relates ro #4 under work practices)
+5. Is there an SLA for maintenance etc? (Not sure if this should be in questions or work practices?)
+6. clear explanation of who at MRC is working on DataUp; their plans for DataUp; our involvement with plans
+
+
+

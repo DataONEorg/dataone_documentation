@@ -1,0 +1,41 @@
+Procedure for resizing of LVM Volume Groups
+-------------------------------------------
+
+If there isn't enough space on a given VM for either actual storage space or for LVM snapshots:
+
+1) Add new physical (or virtual) disks to the VM (Nick, Jamin, Chris B.)
+
+2) Rescan the SCSI bus to inform the kernel of the new device
+
+    # echo "- - -" > /sys/class/scsi_host/host#/scan
+    (Where # is the host scsi adapter [0,1,2,...]. Rescan all if need be)
+
+3) For understanding LUN to kernel device name mapping, install lsscsi
+    
+    # apt-get install lsscsi
+    
+    # lsscsi
+    [1:0:0:0]    cd/dvd  NECVMWar VMware IDE CDR10 1.00  /dev/sr0
+    [2:0:0:0]    disk    VMware   Virtual disk     1.0   /dev/sda
+    [2:0:1:0]    disk    VMware   Virtual disk     1.0   /dev/sdb
+    [2:0:2:0]    disk    VMware   Virtual disk     1.0   /dev/sdc
+    
+The newly added disk will likely be at /dev/sdb or /dev/sdc
+
+4) Create LVM partitions with the new disk (optional, can use whole disk too)
+
+    # fdisk /dev/sdb
+    
+    In fdisk, choose:
+        n (new partition)
+        p (primary)
+        1 (choose partition size by sectors)
+        t (set the partition type)
+        8e (Linux LVM)
+        w (write the partition table)
+
+5) pvcreate /dev/sdb (or /dev/sdb1 if you created a partition)
+
+6) vgextend ubuntu /dev/sdb (Note that the VG on cn-stage-unm-1 is 'ubuntu'. Others vary)
+
+

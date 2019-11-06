@@ -1,0 +1,99 @@
+Installation prerequisites
+Each lab machine will have:
+ * Windows 7, with admin privileges
+ * Java 6
+ * Microsoft SQL Server (2005 or 2008 - prefer 2008 with mixed mode authentication enabled)
+ * MySQL
+ * CUAHSI HIS - ODM Data Loader, Streaming Data Loader, and ODM Tools
+ * SVN 1.6 or greater
+ * Ant 1.7.1 or greater
+ * Kepler
+ * R (linked to Kepler - path set)
+ * Sample Campbell .dat file that is subset of NTL. (Jeff)
+ * Can we have access to one of the machines or an image of one of the machines so we can test our exercises before showing up?
+
+
+Monday, April 30, 2012
+Travel Day
+
+Tuesday, May 1, 2012
+
+Morning
+8:30am: General introductions: 30 mins
+9:00 - 9:30 am Presentation: Sensor data management software, requirements and considerations: 30 min (Don, Matt, Corinna)
+9:30 - 10:30 GCE toolbox introduction (Sheldon, remotely)
+10:30 - 10:45    break
+10:45 - 12:00 question and answers GCE Matlab toolbox (Sheldon, remotely)
+12:00 Lunch
+Afternoon
+1:30 - 2:00 pm Presentation: Introduction to DataTurbine
+Exercise: Installing and configuring DataTurbine
+3:00 - 3:15 pm break
+Exercise: A sample DT source in Java (with Campbell datalogger)
+Exercise: Use RDV to examine sensor stream
+DT Wrapup presentation
+5:30 pm adjourn
+
+Wednesday, May 2, 2012 
+
+8:30 am: Morning
+
+CUAHSI 
+8:30 - 9:00 AM Presentation: Introduction and overview of the CUAHSI Hydrologic Information System (30 minutes)
+9:00 - 9:30 AM Presentation: Introduction to the CUAHSI Observations Data Model (30 minutes)
+9:30 - 10:00 AM Exercise: Setting up ODM (30 minutes)
+10:00 - 10:15 AM Break
+10:15 - 11:15 AM Exercise: Using the CUAHSI HIS Data Loader and Streaming Data Loader (1 hour)
+11:15 - 12:15 AM  Exercise: Query, Visualize, and Edit Sensor Data using ODM Tools (1 hour)
+12:15-12:30 PM Presentation: Wrapup and questions
+
+12:30 PM Lunch
+1:30 pm - 2:00 pm Presentation: Intro to Kepler. 30m. (Matt)
+2:00 pm - 3:15 pm Exercise: Create simple SDF workflow: process array through R actor into Display. 30m (Matt)
+-Exercise: More advanced R workflows. Linear Regression. GDD. Buffalo TB TPC workflow. 30m (Matt)
+3:15 - 3:30 pm break
+3:30-4:00 -Exercise: Use Kepler DT actor to request and plot Last 5 days time-slice (use a 4:00-4:30: pre-made workflow A). 30m (Derik)
+4:30-5:00 -Exercise: More advanced DT actor stuff. ??m (Derik)
+-Exercise: Create Report Design for workflow A. Execute. View Report. View run in Workflow Run Manager. Tag it. 30m (Derik)
+5:00 - 5:30 Wrapup
+5:30 pm adjourn
+
+Thursday, May 3, 2012
+
+8:30 am: Exercises: Enter Metadata into ODM (Corinna)
+Exercises: Use Kepler to parse sensor data into ODM (Corinna)
+Exercises: Use Kepler to parse sensor data into other database formats (Corinna)
+
+10:00 - 10:15 break
+
+10:15 Exercise: Config Scheduler and Run Engine urls in Kepler. Schedule workflow A. Connect WRM to remote store. Look at Kepler Repository web site. 40m (Derik)
+-Exercise: Use Kepler DT actor to connect to and plot stream. (use pre-made WF). 20m (Derik)
+-Presentation/Demo: Sensor Archival Workflow (parse sensor data into EML+SensorML into MetaCat, search for and look at result). 40m (Derik)
+
+12:30 Lunch
+
+1:30--Presentation: Quality control using R actor in Kepler. 45 min  John Porter
+- Exercise: Canned data set; trainees find problems in the data set  45 min
+- Exercise: Adapt the QA workflow in Kepler to use different data 
+
+3:15 - 3:30 break
+
+Kepler
+3:30 Presentation: Intro Kepler Sensor Platform (sensor-view suite and explanation of how to install all components). 30m
+Demo: Import and run Site Layout (against gumstix+CR800+light bar) 5m
+-Exercise: Start Simulator. Import and run Site Layout. Use Plotting. 40m.
+-Exercise: Run streaming Sensor-as-datasource workflow (pre-made workflow B). 20m.
+
+5:00 - 5:30: Wrapup on QA and Kepler
+
+Friday, May 4, 2012
+
+Morning
+Presentation: NEON data processing and sensor management (Matt will ask about this)
+??Presentation: Introduction to OGC’s Sensor Web Enablement
+Discussion: Requirements for a sensor management system
+Wrap up questions and answers
+
+Afternoon
+Travel home
+

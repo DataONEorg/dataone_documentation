@@ -1,0 +1,39 @@
+DataONE Cluster Partition Handling 
+
+https://redmine.dataone.org/issues/3470
+
+Problem:
+
+Partitions in the hazelcast cluster can lead to data inconsistencies between D1 coordinating nodes.  Examples of operations that are not safe during partitioning:
+        - Global 'unique' PID locks can be created in each partition.
+        - Operations that begin in one partition can finish in the other.
+                -MN to MN replication for example.
+        - Independant updates to the same metadata object in different partitions could result in inconsistent system metadata.
+
+
+Solution 1 (favor consistency over availability and partition tolerance) :
+
+When CN detect a cluster partition they go into a 'read-only' mode -preventing data updates while partitions are present.
+
+This proposal builds on top of a concept already present in the d1 'processing' components - sync, replication, log aggregation.  Each of these components tests an 'active' control flag before processing new events or running scheduled tasks.  Currently, this allows each component to be turned on/off independant of the other services in the processing daemon process.
+
+By creating additional control flags (to indicate when partitions are present in various hazelcast clusters), the 'active' component toggle concept can be extended to also provide a hook for turning d1 CN services off/on when cluster partitions have occurred/resolved.
+
+Implementation:
+
+Hazelcast provides a MembershipListener interface that allows custom handling of hazelcast membership events.  Currently there are two membership events reported by hazelcast - member "added" and "removed". When a member leaves the cluster for any reason - either due to shutdown or partition - this event cause the "member removed" event to be triggered in each membership listener.
+
+In cn-common (trunk), there are some beginnings of an implementation of this strategy:
+
+ClusterPartitionMonitor - Holds state information regarding current cluster partition status.  Aggregation of cluster partition listeners - manages these listeners (create/config/start/stop).
+
+ClusterPartitionMembershipListener - extension of BaseMembershipListener, reports membership state changes to cluster partition monitor.
+
+ComponentActivationUtility - Uses state information provided by ClusterParitionMonitor and in coordination with the component 'active' toggle to determine if the compent should be active.
+
+This solution also requires a small additional context configuration indicating what the current 'healthy' size of the cluster is expected to be.  This can easily be derived from the cluster's IP/address list size.  It can also be overrided with a property setting - to allow continued healthy operation when less than all CN are participating in the cluster.
+
+Problems:
+
+Observerations of 'asymmetric' communication issues raise some questions regarding whether an individual node of a hazelcast cluster can accurately determine when a partition has occured anywhere in the cluster.  For example, with 2 nodes (a, b) it is possible communication is occuring in one direction a->b but not b->a, resulting in each node having different opinions regarding partition state.  Node 'a' may report 2 members while 'b' reports only 1.
+

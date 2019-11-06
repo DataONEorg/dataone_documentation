@@ -1,0 +1,57 @@
+2012-07-10 Discussion on Mercury MN Implementations
+===================================================
+
+
+Agenda
+------
+
+
+1. Resource Map generation, identifiers, alignment with landing pages
+
+Created a new index for testing that contains the resoruce maps:
+
+http://mercury-ops2.ornl.gov/clearinghouse_new/mn/v1/object
+
+ORNL DAAC
+
+http://mercury-ops2.ornl.gov/ornldaac_new/mn/v1/object/resourceMap_398.xml
+
+http://dx.doi.org/10.3334/ORNLDAAC/1098
+
+http://mercury-ops2.ornl.gov/ornldaac_new/mn/v1/object/10.3334/ORNLDAAC/398
+
+http://mercury-ops2.ornl.gov/ornldaac_new/mn/v1/object/doi:10.3334/ORNLDAAC/398
+
+Properly encoded form:
+http://mercury-ops2.ornl.gov/ornldaac_new/mn/v1/object/doi%3A10.3334%2FORNLDAAC%2F398
+
+https://code.ecoinformatics.org/code/metacat/tags/METACAT_2_0_1/lib/
+
+
+
+2. DAAC replacement of identifiers
+
+-- For science metadata, IDs are changing
+-- Old ids for science metadata not used any more (Can be marked as obsoleted, archived, and restricted to non-public (e.g., by changing AuthMN to CN)
+-- Old IDs for data objects stay the same
+
+3. Issue noticed with USGS node:
+
+  http://mercury-ops2.ornl.gov/clearinghouse/mn/v1/object?start=0&count=9999
+  
+  returns a 500 error
+
+  - Fixed!
+
+ http://mercury-ops2.ornl.gov/clearinghouse_new/mn/v1/object?start=0&count=9999
+
+4. General discussion on USGS node
+
+- generated resource maps for data and metadata
+- no changes to identifiers
+- probably cumbersome to use the DOIs for RMap identifiers (fairly manual process)
+
+Please send Mike Frame an email when this is done and available, just so I can coordinate with the USGS people and data providers. 
+
+
+

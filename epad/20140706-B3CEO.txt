@@ -1,0 +1,154 @@
+Scroll to line 85 for 2nd Breakout.
+
+Breakout 3 CEO
+
+Participants: 
+Amber Budden, Heather Heinz, Viv Hutchison, Chris Eaker, Sherry Lake, Andrew Johnson, Tracy Kugler, Debora Drucker, Greg Golberg, Bob Downs, Megan Bresnahan, Dan Valen, Andrew Johnson, Rebecca Kuglitsch
+
+Webinar discussion:
+
+Topics
+Need to consider audience - different webinars for different audiences
+ * Using the DataONE discovery tools (librarians may want this in a different flavor)
+ * How to work with data - sharing / uploading / best practices
+ * Tutorials for tools in the ITK (overview and also specifics)
+ * Tools 101; community tools for all different areas of the DLC
+ * What it is to be a MN; tiers, process etc
+ * Consider what DataONE strengths have been and focus on those.  Data description needed in the community
+ * Convert educaiton modules into webinars
+ * How to configure metacat as a MN (topics of interest to the IT community)
+ * Sustainable software, reproducibility
+ * Open data - example of how they worked with DataONE
+ * Data Integration and analysis
+ * What every grad student needs to know about ... (base of BPs)
+ * How to engage your community with DataONE
+ * Data papers / data publication
+
+Have webinar 'tracks' for different types of users
+Topic based approached - otherwise tools don't integrate into the workflow.  More 'tailored'
+Problem based topics - How do I...?
+
+
+Length / Frequency
+Consider timing in terms of relation to grant deadlines / project initiation / calendar year
+Web conference for MNs
+Webconference (facilitated discussion) around a topic / problem / emerging policy / activity within the wider community
+
+ * No more than 1 hour (including Q&A)
+ * Shorter is better
+ * 30 minutes with optional Q&A
+ * Depends on nature of webinar (conveptual vs instructional)
+ * Frustrations associated with poorly organized webinars
+ * Regular schedule important
+ * 1/month
+
+
+Screencasts
+About 4 people have looked at the tool, about 2 people have used it to pull data
+
+Basic search feedback:
+Shading
+ * shading focussed attenion
+ * important early on, less important later
+ * highlighting important where there is no cursor action
+Subtitles
+ * subtitles needed for non native speakers
+ * also for critical features (such as the AND behavior)
+ * subtitles for references to other video 
+ * replace the title in sub bar with information relevant to the action
+Animation on the click was nice
+
+Geographic search feedback:
+ * Arrows good bc you are not actually clicking on everything (highlight vs action)
+ * Pan into bar before shading in bc shading was too large
+ * Use the pan function more, it was helpful
+ * Focus on things that are specific to the tool (for example: overlap and enclose more important that zoom in / out)
+ * If it's a step based tutorial, say the steps up front
+
+Have a page with tutorials and also a glossary
+Think about where the screencast starts
+Make sure you show everything you mention
+Black box was distracting - didn't change very often
+
+
+Prioritization
+ * DMPTool in need of screencasts
+ * Prioritize DataONE and DataONE partner tools
+ * If new versioning is expected, wait on creating screencasts
+ * Use the STs as a framework
+ * Library of other screencast / edu resources??
+ * Release tool with education materials (even if it delays the release of the tool)
+ * Though there is an opportunity to have multiple message broadcasts
+ * Release overview video important at release, can augment with specifics later
+
+
+******************************************************************
+Breakout 3 CEO
+
+Participants: 
+Amber Budden, Heather Heinz, Viv Hutchison, Bill Michener, Bob Sandusky, Kevin Browne, Ted Hart, Matt Neilson, Smiley Calderon, Nancy Hoebelheinrich
+
+Webinar discussion:
+
+Topics:
+ * Domain specificity - use cases
+ * ONER, other toolkit items
+ * Programmatic workflows - reproducability end to end, including experimental pipellines
+ * Writing a DMP for your grant (aimed at researchers)
+ * Latest tools
+ * Data Management best practices for facility managers
+ * Rights management and DataONE (recommended in MN session)
+ * Workflow tools like kepler and taverna
+ * Panel webinar for citizen science (profiling projects for citizen science)
+ * Issues in DM targeted to various data types
+ * Benefits of being a Member Node (for potential new MNs)
+ * What is metadata? How do I create it? How do I use it? What tools can I use for metadata management? 
+ * What is metadata - how to create it / use it / tools for helping
+ * Describing tools that will help people find data (domain specific?)
+ * For a repo manager - how to choose what goes in DataONE when joining as a MN (raised in MN session)
+ * Escaping excel: free ways to manage data outside excel (transition tools - data moves)
+ * Benefits of sharing data (incl use case)
+ * Helping PIs / Data creators understand metadata and how it's used - with use cases.  e.g. How do you make your data discoverable?
+ * Provenance and why it's used, why it's important to you
+ * How to increase the quality of your data
+ * Protecting your legacy (info on sharing for retiring researchers)
+ * Work with specific MNs to help people in the community deposit data
+ * Data Life Cycle for specific domains
+
+Length/Frequency:
+ * 1 hr
+ * Questions after
+ * Monthly
+ * Repeating (i.e., twice a month, same presentation)
+ * Think about timing in terms of international participation
+ * Have longer (flexible) timing depending on topic - if having a panel presenting perspectives on the same idea)
+ * For internationals or people that can't call in, allow opportunity for questions to asked in advanced or contributed post viewing.
+ * Research the need / niche for the webinar - a lot of stuff out there (point people to the other material)
+
+
+
+Screencasts:
+5 people have been to ONEMercury and searched ONEMercury
+
+Basic search feedback
+ * need for spotlight depends on how much of the page is being shown - mouse can get lost
+ * spotlight considered helpful
+ * zooming helpful if not moving in and out too much.  being zoomed out helps people with context
+ * Too much time one non essential if keeping at 1 minute (e.g. where to find other tutorials)
+
+Geographic search
+ * Arrows provide nice contrast
+ * Gradual fade on spotlight?
+ * No-one read the text in the black box
+ * Summary text at the end of the steps (take home points)
+
+
+ * Generic or specific?  Have a speerate one - an example search using ONEMercury
+ * A 'poweruser' example
+
+Prioritization
+ * Start with DataONE tools - wont have been done already, have inside information on versioning, can synchronization
+ * Dont' neccesarily do a full set on a (partner) tool - focus on the parts that are unique or complex
+ * Need to think carefully about the synchronization - don't want to have the redo and frustrate users, don't want to frustrate developers by 'holding' a product for release
+
+

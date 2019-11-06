@@ -1,0 +1,65 @@
+Member Node Wranglers (Fridays at 10:00 am AK/11:00 AM PST/12:00 MST/1:00pm CST/2:00pm EST) 
+
+https://www1.gotomeeting.com/join/734882497
+
+2 August 2013                              
+
+Attendees:  Laura, Bruce, Amber, Dave V.
+
+Regrets:  Rebecca
+
+Agenda: 
+        1. High profile issues
+     * Documentation: working with Rob to flesh out MN deployment checklist - high priority
+     * NPN meeting 1 August:  Lee Marsh's POC in CCIT is Ben Leinfelder.  Lee is working on setting up metacat.
+     * NKN meeting 6? August:  
+                  
+        2. Status of MNs 
+     * will revisit 9 August (unless something critical is happening that we need to address)
+     * (remember to address Taiwan TERN, AOOS, SAEON when Matt is present - next week??)
+
+        3. Old action items
+     * 270TB  Beetle project: met with Andrew Sallans (UVa/DataONE), Vince Formica  (Swarthmore), Sherry Lake (UVa).  The project is image data of beetles in the field to identify/categorize beetle behavior.  Anticipated volume is ~1TB of data per observation day for 3 years.  Their NSF BIO IOS proposal is due Friday; John provided some verbiage that they may use in the proposal regarding creating a plan for long-term data management (i.e. we plan to have a plan that might look something like this).  This will buy them some time to investigate options - perhaps work with an institutional repository (UVa?) which is/might become a DataONE MN.
+            
+     * revisit the Google maps project when Amber is present: 
+            From Amber: I have set about a google map of DataONE MNs 
+(https://maps.google.com/maps/ms?msid=201099493701187189053.0004e2571a86a5a6caaeb&msa=0&ll=27.059126,-0.351562&spn=140.072175,317.109375).
+
+The purpose is twofold: 1) when we need a map for presentations we have something that is up-to-date (I found myself adding triangles to our map for my presentation for this meeting) 2) In the absence of our dashboard, I was also thinking that we could put this on our site?  There are pros and cons of having a google map - it'd be nice if we could customize the look a little
+
+Comment:  It may be useful to rethink this a bit. For exampe, While LTER network office is in Alb. the LTER holdings probably constitute many, many  pin-pricks on a map like this.
+
+Example peer benchmark: ODG http://display.grid.iu.edu/ (b.t.w. this display is also a good case studiy w.r.t. to dashboard presentation planning)
+
+Desire  is to have one authoritative source for this geospatial kind of information.  How do we ensure that the data is updated, minimize effort to add/update MN info, etc.?  
+Dave: can add some custom fields to redmine tickets to indicate lat/long; important that we capture the information so that it is in one place, easily maintained, easy to generate map views, etc.
+Bruce: redmine is the closest thing we have to a master list (as a source)
+Amber: classification of status of MNs - operational, in process (programming/testing, etc.), potential MNs
+Bruce: will take a crack at defining the statuses more discretely
+Laura: should I go ahead and add nearly-there MNs to the Google map or hold off?
+Amber: can add, and we were looking at making this available on the MN part of the website, but it's related to the dashboard, and if the dashboard is coming soon it mightn't make sense to have the Google MN map out there for only a month...
+Bruce: where is best lat/long data for MNs
+Dave: in operations area of subversion
+ACTIONS:  Bruce will pull together lat/long data and Laura will update redmine, Bruce will then pull from redmine to generate MN "maps"
+          
+        4. Not-high profile issues
+     * MN Personas - where we are; how do we use them?
+       * we have 2 of 7 MN personas
+         * PPSR, govt repo, inst repo, discipline science repository, replication node, individual investigator, remote sensing (streaming data, etc.)
+       * Dave: there are several distinct types of MNs (types/quantity of data in particular); might be more valuable to ensure that high/intermediate level documentation is in good shape and then perhaps use these MN personas as examples within the documentation
+       * Have AmberO continue to work on MN personas and get them in as nice a state as possible
+
+     * Do we need to formalize the MN approval process?  See: https://repository.dataone.org/documents/Committees/MNcoord/MN_Approval_Procedure.docx
+       * Dave:  yes, we need a formalized process, list of steps so we don't miss anything
+       * Amber: we talked about having a workflow in the ticketing system (redmine)
+       * Laura: John had said that he thought Dave/Matt were working on something like this, and I was holding off until I checked with Dave
+       * Dave: yes, we've thought about that; with the checklist document (Matt's flowchart) we can develop milestones which would become subtasks in redmine
+       * Laura: this effort and the documentation effort go hand in hand
+        
+        5. Around the room
+       
+       Dave:  KU needs to finalize testing process, need some guidance, then test, then go live.  Continuing activity on Dryad; Chris thinks it's nearly resolved.  
+       Amber: nothing today
+       Bruce: nothing today; can use David Doyle (UTK MS student) to work with Rob on the documentation issues.
+       Laura: all of the items above :)
+

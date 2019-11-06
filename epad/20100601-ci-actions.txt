@@ -1,0 +1,19 @@
+= Collation of stories and tasks from the 20100525-27 meetings =
+
+Task: How is search syntax passed into REST interface (CN_query.serch)?
+
+Task: How are optional return fields specified in the CN_query.search response?
+
+Task  (Chad): agree on and implement authn & authz for short term deployment.  The issue is storing content in the CN metacat instance: metacat uses the logged in user as the owner of data but for CN services, Metacat should use a generic user and ignore ownership (all content manipulated by a "CN service user".  Simplest solution would be to simply define a user "cnservice" and store that in the deployment packaging configuration so that each CN creates the account on package installation.
+
+Task: (Giri) determine how we can take advantage of the science metadata that Mercury can return now to enable clients to specify what  fields they want to come back from the search and then return back that information in the search results. Use the SOLR introspection mechanisms - this can return a list of fields, the field types, the number of unique values in each field (not recommended for FP fields) and the unique values along with their counts. 
+
+Task:  (Roger) update Python MN to match current REST API interface.
+
+
+Story: The CN index update workflow. When new content (create, update, delete) is added to Metacat, the Mercury index needs to be updated.  Possible sources of "new content" include the CN_crud.create internal method (i.e. when harvesting content from MNs) and also from the metcat replication mechanism, which uses the Metacat CRUD operations.  CN_crud.create uses the Metcat CRUD operations also, so it seems appropriate that a hook at the Metacat CRUD operation level would provide the atomicity required.  Options for triggering include: a) writing to logs (potential risk = setting loglevel to 0, thus stopping any log writes) b) modifying metacat to send a JMS message. 
+
+Given that we have complete control over the CN deployment, setting loglevel=0 seems like a low risk, so the recommendation is to use the logger mechanism (little to no additional code required) and modify the log messages to indicate the (D1 identifier, sysmeta local ID, scimeta local ID).  This message would be simple for CN_crud.create - but replication in metacat does not distinguish between objects - so there is no way that such a message can be created.
+
+
+

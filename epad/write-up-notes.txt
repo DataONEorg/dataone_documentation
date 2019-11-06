@@ -1,0 +1,90 @@
+ Richard's Tasks for this Week:
+
+ * Finish the write up, or at least make it much stronger than it currently is. 
+   * Email the write up to David de Roure after going over the database with Karthik.
+ * Digest what each paper says, sort them into subfolders and tags
+   * Position ourselves in relation to other current works. 
+   * Write up notes for each relevant paper. 
+   * Differentiate methods papers from workflow papers.
+   * Look at  how Kepler is being used outside of myExperiment. 
+ * Do tier 2/3 workflows manually. Should take 5-10 minutes each. 
+   * Do 300+ (as much as possible) Taverna ones. Time yourself. 
+ * Research the differences between T1  and T2.
+   * Implications for complexity?
+ * Make slides for Berlin; email them out by Thursday.
+
+Questions:
+
+ * Everyone: 
+   * Get subfolders on the new version of Mendeley
+   * Diachronic study on new  workflows - is this possible?
+ * Karthik:
+   * Whatever happened to  that conference in Tennessee? Eden? Nimbus?
+   * How is the Methods in Ecology and Evolution paper  is going.
+   * What can we wring out of Sparql? When can we meet?
+ * Bill, what happened to SciencePipes?
+ * Bertram: 
+   * What about Galaxy?  Did they ever get back to us?
+   * How much time do you have, what do you want to read? Shall I presort the papers for you/us?
+
+Write up sections to be done:
+http://dl.dropbox.com/u/4245277/Understanding%20Workflows.docx
+
+- methods, teir 1/2/3, selection  processes...
+- Organise in terms of 2,3 tiers of  information 
+      1: high level - author,  when,  how many, nodes, workflow links, goal
+        2: of  nodes, \% of data  aquisition, \% of data sources, type of nodes,  models?
+           3: metadata sufficiency
+ *     How are we going to visualise this? 
+
+Notes, Hypotheses and Questions: 
+
+What gap are we filling? Some open questions about this: 
+ * Scaling > scaling ones are asumed to be more popular (Pegasus, cagrid)
+ * automation > automating ones are more downloaded
+ * provenance > More downloaded, more cited.
+ * Visualisations > easier to follow (How does one test this?)
+ * reproducible > Are myExperiment workflows cited more? Is myExperiment?
+ * (Null hypotheis, tiers)
+ * What users use these? Are they mostly project devs? What works?
+ * Are we dependant only on downloads?
+ * What about closed systems? Science Pipes? How are these different
+ * Applications > Is this important? What field it is in?
+ * Template > Or do they constantly reinvent the wheel? What about one offs?
+ * Are they stand alone? Or are they only plumbing, not the whole system?
+ * Less inpout over time > doesmore complexity lend itself ot more complexity in the input?
+ * What are the weak points > reusint? Training? 
+ * Example ones - are these copied? Are templates carried thorugh culturally?
+ * Sharing issues: what about privacy concerns? IRBs?
+ * What's out there? is myExperiment a good enough show of the state of the art? Or are people using shell scripts and the r scripts? What does these suggest?
+ * What about non-published work?
+ * What's with subsetting, translation, transformation?
+ * Does the information flowing through the workflow change anything? The input versus the output? Are any of these able to be linked easily? 
+ * Live constant visualisation should be more common as time goes on.
+ * Human interactive components should be becoming more common. At the same time, workflows should be more able to have detached execution. 
+ * Embedded workflows should be more common. 
+ * Different workflow systems should be converging over time, both in possible stages, in application, and in natural language descriptions. 
+ * More applications should be considered over time. cf. http://pegasus.isi.edu/applications.php
+ * There should be more results over time - not just in data, but in purposes. 
+ * Linear workflows should become less linear over time. 
+ * Information retrieval should become less common. 
+ * Workflows should in general be used by bioinformatics. 
+ * Downloads will be dependant on the amount of natural language descriptions. 
+ * There will be a proliferation of shims.
+ * Most workflows will use the same repositories. 
+ * Most workflows integrate similar QA/QC steps.
+ * Workflows will have a disparity in their use on public repositories and their function in the literature. 
+ * Workflows will decay with time. 
+ * Knowledge discovery worfklows will become more common with proliferation of databases. 
+ * Composite actors (which collapse details into abstract components) should proliferate.
+ * More workflows will have smart reruns. 
+ * More workflows will have smart semantic links. 
+ * The content should, over time, more predictably alter the nature and course, shape, and tempo of the work flow. 
+ * Workflows should become reduced in their components - hwat used to be one workflow should become one segment. 
+ * Workflows will be more cited in publications.
+ * Workflow visualisations will become more (less?) popular in the literature. 
+ * Parallel execution should become more common. 
+ * Non annotation-based approaches should become more common. 
+ * The type of workflow and application will influence the data provenance. 
+   * "Workflow provenance refers to the record of the history  of the derivation of some dataset in a scientific workflow. The amount  of information recorded for workflow provenance varies, depending on  application needs. For example, workflow provenance of a scientific  result may include details about the type and model of external devices  used, as well as the versions of softwares used for deriving the result." 
+

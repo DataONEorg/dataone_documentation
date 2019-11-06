@@ -1,0 +1,361 @@
+
+This document contains the full text of the published data stories. Suggested discussion questions are embedded in these texts (in bold italic format). Please edit/add/move/etc. questions. The story texts themselves have already been approved in their current form by the story contributors, so changes to these are not easy to make.
+
+In addition to editing the questions, please make suggestions for which lessons to pair them with and where in each lesson to embed story-related slides.
+ 
+STORY 1: Metadata? I thought you were in charge of that.
+Gail reviewing this one...
+To accompany lesson: 7 - Metadata
+Where to embed in lesson? (e.g., beginning, after slide X, end): End/after lesson
+(lynda) Actually, I agree with Gail, at the end. Want me to nix the following?
+After Slide 35: Project Management via Metadata
+   * while it would be a bit unbalanced (there are 2 other similar units, e,g, data management & data discovery) it pairs very well with the Project management content and, as the last of the 3 components, would allow the instructor/students to build upon and compile information learned in the earlier components
+ 
+QUESTION: Imagine that you are collaborating with several researchers at other institutions to collect as many existing data sets as possible related to biodiversity in freshwater lakes. Your plan is to analyze these data sets together to uncover and explore global patterns in lake biodiversity. This project, involving multiple collaborators and a large number of data sets, will require some planning for data management. What are the key data related challenges you would expect to encounter?
+ 
+QUESTION: Please describe your plan to avoid or overcome these challenges.
+I'm not sure you really want to ask story-users to consider ALL aspects of data mgmt? That might be too broad and even stall some people. If you take this out, this kind of makes the set of questions mid-way unnecessary, but end questions could be separated and beefed up instead. Will try to make some suggestions.
+ 
+Ecologists, as a group, seek out adventure, natural wonder, and, let’s face it, sometimes hardship. Rather than being deterred by remote locations and inhospitable environments, they are inspired. Speak to an ecologist, and you’re likely to find out very quickly about the particular location in which they conduct their research and hear amazing stories about the difficulties they endure to collect their data.
+
+A relatively more rare breed of ecologist chooses [I would say "chooses sometimes to forego"- there has been too much vitriole lately about data synthesizers as parasites who live off other people's field work - obnoxious but would like to avoid] (at least sometimes) to forego the adventure, wonder, and frustration of collecting field data for an entirely different (and likely less obvious) set of challenges and exhilarating successes; these brave and adventurous ecologists choose to work with data that have already been collected by other researchers. Members of a research team studying climate change effects on the lakes of the world are great examples of this type of intrepid ecologist.
+
+Buoyed with optimism and excitement about what they would find when analyzing data from lakes all over the world, the researchers set out to collect as many lake data sets as they could. Because they already knew about some of the challenges involved in working with existing data, they made a plan for how to organize and manage all of the data they were collecting. Each member of the team was in charge of contacting a few other researchers who might have data that could be used for the project. When researchers offered to share their data and a new data set was received, the team used a dedicated DropboxTM folder to share and archive the data.
+
+The project was shaping up quite nicely, with a good number of data sets collected and ready for analysis. They scheduled to give a conference presentation on the project, excited to have the chance to talk about the work with their colleagues, and, as is common, also relying on the conference deadline to motivate them to move forward with the analysis. It was during the last-minute preparation for the conference that the first twinges of anxiety began to surface. The team member who was performing the analyses began to notice that many of the data sets were missing metadata.  Metadata, or ‘data about data’, include information about how, by whom, and for what purposes the data were created and to what exactly the data values refer. Without such metadata, it is impossible to understand exactly how a data set can be used. For the analysis of the lake data sets, the researchers needed information about exactly where the lakes are located (e.g., longitude and latitude), and the depth and surface area of each lake from which data were collected.
+
+QUESTION: When describing your plans for managing data for this project, did you include provisions for dealing with metadata?
+ 
+QUESTION: If not, why do you think you overlooked this aspect of data management? this seems a bit leading... who would say "no"?
+ 
+QUESTION: Now that the importance of metadata has been brought to your attention, please describe how you would manage it for this project. 
+Again... this assumes they didn't think it was important before.
+ 
+As anxiety about the missing metadata began to transform to panic under the weight of the presentation deadline, the ecologist contacted his collaborators and requested that they help out with some emergency ‘googling’ to see how much of the metadata they could find online. They were able to compile enough metadata to successfully go through with the presentation, but unfortunately some of the lake data had to be left out of the analysis because they were unable to find all of the information they needed. Although the presentation went well, the team was secretly a little disappointed that they hadn’t been able to include all of the data they had collected. When they returned from the conference, the set to work to contact the data contributors to request the missing metadata so that all of the available data could be included in future analyses.
+
+How did the research team get into this situation? They had been proactive about setting up a procedure and platform for collecting, sharing, and managing the data for the study. How did the absence of crucial metadata slip past them? What could they have done to avoid this oversight?
+
+It turns out that no one on the project had specifically been assigned to manage the project metadata, and everyone assumed that someone else was doing it. Even though there was an agreed-upon data sharing platform and delegation of responsibility for collection of different data sets, planning for metadata collection and organization was overlooked.
+
+One way to avoid this situation would have been to designate a specific team member who would manage the project metadata. Not only would this have ensured that someone would be worrying about the metadata earlier in the data collection process, it would have likely meant that original requests for data would have included requests for relevant metadata.
+
+And what of the intrepid research team? The researchers are still in the process of trying to contact some of the data contributors to complete the metadata for a few remaining lakes.  While confident that they will eventually be able to recover the missing metadata for all of the data sets they had previously collected, backtracking to do metadata collection has slowed progress on the project. Overlooking metadata collection at the time of data collection has had tangible consequences beyond the scramble in the lead-up to the conference presentation. The extra time spent re-contacting data contributors has delayed analysis and preparation of a manuscript by at least a month.
+
+Although needing to go back to recover missing metadata has made the data collection phase of this project more time-consuming than it would have been had data and metadata been requested at the same time, the experience has helped the team learn to anticipate the need for planning metadata management for their next projects. Many first-time field researchers assume that they’ll remember things about their data a lot later, so they won’t organize and keep track of their data in a way that allows them to look back later and know exactly what everything means. In the case of these researchers, the miscalculation was not related to thinking that their memories are stronger than they really are; rather, they neglected to anticipate the types of metadata they would need and make explicit plans for how they would collect and manage these metadata. Intrepid and adventurous they are, but backtracking to collect metadata is an activity they plan to avoid in the future. They have learned a lot about what it means to think ahead when it comes to planning for metadata. Now on to the next data re-use adventure!
+
+QUESTIONS: 
+Briefly describe a data set that you have collected or worked with. How might the data set be reused by others?
+
+Which metadata related to that data would be required to use it effectively in a project of this type? 
+
+Please describe how you currently record and manage this metadata. 
+
+How might you change your data management practices to better create and keep track of this metadata? Are you able to integrate metadata creation into the data development/management process by mapping specific elements to specific stages, e.g. collection, conversion, analysis, outputs, etc. and distributing the effort?
+ 
+
+STORY 2: File Organization System, Meet Collaborator’s File Organization System
+
+
+Gail looking at this one...
+
+To accompany lesson: 3 - Data Management Planning [Lesson 10: Workflows]
+Where to embed in lesson? (e.g., beginning, after slide X, end): this isn't an easy fit, but since I don't see another module that matches better, I have to say "end."
+
+One challenge with tying this story to lesson 3 is that the story is focused primarily on how to make collaboration work smoothly, and not necessarily the entire life cycle. This might suggest an additional question about whether the plan story users would need additional work to address the full life cycle.
+
+A freshwater ecologist who studies natural phytoplankton communities had been working on a project for several years when unforeseen trouble cropped up and the still-incomplete project came to a standstill. Following days and weeks of pondering what to do about the obstacles that were hampering progress, she decided to put the project on hold for a while. Still experiencing the mix of relief and frustration that came with that decision, she focused her attention on another project that involved investigating changes over time in lake temperatures and in the depths at which different types of lake phytoplankton are found. After some time, however, that project also ran into difficulties. Prolonged agonizing over these setbacks (and worrying over all of the time invested without any manuscripts to show for it) was wearing her down when suddenly a moment of clarity revealed an idea that was surely pure genius – the problem with these projects is that they were not big enough!
+
+You may now be questioning the distressed ecologist’s sanity, but her moment of insight actually turned out to be a valuable one. Many of the problems that had crept up in her two studies could actually be resolved if she expanded the study to involve more data and more organisms. Fortunately, she also knew another freshwater ecologist who was investigating yet another species of phytoplankton and he, too, had not yet published his work. She discussed with him her dilemma and her brilliant idea and he was completely on board, especially considering he had been having similar difficulties. They were consumed with optimism and were eager to embark on this new journey. However, after contemplating the next action, they realized they were in for a few storms before they could hit smooth sailing.
+
+QUESTION: What are the most important data management and sharing challenges you expect these two researchers to encounter as they begin to share the data and completed analyses from the projects they had been working on independently?
+ 
+QUESTION: How would you plan the collaborative project in order to avoid or overcome these challenges?
+
+Between the two ecologists they had three separate projects, each having separate folders with multiple files and multiple versions of data and information. They also compared analyses for all of the projects, and came to the unfavorable realization that some of the analyses were in different formats. Two different programs with different formats were used – an open-source statistical and graphics scripting program called R and a commercial point and click program called JMP. They were overwhelmed to say the least! This is where the real trouble began. One of the researchers already had her data and documentation on a collaborative project management server, but this system was no longer supported at her institution, meaning that files needed to be transferred somewhere else. Although her data were on a collaborative site, she wasn’t sure whether or not the files there were up-to-date because she had another collaborator who had been working on the files and might not have added the most recent versions. The other collaborator had his data and documentation on his personal computer, but the file system and file-naming conventions were not very systematic, which meant he would need to go through a lot of the files to refresh his memory about what they each contained. How were they going to merge everything from their separate projects into one clear, organized workflow and file system for both of them to use at the same time, and how were they going to continue adding data and information to eventually successfully complete the collaborative manuscript?
+
+Both of them spent an entire week organizing their data into the new project folder and establishing the most updated results of their combined projects. They began by setting up a shared Dropbox folder, which allowed them to upload and share their data files, code associated with their individual analyses, and other project documentation. To make navigating the files easier, they agreed to always label each file they saved with the date before the file name so they could quickly see what the most updated version of a file was. However, because they were constantly making changes, things very quickly became confusing and it was nearly impossible to keep track of exactly what had been changed and when. Even though they had invested so much time in setting up a file organization system that they both understood, things were getting out of control! As the number and complexity of files grew, finding the most recent version of a file and understanding exactly how it was different from other versions became a frustrating experience.
+
+Despite their best efforts to keep things organized, their system wasn’t working. Frustration began to overtake their initial excitement about the possibilities the collaborative project offered. What to do, what to do?
+
+QUESTION: Was your plan for managing the project similar to the one these collaborators used?
+ 
+QUESTION: If not, how was it different? Do you think the collaborators would have become overwhelmed as the number of files grew if they had been using your plan? Why or why not?
+ 
+QUESTION: Imagine that you are one of the collaborators – how would you redesign your data management system to overcome these difficulties?
+ 
+To collaborate effectively, everything needed to be organized, and changes each collaborator made needed to be easy to identify and understand. During a meeting they organized to brainstorm a solution, one of the collaborators suggested a project management system she had used before – a web application called Redmine. Using specialized tools available for the Redmine environment, they would be able to post updated data files, results, and analyses, and the system would prompt them to create or update metadata (including information about changes that were made) for all of the files. The Redmine system also helps streamline communication between collaborators. If, for example, one researcher uploads files related to an analysis he is working on, he can use the issue-tracking functionality to enter information about how long he spent working on the analysis, the point at which he stopped, things he would like his collaborator to review or add, etc. The issue-tracking system then sends the collaborator an email notifying her that an issue has been posted for her to review. When she is done, she can use the same strategy to assign review or additional analyses to the other collaborator.
+
+Switching to this project management system was a turning point for the project. As the confusion about what the files contained and who was working on what was cleared up, the enthusiasm for the expected outcomes of the analysis came flowing back. They were relieved to find how easy this program made it to collaborate and see the entire work flow of the project.
+
+Although initially the two ecologists had some obstacles to overcome, their efficient communication, effective planning, and consistent adherence to their organization system set them on the right path to continue their project smoothly and efficiently. After another year, they were ready to publish their results and archive their data in a repository! They were so proud of the work they had produced and were so satisfied that they were able to successfully combine their data and keep it organized. When starting new projects, these ecologists now anticipate the types of data management problems they will encounter without a good data management system, and they proactively utilize the tools and practices that help to avoid such problems. No more weeks wasted on reorganizing poorly-organized files!
+
+QUESTION: How did your ideas for data management redesign compare with the project management system used by the collaborators?
+ 
+QUESTION: Do you think that adoption of such a system would offer advantages for any of the projects you are currently working on? What kinds of advantages?
+ 
+QUESTION: What are the most important challenges you would expect to encounter while implementing a project management system such as Redmine for your own projects?
+ 
+
+STORY 3: The Case of the Missing Research Protocol
+Heather working on this one and Steph W
+To accompany lesson: 8 - How to Write Quality Metadata  (Heather:)  It seems we have several for the metadata lecture, and I'm wondering if there's another place for this story.  Maybe data sharing?  I think this would fit there quite well.   I was also wondering about Data Management Planning -- would need to add ?'s about what the original data collectors could have done.   That would be another option - perhaps we could save the assignment of this to a specific PPT until the end and then see which one of the PPTs don't have a story?And now that I've typed that, not sure I think DMP is the right one.  I guess it would fit better under Data Sharing, though that one has several stories, too.  I'm wondering if this story would lend itself to being told in two sections - perhaps the first section is told, and then part of the lecture, and then the rest of the story is told. 
+Where to embed in lesson? (e.g., beginning, after slide X, end):
+End
+
+At first it seemed impossible, too amazing to be true, and she assumed she’d misunderstood. With the help of a translator, she was teaching a field course for students in a country whose native language she could not speak. Surely either she or the translator had heard incorrectly. But when two years later, while teaching the same course, she heard mention of the same dataset – a set of measurements taken in a remote and pristine lake over a 60-year time span, she knew she had to learn more. She was a freshwater ecologist studying lake ecosystems, and recognized immediately the rarity and potential value of a data set spanning such a long time span. She contemplated the possibilities and decided to get in touch with another researcher she knew had done an innovative time-series analysis with data from another lake. Together, they came up with the idea to initiate a collaborative project involving researchers from both countries to examine how the lake had changed over the 60-year time span.
+
+Things went very well for the collaborative research team. A member of the core data collection team (and the granddaughter of the scientist who first began collecting the data 60 years earlier!) joined the research effort and was happy to share the data she and her family had been collecting for so long. She showed up for the first face-to-face research meeting with a shiny, new CD containing – THE DATA! The team eagerly set to work, and their enthusiasm and diligence paid off. Over the next couple of years, they published several high-profile research papers reporting their analyses of how things had changed over time in the lake ecosystem. A small clue about the existence of an amazing data set, together with the instinct to collaborate, the ingenuity required to pull a collaborative team together, and the willingness to share a valuable data set made some amazing discoveries possible!
+
+Other researchers were paying attention to the research being done by the group.  One ecologist who was eager to get involved contacted the team about possible future collaboration.  It was at this point that the idea for a larger project began to take shape. After some initial disappointment with grant proposals, the NSF finally got excited about their research ideas, too, and the project was launched! With this new source of funds, they were able to hire some junior researchers to work on the project and to plan a field season trip to the lake itself.
+
+The field season was WONDERFUL – a chance for the collaborators to experience the natural beauty of the lake, to meet the team that continues to collect the data, and to collect some additional data that they could use to complement the data already being collected by the on-site research group. The team returned home at the end of the season reinvigorated and with fresh enthusiasm to start the analyses they had planned.
+
+QUESTION: When working with data collected by other researchers, what kinds of information (in addition to the data themselves) are you likely to need to help you understand and work with the data? Where will you expect to find this information? What steps might you need to take to acquire these types of information if they are not already included with the data?
+ 
+It was at this point that one of the junior researchers noticed that there was something missing. As he started working with the data, he realized that he didn’t know how to interpret some of the data values. He was interested in how species diversity in the lake had changed over time, and he needed to know the total number of individuals that had been counted for each sample so that he could control for the fact that when more individuals are counted, more species are likely to be identified. He came to the realization that he would be unable to do the analyses he had planned without having more detailed information about exactly how the measurements were taken and recorded. Fortunately, the collaboration team had a working meeting scheduled, so he prepared a set of questions to ask of the collaborator whose family had been collecting the data for so many years. Satisfied that his questions would soon be answered and that he would be able to get started on the analyses he had planned, he turned his mind to other projects until the week of the meeting.
+
+When the meeting began, he was prepared to get the information that would allow him to proceed with his analysis. He scheduled some time to meet with the collaborator, and he began to ask his questions. When the collaborator began to understand more about the kind of information he was looking for, she happily informed him that the data collection team had a research protocol that contained the information he would need for his analysis. She promised to send him a copy when she returned home from the meeting. This was great news – he would soon have the formal documentation of the research protocol!
+
+Two months after the collaboration team meeting (and after dealing with some problems with internet connectivity and missed connections while researchers were on vacation), the researchers received a copy of the protocol that had been scanned from hardcopy. After so much anticipation, the protocol had arrived! Only one little problem – it was a 50-page document, and it was not written in English.
+
+Translating the document took some time – two more months, in fact. Because the document had been scanned from hard copy, it wasn’t perfectly legible. The language was technical and sometimes difficult to translate. But the team member doing the translation (the data manager for the project) was excited to help uncover the missing information and willing to put up with the hard work required to find it. This blend of curiosity and determination (and, of course, a good command of the foreign language), helped the research team sort out the information needed to get the project back on track.
+
+After dedicating considerable time and effort to retrieve and translate the data collection protocol, the team produced two electronic copies – one foreign-language version, the other English – so that all the researchers working with the data now and in the future would have access to using and sharing this important metadata. Now in digital format, the data collection protocol was linked to the 60-year dataset – never to be parted again.
+
+When a project fails to go exactly as planned, it’s tempting to look at those pitfalls along the way and imagine how they could have been avoided. Here, the team might have dodged some of the confusion if they had known about the protocol’s existence from the beginning. But in a collaborative project of this size, stretched across two continents and with an added language barrier, unexpected challenges can float to the surface without warning and put all research plans on hold. In these instances, a little patience, determination, and creative problem solving can be all it takes to find a solution. In the case of the missing research protocol, a healthy helping of each shaped a 60-year legacy of data collection into an accessible dataset of ecological significance.
+
+QUESTION: The researchers in this story had to invest a lot of time and energy to obtain the metadata critical to their analysis. Do you think there is a more efficient way to communicate these kinds of information when data are being shared? Please describe your ideas about what researchers who are collecting data should be doing to ensure that this type of information is more readily available.
+ 
+QUESTION: Do you follow the ideas you just described when collecting your own data? If not, why not? What do you think needs to be done to make it easier for researchers to adopt better practices for metadata creation?
+ 
+
+STORY 4: Don’t Touch That – It’s Under Revision!
+To accompany lesson: 2 - Data Sharing [possible to link this to versioning? DMP? or Analysis and Workflows?]
+Where to embed in lesson? (e.g., beginning, after slide X, end): end
+This is another one where the fit between story and module is loose. Maybe another module (phase 2?) that addresses data management and sharing strategies especially for the collaboration phase, as these can be different from sharing in the sense of "data publication." There are issues such as those raised in story 2 (file org and mgmt) as well as issues of trust and conditions for use. Not all that helpful, I know!
+Steph W reviewing
+Gail too
+ 
+QUESTION: In the abstract, many benefits of open data sharing seem obvious – for example, more rapid advancement of scientific understanding, avoidance of duplication of effort, and accrual of additional value when existing data are applied to answer questions other than those they were intended to answer. Despite these apparent benefits, many researchers have been hesitant to share their data, and even flatly refuse when asked to share. What are some reasons that researchers are concerned about sharing their data?
+ 
+QUESTION: Which of these concerns do you think are justified? Which are not? Please describe the reasoning behind your position.
+ 
+Every good researcher knows what a vital role data sharing plays in the data life cycle. So in a perfect world, the decision to share data would be an easy one to make. By effortlessly passing data on to someone else, you would receive all the spectacular rewards data sharing has to offer – a reputation boost for yourself and a colleague, the satisfaction of fueling new projects and discoveries, and enough leisure time left over to start a new book or take up bird watching. What more could a researcher ask for?
+
+Not surprisingly, however, researchers often find themselves at the mercy of the same mess of hierarchies, rules, and complications that plague the rest of the professional world. In this data story, a novice researcher finds herself in the murkier depths of data sharing where the boundaries of academic territory can seem hazy.
+
+Danielle had just started out in ecological research, but already found herself invited to participate in a working group on species interactions. The group was made up of many experienced scientists in the midst of their careers… and Danielle. But what Danielle lacked in experience, she made up for in connections. The working group was very interested in a dataset Danielle had been working on for several years and had hopeful plans of incorporating it into a model they were developing. The problem? While Danielle held a copy of the dataset, she did not actually own it. In her work with faculty mentor Dr. Stevenson, Danielle had enjoyed liberal access to the PI’s impressive dataset. With a few years of collaborative work behind them, mentor and mentee had developed a trusting relationship where Danielle received an uncommon level of data access.
+
+As someone already involved with the dataset, Danielle was in an ideal position to act as information broker between the enthusiastic working group and her mentor. With these connections, Danielle expected the data sharing process to be a smooth one. However, uneager to upset Stevenson or jeopardize their work relationship, Danielle knew she would first need to gain permission to share the data.
+
+But when Danielle approached Stevenson with the request, she discovered the situation was more complicated than she had anticipated. Dr. Stevenson wanted to help Danielle and give her the information her working group needed, but his data was undergoing revisions. Advances in species identification with DNA barcoding had made it possible to more accurately distinguish one species from another. But with the shift away from morphological characteristics identification, the species in Stevenson’s dataset were suddenly thrown into question. After years of meticulously collecting and maintaining the  data, the last thing Stevenson wanted was for it to become obsolescent. Determined to present a perfectly accurate dataset that would maintain relevance in a changing world, he embraced the new technology and began applying it to his existing samples. Revising the large body of data was possible, but it would take time. Meanwhile, Stevenson was hesitant to share the taxonomic databases while they underwent revisions, lest they later be found inaccurate. When those revisions would be completed was anyone’s guess.
+
+Caught between her allegiance to the working group and her respect for Stevenson, Danielle found herself in the unenviable role of middle man. Emails zinged back and forth: polite pleas from the working group, and apologetically resolute responses from Stevenson. After months of correspondence and bouncing between working group and mentor, Danielle’s efforts have yet to pay off. The dataset remains in the senior PI’s hands (in, Danielle hopes, a final draft version!).
+
+While the uncertain outcome may remain a hurdle for the working group, Danielle feels assured she has made the right decision in waiting for Stevenson’s revised dataset. She has done what she can to push the project along without overstepping boundaries or straining her relationship with her mentor. The wait may be a temporary setback, but Danielle and the working group can rest easy knowing that when the dataset is finally delivered, its improved precision will make it all the more valuable.
+
+QUESTION: Was Stevenson’s concern about sharing data one of those you identified before reading the story? Do you think his decision not to share data in this situation was justified? Why or why not?
+ 
+QUESTION: Do you think that Danielle’s career will be impacted by her lack of control over the data she has based much of her work on? If so, in what way?
+ 
+QUESTION: What, if anything, do you think can be done to make data sharing possible in situations such as this one?
+ 
+
+STORY 5: The Hard Truth about Hardware Failure
+JP will look at this one.....
+To accompany lesson: 6 - Data Protection and Backups
+Where to embed in lesson? (e.g., beginning, after slide X, end): After slide 17 (but that is right after ANOTHER example) or after slide 3 - to stimulate thinking about the solutions to be presented.....
+
+An other thought is that the lesson is largely devoid of malicious behavior. Hacked computers, especially "hostageware" that encrypts both main drives and any connnected backups, pose problems that aren't addressed. To address those you need to make sure that you have older as well as more recent backups.......
+
+Lee was an environmental chemist at a prestigious university. For the past few years, he and his department had been developing green technology to help eliminate environmental pollutants. By collaborating with several of the leading researchers in the field, he hoped to develop innovative techniques for speedily degrading a range of harmful and persistent environmental pollutants. Lee, a careful and thorough researcher, took great pride in his role in the project. Over the years, he had spent many long nights at the lab studying pharmaceuticals and their breakdown in the environment. The advanced instrumentation and analytical tools used in his lab generated an impressive amount of data, and analyzing and maintaining these data and instruments was central to achieving the group’s research goals.
+
+While he was working in the lab one day, Lee noticed that the chromatography instrument was not functioning properly. He suspected hardware issues were to blame since the machine had not been updated for some time, but he could not be sure. When the computer refused to restart the next week, he promptly called the manufacturer for help with figuring out the problem. The representative he spoke with helpfully suggested that the problem was likely due to failed hardware. He then followed up with a reminder that Lee no longer had a service agreement with the company, and would have to deal with the hardware failure on his own. In spite of the mostly unhelpful response from the company representative, Lee was not worried. After all, he had spent much of his adult life as the go-to guy for computer maintenance, and he was pretty sure he could at least recover the data and possibly even fix the hardware problem on his own.
+
+Question: What should Lee have done to prepare for the inevitable problems that computational equipment can encounter? 
+
+Lee decided to focus first on recovering and securing the existing data, so he plugged the hard drive from the compromised machine into another computer. Unfortunately, the new computer was unable to read the hard drive from the old machine. Stumped, he called his friend Brandon in Information Technology and asked what he thought the problem might be.
+
+When Brandon looked over the computer and the instrument, he located the suspected issue. As far as he could tell, the hardware had been engineered so that it could only communicate with computers from the same manufacturer. Furthermore, the data were saved in a proprietary format that was readable only when using the manufacturer’s software. This presented a problem: data collected by graduate students and other researchers over the years was locked in the hard drive of the compromised computer, and Lee had no way to safely extract it and transfer it to another computer.
+
+QUESTION: If you were Lee, what steps would you take to address this problem? (moved from above) 
+
+For the first time since he had begun diagnosing the issue, Lee began to fear there was no clear solution. Even worse, he realized the data stored by so many researchers over the years was in jeopardy. Lee resolved to call the company that had produced the technology and demand answers. Once he connected with a representative who understood the issue, Lee finally received an explanation that could help him to get the instrument up and running again. According to the company, updating the instrument software to the latest version could reestablish communication between the computer and the instrument – but the data on the computer hard drive would no longer be recoverable.
+
+NOTE: I am confused. Paragraph 2 indicates that the computer had failed with a hardware problem and that the company refused to help. However, here the connection problem is being fixed by software and the company is a partner in the solution. 
+
+QUESTION: Imagine that you are facing a similar situation with an instrument you use, or with your own computer. Would you or someone you work with be facing data loss at this point? If not, how have you set up your system to prevent data loss in such situations?
+ 
+Defeated in his attempt to secure the existing data, Lee realized that a software update was the only way to get the instrument functioning again. He prepared to break the news to his lab group, expecting frustration, anger, and possibly tears. But when he made his announcement, Lee was pleasantly surprised by their reactions. Although many of the researchers had housed their data on the faulty computer, almost all of it was backed up in some other location. Many of the researchers had taken precautions in the early stages of their work and stored backup copies in a format that could be read and analyzed without needing the original copy or proprietary software. At long last, some good news! While the data from the old drive was indeed inaccessible following the software update, the potentially major complication of data loss was reduced to a minor hiccup.
+
+
+The question I added earlier is somewhat redundant with this one.  So I'd suggest the alternative:
+QUESTION: To what degree was Lee lucky that all his colleagues data wasn't lost?  What changes need to be made so that luck will no longer be a factor?
+QUESTION: Although many of the researchers in Lee’s lab were already taking steps to protect their data, those that weren’t suffered data loss. What changes could Lee’s lab make to ensure that no one loses data when similar situations arise in the future?
+ 
+
+STORY 6: Inventory Overload
+To accompany lesson: 3 - Data Management Planning
+Where to embed in lesson? (e.g., beginning, after slide X, end):
+ 
+QUESTION: Who generally takes responsibility for data management in your lab or research group? Is this task formally assigned to that person(s)? Are data management/metadata tasks/roles assigned to data contributors?
+
+
+Question: What happens to the data when a lab member or project collaborator leaves? Is there a procedure for continued management or stewardship of the data they have collected or analyzed? If so, please describe.
+ 
+QUESTION: Have you encountered any trouble locating or understanding data left by your predecessor(s)? If so, were you ultimately able to find and use the data?
+ 
+Bev was fed up. She was in the middle of working on her PhD thesis which relied on data from a large and ongoing animal study. When she went to the storage freezer to retrieve some samples for her analyses, she found nothing. Or rather, she found boxes upon boxes of samples… but not the ones she had been looking for.
+
+The study, which was undertaken by a major university, had been going on for several years. The project and data managers had perfectly orchestrated the structure of the study, and things had been going well. They had a solid and time-tested plan for recruiting subjects. They networked between the project’s three sites and did everything necessary to keep the study productive and on track. They even organized the database into an incredibly efficient library system for processing data requests and loaning out data subsets. But even with all those careful strategies in place, there was one area which had become woefully neglected: the physical samples.
+
+At one time, the storage freezers had been meticulously lined with many types of samples collected from the research participants – blood, plasma, and other biological specimens. Once collected, they were labeled, preserved, sorted by type, and placed into storage. In the early days, when samples were fewer and space plenty, it was easy to maintain order with a little planning and diligence. But over the years, as more participants were added to the study, the number of samples continued to grow – making available freezer space a more and more precious resource.
+
+With a little restructuring of the inventory and some long term planning for the bio repository, this would not have been a major issue. However, the job of inventory management typically fell on the shoulders of younger, less-experienced researchers. Well-meaning and always eager to contribute, these organizers would come onto the project ready to care for the samples and ensure they found their proper places. The only problem was that these managers eventually did what they had come to the university to do: complete their work, graduate, and move on to studies and careers of their own.
+
+As students came and went, so too did several styles of inventory organization. With a new student manager came a new method for organizing and storing samples. Boxes got shuffled from freezer to freezer, from shelf to shelf, and still the inventory grew.  By the time Bev arrived on the scene, the study had amassed over 30,000 biological samples in over 1,000 freezer units across 3 different storage sites. The pieces were all there, but it was very difficult to visualize the complete puzzle. When the samples Bev had been looking for turned out to be exhausted and unrecoverable, she knew something had to be done.
+
+After joining the inventory team, she began an assessment of the storage facilities. She convinced the project managers to hire a couple of assistants, and together they navigated the labyrinth of storage, shuffling through boxes and making notes of what samples had ended up where. At the end of a two month period, they had established a map of the freezers showing the location of various sample types.
+
+Still Bev longed for a more efficient organization system – one that didn’t allow for surprises like misplaced samples and messy storage shelves. Then, a new idea occurred to her. What if the physical samples were stored in a kind of library system, like the digital data? In this hypothetical system, researchers could pass the samples on to a data manager, who would then upload descriptions to a central database. Other researchers would request certain samples by submitting a digital form detailing which samples they need, what questions they would attempt to answer, and what data analyses they plan to do. Finally, the data manager would process the request and transfer the samples to the appropriate researcher. After they served their purpose, the samples would be re-shelved under that same system. A place for every sample, and every sample in its place!
+
+Question:  do you anticipate that other researchers in the project would have concerns about this idea? If so, how might Bev respond?
+
+As it turned out, Bev’s idea was not at all crazy, and it did work. She presented it to the directors, and they set aside funds to begin an inventory makeover. Today, they are working towards reinstating order with Bev’s developing library system and her organizational know-how.
+
+The process has been long and slow, but those involved in carrying out the study recognize the complexity of the job at hand. Bev and her assistants are moving towards a better organization system, one box at a time.
+
+Question: are there protocols in place to manage physical samples or data for your lab group? If yes, does everyone know about these protocols? Do they use them?
+
+QUESTION: Are there any elements of Bev’s strategy for managing the physical samples that could be applied to improve how your lab or project manages data or samples? If so, which ones? What effects to you think these changes would have on how easy it is to deal with staff or researcher transitions? not a great question. basically the answer is "easier"
+ 
+
+STORY 7: If Trees Could Talk
+To accompany lesson: 5 - Data Quality Control and Assurance [I think this could go at the beginning, before training module]
+Where to embed in lesson? (e.g., beginning, after slide X, end):
+Steph H: I like the placement of the questions and the questions - compelling story
+[is there a trend here where student is female and mentor is male? worth changing in one of the stories that has some fictional aspects already?]
+In the United States, the 1930s was far from a time of plenty. Through the Great Depression, Americans witnessed a razing of the financial system that, on the heels of the prosperous 1920s, seemed nearly incomprehensible. A time of hunger, homelessness, and desperation, the Great Depression sticks in our national consciousness as a reminder of just how difficult and dark life can become after an unexpected hardship. The triumphs of the decade (though admittedly few) are left obscured by the misfortune of millions. And yet, this solemn era did produce some scientific legacies worth remembering…
+
+It was in graduate school that Marianne first became interested in climate change. When she went to her advisor, Dr. Reynolds, to discuss thesis topics, he told her about a very old dataset on forest composition maintained by a colleague at another university. Though the data collection began during the Great Depression, it was still ongoing over 80 years later. Dr. Reynolds mentioned the dataset included valuable information on tree size measurements. When Marianne realized this could prove useful in a project on carbon storage, she was hooked. Her advisor emailed his contact at the other university, who was happy to share the dataset with someone who would put it to good use.
+
+Marianne’s interest was really piqued when she began going through the data and learning about the study’s history and purpose, both of which proved even richer than she had anticipated. The data was officially collected to document tree growth as a guide for timber harvesting in the area. But the forests surveyed were located on steep and rocky ground – certainly not ideal for logging. The Civilian Conservation Corps, which had organized the project, had a motive more pressing than impractical logging prospects: increasing national employment. By hiring men who were out of work to walk the forests and measure the trees found there, the CCC was able to provide living wages for the victims of the Great Depression. The men involved likely viewed counting trees and measuring their diameters as busy work, but they were undoubtedly pleased to be earning some money for themselves and their families.
+
+After the country recovered, data collection still continued for a few years. But once the economy healed, job creation was no longer a national priority. And there was little justification for continued forest monitoring when the timber was unlikely to ever be harvested. So the land was sold to a local college, and the dataset along with it. Conscious of its important historical ties and the years of effort behind it, the institution decided to continue the data collection. Undergraduate students were hired to carry on the work started by the CCC. This way, the dataset was maintained and students received valuable training in data collection. When technology became available, students worked to digitize the forest data and preserve it for the future.
+
+QUESTION: Imagine that you are Marianne, and that you have just received this amazing historical data set to analyze. What steps would you take to get to know the data and prepare it for your analyses?
+ 
+QUESTION: Based upon what you know about these data, what types of errors do you think might exist in the data set?  How would you identify possible errors, and once identified, how would you deal with them?
+ 
+Many years later, as Marianne sorted through the data, she began to notice something strange. When she had received the dataset, Marianne was warned by the university that it might contain some recording errors. As she began combing through the figures, Marianne was on high alert for anything unusual. So she was unsurprised when some of the more recent data didn’t look quite right; the numbers showed that trees of particular species and size would be present one year and then gone the next, only to return in the data the following year as though nothing had happened. A sizeable oak tree would disappear without a trace, and then be mysteriously replaced by a maple tree of similar dimensions.
+
+Marianne was no arborist, but she did know that trees of that size did not sprout overnight. She suspected that perhaps the students had been a little less careful in their data collection. But Marianne could hardly fault them – there were over 15 species of trees intermixed in the forest, and proper identification could certainly prove challenging for a student new on the job. These human errors required a little detective work on Marianne’s part to fill in the gaps. She divided her task by surveying the dataset one year at a time. Piece by piece, she scrutinized the measurements and species names, pausing at any detail that did not seem to fit. When she encountered errors, Marianne made an educated guess about whether a tree had been misidentified or left out during the recording process. In the case of more recent discrepancies, Marianne was actually able to visit the forest herself, find the tree in question, and revise the data as necessary.
+
+QUESTION: How do you keep track of changes you have made to correct errors in the data sets you work with? What steps would another researcher need to take in order to see where you have made changes?
+ 
+Before using the data in her analysis, she was careful to rigorously check for errors and assure that the tree counts added up. However, dealing with minor mistakes was a small price to pay for continued data collection. The quality control that Marianne undertook may have been a little more time consuming, but it was worth the assurance of consistent data. To keep track of her changes, Marianne maintained two datasets – the original, and her corrected version.
+
+Using the long-sustained dataset, Marianne was able to complete a thoughtful thesis on forest succession and fluctuating rates of carbon sequestration – something that would have been impossible without constant and diligent data collection, preservation, and curation throughout the decades.
+
+But in some ways, this encouraging story represents for Marianne a missed opportunity. After all of the time she devoted to quality control and assurance, Marianne never shared the corrected dataset with the university. The communication that existed between them had never been very strong; Marianne, still believing herself to be an inexperienced graduate student, had not realized what value the assured dataset might bring to the university, and the university had never thought to ask for it.
+
+QUESTION: Because Marianne’s corrected version of the historic tree data set was never shared with the university, any researchers who obtain the same data set in the future will need to repeat her effort to identify and correct errors in the data. How could data sharing be better managed to avoid this duplication of effort?
+
+ 
+STORY 8: The Long and Winding Road to Public Data
+To accompany lesson: 2 - Data Sharing
+Where to embed in lesson? (e.g., beginning, after slide X, end): at the end. 
+
+ 
+QUESTION: Have you ever worked with data that was collected by someone else? How did you acquire this data?
+ 
+QUESTION: Have you ever had trouble locating or accessing data related to a subject of interest? If so, what steps did you take to locate the data? Was your search ultimately successful?
+ 
+Dr. Watson was accustomed to seeing dead things. As a wildlife ecologist, he had made a career out of investigating animals and their untimely demise under the rumbling engines of motor vehicles. Animal road mortalities had a reputation for being difficult to track because the majority of incidents went unreported, so Watson had to come up with creative alternatives for obtaining data. To answer the questions he was most interested in, Watson needed to know exactly where these accidents were happening. The limited data he could access through the police department, however, rarely contained this level of detail. Instead, he had learned to make use of contacts at local agencies and share data back and forth as needed. Watson had developed a reputation for being a friendly, trustworthy collaborator, and his colleagues were happy to help where they could.
+
+Manuel, a graduate student at the university where Watson taught, also had a fascination with the ecological impact of road traffic. Manuel was planning a thesis on road mortality patterns in deer, and was anxious to find more data… but he was stuck. He had neither the resources for collecting new data nor the connections or institutional know-how to locate existing sources. He asked Watson if he knew of any datasets from New England that might contain the data he needed. Though he listened patiently to Manuel and sympathized with his dilemma, Watson informed him that the data simply did not exist.
+
+But Manuel was not to be put off. In his native country, data on animal collision fatalities were plentiful – drivers were required by law to report all accidents involving wildlife. Each year, the body of data grew (especially during times of increased animal activity, like mating seasons). Surely someone, somewhere in New England, recognized the value of that data and was maintaining the stats he needed for his work? If so, couldn’t Dr. Watson help locate it? After all, what did Dr. Watson have to lose?
+
+Seeing that Manuel would not be deterred, Dr. Watson agreed to ask around and determine if such a dataset could possibly exist… but he was more than skeptical. Deer were frequently the victims of car accidents all over the northeast; their grisly remains littered roadsides across the region, and it was highly unlikely that anyone was keeping tally on what was merely an unfortunate fact of life. “I’ll make some inquiries,” Watson promised, “but let’s not get our hopes up.” Manuel nodded and made his exit, though Watson was sure he would hear from him again soon.
+
+Who would he turn to for help? Dr. Watson had of course made many contacts over the years, so he had a few candidates in mind. He would email those that might have an interest in or know of such a dataset (if it even existed). They would also have to be well-connected within their various agencies; ten years on the job had taught him that many of the state organizations operated as silos, wrapped up in their own affairs and cut off from one another’s efforts. He would need to cast a wide net – several, in fact – if he hoped to get a glimpse of this mythological dataset.
+
+After clicking through his email contact list a few times, Dr. Watson concluded his search with a grand total of five names. Four people were managers of their agencies, and the remaining person was a researcher with an outstanding history of cross-collaboration.
+
+Once composed, the message was short, casual, and to-the-point. Watson described what he was looking for and what his graduate student wanted with the data. His requests were minimal: that they contact him if anything turned up, and that they forward the request on to others in their network. When they arrived, the responses were precisely what Watson had imagined. All were friendly and willing to support the search, but none offered even a glimmer of hope for the increasingly-lost cause.
+
+“I would love to see a dataset like this,” the lone researcher replied, “but I just don’t think anyone is working on it right now.” Each respondent wished him well and promised to write back with any news, but that was all. Even Watson’s friend at the Department of Transportation turned up empty-handed. The man had spent years as the point person for a multi-agency research project on reducing animal-vehicle collisions; if he couldn’t point Watson to the dataset, it simply was not to be found. He had done what he could, but Watson knew it was time to give up the ghost hunt. Manuel would be disappointed, but he would understand.
+
+Watson sat down at his desk to write a consolatory email to Manuel. “Well, we gave it our best shot,” he began weakly. No sooner had he clicked SEND than a message appeared in his inbox – from the size of it, something big. It was from a woman named Charlotte from some obscure division at the Department of Transportation. She had heard of his inquiry from a friend of a colleague of a colleague some ways up the grapevine, and she thought she might be able to help. While they had never met, Charlotte knew of Watson by reputation. What’s more, she was an alumna of the very university where Watson worked!
+
+When he opened the impossibly large attachment, Watson let out a whoop of excitement. It was an Excel spreadsheet with over 27,000 geo-referenced deer road mortalities – the very thing Manuel was looking for.
+
+Watson had gone to the Department of Transportation. He had searched through its online files and poked around its various divisions. All of his searching had convinced him that this dataset, the one sitting in his very inbox, did not and had never existed. So what made this seemingly-doomed expedition an unexpected success? Watson was tempted to attribute his and Manuel’s good fortune to serendipity, but knew that luck alone had not delivered the dataset into their hands. He suspected he could learn a thing or two from Manuel’s dogged optimism.
+
+And yet, the whole situation had a foul air about it which had little to do with deer carcasses. When Watson really thought about the circumstances of the data acquisition, it seemed a little silly that so much serendipity, persistence and luck were needed to unearth The Spreadsheet. After all, shouldn’t all data collected using public funds be openly shared to begin with? Why should such a useful resource be locked away in agency fortresses, waiting for the day that a determined graduate student and his advisor finally sniffed it out of obscurity? Research policies were evolving to embrace public data sharing and open access, but not fast enough for other aspiring researchers like Manuel. In the meantime, many of them resigned themselves to more conventional data collection projects after finally accepting that the data they needed did not exist – a hard truth, perhaps, but one that hopefully would not last.
+
+QUESTION: What factors contributed to the difficulty Manuel and Watson experienced when searching for the road mortality data?
+ 
+QUESTION: Should such data be easier to find and access? If so, [the answer is always yes]. How could data management and sharing systems be changed to make data discovery less challenging (and less dependent on luck and on having the right connections)?
+
+QUESTION: Have you tried to obtain data from state or federal agencies or regulators? What was your experience in doing so?  (Heather: I wonder if we might keep this question a bit more general - obtaining data from other projects or agencies?)
+ I wanted to get at the issue that there is a lot of useful data buried in regulatory documents, and it could be made more accessible to researchers -- e..g. sensitve species surveys, general community descriptions, wetlands conditions and extents. There may be a better way to phrase the question.
+ 
+STORY 9: Tallying Every Bug and Byte
+Steph W reviewing
+To accompany lesson: 2 - Data Sharing
+Where to embed in lesson? (e.g., beginning, after slide X, end): end
+
+Nora was a PhD student when she attended a meeting that would change the course of her career.
+
+Until that point, Nora had thought of herself chiefly as an entomologist, with her primary work objective being (as she joked with her colleagues) counting bugs. Born and raised in the Midwest, Nora felt especially drawn to studying field crop pests and their voracious appetite for agricultural delicacies. In her years as a graduate student, she was all too familiar with how pests could invade fields and decimate healthy harvests. Small as they were, hungry insects commanded attention and respect – something Nora provided with satisfaction from behind her microscope.
+
+When Nora decided to attend a meeting bringing together the region’s crop researchers, she wasn’t sure what to expect. But when a man name Andy stood up and described a major dataset on crop pests that had been underutilized and needed some attention, Nora sensed she was in the right place. With the help of his rotating team of researchers, Andy had collected data from a network of more than 40 insect sampling sites every week, every growing season, for the past several years.
+
+But Andy felt the dataset had more to offer. In the process of collecting data for his work on species diversity, he had also managed to net many other data points which might intrigue someone with a quantitative focus. These byproduct data were there, ready for use, but Andy had no plans for them. Why not serve them up to someone else with a different skill set?
+
+“A lot of people have put time into collecting this data, and we still have a lot more that we can do with it,” he explained to the group. “It’s a public resource, and I welcome anyone who has an interest to come and analyze it.” That was all the encouragement Nora needed; she left the meeting with Andy’s word that he would send her a subset of the data that would be useful for her to work on.
+
+QUESTION: Have you ever encountered a researcher like Andy – someone willing to share data openly and go out of the way to seek out other researchers who could use it? How common is it to encounter researchers like Andy in your field?
+
+What are reasons you have, or have heard, for not sharing data?
+ 
+Nora got to work compiling the crop pest data she received from Andy with some others she had worked on previously. Stitched together, they created the biggest collection of data Nora had ever dealt with. At the time, Nora didn’t know exactly what she was getting into – it was her first introduction to a collaboratively generated database, and she felt a sort of nervous excitement at the thought of all those insect counts waiting on her computer.
+
+Nora dove in, looking everywhere for patterns. By the time she resurfaced, she had found a new love: data analysis. Never would she leave behind the world of field pests, but it lacked the mystery and complexity she had only just realized she was missing from her work-life. Nora was ready to do some more in depth data analysis and manipulation – something beyond the scope of her previous studies.
+
+Shortly after Nora finished analyzing the data and drafting a paper on her findings, Andy retired from the project, leaving his technician, Didi, to maintain the still-growing database. With funding drying up and their work coming to an end, Nora and Didi met to finish off the project’s loose ends.
+
+QUESTION: What do you think of Andy’s plan for maintaining his data set after his retirement? What do you imagine will happen to the data set? Do you think that other researchers will still be able to access the data in the years following Andy’s retirement? Why or why not?
+ 
+Then, they had an idea.
+
+There was still plenty of data yet to be explored – what if they compiled everything, every last spreadsheet, every species count, into one place? Nora’s earlier analysis had considered just one species; imagine what hidden secrets the other 249 might contain!
+
+Their plan was solid, but it presented some special challenges that were as big as the database itself. Each spreadsheet was divided by state, site, and year, so formatting differences were sure to creep up. And even though the data had been collected by expert taxonomists, it had all been entered by a rotating staff of summer students who, as it turned out, all had very different ideas about everything from naming conventions to proper spellings of species names to implied zeroes.
+
+It took two weeks of vigilant quality control to get all of the dataset’s pieces into a consistent format. On the last day Nora leaned back in her chair, trying to shake the last of the species names from her head. The finished dataset before her was a work of beauty; it was perfectly preened, it was in CSV format, and it contained 3.2 million observations.
+
+QUESTION: What could have been done early in the data collection process to minimize the data cleaning involved in this dataset?
+
+But Nora and Didi had only just begun. With the complete dataset in order, they decided to go back into the species counts and look at geographical patterns in distribution. And abundance. And while they were at it, maybe they would look at population genetics! But why stop there? The physical specimens still had a lot of information to offer. What if they used those to tackle endosymbionts, and then do some molecular analysis?!
+
+There was still so much to do!
+
+Even now, Nora and Didi persist with their work. Their dream has stretched and expanded over time, taking on still more opportunities for analyses. It may even be enough, they hope, to earn a grant award under the Long Term Research in Environmental Biology program. By continuing to add to the data and reassess its possible uses, Nora and Didi are making sure the dataset fulfills its enormous potential. And though Andy may have retired from the world of bug counting long ago, his work endures through Nora and Didi’s collaborative efforts. With a measure of foresight and an eye for future data applications, he advocated for continued analyses and open access at a time when others may have simply kept the data for themselves.
+
+To maintain the spirit of sharing that had brought the dataset to her in the first place, Nora contributed the full dataset to a biological station and made it downloadable. Now all 3.2 million data points are available to anyone with internet access. Like Andy, Nora enjoys reminding other researchers to explore the dataset and see if they, too, might find a few bytes they’d like to net.
+
+QUESTION: How do Nora’s plans for archiving and sharing the data differ from Andy’s?
+ 
+QUESTION: How significant an impact do you think Nora’s revisions of the data will have on whether or not the data will be used by other researchers in the future? Why?
+
+QUESTION: Is there another place Nora and Didi could have made the data set available to increase discoverability?  Are there things they can do to make others aware of the location of this data set?
+ 
+QUESTION: What do you imagine will happen to the data set Nora contributed to the biological station? Do you think that other researchers will still be able to access the data in the coming years? Why or why not?
+ 
+QUESTION: What do you think motivated Andy, and then Nora, to share the data they had invested so much effort into collecting and organizing? Do you think the benefits Nora and Andy accrued through open data sharing are enough to convince other researchers to share their data? If not, what additional benefits or rewards are necessary to promote widespread adoption of open data sharing practices?
+ 
+ 
+

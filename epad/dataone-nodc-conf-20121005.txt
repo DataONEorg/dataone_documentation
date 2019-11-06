@@ -1,0 +1,73 @@
+DataONE/NODC/ESRI Conference Call
+--------------------------------------------------------
+ 
+DataONE: 
+   Matt Jones: Co-Lead, Core Cyberinfrastructure Team & Leadership Team
+   Amber Budden: Assitant Director for Community Engagement
+   Dave VIeglais: Assistant Director for Development and Operations
+
+NODC: 
+  Ken Casey, Technical Director
+  Yuanjie Li, GIS expert, Technical Development Team Member 
+  John Relph, Technical Development Team Lead
+
+ESRI:
+ Christine White, Project Manager/Geoportal Product Engineer
+ Teddy Matinde, Developer & engineer, Esri Geoportal Server
+  Urban MacGillvray, Development Lead, Esri Geoportal Server
+
+Agenda & Notes
+------------------------
+
+tier infor in box here: http://www.dataone.org/sites/all/documents/DataONEMNFACTSheetFormattedDec1.pdf
+
+A. Plans for NODC becoming a Member Node
+-- On the NODC priorities to connect with efforts like DataONE and similar initiatives
+-- Not yet clear on what milestones might be needed to make this happen
+-- Needs a sense of level of effort and complexity of technical work required
+-- Will be deciding on FY13 deliverables over the next month
+    -- may be able to make progress even if it doesn't make it to the deliverables list
+    
+-- Teddy from ESRI has looked over the DataONE API
+  -- seems feasible for Geoportal to connect to DataONE
+  -- more difficult for DataONE to connect to Geoportal unless we use an open standard like CSW
+
+-- Ken: would target Tier 1 for now
+  -- can they host some other people's data as well (mix in Tier 4 as well)
+
+-- CSW:
+   -- if we are only talking Tier 1, then the level of entry is lower
+   -- http://mule1.dataone.org/ArchitectureDocs-current/apis/MN_APIs.html
+   -- CSW can be used to federate other CSW servers
+
+-- Benefits to DataONE to expose CSW as an endpoint
+   -- would this be done at Coordinating Node or Member Node levels?
+   -- suggestion that CSW be implemented at the DataONE Coordinating Node level
+   
+-- Searching
+  -- http://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html
+  
+-- Logging
+  -- http://mule1.dataone.org/ArchitectureDocs-current/design/LoggingSchema.html
+
+-- Discussion of identification, versioning, and mutability issues
+
+-Ken - seems we would have some work to do to support the logging API call, but that there is nothing in the logging requirements that would be a show stopper for us (since we have privacy guidelines and only have limited statistics that are kept... basic, standard web log stuff like URL accessed, accessing IP address, volumes, and numbers of files).
+
+- Ken seems also that we should probably be able to meet the versioning requirements.
+
+- Ken : rough idea for way forward would be to look at using the Generic Member Node software to map some of the API calls to Geoportal calls, and then develop more specific services for the things not handled by the Geoportal. 
+
+B. Connection points between DataONE and Geoportal Server
+
+C. Next steps
+
+-- Plan for a monthly call to touch base on progress
+-- Unclear currently what the timing is for implementation
+-- Ken's team will explore use of GMN as an adapter to front their systems, Christine's team will explore adapting GeoPortal Server
+-- Matt: would like to know how DataONE team members can help, and what time period that might represent
+
+-- Next meeting: November 9, 2012 11:30 - 12:30 PDT
+
+
+

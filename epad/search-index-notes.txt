@@ -1,0 +1,164 @@
+Adding dataset attributes to SOLR
+
+Discovery use cases:
+
+1. "all datasets that measure size of barnacles"
+
+Proposed fields to index:
+
+attributeName
+    Name of the attribute  (multivalued, include duplicate values)
+
+attributeLabel
+    Longer text label for the attribute. (multivalued, include duplicate values)
+
+attributeDescription
+    Full text description of the attribute (multi-valued, include duplicate values)
+
+units
+    A multi-valued field containing units. Should probably be aligned with a controleld vocabulary (include duplicate values)
+
+attributeText (name could be better....)
+    Multivalued contatenated field contained all four attribute values for a single attribute, per value in the array (include duplicates)
+    
+fullText
+    update with the attribute text (dedupe....)
+
+Index Structure
+
+<arr name="attributeName">
+<str>
+    Date
+</str>
+<str>
+    DBH
+</str>
+<str>
+  SumofJuvenile
+</str>
+</arr>
+
+<arr name="attributeLabel">
+   <str>
+      Diameter at breast height 
+   </str>
+</arr>
+
+<arr name="attributeDefinition">
+   <str>
+       The Date
+   </str>
+   <str> 
+       Diameter measured at (roughly) 130 cm above the floor along the stem using a standard girthing tape.
+   </str>
+    <str>
+       Sum of Juvenile
+    </str>
+</arr>
+
+<arr name="attributeUnit">
+    <str>
+       datetime
+    </str>
+    <str>
+       centimeters
+    </str>
+    <str>
+       dimensionless
+    </str>
+</arr>
+
+
+Additionally
+
+<arr name="attributeText">
+  <str>
+      Date The Date (datetime)
+  </str>
+<str>
+        DBH  Diameter at breast height Diameter measured at (roughly) 130 cm above the floor along the stem using a standard girthing tape. (centimeters)
+</str>
+<str>
+    SumofJuvenile Sum of juvenile (dimensionless)
+</str>
+</arr>
+
+
+
+
+
+Author
+
+1) Want Firstname, Lastname. Now have whatever is in the "author" field. Challenge: FGDC and Dryad both have a single text value for Name. The format is up to science metadata creator.
+
+How can we normalize?
+
+EML is easier. It has separate fields.
+
+"," in string may mean lastname, firstname.
+
+Do we want to normalize the casing of the names?
+
+Can we come up with a few simple rules that can give us a good chunk of correct firstname, lastname?
+
+Do we want a new set of fields for all the items that we process? controlled_*, maybe?
+
+Currently author is first author in the sci-meta - Do we also want display of sub-authors/collaborators?
+
+Add the same science metadata object under each of the authors if we are able to get a list of multiple authors for a single object.
+
+- Todo: Look at author last name. If author is populated, author last name is likely to be populated.
+
+- No author first name?
+
+
+Regions
+
+- Sample coordinates within bounding box?
+
+- Currently have a flat list of names pulled from "site" field.
+
+- //metadata/idinfo/spdom/descgeog
+
+- Currently no rule defined for "site" in EML.
+
+- Maybe "site" would work best as a level 4 in the Regions hierarchy.
+
+- Natural Earth. Vectorized, high rez map of planet. Geotools.
+
+- Possible that there's no coordinates in metadata. In that case, we might want to map from text description back to coordinates and then do coordinate lookup to get the location hierarchy.
+
+- Add separate index for "within 100 miles", etc.
+
+
+Science Discipline
+
+- Currently, nothing to use. Must probably be inferred.
+
+- Topic map modelling?
+
+- Natural language processing?
+
+- Maybe map Member Node to Science Discipline?
+
+
+Taxa
+
+- 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species', 'scientificName'
+
+- How do we deal with partial information in the taxonomy hierarchy?
+
+
+Time Periods
+
+- We have a "decade" field. Need to populate it.
+
+- How do we show if dates are for beginning or ending?
+
+- https://cn-dev-unm-1.test.dataone.org/cn/v1/query/solr
+
+- We might not need a decade field.
+
+
+
+

@@ -1,0 +1,58 @@
+
+ConCall:  Claudio, Aritra, Yaxing, and Bob
+ 
+1.     Planning for UV-CDAT activities
+a.     Make EVA version of UV-CDAT available to Christopher, Rosie, Yaxing, and others 
+                   i.     controlled version, linked to main development version 
+b.     Add documentation for the EVA functionality (VisTrails modules and UV-CDAT tools)
+c.      Improving performance of UV-CDAT
+                  i.     General impression that UV-CDAT is slow
+                        1.     Need to test with large data
+                                we have some very large model output data sets (Terrabytes of global/monthly/100years, global/3-hourly/31years) for testing
+ACTION:  Yaxing and Aritra to investigate
+
+                 ii.     Version of UV-CDAT / VisTrals for HPC?
+                 iii.     Co-located with data
+                 iv.     XSEDE?
+ d.  add documentation, as needed, on installation and setup
+ 
+ 
+2.     Develop basic and common analysis modules for VisTrails
+    a.     Subsetting
+    b.     Units conversion 
+    c.      Regridding
+    d.     Others…….
+    e.     ??? upgrade “search” feature for VisTrails module library ??
+    
+Two things to look at:
+    SAHM: http://www.fort.usgs.gov/products/software/sahm/
+        (main developer: Colin Talbert, http://www.fort.usgs.gov/Staff/staffprofile.asp?StaffID=518)
+    CDAT VisTrails package
+       --> need to make the CDAT package more user friendly by Climate Model Benchmark purpose in Vistrails and UV-CDAT. We can call that EVA package
+ 
+ ACTION:  Aritra and investigate SAHM and CDAT
+ 
+3.     Benchmarking analysis tools for UV/CDAT 
+    a.     Work with Forrest, Christopher, and others 
+    b.     Benchmarking analysis, exploration and visualization
+    c.      Benchmark scoring tools
+                 i.     Suite of scoring code available in R, MatLab, IDL
+ 
+4.     Travel to MsTMIP workshop in ABQ
+    a.     Jorge and Aritra – demo UV-CDAT, help download and install, seek feedback 
+  
+5.     Hargrove Idea (Bill Hargrove, http://www.srs.fs.usda.gov/staff/825)
+    a.     Toggle feature for Model structural characteristics
+    b.     Aritra is interested in pursuing this toggling feature; and Jorge has already begun this activity
+ 
+6.     Link with Provenance Working Group
+    a.     EVA Use case
+    b.     Incorporate workflows they develop
+    c.      Suggest that Aritra join
+ 
+7.     Link EVA with David Koop’s DataONE VisTrails tool set
+        a.     DataONE python client placed into VisTrails
+                     i.     Search and access (need subset from DataONE CI)
+                    ii.     Publish data to Member Node
+ 
+

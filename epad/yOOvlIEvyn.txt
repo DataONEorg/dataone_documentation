@@ -1,0 +1,281 @@
+ * 
+ * 
+ * 2012 DataONE AHM UA&SC WG Joint Meeting Day One 
+
+Agenda:
+
+- Review  agenda/logistics
+- UA Update
+- SC Update
+- Identify top line items to address this week
+- ID / select subgroups/tasks
+- participate with other workign groups
+
+Mike suggested background thoughts around things want to think about during the week: what working groups needed, what works, what doesn’t, how it is structured 
+U&A Lightning Round Talk / Update https://docs.dataone.org/member-area/projects/all-hands-meeting-2012/1-DataONE%20AHM%20Lightning%209.11.2012%20v3.pptx/view
+
+ Assessments results overview: (insert presentation link here)
+
+Barriers re data management:
+- lack of time, lack of knowledge, lack of tools, lack of money
+- most scientists don't know about metadata
+- scientists want their data sets to be cited
+
+Incentives for data sharing:
+- citation, therefore there needs to be an easy way to create citations and academics need to be rewarded for developing, depositing, sharing data 
+
+ University libraries more likely than federal to offer data services, primarily consultative
+ - real need in all libraries for education and training
+ - most data managers today learned it on the job
+ 
+ Questions:
+ - If libraries aren't providing opportunities for staff to develop skills related to data research services, who is?  --> we don't really know, looking at assessing other stakeholder groups at universities
+ - what is the process for turning the usability test results into solutions?  the programmers don't necessarily expertise in that area.  -->  MBW and MF have access to create tags, and the rest of the analysis will be done this week.  Some issues, it may be decided not to address due to new ways of searching, policies, etc.
+ - yes but some of these issues are not bug report type problems.  there needs to be a process for those types of issues.  
+ - overall there needs to be closer communication between UA and developers.  -->  yes, and this is a great step
+ - are you looking at areas of Information Architecture for the next generation of DataONE?  Should maybe be a broad WG identified for the future. (currently semantics, . . . ).  There are discussions now about hiring a specialist for the current grant cycle.
+ - now that DataONE is open to the public do we have a mechanism for collecting info on user experience?  -->  there is a feedback form that goes to Amber and rebecca, but we need to discuss whether this is sufficient.  There is not neccessary a process yet to give analystics back to the providers.  
+ - well statistics and metrics is one thing, b ut there is also just comment type feedback like "hey, I tried to do this and I couldn't" etc.
+ - what happened with ccapturing user metrics over the summer, there was an intern working on this?  are the servers collecting adequate data?  -->  we are not tracking a singler user's activity.  The summer intern's work was to build on top of the logging API, the scope was never to track user's behavior.  Tracking the activity of a particular user is going to be difficult.  But we do need to start thinking bigger picture statistics and presenting that type of picture to the public.  But there were other things that had to be done now.  
+ - What about Google Analytics?  --> we are running that, yes, but  not on the member nodes.  On the coordinating nodes.  
+ - might be useful to do on the MNs.  
+ -->  take home is that we need to form a small group to address this.
+ 
+ need to revisit requirements for reporting against initial metrics proposed in Project Plan and ensure the appropriate data are being collected. Heather and subsequently Amber were handling this.
+ -
+Need a triage of usability issues :
+ * those that can be corrected in time for the reverse site visit
+ * those that are targets for years 4 & 5
+ * those that are targets for the next grant proposal (this is the larger information architecture thing....)
+ * those that aren't worth fixing
+
+ Socioccultural WG UPdate
+ 
+ Achievements listed on slide
+ our efforts are not goign into a black hole even though it feels that way sometimes
+ with metrics we are most interested in understanding and reporting
+ 
+ communication audit and planning
+ - key to our work with stakeholders
+ - connections between groups and leading to long term sustainability need to be made clear
+ - working across the project continues to be a challenge
+ 
+ Goals for this meeting
+ 1.  FAQs process
+ 2.  FAQs technical
+ 3.  Help and relationships with FAQ
+ 
+ - Why are FAQs the purview of the SCWG?  it was thought that they would have good ideas about wabout what should be included.  SCWG can identify the questions more than the answers.  also a number of the questions that need to be answered are sc questions (how do I participate, etc.)
+ - Who are we trying to address the FAQs to?
+ - we'll use the assessments to guide us
+ - they're really anticipated FAQs
+ - in testing a lot of people were asking for role senstiive info.  HOw do I desposit?  what do I do with this as a librarian?  "What's in it for me" from various perspectives
+ 
+ - we can't expect our efforts to go directly to teh website, because they need revirew, but we also need to make sure it doesn't go ininto a blackhole?
+ 
+ what happend to the DataONE principles that we spent a lot of time on and actually seem really useful?  -->  Let's get Amber and rebecca to discuss with us the process. 
+ 
+ SCWG working on a list of current hot topics 
+(e.g. SLA meeting - many libraries doing studies in their institutions, so maybe good to do a meta analysis of all of these assessments)
+Meta analysis of existing assessments 
+
+publications - what can we work on in usability, sociocultural, what can we do beyond assessments? eg. teh WG process - successful or not?  experience?  validation?  
+
+Topics to be addressed at this meeting (brainstorm):
+ - - summary report vision of WG committees work and publications for renewal
+ - interfaqce development and outsourcing strategies for UI
+ - Usability priorities and strategies
+ - assurance step 
+ - need to be able to answer the question "Where do put my data?"
+ - what people are doing on teh website gets at the research question of dataone's capacity for enabenablig new science disxcoveries.
+-  Usage metrics
+-  FAQs and user feeedback
+ - where besides libraries are research data services being provided?
+- data ecosystem
+- what is the demand sideof DataONE?  what is the demand for shared data?
+- capability and maturity model for data management- 
+- how does DataONE relate to teh rest of the communikty?
+- what parts of DatONE are expected to live on?
+ 
+ Tasks and Procedures
+ - design and plan the next assessments. NSF expects certain outcomes here.
+ 
+ (1) Assessments - 5 members
+ (2) Usability Priorities & Strategies - 5 members
+ (3) Interface Development and Outsourching Strategies - 4 members
+ (4) Ecosystem of Data in Institutions - 5
+ (5) FAQ - including "Where do I put my Data" - 3 Members
+ (6) Summary Report - vision of Working Group related to renewal (Work + Publications) - 2 members
+ (7) Metrics (Wednesday topic)
+ 
+ Tomorrow at 3, groups will re-convene to touch base on where you are at, if you are done, if you want to take on another issue, have a problem, etc.
+ 
+ Thursday Morning, 10:30, we all have to report back to ourselves for these groups.  Everyone cannot participate in all.
+
+Items 2 and 3 are closely related to each other.  
+
+ 
+Charge to sub-groups:
+1. goals for sub-group
+2. tasks for this meeting: description and timeline
+3. ongoing tasks
+4. deliverables by thursday
+5. who else needs to be involved
+6. id recorder / facilitator / reporter 
+
+Wednesday Morning:  UA, SC, PPSR, CEE, and a few CI 
+
+Group update CE:
+
+ * create hands on materials for students to use in data management training modules
+ * - success stories/use cases - collect
+ * - Data sharing resource page - policies, guidance docs, etc.  
+ * - metrics for DataONE success (back to original dataone plan) - measures of success
+ * - paper on human rights issues relationships to scientific data (Cliff)
+ * consistenent messages between data training modules and best practices
+ * blog activity?
+ * how to carry DataONE message to venues we already visit without becoming lobbyists (posters, abstracts, slides, etc. at a high level)
+ * 
+ * Q/A:
+   * workshops? - it's on the list
+   * a need for a clearing house of who's going to what conferences?  - it's on the plone site.  it's not being used, but it is there.  
+     * make sure that everyone takes the proper NSF language and grant number with them.  
+     * EG - library archives, library meetings.  presented on dataone and demonstrating how librarians could participate.  Good feedback, requests from attendees for more.  
+       * this might be a use for the high level slides, abstracts, posters. etc. 
+   * Metrics - what is success in community engagement?  what metrics to measure that?  - it's on the list to discuss and this should cross with UASCWG
+   * Coordination of training materials being created by various working groups?  EG PPSR creating best practices for Citizen Scietnce.  how to coordinate?  - yes, we should get this coordinated.
+   * 
+   * 
+PPSR UPdate:
+   * unique in that we hve a very specific audience
+   * many places and ways to present materials.  
+   * metrics of success for PPSR - legitamize to the broader scientific community the value of PPSR, it's a matter of demonstrating
+   * ethics for PPSR given the participation of the public, access to the data for the participants.  Much harder to get data ba38%ck to participants in useful ways.
+   * alighning our education and outreach materials with existing dataone materials
+   * curriculum materials for teachers to use with students who want to participate in PPSR (people are asking for this)
+   * organizinag workshops for project organizers
+   * we really need the soundbyte package of what dataone is for our community who often don't have the jargon or sophisticated data management understanding.
+   * reducing the barriers to the reuse of PPSR data
+   * 
+   * our audience - practitioners (not the citizen scientsts), it's the people who are buidling this field.  
+   * Rick Bonney - not clear yet how we can make use of DataONE for PPSR community
+     * already many resources for PPSR community.  so we need to integrate not create more.
+     * data management is the harest to understand
+     * how do we integrate your data management training into the PPSR community?  we need help aligning and integrating.
+     * 
+   * Q/A:
+   * Your survey?  
+     * attendees at the conference
+     * survey handed out in conference packet.  38% respnse rate
+     * it was the people who run the projects
+     * Andrea presented key results as fyi to dataone AHM partifcipants
+   * High need to align training activities.
+     * 
+     * Note to UA - look to combine PPSR survey results wiht IBIS survey results.  Lots of similarity!
+     * 
+UA Update for work at thsi meeting
+ *  Assessments - finding out what stakeholders are doing now, barriers to data management, incentives, seeing how it changes over time.
+   * final check on the scientists follow up combined with scientists as educators, scheduled for Spring 2013
+ * look at early adopters as represented by figshare (look also at IBIS survey data to ID these groups)
+   * policy makers - first point is to define
+   * get the data and results out
+ * Usability priorities and interface development
+   * results of usability tests at ESIP are being reviewed, categorizing responses and resolutions (SC, UA, CCIT members)
+   * next itterations of search and discovery, visualization needs - where are we going?
+   * define the strategy for the upcoking release of dataone tools
+ * Ecosystem of data in institutions
+   * where is data research services being done?  in academic settings who are the policy makers, who makes decisions?
+   * also need to address the what's in it for me questions
+   * who is the audience?
+   * story telling - both success and the worst case scenarios.
+ * FAQs
+   * anticipated FAQs, 
+   * developed a long liswt of possible FAQs, developed from other presentations
+   * now we will infiltrate the other groups so we can hear concerns and start to answer the questions
+ * Summary report / vision of WGs of the future 
+   * review in Feb - April
+   * renewal
+   * how could DataONE and these WGs position themselves
+   * Is the WG model effective?  should it continue?  this wil be useful to DataONE Leadership team
+   * What has the experience been for the WG members?
+   * developed a questionaire - 1) your experience , 2) WG reports on their own success
+   * 
+   * Target was the vision for the review in Feb-April, and the rebid, and gathering information about the management model as a whole, the buy-in and what are the benefits of WG activity balanced with productivity and outcome. How the current WGs can best demonstrate their products.
+   * 
+ * Metrics and statistics
+   * 
+Q/A:
+     * will users participate in design? - we will be talking about it
+   * 
+Combined WG groups
+- elevator speeches for different audiences
+- FAQs (make sure to collaborate with CCIT)
+
+ Apply concepts from the data management capability manturity model (Crowston et al) to review and certify data quality / processes for particular citizen scientist projects. performing these reviews could also be a source of funding to support DataONE sustainability
+ 
+ Timing of get togethers:
+
+- Assessment meeting in same room and working on scientists follow 
+- uability meeting next door re results of recent tests
+- ecosystems discussion
+- FAQs
+- summary report
+- metrics tomorrow 10:30 - noon
+- 3:30  module cross wal k
+- after morning break SC meet with Amber and Rebecca
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+Parking Lot for issues raised during the May 25-27, 2010 CI team meeting in Albuquerque
+
+ * Who are the end-user testers?  Work with CE side folks for that and for testing paradigm.
+ * CN structure, as currently defined, doesn't have rollback in the case of the plug getting pulled on the VM or host.  Robert working on batch processing tool potentials for addressing this.  
+ * How do we deal with the potential race condition for where someone submits identically the same data set to multiple different data centers?  Follow up with Chris Jenkins to see if we can identify examples or a scenario where this is an expected situation.  The current data model assumes that there is a MN which is the owner of an object (though we allow for MN's to be obsoleted and ownership transferred).  A possible example is that there are multiple places that claim to be the authoritative source for the Keeling Mauna Loa CO2 observational data.  Likewise, there are existing cases where data has already been replicated to multiple different data centers as a deliberate strategy.  So, there is both the backfile case of bringing in existing data centers and the future duplication case.  A possible scenario is where a researcher is required to submit data to an institutional or project repository and to a repository associated with a journal.  
+ * (far future) how do we identify "copies" of data in different MN's and how do we resolve the identity issue of how different means different identity.
+ * Search syntax needs to be defined, for being passed through the REST interface.  Syntax for passing the query through is still an issue to be resolved.  In the short term, build off of what works for Mercury and build off of that.  Right now, when someone does a query, they result set is the system metadata.  For discovery metadata, the search needs to go through the Mercury interface.  The API, as currently defined, is not sufficient to build a user interface for discovery-level metadata.  We can search against the science metadata, but pulling the science metadata back requires a separate call for each of the objects returned.  
+   * /object/?qt=solr&q=abtract:carbon&start=0&page=10&fl=title
+   * ?qt=knb
+   * ?qt=nv
+ *  Time synchronization and time representation
+ * End user documentation.  Need documentation for people to integrate to the API for end user tools and for people who want to implement a member node.  Not a July 31st deliverable, but must be in place before we go production.  Some tasks for this have (?) been put into the product backlog. 
+ * ?? what happens when a member node attempts to propagate invalid science or system metadata.  Need to add this to the specification to understand who is responsible to validate the metadata.  Needs to deal with the case of when invalid metadata is submitted. CN has to assume that it will, at some point, get invalid metadata.  This suggests that the system metadata may need a valid flag.  Do we store (allow a create) for an invalid object?  
+ * Where malicious content is detected (such as an attempted SQL Injection attack), what actions should the system take?  Who should be notified and where should these logs be filed?  How much testing should be done for malicious content versus inadvertently malformed/invalid content?
+    
+

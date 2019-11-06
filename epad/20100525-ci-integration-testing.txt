@@ -1,0 +1,65 @@
+Integration Testing
+------------------------
+
+Brainstorming of tests
+-----------------------------
+Note: This list needs to be segmented to show what tests need to be passed by July 31st, versus what tests can be deferred to later.   
+
+Question of how many failure modes do we want to test?  need a FMEA to prioritize the test cases to write against.  Comment on FMEA (Failure Mode Effect Analysis).  Assign, for a given failure mode a score of 1-10 for each of a) how likely is this to occur, b) what is the cost if this occurs, c) how early can the failure mode be detected, d) how much does it cost to mitigate the failure mode.  Idea is that you multiply across the scores and prioritize accordingly.  A failure mode that is very likely, is catastrophic, cannot be detected until it occurs, and is easy to mitigate prioritizes to the top of the list.  
+
+Note:  The metrics need to be parts of the tests.  Are there things in the metrics that we're not testing?  
+
+Codes:  Integration tests were ranked as High (H) or Low (L) priority, where each person had 10 high and 10 low votes to assign.  Unranked tests were considered Medium (M) priority.
+
+* Targeted use cases should function properly
+   * HHHHHH Use case 1 (get).  Note: need to test for non-existant ID's, test access control, test for malicious content
+   * HHHHHHHH Use case 36 (resolve)
+   * HHHHHHHH Use case 2  (query)
+   * LLLL Use case 3 (register -- manual operation)
+   * HHHHH Use case 6 (synchronize).  Note: what is needed for reschronize and recovery from outage.  
+   * LLLLL Use case 10 (MN status reports)
+   * H HUse case 16 (log CRUD operations)
+   * L Use case 17 (CRUD logs aggregated at CN) Not impmemented yet
+   * Use case 12 (User Authentication)
+   * Use case 13 (User authorization)
+   * HH Use case 9 (MN-MN replication): includes testing replication policies
+   * L Use case 24 (MN and CN's support transactions)
+   * Use case 14 (system authenication and authorization)
+* HHHHHHHH Completing the loop: publish data set, be sure it is retrievable exactly as submitted
+* HLL Race condition:  What happens if two MN's submit the same thing?
+* LH Threshold tests for heartbeats and other status testing.  
+* HHHHHL Do the Java Stacks and Python stacks return the same thing for the same object
+* HH Load testing to determime the break points  (how far can we scale).  Relates to risk register issue that CN's don't scale to handle the load.  
+   * What is the target that we should be able to handle.  Suggestion is that we want to be able to handle 100 member node traffic.  This may not be a big issue until we get to handling high frequency updates (e.g. sensor data).  Thought: look at the milestone 3 metrics and test at 5x that number.  
+* LLLPerformance testing (particularly as a function of load)
+* LLLL Deployment testing -- can we test that dependancies have been resolved, perhaps a particular issue for the ITK, but also for the various member node stacks.  
+* LLLLL Test that the libraries can check for dependancies, so that when the library intializes it checks that the necessary dependancies have been installed.  Some of this is handled with egg installations.  ??what happens if something changes after the installation? Library needs to manage these issues, and emit appropriate error codes.  
+* HLHL Test that the ITK libraries work properly on all supported (advertised)  OS platforms, hardware, and software combinations
+* LLHL Testing the logging and auditing functions. Ditto on the reporting functions.  There should be unit tests for this within the software stacks, but this needs to verify that, for example, a member node action is logged at the MN and at the CN.  
+* Integration tests across multiple member nodes and coordinating nodes.  For example, inserting documents at the same time but in different places to ensure it works and we don't have deadlocks showing up. 
+    H Does an insertion with a MN replication request work?
+    LDoes a MN data/metadata insertion prevent a race condition, even if insertion deviuosly tries to trigger a race condition
+    HHHH Does CN metadata replication work
+    HHHHHH Can a downed CN be revided/repopulated?
+    H Serve up data from a replicated MN when home MN is inavailable
+    H Data and Metadata re-synchronization when MN and CN come back from outage
+* LLL Accessibility -- 508 compliance as a floor, but going beyond this to appropriate level of accessibility.  
+* Broadly, test node failures, including CN and MN.  Mostly concerned with read access at this point.  
+   * HHH MN1 submits data, gets replicated to MN2, MN1 goes down, test access to data even in the absence of the owning member node.
+* LLL Test replication policies.  (duplicative test of above?) Side issue: unit testing to see if replication policy is inconsistent.  More an issue for rule-based replication policies.  Precedence of operations may fix this, but what happens when the replication policy resolves to zero replication nodes allowed (or replication nodes less than required number of replication nodes)?  
+* LLLLResponse time test (both API and GUI).  Relates back to performance testing.
+* LLL Usability testing (generally) -- push off to a different category from Integration testing.  
+* HTesting authentication and access control.  Includes testing actions that should be rejected.  
+* HHHHHH Testing for invalid input and known problems such as XSS and SQL Injection
+* HL General penetration testing (WebInspect as a specific example)
+* H Testing that system metadata is properly validated.  Resilience against a "loco" node with malformed metadata (both operator error and malicious users)
+* LLLL Testing validity of science metadata (compliance with standards).  See issue in parking lot.  
+* HH Test that invalid documents are properly logged on harvest and that logs are machine parseable
+* HH Consistency Check on CN's ( Test that the checksums at CN's match)
+
+Build a test framework
+* Test auditing -- Capturing the results of the tests in incremental steps, track where changes in test results occur.  
+* provide a useful interface to view (or visualize) testing results
+
+
+

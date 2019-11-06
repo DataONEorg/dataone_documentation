@@ -1,0 +1,77 @@
+Member Node Wranglers 
+    Fridays at 10:00 am Alaska
+                    11:00 am Pacific
+                    12:00 noon Mountain
+                    1:00 pm Central
+                    2:00 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+14 February 2014
+                                       
+Attending:  Laura, John, Dave, Rebecca, Amber, Bruce
+
+Regrets: 
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+        New MNs announcements? -  
+       * GOA awaiting news item (Matt reviewing) (afterword - Matt revised and sent to AOOS folks for review)
+       * KUBI news item approved, certs in Prod, registered in Prod, ready for Chris to flip the switch; 
+        COMMENT: perhaps "press release" is a misnomer; we've been referring to what we put out as a "news item"
+       * Dryad - news item approved, Ryan registered in Staging last week, Chris verifying, hope to register and move to Prod Tuesday; 
+            
+        IDCC workshop 2/27/14 -  
+       * in-house meeting 2/6/14 to discuss survey questions; http://epad.dataone.org/2014-02-06-IDCC-Workshop; http://epad.dataone.org/2014-02-13-IDCC-workshop 
+       * collaboration area in Dropbox for us to work together on this. 
+                    https://www.dropbox.com/sh/0o7m3448b05m8h7/uLrxcxM5ZI
+
+        1.5    Current MNs
+       * (2/7/14) LTER  (and KNB) affected by issue of "old" metacat miscategorizing data  (archived does not equal deleted), but problem was identified, fix is in  progress to be rolled out with Metacat v 2.4 in the next several days.   Mark was very kind at the MNF meeting talking about how responsive CCIT  was in helping to identify and solve the problem.  
+       * 2/14/14 - scheduled to go out this afternoon, push to CNs early next week; affected MNs should be corrected next week and Dryad should be able to go to production Weds/Thurs.
+                     
+        2. Status of upcoming MNs
+        
+        Future
+       * Australia:   plan for next 3-4 weeks is to work on 1) conceptual  nature of  TERN/DataONE collaboration and 2) technical details of  possible  implementation (exposing metadata only via TERN and/or allowing   repository(ies) within TERN to be MN(s) in their own right.   NEXT MEETING:  week of 3 March, Doodle poll out
+       * Multiple ORNL potentials: working specifically on RGD (Regional and Global Data) and EDORA  (Environmental  Data for the Oak Ridge Area) right now.  Met 2/27, meeting again 3/5, in the meantime they are working on code to be put in subversion.  
+
+     * Y5Q3
+       * Gulf of Alaska DP (3531) -  PR in review (Matt)
+       * FRIM(4083)  - Jing Tao D1 contact, Laura sent email 2/10/14 - no response as yet (put in backlog - send an email asking more about whether they wish to participate, if we can provide info, etc.)
+       * USGS  ScienceBase (4002) - Mike to get back with us  re: when USGS expects to work on the ScienceBase stuff (from their  perspective)
+       * LTER-Europe (3232) -  Per email from Ben 1/23/14, "LTER_EUROPE is registered and just waiting to be "flipped on"."
+         * Update:   Matt: Please ask Ben to check content, but otherwise I think they are   ready to have release materials be developed and turned on in Y5Q3
+         * DD complete, Laura working on draft news item
+       * Dryad   (3118) -   news item approved(wait for response from the LT); Chris/Ryan working, hope to move Tuesday 2/18
+       * EDAC (3221) -  EDAC to go ASAP after Dryad
+       * Kansas (3188) -  News item approved; ready to flip the switch (although there might be an admin step "KUBI + DataONE = love" that needs to happen)
+       * U  Illinois Chicago (3213) - Chris and Bob pick up after CN.
+       * PPBio  (3748)  - PPBio has moved their server to LNCC (better internet  reliability  and more technical resources available) and is making great  technical  progress.  Debora sent draft MNDD to Laura 2/6/14 (still working on usage stats, etc.), Laura to draft news item for their review.
+       * Taiwan TERN (3211) - (put in backlog - wonder if we can ask them about them updating their Metacat upgrade, advantages to working with Data)
+         * Matt: I haven't been in contact with them.  (12/20/13) 
+       * SAEON (3205) -  Ben has been talking with them; I need to find out about them upgrading Metacat and contact Wim Hugo re: DD and their readiness to proceed
+       * NKN   (3238) -  work on NKN MN has resumed.
+       * GLEON (3422) - Ready to go; need to review the checklist to make sure all items have been completed
+
+     * Y5Q4
+       * EU BON (3964) - Their December meeting has been pushed out to 29-31 January.  
+         * ACTION: Laura emailed Hannu for updates, no response as yet
+       * DFC  (3532) -  
+       * MPC  (3708) - Actively working re: metadata formats, etc.
+
+        3. Old action items
+             
+        4. Not-high profile issues
+            nothing here
+
+        5. Around the room
+            Rebecca: any timeline for GOA announce (Amber will get back with Matt re: will we do a news release); Dryad news item sent to LT for review/suggestions, will return to MNW with responses
+            Dave: nope
+            Bruce: no
+            John: nope
+            Amber: nothing else
+            
+

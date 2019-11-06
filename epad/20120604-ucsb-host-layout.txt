@@ -1,0 +1,62 @@
+Discussion of hosts layout for UCSB
+
+Planned layout
+----------------------
+http://mule1.dataone.org/OperationDocs/server-layout.html
+
+
+
+Existing VMs
+--------------------
+http://mule1.dataone.org/OperationDocs/ucsb-guest-summary.html
+
+[root@host-ucsb-2 jones]# virsh list
+ Id Name                 State
+----------------------------------
+  6 cn-ucsb-1            running             32 GB, all 24 CPUs
+  
+ 25 d1usgs1              running           move to host4, rename mn-demo-5-12
+ 13 d1usgs2              running           move to host4, rename mn-demo-5-12
+ 15 d1usgs3              running           move to host4, rename mn-demo-5-12
+ 
+ 17 d1usgs4              running           move to host1, rename mn-demo-5-12
+ 19 d1usgs5              running           move to host1, rename mn-demo-5-12
+ 21 d1usgs6              running           move to host1, rename mn-demo-5-12
+ 26 d1usgs7              running           move to host1, rename mn-demo-5-12
+ 
+ 29 cn-dev               running  8gb     remove, (start using cn-dev-ucsb-1 on host4) (do before production comes online)
+
+[root@host-ucsb-3 jones]# virsh list
+ Id Name                 State
+--------------------------------------
+  1 mn-ucsb-1            running  32 - replication node (production)
+  2 mn-ucsb-2            running  32 - ESA/PARC node (production)
+  4 mn-stage-ucsb-2      running  32     test MN for testing replication target
+
+[root@host-ucsb-4 jones]# virsh list
+ Id Name                 State
+----------------------------------
+  8 knb-mn-stage-1 (mn-stage-ucsb-1)      running  24   KNB copy
+  9 cn-sandbox-ucsb-1    running  32
+ 13 cn-dev-ucsb-1        running  32      should host existing cn-dev, change to 8gb
+ 15 cn-stage-ucsb-1      running  32
+
+[root@host-ucsb-5 jones]# virsh list
+ Id Name                 State
+----------------------------------
+  7 mn-ucsb-3            running  32   to be production KNB (knb.ecoinformatics.org)
+ 13 mn-sandbox-ucsb-1    running  8    copy of knb for sandbox
+ 17 mn-sandbox-ucsb-2    running  8    replication target, but maybe usgs nodes instead
+ 
+ host-ucsb-1 64GB
+ ------------------
+ knb 16GB    (to be shut down when transfer is complete to host5) (knbvm)
+ mn-stage-ucsb-3
+ demo1 4GB
+ demo2 4GB
+ demo3 4GB
+ demo4 4GB
+ d1usgs0   - can be shut down
+
+
+

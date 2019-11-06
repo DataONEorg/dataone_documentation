@@ -1,0 +1,224 @@
+Attendees: Rebecca, Amber, Mike Frame,Viv, Suzie, John Cobb, Matt, Bertram, Carol, Hilmar, John Kunze
+
+Regrets: Bob Cook, Bill Michener, Dave Vieglais, Bruce Wilson
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Jul 6, 2012 at 10:55 AM MDT.
+https://www1.gotomeeting.com/join/935453873
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (773) 897-3014
+Access Code: 935-453-873
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 935-453-873
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012Jul06-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-07-06
+
+1) CI Update (Dave)
+ A new release was pushed out Tuesday evening that included  few fixes to ONEMercury.
+
+1.2 CN release: this was pushed out on Tuesday and CN had to synchronize but there's a problem with ~65 documents (from different providers) that didn't synchronize acroos the CN.  Have spent time investigating the problem because they feel it may be a symptom of a larger problem.  Have delayed bringing up PISCO and Merritt because they have so many documents and want to resolve the sychronization issue.
+
+Public relelase scheduled for July 19th.
+  -- Possibly better to do it on the 16th at the DUG
+  -- Amber will broach it with NSF about the new dates
+
+JWC: Or maybe pre-announce on the 16th at DUG that the 19th will be the date (but it is avaialble on the 16th anyway, for DUG-folk)
+
+(Update: Bill's presentation to the NSB has been postponed - possibly until fall)
+
+2) New member for Semantics & Integration WG (Koskela)
+
+ Kerstin Kleese-Van Dam can no longer continue on in the Semantics & Integration WG but she proposes that Paulo Pinheiro da Silva take her place.  Deborah supports this and knows Paulo well.  He was her postdoc at Stanford and went to UT El Paso as an asst professor and has done a lot of semantic eScience there and has recently joined Kerstin's group at PNNL - http://www.cs.utep.edu/paulo/  and 
+ http://www.pnl.gov/science/staff/staff_info.asp?staff_num=7774 
+ 
+ The members of the Semantics and Integration WG support the addition of Paulo to the group.
+ 
+2b) DataONE Workshop at ESIP (Matt & Dave) {and possibly others}
+Rebecca will send info to LT on when (Tues 1:30 - 3)  break (3:30- 5)
+http://wiki.esipfed.org/index.php/Summer_2012_Program
+
+3) Planning for next round of funding (Koskela)
+
+Current proposal: was $20M for 5 years (ending July 31, 2014) but the $20M has already
+been reduced by $1.5M => $18.5 
+
+Next proposal $10M for 5 years  {This number needs to be reviewed with NSF - is $10M still the "right" number or is it possible to request more?)
+Any rationale for the 10M$? why 10 and not 5 or 15 or 50?
+
+What would the LT like to see emphasized for the renewal proposal?
+JWC: Maybe filling the funding gap or even better augmenting the total funding (i.e. non-NSF funds-in)
+
+Going to have to figure out:
+**1.) What funds are needed to sustain infrastructure?
+2.) What funds are needed to continue to support Working Groups (If decided to continue and which one's?)
+3.) Will probably need to allocate some funds to data application leveraging or DataONE enabling various tools to essentially use the resource that has been created...
+Do we have any testamonials about successes using dataOne data and services?
+And funds to support outreach/instructional efforts.
+
+Examples of NSF long-term support of infrastructure:
+ * LTER
+ * NCAR
+
+Counter examples in OCI:
+ * Supercomputing centers
+
+S&G WG is hiring a consultant to work with them on a sustainability plan. 
+LT will need to advise on what needs to be sustained. Matt: S&G WG should be talking to the CNs on what (and how much) is needed to sustain the CNs. Hardware refresh and storage costs should be looked at for the long-term and also after some experience with public release. 
+
+**Baseline support for infrastructure should be core to the next proposal
+
+BL: What do we know / plan about the future role of Working Groups?
+
+
+The WGs haven't played out their roles yet - 2 examples: Integration & Semantics and Provenance. Important for the WGs to advise the CI this year and next and also to align their efforts in these last 2 years with the CI.
+
+Will need a S&G function - less in an exploratory role than with with actually getting things done.
+
+Education and outreach will also be important now that public release is here.
+
+Falling short on datasets that contained data - actual preservation of data was a core component of the proposal.  Hope to remedy this with new MNs -
+are the datasets categorized / tagged if they are metadata or ground data?
+Is NEON an issue here in this discussion?
+
+
+The UA Group probably is needed for repeat Assessments, and UA of Tools/Services... But perhaps it could be merged with some other group... Could UA and SocioCultural be merged in the future?
+Include deliverables for WGs - still need WGs but maybe the whole group does not have to
+attend each meeting.  Perhaps, semi-adhoc teams for specific questions/functions/issues
+Would like to see continuity from a group of people to move forward but also the ability to
+bring in specific expertise for some things.
+May have to get some extra funding to support the broad community - check the cost of the infrastructure and the cost of S&G and then check to see how much left?  May not be alot
+left for the community building. Would like to see the DUG go forward to advise and help prioritize.
+
+Have WGs identify funding sources to continue their work - arrange for time at the AHM to have brainstorming session on this
+
+Pursue collaoboative funding projets that are DataONE related. Ex. Semantics.
+
+For years 5-10 we either need more than 10M$ or we need to pan to do less than we are doing now.
+
+What to cut back to save $ ?
+Transition to a focused service model. I.e. less effort and $ spent on spin-up activities. (but not zero)
+
+some WG's become intermittant or have intermittant attendance - i.e. more community activities and then bringing a subset of the community in for focused meetings with deliverables
+
+[JWC WAG} A possible Proto-WBS for DataONE yrs 5-10
+
+Operations
+        CN
+            staff
+            HW refresh
+            Cybersecurity
+        MN 
+            What to include?
+            Integration?
+            Cybersecurity
+        CCIT (is it covered above
+            Maintenance Development
+            DataONE-wide cyber-security issues
+            System metrics
+                Health
+                Performance
+                Insturmentation to assist defect removal
+            Scaling
+                high number of MN's
+                harmonisation of data and metadata access policies
+                Federated identity implementation and expansion
+                higher rates of
+                    Metadata record ingest
+                    Data ingest size
+                    Data replication requirements
+
+Integration
+        New MN's
+        New Toolkit Items
+        Incorporating new functionality from WG results
+        continued WG's - maybe it fits here.
+
+Education/Outreach/Training
+        Science use cases
+        Training
+        Education
+        Outreach
+        Tool development/use (e.g. DMPtool collaobration)
+
+Development
+        Sustainability
+        Governance
+            MN induction decisions (used to be called MN prioritization)
+        Client development
+        Customer management
+                Assessment (does it fit here or another level up?)
+        Integation and interoperability with other projects
+            
+            Other Datanets
+            Dataway outcomes
+            Discipline focused projects
+                NEON
+                iPlant ?
+                OOI ?
+            CI projects
+                OSG
+                XSEDE
+                ...
+            International projects
+
+Project Managemen
+        Budget management
+        Project management (facillitating milestone development, tracking progress, pressing noses to grindstones)
+        Institutional Management (UNM interface)
+        Strategic planning
+                5 yr
+                past 5-yr
+        Reporting
+        "BRAD" Support?
+
+FROM original NSF DataNET solicitation:
+
+If a second five-year award is made, NSF funding is expected to decrease in each successive year of the award as the Partner transitions to a sustainable economic model with other sources of support. The actual amount of the annual decrease in NSF support will be established through the cooperative agreement."
+
+DUG could be part of ESIP User Group or in conjunction with other User Groups.
+
+
+
+4) Around the room
+
+Mike:
+
+DataONE ESIP UA Work
+- Do we have a give away (i.e. DataONE USB Drive, etc.)?
+- Are we sending out a note on the ESIP List for the DUG and could we include the DataONE UA session.
+- We are going to do a Poster advertising the UA session to put up somewhere at the General ESIP meeting
+
+John Cobb: Nothing to add today
+
+John Kunze: finished the Merritt MN software and began loading 17,000 water quality reports yesterday (have about 10,000 so far)
+
+Deborah McGuinness:  
+·        Started Postdoc Patrice Seyed 
+·        Deborah will be at ESIP on Wednesday and Thurs – giving keynote on Wednesday.  Is there any dataone session or opportunistic meeting that makes sense to consider?
+·        Identified with Schildhauer (NCEAS), O’Brian (LTR SBC),  Horsburgh (Utah), McGuinness (RPI), Bowers some initial data sets for initial water-based demonstration for initial postdoc task on semantically-enabled search.     McGuinness met with Schildhauer and Bowers about this before IPAW
+        Pinheiro da Silva will officially replace Kerstin as of today - July 6, 2012
+
+Bertram: Don't have a good telecon setup for the weekly ProvWG calls. Skype has been flaky. Gotomeeting or similar would be better.
+
+Suzie: SCWG held an online meeting this week. All but two members attended. Reviewed where we were at in terms of projects we are working on and started identifying our next group of products.  One member, Kevin Crowston, will be going to NSF in the fall as a rotater for two years. He told them he would like to   continue working with DataONE in the working group— and NSF implied there may be a way to work that out.  He will keep us informed.  We also began sending out our periodically WG newsletter -- which is in conjunction with UAWG.
+
+Amber - working on pulling the DUG together and ESA workshop / booth prep. Nothing new.
+
+Carol: Nothing new to add, I'm on vacation.:-)
+
+Viv: Prepping for ESA DataONE presentation
+
+Matt: Working with Dave, Bertram, and others on DIBBs proposal with DataONE playing a major role in archival, and expanding on the provenance working group results 
+
+

@@ -1,0 +1,53 @@
+Notes from 6/1/2012
+
+Robert Waltz
+
+  Completed changes to d1_libclient_java/synchronizaton/logAggregation that deals timeout problems. 
+  
+  Start the process of producing release candidates for all the components.  Assuming some components may need a further release early next week. But want to get production machines built with a release to prepare for MN releases next week.
+
+
+Roger
+
+- Fixed timeout issue on GMN replication
+- Looked into GMN buffering issue (not yet resolved)
+
+
+Andy
+
+- Python code has been changed for .../object/<pid>  ==>  .../resolve/<pid>
+- Waiting for dev to be updated so I can test.
+
+Chris
+
+ * worked with skye on replication testing.  Tracked down two small bugs that were causing failures
+   * CN.deleteReplicationMetadata() threw an exception when it shouldn't due to a typo. Fixed
+   * SystemMetadataFactory in Metacat was producing empty AccessPolicy entries on certain pids. Fixed.
+ * Locking changes in d1_replication are working in the latest runs
+   * tracking down individual pid issues. GMN was timing out, leaving pids in the requested state. Roger has added in a fix
+ * Will be working on larger runs today. Previous runs have no failed replica entries, but we didn't get a 'perfect' run (ie expected 198 replicas, got 140) After calling evict/get (emulating an audit), we got 191 of 198. Encouraging.
+
+
+Skye
+
+Replication work. Setting up runs. ReplicationTasks were getting stuck in different states.
+
+Mercury search changes. mostly CSS and logo and header layouts. Now on cn-dev-2.       mercury problem with SOLR query. fixed.
+    May be outstanding UI changes coming in from LT.
+
+Resource Map with type of  http://www.w3.org/TR/rdf-syntax-grammar . Is this a valid format?  -- If change required here, will effect index_processor, index_build_tool components only.  May just need to update the ResourceMapParser class to add this namespace.
+
+Jing
+
+  Reviewing Morpho code - figure out methods/actions used in Metacat, determine how to replace them with D1 API methods.  Design phase, present it next week.
+  
+  For account information, look at the CNIdentity API:
+  http://mule1.dataone.org/ArchitectureDocs-current/apis/CN_APIs.html#module-CNIdentity
+  
+Ben
+
+  Able to Synchronize a clean CN to two other running CNs.  So a CN can come up from a clean state.  Forces a running CN to push all the content through. A restart is needed, it is convenient (?) . Similar to how Metacat used to load everything from backing store. 
+  
+
+
+

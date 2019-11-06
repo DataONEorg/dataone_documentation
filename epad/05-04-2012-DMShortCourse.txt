@@ -1,0 +1,105 @@
+Call agenda: 
+Review assessment questions to participants
+Review agenda -- Hands on activities - any pre-installed software needed?
+Timelines -- assessment to participants May 9 (out) May 16 (back); agenda out to participants - date?
+Other details? 
+
+
+*******************************************************************************************
+v4:
+
+DataONE Data Management Workshop
+May 23-24, 2012
+Santa Barbara, CA
+
+Workshop Goals: 
+1) Provide an introduction to data management concepts and best practices 
+2) Gather feedback from each lesson from students in order to assess effectiveness
+Presenters: 
+Viv Hutchison (USGS), Carly Strasser (UCOP), Heather Henkel (USGS), Nancy Hoebelheinrich (NSIDC), Mark Schildhauer (NCEAS)
+ 
+AGENDA
+Day 1
+ 
+9:00 – 9:45               Welcome and Introductions (Viv) 
+9:45 – 10:45             Introduction to Data Management (Viv)
+10:45 – 11:00            BREAK
+11:00 – 11:30              Data Sharing (Carly) and Advertising your Data (Nancy)
+11:30 – 12:30          Data Management Plans and Tools (Carly)
+                                    - HANDS-ON: Write a Data Management Plan
+                                    - Evaluation of learning materials
+12:30 – 1:30             LUNCH
+1:30 – 2:00               Data Entry Manipulation (Carly)
+2:00 - 2:30               Quality Assurance/Quality Control (Carly)
+2:30 – 3:30                   - HANDS-ON: Data Organization Tips for Your Dataset 
+3:30 – 3:45               BREAK
+3:45 – 4:45               Analysis and Workflows (Mark)
+4:45 – 5:30                      - HANDS ON: Demo of Sample Data to Analysis Environment  
+6:00                           Group Dinner (optional)
+ 
+Day 2
+ 
+9:00 – 10:00             What is Metadata? (Viv)
+                                 The Value of Metadata (Viv)
+                                 Writing Quality Metadata (Viv)
+10:00 – 10:30               - HANDS-ON: Writing a Metadata Record for Your Dataset
+10:30 – 10:45           BREAK
+10:45 – 12:00               - HANDS-ON: Writing a Metadata Record for Your Dataset 
+-  20 min                               Data Semantics (Mark)
+12:00 - 1:30             LUNCH
+ 1:30 – 3:00          Data Citation (Nancy)
+                                      - HANDS-ON: Create a Dataset Citation for Your Data
+                                     - HANDS-ON:  Create a Citation for Data From Other Researchers
+3:00 – 3:15           BREAK 
+3:15 – 4:00           Protected Backup and Data Preservation (Heather)
+                                        - HANDS-ON: Storing Data
+4:00 – 5:00              Review of course material; Survey; Comments
+5:00                     Adjourn
+
+Get From Participants: sample of the dataset in CSV format; send in advance if possible (or send a description of the structure, syntax and semantic content of it).....a week in advance of the course date.
+
+Send out a note today asking what kinds of data the participants they plan to bring to the workshop (remind them it only has to be a sample)
+
+
+Last Name    First Name    Stage    Subject    Institution
+Abercrombie    Parker    Incoming Masters    Computer scientist /geog  Boston University
+Aktaruzzaman    Zaman    Early stage (1 yr) Postdoc    Civil Environmental Engineering    University of Illinois at Urbana-Champaign
+Albalasmeh    Ammar    PhD Candidate    Environmental Systems    UC Merced
+Dworkin    Ian     Assistant Prof    Ecology, Evolutionary Biology & Behaviour    Michigan State
+Eaker    Chris    Masters Candidate    LIS    University of Tennesse
+Forrester    Tavis    PhD Candidate    Ecology    UC Davis
+Frazier    Heather    PhD Candidate    Geography    UC Santa Barbara
+Garcia    Elizabeth    PhD Candidate    Geography    UC Santa Barbara
+Gilbreath    Thomas    PhD Candidate    Ecology / Evolutionary Biology    UC Irvine
+Hartsough    Peter    Late stage (4 yr) Postdoc    Hydrology    Dept. of Land, Air and Water Resources
+Hoagland    Serra    PhD Candidate    Forestry    Northern Arizona State
+Judson    Sarah    Researcher (Masters level)    Aquatic Ecology    BLM/USU National Aquatic Monitoring Center
+Kirchener    Peter    PhD Candidate    Hydrology    UC Merced
+Laney    Christine    PhD Candidate    Environmental Science / Engineering    U Texas El Paso
+Pai    Henry    PhD Candidate    Environmental Systems    UC Merced
+Purcell    Serenity    Masters    GIS    Maryland / Smithsonian
+Thorpe    Andrew    PhD Candidate    Geography    UC Santa Barbara
+Vieli    Lorena    PhD Candidate    Agriculture    UC Santa Barbara
+Whalen    Matt    PhD Candidate    Ecology    UC Davis
+
+How would you rate the quality of the information presented during the lecture component of this lesson?
+            Comments on how it could be improved
+How would rate the quality of the hands-on component of this lesson?
+How would rate the quality of the instructor’s presentation of this information?
+How useful was the information presented in this lesson to you personally?
+            Is there information that would be of use to you but was not covered in the lesson? If so, please describe
+ 
+o   During this session, we presented the following as best practices:
+§  …
+§  …
+§  …
+o   Do you foresee obstacles to implementing these best practices in your work? How difficult do you think it will be to overcome these obstacles?
+§  I am already doing this + Likert scale ranging from ‘may require some work to implement, but no serious obstacles’ to ‘insurmountable obstacles’ + not applicable to my work
+o   If you see significant obstacles, which of the following best describes the obstacles?
+§  Not enough time
+§  Not enough knowledge
+§  Not enough technical support
+§   
+o   Please provide more information about the serious obstacles that you see to implementing these best practices in your work.
+ 
+

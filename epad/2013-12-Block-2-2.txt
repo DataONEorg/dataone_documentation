@@ -1,0 +1,195 @@
+Sprint Notes for 2013-12-Block-2-2
+==================================
+
+Skye
+----
+ * 20130327
+   * Robert discussing a replacement to the hzNodes map
+   * Need some design work on for the Node registry functionality
+   * Need to discuss CN invalid replica issues and strategies on how this will work
+   * Will be testing auditing, but CN auditing response to invalid content in Metacat needs to be addressed
+   * 
+ * 20130325
+   * differing opinions for handling replicas in auditing
+     * Dave - delete bad replicas
+     * Chris - history of bit-rot (invalidated status in replica)
+     * Matt - purposed of invalidated is simply to note the bad state.
+   * Q. how to re-replicate (replace invalid copy with valide one)?
+   * Q. who is authoritative for checksum?  CN should be.
+ * 20130322
+   * Continued replication work - strategies
+     * Questions re: authoritative MN
+       * auth_mn is the co-owner, and curator of an object
+       * checksum authority might need to be a majority algorithm
+ * 20130320
+   * MN-MN to Replication
+     * Replication DAO queries
+     * ReplicaAuditingStrategy - some questions re: verifying replicas
+     * Will continue work on unit tests
+
+Ben
+---
+ * 20130327
+   * Morpho UI work
+   * Migrating Metacat/Morpho bugzilla migration with Nick
+   * Working with Matt/Jing on Morpho/Metacat
+ * 20130325
+   * keeping calm and carrying on...
+ * 20130322
+   * Testing replication within KNB/PISCO/LTER/SANPARKS, etc.
+     * dealing with sync errors
+     * SANPARKS first, on the order of 3K objects
+ * 20130320
+   * Wrapping up UI changes in Morpho
+   * Will be planning a Metacat release for 2.0.6
+   * Will work with Matt on IdP
+ * 20130318
+   * ask.dataone.org
+     * Needs some work to flesh it out prior to making it public
+     * Everyone needs to contribute to get some karma
+
+
+Chris B
+-------
+ * 
+ * 20130325
+   * not much to report yet
+   * Waiting on Robert Waltz to send the latest XML schema to me 
+
+ * 20130322
+   * Met with Robert, agreed on apt and ansible configuration
+     * Will add write up to ops documention
+   * Splunk - worked with Bruce on Wednesday
+     * SSL access is next
+ * 20130320
+   * Splunk
+     * Installed Splunk, configured and started the service
+     * Completed some of the basic tutorials
+     * Next step is to start collecting some test data and using it with the splunk apps provided.
+
+   * Ansible
+     * Private site module
+       * Adapting Rob Waltz's work to ansible
+       * Have the XML and schema validation working for the sample site configuration xml sent out by waltz
+       * Working on xpath queries using the information from the configuration data and network interface data
+
+ * 20130318 
+   * Splunk
+     * Setup a VM at ORC
+     * Created an account at Splunk
+     * Next step  is to install the software and begin server setup
+     * 
+
+   * Ansible
+     * Completed first pass at the debconf module
+       * Adding some more features
+         * Adding the results to the global variables for playbooks
+       * Looking into including the module in the next release of Ansible.
+
+   * Private site module
+     * Adapting Rob Waltz's work to ansible
+       * Using python ctypes to call the getifaddrs call to the network interfaces call should work on BSD, Linux and Mac
+
+
+
+Robert
+------
+ * 20130327
+   * Working on config Types XSD, will send out sample XMl for Chris to review
+   * Miriam will chat with Dave re: faq on the website, wrt ask.dataone.org
+   * Usability and Assessment workshop in late April, early May: Robert will send out the agenda
+ * 20130325
+   * not much to report - sidelined by hardware issues.
+ * 20130322
+   * Q: sync returning InvalidSystemMetadata #3671, A: reject
+   * Working with Chris B. on debian conf schema
+     * will be adding in element under templates
+ * 20130320
+   * debian configuration parsing
+     * created an XML schema for our debian configuration
+     * <environment>
+ * 20130318
+   * os-core continued work (bashing in bash)
+   * WRT location of os-core properties:
+     * publish props files like we do schemas
+     * need to be careful using trunk files in production
+     * will create a location on dev-testing.dataone.org
+
+Rob
+---
+ *  20130327
+   * Sketching out seriesId requirements
+   * Will work with Dave re: mutability
+     * Thinking through how some MNs may not store older revisions
+     * May need to hold onto sysmeta
+   * Get CCIT SB meeting notes and whiteboard doc. on series ID 
+ * 20130322
+   * In touch with Ryan at Dryad
+     * ORE map issues - consistent bytes, might have to call 5 times.
+   * Ryan has questions about encoding ids
+     * Doing partial encodings in the ORE docs - needs fixing
+     * encoding of identifiers seems to be ok in ORE docs.
+       * (url encoded when pid part of the resolve URL, not encoded when just identifier)
+     * the problem is with return Log type, where & in the xml are not xml-escaped
+   * Semantics of OREs (wrt archived docs not in the Solr index)
+     * Can you remove triple statements in an ORE?
+       * obsolete the old package
+       * new ORE will get new relationships as needed
+ * 20130320
+   * Writing up tickets re: archive flag
+     * recreating the obsolecense chain is difficult if we archive() on update()
+     * ben: indexing is: SysMeta.archived != true OR objects SysMeta.obsoletedBy != null
+     * suggestion: create a new API calls:  
+       * {CN|MN}.getObsolecenseChain(pid) and/or
+       * {CN|MN}.getRevisionHistory(pid) and/or
+       * {CN|MN}.getLatestIdentifier(pid)
+     * TODO: will write up API additions proposal for the above, note: related to get(seriesId), etc.
+ * 20130318
+   * Friday: documentation, 
+     * latest content, resource maps, and supporting mutability
+     * curation issues
+     * https://repository.dataone.org/documents/Projects/cicore/guides/NOTES.txt
+     * we may be introducing a 'published' state
+
+Matt
+----
+
+ * 20130327
+   * Working on MN checklist with Chris
+     * Need to ccordinate with Laura Moyers and the MN Wranglers group
+ * 20130325
+   * continuing member node checklist coming on-line.
+   * would like to get folks working on testing to comment on the non-codified tests.
+ * 20130322
+   * MN Forum call
+     * MN reps
+       * existing nodes: Bob Waide, Mike Frenock, etc
+       * new nodes
+     * Helped to clarify where we are lacking
+     * Need to be explicit about tests
+     * http://mule1.dataone.org/OperationDocs/member_node_deployment/overview.html
+ * 20130318
+   * ISEES workshop last week
+   * ask.dataone.org work
+
+Dave
+----
+ * 20130327
+   * Will chat with Rob re: mutability
+
+Chris
+-----
+ * 20130327
+   * TODO: set up a CN auditing meeting
+ * 20130322
+   * Replication work with Ben
+   * KNB conf call with Matt, Jing, Ben
+   * LTER sensor workshop coordination
+   * Documentation checklist for MN deployments
+   * http://mule1.dataone.org/OperationDocs/member_node_deployment/overview.html
+ * 20130318
+   * TODO: change the MN.update() arch docs to note that it SHOULD set the archived flag to true
+
+
+
+

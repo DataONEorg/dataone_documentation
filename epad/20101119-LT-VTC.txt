@@ -1,0 +1,211 @@
+Attendees: Rebecca Koskela, Amber Budden, Bob Cook, Suzie Allard, Bill Michener,John Cobb, Trisha Cruse, Todd Vision, Matt Jones, Dave Vieglais, Steve Kelling,Bruce Wilson,
+
+
+Regrets: Viv Hutchison, Carol Tenopir
+
+
+http://epad.dataone.org/20101119-LT-VTC
+ 
+
+ Agenda for 2010-11-19
+ 
+ Discussions about permissions on LT folders; DUG Planning folder probably needs to be moved out of the LT folder; Dave will verify that DataONE Team members can't read from
+ LT folders
+
+     1. DataONE Users Group - review materials for attendees
+     https://docs.dataone.org/member-area/committees/management-team/meetings/planning-for-dug
+     
+I. Member Node Documents
+ 
+Item: Process to add member node (now a ppt) (Amber or Rebecca)
+(S&G Summary slides - ppt)
+Status: turn ppt slide into a text document, but add an illustration if necessary
+ Step by step guide for adding a member node
+ 
+Item: 2-page on the document on Member nodes – Mike Frame
+Status: in process – work with Allison, Rama, and Lisa Zolly to complete. Needs to have DataONE template.
+ Intent: high level description of MN, benefits of being a MN - elevator speech on MN
+ 
+Item: Summary description – slide (Bill)
+Status: complete, but needs to have DataONE template
+ First slide in deck - process to establish a MN - combine with Alison's?
+ 
+Item: DataONE Member Node Registration – part of the application package (Bob) - Needs review by CI
+Status: complete, but needs to have DataONE template.
+ changes will be needed - APIs will be prescribed by DataONE; 
+ larger context of what data the potential MN will provide
+ CI: series of sw stacks that are available or libraries - MN would adapt these
+ MNs would come and go over time
+ Document may need to evolve over time as infrastructure evolves over time
+ 
+ alternatives for word "Registration" - Survey?
+ 
+ 
+Item: Sample registration (Bob) 
+Status: complete, but needs to have DataONE template.
+Bob has comments from Bruce that he wants to incorporate
+ 
+ Need example from KNB - Matt (responses will be broad)
+ 
+Item: Service Guidelines (Mike and Trisha)-Needs review by CI
+Status: in process, but needs to have DataONE template.
+ Background: SLA might be a barrier so a guideline showing roles & responsibilities of both sides - Needs a look by CCIT and doesn't overlap improperly with other documents
+ Means of MN to communicate back to DataONE
+ Who can be a MN paragraph - individual invesigators can't become a MN
+ Hot topic at Tamaya: concern about individual researchers being able to be a MN
+ Remove statement for now
+ 
+ Service Availability - service windows - CNs should be able to cover others maintenance windows - Important for CCIT to review this and comment
+ 
+ Mailing lists and feeds for network are important but not ready to commit to a specific model
+ Label document as DRAFT
+ 
+ Reporting:  some designed into s/w stack but it is not in the s/w stack right now but should be there at first public release
+ 
+ Some of the wording in this document is too strong - more flexible statements
+ Distinguish between endpoint and the evolving public versions
+ 
+ Who's responsible for training?
+ Breakout session devoted to these guidelines - mechanism to recruit MN - MNs could help each other
+ In terms of governance, tightrope to walk between agreement but not committing DataONE to too much
+ For training, start with mailing list to provide support, and list what might be there in the future
+ 
+ Dave & Matt work on softening some of the language and clarify where necessary
+ 
+ What is intended final product?  Perhaps a folder with all the documents numbered
+ Review in early December
+ 
+Item: Strategic criteria for standing up a member node 
+Status: complete, but needs to be woven into the 2-pager
+ 
+ Document worked on in Oakland at last S&G WG meeting - blend into 
+ 2-pager
+ Now in folder
+ Says 5 criteria but only 4 are listed - Size just needs a bullet
+ Internal criteria for how we help MN come on-line not meant to be restrictive
+ Question of resources: would also illustrate to EAB & community that we are thoughtful in building out the DataONE community
+ Prioritizing our investments in MN but not to be used in a restrictive sense
+ EAB had asked about plans to build out member nodes - this document was in response to that 
+ Change language to reflect Matt & John's comments about the resource impact on DataONE
+ 
+ 
+ 
+ 
+ Bill working on summary of DataONE that may serve as preview - will take the
+ place of the existing 1-pager
+ 
+Item: Member node technical documentation … Bob, Mike, and Dave
+May need input from CCIT (??)
+Status: not yet started
+ General overview; includes extracts from API documentation
+ 
+II. DataONE Users Group
+Item: Charter (Amber) 
+Status: Clean-up and send to leadership team. (needs to have DataONE template.)
+ Challenge: elect a chair and voting requirements
+ Chair in place:
+ Good for review
+ Good for planning next meeting
+ 1st official meeting in 2012 
+ Size is open - organization like ESIP that starts out small and grows through time
+ John's suggestion: chair for 3-6 month term as "startup" chair
+ Would probably need to be 13-month
+ Committee to work on by-laws
+ 
+Item: Agenda  (Rebecca)
+Status: complete 
+
+      2.  Redmine Issue Tracking (Vieglais)
+
+      3.  NEES & DataONE(Cobb)
+           Upsides:
+
+            A) To the extent that DataONE can be of service to another large NSF  project with a 
+                 large CI component, it can only help to emphasize the  importance of DataONE as 
+                 a component of Data CI both directly for  environmental and ecological science and
+                as an exemplar for data focused  CI NSF-wide
+            B) Possible re-inforcing strategies on providing data management plan services for 
+                 NSF proposals.
+            C) collaboration and exchange on information, strategy, and technology.
+
+        Action Items:
+            1) DataONE LT discussion on strategy (really more like a fuller briefing) on a LT call in
+                the near future
+            2) Discussion on how to engage NEES
+
+
+
+  4.  Round the room (All)
+  
+  Cobb:
+A:
+  Discussion with storage vendors at SC'10
+      Dell -tech refresh 3100->3200. Dell has a Lustre appliance preconfigured and plug and play. Native IBbut 10GbE option
+      Raid Inc
+      Next-IO
+      SuperMicro
+      PanasasCirraStor
+      Aristia: 10GbE switch at ~$300/port cost on switch side!!!
+      Missed speaking to Panassas and DDN
+      
+      next step: ask for an informational quote based on HW specs discussed at AHM.
+
+B:
+Thinking about preparing MOU for TG mtg in Dec. (at the same time as DUG)
+
+C: 
+wokring on next Allocations req. for Eva and other TG relate allocations. Working with CLO folks on needs, but also can add other DataONE needs into htat proposal. If there are other needs, let me know and I'll try to roll them in.
+=================
+[10:58 AM] Bob joined.
+[10:59 AM] Trisha Cruse joined.
+[10:59 AM] Rebecca: http://epad.dataone.org/20101119-LT-VTC
+[11:04 AM] John W. Cobb left.
+[11:04 AM] Dave Vieglais joined.
+[11:04 AM] Matt Jones joined.
+[11:04 AM] Todd Vision joined.
+[11:05 AM] Dave:  partially
+[11:06 AM] Rebecca: I emailed all the documents to Bob
+[11:07 AM] John W. Cobb joined.
+[11:07 AM] Bob Cook:  emailed to Bob S.?
+[11:07 AM] John:  Sorry folks, I may be bouncing a bit - hotel network for me :<
+[11:07 AM] Rebecca: Yes - Bob S.
+[11:09 AM] Steve joined.
+[11:10 AM] Bruce Wilson joined.
+[11:13 AM] Suzie:  Carol is flying back from Germany
+[11:13 AM] Dave:  testing a random selection of files seems to indicate that file permissions are correct on the leadership team folder and its children
+[11:15 AM] John W. Cobb left.
+[11:15 AM] Bob Cook:  I haven't reviewed the DUG MN 2-pager
+[11:16 AM] John W. Cobb joined.
+[11:16 AM] John:  I'm back. sorry.
+[11:23 AM] John:  The unique thing about a security MOU is that DataONE will have to do some sort of audit (or really assessment) to make sure the implementation is meeting the expectations
+[11:28 AM] John W. Cobb left.
+[11:28 AM] John W. Cobb joined.
+[11:29 AM] John:  I'm back again. I'm averaging 30 kbs <ugh>
+[11:32 AM] Bruce:  @John-I thought you were at a computing conference  
+[11:35 AM] Steve:  Sorry, but I have to go.
+[11:35 AM] Steve left.
+[11:36 AM] John W. Cobb left.
+[11:36 AM] John W. Cobb joined.
+[11:39 AM] Trisha:  that is what i heard too  
+[11:41 AM] John:  It sounds to me like we need to subscribe Trish to receive e-mail updates for ALL changes in repo :>
+[11:43 AM] Matt:  is the strategic doc in the folder?
+[11:48 AM] Suzie:  I think the data citation white paper will be done -- final draft wil lbe going out for review at the end of this weekend.  Would you want that in the notebook?
+[11:49 AM] John:  It would be good if that white paper would also appear on the externally avaialble DataONE web-space
+[11:50 AM] Bill:  agreed.
+[11:50 AM] John:  I have already gotten several requests from non DataONE folks for DataMan plan examples and "best practices" papers for various things including data citation
+[11:51 AM] John:  perhaps select a chair for a 3 month or 6 month term as a "startup" chair
+[11:54 AM] Trisha:  Rebecca -- did we look at the criteria document and was it OK?
+[11:56 AM] Todd:  Sorry, have to leave a few minutes early.  The strategic criteria look good to me.  Bye!
+[11:56 AM] Todd Vision left.
+[11:58 AM] John:  I agree with Dave. A fully capable independant member node should be welcomed.
+[11:59 AM] John:  Our need is to prioritize the impacts on DataONE resrouces
+[12:00 PM] John:  Maybe we are missing an unspoken criterion which is resrouce impact on dataONE
+[12:03 PM] Trisha Cruse left.
+[12:03 PM] Suzie:  works for me
+[12:03 PM] Suzie:  bye happy t-day
+[12:03 PM] John W. Cobb joined.
+[12:04 PM] Bob left.
+[12:04 PM] Suzie Allard left.
+[12:04 PM] Bruce Wilson left.
+[12:04 PM] Matt Jones left.
+

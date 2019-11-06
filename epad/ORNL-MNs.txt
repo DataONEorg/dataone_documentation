@@ -1,0 +1,49 @@
+Other ORNL Member Nodes (beyond ORNL-DAAC)
+
+EDORA redmine ticket:  https://redmine.dataone.org/issues/4247
+
+RGD redmine ticket: https://redmine.dataone.org/issues/4248
+
+===============================================================
+Meeting 28 August 2014, 3pm ET
+
+Attending:  Chris, Bob, Ranjeet, Laura, Yaxing, Jim, Bruce
+
+Regrets:  Dave
+
+Current outstanding issues as noted in redmine tickets (from Chris):
+ * Ranjeet has addressed one of these (#6047), and there are a couple outstanding tasks (#6048, #6049, #6053), which we can discuss
+ * https://redmine.dataone.org/issues/6047  looks like data in EDORA, RGD, DAAC are validating
+ * https://redmine.dataone.org/issues/6048
+ * https://redmine.dataone.org/issues/6049
+ * https://redmine.dataone.org/issues/6053
+ * 
+
+Today's agenda:
+1.  RGD and EDORA Member Nodes
+    -Validate schema (Redmine ticket
+    https://redmine.dataone.org/issues/6047 ) -Timeline for additional activities registering xsd; certificates for production
+    
+    register domain at purl.org, register schema at CN, start harvest
+    Ranjeet will wait a day or two to hear back from purl folks to confirm that the requested domain has been accepted
+    Ranjeet/Jim to recreate scimeta files with Mercury namespace, Chris to register namespace on CN, version 1.0
+    Chris can create production certificates today for RGD and EDORA (but Ranjeet hold off on loading until tickets above have been resolved)
+    Also, for ORNL DAAC, hold off on changing things until API 2.0 is available
+    
+
+2.  Plans for MsTMIP Mercury Instance and MN
+ *     iso metadata based, extracted from TDS
+ *     need to engage Skye to develop mapping from ISO to dataone
+ *     
+    will contain granule level information, to enable search and access of individual granules
+ *     
+ *    would  like to have a version up and running for test purposes in 2 months (end of October)
+ *    
+ *    need feedback on the ISO format, especially the empty elements
+   * List of DataONE indexed fields:
+     * https://cn.dataone.org/cn/v1/query/solr
+ * Additional documents (description, contact, ...) needed by Laura for a new MsTMIP member node?
+
+3.  Other items 
+Next meeting on Thursday, September 18 at 3 pm
+

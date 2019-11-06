@@ -1,0 +1,63 @@
+Member Node Wranglers 
+    Fridays at 10:00 am AK
+                    11:00 AM PDT
+                    12:00 MDT
+                    1:00pm CDT
+                    2:00pm EDT) 
+
+https://www1.gotomeeting.com/join/430697153
+                                                                                                                    UPDATING IN PROGRESS
+20 December 2013  
+
+Attending: CANCELLED
+
+Regrets: Laura, Bruce, 
+
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+        Dashboard meeting 12/18/13 - reviewed changes based on suggestions at AHM made to date, clarified what some values are, etc.  
+        epad from the meeting is http://epad.dataone.org/2013Dec18-Dashboard  
+        Tentative plan is to push out the simple dashboard mid-January and then add map functionality prior to NSF review end of February.
+        
+        CN synch issue - Per Dave 12/20/13:  A solution has been identified, it is being implemented, but is not yet complete.
+
+        New MNs announcements? -  holding off until after CN issues resolved; SEAD has been announced:  http://www.dataone.org/news/sead-virtual-archive-joins-dataone-member-node
+
+        IDCC workshop 2/27/14? -  workshop announced http://www.dataone.org/news/register-now-dataone-mn-implementation-workshop
+     
+        2. Status of MNs  (very few changes from previous week)
+     * Y5Q2
+       * holding off on announcing NPN until the CN issues are resolved
+       * Gulf of Alaska DP (3531) - The GoA PIs et al. met before Thanksgiving, which is what we were waiting for before we could announce. Need info from Matt.
+         * Matt: Just need to write the press release; node is fully synced in production
+       * FRIM (4083) - Jing Tao D1 contact, Omar Ali is tech MN POC, currently installing latest version of Metacat, Jing sent an email to Omar.  I haven't seen a reply yet.
+       * LTER-Europe (3232) -  Need info from Matt.
+         * Matt: No movement. I emailed them today.
+       * Dryad (3118) - Per Ryan 12/20/13:  we have been slowly fixing bugs as they are identified by the developer team. We fixed the last known bug about a week ago, but the developers had some high-priority issues come up, so they haven’t been able to re-test for us yet.
+       * EDAC (3221) - just a few more tickets to address; Rob and Soren working these.
+       * Kansas (3188) - as of 12/12/13, exceptions are resolved and KUBI is ready to go to production.  Holding off for CN synch issue resolution.
+       * U Illinois Chicago (3213) - Bob says "We still have to finish up installing the prerequisites for Metacat (Java). The cert is installed and functional. I'll be in touch with Chris to schedule our next install  session."  Laura to follow-up with Bob/Chris.
+       * PPBio (3748) - LLNC server migration is complete. May need support now for further configuration. Laura to be in touch with Debora.
+       * SAEON (3205) -  moving metacat to more permanent server - Need info from Matt.
+         * No change in status, no reply to my last email
+       * NKN  (3238) - To resume development after the holidays per Luke.
+
+     * Y5Q3
+       * USGS ScienceBase (4002) - Per Mike Frame, planning a meeting in January to discuss broader issues of how/where this data will fit into the overall USGS DataONE involvement
+       * DFC (3532) - Bruce has emailed Lisa - update?
+       * Taiwan TERN (3211) - Need info from Matt.
+         * Matt: I haven't been in contact with them.  
+
+     * Y5Q4
+       * EU BON (3964) - Their December meeting has been pushed out to 29-31 January.
+       * MPC (3708) - decided to go with GMN with Dublin Core for metadata; they think they will pursue OAI-PMH in the future for other purposes.  All  DC terms are contained in EML, Dave recommends create simple EML documents, so D1 doesn't have to do anything special to use; allows   richer metadata if they choose.  Wendy in conversation with Chris et al. re: DC.
+
+        3. Old action items
+        
+        4. Not-high profile issues
+         
+        5. Around the room
+

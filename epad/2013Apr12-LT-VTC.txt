@@ -1,0 +1,95 @@
+Attendees: Rebecca, Amber, Bob, Suzie, Dave, Mike, John K., Bertram, Matt, Todd
+
+Regrets: Steph, Bill, Viv, Bruce, 
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+ We will also use the epad: http://epad.dataone.org/2013Apr12-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+1.  Please join my meeting, Apr 12, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/941447705
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 289-0012
+Access Code: 941-447-705
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 941-447-705
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+Agenda for 2013-04-12
+
+1) CI Update (Vieglais)
+Things are progressing as planned.  Had network outage at UT last night (planned) and was handled without problems.  Lots of work lately on streamlining the process of bringing MNs online - mainly working on documentation (merging technical with overview).  Responding to issues that have been encountered in bringing MNs online.
+Roger has been working on ONEDrive.
+Put together an initial proposal on immutability: 
+
+http://mule1.dataone.org/ArchitectureDocs-current/design/ContentMutability.html
+
+Dave will check on getting a graph of the downloads of data from DataONE for the quarterly report.
+
+2) CEE Update  (Budden)
+Was on a panel at AAG with TerraPop and DFC (SEAD unable to make it). Group was mainly remote sensing and GIS. Audience was ~25.
+
+Internship program is closed and all 8 first choice candidates accepted the offers. Four of the 8 acceptance letters have been received by the DataONE office.  Mentoring information will be going out to mentors soon.
+
+AGU workshop deadlines are approaching - Amber will submit a proposal for a Data Management session. Potential people to be involved: Amber, Carly, John K. - anyone
+else?
+Amber had email from Pat Lineback, Regional GIS Coordinator, for USFWS Geospatial Service about collaborating on a grant. She will talk to them next week.
+
+Ask.dataone.org is now connected to the DataONE public web site (on Resources landing page and also on Contact page).  If you are using this, please add a picture. Matt said that the avatars were disabled on purpose for privacy purposes. 
+Mike: Amber maybe let me know what Region he is in FWS or Program? 
+Todd: looks like #8 http://www.fws.gov/gis/contacts/Reg8.htm
+
+3) MN Update (Cobb)
+
+SEAD and other DataONE updates
+
+Action Item: Note to Chadduck from DataONE concerning SEAD status as a DataONE MN
+    SEAD has made much progress
+    The DataONE MN instantiatino progress may have also help SEAD qua SEAD  to standardize and regularize their processes.
+    Purpose si to make sure that SEAD-CI get recognition it deserved
+
+work continues on documentation and sharing re MN process and policy under discussion. Preliminary drafts can be viewed at
+
+Taiwan Forestry Institute moving forward with their process to become a MN.  They will soon be in the staging environment.
+
+4) Around the Room
+
+Bruce: Have done some proof-of-concept explorations with Chris Brumgard about a possible tool to help with monitoring and log file analysis.  I've spent some time on the mutable content discussion and will provide some input later today.  I still need to finish my review of the applicants for the UTK cyberinfrastructure GA position for next year.  I've basically got people with the right attitude, but not the skills I'd like.  We had a (planned) network outage at the ORC node on Wednesday night.  Chris Jones handled the tasks of taking the ORC nodes out of the rotation and bringing them back in.  I'm not aware of any problems arising from the outage.  
+
+John Cobb:
+Next week attending 
+Advanced Regional & State Networks (ARNs): Envisioning the Future of Critical Partners in Data-Driven Science workshop <https://www.mcnc.org/envision/program> Issue for discussion includes how regional networks can fit into campus and national network ecosystem. The hope is to define some opportunities for the regional networks. Of special interest is how they could provide big-data service/data-intensive science. Other Datanets will also be there includine Beth Plale and Reagan Moore
+
+
+Bob:
+1.  Attending a Science Gateway Focus group meeting next Thursday and Friday.  This focus group is part of a conceptualization award for the Scientific Software Innovation Institutes (S2I2) to be funded by the National Science Foundation (NSF).   Science gateways are digital interfaces to advanced technology that supports science and engineering research. These gateways, frequently implemented as web and mobile applications, provide access to community resources such as software, data, collaboration tools, instrumentation, and high-performance computing.
+http://sciencegateways.org/about/
+2.  DataONE (Dave Vieglais is lead) is a collaborator on the EarthCube Building Blocks Proposal, dealing with Brokering Services.  I am also a collaborator on this BB Proposal, using our North American Carbon Program and EVA data, processing, and visualization.  BB Proposal is due near the end of May.
+
+
+Suzie: 
+Attended the "Users' Requirements" meeting hosted by Datanet Federation Consortium ( Regan Moore, Helen Tibbo, Cal Lee) at UNC Chapel Hill.  There were also onsite representatives from SEAD (Ann Zimmerman) and TeraPop (Traci ) as well as online attendants Kimberly Douglass and Scott Brandt from the Data Curation Profile project at Purdue.  We reviewed what each data net is doing regarding understanding their users and made some plans for joint work, etc.  This meeting will be included in the RSV materials for each of these projects (week of April 22).  Everyone was very impressed with what DataONE is doing particularly related to our ability for CE and CI to interact.  The group would like to organize a workshop to map commonalities across our communities and look for bridges to build social interoperability. If we can pull it together it is likely to be built around a framework from the DataONE principles. 
+
+Bruce (co-PI) and I (PI) were funded by IMLS for a small planning grant (~$50K) for "Cybersecurity for Science Information (CSI):  Developing Workforce Proficiency" (CSI). 
+
+We have gained access to FigShare community for our early adopters survey.  Geoff Bilder provided the introduction.  The survey is going out shortly. 
+
+Mike: Nothing to report
+
+Todd: nothing to report
+
+John Kunze:  Presented "Annotating Research Data", a brief talk at "I Annotate" yesterday in SF, highlighting two different approaches (long tail vs Protein Data Bank).  Talked to Rob Sanderson about LANL, who mentioned talking to DataONE about his Resource Sync work.  Presented also at RDAP 2013 on data curation.
+
+Bertram: nothing new.
+
+Rebecca: EUDAT/DataONE meeting next week at DataONE office (Tues,Wed) and also
+meeting at Los Alamos National Lab on Monday 
+
+

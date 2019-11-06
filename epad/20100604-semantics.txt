@@ -1,0 +1,50 @@
+Briainstorming list (not authoritative) in teleconference between Bruce Wilson and Jeff Horsburgh on 6/4/10.  
+
+Key deliverables for Semantics working group:
+
+1) In collaboration with other working groups, particularly EVA, develop publishable and useful examples that highlight the value of semantic annotation and integration of data. Show how this makes something possible or easier than it would be without the semantic integration.  Identify the current barriers to data integration and discovery.   ??How does this add innovative value or something to the working group members?  ??What does this do to advance DataONE's objectives?  
+ 
+2) Provide a strategic roadmap, with prioritization, for semantic technologies and standards that DataONE should adopt or implement by the end of year 3 and by the end of year 5 for DataONE to reach its goals (as articulated in the original proposal).  The working group, in conjunction with DataONE staff and students, may implement prototypes and or test implementations of some of these tools, both as a means to achieve objective (1) and as means to assist in the selection and prioritization of approaches.  
+
+3) Provide information to the community, at large, for the unsolved problems, needed standards, and issues relating to semantics -- what has not been solved and needs to be solved for DataONE to achieve its goals in the 1, 5, and 10 year time horizons.  Goals are defined in the proposal, but may need broader definition.  
+
+4) Articulate additional use cases and stories which describe the role of semantic tools in the context of DataONE and which can be used for the implementation of appropriate cyberinfrastructure tools.  
+
+5) What infrastructure is needed to support the semantic-related objectives.  Note infrastructure in the NSF CI model -- software, hardware, people.  What is the sustainability modeld for this infrastructure, including collaborative relationships with particular people and organizations?  
+
+Interoperability among DataNets should be addressed, particularly wrt Data Conservancy.  
+
+What input can we give for the Ithaca meeting?  What do we see, here and now, as needs to feed to this meeting?  Data Conservancy may be trying to do the work at the upstream end for a common observational data model.  DataONE takes the approach that there will be multiple data models.  How does semantics and observational data models take into account the backfile of existing data?  And if we are limited by what can be done with the backfile, how do we ever move foward? 
+
+A barrier to different observational data models is standards and controlled vocabularies across scientific domains.  How can we search across different domains?  What is covered in the ontologies for different domains? What technologies are available for integrating or mediating across differnt domain ontologies? 
+
+What is the relationship between the observational models and semantics to the crosswalk work from last summer's students?  
+
+Additional ideas from Jeff and Ilya Zaslavsky as a result of meeting at SDSC on 6/10/2010
+
+1) Generally, what is the symbolic representation of the domain of interest? (e.g., digital watershed for hydrology)
+2) How to decide if you have sufficient data to define the domain of interest for a particular analysis?
+3) How can you exchange the symbolic representations so they can be played or replayed by others
+4) Units, space, and time inconsistencies
+    -How to resolve in different datasets
+    -What are the authoritative sources of units, etc.?
+5) How to represent data collections symbolically to assess if they are complete and resolvable into something that represents the inputs to a model?
+6) How to massage data as inputs to models to make them more consistent
+7) Catalogs - how to interface catalogs with each other when catalogs have different levels of granularity (time series versus dataset versus geochemical samples)
+8) Resolving ontological mappings across domains/multiple ontologies?
+9) Discovery over catalogs that are dynamically updated - how to build an infrastructure that manages the tradeoff between latency and having everything in sync
+10) Ontologies for different purposes (search, units, etc.) - how do they talk to each other?
+11) Use case ontologies assembled to describe a particular problem
+12) How to enable querying of data with different types of granularity (goes back to the cataloging at different levels of granularity)
+13) 10 Queries - what are the 10 queries/use cases that the semantic technologies of DataONE should support?  What are the information models needed to support this?
+
+Notes from 6/25/10 meeting
+Three different things:
+1) decide what are the specific challenges in semantics that DataONE should address in the shorter term and longer term
+2) based on these tools, what are the specific tools and technologies that exist or be developed
+3) for those that need to be developed, what are the functional requirements and technologies that should be implemented, and what it the path for that implementation.  
+
+Flesh out the toolbox for handling the problem space.  
+
+Working group still needs to do things that are valuable to the people contributing time on the working group.  What are the things that this type of a WG could do that are valuable to the members of the WG?  
+

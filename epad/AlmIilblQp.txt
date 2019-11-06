@@ -1,0 +1,46 @@
+Tasks for the coming week (7/12 to 7/19):
+   * Continue going over the data. Blog about it, ask questions of Karthik or others if needed.
+   * Put this list on the mentor plan. 
+   * Send out a message requesting information on views vs. downloads. 
+   * Create a list of things that you would like to research from myExperiment - send this around when it is written. 
+   * Get the embedded information for the workflows, manually or otherwise.
+   * Get the embedded information for non-minable workflows. Not possible, as far as I can tell. 
+   * Reupload the new datasets to the server.
+   * Mine the non-numeric columns using R in some way. Experiment with this. (I can help with this. We can summarize these numerically using regexp. Let's work on this via Dropbox).
+   * Load the new code onto Github.
+   * Load the example R code onto github. (If you do this remember that everything is public. If the goal is to share ongoing efforts, then be sure to annotate the code as you go along).
+   * Plot as much data as feasible to see what can be seen. (see the book on ggplot2 for examples. I use it everyday so if there are plots you are trying to visualize but cannot code up, let me know).
+   * Start a commented R code for all of the plots that are being done.
+   * Start putting plots into the Understanding Workflows document.
+   * Fill out the Understanding workflows document.
+   * Research papers for the draft that might be useful. (Perhaps start something on Google docs and outline the sections?)
+   * Sort at least half of what papers we have. 
+   * Explore different graphing possibilites (box plots, etc.) 
+   * Send an email to David de Roure talking about what we're doing, asking for co-author advice and thoughts. 
+   * Earmark any ecology papers for Karthik. (it would be great if you could either tag these or move them to a sub-folder on Mendeley).
+   * Appraise whether its worth going over the other tiers, and what to do for the next two weeks. 
+
+
+Hypothesis 1: Most workflows perform simple, but repetitive data acquisition tasks as opposed to complex operations.
+This would be an interesting finding, as it would illuminate how scientists view workflows and workflow systems: Either they are merely tools for facilitating current experiments, or they are complex systems that themselves can take the majority of the load in the experiment being done, including such processes as integrating with R, producing stats, or integrating with grid systems to perform computational models, as in ecological niche modeling.  
+Hypothesis 2: Workflows are becoming more complex over time.
+ 
+The workflow systems being used, such as Kepler and Taverna, have as their goal the effortless streamlining of scientific problems that would normally take higher coding skills or repetitive tasking. However, they themselves have a significant learning curve. As the workflows available for these systems have propagated throughout the community, it would be expected that scientists would be more able to develop and use more complex workflows. This is especially true given the ability to embed workflows within other workflows, which allows for replication of previous work without the need to reinvent the wheel. 
+ 
+A null hypothesis would show no change in workflow complexity, while a change in complexity would be demonstrated by increases in numbers of components and dataflows, in the amount of branching within the workflow, in the numbers of sub-workflows (embedded workflows), and in the proportion of workflows that perform simple data acquisition vs those that perform numerous processing steps.  
+ 
+Hypotheses 3. Workflows become more powerful over time. 
+ 
+This can be charted as an increase in the level of functionality. 
+Hypothesis 4: Workflows become more complex as one gains more experience. 
+ 
+This hypothesis would involve tracing individual users, and looking at their uploads over time, checking for variably complexity in their uploaded workflows. It is possible that the users on myExperiment are not uniform, but that rather that a small amount of core developers design and upload the majority of the complex systems in the repository. If this is the case, what is it that differs from their workflows with other, more inexperienced users? How could the two be integrated and how could the workflow systems be changed to enable inexperienced users to design workflows easier?
+Hypothesis 5:  Workflow re-use is proportional to the complexity of tasks performed by the workflow.
+ 
+The average workflow is downloaded 386 times on myExperiment: however, that average may level over inconsistencies in the amount of workflows being downloaded, and what sort they are. 
+Hypothesis 6:  Workflow re-use is proportional to the sufficiency of the documentation. 
+ 
+Hypothesis 7: Reuse is proportional to the age of the workflow. 
+ 
+Hypothesis 8: Workflow reuse is proportional to the proficiency of the creator. 
+

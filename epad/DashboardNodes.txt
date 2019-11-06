@@ -1,0 +1,122 @@
+Dashboard Design Notes:
+
+After review and discussion on Friday, pointed out that really need to focus on enhancing the 'current member node' list and providing dynamic data for that area.   Initial dashboard was too network/engineer focused.
+
+Inforrmation to be displayed
+
+Current Status Information
+- Number of publicly available data packages (latest revision)
+- Total data packages (latest revision)
+- Total object (latest revision)
+- Total public data packages (all revisions)
+- Total data packages (all revisions)
+
+Histograms of object size distribution:
+- for all content (combined DataONE content)
+- by member node
+
+Counts by object format
+- for all content (combined DataONE content)
+- by member node
+
+Downloads of content:
+- overall
+- by member node
+
+
+
+So will mockup and maybe prototype a "member node dashboard' starting from dataone.org's current member node list page.
+
+Member Node List Integration of MN summary info:
+https://cn-dev-unm-1.test.dataone.org/d1Search/nodelist.html
+https://cn-dev-unm-1.test.dataone.org/d1Search/nodeTable.html
+
+UI Mockups:
+https://cn-dev-unm-1.test.dataone.org/images/index.html
+
+Network Dashboard UI mockup - 2 versions, just differing layout.
+
+Prototype:
+https://cn-dev-unm-1.test.dataone.org/d1Search/dashboard.html
+
+Idea is node summarys that drill down into detail information in the lower section.
+Content of the node summary and detail areas would vary depending on CN vs MN
+
+Each node summary, node detail area could be html/js/css widgets that are independant from another.
+
+Basic approach is to build data services that each CN will provide via a new tomcat web app.
+Then to build clients based in html/js/css that integrate the data provided by the CN rest services for or display in web client.
+
+What kind of shell commands or file resources can we create to expose CN monitoring data?
+ps | grep to detect what daemons are running...
+config files in /etc/dataone to detect which components of process-daemon are on?
+hazelcast client to report on replication tasks?  synchronization progress?
+grep and/or tail log files to display log info.
+
+Uptime and cpu utilization statistics from...
+
+REST API:
+
+/monitor/summary - d1-summary object
+
+/monitor/node/{nodeId} - node-info object
+
+/monitor/node/{nodeId}/objects/{timespan}  - time series data
+/monitor/node/{nodeId}/indexed/{timespan}
+/monitor/node/{nodeId}/downloads/{timespan}
+
+/monitor/object/{docId} - document dashboard data....not very well defined yet.
+
+/monitor/user(author?)/{userId} - author dashboard data service.
+
+
+DATA OBJECTS:
+
+<!-- Widget/Summary Support -->
+<d1-summary>
+        <cnCount>3</cnCount>
+        <mnCount>8</mnCount>
+        <publicReadableCount>600</publicReadableCount>
+        <objectCount>1211</objectCount>
+        <docsAddedLast24h>3</docsAddedLast24h>
+        <docsAddedLast30d>120</docsAddedLast30d>
+</d1-summary>
+
+
+<!-- Node Information -->
+<nodeInfo>
+        <nodeId>urn:node:nodeId</nodeId>
+        <nodeName>Node Name</nodeName>
+        <nodeDescription>Text description of this node.</nodeDescription>
+        <contactSubject>This Guy</contactSubject>
+        <nodeLocationPoint>121,34</nodeLocationPoint>  <!-- can we get this? -->
+        <url>http://node.domain/path/</url>
+        <dateAdded>01/01/2012</dateAdded> <!-- Can we find this with first log create event for node? -->
+        <lastHarvest>01/02/2012</lastHarvest>
+        <status>up/down</status>
+        <services>
+            <synchronize>true/false</synchronize>
+            <replicate>true/false</replicate>
+        </service>
+        <ping>
+                <pingDate>12/12/2012</pingDate>
+                <pingValue>2222</pingValue>
+        </ping>
+        <daemons>
+                <daemon>
+                        <name>indexing</name>  <!-- ps -ef | grep 'process name' -->
+                        <status>up</status>
+                </daemon>
+        </daemons>
+
+        <objectCount>1211</objectCount>
+        
+        <dataPackageCount>200</dataPackageCount>
+        
+        <publiclyReadableCount>400</publiclyReadableCount>
+        
+        <docsAddedLast24h>0</docsAddedLast24h>
+
+        <docsAddedLast30d>21</docsAddedLast30d>
+</nodeInfo>
+

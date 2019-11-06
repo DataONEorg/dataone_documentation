@@ -1,0 +1,118 @@
+Code Versioning
+DataONE follows a standard incremental versioning approach to its software packages whereby new features under developer are put under a version number.  This document describes in some detail the process to follow when we want to release a version and move mainline development to the next increment.
+
+Note: Independently, DataONE tracks a service-interface version that indicates communication compatability between the independently managed nodes of DataONE.  These versions, while not 
+
+
+Baseline assumptions
+
+SCM practices
+ * the trunk is where primary feature development takes place
+ * tags are used to mark versions of stable code that meet project deliverables
+   * the only development off tags are patches that fix functionality
+   * to deploy patched packages, either a Hudson job is needed, or manual deployment to the project-local maven repository (on dev-testing.dataone.org) will be required for affected packages
+ * branches are reserved for divergent or exploratory development, and typically requires a merge back into the trunk when complete.  
+
+Build practices
+ * DataONE's packaging technology for Java components is Maven
+ * Maven's dependency management, using with a project-local maven repository, is used to integrate different dataONE components together.
+   * the project-local maven repository is located on dev-testing, and populated by Hudson
+
+Testing practices
+ * Unit tests are written as part of the package under development, and should be passing locally before committing to the SVN repository
+ * Hudson jobs are created for each package under development, for continuous unit testing of committed code.
+ * Hudson deploys verified packages (those that pass all tests) to a project-local maven repository
+ * Integration Testing is primarily accomplished through the dedicated package d1_integration
+ * Test Environments, consisting of a distinct sets of nodes, are maintained to accomplish integration testing.  
+   * Existing environments (contexts):
+     * DEV - used for testing the latest code (trunk development).
+   * Future environments:
+     * MN-STAGING - used to fully test new member nodes before putting into production
+       * (testing synchronization and replication features)
+
+ * feature development happens off the SVN trunk
+ * "patches" happen off tags/branches (in SVN they are mechanically the same, although)
+ * distinct test environments that can be independently tested on Hudson
+ * Hudson's d1_integration job uses the trunk d1_integration version for testing the DEV environment.
+ * the d1_integration pom should be pointing to the latest dataone code artifacts (locally installed jars)
+
+
+Advancing code/package versions:
+When a version is feature-complete, all necessary integration tests are written, the latest artifacts are deployed to DEV nodes*, and integration tests are passing on Hudson, it is time to "tag-and-release."
+
+*otherwise d1_integration tests can pass in the DEV environment even though the the latest code in the trunk is faulty. 
+
+Tag and Release Process
+1.  check that all d1_integration tests are passing (no failures, and in general no ignores)
+2. tell the team that they cannot commit code to the trunk while we are tagging and releasing code.
+    (lock the trunk?)  
+        cd /repos/path/of/interest
+        find . -type f -exec svn lock '{}' ';'
+        
+3.  for each package, (starting with the deepest dependency):
+     http://mule1.dataone.org/ArchitectureDocs-current/implementation/components.html#dependency-graph
+    a.  in the package pom.xml, edit the version, removing the '-SNAPSHOT' suffix to 
+         make it a permanent fixture in the project-local maven repository.
+         <version>0.1.0-SNAPSHOT</version> 
+            becomes
+         <version>0.1.0</version> 
+    b.  edit any dataone dependency versions as in step a, to point to the new maven artifacts.
+    c.  run unit tests locally
+    d.  commit to the repository
+    
+**Hudson will run mvn install command after commits and if successful, will deploy the artifact (jar) to its maven repository.  This will be needed so that downstream tests can find their new dependencies (see 3b).
+
+4. create subversion "release" tag off the latest trunk.
+    svn copy https://repository.dataone.org/software/cicore/trunk/ https://repository.dataone.org/software/cicore/tags/TAG_NAME
+
+5. tell the team that they should update their local trunk checkouts, and can do commits again.
+    (unlocking the trunk)
+        find . -type f -exec svn unlock '{}' ';'
+
+Comments:
+ * While it is easiest to do the entire tag and release process for every package in one block, with a bit of forethought, it's also OK to do one at a time, so that other's can work on the trunk for future feature development before all packages are released.  It just has to follow the dependency tree.
+ * For practicality, the deployed packages in a given environment do not have to be changed to the final (non "-SNAPSHOT") version, as long as we can assure ourselves that the deployment is in sync with the latest code in the SVN repository. 
+
+
+Detail on Metacat versioning and integration testing:
+Much of the CN interface is implemented by Metacat, whose code is maintained in a separate code repository (https://code.ecoinformatics.org/code/metacat/).  It also has its own set of tests that need to pass before being released to DataONE.  Still, metacat needs to pass d1_integration tests, so changes in metacat code need to be deployed into a testing environment for this to happen. 
+
+Some relevant detail:
+ * The deployable unit of metacat is the knb.war, and it is deployed as a separate webapp into a tomcat container.
+ * DataONE uses metacat in 2 contexts:
+   * as a Member Node
+     * as a member node, the knb.war is deployed as metacat on the target node. 
+   * as a component of the Coordinating Node
+     * as a coordinating node, the knb.war is copied to the DataONE SVN repository under the cn-buildout/dataone-cn-metacat project
+
+It is not practical in most cases for the metacat developer to deploy often to the DEV environment, so integration testing against a local metacat deployment is preferable, and has be facilitated.  In this way dataone integration tests (at least for member node functionality) can be run against the same locally deployed metacat instance used for metacat tests.
+
+Local d1_integration testing of metacat as Member Node:
+1.  checkout / update the d1_integration package 
+2.  run integration tests from d1_integration directory with the command 
+    mvn -Dcontext.label=LOCAL_METACAT -Dit.test=MNode* verify
+   (additional properties can be defined in context.LOCAL_METACAT.test.properties file in d1_integration/src/main/resources)
+   
+Local d1_integration testing of metacat CN functionality
+While not yet attempted, in theory and assuming a local cn is configured:
+1. checkout / update the d1_integration package
+2. run integration tests from d1_integration directory with the command
+    mvn -Dcontext.label=LOCAL_METACAT -Dit.test=CNode* verify
+    
+Other integration tests (synchronization, replication require multiple MNs and CNs, so running the above maven commands without the "it.test" filtering property will undoubtedly fail.
+
+
+
+Versioning Run-Through
+==================
+Development of version 4.2 seems to be complete.  The latest version of metacat is passing its own tests and d1_integration tests run against a local deployment.
+1. Update the DEV environment
+ * the knb.war used for local deployment is committed to dataone SVN cn-buildout
+ * the DEV CNs are updated with the new knb.war (or rebuilt entirely)
+ * the DEV metacat MN is updated with the new knb.war (or rebuilt entirely)
+ * (optionally)  run d1_integration tests locally against DEV environment:
+   * mvn -Dcontext.label=DEV verify
+ * kick off Hudson d1_integration job against DEV environment
+
+
+

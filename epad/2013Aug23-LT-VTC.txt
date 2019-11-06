@@ -1,0 +1,287 @@
+Attendees: Rebecca, Bob, Carol, Trisha, Mike, Steph, Bruce, Bertram, Deborah, Dave, John K, Todd, John Cobb
+
+
+Regrets: Amber, Suzie
+
+
+Here's a preview of upcoming agendas for the Leadership Team meetings - all are directed towards preparation for submitting the renewal proposal and planning for the All Hands Meeting in October.
+
+August 23: Review of WG plans for year 5; AHM planning
+August 30: Plans for the combined Usability & Assessment and Sociocultural WG in years 6-10 (Suzie, Mike & Carol)
+September 6: Community Education & Outreach plans for year 5 and Core for years 6-10 (Amber)
+September 13: CI WG plans for years 6-10 (Dave)
+September 20: Sustainability & Governance WG for years 6-10 (Trisha, Bill)
+
+
+1.  Please join my meeting, Aug 23, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/223492296
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (215) 383-1021
+Access Code: 223-492-296
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 223-492-296
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+We will also use the epad: http://epad.dataone.org/2013Aug23-LT-VTC 
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-08-23
+
+1.  Review of Year 5 plans of Working Groups (based on input from WG co-leads)
+
+Provenance WG
+Milestones Summary:
+ * ProvWG related presentations/posters at 
+   * DataONE AHM (PBase summer internship, ongoing research on querying provenance)
+   * CAMP-4-DATA 
+   * AGU 
+   * TDWG
+ * Initial demo/prototype of provenance-aware R 
+ * Finalizing D-PROV model (technical report,  paper)
+ * Further integration of provenance tools with the DataONE CI
+ * Explore funding opportunities to continue/expand ProvWG work
+
+Milestones (Details)
+Short term:
+We aim to present two posters at the Oct. 2013 DataONE AHM, detailing:
+ * The   outcomes of our summer internship. Parisa’s work has focused on   implementing PBase on top of the Neo4J graph DBMS. The implementation   includes the key provenance queries that were identified during our  June  WG meeting, as well as importers for VisTrails provenance traces.
+ * Progress   on research from Victor Cuevas. Victor has been focusing on the   performance of our PBase provenance management platform, on two fronts.   Firstly, he has been experimenting with indexing structures that are   optimised for querying graph data. Secondly, he has been analysing the   scalability limitations of the Neo4J graph DBMS, which is currently our   choice of Data Layer for PBase. The aim of this work is to ensure that   PBase can fit in with the scale requirements of the broader DataONE   architecture.
+
+Until July, 2014:
+
+ * We   aim to continue research on scalable provenance queries, possibly   considering alternatives to the current Neo4J DBMS. This includes a   benchmarking effort.
+   * Starting point: Victor’s current work
+   * Expected   outcomes: a technical report and possibly a publication on what we   learned from implementing experimental indexing and benchmarking Neo4J,   focusing on opportunities to optimize performance for   provenance-specific graphs and queries
+ * Making R provenance-aware
+   * Starting point: blueprints from earlier discussions involving Karthik, James Cheney, Paolo
+   * Expected   outcomes: A proof-of concept prototype, depending on available   resources. Duncan Temple Lang is deeply involved in R development and   would be ideal to lead this effort.
+ * Finalizing the D-PROV model
+   * Starting point: the white paper prepared over the summer for the July planning meeting
+   * Expected outcomes: 
+     * technical report and/or full paper (journal)
+     * A white paper on the added value from provenance in the broad context of data preservation. 
+ * Further integration of PBase and other provenance tools with the DataONE architecture
+   * Starting point: the prototype and demo code developed in 2012 for the NSF RSV.
+   * Expected outcome: a richer prototype that is based on PBase and includes additional importers from workflow traces.
+
+Life of our codebase after DataONE phase 1
+We   would like to discuss options to make our codebase available to  research groups affiliated with the Prov WG after the end of the  group’s  activities. Both UC Davis and Newcastle have expressed interest  in using PBase and it associated code to pursue further experimenting  and  research.
+=======================================================================
+EVA WG
+Milestones for next 12 months:
+October 2013
+Prepare  a draft manuscript on an expanded study of visualization of complex  model output by soliciting more examples from the carbon modeling  community and provide directed input on how to improve carbon model  visualizations.  Targeted journal:  IEEE Transactions on Visualization  and Computer Graphics (TVCG).
+ 
+October 2013
+EVA Working Group meeting scheduled for October 22-24, 2013.
+ 
+November – May 2014
+Further UV-CDAT/VisTrails-based Integrated Model-data Intercomparison Framework (IMIF) development:
+   * Improve  performance of data analysis modules through  parallelization and  experiments on the Lens cluster of the Oak Ridge Leadership Computing  Facility (OLCF). [November 2013]
+   * Experiment  UV-CDAT-based interactive visualization for large-scale  multi-dimensional data similarity analysis on the Lens cluster.  [November 2013]
+   * Develop  Brokers-based connector modules to dynamically integrate data resources  from DataONE, NASA, and Earth System Grid (ESG).  [February 2014]
+   * IMIF  use case research and development: modeled carbon flux extremes and  their connection with driver climate extreme events.      [April 2014]
+   * Prepare manuscript summarizing IMIF development and research activities. [May 2014]
+   * Integrate IMIF modules into periodic official UV-CDAT binary releases. [periodic?]
+ 
+Spring 2014
+EVA Working Group Meeting, data and venue TBD.
+  
+June 2014
+Develop proposal based on past and current EVA activities to advance EVA research through seeking external funding.
+========================================================================
+Semantics and Integration WG
+
+Milestones for next 12 months: 
+  
+--           Demonstrate how the SemantEco Annotator, developed over the DataONE summer intership, can be used to integrate wildfire and water quality data and/or other datasets of types important to DataONE;  the updated wildfire use case is described at:   https://docs.dataone.org/member-area/working-groups/integration-and-semantics/products/use-cases/HydroEco-Use-Case-selected-events-wildfires.docx/view.  Initial demonstration available in Oct 2013.
+      
+--           Demonstrate the value of linked data and ontologies for integration and discovery in the use case with a write-up submission to an appropriate conference.
+--           Refine and demonstrate a prototype data discovery interface that suggests keywords to users for query expansion based on vocabulary and topic modeled terms as described in the DataONE Newsletter. 
+--           Work with the DataONE CCIT to transition prototypes, tools and techniques developed by the Integration and Semantics Working Group into the DataONE infrastructure.  We will also identify and gather additional requirements that may affect our ongoing work.
+--           Continue interactions with the Scientific Observations Network (SONet) NSF project  leveraging post doctoral work on ontology and infrastructure.  Work continues with SONet PI /DataONE wg member Schildhauer, SONet co-PI/ DataONE wg co-lead McGuinness, DataONE postdoc Seyed, SONet postdoc, and LTER/dataone member O’Brien.
+      --         Face to Face meetings.  We plan to provide an update on the work of our group at the upcoming All Hands Meeting, including a DataONE Summer Intern presentation on the annotator work along with future directions.  We plan to have at least one additional face-to-face meeting of the working group.
+      Presentations include International Semantic Web Conference, AGU, and possibly TDWG
+
+=======================================================================
+PPSR WG
+Note from RK: Rick and Greg working on adding dates
+
+Milestones for the next 12 months:
+ 
+   * Widely  disseminate to the PPSR field our two new data guides: The Guide to  Managing Data in PPSR projects described in the last report and our new  Guide to Data Policies for PPSR Projects written by our summer intern,  Anne Bowser
+   * Translate both guides into interactive web formats for use on www.citizenscience.org 
+   * Publish an academic paper based on the Data Policies Guide 
+   * Submit  a revised paper on models for the collection of field-based citizen  science observational data with colleagues at U of Minn computer science  department (Wiggins)
+   * Continue  working on developing a core data exchange standard for the sharing of  PPSR related data and associated datasets. This data exchange protocol  (PPSR_CORE) will define core data fields and formats related to PPSR  programs. It will identify required data fields and formats along with  optional fields. The standard will be delivered and supported as both a  JSON-based and an XML-based protocol to facilitate third party data  provider Application Programming Interfaces (APIs) development to  seamlessly share and exchange PPSR data and metadata. It is envisioned  that PPSR_CORE will be used by RESTful web services to consume and share  data about PPSR programs and data generated by PPSR programs. The  proposed PPSR_CORE protocol will form the basis of the newly developed  CitizenScience.org web application and database that will facilitate  searching of PPSR programs and associated datasets. Finally, the  protocol will also facilitate data exchange and sharing with DataONE  member nodes and will lead to the easy development of third party data  provider web services to make it easier for PPSR programs to contribute  data to DataONE member nodes.
+   * Continue  developing the outline and data-collection validation for a large-scale  research project/paper that will be based, in part, from data generated  by deployment of the above-mentioned data exchange protocol (DUST; Data  Usage Study)
+   * Continue  work on a major paper on Guidelines for Effective Data Management  targeted toward potential program managers, data managers, data users,  and the broad scientific community
+   * Complete  (with several individuals external to the WG) a manuscript for an  upcoming issue of Issues in Ecology focused on conservation/policy  outcomes of PPSR
+
+Citizen Scientist organization, initially national then moving to global
+=======================================================================
+S & G WG
+
+Milestones for next 12 months: 
+-
+2013:
+- July through October – develop DataONE white paper for years 6-10
+- September – develop S&G WG structure and work plan for years 6-10
+- October/November – submit NSF follow-on proposal white paper
+- November/December – develop proposal based on NSF feedback
+- December – meet with External Advisory Board
+- Fall – meet with USGS senior leadership
+- Fall – review and revise (as necessary) Marketing Plan
+ 
+2014:
+- hold spring S&G meeting (develop plan for years 6-10)
+1.       Align D1 mission with what repositories need
+2.       What can we provide individual users
+3.       Develop relationships with funders
+4.       Develop relationships with other organization
+5.       Policies that support the D1 mission
+- July – review and revise (as necessary) Business Plan
+ 
+=======================================================================
+CEE WG
+
+ Milestones for next 12 months:
+ * Fall 2013 - Coordination of / participation in training activities at ESA and other relevant conferences
+ * Oct 2013 - May 2014 May Additional  development of Hands-on Exercises for Data Management Modules 
+ * May 2014 - Completion of the librarian outreach kit and publication online
+   * Make sure that WG aware of other efforts (ARL, Sloan Foundation, etc) in this area so not duplicating work that already exists
+   * Steph will pass this on to the WG
+ * May 2014 - Completion of the Video Contest for Students on Data Management and results announced
+ * May 2014 - Develop training/education resources around DataONE tools (Morpho, ONEMercury, DataUp, R-plugin) 
+ * December 2013 - Produce 3 Data Management Training modules appropriate to a broad science audience. Funded by USGS, DataONE is collaborator
+ * May 2014 - Submit ms on open access and human rights (Cliff Duke)
+ * Spring 2014 - meeting to wrap up projects and plan for moving forward
+ * Oct 2013 - May 2014 - Further develop web presence through social media
+ * Oct 2013 - Initiate new projects with input from newest group members
+
+=======================================================================
+U & A WG
+
+
+Milestones for next 12 months: 
+   * Conduct usability testing and provide feedback on DataONE website and tools.
+     * ONEDrive - (Fall 2013)
+     * ? ONEMercury - ?
+     * DataUP - (Fall 2013 at AHM)
+     * DataONE Statistics & Metrics - (Fall 2013 at AHM to gather initial feedback)
+
+   * Complete analysis and dissemination of results for baseline assessments (all fall 2013) of:
+             1.    federal libraries - low response, will write-up results
+             2.    federal librarians - low response will write-up results 
+             3.    data managers- currently writing up
+             4.    early adopters of open data sharing (intial analysis) - Draft as Focus Group
+             5.    academic libraries / librarians combined (completed, paper out for review)
+   * Administer and analyze assessment of:
+            1. early adopters of open data sharing (to increase response rate, fall 2013)).  
+            2. policy makers (pending approval)
+   *  Administer and analyze follow up assessment for:
+            1.    scientists/educators  (October 2013)
+            2.    academic libraries (Spring 2014)
+            3.    academic librarians (Spring 2014)
+            4.    federal libraries - difficult to reach and low response rate. Determining when
+            5.    federal librarians - difficult to reach and low response rate. Determining when
+            6.    data managers
+            7.    USGS scientists and data managers assessment (Spring 2014) 
+   * In collaboration with SCWG:
+   * Work with member node coordinator: Identify and describe relationships between DataONE, Member Nodes and Coordinating Nodes.
+   * Develop a strategy for capturing high priority usage metrics and statistics (Also In collaboration with CCIT)
+   * Conduct, analyze and disseminate research on the DataONE Working Group model.
+Upcoming f2f Working group meetings:
+    --at October AHM
+    --likely early May 2014 (in Knoxville?)
+    
+Analysis/publication of Tracking 1000 Datasets study (Piwowar)  (?)
+
+Analysis/publication of 3-yr survey of corresponding authors in JDAP & non-JDAP journals (Piwowar) (?) 
+    
+    
+=======================================================================
+Sociocultural WG
+Note from RK: will be updated next week
+
+Milestones for next 12 months:
+October 2013
+   * Identification  of key stakeholders and description of their relationships in the  research support/ data services ecosystem of academic and federal  institutions.
+   * Development of FAQs for DataONE.org and ONEMercury. 
+   * Dissemination of DataONE personas and scenarios through sharing with other DataNets and website visibility.
+   * Facilitation of internal and external DataONE communication.
+   * In collaboration with UAWG:
+   * Work with Member Node coordinator: Identify and describe relationships between DataONE, Member Nodes and Coordinating Nodes.
+   * Conduct, analyze and disseminate research on the DataONE Working Group model
+   * Develop a strategy for capturing high priority usage metrics and statistics.
+   * 
+=======================================================================
+
+Preservation and Metadata WG
+
+Milestones for next 12 months:  (work in progress)
+   * July  2013 – Mentor intern in wrapping up summer work, documenting R&D  activities, and exploring appropriate dissemination channels.
+   * Summer/fall, etc. 2013/2014 – Continue developing and experimenting with SeaIce, Metadictionary (http://seaice.herokuapp.com/). Further develop heuristics for term class (canonical, vernacular, and deprecated), voting impacts, and activity intervals.
+   * Summer/fall 2013 – Submit results of Murillo, et al, to PLOS jrnl.
+   * Fall 2013 – Explore funding/grant options (NSF, IMLS, etc.).
+   * Fall 2013 – Participate in DataONE all-hands-meeting in New Mexico.
+   * Fall 2013, Sept. – Participate in the Dublin Core/RDA CAMP-4-DATA, Lisbon, Portugal.
+   * Fall  2013 – Explore link between PAMWG and other DataONE WG (e.g.,  Provenance), the RDA (Research Data Alliance) Metadata WG and IG, and  other RDA groups.
+   * Fall 2013, Nov. – Explore participating in BigData/SIG/CR workshop.
+   * 2014
+     * Ongoing feedback from DataONE and WGs
+     * Pending resoures, ongoing development plan for SeaIce
+     * Preservation policy review and update
+
+======================================================================
+2.  All Hands Meeting planning (Rebecca)
+     Folder in google docs (AHM_2013): http://bit.ly/14U5J9H
+    
+    WGs  who are meeting at the AHM and need meeting space:
+ *     CCIT
+ *     U&A
+ *     Sociocultural
+ *     Provenance
+ *     Preservation & Metadata
+ *     EVA
+ *     PPSR
+ *     CEE
+    
+    WGs not meeting at AHM:
+ *     Semantics (a couple of members will be coming) Jeff, plus 2 interns, probably Line and Margaret
+ *     S&G
+     
+     Welcome - overview of meeting
+     Overview of project - status CI & CEE
+     Status of NSF expectations
+     Quick reports from WG (1 slide) 2-3 minutes each
+     Q&A
+     
+     End plenary
+     Reports back from WGs
+     Questions from meeting
+     
+     LT face-to-face is Monday of AHM 
+     
+======================================================================     
+     
+3.  Around the room (all)
+Rebecca - New NSF Program Manager, Amy Walton from JPL
+Carol: Here is a link to the Nature report on libraries and data. http://www.nature.com/news/publishing-frontiers-the-library-reboot-1.12664
+Trisha: I will share with the group in another document information on the new version of DataUp.
+Mike: Nothing to report 
+Steph: interesting exchange occurring online about the CEE WG's paper "big data and the future for ecology" : http://ideas4sustainability.wordpress.com/2013/07/13/a-critical-appraisal-of-a-new-paper-on-big-data-and-the-future-of-ecology/
+Bob:  Nothing to report
+Deborah:  DataONE 2012 Semantics and Interoperability Summer intern,  Suppawong Tuarob, won Best Student Paper award for his paper “Automatic Tag Recommendation for Metadata AnnotationUsing Probabilistic Topic Modeling, Joint Conference on Digital Libraries, Indianapolis, July 2013.
+Dave: latest version of CN software dependent on some work with Dryad and ONEShare
+and should be released soon
+John K: nothing to report
+Bruce: working on MN Wrangler project 
+Bill: finished policy guide for the PPSR WG - will go on web site and citizen science web site
+At NIH this week at data workshop
+

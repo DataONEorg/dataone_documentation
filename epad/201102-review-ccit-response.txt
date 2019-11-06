@@ -1,0 +1,39 @@
+Cyberinfrastructure - Panel Recommendations:
+1. The semantic problem is key. It would help if the team could show how this is being done in the upcoming months on a case-by-case basis. How are the synonyms, hyponyms, polynyms which will exist in the thousands, being resolved? (CCIT, Vieglais)
+
+Support for semantic search and semantic integration are important targets for the ongoing development of DataONE infrastructure and are targeted for implementation following roll out of the initial core infrastructure towards the end of 2011.
+
+The Mercury infrastructure for search already provides support for inclusion of multiple thesauri, which provides a basis for end-user searching and searching through the OpenSearch API interface that is part of the SOLR and Lucene engines upon which Mercury is based.  DataONE has also been working with BioPortal and has a test implementation of their ontology repository.  We are working on using the repository itself as a useful tool for the DataONE community, as an specialized type of information repository about relevant ontologies and thesauri.  We will use some of these semantic information sources moving forward to enable semantic search, both for synonyms, broader topics, and narrower topics.  The semantic search can also be used to expand the existing "More like this" functionality that exists in DataONE. As with other aspects of this project, DataONE cannot possibly generate all of the potential ontologies that are needed, but DataONE can work with the communities that are generating them, use the ontology repository to highlight the areas which need coverage and where ontologies are in conflict for the definition and organization of concepts.  
+
+
+2. Different parameters need different facets (or attributes) to be discoverable. Semantic interoperability, cross-discipline DataONE lifecycle data management nomenclature and faceted search resolvers could enhance data discovery. (CCIT, Vieglais)
+
+Discovery of available facets and the range of values represented by those fields is valuable to clients as it provides circumscription information for the set of records being examined. The Mercury web interface and other components such as the FUSE file system driver rely heavily on the faceting capabilities of the SOLR and associated Lucene indexes that are populated using system and science metadata objects. Introspection services for discovery of facets and the range of values they represent are available through the SOLR interface which in turn are to be exposed as part of the DataONE APIs. Ease of access to enumerated values from indexed fields is important for basic quality control operations such as building and verifying controlled vocabularies which can in turn provide more reliable association with terms defined in domain ontologies.
+
+
+3. Develop user-friendly graphical user interfaces (GUI) APIs to overlay current systems administrative command-line functions for broader impact and use.(CCIT, Vieglais)
+
+Notes: Relates to the demos that were all command-line driven;
+Up to the CCIT to identify which pieces need GUIs and then work with CE to check the usability
+Be able to point to specific locations in the Architecture Document and/or PMP.
+
+ALTERNATE:  We recognize the importance of graphical interfaces for usability and they will be part of the public deployment.  The development process requires that the underlying functions first be built and tested.  Command line interfaces are by far the most efficient means for developers to work in a test-driven development best practice.  Those command line interfaces will also be important to a significant user segment focussed on automation of data access and manipulation.  
+
+As the core services stabilize  and resources become available, additional attention is being directed  towards the design and building out of graphical user interfaces for various adminsitrative and user tools with the general goal of  increasing the audience to which such tools will be useful.  Much of that work remains to be done, but is made much simpler by having a robust and well-tested set of API's. Usability  assessment will be an important part of all user interface design work,  especially for the more widely disseminated investigator toolkit  components.
+
+Graphical user interfaces design and implementation can consume considerable resources without providing any enhancement of functionality beyond that available through simple command line tools. DataONE development resources are currently focussed on building out core infrastructure functionality which requires many low level test operations and interactions to be performed in an automatable manner. As the core services stabilize and resources become available, additional attention will be directed towards the design and building out of graphical user interfaces for various administrative and user tools with the general goal of increasing the audience to which such tools will be useful. Usability assessment will be an important part of all user interface design work, especially for the more widely disseminated investigator toolkit components.
+
+
+Strategic and longer-term planning - Panel Recommendations:
+4. Plans for the DataONE network should include the development of procedures for logging and recovery, as is done for distributed database management systems. (CCIT)
+
+Notes: This is in respect to treating DataONE as a transactional model.  Dave thinks we can address this with the current implementation.  If a transaction fails, it disappears out of the system. Need to verify this.
+
+We agree.  Logging and recovery are a core part of the DataONE design and API.  A part of our testing plan for Member Nodes and Coordinating Nodes includes handling network segmentation, abrupt loss of a node, and disk failures.  While we have not exposed all of the 
+
+Extensive operation logging and reporting capabilities are part of the DataONE service interface design and are intended to support core service monitoring and overal infrastructure state of health reporting as well as reporting on content access for individual users, by Member Node, and through other facets.
+
+Support for transactions in the federated DataONE infrastructure varies, though in general operations are designed to be sufficiently granular so that they fully complete or fail, so that objects or operations are always at a defined state. Sequential operations such as the synchronization of a Member Node with a Coordinating Node keep track of state at a level suffciently granular that should the overal process fail due to network outage for example, the overall operation will continue from the last valid step in the process. 
+
+
+

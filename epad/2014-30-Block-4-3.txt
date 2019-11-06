@@ -1,0 +1,402 @@
+Notes for Development Block 4.3
+===============================
+
+Previous epad notes: http://epad.dataone.org/2014-28-Block-4-2
+
+G+ URL: https://plus.google.com/hangouts/_/nceas.ucsb.edu/d1-standup
+
+Sprint Planning:
+----------------
+ * CCI 1.3 Release
+   * https://redmine.dataone.org/issues/5471
+ * CCI 1.4 Planning
+   * https://redmine.dataone.org/issues/5533
+   * https://redmine.dataone.org/projects/d1/issues?query_id=67
+ * v2 common and libclient support
+   * https://redmine.dataone.org/issues/3755
+
+Production Status Log in Redmine
+--------------------------------
+https://redmine.dataone.org/projects/d1/wiki/Production_Status_Log
+
+Vacation Planning (August)
+--------------------------
+w = working
+V = vacation
+o - other / not here
+
+       week_Jul28   week_Aug4  week_Aug11   week_Aug18  week_Aug25    week_sept1
+Rob        w            V          w            w           w     
+Mark       w            w          w            V           o             w
+Chris      V            w          w            w           w             w
+Ben        w            w          w            w           o             o
+Skye       w            V          V            w           w             w
+Peter      w            w          V            w           w             w
+Robert     w            w          w            w           w             w
+Lauren                             w            w           w             w (o T-Th)
+David D*   w            w          V*           w         w             w
+(*1/4 time starting Aug. 1, vacation Aug. 13-17)
+
+NSF Cybersecurity Summit to be held in DC the week of 25 August 2014 (Mark Servilla and Dave Vieglais will be attending)
+
+David D
+-------
+20140804, 0808, 0811
+ * Training Michael on ORC VMware infrastructure, Splunk
+
+20140801
+ * 10hr/week starting today
+ * had a couple of meetings Wed/Thurs w/Bruce, Michael, various ORNL people re: phase II sysadmin work
+ * training Michael on ORC sysadmin
+ * built 2 DSpace VMs at ORC per Bruce's request
+ * working on Splunk cluster
+ * revising ORC sysadmin/Splunk documentation
+
+20140730
+ * as 20140728
+
+20140728
+ * Splunk cluster/mobile work
+   * Got a request Friday to get Splunk mobile access up and running, so I spent some time Friday and over the weekend getting that working
+     * Mobile access to Splunk up and running via Splunk iOS app and Splunk Mobile Access Server built into ORC search head
+ * Stage CN syncrepl
+   * going to begin testing pull mechanism for ldap replication on dev the next time it won't interfere w/other coredev work
+ * Building some DSpace VMs at ORC
+ * Training replacement
+
+20140725
+ * Cont'd work on Splunk cluster
+ * Tested syncrepl on stage
+   * only current issue is what appears to be some instability w/connections to cn-stage-unm-1 - changes made sometimes will not propagate to unm, requires restart of slapd to reconnect and propagate
+     * outgoing connections from unm to other stage CNs do not seem to be affected
+     * would like to try some changes to slapd.conf and ldap.conf to see if changing how stage handles timeouts helps
+     * are we seeing this behavior in other environments?
+
+20140723
+ * Working on tweaks to Splunk cluster
+   * migrated user/admin accounts to search head, admin accounts to cluster master and index peer
+   * updated inputs on universal forwarders to account for new tomcat log directories that were changed when tomcat7 was rolled out
+ * Working on testing syncrepl on stage CNs today (pending, will schedule around others' potential work on stage)
+ * Got a name from ORNL for the sysadmin who will be working on ORC, hammering out times for initial meetings, will see if I can get him to standup Friday or early next week
+
+20140721
+ * STAGE CN SYNCREPL:
+   * Sync replication working across all stage CNs
+     * Tested Friday - cn-stage-unm-1 not accepting or pushing replications;  restarted slapd, replication activity began across all stage CNs
+     * Tested over the weekend - replication working across all stage CNs without any further prodding on my end
+     * TO DO: Ask coredev - is this good to call fixed, or do we need any further tests? Need to induce outage on stage, make test changes to ldap database, bring it back up and see if changes made to 
+ * SPLUNK CLUSTER
+   * worked  on the cluster peers over the weekend, replication activity is now  happening across all peer indexers at ORC, and replicated data is  searchable by search head
+   * TO DO:  Full list of to-dos can be found at https://redmine.dataone.org/issues/5521
+     * need to bug Chris, Dave, et al re: whether we want to get further cluster VMs set up offsite (UNM/UCSB) peer and search head will be set up at UNM
+ * REPLACEMENT TRAINING
+   * Hopefully should have a name for replacement by Tuesday; if not, Bruce will begin making further inquiries
+   * Sending out more documentation to ORNL JICS contact
+
+Rob
+---
+ * 20140721
+   * libclient_java
+     * refactored D1Node implementation classes to simplify.  Generalized timeouts into the RestClient interface; removed the HttpMNode and HttpCNode classes, so there are again only one set of implementation classes for the service apis.
+     * removed localization of inputstreams for those methods that return inputstreams, using AutoCloseInputStream to help protect against applications from themselves.
+   * for today:
+     * small clean ups in libclient
+     * work with Mark re: maven and archiva
+ * 20140725
+   * adapting for v2 the d1_integration tests that test libclient against the architecture 
+   * looking into design a factory that builds MNodes / CNodes from NodeReference, too.
+     * to mimic v1 D1Client behavior, but not a singleton - (so we can unit test it!) 
+ * 20140728
+   * fixed D1Client to be more factory-ish, doesn't depend on existing CN for building MNodes by baseUrl.
+   * refactoring client-architecture integration tests to test the new v2 implementations.
+ * 20140730
+   * investigating checksum calculation that seems to be specific to the WebTester and James's ec2 MemberNode. logged as a bug: https://redmine.dataone.org/issues/6013
+   * finishing up client-architecture integration tests for v2
+   * starting up on Replication policy CN implementation.
+   * will review new optional properties added to v2 schemas.
+ * 20140801
+   * found source of checksum issue - object was cached locally for several days, and the object of behind the pid changed in the meantime.
+   * working on NodeReplicationPolicy implementation in Node Service Registry
+ * 20140813
+   * working on adding NodeReplicationPolicy storage into d1_cn_nodeRegistry
+ * 20140815
+   * Node registry clean up. Refactor or work with what we have?
+   * Add more tests. Looking at "emma" eclipse plugin. Shows unit test coverage very quickly. Utility for maint/ops team.
+
+Roger
+-----
+ * 20140808
+   * Continued work on CCI 2.0.
+ * 20140804
+   * CCI 2.0 work.
+ * 20140721
+   * Continued work on ONEDrive Zotero integration.
+ * 20140815
+   * Last day is September 1st, 2014
+   * LTER consistency evaluation:
+     * compare to CN
+
+Mark
+-----
+ * 20140815
+   * MN - CN inconsistency. Still evaluating the causes.
+   * All PASTA objects were harvested into staging
+
+
+Chris
+-----
+ * 20140820
+   * MN Support: EDORA, RGD, and DAAC schema issues
+   * MN support: troubleshooting EDAC sync
+   * Will be working on v2 unit tests
+   * Owe Skye a code review of replication changes - will get to this
+   * cn-ucsb-1 needs security patches - cover this in 1.3.0 rollout
+ * 20140813
+   * MN Support for EDAC
+     * troubleshooting registration issues with Hays Barrett
+   * MN support for MPC
+     * generated new test certs for Judy Kallestad
+     * worked on possibly embedding DC metadata into ORE docs
+   * MN support for EDORA/RGD
+     * validation of instance docs with new schema, troubleshooting errors;
+   * Troubleshooting indexing issue with Jing
+   * Created v2 tickets - please relate tasks into the story
+     * https://redmine.dataone.org/issues/6038
+ * 20140811
+   * Continued work on Project Execution Plan
+   * Troubleshooting CN indexing
+   * Metacat testing
+ * 20140808
+   * Continued work on Project Execution Plan
+   * ORNL/MsTMIP MN planning meeting
+   * reviewing LTER sync, troubleshooting SSL errors
+     * peer unverified on MN.listObjects() calls
+ * 20140806
+   * Working on Project Execution Plan with Dave for Phase II
+   * Metacat v2 code review, unit test work
+   * Troubleshooting CN.register() on stage for mnTestLTER
+ * 20140725
+   * CN Stage is working correctly now
+     * replication works, some errors seen
+     * /etc/ssl/certs has duplicate entries (in all CN envs) - needs attention
+   * Production Status Log
+     * https://redmine.dataone.org/projects/d1/wiki/Production_Status_Log
+   * Would like to discuss Dublin Core metadata support
+   * Will be out next week
+ * 20140723
+   * Working on the stage-2 env, SSL issues are now fixed
+     * Remaining: onemercury is not showing all registered MNs, will get with Skye
+ * 20140721
+   * Continued work on v2 changes
+   * Will be working in stage-2 for NCEAS/RENCI training
+
+Jing
+-----
+ * Merged code from branches 1.2 to 1.3
+ * Rebuilt beta-channel on jenkins and installed it in sandbox env
+ * Wiped data on CNs and kicked off the synchronization
+ * Only harvested 160 objects over the weekend.
+ * 20140815
+   * CN stack java 1.7 and other tools. Switch pom.xml to require java 1.7
+   * upgrade jibx to use a version that is compatible with j1.7
+   * Morpho bug (associatedParty role)
+
+Lauren
+------
+ * 20140815
+   * Setting up metacat locally to accept and indexing ORE documents with additional PROV annotations
+
+Skye
+------
+ * 20140721
+   * 1.3.0 CCI Release support
+   * Coins Tag / Zotero / Mendeley integration with OneMercury review for Heather Heinz
+ * 20140725
+   * 1.4.0 Release work - redmine 5510, 5993, 5994, 5995
+   * Dataone.org issues with different versions of bootstrap in various modules.
+   * PTO - first 2 weeks of August.
+ * 20140820
+   * 1.4.0 Release work continued
+     * finishing redmine 5994, moving onto 3910 soon
+   * moved rebuild search index onto cn-ucsb, cn-orc as part of cci 1.3.0
+     * coordinating with robert to copy into solr core
+   * troubleshooting a search index resolve field issue
+ * 20140422
+   * 1.4.0 Release work continued...
+   * small one-mercury fixes:
+     *  to maintain datasource session variable
+     * allow datasource pre-selection (for CJ @ KUBI)
+   * finished search index rollout for CCI 1.3.0
+
+Peter
+-----
+ * 20140721
+   * CCI 1.3 testing
+   * CCI 1.4 design/planning
+ * 20140808
+   * CCI 1.4 log agg changes for active/passive CN config
+     * details here: http://epad.dataone.org/20140731-CCI-1-4-0 starting at "Design Considerations"
+ * 20140811
+   * PTO this week
+ * 20140818
+   * continue work on log agg changes for CCI 1.4
+
+Robert
+------
+ * 20140723
+   * June Tidy shows 82 pids that are inconsistent on prod
+     * UCSB has definitive versions
+   * Working on d1_cn_repair to incorporate tidy dao in cn-common-java
+   * cn-stage-orc-2 is out of commission. Need to save all installed d1 certificates in case of full wipe, /etc/network/interfaces
+ * 20140725
+   * Mis understood tidy results.  There are only 280 that UCSB contains corrected sysMetadata, while 800+ are correct on either ORC or UNM
+   * Out sick on Thursday
+ * 20140728
+   * Unexpected PTO. Storm on Sunday knocked out electricity. 
+   * Unexpected sick leave. 1/2 day on Tuesday
+ * 20140730
+   * Found a bug in Synchronization that needs to be addressed. In Java7, Hazelcast IQueue size appears to increase without ever decreasing regardless of # of entries in IQueue.
+   * Need to consult with Skye,Rob about tidy fixes.
+ * 20140801
+   * Working on Tidy Fix scripts, nothing problematic yet.
+   * Scoped out 1.4.0 release, https://redmine.dataone.org/projects/d1/issues?query_id=67
+ * 20140804
+   * Missed standup due to morning personal commitment running over
+   * Worked on Tidy
+   * Examined Production Split between UNM and ORC, UNM appears to have paused for 6 minutes.
+ * 20140806
+   * Tidy Work, verification did not verify change_record results. Need to verify the verification routines.
+ * 20140808
+   * Verification routines are verified. Results are noted in https://redmine.dataone.org/issues/6014 .
+   * start serialize authoritative systemMetadata records
+ * 20140811
+   * Tested serializaton and deserialization of authoritative of systemMetadata records
+   * Ready for Production repair of systemMetadata
+   * Need to review other consistency issues such as bad identifier table entries, inconsistent xml_documents/xml_revisions tables, verifying documents on filesystem
+ * 20140813
+   * Repaired SystemMetadata on 3 CNs
+   * Need to join cluster together, force replication, review more consistency issues
+   * Lauren reported that not all records from GOA have been  synchronized
+ * 20140815
+   * 1.3.0 released on cn-orc-1 and cn-unm-1
+ * 20140820
+   * Scheduled release for 1.3.0
+ * 20140822
+   * Released 1.3.0 successfully
+   * Working on Jenkins build issues
+
+
+Topics
+------
+ * Team communication
+   * DECISION: use a production log wiki in redmine to document major operational changes as log entries
+   * DECISION: Also send an email to coredev@dataone.org
+   * TO DISCUSS: Potentially use a check sheet for upgrades
+     * Perhaps use the ticket generator for CN releases
+   * Optionally set a login message on the server in question
+ * libclient discussion
+   * v2.0 release will initially be beta
+   * 
+ * Dublin Core metadata support
+   * MPC has suggested we support Dublin Core, but asked D1 to provide a container spec
+   * Mark: Potentially use EML?
+   * By providing DDI *and* Dublin Core in the aggregation, we'd get double hits in ONEMercury. Everything in the aggregation gets indexed
+   * Rob: if this is a temporary fix, building a custom schema may not be a good idea
+
+ * Tidy Work
+ * LTER/GMN Migration
+
+Tidy Update
+-----------
+Keep ORC & UNM separate from  UCSB in two clusters
+
+verify that the inconsistent records on a CN identified by tidy have not been updated (DONE)
+   * compare dateSysMetadataModified and serialVersion of records identified on production machine to tidy db entries (DONE)
+
+serialize authoritative systemMetadata records as found in Tidy Database to change for a CN 
+   * using the systemMetadata DAO, get the systemMetadata and write to a directory named for the CN that needs updating.
+
+deserialize systemMetadata records and update backend database
+  * copy over directory to target CN
+  * read each systemMeta record  and update database directly, evicting any existing record from hz map
+  
+verify identifier consistency on UNM and ORC
+shutdown tc on UNM
+shutdown tc on ORC
+restart tc on ORC, then UNM to get a clean Identifiers Hazelcast Set
+change the RR to ORC
+shutdown tc on UCSB
+
+Tidy progress:
+---------------
+ * Correcting sysmeta is straight forward
+ * Next, bogus ids in the identifier table
+ * Potential inconsistencies of xml_docs and xml_revs tables across CNs
+   * The lock on the MN during harvest was dropped because of split brain
+     * Two CNs may have then harvested the same PID, and generated two different autogen docids within Metacat
+https://redmine.dataone.org/issues/5523
+
+Phase II Development block naming:
+----------------------------------
+Was: 2014.30-Block.4.3
+
+Proposed: TeamName-Block.4.4
+
+In redmine, can we use the same backlog, and create sub projects that inherit from the backlog?
+
+Maven/Jenkins Build Environment Issues
+--------------------------------------
+ * http://epad.dataone.org/20140722-Maven-Repository
+ * Is there a cross-build issue?
+   * Maven builds from:
+     * 1) local .m2 repo first
+     * 2) remote machine repo
+   * Java 1.6 is being used on dev-testing.dataone.org/hudson:8080
+   * Java 1.7 is being used on jenkins.dataone.org
+   * Looks like we don't have a cross-build issue, since maven will pull from the local .m2 repo as a priority
+ * Transitioning away from dev-testing.dataone.org
+   * Need to maintain the dev-testing.dataone.org/maven URL for historical access
+   * Need to establish a new /maven directory on jenkins, and move old artifacts over
+   * Jing has built in JDK 1.6 support under JDK 1.7
+ * Some services on dev-testing need to be migrated off (like mule1/docs)
+
+Metacat LTER consistency issues
+-------------------------------
+
+Team Organization Planning for Phase II
+---------------------------------------
+ * https://docs.google.com/spreadsheets/d/1y_24pGrI2s_f1NP-UbRza--qx4bKg33h4-QCPE6c1Kk/edit#gid=0
+ * Maintenance
+ * MN Services
+ * Provenance & Semantics
+
+ * Need to schedule meetings for each of the above groups via Doodle
+ * Potential biweekly all CI team call using GoToMeeting, audio only
+   * this meeting would focus on cross-team communication
+ * Start date: Week of Aug 25
+ * Phase I --> Phase II transition
+   * Release v1.3 week of Aug 18
+   * Finish up v2 code changes (Ben), move testing and deployment to Maintenance group members
+ * Activity tracking
+   * Earned Value Management requires tighter tracking
+   * Will need to track time for products/features (not per-person time)
+     * Break down the work (WBS)
+     * Assign people to do the work in the estimated time
+     * Calculate value
+   * dave: weekly reports, monthly reports, quarterly reports
+ * Plan
+   * Dave will send out Doodle polls for calls
+   * Transition the week of August 25th
+   * Review and adjust redmine categories
+ * Evaluate Github for some portions of the project
+
+Jibx Extensions change to Java 1.7
+----------------------------------
+ * To accomodate JDK 1.7, Jing upgraded Jibx to 1.2.5
+ * d1_jibx_extensions
+
+Discuss Jenkins configuration
+-----------------------------
+
+
+

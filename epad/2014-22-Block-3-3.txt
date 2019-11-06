@@ -1,0 +1,138 @@
+Notes for Development Block 3.3
+===============================
+
+Previous epad notes: http://epad.dataone.org/2014-20-Block-3-2
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+Sprint Planning for Block 3.3
+-----------------------------
+ * VM Operating System upgrades (Jing, Robert, Skye)
+   * Testing 
+   * Migrate from ubuntu-stage to ubuntu-beta channels
+   * Scheduled in CCI 1.2.7 - https://redmine.dataone.org/issues/5462
+   * Fix Tomcat 7 related issues 
+ * Mutability implementation proposal (Rob, Chris, Skye)
+ * Address CN master/slave setup issues (Chris, Dave, Robert, Ben, Skye)
+ * ONEDrive: beta release for DUG (Roger)
+   * Mac installer
+
+Sprint Planning for Block 3.4
+-----------------------------
+ * CCI 1.3 preparation (to be released during Block 3.4)
+   * Incorporate Solr search and log aggregation changes into the CN stack
+     * Refactor log aggregation to minimize Hazelcast usage
+   * Incorporate JibX extensions into d1_common_java, release it
+     * Refactor CN components to use new d1_common_java changes
+     * Schedule Meeting to determine the scope of changes to apply. (review empty vs null List/Map variables in JibX)
+   * Incorporate HTTPClient 4.2 into libclient (affects CN stack - focus on testing affected components)
+   * Replication Auditing w/splunk logging
+
+
+Rob
+===
+ * 20140606
+   * libclient_java / HttpClient 4.3 adaptation:  have alpha-level version available as a branch that I plan to test locally.  
+     * (https://repository.dataone.org/software/cicore/branches/d1_libclient_java_httpClient_refactor/) 
+     * epad design notes for review (will send email): http://epad.dataone.org/20140601-libclient-refactor
+   * Mutability: met to discuss, 
+ * 20140604
+   * EDAC support: worked out plan for their listObjects.
+   * libclient HttpClient 4.3 adaptation:  have lower-level classes configured.  Looking for others to review and help plan next steps (Factories and/or ServiceLocator)
+ * 20140530
+   * HttpClient 4.3 adaptation:  refactoring timeouts and SSL setup, which rely on different mechanisms.  Will try to replace deprecated methods and classes where able.
+   * EDAC support:  their listObjects takes 75 seconds to return object infos for 1000 objects.  They are not persisting checksum values for their objects, so need to recalculate them every time.  Suggested returning only 100 at a time, which should get them to respond in under 10 seconds.  
+
+
+Chris
+-----
+ * 20140606
+   * Continued work on mutability proposal
+     * meeting today with Ben, Dave, Skye, Rob
+   * Continued work on CN failover procedures
+     * working writing up decisions from our meetings this week
+   * SSL vulnerability issues
+     * http://arstechnica.com/security/2014/06/still-reeling-from-heartbleed-openssl-suffers-from-crypto-bypass-flaw/
+     * https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0224
+   * Still troubleshooting hz client connection for EBIRD sysmeta changes
+   * Caught up on some administrative tasks
+ * 20140604
+   * Troubleshooting 2 LTER-Europe pids, looks good in production though
+   * Having some issues with maintaining a hazelcast client connection during system metadata updates for CLOEBIRD
+   * Focusing on mutability proposal, will be working with Skye and Rob today
+   * Met with Rob, Dave, Robert, Ben re: CN single master mode
+ * 20140530
+   * Finished system metadata changes for select GOA pids
+   * Discussion with ORNLDAAC re new MNs
+   * Was out Thu for appts in Boulder
+   * Working on mutability proposal for CCIT
+
+
+Jing
+-----
+ * 20140604
+   * Remove all data from cn-dev-orc-1 and cn-dev-ucsb-1
+   * Fixed an issue that d1-processing can't start
+   * Still working on why just 5 objects were harvested by cn-dev-orc-1
+   * Found an bug that dataone-cn-os-core can't be installed
+
+
+David D
+-------
+ * 20140606
+   * Continuing Splunk work described below
+   * Building Splunk inputs from CN audit results data w/Skye
+ * 20140604
+ * Building dashboards in Splunk
+ * Configuring Splunk apps
+   * Working on getting Linux stats into Splunk
+   * Stats are in place (except CPU, which has a dependency)
+   * Need to work on tweaking polling times for Linux stat - too much incoming data right now, hitting license limit
+     * Maybe turn some inputs off or switch Linux stat reporting over to production systems only
+
+Peter
+-----
+ * 20140604
+   * continuing work on log aggregation refactor - finished removing hazelcast/distributed processing dependency
+   * implement ./cn/v1/logsolr endpoint
+   * implement query engine description for logsolr
+
+
+Skye
+----
+ * 20140604
+   * Out Monday/Tuesday
+   * Prep for CCI 1.2.7 - https://redmine.dataone.org/issues/5462
+ * 20140606
+   * Some log aggregation troubleshooting with Jing and Peter
+     * Issue with configuration using raw solr endpoint which was closed in last release
+   * Series Id design and discussion
+   * Single Active CN discussion
+   * Replication Auditing splunk integration and cleanup for 1.3.0 release.
+
+
+Topics
+------
+ * Discuss clearing CNs with Jing
+   * On all 3 CNs: (ensure the installation of cn dev administration scripts on CNs /usr/local/bin/CnScripts)
+   * shutdown daemons (Same as /usr/local/bin/Stop-daemons.sh) (/usr/local/bin/CnScripts/stopDaemons.sh)
+     * /etc/init.d/d1-index-task-processor stop
+     * /etc/init.d/d1-index-task-generator stop
+     * /etc/init.d/d1-processing stop
+     * /etc/init.d/tomcat7 stop
+   * Clear Metacat ( run the /usr/local/bin/CnScripts/resetMetacat.sh )
+     * As postgres, dropdb metacat, createdb metacat
+     * rm -rf /var/metacat/documents
+     * rm -rf /var/metacat/data
+   * re-install all debian packages if needed
+   * /etc/init.d/tomcat7 start
+   * verify metacat configuration (must login and verify the pages, especially the database page, then logout)
+   * Re-populate the object format list in Metacat only for one of the CNs (the other CNs should recieve the object via metacat replication)
+     * cd /usr/share/metacat/debian
+     * Run ./insertOrUpdateObjectFormatList.sh ./objectFormatList.xml
+   * Re-populate the xml_replication tables
+   * 
+   * /etc/init.d/tomcat7 stop/start (after verification, restart tc)
+   * /usr/local/bin/CnScripts/startDaemons.sh
+
+

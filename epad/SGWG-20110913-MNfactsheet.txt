@@ -1,0 +1,159 @@
+FROZEN : PLEASE DO NOT EDIT FURTHER. MIKE FRAME is pulling this into a word file to be placed at: 
+<https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/meetings/2011_0913_oak_ridge/member-node-fact-sheet>
+
+FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN
+FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN
+FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN
+FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN
+FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN
+FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN
+FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN FROZEN
+
+DataONE Member Node Fact Sheet
+
+Breakout Group: John, Dave, Greg, Mike 
+
+
+Specific Question:
+
+                What does being in DataONE get me
+
+                How does it benefit my business/community
+
+                Cost to me/ resources required
+
+                How do I find out More
+
+                What Kind of agreements/MOU’s are needed to be a MN – expectations
+
+                Characteristics of a well prepared MN/ who we are interested in for MN’s (MN tiers?) (existing data centers, planned data centers)
+
+                Existing and planned benefits and costs
+
+                MN’s will be joining a community of MN’s
+
+                CI overview (API’s etc, but shortened and abstracted)
+
+ 
+-------
+
+Under MN key messages
+
+ 
+See the UA document at https://docs.dataone.org/member-area/working-groups/usability-and-assessment/involvement%20position%20paper.pdf/at_download/file for much of this information
+
+See drafts at http://epad.dataone.org/SGWG-20110913-MNfactsheet
+
+
+Outline
+(Note from Amber: be sure to be in harmony with website information on public web-site)
+
+format (perhaps) two column front back (36 column inches, 18 column inches per page) title is across the entire page
+
+Title: (2 X 1 column inches) F DAVE -drafted
+
+DataONE: Data Observation Network for Earth
+Member Node Information Sheet
+
+DataONE synoptic overview: ( 4 column inches) F DAVE -drafted
+
+ * DataONE seeks to provide access to multiple hetereogenous information collections through a centralized metadata registry and a collaboration of data collections at DataONE Member Node locations.
+ * The focus of DataONE is ecology, biology, ad envrionment science and related scientific disciplines.
+ * DataONE's intent is to help provide preservation, retrieval and value added analysis for archival data.
+ * There are three major components in the DataONE infrastructure: Member Nodes which represent data repositories, Coordinating Nodes which serve data management and discovery services, and the Investigator Toolkit which contains a variety of end user tools for interacting with the infrastructure.
+ * Participation in the DataONE infrastructure as a Member Node or by using the Investigator Toolkit (i.e. implementing or utilizing DataONE service interfaces) provides several fundamental services upon which additional infrastructure, services, applications and communities may be built. These core, community building services include:
+     * promotion of data preservation through automated replication of data and metadata
+     * support for arbitrary globally unique identifiers with guaranteed resolution and dereferencing
+     * extensible search and discovery services
+     * federated management of user identities and access control
+ * Member Nodes store and provide access to their digital scientific data holdings. Member Nodes provide metadata describing their data to CoordinatingNodes to facilitate discovery and retrieval of the data within the DataONE Network. Member Nodes may host their own data, and/or may partner with other data holders to provide access to partner’s data and metadata. Member nodes may have direct connection with user communities. Member nodes represent a diversity of organizations, institutions, and capabilities.   This diversity and broad community involvement allows Member nodes to help shape DataONE priorities, services, and capabilities needed by the community.    
+
+DataONE architecture:  ( 4 column inches) F DAVE 
+    need graphic
+    Describe MN's are part of the architecture
+        diversity of MN's - types of MN's (incl computing nodes and storage donation node)
+        replication capabilities (LOCKSS concept)
+
+Benefits of becoming a DataONE MN  ( 4 column inches) F Mike -drafted
+
+DataONE Member Nodes are leaders in environmental science knowledge creation and data stewardship, leveraging domain expertise through networked data services.   Member Nodes help to shape the evolution, services, and tools available to the Community from the DataONE network.  Significant benefits to becoming a DataONE Member Node are:
+
+· Improved methods of access to your data, as well as wider access to and exposure of those data
+- Leverages your existing investment in cyberinfrastructure and related data management practices.  
+· Cost-effective preservation of your data and metadata through the DataONE cyberinfrastructure.
+· Access to a larger community with expertise and best practices in data life cycle management
+· A Principle Investigator Toolkit for analysis, visualization and modelling your data
+· Responds to increasing demands by funding agencies for long-term data management planning
+· Provides visibility as a community leader in supporting open and rapid access to scientific data
+· Faciliates recognition and credit for data and services provided through data citations in published literature
+· Provides opportunities for collaborative research in the evolving field of cyber-infrastructure
+· Enhances public understanding of the value of MN and participating organizations.
+
+Example MN and testimonial (4 column inches inset box 2inches by 4 inches) F  TBSL
+    possibles: KnB, ORNL DAAC, Dryad, Cuashi, CDL/Merit, UofI, AKN, USGS, Mercury, international node
+    Which one? Perhaps think about how academic institutions will receive this message.
+
+How to become a MN  (4 column inches) B John - drafted
+    * MN services allow:
+        - MN's to register their content via metadata deposition with DataONE at large, 
+        - users to query (multiple) MN's via a aggregated metadata collection,
+        - data to be replicated, according to defined policies, across multiple MN's and
+        - users and automated workflows to retrieve data for analysis
+    * MN services are implemented by providing REST web service interfaces for a small set of service interfaces.
+    * MN's provide access to data collections of interest, including providing metadata describing their data collections to DataONE via the CN's.
+    * Through DataONE queries, data users will be directed to MN's. MN's will support (appropriately authorized) data retrieval for users.
+    * DataONE MN's and CN's collectively will provide a more integrated and complete set of meta-collections of data to users
+    * An existing or planned data center can become a DataONE MN by:
+        - Deploying and operating the DataONE MN SW stack, including the REST webservices. SW stack details can be found in thepublic repo at <http://mule1.dataone.org/>
+        - Building connecting software bridge to present data to DataONE interfaces from their native datacenter access methods. (The bridge may be a no-op if the datacenter's native access method is one of the already supportted DataONE interaces
+        - Providing operational service in the form of MN operations contact for operations and integration activities.
+        - Continued participation in DataONE community and community activities
+    
+    
+    How to set up a MN SW stack
+    How to find out more information
+    
+    
+
+Back graphic: Show a search results interface with data products from different MN's presented in a combined query screen. Perhaps a mercury screenshot. (4  column inches ~4inchesW  x 3.75 T) B  still needed
+
+Types of data providers that would make good MN's (existing datacenters and planned datacenters)  (3 inches) B Mike -drafted
+
+ ("What are we looking for - this could be you"... 
+
+Potential characteristics of a DataONE Member node would include:
+- Existing Data Centers within the earth science domain
+- Long-term projects and research activities wishing to share, access, and preserve data 
+- Organizations/Institutions establishing data infrastructures to manage research data
+- Organizations with computing and storage capabilities to augment the DataONE cyberinfrastructure
+- Organizations/Institutions with expertise in eco-informatics research and applications 
+
+Resources required for MN participation  (3 inches) B  -drafted
+
+Participation in the DataONE network as a Member Node has been designed to easily allow organizations and institutions to contribute and consume data in a safe, secure, and community driven approach.   The distributed nature of the DataONE enterprise does require some minimial level of committment by the Member Node participants.   These include:
+
+· Provide reliable access to actively managed data
+· Allow replication of data for preservation and increased access
+- Provide descriptive metadata to DataONE Coordinating Nodes to facilitate data discovery, access and usability
+· Engage with the larger DataONE community to advance DataONE services, support, emerging Member Nodes, tools, and promote best practices in data management.
+· Deploy an implementation of DataONE APIs (Application Programming Interfaces)
+· Utilize a unique identifier for each dataset by participating in DataONE user identity federation
+
+MN agreements  (2 column inches) B -drafted
+
+In order to participate as a MN, MN's and DataONE will need to draft and execute a short MOU describing;
+    - the roles and activities,
+    - the duration of the agreement,
+    - the data to be provided, the acees to and protections of  (authorization, authentication, replication, integrity, ...) to be given data collections and metadata,
+    - how data will be retained or discarded if/when the agreement ends
+
+More information   (2 column inches) B -drafted
+    URL" www.dataone.org
+    contact e-mail: <Rebecca TBSL> <http://www.dataone.org/contact> 
+    Facebook: DataONE   Twitter: @DataONEorg
+    is this a standard block?
+
+
+
+
+

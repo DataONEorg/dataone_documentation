@@ -1,0 +1,56 @@
+..meta::
+  :keywords: DataONE, CCIT, 20110216, VTC
+
+DataONE Developer Call - 2011-02-16
+===================================
+
+
+:Attendees:
+Rebecca Koskela, Paul Allen, Chad Berkley, Rob Nahf, Mark Servilla, Bob Sandusky, Ryan Scherle, Giri Palanisamy, Roger Dahl, Bruce Wilson, John Kunze
+
+
+
+Agenda and Notes
+----------------
+
+
+1. Status of presentations for CI portion of review
+
+Slides are being prepared and saved at:
+
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review
+
+
+
+2. Status of demonstrations for review
+
+Three demonstrations planned:
+
+a) Search CNs using the mercury interface.
+
+b) The R analysis of ebird data
+
+c) Upload content to a MN, and have it show in search index.
+
+
+
+3. Next major topics to be addressed 
+
+a) post-review evaluation and code cleanup
+
+b) Prototyping for authentication infrastructure
+
+c) Revising the search metadata extraction process and defining search application and user interface(s) 
+
+
+Mark 
+- LTER becoming an InCommon member
+- Internet2 uses a SAML assertion mechanism for identity management for both InCommon members and other entities in Europe - perhaps a model for CILogon/DataONE identity management?
+
+Ryan
+- Dryad native member node close to being ready
+- URL = ?
+
+
+
+

@@ -1,0 +1,92 @@
+
+
+Week of:
+May 31  
+June 7  
+June 14 
+June 21 
+June 28 
+July 5  
+July 12 
+July 19 
+July 26  Contingency
+
+
+Tasks
+
+CN Development
+  - List of member nodes (Robert)
+    The CN needs to record a list of member nodes.  
+    This can be a config file that record domain name of the MN, and include other static information about the MNs that is required for CN interaction with them.
+    - static text / config file
+    
+  - Index updating (Chad)
+    - Metacat needs to be modified so that notification of science and system metadata is available to trigger the packaging of science metdata + system metdata so that it appears in the Mercury index.  System metadata is recorded for data objects and science metadata objects.  The trigger should distinguish between changes to the system metadata associated with data and the system metadata associated with science metadata, since only sysmeta associated with science metadata needs to be packaged.  The trigger should respond to both inserts through the data one create() method and also in response to content change in response to metacat replication activity.
+    
+    - metacat completion of CRUD event
+
+
+  - MN Synchronization (Robert)
+    - spec the message queue implementation
+    - populate harvest queue
+    - implement harvester
+    - determine principal for insertion into metacat / define 
+  - CN.getLogRecords
+  - CN.resolve (Robert)
+  
+MN Development
+  - Update MN url mapping to match the current version of documentation
+  - iterate with integration testing results (Roger, Chad)
+  - metacat getLogRecords needs to be implemented
+
+CN Deployment
+  - setup VMs for hosting the CN stack (define config params - disk space etc) (Dave, Nick+David+Dave)
+  - Use 9.10 OS
+  - Test packaging and deployment to VMs (Robert)
+  - DNS - cn1, cn2, cn3 .dataone.org (Nick)
+  - Setup admin access across machines
+  - create mailing list for sysadmin group (Nick - Bruce send info)
+  - configure metacat replication (Chad)
+  - nagios integration with deployment process
+  - create metacat admin in LDAP (Matt)
+  - create stock metacat config file to avoid working through web interface
+
+MN Deployment
+  - move Dryad MN to Karya
+  - deploy metacat MN (Chad)
+    - deploy a VM
+    - install metacat
+    - copy KNB content (anonymous data)
+    - create system metadata for KNB content
+  - DAAC
+    - system physical move (Bruce)
+    - ip addresses changed
+    - DNS changes
+    - Add more data to ORNL DAAC
+
+System Monitoring (Rob)
+  - Nagios design
+  - Nagios deployment
+  - Reporting
+
+Integration Testing (Roger, Rob, Dave)
+- Build framework for integration testing
+  - design 
+  
+- Use case 36 (resolve)
+- Use case 2 (query)
+- Completing the loop: publish data set, be sure it is retrievable exactly as submitted
+- Use case 1 (get). Note: need to test for non-existant ID’s, test access control, test for malicious content
+- Do the Java Stacks and Python stacks return the same thing for the same object
+- Does CN metadata replication work
+- Consistency Check on CN’s ( Test that the checksums at CN’s match)
+- Testing authentication and access control. Includes testing actions that should be rejected.
+
+
+Investigator Toolkit (Dave)
+  - Command line client
+  - R client
+
+Reporting (Matt - get outreach team involved in this)
+  - generate recordings of interactions with web site, client tools.  Package as part of reporting to NSF
+

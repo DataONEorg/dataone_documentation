@@ -1,0 +1,80 @@
+Member Node Forum - 17 October 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 31 October, 14 November, 28 November
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307  (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,  -20130530, -20130613, -20130627, -20130711, -20130725, -20130808,  -20130822, -20130905, -20130919, -20131003
+
+Attending:  Laura Moyers, Amber Budden, Kevin Webb, Rebecca Koskela, Bruce Wilson, Mike Frenock, Dave Vieglais
+
+Regrets:  Luke Sheneman
+
+Action items from last time:
+
+Agenda:
+
+0. Welcome new attendees - introductions
+    Kevin is here for eBird.
+
+1. Network-wide update and issues affecting MN's as a whole
+    USCB is in the process of moving their server from one place to another.
+    Mailing list outage this morning; complete soon if not done by now.
+
+2. Open issues:  MNs please add anything you would like to address here.
+    The DataONE All Hands Meeting is next week in Albuquerque.  Anything you'd like to ask or pass on?  Let us know!
+
+ * Has LTER data been successfully replicated on the KNB node?  ACTION:  Laura to check with Mark.  Bruce thinks that it has been replicated, but is only 51% sure.  :)
+ * Matt to draft replication policy change (default to "yes") and send out for feedback - done
+   * some CCIT discussion about MNs who did NOT want this default change; we need to offer clear directions on how to set the desire replication policy.
+   * ACTION:  Laura to follow up and respond (grab Matt at AHM)
+
+3. Feature requests/opportunities for collaboration:
+    Mike: setup question, people getting a CILogin identity, Mike working on a document to help folks know how to do this, i.e. what is the process on getting a CILogin identity and how do you get your certificates.  ACTION:  Bruce to follow up.  
+        Currently folks who don't have a CILogin will first have to get a google account.  If you're new to this, it will create a credential for you (in DataONE)
+        Kevin:  I just went through this, and my impression is this is a client-side certificate.  The server side is a different animal.  Couldn't find specific documentation on the D1 site that helped in this process.  Found something on a Python site, though.  
+        There are 3 different types of certificates: server SSL cert for MN to be running SSL on their server; DataONE certs that authenticate the MN; CILogin certs that authenticate people (question is how does a new person get one).  Within that second category, there are multiple actual certificates that have to be received and installed correctly.  
+        Instructions for access to server side cert info found at pythonhosted.org/dataone.generic_member_node/setup-authn-ca.html   <------ 
+        Note that setting up the certs for the MN is regularly referred to as one of the most difficult parts of getting a MN set up.  
+      This should definitely be a part of the documentation overhaul, both the steps of obtaining certificates at various levels and pointing to existing or creating documentation for those cert steps as well.
+      
+      Kevin:  an observation: on CN.dataone.org/onemercury, the checkbox that says "only results with data"... what about a situation when the metadata has a link to the data for download?  This result would show up only when the checkbox is unchecked. 
+          Either DataONE holds the data (related to a metadata document) OR DataONE does not hold the data but there is a link to the data (for download) in the metadata document (risk there is that there are dead links)
+          Maybe make this clearer on ONEMercury - some help text, etc.
+          There are other MNs with data in this situation (link to data in metadata) where searches with checkbox checked or not may impact data discovery/access.  (SEAD will have data like this.)
+          
+          
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+    PISCO (Mike) - working on distributing ability to upload data to other folks besides Mike (share the wealth), folks at UCSB and OSU helping, question of whether using morpho will create metadata, etc. for you;  Dave says a later version of morpho will be available soon (in next few weeks) and WILL generate resource maps.  BEW: Update. There is a new version of Morpho in the works and a new version of Metacat.  If a MN is running the (not yet released) version of Metacat, then the resource maps will get generated.  If the user has the newer version of Morpho, the resource maps will get generated.  Either update is sufficient to get the resource maps.
+        also working on indexing, comparing local index to D1 CN index
+        How are folks getting data in now?  Mike wrote Java utilities to upload data in batch
+        Is that available publicly?  Yes, Mike has a public repository:
+        git clone http://data.piscoweb.org/piscogit/matlab_tools.git
+        git clone http://data.piscoweb.org/piscogit/metacat_load.git
+        README files outline issues and usage
+    
+    eBird (Kevin) - certificate situation sorted out in past couple weeks; seeing late night hits from UTenn
+    
+If  you have any other comments/suggestions about anything discussed here,  particularly the MN discussions at the CCIT meeting last week, please  feel free to post to developers@dataone.org or mnforum@dataone.org.
+
+OTHER INTERESTING THINGS: 
+
+contact points: 
+NEW EMAIL contact: mninfo.dataone@gmail.com       - This email monitored by DataONE staff.  I think we might migrate to   this being the primary point of contact for MN questions so we can keep  a  better handle on issues/resolutions.
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Upcoming deadlines:
+

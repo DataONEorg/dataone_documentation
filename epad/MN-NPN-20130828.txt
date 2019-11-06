@@ -1,0 +1,83 @@
+USA-NPN (USA National Phenology Network) - DataONE Member Node follow-up meeting
+
+28 August 2013, 3pm EDT, 2pm CDT, 1pm MDT, noon AZ/PDT, 11am AK
+(previous meeting was 1 August 2013, epad: http://epad.dataone.org/MN-NPN-20130801
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/278959080
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (626) 521-0013
+Access Code: 278-959-080
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 278-959-080
+ 
+ 
+Attending:  Laura Moyers, Ben Leinfelder, Lee Marsh, Alyssa Rosemartin, Robert Waltz, Dave Vieglais
+
+Regrets:  Bruce
+
+Redmine ticket: https://redmine.dataone.org/issues/3186
+
+Agenda:
+
+Lee update current status:
+Lee:  was struggling to get authentication with LDAP server going, Bruce/Ben have been helping, not too long after that, NPN has gotten their own LDAP server but having some difficulties
+Ben:  this is an LDAP server talking with metacat?
+Lee:  Yes.  It can communicate with LDAP server ok when you specify domain, etc.  But when you try to log in as metacat admin, it says can't authenticate user.  Looks like LDAP server is working ok but authentication with metacat is not working.
+
+<much discussion between Lee and Ben - to continue offline>
+
+cn=dataone,dc=npn,dc=arizona,dc=edu
+
+Ben: will NPN users be adding metadata or will Lee/admin be the only user?
+Lee:  NPN administrator only
+Ben: NPN could piggyback on our LDAP server if needed
+Lee:  NPN has been wanting to have our own LDAP server anyway
+Ben: try this: uid=admin,o=NPN,dc=ecoinformatics,dc=org, if this works then is likely a problem with metacat there, not LDAP
+Lee: may need to double check what I'm doing
+
+Lee: LDAP search with specific user and credentials works ok
+Ben: if you get same results if you do/don't bind as a specific user, ... <whoa, this is way over my head>
+
+Laura: What does authentication mean?
+Ben:  search for user in the system, let the user log in (authenticate) with username/password.
+Lee: can look at user account but can't log in as user
+
+Ben: Do you have Tomcat behind an Apache server
+Lee: Yes.  I think I already have the SSL cert installed
+Ben: Is this public?
+Lee: Yes, URL is:
+mynpn-dev.usanpn.org/knb
+Don't go to port 80.  
+Ben: Using a self-signed certificate?
+Lee: <wondering if administrator is messing with the server right now because things look weird>  Do self-signed certs not work with metacat?
+Ben: if CNs don't trust the cert, they won't harvest your data.
+Lee: is it ok if the cert has alternate domain names?
+Ben: as long as one of them is the actual server name, it's ok (we sometimes use wildcards).
+
+    Recap:
+   * NPN wishes to operate at tier 1 and that they are in a position to establish a test system.
+   * Based on NPN's "live" data status, we think we'll have one dataset that's historic wildlife data, others by year.  Alyssa said they'd work on PIDs/DOIs with Bruce.
+   * Alyssa indicated that the due date shown on the redmine ticket of 31 Oct 2013 is reasonable.
+
+    Follow-up:
+   * Last time, Lee said the LDAP server was a holdup.  Current status: still kind of a problem, Ben/Lee working
+   * NPN to decide how often to publish/update and what scheme provides the best value to NPN and NPN data users.  Current status: probably going to be yearly
+   * DOIs: there was some discussion about how to create them (EasyCite? EasyID?) as well as the immutability question (i.e. when a data set is updated on a monthly/quarterly/annual basis, the "new" dataset needs to have its own unique DOI).  Current status: looking at EasyID as an option  
+     * Ben: if your institution gets an account at EasyID, can create DOIs/PIDs that will work with metacat
+     * Ben: who is NPN's "parent" organization?
+     * Alyssa: probably U Arizona, possibly USGS
+
+    Questions from NPN that DataONE can address?    
+        Not right now.  
+        
+Robert working on a script that installs metacat on a test box, does not do LDAP, pretty insecure so on a private virtual machine, based on CN scripts.  Haven't worked on in a while.  Not necessarily a useful tool for NPN at this point, and besides, Lee and Ben are already working together so we're good.
+
+https://github.com/rpwaltz/d1-mn-cat
+
+
+
+

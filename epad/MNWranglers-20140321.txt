@@ -1,0 +1,70 @@
+Member Node Wranglers 
+    Fridays at 10:00 am Alaska
+                    11:00 am Pacific
+                    12:00 noon Mountain
+                    1:00 pm Central
+                    2:00 pm Eastern
+
+https://www1.gotomeeting.com/join/430697153
+
+21 March 2014  
+                                                     
+Attending:  Laura, Rebecca, Dave, Amber, John Cobb
+
+Regrets:  Bruce
+
+Agenda: 
+
+        1. High profile issues (or current items of interest)
+        
+        CN fix? - Dave said it was running yesterday at MNF; stopped, made fixes and running again today
+        
+        New MNs announcements? -  
+       * GOA announced Wednesday
+
+        1.5    Current MNs
+
+
+        2. Status of upcoming MNs
+        
+        Future
+       * Australia  (4286): next meeting 3/27/14.  Bruce sent out draft MOU.  
+
+     * Y5Q3
+       * GLEON (3422) - Chris said: 
+         * GLEON is registered in stage now for testing.  The main problem was that Aaron’s installation was on Ubuntu 12.04 with Tomcat 7, and Java OpenJDK 6. We have really only tested and support Ubuntu 10.04 at the moment, with Tomcat 6 and Sun/Oracle Java 6.  So, Jing had Aaron change to Tomcat 6, and Ben worked with him on the certificate trust issues, and ended up having him change to Oracle Java 6.  Those two changes fixed the issues they were having.
+       * LTER-Europe  (3232) - Awaiting approval from David Blankman re: news item.  Laura awaiting response from David (has he heard back from folks in Poland).  Laura needs to coordinate when we are really ready.
+       * EDAC (3221) - EDAC is ready to go; start small and gradually add.  Look at going live when the CN fix is complete (late next week or early next); Rebecca to meet with Karl, Soren, Rob.
+       * PPBio  (3748) - Ben supporting
+       * SAEON (3205) - Chris says he is awaiting response from Wim re: upgrading their metacat.  
+       * NKN (3238) - Ed has re-registered in the sandbox and things appear to be working ok  Laura to email Ed for status
+
+     * Y5Q4
+       * DFC  (3532) -  Chris has been working with Lisa Stillwell and Mary Whitton answering questions
+       * MPC   (3708) - Email traffic re: data package formats, etc.
+       * ORNL    "slender nodes" (RGD (4248) and EDORA (4247)) -  Ranjeet says: 
+         * - Jim has the latest slender node code deposited at the DataONE svn
+         * - Code takes about 20 command line arguments.. So it definitely needs some usage documentation-- which we are currently working on
+         * - Last week we have identified new nodes to register which we are currently setting up
+
+        3. Old action items
+             
+        4. Not-high profile issues
+     * Laura working with Roger on redmine ticket generator
+
+       
+        5. Around the room
+            Dave: nothing special
+            Amber: travelling/meetings next couple weeks
+            Rebecca: operations documentation   http://mule1.dataone.org/OperationDocs/;  We would like to pull out MN specific documentation and make it more stand-alone, separate from the general operations docs; when Rob is available we'll work on this again.  The MN Deployment section is looking good (IMO); next step there is to add links to detailed information that we know exists (some of it lower down in Operations, some maybe in Architecture)
+                Section to be added: ongoing operations
+                    taking node down/up
+                    going out of business
+                    changing out servers?
+                what about defining expectations? should there be procedures (as in case of deleting a dataset), or should we talk with MNs about expectations (like turning replication on, etc.)
+            John: MNs will lose data, so perhaps we need to state up front that it's possible that data discoverable via DataONE may not be available at a point in time
+                
+                “A distributed system is one in which the failure of a computer you didn't even know existed can render your own computer unusable” Les Lamport  (who won the Turing award this week)
+                
+
+

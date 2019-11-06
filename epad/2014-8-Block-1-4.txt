@@ -1,0 +1,187 @@
+Notes for development Block 1.4
+-------------------------------
+
+Previous epad notes at: http://epad.dataone.org/2014-6-Block-1-3
+
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+
+
+Skye
+-------
+ * 20140003
+   * PTO March 5-11
+   * Dashboard UI updates.
+ * 20140221
+   * Tidy change result testing/verification/noise inspection.
+   * Cross browser testing on changes for ubuntu FF 27 font rendering issue
+     * Chrome/IE/FF on Windows
+     * FF on Ubuntu
+     * Chrome/FF/Safari on OS X
+ * 20140219
+   * Cleaned up some tidy errors, cleaning up change record noise.
+   * Worked on FireFox 27 rendering on Ubuntu
+     * Font sizes in FF 27 ubuntu are huge, pushing input sizes to be very large
+     * Table/Fieldset layout issues due to huge fonts in FF ubuntu.
+
+
+Robert
+------
+ * 20140307
+   * cn-dev-orc-1 is rebuilt, except for the replication/ldap cert. Ldap will not run until.
+   * reviewed stats endpoints for query mechanism
+ * 20140305
+   * cn-dev-orc-1 is almost rebuilt, need certs to complete.
+     * Pro
+   * talked with Peter re: log and stats dashboard.
+ * 20140228
+   * cn-dev-orc-1 buildout was somewhat problematic. may need to review ldap-pam setup instructions.
+   * read about hazelcast and outbound ports, may need to open up outbound ports for hazelcast
+ * 20140226
+   * rebuilding cn-dev-orc-1, writing up instructions on SSH cert only login
+   * writing code to review errors of Dryad sync
+ * 20140224
+   * No luck on the tidy log analysis
+   * Looked more at OpenLdap problems
+   * Need to login to cn-dev-orc-1
+ * 20140221
+   * out sick
+ * 20140219
+   * Looked at Openldap a bit, holding off on rebuild
+   * Looked at Metacat, requires higher version of ant thatn 10.04 installs by default. Dave V installed the most recent version of ant.
+     * Metacat is not the most recent version on dev.
+   * Devised test for possible ssl connection problems, we didn't have any problems that persisted past Monday morning.
+   * Looking at cn_log_report code again.
+
+
+David D
+--------
+ * 20140307
+   * Adding splunk inputs for syslog and apache to cn-dev-orc
+   * Planning application update to prod forwarders/indexer next weekend
+ * 20140305
+   * Rolled out Splunk test input configs to existing dev CNs
+   * Found a possible ufw config issue at cn-stage-ucsb-1
+     * ufw was not configured to accept connections on 389 from its own IP address - other stage CNs were
+     * opened 389 to said port - no change in behavior
+   * Meanwhile, ldap sync replication had begun failing across stage altogether
+     * Stopped/started slapd on all stage CNs, which restored replication to/from orc and ucsb
+   * ADC ldap browser isn't connecting to cn-sandbox-orc-1 for some reason
+     * Tried a couple of other ldap browsers and was able to connect to the dev orc's ldap directory - application issue w/ADC?
+ * 20140303
+   * Rolled out Splunk test environment output configs to sandbox CNs
+     * Dev next, depending on where cn-dev-orc-1 is at
+     * Still need sudo access to some sandbox MNs
+   * Running stage CN tcpdumps through a different packet analyzer to see if it shows anything that Wireshark doesn't, or if I catch anything after another look at them
+ * 20140228
+   * Cleaned up spammy jsvc logs, forced logrotate to confirm good rotation activity, will keep an eye on it
+   * In addition to other tasks, going to look into why Apache Directory Studio won't connect to cn-sandbox-orc-1
+ * 20140226
+   * Still digging through slapd-related logs
+     * created some more .ldifs from slapcat on the stage CNs
+       * several dns showing different entries for entryCSN and modifyTimeStamp but are otherwise equal
+       * some dns appear to be either missing altogether from one database or another, or they're in different order across the databases
+   * Going to circle back to Splunk test setup and doing some cleanup of bad log files
+   * Found port 5432 blocked on cn-stage-unm-1 - port used by postgres unblocked on other stage boxes, and orc stage was sending tons of connect requests to unm at that port, so unblocked
+ * 20140224
+   * Looked into stage ldap connections w/Robert, determined that encryption is in fact configured correctly and working as expected on orc and ucsb
+   * Robert still suspects database corruption
+     * Looking into more tests for database corruption
+ * 20140221
+   * traced stage syncrepl back to encryption config issue
+     * port 389 on cn-stage-orc-1 is blocked until a fix can be determined
+ * 20140219
+   * Talked w/Bruce re: stage syncrepl issue - he's not convinced that database corruption is the (only) problem
+     * wants  Chris B. and I to figure out which cipher suites the stage boxes are  using to talk to one another and run some more tests on slapd activity
+ * 20140217
+   * stage CN syncrepl:
+     * Ran tcpdumps on cn-stage-orc-1 and cn-stage-ucsb-1, then induced a failed ldap sync replication, looked at results w/Wireshark
+       * Wireshark  packet analysis shows multiple connections made, tls handshakes  completed, minimal amount of application traffic, then connections  shutting down with tls error code 21 - "TLS1_ALERT_DECRYPTION_FAILED"
+     * running slapcat on stage CNs gives three .ldif files that are highly different from one another
+       * Also,  some values in the .ldifs created by slapcat appear to be corrupted,  e.g. "cn=benjam\2BaO0-n leinfelder" instead of "cn=benjamin leinfelder" per Chris J, this particular entry is expected
+         * Seeing this on orc too, not just ucsb irrelevant, since this is expected behavior
+
+Rob
+---
+ * 20140307
+   * minor refactoring of libclient objects to improve testability:
+     * abstract out object creation into factory methods for MNode and CNode classes.
+ * 20140305
+   * EDAC testing
+     * reviewed status of EDAC node in DEV
+     * checked ONEMercury issues in DEV
+   * Reviewing libclient architectural issues:
+     * depencency on apache HttpClient v 4.1.3
+     * reliance on concrete class D1Client to get access to nodes, instead of interface - very difficult to use other implementations, or mock objects.
+ * 21040226
+   * debugged the accessPolicy presentation in ChangeRecord.
+     * fixed the duplicate record problem
+   * built the option in TypeCompareUtils to flatten lists of simple types, but needs unit tests.
+     * for example: BlockedMN and PreferredMN lists of NodeReferences would be flattened and lead to fewer logging lines.
+   * need to reharvest EDAC in DEV then review with Soren / Skye.
+ * 20140224
+   * registered EDAC to DEV, got it to synchronize.
+     * will review and ask Soren to review
+   * will run tidy with the ChangeRecord changes
+ * 20140221
+   * EDAC - registering to new test environment
+     * trouble connecting to STAGE2's portal so registered to DEV
+   * DigitalAntiquities:  
+     * Adam Brin interested in using libclient, but having version conflicts with apache HttpClient
+     * interested in a more generalized technical document - about a step up from the API specs, to help with implementation.
+ * 20140219
+   * libclient_java:
+     * looking into apache.HTTPClient version issue on Hudson (seems to regularly complaining about not finding approprite version)
+       * not clear why Hudson is failing, so am investigating removal of download.java.net/maven/2/ repository 
+   * investigating cost (impact) of using newer versions
+
+
+Jing
+----
+ * 20140307
+   * Discussed the plan to assign alias dns for nceas ldap server
+   * Working on the process to modify the ldap server - create alias or create accounts on ou=Account.
+ * 20140305
+   * Created a new maven project and checked in the code.
+   * Automated the process to create tables, import the ldap account.
+   * Working on the process to assign target DNs.
+ * 20140303
+   * Dicuss the plan for how to merge NCEAS subtree
+   * Try to set up new code repository 
+ * 20140228
+   * Fixed some bugs on metacat 2.4.1 release
+   * Trouble shooting for UW's Metacat
+   * Work on a plan to fill the action and guid for NCEAS subtree in NCEAS' production ldap.
+ * 201402024
+   * Developed some code to import the ldap accounts into a sql database
+   * Developping the code (Java or Perl) to merge the ldap account trees†
+ * Installed cn-dev-unm-1 and cn-dev-ucsb-1 to confirm the change in the prostinstall script
+ * Looking at the access log of the NCEAS' LDAP server to compile a list who are using the LDAP.
+
+Chris
+-----
+ * 20140219
+   * IDCC presentation work
+   * MN support: certs and registering
+   * Metacat upgrade: dealing with DwC versions
+
+Roger
+-----
+ * 20140310
+   * Back to the MN Deployment Ticket Generator. The program itself is very simple and mostly completed. Remaining is refining the ticket template.
+ * 20140305
+   * Have cycled back to do more work on replication processing in GMN and replication testing after finding some issues. Will write a document about this.
+ * 20140226
+   * Continuing work on the D1 ticket generator.
+
+Peter
+-----
+ * 20140228
+   * Created a document that describes the proposed changes to the log aggregation/query (via Solr) index to support a user oriented dashboard and other similiar clients
+ * 20140303
+   * began metacat upgrade to Solr 4
+   * talking w/Robert regarding setting up a D1 CN test environment for development/test of changes to log aggregation to support a user dashboard on MNs
+ * 20140305
+   * continue work on metacat Solr4 upgrade
+   * continue work on stats service for user dashboard
+

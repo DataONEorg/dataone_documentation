@@ -1,0 +1,304 @@
+Responses to List Emails, [sic]
+
+Lists:
+Mendeley
+Ecoinfo
+Taverna-Users: http://sourceforge.net/mailarchive/forum.php?thread_name=BANLkTinbxgHXrwevs0XLhPYk-qd%3DnNo0Cw%40mail.gmail.com&forum_name=taverna-users
+Kepler users
+Ecolog
+LTER-IMPLUS
+
+§§§§§§§§§§§§§§§§§§§§
+OKF in berlin
+
+fromDavid Aanensen daanensen@gmail.comtorichard.littauer@gmail.com
+dateThu, Jun 30, 2011 at 4:03 PMsubjectmyExperiment - OKcon11mailed-bygmail.comsigned-bygmail.com
+
+hide details 4:03 PM (2 hours ago)
+
+
+
+Hi Richard,
+
+thanks for saying hi after my question on myexperiment / Taverna. I look forward to looking through the dataone site.
+
+the paper we published that bigs up the use of myexperiment is here - http://www.ncbi.nlm.nih.gov/pubmed/19521881
+
+and this is the kind of stuff that I do:
+
+http://www.epicollect.net
+http://www.mlst.net
+http://www.spatialepidemiology.net
+
+all the best and I'm narked I cannot make your talk tomorrow!!
+
+David
+
+
+§§§§§§§§§§§§§§§§§§§§
+ECO-INFO
+
+fromClement Jonquet jonquet@lirmm.frtoRichard Littauer <richard.littauer@gmail.com>
+dateTue, Jun 14, 2011 at 10:12 AMsubjectRE: [ecoinfo] Questions and Research on Scientific Workflowsmailed-bylirmm.fr
+
+hide details 10:12 AM (9 hours ago)
+
+
+
+Hi Richard,
+ 
+For your review.
+At NCBO we do have a scientific “biomedical semantic annotation workflow”… that we make available as a web service for the community and that we have used to index semantically oipen biomedical data resources.
+ 
+Check this at:
+http://www.bioontology.org/wiki/index.php/Annotator_Web_service
+http://www.bioontology.org/wiki/index.php/Resource_Index
+ 
+And related publications:
+Clement Jonquet, Nigam H. Shah & Mark A. Musen. The Open Biomedical Annotator, In American Medical Informatics Association Symposium on Translational BioInformatics, AMIA-TBI'09. San Francisco, CA, USA, March 2009. pp. 56-60. [Abstract] [BibTeX] [PDF] [RelatedLink]
+ 
+Nigam H. Shah, Clement Jonquet, Annie P. Chiang, Atul J. Butte, Rong Chen & Mark A. Musen. Ontology-driven Indexing of Public Datasets for Translational Bioinformatics, BMC Bioinformatics. February 2009. Vol. 10 (2:S1),  [Abstract] [BibTeX] [DOI] [PDF] [RelatedLink]
+ 
+We are indexed on Myexperiment or stuff like that.
+But could be useful for you.
+ 
+This is mainly applied to biomedical sciences…. But similar initiatives exist (or will exist) for earth sciences.
+ 
+ 
+Regards
+Clement
+ 
+---------------------------------------------------------------------------------------------------
+Dr. Clement JONQUET  -  PhD in Informatics  -  Assistant Professor
+ 
+jonquet@lirmm.fr
+http://www.lirmm.fr/~jonquet
+ 
+                University of Montpellier
+                LIRMM
+                161 rue Ada 
+                34095 Montpellier Cdx 5
+                France 
+ 
+Tel:                +33/4 67 14 97 43    
+Fax:               +33/4 67  41 85 00
+Skype:          clementpro
+Twitter:        @jonquet_lirmm
+Slideshare:  jonquet
+ 
+
+§§§§§§§§§§§§§§§§§§§§
+ECO-INFO
+
+fromCorinna Gries cgries@wisc.edutoRichard Littauer <richard.littauer@gmail.com>
+dateMon, Jun 13, 2011 at 10:07 PMsubjectRe: [ecoinfo] Questions and Research on Scientific Workflowsmailed-bywisc.edu
+
+
+Hi Richard,
+
+here at NTL LTER we are using Kepler routinely for general data management tasks. I.e. moving field data from spreadsheets into a database including basic Q/C. The workflows are all very simple data manipulations and are running locally. We have not submitted them to any repository but I'd be happy to share them. And I just co-authored a paper on that subject which we submitted to the upcoming EIMC.
+
+I am not sure that application qualifies to answer your questions, as we are not doing any scientific analysis, only getting the data ready for such.
+
+let me know if I can help
+Corinna Gries
+NTL LTER Information Manager
+
+§§§§§§§§§§§§§§§§§§§§
+ECO-INFo
+
+fromErik Franklin erikcfranklin@gmail.comtoRichard Littauer <richard.littauer@gmail.com>
+ccRuth Gates <rgates@hawaii.edu>,
+Xavier Pochon <pochon@hawaii.edu>,
+Michael Stat <stat@hawaii.edu>,
+Hollie Putnam <hputnam@hawaii.edu>
+dateMon, Jun 13, 2011 at 8:18 PMsubjectRe: [ecoinfo] Questions and Research on Scientific Workflowsmailed-bygmail.comsigned-bygmail.com
+
+
+Dear Richard,
+
+In response to your call for work on scientific workflows, I've
+attached a copy of our manuscript,"Cheap, Fast, and Good Enough: Rapid
+Development of a Hybrid Web Application for Synthesis Science of
+Symbiodinium with Google Apps", that we've just submitted for
+presentation at the Environmental Information Management 2011
+Conference <https://eim.ecoinformatics.org/eim2011>.
+
+The intent of the paper was to provide an overview of the way we
+"created" a workflow that resulted in a web-based tool. The tool,
+called GeoSymbio, allows dynamic queries of the knowledge available on
+a particular topic (in this case, the occurrence of host-Symbiodinium
+symbioses) and provides comprehensive data resources for further
+advanced desktop analysis. The backbone of the scientific workflow was
+Google Apps. I direct you to Figure 1 in the manuscript for a
+schematic of the data/work flow in the development of the application.
+
+Although the software tool-set wasn't a formal scientific workflow
+such as "Kepler", we feel that the work illustrates a realistic model
+for "how scientists get their work done" especially for a project
+involving a small (5) interdisciplinary research group focused on
+bioinformatics and ecoinformatics. Please feel free to contact me with
+any questions regarding the project.
+
+Aloha,
+Erik Franklin
+Hawaii Institute of Marine Biology
+University of Hawaii
+
+§§§§§§§§§§§§§§§§§§§§
+ECO-INFO
+
+fromPatrick Maué pajoma@uni-muenster.de
+dateMon, Jun 13, 2011 at 8:23 AM
+subjectRe: [ecoinfo] Questions and Research on Scientific Workflowsmailed-bygmail.comsigned-bygmail.com
+
+Hi Richard,
+
+maybe you are interested in the ENVISION projeect (see
+http://www.envision-project.eu then. We focus on adaptive chaining of
+geospatial Web services to migrate environmental models to the Web.
+
+best,
+ Patrick
+
+§§§§§§§§§§§§§§§§§§§§
+KEPLER-USERS
+
+fromUfuk Utku Turuncoglu (BE)u.utku.turuncoglu@be.itu.edu.tr
+dateMon, Jun 13, 2011 at 9:41 AM
+subject[kepler-users] Questions and Research on Scientific Workflows
+
+Dear Mr. Littauer,
+
+As a part of my PhD thesis i used the Kepler workflow to automatize the routine steps in earth system modeling. I also add some provenance recording capability to the designed workflow system. The study is published in the following paper,
+
+Turuncoglu, U. U., Murphy, S., DeLuca, C., Dalfes, N., 2011. A scientific workflow environment for Earth system related studies. Computers & Geosciences 37(7), 943-952. DOI: 10.1016/j.cageo.2010.11.013
+
+The code is also available in the following link.
+
+http://esmfcontrib.cvs.sourceforge.net/viewvc/esmfcontrib/workflow/
+
+and you can see the some screen movie that shows the system in the following link,
+
+http://www.be.itu.edu.tr/~u.utku.turuncoglu/workflow.htm
+
+I hope this helps you. If you have any question, please just let me know.
+
+Best regards,
+
+Ufuk Utku Turuncoglu
+Informatics Institute
+Istanbul Technical University
+
+
+§§§§§§§§§§§§§§§§§§§§
+MENDELEY
+
+Jonathan Eisen added a document to this group
+"Introducing W.A.T.E.R.S.: a workflow for the alignment, taxonomy, and ecology of ribosomal sequences."
+
+Jonathan Eisen: "this is my one paper about a formal workflow (using Kepler)"
+
+TWITTER
+Richard: @phylogenomics You have 209 articles, one of which is about a workflow. Do you use Kepler for any of the others? In your lab?
+Eisen: @richlitt that was 2010 -- prior to that some of our informatics work was conceptually like workflows but not formalized
+Eisen: @richlitt some Kepler folks at a database called camera were planning on making other workflows from our scripts but never happened
+Richard: @phylogenomics Right, that makes sense. I've been in contact with CAMERA - they're still around. Thank you for the help!
+
+§§§§§§§§§§§§§§§§§§§§
+TAVERNA-USERS
+
+fromJames Howison james@howison.name
+dateSun, Jun 12, 2011 at 8:14 PM
+subjectFwd: [Taverna-users] Questions and Research on Scientific Workflows
+
+Hi Richard,
+
+Our recent paper describes three workflows in different sciences leading to published papers, but not "formal workflows" in that they weren't driven by particular workflow technologies (ie manually or idiosyncratically linked stages).
+
+James Howison and Jim Herbsleb (2011) "Scientific software production: incentives and collaboration". Computer Supported Cooperative Work (CSCW) 2011. http://portal.acm.org/citation.cfm?id=1958904
+
+Your Mendeley collection looks interesting, I'll endeavor to follow.
+
+--J
+
+§§§§§§§§§§§§§§§§§§§§
+ECOLOG
+fromCarl Boettiger cboettig@gmail.com
+torichard.littauer@gmail.com
+dateFri, Jun 10, 2011 at 10:16 PM
+subjectUnderstanding Scientific Workflows
+mailed-bygmail.comsigned-bygmail.com
+
+Hi Richard,
+
+I just read your note on the ecolog about scientific workflows.  Great to hear about this project!  I would love to talk with you more about this or answer any questions.  Some answers below.  
+
+
+- routinely use workflows, and wouldn't mind sharing them
+
+My own workflow is based around my lab notebook, which integrates a variety of social media tools (Wordpress, Flickr, Github, Mendeley, see the intro to my notebook).  I've been working on making betterlinks from results to code and more semantic support.  
+The thing you might actually call the executable workflow is usually an R package, which handles the data, code, and scripts rather well.  
+
+I've been intrigued by the workflow tools such as myexperiment, taverna, and kepler, but have been hesitant to commit to them before they become established.  (Also just for lack of time).  I started my notebook on openwetware but moved to my current system partly out of concern that openwetware community was becoming less active (board not longer meeting, day-length outage, etc) and partly to have a more customizable platform.  
+
+- have any relevant information on workflow usage or research in the scientific community
+
+Er, would probably tell you what you already know.  
+
+- know of any science publications that happen to mention in some form or other how the authors
+have used scientific workflows in conducting their science
+
+err, where to start?  These are all good:  (Searching the articles I've read in Mendeley on workflows and pasting in the refs:). 
+
+Attwood, T. K., Kell, D. B., McDermott, P., Marsh, J., Pettifer, S. R., & Thorne, D. (2010). Utopia documents: linking scholarly literature with research data. Bioinformatics, 26(18), i568-i574. Retrieved September 7, 2010, from http://www.bioinformatics.oxfordjournals.org/cgi/doi/10.1093/bioinformatics/btq383.
+Attwood, T. K., Kell, Douglas B, McDermott, Philip, Marsh, James, Pettifer, Steve R, & Thorne, David. (2009). Calling International Rescue: knowledge lost in literature and data landslide! The Biochemical journal, 424(3), 317-33. Retrieved from http://www.ncbi.nlm.nih.gov/pubmed/19929850.
+Bourne, P. E. (2010). What Do I Want from the Publisher of the Future? (J. McEntyre, Ed.)PLoS Computational Biology, 6(5), e1000787. Retrieved from http://dx.plos.org/10.1371/journal.pcbi.1000787.
+Bradley, J.-C., Lang, A. S. I. D., Koch, S., & Neylon, C. (2011). Collaboration Using Open Notebook Science in Academia. In S. Ekins, M. A. Z. Hupcey, & A. J. Williams (Eds.), Collaborative Computational Technologies for Biomedical Research. Hoboken, NJ, USA: John Wiley & Sons, Inc. doi: 10.1002/9781118026038.ch25.
+Constable, H., Guralnick, R., Wieczorek, J., Spencer, C., & Peterson, A. T. (2010). VertNet: a new model for biodiversity data sharing. PLoS biology, 8(2), e1000309. Retrieved from http://www.ncbi.nlm.nih.gov/pubmed/20169109.
+Devil in the details. (2011). Nature, 470(7334), 305-306. doi: 10.1038/470305b.
+Fox, P., & Hendler, J. (2011). Changing the Equation on Scientific Data Visualization. Science, 331(6018), 705-708. doi: 10.1126/science.1197654.
+Goble, C. a, Bhagat, J., Aleksejevs, S., Cruickshank, D., Michaelides, D., Newman, D., et al. (2010). myExperiment: a repository and social network for the sharing of bioinformatics workflows. Nucleic Acids Research, (10), 1-6. Retrieved from http://www.nar.oxfordjournals.org/cgi/doi/10.1093/nar/gkq429.
+Hull, D., Pettifer, Steve R, & Kell, Douglas B. (2008). Defrosting the digital library: bibliographic tools for the next generation web. PLoS computational biology, 4(10), e1000204. Retrieved fromhttp://www.ncbi.nlm.nih.gov/pubmed/18974831.
+Jones, Matthew B., Schildhauer, Mark P., Reichman, O.J., & Bowers, S. (2006). The New Bioinformatics: Integrating Ecological Data from the Gene to the Biosphere. Annual Review of Ecology, Evolution, and Systematics, 37(1), 519-544. doi: 10.1146/annurev.ecolsys.37.091305.110031.
+Lud\"ascher, B., Weske, M., McPhillips, T., & Bowers, S. (2009). Scientific workflows: Business as usual? Business Process Management, 31–47. Springer. Retrieved December 4, 2010, fromhttp://www.springerlink.com/index/j30w8421kmu06107.pdf.
+Reich, M., Informa, C., Ins, D. B., & February, H. (2011). Accessible Reproducible Research. Retrieved from http://www.stanford.edu/~vcs/AAAS2011/.
+Reichman, O J, Jones, M. B., & Schildhauer, M. P. (2011). Challenges and Opportunities of Open Data in Ecology. Science, 331(6018), 703-705. doi: 10.1126/science.1197962.
+Szalay, A., & Gray, J. (2006). Science in an exponential world. Nature, 440(March), 413-415. Retrieved from http://www-users.cs.umn.edu/research/shashi-group/CS8715/IM8_szalay.pdf.
+Task Force on Software for Science and Engineering. (2011). .
+
+
+- are aware of any faults between workflow systems, in the categorisation of workflows, or of
+inadequacies in the natural language description of workflows
+
+
+- or know of any open repositories of workflows that you or your colleagues may use to upload
+their workflows.
+
+Don't know any close colleagues who use workflows.  
+
+
+For what it's worth, here's a couple of my interests in this area:
+1) API interfaces to data repositories
+It seems these are exciting times for greater access to scientific data, facilitating real meta-analysis and reproducible work.  To this end, I've started writing R interfaces to various repository APIs such as TreeBASE, Dryad, Mendeley, PLoS and Springer.  
+
+2) reproducible research; particularly for computation.  
+I am particularly interested in the problem of establishing unique identifiers to computational objects (a laDonoho & Gavish).  Linking methods and figures to software scripts; capturing code version history.  
+
+3) More open science
+I'm excited about the direction that projects like DataONE, together with new journal sharing requirements and data management funding requirements are taking us, and I'm delighted to see that ecology/evolution fields are doing a decent job at leading this change.  I organized a workshop at UC Davis and brought together some of the folks from UC3/Merritt repository with some of editors-in-chief on our faculty to discuss these issues this winter.  (Workshop outline, video recording.)  Also had a chance to speak about open notebook science at Science Online and iEvoBio.  Also interested in the use of social media to this end.  
+
+i.e. seems that if you posted your questions on Friendfeed or the like, it would be easier to reply without repeating what others have said.  
+
+
+
+Cheers,
+Carl
+
+
+
+-- 
+Carl Boettiger
+UC Davis
+http://www.carlboettiger.info/
+

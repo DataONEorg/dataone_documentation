@@ -1,0 +1,134 @@
+Attendees: Rebecca, Amber, Bill, Bruce, Trisha, Dave, Viv, Steph, John Cobb, Matt, Steve, John Kunze
+
+Regrets: Bob Cook, Mike Frame, Todd Vision
+
+
+http://epad.dataone.org/20110204-LT-VTC
+
+
+ Agenda for 2011-02-04
+
+1. DataONE NSF Review
+
+We'll review status of the documents that need to be sent to NSF by COB on Monday,
+February 7, 2011.  If time permits, will review status of presentation.
+
+Locations on docs.dataone.org<http://docs.dataone.org/>:
+Current version of NSF Review document:
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/documents-for-nsf-review/NSF%20DataONE%20Progress%20Report_vs0.9.docx/view
+
+Comments in by noon (MST) on Sunday (so you can watch Super Bowl)
+
+Charge to Panel:
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/The%20Charge%20Final.docx
+
+Document causes Word to lock up so SAVE OFTEN
+
+I.      Executive Summary (Lead:WM – input from ET & LT) {5 pages, including attractive, appropriate slide}
+Reviewers: Steph, Bruce
+(We're ~20 lines over here so need help with this)
+ 
+II.    Introduction (Lead: WM – input from ET & LT) {1 page}
+Reviewers: Steph, Bruce
+ 
+ 
+III.  Cyberinfrastructure (Lead: DV with BW,MJ & ------) {8-9 pages}
+ 
+Reviewers: Bruce, John C
+ 
+ Question about operational metrics: - may want to reference performance metrics in PMP
+ Monitoring in CI section? - highlight what monitoring - would be revelant to first question
+ Not tracking stats because not live yet
+ 
+ 
+IV.   Community Engagement (Lead: AB with CT,SA) {2 pages}
+Reviewers: Viv, Bruce
+ 
+ 
+V.     Sustainability (Lead: TC with WM, DV) {1 page}
+Reviewers: Bruce, Trisha
+ 
+VI.   Project Management (Lead: RK) {2 pages}
+Reviewers: Bruce
+ 
+ 
+VII.  Supplemental Material (Lead: RK)
+a.     Proposal 
+b.     Cooperative Agreement
+c.      PMP latest versions at: (?) <https://docs.dataone.org/member-area/documents/management/project-management-plans-pmp/?searchterm=pmp>
+
+d.     Architecture Document (CI) (DV & MJ)
+e.    Community Needs Assessment Document (CE)  (AE & CT) – (manuscript with
+cover paragraph from Amber)
+
+
+https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review
+
+<https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/eab-feedback-posters/Feedback%20from%20DataONE%20EAB%20Meeting.docx>
+
+Bruce: Have initial quotes back from Dell for UTK equipment purchase.  Will get a couple of other variations and have gotten some feedback on how the MD3220i devices are best configured.  
+
+Trisha: Amber and I are working together on developing the Data Management planning partnership (UIUC, Smithsonian, UC, UVA, DataONE, Purdue)?)).  A press release will be issued announcing the partnership and the intent to create a tool on Feb. 14 or 15th.  If anyone wants to contribute a quote (an NSF quote???) let me know.  If anyone has any science outlets that we should target with the press release we can do that to.
+
+
+Viv: Two new members for CEEWG: Heather Henkel (USGS) and Corinna Gries (LTER). 
+Working with Kristin Vanderbilt and Amber to start planning a workshop for developing a formal online data management course
+Submitted major proposal to USGS Powell Center for developing a data management process for USGS - several DataONE leaders have agreed to participate, if funded, and did review on proposal - there will be some overlap with DataONE activities if it goes forward. 
+
+
+Steph: making good progress on draft manuscript for CEE working group with Carly, looks on track to be a good working first draft by end of our first meeting
+
+Summer Institute at UNM for 3 weeks - Environmental Informatics
+Kristin Vanderbilt (CEE WG) will coordinate this effort with Bill
+
+Notes from Marratech:
+
+[11:05 AM] John:  I volunteer to the be the second reader on any section
+[11:05 AM] Trisha:  I can do some reading and I will volunteer John K. to ready he is good at that
+[11:06 AM] Matt Jones joined.
+[11:06 AM] Bruce:  Yup.  Working on it tonight and tomorrow.
+[11:07 AM] Viv:  I can read some sections too...
+[11:08 AM] John:  editing in word with change tracking on - right?
+[11:08 AM] Rebecca: right!
+[11:08 AM] Trisha:  so version 9 si what we should be looking at?
+[11:08 AM] Rebecca: Yes
+[11:10 AM] Viv:  R, can you put out a link to version .9?
+[11:10 AM] John Kunze joined.
+[11:10 AM] Bruce:  @viv -- in epad
+[11:10 AM] Rebecca: https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/documents-for-nsf-review/NSF%20DataONE%20Progress%20Report_vs0.9.docx/view
+[11:11 AM] Viv:  got it
+[11:11 AM] Steve joined.
+[11:13 AM] Bruce:  Any views on using CI instead of cyberinfrastructure?  I see a couple places where that helps a paragraph break.
+[11:14 AM] John:  define first use and then use the abbreviation.
+[11:14 AM] Viv:  WHAM!
+[11:14 AM] John:  Q: What is the appropriate abbreviation? ci, Ci, CI (I vote CI)
+[11:14 AM] Rebecca: CI
+[11:16 AM] Bruce:  I also find using "show final" so that I can see what the doc looks like and not be confused with the tracks.
+[11:18 AM] John:  Do we have any material in report or slides about operational statisitcs?
+[11:18 AM] John:  such as uptime, planned outages, unplanned outages, ...
+[11:18 AM] John:  mostly this will be a hint to ops metrics we will examine looking forward rather than in the first 18 months)
+[11:20 AM] Trisha:  I can help you John
+[11:24 AM] Rebecca: I put your name there & made it official
+[11:24 AM] Trisha:  ok -- I was talking with my mute button
+[11:26 AM] John:  huury up and buy or will will have to up the order even more :>
+[11:27 AM] Rebecca: @Amber - found the UNM dept - will get contact info for press release
+[11:28 AM] Matt:  Gries?
+[11:28 AM] aebudden:  Thx - waiting for the group to finalise the draft press release before contacting UNM
+[11:28 AM] Rebecca: Viv - will you send me the names and email addresses - have Corrina's just need the other one
+[11:29 AM] Rebecca: @Trisha - please put your notes on epad
+[11:29 AM] Viv:  yup
+[11:29 AM] Bill:  yes indeed
+[11:29 AM] Rebecca: @Viv also
+[11:29 AM] Viv:  Corinna Gries
+[11:30 AM] Matt:  awesome!
+[11:31 AM] Bill:  awesome
+[11:31 AM] Bill:  sunday noon
+[11:32 AM] Matt:  Dave -- do we have an approx headcount for the CCIT meeting?
+[11:33 AM] John:  TeraGrid'11 conference will be July 18-21 overlapping CCIT meeting
+[11:34 AM] Matt:  Jim Regetz @ NCEAS is great with stats tutorials
+[11:37 AM] Viv:  I can send a list to you today, Rebecca...
+[11:37 AM] Rebecca: @Viv - Thanks!
+
+[11:45 AM] aebudden:  https://docs.dataone.org/member-area/documents/management/nsf-reviews/nsf-review-february-2011/presentation-materials-for-nsf-review/current-working-copies-of-nsf-presentations-post-eab-review/DataONE%20NSF_OVERVIEW_Michener_2011%20Feb_vs2.0.pptx/view
+[
+

@@ -1,0 +1,208 @@
+.. meta::
+
+   :keywords: sprint, standup, ccit, 
+   
+
+Sprint-2012-46-Block-6-3 Notes
+==============================
+
+Roger
+-----
+ * ONEDrive package management
+   * trying to get to a stable space, not feature-complete
+   * Looking at OAI-ORE serializations
+     * will be using RDF/XML for now (formatID = http://www.openarchives.org/ore/terms )
+   * Had to deal with handling solr index not in sync on the CNs
+     * gracefull fallback if pids in the index are not resolvable
+
+
+Chris B.
+--------
+ * Reworking the ansible playbooks to flatten the dependencies to restrict dependency tree to two level.
+   * Done
+ * Working with the Ansible developers on sub-playbooks
+ * Playbook generator is complete
+   * ncurses-based input is ok
+ * Looking into the dataone packages to see what configuration files are produced and the required information that the ansible playbooks should ask.
+
+
+
+Rob
+---
+Client Data Format Support:
+ * Getting up to speed on R data frames and existing tools for data formats.
+ * Looking at ncdf package (for Unidata's netCDF)
+ * Working on delimited file parsing (CSV) in a general manner
+ * Worked on an EML parser in the R client
+   * needs a reasonable amount of eml-physical metadata
+
+
+Dave
+----
+ * 20121130
+   * preparations for EAB meeting
+   * issue with nagios / check_mk on cn-stage-unm-1
+   * reviewing replication process
+
+ * 20121128
+   * (automating) check through versions in svn tags, branch, dev and what is in poms
+   * preparing for EAB meeting
+   * Updated nagios configs on stage CNs for monitor.dataone.org
+
+ * 20121126
+   * Updating docs, dev schedule, component list (see actions below)
+   * Added statsd datagram to websocket gateway
+   * Network outage at UNM office Tuesday, 8-12MT (epad, redmine, hudson affected)
+
+
+Chris
+-----
+
+ * 20121126
+   * d1_replication testing with Skye, revealed a Metacat bug
+   * Looking at switching Metacat indexing on/off to deal with this CN sync bug
+
+
+Ben
+---
+ * Morpho API work (save, open, etc)
+   * Using user-specified certificate location for authentication. Not exactly ready for end user, but useful for development and demonstrates the plumbing is in place for certificate-based auth.
+   * [experimental] Working on the ability to assign ids if generated identifiers are not desirable
+   * tracking bugzilla entry http://bugzilla.ecoinformatics.org/show_bug.cgi?id=5736
+ * Working with Jing on bugs WRT archived objects
+   * Metacat not looking at the archived flag
+     * fixed in trunk -- will be in 2.0.5 release
+   * Metacat.delete() was not marking SM.archived=true (https://redmine.dataone.org/issues/3406)
+     * fixed in trunk -- 2.0.5 release
+ * CLO/AKN member node -- what was the decision on that?
+   * Chris will approve this in production
+ * Jing will be working on Morpho again
+ * Adding MN.generateIdentifier() in Metacat
+ * Changed Metacat to use SQL-based sorting/limiting, not Java-based
+   * max log entry return count is 7000
+
+Skye
+----
+ * Replication testing
+   * Final run on wednesday looks to have missed 20 docs
+   * No errors in replication log...
+   * lots of errors in catalina.out from indexing tasks?
+ * DONE: Perform run with replication running on all three CN?
+   * Result: replication running on 2 or 3 CN's worked well:
+     * Increased performance/throughput of the replication process
+     * Full replication runs with 2 and 3 CN for small test runs of 1K objects
+ * TODO: Minor buildout error in cn-index buildout on purge/install
+ * Added second CN into an already replicating cluster
+   * saw a member drop outof the cluster, either network or client issue
+   * this is an outstanding issue (split-brain)
+   * need to create a strategy that handles inconsistencies between nodes
+ * Most recent run stalled erly, looking into it - may be a Metacat upgrade issue?
+ * will work on a standalone membership monitor
+   * Hz LifeCycleEventListener
+ * sync/repl run this morning, noticing repl pauses - need to figure out why it does this (locking?)
+
+Robert
+------
+ * Submitted pull request to hazelcast
+ * built hazelcast sucessfully on localhost machine
+ * deleted and re-forked hazelcast/hazelcast repo into rwaltz/hazelcast
+   * rebuilt on hudson
+ * fixed some errors in synch NullPointer issue
+ * investigated hazelcast executor exception. Not enough info.
+ * want to investigate the hz client connection issue that causes EOF warnings on cluster members
+
+Bruce
+-----
+ * Moving additional server into ORC cluster to add capacity
+ * Resolving "sand in the gears" issues with UTK OIT
+ * Documentation and testing of bibliographic tools (Mendeley, Zotero, Papers, EndNote)
+ * Start framing for USA-NPN member node (likely MetaCat implementation, in January)
+
+Discussion Items
+----------------
+
+ * Component status, responsibilities, versions spreadsheet:
+
+  https://docs.google.com/spreadsheet/ccc?key=0Ai3ryhJR2IgZdEwwTDhnai01UXN1RlRoUWtkOFNyZVE#gid=0
+
+ * Client data format support - addressing EML parsing in d1_client_r
+
+ * Hazelcast non-snapshot release
+   * A 1.1 release will require a full solr index rebuild, so timing of a 1.1.1 release may interfere
+   * Robert will contact the Hazelcast group re: 2.4.1 tag
+   * We'll test d1_replication against the 2.4.1 snapshot this week
+   * Waiting on pull request re: logging in hazelcast
+   * Should consider maintaining a D1 HZ repo if we use SSL (non-pay)
+
+ * Metacat indexing DONE
+   * Chris will test metacat with the indexing flag turned off
+   * We'll look at keeping indexing running, but remove docids from the IndexerQueue on archive(), noting that there may be a race condition involved there
+
+20121128
+ * Scimeta parsing for clients (R)
+   * science metadata is often less than perfect WRT physical file syntax
+   * converting from a byte array to delimited text using read.csv
+
+ * Network partitioning (split-brain) issues in repl and sync
+   * Listeners can notify when members leave/join the cluster.
+   * May be able to create ourown Merge Policy within Hazelcast
+     * need to look at timestamps of object records in postgres
+   * Look at WAN replication in Hazelcast
+    
+    
+  Types of communiction that may be split:
+    - Hazelcast
+    - LDAP
+    - Metacat replication
+
+  Also issues where one or more CNs have internal service failures - e.g. postgres failure, disk full, disk failure, hardware fault, etc
+
+  Approaches to dealing with network partitioning:
+  
+  1- Don't use multi-master
+  2- Detect and stop actions until split is resolved
+  3- Never update, only create new records each with timestamp. After split merge content during time of split (may not be possible in all cases - e.g. permission conflict)
+  4- Use WAN replication mode (3CNs = Active-Active-Active mode) in Hazelcast, requires implementation of conflict resolution mechanisms (merge-policy)
+
+Note: since we have 3 HZ clusters, we need to determine what a 'split-brain' state is
+    hzStorage
+    hzProcess
+    hzSession
+
+
+
+Path forward:
+1- Implement monitor of cluster membership. What gets notified when a member joins / leaves?
+   http://www.hazelcast.com/docs/2.4/manual/single_html/#ClusterInterface
+
+2- Implement mechanisms for responding to network partition events
+
+Strategy 1 - revert to a read-only system
+  - What is the level of disconnect? (one node, all nodes?) 
+  - What time frame equates to a disconnect (seconds, minutes?)
+  - what services need to be stopped? All write activity should stop.
+    - what happens to outstanding replication requests for example?
+  - What should administrators do? DNS update?, check and restart services?
+  - How to override the default behavior?
+  
+on disconnect:
+  - set status to read only
+  - Notification mechanism should not rely on hzClient, but a local service
+  - notify admins
+
+Strategy 2 - Queue all writes
+
+- writes are recorded as provisional
+  provisional = interval between when split brain detected to when resolved
+
+on disconnect:
+  - DNS change - immediately switch to 2 nodes or one node
+  - set status to queue changes (what does this mean? disconnect the backing store?)
+
+Strategy 3 - Merge data stores
+  - keep a Journal log, either merge all entries or last write wins
+    (From discussion of Rollout procedures: We  may wish to consider that we keep a journalling system of posted  reservations (independent of LDAP) on a pubic facing CN during upgrades  that will create a replayable log of reserveIdentifier actions.)
+
+
+
+

@@ -1,0 +1,356 @@
+NKN MN status update
+
+at Member Node Forum 3 October 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am ADT
+
+Attending: Laura, Bruce, Dave, Matt, Luke
+
+Regrets:  
+
+Agenda:
+   
+Client/server certificate issues from last time resolved, getting ready to stage test.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+NKN MN status update
+
+12 September 2013  2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am ADT
+
+Attending:  Luke, Dave, Bruce, Laura, Greg
+
+Regrets:  
+
+Agenda:
+    Where we were last time:
+        Luke had been away for a bit and was planning to continue installation of the GMN stack (done-ish); Chris was to get a certificate to Luke (done); Ed was to continue work on assigning unique identifiers to files (done) 
+    
+    Where we are now:
+        Luke has installed s/w and following instructions for GMN, working well until got to the certificates, worked with Chris and got the cert "thing" fixed.  Chris had created a client side cert for Luke, linked with an account that looked like it belonged to Luke, but nope.  Luke's got it sorted.  A little confusion re: server-side cert vs client-side cert based on documentation, but is ok now.
+        Next step: configure server, db, files on our MN installation
+        In development instance
+        Luke has made some notes about documentation; updates have been made to documentation that resolved problems Luke was having; looks like some documentation was geared toward specific environment, but Luke was able to "translate" it into his redhat environment
+        
+        Luke has been making notes that will help inform the documentation we are working on for GMN (how to start up a GMN MN)
+        
+        Luke asked who else is considering GMN; Bruce replied there are a few who are considering metacat vs GMN; Dave: LTER switching to GMN, UKansas will be GMN
+        Luke:  what is next step after passing tests, etc. in development?
+        Dave:  likely run through staging as a sanity check before going to production
+        Luke:  when we're fully connected, is there a testing scheme
+        Dave:  see webtester; also do a synchronization of content;  are you running at tier 1
+        Luke:  initially yes, plan to eventually be tier 4
+        Dave:  for tier 1, synchronization of content and verification of communciations 
+        Luke:  is the plan to gradually work our way through the tiers?
+        Dave:  GMN has been extensively tested as tier 4; hopefully in moving up the tier structure it should be pretty straightforward to move from tier to tier; mostly cert issues to confirm
+        Luke:  certificate challenges in tier 4; Karl Benedict at EDAC says he thinks that will be one of their main challenges with tier 4; is this a hurdle that NKN needs to be thinking about right now?
+        Dave:  challenge is taking a repository with their own accounts, authentication, etc. and making it work with DataONE; DataONE does have an identity mapping mechanism to relate legacy accounts with InCommon accounts; another challenge: when you have new users wanting to add data or change existing content, should they go through the legacy (original) system or through DataONE??  We don't have a general solution for everyone right now - will need to work with each system (i.e. EDAC, NKN, et. al.) to work through issues
+        Luke:  we'll look at it from our end
+        Dave:  would be nice to see typical workflow
+        Luke:  if a user contributes content to our repository, will that user also have some identity in DataONE separate from their identity in our system?
+        Dave:  content will be owned by whoever contributes it; science metadata indicates who is the author/creator of the content; owner could be the original person or it could be the site curator
+        Dave:  have you been making notes on this process with redhat?
+        Luke:  yes
+        Dave:  will get Roger to include that in his documenation
+        
+        Laura:  what about unique identifiers for datasets?
+        Luke:  Ed has been working on it, we think we've got it settled on our end
+
+Rather than a specific NKN meeting, we'll just all get together at the MN Forum meeting in two weeks.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+NKN MN status update
+
+29 August 2013  2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am ADT
+
+Attending:  Luke Sheneman, Ed Flathers, Chris Jones, Dave Vieglais, Laura Moyers,John Cobb
+
+Regrets:  Bruce Wilson, Greg Gollberg
+
+Agenda:
+    Where we were last time:
+        Action items for Luke:  install GMN stack, talk to Chris about certificate, work with Ed about assigning identifiers to individual files; beyond having a certificate, is there other authentication required
+        Action item for DataONE: How to test replication in testing phase? DataONE needs to noodle this out.
+    
+    Where we are now:
+        Luke: downloaded and begun to install GMN stack on development host, conversations in-house re: assigning unique identifiers to files (Ed), 
+        Ed:  It shouldn't take long to assign identifiers when the GMN stack is up and running
+        Chris: Did NKN talk about immutability of DOIs/PIDs?
+        Ed: I don't think so
+        Chris: DataONE emphasizes immutability to ensure reproducibility (i.e. a DOI refers to one file/dataset only which will not change over time, if the file changes it must have a new DOI)
+        Ed: Do we need to keep the old file when there's a change?
+        Chris: Yes; GMN supports retention of "old" files.  However, if data size is a problem we may have to look at another method of retaining/accessing older files if there's "no space" to keep them
+        Luke:  this is something we've been looking at here at NKN Idaho
+        Luke:  What was the situation about the certificate?
+        Chris:  You can implement the MN stack w/o the certificate up to the point where you start to interact with other MNs (CNs or MNs); at that point you'll need a DataONE certificate which gets sent along with the SSL communication to the CN (i.e. the CN will recognize you as a legitmate MN).  SSL isn't required for the MN to work, but any interaction between MNs requires the certificate
+        Luke:  Do you get with you to get a certificate?
+        Chris:  Yes, I can give you a test certificate first.  Now that I know you need one, I can create a cert for you, but here are some directions: 
+    
+    Registration: http://mule1.dataone.org/OperationDocs/member_node_deployment/registration.html
+        Chris:  Luke will create an LDAP account in the DataONE system and can then download the cert from the URL we send to you.
+        http://mule1.dataone.org/OperationDocs/member_node_deployment/registration.html#id4
+        
+        Chris:  we will create a test certificate which is recognized in sandbox, development and stage (test) environment.  Next you'll have a separate environment for production which will require a separate certificate.  If it is a problem (resources?) to have two environments, we can deregister an old cert and make it the production one
+        Luke:  we have two machines, (so the resource problem isn't an issue)
+        
+        Laura: is there anything else d1 can do to help?
+        Luke: as we pick this effort back up, we will probably have some questions
+        
+        Laura:  following up on replication in test phase??
+        Chris:  replication is on an per item basis, when CN starts harvesting data from MN, it will check the metadata and if the replication "flag" is checked, it will check to see if there are replication targets to receive the data.  
+        Laura:  since replication involves communication with CNs/MNs, we can't really test that before we get to the stage testing environment, right?
+        Chris:  replication involves multiple systems so would be an integration test rather than a unit test
+        
+        Example System Metadata record: https://cn.dataone.org/cn/v1/meta/ark:%2F13030%2Fm500017x%2F1%2Fcadwsap-s2400172-001.xml
+        Standard harvest showing two replicas (one at source (CDL) and one at CN.
+        Luke:  what is the rights holder (in this document above)
+        Chris:  the person/group that has read/write/change permissions for this object, if you didn't have an access policy explicitly stated here, only the rights holder could read the data; 
+        Luke:  unique identifier is the identifier tag?
+        Chris: yes;  the format id is also something to be aware of - say you have txt, csv, xls, etc.; for D1 to know what we're working with, we've created a format registry (formats that DataONE knows about)
+                UDFR.org (international effort to identify these standard formats)
+        https://cn.dataone.org/cn/v1/formats/
+        If you have a new/different format that isn't indicated here, we can add it to the list.  UDFR shows (for example) previous versions of Excel, but DataONE doesn't have that yet.
+        Luke:  what do we need to do to add new formats?
+        Chris:  good question  :)  We've been documenting that in Redmine under the ticket for your MN (add a subtask under the task for the MN saying "need a format id for Ancient Excel)
+        Luke:  is format id optional or required?
+        Chris:  it is required.  CN only harvests science metadata so needs to be able to distinguish between different metadata formats.  We have the ability to index many metadata formats to a central SOLR index, so all these files are searchable across many metadata formats
+        
+        Luke: when can we meet again?  12 September same time
+
+        Chris:  Roger Dahl is main developer of GMN, so if you have specific GMN questions he can help, as can Dave Vieglais.
+        
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+NKN and DataONE - next steps
+6 August 2013  2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am ADT
+
+https://www1.gotomeeting.com/join/752050521 
+
+Attending:  Laura, Greg, Luke, Ed, John, Bruce
+
+Regrets:  Chris, 
+
+Agenda:
+    Where we are now
+        Luke:  hasn't checked GMN stack yet; is there anything else I need to do before installing GMN s/w stack
+        Bruce:  take notes re: documentation, next steps, what to do next, 
+        Luke:  what are the steps for actually connecting after installing s/w stack?
+        Bruce:  work with Chris Jones to get a certificate to be installed; first hook up to test "area" to see how datasets look as they flow into D1 test environment; can do in your own test environment, too
+        cn.test.dataone.org
+        Luke:  Given the test URL and the certificate from Chris, what else do I need to know?
+        Bruce: what are data files I need to put out, where is the metadata, how is data to be packaged?
+        Luke:  using ESRI geoportal server as metadata catalog; zip archives 
+        Bruce:  Goal is to have each file w/in each dataset to have its own DOI and be individually addressible; pointer to XML envelope (OAI/ORE), 
+        Luke:  envelope has a manifest
+        Bruce:  has metadata and pointers to each file within the dataset (preferably with own DOIs)
+        Greg:  are you using BagIt
+        Bruce: OAI/ORE is equivalent to BagIt
+        Luke:  internally have unique identifiers for zipped files, but individual files do not have their own DOIs
+        Bruce:  D1 agnostic re: identifier scheme; only thing we care about is that they are unique within DataONE
+        Luke:  is there a size limit
+        Bruce:  256 characters
+        Ed:  is there any kind of checksum or other check?
+        Bruce:  yes, part of OAI/ORE is what is MD5 checksum; periodically poll MNs for checksums and store that info at the coordinating node(s) so that a requestor is sure that they got all of exactly what they asked for
+        Luke: **** Action Item(s) ***  install GMN stack, talk to Chris about certificate, work with Ed about assigning identifiers to individual files; beyond having a certificate, is there other authentication required
+        Bruce:  that's what the certificate is for, put it on whatever system(s) you want to be authoritative for your MN
+        Luke:  re: other MNs replicating our data, does that happen automatically once we're "on" 
+        Bruce:  turns on automatically if that's what you indicate; suggest start at tier 1 with replication "checked"; if you want to move to tier 4 and accept replication from other MNs, can specify which MNs you want to accept data from, 
+        Luke:  when ready to test tier 4, do you suggest we just accept replication from one MN to test it out?
+        Bruce:  sounds like a good idea  
+        *** Action item: *** how to test replication in testing phase? DataONE needs to noodle this out.
+        Greg:  UNM (EDAC/EPSCOR) as first MN to try it out on
+        Luke:  I think I've got everything I need to go on
+        Greg:  should we set a regular check-in meeting?
+        Bruce:  might be a good idea to have a regular meeting and if there's nothing new we can cancel
+        
+        NEXT MEETING TIME:  2pm EDT, Thursday 29 August
+        
+        Rob Nahf will probably be the CCIT POC (Action item: Bruce to follow up)
+        
+    What we need to do - i.e. what are the next steps?  (see all the above)
+    
+    Communication during the process
+        email Laura (lmoyers1@utk.edu)
+        or Bruce (bwilso27@utk.edu) <-- this is the preferred email contact for Bruce
+        or mninfo.dataone@gmail.com
+        
+        also, irc.ecoinformatics.org#dataone is the channel where the developers hang out, good for immediate questions/responses
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+NKN and DataONE - a discussion
+18 June 2013  12pm EDT, 11am CDT, 10am MDT, 9am PDT, 8amADT
+
++1 (805) 309-0010
+USE 786-102-904
+
+Let's just drop to phone? does that work for all.
+I started a new meeting use 
+https://www1.gotomeeting.com/join/786102904
+
+=====================================================================
+
+GoToMeeting details:
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/786102904
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (786) 358-5417
+Access Code: 472-328-065
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 472-328-065
+USE 786-102-904
+
+=====================================================================
+
+Action Items:
+1) Reconvene in ~2 weeks (Cobb, Moyers) Doodle to schedule and set up
+2) Start exploring a GMN MN deployment at NKN
+    a) server
+    b) Packaging
+    c) Assign proper DataONe CCIT contact to interact with Luke
+    d) Begin building MN description document
+3) Present overview of NKN at DUG
+
+
+Attending: John Cobb, Dave, Steve Daley Laursen
+Greg Gollberg
+Dave Vollmer - Web app dev NKN
+Ed siller (sp?)
+Luke Shenemen (sp?) arch NKN, CI research coordinator NKN
+Mike Frame, USGS 
+Amber Budden - DataONE CEO
+Rebecca Koskela - UNM (via Alaska today)
+Dave Vieglais - DataONE DD for dev. and operations
+Laura Moyers - DataONE Member Node coordinator
+
+
+Regrets:  
+
+Provisional Agenda:
+1. What is the opportunity? (20 minutes)
+      What is NKN?
+
+        NKN is an umbrella organization to help manage data across all disciplines at U. Idaho.
+        Servers physically in U. Idaho Library as well as access to INL data center
+        Primarily involved with a number of research projects.
+            FRAMES is an instance of  large program that is under the NKN umbrella. We provide techinical services to FRAMES
+            USDA project REACH (Idao, Wash u, OSU)
+            Northwest climate sceince center (UW, ...<missed a couple>... U idaho)
+            Epscor 
+                winding down current track 1 and track 2
+                Funded for a new track 1
+                Optimististic about a new track 2
+        Goal build a core architecture common to projects
+            Build a catalog 
+            
+        NKN portal is build off of ESRI Geoportal server.
+        additional capapbility to upload data and linkto metadata records
+        We have some mods about how we link data to our repositories
+        We have synchronous replication to INL for DR (currently DR, in the future exploreing load balancing as well.)
+        
+        Content management systems
+            Concrete  5 (?) FRAMES, NW CC, REACH
+            Shifting toward Drupal. Increasing NKN Drupal expertise. Pleased with it.
+            AA using LDAP (open source). supporting a common identify store across all NKN supported projects. Locally managed access.
+            
+            
+            In EPSCOR we have worked with UNM and Karl Benedict.
+                working on data and metadata replication across the EPSCOR states
+                
+            Ongoing project with Climate centers to have a catalog-wide sharing. 
+
+       What is DataONE?
+        <short synposis of DataONE>
+        
+        Q: Luke: status of implementation of SPI?
+        A: Dave: there are currently three implementations:
+            Mercury (Java)
+            Metacat (Java)
+            GMN (Python)
+        Q:  How many Member Nodes do we have?
+        A:  Currently 13 MNs, List of all nodes at https://cn.dataone.org/cn/v1/node and http://www.dataone.org/current-member-nodes
+    
+        Q: what are you next development areas?
+        A: Primary focus is maintaining/enhancing core infrastructure. A few feastures being added.
+                evolving discovery tools
+                Addition of MN's
+                Activity on Investigator tools (ITK's) that enable access to DataONE Services, Three prominent
+                    R-plugin (read and write aceess)
+                    Morhpo (Metadata editing)
+                    ONEDrive( Allos mounting all or a subset of DataONE content)
+                Ongoing discussion on creating/modifying search capability
+                    
+        Q: What are the steps?
+        A: 1. This conversation
+            2. core requirements:
+                every object (data or metadata) needs a GUID (globally unique identifier).
+                DataONE does treat content as a discrete unit. 
+                
+        Q: What do MN's use to provide GUID's?
+        A: we are scheme agnostic. We support: DOI, handles, ARCs URLs. The only requirement is that the string representation of the GUID is unique within DataONE (and DataONE checks this on ingest). (Easily accomplished by adding a MN prefix.
+        A: NKN automatically generates GUIDS and add a NKN prefix.
+        
+        Q:  Does the content change over time?
+        A:  NKN's plan is to generate DOIs for content that is considered published (i.e. citable), those will not change after publishing (made publicly available).        
+
+Greg: We also are providing support for work areas for researchers. This is not considered "published"
+
+Luke:  We also support metadata editing.
+Dave: we realize this need and are developing/deplyoing a "series" identifier. We preserve the metadata instances but unless specifically requested, the latest Metadata version is served. The MN is not required to maintain all copies of the Metadata, but DataONE is planning to maintain that.
+
+Dave: Associated with each object is "system metadata". Objects can be data or science metadata. General reference to DataONE architecture: http://mule1.dataone.org/ArchitectureDocs-current/index.html
+Specific on system metadata: http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html#Types.SystemMetadata
+
+Greg: Is DataONE engaged with MNs for data replication?
+John:  Yes
+Dave:  Data replication is primarily driven by Coordinating Nodes.  CNs examine each object to see how many copies exist across all replicating nodes; if the number is small, the CN requests another MN to make a copy of that content. currently via HTTP. If this proves too inefficient, we can support an out-of-band mechanism of identifying and 
+
+John: do you have a method that you are replicating with the other EPSCoR states?
+Greg:  yes, working on it
+Luke:  We expose web-accessbily folders with specfied directory structures to orchestrate (re)distribution. ISO-115 metadata standards
+Steve: We have had interest from EPSCoR states beyond the first three.
+
+Luke:  One way to become a MN quickly would be to deploy a reference implementation (GMN) and then register and off we go. Another approach would be to implement the SPI within the NKN infrastructure.
+
+Dave: GMN is easy. Also, you can re-implement the GMN backend to integate with existing services.
+
+John:  We have had successes in implementing MNs, but there have been instances where we (DataONE and the MN) might have a different idea of fixity of data, etc.  We work it out.
+
+Greg: NKN is the member node.
+John: Is this a consesus
+Steve: ...
+            USGS sees a need for central 
+            With NKN is helps researchers address needs across a large set of problems.
+            But we would have to identify what NKN would provide
+            Regional in terms of client base.
+
+Luke:    NKN MN
+
+Steve: There is some common purpose (regional issues) of services that NKN provides. That is the focus
+
+John: relation with other 7 Climate centers
+
+Greg: USGS has evolved toward central publication. All products would have copies in ScienceBase. Sciencebase will be the locus for publication of all data products for the Climate centers
+
+NKN choice for data management services while ScienceBase choice for data storage.
+
+Steve: working with prospects for USDA AFRE (?) hubs for application efforts.
+
+2. How would a NKN-MN be created? (20 minutes)
+        NKN and Drupal
+        DataONE SPI
+        DataONE MN deployment workflow (3 URL's)
+        DataONE Dev/staging/prod process
+
+3. Next Steps? (10 minutes)
+    When should we get back together - in a couple weeks.  Doodle poll for time (and Laura will make sure she states the correct time zone)  
+    Should we set up a GMN for Luke to check out and see how it feels?  Luke: yes.
+    John to create redmine ticket to start this process.
+    We also have IRC to aid communciation.
+    Greg coming to the DUG meeting.
+    
+4. Followup? (5 minutes)
+        Next Discussion?
+        Reporting to other meetings/groups?
+
+

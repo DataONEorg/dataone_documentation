@@ -1,0 +1,146 @@
+ 
+CCI 1.4.0 Release
+
+Planning meeting 2014-07-31
+ * attendees: Ben, Dave V., Jing, Marco., Peter, Robert W., Skye
+ * redmine story: https://redmine.dataone.org/issues/5533
+
+Items to be included in this release:
+ * proposed items for 1.4 release from CCIT meeting in SB (notes: http://epad.dataone.org/20140624CCIT-NCEAS):
+   * Separate LogAggregation from d1 processing to a separate VM and remove HZ from it without touching the rest of the CN
+     *  (week of July 14 and 21 and 28)
+     * Consider use SolrCloud for replication
+       * need to have a mockup of this and testit with large amount of documents to check throughput rate
+       * might be minor code changes
+       * already have zookeeper component that was initially used for cn auditing
+       * what is the strategy for indexing?
+         * update a solr core and swap?
+     * log agg needs to write to solrcloud endpoint, not local
+     * authentication may be an issue
+       * certificate manager is a singleton and may be an issue when running in Jetty
+     * have to separate Hazelcast internal usage from WAN functionality
+   * Minor OneMercury help text, UI updates (from Heather Heinz testing) (2 days of dev and testing effort) (1.4) - complete
+   * think about using MetacatUI search in parallel with OneMercury
+     * Authentication not tsted yet, so would provide a public only search capability for immedate future
+     * ask Lauren to document how much work to use MetacatUI to view solrIndex geolocation info on the CN
+       * not simply a matter of pointing to CN solr index
+       * metacat relies on a limited view of metadata that is available from solr index
+         * possible construct resolve URLs 
+   * Release replication auditing (work complete just needs scheduled into release) (1.4)
+   * Move to new maven repository in poms
+     * Rob, Mark reviewing Archiva setup on Jenkins
+       * does Jenkins, Archiva need to run on separate VM?
+       * still in the works
+       * Dave, Marco, Rob will work on this next week
+         * refer to Redmine tickets: #5996, #5997
+   * Move OneMercury to another VM or servlet container  (deferral candidate)
+     * Needs some discussion (2-3 days of effort?)
+     * authentication is the problem
+       * user certificate passed to solr, converted to subjects from http request (via URL filter)
+     * Requires VM's to be stood up for each environment - dev, sandbox, stage, production.
+     * want to be able to make updates to UI without affecting CN
+     * 
+Individual issues from redmine cci 1.4 milestone
+ * https://redmine.dataone.org/projects/d1/issues?query_id=64 (Milestone 1.4 query in redmine sidebar)
+ * for each of these issues - should they be included in the CCI 1.4.0 release?
+ * These issues will be reviewed and any comments entered into redmine for each issue
+   *  Story https://redmine.dataone.org/issues/2246: refactor libclient_java connection management
+   *  Story https://redmine.dataone.org/issues/824: CN replica auditing
+   *  Story https://redmine.dataone.org/issues/5510: Corrections and suggestions for ONEMercury UI 
+   * Bug https://redmine.dataone.org/issues/3998: Log Aggregation is not handling equivalent identities
+   * Task https://redmine.dataone.org/issues/5331: Remove Hazelcast dependency from Log Aggregation processing
+   * Story https://redmine.dataone.org/issues/5575: Migrate maven to a new repository location
+   * Bug https://redmine.dataone.org/issues/5578: Metacat compilation should target Java 1.6
+   * Task https://redmine.dataone.org/issues/5993: Do not attempt to replicate invalid documents 
+   * Task https://redmine.dataone.org/issues/5994: Create facility for tracking replication attempts 
+   * Story https://redmine.dataone.org/issues/3910: Modify Synchronization to apply more validation Logic
+   * Bug https://redmine.dataone.org/issues/6012: d1_libclient_java printing 'checkServerTrusted - RSA' 
+   * Bug https://redmine.dataone.org/issues/5743: d1_processing replication fails at startup on Production
+   * Bug https://redmine.dataone.org/issues/5742: production oa4mp_client.xml in metacat contains wrong key
+   * Story https://redmine.dataone.org/issues/2192: Implement NodeReplicationPolicy in Node Registry Service
+   * 
+ * Design considerations
+   * Log Aggregation
+     * for CCI 1.4, log agg will be modified to run on active/passive CN configuration (single active CN, multiple (2?) passive CNs)
+       * harvesting of MN event records will be indexed initially on only the active CN
+         * i.e. the processing of adding sysmeta fields, IP address to location fields, etc will not be distributed among all CNS, but will be performed on the active CN
+       * synchronization of event indexes between CNs
+         * content will always be initially inserted, updated on the active CN event index
+         * content will be synchronized to the passive CNs after the active CN is updated
+       * decouple log agg from the CN processing
+ * Implementation 
+   * Log Aggregation
+     * for CCI 1.4, log agg will continue to use Hazelcast to receive notification of modifications to sysmeta via the SystemMetadataLister.java class
+       * this is needed to update event records for a pid that has had mutable sysmeta content changed
+         * most important info for log agg is a pid's access policy - changes in access policy can effect a user's access to event index documents
+       * harvested MN event log records will no longer be submitted to the HZ processing cluster to distribute processing/indexing
+     * decouple log agg from CN processing
+       * remove log agg from d1-processing and place in it's own service: d1-event-index
+     * synchronization
+       * SolrCloud will be used to syncronize event indexes between all CNs
+         * SolrCloud requires Solr 4
+         * a Zookeeper ensemble will be used to sync the 3 Solr instances
+           * each CN will run a standalone Zookeeper
+             * hostids that comprise the ensemble are specified in the ./conf/zoo.cfg file:
+           * Zookeeper must be started before Solr
+       * in log agg source, have to disable manual synchronization
+         * LogAggregationRecoveryJob will be removed 
+           * in CCI 1.3 and before, this was used to sync a CN that was just starting
+             * starting CN synced to CN with most current event index entries
+         * LogAggregationSyncJob will not be implemented (was checking into d1 souce trunk)
+     * solr 4 install/configuration
+       * solr will be started as a Jetty context
+         * where does the solr.war file go?
+         * what config files are needed for this context to load?
+     * use jetty as servlet container for solr
+       * since we are using Solr 4 and the object index is using Solr3, we must move log agg to another servlet container
+       * apache web server routing
+         * use ajp connector to route logsolr requests from apache to jetty/solr 4
+           * http://wiki.eclipse.org/Jetty/Howto/Configure_AJP13
+         * use mod_proxy instead of ajp13?
+       * URL rewritting
+         * in cci 1.3 apache rewrites URLs to route requests to solr event index
+           * currently implemented via mod_rewrite 
+             * config file: /etc/apache2/conf.d/rewrite_cnlog
+       * in tomcat7, solr context is automatically loaded via config file:
+         * /var/lib/tomcat7/conf/Catalina/localhost/d1-cn-log.xml
+           * solr context loaded via
+             * /var/lib/tomcat7/conf/Catalina/localhost/solr.xml
+     * setup URL filtering with jetty
+       * authenticated access to the event index is enabled via URL filtering
+         * in tomcat, this is enabled from 
+           * /usr/share/solr/WEB-INF/web.xml 
+     * SSL authentication
+       * does an addition instance of CertificateManager need to run w/Jetty?
+     * new CN components that will be needed for log agg, event index
+       * dataone-event-index
+         * installs log agg processing software
+         * starts the Spring application to run log agg MN harvesting/indexing
+         * installs, log agg configuration in jetty, zookeeper, solr4
+           * configures /var/lib/zookeeper/conf/zoo.cfg
+           * configures /var/solr/
+     * existing CN components (not currently used in cci 1.3, but have been in source tree) that will be used
+       * dataone-solr
+         * installs solr 4 to /var/solr
+         * this component will be updated to Solr 4.9.0
+         * solr4 needed for solrcloud feature used by log agg cci 1.4
+         * solr3 will continue to be used for object index
+       * dataone-jetty
+         * jetty has to run on CNs that are also running tomcat
+           * jetty will use default port 8983
+           * should this component be updated to the current version of jetty (9.?)?
+             * currently installs v 8.1.11
+           * this component will be upgraded to jetty 9.2.2
+       * dataone-solr-jetty
+         * this component will not be used
+       * dataone-zookeeper
+         * currently installs v 3.4.5
+           * this will be upgraded to v 3.4.6
+             * The release fixes a critical bug that could prevent a server from joining an established ensemble
+     * cn/d1_solr_extensions
+       * this component produces a jar file that contains classes needed for auth checks for logsolr queries
+       * these checks are activated by URL filters defined in /usr/share/solr/WEB-INF/web.xml
+Log aggregation configuration
+ * /etc/dataone/node.properties
+   * set property 'cn.nodeId.active=<nodeId>' so that <nodeId> is the node identifier of the 'active' CN (in the single master CN configuration), e.g. cn.nodeId.active=urn:node:cnDevUCSB1
+

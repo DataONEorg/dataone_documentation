@@ -1,0 +1,88 @@
+# Next steps (from KR's end)
+1. Removing existing documentation (man/) and moving relevant sections to roxygen2 syntax inline with function definitions. Actually this might not be possible at all since all function definition might be handled by the .jar files? All I see under the R/ folder are the class definitions.
+
+I also cannot even get past the basic test on mac osx 10.8.2.
+
+> d1.test()
+[1] ""
+[1] "####### Test 0.1: rJava Accessible ######################"
+[1] 7
+[1] " "
+[1] "####### Test 0.2: Java Classpath ########################"
+ [1] "/Users/karthik/Library/R/2.15/library/rJava/java"                                       
+ [2] "/Users/karthik/Library/R/2.15/library/dataone/java"                                     
+ [3] "/Users/karthik/Library/R/2.15/library/dataone/java/activation-1.1.jar"                  
+ [4] "/Users/karthik/Library/R/2.15/library/dataone/java/apache-mime4j-0.5.jar"               
+ [5] "/Users/karthik/Library/R/2.15/library/dataone/java/arq-2.2.jar"                         
+ [6] "/Users/karthik/Library/R/2.15/library/dataone/java/bcprov-jdk16-146.jar"                
+ [7] "/Users/karthik/Library/R/2.15/library/dataone/java/commons-beanutils-1.8.3.jar"         
+ [8] "/Users/karthik/Library/R/2.15/library/dataone/java/commons-collections-3.2.1.jar"       
+ [9] "/Users/karthik/Library/R/2.15/library/dataone/java/commons-configuration-1.7.jar"       
+[10] "/Users/karthik/Library/R/2.15/library/dataone/java/commons-io-1.4.jar"                  
+[11] "/Users/karthik/Library/R/2.15/library/dataone/java/commons-lang-2.6.jar"                
+[12] "/Users/karthik/Library/R/2.15/library/dataone/java/commons-logging-1.1.1.jar"           
+[13] "/Users/karthik/Library/R/2.15/library/dataone/java/concurrent-1.0.jar"                  
+[14] "/Users/karthik/Library/R/2.15/library/dataone/java/d1_common_java-1.2.0-SNAPSHOT.jar"   
+[15] "/Users/karthik/Library/R/2.15/library/dataone/java/d1_libclient_java-1.2.0-SNAPSHOT.jar"
+[16] "/Users/karthik/Library/R/2.15/library/dataone/java/easystream-1.2.9.jar"                
+[17] "/Users/karthik/Library/R/2.15/library/dataone/java/foresite-1.0-SNAPSHOT.jar"           
+[18] "/Users/karthik/Library/R/2.15/library/dataone/java/hellojavaworld.jar"                  
+[19] "/Users/karthik/Library/R/2.15/library/dataone/java/httpclient-4.1.3.jar"                
+[20] "/Users/karthik/Library/R/2.15/library/dataone/java/httpcore-4.1.3.jar"                  
+[21] "/Users/karthik/Library/R/2.15/library/dataone/java/httpmime-4.1.3.jar"                  
+[22] "/Users/karthik/Library/R/2.15/library/dataone/java/icu4j-3.4.4.jar"                     
+[23] "/Users/karthik/Library/R/2.15/library/dataone/java/iri-0.5.jar"                         
+[24] "/Users/karthik/Library/R/2.15/library/dataone/java/jcs-1.3.jar"                         
+[25] "/Users/karthik/Library/R/2.15/library/dataone/java/jena-2.5.5.jar"                      
+[26] "/Users/karthik/Library/R/2.15/library/dataone/java/jibx-run-1.2.2.jar"                  
+[27] "/Users/karthik/Library/R/2.15/library/dataone/java/joda-time-2.0.jar"                   
+[28] "/Users/karthik/Library/R/2.15/library/dataone/java/log4j-1.2.15.jar"                    
+[29] "/Users/karthik/Library/R/2.15/library/dataone/java/mail-1.4.1.jar"                      
+[30] "/Users/karthik/Library/R/2.15/library/dataone/java/servlet-api-2.5.jar"                 
+[31] "/Users/karthik/Library/R/2.15/library/dataone/java/xercesImpl-2.6.2.jar"                
+[1] " "
+[1] "####### Test 0.3: Java Version ##########################"
+[1] "1.6.0_37"
+[1] "1.6.0_37-b06-434-11M3909"
+[1] " "
+[1] "####### Test 0.4: Hello World ###########################"
+[1] "Hello Java World!"
+[1] " "
+[1] "####### Test 0.5: testClientEnv  ########################"
+[1] "ENV IS:  https://cn-dev.test.dataone.org/cn"
+[1] " "
+[1] "####### Start Testing ######################"
+[1] " "
+[1] "####### Test 1: createD1Object ######################"
+[1] "building a D1Object"
+[1] "@@ D1Object-class:R initialize as character"
+[1] "Java exception was raised"
+[1] 1
+[1] 0
+[1] "Java-Object{org.dataone.service.exceptions.InvalidRequest: values for 'submitter' parameters were empty or null.}"
+[1] "ID of d1Object: "
+Error in .local(x, subject, ...) : object 'result' not found
+Calls: d1.test ... d1.testCreateDataObject -> canRead -> canRead -> .local
+In addition: Warning message:
+In write.csv(df, file = con, row.names = FALSE, col.names = TRUE,  :
+  attempt to set 'col.names' ignored
+Calls: d1.test ... d1.testCreateDataObject -> convert.csv -> convert.csv -> .local -> write.csv
+ERROR [main] (CertificateManager.java:359) - No certificate installed in expected location: /tmp/x509up_u501
+java.io.FileNotFoundException: No certificate installed in expected location: /tmp/x509up_u501
+        at org.dataone.client.auth.CertificateManager.locateCertificate(CertificateManager.java:1004)
+        at org.dataone.client.auth.CertificateManager.getKeyStore(CertificateManager.java:852)
+        at org.dataone.client.auth.CertificateManager.loadCertificate(CertificateManager.java:355)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at RJavaTools.invokeMethod(RJavaTools.java:386)
+        
+        > d1.javaversion()
+[1] " "
+[1] "####### Test 0.3: Java Version ##########################"
+[1] "1.6.0_37"
+[1] "1.6.0_37-b06-434-11M3909"
+
+
+

@@ -1,0 +1,434 @@
+wCN Integration Testing
+================
+
+
+Beta Release Plan
+---------------------------
+   * Testing plan:
+     * Deploy to sandbox (beta channel)(done) (working)
+       * before stopping Tomcat
+         * Clear Search Index
+           * sudo /usr/share/dataone-cn-index/scripts/clearSearchIndex.sh
+         * To rebuild search index with existing cn data (after an upgrade, if not clearing CN documents/data): 
+           * sudo nohup /usr/share/dataone-cn-index/scripts/index-tool.sh &
+         * Copy index data files from one CN to another (to avoid rebuilding on each CN)
+           * COPY INDEX FILES:  (example shows moving index data files from unm to orc)
+           * ssh -A user@cn-stage-unm-1.dataone.org (from workstation to search index source machine, -A forwards credentials)
+           * stop tc and d1-index-task-generator, d1-index-task-processor (d1-processing if running) deamons on source CN (stops mutations of index data files)
+           * cp -r /var/lib/solr/data/d1-cn-index/index/ /home/user/indexCopy (indexCopy is a temp dir, can be removed after rsync)
+           * start tc and d1-index-task-generator, d1-index-task-processor, (d1-processing) daemons on source CN
+           * rsync -av --partial /home/user/indexCopy user@cn-stage-orc-1.dataone.org:/home/user/indexCopy (copy from source to target machine, over 4GB of files to move so may take a bit)
+           * stop tc and d1-index-task-generator, d1-index-task-processor (d1-processing if running) deamons on target CN (cn-stage-orc-1)
+           * rm -rf /var/lib/solr/data/d1-cn-index/index/*  (remove old index data files)
+           * cp -r /home/user/indexCopy/* /var/lib/solr/data/d1-cn-index/index/ (copy new data files to solr data dir)
+           * sudo chown -R tomcat7.tomcat7 /var/lib/solr/data/d1-cn-index/index/ (assign data files to tomcat7 user/group)
+           * start tc, d1-index-task-generator, d1-index-task-processor (d1-processing) daemons on target CN (cn-stage-orc-1).
+         * clear the event index, prepare for complete reharvest of event records from MNs
+           * In three CNs do
+             * sudo /usr/share/dataone-cn-index/scripts/clearEventIndex.sh or /usr/local/bin/clearEventIndex.sh 
+           * The following steps in the () is only for no wiping off data, just reharvest event log (Stop the d1-process, index-task-generator and index-task-processor)
+           * (change the active=FALSE in ucsb-1 in those files)
+             * /etc/dataone/proces/synchronization.properties
+             * /etc/dataone/process/aggregation.properties
+             * /etc/dataone/process/replicate.properties
+           * (Stop d1-processing on ucsb-1)
+           * (in LDAP, reset the d1NodeLogLastAggregated attribute to this value for the node entry for each MN and CN that will be reharvested: 1900-01-01T00:00:00.000-00:00
+             * for example dc=dataone,dc=org / cn=urn:node:mnDemo8 / d1NodeLogLastAggregated = 1900-01-01T00:00:00.000-00:00)
+           * (change the active to TRUE in above files and start d1-process)
+       * wipe the sandbox cn environment of data, run /usr/local/bin/CnScripts/metacatReset.sh
+       * Configure sandbox for single CN operation (RR DNS, inactive CN readonly)
+         * in /etc/dataone/node.properties (add or set) cn.storage.readOnly=true
+     * ldap syncrepl (worked)
+       * change an attribute for one of the nodes and ensure it replicated across CNs
+       * or, register an MN, ... make certain Last Harvested is changed 
+
+
+     * d1_portal (worked)
+       * Try logging in via CILogon:
+       * https://cn-sandbox.test.dataone.org/portal/
+       * Problems: Are TCP ports open for 5432?, Postgres configured SSL, certificates
+     * d1_sync (worked)
+       * Single CN mode (d1-processing on only one CN)
+       * Harvest Jobs are running for each MN (/var/log/dataone/synchronize/cn-sychronization.log*)
+       * compare all MN identifiers to CN identifiers: call MN.listObjects(), iterate over list, call CN.describe(pid)
+             5057 (cn-sandbox)/5057(5056 mn-sandbox-ucsb-1 +1 mn-sandbox-orc-1)
+             (mn-sandbox-ucsb-2 and mn-sandbox-unm-1 only have replicas)
+     * d1_repl
+       * add a few pids with ReplicationPolicies, ensure replicas are:
+         * 1) on other replica MNs
+         * 2) listed in the system metadata on the CNs
+           * select count(guid) from smreplicationstatus where status = 'COMPLETED';
+           * select * from smreplicationstatus where status != 'COMPLETED';
+           * https://cn-sandbox.test.dataone.org/cn/v1/meta/urn:uuid:b80ddc56-cc02-4a9d-904b-1c922952638e
+           * 
+           * https://cn-sandbox.test.dataone.org/cn/v1/meta/urn:uuid:9f44e94a-83a1-4538-ae67-607988341d2d
+       * ensure that total # of requested replicas == # of registered replicas on the CN
+         * Use postgres query against smreplicationstatus table
+
+
+metacat=> select distinct number_replicas from systemmetadata; 
+ number_replicas 
+-----------------
+              -1
+               2
+               3
+(3 rows)
+
+metacat=> select sum(number_replicas) from systemmetadata where number_replicas=2;
+ sum 
+-----
+   8
+(1 row)
+
+metacat=> select count(number_replicas) from systemmetadata where number_replicas=3; 
+ count 
+-------
+  5001
+(1 row)
+
+Since the we only have 4 member nodes and orc-1 (GMN) doesn't work, the  replicas of an object can only be 2 even though the replication policy  says 3. So the total replicas will be: 
+ 8 + 5001X2 = 10,010 
+ Total objects in memeber node: (this is for orginal node) = 5057 (5056 from ucsb-1 and 1 from orc-1).
+ 
+ The scientific metadata harvested to cn is: 
+metacat=> select count(*) from systemmetadata where object_format not  like 'text%' and object_format not like 'application%'; 
+ count 
+------- 
+  5037 
+(1 row) 
+
+So the total number is 10,010+ 5057+5037=20104. 
+
+The completed replication is 20100 as well: 
+metacat=> select count(*) from smreplicationstatus where status='COMPLETED'; 
+ count 
+------- 
+ 20104 
+(1 row) 
+
+So the numbers match.
+ 
+         
+     * d1_index (worked)
+       * Assumes d1-index daemons are running during sync.
+       * look to see if index count is equal across all 3 CNs (once sync is complete)
+         * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/solr/select?fl=id&q=id:*
+         * ucsb has 5047
+         * orc has 5047
+         * unm has 5047
+       * If there are differences, usually a Metacat-repl problem (objects not transferred)
+         * (file doesn't exist on disk, pid is present): force replicate pid via Metacat
+         * pid is not present in object path hz data structureyet.
+       * grep through /var/log/dataone/index/cn-index*log for 'ERROR'
+     * ONEMercury (exercise resolve() from searches, etc.)(worked)
+       * Search, look at detail of results across all MN
+       * Ensure all MNs are listed in the MN list search box(worked)
+       * Try both scimeta and scidata downloads (download doesn't work, it opens another tab (resolve) and hangs there) router cn can resolve a pid
+       * Look at both eml and fgdc rendering (spot check manual)(worked)
+
+
+     * Metacat & hz repl - scimeta and scidata (object_format_list*) content is replicated across CNs(working)
+       * /object?count=0  should be the same on all 3 CNs ( 3 cns has the same number 5057) (Worked)
+       * /var/metacat/{documents|data} should have the same count(worked)
+         * ucsb has 19 resource objects, 5019 scimeta documents (total 5038)
+         * orc has 19 resource objects, 5019 scimeta documents (total 5038)
+         * unm has 19 resource objects, 5019 scimeta documents (total 5038)
+       * xml_documents, xml_revisions tables should have the same counts (Worked)
+         * ucsb xml_documents has 5038, xml_revisions has 0, systemmetadata has 5057
+         * orc xml_documents has 5038, xml_revisions has 0, systemmetadata has 5057
+         * unm xml_documents has 5038, xml_revisions has 0, systemetadata has 5057
+
+     * log_aggregation - is harvesting from all MNs
+       * Is it running? : /var/log/dataone/logAggregate/cn-aggregation.log
+         * are jobs scheduled for each MN (looking at the log file) when d1-processing daemon starts.(worked)
+         * after each MN is harvested, perform a count (always from day ago): on the cn perform a solr query using curl, on mn perform log query (with dates)
+           * For CCI 1.2.8, Solr endpoint is/solr/d1-cn-log - for CCI 1.3.0 it is /cn/v1/query/logsolr/.../
+       * verify that the /solr/d1-cn-log endpoint is not available
+         * https://cn-sandbox-ucsb-1.test.dataone.org/solr/d1-cn-log (this url not found - slaughter - 7/21/14)
+       * verify that thethe http://localhost:8080/solr/d1-cn-log endpoint available? (passed - slaughter 7/21/14)
+         * query: sudo curl "localhost:8080/solr/d1-cn-log/select?q=nodeId:u*&rows=100"
+         * result: <?xml version="1.0" encoding="UTF-8"?>
+         * <response>
+         * <lst name="responseHeader"><int name="status">0</int><int name="QTime">1</int><lst name="params"><str name="q">nodeId:u*</str><str name="rows">100</str></lst></lst><result name="response" numFound="308992" start="0"/>
+         * </response>
+       * are the counts for each node the same on the MN and the CN? 
+         * CN query: (change date to day before current date)
+           * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=true&facet.field=nodeId&facet.limit=1000&rows=0&fq=dateLogged:[*%20TO%202014-07-20T00:00:00Z]
+           * result:
+             * <result name="response" numFound="3771711" start="0"/>
+             * <lst name="nodeId">
+             * <int name="urn:node:mnSandboxUCSB1">3751320</int>
+             * <int name="urn:node:mnSandboxUCSB2">10118</int>
+             * <int name="urn:node:mnSandboxUNM1">10106</int>
+             * <int name="urn:node:cnSandboxUCSB1">159</int>
+             * <int name="urn:node:mnSandboxORC1">8</int>
+             * </lst>
+             * </lst>
+             * </response>
+         * mn query for mn-sandbox-ucsb-1 (passed - slaughter 7/21/14)
+           * query (issue query from cn-sandbox-ucsb-1, set date to 1 day before current date)
+             * sudo curl --cert /etc/dataone/client/private/urn_node_cnSandboxUCSB1.pem  "https://mn-sandbox-ucsb-1.test.dataone.org/knb/d1/mn/v1/log?start=0&count=0&toDate=2014-07-20T00:00:00.000"
+           * query result:
+             * <?xml version="1.0" encoding="UTF-8"?><d1:log xmlns:d1="http://ns.dataone.org/service/types/v1" count="0" start="0" total="3751320"/>
+         * mn query for mn-sandbox-uscb-2 (passed - slaughter 7/21/14)
+           * query
+             * sudo curl --cert /etc/dataone/client/private/urn_node_cnSandboxUCSB1.pem  "https://mn-sandbox-ucsb-2.test.dataone.org/knb/d1/mn/v1/log?start=0&count=0&toDate=2014-07-20T00:00:00.000"
+           * query result:
+             * <?xml version="1.0" " encoding="UTF-8"?><d1:log xmlns:d1="http://ns.dataone.org/service/types/v1" count="0" start="0" total="10118"/>
+         * mm query for mnSandboxORC1 (passed - slaughter 7/21/14)
+           * query:
+             * sudo curl --cert /etc/dataone/client/private/urn_node_cnSandboxUCSB1.pem  "https://mn-sandbox-orc-1.test.dataone.org/mn/v1/log?start=0&count=0&toDate=2014-07-20T00:00:00.000"
+           * query result:
+             * <?xml version="1.0" ?><ns1:log count="0" start="0" total="8" xmlns:ns1="http://ns.dataone.org/service/types/v1"/>s
+         * mn query for cnSandboxUNM1 (passed - slaughter 7/21/14)
+           * query:
+             * sudo curl --cert /etc/dataone/client/private/urn_node_cnSandboxUCSB1.pem  "https://mn-sandbox-unm-1.test.dataone.org/knb/d1/mn/v1/log?start=0&count=0&toDate=2014-07-20T00:00:00.000"
+           * query result:
+             * <?xml version="1.0" encoding="UTF-8"?><d1:log xmlns:d1="http://ns.dataone.org/service/types/v1" count="0" start="0" total="10106"/>slaughter@cn-sandbox-ucsb-1:~/cci-1.3-testing$ 
+       * does solr faceting output show up for fields other than “sensitive” fields (rightsHolder, subject, ipAddress, readPermission)
+         * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=true&facet.field=nodeId&facet.limit=1000&rows (passed - slaughter 7/21/14)
+         * are sensitive fields filtered from the query and output?
+           * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=true&facet.field=rightsHolder&facet.limit=1000&rows=0 (passed - slaughter 7/21/14)
+             * this query returns result count but no facet output (passed - slaughter 7/21/14)
+           * same for facet.field=subject,ipAddress,readPermission,rightsHolder (passed - slaughter 7/21/14)
+       * test the old/new query engine description endpoints
+         * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/solr  (passed - slaughter 7/21/14)
+         * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/solr/ (passed - slaughter 7/21/14)
+         * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/logsolr (passed - slaughter 7/21/14)
+         * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/logsolr/ (failed - slaughter 7/21/14 - this should return a default query result)
+       * verify that the new event index field ‘dateUpdated’ is included and initialized (passed - slaughter 7/21/14)
+         * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=true&facet.field=dateUpdated&facet.limit=1000&rows=0
+           * all values initialized to "1900-01-01T00:00:00Z”
+       * verify new “id” field unique key of nodeId + event id (passed - slaughter 7/21/14)
+         * query: https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=true&facet.field=id&rows=0
+       * check that SystemMetadataMap listener is updating event index when mutable sysmeta content is changed (passed 7/24/14)
+         * check cn object index to see current permission rules for a pid (check which subjects have changePermission)
+           * https://cn-sandbox.test.dataone.org/cn/v1/meta/pcs.3.1
+         * update sysmeta on member node (added subject 'cjones' with changePermssion)
+           * https://mn-sandbox-ucsb-1.test.dataone.org/knb/style/skins/dev/login.html
+           * https://mn-sandbox-ucsb-1.test.dataone.org/knb/metacat?action=setaccess&docid=pcs.3.1&principal=cjones&permission=changePermission&permType=allow&permOrder=allowFirst
+         * wait for cn to sync metadata (every 3 minutes)
+         * check for update in object index
+           * https://cn-sandbox.test.dataone.org/cn/v1/meta/pcs.3.1
+         * check for update in event index - verify new subject 'cjones' in <readPermission field>
+           * on cn-dev-ucsb-1:
+             * sudo curl --cert /etc/dataone/client/private/urn_node_cnSandboxUCSB1.pem  --CAcert /etc/ssl/certs/GeoTrust_Global_CA.pem "https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/logsolr/select?q=pid:pcs.3.1"
+
+Release Integration testing Plan for Stage
+------------------------------------------------------------
+
+ * ldap syncrepl ()
+   * change an attribute for one of the nodes and ensure it replicated across CNs
+
+ * d1_portal (worked)
+   * Try logging in via CILogon:
+   * https://cn-stage.test.dataone.org/portal/
+
+
+ * DataONE Processing
+   * Processing should be running only on a single CN (ucsb) (confirmed)
+     * confirm that d1-processing is running
+     * ps guaxwwww | grep -P 'java.+d1\-processing' 
+   * check d1_sync on a single CN (ucsb) (confirmed)
+     * Confirm synchronization is running
+     * Harvest Jobs are running for each MN in environment (/var/log/dataone/synchronize/cn-synchronization.log)
+   * check d1_repl on a single CN (ucsb) (confirmed)
+     * Confirm replication is running
+     * Replication is running on single Master in staging environment (tail -100f /var/log/dataone/replicate/cn-replication.log)
+   * check d1_index on both ucsb (no error) and orc (no error)
+     * Confirm indexing daemons are running correctly
+     * tail -500f /var/log/dataone/index/cn-index-generator-daemon.log
+     * tail -500f /var/log/dataone/index/cn-index-processor-daemon.log
+ * CN Rest Service
+   * Confirm Single CN mode (confirmed)
+     * Only active Master should be writable 
+       * vim /etc/dataone/node.properties and there is NO "cn.storage.readOnly=true"
+     * All passive master nodes should only be read-only
+       * vim /etc/dataone/node.properties and there is a "cn.storage.readOnly=true"
+   * check /cn/v1/node (confirmed)
+     * response should show all active CN and MN
+ * ONEMercury (exercise resolve() from searches, etc.)
+   * Search, look at detail of results across all MN (worked)
+   * Ensure all MNs are listed in the MN list search box(Miss some: stage-orc, ucsb, unm. This is right, because their harvest dates are before the dataone project start date 2012-07-01)
+   * Try both scimeta and scidata downloads 
+ * Metacat (worked)
+   * confirm metacat is operational (confirmed)
+   * check  log files /var/metacat/logs/metacat.log &  /var/metacat/logs/replicate.log
+   * /object?count=0  should be the same on all 3 CNs 
+     * ucsb = 285395
+     * orc =285395
+     * unm=285395
+   * select coun(*) from xml_documents
+     * ucsb 195614
+     * orc   195624
+     * unm  195641
+   * select count(*) from xml_revisions
+     * ucsb 17946
+     * orc   17934
+     * unm  17932
+   * /var/metacat/data ls -l | wc -l
+     * ucsb 8694
+     * orc   8698
+     * unm 8696
+   * /var/metacat/documents ls -l | wc -l
+     * ucsb 204866
+     * orc   204862
+     * unm 204846
+   * /object?count=10 
+     * Choose a ScienceMetadata entry and execute a getSystemMetadata and getObject:
+                https://cn-stage-ucsb-1.test.dataone.org/cn/v1/object/08d2c688-19fd-4cd5-88ff-4ed76bf40332
+              https://cn-stage-ucsb-1.test.dataone.org/cn/v1/meta/08d2c688-19fd-4cd5-88ff-4ed76bf40332
+              https://cn-stage-orc-1.test.dataone.org/cn/v1/object/08d2c688-19fd-4cd5-88ff-4ed76bf40332
+              https://cn-stage-orc-1.test.dataone.org/cn/v1/meta/08d2c688-19fd-4cd5-88ff-4ed76bf40332
+
+https://cn-stage-unm-1.test.dataone.org/cn/v1/object/08d2c688-19fd-4cd5-88ff-4ed76bf40332
+
+https://cn-stage-unm-1.test.dataone.org/cn/v1/meta/08d2c688-19fd-4cd5-88ff-4ed76bf40332
+
+     * log_aggregation - is harvesting from all MNs
+       * Is it running? : /var/log/dataone/logAggregate/cn-aggregation.log
+         * are jobs scheduled for each MN (looking at the log file) when d1-processing daemon starts.(worked)
+         * after each MN is harvested, perform a count (always from day ago): on the cn perform a solr query using curl, on mn perform log query (with dates)
+           * For CCI 1.2.8, Solr endpoint is/solr/d1-cn-log - for CCI 1.3.0 it is /cn/v1/query/logsolr/.../
+       * verify that the /solr/d1-cn-log endpoint is not available
+         * https://cn-stage.test.dataone.org/solr/d1-cn-log (this url not found - slaughter - 7/30/14)
+       * verify that thethe http://localhost:8080/solr/d1-cn-log endpoint available? (passed - slaughter 7/30/14)
+         * query: sudo curl "localhost:8080/solr/d1-cn-log/select?q=nodeId:u*&rows=100"
+         * <?xml version="1.0" encoding="UTF-8"?>
+         * <response>
+         * <lst name="responseHeader"><int name="status">0</int><int name="QTime">29</int><lst name="params"><str name="start">0</str><str name="q">nodeId:u*</str><str name="rows">0</str></lst></lst><result name="response" numFound="1708189" start="0"/>
+         * </response>
+       * are the counts for each node the same on the MN and the CN? 
+         * CN query: (change date to day before current date)
+           * https://cn-stage.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=true&facet.field=nodeId&facet.limit=1000&rows=0&fq=dateLogged:[*%20TO%202014-05-01T00:00:00Z]
+           * result:
+             * <result name="response" numFound="1375734" start="0"/>
+             * <lst name="facet_counts">
+             * <lst name="facet_queries"/>
+             * <lst name="facet_fields">
+             * <lst name="nodeId">
+             * <int name="urn:node:mnStagePISCO">1237253</int>
+             * <int name="urn:node:cnStageUCSB1">86553</int>
+             * <int name="urn:node:mnStageLTER">41436</int>
+             * <int name="urn:node:USGSCSAS">7632</int>
+             * <int name="urn:node:mnStageORC1">1598</int>
+             * <int name="urn:node:mnDemo11">557</int>
+             * <int name="urn:node:mnTestUSANPN">259</int>
+             * <int name="urn:node:mnStageUCSB2">191</int>
+             * <int name="urn:node:mnTestGLEON">97</int>
+             * <int name="urn:node:mnStageUNM1">76</int>
+             * <int name="urn:node:mnTestEDORA">74</int>
+             * <int name="urn:node:mnTestRGD">8</int>
+             * </lst>
+             * </lst>
+             * <lst name="facet_dates"/>
+             * <lst name="facet_ranges"/>
+             * </lst>
+             * </response>
+         * query results
+           * used commands like
+             * sudo curl --cert /etc/dataone/client/private/urn_node_cnStageUCSB1.pem https://mn-stage-orc-1.test.dataone.org/mn/v1/log?start=0&count=0&toDate=2014-07-29T00:00:00.000
+             * urn:node:mnStagePISCO
+               * CN reports 1237253
+               * MN: query failed do to certificate problem
+             * urn:node:mnStageLTER (failed - slaughter 7/31/14)
+               * CN reports: 41436
+               * MN: server unable to service request
+             * urn:node:USGSCSAS
+               * CN reports: 7632
+             * urn:node:mnStageORC1 (passed slaughter 7/31/14)
+               * CN reports: 1598
+               * MN: reports 1598
+             * urn:node:mnDemo11 (passed slaughter 7/31/14)
+               * CN reports: 557
+               * MN reports: 557
+             * rn:node:mnTestUSANPN (failed - slaughter 7/31/14)
+               * CN reports: 259
+               * MN: certificate verify failed
+             * urn:node:mnStageUCSB2 (passed - slaughter 7/31/14)
+               * CN reports: 191
+               * MN reports: 191
+             * urn:node:mnTestGLEON (passed - slaughter 7/31/14)
+               * CN reports: 97
+               * MN reports: 97
+             * urn:node:mnStageUNM1 (passed - slaughter 7/31/14)
+               * CN reports: 76
+               * MN reports: 76
+             * urn:node:mnTestEDORA
+               * CN reports: 74
+             * urn:node:mnTestRGD
+               * CN reports: 8
+           * 
+           * 
+         * 
+         * 
+         * " count="0" start="0" total="10106"/>slaughter@cn-sandbox-ucsb-1:~/cci-1.3-testing$ 
+       * does solr faceting output show up for fields other than “sensitive” fields (rightsHolder, subject, ipAddress, readPermission)
+         * https://cn-stage.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=formatType&rows=0
+         * passed - slaughter 7/30/2014)
+       * are sensitive fields filtered from the query and output?
+           * https://cn-stage.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=true&facet.field=rightsHolder&facet.limit=1000&rows=0 (passed - slaughter 7/30/14)
+             * this query returns result count but no facet output (passed - slaughter 7/30/14)
+           * same for facet.field=subject,ipAddress,readPermission,rightsHolder (passed - slaughter 7/30/14)
+       * test the old/new query engine description endpoints
+         * https://cn-stage.test.dataone.org/cn/v1/query/solr  (passed - slaughter 7/30/14)
+         * https://cn-stage.test.dataone.org/cn/v1/query/solr/ (passed - slaughter 7/30/14)
+         * https://cn-stage.test.dataone.org/cn/v1/query/logsolr (passed - slaughter 7/30/14)
+         * https://cn-stage.test.dataone.org/cn/v1/query/logsolr/ (failed - slaughter 7/30/14 - this should return a default query result)
+       * verify that the new event index field ‘dateUpdated’ is included and initialized (failed - slaughter 7/30/14)
+         * https://cn-stage.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=true&facet.field=dateUpdated&facet.limit=1000&rows=0
+           * all values are NOT initialized to "1900-01-01T00:00:00Z”, other values exist
+           * this should not hold up the release, as this field isn't being used yet (may be used in cci 1.4, added now so that we don't have to reharvest MNs for cci 1.4 - this can be fixed in production for cci 1.4 with a single solr update command)
+       * verify new “id” field unique key of nodeId + event id (passed - slaughter 7/31/14)
+         * query: https://cn-stage.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&facet=true&facet.field=id&rows=0
+       * verify that all ids are of the correct format (i.e. nodeId + eventIndex, i.e. (passed 7/31/14)
+         * https://cn-sandbox.test.dataone.org/cn/v1/query/logsolr/select?q=*:*&fq=id:urn*
+           * the count for this query should be equal to the total count of all documents, i.e. count from the previous query for id
+       * check that SystemMetadataMap listener is updating event index when mutable sysmeta content is changed (passed 8/5/14)
+         * check cn object index to see current permission rules for a pid (check which subjects have changePermission)
+           * https://cn-stage.test.dataone.org/cn/v1/meta/pcs.6.1
+         * update sysmeta on member node (added subject 'cjones' with changePermssion)
+           * https://mn-demo-11.test.dataone.org/knb/style/skins/dev/login.html
+           * insert an object - in this case pid=pcs.6.1
+             * https://mn-demo-11.test.dataone.org/knb/style/skins/dev/loadxml.jsp
+           * check that the object has been synch'd to the CN:
+             * https://cn-stage.test.dataone.org/cn/v1/meta/pcs.6.1
+           * change the permissions on the new object:
+             * https://mn-demo-11.test.dataone.org/knb/metacat?action=setaccess&docid=pcs.6.1&principal=cjones&permission=changePermission&permType=allow&permOrder=allowFirst
+             * when log agg systemmetadata listener is called on the CN, log agg will add read permission to the "readPermission" field in the event index for any pid that has "changePermission" privilege for the pid whose systemmetadata is being updated.
+           * the metacat setaccess action will automatically request that the CN update permissions for this pid
+         * check for update in event index - verify new subject 'cjones' in <readPermission field>
+           * on cn-stage-ucsb-1:
+             * sudo curl --cert /etc/dataone/client/private/urn_node_cnStageUCSB1.pem  --CAcert /etc/ssl/certs/GeoTrust_Global_CA.pem "https://cn-stage.test.dataone.org/cn/v1/query/logsolr/select?q=pid:pcs.6.1"
+
+ * Tests for new fields in the search index:
+   * Note: the fields "geohash_1" through "geohash_9" were added to the object (aka "search") index were added to the schema in CCI 1.3
+   * any geohash value should have only the following values (32 values character set (modified base 32)):
+     * 0 1 2 3 4 5 6 7 8 9 b c d e f h j k m n p q r s t u v w x y z  
+   * test the level 1 geohash for proper count and character set: (passed - slaughter 7/31/14)
+     * https://cn-stage.test.dataone.org/cn/v1/query/solr/select?q=*:*&facet=true&facet.field=geohash_1&facet.limit=1000&rows=0
+     * each facet field should only be 1 character long
+     * each facet value should be within the character set shown above
+   * test all other geohash levels through geohash_9 (i.e. change facet.field for each geohash level) (passed - slaughter 7/31/14)
+   * check geohash values for supported formats:
+     * eml://ecoinformatics.org/eml-2.0.1 (passed - slaughter 7/31/14)
+       * https://cn-sandbox.test.dataone.org/cn/v1/query/solr/select?q=*:*&fq=formatId:eml*2.1.0&fl=id,geohash_9&rows=1000
+         * check that geohash values exist and contain only characters within the character set shown above
+         * check the eml metadata for a pid and hand calculate geohash for center of geographic coverage and compare to computed value from solr index
+           * retrieve eml metadata to get lat, long of center of bounding box
+             * https://cn-sandbox.test.dataone.org/cn/v1/object/doi:10.5072/FK2/LTER/knb-lter-gce.100.28
+             * northBoundCoord: 31.54224
+             * southBoundCoord: 31.30587
+             * westBoundCoord: -81.4747
+             * eachBoundCoord: -81.20764
+             * calculated center lat, long: 31.424055, -81.34117
+             * calculate geohash from coords at url http://geohash.org/: djw4v094mk7t
+               * this matches geohash from formatId solr query above for this pid: djw4v094m
+               * compare just first 9 digits
+     * eml://ecoinformatics.org/eml-2.1.0
+     * eml://ecoinformatics.org/eml-2.0.0
+     * eml://ecoinformatics.org/eml-2.1.1
+     * FGDC-STD-001-1998
+     * FGDC-STD-001.1-1999
+
+

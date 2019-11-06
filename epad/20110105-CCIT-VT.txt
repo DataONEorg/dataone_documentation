@@ -1,0 +1,157 @@
+..meta::
+  :keywords: DataONE, CCIT, 20110105, VTC
+
+DataONE Developer Call - 2011-01-05
+===================================
+
+:Attendees: Paul Allen, Dave Vieglais, Bob Sandusky, Roger Dahl, John Kunze, Mark Servilla, Jeff Horsburgh, Matt Jones, Rebecca Koskela, Ryan Scherle, Line Pouchard, Bruce Wilson, Rob Nahf, Ravi Vegiraju
+
+
+Action Items:
+
+- Schedule discussion for CiLogon page (Mark)
+- Invitations to Integration and Semantics workshop for Mark Schildhauer and John K. (Line, Jeff)
+- CCIT consider overall goals for IS working group and key deliverables over next couple of years (CCIT)
+- Vote on vacation destination for July CCIT meeting (Dave send out note to CCIT)
+- Moving forward with hardware purchase - question on preferred vendor vs. bid (Dave)
+- Solicit input on Docs and presentations for Feb review (+ EAB) (Dave)
+- Brief note about PASTA <-> DataONE (Mark)
+
+
+Agenda and Notes
+----------------
+
+0. Comments on DataONE branded CILogon page (Mark)
+
+- Take a look at: https://cilogon.org/?skin=DataONE
+
+- Please provide Mark Servilla with feedback regarding the general appearance and usability from a DataONE end user perspective on this interface.
+
+- Matt - suggest a bit more discussion - e.g. what to do with the certificate, etc. Lots of usability issues associated with handling certificates - web interface is probably fine, it's what to do with it afterwards.
+
+- Mark will doodle poll for additional discussion
+
+1. General update on CI
+
+- update on bugs and issues surrounding identifier encoding
+- update on general progress
+    -- about to embark on MN replication for Metacat, largely complete for GMN, needs work on the CN side
+    -- starting work on Authorization implementation
+        http://mule1.dataone.org/ArchitectureDocs-current/design/Authorization.html
+        -- feedback requested ASAP
+    -- will be starting to focus on ITK demos for site review
+
+2. Preparations for the EAB (Jan 17-18) and NSF Review (Feb 22-24)
+
+A. Documents
+
+- Define cyberinfrastructure
+- Design, reference architecture diagrams
+- Software development and implementation timeline
+- Goals of the DataNet program as implemented by DataONE infrastructure
+  
+  - Curation and preservation
+  - Search and discovery
+  - Security
+  - Integration with investigator tools
+
+- Technical collaborations
+
+B. Presentations
+
+C. Demonstrations
+
+From http://epad.dataone.org/20101110-CCIT-VTC :
+
+ * 1. Target deliverables for the February review
+ * 
+ *   i. Infrastructure functionality
+ * 
+ *     - Add content to a member node
+ *     - Synchronize coordinating node catalog with member node content
+ *     - Discover newly added content
+ *     - Retrieve new content from original member node
+ *     - Replicate content to another member node
+ *     - Resolve the location of the content
+ *     - Retrieve content with original member node offline
+ *     - Authenticate using CILogon
+ * 
+ *   ii. infrastructure deployment
+ *   
+ *     - Three coordinating nodes (UNM, UCSB, ORC)
+ *     - KNB member node (Chad)
+ *     - DAAC member node (Bruce, Roger)
+ *     - Dryad member node (Ryan)
+ *     - Generic member node (as replication target)
+ *     - Monitoring (Rob)
+ *     - CILogon branding (Mark, Jeff)
+ * 
+ *   iii. Client tools
+ * 
+ *     - ITK libraries in python and java
+ *     - Command line client (Roger, Dave)
+ *       - Probably satisfactory for very basic interaction with CN and MN
+ *       - Need to verify
+ *     - R client (Matt)
+ *       - (EVA experiment) Should be fairly straight forward to execute within D1
+ *       - Read data from D1 (not dependent on authentication)
+ *     - Zotero (Bruce, Ryan) 
+ *       - goal similar to do something as Dryad does - e.g. RDFa tags in HTML output
+         -  Add tags to mercury html page output
+         
+ *     - Morpho (Chad)
+ *       - Use to add content to D1.
+        - Depends on authentication stuff
+        - fall back is to use existing interface to inject content into Metacat
+        - Adapting Morpho would emphasize the issues associated with implementation 
+ *  
+ *     - EVA (Paul and Matt)
+ *        - Met with Daniel and Kevin - putting together R scripts to generate a  couple of frames of the animation output (end of Nov)
+ *       - Matt will modify to use the R client
+ *       - Moving scripts into VisTrails (Kevin Webb), and Kepler (Matt)?
+ * 
+ *         - May be possible to enable VisTrails by review time
+ * 
+ *       - Demo is to do live demo, getting live, toy data set, doing analysis. Also show time-compressed canned animation of actual EVA dataset download, analysis, and visualization.
+ *     - (other clients as resources permit)
+ * 
+ *   iv. Documentation
+ * 
+ *     - Architecture documentation (cleaned up, html, pdf, epub formats)
+ *     - Member node participation documentations
+ *     - Investigator toolkit (tools documented, new tool construction document)
+ *     - Implementation plan for PASTA
+       * overview document of implementing MN functionality / mapping between PASTA and D1
+
+
+
+
+3. Upcoming Semantics working group meeting (Jan 24-26)
+
+Plone: https://docs.dataone.org/member-area/working-groups/integration-and-semantics
+svn: https://repository.dataone.org/documents/WorkingGroups/IntegrationSemantics/20110124_WG_Stanford/
+
+- Kick off for Semantics and Integration working group
+- Stanford (Monday afternoon, through Wednesday morning)
+
+- Useful relevant information captured by SONET group
+- Collate overall goals for WG from the CCIT - provide a general guide to expected outcomes and deliverables for the group.
+- Chance that Mark Schildhauer from NCEAS could attend (Line and Jeff invite)
+
+
+4. Selection of venue for the July CCIT meeting (July 19-21)
+
+Current options include:
+
+- Juneau
+- NESCent
+
+The choice may be influenced by the next DUG which is to be held in Santa Fe and scheduled for immediately pior to the CCIT (week of 11 July in conjunction with ESIP).
+
+
+5. Any other business
+
+- Hardware
+  - Send out copies of UNM RFP to Matt and Bruce
+  - Discuss details of process (bid required? deadline for purchase?) wth Bill and Rebecca.
+

@@ -1,0 +1,48 @@
+Attending -- Jim, Jane, Nassib, Greg, Tim, John, Angela, Karthik, Rob,
+
+Jane: not just on the web, but for the web, not hidden, not academic, but used
+
+Nassib:  started to mockup with Coordino (Cake-PHP), software has done a bunch but has problems
+
+Karthik: seems like Coordino is under active development
+
+Tim:  happy that you're focussing on the UI; the GBIF vocab UI was too complex
+Tim: very important to do multiple languages
+  [Tim?  can we turn this into a software requirement ]
+Rob: could be very hard to support for multiple languages
+   Jane: could this be done as part of a non-tech goal
+
+Tim: do you have a "versioned bag of terms?"  Darwin Core has "basis of record" 
+(human obs, machine observation,...)
+   ouch hard, terms that are deprecated, split terms
+
+Greg:  can people edit terms to consolidate terms?
+Karthik: yes, with sufficient reputation, and we can adjust default starter reputations,
+    multiple terms under the same natural language [our data model should have conceptid]
+
+Jim: need ability to call up specific persistent version [this is the "release" 
+tagged version]
+
+Jane: need prioritized functionality wishlist
+
+Nassib: 3 dimensions of functionality:  propose, edit, comment
+
+Scheduling conference:  every 3 weeks for now, re-evaluate rythym in January
+Feb for f2f
+
+Jane: non-tech DataONE goals include "assessment" 
+
+Round the room:
+
+Jane: RDA doing metadata in the opposite way to us
+John: Dublin Core ISO standardization, Diane Hillman from OpenMetadata says use a more online, evolvable approach
+Greg: EOL is a destination, are we a destination?  Maybe we have a "reader" view for the non-geeks that hides the voting numbers, as opposed to an "edit" mode.
+Rob: stackoverflow seems like the best model
+Jim: see https://docs.google.com/drawings/d/1QaJyRm1cpIyte9SlIkFuWL7u64WLPq3cwcW1hBIl2nQ/edit
+Karthik:  seems complex, but straightforward to do in stackoverflow model
+Nassib: wonders about practical realities
+Rob:  will send something to list about the OBO foundry investigation
+Rob:  google+ better than skype, but readytalk works best
+
+John: will contact Jim about Registry state workflow and Tim separately
+

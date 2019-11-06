@@ -1,0 +1,74 @@
+WebSite Revision Discussion
+Oct 5th 2011 @ 12 PT / 13 MT
+
+Attending: Amber, Rebecca, Laura, Grace, Chris
+
+Posters to be printed at end of week:
+1.Home - Some changes needed
+2. About>DataONE Organization - Good to print (once header issues resolved)
+3. EVA page - once images in, good to print
+4. Products>BP landing - life cycle diagram fix, text needed from Amber
+5.ST>Vistrails - USE Taverna instead (more content, better example)
+6. Education>Training activities
+
+Status Updates:
+ITEMS ADDRESSED
+Front Page
+ *     Site Search 
+ *    Twitter feed - holding spot for CCIT? Replace with CCIT image (e.g. MN map) with word incidating "Access ONEMercury" or some such?  
+ *    Too many fonts - stick within san serif
+ *    Put dots back
+ *    Links change to bold - this makes things jump.  Change method of roll over
+ *    Social media icons smaller?  Also, align with line and/or word above
+ *    Footer font - smaller?
+ *    Speed of scrolling news too slow?
+ *    Background color - can it be less dark?
+ *    Black panel for picture label  - increase transparency?  reduce words?
+ * Tab Info - give logo transparent background and make DataONE one word (as in current website)
+ *    8pt buffers throughout
+General
+ * Drop down alignment - should align. style similar to aekos. org.au but use same size tabs 
+ * ITK comes out from under Data
+ * Landing page - need to have one?  if so, need to have content. No landing page - make ONEMercury page have content.
+ * ONEMercury shouldn't be two words
+DataONE Organization
+ * Org Chart -  color changes to pums and teals, include names, change one of the WG names - Rebecca to send. Org chart elements to be links.
+ * "THE Organization" - drop "the"
+ * CCIT - spell out
+ * About DataONE - reduce to About so it matches boxes
+EVA
+ * Amber to send images and credits for EVA page.  Amber to edit pages.
+Best Practices
+ * Tag cloud - include color?
+ * Move 'Products Links' to top and reduce to 'Products'
+ * Order of LHS elements: Products>Featured>Tags>FIF
+ * Tags correction - desribe and Describe
+Vistrails
+ * Items to go after colons
+ * 'Contributor' to be removed and used for behind the scenes stuff only
+
+
+ITEMS REMAINING??
+Front Page
+ *    Alignment - Align DataONE Logo with picture panel -completed.Not yet- revisit
+ *    Latest News - links to news page? - completed need to check
+ *    Picture panel - takes you to relevant content as opposed to a news item
+General - Check
+ * Breadcrumbs - don't always followONEMercury comes out form under Products.
+ST>Vistrails
+ * Tags to be horizontal - tags are now displayed on one single line.
+ * If additional info box is filled, that would start below subhead and not to right of colon (the one exception)l -completed.
+
+
+NEW ITEMS
+ * Plum social network logos - completed.
+ * space between logo and tags on software tools (remove word logo:) - word logo removed  Also added top spacing between the logo and  tags.
+ * fix datalifecycle graphic
+ * add images to EVA workgroup
+ * Amber to work on BP landing page text
+ * create pages for 2010 and 2011 training activities fix lhs past training block - fixed to '2010' and '2011'
+ * Amber to update old site training page 
+ * Updated Best Practices URLs to display "../best-practice/..Best_Practice" as opposed to "../content/..Best_Practice" -- Also made sure BP tag cloud is displayed on every Best Practice page.
+ * Updated Software Tools URLs to display "../software-tool/..Software_Tool" as opposed to "../content/..Software_Tool" -- Also made sure ST tag cloud is displayed on every Best Practice page.
+
+

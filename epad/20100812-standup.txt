@@ -1,0 +1,104 @@
+Matt:
+
+693, 694 - close out and create new tasks for extending functionality
+
+308 - Close 
+
+309 - Close
+
+421 - Dupe - close, completed.
+
+695 - Move to no milestone
+
+179 - Move to no milestone
+
+400 - complete but ongoing activities, close
+
+191 - close 
+
+355 - reasign to Dave
+
+
+Robert:
+595 - Close, 130 hrs
+608 - defer
+609 - close. add new task for creating messages
+610 - close. add tasks for working with messages
+662 - close. add new task to persist registry information in a better way (currently in /etc) and provide a better design to handle locking etc.
+663 - remove milestone and re-evaluate
+627 - defer
+628 - defer
+629 - defer
+630 - defer
+658 - incomplete - move to prototype evaluation
+677 - close
+707 - Duplicate? Move, remove milestone and re-prioritize
+719 - Close - different named context for Spring + something else - perhaps to do with dataone and metacat
+686 - Part of review process - Evaluation MS
+646 - Move into backlog - some functionality needs to be added.
+
+Rob:
+664 - implementation working for xml.  Close and create new ticket for additional functionality
+687 - add comments on status and remove milestone
+689 - invalid, add comment describing why
+691 - close, and create new ticket that tests the functionality implemented - i.e. finding the harvested files in their subdirectories
+
+Dave
+332 - backlog
+336 - close
+640 - need clean up - move to next milestone (i.e. evaluation)
+327 - being worked on - part of review milestone
+338 - for review / evaluation MS
+587 - for review MS
+588 - for review MS
+714 - Still open, needed for evaluation MS. Perhaps use a symlink to fix the problem?
+186 - still valid, remove MS
+164 - part of V1 release
+268 - should be able to close - thses tests are available
+291 - should be able to close
+311 - mostly done.  close and create new ticket for information flow
+
+Chad
+685 - Needed for evaluation. moved to eval.
+684 - Check with Chad - might be done.  Part of evaluation.  moved to eval
+
+Giri (Dave)
+80  - close
+166 - all wrapped in mercury - close ticket invalid.
+173 - should be able to close.  Robert will check in outstanding, Dave will make task to restructure and refine.  #786
+451 - close
+452 - close
+453 - close
+713 - check email (Robert and Dave to check email for this)
+
+Bruce: (Dave)
+561 - Close
+562 - Close
+563 - Close
+183 - Move to review MS
+
+========================
+
+328 - (Dave) review MS
+329 - (Dave) move to 1.0 MS
+333 - (Dave) close
+334 - (Dave) clarify title and description
+335 - 1.0 MS 
+340 - Dave - public web site release MS - Laura
+342 - CE topic - create a milestone for CE and assign to that
+357 - Close
+360 - Review MS - perhaps create a task for incorporating feedback.
+                - adding the diagrams
+372 - Close
+373 - move to public web milestone
+582 - pre- 1.0 MS
+589 - pre 1.0 MS
+364 - "
+365 - "
+
+
+
+
+
+
+

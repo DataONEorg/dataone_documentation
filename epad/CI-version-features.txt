@@ -1,0 +1,116 @@
+Schedule for Post 1.0.0 Development
+===================================
+
+Draft outline for next six months or so of development activity on core CI.
+
+
+Client Tools, ITK Development
+-----------------------------
+
+- Packaging recommendations and process
+- Morpho
+- R plugin
+- Excel plugin (DCXL
+- File system driver
+- Workflow system
+
+
+Additional Member Nodes and Content
+-----------------------------------
+
+- LTER 
+- Replication target MNs
+- ONEShare (Merritt MN hosted at UNM supporting DCXL)
+- AKN
+- etc
+
+
+Core CI / API Schedule
+----------------------
+
+Draft outline for activity for implementation and deployment of additional capabilities and refinements for the core CI. Development of new tools, applications, ITK components, etc are addressed separately.
+
+The schedule shown generally refers to the period where RCs are built and tested, then releases cut, tested and deployed. Design and development can of course happen before the specified period.
+
+
+v1.0.1
+~~~~~~
+
+Schedule: Immediate
+
+- All issues identified in redmine for 1.0.1
+- Remainder of MNs for initial release
+
+
+v1.0.2
+~~~~~~
+
+Schedule: + 2 weeks (week of July 2)
+
+- All nodes running NTP daemon
+- VPN for secure connections between CNs
+- Other fixes as identified
+
+
+v1.0.3
+~~~~~~
+
+Schedule: + 2 weeks (week of July 23)
+
+- Installed after July 15
+- Other fixes as identified
+
+
+v1.1
+~~~~
+
+Schedule:
+
+2012 Block 5 (20120812 - 20121006)
+
+Features:
+
+- MN-MN Replication
+- Basic log reporting capabilities
+- Search index introspection, output field selection
+- API support for adding Object Format entries
+- Content auditing
+- MN kill switch, emergency response to innappropriate content
+- Support for additional metadata formats (as dictated by MN content)
+- Initial support for Puppet controlled deployment
+
+
+v1.2
+~~~~
+
+Schedule:
+
+2012 Block 6 (2012107 - 20130105)
+
+Features:
+
+- Basic change notification / subscription mechanisms
+- UI for user authentication and group management
+- Basic subsetting capabilities
+- Core integration with other DataNet infrastructures
+- Isolation / specialization of search services
+- Progressive improvements to index generation (e.g. controlled keywords)
+
+
+v1.3
+~~~~
+
+Schedule:
+
+2013 Block 1
+
+Features:
+
+- Push notification for MN content (MN notifies CN instead of polling)
+- Support for high performance data transfers (e.g. GridFTP)
+- Progressive improvements to index generation (e.g. taxonomic name resolution services)
+- Alternative discovery interface to ONEMercury
+- Design for > 3 CNs on possibly high latency connections
+- Support for efficent bulk loading of content
+- Other performance improvements as necessary
+

@@ -1,0 +1,19 @@
+This epad is used for collaborative drafting of changes to the DataONE APIs. Final edits should be added to the 
+
+
+2012-03-20
+
+Problem: Automating testing of node registration information, especially the certificate being used for node identification.
+
+Suggested API changes to support auth debugging (draft)
+
+- Update ping().
+
+  - When called with a session, returns the session info. 
+  - Add an optional callId parameter, which is an string that is returned in the response
+  - Serialization without imposing a new schema?
+
+- new method: pingBack(session, callId)
+
+  - Requests that a node calls the ping() method on the caller. The node should perform a ping() request against the caller using its client certificate for authentication, and include the supplied callId parameter in the request
+

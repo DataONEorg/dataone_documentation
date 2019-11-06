@@ -1,0 +1,371 @@
+Community Engagement and Education Working Group
+May 13-15 Park City, UT
+
+People: Cliff Duke, John Porter, Lynda Wayne, Carly Strasser, Stephanie Wright, Stephanie Hampton, Stacy Rebich Hespanha, Heather Henkel, Amber Budden
+
+Agenda - May 13
+(Morning - plenary and updates)
+Afternoon - 1:00 Review of overall status – updates from each member
+
+1. Library/librarian outreach (Gail?)
+ * we created an outreach toolkit for librarians. includes
+ * RDMneeds citeulike biblio
+ * flagged ask.dataone.org questions with librarian tag
+ * primer on dataone for librarians
+ * one-pager describing dataONE
+ * poster - presented at IDCC; will be presenting at IASSIST and ALA
+ * Next steps: target webinar series etc. for place to present (e.g., ACRL)
+ * ? target groups focused on training librarians (ACRL DMCIG, more?)
+     
+2.  Hands-on exercises – see http://epad.dataone.org/2013-AHM-CEE-handsOn-notes (Tom, Steph)
+ * Tom isn't at this meeting. Steph will check in with him via email
+ * A lot of work has already been done (see e-pad)
+ * Should revisit during this meeting. wrap them up.
+ * People at this meeting could take a look and evaluate
+ * Suggestion to retitle metadata module - How to Write Quality Metadata
+ * Heather and Viv interested in getting some USGS funding to develop training modules, could be a project in collab with NEON - potentially meet in Denver as full team to develop polished D1/USGS/NEON hands-on modules
+ * Heather is going to go through all the modules to create final versions that can be posted - making good progress!
+     
+3. Data stories – status, synthesis (Stacy)
+ * has been moving along. more stories have been added to D1 site. 11 stories up so far.
+ * 20ish recorded already. 2 more to be recorded. transcribed and annotated.
+ * Lots of shares and views on figshare of poster. Figure used by Stace Beauleau at WHOI
+ * Working on discussion questions that can accompany the stories in data management training.
+ * PDFs of stories? 
+ * this meeting: wants feedback on stories and big figure (concept map) (4pm Wednesday - review material below first)
+   * epad containing stories and questions: http://epad.dataone.org/2014-AHM-CEE-wg-DataStories
+   * poster: http://figshare.com/articles/In_Their_Own_Words_Researchers_stories_of_challenges_and_triumphs_in_data_management_and_sharing/892403
+   * link to most recent version of concept map: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/data-stories/20140514story_conflicts_resorted_newcolors.pdf/view
+
+4. Distributed graduate seminar for LTER/DataONE  (Kristin)
+ * need to find scientists to champion the idea so they are interested in synthesis/science outcomes
+ * will be shopped around at LTER meeting. Kristin might work on a supplementary proposal to move it forward
+
+5. Data publication paper (John, Cliff) - Meet room Uinta 149B
+ * Plan to work on during this meeting - Draft in Google Docs - https://docs.google.com/document/d/1lU85hBLUvco9FykyH--7LX22_aVEDGaatyPtDdgp7fg/edit?usp=sharing  but you need to see JP to add you as a "collaborator" on the document
+ * Have accumulated additional materials for citation (link in Doc)
+ * Need status on Carly's Post doc's paper.....: http://f1000research.com/articles/3-94/v1
+ * Report - session 1
+   * partly reviewed existing outline
+   * read Kratz and Strasser paper - not too bad on overlap - some useful distinctions that we can incorporate and build on
+   * Want a table of public data repositories that might be used by biologists (Figshare, KNB, Dryad, VegBank, OneShare, Ecological Archives, Scientific Data - Others?)    [check Ethan White's IEE 2013 - short table of ecology and evolution repositories: http://library.queensu.ca/ojs/index.php/IEE/article/view/4608/4898]
+     * Check DataBib also RE3 data  (now merging)
+     * table columns - 
+       * Restrictions (none, associated with paper, in existing repository)
+       * metadata (nonstandard, standard, unstructured, structured)
+       * review level (none, metadata
+
+6. Human rights and data sharing paper (Cliff)
+Cliff needs to review material that Kim Douglass sent him. We have a working outline.
+
+7. Social media - does DataONE coffeehouse need additional content? (Carly, Scott)
+good for now.
+
+8. Video materials (Stacy)
+ * we have recruited a summer intern to create videos based on Data Stories: http://www.beckybeamer.com/Beamer/Home.html
+ * Our plan is to create ~6 videos over the internship period
+
+9. DMPTool and DataUP outreach activities (Carly)
+ * DataUP: supplemental grant started, proj manager hired. Developer working on it at Mircosoft left. Would like to see it migrated to Python or Ruby, made freely available.
+ * DMPTool webinar for administrators tomorrow. $500K grant from Sloan last year for v.2.
+
+10. Ontologies based on text mining, to use for discovery (Stacy)
+ * Poster on viz of thematic elements of DataONE (AGU)
+ * Made some recommendations on adopting this approach for D1.
+
+11. Screencasts for – ONEmercury, R package, ONEdrive (Amber)
+ * Anticipating phase 2. Interns will be helping. Start developing screencasts for current tools, develop a workflow for creating screencasts and estimate effort.
+
+12. Data sharing and decision/policy-making (Lynda,  Cliff, John)
+ * Lynda worked on white paper for state GIS managers - why having GIS data on hand is important for decision-making. http://www.nsgic.org/public_resources/NSGIC_Data_Sharing_Guidelines_120211_Final.pdf (add to D1 site?)
+ * Federal level - open data initiatives (such as data.gov).
+
+13. Teaching modules (Steph and Carly  - any news from Shan Huang?)
+ * Shan Huang developed teaching module as part of summer internship. Hands-on statitsical exercise. Sent to "Teaching Issues and Experiments in Ecology" - basically ready to go.
+
+14. Cost of data sharing
+ * what it costs an individual investigator to manage, share, etc. 
+ * No progress yet but still an interesting topic.
+ * Lot of work done on ROI to state governments.
+ * DIfficult to address - with skills, not a big deal. Without skills, no amount of $ is enough.
+ * Possible angle: how to minimize the cost through best practices.
+ * Would be very useful to have this info and to manage costs for data mgmt included in grant proposals.
+ * Short note or opinion piece?
+ * relevant existing article: http://www.nature.com/nature/journal/v509/n7498/full/509033b.html 
+ * Scope: think peer review of data sharing practices
+ * can partition costs (researcher, long-term archival)
+   * often what is easiest for the researcher (zip up excel file) is more costly for the archive to provide long-term accessibility (tools to read old files)
+ * UK has done strong work here: http://repository.jisc.ac.uk/5568/1/iDF308_-_Digital_Infrastructure_Directions_Report%2C_Jan14_v1-04.pdf
+ * Consider that the cheapest way of doing it right now just pushes the costs down the road to someone else later who might have to deal with your mess (old formats, lousy metadata, etc)
+ * Do we want to add page to D1 web - data sharing info and resources? Issue: keeping it current. scrubber to find dead links....Could be very useful resource for librarians' toolkit.
+ * Nice first line: "Open access to scientific data offers clear benefits on many levels, but the topic continues to engender heated debate primarily due to the varied associated costs that have not historically been a part of the scientific process. "
+ * 
+ * Assessment of LTER infomration management costs: http://databits.lternet.edu/fall-2013/understanding-true-cost-lter-information-management
+ * use of best practices decreases costs - 
+   * but includes training costs
+ * better tools decrease cost
+   * e.g. Open Science Framework - tracks project components - valuable source for metadata
+ * Gail suggests that finding a pressure point in the process would be useful - a point in process that scientists are comfortable with, that they could best implement best practices and minimize costs
+ * Lynda - DMP associated with begining of a project and the project management is a time when 40% of the metadata is created
+ * Heather submitted a Powell Center proposal on calculting costs - not funded but potentially a starting point
+ * Cliff - this is a R&D prospectus - what point in the process could costs be minimized
+ * AAAS fellow might be able to access NSF proposals to see what resources are devoted in the Data Managment Plans....
+ * Steph W - most of the previous analyses focus on costs of archive not people costs in documenting, etc
+ * Preception that IM is taking money away from SCIENCE.....
+   * helps reuse your OWN data.... 
+   * but now sharing data is a given - it is a requiremenion
+ * Steph W: recognition in libraries that investigators have to spend a good amount of time documenting, may not then be willing to also pay for long-term archive, especially if they can just put it in Dropbox and call it good :-o
+ * Oneida Lake archive in KNB attracts people to the lake research and saves them time
+   * it costs something, but it SAVES something
+ * Steph W - loss of 30 yr of data resulted in loss grant funding
+ * who bears the costs and where do they lie
+   * funders, gov, institution, researchers
+   * points towards advanceds in science
+     * and efficiencies in cost
+   * sustainability models for publically funded databases
+   * sustainability and costs are inextricably linked
+ * researchers are often responsible for more than they need to be.....
+ * Some costs must be born by individual researchers, but economies of scale will be achieved elsewhere
+ * If you have done it once, then you will know how to do it, so it's the upfront investment
+ * people are not willing to put the upfront investment until they know exactly what they should learn
+ * if you don't do it upfront, the costs increase exponentially down the road
+ * Sustainability and costs are inextricably linked
+
+15. Research Data Management Exit Survey (Heather)
+ * walk scientist or data mgr through exit interview before scientist leaves
+   * can feed into data rescue program at USGS
+
+16. Model documenation/preservation (Heather)
+ * would be good to have best practices.....
+ * complmentary effort - software sustainability inititiatives
+ * Institute for Software Sustainability in Ecology and the Environment - this might be in their domain, and anticipated to be a close partner with DataONE http://isees.nceas.ucsb.edu/
+ * John P: there was a workshop about 8 yr ago on LTER modeling - many good discussions but no major conclusions
+   * difficulty of wide variety of approaches
+17. Expanded user guide for DM primer - future idea? (Heather)
+ * can some of educational modules be inserted into/cross-referenced in the primer (regular one - librarian one has links), or examples?
+ * Do this week - make recommendations.
+
+2:00 - Future for DataONE CEE (Amber)
+ * July 31 = end phase 1.
+ * Phase 2 - 4 WGs as Bill reported. Membership TBD.
+ * CEO: 7 people including co-leads, UNM postdoc, leadership team member (Bob Cook). Leaves 3 positions - very constrained.
+ * Terms & conditions include 18 and 36 month milestones. 
+ * For CEO - need to see measured impact. Also need online, running education program (webinars, revised/enhanced modules, integrated with screencasts), with demonstrated uptake. Outreach activities, intern program. DUG.
+ * NSF wants to see high visibility for DataONE.
+ * Some of the things we're talking about today could be rolled into phase 2, as long as they meet above criteria.
+
+2:30 - Working Group Next Steps
+Groups:
+ * Librarian outreach - 338B White Pine
+ * Hands-on exercises
+ * Data stories (later)
+ * Paper (data pub, human rights) - 149B White Pine
+ * cost of data sharing (later? group brainstorm?) 
+ * Reconvene 430 - report out
+
+Reporting back -
+
+Librarian outreach - things to work on:
+ * Improve Librarian toolkit web page - add descriptions/categories for readability/usability
+   * done
+ * Update CiteULike - add tags, ratings, new resources
+ * Update primer and one-pager (eye towards phase 2
+   * tabled until Phase 2
+ * Review askdataone.org q's
+ * Identify targets for outreach
+ * Work on creating RDM clearinghouse (reddit? other?) - no suitable platform identified
+
+Hands-on exercises:
+ * There are a lot! Lot done at last meeting.
+ * Steph would like to enlist people to go through exercises and powerpoints, make sure they make sense. Find related readings.
+
+Data stories:
+ * I continued to prepare data stories and associated discussion questions for WG review tomorrow.
+
+Lynda - resources for data sharing, best practices, etc.
+ * Some overlap with RDM clearinghouse idea - let's get together.
+
+Papers:
+ * reviewed status of papers
+ * reviewed Jon Kratz's paper, there's still enough other material to cover.
+ * Ethan White (2013) has a short table of repositories with info: http://library.queensu.ca/ojs/index.php/IEE/article/view/4608/4898
+ * Suggestion: use DataBib and/or re3data.org for some additional repositories.
+ * Possible places to publish: BioScience, PLOS biology
+ * Basic target: biologist who hasn't published data before
+
+Tomorrow:
+ * convene, decide...
+ * 
+=======================================================
+
+CEE May 14
+
+Hands-on exercises (~1hour, now)
+Match up exercises with training modules - read through, edit if you like or just make sure that they make sense (i.e. open up both files and make sure that they make sense together) - please make edits rather than comments, don't count on someone else to go back through the document and implement all the changes you suggest
+
+Training Modules: http://www.dataone.org/education-modules
+ * for reference -- results of evaluation of workshop based on modules
+   * poster: http://www.dataone.org/sites/all/documents/ShortCoursePoster2012.pdf
+   * full report: http://www.dataone.org/sites/all/documents/ShortCourseReport2012.pdf
+Hands-on exercises: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management
+If you make edits - track changes, upload new version.
+
+1 (accessing data in the literature): Stacy
+ * MODULE: Suggested edits to module: The take-home lesson from this exercise, 'that access to valuable original data can become difficult or impossible in a short period of time after a paper is published, but this loss of accessibility is avoidable', is not very salient in the lesson slides (e.g., not explicitly stated in the learning objectives). If/when lesson slides are revised, make changes to make the connection between lesson and hands-on activity more explicit by:
+   * updating learning objectives
+   * adding a slide or two before/among current slides 19-22 to more directly incorporate discussion related to the hands-on activity
+ * Changes to hands-on lesson: I edited the document to include an optional extension, and uploaded the new version with changes tracked to the plone site (replaced old document with edited one)
+2 (data sharing): Steph W
+ * MODULE: Slide 15 of lesson module: bottom left table cell wording needs editing (doesn't match previous slide and wording is awkward)
+ * MODULE: Slide 19: last bullet (LETR should be LTER)
+ * MODULE: I would recommend reviewing slides 19 & 20 and update for current options.  Slide 19 mentions publishing metadata and nothing about actually publishing dataset.  Slide 20 mentions publishing metadata & data but nowhere does either slide mention institutional repositories as an option for depositing data.
+ * Edited hands-on activity to point to DataBib for finding repositories instead of DataCite since the latter now points to the former. Uploaded revised document with changes tracked.
+3 (data maangement planning):  Carly
+ * First draft: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management/HandsOnActivity3_DMP.docx/view
+ * Steph W reviewed
+ * MODULE: URLs for DMP Tool need to be updated in module.
+4 (data organization): deployed, pretty solid. Heather
+5 (qa): deployed. John
+ * Apart from the reference to Wikipedia, zooplankton is not defined but is used later. May want to add the phytoplankton/zooplankton distinction in the introductory paragraph
+ * File names don't match the real file names (+ vs -)
+ * Campbell et al. 2013 BioScience might also be a good reference......
+ * Activity 2a might also incorporate a check of maximum and minimum values
+   * it would be good to corrupt some of the dates as well.... preferably to impossible dates like 30/06/11 or better yet, 6/70/11 ......
+ * I'm not crazy about activity 2c because the choice of missing values is often dictated by the software used. For example, relational databases won't allow non-numeric values in numeric columns, whereas R only recognizes NA as missing. Asking the students to make a reasoned decision may be impossible without some broader experience. Additionally, just flagging data as missing should be enough - regardless of what is in the column....
+   * I'd suggest replacing it with having the students use the data validation capabilities of Excel. See http://www.techrepublic.com/blog/five-tips/five-tips-for-avoiding-data-entry-errors-in-excel/825?tag=nl.e101 for a nice, brief intro.
+6 (data protection): brand new. Cliff and Gail
+Cliff, just a few minor edits, saved in track changes and uploaded with csd initials
+7, 8 (metadata): deployed. Lynda
+
+FOR CHANGES TO MODULES AND/OR EXTENSIVE EDITS TO TRAINING ACTIVITIES: (I copied pasted all of the above info at 10:11 am)
+https://docs.google.com/document/d/1EZJWhsng5yiHRLYX3ZF8gpq0jbTrrjyMh15d6GFFKeI/edit?usp=sharing
+
+Data stories discussion/work:
+ * where to integrate stories into modules - http://epad.dataone.org/2014-AHM-CEE-wg-DataStories
+ * feedback on content and wording of questions, as well as placement
+ * also seeking feedback on concept map - https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/data-stories/20140514story_conflicts_resorted_newcolors.pdf/view
+
+
+New DataONE for librarians:
+https://docs.google.com/document/d/1WhklpNlPT1XLZcWgYtPCpqhKTMPxf3n9blVs7O45BZY/edit#heading=h.svdwn9ucouwk
+
+
+Break out groups (for later):
+ * Libraries
+ * Papers - human rights, data publication
+ * Cost of data sharing (as a larger group)
+ * 
+
+=============================================================
+
+CEE May 15
+
+New ideas / continuing work
+ * Data stories - analysis - possible supplemental request. Action item: Stacy and Steph follow up.or 
+   * NSF RCN program: http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=11691
+   * Building Community and Capacity for Data-Intensive Research in the Social, Behavioral, and Economic Sciences and in Education and Human Resources (BCC-SBE/EHR): http://www.nsf.gov/pubs//2014/nsf14517/nsf14517.htm (more funding in 2015?)
+   * 
+
+What to get done today:
+ * Heather and Lynda wrap up work on hands-on exercises. Heather would appreciate review.  Heather: my main goal was to impliment the suggestions/edit from everyone and to format the pages so they looked uniform and a bit more polished 
+   * Please see: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management/final-exercises-draft-versions
+ * Libraries: CiteULike updates, webinar webcast  :-) opps for D1 phase 2, help out other groups as needed. Not pursuing the DM resource inventory because others exist and we couldn't find a platform that does what we want.
+ * Steph and Stacy follow up on their projects.
+ * John & Cliff - papers.
+ * Cost of data sharing: group discussion
+   * Cost to individual, or cost to institution?
+   * Following best practices minimizes costs
+   * COS open science framework: https://osf.io/ 
+   * (overlay cost of DM/sharing over time - ie don't let it wait - on Michener metadata loss over time figure...)
+   * Look at proposal budgets, if available, for $ devoted to DMP (recruit AAAS-NSF fellow?)
+   * 4C Project: http://4cproject.eu/ : Collaboration to Clarify Costs of Curation
+   * Most existing lit on cost of curation has to do with cost of storage, little on direct cost to researchers for the work of curation
+   * UK has done strong work here: http://repository.jisc.ac.uk/5568/1/iDF308_-_Digital_Infrastructure_Directions_Report%2C_Jan14_v1-04.pdf
+   * From Lynda - (above) http://www.nsgic.org/public_resources/NSGIC_Data_Sharing_Guidelines_120211_Final.pdf
+   * Relate to emerging requirements
+   * Need to clarify scope
+   * Possibly unique contribution: access being mandated, according to some standards. No one likes cost. How to structure costs in order to minimize them and meet requirement efficiently. Cost should be less than or equal to benefit.
+   * There are also costs to NOT sharing = to loss of data, loss of future funding, labor of sharing individually rather than publicly, 
+   * Emphasize that costs will be there - they are not taking away from science - this is an activity that supports and enables science
+   * There are also potential hidden costs of data management activities - for example, needing extra funds to rescue data or take analog data and make it electronic.  
+   * Point to need for systematic assessment of costs, if none exist. (Aside: BRDI working on costs of publicly funded DBs)
+   * Part of the costs will inevitably be borne by individual researchers, but economies of scale can be achieved elsewhere. What costs can be more economically acheived by repo or data cetner, vs those that HAVE to go to researcher.
+   * What aspects of curation are we really talking about: metadata, data organization
+   * DataUP a good example of a tool that could make improving data organization more economical and streamlined
+   * Here is another good resource on digital repository susainability: http://www.sr.ithaka.org/research-publications/guide-best-revenue-models-and-funding-sources-your-digital-resources
+   * Pitch - to researchers, also administrators. BioScience, Science, Nature, ...?
+
+Report outs
+
+Librarian outreach:
+Went from 44 to 60 items in data needs assessment bibliography: 
+http://www.citeulike.org/group/18394
+Improvements to DataONE for librarians page submitted to Amber to replace this page: http://www.dataone.org/for-librarians)
+Librarian outreach - webcast/webinars - some possible channels for phase 2 of D1:
+ * EDUCAUSE - ?
+ * ALA - ?
+ * ACRL Numeric and Geospatial Data Services & Digital Curation Interest Group
+ * DLF E-Research Peer Network and Mentoring Group
+ * IASSIST
+ * ARL ?
+ * ASIST ?
+
+Data stories
+ * We are continuing active work on this project between now and July 31
+   * recording, transcribing, analyzing final interviews
+   * finalization of concept map
+   * draft of publication focused on sources of conflict in data management and sharing efforts
+   * as many stories on blog as time permits
+   * provide documents containing stories and discussion questions
+     * information for instructors to accompany each published story and questions
+       * suggestions for how to use together with training modules
+       * suggestions for additional sources of information related to story themes?
+   * summer internship will produce ~6 story-based videos
+
+Hands-on exercises:
+ * Exercises for modules 1-8 (there is only one for metadata, covering lectures 7 & 8) are done!  Posted to D1 docs site at https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/hands-on-exercises-for-data-management/final-exercises-draft-versions
+ * Issues with USGS online metadata editor (OME), need to know what to point people to. Not available to non-USGS people. 4 other options; Heather has experience with 2.
+ * Planning changes to sample metadata record for metadata exercise, include some comments in teacher's notes.
+ * Decision: point them to Morpho and DataUP for metadata tool creation and remove references to USGS Online Metadata Editor (OME).  Also, the focus of the exercise will be to fill in the missing segments of the metadata table as opposed to a deeper understanding of how to create metadata.
+ * Tom offered to review exercises, we'll take him up on that.  We will ask him to work on the final two (#9 and 10) as those only have brief intros and no real content.   Will be ready to deploy.
+ * Heather will look at the exercises and see how/if they fit together.
+ * On a related note: we are going after funding to create more online training modules.  (Existing ones at http://www.usgs.gov/datamanagement/training/modules.php).  These modules were based upon the modules from D1 and have received really good reviews.
+
+(Heather) Science Data Exit Form
+ * Heather is working on a Science Data Exit Form form that can be used when we have staff leaving (retiring, new job, alien abduction). As more and more people leave, knowledge about their research, day-to-day activities, and information they have created and collected is either walking out the door with them or is left behind in someone’s office.  The intent is to have some sort of form that can be filled out which will note where data and information is located, how to access the data, etc.  The hope is that even if boxes are still left behind, or data from a previous employee is needed, that these forms will give us a way to find and use that information.
+ * The current version of the form is broken into several general categories: 
+     * Introduction/Explanation/Justification, 
+     * General Information, 
+     * Project Contacts, 
+     * Documents/documentation, 
+     * Systems, 
+     * Hardware, 
+     * Software, 
+     * Acquiring Data, 
+     * Data Delivery, 
+     * Data Considerations (like privacy, litigation, etc.), 
+     * Data Disposition, 
+     * Data Preservation, 
+     * Electronic Data, 
+     * Physical Data (cores, microfilm, etc.)
+   * Once Heather has a draft version available, she will send out to the CEE folks for their input.  If there is time, Heather will create a D1 version which will integrate D1 tools into the form as a way to provide some guidance
+
+Papers - data publication
+ * Will work on over the summer - end of August?
+ * set up VTC schedule for Cliff, Stephanie H and John  - every 2 weeks
+ * Publish in BioScience or PLOS Biology
+
+Cost of data sharing -
+ * Steph will sort through discussion ideas, see if we have something, draft outline, share with group and see who's interested
+
+Distributed graduate seminar for LTER/DataONE  (Kristin)
+
+Paper - data as a human rights issue
+ * still trying to firm up the outline (Cliff, others), 
+ * will continue working on it
+ * http://www.ncbi.nlm.nih.gov/pubmed/24573176 - discusses tension betw data as human right and confidentiality issues in genomic & clinical data sharing
+
+DataONE coffeehouse
+
+
+

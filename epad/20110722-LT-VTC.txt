@@ -1,0 +1,492 @@
+Attendees: Rebecca, Trisha, Mike, Bill, Amber, Todd, Suzie, Steve, Steph, John K., John Cobb, Hilmar Lapp
+
+Regrets: Bob Cook, Carol (on vacation)
+
+Call Information:
+
+Conference Call Number: (866) 804-6831
+This brings you to our conference call line - next press 1
+The conference number is: 73896#
+
+Will also use the epad: http://epad.dataone.org/20110722-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2011-07-01
+
+1.Review of Working Group status (Koskela/Vieglais/Budden)
+The purpose of the review is to keep the Leadership Team informed on the progress of each WG.  In addition, there is overlap among the WGs and this is an ideal time to uncover the overlap and also make sure the cross-communication is taking place.
+2. Around the Room
+
+
+Working Group Reports:
+ * Preservation and Metadata (Kunze)
+ * Integrations and Semantics (Horsburgh/McGuinness)
+ * Exploration, Visualization, and Analysis (Cook/Kelling)
+ * Usability and Assessment (Frame/Tenopir)
+ * Sociocultural Issues (Allard/Douglass)
+ * Community Engagement and Education (Hampton/Hutchison)
+ * Sustainability and Governance (Michener/Cruse)
+ * Provenance Working Group (Ludaescher/Missier)
+ * Distributed Storage (Cobb/Honeyman)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * Public Participation in Scientific Research (Weltzin/Bonney)
+ * Federated Security
+
+
+=================================================================
+Working Group: Preservation and Metadata
+Chair: John Kunze
+Date: 2011.07.15   
+ 
+Overall Objective: 
+·         Review and evolve preservation and metadata strategies for DataONE  
+ 
+Milestones for next 12 months:
+ 
+-      August 2011
+o   Consolidate technical metadata requirements from July CCIT meeting
+o   Identify other sources of metadata requirements, including preservation, citation, discovery, as well as spreadsheet publication and data paper publication
+o   Complete metadata vocabulary maintenance framework design, with feedback from new (July 2011) Dublin Core Executive group
+-      September 2011
+o   Review data integrity checking approach (with CCIT)
+o   Convene metadata working group to draft minimal metadata requirements
+-      October 2011
+o   Circulate DataONE minimal metadata requirements for comment
+-      January 2011
+o   Pilot metadata framework
+-      May 2012
+o   Report on pilot experiences
+ 
+Accomplishments from past 3 months:
+ 
+-      May 2011 – prepared VDC Preservation Strategy annual report for INTEROP (Michener, Kunze)
+-      July 2011 – conducted Citation and Preservation breakouts at DUG in Santa Fe (Abrams, Cook, Kunze)
+ 
+Products
+ 
+-      VDC Preservation Strategy for annual report to INTEROP
+
+=================================================================
+Working Group: Integration and Semantics
+Co-chairs: Deborah McGuinness & Jeff Horsburgh
+Date: 7-19-2011   
+ 
+Overall Objective: (1-2 sentences)
+ 
+·       The objective of the Data Integration and Semantics Working Group is to guide the specification, adoption, and implementation of semantics technologies, broadly defined, that will enable DataONE to sustainably achieve its objectives for the seamless discovery, integration, and dissemination of Earth observational data.
+ 
+ 
+Milestones for next 12 months: (3-5 bullets)
+ 
+·       Summer 2011 – Analyze use cases for using semantic technologies in DataONE CI
+·       Fall/Winter 2011 – Development of the technology roadmap components related to discovery of data in DataONE
+·       Spring 2012 – Development of the technology roadmap components related to data integration
+·       Fall 2011 – Hiring a post doc to work on the Working Group activities
+·       November 2011 – Report progress at the All Hands Meeting
+ 
+Accomplishments from past 6 months: (3-5 bullets)
+ 
+·       January 2011 – First working group meeting held at Stanford University.  Eleven members participated in addition to DataONE’s Director of Operations.
+·       July 2011 – Working group meeting and joint meeting with the DataONE CCIT held in Santa Barbara.
+o   Analysis of semantic approaches and technologies to satisfy existing use cases in DataONE (focused on data discovery)
+o   Joint meeting with DataONE CCIT to identify how DataONE is providing data discovery capabilities and to prioritize implementation of semantic technologies to improve discovery.
+o   Finalizing the Working Group Charter and deliverables
+o   Advancing the Technology Roadmap
+·       Monthly – The Working Group has met monthly via teleconference.
+·       Development of a post doc position description 
+o   DataONE internship on integrating DataONE data into the Linked Open Data cloud
+ 
+Products 
+o   None to report
+ 
+=================================================================
+Working Group: Exploration, Visualization, and Analysis
+Co-chairs: Kelling & Cook
+Date:  July 20, 2011  
+ 
+ 
+Overall Objective: 
+The scope of this EVA Working Group is to assist in the development of a benchmarking CI system for integrating disparate types of observational data and model output in conjunction with ILAMB (http://ilamb.org/). The benchmarking software system will support a number of ILAMB goals:  integrate observational data and model output; implement benchmarks for land model performance, with a focus on carbon cycle, ecosystem, surface energy, and hydrological processes; apply the benchmarks to global models used as part of the TRENDY model data intercomparison (http://dgvm.ceh.ac.uk/trendy-gcp) and the IPCC Fifth Assessment Report (scheduled for release in 2013); strengthen linkages between experimental, monitoring, remote sensing, and climate modeling communities in the design of new model tests and new measurement programs.
+ 
+ 
+Milestones for next 12 months: 
+·       November 2011:  
+o   First WG Meeting:  Design a general purpose framework for integrating divers data streams
+·       March 2012
+o   Second WG Meeting:  Implement software system for benchmarking key parameters for observations and models, including summary tables and visualizations
+·       August 2012
+o   Third WG Meeting:  Implement integration of select parameters from multiple data repositories 
+ 
+Accomplishments from past 6 months: 
+·       May 2011
+o   Established Charter and 
+·       June 2011
+o   Invited members for EVA-Carbon group
+ 
+ 
+Products
+ 
+o   None to report
+ 
+  
+=================================================================
+Working Group: Usability & Assessment
+Co-chairs: Carol Tenopir, Mike Frame
+Date: July 19, 2011   
+ 
+Overall Objective: 
+·         Support DataONE usability & stakeholder assessment requirements.   
+ 
+Milestones for next 12 months: (3-5 bullets)
+ 
+-      October 2011 – UA Working group meeting at DataONE All Hands
+-      Distribution of Data Managers Assessment – Summer/Fall 2011
+-      Summary of initial results of Library & Librarian Assessment at DataONE All Hands
+-      Participate in USGS Data Integration Community Workshop August 16-18 2011 
+ 
+ 
+Accomplishments from past 6 months: (3-5 bullets)
+ 
+-      May 2011 – Joint workshop between Usability & Assessment & Sociocultural.  
+-      May 2011 - Summary report of findings and recommendations related Tools/Toolkits
+-      May 2011 - 2.  Completed Customer-based focused assessment on tools and needs and assessments of other stakeholders – Librarians & Library Assessments; Data Managers Assessment.   
+-      May 2011 - Comprehensive document of DataONE personas/scenarios for use by all DataONE Working Groups
+-      May 2011 - Finalization of Privacy, Data Citation, and member node guidelines for approval by DataONE Leadership Team
+-      June 2011 – DataONE Member Node Guidelines & Criteria completed and presented at DUG
+-      June 15, 2011 – Briefing to University of California on DataONE Project & Assessment activities 
+ 
+Products
+ 
+- Tools related Documents: https://docs.dataone.org/member-area/working-groups/usability-and-assessment/joint-ua-socio-working-group-mtg-knoxville-may-3-5-2011/tools
+- Assessments related Documents: https://docs.dataone.org/member-area/working-groups/usability-and-assessment/joint-ua-socio-working-group-mtg-knoxville-may-3-5-2011/assessments-sub-group
+- Personas related Documents: https://docs.dataone.org/member-area/working-groups/usability-and-assessment/joint-ua-socio-working-group-mtg-knoxville-may-3-5-2011/personas-subgroup
+ 
+
+=================================================================
+Working Group:   Sociocultural Issues
+Co-chairs:  Suzie Allard & Kimberly Douglass
+Date:    21 July 2011   
+  
+ 
+Overall Objective: (1-2 sentences)
+Understand sociological and cultural issues that inhibit effective data sharing and long-term preservation. Facilitating transformations of the data practices of scientists and the environment the scientists work in [data lifecycle].  Stakeholder domains.
+ 
+Milestones for next 12 months: (3-5 bullets)
+o   Nov 2011 All Hands Meeting
+o   Spring 2012  WG meeting – possibly joint with UA WG
+o   Develop additional personas
+o   Work on Projects identified by LT
+ 
+Accomplishments from past 6 months: (3-5 bullets)
+ 
+o   WG meeting held with U&AWG on  May 3-5.  Attended by 9 SCWG members &8 U&A WG members. Guests: Cobb, Cook, Sandusky & 3 doc students. Report at https://docs.dataone.org/member-area/working-groups/usability-and-assessment/DataONE_Spring_2011_Meeting_of_UA%20and%20Sociocultural_Working_Groups_Summary_Report.docx/view 
+o   Terms & conditions drafted – presented for review (with some U&A WG members)
+o   Persona data lifecycle scenarios created  (with some U&A WG members)
+o   Customer –based focused assessment on tools & needs and assessment of other stakeholders (some SC WG members joined group led by U&A WG )
+o   Added new co-lead, Dr. Kimberly Douglass.  Former co-lead, Maribeth Manoff, staying on as group member.  Maribeth stepped back in order to have time to be a leader of the eScience initiative at her academic library. 
+
+Products from past 6 months
+·       Building a DL for the future: DataONE.  International Conference on Digital Libraries and Knowledge Organization. 14-16 February 2011. Gurgaon, Haryana, India. Presented by Suzie Allard.  Estimated audience size: 40
+·       Environmental Empowerment: Citizens as Contributors to Science Digital Archives.  International Conference on the Convergence of Libraries, Archives and Museums, 15-17 February 2011. New Delhi, India. Presented by Suzie Allard. Estimated audience size: 75
+·       Perfecting STEM Partnerships: Environmental Scientists, Information Scientists, Librarians & Educators, Oh My!.  WebWise 2011. 9-11 March 2011. Baltimore, MD. Presented by Suzie Allard. Estimated audience size: 350
+·       Collaborations between Librarians and Scientists: DataONE. 3rd Annual eScience Symposium.   6 April 2011. Shrewsbury, MA. Presented by Suzie Allard. Estimated audience size: 125
+·       Components of a Cohesive Research Agenda: SciValue and Other Research Tools. University of Tennessee, College of Communication and Information Annual Research Symposium. February 25, 2011. Knoxville, TN.  Presented by Kimberly Douglass. Estimate audience size: 50
+·       Suzie Allard (PI), Carol Tenopir (Co-PI), Peiling Wang (Co-PI). (Kimberly Douglass as student mentor). 2011. IMLS Laura Bush 21st Century Librarian. SciData: Science data and information professionals for the future. $546,472.  Aug 2011-July 2014
+·       Ed Cortez (PI), Suzie Allard (Co-PI). 2011. IMLS National Leadership Grant.  La SCALA: Latino Scholars Cambio Leadership (IMLS). Planning grant. $22,194. July 2011-Nov 2011.  [addresses diversity issues in STEM information – partner with Bryan Heidorn]
+·       Carol Tenopir, Suzie Allard, Kimberly Douglass. 2011. IMLS National Leaderships Grant. MARS Data: Meta Analysis Research on Scientific Data.   Submitted January 2011.
+
+Related Conferences Attended
+·       American Association for the Advancement of Science (AAAS). February 17-21, 2011. Annual Meeting. Washington, D.C.  Kimberly Douglass, attendee. 
+ 
+=================================================================
+
+Working Group: Community Engagement and Education
+Chair: Stephanie Hampton, Viv Hutchison
+Date: 2011.07.15   
+ 
+ 
+Overall Objective: 
+·         Develop education resources for DataONE users
+·         Publish manuscripts on data sharing by ecologists, put on symposia, workshops and other activities that increase capacity for DataONE adoption by broader community
+ 
+Milestones for next 12 months:
+ 
+-      August 2011
+o   Complete and post education modules to DataONE website for download by users 
+o   Wrap up student intern projects
+ * §  Submit teaching module using public data for peer reviewed pub
+ * §  Outline manuscript estimating ecological data
+-      September 2011
+o   Complete and post enhanced education modules (with voiceovers) to DataONE website 
+o   Finalize draft of CE WG manuscript
+o   Review and decide on next Working Group projects prior to meeting
+-      October 2011
+o   Face to Face meeting of Working Group; 
+o   Finalize ms on estimating ecological data
+-- continue making progress on ESA symposium for 2012
+  
+Accomplishments from past 3 months:
+ 
+-      April 2011 
+o   CEEWG Face to Face meeting, Santa Barbara, CA 
+o   Refinement of content for Data Management Education Modules
+-      May 2011
+o   DataONE internship – Melody Basham hired for assistance on Data Management Education Modules
+o   DataONE internship – Shan Huang hired for creating teaching module using public data
+o   DataONE internship – Michelle Chang hired for estimating ecological data quantity
+-      June 2011
+o   Data Management Education Modules prepared for posting to web; voiceovers in progress
+o   Teaching module drafted
+o   Project outlined for estimating size of ecological data
+o   Data compilation completed for public data survey of NSF projects, for use in CE WG ms
+  
+Products
+ 
+-      Data Management Education Modules
+ 
+=================================================================
+
+Working Group: Sustainability and Governance
+Co-chairs: Michener and Cruse
+Date:  July 20, 2011  
+ 
+Overall Objective: 
+ 
+The Sustainability & Governance working group will focus on the research, development, and governance implementation of the marketing plans, business plans, and sustainability strategy to establish DataONE as a long-term sustainable network for earth science data.   
+Major objectives for the Sustainability & Governance Working Group are described below:
+ 
+·      Establish appropriate governance strategy to support the DataONE network.   
+·      Develop and implement a Sustainability Strategy for DataONE. 
+·      Actively engage in an iterative process the External Advisory Board.   
+ 
+Milestones for next 12 months: 
+ 
+·      September 2011:  
+o   Sustainability and Governance Working Group meeting:  Develop a plan to implement the DataONE Marketing Plan and begin the development of a DataONE policy framework.
+·      November 2011
+o   Prepare materials for and support the External Advisory Board Meeting. Present Marketing Plan to External Advisory Board. 
+·      April 2012
+o   Sustainability and Governance Working Group meeting:  Begin developing a DataONE business plan.
+ 
+Accomplishments from past 6 months: 
+ 
+·      Developed DataONE marketing plan. 
+·      Developed key marketing messages for primary stakeholders; libraries, member nodes, environmental scientists. 
+·      Developed matrix to target potential funders. 
+ 
+Products
+ 
+o   Draft DataONE Marketing Plan
+ 
+ =================================================================
+
+ Provenance Working Group (ProvWG) 
+Overall Objective: 
+To support the DataONE data life-cycle as outlined in the ProvWG charter. Specifically, investigate models, techniques, and tools for preserving process specifications (workflows) and 
+
+Ultimately, our goal is to enable scientists and other DataONE users to leverage this information throughout the data lifecycle (see Fig.2 from WG charter). 
+
+Activities and Milestones for next 12 months: 
+ * 
+ * Continue Development of D-OPM ○ ⇒ D-OPM tech-report planned for AHM 2011 ○ ⇒ involve new members (Galaxy, … ) 
+ * 
+ * Finish DataONE summer intership project “Provenance Repository” ○ ⇒ GoldenTrail protoype demo planned for AHM 2011 
+ * 
+ * Organize WG F2F meeting at AHM 2011 
+ * 
+ * Initialize paper on the novel aspects of D-OPM, based on the tech report and feedback from CCIT as well as the participants at the next WG meeting at AHM 2011. 
+ * 
+ * Renew efforts to involve DataONE stakeholders (key DataONE users & CCIT) 
+ * 
+
+Past Accomplishments and Products: 
+● Implemented prototype for the DataTree Of Life 2010 summer internship project: The prototype demonstrates provenance merging and interoperability across multiple workflow models (Kepler, COMAD, Taverna) and resulted in two publications: 
+○ Paper [1] at WORKS, New Orleans, 2010 
+○ Abstract [2] at AGU Fall meeting, San Francisco, 2010. (both papers presented by Ludaescher) 
+ * 
+ * First ProvWG Meeting at DataONE AHM, Tamaya, November 2010. 
+ * 
+ * ProvWG member S. Dey (self-funded student) publishes [3], [4] (advisor: Ludaescher) 
+ * 
+ * Second ProvWG Meeting, June 7-8, 2011, UC Davis 
+ * 
+
+● Outreach: 
+Cross-fertilization with the Wf4Ever EU project. Wf4Ever aims at producing a workflow preservation model and architecture in a scientific setting. As a member of the Scientific Advisory Board of the Wf4Ever project, Paolo Missier has been promoting synergies across the two projects. 
+○ Liaison efforts at the W3C Working Group on Provenance. 
+■ As a member of the WG, Paolo has been active within the “Connection Task Force”, tasked with ensuring proper connection with related efforts worldwide. As a result of this effort, the W3C WG is fully aware of the ongoing efforts in this Provenance WG. 
+■ Paolo is also a leading member of the Model Task Force within the W3C Provenance WG, and in that capacity he ensures mutual awareness of the modelling efforts of the two groups. 
+
+References 
+● [1] Missier, P., Ludaescher, B., Bowers, S., Anand, M. K., Altintas, I., Dey, S., et al. (2010). 
+Linking Multiple Workflow Provenance Traces for Interoperable Collaborative Science. 5th Workshop on Workflows in Support of Large-Scale Science (WORKS). 
+● [2] Missier, P., Ludaescher, B., Bowers, S., Anand, M. K., Altintas, I., Dey, S., et al. (2010). 
+Seamless Provenance Representation and Use in Collaborative Science Scenarios 
+(Abstract). AGU Fall Meeting. San Francisco, CA, USA. 
+
+ * [3] Dey, S., Zinn, D., Ludaescher, B.: PROPUB: Towards a Declarative Approach for Publishing Customized, Policy-Aware Provenance. 23rd Intl. Conf. on Scientific and Statistical Database Management (SSDBM). LNCS 6809, Portland, Oregon, Springer (2011) 
+
+ * [4] Dey, S., Zinn, D., Ludaescher, B.: Reconciling Provenance Policy Conflicts by Inventing Anonymous Nodes. 4th Intl Workshop on Resource Discovery (RED), at the 8th Extended Semantic Web Conference (ESWC), May 29-June 2, Heraklion (2011) 
+
+ 
+ =================================================================
+ Distributed Storage
+Chair: John Cobb, Peter Honeyman
+Date 2011.07.22
+
+Overall Objective: 
+·          Develop  a strategy to incorporate advanced storage and file system  architectures into DataONE CI, including issues such as evaluation of  technical maturity and readiness for production deployment of wide area  storage coordination, file system developments, general adoption rates,  architecture adoption by other high profile CI efforts
+ 
+Milestones for next 12 months:
+ 
+-    Complete Charter
+-    Complete solicitation and acceptance of membership
+-    Kickoff meeting
+-    Technology assessment reports of "current state"
+        Wide area file-system
+        wide area metadata coherency with low latency
+-    Assessment of architectural impact on current DataONE CI arch in order to support WAFS's 
+ 
+Accomplishments from past 3 months:
+ 
+-      We have been in stasis.
+-      Observing key developments for clarity
+           Development of V1 DataONE SW as well as architectural refinement of backend storage architecture(s)
+           Surveillance of wide are file systems commercial and open source, high end and ubiquitous
+ 
+Products
+ 
+-      Assessment of generalized files system and storage strategy survey of current leading edge and emerging technologies 
+-      Assessment of deployment readiness of these technologies
+-       Suggestions of judicious DataONE architecture modifications to extend  DataONE's relevance and impact. In particular looking for ways that a  subset of DataONE CN's and MN's could support high performance  requirements in a fashion not incompatible with a less CI-intensive, but  still fully functional architectural compoenets
+-       Identifications of collaboration opportunities with with CI and  discipline science projects in order to broaden DataONE's intellectual  impact and to further spread the resource load for implementation (i.e.  more sustainable)
+
+
+
+
+=================================================================
+DataONE—Observation Network for Earth
+Leadership Team Charter 
+This charter is in effect for the term of the DataONE award or until a formal legal organization, such as a 501(c)(3), is formed.  
+Background
+It is an immense challenge to provide persistent, universal and easy access to data about life on Earth and the environment that sustains it. To meet this and similar grand challenges, the National Science Foundation established the DataNet Program.    In response to this Program call, a team of diverse multi- and interdisciplinary scientists began planning for the establishment of a DataNet partnership focused on understanding the nature and pace of change on Earth – DataONE (Observation Network for Earth).   This team was formed based on past successful collaborative research efforts, an eye toward diversity of members and organizations, and inclusion of individuals committed to changing the scientific culture related to preservation, access, and management of data.      
+The DataONE Leadership Team was formed, primarily of the Investigators on the original proposal, to provide both short-term and long-term leadership and technical direction to the project. 
+Purpose, Scope, Mission
+The DataONE Leadership Team is responsible for providing strategic and operational advice and recommendations to the Principle Investigator, Executive Director, and Directors for Development & Operations (D&O) and Community Engagement & Outreach (CE&O) (collectively referred to as the DataONE Office) related to DataONE activities.   The Leadership Team is responsible for evaluating progress, resolving conflicts, and identifying working group participants.
+Duration of Working Group   
+The DataONE Leadership Team will exist throughout the duration of the project.   
+Major Objectives
+The primary objectives of the DataONE Leadership Team are to support to the DataONE Office in the functions below and to provide advice, recommendations, ideas, and consultation to DataONE Office.  
+   *  
+   * Assist in the development of DataONE Mission,      Objectives, and the Strategic Plan
+   *  
+   * Monitor progress toward achieving the DataONE      strategic plan 
+   *  
+   * Approve Working Group charters, membership, and      work plans, and resolve conflicts
+   *  
+   * Assist in the development of the DataONE      Project Management Plan
+   *  
+   * Perform quarterly review of the DataONE Project      Management Plan deliverables, tasks, metrics, and outcomes and assess      overall performance
+   *  
+   * Assist in the development and implementation of      the DataONE Risk Management plan 
+   *  
+   * Provide input to budget and scope of work as it      relates to Working Groups, DataONE operations, and community engagement 
+   *  
+   * Provide advice and recommendations on      sustainability options and approaches
+   *  
+   * Provide recommendations to the DataONE Office      on alliance, partnerships, and funding opportunities DataONE should pursue      
+   *  
+   * Support the DataONE Office on special issues 
+   *  
+   * Support the DataONE External Advisory Board 
+   *  
+   * Assist the DataONE Office in communicating      DataONE objectives, accomplishments, capabilities, and project activities      to partners, collaborators, and stakeholders 
+   *  
+   * Serve as a liaison to related projects, as      agreed to within the Leadership Team, to ensure the appropriate      coordination of DataONE activities with these related projects.
+   *  
+   * Provide input to DataONE Directors performance,      when requested
+   * 
+Expected Outcomes & Schedule 
+Various reports, recommendations, and white papers will result from the Leadership Team activities.   
+Potential Risks
+Potential risks related to the DataONE Leadership Team include: 
+   *  
+   * Member’s inability to participate either based      on conflicting priorities, job change, or other unforeseen      circumstances.   
+   *  
+   * Necessary funding to support in-person meetings      is unavailable.    
+   *  
+   * Inability of members to participate long-term      in Leadership Team activities
+   * 
+ 
+ 
+Membership
+The DataONE Leadership Team is a representative body, reflecting the diverse viewpoints and participants from the Investigators (PI, Co-PIs, and Co-Is), and collaborators on the DataONE Project.  The Leadership Team will consist of DataONE staff including: 
+   *  
+   * Principle Investigator, ex officio member
+   *  
+   * Executive Director, ex officio member, will      serve as the lead for the group
+   *  
+   * Directors (D&O; CE&O), ex officio      members
+   *  
+   * Co-PIs and subset of Co-Is 
+   *   
+   * ========== see line below ==========================
+   * No more than 12  total members will be on the Team.  
+   * 
+DataONE Leadership Team members are determined in a consultative manner with the DataONE Directors, Investigators (PI, Co-PIs, and Co-Is), and existing Leadership Team members.  
+While the expectation and intent is that the Leadership Team will work together in a spirit of cooperation, respect, integrity, and scientific cooperation, the DataONE Principle Investigator has the authority to remove any member of the Leadership Team and to make appointments to fill any vacancies on the Leadership Team. 
+Roles & Responsibilities 
+DataONE Leadership Team decisions are made, when possible, by consensus by all involved.   Majority support for all decisions will be sought by the Team to insure buy-in and differing opinions are fully understand and evaluated before final decisions are made by the Team.  
+If no decision can be agreed upon by the Leadership Team, the DataONE Principle Investigator will make the final decision.  
+Resources (travel, budget, students, etc.)
+The DataONE Leadership Team will utilize the DataONE Collaboration Forum for document development, review, versioning, and archival of documents.
+The Leadership Team will use Desktop Sharing (Web Ex), Video Conference (e.g. Marratech), and Conference Bridge capabilities.  
+Funding for travel is provided to support member participation in in-person meetings.   
+No specific salary is to be provided for member participation.    
+ 
+ 
+Relationship to other Working Groups
+The Leadership Team will be responsible for evaluating progress, changing directions, resolving conflicts, identifying co-chairs, and recommending working group participants across the DataONE project.  A close collaboration between the DataONE Office, Leadership Team, CCIT, EOT, Working Groups, and External Advisory Committee is imperative for DataONE success.     
+Communication Plan & Reporting Requirements 
+Effective communication is paramount to DataONE success.   A formal communications plan, as a component of the DataONE governance, will be developed as part of the project.  This plan will include the communication mechanisms for all DataONE Working Groups, Network Office, and other team members.   The DataONE Leadership Team will:    
+   *  
+   * Meet weekly via video/conference calls 
+   *  
+   * In-person meetings will be held quarterly at      various sites in conjunction with other DataONE meetings, workshops, or      symposiums.    
+   * 
+The DataONE Office with input from the LT will prepare Quarterly Status Reports on DataONE progress toward outcomes and deliverables and distribute  to all DataONE Investigators, External Advisory Board Members, and other interested parties.”
+Modifications to the Charter
+Any modifications, changes, or additions to this Charter will be reviewed and approved by the Directors for DataONE and the Leadership Team.
+ 
+ 
+
+Around the room:
+
+John cobb:
+1. SC11 Tutorial - we will soon start to pull slides together. We need to have a rough draft in a month
+2. Notes from TG'11 <https://www.teragrid.org/web/tg11/home>
+    a. Ed Seidel (NSF AD for MPS) gave a capstone/Keynote Th. morning. His slides talked about NSF CF21 and many, many of his slides were data, data, data - a pretty impressive pivot considering that Ed is a "computational guy"
+    b. DataONE was well represented and well received
+        N. Dexter et. al paper on TeraGrid DataONE MN implementation
+        D. Fink on STEM/EVA1 presenting results on  science runs form last year's effort on TG with EVA that fed input inot the SOTB'11
+    c. Several productive ad-hoc metings
+        i. EVA1-yr2 and NICS/RDAV team (Cobb, Fink, Silva, ahern, Makc, Patel, Zimmerman, Semmarro, ..) on using Nautlius and advnaced R modules to interactive high performance vis. (such as Bird Vis)
+        ii. (Cobb, Navarro, Dexter) Discussion of XSEDE's emerging architecture adn the requirements process to develop that architecture (XSEDE is the TeraGRid follo-on program. NSF final approval with final PT&C's just received on 7/21), Navarro offered to explore the option that DataONE's data management architecture be adopted as the data management architecture! THIS IS A REALLLY BIG OPPORTUNITY!!!, with positives and negatives. It gives the chance to greatly increase DataONE's impact and is a golden opportunity to open up possibilities for other resources and a broader base (for increased sustainability) but it will require partnering at the architectural level and i htat process accomocating reuqirements outside of DatONE's core bio,eco,envior communities.
+    d. The U&A WG PLOS paper on the scientists' baseline assessment got some interest. N=1300 was impressive.
+    e. Federated Sec. WG folk were at TG'11 (Randy butler, Jim Baseney) DataONE InCommon participation was mentioned in Von Welch's "
+
+
+Todd:
+nothing here
+
+Suzie
+Nothing new
+
+Mike:
+
+Pcast report came out that will be relvant to some of our activities:
+http://www.whitehouse.gov/sites/default/files/microsites/ostp/pcast_sustaining_environmental_capital_report.pdf
+
+
+

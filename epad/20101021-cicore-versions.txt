@@ -1,0 +1,19 @@
+
+
+Tasks:
+
+1. update the components in redmine
+2. evaluate whether we can use relative paths for schemaLocation in .xsd docs
+3. update all code to utilize the tagged version of the schemas
+4. Update hudson to ensure that it is using then 
+4. update all code to use the suggested package names
+
+
+Comments 
+- Package names should be the same as the repository folder names, which means that hyphens are not a good choice for package names.
+
+- Need to rearrange the SVN structure 
+
+
+
+

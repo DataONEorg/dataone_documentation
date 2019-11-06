@@ -1,0 +1,48 @@
+20140325 - DataONE Coordinating Node View Service
+=================================================
+
+Attendees
+---------
+
+Dave Vieglais, Isis Serna, Chris Allen, Chris Jones
+
+Goal 
+----
+
+Provide a service on the coordinating nodes that given an identifier (PID), will provide a rendering of the content associated with the PID suitable for viewing in a web browser. 
+
+This "content view by identifier" capability is available already in Metacat, which operates as a core component of the Coordinating Node software stack. Enabling access to the Metcat view service at a standard URL should functionality required by such a service.
+
+The appearance of the Metacat view service can be "skinned" to alter the look and feel of the rendering. 
+
+Example of a metacat view of identifer: "doi:10.5063/F10V89RP"
+
+  https://knb.ecoinformatics.org/#view/doi:10.5063/F10V89RP
+  https://dev.nceas.ucsb.edu/#view/doi:10.5063/F10V89RP
+  
+  Without CSS:
+  https://knb.ecoinformatics.org/knb/d1/mn/v1/views/metacatui/doi:10.5063/F10V89RP
+
+
+
+Actions
+-------
+
+- Provision a new VM and install clean metacat there (Chris J)
+
+- Provide access to the new VM (Dave)
+
+- Document location of content to change (metcat theme documentation)
+
+- Pointers to documentation for metacat theming:
+
+  https://knb.ecoinformatics.org/knb/docs/themes.html
+
+- Adjust CSS and graphics (Isis, Chris)
+
+- Sketch some possible layouts for the different metadata formats (Isis, Chris)
+
+- Identify who will be involved in review / usability (Dave)
+
+- Change installation on the CNs to support the view service (Dave, Chris J)
+

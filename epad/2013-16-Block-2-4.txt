@@ -1,0 +1,296 @@
+Notes for Standup, 2013-16-Block-2-4
+====================================
+
+
+Chris B.
+--------
+ * 20130426
+   * Laptop upgrade troubles
+   * Planning on Ansible demo for Monday
+ * 20130424
+   * Ansible is now reading the config template file
+     * working on user input now
+   * Ansible walk through on Monday
+ * 20130422
+   * debian package work for Ansible-based packaging
+     * handling test cases
+     * shooting for finishing up this week
+   * Coordinate with Roger at UT next week
+ * 20130419
+   * Progress on the Ansible modules
+     * writing deb-conf - interacts with debconf backend
+     * writing 'sitefacts' module
+       * Uses the XML config file to build a list of the variables for the environment that module is run in (configuration info)
+     * plan to finish this up next
+ * 20130417
+   * Working on XML Schema for configuration under Ansible
+ * 20130415
+   * Meeting with Robert: Ansible
+     * agreed on XML schema for configuring CNs
+     * values from debconf
+     * user input
+     * template values, etc.
+     * modifying the debconf
+
+Rob
+---
+ * 20130426
+   * Finished up libclient ORE validation work (according to new documentation on this)
+   * Working with RDFS reasoners in lib_client_java - inverse relationship inferencing
+ * 20130424
+   * Working on loose end tickets in Block 2 wrt mutability, d1-client, etc
+   * Worked on resource map validation in d1_client_java
+     * fails on problems, needs to report better
+     * use a straight exception
+     * Dave: aggregation ID can be resource map URI + a fragment
+     * Dave and Matt will review the DataPackage documentation
+ * 20130419
+   * Working on isDescribedBy relationship in ORE documents, and how it's used
+   * working on integration tests for checking resource map construction
+   * Will add in story on validating recource maps on the CN  (https://redmine.dataone.org/issues/3720)
+     * require both sides of inverse relationships as a D1 requirement, to be loosened later
+     * make it super simple to produce these maps by putting in libclient java and python
+     * create a service that uses RDFS reasoners to get the triples
+       * is there a way to limit all the triples that it processes?  we only want describes, documents and their inverses, at least for indexing
+       * memory issues related to large models
+       * have the indexer make use of the library for obtaining the triples it needs to populate appropriate fields.
+ * 20130417
+   * Committed documentation for resource maps
+     * needs review:
+     * http://mule1.dataone.org/ArchitectureDocs-current/design/DataPackage.html
+   * resource map parsing
+     * worked with Roger on python parsing of EDAC 
+     * In Java: ResourceMap is a foresite object, we may not want others to have to code against foresite
+   * Meeting at UNM:
+     * content mutability discussion
+     * EDAC: content metdata + data into a zip file, and add another science metadata object
+     * Brings up package delivery issues: use BagIt instead?
+     * Implement services to get and load BagIt packages via the DataONE API
+ * 20130415
+   * Working on bug for system metadata without a submitter subject
+     * CN tester submits without a contact (submitter)
+     * Metacat should be checking this value (CN.create handler)
+     * Needs to throw InvalidSystemMetadata
+     * create cn.create() integration test that pulls the metadata to make sure everything is OK.
+   * Working with EDAC on tests
+     * looking at their serialized resource maps
+     * failing to deserialize with the Java ResourceMapFactory
+     * should we throw an exception if we get a null map?
+       * yes
+     * How does the foresite python library handle this?
+       * have not cross-compared java and python libraries wrt serialization/deserialization
+Roger
+-----
+ * 20130426
+   * time off
+   * Set up back up system locally
+   * ONEDrive Ticket: 3640 is done - couldn't reproduce it
+     * artifact of a decision on setting up filters, jumping directly to editing
+   * Found another bug: ONEDrive discrepancies between the index and what is available locally (getting access denied)
+     * ONEDrive should handle this
+     * The index shouldn't be showing these pids anyway (Skye will look)
+   * Mockup screenshots for the U/A meeting
+     * met yesterday with Dave, Robert, others going to the meeting
+ * 20130422
+   * Added in libclient examples for Solr queries
+   * More mockups for ONEDrive
+     * zip file objects
+     * each object could be exposed as multiple formats
+     * plugin-based transformations
+     * meeting tomorrow
+   * Working on backlog of tickets
+ * 20130419
+   * Added ore parsing example for Rob
+     * parsing of example from Rob worked in python
+   * Added another ONEDrive mockup
+     * really need the 'displayName' attribute to make files look right
+ * 20130417
+   * Worked with Rob on ORE maps
+     * Rob will try to parse via Java, need to do vice versa with python
+   * Worked on Mockups
+     * added two more - geographical area - by country or by lat/lon - needs UI work for degrees minutes seconds
+     * writing up an overview of the mockups
+     * call with Mike Frame next week on usability meeting
+ * 20130415
+   * ONEDrive mockups demo on Friday
+   * Looked through mutability document: meeting?
+
+
+Matt
+----
+ * 20130426
+ * 20130424
+ * 20130422
+ * 20130419
+   * Worked on MN checklist
+ * 20130417
+ * 20130415 
+   * Need to ccordinate with SEAD folks
+
+Skye
+----
+ * 20130426
+   * Audit reporting work + unit testing
+   * Fixed the issue Matt reported re: CN host names
+ * 20130424
+   * Tracked down UTF-8 issues in ONEMercury
+     * Search and facet encodings had to be fixed to not use ISO 8859-1
+     * Will get this into the buildout
+   * Met with chris and Ranjeet for DAAC and USGS issues
+     * application/octet-stream
+     * will change format ids on the CNs
+     * removed content: Ranjeet will archive those
+     * USGS problems too - will update archived flag for old objects too
+     * Synchronization report would be helpful
+   * Replication auditing now
+ * 20130422
+   * ORNL DAAC resource maps issue
+     * can't confirm 1029 - MN has 1011
+     * mistyped resource maps, then fixed them?
+   * Chris will look into the Dave/Ranjeet email thread
+   * ONEMercury encodings
+     * EML XSLT views had ISO 8859-1 encoding declarations
+     * fixed these
+   * Will be at tech conference on Lucene in San Diego all next week
+ * 20130419
+   * Worked on UTF-8 encoding in ONEMercury
+     * tried this in dev, set the Tomcat Connector encoding attribute
+   * Looked at how the maven shade plugin works
+     * index task processing and task generator daemons, no longer being put into maven
+     * done in the buildout
+   * Need a bit of help on the missing objects on the CNstated in the object path map
+   * Back into auditing - XML output for the reports, with XSLT
+ * 20130417
+   * Re-indexed objects in stage
+   * Working through ONEMercury UTF-8 support
+     * Tomcat connector isn't config'd to UTF-8: need to change this in cn-buildout
+   * Production index counts:
+     * Some documents not getting copied to UNM (200 ish objects)
+     * some pids don't have the object path in hzObjectPath map (40ish pids in UCSB and ORC)
+   * Worked with Jing on indexing jar - made changes to POM for dependency-free jar
+     * create separate jars: one for shaded daemon jar, one for a jar without the shaded dependencies
+ * 20130415
+   * SEAD: bug fixes would need to go into production if we move SEAD there
+   * Working on Auditing reporting
+   * Updated ReplicationManager to use not only authMN copies of replicas a source
+
+Ben
+---
+ * 20130426
+   * Metacat work
+   * SANPARKS discussion with Judith Kruger - more content in their MN
+ * 20120424
+   * Will upgrade the KNB this evening - 2.0.6
+     * Dealing with backups
+     * Will be able to turn on log aggregation (fixed OOM)
+   * Upgraded the SANPARKS node
+   * PISCO is at 2.0.5
+ * 20130422
+   * Worked on notes since Friday for relationship handlings and RDF reasoners
+ * 20130422
+   * Testing and tagging Metacat 2.0.6
+   * Will fix hudson config
+ * 20130419
+   * restart of UCSB in production. postgres connection pool issue, portal was failing
+     * need to look into connection pool leaks
+   * Working with TFRI MN - ensuring CNs handle UTF8 character set
+     * need to look at ORE maps
+ * 20130417
+   * Semantics meeting
+   * /portal vs /portal/ - do both work?
+ * 20130415
+   * TFRI is sync'ing in stage
+     * indexing may be out of sync
+     * Display of chinese characters needs work
+     * Title should have a translated version?
+
+Robert
+------
+ * 20130426
+   * Time off Thursday
+   * Testing on Wed with Chris B. wrt CN buildout packages
+     * Config files aren't available during the config phase
+     * will meet with Chris again
+ * 20130424
+   * debian package work - user input and overriding issues
+ * 20130422
+   * Time off Thu/Fri
+   * Working on debian packaging
+     * testing locally for now
+ * 20130417
+   * cn-buildout coding for using new XML schema for describing configuration
+   * prepping for usability meeting
+ * 20130415
+   * More meetings on Friday: spoke with Chris B.
+     * might have some more changes today
+     * multiple flags will indicate the source of a config param's value
+   * CNs look to be in sync after TC, slapd restart
+     * indexing is off in terms of counts
+     * will work with Skye on re-indexing the remaining
+
+Dave
+----
+ * 20130426
+   * redmine ticket review
+   * quarterly report
+   * travel and meeting preps
+   * outlining a number of new use cases related to changing properties on sysmeta
+     * need to spec out additional use cases wrt system metadata mutability
+     * how does one change the auth MN?, etc.
+ * 20130424
+   * ORE work - working on a parser using RDFquery
+     * many malformed resource maps in the dev environments. Will check into this. ONEShare?
+   * Working on dataPackages doc
+ * 20130422
+   * Traveling
+   * Javascript parsing of resource maps
+     * will be able to introspect ores in the browser
+   * software tools for querying Solr
+     * https://repository.dataone.org/software/tools/trunk/example_service_calls/
+   * Maintenance of redmine, etc.
+     * Adding in sprints through remainder of project
+     * need backlog triage
+ * 20130417
+   * European Union group call - possible interactions
+     * http://www.eudat.eu/
+   * Writing documentation
+     * General architecture introductions
+     * tool that encodes Solr query terms
+     * Patrice is interested in certain queries
+   * CCIT call on Monday
+
+Chris
+-----
+ * 20130424
+   * DAAC/USGS work with Ranjeet and Skye
+   * d1noderegister script
+   * adding registration info to MN checklist
+   * TODO: email Bob Cook re: DAAC
+   * Followup: mutability discussion
+     * Next steps: work on detailed impl (API calls, handling sids, etc)
+ * 20130419
+   * TODO: ticket for postgresql connection pool issues
+   * SEAD: new object formats in Stage, working with Kavitha on rightsHolder entries
+   * Metacat replication troubleshooting
+   * Meetings with Matt, Jing on Metacat
+   * Meeting with LTER sensors group
+ * 20130417
+   * Rob: generated the EDAC test cert, access set to sscott, rnahf
+     * https://dev-testing.dataone.org/edac/
+   * Working on Metacat locally - blocked by some configuration issues
+     * need some time with Ben for some configuration troubleshooting - after standup?
+   * SEAD: In touch with Kavitha, but not hearing back. Assuming the stage env will be used for screenshots for their NSF review
+   * Sensor network best practices writeup work
+   * Chris B./ Skye: coordinate on d1_indexing work
+   * Mutability discussion email out to Dave - not sure if he's on leave at the moment
+   * Robert: okay to add cn-orc-1 back into the RR?
+   * Chris B: IP address for splunk.test.dataone.org? In redmine ticket
+   * TODO: Ticket for implementing services to get and load BagIt packages via the DataONE API
+ * 20130415
+   * SEAD update of system metadata
+   * Metacat: troubleshooting replication update calls
+   * Sensor network workshop writeup
+   * TODO: schedule mutability discussion
+   * TODO: internationalization discussion (CCIT?): 
+   * should DataONE require minimal english metadata fields?
+

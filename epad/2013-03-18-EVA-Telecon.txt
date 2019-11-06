@@ -1,0 +1,88 @@
+EVA Working Group Teleconference
+
+Toll Free Number:  866-703-9626 
+Pass Code:  767574 
+
+Participants: Anna Michalak (first 20 minutes), Colin Talbert, Arthur, Aritra, Jorge, Bill Hargrove, Dan Ricciuto, Yaxing Wei, Bob Cook, Forrest Hoffman
+Not able to Participate:  Claudio, Steve Aulenbach
+
+Agenda
+1.  NSF Review
+2.  UV-CDAT activities
+3.  Critical evaluation of common figures / maps for terrestrial biosphere modeling results
+4.  Machine Learning
+5.  Summer Interns
+6.  Other topics?
+
+Background:  January Workshop:  http://epad.dataone.org/2013-01-22-EVA-Wkshp
+
+
+
+Notes
+1.  NSF review - Bob
+    presentation on EVA given at the NSF Reverse Site Visit (February 28) will be added to the Wiki
+    includes several short screen casts of the functionality
+    
+    
+2.  UV-CDAT
+ * Review of featues in current UV-CDAT binary release - Yaxing and Jorge
+   * Version 1.2:  currently available from LLNL
+     * selected features are available: Parallel Coordinates, Multi-Dimensional Scaling, Linked Views, dendrograms, Interactive time series.
+     * Missing features: Selecting Ecoregions, import dataset by HTTP protocol.
+
+    
+ * tutorials:  http://uv-cdat.llnl.gov/wiki/VideoTutorials
+        View especially the General Tutorials
+
+ * Installing UV-CDAT
+     UV-CDAT binary releases can be found at http://uv-cdat.llnl.gov/install/.
+         c-make installation
+     Having questions about installation? Please contact:
+       - Jorge Poco: jpocom@gmail.com
+       - Ben Burnett: benjam.arlyn@gmail.com
+
+ * April release of UV-CDAT (no earlier than April 10)
+   * Jorge working with Ben to add functions
+   * will have all the features that Jorge added (demo'd) 
+    
+
+3.  Critical evaluation of common figures / maps for terrestrial biosphere modeling results -- Aritra
+    Evaluation based on three criteria:
+ * visualization approaches that are typically used  for carbon model visualizations
+   * five different images --mixtures of data types (numerical, spatial, temporal, categorical)
+ * design problems that are generalizable, and 
+ * sufficient level of visualization complexity for them to be redone
+
+March 31 deadline for conference paper
+will have a draft in the next few days; will need to have some domain specific text for context
+
+would like to have more papers and visualizations aligned with the current scope?
+Scope:  static visualizations for terrestrial biosphere models (flux, biomass), multiple models??
+Send request to a bigger community, for example the North American Carbon Program (NACP), to seek more figures/maps/plots, 
+
+
+-maps, scatterplots, line plots, 
+general types of figures under two different schemes: climate change science and visualization science.
+
+
+Bill Hargrove:
+    current categories are general    
+    maybe generate some specific categories (difference maps; comparisons; time series)
+        strengths / weaknesses
+    turn to interactive figures (from static)
+  
+4.  Machine learning and visualization interactions - Forrest, Bill, and Jorge (briefly)
+    Forrest has provided some data; perhaps looking at clustering / visualization 
+    
+        
+5.  Summer Interns  -- Bob and Yaxing
+ * DataONE Intern: Build Fundamental Components for Provenance-aware Model Exploration, Evaluation, and Benchmarking Cyber-infrastructure Prototype
+     See http://www.dataone.org/internships, project 8).
+     This is an activity related to the "working group 5" we discussed at New York EVA workshop (http://epad.dataone.org/2013-01-22-EVA-Wkshp).
+     You're very welcome to provide suggestions on what "core" functionalities that you want UV-CDAT/VisTrails to provide to help model data exploration, analysis, and evaluation.
+
+ * ORNL Interns
+    
+    
+6.  Other topics?
+

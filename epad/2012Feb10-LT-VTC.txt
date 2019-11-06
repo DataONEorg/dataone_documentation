@@ -1,0 +1,139 @@
+Attendees: Rebecca,Carol, Steve, Viv, Bill, Bob, Bertram, Amber, John Cobb, Bruce, Dave, John Kunze, Stephanie, Trisha, Hilmar, Matt, Deborah
+
+Regrets: Mike Frame, Suzie
+
+9 am Alaska/ 10 am Pacific/ 11 am Mountain/ noon Central/ 1 pm Eastern
+
+Information for the call:
+
+1.  Please join my meeting, Feb 10, 2012 at 10:55 AM MST.
+https://www1.gotomeeting.com/join/503642057
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (636) 277-0137
+Access Code: 503-642-057
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 503-642-057
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Will also use the epad: http://epad.dataone.org/2012Feb10-LT-VTC if participants can get to it
+ 
+If you have items to add, let me know
+ 
+Agenda for 2012-02-10
+ 
+1.  CI Status (Vieglais)
+Now figuring out what is stable enough to put in the sandbox environment for both MNs and CNs.  This will be the first time all the components will be operating at the same time. Will be able to experiment with the whole environment next week. If this is successful, then will open up to volunteers from DataONE. 
+CN software stack looking solid
+MN - Metacat close to release
+Have made a copy of all the Mercury source code into the DataONE repository. This is working ok so far. 
+Will be a significant change in DNS - changing providers and should go smoothly. Moving to GoDaddy as the registrar. John Cobb asked if there was 24/7 support - it's just the registrar. DNS is being run through NCEAS. Looking at a backup DNS provider now (afraid.org) Bruce will check on difficulty of having a secondary DNS at UTK. 
+
+2.  Summer Internship Program (Budden)
+Feb 22nd: Projects identified
+Feb 24th: Projects published on website
+Feb 24th: Application period opens
+Mar 11th: Application period closes
+Mar 12th: Materials made available to mentors for evaluation
+Mar 21st: Evaluation / review period closes
+Mar 23rd: Mentors informed if their project will be funded (in the case of more than 8 project proposals)
+Mar 26th - 30th: Phone interviews may be conducted for top interviews at Mentor's discretion 
+Apr 2nd: Deadline for final decisions on student interns by Mentors
+Apr 4th: Decisions communicated to all applicants
+
+Google doc for proposals: http://bit.ly/zCk1KQ.
+
+
+3.  Ideas of workshops before June 30 (Michener)
+INTEROP project still has some funds available before June 30th for workshops. Most recent workshop that was funded was the Data Governance Workshop in December in Arlington, VA. Half of the Summer Internship Program will be funded by the INTEROP grant.  Viv and Bob have been discussing a 1-2 day workshop on data management planning. Possibliity of
+a "two-fer" by adding the DMPTool - or a "three-fer" - adding the Tribal College students?
+
+--is a no cost extension a possibility to allow for more planning? Problem with this grant because have already been given a one-year extension.
+
+Trisha and MacKenzie are finishing up the notes from the Data Governance Workshop and there may some ideas for follow-on.
+
+John K. - possible venue: Long-term stewardship of data at the ALA in Anaheim, CA June 24th (with Bob Sandusky)
+
+Matt will contact Corrina Gries & Don Henshaw to see if they need added funding for their workshop on sensor networks that will be held week of April 30th (see Matt's around the room item)
+
+If you think of anything by this weekend, contact Bill
+
+Follow-up: by  Friday (2/17)
+Trisha: Data Governance follow-up
+Viv & Amber & Trisha: DMP Workshop
+
+
+4.  Upcoming dates - including update on activities with ESIP (Koskela)
+
+Summary of January 20th call on DataONE/ESIP collaboration on education:
+Attendees: Carol Meyer, Erin Robinson, Ruth Duerr, Amber Budden, Rebecca Koskela
+Regrets: Bob Cook, Viv Hutchison
+
+ESIP has a $90K grant from NOAA that ends in June.  They have been  targeting their trainings to early career scientists and have been designing them so that they can be done in 5-10 minutes on specific  topics.  DataONE has been targeting their educational material for
+university  faculty who want to introduce the topic of data management.  Most  modules require about 40 minutes.   Although the audiences and length of time are different, there is overlap in the ESIP and DataONE content.
+
+Ruth's  cluster was officially changed to a committee at the Winter ESIP meeting. This committee is interested in pursuing data management training even if there isn't grant money to cover it.  Their materials  are now in draft form. An editorial board has been assembled (Ruth and Nancy) and they will be reviewing the ESIP materials. The goal is to publish the materials with DOIs assigned to the materials.
+
+Carol said there is also an ESIP Working Group that is focused on Professional Development. That Working Group has expertise in curriculum  development and online content. This is a group that we should bring  into the conversation. We also briefly discussed certification for data  managers.
+
+We all agreed that a collaboration is a good idea.  We have a  conference call set up for March 8 at 1pm PT/2pm MT/3pm CT/4pm ET to discuss the arrangements and registration web forms for the DataONE Users Group Meeting as a part of the Summer ESIP Meeting in Madison, WI so thought we could use part of the time to continue the discussion.
+======================================================================
+February 24: Summer Intern Program starts accepting applications on the web site
+(which means the new web site has to be live on this day)
+
+March 8: Conference call for DataONE DUG planning and DataONE/ESIP education collaboration
+
+March 11: Deadline for Summer Internship applications
+
+March 15: Registration for DataONE DUG & ESIP Summer meeting is open
+
+September 17: DataONE Leadership Team Meeting
+September 18-20: All Hands Meeting
+
+Possibility of joint conference with DataCite around the time of the AHM - contact Trisha if want to discuss this
+========================================================================
+5.  Around the Room
+
+Suzie: 
+I co-led a session, "Brainstorming Data Science @ iSchools", with  Carole Palmer, Jeff Stanton, Catherine Blake and Lesley Farmer. We  explored the model for shapeing the contribution of iSchools to data  science education and for building a shared vocabularly  about Data Science. 
+Carol: The press release and publicity for SciData master's program is out--now recruiting students with a science background who would like to earn a master's in information sciences with a concentration on science data management and science information. Suzie is PI, I am a co-PI.For SciData: http://www.utk.edu/tntoday/2012/02/08/sis-science-data-curation/  Also: http://www.sis.utk.edu/SciData
+Steph: CEE WG has at least two ideas for internships - Stacy developing descriptions. Going to CUREnet RCN meeting 27 Feb to give advice on data sharing based on DataONE/NCEAS experiences with student distributed collaborations (CUREnet: Course-based Undergraduate Research Experiences Network ).
+John Cobb: XSEDE (formerly TeraGrid) has responded to interface request. Nancy Wilkins-Diehr  is the XSEDE POC. I will be contacting DataONE folks for some follow-up items. Anyone interested is welcome to join in the effort.
+
+Matt: 1) Discussed transition to MN status for KNB, LTER, PISCO, and SANPARKS -- all are on board and testing the metacat upgrade with us.  Both PISCO and LTER are going to be contacting EZID to set up accounts to transition their objects to DOIs at same time as KNB -- it would be really helpful to expedite those EZID applications if possible.
+2) Will be moving DNS registrar today -- there is a small chance this will be disruptive, but Dave and I agree this should be done before public release. 3) Planning a collaborative training workshop on managing sensor data with Kepler and other tools in conjunction with NCEAS, LTER, and SDSC; dates are week of April 30th.
+
+Amber: Website to be live by Feb 24th.  Positive feedback from postdocs regarding webinars.  Bill and Amber will likely lead the first and have the postdocs contribute additional webinars. 
+
+Bill: DataONE has been invited to provide a featured presentation to the National Science Board during their july 17-18 meeting.  I will be working with our PDs to come up with a compelling ppt. Will be doing a DataNet or DataONE symposium at NSF about the same time. Dave and Bill will be meeting with the National Climate Assessment group (USGCRP) March 14 in Washington, DC.
+
+Trisha: As reported we held a data management planning tool (DMPTool) meeting Jan. 23-24th in Berkeley.  In that meeting we identified development priorities for the version 2 of the tool.  At the CDL we are scoping out the development effort required for various chunks of development.  Once that is in place our challenge is to find resources to do the development -- since this is a "community" project we are looking to the community to contribute, but how that actually happens I am not sure. 
+
+Bob:  nothing from me this week
+
+Steve: Nothing new from me
+
+John Kunze: presenting on data papers and data citation at NFAIS meeting in Philadelphia Feb 27.
+
+Viv: Nothing new from me either.
+
+ 
+McGuinness attended the Data2012 meeting (Schildhauer was supposed to but flight changes modified that).  McGuinness was representing two other interops – Scientific Observersations Network and Semantic Sea Ice.  Had a meeting of Koskela, Vieglas, McGuinness on working group issues with brief follow up with Michener.   Agreement that we could either have the next f2f at Stanford or Santa Barbara.   (Santa Barbara would overlap with IPAW, W3C provenance meeting, Dataone provenance meeting).  Co-lead Jeff has the doodles for scheduling next meeting both telecom and working group meeting.  Discussion whether to do group interviews of postdoc or individual ones.  McGuinness would like to do individual ones just to simplify scheduling.  If no complaints on that, beginning interviews this coming week.  Working group hopes to also propose a summer project proposal.  
+
+Bertram: 
+-- ProvWG will have a meeting just prior to IPAW in June @ UCSB
+(and another meeting in September at the AHM)
+-- Several members (Paolo, Shawn, James, ...) will also have an opportunisitic get together at a Dagstuhl Seminar on provenance: http://www.dagstuhl.de/12091
+-- DataONE made offer to ProvWG postdoc (Victor Cuevas) -- hiring process has been started. I hope we can get Victor on board as soon as April 1st! (no kidding)
+--> Rebecca: is that feasible? Depends on how long it takes to get the visa
+-- We also plan to put a proposal for Summer Project in (probably continuing on the provenance repository, with a focus on powerful queries and visualization... maybe an opportunity to get Vistrails people in on the action!)
+
+Dave: contacted by Randy Butler for collaboration on new proposal with Von Welch to create CTSC - Center for Trustworthy Scientific Cyberinfrastructure which will be a team of experts that science software projects can work with on activities such as a security audit of their software stacks.
+
+
+
+

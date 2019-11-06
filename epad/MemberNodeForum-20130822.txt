@@ -1,0 +1,68 @@
+Member Node Forum - 22 August 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 5 September, 19 September, 3 October
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307  (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,  -20130530, -20130613, -20130627, -20130711, -20130725, -20130808
+
+Attending:  Laura Moyers, John Cobb, Bruce Wilson, Mike Frenock, Rebecca Koskela, Dave Vieglais, Debora Drucker
+
+Regrets: Inna Kouper, Kavitha Chandrasekar
+
+Action items from last time:
+
+Laura working with Debora Drucker (PPBio) to set up meeting with all affected personnel to make plans for implementing a D1 MN there.  Debora says that  "André reported today on advances on the Metacat transfer so things are going well."  See redmine ticket https://redmine.dataone.org/issues/3748 which indicates "PPBio Node is working on having the MN Tier 4 Node operational by  Sep/2013. Server is being transfered to LNCC (Petropolis/RJ) and  deployment in staging environment is planned to  take place in august." 
+Meeting next week with all the Brazilians involved so everyone will have a good understanding of what DataONE is, then meet with DataONE personnel.
+    
+Agenda:
+
+0. Welcome new attendees - introductions
+    
+1. Network-wide update and issues affecting MN's as a whole
+    Dave: everything up and running normally
+   
+2. Open issues:  MNs please add anything you would like to address here.
+
+ * 5 MNs in progress for Y5Q1: EDAC, SEAD, UKansas, NPN, and NKN
+   * EDAC is evaluating options for supporting multiple data formats / representations of the same content. DataONE can "kind of" support this by presenting links that are cited in the science metadata (e.g. link to access same data through a WCS / WFS service available on the EDAC server)
+   * KU node is joining stage testing - in process of issuing and configuring certificates
+   * SEAD: waiting for NCED to finish creating/checking metadata
+ * Dryad and several others aiming for production in Y5Q2
+ * Mike asked about the documentation for CURRENT version of DataONE API - Dave: this is in progress
+   * http://releases.dataone.org/online/api-documentation-v1.0.0/
+   * versions 1.1 and 1.2 will be added soon
+   * Landing pages / guidance will be added as well
+   * These will be the authoritative versions of the docs - the mule site will continue to provide the development version of the docs
+
+3. Feature requests/opportunities for collaboration:
+    Mike: working with Ben on installing new version of metacat on development side with metacat index; it kind of works (debug messages rolling out like crazy); 
+
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+    PPBio and others: see above
+    PISCO: experiencing power surges, so if PISCO MN disappears for a while that's why.  Mike wants to go back and check queries/results to make sure everything is fixed.
+
+OTHER INTERESTING THINGS: 
+
+contact points: 
+NEW EMAIL contact: mninfo.dataone@gmail.com   - This email monitored by DataONE staff.  I think we might migrate to this being the primary point of contact for MN questions so we can keep a better handle on issues/resolutions.
+Bruce: if there's a generic question, ask it here so that we can keep track of communications in case there are new people involved in the project.  We can still email directly with folks we are working with, but the hope is to maintain a history of common/useful questions/resolutions.
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Upcoming deadlines:
+
+
+

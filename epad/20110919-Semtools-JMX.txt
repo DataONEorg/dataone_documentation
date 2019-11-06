@@ -1,0 +1,59 @@
+OBOE Ontology Extensions Meeting Agenda
+=======================================
+MINUTES
+-------
++-------------------+----------------------------------------------------------+
+|DATE               | September 19, 2011                                       |
++-------------------+----------------------------------------------------------+
+|TYPE OF MEETING    | Ontology Development, Annotations                        |
++-------------------+----------------------------------------------------------+
+|CALL IN            | EVO                                                      |
++-------------------+----------------------------------------------------------+
+|NOTES              | Everyone                                                 |
++-------------------+----------------------------------------------------------+
+|ATTENDEES          | Shawn Bowers, Ben Leinfelder, Chris Jones, Matt Jones,   |
+|                   | Margaret O'Brien, Mark Schildhauer                       |
++-------------------+----------------------------------------------------------+
+
+Discussion topics
+-----------------
+
+1. Creating annotations
+ * See https://code.ecoinformatics.org/code/semtools/trunk/dev/sms/examples/Salmon/
+ * Problems encountered
+   * Creating annotations with Morpho fails to save locally, and saving to fred fails due to log in issues.  Ben - ideas on this? 
+     * Ben is looking into bespin being down
+     * Use Annotations menu to Save locally (unintuitive?)
+   * Annotations are viewable in 'full annotation' view, not 'column annotation' view in Morpho
+     * The <sms:map> dataObject attribute was set to '1', not '0', which was incorrect (zero-based list)
+   * Hand-written Annotation syntax
+     * Documentation in the XSD file would be helpful
+     * Examples should be updated
+
+2. Detailed subclasses vs object properties
+ * Dilemna - do we create entity classes that are specific to entities that are being observed with highly detailed properties?
+ * Example: see https://code.ecoinformatics.org/code/semtools/trunk/dev/sms/examples/Salmon/cjones-eml.21.1.xml
+   * We've created classes such as LiveSmoltSteelheadPopulationSample
+   * We haven't created LiveHatcherySteelheadNoIdentifierPopulationSample
+   * or LiveHatcherySteelheadLeftRedIdentifierPopulationSample
+ * These classes are increased specializations based on the protocol at hand
+ * Discuss the use of object properties
+   * PopulationSample and hasMember only Steelhead and etc ...
+   * example property to discuss
+     * hasMember
+     * memberOf (and all other partonomy-type relationships)
+     * hasOrigin 
+     * originatesFrom (relating to Wild vs Hatchery Origin)
+     * 
+
+3. Namespaces
+ * http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Entity vs
+ * http://ecoinformatics.org/oboe/oboe.1.0/Entity
+ * http://ecoinformatics.org/oboe-ext/salmon.1.0/oboe-salmon.owl#ChinookSalmon vs
+ * http://ecoinformatics.org/oboe-ext/salmon.1.0/ChinookSalmon
+
+4. JMX conclusion
+ * Write a final explanatory report that includes the oboe-salmon extension as a deliverable (9/30)
+ * Reschedule trip to WA, perhaps do a presentation at the Wild Salmon Center in Portland instead
+   * EIM in September, DataONE All Hands in late October. Perhaps November?
+

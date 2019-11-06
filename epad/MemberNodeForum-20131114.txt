@@ -1,0 +1,96 @@
+Member Node Forum - 14 November 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/263857105
+  (Occurs every 2 weeks on Thursday 3pm Brazil, 2pm EDT, 1pm CDT, noon MDT, 11am PDT, 10am AKDT or Friday 2am Taiwan)
+  Upcoming meetings 14 November, 5 December
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (619) 550-0000
+Access Code: 263-857-105
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 263-857-105
+
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307  (note typo on year-sorry), -20130321, -20130404, -20130418, -20130516,  -20130530, -20130613, -20130627, -20130711, -20130725, -20130808,  -20130822, -20130905, -20130919, -20131003, -20131017, -20131031
+
+Attending:  Amber Budder, Laura Moyers, Greg Gollberg, John Cobb, Mark Servilla, Mike Frenock, Rebecca Koskela, Dave Vieglais, Ryan Scherle, Kevin Webb
+
+Regrets:  Bruce
+
+Action items from last time:
+
+Laura to check to see if LTER's ("old") data had been replicated to KNB successfully - still verifying
+Laura to check with Matt and see where the draft replication policy change is after it was sent out for feedback - we think that, since there are some concerns about the change(s), we should have a sit-down with all affected parties and discuss - date/time TBD
+
+
+Agenda:
+
+0. Welcome new attendees - introductions
+
+1. Network-wide update and issues affecting MN's as a whole
+
+dave.vieglais@gmail.com
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+Coordinating Nodes issues - some issues with consistency between CNs; we think it's related to when we made some changes at UCSB.  Doesn't affect anything from MN point of view.  Running on ORC (ORNL/UT) CN right now.  ---  Mike (PISCO) seems to be having some problems with info on the different CNs.  We have had some changes that Robert and Chris have been working on - Mike to send Dave emails that have gone back and forth and Dave to look into.  Chris to look into this afternoon - should go into the update to be pushed out early next week.
+
+    28 November is US Thanksgiving - with that and the Christmas break (for many of us) we would only meet 12 December? 
+    
+    To ask Mike Frenock (PISCO): are other people able to add data to PISCO now to help with the volume of data?  Also, how is indexing going?   No way to register on the portal, so can't add people into data managers group; is a bug #4113.  Mike is stuck until that gets fixed.  This one assigned to Chris who has been out of pocket.  This is a blocker; Dave to work with Chris and Mike to resolve.
+    
+Bug 6183 - MN cant update system metada on the CNs.  Has been worked on by Jing on dev system but still a blocker to Mike.  Trying to switch from metacat APIs to system SPIs.  Chris indicated that is was a problem with CNs and should be able to update, but Mike can't.
+Redmine #?  6183 not in DataONE.  Metacat issue? Metacat.
+https://projects.ecoinformatics.org/ecoinfo/issues/6183   Fixed in Metacat but haven't been able to move to production this week - looking at next week.  
+
+3. Feature requests/opportunities for collaboration:
+
+ Laura to follow up on this: ~~~~~     
+      Kevin:  an observation: on CN.dataone.org/onemercury, the checkbox that says "only results with data"... what about a situation when the metadata has a link to the data for download?  This result would show up only when the checkbox is unchecked. 
+
+We have submitted a ticket in redmine to ask for this issue to be reviewed:  Task #4144: 
+Evaluate "Only results with data" checkbox in ONEMercury 
+
+No, we've got the ticket created, but we do need to have a meeting with interested parties (LT, MNs, etc.) to discuss why the default was set to checking the checkbox, good/bad ramifications, etc.  To be set up soon.
+
+BEW: the original default was essentially having this unchecked.  We got a lot of confusion and problems, both from demos and from users, that they were trying to get to data and it was hard to sort out what was just metadata and what was metadata with DataONE-enabled data (my wording here).  Some metadata has pointers to landing pages, some has links to data. And some metadata, unfortunately, has stale links that don't point to anything.  
+
+4. MN showcase:  Member Nodes who are present, please discuss your status:
+
+That was leftover from last time.  :)
+
+NKN (Greg) - no update at this time.  Last word from Luke was that things are moving along, 
+
+LTER (Mark) - status quo
+
+PISCO (Mike) - see above, he's stuck until above issues are resolved.  Upgraded to metacat 2.2.1.  Dave - now at 2.3.  Suggested checking in with Ben / Chris to find out about the differences / updates.
+
+Dryad (Ryan) - two small issues identified by D1 developers, one addressed but code not deployed yet (Ryan to review this afternoon, to be tested tomorrow), the other is a data consistency issue since we're working on development server and sometimes data on dev side isn't quite the same as on the test/prod side.  
+
+Should this be a reminder to new folks who are developing a MN, i.e. ensure that data on dev side is complete/accurate, as close to "real" as possible.  For Dryad, pains are taken to ensure production data is as clean as possible.  On the development side, there may be "dirty data" which impacts testing results.
+
+How confident are we (as a new MN) that the dev data is fairly clean?  Ideally, development and testing will be done on clean data.  
+
+
+
+If  you have any other comments/suggestions about anything discussed here, please feel free to post to developers@dataone.org or mnforum@dataone.org.
+
+
+OTHER INTERESTING THINGS: 
+
+DataONE survey to build understanding of data needs. "You are invited to participate in an NSF-sponsored research study, in which the DataONE (Data Observation Network for Earth, www.dataone.org) organization is investigating how scientists work. Your responses will help us better understand how scientists manage their data, which will then allow DataONE to better serve their data management needs. The questionnaire should take about 20 minutes to complete" https://utk.co1.qualtrics.com/SE/?SID=SV_aWxuyT94cZBsBb7
+
+contact points: 
+NEW EMAIL contact: mninfo.dataone@gmail.com   - This email monitored by DataONE staff.  I think we might migrate to   this being the primary point of contact for MN questions so we can keep  a  better handle on issues/resolutions. 
+
+This isn't being used currently - most of the time we (MNs) just email the person we know or who we're working with.  
+
+Laura - lmoyers1@utk.edu 865.974-7931 and/or 
+Bruce - bwilso27@utk.edu 865-574-6651 
+
+Don't forget irc.ecoinformatics.org, channel=dataone if you have an urgent issue.  CCIT folks are always there and can assist you.
+

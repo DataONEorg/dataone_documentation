@@ -1,0 +1,118 @@
+
+Present: Bertram, Paolo, Shawn
+
+
+selling points for the 
+1. D-OPM model + (discuss draft, solicit input)
+-- includes "mini-ontology" of depends-on relations
+2. prov. repository + (request to host @ DataONE)
+3. prov. toolkit (postdoc w/ CCIT help)
+
+(in order of ambition/timeline)
+
+1: solicit feedback, get buy-in from WG participants
+2: get buy-in from DataONE leadership
+
+- lower barrier of entry to new players in the e-science / workflow space
+- Paolo makes an adventurous parallel with Hadoop in the MapReduce impl space
+
+[Jacek? Wf-land + Trace-land aligned in viz tool being designed / implementation by M.sc. student]
+
+Shawn: broad the scope, to make sure the idea appeals beyond the workflow community -- for example R. 
+make it more appealing to DataONE even in the absence of workflows.
+
+selling point for having common model: 
+- enable people who are not stakeholders in any of the workflow systems to write tools against the common model/repo.
+
+- at the AHM we need to collect input / feedback / buy-in
+wearing the DataONE hat, members have an opportunity to influence an upcoming common model and provenance management system for workflow-based provenance
+
+- play the "provenance-rich publication" card / executable papers
+
+* Draft Invite:
+The DataONE ProvenanceWG is continuing the development of a provenance model and standard to facilitate ...
+ ... based on OPM ... extend for scientific workflows and related technologies (such as R)
+ Vision: develop data model and provenance management architecture that makes it simple for groups that have prov generating systems to operate and interoperate.
+ Prov Mgmt infrastucture on top of which addtl functionality can be built easily,
+ 3rd parties can build on this easily 
+ 
+ Scope: provenance-generating scientific workflow systems (Galaxy, Kepler, Pegasus, Taverna, Vistrails, ...) and related systems and tools (R, BioPerl, BioPython,...)
+ 
+ First phase: 
+ -- D-OPM draft 0.1 (coming out of initial ProvWG meetings and DToL, GoldenTrail summer projects)
+ 
+ Agenda point: solicit feedback and invite active involvement on D-OPM v1.0 
+ 
+ Second phase: 
+- development of provenance toolkit: 
+- based on D-OPM model
+- includes repository (-ies) hosted by DataONE
+- querying and visualization tools
+
+
+-- infrastructure: reference implementation of a D-OPM schema
+-- 
+
+
+ProvWG participant expectations and role:
+- monthly telecons: updates on development efforts (from ProvWG postdoc, CCIT?), 
+- 
+- 
+
+ProvWG will have:
+- 1 postdoc to develop infrastructure
+- will work with your folks 
+
+Questions:
+-- link to new EVA group
+ 
+-- Bring together a community to define and build common and useful/relevant provenance tools to build a larger community of provenance users
+  -- Instead of yet another provenance model
+  -- Bring into the fold more widely used systems (like R) as well as possibly data providers (e.g., for EML metadata of protocols/methods)
+  -- Address the gap of provenance models but with a lack of useful tools to exploit the numerous provenance models ... examples of tools would be repository infrastructures, query languages/implementations, import/export, visualization and browsing, and others tbd by the group (e.g., for assessing data quality, for managing experiments, for "smart" papers, etc.)
+  
+
+
+
+Invitees:
+Bertram Ludaescher (UCD)
+Paolo Missier (Newcastle) 
+Shawn Bowers (Gonzaga) 
+
+Duncan Temple Lang (UCD, R & provenance) new invitee
+Ewa Deelman (USC, PEGASUS) ProvWG member
+Ilkay Altintas (SDSC, BIOKEPLER) ProvWG member
+James Taylor (Emory, Atlanta, GALAXY) new invitee
+Juliana Freire (NYU Poly, VISTRAILS) ProvWG, Claudio Silva,  (Juliana sent David Koop last year)
+Khalid Belhajjame (U Manchester, TAVERNA) new invitee
+Michael Agun (Gonzaga) -- Summer Intern (would miss classes, can maybe make "poster day"?)
+Saumen Dey (UCD) -- Summer Intern and ProvWG member
+Tim McPhillips (UCD, RESTFLOW) new invitee 
+
+Yogesh Simmhan (USC, KARMA, OPM) ProvWG member, focus now is cloud
+
+? James Cheney (Edinburgh): talk with him, see whether he is interested
+
+(2 out of 3?)
+Leon Osterweil (UMass) -- G, N (Harvard ecology/provenance use case!?)
+Barbara Lerner, (Mt. Holyoke College, http://www.mtholyoke.edu/~blerner/), development of persistence technology
+http://www.mtholyoke.edu/~blerner/DataProvenance/
+Lori Clark (UMass) -- G, N? 
+
+
+? Jim Myers (RPI) -- G, N?
+
+John Kunze WG interaction (data-cite)
+Bob Cook WG interaction (EVA)
+
+? Carole et al (BioVeL - Biodiversity Virtual e-Laboratory (BIOVEL))
+? Dave De Roure
+? Margo Seltzer
+
+? Deborah McGuiness (Semantic WG, PML)
+
+Next Actions:
+Bertram to email Rebecca (cc: Bill) names; issue with 3 UMass
+Draft invitation (Bertram)
+Model (Paolo)
+

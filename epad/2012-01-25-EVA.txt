@@ -1,0 +1,76 @@
+
+#persist
+
+CCIT and EVA Teleconference:
+
+Steve Kelling
+Matt Jones
+Dave Vieglais
+Bertram Ludaescher
+Bob Cook
+
+Toll Free Number:  888 551 7631
+Pass code: 7813231
+
+
+Goal:
+Identify and develop data intensive exploration, visualization, and analysis exemplars that can serve as the foundation for the creation of workflows and DataONE analysis and visualization functionality. 
+
+Focus on Carbon Cycle Models
+
+Background:
+
+-a number of Model Intercomparision Projects (MIPS) have occurred over the past 20 years or are occurring now
+    VEMAP, LBA-MIP (Brazil), three North American Carbon Program MIPS, C-MIP5, Multi-scale Synthesis and Terrestrial Model Intercomparision Project (MsTMIP), Agri-MIP, etc.
+-each group builds their own system, including scoring and visualization
+-a DataONE CI system and standard scoring / benchmarking would enable 
+
+-ILAMB is busily conducting scoring for the IPCC (papers due in Summer); EVA will build on ILAMB and apply to MsTMIP
+
+
+Approach
+
+1.  Model Benchmarking Cyberinfrastructure
+       -system to allow modelers to compare model output to observations 
+        -system has scoring /benchmarking code, key observations as a function of time / space/ and biome
+            http://www.ilamb.org/benchmarks/
+            http://www.climatemodeling.org/c-lamp/results/diagnostics/CN_vs_CASA/
+        System will take the following as inputs
+            -standardized model output
+            -observations (perhaps provided in a standardized manner on DataONE)
+
+        -opportunity for Scientific Workflow  and provenance  
+        -Dave Koop (Arizona, formerly a Claudio grad student) is involved in Provenance WG
+        
+2.  Visualizations for Benchmarking
+    -tied to Model Benchmarking CI (above)
+    http://www.climatemodeling.org/c-lamp/results/diagnostics/CN/ameriflux/FortPeck_model_vs_ob.png
+
+
+3.  Carbon / Climate Model Output Visualization 
+    -build off of BirdVis activity (DataONE eBird plus custom software from Claudio's group)
+    -http://www.ornl.gov/filedownload?ftp=e;dir=uP17NktRq768
+            
+            
+Next steps:
+April EVA Working Group meeting
+Claudio and student coming to ORNL to discuss #3
+
+Resources:
+EVA WIKI: http://dataoneeva.pbworks.com/w/page/48275384/FrontPage
+
+
+What should CCIT or the Workflow Provenance WG tackle?
+   - Focus on data access to the tools
+     - storing model output data (in Thredds/OPeNDAP/NetCDF)
+     - storing observations data (for comparisons)
+     - BirdViz requires a specific schema
+
+ProvWG Notes:
+Goal: use old and/or new EVA use cases to validate provenance model developed by ProvWG
+=> Science side: need scientific questions that provenance information allows to answer 
+=> Technology side: what are the right observables to record, how to instrument "the code" (hairball ;-)
+=> get Claudio and/or Juliana and/or Dave Koop involved in 
+development of joint ProvWG & EVA use case
+
+

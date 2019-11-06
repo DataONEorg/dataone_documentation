@@ -1,0 +1,58 @@
+Authentication and Authorization conference call
+----------------------------------------------------------------------
+May 3, 2011
+
+Participants
+------------------
+Jones, Basney, Servilla, Butler, Leinfelder
+
+Background
+------------------
+AuthN design: 
+http://mule1.dataone.org/ArchitectureDocs-current/design/Authentication.html#authentication-service
+
+Agenda
+------------
+1. CILogon attribute embedding
+    a. Can CILogon be modified to query DataONE identity service to get attributes to be embedded in X.509 certificate? 
+    Yes. Can base need for Attribute lookup based on coming in through the D1 skin at CILogon.
+    
+    Should each of these attributes be in their own certificate extension, or under one XML blob in a single certificate extension -- could be SAML or our own homegrown XML structure.  Using the XML embedded format has advantage of allowing us to change the attribute structure from the D1 side as needed.
+    
+    b. Is CILogon open source?  
+    http://sourceforge.net/projects/cilogon/ Yes, but not easily deployed at this point.
+    
+    c. Can we make these changes ourselves, or do Jim and Randy need to be involved?
+    Jim will make the call-out on their side.
+    DataONE needs to implement a REST service to provide the necessary attributes / document for insertion into the certificate. http://mule1.dataone.org/ArchitectureDocs-current/apis/CN_APIs.html#CN_auth.getPrincipalInfo
+    
+2. CILogon service behavior under different browsers
+    a. Under Firefox returns usercred.p12 from link (dave: firefox works same as chrome for me)
+        https://cilogon.org/?skin=DataONE (DataONE skin returns PEM)
+        https://cilogon.org/?skin=all (shows all the options)
+        
+    b. Under Chrome, launches JNLP app that downloads x509up_u501 file (pem?)
+    Different skin, see default versus dataone skins
+    c. Can we turn the PKCS#12 file into a PEM certificate programatically in Java?
+        YPrefer PEM because then we don't need a password.
+         See example code here:
+             https://repository.dataone.org/software/cicore/trunk/d1_libclient_java/src/main/java/org/dataone/client/auth/CertificateManager.java
+             https://repository.dataone.org/software/cicore/trunk/d1_libclient_java/src/test/java/org/dataone/client/auth/CertificateManagerTest.java
+
+    Can drop IP restrictions because SSL handshake takes care of verifying access to private key.
+    
+3. How do we handle auditing?
+    -- now that session service is eliminated, who is responsible for logging authentication?
+        -- CILogon logs all auth sessions
+        -- we could have the IdM service log requests from CILogon (possibly including the IP # for originating auth)
+        -- we can shut down attributes if login is required
+
+4. Probably want MNs to be able to check attributes in addition to the cert service 
+
+5. Single point of failure?
+    -- should talk about replicating CILogon service
+    -- enter a story about running replica auth services (DONE; see https://redmine.dataone.org/issues/1517)
+
+
+
+

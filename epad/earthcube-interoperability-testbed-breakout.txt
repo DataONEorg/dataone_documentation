@@ -1,0 +1,53 @@
+Earthcube Interoperability Testbed Breakout
+---------------------------------------------------------------
+Participants:
+Liping Di, Reagan Moore, Janet Frederick, Chris MacDermand, David Arctur, Scott Peckham, Matt Jones, Jeff Horsbugh, Bill Rideout, Kelly Eicher, Yong Liu
+
+Repositories and systems in use
+----------------------------------------------
+Ground based radar
+CUASHI HIS
+DataONE
+Kepler
+CSDMS -- community surface dynamics modeling system
+    -- interoperable components
+    -- model interoperability
+    -- CCA -- common component architecture
+-- ESMF -- Earth Science Modeling Framework
+-- OGC services and standards
+-- Woods Hole Coastal observatory (IOOS, uses SOS)
+-- HFR radar, ionosphere
+-- policy based data management and processing (iRODS)
+-- agriculture and sensor data -- data repository and modeling
+-- citizen science data
+-- GEOSS brokering service -- describes data access services available at GEOSS providers
+    -- two stages to access: discovery, then resolve and access services to get data
+-- OGC PubSub standards working group
+-- GI Cat -- italy, integrated with CUASHI system and other large scale networks
+-- OGC CSW -- multiple catalog profiles -- ebRim, simple, etc.
+
+Levels of Interoperability
+-----------------------------------
+-Repositories
+    -- Access services
+    -- Data semantics
+-Workflows
+-Catalogs
+-Models
+
+Potential testbed activities
+--------------------------------------
+Prototype goals
+1) What interoperability can we acheive today among existing repository servers?
+2) What does the prototyping tell us about what we can and should do better?
+
+-- interoperable discovery
+-- data and service interoperability
+-- service to service interoperability
+-- workflow interoperability
+
+-- drive from an end-to-end scenario
+    -- data/sensor to data fusion to model/workflow run
+
+
+

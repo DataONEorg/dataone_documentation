@@ -1,0 +1,83 @@
+Suggested node configs - 
+
+Nodes participating in sandbox:
+
+cn-sandbox-ucsb-1.dataone.org (existing VM)
+cn-sandbox-unm-1.dataone.org (existing VM)
+cn-sandbox-orc-1.dataone.org (existing VM)
+mn-sandbox-ucsb-1.dataone.org (new VM, metacat)
+mn-sandbox-ucsb-2.dataone.org (new VM, metacat)
+mn-sandbox-unm-1.dataone.org (new VM, metacat or gmn)
+mn-sandbox-orc-1.dataone.org (new VM, gmn)
+
+RR DNS: cn-sandbox.dataone.org (three targets)
+
+Each MN will have minimum resources of: 4 CPU, 8GB RAM, 100GB disk
+
+
+Nodes participating in staging:
+
+cn-stage-unm-1.dataone.org (existing VM, needs CN stack installed)
+cn-stage-ucsb-1.dataone.org (existing VM, needs CN stack installed) 
+cn-stage-orc-1.dataone.org (existing VM, needs CN stack installed) 
+mn-stage-ucsb-1.dataone.org (existing VM, metacat) 12 CPU, 24GB RAM, 2.2TB disk
+mn-stage-ucsb-3.dataone.org (existing VM, metacat) 4 CPU, 8GB RAM, 22GB disk
+mn-stage-unm-1.dataone.org (new VM, metacat or gmn)
+mn-stage-orc-1.dataone.org (existing VM, gmn) 4cpu, 32gb RAM 132GB disk
+
+RR DNS:
+cn-stage.dataone.org (single target)
+
+
+Environment Definitions
+-----------------------
+
+There are four environments, progressing in terms of stability from Development to Sandbox, Staging, and Production.
+
+Development Environment
+~~~~~~~~~~~~~~~~~~~~~~~
+A potentially unstable environment that generally runs the trunk version of software. This is used in development for rapid evaluation of fixes / new features. There may be multiple development environments operating as necessary to support parallel feature development and bug fixes.
+
+The development environment is used primarily by project developers when evaluating bug fixes, new features, or other changes where integration with other components of the infrastructure is required for testing.
+
+Sandbox Environment
+~~~~~~~~~~~~~~~~~~~ 
+A more stable version of the development environment (a development play ground). Generally used to evaluate new features that are close to release or require a more stable environment than dev for evaluation and testing. The sandbox will generally be running release candidates, but may also be running software from the trunk, or when necessary, binaries / changes that may not yet be committed to revision control. There will generally be a single sandbox environment.
+
+The sandbox environment is used primarily by project developers where integration testing in a more stable environment than that offered by the development environment is required. The Sandbox is also a good location for third party developers of client tools and member nodes to test their implementations.
+
+Staging Environment
+~~~~~~~~~~~~~~~~~~~
+Runs the latest release (or release candidate). Nothing from trunk should be running here. Staging is used to evaluate the newest release / release candidate in a stable environment similar to that of the production environment. So for example, if production is running v1, then staging may be used to ensure that v1.1 of the software is operating correctly before pushing the updates to the production environment. There is a single staging environment.
+
+Project developers, project participants, and in some cases, end users will generally work with the staging environment when testing and evaluating release candidates prior to release to the production environment. The staging environment should only run software that is under revision control, and in general, should only run software that is tagged as a release or release candidate.
+
+Production Environment
+~~~~~~~~~~~~~~~~~~~~~~
+The operational infrastructure. Runs only stable versions of the software. May lag slightly from latest release, but generally running the lastest stable version of the infrastructure. Update delays only due to operational limitations. There is a single production environment.
+
+The production environment only runs software that has been tagged in revision control as a release. Production is used primarily by end users of the infrastructure.
+
+
+Examples of Environment Use
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Bug fixing, rapid development of core infrastructure by project developers where some integration with infrastructure components is requried: Development
+
+Bug testing, feature testing requiring a more stable environment: Sandbox
+
+Release candidate evaluation, usability testing prior to release: Staging
+
+Evaluation of new client tools, member node implementations developed by groups not directly associated with DataONE (i.e. not DataONE developers): Sandbox
+
+Evaluation of client tools, member nodes prior to "endorsement" by DataONE for compatibility: Staging or Sandbox (in either case, should be running the same version of infrastructure as production).
+
+Typical end user interactions: production environment
+
+Testing of MNs prior to adding to the production environment (testing will typically be undertaken by DataONE "staff" in conjunction with the node operators): Staging
+
+Testing of third party MNs during development phase: Development or Sandbox
+
+Testing third party client tools during development phase: Development or Sandbox
+
+

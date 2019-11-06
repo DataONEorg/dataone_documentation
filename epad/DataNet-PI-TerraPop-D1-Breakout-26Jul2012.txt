@@ -1,0 +1,57 @@
+Attendees: Steve Ruggles, Tracy Kugler, Cathy Fitch, Bill Michener, Rebecca Koskela
+
+Question about data objects - subsetting larger census data for the variables in which the user is interested
+Relational database for metadata (SQLServer or mySQL); compressed ASCII flat files for
+data - going to move to different storage system in future (column store)
+GIS data is in postgres
+
+Data in a large number of files is not a problem for DataONE (similar to the museum community)
+If there are products that the community would be interested in, these might be a good start to
+a MN
+
+Data file integrated over time for a particular area - might be interesting to land-use community, human-environment interaction
+
+Another possiblity would be to have metadata but necessarily with the data - just a link to
+the web site 
+This along with a derived data product that would be highly used would provide greater exposure for TerraPop
+
+How difficult will it be to create the metadata?
+Biggest use data will be small area data derived from the microdata - go to TerraPop for the microdata
+
+Grand challenges in environmental questions include human impact data
+Actually works in both directions
+
+As prototype goes live, may be opportunities to make TerraPop more visible to new communites - for example, ESA (Ecological Society of America)
+
+Issue of DataNet branding: develop a DataNet logo to put on all the DataNet web pages
+Have a DataNet web site that links to all the DataNets
+
+Summary:
+ * Metadata repository that points to TerraPop
+ * High value datasets that could be added to a repository
+ * Joint DataNet web page
+ * Millenial series at ESA where talk about grand challenges that could be served by data not usually accessed by the environmental community
+
+Once prototype is complete, then will begin their (TerraPop) outreach activities
+
+John Foley - head of Institute on the Environment at MN (global crop database)
+175 crops and yield on acreage - global coverage from satellite data
+
+DataONE: developing a 1 credit university course on managing research data and would be good to get some feedback on the curriculum
+Margaret and Steve on panel on educating data curators 
+Would be good to integrate data curation curriculum with the hands on data reformating for analysis
+Symposium in Washington on educating people on curation - information science schools vs domain curation; most of the curation that is being done now is done by domain specialists not those with training in information science - report by the National Academy of Science
+
+Education is an area where the DataNets could collaborate
+DataONE: Best Practices Database (tied to data life cycle), Data Management Primer, Tools Database, Education Modules (all on web), 1 credit university course, 6 credit 3-week university course on data management
+
+Thinking of a class on how to manipulate data in order to use it - 
+
+Next Steps: 
+TerraPop - take a look at the DataONE Architecture documentation and shorter document on how to become a MN
+
+Add links to each DataNet web site to the other DataNet web sites
+
+
+
+

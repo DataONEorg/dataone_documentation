@@ -1,0 +1,82 @@
+Skye
+----
+ * Helping Alice with final week of internship. poster. documentation
+ * Index migration from debian packages
+   * Taking advantage of new schemas, refactoring
+ * Adding indirection in one-mercury through Factory pattern to allow one-mercury to take advantage of new schema features as they become available.  (without redeploy or tc restart)
+
+Andy
+----
+ * With most certs/hosts inaccessible, just working on the code until it starts to interract with DataONE, then I move on to the next test.
+ * Since D1Client and D1Object are not complete, I will not be using them to implement; if desired they can be used in a reimplementation.
+ * A future sub-project - standardized logging mechanism across applications (much easier to parse if the format is consistent).
+
+Rob
+---
+ * finishing up initial version of d1_auditing_java
+ * working on possible new api requirements to support incremental auditing.
+ * 
+
+Robert
+------
+ * Looking at backlog for his issues
+ * Bring up ORC over the weekend
+   * Two empty pids need to be evicted, then restart
+ * Expecting a metacat repl timeout
+   * Will individually call metacat replication per object
+
+Chris B.
+--------
+ * VPN deployment and benchmark testing
+   * Adding in certs
+   * Iperf testing
+ * Attempting to duplicate the ureadahead issue on a test box
+ * Testing using lvm to patch around 2 TB disk disk limit for vmware 4.
+   * Benchmarking the effect of this method with bonnie++.
+ * Working with Rob on the audit tools.
+ * Developing a long term incremental audit tool for the cn's.  
+   * Considering also adding a tomcat program to monitor the status and results of the audit tool. (If the nagios report page can adequately display the required information then this is not required).
+   * Nagios alerts.
+   * Comparision of system metadata.
+   * Periodic checksumming on data objects to avoid bit rot. 
+
+Jing
+----
+ * Talked with Chris, Ben re: morpho authentication (cilogon, portal, etc)
+ * Wrote up solutions in tickets
+ * Working on update() and delete() methods, most of the auth, read, storage API now implemented
+
+Ben
+---
+-DOI registration (a slog of details!)
+-ORE reserialization utility (correct dateTime string in RDF)
+-Metacat support inquiries
+-Some test.dataone.org cert work
+-Plan for deploying new dev/stage/sandbox CNs?
+
+Chris J.
+--------
+ * Changed dataon-cn-os-core scripts and conf files to use *.test.dataone.org names.  Needs testing. requires new certs to be generated, so waiting on Matt for that.
+ * Tracked down the 2 empty system metadata objects in production. Evicted them, Robert will re-harvest with more logging to troubleshoot 
+ * Worked with Jing and Ben on Morpho authentication impl - discussed portal, exterior browser, embedded java browser, etc.
+
+
+Topics to discuss
+-----------------
+ * Process for getting the CNs back into a consistent state
+   * Logging debug will be increased on ORC, UNM, UCSB
+   * This will help troubleshooting of the 'empty' system metadata situation
+ * Progress on debugging how things got out of whack
+   * We will up logging, and reharvest since there's nothing apparent in the logs
+   * Will watch for hzIdentifier size vs hzSysMeta size - they are off by 156146 - 154405 = 1741
+ * Options for reducing startup time on the CNs (can we just run identifiers.addAll(loadAllKeys()) in a worker thread ?)
+   * hzIdentifiers is now only used by the index build tool to buildfrom scratch
+   * indexing responds to events
+   * hz object migration is the issue it seems
+   * potentially refactor the addAll() method
+ * When can we restart synchronization on at least one CN? There are some updates on DAAC that those guys are anxious about getting pushed to the CNs and indexed.
+   * Yes, we can start on cn-uscb-1 after the public release. CDL is approved and ready to resume synchronization. Estimates are 24hrs to complete. If we need to defer the sync in preference of the DAAC, then we can toggle sync in the nodelist for CDL such that it does not start (so as to schedule later).
+ * Procedure for synchronizing the content that was missed on PISCO (I think) and CDL
+   * PISCO needs its lastHarvestDate reset. However, need to do some basic troubleshooting before turning it back on. Test on staging would be preferrable.
+ * Public release announcement next Monday, to correspond with "the weekly news cycle in Washington"
+

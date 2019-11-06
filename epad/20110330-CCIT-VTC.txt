@@ -1,0 +1,162 @@
+.. meta::
+  :keywords: DataONE, CCIT, 20110330, VTC
+
+2011-03-30 - DataONE Developer Call
+===================================
+
+:Attendees: Dave Vieglais, Paul Allen, Rebecca Koskela, Bruce Wilson, Ryan Scherle, John Kunze, Robert Sandusky, Mark Servilla, Rob, John Cobb, Matt Jones, Chris Jones, Roger Dahl, Nicholas Dexter
+
+
+Agenda and Notes
+----------------
+
+**1. Demonstration screen casts from the review**
+
+The demo screen casts are located in subversion at:
+
+EVA demo (R script): https://repository.dataone.org/software/allsoftware/demos/eva_demo_1/screencast/DataONE-species-prediction-analysis.mov
+
+Morpho demo: https://repository.dataone.org/software/allsoftware/demos/morpho_upload_1/20110217_cjones_morpho_d1_demo.mov
+
+Mercury demo: https://repository.dataone.org/software/allsoftware/demos/mercury_demo_1/DataONE-Mercury-general-facets.mov
+
+FUSE file system demo: https://repository.dataone.org/software/allsoftware/demos/fs_demo_1/DataONE-FS-v0.2.mov
+
+slides:  https://repository.dataone.org/software/allsoftware/demos/
+
+- General impressions
+  - voice over important. 
+
+
+- Applicability of each
+
+- Subtitles only vs voice over + subtitles?
+
+- Refactoring?
+
+- Distribution preferences (vimeo, youtube, ...)
+
+- Distribution restrictions?
+
+- Consistency between screen casts?
+
+Paul - send out ASAP, as is. Make them public.
+Bob - make them fully accessible - so voice over and transcripts are important. stop/start controls. Need to add introductions and timing steps to provide guidance through the screen casts.
+
+Resolution 1280x720 (largest handled by youtube)
+
+Sandusky notes below [0]
+
+Probably best to have a non-tech person write the transcript to provide a broader reach.
+
+Next steps: 
+
+- discuss at LT
+- power point slides for steps
+- transcripts
+- voice over
+
+
+**2. Data replication constraints (continued)**
+
+Bandwidth performance between each of the CNs and to a client.
+
+See http://mule1.dataone.org/ArchitectureDocs-current/notes/time_bandwidth_constraints.html
+
+- add periodic tests for bandwidth between nodes as part of the monitoring infrastructure
+- also useful to add in "save to disk" times
+- also add n clients
+- check the routes that are being used
+- perfsonar (being used by internet2) - could also test nodes in between
+- iperf
+- need to look at latency in addition to throughput
+- also add in checks for member nodes (largest data holdings)
+
+
+ref: TeraGrid metrics:
+Speedpage (NxN test of GridFTP performance between TG sites) <http://speedpage.psc.teragrid.org/speedpage/www/speedpage.php>
+WE also have a iperf infrastructure that does igbps tests for speed and jitter, but it is mostly turned off during most times now since the network works well at 1 gbps adn we do not want to test at 10 gbps becuase it impacts production work.
+Perfsonar link: http://www.perfsonar.net/ Martin Swany (U. Del) is the main force behind this and it is catching hold in internet2 and ESnet and elsewhere. The idea is to develop a set of non-intrusive tests that give good correlation to netowrk performance under high loads.
+
+
+**3. Any other business**
+
+- CCIT Meeting Scheduled for 19-21 July. Any preparations that need to be
+  checked on?
+  
+  - Matt will send out a reminder email for the Doodle poll (need a head count)
+
+  
+- DataONE Users Group meeting July 11-12
+-- Meeting likely to focus on ITK (December 2010 meeting focused on MNs)
+-- Perhaps have some ITK development partners attend?
+
+- perhaps invite development partners such as microsoft?
+- Matt, Bob, John will be attending
+- Use meeting as a forum for gathering requirements, perhaps usability testing, etc.
+- Need strong presentation about what the ITK is
+- Use UG to help prioritize the tool selection and features to be supported, etc
+- What are some important questions that need  to be addressed as outcomes from the DUG meeting?
+  - e.g. what are the three tools that should have dev focus?
+  - other groups that can be convinced to help with development (of itk pieces)?
+- Finalising the agenda - time frame? Draft agenda approx end of May.
+- Invitee list - needs to be broad cross-section to minimize bias in prioritization. Input on invites from CCIT would be very helpful
+- approx 50 attendees
+
+
+[0] Sandusky notes
+
+Overall, the screencasts are quite good.
+
+General comments:
+- accessibility: these are OK for sighted people, but not for those with impaired vision. Recommend (1) voice overs and matching transcripts.
+- accessibility: controls are important for people with a range of cognitive abilities
+- add outlines at beginnings 1- step A 2- step B 3- step C and insert  frames along the way to help keep the viewer oriented
+- can these screencasts be put into a contextual frame? E.g., "Tools for scientists being developed to work with DataONE" on dataone.org
+
+Potential applications:
+- push out to WG membership and potential members
+- push out to DUG membership and potential members
+- add to DataONE public Web site
+- push out to other potential ITK toolmakers
+
+ITK: Morpho Upload Demonstration
+
+- Needs a little more context, which could be provided by a voice-over.
+- Might be better with pauses between slides with user start-stop control.
+- Second part, starting at 2:32, with title "KNB data synchronize to DataONE" and then showing Mercury and retrieval really needs more contextual information.
+
+What tool was used to create this screencast?
+
+ITK: Species Distribution Model in R
+
+- Pointer bouces around a lot ca. 00:20 - 00:27; is there some other way to highlight screen regions of interest?
+- Interstitial titles might help orient the viewer; show the N steps covered in the screencast, highlighting the step that's about to be shown
+- Some typos in results returned from Mercury (1) "dat apackage" instead of "data package"; (2) "speccies" instead of "species"
+
+ITK: Facetd Search of DataONE Using Mercury
+
+- pace on this one was better overall than previous two
+- the COinS stuff at end went a bit fast perhaps
+
+ITK: DataONE as a Tagged File System
+
+- pace on this one was generally good
+- ca, 00:15; consistency: on-screen, data_providers but title says data sources (maybe this is OK)
+- ca, 2:50; section on "describes" lost me the first time through
+- ca, 3:50; typo (1) "as as" instead of "as" in the title
+
+
+
+=====
+
+[4:21 PM] Bob:  what tool was used to create the screencasts?
+[4:30 PM] John:  do we have a sense of what is the "needed" BW?
+[4:30 PM] John:  to compare with this experience?
+[4:31 PM] John:  Are we doing periodici iperf connection tests between nodes?
+[4:32 PM] Matt:  dd if=/dev/urandom of=test_100M.bin bs=1048576 count=100
+[4:51 PM] John:  I may be there
+[4:58 PM] John:  and even a university admin-critter might be useful in small doses
+[5:00 PM] Bob:  community building!
+
+

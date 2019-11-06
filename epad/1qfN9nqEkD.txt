@@ -1,0 +1,254 @@
+
+Welcome to EtherPad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text.  This allows you to collaborate seamlessly on documents!
+
+
+Maribeth stepped down from co-lead to member, Kimberly Douglass stepped up to Co-lead
+Carol Hoover Los Alamos National lab joining for this meeting.  DOE has stated all data sets need to be submitted.  Now working on a committee to address it at LANL.
+
+
+2 members need to be rplaced
+Chuck Humphries - will be stepping down 
+Helena Karasti
+
+ideas for replacing membership. 
+disucssion of putting it out to entire Internet.   There may be people we don't know about, but a downside of allowing self-nomination is that people may be unhappy about not being chosen.  
+
+Leadership team has final say.  
+
+MM - follow the methods from the past until that doesn't work.
+SA - we try to have a diversity standard, in terms of interests, disciplinary expertise.  
+KD  Also consider geography.
+MM - in the past we've gotten recommendations from other WGs
+SA - somewhat a fluke that we are heavily based in TN, but also helps with getting the work done because of the assigned post-doc and physical proximity.
+SA - recommends we go through the charter first. while people are thinking about membership ideas.  In the past we put together a whole list of names, and discussed them as a group before discussing with the names suggested.
+
+KC - People presenting data-related papers at ASIST and the upcoming 4S conference:
+
+ * Steven Jackson, Assistant Professor, School of Information, University of Michigan (http://misc.si.umich.edu/people/sjackso )
+ * Götz Hoeppe, Assistant Professor of Anthropology, College of William & Mary (http://wmpeople.wm.edu/site/page/ghoeppe )
+ * Matthew J. Bietz, University of California Irvine and Affiliate Assistant Professor, University of Washington (http://www.matthewbietz.org/ )
+ * Cory Philip Knobel, Assistant Professor, University of Pittsburgh (http://www.ischool.pitt.edu/people/knobel.php )
+ * David Ribes, Assistant Professor, Georgetown (http://explore.georgetown.edu/people/dr273/?PageTemplateID=310 or http://www.davidribes.com/ )
+
+
+ * Theresa MacPhail, Assistant Professor/Faculty Fellow of Draper Program, NYU (http://draper.as.nyu.edu/object/TheresaMacPhail.html )
+ * Dawn Nafus, Anthropologist, Intel Labs (http://techresearch.intel.com/ResearcherDetails.aspx?Id=199 ) 
+ * Kristin Eschenfelder, Associate Professor School of Library and Information Studies, University of Wisconsin Madison (http://kreschen.wordpress.com/ )
+ * Diana Hicks, Professor and Chair of the School of Public Policy, Georgia Institute of Technology (http://www.spp.gatech.edu/aboutus/faculty/DianaHicks )
+ * Lawrence Busch, Professor, Sociology, Michigan State University & Lancaster University (standards, especially for food and agriculture)
+
+ * Matthew Mayernik, PhD Candidate, University of California, Los Angeles
+ * Jillian C Wallis, PhD student, University of California, Los Angeles
+ * Matt Burton, PhD student, University of Michigan
+ * Dharma Akmon, PhD Student, University of Michigan
+ * Betsy Rolland, PhD student, University of Washington
+ * Drew Paine, PhD student, University of Washington
+ * Toni Ferro, PhD student, University of Washington
+ * Cécile Bidaud, Graduate Institute of International and Development Studies in Geneva
+
+Other ideas:
+   * John Dupuis (jdupuis@yorku.ca)
+   * Mary Vardigan, ICPSR
+   * Robin Rice: http://www.linkedin.com/in/robinrice
+   * Simon Hodson, JISC
+   * Someone from Pangaea?
+   * Someone from the DCC? http://www.dcc.ac.uk/about-us/dcc-staff-directory
+   * 
+A scientist!  Someone who creates science data that goes into present or future DataONE member nodes will have very useful sociocultural perspective that will help us prioritize and focus our issues.  Suggestions
+ * Carl Boettiger
+ * Robert Guralnick or Andrew Hill
+ * Philip Bourne (or someone suggested by him)
+ * Cynthia Parr
+ * Vince Smith
+ * Others?  Todd Vision might have more ideas...
+
+Sociocultural Working Group Charter (this is a name change from Sociocultural Issues)  SA suggested removing the "Issues"
+ 
+Background  
+The Observation Network for Earth (DataONE) is poised to be the foundation of new innovative environmental science through a distributed framework and sustainable cyberinfrastructure that meets the needs of science and society for open, persistent, robust, and secure access to well-described and easily discovered Earth observational data.  Supported by the U.S. National Science Foundation, DataONE will ensure the preservation and access to multi-scale, multi-discipline, and multi-national science data.  DataONE will transcend domain boundaries and make biological data available from the genome to the ecosystem; make environmental data available from atmospheric, ecological, hydrological, and oceanographic sources; provide secure and long-term preservation and access; and engage scientists, land-managers, policy makers, students, educators, and the public through logical access and intuitive visualizations.  Most importantly, DataONE is not an end but a means to serve a broader range of science domains both directly and through the interoperability with the DataONE distributed network. (boiler plate across all WGs)
+ 
+Working Groups
+Working Groups are central to DataONE in conducting research, specifying cyberinfrastructure, and engaging the community. The Working Group model will allow DataONE to conduct targeted research and education activities with a broad group of scientists and users. Working Groups are also designed to enable research and education activities to evolve over time. Each Working Group will have two co-leaders who organize the activity and propose solutions to particular research, education, and cyberinfrastructure problems. (boiler plate for all WGs)
+
+Purpose, Scope, Mission
+
+This  working group is responsible for informing the efforts of DataONE from a  set of diverse perspectives: sociocultural, international and  interdisciplinary. The working group engages in identifying,promoting,  assessing and developing models, frameworks, definitions and theories. The work of this group also integrates across other working groups in DataONE and provides support to DataONE activities. 
+
+This working group will research the social and cultural context of the scientific data lifecycle to devise strategies that maximize the impact of DataONE.
+ 
+This working group will think and visualize from large-scale, long-term perspectives the sociocultural aspects of data management, data use, data sharing and preservation.
+
+ 
+The working group succeeds by inspiring innovations in the data practices of scientists and other stakeholders to ensure preservation and access to multi-scale, multi-discipline and multi-national environmental science data.- 
+
+SA - do we want to add in the concept that we are doing really hands on stuff for DataONE like "Terms and Conditions"
+
+MM - add a sentence about our objective to have these models be used by the different WGs and DataONE itself, or adding the practical aspect of our development of these things.CH
+
+
+Carol Hoover - possibly add somethign about how this WG interacts with others.
+ 
+Duration of Working Group
+·         Constitute in Y1Q3 
+·         Operating for the duration of the project
+ 
+ 
+ 
+ 
+ 
+ 
+Major Objectives
+·         Establish a research program to identify social and cultural issues within the stakeholder communities that facilitate or inhibit effective data sharing and long-term preservation;
+o   Understand work practices, norms and beliefs of stakeholders throughout the scientific lifecycle as they relate to data;
+o   Understand how the organizational, institutional and disciplinary environments of stakeholders impact scientific data sharing and long term preservation;
+·         Facilitate alignment among D1--tools, technologies, practices and policies--and practices of users and their environments;
+o   Evaluate and recommend strategies for D1 development and implementation that overcome socio-cultural barriers identified;
+o   Inform other working groups about the social/cultural context relevant to their work;
+·         Facilitate the transformation of  cultures around data across the breadth of stakeholders;
+o   Evaluate and recommend strategies that encourage and support cultural change related to the data lifecycle;
+o   Identify incentives and  disincentives, enablers and barriers to preparing data for sharing, preservation and reuse; 
+o   Increase recognition of the value of good data practices; and
+o   Explore and make recommendations regarding the roles for stakeholder and strategic partner communities in training data authors, supporting data curation and acting as a facilitator of digital preservation practices. 
+
+Discussion on above:
+  SA - doesn't see them changing except for how we operationalize them over time.
+  HP - we may not want to change them, but make sure they are inline with what we are actually doing.
+  SA - originally this was partially based on member's interests and expertise,  but that has been changing so worth review.  We treid to make them broad.
+  SA  - review of deliverables etc. will help us know how to change these.
+
+
+
+
+Expected Deliverables, Outcomes & Schedule
+
+·         Facilitate selection of a data lifecycle model that will be used across D1. (Y1Q4) (locked in, delivered and shipped)  we can develop one to use for other things, but there has been one now agreed to by D1 wide.  we can add detail to this.  should it be a deliverable?  should probably be developed on as needed case by case basis.  may not be high priority this year, and may developed by others.the existing model is from a data perspective, and reflect the needs of developers, but we recognize this is not a person based model and that might be somewhat different.
+
+immediate action - put the life cycle model somewhere clear, identifiable and findable.  
+create a limitations and caveats paragraph to go with this model.
+
+Explain uses and limitations of the DataONE data lifecyce (Y3Q3) 
+
+·         Facilitate selection of a research lifecycle model that will be used across D1. (Y2Q1) 
+- this can be more involved and less simplistic than the data life cycle model.This is the "people" based model. CONTINUE
+
+·         Refine stakeholder network/matrix -- add network by function.  (Y2Q1) 
+KD - what we're using doesn't define the network by function.  Doesn't illustrate how people would use DataONE.
+SA - the network itself has been done, but there are problems finding it.  
+MM - shoudl it be on the public site.  
+KD - we have included it in a paper.
+MM - if nothing else on our public working group site.  Find out how it is being used, and does it need to be refined in any way?
+ LB - who is using it in the organization?
+  
+  ·         Data citation white paper. (Y2Q1) 
+  CH - include in paper "this is moving target."  HP - long wait for this to firm up.  LB - could have dated DRAFTS 2011, 2012?  Is there an issue with delivering it as a draft?  HP - just because the field is evolving doesn't mean we shouldn't write on it, especially just for a white paper (SA).  LB  - gets to state of the art write now.  SA - who would want to be involved in this?  I'll follow up.  Who else?  Bob, Heather, KD, CH, LB.  Is Datacite putting out a paper?  I think they are based on Berkely meeting from last summer.  Ours is just a 6 - 8 page white paper.  Th eusual areguments.
+  
+·         
+·         Build "persona" description for stakeholders--day in the life, concerns, how D1 fits in. (Y2Q2) KC - half way done,  Important ones are done, the others may not be worth spending a lot of time on.  SA - used a lot bySustainability and Governance.  KC - limbo status of document.  Not really private, but no one knows about it.  SA - the site Heather set up didn't get traction.  KC - this could be declared as done and make it more public or decide we need to finisn a few more personas.  SA - what about the personas developed via the IBIS project at UT?  these are composites (2) off about 20 interviews.  SA - we can declare as done what we started, then start a new phase.  KC - scientists and data librarians one have clear uses, but these others what are the uses and for?  SA - let's ask SG WG, CO&E they may also find them useful.  KC - find out if there is an audience for additional personas before spending much more time on them.  Data Conservancy ones - sufficiently well developed.  SA - we can build off those.  KC - those may be sufficient.
+
+
+
+
+·         Report on success stories of free and open data exchange for D1 User Group (Y2Q2)
+SA  - Leadership team would love for us to pursue this.  MM - Scott and Theresa work on this?  They had a plan.
+
+·         Develop recommendations for data citation practices with stakeholder communities. (Y2Q2) HP - DataONE needs a plan for this.
+
+
+
+·         Environmental scan to examine the role of journal policies and professional societies in data sharing.  (Y2Q3)  done , but there has not been a paper.  HP is working on it.  A poster has been done.
+
+·         Paper addressing what theoretical constructs inform intervention strategies that can be useful for changing the behaviors of stakeholders around data. (Y2Q3) KC -has done one piece, SA - lead on anothe rpiece.
+
+·         Exploration of what different groups of scientists and other key stakeholders mean by: data, data set, data reuse. (Y2Q4) - CH - about to do a survey of our researchers who publish data with journals who have those requirements.  we'd be glad to share that info.  KD - one pager, two sided.MM - we need to go out and talk to stakeholders.  MD - remine the IBIS interviews for these language issues.  KC - taxonomy of different kinds of data, and concerns about re-use and sharing.  Fine grain.  SA - we cold get some of this out of the UT Data Profiles.  LB/KD - combine with baseline assessment.  HP - how would this be used?  KC - a way to speed up describing what a particular grop is dong.  MM - education too, targeting types of researchers with different education.  HP - a lot of work and hard to make usable.  KC - interesting project independent of dataone.  MD - can also mine the interviews for the taxonomy KC mentioned.
+
+·         1 pager (2 sided) addressing barriers --> mitigation for researchers. (Y2Q4)
+·         Environmental scan to examine institutional policies, e.g. data in institutional archives. (Y2Q4) HP - is it important, same SA.  SA 0 keep it in background.
+·         Investigate international policies on data sharing. (Post-Y2) 0 not high priority.
+·         Organize DataNet Partners sociocultural symposium. (Post-Y2) - has to wait.
+
+New deliverable ideas
+Focus on Tools 
+Focus on Member Nodes
+SAwhat can we do to connect with CCIT, formalize communications
+SA - if we don't keep it on forefront the interchange will die.  
+
+
+HP - how do we suggest they filter on licensing types?  KC - one issue is that filters only work on metadata, everything dependent on metadata from member nodes.  do mn's have default licensing agreements.  Major issues with date fields and what date is searched on.  HP - we should look at teh metadata, is it what is needed to support our SC issues.  SA - we need to also think about how to connect wiht provenance group.  MM - UA had real input into ONEMercury SA - Bob Cook and Giri came to us so we did it.  we did usability.  MM - we shoudl team up with UA on this.
+
+HP - file our ideas to dos under our objectives as a working document.
+
+SA - help issues for MNs.  How do we come up with prioritizing MNs?  
+
+Potential Risks/Mitigation Strategies
+·         Lack of participation by Working Group members due to loss of interest; mitigated by periodic reviews of membership of working group and rotation off and recruitment of new members
+·         Lack of participation by Working Group members due to lack of time (in general or at key points); mitigated by careful planning of work, agreed contribution and communication of availability
+·         Lost focus or not focusing on specific problems that address DataONE concerns; mitigated by keeping in touch with other working groups to determine needs and wants
+·         Not delivering useful information at the right time; mitigated by incorporating needs and wants in planning of work and reports
+·         Taken away from our primary mission by demands of project and other Working Groups; mitigated by focus on primary mission in planning
+·         Misunderstanding our stakeholders and their environments; mitigated by use of appropriate data collection and analysis approaches and checking results with stakeholders
+ 
+ 
+Membership
+Leaders: Suzie Allard, Maribeth Manoff
+Members: Lynn Baird, Geoffrey Bilder, Ahrash Bissell, Kevin Crowston, Chuck Humphrey, Heather Joseph, Helena Karasti, Theresa Pardo, Scott Tomlinson
+ 
+Generally members of this working group may include experts in:
+·         Library and information science
+·         Public administration and policy
+·         Sociology 
+·         Information systems
+·         Science technology studies
+·         Anthropology
+·         Communication
+·         Economics
+·         Science
+·         Scientific publishing
+·         Digital preservation
+·         Data management
+·         Data access
+ 
+New members will be nominated to the WG chairs and vetted by the Leadership Team.
+ Membership - Nominations/Removals - SA we decided not to put a term, but it shold be based on ability to cparticipate.  do we want to formalize it or leave it as is?  KD _ we should have a policy.  SA - may be under assumptions, make it stronger.  LB - would be useful when we're adding new people so they can undersatnd what their time committment and term would be.  KC - expectation is that you would attend two 3 day meetings fall and spring) each year and contribute regularly for 2 years.  Possibly renewable.
+ 
+Working Group Assumptions
+·         Members of this working group should be prepared to provide expertise and potentially resources that can be used for exploration of social and cultural issues.
+·         All members are expected to participate in the research and development of deliverables. 
+·         Members are expected to participate directly in working group activities and not designate representatives to participate on their behalf. 
+·         All members are invited to participate in the management of the working group.  
+·         The working group will establish a communication plan that allows members to easily and consistently participate in discussions and planning.  
+·         This working group encourages members to involve students. 
+·         Decisions within the Working Group will be by collective agreement, giving serious treatment of every group member's considered opinion. Ultimately, the WG will make decisions on at least a majority vote and ideally by consensus.
+·         Authorship and publishing
+o   Authorship for published work will be decided on an item-by-item basis, negotiated near the beginning of the work. Authorship should reflect substantial intellectual contribution to the publication. 
+o   Authors should consider publication in open-access journals; working versions of papers should be made available on the project website in all cases. 
+o   Products of the working group will be shared with all members of the working group and eventually with the entire project and the world. 
+
+ 
+Resources (travel budget, students)
+·         All Working Group documents will be managed through the DataONE Collaboration Forum.
+·         An annual or biannual face-to-face Working Group meeting will be held in support of Working Group activities.  
+·         Monthly Conference calls/Video Conferences will be held to support Working Group activities. Agendas, documents in development, and other materials will be available in advance of these monthly meetings.
+·         Financial support will be provided for Working Group members’ travel to Working Group and DataONE meetings.
+ 
+Relationship to other Working Groups
+·         Usability and Assessment WG
+o   Assessment (input from them and give ideas for further questions)
+o   Usability (our understanding of culture could inform them)
+·         Sustainability and Governance (public officials/funding)
+·         Community Engagement and Education (best practices, etc.)
+·         Citizen Science and Outreach (public officials, communication messages)
+·         Core Cyberinfrastructure Team (CCIT) (outputs to input from about what would be useful)
+ 
+  
+ 
+Communication Plan and Reporting Requirements
+·         First meeting in May ‘10
+·         The Sociocultural Working Group will provide Quarterly Status Reports identifying major activities completed, anticipated deliverables, and any other issues identified to the Principal Investigators and Executive Director. 
+ 
+Modifications to the Charter 
+·         The WG, when constituted, will review the charter and propose revisions
+·         Final approval for this Working Group Charter will be provided by the Executive Director and Associate Director for Education and Outreach.
+ 
+

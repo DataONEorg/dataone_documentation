@@ -1,0 +1,312 @@
+ of DataONE UA Work Plan & Strategy
+
+Outline
+
+Background:
+
+The DataONE Usability & Assessment working group has the primary responsibility for leading and implementing Usability and Assessment related Programs within the DataONE network. The working group focus's on the research, development, and implementation of the necessary processes, systems, and methods to insure DataONE products and services meet network goals, include appropriate community involvement, and demonstrate progress and achievements of DataONE. 
+
+The working group has been supporting various analysis of DataONE and partner tools/services since it's existence in 2010.  
+
+This document identifies the major activities of the working group related to Usability Testing, Analysis, and Data summarization from May 2012 through December 2012. 
+
+
+The usability testing sub-group proposes a two-pronged strategy for usability activities over the course of 2012:
+ * an immediate short term strategy that will support the official Summer, 2012 release of the Dataone.org and OneMercury website
+ * a longer term testing that will help achieve overall objectives of the site for meeting user needs and providing ease of use.
+
+In early May, 2012, the sub-group determined that it needed to focus on identifying short term fixes that would prepare the website for its official release in late May, 2012. A heuristic evaluation of the current production version of the Dataone.org was conducted, as well as the alpha version of the OneMercury interface. The heuristic evaluation method was selected to inspect the site and facilitate identification of problem areas with the presentation of content and interactive functionality. The sub-group used Jakob Nielsen’s 10 usability heuristics (Nielsen, J. (1994). Heuristic evaluation. In Nielsen, J., and Mack, R.L. (Eds.), Usability Inspection Methods, John Wiley & Sons, New York, NY) as a guideline and inspected the site on a page by page basis capturing a list of immediate usability concerns.
+
+Long-term goals:
+Periodic ongoing assessment to improve the functionality and user experience with the DataOne and OneMercury web portals.
+
+Scope of the Test (Mike)
+
+The Usability analysis will focus on the DataONE.org site and its various components available by July 1, 2012. This approach is being undertaken so that the DataONE Program as a whole can be evaluated during this Usability analysis. Users will be asked to perform particular tasks and provide general impressions using all of the DataONE resources including the DataONE.org website and ONEMercury. 
+
+
+Goals 
+
+The overall goals for the Usability Analysis are:
+
+Improve users ability to quickly find, discover, and understand DataONE Programmatic resources (i.e. Organizational structure, Working Groups, Who is involved, etc.)
+
+Analyze users ability to navigate between DataONE Programmatic resources and DataONE Tools/Services (i.e. ONEMercury, Member Node Toolkits, etc.)
+
+Engage the environmental science community in improving DataONE tools, services, and information to better meet community needs. 
+
+High-levl Activities of the DataONE UA Sub-team:
+
+Perform Heuristic analysis and summarization of DataONE.org and ONEMercury as development on these applications [portals] is in process. 
+
+Perform formal Usablity Analysis and Testing of DataONE.org and all of its components. 
+
+Peform data summarization of Test results in support of improving DataONE tools/services and sharing results via various publications/presentations to the DataONE organization, environmental community, and interested stakeholders. 
+
+
+Review user types from personas and identify those types that have not been selected in previous rounds of testing. [??does this bias testing? do we need to identify some users for each persona, perhaps over sample in unused personas??]
+ESIP attendees asked to participate in the DataOne and ONEMercury usability testing will be aligned with these targeted personas. This testing session will also provide an opportunity for the usability testing sub-group to aid in validating persona descriptions.
+
+Testing
+
+Before testing begins, the researchers will complete an IRB application for testing.  This IRB will be filed by the University of Tennessee research group.
+
+An email will be sent to the ESIP community before the conference soliciting volunteers, possibly asking for particular groups of users (e.g., data managers, scientists, researchers, etc. in alignment with Personas developed).  This communication may also be advertised during the ESIP conference asking for additional users.
+
+At least 5 participants from each user group identified will be tested.
+
+An incentive will be offered (flash drive with DataONE logo, mousepad, candy, cookies), this will be decided at a later time (before IRB submission).
+
+Testing will occur during the ESIP Conference.  A room will be reserved for the testing period.  The testing facilitator will setup laptops that will have the usability recording software installed (Morae).  MORAE is a software that can be used to record participants’ interaction with the website (how they locate the information), task completion, and their think-aloud data (thoughts about finding the information). MORAE recordings will be stored on the password-protected lab’s computer.
+
+The facilitator will ask the participants to complete tasks related to the DataONE.org site and the ONEMercury Portal.  A pre- and post- questionnaire will be programmed into the software to be completed prior to and after testing.  The facilitator will be present during testing and available for any issues related to the tasks or technical problems.
+
+The tasks will be related to finding information on the DataONE site (e.g., finding how to join a member node or best practices for data management, etc.) and the functionality of the ONEMercury Portal (e.g., finding and exporting data).
+
+The pre-questionnaire will ask demographic questions to determine their occupation (e.g., researcher, data manager, etc.), and their self-efficacy using various databases/computer software, and the level of awareness of the participant with DataOne. 
+
+The post-questionnaire will ask questions related to the participant's comfort with/ease of using the DataONE site and the ONEMercury portal after exposure.
+
+After testing has ended, the facilitator will save and export the data to a password protected location (e.g., external hard drive or server space).
+
+Potential Locations:
+
+General graduate student testing can take place over the summer at UT campus
+DataONE DUG/ESIP - July 15 -20, 2012
+ESA - August 5-10 2012
+AGU - December 3-7 2012
+ASIS&T - October 26-31st 2012
+ALA Midwinter - January 25-29, 2013 (Seattle)
+AAAS - February 14-18 2013
+ACRL - April 10-13, 2013 (Indianapolis)
+
+Possible Testing Strategy:
+
+ESIP - Scientist and Data Managers (persona groups): Think Aloud, Proctor/Facilitator guides users through the system and tasks
+Fall Semester - Graduate Students (persona group): Eye Tracking
+January/February Conference - Selected Persona Groups: Usability and Eye Tracking with new functionalities installed on site
+
+
+Data analysis timeline (Denise)
+Analysis of collected data are based on phased consecutive timelines. This is due to the UT semester and introduction of a new GA for data analysis support. Timelines may be shortened if concurrent analysis is possible. Analysis is based on a pre-questionnaire, questionnaire, and post-questionnaire model of assessment..
+
+1. Pre-questionnaires
+
+ * limit to 3-5 questions, ask all website usability assessment participants. Analysis verbatim
+   * examples (Familiarity with the DataONE.org site, Efficacy in using computers)
+
+ * allow 2-3 weeks for review, analysis and scrubbing (Aug 10, 2012). Narrative allow 5 days (Aug 17, 2012)
+
+2. Test questions at ESIP / DataOne Users Group - DataOne site, OneMercury portal
+
+ * proctor/facilitator record responses, record directions/discussion during guided website review
+
+ * verbatim analysis
+
+ * Review, analysis and scrubbing – allow 5-6 weeks (Sept 21-28, 2012)
+
+ * Narrative allow 10 days (Oct 12, 2012)
+
+3. Post-questionnaires
+
+ * proctor/facilitator records responses (?)
+
+ * verbatim analysis
+   * Examples include: Perceived complexity of the system, Ease of use, Information presentation, Information access, Features of the site
+   * In addition, the participants could write down their thoughts in one open-ended question at the end of the questionnaire.
+
+ * Review, analysis – allow 2 weeks (Oct 26, 2012)
+
+ * Narrative allow 5 days (Nov 2, 2012)
+
+What will be done with results:
+
+Results from DataONE Usability testing and analysis will be shared with the DataONE Leadership Team, Cyberinfrastructure staff members, and other DataONE Working Groups. Results will also be summarized and published in appropriate scientific journals. 
+
+
+Potential Questions/Script for Actual UA Test
+
+
+
+
+Pre questionnaire: (2-3 minutes to complete)
+ *  Job Title (Demographics, disciplines)
+ * familiarity with DataOne site - range response, frequency of visit  (very often>>not at all)
+ * e.g., 
+   * 1. I have heard of DataONE.
+   * 2. I am familiar with DataONE.
+   * 3. DataONE is applicable to my work.
+   * 4. I have visited DataONE’s website.
+   * 5. I am directly affiliated with the DataONE project.
+   * 6. Someone I know is directly affiliated with the DataONE project.
+   * I attended a DataONE training
+     * If yes, when?  In the past 6 months, in the past 12 months, more than 12 months ago.
+ * what is the most important thing for you (manage data, 
+ * type of position (personas), what individual primarily engages in use  - researcher, data manager, educator
+ * job title
+ * What is your biggest data challenge
+
+Core questions:
+
+-What do you think the primary purpose of DataONE (Maybe find 3 examples)
+
+-How could DataONE be relevant to work I do?
+
+-How do I participate or find out more information?
+
+Core questions for ONEMercury
+
+- Please locate the area where you would find data on the  DataONE website?
+- Search for <data query of choice> or <specific data query task> 
+        Example: Using the ONEMercury Search page, find the dataset about “vegetation and 
+        invertebrate communities” located in Colorado. You can use the filter options to limit 
+        the number of results returned. When you feel you have completed this task, proceed 
+        to the next task.)
+- Download a dataset (e.g., download the dataset you’ve found in Task 3 and save it to ?) 
+- How do you save a search result?
+- Ask open-ended question, when searching for a dataset what would you like to do with it? 
+  email, save, view, share...?
+- ask if they can see desired functionality.
+
+Additional Questions for DataONE.org
+
+- Can you find information on how to document and organize your data?
+
+- How would you find a tool to view the completeness of your metadata?
+
+- How would you find a tool to help you <insert relevant verb term based on pre- 
+  questionnaire results of 'biggest data challenge' > your research data?
+
+Other Core questions
+- 1. What are the three “data documentation” practices provided in “Best Practices”?
+  2. What is a data management plan?
+  3.  What are components of data management plan included in JPL community?
+
+
+
+Potential Pre-Questoinnaire 
+
+Computer Self-Efficacy Questions 
+Rate on a scale of 1 -7 where 1 is strongly disagree and 7 is Strongly agree (4 is neutral)
+
+I feel confident.....
+
+  1. Understanding terms/words relating to Internet software.
+  2. Moving the cursor around the monitor.
+  3. Making selections from an online menu.
+  4. Using the Internet to gather data.
+  5. Learning advanced skills within a specific Internet program.
+  6. Engaging in an online discussion group.
+  7. Searching for information on the World Wide Web.
+  8. Working on a personal computer.
+  9. Using online chat to communicate with others.
+  10. Using instant messaging to communicate.
+  11. Learning to use a variety of programs (software).
+
+
+Post Questionnaire
+  Was there anything you saw on the DataONE website that met your data challenge? Elaborate.
+
+Rate on a scale of 1 -7 where 1 is strongly disagree and 7 is Strongly agree (4 is neutral)
+
+    1. This site was missing critical features that would be very useful to me.
+    2. This site was exactly what I needed to carry out my tasks
+    3. It was difficult to complete my tasks effectively because some of the features I needed 
+        were not available.
+    4. This site contains appropriate features for my purposes.
+    5. It was easy to locate information in this site.
+    6. I could get to information quickly and easily.
+    7. It was easy to access information that I needed.
+    8. The exact purpose of this site was easy to determine.
+    9. I needed help accessing and understanding this site.
+    10. It is easy for me to learn how to use this site.
+    11. This site gives me access to information that I need are convenient and easy to use.
+    12. The information that I needed was displayed in an understandable layout.
+    13. The information was presented in a useful and understandable format.
+    14. There was so much information, it was difficult to sort through it.
+    15. The information was located in so many different places; it was hard to know how to 
+         use this site effectively.
+
+ESIP Usability Test Proposed Schedule (wiki.esipfed.org/index.php/Summer_2012_Program)
+
+Tues, 7/17 (90 minute Lunch and 2x30 minute breaks)
+Wed, 7/18 (90 minute Lunch, 2x30 minute breaks, and poster session)
+Thu, 7/19 (90 minute Lunch and  2x30 minute breaks)
+
+***********************************************************
+Report out all subgroups NOTES May 3, 2012
+DataONE data principles SCWG
+(5) data environment is dynamic and requires evidence-based decision-making about practice and governance
+Challenges and trends - top sociocultural issues impacting DataONE:
+
+ * advantage of reuse, collect data - stories
+ * evidence from outside DataONE community that proves this
+ * planning for future "uptake" at the institutional level. Work in parallel to educate, create outreach materials, answer questions about adoption ....role of usability testing in this.
+
+Communications (SCWG)
+internal communication, including MN - information transfer issues/challenges
+1. implement a task management system to track quetions and action items from the WGs
+2. designate one or more liaisons to facilitate internal communications (exclusive of IT/development tracking)
+3. increase access/participation to Leadership Team (LT) meetings 
+4. task working groups (WGs) to help support new member (individual and member node) participation.
+
+Metrics
+server log event attributes (data, user, session)
+(Alison's flow charts)
+content on DataONE website should mirror the flow chart detail - deposit data, use data (public user and member)
+individual metrics, interaction metrics, infrastructure metrics, user services)
+object, users and services) 6 data components (chart)
+
+manditory metrics in deliverables to NSF (02/07/11 report), all hands October 2011 meeting notes
+prepared summary table and marked by 4 categories of data collection and analysis.
+
+citation analysis question - data reuse construct needed
+
+data usage and citation visualization - student intern summer 2012
+
+
+Theresa Pardo
+Determinants of publications of scientific data in open data initiatives (student paper)
+ 
+Sharing data enrich and promote the progress of research and generate knowledge
+Data sharing – category, challenges, literature
+Likelihood to share (lower cost, greater likelihood)
+Dataone data used , visualizing the access pattern
+Disconnected cluster indicates that a majority only access one database
+Interface for depositing irrelevant – it is about behavior, trust in the system
+Motive for data publication in open data initiative –theory of planned behavior
+Intention correlates with action of sharing datasets, legal context impact, significance of organization support for sharing datasets, strong indirect impact of reward to the action of sharing through the intention.
+
+**********************************************************
+"watchers"  ONEMercury
+
+asynchronous communication for WGs and subgroups
+
+*************************************
+policymakers white paper
+highlevel administrators, federal agencies
+economic investment
+risk-reward analysis of investment
+
+*************************************
+
+policymakers white paper
+
+highlevel administrators, federal agencies
+
+economic investment
+
+risk-reward analysis of investment
+
+ 
+tool of economic investment – user survey data feed into evidence of value
+EPA, USFS, USDA
+ 
+Assessment subgroups
+Librarian surveys, data managers survey – prioritize new stakeholder groups for upcoming surveys
+Policy makers are being targeted; publishers; graduate/undergrad students
+Categories of questions for institutional decision makers (plan, collect, assure, …..)
+How to locate a data set, and other questions
+ 
+ Wanda Dole study on interaction between campus chancellors and library for research support....get citation (Denise)
+

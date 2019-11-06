@@ -1,0 +1,84 @@
+Attendees: Suzie, Carol,  Bob, Bertram, Amber, Viv, Bruce, Dave, Steph, Bill
+
+
+Regrets: Mike, Rebecca,
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Dec 21, 2012 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/874231585
+,
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (630) 869-1012
+Access Code: 874-231-585
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 874-231-585
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2012Dec21-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-12-21
+
+1) CI Update (Vieglais)
+Not much to report this week. Testing of version 1.1 or infrastructure ongoing, getting very close to completion.  Working on writing up notes, particularly relating to documentation needs, based on EAB feedback.  UCSB hardware moving to a new location the week after Christmas.  Will need to watch what happens there and make sure all comes on-line properly. 
+
+
+2) CE Update (Budden)
+At EAB for the first few days of the week.  Newsletter out and on the web site.  DMP tool had grant app funded by Sloane foundation.  DataONE is part of the grant, but not funded (in kind).  DMPTool and DMP on-line were finalists for a UK competition, but didn't win the trophy.  Good reviews, positive feedback, good exposure.  
+
+
+
+3) Update from Bill (DSpace and EAB meeting (Michener)
+1)  DSpace -- Spoke with DSpace prior to EAB meeting (e-science institute meeting).  DSpace (Michelle Kimpton, director) is working on designing the next round of changes in their architecture and is interested in talking with DataONE about integration points as part of that, particularly as a way to generate a turnkey solution for a federation of repositories (DataONE plug-in as part of standard install).  DSpace has strong presence in the academic environment, particularly for those wanting to do minimal configuration/out-of-the-box installs (1200+ installs worldwide).  Telecon planned for sometime after the first of the year.  Should be able to build on Dryad integration work.  
+
+Note that Fedora Commons is also working on a major rewrite, so discussions with them would also be useful and Bill and Dave are working on that.  
+
+2) EAB -- See Bill's note regarding 3 questions asked of all participants.  See https://docs.google.com/document/d/173gVJMMWRYnpxWZskmxpadWeDt7FdE3b6BdOswVu6t8/edit for the (23+ pages of internal) notes assembled by DataONE folks at meeting.  See presentations in Docs site at https://docs.dataone.org/member-area/committees/external-advisory-board/2012_17-18dec_eab_meeting_washingtondc (including a copy of the agenda).
+
+Note that Bob Chadduck is now full-time staff with NSF and expected to stay the long-term DataONE program officer and that Alan Blatecky is finishing up his rotation in 8 months and returning to the University of North Carolina (almost certainly before our follow-on proposal is submitted).
+
+The DataNet program, per se, is not continuing as originally expected, but we are being invited to submit what may well be an unsolicited follow-on proposal.  The DIBBs program (Data Infrastructure Building Blocks) is one vehicle for (smaller) CI projects.  Our proposal needs to not be a straight renewal, but needs to be more of a follow-on which builds on what we've accomplished and seeks to be broader than a straightforward renewal proposal would be.  This is what led to the three questions, referenced in Bill's note of 12/19/12.  As a result, we need to do some careful strategic planning in developing this follow-on.  From an EAB perspective, we can go in one of two directions: a) provide deeper services to the community we originally set out to work with (env and earth sciences) and/or b) go much broader and move outside this original community (particularly given our success thus far and role vis a vis the overall DataNet program).  Third option is hybrid of both broad and deep.  A key thought in broading is to recognize that we can't be all things to all people, and we need to be selective about how we move forward -- what are we trying to do and for whom are we trying to do it?
+
+Also need to broaden funding portfolio.  This follow-on proposal should be part of a broader portfolio of activities to be supported for DataONE.  Some of these can go to NSF (like DIBBs; http://www.nsf.gov/pubs/2012/nsf12557/nsf12557.htm) and others can go to other agencies and private foundations.  
+
+Dave -- build on what we have and what we've learned.  We have a lot of experience and a lot of insight to offer to the community.
+
+Bob -- consider DIBBS (or something similar) for funding adding in access to tools like THREDDS, OGC, OPEN Search and other services.  Also noted comments made by Blatecky to the National Science Board that NSF has to take responsibility for the data that's generated from NSF projects.  Also, from comments made by Paul Riser and Nancy Grimm, consider how we broaden from a researcher focus to more applied users, like resource managers. (Bill -- See comments in the spreadsheet in his note about three questions; reinforces this last point).  
+
+Suzie -- discussions with Tony Hey.  Sees key value of DataONE as the metadata consolidation through the search interface.  Reinfoced through an email follow-up.  From other conversations, key value in working across agencies.  Might not be directly of interest to NSF [BEW -- but absolutely of interest to many of our users; they don't necessarily care about who funded the work, only whether the data is useful to them].  Also discussions regarding interoperability of services and interoperabiltiy across agencies and different communities.  
+
+4)  DUG Meeting - # of days (Michener)
+ESIP meeting in Chapel Hill, NC in July.  We've typically done weekend before and morning of the first day (Sunday and Monday morning), given ESIP tends to start on a Monday.  If we choose to not co-locate with ESIP, we have options to go longer.  There's some sense that the previous meeting was too time constrained.  This year, ESIP is starting on Tuesday, but with workshops scheduled for Monday.  Consensus seems to be staying with day and a half, in conjunction with ESIP.  Amber to follow-up with Rebecca and others to finalize arrangements.
+
+5) Major meetings:
+
+a) RSV planning -- Jan 28-30; Santa Fe
+b) Proposal planning -- May 13-17; ABQ
+c) Proposal planning -- July 15-19; TN or Santa Barbara or Oakland
+
+6) Around the room
+
+Bruce -- Was at DataONE EAB meeting.  Working with the R client to help improve the documentation. I'll be working next week on that and a few other CI-related issues.  Still working to resolve an issue with needing to tighten access to some of the infrastructure at ORC.
+
+Bertram: ProvenanceExplorer work continues; hoping to have a first prototype/demo by mid January in time for RSV. Includes demo of EVA workflow provenance use case.
+Provenance-enabling R: looking for suitable student to help with this, but this will obviously not be ready for RSV (more likely for summer 2013).
+
+Steph: nothing new to report this week
+
+Suzie: Was at DataONE EAB meeting. We (UT SIS) hired a new assistant professor, Carolyn Hank,  whose specialty is Digital Curation. She is a PhD from UNC, Chapel Hill. She will be at IDCC in Amsterdam shepherding some of our science information students who are presenting posters. She is on-board with us in January.
+
+Carol: Nothing new this week.
+
+Bob:  Planning the EVA Working Group meeting, which will take place in January in Brooklyn.
+
+Viv; Nothing new this week
+

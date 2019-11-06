@@ -1,0 +1,83 @@
+
+Summary of Discussions on DataONE Policies 
+S&G Working Group meeting  
+May 14, 15, 16, 2012 
+Marconi Conference Center, CA
+
+Policy Categories (was Terms & Conditions)
+
+1. software  (NOW or SOON)
+including both DataONE-written or commissioned and 3rd party provided
+Note:  Mercury has an Open Source License from UT-Battelle http://mercury.ornl.gov/Mercury_License.txt
+    a. who holds the copyright for the platform? UNM? Risk: down the line will be problematic
+    b. what distribution license and what contributor license (if any)
+        e.g. BSD (simple) vs. Apache with its CLAs (more overhead)
+    NOTE: see http://mule1.dataone.org/ArchitectureDocs-current/license_and_copyright_policy.html#copyright for current public statement on these policies. If these statements are true then they have major implications for future governance and sustainability of the platform.
+    c. what Open Source community governance model
+    d. due diligence of 3rd party code, e.g. NO GPL (see Black Duck due diligence service)
+action: 1) figure out what is going on; 2) what services are implicated by D1; 3) are people or software (or both) implicated 4) consult with UNM lawyer; 5) how do we do something that doesn't disrupt the project relationships. END PRODUCT: IP Policy for the software (what is the asset and what is the IP Policy. Rebecca and John Cobb are the owners. timeframe: start no sooner than July. Remove license page on dataone.org
+
+
+2. website (NOW)
+    a. web pages copyrighted by UNM and CC-BY licensed? both dataone.org (information) and onemercury.org (meta/data) Student blog, dataone.org, mule, repository, and docs
+    no license here now.  Amber to research CC0 / CCBY - work with Bob C and Heather P
+    b. with what user privacy policy? what usability commitment? see existing draft from SCWG: as soon as possible. Amber liaise, but need feedback. Bob can help advise on what personal information we are keeping
+Should we cc license the content?  Complicated to have differenct licenses for segments of the content.  Implications if we are to have a fee service for some products / resources.
+    c. how will users provide attribution (i.e. cite) DataONE resources from the site?
+Action: Amber will look at websites.  Bob will advise and provide exptise. Timeframe: as soon as possible. 
+
+3. metadata (NOW)
+    a. Phase 1: minimal license or waiver (e.g. CC0 or public domain) for all contributed metadata. Metadata records include system metadata that has access restriction info*
+    MacKenzie to craft statement. 
+    b. any other (non-legal) policies for metadata quality and/or reuse?
+    c. metadata deposit agreement (what rights/responsbilities does DataONE have?) is this part of the member node MOU? will DataONE ever harvest metadata from non-member sites?
+MN Partnership Agreement: Mike and Trisha -- review existing agreement add public domain and CC0 statement. Ask existing MN's to sign.  ASAP.
+    d. create rights statement for metadata in DataONE platform -- language on the site that explains what the policy is. 
+
+* paragraph on why dataone metadata should be in the public domain, and what policy implications that has
+
+Context for DataONE Public Domain metadata policy -- this is from MacKenzie
+
+DataONE has as part of its mission to promote openness of research data, including its discoverability, access and reuse, all of which depend on metadata. Phase 1 of DataONE is primarily a discovery service that aggregates metadata from Member Nodes to index via the MercuryONE search interface. While we recognize that data access often needs to be limited, for example, if it involves personal privacy, national security, or endangered species locations, and in other cases data is only accessible to a known set of people (e.g. prior to analysis or publication). In all of these cases it's possible to make the metadata publicly accessible while protecting access to the data it describes, and it's desirable for users to know that the data exist, for example, to avoid redundant experiments. Furthermore, most metadata is not copyrightable in the US since it's factual in nature, so no copyrights accrue to it in any case. So an initial (phase 1) DataONE principle should be that metadata collected by the system will be publicly available, either in the Public Domain (e.g. produced by a federal agency) or under a CC0 waiver of rights. This policy will provide greatest clarity to DataONE users about what they can do with the metadata, and enable more and faster innovation of new tools and services for data discovery that will provide benefit back to DataONE and its community.  For more complex situations where metadata must have limited access, which will increases DataONE system cost and complexity, phase 2 could revise this policy and consider business models that recover those added costs.
+
+4. data (NOW)
+    a. identify assumptions, e.g.member nodes or data source retains rights, if any, in the data; most data indexed by DataONE is not copyrigtable nor do other data rights accrue (i.e. it's in the Public Domain)
+    b. data privacy and security John Cobb: consult with Dave if there is a security policy
+    
+We need a policy that supports data use and reuse.  will there be policy in place for version 
+
+-- DataONE does not in anyway change the data policies of the existing Member Node. 
+
+    
+SOON
+    b. deposit agreement, i.e.what rights/responsbilities does DataONE have? what rights/responsibilities do Member Nodes have? {this needs to be in the MN MOU aka Partnership Agreement}
+        e.g. right to refuse subcollections? right to re-appraise for deaccessioning? 
+    c. data usage agreement, i.e. click-through license
+    see examples
+        http://www.lternet.edu/data/netpolicy.html for an example policy
+        http://data.gbif.org/tutorial/datauseagreement
+        http://www.icpsr.umich.edu/icpsrweb/ICPSR/access/restricted/agreement.jsp
+    d. take down policy for copyright/data right infringement claims
+
+LATER (possibly the Preservation WG)
+    d. preservation policies (of the DataONE coordination service, preserving member nodes)
+    (we have some of this from the preservation working group?)
+
+5. Business
+    a. governance process
+    b. define and scope DataONE, e.g. UNM is the responsible legal entity and  rights holder, DataONE is the platform? the contents? the website?
+    c. develop a copyright statement to apply to documents, web pages, etc.
+    c. IP policies (for software, data assets
+    d. What happens to the assets if DataONE goes away?
+    who are the actors / experts 
+
+Process
+1. S&G is responsible for coordinating policy development and either writing policy or commissioning that work by the various working groups.  The policies will then be forwarded to the LT with a recommendation for decisions. Document the decisions... create spreadsheet to track (Trisha). 
+
+3. document policies, terms & conditions as a set of separate documents (e.g. HTML) on the website and keep them as simple as possible (e.g. http://libraries.mit.edu/dspace-mit/build/policies/index.html)
+
+4. Useful documents
+http://www.dcc.ac.uk/resources/how-guides/license-research-data
+http://www.dcc.ac.uk/resources/policy-and-legal/policy-tools-and-guidance
+http://pro.europeana.eu/projects
+

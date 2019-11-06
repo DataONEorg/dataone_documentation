@@ -1,0 +1,106 @@
+DataONE Users Group Meeting - Day 2 - 7 July 2014
+
+2014-07-07 Open Access Roundtable (Bighorn C)
+
+Community discussion leader Spencer Keralis
+Attendees: Bob S (facilitation), Spencer K (discussion leader), Heather H, Bob D, Debora D, Chris E, Laura M, Bill M, Viv H, Trisha C, Dan V, Matt N, Sherry Lake, Soren S, Ken C, Amber B
+
+Here's the PhDComics video on "What is Open Access?" http://www.phdcomics.com/comics.php?f=1533
+
+Opening remarks
+Open access is a set of principles, not a business model  The Denton Declaration provides a set of principles and actions for being an open data advocate: http://openaccess.unt.edu/denton-declaration
+Not only about publishing
+DataONE is ahead of the game: open access is at the core of what DataONE is and aspires to be
+
+Funder motivation for OA includes ensuring that science can be reproduced and to prevent funding duplicative research. Making data available supports reproducibility.
+
+Cultural shifts in:
+ * the tenure process to recognize the value of the publication of data
+ * overcoming resistance to data sharing by scientists: 'no one else can understand' or 'no one would ever want my data'
+   * This is a great list of objections to data sharing and responses to them by a couple of people in the UK: https://docs.google.com/document/d/1nDtHpnIDTY_G32EMJniXaOGBufjHCCk4VC9WGOf7jK4/edit#
+
+Authorship for data and intellectual property rights to that data.
+
+See handout posted in dropbox at:
+
+Discussion
+RD: There are many differerent flavors of OA. As a data repository operator, we need to respect the rights of the contributors of the data in the repository. The repository we run is as open as possible: it's much easier to manage open data than data requiring rights management: we don't have to think about it! 
+
+Data contributors want the repository operator to handle all the questions and issues around access, which can be a lot of work.
+
+Some repositories are trying to use CC licenses to express rights management.
+
+There are different "rules" in different countries re: public domain, CC licenses, etc.
+
+SL: What's typical in the U.S. is that the institutions own the data, not the individual researcher. The agreements are between the funding agency and the research institution. At UVa, the research office wants to have a look at the data to ensure there's no loss of control of patentable / commercial data. At U North Texas, the VP for Research comes from the entrepenural community, so concerns for commercial exploitation are now heightened.
+
+Researchers frequently have a strong sense of ownership 
+
+KC: Disagree with notion that the U.S. federal policies are NOT about research data. The PAR process covers 'products of research' which includes publications and data. At NOAA, the plan is similar to those being developed at other U.S. agencies. Regarding 'what do we do next?', when all the agency plans are released, it would be valuable to analyze them to identify the roles that DataONE could play in supporting those policies.
+
+SK: For U.S. federal agency policies to be effective, the agencies need to implement some kind of enforcement: with regard to NSF DMPs, during peer review of proposals; at project report / review points. Compliance with the DMP: use project reporting to describe level of compliance; to describe changes to the plan and rationale.
+
+Payoffs / return on investment for the energy put into creating DMPs and putting data into repositories is long deferred: projects run 2-4 years; time to deposit; time for others to discover, reuse, and cite.
+
+RD: we can't be prescriptive about DMPs as contracts; plans are always subject to change, and are nearly always changed in practice.
+
+SL: Different NSF directorates handle these issues differently. Engineering is explicit about need for PIs to report changes in DMP.
+
+SS: What data are we sharing?
+SL: At NSF it varies; for Engineering, it's not the raw data, but the data that supports publications and findings.
+
+Humanists are currently struggling to understand what data means in the context of the humanities.
+
+KC: What is DataONE's scope? Should we ensure we focus on data for the project.
+AB: Negotiating the boundaries is an important issue for DataONE's sustainability.
+
+RS: The issue of how to select or filter the data that comes in from repositories that hold a wide variety of data: for example, a typical DSpace institutional repository. A couple of people raised this issue at the Member Node breakout on Sunday morning.
+
+DV: Is the time lag mentioned earlier a barrier to getting researcher buy-in to data sharing?
+Data repositories are designed to hold data from the end of a project, rather than 'working storage' systems for data during research project execution.
+
+Discussion of how services can be built to make use of published data easier for data consumers. The open source software community has been able to make this work in many cases.
+
+RD: Unless you're looking at a printed map, geospatial data requires services to be provided to make the data useful.
+
+What should we be teaching graduate and undergraduate students to help them understand the value of and techniques for using shared, open data?
+
+SL: at a minumum, we need to make them aware of these issues. Too often their mentors and advisors are not aware of or supportive of OA.
+
+KC: Align the emerging federal mandates with outreach and education efforts in higher education as well as in DataONE's educational programs. What is emerging now is much more actionable than what's been available to date.
+
+See the shared DUG Dropbox folder DUG2014_10_SessionTen_OpenAccess_Roundtable for information/links to OA resources
+
+SK: Collectively we need to both talk about OA, open data, and its benefits; we also need to walk the walk and support OA publishing by focusing on publishing in and reviewing for those journals. 
+
+AB: are the kinds of materials DataONE is providing sufficient to move the needle?
+SK: the electronic theses and dissertations processes now common in higher education are one good opportunity to reach graduate students. I have an upcoming opportunity to talk about OA to the Pharmacy community, which is one with a high concern for protecting commercial opportunities.
+
+We need to do as much evangelizing in the communities where we don't already have a lot of coverts.
+
+Wider distribution also enables a wider readership, including readers from outside the established academic communities.
+
+OA is an emerging culture seeking to change or overturn the establish academic scholarship culture. Social theory suggests we can expect this to be slow and to expect some violence.
+
+'Relentless cheerful advocacy'
+
+Give students the task of getting an article to which your institution does not have a subscription.  Right to Research Coalition is a student-centric OA advocacy organization: http://www.righttoresearch.org/
+
+OA button: openaccess.org; helps document and track paywalls encountered. Here's the link for the OAbutton: https://www.openaccessbutton.org/ 
+
+What are the top three things we should do as individuals and what are the top three things for DataONE as an organization?
+
+1. put your money where your mouth is: make OA part of your own research practice
+2. stop supporting non-OA publishers with your free labor as reviewer, editor
+3. talk to your students and guide them to OA practice
+4. talk to communities that have not yet been converted with regard to OA
+
+1. review the federal policies that are forthcoming so DataONE doesn't miss an opportunity
+1.1. Chris E. and Suzie Allard will be conducting a content analysis on the federal plans once available.
+2. DataONE should continue to review and attempt to define the scope of the data to be managed in DataONE
+3. go to unexpected places to talk about DataONE: focus on the disciplinary communities
+
+Discussion has been US centric - different IP / rights policies internationally so need to be aware of this in conversations.
+
+https://www.dropbox.com/s/kmja48tnvx0n85h/aacp%20handout.pdf Spencer's link
+

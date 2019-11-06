@@ -1,0 +1,110 @@
+Member Node Wranglers  - please note time change to half-past the hour
+    Fridays at 10:30 am Alaska
+                    11:30 am Pacific
+                    12:30 noon Mountain
+                    1:30 pm Central
+                    2:30 pm Eastern
+
+Please note new GTM info, also:
+   * https://www1.gotomeeting.com/join/698027049
+
+18 July 2014
+                                                                    
+Attending:   John Cobb, Laura, Dave, Rebecca, Mark
+
+Regrets:  Amber, Bruce
+
+
+Agenda: 
+
+NOTE:  New meeting time at least through the end of July - 2:30p Eastern
+
+        1. High profile issues (or current items of interest
+        
+        FOLLOW-UP -- DUG activities/outcomes:
+   * We would like to go ahead and create rules for DDI, but putting DC metadata out there may be the best short=term, get-it-out-there solution.  Dave's  take on DDI - better off implementing support for DDI in DataONE rather  than some sort of custom implementation.  How we put the metadata out  there initially is intended to be permanent.  Let's ask TerraPop to  provide a couple example DDI metadata files, we can provide them how we  would pull particular fields from their DDI, we would need to create  rules to tell the CNs how to strip appropriate metadata from the DDI  files.  (http://www.ddialliance.org/)
+     * If we provide MPC the information that we search upon, they can help generate the "rules" for DDI  (Dave, Skye and maybe Mark to help)
+     * can go ahead and get the MN up and running but NOT searchable until we put the rules out there.
+     * Issue with having to generate new identifiers if we start with DC metadata then switch to DDI metadata.
+     * Index fields: http://releases.dataone.org/online/api-documentation-v1.2.0/design/SearchMetadata.html#values-extracted-from-science-metadata
+     * Rules for processing EML: http://releases.dataone.org/online/api-documentation-v1.2.0/design/SearchMetadata_eml.html
+
+   * Met with Nikki Thurgate of TERN-Australia.  Based on this conversation, it looks like we may target EcoInformatics http://www.tern.org.au/Eco-informatics-pg17733.html  first.  This is contrary to previous discussions where it was HIGHLY  desired that TERN as a whole be the MN.  This requires more discussion.   Also, we are reviewing the MOU and plan to rework it as an agreement  between DataONE and TERN and keep the parent institutions (UNM, UQ) out  of it - also requires more discussion.
+     * update: I know I haven't done anything on this front this week; has anyone else??
+     * Rebecca and Bruce to work on the MOU part of this
+
+   * Bruce talked with several people:  Laura to ping Bruce to put some notes here.
+
+   * Discussion with Dave, Chris,  Jim Myers (SEAD), Greg Gollberg, Bruce, Laura about getting MNs more  involved in the design/development process, identifying resources in the  field, determing areas of expertise, etc.  Notes here: https://docs.google.com/document/d/1UBNJe5zhLOPEPfyuEUapVc6fKJWQBKt23UR80_xiN6c/edit?usp=sharing
+     * Greg has drafted a letter, all have commented/improved; sending to MNs and prospective MNs, from (we think) the DUG and DataONE (who precisely?? - Dave for sure :) )
+     * Laura to send draft to Rebecca, update to Dave
+            
+
+        1.5   Current MNs
+                 Memorandum of Understanding (re: operations and service expectations) - this would be a good thing to have with  MNs (and not get legal departments involved) - LT to address.  (This has impacts in the SANParks uptime issue as well as the recent CDL need-to-be-harvesting-all-the-time issue.)
+                     ask CDL (and other MNs) if they know they control the harvest frequency - it's in the documentation but maybe everyone at the MN doesn't know about it
+                     maybe compile a list of common hangups - ??
+                
+        2. Status of upcoming MNs
+    
+     * Y5Q4
+       * DFC (3532)   -  Bruce has corresponded with Lisa; following up - Rebecca: talked   with Reagan, they plan to do one iRods installation (a NC piece of   CUASHI)
+         * they plan to have their MN up and running by October (before their RSV)
+         * Laura to follow up, see where they are (Chris as POC?)
+       * MPC (3708) - see above.
+       * ORNL MNs (RGD (4248) and EDORA (4247)) - met 7/17/14.  We can go to production with what we have now (URLs in metadata view but not in download links) and add in URURL
+       * GLEON (3422) -  Nothing new.
+       * PPBio (3748)  -  email out  to Debora re: updating their MN desc doc.
+       * NKN (3238)   - working; no change.
+       * SAEON (3205) - Chris or Mark will be able to help Alex at SAEON.
+
+    Future
+       * FigShare???  FigShare as either an ITK element or as a MN or both.; Dan Vallens (FigShare) was at the DUG.
+       * NODC - revisit, target for next 18mos (Bruce/Matt)
+       * iPlant (see what happens with iRods at DFC)
+       * IARC  (International Arctic Research Center) (4700) -  some conversation with Jim this week; working
+       * EU BON -- Looking to deploy a test MN (probably Sierra Nevada - August/Sept in Albuquerque) in the next 6-9 months. 
+
+        3. Old action items
+             MN Documentation - MN Deployment and MN Ongoing Operations - holding   ready to pick up again, good feedback from DUG attendees that some of  what we have is great, other areas need polishing, big thing is  advertising what we do have available. Laura to do this>>>>   use Ask.dataone.org - where can I find? is there documentation  on....?  
+             
+        4. Not-high profile issues
+     * Redmine ticket generator - woo hoo!!!  Roger helped get tickets out there for GBIF and IARC - technical difficulties on my end resolved and I added tickets for MPC.  At this point, I have to go in and update subtasks as needed so we know where we actually are in the process for these MNs.
+     * Laura and Mark to look at this together and get the word out to everyone what it means and how it will help us
+       
+        5. Around the room
+        Rebecca - not today
+        Dave - DSpace MN implementation coming along nicely, still work on logging aspect; 
+                    OPeNDAP progressing well (James Gallagher), different parts working need to put things together
+                    OpenScience repository - Andrew Sallans sent Dave a contact re: OS
+                    Tim Robertson (GBIF) - making great progress (lots of email traffic, good questions, clarifications, etc.)
+        John - nope
+        Mark - nothing here
+      
+ 
+
+  1.1 (Leftover from previous meetings - don't want to remove from this epad yet)
+                    >>>Purpose of MN Description Document (past and future) - past: identify data holdings (type, volume, etc.), operations, to aid in MN development.  future: ???  
+                   Intent  is to describe the (potential) MN, identify the    types/quantity/formats  of data they hold, - perhaps we need a    "friendlier" format, perhaps an  interview process; 
+                    Workflow: should this information (MNDD) be collected at the   beginning   of the process, or is the way we've been doing it lately   (after the   fact) a new way of doing business??  Also consider if this   information   gathering (form or interview) is the best use of  resources  for those   potential MNs who may or may not become a MN if  implemented  as a frist  step.  Possibly change the workflow? Is a pdf  the best was  to view the  information?
+                Next steps:  Laura to come up with alternative(s) to current MNDD - content is good, but format/mechanism needs some work.  
+                Another thing: Laura and Amber to look at workflow for last stages of implementation, test with EDAC  too late for that, need to pick another one.
+                
+                Also -- how does the MN DD relate to: 
+                    the node document:  https://cn.dataone.org/cn/v1/node  - developers have/create this information (node registration, see updateNodeCapabilities)
+                    and redmine??    <--- work with redmine as mostly-authoritative source
+                
+                    Could a spreadsheet be a viable solution?  Maybe.  A database would   work.  In any case, some information is appropriately "private" - how     would we handle that?
+                
+                
+                >>>Question: revisit the default "only results with data"    checkbox to unchecked; what is the process for making this decision?     Let's bring it up at the DUG.  
+                  What was discussed/decided at the CCIT and DUG meetings?  --  move the   checkbox from search  page to results page, remain checked by default,   initial draft in development environment.
+                
+                    >>> Bob's feedback about the dashboard - he suggested a count   of MNs on the dashboard (MNs, RNs), probably/maybe an easy thing to  do   a  count of MNs and RNs and display
+                
+                    >>> SANParks is often off-line because of their location;    EDAC  is sometimes non-responsive (could be due to their size).   Should   we  have performance expectations or requirements of a MN  before they   commit  to participate in DataONE?  Would this present a  barrier to a   MN's  participation?
+                       SANParks is replicating (i.e. if they are off-line, their data is  available from another site where their data is replicated).  
+                        There was some talk previously of doing a metadata dump of a MN's     content to help when a MN is unavailable for a time.
+                        Check heartbeat of MN, if last check indicated down, put them last in   the list of sources to check with the resolve function.
+
+

@@ -1,0 +1,131 @@
+Attendees: Rebecca, Dave, Matt, Bruce, John, Bertram, Bob, Suzie, John Kunze, Steph, Bill, Amber
+
+Regrets: Trisha, Todd, Mike Frame, Deborah
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Oct 12, 2012 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/685559648
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (636) 277-0131
+Access Code: 685-559-648
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 685-559-648
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2012Oct12-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-10-12
+
+1) CI Update (Vieglais)
+In the process of putting out 1.1.0 out - they are refining the strategy for pushing out changes to the infrastructure. Need to be very careful when making changes to low-level elements especially in this case where there are some structural changes. They think they have the strategy figured out and will require additional testing. Will add quite a few changes to the search capabilities. Also some changes needed for ONEDrive and Morpho. Are triaging the issues raised at the AHM.  No new MNs yet and finding out what the status of ONEDrive is. Still discussing things with Dryad
+
+2) CE Update (Budden)
+
+
+
+
+3) Supplement with XSEDE (Cobb)
+Last week Bill said there was an option for a supplement and one possibility raised was
+collaboration with XSEDE. One suggestion was to move EVA-1 into production and another
+suggestion was to work with EVA-2. Claudio's work on visualization for EVA-2 may benefit
+from more compute power so John continuing to contact the right people for this discussion.
+The idea being to look to instantiate one (or more) XSEDE MN's before the RSV. Perhapts the parget is deploying on Nautilus in addition to LENS. This is useful becuase the vis work is discovering an increasing need for data intensive computing resources as part of EVA-2.
+
+Next step: Call to congeal early next week: Attendees: Bill, Rebecca, Matt, Dave, Claduio, and Steve K. others?
+
+4) Names to suggest to NSF for RSV (all)
+From Dave:
+ * Shuichi Iwata, Professor, The Graduate School of Project Design (s.iwata@mpd.ac.jp)
+ * Peter Arzburger, Executive Director, National Partnership for Advanced Computational Infrastructure (parzberg@sdsc.edu)
+ * Sherry Lake, University of Virginia - http://guides.lib.virginia.edu/profile.php?uid=4245
+ * Martin Donnelly, DCC, University of Edinburgh - http://www.dcc.ac.uk/about-us/dcc-staff-directory/martin-donnelly
+ * Will McClintock, UCSB, http://cmap.msi.ucsb.edu/people/will-mcclintock (he's in conflict bcse of UCSB)
+ * Deb Gracio, PNNL. Familiar with data-intensice computing and high-performance workflows. <http://www.pnl.gov/nationalsecurity/technical/computing/bios/gracio.stm>
+ * Dan Stanzione, perhaps? TACC. Involved with iPlant and very aware of Datanets.<http://www.tacc.utexas.edu/staff/dan-stanzione>
+ * alternatively, Chris Jordan. Now at TACC formerly at SDSC. Data focus, particularly storage. Knows about DataONE. <http://www.tacc.utexas.edu/staff/chris-jordan>
+
+
+5) Policies (additional agenda item)
+From the notes at the May S&G WG meeting:
+
+Who should do policy?
+S&G can draft policy, bring to LT for modifications and approval
+Organically from other WGs? example would be metadata
+If pertains to MNs - then vet by MNs
+
+
+Policies
+1.     Open source has been agreed to so just need decision on which license and who holds the copyright
+        -- Matt: We in principle endorsed Apache 2 for our new software, and will accept any OSI approved license for existing software that we are integrating
+
+2.     Web site – who holds copyright - DONE
+Content – CC or do we want to be able to sell it later
+May have a members only section
+Amber: Assuming this one is mine (in terms of responsibility)
+
+3.     Metadata-John Kunze & Jane Greenberg WG
+   * Related to Partnership Agreement
+   * Also need MN input and approval on these types of policies
+
+4.     Data (Todd, Matt, Bob/Bruce, John Cobb)
+·      Is it possible to refuse data? (out of scope, etc)
+·      Take down policy and process
+·      URL from MNs that point to their T&C that can be included in the system metadata
+
+
+5.     Preservation - John Kunze & Jane Greenberg WG
+
+6.     Business
+   * Governance process
+   * Joint copyright is problematic for creating a 501c
+   * Whose responsibility is this? LT 
+   * §  Or S&G WG to make recommendations to LT?
+   * Role of the WGs re: overall project and certain functions 
+
+7.  Privacy Policy?? (I think Socioculture WG has made a draft of this - a part that could be pulled out of a larger document they did)
+
+8. Cybersecurity policy and playbook (I think this is in place already - no?) check for what John Cobb
+
+6) Around the room
+
+Mike Frame by email: We had a very good meeting with Chris on ONE Mercury UA Feedback. We discussed the process for tracking, reviewing, and who would be working on it. Chris, Skye, Ranjeet, Mary Beth, Ryan S. and Robert (I think he was on part of the call) were all on the call. For some of the changes, Mock's to show you and Amber will be done (I already did most in PPT one night at the meeting) to get your buy-in and involvement. 
+
+John Cobb: Nothing to add today
+
+Steph: nothing new this week; will not be on call next week
+
+Bob:  User stats from the ORNL DAAC Member Node (July through September 2012) :
+Since the July 2012 release of the ONEMercury search tool for DataONE, 44 ORNL DAAC data products and 235 metadata records were accessed by 52 unique users through the ONEMercury interface.  ORNL staff (not users) were filtered out of these results.
+
+
+Suzie:  Helen Tibbo (UNC) asked me to join her proposal for a session at Society of American Archivists next summer which includes archives related socio-cultural issues across data nets. 
+
+Bruce: Spent some time catching up on UTK finance issues.  Some work with Chris Brumgard on a couple of developer questions.  As an FYI, I've moved out of a managerial role, back into a more technical role as an enterprise architect in my day job.  Should be significantly less day-to-day operational pressure.  
+
+John Kunze: ONEShare/DataUp: Trying to address some quality concerns (but still with the real possibility of getting some junk) to get harvesting turned on quickly, the steps underway right now are
+
+    1.  bring up a stage repository (ONEStage?), working with UNM
+    2.  add a ONEStage choice to DataUp and send practice users there
+    3.  fix the remaining metadata validation errors via a combination of local hacks and ongoing bug fixes from the MSR developers
+
+Bertram: Evaluating undergrad student applicants to help with Provenance Explorer.
+R subteam of ProvWG still trying to find out specifics about candidate.
+
+Amber: Nothing to add.
+
+Matt: DOIs for KNB/LTER/PISCO MNs are not yet registered in DataCite; working with EZID on figuring out how to get these to show up
+
+Bill: Microsoft eScience workshop (Dave, Carly, John Kunze) last week - well attended and lots of interest in DataUp and DataONE
+
+
+

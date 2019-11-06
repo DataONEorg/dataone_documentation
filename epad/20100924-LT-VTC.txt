@@ -1,0 +1,116 @@
+
+http://epad.dataone.org/20100924-LT-VTC
+ 
+
+Attendees: Rebecca Koskela, Mike Frame, Carol Tenopir, Steve Kelling, Matt Jones, Dave Vieglais, Suzie Allard, Bob Cook, Todd Vision, John Cobb
+
+Regrets: Bruce Wilson, Trisha Cruse
+
+Agenda for 2010-09-24
+
+Reminders:
+ * New public website is active (http://www.dataone.org or http://dataone.org)
+   * If you see something that needs to be corrected or want something added to the public web site, please submit a ticket
+   * MF: Site looks good
+   * MF: Management Link is dead - http://www.dataone.org/management_team
+   * MF: One thing to make sure we clearly describe in the UI is the "Search Function".   We were dinged a few years ago with "to many search boxes" and right now the Search seems to be of the "public site contents", not the data catalog or the Member area?   Anyway, something to think about as the site evolves...
+   * Pilot Data Catalog is available to the public, but the link is not published:
+     * http://www.dataone.org/node/4
+
+   * Hey when the Pilot Data Catalog is mentioned during briefings or presentations, you also need to mention the USGS Data Holdings and several of its partnering organizations is also available through DataONE.  Even though we aren't necessarily considered a MN at this point, considerable content is coming.  This includes State Organizations (PA Spatial Data Institute), Musuems (i.e. Bishop Museum), Other Federal Agencies (i.e. US FWS). 
+   * 
+ * Use http://docs.dataone.org to access the Plone site
+
+ * Check out the first draft of DataONE animations at http://willmorris.net/dataone/videos/add/ 
+   * Send feedback and/or kudos to:
+   * Paul Allen, Bob S. , and Will (pea1@cornell.edu,sandusky@uic.edu, wilzan@gmail.com). If you think they are critical, please use “critical” in the subject line and get them to us by 12 noon ET Friday Sept. 24. All other comments should be in by Oct 1.
+   * I'd also include the DataONE Tag Line at the very end - under the logo...
+   * I do think longer term, we may want animations for "I am a scientists wanting to "access or find" or "contribute".   The animation spends alot of time on the MN, CN replication (Which I think is really cool from a back-end systems point of view), but it might need to be paired down for a Scientist view of the animation? - these are just tweaks though!
+   * many kudos
+   * maybe, if not too much work, a scenario showing meta data synthesis. I.e. one data set and another data set getting merged to have a bigger, merged, data set with synergistic value
+   * The animations took about 3-4 days but the whole process from idea to animation took 3-4 weeks (not full time)
+
+ * Presentation & overview paper for the September 27th meeting with NSF are at
+https://docs.dataone.org/member-area/documents/management/nsf-review-sept-2010/2010-09-27-DataONE_NSF-review-v5.4.ppt
+
+https://docs.dataone.org/member-area/documents/management/nsf-review-sept-2010/DataONE_Overview24September2010_v1.pdf
+
+ * Does anyone have a connection with these 2 grants?
+
+   * 0634423 - to UIUC
+            Thomas Dunning tdunning@ncsa.uiuc.edu (Principal Investigator)
+            Paul Kelter (Former Principal Investigator)
+            Edee Wiziecki (Co-Principal Investigator)
+            Diana Dummitt (Co-Principal Investigator)
+            Rebecca Canty (Co-Principal Investigator)
+           Jean Anderson (Former Co-Principal Investigator)
+           Lyle Rigdon (Former Co-Principal Investigator)
+
+   * 0849301 - to UIUC
+           William Gropp wgropp@illinois.edu (Principal Investigator)
+
+ * Planning for AHM in November (Koskela)
+   *       Plenary
+   *       Do new WGs need a separate session to come up to speed with DataONE?
+   *       Breakout sessions
+       * Request to send out agenda with just blocks so that the CCIT and WG leaders can start planning their agendas
+   *       BOF @ day from 4-6? 
+   * Could be the informal communication across groups -
+   * 1 hr rather 2
+        
+   *       Ways to communicate across WGs?
+   * Bob S sat in SC WG; more formal time with U&A WG
+   * John:  maybe assign a "round robin" or a scavenger hunt. I.e. build a list of cross-group communicsation items that need toe resolved and then have some unstructured "caucus" time period with the goal of nailing down these issues
+   * CCIT has identified issues (ex, policy issues help from S&G WG)
+   * Each group do bullet list of what interactions they need
+   * Mike:  Each group could do that at the end of each day and also before the meeting - Then we just alllow some time in each of the agendas/days for this discussion.
+   * John:  WE could start the meeting with a list as well
+         
+   *       2hrs on Thursday (Nov 4) for 
+     *       Summary
+     *       What's next
+     *       Calendaring
+
+
+ * Cyberinfrastructure update (Vieglais)
+
+The team has been primarily working on getting the presentation/demo ready for the NSF review on Monday, September 27th. Fortunately most of the work coincided with the actual CI schedule.  The 3 MNs are up and running; the monitoring API has been improved; and they have good test data. The 3 CNs are up and running and the team is working on some bugs that popped up; synchronization is working better; indexing is working; and the Mercury interface has some new features that will help with indexing. There has also been great progress on the ITK, especially the work Matt has done on the R client. The infrastructure is ready for the demo on Monday - it may not be visually compelling because it's infrastructure but it will demonstrate the functionality of 3 very different systems combined into one framework.
+
+The ticket system, Trac, is not scaling and has some user interface issues so the CCIT has been investigating other options. They have settled on Redmine (https://redmine.dataone.org). The transistion is scheduled for the week of October 4th.  Dave will send email when this occurs.
+
+As mentioned above, the public website is active now. The pilot catalog is accessible from the public website
+(through a specific URL if you know what it is).  The timeline for publishing this URL is before the AHM in November.
+
+Todd asked about the status of replication of data between MNs.  Replication among MNs is dependent on authentication.  The scheme for authentication has been worked on but the CCIT also needs feedback from the MNs on how the scheme may impact them.  They would also like some input on this from the S&G WG and the CE WG.  Matt will include this in the bullets of items that are across WGs for the AHM and also try to
+get the list ready the week after next so that a discussion may take place before the AHM in November.
+John agreed that this is am important point. It is what is currently "tripping up" his efforts to set up data replication for neutron sources. MNs should trust the CNs but will they trust other MNs to carry out their policies.  Replication should be done before next February - it's the next major milestone for the infrastructure. 
+
+ * Round the room (All)
+
+Bruce Wilson attended a Knowledge Management workshop for activities to support the upcoming National Climate Assessment (2013 release), partially in representation for DataONE.  We have some opportunities for ways that we can support this activity, andhe has made some suggestions to Anne Waple (NOAA) and Kathy Jacobs (OSTP) who are key leaders on this project. He will be following up with them over the next couple of weeks.  Jarvis Moyers from NSF was at this workshop and is currently the NSF liaison to the NCA activities.  Technical support for NCA will be led out of NCDC.
+
+Mike Frame: A topic we might want to put on a LT Agenda for later this month is Dec IDC meeting and Monday Workshop.  Below is some background from Bryan with exchanges between myself, Viv, and him as to our USGS participation in the Workshop.    
+
+As part of the Data Conservancy DataNet initiative, we will be hosting an invitational Research Data Workforce Summit on Monday, December 6th, 2010 in conjunction with the International Digital Curation Conference.  We are inviting representatives from DataNet partners and other educators and federal agencies who are currently active in developing programs to advance the data curation workforce. .... Bryan Heidorn, Sept. 13, 2010
+
+Suzie: Miriam Davis, the UT post-doc funded by USGS for the SAIN project attended the USA-National Phenology Network’s stakeholders’ workshop.  Items of interest to DataONE:
+·        Syracuse doctoral student Andrea Wiggins, whose advisor is D1 SCWG member,  Kevin Crowston,  attended and she is conducting her dissertation work studying US-NPN regarding issues of interest to D1. 
+·        Miriam introduced the NBII and DataOne sites for training materials and learning about metadata to Shelly Grow, Conservation Biologist with Association of Zoos and Aquariums in charge of FrogWatch and Climate Change initiatives.
+
+Carol: The UT team will be advertising in October for a Post-Doc
+
+Matt: Matt is chairing the NEON Data Standards Working Group to make recommendations to NEON on how to publish their data products in the most useful manner to the community.  Viv has been invited to participate, but it might also be useful to have another DataONE technical contributor, so I'm looking for suggestions.  The group will meet virtually over a 2 year period, and currently has members from a wide variety of standards and data center backgrounds. Giri is also on this committee.
+
+Bob:  Our new Climate Change Science Institute is having a review next week; I'll show an EVA poster (based on a poster I showed back in March).
+
+John: nothing to add
+
+Steve: nothing to add except saw a Lincoln sparrow this morning
+
+Rebecca:  Needs to reply to email about student intern report; answer is yes, does need report, preferably before the first quarter report for year 2 is due; will share Survey Monkey results for both mentors and students with Suzie, Todd, and Bruce.  Heather had also requested to see the results.
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+ Attendees: Rebecca, Trisha, John Cobb, Bruce, Bertram, Deborah, Bob
+
+ 
+ 
+ Regrets: Suzie, Bill, John K.
+ 
+ 
+ 
+1.  Please join my meeting, Oct 11, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/876797288
+
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 289-0010
+Access Code: 876-797-288
+
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 876-797-288
+
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+We will also use the epad: http://epad.dataone.org/2013Oct11-LT-VTC 
+ 
+Agenda for 2013-10-11
+
+1.  CCIT Update (Dave)
+This week have been pushing forward on:
+ * Another CN release is close - bugfix for a couple of issues in indexing; log reporting by metacat is causing some issues with metacat itself - impacts the CN because are running some of the metacat code on the CN - only MN impacted is KNB - this is planned for Monday, 10/14
+ * Dashboard coming along and expect to show it at the AHM - think need one more review before it goes live
+ * Rob Nahf working on MN documentation
+    Site map:  http://goo.gl/3PDjFK
+ * Log aggregation: have some preliminary results; downloads since production
+    http://goo.gl/8pOZDY
+     Seeing about 1.2M downloads - doesn't include KNB or the CNs; spike of downloads after production then dropped; now increasing again (numbers exclude internal)
+ * Working on Splunk monitoring system - will be able to report real time system behaviour
+
+Preparations for AHM and white paper
+
+Need to compare the downloads with the metrics but think it exceeds 
+
+2.  CEE Update (Amber)
+
+Not much to report - newsletter is done and is uploading it to the website
+Working with the DMPTool group to get ready for the AHM
+IDCC abstracts are due in 10 days - is anyone planning to submit either a workshop or paper?
+9th International Digital Curation Conference (IDCC) 
+Monday 24 February to Thursday 27 February 2014 at the Omni San Francisco Hote - See more at: http://www.dcc.ac.uk/events/international-digital-curation-conference-idcc#sthash.0RjYv3gh.dpuf
+
+Call with DUG chairs this week - steering committee calls will take place quarterly after the AHM
+DUG mailing list: 150 plus some extras (not members)
+DataONE community mailing list: 5100
+
+Two different concepts (community vs DUG)
+Concern about lack of information going out about DataONE (to either list, but in particular the community list) Should successes be broadcast to the community?
+Community is sent email once a quarter to let them know a newsletter is available
+
+Amber will monitor the traffic on the community list and try to get information out during quiet periods
+
+3.  Proposal progress and Q&A's
+
+Draft sections have been moved to Word document (also in google docs folder) - blue on outline indicates that there is a draft version available for that section.  Light red indicates that I haven't found the draft version.  The deadline was last Monday - we need to get the draft versions completed soon in order to meet the deadline for this white paper.
+
+Probably will reorder the sections in the white paper - move the more compelling sections towards the beginning - need to remember the audience; compelling story written for an educated, general audience (limit technical jargon)
+
+Outstanding issues:
+ * How to represent the Member Nodes
+   * Were supposed to have 20 at the end of year 4 and 40 at the end of year 5 - we now have 11 and some more in testing (5); the content in these five is dwarfed by current content - suggestions on how present this in the most positive light?
+
+We have learned many issues: 
+1) Asking MN's to implement custom SW stacks is a challenge
+2) We better know scaling relations in terms of impact on CI operations and on MN operations teams
+3) We have adjusted
+        looking at new D1 supplied MN stacks as a way to scale further
+4) Better understand non-tehcnical  workflow issues (SOP variations, agreements, ....)
+oh, and also, we have "collapsed" some MN's into a single MN i.e. we had three USGS related MN collections and we are going to present them as 1 (or maybe 2) MN's but the science content is the same. -- .e. we are not stuffing metrics by MN mitosis.
+
+
+Graphic options for showing MNs:
+- Total content available
+- Cummulative downloads
+- Global coverage of data (map)
+- Temporal coverage (time range)
+- Diversity of content (requires some analysis against the search index)
+
+ * Estimates for when the rest of the CI innovation sections will be available? Done!
+
+4.  Around the Room
+
+Bob:   Preparations for the EVA WG meeting at Tamaya, including finishing  posters
+Deborah:  3 agu submissions accepted, preparing for intl semantic web conference presentations as well as tdwg presentations
+Cobb: Nothing to add.
+Bertram: Nothing to add.
+
+Bruce: More Member node teleconferences, including EU BON.  Some emails working with SEAD and NKN.  I need to work with Laura on some updates to the MN backlog listing.  We've moved a couple of MN's into Planning stage, based on initial conversations with people at those MN's.  Some work with the two grad students on Splunk.  We're now grabbing some of the Apache logs.  I need to work with Chris and Dave on getting logs from the production nodes.  
+
+Trisha: nothing to report
+
+Amber: Nothing to add.
+

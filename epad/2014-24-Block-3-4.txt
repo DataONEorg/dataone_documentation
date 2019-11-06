@@ -1,0 +1,485 @@
+
+Notes for Development Block 3.4
+===============================
+
+Previous epad notes: http://epad.dataone.org/2014-22-Block-3-3
+
+https://plus.google.com/hangouts/_/nceas.ucsb.edu/d1-standup
+G+ URL: https://plus.google.com/hangouts/_/event/cqpnckqbr0s8o40kpk3r20ko8s0
+
+Etherpad for V1, V2 API naming convention: http://epad.dataone.org/20140701-API-V2
+
+Sprint Planning for Block 3.4
+-----------------------------
+ * VM Operating System upgrades (Jing, Robert, Skye)
+   * Testing 
+   * Migrate from ubuntu-stage to ubuntu-beta channels
+   * Scheduled in CCI 1.2.7 - https://redmine.dataone.org/issues/5462
+   * Fix Tomcat 7 related issues 
+ * Mutability implementation proposal (Ben, Rob, Chris, Skye, Dave)
+ * Address CN master/slave setup issues (Chris, Dave, Robert, Ben, Skye)
+ * ONEDrive: beta release for DUG (Roger)
+   * Mac installer
+ * CCI 1.3 release (Block 3.4, shooting for 6/19,20/2014)
+   * https://redmine.dataone.org/issues/5471
+   * Incorporate Solr search field additions and query endpoint into the CN stack
+   * https://redmine.dataone.org/issues/5497
+
+ * CCI 1.4 planning 
+   * Refactor d1_processing/d1_cn_rest to minimize Hazelcast usage
+     * log aggregation
+       * will continue to use hazelcast for sysmeta map listener
+     * synchronization
+     * replication
+     * cn-rest webapp must communicate node changes/additions to d1_processing components
+   * Incorporate JibX extensions into d1_common_java, release it
+     * Refactor CN components to use new d1_common_java changes
+     * Schedule Meeting to determine the scope of changes to apply or add. (review empty vs null List/Map variables in JibX)
+   * Incorporate HTTPClient 4.2 into libclient (affects CN stack - focus on testing affected components)
+   * Replication Auditing w/splunk logging
+
+ * Important: Add a maven.dataone.org repository
+
+
+Skye
+----
+ * 20140609
+   * Replication Audit integration with splunk for logging:
+     * Finishing audit log client splunk client implementation.
+       * Will need to test splunk alignment with David.
+     * Moved replication processing auditors back to Replication project (ReplicationManager)
+   * Use case analysis on SeriesID proposal.
+ * 20140611
+   * Finished replication audit log entry logging for splunk integration
+     * Ready for dev testing..
+   * Mutability Meeting
+   * Upgrade testing procedure meeting
+ * 20140616
+   * Testing replication in dev.
+     * Splunk file is being generated now.
+     * Verifying auditing results
+       * Does not look like many docs replicated to CN (ucsb,orc).
+ * 20140618
+   * Replication auditing continued
+     * Splunk integration working great
+     * Resolving some edge case behaviour
+   * https://redmine.dataone.org/issues/5497
+   * SeriesID discussions
+ * 20140620
+   * SeriesId discussion
+     * implications of SIDS in ORE
+       * Use cases being developed
+   * Sandbox testing troubleshooting
+     * Some MN apache config issue regarding optional cert setting.
+     * Need to set cn-sandbox-ucsb-1 as only DNS entry for cn-sandbox.test.dataone.org
+   * OneMercury analysis with Heather (summer intern)
+   * Testing: https://redmine.dataone.org/issues/5497 for 1.3.0 release
+   * Replication auditing
+     * review of strategies with Chris
+     * dev testing finished.
+
+Rob
+---
+ * 20140609
+   * Testing new d1_libclient_java - refactoring d1_integration to use refactored libclient classes/interfaces
+ * 20140611
+   * participated in mutability discussion
+   * d1_libclient_java: cleaning up interfaces, and writing a test MNode implementation that doesn't use HttpClient to test the new design.  Hope to be able to use it in testing SeriesID discussions.
+   * EDAC support:  EDAC changes the default page size to 20, and synchronization harvested items, though only 1032 are shown in the SOLR query, while EDAC reports a total of 1075 via listObjects.
+ * 20140613
+   * EDAC: 18 FGDC metadata docs are not syncing due to invalid formatting.  Should this delay the announcement?
+   * libclient refactor - debugging and testing.  Things a bit slow with the NodeLocator implementations / factories.  Have successfully run MN Tier tests against real MNs.
+ * 201406016
+   * EDAC: working through emerging performance issue - node seems to be intermittantly down a lot.  Discussed with Chris that the best thing to do is to inform leadership (Karl, Rebecca, Dave) as to it's impact. 
+   * libclient refactor: low-level connection management bug fix.
+   * d1_integration: fixed unclear error message as related to listObject count test.  New MNTier1 test "stressTest" to identify performance issues early.
+ * 20140620
+   * series ID discussions
+     * Q. about d1_common_java & libclient_java preparedness for v2:  Any design work done?
+   * libclient refactor:  
+     * want to define common methods (get, ping, etc.) as an interface in d1_common_java for better handling of general client-side implementations (e.g. pagedListObjects)
+     * noticed provenance-related features being added to ResourceMapFactory without discussion or tickets in redmine.
+ * 20140702
+   * libclient refactor: finished NodeLocator implementation and wiring mechanism for use of Mock objects working.  Sent overview to Skye for code review. 
+   * iRODS support: helping Lisa (along with Chris) on Tomcat configuration.
+   * participating in V2 design discussions.
+
+
+Robert
+------
+ * 20140609
+   * Fixed problem for dataone-cn-solr
+   * Need to add a perl package to fix libio-prompt-perl bug in precise, it has been fixed in later versions of the package
+   * need to work on changing the staging channel to the beta channel
+ * 20140611
+   * dev environment is working
+     * cn-dev-unm-1 is running the daemons
+   * problem with ldap fix
+   * modified 12.04 upgrade procedure due to installation problem with dataone-cn-os-core
+   * install jobs on jenkins for beta
+   * merge of the trunk projects into the branches, debian packages merged
+     * skye merged source code
+     * d1_process_daemon/src/main/resources/org/dataone/configuration/config.xml
+     * exclude schema changes in dataone-cn-solr 
+ * 20140620
+   * still working on 1.2.7 release, everything appears to have worked as expected.
+ * 20140630
+   * still working on 1.2.7 release
+   * Need to review tidy
+ * 20140702
+   * Staging ready for upgrade
+   * Building on Jenkins going according to plan
+   * Need to review tidy
+   * Need to meet with Ben about Types extensions
+ * 20140707
+   * Reviewed Ben's changes for 2.0 in d1-common-java
+     * looks good, lets try applying the strategy for 1.1 too
+   * Staging upgrade failed last week
+   * ORC and UNM not allowing ssh logins
+     * ORC VCenter has me blocked out
+   * Branch 1.3 release
+   * Prepare for 1.4 release/design discussion needed with Peter
+
+
+Roger
+-----
+ * 20140620
+   * Finished current version of ONEDrive for the Mac.
+ * 20140616
+   * Working on Solr connection issue in ONEDrive.
+ * 20140609
+   * I'll take a look at the GMN node in dev to find out why it stopped working. Then I'll install a fresh version of GMN on there.
+   * Working on the Windows version of ONEDrive.
+   * Hoping to get that done today and get back to the Mac version.
+
+
+David D
+-------
+ * 20140711
+   * Migrated cn-stage-orc-2 to new VM HW
+     * took about 7 hours, confirming duration from cn-stage-orc-1
+     * had to reconfigure network configuration, as old configs were incorrect and led to lack of network connectivity after migration
+     * waiting on 1.2.8 to move prod
+   * I don't have a name for my successor yet, but I have contact info for the team lead, so I'm gathering infrastructure documentation to send his way
+   * Working on Splunk indexer cluster build
+     * Off-site VMs? sending VM specs to cjones/vieglais
+ * 20140709
+   * Migrated cn-stage-orc-1 to new VM HW to test
+     * migration took several hours more than expected - hoping to migrate cn-stage-orc-2 today this week to confirm
+   * Splunk cluster VMs have dataone.org DNS entries, so index replication testing is now properly in progress
+   * Meeting w/Bruce tomorrow, hopefully should have some contact info for new ORC sysadmin
+ * 20140707
+   * Ready to begin VM migration (prod, stage, others as requested) to new hosts
+     * Will require brief downtime, need to coordinate that
+   * Built several VMs at ORC to test Splunk index replication
+     * need to get .dataone.org names for 3 ORC VMs
+ * 20140702
+   * VM hardware tests
+   * Splunk
+     * building test cluster peer, testing index clustering
+     * updating all Splunk agents to v6.1.2
+ * 20140630
+   * Testing new VM hardware before migration of existing VMs to new hardware, working w/OIT to get issues with access to new hardware ironed out
+   * Looking into converting Splunk setup to cluster-based indexing to provide redundancy of indexes and protection against hardware failure
+     * Build a second test indexer at ORC to test behavior
+     * Ideally, will have at least one indexer offsite either at UCSB or UNM to protect against catastrophic failure at ORC
+   * Looking into cn-orc-1 failure from a couple of weeks back
+     * Have some interesting error messages, would like to go over them with someone from coredev to see if they tell us anything more than we already know
+ * 20140618
+   * Worked with Skye on getting CN audit logs into Hazelcast and getting his account working
+     * Built inputs for that into all CNs to get that ready for future rollouts
+   * Finishing up deployment server work
+   * Found an issue w/rsyslog on 12.04 - message rate limiting in place by default
+   * Looked into building hazelcast alert that Chris asked about Monday
+ * 20140616
+   * Splunk deployment server:
+     * all CNs/MNs are pulling inputs configurations from deployment server
+     * Splunk indexer pulling all app configurations from deployment server
+     * TO DO: output configurations on CNs/MNs, inputs/outputs on site forwarders, inputs on indexer, document
+   * MAYBE DEFINITELY TO DO: test CN audit log aggregation into Splunk w/Skye
+ * 20140613
+   * Splunk deployment server: all Splunk instances are polling the server for updates, downloading a test app, installing and configuring as expected
+   * Need to build further apps and configuration files into deployment server, map to server categories, and deploy
+   * Checking w/Skye to see if CN audit logging is ready for Splunk, if so, testing on dev
+   * Helped Jing w/a DNS error on mn-sandbox-orc-1 Wednesday evening
+ * 20140609
+   * Went over preliminary CN audit Splunk logging work w/Skye
+     * Skye is working on (has finished?) log implementation
+     * I built CN audit indexes into Splunk
+     * When dev environment is ready after OS upgrades, will work on building inputs into Splunk and testing
+   * SSL vulnerability fix on ORC VMs
+     * Went through all ORC VMs and checked openssl versions, upgraded as necessary
+Peter
+-----
+ * 20140609
+   * out 1.5 days last week
+   * log agg 'refactored' code to reduce hazelcast dependency is ready for testing
+   * implementing ./cn/v1/query/logsolr endpoint
+     * query engine description
+     * this endpoint will be implemented via apache jk connector and not through Spring DispatcherServlet 
+       * this is the same mechanism that ./cn/v1/query/solr uses
+   * released docs on usage of geohashes with our sysmeta index, event index
+ * 20140620
+   * testing CCI 1.3 (from trunk) in dev env
+     * reindex object index
+     * reindex event index
+     * test ./cn/v1/query/logsolr endpoint
+     * verify that log agg works properly with the /solr/d1-cn-log endpoint being closed
+     * test query engine response writers
+ * 20140703
+   * CCI 1.3 testing is mostly complete, except for a couple of minor issues
+   * evaluating SolrCloud/Apache MQ for use with CCI 1.4 (removing Hazelcast dependency)
+
+Chris
+-----
+ * 20140618
+   * Looked into the Jun2014 tidy-process run results, had some questions
+   * Continued seriesID work, will be working on presentation for CCIT
+   * MN support with Pat @ SC re: node registration in sandbox
+   * Need to discuss the recommended env for registration/testing
+   * Continued write up on Active/Passive CN failover
+   * Will get back to the OpenDAP MN review
+   * ORC is in the RR, waiting for the ok to move UCSB back in
+ * 20140616
+   * Continued review of opendap MN
+   * Working with Pat @ SC on GMN registration
+   * TODO: create certs for Jing
+   * Worked on HZ outage over the weekend, need to discuss this
+   * TODO: DNS change for production to ORC for Wednesday 18th, read-only mode
+ * 20140613
+   * Worked on seriesID proposal with Ben, Dave, Skye, Rob
+   * Reviewing OpenDAP MN code, getting it installed and running locally
+   * Was out 1/2 of yesterday for a doctor's appointment with Kimberly
+   * 
+ * 20140611
+   * SeriesID work with Dave, Ben, Skye, Rob
+     * We've made some decisions on what is supportable, but have other issues to discuss
+   * Finished the EBIRD system metadata updates
+   * Worked on CN upgrade test plan with Jing, Dave, Robert, Skye
+     * Timeouts in calling hzSystemMetadata.keySet() are still causing failures, not locks
+   * Working on CN failover procedures
+   * Will be reviewing OpenDAP codebase in the next few days
+   * Ask David about cn-orc-1 CRITICAL messages re: too many threads
+
+
+Jing
+=====
+ * 20140616
+   * Installed GMN on mn-sandbox-orc-1. But failed to regestier it on cn
+   * Registered the mn-sandbox-unm-1 on cn.
+   * Wiped off data on three sandbox cns and started a synchorization in single master cn mode . 5073/5074 objects. All cns have the same number.
+   * tested ldap replication, it seems working
+   * Need certificate/private key for mn-sandbox-ucsb-2.
+
+Topics
+======
+ * SeriesID work with Ben
+   * Will continue to work on API docs for Tuesday's meeting
+ * Hazelcast consistency (weekend of 6/14-5/2014)
+   * list of identifiers that are inconsistent across CNs as of 13:04UTC, generated by listObjects() specific to each CN:
+     * https://monitor.dataone.org/_production_history/data/CN-PID-comparison.yaml
+     * History for the PID list is preserved in a git repo at:
+       * git clone https://monitor.dataone.org/_production_history/data/.git/
+     * Script that runs this is in monitor.dataone.org:/home/vieglais/bin/get_production_pids.sh 
+   * Ensure the pid count is consistent across 3 CNs
+     * Confirm Metacat replication is configured to once hourly, not daily
+     * Shutdown ORC and UNM, restart both to get them back into the cluster
+       * UNM first, 
+         * monitor metacat log, 
+         * confirm that startup restore pids procedure worked, 
+         * force replication on unm
+         * confirm unm count against ucsb
+       * ORC second 
+         * monitor metacat log, 
+         * confirm that startup restore pids procedure worked, 
+         * force replication on orc
+         * confirm orc count against ucsb
+     * Run force replication on UCSB
+   * Need to ensure system metadata consistency across 3 CNs
+ * CN OS upgrades and deployments for CCI 1.2.7
+   * configure Jenkins to build the beta channel
+     * modifying env variables to accomodate TC7, java home directory, etc. (?)
+     * jobs have been added(copied to jobs dir) and some variables changed, but the jobs are not showing up in webapp
+   * Configure Jenkins to build the stable channel
+     * looks like Robert added these jobs in, but they haven't been run yet.
+   * Configure each CN to use the beta channel in /etc/apt/sources.list
+   * Add to sandbox:
+     * mn-sandbox-orc-1.test.dataone.org
+     * mn-sandbox-ucsb-1.test.dataone.org (upgraded to metacat 2.4.1)
+     * mn-sandbox-ucsb-2.test.dataone.org
+     * mn-sandbox-unm-1.test.dataone.org
+   * 
+   * 
+   * 
+   * 
+   * Testing plan:
+     * Troubleshoot LDAP server spin up first (done) (working)
+     * Deploy to sandbox (beta channel)(done) (working)
+       * wipe the sandbox cn environment of data, run /usr/local/bin/CnScripts/metacatReset.sh
+       * Configure sandbox for single CN operation (RR DNS, inactive CN readonly)
+         * in /etc/dataone/node.properties (add or set) cn.storage.readOnly=true
+     * ldap syncrepl (worked)
+       * change an attribute for one of the nodes and ensure it replicated across CNs
+       * or, register an MN, ... make certain Last Harvested is changed 
+
+
+     * d1_portal (worked)
+       * Try logging in via CILogon:
+       * https://cn-sandbox.test.dataone.org/portal/
+       * Problems: Are TCP ports open for 5432?, Postgres configured SSL, certificates
+     * d1_sync (worked)
+       * Single CN mode (d1-processing on only one CN)
+       * Harvest Jobs are running for each MN (/var/log/dataone/synchronize/cn-sychronization.log*)
+       * compare all MN identifiers to CN identifiers: call MN.listObjects(), iterate over list, call CN.describe(pid)
+            5073/5074 
+            /(5055+1=5056)
+     * d1_repl
+       * add a few pids with ReplicationPolicies, ensure replicas are:
+         * 1) on other replica MNs
+         * 2) listed in the system metadata on the CNs
+           * select count(guid) from smreplicationstatus where status = 'COMPLETED';
+           * select * from smreplicationstatus where status != 'COMPLETED';
+           * https://cn-sandbox.test.dataone.org/cn/v1/meta/urn:uuid:b80ddc56-cc02-4a9d-904b-1c922952638e
+           * 
+           * https://cn-sandbox.test.dataone.org/cn/v1/meta/urn:uuid:9f44e94a-83a1-4538-ae67-607988341d2d
+       * ensure that total # of requested replicas == # of registered replicas on the CN
+         * Use postgres query against smreplicationstatus table
+         * number of replicas is: 15048
+metacat=> select sum(number_replicas) from systemmetadata where number_replicas != -1;
+            sum  
+            -------
+            15048
+            (1 row)
+         the number of smreplicationstatus should be 
+         15048+ 5077(total objects (this is for orginal node))+ 5055(sci metadata in cn) + N (number of ORE on CN) =25180
+         
+     * d1_index (worked)
+       * Assumes d1-index daemons are running during sync.
+       * look to see if index count is equal across all 3 CNs (once sync is complete)
+         * https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/query/solr/select?fl=id&q=id:*
+         * ucsb has 5065
+         * orc has 5065
+         * unm has 5065
+       * If there are differences, usually a Metacat-repl problem (objects not transferred)
+         * (file doesn't exist on disk, pid is present): force replicate pid via Metacat
+         * pid is not present in object path hz data structure yet.
+       * grep through /var/log/dataone/index/cn-index*log for 'ERROR'
+     * ONEMercury (exercise resolve() from searches, etc.) (worked)
+       * https://redmine.dataone.org/issues/5463 (documented upgrade issues for mercury)(worked)
+       * Search, look at detail of results across all MN
+       * Ensure all MNs are listed in the MN list search box (worked)
+       * Try both scimeta and scidata downloads (download doesn't work, it opens another tab (resolve) and hangs there)
+       * Look at both eml and fgdc rendering (spot check manual)(worked)
+         * did a % sesarch, click "view metaca" and get org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.StringIndexOutOfBoundsException: String index out of range: 7        org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:583)
+         * Production cn has the same issue.
+
+     * Metacat & hz repl - scimeta and scidata (object_format_list*) content is replicated across CNs (working)
+       * /object?count=0  should be the same on all 3 CNs ( 3 cns has the same number 5073) (Worked)
+       * /var/metacat/{documents|data} should have the same count (worked)
+         * ucsb has 17 resource objects, 5035 scimeta documents (total 5052)
+         * orc has 17 resource objects, 5035 scimeta documents (total 5052)
+         * unm has 17 resource objects, 5035 scimeta documents (total 5052)
+       * xml_documents, xml_revisions tables should have the same counts (Worked)
+         * ucsb xml_documents has 5052, xml_revisions has 0, systemmetadata has 5073
+         * orc xml_documents has 5052, xml_revisions has 0, systemmetadata has 5073
+         * unm xml_documents has 5052, xml_revisions has 0, systemetadata has 5073
+     * log_aggregation - is harvesting from all MNs
+       * Is it running? : /var/log/dataone/logAggregate/cn-aggregation.log (only ucsb has the file)
+         * are jobs scheduled for each MN (looking at the log file) when d1-processing daemon starts.(worked)
+         * after each MN is harvested, perform a count (always from day ago): on the cn perform a solr query using curl, on mn perform log query (with dates)
+           * For CCI 1.2.7, Solr endpoint will be /solr/..., for CCI 1.3.0 it will be /cn/v1/query/logsolr/...
+           * curl --trace curl.out --cert /etc/dataone/client/private/urn_node_CNUCSB1.pem  --cacert /etc/ssl/certs/DataONERootCA.crt  "https://data.esa.org/esa/d1/mn/v1/log?start=0&count=0"
+           * curl --trace curl.out --cert /etc/dataone/client/private/urn_node_CNUCSB1.pem  --cacert /etc/ssl/certs/DataONERootCA.crt  "https://cn-ucsb-1.dataone.org/solr/d1-cn-log/select?q=nodeId:u*SEAD&start=0&rows=1&wt=xml&indent=on" > SEAD.out
+
+curl --cert /etc/dataone/client/private/urn_node_cnSandboxUCSB1.pem  "https://mn-sandbox-ucsb-1.test.dataone.org/knb/d1/mn/v1/log?start=0&count=0" 
+
+<?xml version="1.0" encoding="UTF-8"?><d1:log xmlns:d1="http://ns.dataone.org/service/types/v1" count="0" start="0" total="3735493"/>
+
+ curl --cert /etc/dataone/client/private/urn_node_cnSandboxUCSB1.pem  "https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/log/select?q=nodeId:urn*UCSB1&start=0&rows=1&wt=xml&indent=on" 
+ 
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<d1:log xmlns:d1="http://ns.dataone.org/service/types/v1" total="5037" start="0" count="1">
+<logEntry>
+<entryId>588</entryId>
+<identifier>doi:10.5072/FK2/LTER/knb-lter-gce.129.19</identifier>
+<ipAddress>128.111.54.77</ipAddress>
+<userAgent>N/A</userAgent>
+<subject>CN=urn:node:cnSandboxUCSB1,DC=dataone,DC=org</subject>
+<event>create</event>
+<dateLogged>2014-06-15T05:49:01.055Z</dateLogged>
+<nodeIdentifier>urn:node:cnSandboxUCSB1</nodeIdentifier>
+</logEntry>
+</d1:log>
+
+<error detailCode="-1" errorCode="500" name="ServiceFailure">
+&lt;p&gt;The server encountered an internal error or
+ admin@nkn.uidaho.edu and inform them of the time the error occurred,
+caused the error.&lt;/p&gt;
+&lt;p&gt;More information about this error may be available
+in the server error log.&lt;/p&gt;
+</error>
+
+ERROR
+curl --trace curl.out --cert /etc/dataone/client/private/urn_node_cnSandboxUCSB1.pem  --cacert /etc/ssl/certs/DataONETestCAChain.crt  "https://cn-sandbox-ucsb-1.test.dataone.org/cn/v1/node"
+
+This works
+curl --trace curl.out --cert /etc/dataone/client/private/urn_node_cnStageORC1.pem --cacert /etc/ssl/certs/DataONETestCAChain.crt "https://cn-stage-orc-1.test.dataone.org/cn/v1/node"
+
+Same error in dev env:
+sudo curl --trace curl.out --cert /etc/dataone/client/private/urn_node_cnDevUCSB1.pem --cacert /etc/ssl/certs/DataONETestCAChain.crt "https://cn-dev-ucsb-1.test.dataone.org/cn/v1/node"
+
+gives the error:
+curl: (60) SSL certificate problem, verify that the CA cert is OK. Details:
+error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+More details here: http://curl.haxx.se/docs/sslcerts.html
+
+curl performs SSL certificate verification by default, using a "bundle"
+ of Certificate Authority (CA) public keys (CA certs). If the default
+ bundle file isn't adequate, you can specify an alternate file
+ using the --cacert option.
+If this HTTPS server uses a certificate signed by a CA represented in
+ the bundle, the certificate verification probably failed due to a
+ problem with the certificate (it might be expired, or the name might
+ not match the domain name in the URL).
+If you'd like to turn off curl's verification of the certificate, use
+ the -k (or --insecure) option.
+ 
+ 
+openssl x509 -in /etc/dataone/client/private/urn_node_cnStageORC1.pem -noout -text
+
+LogAggregator.active=TRUE
+LogAggregator.solrUrl=http://localhost:8080/solr/d1-cn-log
+LogAggregator.solrUrlPath=/solr/d1-cn-log
+LogAggregator.logRecords_batch_size=1000
+# cn_base_url should point to metacat in order to grab the logs maintained there
+LogAggregator.cn_base_url=https://cn-sandbox-ucsb-1.test.dataone.org/metacat/d1/cn
+LogAggregator.delayStartOffset.minutes=10
+LogAggregator.delayRecoveryOffset.minutes=5
+# the field name of the period to calculate interval between trigger 
+# firings of logAggregation jobs. Valid values are hours, minutes or seconds
+LogAggregator.triggerInterval.periodField=minutes
+LogAggregator.triggerInterval.period=1440
+
+
+
+wipe off metacat:
+
+1. sudo /etc/init.d/tomcat7 stop
+
+2. postgres@mn-sandbox-ucsb-2:~$ dropdb metacat
+postgres@mn-sandbox-ucsb-2:~$ createdb metacat
+
+3. delete everything from /var/metacat/data and /var/metacat/documents
+
+4. sudo vim /var/lib/tomcat7/webapps/knb/WEB-INF/metacat.properties
+set 
+configutil.databaseConfigured=false
+
+5. start tomcat
+
+6. configure tomcat
+
+7. restart tomcat
+
+

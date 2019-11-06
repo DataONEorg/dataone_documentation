@@ -1,0 +1,73 @@
+This page is for the Librarian Outreach Project
+Main WG notes page: http://epad.dataone.org/CEEWG-May2013
+
+Goal: Help librarians understand DataONE, how it can help them and their researchers
+
+Deliverables: 
+ * new section of D1 website - to educate libn's on D1
+ * outreach kit - for librarians to educate researchers
+ * webinar for librarians - to educate librarians on D1
+ * primer for librarians - to educate librarians on D1
+ * 1 page synopsis on importance of data management - ed libn's
+ * also... tutorials (but bigger than just librarians) - both to ed libn's and libn's to ed researchers
+ * add ask.dataone.org questions relevant to librarians
+
+Message to librarians:
+ * importance of data management stuff - why it's a hot topic
+   * OSTP
+   * data sharing stuff
+   * everything is digital
+ * opportunities for libaries to become key players
+   * front lines. lynchpins etc etc.
+ * learning more: educating libarians
+   * what dataone is: amber schpiel
+   * how their community/institution might benefit (IR connection)
+   * how to talk to researchers
+
+outreach kit contents
+ * talking points
+ * slide decks (education modules for now)
+ * D1 marketing materials 
+   * postcards
+   * flyers
+   * bookmarks
+   * merch: dataone <3s librarians
+
+create section on website - secondary tab. amber to clear with LT.
+
+what we can do at SB:
+ * 1 page synopsis:  broad strokes of data management (in web page, and as pdf download) Draft: https://docs.dataone.org/member-area/working-groups/community-engagement-and-education/working-documents/librarian-outreach/OnePager.pptx/view *URL for librarian part of website needs to be updated
+ * Primer for librarians (in progress)
+   * https://docs.google.com/a/uw.edu/document/d/1bCCyqqttgYjFYaQstJ7Nb1F8iisAMuJ9gXYP4I8SJ08/edit#
+ * Web page components (in progress - Scott) 
+   * http://schamberlain.github.io/d2/
+ * Webinar introducing DataONE to libs - Tues 5 Nov 10-11 am PT. Will give feedback during All Hands meeting. Stephanie to present with Carly assist.  Advertise with DMPTool IMLS webinar series (http://blogs.library.ucla.edu/dmptool/webinar-series/)
+ * Talking points for librarians to use when chatting with researchers
+ * Tutorials/Screencasts (separate tab on dataONE site)
+   * ONEMercury
+   * best practices database
+   * overview of website (software tools, ask website)
+   * another idea: downloading data from dataone
+   * in the future: installing/using R package
+
+Existing resources:
+ * dmp resources roundup: https://bitbucket.org/dmptool/main/wiki/Resources
+
+Whiteboard: https://www.dropbox.com/s/116vrhhf4zlhj81/whiteboard.JPG
+
+Website Text: https://docs.google.com/document/d/1ed33xX5OwjrZ-CVZH-l4Oz1XwhKGNXg0dmJbSIDvOvM/edit
+
+once we're live:
+ * listserv BOMB
+ * webinar(s) on youtube and vimeo
+
+Questions for ask.dataone.org relavant to librarians
+ * How does my institution (and its IR) become a member node of DataONE?
+ * Does DataONE have services available for librarians outside the earth and environmental sciences?
+ * What are the data management needs of faculty in the earth and environmental sciences?
+ * Can I point to DataONE as a place for researchers to store data?
+ * How do I use the Outreach Kit?
+ * Can I customize the materials in the Outreach Kit?
+ * Can I customize the slides in the Education Modules?
+ * Where can I learn more about data management?
+

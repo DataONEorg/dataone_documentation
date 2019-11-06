@@ -1,0 +1,421 @@
+#persist
+
+ILAMB working group meeting, Nov 15-17, 2011 NCEAS, Santa Barbara
+--------------------------------------------------------------------------------------------------------
+
+Participants
+Steve Aulenbach
+Bob Cook
+Forrest Hoffman
+Debbie Huntzinger
+Matt Jones
+Steve Kelling
+Shishi Liu
+Yiqi Luo
+Anna Michalak
+Bill Michener
+Mingquan Mu
+Giri Palanisamy
+Jim Randerson
+Christopher Schwalm
+Claudio Silva
+Kathe Todd-Brown
+Vineet Yadav
+Yaxing Wei
+
+-- What does ILAMB want/need from CI?
+    -- desktop tool for intercomparison
+        e.g., VisTrails
+    -- web-based tool for accessing scoring models and graphic comparisons (e.g., difference plots)
+        -- More formal evaluation of benchmarking
+    -- clear lineage for model system output
+    -- want clean documentation of model outputs, metadata, how they did the comparison
+        -- web based tool for creating this documentation
+    -- formalize the 'metrics' for intercomparison
+    -- ability to handle evolving models and evolving data sets
+        -- versioning, retention of old versions, and advertising of new versions for both
+    -- model output is very standardized, but gridding is not standardized
+        -- netCDF output
+        
+    -- VisTrails could fit in
+    
+    -- need visualization tool for exploring and comparing model outputs
+        -- ability to synchronize variables in various windows
+        -- linking and brushing techniques for animated time series
+        -- existing tools are all snapshots, non-interactive
+        -- try to detect time of divergence of model outputs (start from same driver data, then diverge as dynamics of model kick in)
+        -- netcdf file at monthly resolution could work seemlessly across models
+        
+    -- compare to atmospheric model comparison tools
+        -- these work with Earth Systems Grid nodes
+        -- James Randerson mentioned CMOR (http://www2-pcmdi.llnl.gov/cmor )
+        -- CDAT -- for model diagnostics ( http://www2-pcmdi.llnl.gov/cdat )
+        -- (should probably use UV-CDAT -- http://uv-cdat.llnl.gov/ http://uv-cdat.llnl.gov/wiki - better installation instructions)
+        
+    -- From Randerson
+   * easy to use Web interface
+   * good metadata structure
+   * clear lineage for model simulation output
+   * (expected to change over next 6 months on ESG)
+   *        - need to check to make sure we've got latest version before final runs for paper
+   * clear and well documented code (could be in R, Python, NCL, ...)
+   * clear documentation of metrics and benchmarks
+   * easy ways to swap in and out different models, build a new data module
+   * easy way to assign scores to different data
+   * comparisons and generate an overall model score
+   * interface for downloading ILAMB 1.0 package to your university or national modeling center
+
+ DataOne Resource:
+         -- Architecture documentation: https://mule1.dataone.org/ArchitectureDocs-current/index.html
+         -- list of metadata standards: http://mule1.dataone.org/ArchitectureDocs-current/design/WhatIsData.html
+         -- details about the search metadata: https://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html?highlight=fgdc#id1 [a set of common properties shared by different metadata standards from the above list]
+         
+-- Short term goals
+    -- use R and Matlab and NCL for intercomparison work
+    -- tight time schedule (MsTMIP) to get a lot of the evaluation done (end of grant)
+        -- global simulations at 0.5 degree
+        -- North American aims at 0.25 degree in the spatial area of (W: -170, S: 10, E: -50, N: 84)
+        
+        
+DataONE WG could focus on two areas:
+    1) Model intercomparison
+    2) Model output visualization
+    
+    For each of these, gather the:
+        -- requirements
+        -- metrics
+        -- data sets needed
+        
+CMIP5/MsTMIP variable Selection Criteria
+1) Eco system variables:
+    - net ecosystem exchange (GPP, LAI, NPP, NEP, RA, RH, soil carbon, biomass, litter carbon, flux between organic carbon pools)
+    - physical variables (precip, air temp, soil temp, humidity, solar radiation, CO2 level)
+
+    CMIP5 variables:http://cmip-pcmdi.llnl.gov/cmip5/docs/standard_output.pdf 
+    MsTMIP output variables:
+      - variable names follow ALMA convention: http://www.lmd.jussieu.fr/~polcher/ALMA/convention_output_3.html
+
+2) Experiments:
+    - CMIP5: Historical, Historical ESM, RCP8.5, RCP8.5 ESM 
+      ESM - Earth System Model (forced with emissions instead of assigned CO2 concentrations) 
+    - MsTMIP global simulations: BG1 (best estimate: climate + LULUC+ CO2 + N2), SG1 (climate only), SG2 (climate + land use change), SG3 (climate + land-use change + CO2 ).
+
+Wednesday November 16 Discussions
+
+1.  CI Framework Questions
+    standards:  file format, metadata, &  ??
+    File format:  netCDF-3, netCDF-4 (classic model), HDF-5
+    file structure convention:  CF-1.x 
+
+   ILAMB: CF-1.4  netCDF-3
+   MsTMIP: CF-1.4 netCDF-3 (variable naming convention follows ALMA)
+   SI2: HDF 4/5, HDF-EOS 2/5, considering netCDF  (for both input and output)
+   
+   Metadata Standards:
+   - FGDC, EML, ISO
+   - a cross walking between FGDC to ISO 19115 is available, and, EML and ISO is going on
+   - DataONE focuses on integration instead of building new standards 
+   - shall all the data to be made discoverable, a common set of discoverable metadata attribtues: https://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html?highlight=fgdc#id1
+   
+    "if you can do it this way..."
+    EVA would like from DataONE summary of pros and cons of various standards
+    DataONE needs help from the community to narrow the scope of standards to evaluate
+    
+    Should any questions arise:  EVA will address them
+    
+    
+2.  Exploration / Visualization for Earth System Models
+    - Can a visualization tool similar to the birdvis be developed for carbon model intercomparison (additional funding opportunities?)
+    - Purpose of visualization: to display research results (generation of publication-ready plots), or to help with the research, or both?
+
+Visualization capabilities needed:
+    - tier 1: browsing (maps through time, model output, corresponding observations, side by side map matrix & simple map overlay (with background boundary layers), 3-D iso-lines & iso-surfaces (see UniData Integrated Data Viewer (IDV)) [tools already existing, but hard to use and complex]
+    - tier 2: summary plots over any region; general R/Matlab/... subroutines can be used by the community
+    - tier 3: intelegent part, machine learning funtionalities
+    - tier 4: dynamic model integration
+
+Features    
+   - Web-enabled tools (e.g. Virtual Watershed Application Prototype: http://vws.erp.siu.edu:90/vws/proto.php), 
+   WebGL/OpenGL ES:  allows for fast rendering of high res images on the client side (very fast, but may have issue with large gridded data)
+   
+   
+
+Approach to Tier 1:
+  - start from scratch or build on top of existing tools like IDV?
+      issue:  UniData Integrated Data Viewer (IDV) [lots of features, but hard to use and complex]; more features than needed
+     Action:  Steve A. to contact Unidata, ask that they give a Webinar, based on our requirements for IDV
+
+Approach:
+  - start with several use cases from the paper (to be) published
+    -- Image-Net: http://www.image-net.org/index. images associated with metadata
+    -- cluster images together based on similarity (spatial pattern, ...)
+    -- 1. sensitivity of transport (inverse) model to individual observations, large number of sensitivity maps, to diagnose transport model simulations; maybe the same issue applies to MsTMIP for anomaly detection
+    -- 2. Yiqi: with US/world map, idenfity linkages between different parameters (??)
+    -- 3. Daymet (daily meteorology data): put tiles together on the fly, visually check spatial pattern. 
+           - spatial extent: NA (cutoff at 52 degree North) 
+           - temporal extent: 1980 - 2008
+
+
+
+Projects needs:
+iLAMB: 
+  - tools community thinks good, do visualization for metrics used in the benchmark using data from CMIP5, statististical plots/graphs, no interaction needed, for students to visualize/analyze model outputs; iLAMB focuses on data assimiliation, remapping, regridding, data tracking/provenance more (Forrest), no particular strong needs on visualization. Forrest's SciDAC project has an interest in this topic. 
+  - can the tool track all aspects involved in the benchmarking, including versions of data sets used?
+
+MsTMIP:
+  - benefit from all iLamb's thoughts, a goal is to make sure MsTMIP products (including data and tools) are still valuable after ending and can be used by later works
+  - two types of tools are useful for MsTMIP: 1. visualization tools that help the core team to developm metrics 2. tools help individual model teams to do self diagnostic
+  - Visualize uncertainties
+  - universal v.s. specific users
+  
+SI2:
+  - real-time data streaming
+  - pixel-based time series (e.g. seasonality between two different pixels)
+  - web-enabled system, visualization shall be done on-line
+
+Features for Earth System Visualizations
+    - what are already available from IDV, what are still needed?
+    
+    
+Why was birdvis created? Why do people love birdvis?
+  - computer science research aspects of visualizing the data
+  - a common interest from both the computer science and earth science groups
+  - data volume handled by birdvis may not be as big as "carbonvis"
+
+Issues to address:
+1.   number of days per year 
+    (needs to be fixed so that all models and observations have the same value or it needs to be corrected)
+
+2.    What is the volume?:
+           Massive Image Streaming T (MIST) handles zooming in, with a preprocessing (aggregates) and modifies the spatial data
+                x-y spatial data resolution:  MODIS:  250m is the smallest
+                z:  50 vertical layers
+
+    MsTMIP:  half/quarter degree and monthly
+    SI2:  Data assim:  50 vertical layers, xx degree, and ?monthly?
+
+3. Regridding problem
+    - mismatch in space
+    - mismatch in time
+    - interpolation methods: linear, conservative, dominant, ...
+
+what is the possiblity of doing innovative research that benefits the Grad Student, plus the four projects, plus DataONE.
+identify EVA subgroups that can work issues
+need to identify papers that the EVA group / subgroups can prepare
+
+
+ILAMB:  products in January, 2012
+MsTMIP:  model driver data sets available (global & North American),  model output products in March, 2012 (global)
+SI2:  December 2011 (sample data available), near-realtime data
+Yiqi: push forecast activities forward
+
+need to evaluate commonalities of four activities
+    SI2 , MsTMIP, ILAMB: highly similar
+
+start with one activity (some concrete idea)
+- model skills as a function of time (MsTMIP), is that something similar to the birdvis can be done for not only interactive visualization, but also evaluation of models quantatively?
+
+Products:  visualization tools, papers
+
+STAR - Global Vegetation Health Products: http://www.star.nesdis.noaa.gov/smcd/emb/vci/VH/vh_browse.php
+
+
+3.  Metrics / benchmarking
+    -requirements
+        
+    -- From Randerson
+   * easy to use Web interface
+   * good metadata structure
+   * clear lineage for model simulation output
+   * (expected to change over next 6 months on ESG)
+               - need to check to make sure we've got latest version before final runs for paper
+   * clear and well documented code (could be in R, Python, NCL, ...)
+   * clear documentation of metrics and benchmarks
+   * easy ways to swap in and out different models, build a new data module
+   * easy way to assign scores to different data
+   * comparisons and generate an overall model score
+   * interface for downloading ILAMB 1.0 package to your university or national modeling center
+   * 
+    -- iLamb 1.0 will have some sort of library of tools, an integrated interface/system may not be applicable at this moment
+    -- move data to models? move models to data?
+       - need a centralized inventory holding summary data and tools, they can be distributed to different machines
+       - a web-interface will useful for sharing
+
+    requirements
+    -metrics
+      -- weighting factor: different model teams have their own idea on how the factors shall be, they focus on different aspects: carbon, water, ...
+      -- scores: 
+          - multiple algorithms needed for each parameter (CO2, LAI, soil carbon, ...), multiple scores will be generated for each parameter, they need to be combined into a single score
+          - convert multiple scores for different parameters into a single overall score, weighting factors are needed in this step
+      
+    -data 
+      -- data interoperability: bridge different obervational and model data sources from different organizations/data centers together, need CI to support this. Scope: data discovery, variable name/metadata (for understanding data), data access. this is a long term and challengable activity, may not be durable in the next year, may need 2-3 years work. projects like MsTMIP doesn't have time for this CI to be set up, they need to make progress in a timely sense.
+      -- requirements on CI: the whole lifecycle to discover data, transport data into the computing environment for model simulation.
+
+
+- how lessons learned from iLamb-related activities (soil carbon, fire disturbance, ...) benefit the community
+  shortterm: get standardized regridding routines out, different regridding methods need to be included, different methods apply to different types of parameters (flux, land cover, temperature, ...), these kind of tools are beneficial to projects like MsTMIP. 
+  
+  longterm: come up with a climate package for R? 
+  
+  projects like MsTMIP may think more of contributing to the community, considering the timeline of the projects. problems exist in how to align different project timelines together.
+  
+Come up with an inventory of existing tools from these activities, think about how to bring them together and share in the community
+- Kathy: histogram is directly from R, taylor diagram script was adjusted
+
+[Tools Inventory]
+
+Kathe: 
+  - existing: all R, meta-scripts to check filenames/variables/units (CMIP5 standard units, link with UDUNITS libary), load netcdf data (basic qa check: missing value in R, max/min tolerance [to be done] ), mapping functions, regridding with home-made R scripts (regrid observation/model outputs into 1x1 grid space), modified taylor diagram, histogram, mapping, biome (IGBP or others) calculation for processing MODIS data (mask generation & regridding category/density), mask map for HWSD soil types (1x1 resolution), summary scripts (tables, ...)
+ 
+ 
+ Generic  MIP tools: 
+  - wishlist: readme about the regridding algorithm is useful, consider putting global attribtues into netcdf files to specify what regridding method was used, requirements on variable names-all lower case, on filenames too, the tool shall be able to handle CF convention or ALMA naming convention. definitions for different variables (same variable name may mean different things in different models/projects, crosswalk between variables in different projects), mapping functions support multiple projections (polar projection, geographic projection, equal-area projection: R-GDAL), generic file reformatting tool, generic reprojection tool (can be partly addressed by SCRIP), 
+
+
+MsTMIP:
+Christopher:
+   - existing: Matlab-based tools, find/ingest benchmark data into matlab,  QA check scripts, remapping tool (spatial/temporal), basic statistics,  visualization (3D model skill plots, target plots), many pieces of  codes 
+   - talk with iLamb to see if resources (tools, metrics, science questions to be answered, ...) can be shared, minimize duplication, focus on global scale first
+
+Debbie:
+  - existing: matlab codes to do NACP intercomparison, biome/transcom aggregation, 
+  
+MAST-DC:
+  - existing: [matlab, ArcGIS python, C] regridding script based on SCRIP/ArcGIS, format conversion (ArcGIS, GDAL), gap-filling data to be consistent with given land/water mask (Kevin), NCO (NetCDF Operator) scripts to adjust netCDF files to make them compatible with CF convention, online data access through THREDDS/OPeNDAP, online data access through OGC services (MapServer-based WCS/WMS), web-interface for data visualization (SDAT - Spatial Data Access Tool: http://webmap.ornl.gov/wcsdown?publisher=mast-dc), 
+
+Forrest: mapping tool, statistical functions
+
+
+People who will benefit from these tools:
+- Andy doing CO2 concentration
+
+Action Items: 
+each of the groups do:
+  - document the scripts
+  - get the code into a repository
+  - build a list of tool categories (requirements matrix) required by our work, then people throw their preferred tools into different categories of this list. Yaxing and Kathe start building this matrix, and then link to the scripts submitted into the respository. (Yiqi's postdocs volunteer to help with this topic)
+  - regridding is of the highest priority? evaluate each parameter; throw out a regridding example and people review it?
+  - Chris, Forrest, Yaxing, and Shishi talk about preparing observational data package for benchmarking (Yiqi's postdocs volunteer to help with this topic)
+  - follow-up telecons to evaluate and demostrate the issue (uncertainty, cost funtions ? ...)
+  - future meetings: visualization group with Claudio, workshops like this one, thematic working groups (may help to make progress more quickly)
+  - lessons learned: break-out discussions are needed
+  - Share some plots/maps (soil, fire, ...) with Claudio
+  - DataONE has a list of tools to consider, any other tools need to be added to the list? comments on the tools listed?
+    Yiqi: nothing new
+    Debbie: ArcGIS
+    Anna: ArcGIS, virtual globes (google earth), an integerated collaboration system (Anna will help to set up one)
+    Kathe: R, google docs
+    Steve: open source benchmarking evaluation tool (a proposal)
+    Vineet: postgis, database connection tools
+    Chris: python, GIS tools
+    Forrest: Grass, PostGIS, MySQL, Wiki software (pbWiki), revision control (subversion, mercurial), UV-CDAT, VisIt, 
+    Giri: collaboration tool (pulon? switched to drupal), the drupal collaboration hasn't been used, need to evaluate that or a separate collaboration
+    Mingquan: NCL, IDL
+    Yaxing: MapServer
+
+
+Shall we consider bring existing nice tools for use of our activities?
+Regridding - Spherical Coordinate Remapping and Interpolation Package (SCRIP): http://climate.lanl.gov/Software/SCRIP/
+
+Keep the native resolution of model outputs
+
+for later activities
+        weighting scheme:  flexible 
+        model skills as a function of time
+
+Inventory of MsTMIP can benefit DataONE. MsTMIP want to contribute and align with other projects to share resources
+
+Kathy's Soil Carbon Presentation
+- HWSD overestimates soil carbon in peatland area high latitude
+
+  -- histogram
+  -- constructed biome coverage, different models are using different biome map internally
+  -- high soil carbon locations are extracted, Tarnocai data will be incorporated to fix the pan-arctic area soil carbon
+  -- need to capture uncertainty of the observations:  HWSD. uncertainties can somehow be captured by some techniques (?need to be filled in by Vineet) 
+  
+  --in ILAMB:  enable the researcher to use different approaches for uncertainties, cost funcitons, metrics. uncertainties need to be considered when scoring models. Different combinations of parameters & weighting factors can be used to score different models. Different combinations may yield to different models ranked on top. this may be a point that needs to be captured by CI to build a scoring system.
+
+  -- codes scripted in R, can be implemented as a standard library? can similar metrics and codes be applied to other parameters? many independent activies, including Kathy's, Mingquan's, ... these need to be bridged together
+
+[Note]:
+- These ideas are beyond the scope of DataONE. May come up with proposals to bring additional fundings about uncertainties, cost functions, ... but before heading forward, evaluate if this (cost functions, ranking, ...) is really an issue that needs to be addressed.
+
+[Open Discussion]
+- timeframe of iLamb & MsTMIP: iLamb discussion on AGU meeting, issue of mismatching between MsTMIP and iLamb spatial resolution, bring everything into half-degree grids? 
+
+- observational data requirements in iLamb: naming convention, format, 
+  borrow some ideas from ESG's solution to handle observational data
+Additional resources:
+ CMIP5 model output requirements: https://oodt.jpl.nasa.gov/wiki/download/attachments/26542378/CMIP5_output_metadata_requirements.pdf?version=1&modificationDate=1298512144634
+ 
+Metadata and data requirements from CMIP5 Observational datasets:
+https://oodt.jpl.nasa.gov/wiki/display/CLIMATE/Data+and+Metadata+Requirements+for+CMIP5+Observational+Datasets
+
+
+
+
+
+
+Possible CI components:
+ 
+    - identify the data (from obs, models) DONE - but still needs to find and retrieve the actual datasets
+      - data products have been identified, but data haven't been retrieved and compiled, shall move forward to put data into ILAMB's data repository (ftp server is necessary?), can source control system help with data management (e.g. git)? MAST-DC can provide some resources to help with this activity. 
+      - couple of C-LAMP data products can be reused, but many of the satellites data need to be regenerated to incorporate the most recent observations
+      - MsTMIP has a lot of these data in house (Chris), e.g. albedo
+      - ORNL offers MODIS products including albedo in subset, but not in CMG format
+      - eventually focus on data sharing and interoperability (ESG, THREDDS, ...). THREDDS provides data subset functionalities. MAST-DC has a THREDDS server running. 
+      
+    - prepare the metadata using a common structure (describe model and obs. data, and scripts),
+      - both data set/granule level metadata
+      - operational metadata (what's included inside the netCDF files, CF attributes)
+      - discovery metadata
+      - tools / template help to collect/compile metadata
+    
+    - Action: review data sets used by ILAMB and MsTMIP, their status
+      - MsTMIP: Chris has an initial list of candidate data sets. some are in house, some are sitting there online; site list: 40 NACP FLUXNET sites used in NACP)
+    
+    - CI to store, publish and access these datasets
+        - Data packaging options
+          - auxilliary documents, better organize data to enable efficient data access
+        - versions
+          - version management, version tracking, iLamb is using subversion
+          - DataONE shall come up with recommendations on how to version control data
+        - DOIs for these datasets (can be used in publications)
+          - for citation of data products
+          - for long-term preservation
+          - DOI appropriate for data products ready for publication (may also be appropriate for analyzed data products)
+          - DOI for models (in evaluation)
+          
+        - access control?
+          - multiple levels of access control, ILAMB uses SVN for access control
+          - data access log/tracking
+          
+        - CMIP5 datasets - publish in ESG?
+          - MsTMIP data will go to ORNL DAAC
+          - CMIP5 data sets published into ESG
+        
+    - identify and build standard set of tools (library of scripts), build a standardized regridding algorithms
+      - a script repository, including vistrail vt files, IDL scripts, Matlab, R, NCL, Fortran 77/90/95, C, etc.
+      - 
+      
+    - CI to share the scripts and possibly run (in super computer)?
+      - set up a computing environment? resource available? 
+        Longterm wishlist 
+        - DataONE computing member nodes may be used (needs proposal to request computing hours). 
+    
+What's missing:
+- how are these data to be published into DataONE
+  - MsTMIP data will go through ORNL DAAC
+  - iLAMB needs further consideration (iLAMB 1.0 into ORNL DAAC? needs community review and  NASA's permission; ESG? JPL systems?)
+- data use policy, fluxnet data use policy
+- iLAMB is considering global FLUXNET & AmeriFlux data, level 3/4. Get the Ameri-flux gap-filling code for FLUXNET data.
+
+Comments:
+- avoid separated travel days, somewhere in the middle
+- (Yiqi) great workshop, the list of obervational data, benchmarking, ...  are all beneficial to data assimiliation, RCN has funding to support students working on these activities; a CI system is important; organize workshops based on science-oriented, technical-oriented, mixed, ... ; EarthCube ...; this is an activity that involves both science and computing science
+
+Thank you Bob!
+Greatly organized workshop!
+
+

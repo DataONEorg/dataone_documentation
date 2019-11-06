@@ -1,0 +1,35 @@
+1.)  Stand-up Epad Notes - who is the target audience?  Are these notes used / useful to someone?
+
+    Target audience is Dave, Chris J and others who need to review what the team is doing when they are traveling or otherwise unavailable for the meeting.  Robert W. uses the epads for CCIT summary reports to DataONE UTK status meetings.
+
+    Use of Epads needs to be revised.  Use epads for sprints as only work in progress reports. 
+    Epad sprint reports shoud be documented by story instead of 'by reporter'. The epad will be used as a white board focused on tasks rather than focused on developers. Epads must be updated before the sprint by each member of the team.
+
+    Any design discussion or 'issue' report will be scheduled after sprint (usually immediately afterwards), and the first step of a design discussion should be created a 'scratch' epad.  After the initial design is decided the epad should be translated into redmine stories/task structures. 
+    Any bugs should be immediately entered into redmine.
+
+    Decision: * Organize by active stories *
+    Decision: Shoot for 15 minutes for standup
+    Decision: Focus on: blockers, progress, "i have open cycles", "i need help", "i can give help" 
+
+
+2.) Scrums/blocks/milestones - seems like we are artificially working blocks/sprints but I don't see what the benefit / result is.  If we are not tracking team velocity to forward plan development budget for the next sprint, not sure why we need manage these 2 week blocks.  Would like to see a more release focused use of milestones.
+
+    Sprint implies time while milestone implies functionality. point of milestone is to focus team on a set of work (maybe by timeframe as well). What are the goals for each block of time. What major peices of fuctionality are expected in two months. (Milestones are effectively releases in redmine). For the first relevant period of a block, we have a sprint planning meeting. define major development areas, chunk it up into sprints with loose resolution. Focus in then on immediate sprint needs. Each major goals are copied into subsequent sprints. 
+    
+       Releases are Stories. A release story should be created, but any bug or feature that is associated with a release is tied to the story by 'related' stories rather than as children tasks. Since the steps of a release are outlined in the documentation, the primary use of children tasks for 
+        
+        Target version- are the sprint/which block to which the particular issue belongs
+        Milestone -  Prioritized and functional Goal oriented division of a larger time block that is somewhat undefined, but usually 2-3 months.
+
+        Add a product version field to redmine
+
+3.)  Forward Planning Releases/Milestones - would like to see some effort put into defining releases prior to deciding its time for release (major/minor releases).  Of course, patch releases for bug fixes will/would need to occur on a 'as needed' basis.  IMHO would help focus team effort to reaching release goals.
+
+   Before each Sprint, we will have a sprint planning meeting.  Probably on Thursdays. We can also talk about how well/not well the previous sprint went.
+    We define milestones  and work toward the goals during sprints.  Before the beginning of each milestone and related sprints, we have a milestone meeting and define what stories/features/major bugs will be worked on during a milestone. During beginning of each sprint, the milestone goals will be copied into the top.
+    Releases are worked on during milestones, but may not necessarily be a result of a milestone (for major release work probably will be the result of several milestones). Releases are stories that contain related stories.
+
+4.) Building ahead of design/documentation
+ A lot of time we go straight from stand-up discussion to coding, with design/documentation intended to happen in parallel.  In these cases, the design / documenation usually lags far behind.  This has the effect of prolonging development cycles.  (e.g. data packaging, authorization)
+

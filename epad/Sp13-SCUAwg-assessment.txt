@@ -1,0 +1,238 @@
+Spring 2013 US/SC Joint WG Meeting:
+Assessments Subgroup
+
+Twitter sharing during the meeting @DataONEorg #UASCwg
+
+Current Meeting Documents________________________________________________________________
+
+2013 Joint UA & SC WG Meeting Knoxville Apr 30 - May 2:
+ * - Plone Site Folder https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-ua-sc-wg-meeting-2013
+ * Agenda https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-ua-sc-wg-meeting-2013/Joint%20SC_UA%20WG%20Agenda%204.26.13.doc/view
+
+Past Meeting Documents________________________________________________________________
+
+Joint Meeting Knoxville:
+ * Prior E-Pad: Spring 2012 UA / SC Joint Meeting http://epad.dataone.org/ajllhvzhxK2012
+ * Plone Site Folder https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg
+ * Summary Report https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/Summary%20Joint%20SC_UA%20WG%20May%201%20-%203%202012.doc/view
+ * Assessments Subgroup https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/assessments-sub-group
+ * AssessmentsGroupReport5.1.2012.pptx https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/assessments-sub-group/AssessmentsGroupReport5-1-2012.pptx/view
+ * Assessments 3May2012 presentation.pptx https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/joint-u-a-sc-wg/assessments-sub-group/DataONE%203May2012%20Assessments.pptx/view
+
+AHM Sept 2012:
+ * Plone Site Folder https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm
+ * Executive Summary https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/ahm-2012-executive-summary-report-ua-and-sc-wgs
+ * Usability and Assessment Lightning Talk https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/DataONEAHMLightning9-11-2012.pptx/view
+ * Report Out https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/DataONE%20UA%20SOCIO%20Summary%20AHM%202012.pptx/view
+ * Breakout Session notes: UA and SC combined sometimes including CI and PPSR    http://epad.dataone.org/yOOvlIEvyn
+ * Assessments Subgroup https://docs.dataone.org/member-area/working-groups/usability-and-assessment/meetings-usability-and-assessments-working-group/2012-ahm/assessment-subgroup-ahm-2012
+
+AHM Oct 2011:
+ * Plone Site Folder https://docs.dataone.org/member-area/working-groups/sociocultural-issues/meetings-sociocultural-working-group/ahm-oct-2011
+
+____________________________________________________________________________
+BEGIN CURRENT MEETING EPAD
+____________________________________________________________________________
+Group members: Ben Birch, Denise Davis, Bob Sandusky, Carol Hoover, Ellie Read, 
+
+Tasks:  
+ * Design 4 follow-up surveys 
+   * Academic Libraries 
+   * Academic Librarians 
+   * Federal Libraries 
+   * Federal Librarians 
+   * Guidelines : 
+     * Questions from the baseline surveys should be kept in the follow-up 
+       * Exception: Questions 56, 57, 58, and 59 in the Federal Librarians baseline should not be carried over because in the baseline survey there were 0 responses to these questions. 
+     * The academic library follow-up should end up with the same questions as the federal library survey unless there are questions that don't apply to both. 
+     * The academic librarians follow-up  should end up with the same questions as the federal librarians survey  unless there are questions that don't apply to both. 
+     * The librarys surveys present library policies, and the librarians surveys present librarians perceptions. For every question in a library survey there should be a corresponding question in a librarians survey (and vice-versa) that allows us to see how much misalignment there is between the two points of view. 
+ * Create a detailed timeline for completion of all surveys (with tasks broken down) that are scheduled to be completed before the end of year 5. 
+   * Scientists/educators follow-up 
+   * Early adopters baseline  
+   * Academic libraries follow-up 
+   * Academic librarians follow-up 
+   * Federal libraries follow-up 
+   * Federal librarians follow-up 
+   * Data managers follow-up 
+
+State Libraries - change in leadership with the COSLA Research & Statistics Committee. Hulen Bivens is the new chair. Action needed - reach out to Hulen to discuss COSLA partcipation in the DataOne survey process. Based on response, UTK is poised to request IRB, etc to collect data.
+
+Seek alignment between these pairs of surveys:
+Academic and federal libraries
+Academic and federal librarians
+Academic libraries and academic librarians
+Federal libraries and federal librarians
+
+
+Academic Library survey add/modify
+
+Page 1 (informed consent information)
+Generally make it more like the IC information used with the other 3 surveys.
+ * Remove paragraph 1
+ * Add "and that I am 18 years old or older" to the end of the final sentence that begins "By proceeding..."
+
+ * Add after web page 3:
+
+Modify  question on web page 4 to: 'How many NSF, NIH, NEH, other federal  agency, and foundation grants are typoically awarded on your campus each  year?'
+
+Does your institution receive external funding for research Y/N/Don't know
+
+Please indicate the total annual value in US Dollars of external funding received from federal agencies (NIH, NEH, NSF, IMLS, etc) and foundations for the most recent fiscal year. Response ranges need to be established.
+
+web page 5 - last response option reword to
+acquire data/data sets for repositories on or off campus
+
+web page 6 - delete word ("reference") in response option 
+Providing support for finding and citing data/data sets
+
+web page 7 - add response options from federal survey:
+Seeking data sets for repository and outreach to data set owners
+Consulting or involved in either policy development or strategice planning related to research data services (RDS)
+Consider changing 'on a semi-regular frequency' to 'on a regular or semi-regular basis'
+
+Consider modifying responses on web page 8 from radio buttons to checkboxes so more than one option can be selected. (Not 100% sure this is a good idea)
+
+web page 10 - create response list drop down from baseline survey; a set of checkboxes would allow respondents to select more than one if that seems warranted.
+add "other" with text box
+
+web page 11 + 12  -change question to align with federal library quest6
+Does your library manage, or participate in managing technology infrastructure (e.g., data storage, tools for data analysis, virtual community support) that supports research data services (RDS)?
+
+web page 12: it seems that the list of options could be greater than the 3 provided right now. Check if BL survey responses include good candidates. One to add might be 'Operating a data respository' which to me is different from data storage (implying raw file storage vs. a repository with metadata, organization, and some access/discovery capabilities)
+
+web page 15, change "developed" to "provided" in first sentence.
+
+
+Federal Library survey add/modify
+quest17+20 -- remove response option column No Answer
+
+quest20, modify language
+Does your agency perform secondary analysis of others' data?
+Does your agency support (provide?) public access to data / datasets?
+Is provision of public access to data part of the agency's core mission?
+does your agency support the preservation of data?
+Is preservation of data part of the agency's core mission?
+
+change "currently do or plan to do in the future" to "currently offer or plan to offer in the future" wherever it appears in the questionnaire (e.g., quest 2, 133, etc).
+
+quest 12, last response statement, modify opening word to  Acquire (acquisition of) data / data sets for repository.
+
+quest 133 -
+providing support for finding and citing data/data sets / data repositories
+deaccessioning/deselection of data/data sets for removal from a repository
+
+quest 14, response option text modification
+Preparing data/data sests for deposit into a repository
+Discussing research data services (RDS) with other professionals on a regular or semi-regular basis
+Consulting or involved in either policy.....
+
+quest 15, delete first response option (consultation on locating...)
+ 
+ quest 16 modify response options
+ Identifying data sets for local/institutional repository
+(NEW; break out from other  response option) Reach out to data set owners in order to add datasets  to a local/institutional repository
+ Training co-workers inside/outside your library on research data services (RDS)
+ 
+ quest 3
+ change '(S)' to '(s)' in second radio button
+ 
+ quest 4 - align with response options academic survey
+ change response 'a combination of the above or other' to 'a combination of the above'
+ add "other" and "my library is not involved in RDS"
+ 
+ quest 5 -- create response drop down list from baseline responses. include an "other" reponse option with a text box
+ 
+ quest 6 -- use what is in the academic library survey (from web pg 11 and 12 questions).
+ 
+ quest 7 - add "not applicable" response option
+ 
+ quest 9 - use same wording as in Academic survey web page 15
+ 
+ quest 10, modify text to Does your library collaborate with researchers within your unit to develop professionals with skills related to research data services (RDS)?
+ 
+ quest 11- modify parenthetical Yes(please specify the collaborating units)
+ 
+ quest 12 - modify parenthetical Yes(please specify the collaborating agencies)
+ 
+Add between Federal questions 12 and 18 the question on Academic Library webpage 17 re: 
+ You have indicated that your library collaborates with other units or divisions regarding research data services (RDS). Please indicate the unit(s)/division(s) with which you have collaborated.
+
+modify response options list for Federal to align with those in Federal quest18
+biological sciences/computer and information science and engineering/engineering/geosciences/mathematical and physical sciences/social, behavioral and economic sciences/education and human resources
+
+
+ ACADEMIC Librarian survey edits
+ quest6, align some question statements to academic library survey web page 7 question.
+* Participation in informal discussion groups about research data services, and 
+* Participation in working groups or other professional groups about research data services 
+
+Last question statement, add to Academic Library survey web page 7 question?
+Strategic planning related to research data services (RDS)
+
+quest 7 - look at Academic Library survey questions webpage 13/14/15 to make sure the detail is reflected in each questionnaire.
+
+quest 28 - compare with Academic Library survey questions web page 14-15 to make sure all detail reflected in each questionnaire. 
+Question about response statement "My patrons need research data services" whether it needs to appear in both questionnaires?
+
+quest 29, response statement "My library has sufficient technical infrastructure to support research data services (RDS) - include in Academic Library questionnaire in webpage 11-12 questions.
+
+quest8, 9,10 -- no need to align with other questionnaires.
+
+quest 11 - add to Academic library survey.
+
+quest 21 - add from Academic Library survey webpage 8 question (who in the library provides research data reference consultation....). 
+Also ask about respondent position/title in the library in librarian survey
+
+Add question about training co-workers - use academic library webpage7 question, response statement "Training co-workers in your library....."
+
+quest 18 add to academic library survey?does your library have an institutional repository.....
+
+after webpage25, add academic library webpage9 question to Librarian survey....If your library is involved in any research data services (RDS)...
+
+academic librarian quest31, response statements below, add to Academic Library survey at appropriate location in questionnaire:
+*Without research data services, by a library, graduates will be data illiterate
+*Failure to support research data services through the library will negatively impact institutional accreditation
+
+FEDERAL LIBRARIAN survey edits
+quest34
+Does your agency perform secondary analysis of others' data?
+Does your agency support (provide?) public access to data / datasets?
+
+quest33
+Is provision of public access to data part of the agency's core mission?
+does your agency support the preservation of data?
+Is preservation of data part of the agency's core mission?
+
+quest25
+Identifying data sets for local/institutional repository
+(NEW; break out from other response option) Reach out to data set owners in order to add datasets to a local/institutional repository
+
+quest21
+Change this to a select list; should be based on the responses we received in the baseline
+
+
+quest17(?) - need to add staffing questions to both the federal library and federal librarians surveys:
+Carol Hoover recommended refering to staffing as
+"How many FTE staff/employees work at your institution?" 
+(use range response list, TBD) 
+
+Denise: is this correct? - Bob S.
+add federal librarian quest 24 (age?) and 14 to acadedmic librarian survey (subject specialty detail)
+
+
+
+Link to the Timeline: 
+https://docs.google.com/spreadsheet/ccc?key=0Am8rDNhFX-BkdG1ZYkJ5TndsckItZmhDdVNSOFpxNnc#gid=0
+
+
+Scientist / Educator Follow-up
+
+Discussion about the survey deployment. The BL survey utilized a 'contact the champion' approach: we are not sure we have a list of the champions we utilized for the BL that we can re-use for the follow-up survey. We would also benefit from knowing which mailing lists it went out on.
+
+E.g.,
+Using ACRL subject group mailing lists 
+
+Read: contact at Geulph
+Frame / Zolly: USGS
+

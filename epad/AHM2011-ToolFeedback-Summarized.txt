@@ -1,0 +1,212 @@
+This document provides a summarization of the feedback from the four different tool feedback sessions. When this document is finalized, it will be used to drive development efforts and will be put into the code/document repository, with a link in the Plone document repository.
+
+
+The raw feedback information is in four separate EtherPads
+ * Authentication and ID mapping: http://epad.dataone.org/AHM10182011AuthNFeedback
+ * ONEDrive: http://epad.dataone.org/AHM10182011ONEDriveFeedback
+ * ONEMercury: http://epad.dataone.org/AHM10182011-OneMercury
+ * ONE R Client: http://epad.dataone.org/2011-10-18-r-client 
+
+Overall Themes and Common Requirements:
+
+Chaining, Integration, Relationships between ONESearch  - ONE R Client & ONEDrive should be investigated and better defined.  For instance, separate filtering from access -- use mercury as the recommended way to search, then allow the results to be opened in a filesystem view (e.g., a "smart folder") (+3)
+- Discussions of "chaining" ITK tools together came up a couple of times. One was in the context of searching for data using Mercury and then linking from results to starting a dataset download in R;  or providing a button in Mercury searching results to use query to mount ONE Drive
+- Common needs for ONE Drive and ONE R Client regarding signalling to user information about file size, relationships to other objects in DataONE ("you've found a very large raw data file; here are some derived subsets you may prefer to use")
+- Representing resource maps for users in ONE Drive and ONE R Client
+- Generate citations for any object used in ONE Drive and ONE R Client; user can embed in other documents using copy & paste
+- Focusing on READ ONLY aspects of the ONE Drive allows users to better understand the capabilities of DataONE, it's data holdings, and participating organizations.   
+
+Summary of R Requirements & Priorities;
+
+Another had to do with improving metadata creation; improving R may not be the best approach: instead could R be "chained" to some other ITK tool (Morpho?) for metadata creation? 
+
+List of themes from the flip charts: the issues that got votes during the prioritization process (issue / vote total across all 4 sessions):
+
+Locally cached data        11
+
+Improve metadata generation: templates; for derived data products; apply from existing object         9
+- Use Metadata Template built into the R Client (Science Metadata)
+- Found Dataset, potential relationship ship to existing dataset, how can you reuse Science Metadata 
+- Possible use of Resource Maps 
+
+Provenance data: in science MD; R history dump        9
+
+Supporting large datasets: show related that might be smaller; interop. w/ batch data sources; preview size, characteristics        9
+
+Multi-object packages: support for operations; preview; streamline access        7
+
+Help, guidance, case studies on R client use in DataONE        4
+
+Archive R scripts people have used        4
+
+Return a citation you can embed in a document using copy & paste        3
+ID generation: like tinyURL, short, pre or append constant        2
+Mechanism to transform non-DataONE R scripts to DataONE enabled scripts        2
+Enable R plugin to send usage data to DataONE        2
+Support writing data packages to DataONE as single transaction        2
+Integrate R client with workflow engines        2
+Text-based searching within R        1
+Support setting access restrictions: lists of allowed readers / writers        1
+Allow remote execution of R scripts: near big datasets        1
+Access to phylogenetic data in DataONE        1
+Promote R as tool for data quality assurance (session 4)        1
+
+
+ONE Drive Requirements & Priorities:
+
+(R) - Recommended to be completed before Release 
+(?) - To be evaluated by CCIT for feasability and long-term availability 
+
+Priority: Read Only Capabilities
+
+ * (R) Create a Windows and Mac OS self installer program that includes all necessary scripts, Python executables, and documentation (i.e. Mounting Instructions, Features, etc.) 
+
+ * (R)Filtering -- use mercury as the recommended way to search, then allow the results to be opened in a filesystem view (e.g., a "smart folder") (+3)
+   * UI based Filtering for all OS
+   * allow filtering on Title, Keywords
+   * allow filtering on geography (+1)
+   * allow filtering on Taxonomy
+   * allow filtering on Methodolgy 
+   * ability to find data similar to existing data, or collaborative filtering (+1)
+   * Save Filter setting (shopping cart or bookmark lists for my "saved" data.(+2))
+   * Refresh Filter setting to include "new" datasets available based on criteria (If Drive is already mounted, need a way to refresh drive contents). (Do these need to be somehow flagged or pushed in some way?) 
+   * Allow the filter query to be updated on the fly (while the drive is mounted)
+
+ * (R)improve listing of keywords, using controlled vocabularies and perhaps some degree of  thesauri mapping (latter may need to be deferred until after initial release).   Potential defining of 10-20 High Level Keywords, drilling down into more detail
+
+ * (R)generate more features like abstract.txt automatically from the metadata, investigate other output formats that people would want (+1).  Specifically use of FGDC, EML Style Sheets for Display
+
+ * (R)modify the display to indicate which items will work with which applications (user interface) - File Extension Icon usage 
+
+ * (R) Modify Title, Data Package, Identifier, etc. views to display more Human Readable metadata. 
+
+ * (R) Completion of (draft) end-user documentation
+
+ * (R) Usability testing  
+
+ * (?) When opening a file, report the canonical path, rather than the path used to locate the item (this will allow applications to cache a path that should be stable and create a "short path".  
+
+ * (?) Creation of a Data_Citation.txt file for proper data citation text or format, easy import into citation management tool
+
+ * (?) Separate long-folder names, title, etc. into pages (Pagination of Pages) (+1.).  Potentially use CDL Namaste tags for enhancing the directory listing?
+
+ * (?)Ability to drag a folder (data package, all data associated with a keyword, etc.) into other investigator tools (+2) (Would first need to identify and prioritize potential tools)
+
+Future Requirements: 
+
+ * Develop appropriate Authentication and Authorization mechanism for access, posting, updating, and removing (Probably not allowed) content within the DataONE Drive.
+
+ * Write access issues
+   * adding a hook so that data sets cannot be combined, permanently, which changes the original data sets
+   * take the metadata and format it for as a new data set, perhaps for only particular users.
+
+ * Interface design issues
+   * ratings system (e.g., quality of the data package). Essentially this would address the completeness of the package - NOT the quality of the data - to address concerns of provenance.
+   * Semantically enabled//facilitated search capabilities
+   * multi-language support -- generate multi-language abstracts (+1) via Google Translation or something similar 
+   * 
+ * Reporting issues
+   * statistics should be segragated by the tool/interface that generated them -- this way we can sort out the stats for ONEDrive from other tools
+
+Authentication Interface / Identity Mapping Priorities
+
+The following requirements were drawn from the authentication interface / identity mapping session notes:
+
+ * Identity management for exceptional cases: ID reuse at an institution; revocation / banning / blocking; responding to abuse; allowing laid-off / terminated people to maintain their access.
+ * Resolution of multiple identities for one individual with multiple affiliations; the name authority problem (Orcid?)
+ * Allow groups to own other groups
+ * Allow groups to hold the ownership rights for objects
+ * Help, tooltips, feedback for users throughout: remember my OA; why should I love certs; show cert lifetime on CILogon page; why a complicated ID management system is needed (FAQ); "hello Bertram@google.com, or Bertram@ucd.edu; how group and individual authentication rules interact, including groups within groups; explain to users the effects of having their account at home institution decommissioned; explain to users system behavior if they're already logged into a Google account; explain to users how to see which identity is related to their current certificate; hide the LDAP field from users; explain to users what the 'logout' action does (e.g., to the certificate); explain to users what a proxy certificate chain is and how and when to use this approach; show a 'logged in' indication to the user (from CILogon? within other ITK tools?)
+ * Can cert life be extended in some cases (e.g, read-only for 2 weeks)
+ * Define the information DataONE keeps about identities (from MN, tools, wherever)
+ * Monitoring for abuse
+ * Plan for migration of existing DataONE users (e.g., plone site accounts)
+ * Want to use home institution ID (i.e., netid)
+ * Leverage the IDs that exist at the Member Nodes
+ * Use CILogon with DMP tool and other DataONE sites and services, not separate username / passwords
+ * Use e-mail as proof of identity instead of the CILogon process
+ * Process and support for bequething ownership of data / objects; or assuming ownership when objects are orphaned
+ * Ability for users to verify their ownership of data deposited in the past
+ * Support ability for scheduled computational resources to maintain access (e.g,. an R script that runs daily at 2:00AM); variation: certificate times out during a long operation (download or upload)
+ * Use 'predictive search' instead of scrolling a long list of Identity Providers
+ * Provide a checkbox to indicate user is at a public computer, so certificate can 'time out'
+
+One Mercury Requirements/Priorities
+
+(R) - Recommended to be completed before Release 
+(F) - Needed but may be more appropriately deferred to updated release.
+(?) - To be evaluated by CCIT for feasability and long-term availability 
+
+Usability and Interface related recommendations:
+
+Home page:
+ * (R) Change "Toggle advanced function" to "Show/Hide Advanced Search". This function should be defaulted to NOT displaying those Advanced Search options.
+ * (R) Consider making "Show/Hide Advanced Search" a hyperlink, rather than a box, because it visually competes with the Search button. Alternatively, you can increase the size and font of the Search button. Also, the yellow color of the toggle button competes visually with the Search button and draws attention away from Search. Consider making the Show/Hide Advanced Search button white with blue letters. This will distinguish it from the Search button without using a color that stands out and distracts.
+ * (R) These advanced search options can use collapse/expand to avoid scrolling down actions from users
+ * (R) Have a polygon list instead of manually inputing polygon values
+ * (R) Provide a brief "Help" page on how to use advanced search features
+ * 
+ * (R) What is "Mercury"? Can you expect your users to associate Mercury with search functionality? Possible solution: put some sort of very simple and direct tag line to the right of the logo in the banner to distinguish it as a search cabability. Looking at the banner you would see "ONEMercury (logo)  - A Search Tool for Scientific Data" (just made that up, not great, but you get the point about a clear tagline) 
+ * (R) Consider removing the headline statement about ONEMercury: "The DataOne Clearinghouse is a powerful resource for scientists, allowing them to share and access information about important research in natural resources. The catalog contains over 91,000 records from over 85 data providers."
+   *     it's distracting
+   *     it will have to be maitained as the number of providers and records grow
+   *     consider whether it's necessary, as users will recognize immediately that they are looking at a search interface
+   * many users don't understand the context of the word "clearinghouse", and "data providers" will confuse many users who don't realize that these aren't research originators, but member nodes
+   * if ONEMercury is the de facto search for DataONE, do we really need this tagline here? Isn't it more appropriate to spotlight DataONE's current holdings in a prominent place on the home page? (Maybe this could be a permanent homepage ticker/callout box showing real-time holdings statistics)
+ * (R) A link to a comprehensive Help section should be placed somewhere at the top of both the Search and Results pages.
+    
+Advanced Search interface
+ * (R) When Advanced Search is toggled on, there should be a thick tool line to divide the simple search box visually from the advanced search box. Otherwise, it looks as if the user can enter parameters in both the simple search box *and* the advanced search parameters to create a complex query (e.g. Boolean statement + bounding box + date range).
+ * (R) Area search pulldown list
+   * Two possible methods for improving this capability
+     * Visually emphasize that select from the list is from the USA or World, depending upon radio button activated.  Ideally this would be contextual to the activated radio button, and would "Select State" (if USA is chosen) or "Select Country" (if World is chosen). If this is too complex programmatically, use "Select State/Country" help text inside the pulldown list.
+     * OR There is a potential redundacy in geographic search options.  Get rid of radio button options for USA and World, and instead provide two pulldown box options. USA would be taken care of by including USA - ALL STATES in the state drop down list.  WORLD would be taken care of by WORLD - ALL COUNTRIES in list.
+   * Need ability to choose non-adjacent geographic locations like that have same habitat (Southern California and South Africa) or Mexico and Conneticut for spring migrants.
+   * Need ability to select more than one choice from each pulldown box (via Ctrl+Click)
+ * (R) Place textbox is hidden at the bottom of the map and not visible. Re-label as "Place Name," and make textbox wider. 
+ * (R) Coordinate boxes are stacking up strangely (at least in Chrome). West East display above 2 stacked textboxes, so it's not clear which box is for West coordinate, which for East. Consider linking coordinates visually to the color of the box.
+ * (R) The "=" icon/button is not an intuitive icon, and it's not clear what happens when you click on it. Consider rollover popup text to label/define functionality.
+ * (R) What does Content Type mean as a drop down box? Is this a term specific to a metadata standard? Consider translating it to a more meaningful label in search interface.  Instead of 'Content Type'  use the Terms "Restrict to" or "Only Include" then have checkboxes or something.
+ * (R) Do not put "Search" button at the end of page, which makes people to scroll down to hit "Search." Or alternatively, offer "Search" buttons both at the top of the Advanced Search interface for people who don't want to add additional parameters beyond the fielded search, as well as in the current bottom of the page location.
+ * (R) Re-label "Data Providers" pulldown as "Member Nodes."
+ * (R) Change "NBII Clearinghouse" in current Data Providers/Member Nodes pulldown to "USGS Clearinghouse."
+ * (F) Would it be possible to show/hide the map, as it consumes a lot of real estate on the page?
+ * (F))Need to improve "map" area, maybe use open layers. A useful feature would be a boundary overlay, like Saskatchewan. Capability for users to upload their own polygon/shape file to the map.
+ * (F) Bounding layers and/or pulldown options to filter by Ecoregions. (Issues would include: properly tagging records that don't contain this metadata; which ecoregion standard to use in the tool and how to crosswalk records that use a different ecoregion standard)
+
+Results page:
+ * (R) The "No Results Found" page button "Return to Search" should be labeled "Refine Search" (and take you back with your original query populated). There should be a second button for "New Search."
+ * (R) Change "Back to Search" button to "Refine Search" and add a second button for "New Search." The Back to/Refine Search option needs to preserve the user's original query elements.
+ * (R) Consider changing filter label "Data Providers" to "Member Nodes" to avoid confusion with the "Originator" filter. "Data Provider" is understood within DataONE to be the member node providing access to the data package to the network, but might be understood by end users to be the organization from which the data was created and published (and in fact, this is the Originator).
+ * (R) Add a scroll bar to the results filter currently called "Data Providers."
+ * (R) Change the sort order tab label "Index Ranking" to "Relevance."
+ * (R) Provide rollover help boxes to provide context for results sorting tabs, relevance stars, and filter labels
+ * (R) Sort tab "PubDate" is unclear. Does this refer to the beginning date range of the data? The end date range? The publication date of the paper? The date of the metadata record? What does this label mean, and what is the source for deriving it?
+ * (R) Get/View Buttons are displayed in random order in results sets. Bug also occurs when you "find similar data."
+ * (R) Give users the option to "Show Query Details" or Hide them. This would require moving up the bottom-of-page Search button to the Data Providers query area.
+ * (R) Consider removal of ranking stars, as they don't seem to be particularly meaningful. If default sort displayed is by Relevance, are the stars really necessary, as ordering of results already implies their ranking
+ * (R) Improve the labeling of "find similar data" results. If the first "result" is actually the exemplar dataset, it's ok to leave it at the top of the results set, but ideally we should highlight it with a label that says "You searched for data like this:". At minimum, we need some visual way to distinguish it from the "like" results beneath it.
+ * (R) There should also be filters for the results of a "find similar" search.
+ * (R) Email/Bookmark/RSS Feed/Help buttons across the top of the page:
+   * Confusion over whether it is the search results or the query statement that's being e-mailed, book marked, RSS’d etc. The button labels should say Email Query/Bookmark Query/RSS Feed for Query, OR should provide rollover context to tell you this.
+   * Testing the Email feature, the query string was pasting into the TO: textbox of my email, not the Subject line or text area of the new email.
+   * Help is a different and universal function and should be visually distinct and separated from Email/Bookmark/RSS Feed buttons, which deal specifically with results.
+ * (R) Missing metadata impact on results:
+   * maybe be an option include/exclude records with/without or with/without author geographic data otherwise if you do a search on geography many pertinent records may not show up.  
+   * Can you search for datasets for which fields are missing.  Not all accesspoints in the index are presented in the initial search page. So if a dataset is present that a research knows only a single accesspoint, it may not be presented for searching against.
+   * Zotero exported data is not preserving the Author Name,  We need to confirm that DataONE fields equal Zotero fields.
+ * (F) Dates and how they are parsed is a problem.  Even with a simple interpretation of a single integer as the year, the date fields can be very poorly formated.  Maybe create a limit to years that are understood to be interpreted. Date translation and metadata records in sorting issues; forced to attribute more precision than is there in the first place.
+ * (F) Consider re-applying star notations to indicate number/density of publications that have cited that particular dataset
+ * (F) Add semantic functionality: term expansion, synonyms, domain-specific ontologies. March up a hierarchy of related terms, so the idea of organized ontologies but they're often domain specific.  How do we determine what domain a set lives with?  What if a dataset belongs to two different domains?
+ * (F) Add a clickable select to turn on semantic concept mapping search and show the tree and nodes
+ * 
+ * (?)The "find similar data" function provides somewhat unexpected results. The first result in the list is the item selected by the user for finding similarities; it has a ranking of 10 (item is most like itself). The remaining items have no relevancy ranking (stars). It's also not immediately apparent whether "find similar" operates on the full text of the documents, or matching keywords in specific metadata fields (such as title, theme keyword, abstract).
+ * (?) Mail button may not be useful for everyone. Consider using export links
+
+New Features/Integration with Other Tools
+
+ * (R) If a data provider is listed, a global search on the data provider should not return a null set.
+ * (R)  if I click on Get Data, do I go to my DataONE Drive, if I have it? How will it be clear to users that  they may have different ways to "get" the data? How will the ONEDrive interoperate with the Get, View and Sort capabilities of search results?
+ * (F) Collect usage statistics on  search, refinement. Also do a pop-under survey request so that you can gather data from users at the end of their search.
+
+

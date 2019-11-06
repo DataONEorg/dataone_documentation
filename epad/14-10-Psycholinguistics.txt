@@ -1,0 +1,140 @@
+Pyscholinguistics I
+Pirita Pyykkönen
+
+Overview:
+Friday:
+What is Pyscholing?
+        Definition, research areas, research questions, linguistic tools
+Experimental research…
+    what do we measure
+        laboratory work, offline, online methods
+    
+Monday:
+    how do we do that
+        design, hypothesis testing, statistics
+Pyscholinguistics in Saarbrücken
+    computational modelling
+    
+-----------===========--------------
+http://en.wikipedia.org/wiki/Psycholinguistics
+
+==
+Psycholinguistics or psychology of language is the study of the psychological and neurobiological factors that enable humans to acquire, use, comprehend and produce language. Initial forays into psycholinguistics were largely philosophical ventures, due mainly to a lack of cohesive data on how the human brain functioned. Modern research makes use of biology, neuroscience, cognitive science,linguistics, and information theory to study how the brain processes language. There are a number of subdisciplines with non-invasive techniques for studying the neurological workings of the brain; for example, neurolinguistics has become a field in its own right.
+
+Psycholinguistics covers the cognitive processes that make it possible to generate a grammatical and meaningful sentence out ofvocabulary and grammatical structures, as well as the processes that make it possible to understand utterances, words, text, etc. Developmental psycholinguistics studies children's ability to learn language.
+==
+
+Pyschological/cognitive mechanisms
+    Processing and Mechanisms are the most important terms.
+    Bottom-up vs. Top-down
+    Serial vs. Parallel processing
+    Automatic vs. Strategic processing.
+
+-->Processing models / Computational models -> Architecture of language processing
+
+Relationships:
+    Language and thought
+    Language evolution
+    ***Language evo. also involves lang. acquisition. How much of the lang. is innate, or how much of it is acquired thru social contexts....
+
+One of the biggest debate in p.linguistics: do we do these processes automatically or with some kind of strategic control?
+
+Sl.5:    What is Pyscholinguistics (cont.)
+
+Language production: what type of mechanism is involved in the lang. production?
+
+Dialogue: comprehension and production processes simultaneously
+One of the biggest challanges in p.linguistics involves dialogues...Because there are similtenaous cognitive activities  going on. How complex this system is still not very clear and understood.
+
+Language acquisition
+Important questions: How do we acquire language? Acquisition involves all of the processes mentioned above (comprehension, production, and dialogue).
+
+Sl.6:
+
+Example research questions:
+ 
+Word recongition and the mental lexicon
+    Storage/retreival?
+    *Important question: how do we distinguish a singular noun from a plural noun cognitively? 
+    Morphology first Theories: When you encounter a word, you start chunking it immediately. When you hear, for example, cars, you try to find the morpheme boundary. if you find the boundary, you take both parts and put them aside, process them separately, and then join then together later. You look at the stem first, and the add on the extra stuff later. 
+    Morphology Second theories: there is no chunking if it's not necessary. IF the words are parsed, then we look at it as a whole world.
+
+Syntax
+    Parsing?
+        Modular/interactional theories; Embodied theories
+        What we're talking about here is sentence processing theories
+        (***Optimality Theory***??)
+    Modular / Interactional Theories: After the structural analysis, we can start looking at the semantic or pragmatic sides of the meaning.
+    Embodied theories; last ten years. 
+    Language is founded in performance and action. 
+    Certain areas of brain functions to process the meaning of the actions (i.e: *John kicked the ball. --> The brain processes the meaning of the action 'kick')
+    
+Semantics - Pragmatics
+    represented and accessed?
+    
+Dialogue
+    Alignment models (theories - still under development)
+    We're trying to facilitate our conversation by algining our behaviour - not clear whether automatic or not. Same vocabulary, for isntance.
+    For example, in a dialogue if one person uses a certain way to construct a sentence with D/O, I/O (John gave the ball to the boy OR John gave the boy the ball), the next person is also likely to use the same construction that the first person used.
+
+Sl. 7: Linguistic Tools - Examples
+
+Ambiguity:
+    Garden paths, referential ambiguity
+    Garden path i.e: Put the apple on the towel--> Put the apple *that is* on the towel--> Put the apple on *to* the towel.
+    Referential amb. i.e: The panda hit the parrot near the hut. He... --> Does 'he' refer to the panda, or the parrot?
+
+Violations/constraints:
+    John thinks that Peter hates himself (binding constraint)
+    The secretary hates himself (stereotypes)
+
+Sl.9: What do we measure?
+
+[...cf slide...]
+
+What is important is that we ask the question: what is the question that we want to ask?
+
+Sl. 10: 
+Offline Methods:
+Online Methods:
+
+Sl. 11: Off-line Paradigms
+
+Final Interpretation: 
+
+Judgements: "The woman hit the man with the umbrella."
+     people's compherension of sentences (esp. ambigious ones) are different. For some, a     statement can be grammatical while it can be ungrammatical for others.
+
+Comprehension:  ***Time limits / pressure affects the comprehension. 
+
+                    "While Mary bathed the baby cried in the cradle."
+                --> Did Mary bathe the baby?
+            ***People's interpretation / comprehension of this statement and question will be different based on the time limit.
+            
+Completions: John frightened / feared Mary because _________________.
+                    *** How do you fill the blank? Does the following clause refer to 'John', or           'Mary'?
+                    
+
+Sl. 12: Reading Methods
+
+Self-paced reading: the person to read comes to the lab and reads the text word by word by pressing the button each time for the next word to come on the screen. 
+
+In this test, we are interested in the reading time (processing / comprehending).
+
+Prolonged Reading Times (RT) = processing load
+Reading times measured for: sentences, phrases, words
+
+***It is also important to take the button press time into account--not just the perception of the target words, and processing it.
+
+
+
+
+
+
+
+
+
+
+
+
+

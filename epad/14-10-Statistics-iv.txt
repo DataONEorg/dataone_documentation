@@ -1,0 +1,26 @@
+October 13th; Statistics ii
+
+Character bank: α
+
+There are good slides, but they are not yet available. 
+
+=====
+
+You have data. You have preconceived notions: a null hypothesis (where it is due to chance) and an alternative hypothesis that you want to show. You first put this through the α level, which is the parameter you set (generally .05%) to make sure that it is not due to chance. In a two tailed test, you divide by two. 
+
+Sl. 51: Effect Size
+
+* In cohen's d formula- s: standard deviation(?) ##think so?
+
+ Sl.53:
+ 
+ Distributions are different when compared the influence of coffee intake on the exam time and the exam performance. (Why?)
+ 
+ 
+
+Variability_total = Variability_between-groups + Error_within-group
+
+∑/i ∑/g (Y_ig - GM)^2 = w∑(y_y -GM)^2 + ∑/i ∑/g(y_iy - Y-y)
+
+
+

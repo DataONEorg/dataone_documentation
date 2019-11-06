@@ -1,0 +1,59 @@
+DataONE/NODC/ESRI Conference Call
+=============================
+ 
+DataONE: 
+   Matt Jones: Co-Lead, Core Cyberinfrastructure Team & Leadership Team
+   Dave VIeglais:  Director for Development and Operations
+
+NOAA/NESDIS/NODC: 
+  Ken Casey, Technical Director
+  Yuanjie Li, GIS expert, Technical Development Team Member 
+  John Relph, Technical Development Team Lead
+  
+NOAA/NESDIS:  
+  Jeff DLB, NOAA Data Management Architect
+
+ESRI:
+ Christine White, Project Manager/Geoportal Product Engineer
+ Urban MacGillvray, Development Lead, Esri Geoportal Server
+
+Log Records
+------------------
+- Tracking log records is a challenge - large volume of information and a granluarity mis-match
+- Perhaps not so critical for a tier 1 node, but really depends on what is required by users of the node
+- Main emphasis is on CRUD operations
+- Would require this fully for a Tier 4 node that 
+- Perhaps initial implementation might be logging only calls through the DataONE APIs?
+
+SystemMetadata
+--------------------------
+http://mule1.dataone.org/ArchitectureDocs-current/design/SystemMetadata.html
+-- table lists which fields are mutable by which actors (client, MN, CN)
+
+MNQuery.query()
+-------------------------
+-- MNQuery is optional
+-- Can ignore certificates if you are only querying public data
+
+Design and implementation plans
+------------------------------------------------
+-- some mismatch between NODC and DataONE information models
+-- may need additional tables to collect DataONE specific info, particularly in:
+  -- object usage
+  -- tracking versioning of objects
+-- ESRI is thinking of the simplest approach to meeting requirements of the protocol
+    -- Could use additional support from other customers (possibly contact Tim Mancuso at USGS)
+    -- This is currently not in the ESRI task list for NODC
+-- DataONE API seems complex
+    -- Should DataONE support CSW?  Is it sufficient?
+    -- Maybe a focused description of implementing just Tier 1 would be useful
+
+New federal requirements
+-------------------------------------
+-- Each agency will need to provide top-level inventory of their data, with links to additional metadata
+    -- TBD on the mechanism
+-- Conceivably, this could be leveragable by DataONE
+
+Next steps: NODC and ESRI will talk about directions and plans, and get back to DataONE later (Meeting is scheduled for Thursday, Feb 7)
+
+

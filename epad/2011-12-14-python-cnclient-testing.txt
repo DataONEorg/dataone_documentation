@@ -1,0 +1,60 @@
+OK:
+
+- listFormats()
+- getFormat()
+- getLogRecords()
+- 
+
+CONVERTED TO TICKETS
+
+Performed against: https://cn-dev-2.dataone.org/cn/
+Using valid cert signed by CILogon (OpenID)
+
+
+
+CNAuthorization.isAuthorized() returns true or false when called with an existing PID
+GET /cn/v1/isAuthorized/testMNodeTier3:20113401248774_common-unicode-ascii-escaped-tomcatBlocked-%25255C
+404
+- very odd that it doesn't work.
+- 404 is wrapped in NotFound exception by CN
+
+
+CNAuthorization.setAccessPolicy() correctly changes the access policy on an existing object
+PUT /cn/v1/accessRules/testMNodeTier3:20113404152642_common-unicode-ascii-escape-anyway-%252B
+404
+- should work
+- 404 is wrapped in NotFound exception by CN
+
+
+CNReplication.setReplicationPolicy()
+PUT /cn/v1/replicaPolicies/testMNodeTier3:201134012486227_common-unicode-ascii-safe-unreserved-._~
+500
+- should work
+CN returns DataONEException:
+ServiceFailure: name: ServiceFailure
+errorCode: 500
+detailCode: 4882
+description: Couldn't resolve the multipart request: Processing of multipart/form-data request failed. Stream ended unexpectedly
+
+
+CNRegister.updateNodeCapabilities()
+PUT /cn/v1/node/test_node_outquestion%3Btwitteration%3Bnifling
+500
+- should work (tested recently)
+CN returns DataONEException:
+ServiceFailure: name: ServiceFailure
+errorCode: 500
+detailCode: 500
+description: Internal Server Error: The server encountered an unexpected condition which prevented it from fulfilling the request.
+
+
+register()
+POST /cn/v1/node
+500
+- should work (tested recently)
+CN returns DataONEException:
+ServiceFailure: name: ServiceFailure
+errorCode: 500
+detailCode: 500
+description: Internal Server Error: The server encountered an unexpected condition which prevented it from fulfilling the request.
+

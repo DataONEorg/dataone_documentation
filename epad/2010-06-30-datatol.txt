@@ -1,0 +1,74 @@
+Participants: Anand, Biva, Saumen, Paolo, Bertram, Daniel Zinn
+
+* Report from Anand:
+1) Querying the Kepler native provenance information from my code using query API(some bugs in it, trying to debug)
+2)Learned the RDF syntaxes(how they differ from core XML specification)
+3)Tried to generate the RDF specification from the native provenance OPM format(tried to debug the concerned utility.)
+   Also  got acquainted with the tools which can generate a graphical/ 3 tuple representation of the data from a plain RDF file.
+4)Analyzing the questions which can be asked against  SPS(more of that coming up shortly)
+
+* Report from Biva:
+Using ProvenanceAPI to query provenance database(mysql) in Taverna 
+Step 1: install eclipse
+Step 2: install maven http://m2eclipse.sonatype.org/
+Step 3: install maven pluggin in eclipse and link in with the maven installed using setting.xml file
+Step 4: download the svn checkout from http://www.mygrid.org.uk/dev/wiki/display/provenance/Taverna_provenance_howto
+Step 5: Update dependencies
+Step 6: do maven clean install
+Step 7: run src/main/java net.sf.taverna.t2.provenance.api.client.ProvenanceAPISamleClient.java
+ 
+NOTES: there are two querry files: minimal.xml and completeGraph.xml which can be tried and the resource file is APIClient.properties.
+ERRORS ENCOUNTERED AND SOLUTION:
+        1) 'repositories.repository.id' must be unique: it was a problem with the latest version of maven pluggin of eclipse thst requires the   repositary id to be unique. It was solved by making the ids unique.
+        2)bundle not found error: the resource was not in the src/main/resource directory. was solved by bringing the resource to the correct directory
+        3) minor errors: minor errors like unable to connect to the database can be caused by leading and trailing spaces in the name and password used to connect to the database.
+RESOURCES
+  http://www.mygrid.org.uk/dev/wiki/display/provenance/ProvenanceQueryLanguage
+PS: I have also tried a simple query of my own to understand the xml database schema:
+
+* Report from Saumen:
+- Developed the conceptual schema
+- Installed COMAD and ran FPC1, FPC2, and FPC3
+- Installed ProvenanceBrowser with MySQL and loaded the FPC1.trace into the database.
+- Read opm1.01 paper
+- Read papers on comad
+==> some problems with provenance browser / MySQL
+
+Q: IPAW paper -- read??
+
+* Paolo going over Concrete Target Scenario:
+https://docs3.google.com/document/edit?id=1Mn2-mhhKksCOI8w2FsEMFIfecZ84lPh4LvyikkLpvGc&hl=en#
+
+==> Someone to do the equivalent of Paolo's A.2 ("publishing" data to the shared data store SDS) for Kepler
+
+Taverna2public mapping
+is naturally in RDF using OWL:same-as statements
+
+When ready to publish the data of a previously run workflow,
+a "publication workflow" is executed whose products include the mapping table.
+
+==> A2.3 students!!
+
+Bob picks up Y data (ignoring issues of discovery, metadata)
+possibly massaging it into Y'.
+Need to assert explictely Y-->[Bob-preparation]-->Y'
+
+
+
+
+
+
+* NEXT ACTIONS
+==> Bertram, Paolo ==> google wave for DToL (or IRC channel)
+--> "Good Morning DToL!"
+
+==> Bertram publish the CM
+==> Manish, Saumen et al to create relational schema
+
+==> Deliverables page: just an *index* (create your own pages for your deliverables, products!)
+
+==> A2.3 students!!
+
+
+
+

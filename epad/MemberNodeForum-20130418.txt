@@ -1,0 +1,113 @@
+Member Node Forum - 18 April 2013
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/318278809
+  (Occurs every 2 weeks on Thursday 2pm EST, 1pm CST, noon MST, 11am PST, 10am AK)
+  Upcoming meetings 16 May (can't meet 2 May due to UA/SC joint WG mtg)
+  
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (213) 289-0010
+Access Code: 318-278-809
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 318-278-809
+
+Previous epad(s):  
+epad.dataone.org/MemberNodeForum-20120307 (note typo on year-sorry)
+epad.dataone.org/MemberNodeForum-20130321
+epad.dataone.org/MemberNodeForum-20130404
+
+Attending: Laura, Amber O., Ranjeet,  Alex Thompson, Dave V, Mark S, Matt, Rebecca, Steve K, Amber B, Andrea Matsunaga, Greg Traub
+
+Regrets:  Inna, Kavitha, John, 
+
+Action items from last time:
+
+Action items from previous meetings (follow-up):
+1. Issue: Develop a implementation checklist that MN implementation teams can use (specifically on CCIT side).  https://redmine.dataone.org/issues/3678
+
+QUESTION: is this ready for distribution?  Matt,  Chris, and Laura are working on creating a cradle-to-grave  checklist/procedure, which we hope to have publicly available by the  SC/US Joint WG meeting 30 April-2 May.  
+
+Currently available at: 
+http://mule1.dataone.org/OperationDocs/member_node_deployment_2/mn_checklist.html
+This is in editing and will change.  We'll notify everyone in this forum when it is completed.
+
+2. Issue: support SEAD for April 22 NSF demo.
+UPDATE:  Inna  and Kavitha are practicing for the NSF review today.  They pass on  their thanks to the group; Matt and Chris have been instrumental in  getting them ready for their demo.  They are demo-ing the stage  deployment for NSF.  We need to move the activity for SEAD to  production; John/Laura to monitor/assist.  SEAD needs to determine if their data is in a suitable position to move forward to production.
+
+3.  We need to create a "compatible versions" for current version of  DataONE API's and SW products (and maybe MN versions as well).
+  (i.e. available documentation needs to match currently released s/w version)
+UPDATE:  (Source:  Mike Frenock - production documentation points to trunk, no links to  currently running versions of s/w.  Mule only has trunk-level  documentation.  See redmine ticket which requests current released s/w  and documentation match.  Take offline - Laura to monitor.)
+
+4.  Question about the type/availability of usage statistics, granularity,  etc.  Also relates to the "dashboard" being developed for the Member  Node page at http://www.dataone.org/member-nodes
+
+Dave:  every access to DataONE MN is logged, stats are aggregated at  Coordinating Nodes; we do not currently have summarization of that data  available.  
+
+SteveK: would like to review offline with Dave et. al. how eBird is currently collecting data usage stats
+Dave: would be helpful in the broader effort
+
+Rebecca: EUDAT, http://www.eudat.eu/  (European Data Infrastructure  - big data infrastructure project in Europe) folks are also interested in collaborating on this effort
+
+Welcome to Alex Thompson from iDigBio!
+
+Alex:  We've just started our efforts looking into DataONE; iDigBio is (will add text later)
+Coordinates  digitization efforts and helps mobilize biological data.  Located at  Florida.  Long-term storage/accessibility of data and images (very large  files).  
+
+
+Agenda:
+1. Network-wide update and issues affecting MN's as a whole
+
+Dave:  nothing right now; a couple internal maintenance things going on; a  maintenance activity at the ORNL Coordinating Node was transparent to  users.
+
+2. Open issues:  MNs please add anything you would like to address here.
+
+SAVE    THE DATE:  The DataONE Users' Group meeting is July 7-8, 2013 at   Chapel  Hill, NC.  Agenda and registration details to follow.
+    We expect to have two slots of special interest to Member Nodes:
+        - A MN showcase speed session where each MN can present a short (~3 slide) summary of the MN and interesting activities
+        - A poster session one evening where longer, informal discussions can occur.   
+Preliminary agenda and registration are available on the DataONE website:  http://www.dataone.org/dataone-users-group
+
+3. Feature requests/opportunities for collaboration:  MNs please add items here.
+
+MikeF: was looking at SOLR stuff from Matt 
+Matt:  query interface is same for MN and CN, can choose which query engine to  implement, Coordinating Nodes have chosen to use SOLR, MNs can/often do  choose something different; implementing SOLR with MetaCat as we speak,  plan to be available in release after next.
+
+4. MN showcase:  If you would like to share what your MN is about, please add here.
+MikeF: working a lot w/D1 APIs vs old Metacat; scientists use Matlab, working on incorporating transition from Matlab data (Metacat) to D1 APIs
+Matt: would you be willing to make that publicly available
+MikeF: yes, currently in git; working on removing Metacat references, plan to make it public repository later
+
+MarkS:  update on PASTA, testing interaction between generic MN stack and  PASTA; next move to staging to see how data flows from PASTA into  DataONE.  Still working on data access as far as LTER is concerned;  trying to relax access rules.  
+
+Matt: planning on using verified user form, or only make metadata available? 
+
+MarkS:  some contributors want more controlled access, Science Council meeting  in May to discuss more open access to data, usage tracking, etc.
+
+SteveK:  switched over to level 3 access to full eBird data; processed ~900  requests for access to eBird data, see who is using the data and for  what purpose (some people using data for for-profit applications!); half  of requests from academics/students specifically for some project in  ecology/GIS class; has been great to get this information; about to  release an updated dataset to DataONE (117M records)
+
+MarkS: question: is access an opt-in or required for new download/access?
+SteveK: can control access to data, duration of access (students ~a month, power users unlimited open access)
+
+Matt:  see EML access control, ticket-based system, anyone with ticket code  can access the data; we didn't put that functionality in DataONE because  it appeared no one was using it;  would like to talk with SteveK re:  their access control system and what mechanism(s) should be made  available in DataONE
+
+SteveK:  type/quality of data made available varies on the intended use/user;  seeing need for versioning (maintaining old datasets while making new  data available)
+
+Alex:  would be nice to collaborate with SteveK re: their experiences with  DataONE so far in aiding iDigBio in their implementation.
+
+Dave: documentation is a big focus right now
+Matt: data packages - if you're interested in this discussion, please contact Matt and other CCIT folks
+
+Dave:  ask.dataone.org is a convenient way to ask questions for the DataONE  team and broader community to address.  It's very much a dynamic site;  everyone should feel free to ask questions, clarify answers to existing  questions, etc.  Focus isn't necessarily technical but covers all  aspects of the project.  
+Matt: if you have a DataONE account, you may post questions/answers.
+
+OTHER INTERESTING THINGS: 
+
+Upcoming deadlines:
+ASIST annual meeting
+Beyond the Cloud: Rethinking Information Boundaries
+November 1-6, 2013, Centre Sheraton, Montreal, Quebec, Canada
+https://www.asis.org/asist2013/am13cfp.html  
+Deadline for posters, demos, video is July 1.
+
+

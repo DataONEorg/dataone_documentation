@@ -1,0 +1,101 @@
+Attendees: Rebecca, Carol, Steph, Dave, Mike , Deborah, Bertram (briefly only)
+
+Regrets: Amber, Bruce
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Aug 30, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/983855753
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 493-0603
+Access Code: 983-855-753
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 983-855-753
+
+
+Dear Leadership Team,
+
+Here's a preview of upcoming agendas for the Leadership Team meetings - all are directed towards preparation for submitting the
+renewal proposal and planning for the All Hands Meeting in October.
+
+
+August 30: Plans for the combined Usability & Assessment and Sociocultural WG in years 6-10 (Suzie, Mike & Carol)
+September 6: Community Education & Outreach plans for year 5 and Core for years 6-10 (Amber)
+September 13: CI WG plans for years 6-10 (Dave)
+September 20: Sustainability & Governance WG in years 6-10 (Trisha, Bill)
+
+Rebecca
+
+
+We will also use the epad: http://epad.dataone.org/2013Aug30-LT-VTC 
+ 
+If you have items to add, let me know.
+
+Agenda for 2013-08-30
+
+1.  CI Report (Dave)
+Not alot to report this week - there has been progress on the dashboard.  Chris and Ben are working on this and may have something to see next week.  Core infrastructure proceeding on schedule. Continuous building environment (for development and testing) that downloads dependencies from maven.  This is used by many open source projects.  It was being blocked by UNM IT.  It is working right now but don't know if this is temporary or for the long-term. DataONE is different in that it has many developers working together from many different locations and need to let UNM IT know that is usual behaviour rather than unusual behaviour.
+
+Have an opportunity to take advantage of a developer who has worked with OpenDAP. Dave will have him evaluate how much effort would be needed to make this a MN stack.  Would like to do the same with DSpace.  Suzie suggested that Dave contact Holly Mercer at UTK because they are also trying to determine the effort needed for DSpace.  Deborah said they are also looking at OpenDAP.
+Bob said the ORNL has many THREDDS  OpenDAP servers (www.unidata.ucar.edu/projects/THREDDS/‎) and would be happy to share their experiences.
+    here is one of ORNL's  OPeNDAP Servers:  http://daymet.ornl.gov/thredds/catalog.html 
+Bill is suggesting that the developers from DataONE get the documented process for support from UNM IT. Will there be a similar issue at UCSB and UTK? Perhaps Dustin can get this workflow from UNM IT.
+
+2.  Plans for the combined Usability & Assessment and Sociocultural WG in years 6-10 (Suzie, Mike & Carol)
+Three core functions to collect information to help in strategic decision making:
+1) Internal evaluation
+    Users of DataONE services, capabilities, communication, Functions of DataONE
+2) External assessment of stakeholders
+    Scientists Follow-up (Year 8)
+    Academic Institutions: Libraries, Research Admin 
+        - Tie also to S&G related to Administrators, etc. 
+    
+3) Usability
+    Dependent on the services or tools that need to be assessed
+
+Approach: 
+Smaller group than currently - would bring in expertise as needed (Task Force approach - short duration - specific deliverable) Core group would be 6-8 people, but key is to also keep others involved in some form or fashion.  
+
+Will also be looking at how to do this at the WG meetings in year 5
+Discuss how to keep people engaged with the LT and perhaps also at the AHM
+Two examples: ESIP conference calls/work products 
+LTER data manager water cooler talks
+interesting thought wth the esip model - funding comes from nasa grants as i understand it (typically as i understand the leaders of the group have funding from nasa - sometimes members as well
+Build on the volunteerism that has already been created - another example might be EarthCube (even though there might be some problems with this) - build on the espirit d'cor (sp?)
+Another example of sustainabile CI SW is EPICS http://www.aps.anl.gov/epics/about.php  and http://en.wikipedia.org/wiki/EPICS . It reflect what Deborah said about an expected contribution from related projects using this CI being expected to contribute back to the community. (JWC)
+
+(MIKE) How to keep people involved - "products from DataONE have to help push science, data management, etc. activities further in their organizations". ==== Joint Benefits for participation in DataONE. So, don't just think of DataONE for funding, but "products, expertise, capabilities, complementary efforts". 
+
+
+
+3.  Around the room (all)
+Suzie: Sociocultural WG will do an environmental scan in year 5 to study what has made success in data sharing by other projects (across disciplines) and report on lessons learned
+
+Carol, Suzie, Mike: SC and UAWG leads met to begin working on agenda for AHM and to work on tasks needed in a combined group in years 6+
+
+Carol (and Bill) will be speaking to BYU librarians in October on data services in libraries.
+
+Steph: Nothing new to report
+
+Mike: Nothing to report this week
+
+Todd: 
+1. RE sustainability, some of you may be interested in the pending (after Labor Day) introduction of data publication fees in Dryad, explained here: http://blog.datadryad.org/2013/08/30/the-who-what-when-and-why-of-data-publishing-charges/. 
+Q: How will Dryad mesure the effect of this policy change on deposition?
+A: We have a reliable baseline predition and will measure the deviation.
+2. We will be using our yr 2 funds at NESCent for developers associated w/ CCIT, and a major goal will be supporting prospective member nodes using DSpace and other institutional data repositories. If people are aware of developers who would be qualified and interested in  a 9 month position as a contractor or temporary Duke employee, please let me know.
+
+
+Bob:  nothing to report
+Bertram: Our summer internship ended this week (we started later, due to UCD quarter system). Have learned a lot about one of the state-of-the-art graph query systems (Neo4j) and what it can (and can't!) do in terms of provenance queries. Parisa is preparing a poster about this for the AHM.  We'll also submit an abstract to TDWG. Paolo will be attending Camp-4-Data.
+
+Deborah:  Semantics
+- Updated video produced and is being submitted today on Semantics Internship for the annotator project
+- Confirmed that Jeff will be available for all hands read out
+- working on tadwg submission 
+- Patrice to replace Deborah and represent semantics and DataONE at the EUDAT meeting next month
+- Final knowledge representation NSF meeting report submitted from  Natasha Noy and Deborah McGuinness .  Should be available in the next  few weeks.
+

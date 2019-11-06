@@ -1,0 +1,1455 @@
+Member Node Discussion
+10 May 2013
+Attendees: Laura, Rebecca, Amber, Dave, Mike 
+
+Regrets: John Cobb(on the phone from the road),Suzie, Matt 
+
+Discussion:
+
+MetaAgenda: Reforming the standing agenda structure
+        1. High profile issues (i.e. SEAD's push for NSF demo)
+        2. Status of MN's (run quickly thorugh the list and highlight a few - touch-base with redmine status) 15 min (list them all, flag things we want to discuss at the meeting)  See the overview (backlog) in redmine that Dave put together, copy that over here in the meeting's epad.
+        3. old Action items (update before the meeting so status is available at mtg)
+        4. not-high profile issues
+        5. around the room
+        Ancilliary issues:
+            Agenda formed by Wed for Fri. mtg.
+            Updates and queries initiated before Friday meeting
+            General focus: leaning more to actual MN interaction rather than process.
+            Move to a single epad per meeting proposed url for: <http://epad.dataone.org/MNwranglers_YYYYMMDD> (Yeah! wonderful idea)
+
+Redmine issue review
+  In looking at open redmine tickets for MNDeployment, I see several that are "stale" that we haven't touched in some time.  Either things are happening and we're not updating, or nothing is happening.  We suggest as a tickler I should note the tickets which are stale, which will send out a notification to all of us, and the person who is responsible will hopefully be able to respond appropriately.  
+  
+  Highest priority - things in progress, MN implementations have everything they need to move forward to production; be on top of these MNs
+  Next priority - people who have expressed interest; we need to check back with someone either on MN side or CCIT side to get information about where this potential MN is in the process (just interested, gathering information, etc.)
+  As we go through the list of MN tickets, we should have a better idea of where each one is in the process.
+  Who's on first? - MN implementation ticket is assigned to one person, with sub-tickets assigned to others, perhaps, who will accomplish these subtasks.  The primary person should be the one who keeps track of the ticket and updates it.  Ensure essential info is on each ticket, main contacts at MN, point to any other relevant documents, other attributes.  
+  
+ACTION at/before next MNW: look at open redmine tickets and ensure they are assigned to the right person.
+
+Important to do this periodically (monthly? biweekly?).
+
+What defines "stale"? Not touched in 2 weeks? a month?
+
+Rebecca: Perhaps include in the ticket a deadline/timeframe for action.
+
+John: use that timeframe as the tickler to revisit
+
+Dave/Matt: let's just pull up redmine during the meeting to make changes, link in epad
+
+Rebecca: maybe focus on the top three MNs at each meeting - must define what it means to be in the top three
+
+Dave: maybe use the sprint concept, or set up sensible milestones to be met and as MN approaches milestones
+
+Rebecca: heard back from Todd, who says their implementation is "imminent"
+Dave: set a deadline, and if Dryad isn't "on" by the deadline.... consequences
+Amber: Todd registered for DUG
+Dave: sit on it another couple weeks, then follow up
+Rebecca: will copy email from Todd into Dryad's redmine ticket
+Mike: when does Dryad have their next advisory board? perhaps discuss there if DataONE membership is a priority for them
+Rebecca: board meeting May 24; probably not something that will have an effect
+
+SEAD as a production MN, they need to validate their content and are no technical issues holding them back.  (Yay!-LM)  There are some access issues that they need to investigate before proceeding.  
+
+KU (Kansas) - Dave: people in the know are on vacation right now.
+
+Bob Sandusky at DSpace meeting this week, pushing the notion of a general D1 plugin for DSpace, has gotten feedback from Kavitha and Ryan re: their respective implementations.  
+
+Rebecca: Isn't DSpace being rewritten right now?
+Dave: Yes, one of the issues we're looking at now re: its relationship to D1.
+
+Dave: TFRI MN very close, in stage testing, need update to ONEMercury (pushed out this afternoon) for them to proceed
+
+Amber: ARCTOS has a "rejected" ticket
+Dave to add "duplicate" as a status in redmine; Laura to update ticket 3693
+
+recapping action items
+
+Rebecca: we want to make sure we use the great feedback we received at the SC/UA meeting last week
+John: notes from epads being collected/massaged for public consumption
+    personas are taking longer than we thought, but they are progressing, we have AmberO to help us
+    policy/procedure
+    
+Rebecca: need to 
+
+John: external website stuff available in the next two weeks, policy/procedure revisit at DUG based on what we drafted plus feedback from SC/UA
+
+Amber: link to mockups from Matt 
+https://docs.dataone.org/member-area/member-nodes/coordination-work-area
+
+Dave: dashboard is near the top of the priority list
+
+Rebecca: as we approach end of our 4th year, we need to stay on top of our priorities and ensure accomplishment/completion
+
+Rebecca: do dashboard items need a lot of work or are they straightforward
+Dave: content is straightforward, design needs some work; unless there are major changes in requirements, can be done fairly quickly; would like to have this done as well as usability testing before the DUG 
+
+SC&UA recap
+    Persona status and progress
+    Comments on proposed documents
+    Assessment/metrics - John showed the metrics we currently have available and solicited input from participants re: are these good metrics, do we need something different
+    MN Scaling - range of 20-4800 MNs suggested in the meeting, some people put calculations on those estimates; what are roadblocks?; what can we do to mitigate these roadblock issues.
+
+Around the room
+
+Amber: with DUG coming up, we need to start encouraging people to register, esp w/respect to MNs and their MN showcase activity - we need to provide them some guidance re: what aspects of their MN they are to present; Amber to send Laura list of DUG registrants, Laura to check against MN contact list and ask them if they want to participate in the showcase.  
+
+ACTION: Amber and Laura to come up with template to deliver to participating MNs so they will have a starting point.  Laura to look at unregistered MN POCs.  Need the MN's slides beforehand.
+
+Rebecca: nothing today.
+
+Dave: nothing today.
+
+
+
+
+==================================================================
+No meeting 3 May 2013
+==================================================================
+
+26 April 2013 
+
+Attendees: Rebecca, John, Amber, Suzie, Bill, Amber B, Dave, Laura, Matt
+
+Regrets:Mike
+
+Discussion:
+
+SC&UA WG Mtg Prep
+    Personas: Comments
+        Fewer complete is better than more incomplete
+        MN Persona template draft: https://repository.dataone.org/documents/Committees/MNcoord/Coordination%20Work%20Area/SC%20UA%20Joint%20WG%20mtg%2030Apr-2May/DataONE%20Member%20Node%20Persona%20Template%20-%20DRAFT.docx)
+        MN Persona definitions (categories we've come up with so far):  https://repository.dataone.org/documents/Committees/MNcoord/Coordination%20Work%20Area/SC%20UA%20Joint%20WG%20mtg%2030Apr-2May/DRAFT%20Definitions%20of%20MN%20personas.docx
+        Some dimensions to categorize:
+            Type of content
+                Large - satellite
+                Small data with high metadata/data ratio
+            MN resources in Operations (L,M,H)
+            Organizational type
+                independent research laboratory
+                institution/enterprise
+                Government lab
+            Level of curation
+            Main purpose of repository
+            Funding (related to organization type)
+            "Divide it up and hit on all the axes"
+            Ex: KNB (long-term presevation) is different from DAAC (agency repository) is different from a senior scientist's lab
+                Extract the essences of how they differ.
+                
+        Document review
+        How to assess and measure MN actvities
+        Scaling
+
+Caveat: Don't restate the obvious.
+
+
+How to capture ex-post-facto case study analysis
+    what to "write-up"?
+    How to keep short but informational (Redmine or something else?)
+    How to communicate effectively to MN's as a body of knowledge
+    Modifications of process document - ongoing operations communications
+    connection to ask.dataone.org
+    
+Comments on common examples
+    mis-undersanding of DataONE
+Possible solutions:
+    put in documentation
+    add into checklists
+    DataONE should try to be aware and sensitvie to "latent" issues that may indicate mis-understanding
+    Effectively communicate back to DataONE when an error is detected.
+    (Matt) Over time we will build a community of understanding. (Does this lead to a best-pracitce/tutorial process)
+    
+Bill:
+    How to lower the barrier of integrating MN's
+    MN-lite
+    Also in context of phase -II
+    Possible: slightly re-orient Th. Morn session.
+    
+    MATT: MN-lite is a good idea
+        Tier-1 is a light-wieght MN b/c we were trying to achive a certain level of Functionallity.
+        Dropping some interoperabiltiy requirements could make it even easier
+        C.F> Kunze "Slender node" concept - just harvet <Ember nodes.
+        But Permanence of content is needed for utility of DataONE (vanishing data is less useful)
+        CCIT took this as an action item:
+            should we accept reduced quality in order to reduce the bar.
+    Cobb: Ex. ONEshare as a way to connect Lite-MN candidates to DataONE
+    MATT: Examine protocols to federate metdata (e.g. OAI-PMH) ...
+        Problem: Thne we cannot layer DataONE needs on the MN's. For example, OAI doesnt require UID.
+        
+    Dave: cponcept of MN is fine, but we may leverage some existing stds. Maybe spend some time examining an example of how to integrate something like a OAI-PMH MetaData services as a MN and how that would play in DataONE vis-a-vis usability. Where does the service translation appear? Is it an external bridging service or core in CN,, ... Do a resource estimate of what it would take to do this and how it would affect DataONE architecture and operations. At least document.
+    Cobb :also do an environmental assessment of what exists, what's it footprint and what it uses 
+
+Rebecca:
+    What would be really good: Go over Redmine.
+    Spend 10 minutes
+    NEW: Action Item: Keep Redmine current to X days (what is X)
+    
+Matt:
+    Taiwan Metacat Nodes
+        TFIR/LTER node and TERN node
+        
+
+Q: How to resolve Dryad issues? Perhaps a conversation with Todd
+    
+    
+Mike:
+Sorry, can't be on the call today, but just to make sure everyone is  aware, all we did in USGS was change our ID scheme. When I looked at the  published DataONE USGS data, it had incorrect IDs. I wanted them  assigned via the DOI ID the records have.
+
+So, I think it is very realistic to have some "preview"  before publishing because I would have caught this immediately - almost  like we do all of the staging technically, but there needs to be some  final - yes its ready to go from a Mgt. or other perspective?  I hate to  have another review piece, but not sure what to do.  
+
+So, this is the incorrect ID below. It will have a  DOI within it (Which actually our first 50 Records actually were  correct.....)...
+
+identifier: www1.usgs.gov_metadata_mdata_NPS_nps_d_metagucoaa.xml 
+
+Just my 2 cents.
+
+ * Response from Matt: The review phase needs to happen on the MN side -- the MN completely controls which packages show up using which identifiers and when.  If USGSCSAS wants a mgt review phase before releasing, that's totally feasible.  DataONE only sees the content after the MN decides to publish it.  Once a data package is published with a given ID, that ID is permenant, but can be obsoleted in favor of another using the update operation.  So if a MN accidentally publishes a dataset with one identifier, they can then update it to use a new one (e.g., switch to using a DOI).
+
+Action items:
+    Old:
+        Documents:
+            Policy (Cobb) - late ETA 4/27
+            Procedure - in process integrating LM and MJ efforts
+            Ext. content draft - late ETA 4/27
+        Review of prospective MN list (Duraspace, NKN, U Kan, Tiawan, Brazil, ... )
+        Status check on development nodes
+            https://redmine.dataone.org/rb/master_backlog/mns
+        Status check on operational nodes
+    New:
+        SC&UA Meeting actions items (pres. prep, writeup, archive)
+        Remote participation
+        MN relavent agned parts (as of 4/26 agenda draft)
+        Tue Apr 30
+            9:00-10:30 Block One
+           * 1) Welcome, 
+           * 2) Introductions
+           * 3) Begin DataONE Context Setting, Updates and Demonstrations via Mini Reverse Site Visit
+             * a. CCIT
+
+            11:00-12:30 Block Two: Mini – RSV continued
+             * a. Sociocultural
+             * b. Usability & Assessment
+             * d. Community Engagement
+             * e. Member Nodes <----------*************
+             * f. Sustainability
+
+            1:30-3:00 Block Three
+1) Briefings for subgroup topics : status to date and deliverables from this meeting
+    a. Tuesday afternoon and Wednesday’s work (UA and SC largely split up)
+        1. One Drive and Other Tools – Usability Testing and Development Strategy
+        2. Assessments – follow-ups, additional baselines and results usage
+        3. Member Nodes (John Cobb)
+        4. FAQs, Other Documentation and Environmental Scan of Institutional Policies
+    b. Thursday’s work (Joint/Cross WG work)
+        1. Future Interface
+        2. Assessing Evaluation Program (American National Standard) and Discuss Relationship of DataONE to User Community in prep for next grant phase.
+    c. (Other topics generated from WG discussion)
+
+2) Select subgroups to work on tasks/deliverables
+
+    1. Scripps theatre (2 groups) All day T – TH projector, screen, whiteboard, flip charts
+    2. Scripps conference room All day T – Th monitor, video conferencing, whiteboard, flip charts
+    3. Scripps focus group room All day T – Th monitor, video conferencing, whiteboard, flip charts
+    4. SIS Conference room (back of suite 451, 4th floor)
+All day T, W 8 – 1, All day TH Projector, screen, flip charts
+    5. Gary Purcell Reading Room, 4th Floor All day T – TH
+
+Epads for Sub-groups: 
+Usability - http://epad.dataone.org/Sp13-SCUAwg-usability Assessments - http://epad.dataone.org/Sp13-SCUAwg-assessment 
+SC FAQ - http://epad.dataone.org/Sp13-SCUAwg-faq 
+Member Nodes - http://epad.dataone.org/Sp13-SCUAwg-membernodes
+
+3:00-3:30 Break (refreshments provided)
+
+3:30-5:00 Block Four: Subgroups work on tasks/deliverables
+MN Persona definitions (draft)
+https://repository.dataone.org/documents/Committees/MNcoord/Coordination%20Work%20Area/SC%20UA%20Joint%20WG%20mtg%2030Apr-2May/DRAFT%20Definitions%20of%20MN%20personas.docx
+MN Persona template: https://repository.dataone.org/documents/Committees/MNcoord/Coordination%20Work%20Area/SC%20UA%20Joint%20WG%20mtg%2030Apr-2May/DataONE%20Member%20Node%20Persona%20Template%20-%20DRAFT.docx
+
+
+5:00-5:30 Reassemble for any questions and logistics (rides, etc.). Group dinner in Knoxville.
+Wednesday May 1
+
+8:00-9:00 Full Breakfast (provided)
+
+9:00-10:30 Block Five: Work with subgroups.
+
+10:30-11:00 Break (refreshments provided)
+
+11:00-12:30 Block Six
+1) Five minute initial progress reports from subgroups & subgroup needs
+2) Discuss dinner plans
+3) Subgroups continue their work
+4) Subgroups begin new tasks as needed
+
+12:30-1:30 Lunch (provided)
+
+1:30-3:00 Block Seven
+a. Introduce Additional Joint Subgroup work/tasks for afternoon
+b. Future Interface
+c. Assessing Evaluation Program
+UA User Interface - http://epad.dataone.org/Sp13-SCUAwg-user-interface Assessing Evaluation Program – http://epad.dataone.org/SP13-SCUAwg-eval-prog
+
+3:00-3:30 Break (refreshments provided)
+
+3:30-5:00 Block Eight
+a. Joint Subgroups ( a and b above) continue their work and deliverables
+
+5:00-5:30 Debrief. Logistics. Group dinner arrangements.
+
+Thursday May 2
+
+8:00-9:00 Full Breakfast (provided)
+
+9:00-10:30 Block Nine
+1) Original four subgroups regroup and continue their work and deliverables
+
+10:30-11:00 Break (refreshments provided)
+
+11:00-12:30 Block Ten:
+1) Continue in original four subgroups
+2) Post draft deliverables to DataONE docs site/plone
+3) Subgroups decide how they will report to full DataONE
+
+12:30-1:30 Lunch (provided)
+
+1:30 – 2:00 Block Eleven: All six subgroups organize draft deliverables
+
+2:00 – 3:00 Block Twelve:
+1) All six subgroups report out.
+2) Recommendations for DataONE future direction
+3) Next steps and planning for future meetings
+
+=============================================================
+NO MEETING 19 APRIL 2013
+=============================================================
+
+Member Node Discussion
+12 April 2013 
+
+Attendees: (oops, got happy fingers and started editing here rather than making new info above - LM)
+
+Regrets:
+
+Action Items:
+This meeting next week 30 minutes later than usual.  (LT has WG reports.)
+
+
+
+To discuss:  Draft MN agenda for SC/UA Joint WG mtg 30Apr-2May
+3. Member Nodes 
+    i. MN personas/scenarios DRAFT to present and solicit input 
+    ii. MN policy (prioritization, selection criteria, etc.)  Intent is to present to SC/UA WG for review/suggestions, then LT/CCIT review. 
+    iii. MN procedure (i.e. checklist in conjunction with CCIT)
+    iv. DataONE external website MN page 
+    v. MN recruitment and implementation experience from the MN’s perspective (ask MNs present at the mtg what works well, what can be improved; SC/UA may be able to provide insight as to HOW to ask questions, WHAT KINDS of questions to ask (targeted for appropriate result), etc.)
+        Caution: give a context: IF they are not a MN, why are we asking them? (help us gather the desired input in the best way possible)
+         LM: Also, ask SCUA about how to craft a process to get this sort of information
+    vi. OPEN DISCUSSION:  How can we use UA data to continually improve the MN recruitment and implementation processes  
+        Q: What usability data? can incorporate information in upcoming survey. Component of the three day meeting talking about project assessment for current project and planning for assessment in phase 2. 
+        Matt: Maybe # of MNs and # of holdings.
+        Q: What about quality of nodes, for example ESA node? (may move to Dryad)
+        John C: also need metrics on characteristcs of MN's and metrics on resource required by DataONE and MN to deploy; length of time to deploy; critical path; long-time items on that path.  
+        Matt: maybe write case studies on deployed nodes. (especially SEAD and EDAC as nodes coming online after the API was published)
+            
+    vii. MN scale: what is the ultimate goal of # of MNs? (with noted caution from 4/5 LT call) 
+    
+    For each session: explain why we are conducting this session, what we want to accomplish and how will it be used.
+
+What is a persona definition?
+
+MN Updates:
+    Operational Nodes:
+        Any issues
+            Q: Are replication nodes online online and replicating content?
+            A: (Dave) They are online and running but they do not have content at this point. We are waiting for a tool to test replication status of content and then we can request re-distribtuion.
+            A. (Matt) We also need a replication policy. Suggest 2 replicas (original + 2 replicas) We will be turning on replication on all KNB content.
+    Development Nodes (see https://redmine.dataone.org/rb/master_backlog/mns):
+        SEAD status - staging status, they've uploaded a portion of their content and it seems to be functioning; SEAD is (probably) happy to demo from stage, i.e. they don't have to be in production before their NSF demo.  Dave: generating very large data packages, some concerns.  Matt: agreed to not upload large packages until we have some resolution to the issue (up to 100-125 data files).  Also DAAC may be in the same boat (very large data packages).
+        Taiwan Forestry Institute moving forward with their process to become a MN.  They are in the staging environment. Example of some metadata: https://metacat3.tfri.gov.tw/tfri/d1/mn/v1/object/chenlung.111.5
+        (It in stage now: https://cn-stage.test.dataone.org/cn/v1/node)
+        Staging is occurring but there was a UTK net burp last night. It is not clear if indexing has occurred.
+        We may see some integration hiccups as time progresses, esepcially b/c of internationalization issues; technical and UI
+        
+        Minnesota Population Center (TerraPop)
+            There is a call next week. Talking with Cathy. We want to talk about next steps. They want to be able to say something concrete. We think the goal is for TerraPop to be able to say that they have contacted with us.
+            Amber: My understanding is that one of their data centers is closing down and they want to make sure that the data is still available. Call is scheduled for Th. 18th at 11:00 AM MDT
+    MN prospects:
+        EDAC is going to hold off for now until they get better information on the testing environment. We need to let them know when our documentation advances. For example the first web test may look like the only test.
+
+Other items:
+        Reminder: consensus is being developed on MN communications.
+    How to best communicate MN info, i.e. where to put stuff - repo, external website with links to repo, ongoing edits may be better done in epads/Google docs/dropbox.
+    
+Around the room:
+    Dave: we're still chipping away at documentation.
+    Amber: nothing to add.
+    Rebecca: likes progress on documentation efforts (me too!-LM)
+    Laura: nothing to add.
+    
+
+MNF call Th. April 18
+MN Wrangler Meeting will Be 1/2 hour later at 12:30 PM MDT  (2:30 PM EDT: 1:30 PM CDT: 11:30 AM PDT: Alaska Time? D or S?)
+MNF Forum regets: Dave V. and maybe JWC
+MN Wrangler regrets: Dave V. and maybe JWC
+=================================================================
+Member Node Discussion
+5 April 2013 
+
+Attendees: Laura, Rebecca, Dave, John Cobb, Amber
+
+Regrets: Suzie, Matt
+
+From yesterday's MN Forum meeting - a lot of interest in the kinds of statistics available to MNs and others.  Dave/Matt to clarify at next MNF mtg 18 April.
+
+Question about status of the Dashboard - conceptual drawings running around, high on priority list.  
+Amber: it would be nice to float those conceptual drawings around to the CE folks as well as the CI folks.  Will send email to Dave/Matt asking for that info to be shared.
+
+Dryad:  we're not sure what the status is at this point.  Dave to follow up.
+
+EDAC: not a MN yet, Soren and ?? still working; in process of being registered, similar to SEAD as to where they are in the process.  They should be pretty close.
+
+John: looking at redmine tickets to see status; we probably need to check status to ensure things are being updated.
+
+Kansas: in process.  KU is a MN that is close to becoming operational also
+
+The three replicating nodes are operational, but have no content as yet.  As new content comes in, it will be replicated here.  
+
+ARCTOS (Arctos-Multi-Institution, Multi-Collection Museum Database) - working on how/if they can be a MN, they might be better off using an alternative mechanism for backing up their data rather than joining DataONE  --- is that right? ---
+
+Rebecca:  TerraPop AKA Minnesota Population Center  (Cathy Fitch)
+Question:  Does Cathy (or other MN POCs) need access to docs.dataone.org?  
+
+CLARIFICATION: 
+docs.dataone.org - people who actively working with DataONE: LT, WG chairs, WG members, DUG chairs, summer interns
+
+mailing lists - community-wide mailing lists, i.e. DUG members
+
+MN POCs will need access to architecture documentation available in mule
+
+Dave's preference is to make all procedures available via mule (easier to maintain).  Plan to have overall policy/procedures SUMMARY (teaser) on website, pointing to details on mule (maintained on mule).  
+
+There is a dichotomy - some areas of the project use docs as archive and/or working space, other areas use mule or repo; we also use epad, etc. to work/store info.  We can link between docs and mule, though, to simplify the creation/maintenance of information while still making it widely available.
+
+Email from Matt:
+
+Hi Laura --
+
+I'm  not so concerned that she gets access to the members site -- that would  be fine -- I'm more concerned that we don't have all of the materials  that a potential MN would need out on our web site to do all of this.   So I'm actually thinking more about how we can be sure we are even more  transparent -- if there is anything in the restricted documents area  that a MN might need, we should work on getting it incorporated into the  MN checklist document or another similar place that is publicly  accessible.  
+
+Writing the MN Checklist document has triggered lots  of thinking on the development team about what the steps really are,  and how to communicate them.  There's a feeling that the process as  described is too overwhelming and needs to be simplified, or broken out  into a decision tree that makes it clear that not all MNs need to  develop their own software. I think we need to plan a call that  explicitly deals with this, and that includes the developers who  represent the main point of contact through much of the process like  Chris and Ben.  I am going to continue evolving the checklist document,  trying to make the process more understandable (and to define the  process better in our own minds).
+
+ACTION: Laura and John:  set up virtual meeting with Matt et. al. to discuss the MN Checklist/procedures from an overall perspective.  
+
+Rebecca setting deadline of 19 April to have DataONE public website new info available. John to provide MN info in ASCII form.
+
+Dave: have a couple paragraphs and the MN flowchart with info linked to mule available as MN webpage
+
+Amber: we don't want to change URLs too frequently, and looking forward to the dashboard (on landing page) and current MN mini-dashboards (on current MN page) we need to focus on updating/creating new content for the Become a MN page (by 19 April).  Amber will tidy up the landing page, maybe add some pictures, John/Laura will provide input for Become a MN page including the MN diagram/flowchart and links to detail info in mule.
+
+John to bring up at SC/UA WG mtg - perception of MN and CN, communication of roles/responsibilities.  See the video (w/Amber's v/o) and earlier PPT which showed a network of existing entities whose work is facilitiated by DataONE.  
+
+We all need to work on our messaging.  Rebecca teaching a class Monday and will make a note of the questions she's asked to help identify issues with perception/messaging.
+
+Talk about the MN agenda for the SC/UA WG mtg NEXT WEEK. 
+One of the questions we hope to address is volume of MNs we can manage; quantitative data would be nice, but it is hard to gather that data while people are expending all their effort in the work itself.  We want to have as many MNs as possible as quickly as feasible.  What are the pinch-points?  At what number to we run into problems implementing?  
+
+QUESTION: how can the SC/UA group contribute to this question?  Are they the right group to ask for input?  Perhaps DUG or MNF members might have input as well. Maybe the SC/UA group could help formulate questions to ask at the DUG - this might be a better use of these resources.
+
+========================================================
+Member Node Discussion
+29 March 2013 - Meeting cancelled
+
+Attendees:
+
+Regrets: Rebecca, Mike Frame
+========================================================
+***********************
+***********************
+***********************
+***********************
+***********************
+OOPS!!! MY mistake on 3/22 - I have not set up a Gotomeeting.
+
+Let's fall back to audio phone at 877.416.7592 code 9171592
+
+for today only, 3/2//2013
+
+-jwc
+***********************
+***********************
+***********************
+***********************
+
+
+
+
+2013-03-22 notes start on line XXX 15
+2013-03-15 notes start on line XXX 15
+2013-03-08 notes start on line XXX 12
+2013-02-15 notes start on line XXX 12
+2013-02-01 notes start on line XXX 107
+2013-01-25 notes start on line XXX 205
+2013-01-18 notes start on line XXX 329
+2013-01-11 notes start on line XXX 422
+2013-01-04 notes start on line XXX 496
+2012-12-14 notes start on line XXX 577
+2012-11-30 notes start on line XXX 594
+2012-11-19 notes start on line XXX 612
+======================
+2013-03-22
+Prior Action Items:
+
+cooridnation error: gotomeeting not set up because LT meeting cancelled and I (jwc) did not realize it in time.
+
+Conseuqently, ost of the meeting was a push.
+
+Duraspace Contact:
+
+NKN
+
+Policy/ process docs:
+
+ExT. web page draft
+
+Agenda:
+
+SEAD 4/11 NSF demostration
+
+Chelsea MN Paper
+
+Status updates:
+Dryad:
+EDAC
+SEAD
+
+======================
+2013-03-15:
+Attendees:John, Laura, Amber B.
+Regrests: Matt, Dave, 
+
+Link to view Member Nodes backlog:
+https://redmine.dataone.org/rb/master_backlog/mns
+
+Prior Action Items:
+
+Bill: Contact Duraspace 
+
+NKN: (Mike Frame, JWC): 
+
+Prepare policy document for MN process workflow (JWC) 
+
+John: External page draft (in process darft expected 20130311) (ack: Rebecca query - what's up?)
+
+Agenda:
+
+InDraft Documents:
+
+    Contact list
+    
+    https://ask.dataone.org
+        needs work to integrated into DataONE
+            how to integrate with official DataONE FAQ's
+            how to feed FAQ's
+            How to make sure content is accurate
+            How to make sure that questions don't go unanswered.
+            How to consolidate the many questions on ask.dataone.org into a concise FAQ
+            
+    MN policy (include contact points)
+    John/Laura working on now.
+
+    MN process  (include contact points)
+    John/Laura working on now.
+    
+    MN Process detail
+    John/Laura working on now.
+    
+    External content
+        MN uptime note also node to MN's
+        Dave V. has a layout. with 4 panels.
+            content layout is static but informaiton is dynamic.
+    
+    MN Personas Effort
+    Amber Owens taking lead.  We hope to have a DRAFT document available at the SC/UA joint WG meeting at end of April, solicit input, take to DUG and present as still a DRAFT (can modify) but with a firmer position.  Hope to have firm MN persona/scenario document end of summer.
+    John and Laura guiding/helping AmberO with this effort.
+    
+News/Around the room
+
+From chat:  https://www.xsede.org/ and https://portal.xsede.org
+John showed us how XSEDE works, ideas for transfer to DataONE's website - multiple faces: public, private (requires signon), MNs, or users
+
+XSEDE thinks of itself as collection of computer centers with users; DataONE thinks of itself as collection of ??? (help, John, can't translate fast enough)
+
+MNs might want a dashboard with these kinds of info: replication status, how many queries to their data w/success/failure stats.
+Users might want reusable workflows/queries on a dashboard.
+
+Amber: DUG agenda planning.  On 1st day, plan to have MN presentation where each current MN will have 5 mins to talk about their MN, activity, etc.  Also breakouts after lunch for Member Nodes (John/Dave), Tools, and Outreach (Amber/Laura?/Suzie?)
+
+Need to advertise DUG to MNF (Laura to put in agenda for next MNF mtg 3/21/13).
+
+=====================
+2013-03-08:
+Attendees:Rebecca, Bill, Laura, Dave, John C, Matt, Suzie
+Regrets:Amber
+
+Link to view Member Nodes backlog:
+https://redmine.dataone.org/rb/master_backlog/mns
+
+Previous action Items:
+
+Bill: Contact Duraspace 
+still on it.
+    Matt: discussion on developers@dataone.org happened with a couple of interested DSpace repositories
+
+MN page on web-site. (action Item Cobb:)
+include process.
+    contat points
+        testing phase
+    (a development site exists follow-up with Rebecca) Chris Allen has access to development site
+
+Update Redmine (John) All: (ongoing) (John needs to do some still)
+    Filtred Push project: Bill was contact.  More likely to be a tool or service.
+    AI: remove as a MN. Move to general list and tag to Dave.
+
+NKN: (Mike Frame, JWC): (no update)
+
+Prepare policy document for MN process workflow (JWC) (in process)(ack: Rebecca query - what's up?)
+Routing: LT --> ... --> Approved Policy
+
+John: External page draft (in process darft expected 20130311) (ack: Rebecca query - what's up?)
+
+Initiate contact with GLEON and Triana (correction probably Corinna Gries): (In Process: who is tagged for this?)
+Global Lakes Environmental Observatory network (part of PRAGMA - indirectly related)
+Corinna Gries has a NSF proposal under consideration to get a DataONE set setup. Status unknown.status deferred. assign to Dave.
+
+
+* Agenda:
+
+MNF Item: Plan to incorporate MN contacts into Redmine,
+Action Item: automate Redmine issue creation authorization when docs access granted. (Dave Volunteered) 
+
+MNF Item: Need two new information locations to help development.
+a. cross map SW versions for DataONE SPI and ITK tools - what is current? What levels are compatible?
+b. location of proper repository and location of DataONE extensions for externally hosted ITK components
+
+MNF Item: Need a channel of some sort for "how do you ...?" questions during implementation and testing.
+Approach? (Dave mentioned an approach similar to stackoverflow on the 20130308 LT call)
+<https://ask.dataone.org>
+ - default installation
+
+
+EDAC:
+    How do we add people add to MNF dist list.
+    Is it
+    Idea: creat MNForum@dataONE.org
+    EDAC status: testing
+        Rob Nahf working to help.
+        Identifying some issues with the tester.
+            Then register EDAC in a test environment - maybe next week
+        Lesson learned: communication
+    r=Rebecca: this is a good data point of how communication is working for non-DateONE insiders. 
+    
+    AI: contanct Soren to followup to insure communications working
+    
+    AI: SEAD coming soon - asisgn someone
+
+eBird, AKN name change and process?:  urn for existing node will change from CLOAKN to EBIRD, new node (AKN) will probably have urn of AKN.  AKN POCs are Andrea Wiggins, Leo Salas, and Katie Koch.  eBird's POCs are Steve Kelling and Kevin Webb. Changing urns is a big no-no, since a lot (all?) infrastructure is tied directly to the URN.   
+
+Dryad Status: waiting on Dryad at this point. 
+CCIT Santa Barbara meeting wa productive.
+A discussion would be worthwhile
+next step: Have Chris or Skye contact Ryan. Maybe go over the document about outstanding issues needing resoluton.
+Q: Are all issues contained in tickets already?
+A: not yet.
+Note: There is a Dryad ticket system that may contain many of the "go do's"
+DataONE liason: Robert, Chris, or Skye
+
+Status of replication nodes? registered but are not receiving content.
+We have 5 replication nodes:
+2 OR 
+2 UNM
+1 UCSB
+Matt: About to start to do a sweep for replication content. 
+We are going to move to a state where replication is on.
+Why 2 RMN's? Different technology stats. One is GMN and one is Metacat.
+
+other tier 4 nodes:   KNB, maybe LTER
+tier 3 nodes (by desire. Technically could be tier 4) SANparks, PISCO
+
+AI: complete replication and "celebrate" with external communication.
+
+Also follow-up with Amber
+
+May USGS workshop: We may have some sequester limbo:
+
+** New News/around the room:
+
+Rebecca: 
+1 Public web-site will have pointers to information locations:
+2. "How to become a member node"
+3. "process approval"
+
+======================
+2013-02-15:
+Attendees:John Cobb, Laura, Suzie, Rebecca, Amber, Bill, Matt, Mike\
+Regrets: 
+
+Link to view Member Nodes backlog:
+https://redmine.dataone.org/rb/master_backlog/mns
+
+Previous Action Items:
+
+Bill: Contact Duraspace 
+    no update.
+
+John: External page draft (in process)
+
+MN office hours call: John & Laura: (Done)  Now called the MN Forum.  
+
+Update Redmine (John) All: (ongoing)
+        ensure Redmine reflects state of contacts and contains contact communications.
+        update operational nodes tickets
+
+Also search etherpad for MN related discussion (Laura)(John) - 
+   posted at <https://docs.dataone.org/member-area/member-nodes/current-working-folder-for-mn-documents/MN_mentions%20in%20Epad.rtf/view>
+
+(All) transfer information from scraps of paper into Redmine
+
+Contact new member nodes
+
+EDAC - Soren is working through a few more items this week, checking in again next week  We have received a new MN description document from Soren for EDAC.
+"Very close" they have a full implementation and are testing. Low probabilty of making it by RSV.
+
+NKN: (Mike Frame, JWC): (no update)
+
+eBird (and not AKN), (JWC) : up!
+
+SEAD: (In Process) Ryan contacted by SEAD.  They are interested in the Dspace implementation.  Laura is inviting the SEAD folks to the MN Forum meeting next week.
+
+
+Dryad - waiting to free up a developer to work through final testing (blocked by work on 1.1 release) (Status after CCIT?)
+CCIT Santa Barbara work went well. Dryad has a complete SW stack. Test ran yesterday and failed a couple of tests.
+
+Does DRYAD represent a generic DSPace implementation? Ryan says it will be a good basis.
+
+Prepare submission for a MN workshop in Denver May 20. Abstract due:  Feb. 22 (JWC, Mike Frame) - Mike is working on 1st DRAFT and will send to John NEXT WEEK
+<http://nationalmap.gov/tnmuc_cdiworkshop/> (Done?)
+Begin to prepare. 
+
+Prepare policy document for MN process workflow (JWC) (in process)
+
+Initiate contact with GLEON and Triana: (In Process)
+
+clean up tickets in Redmine for operational nodes (John Cobb) ongoing remove from list
+
+EDAC Description Form (In Process)
+    Soren is in E-mail contact with Laura and others (see above)
+
+* Agenda:
+
+** New News:
+
+- First MN Forum call Th. Feb. 21 2:00-3:00 PM EST : "Office Hours" type of forum - this turned out to be the best time for the MN's that responded to the Doodle poll
+Update on project and then provide a chance for people to ask questions
+
+- Amber Owens SciData graduate student at UTK and is joining the MN Wrangler group. She will work for 18 months. PLease welcome her
+
+- Amanda Andrews  (PR masters student) and Paul Domingo (AD masters student): They are using DataONE for their STEM communications calss project. They will draft a communications campaign that will hopefully to be use to DataONE. They have discussed an overview with Allard, Moyers, and Cobb. They will look at some previous messaging
+
+
+** New Discussion Items:
+
+
+SEAD: interested in moving forward. Has an implementation in testing. Has a question about resource maps.
+
+EDAC: In process.
+    Issues?
+    
+Dryad: Testing? Status?
+    Does progress with Sryad tran
+
+** Around the room: 
+
+Amber; MN area of the web-site to make more inviting to MN information. Suggestion, bring up the current MN pages as the MN page. 
+Mock up at: sent via email at 11.23am (MN Mock Up)
+
+Also at:  https://docs.dataone.org/member-area/member-nodes/current-working-folder-for-mn-documents/MNMockup
+MAybe insert a MN highlight into the homepage rotation
+
+Matt: PELD node still in progress. They have upgraded Metacat. Setting up SSL certs. Moving along. PELD group is discussing what it means to be a member. They wanted to write up a DataONE MOU. DataONE encourages just assenting to partnership guidelines.
+Issue: DataONE needs to think about how to address the MN agreement form.
+Hope that PELD comes up a few weeks after the RAV.
+
+UK node: testing now. May be online by review. Technically might be there.
+
+** Next Meetings: Feb 22 No - March 1 - No, March 8!
+
+======================
+2013-02-01:
+Attendees:John Cobb, Laura, Bill Michener, Amber, 
+Regrets: Rebecca, Suzie
+
+
+Link to view Member Nodes backlog:
+https://redmine.dataone.org/rb/master_backlog/mns
+
+<prev week> ToDos:
+Bill: Contact Duraspace 
+
+John: External page draft 
+
+External website 
+
+MN office hours call: John & Laura: 
+
+Update Redmine (John) All: 
+        ensure Redmine reflects state of contacts and contains contact communications.
+        update operational nodes tickets
+
+Also search etherpad for MN related discussion (Laura)(John) - 
+   posted at <https://docs.dataone.org/member-area/member-nodes/current-working-folder-for-mn-documents/MN_mentions%20in%20Epad.rtf/view>
+
+(All) transfer information from scraps of paper into Redmine
+
+Contact new member nodes
+
+EDAC - Soren is working through a few more items this week, checking in again next week
+
+NKN: (Mike Frame, JWC)
+
+eBird (and not AKN), (JWC) 
+
+SEAD: (who?)
+
+Dryad - waiting to free up a developer to work through final testing (blocked by work on 1.1 release)
+
+Prepare submission for a MN workshop in Denver May 20. Abstract due:  Feb. 22 (JWC, Mike Frame) - Mike is working on 1st DRAFT and will send to John NEXT WEEK
+<http://nationalmap.gov/tnmuc_cdiworkshop/>
+
+Prepare policy document for MN process workflow (JWC)  [also incorporate principles and other ether pad comment <http://epad.dataone.org/2012Apr17-MN-Prioritization>]
+
+Initiate contact with GLEON and Triana
+
+********
+Agenda:
+
+New to DO's
+clean up tickets in Redmine for operational nodes (John Cobb)
+EDAC Description Form
+
+*************************
+New Discussion Items:
+
+1) Examination of the MN prioritization in Redmine
+<https://redmine.dataone.org/rb/master_backlog/mns>
+
+2) Status of description forms: (Laura)
+5 updated.
+5 outstanding 
+
+3) Info: student assistance: (John) 
+
+4) EDAC detailed near-term need needs
+    Last communication with Soren at EDAC: A few minor issue to correct. Current status not certain but they are in testing. Proceeding apace with no roadblock.
+    CCIT: contact: currently Dave V. (was Roger) Good chance that it will be up by site visit.
+
+5) Dryad near-term needs needs: In final stages of testing. Ryan's lastest this AM - it was passing tests. Move to staging and production next week hopefully. Mutability issue is not resolved in this release. It will be a member node before the mutability issue will be resolved.
+
+6) NODC contacts: We are having periodic discussions with NODC and ESRI. ESRI needs t ogo back and review the effort involved in setting this up. Especially the levle of reporting required for access. There is a descrepency in reporting in that ESRI's geoserver does not record some loggin information.
+NODC: National Oceanagraphic Data Center (Miami) 
+Mike: ESRI is also asking do others need this besides NOAA. We are trying to push that the answer is yes - DOI/USGS needs it.
+
+
+*************
+Discussion:
+
+Laura: setting up dist. lists and outreach commnications. Is there a dedicated CCIT person to add to the distribution.
+Dave: It is me until we find someone else.
+
+LauraL: what to call this meeting?
+not office hours
+not "hepldesk"
+Dave: Call it a forum
+
+Mike:  If we add new USGS data, will it get into the metadata index in time for the site visit. We are working on the park ervice items.
+
+For the tickets: Are there any aspects of the NODC's do we want to put in a ticket?
+Mike: Matt had been on this issue.
+conclusion: add a ticket on ESRI outreach.
+            add a ticket to discover agency interest in ESRI geoserver supporting DataONE interoperability. invlve Mike and Matt
+
+Mike: USGS workshop abstract.
+
+also fix up the line numbers in <http://epad.dataone.org/20121119-MN-Discussion>
+
+======================
+2013-01-25:
+Attendees: Rebecca, Dave, Laura, Mike, Bill
+Regrets: 
+
+Link to view Member Nodes backlog:
+
+https://redmine.dataone.org/rb/master_backlog/mns
+
+
+1/18 ToDos:
+ * Bill: Contact Duraspace - Still need to get in touch with those
+ * John: External page draft (reviewed and up by RSV - 1.5 weeks)
+   * Still in process: Expected 1/23/2013
+   * Check with amber for preferred Style
+ * Exernal website 
+ * John & Laura: preparation for MN's support call - accepted and closed.
+ * All: ensure Redmine reflects state of contacts and contains contact communications.
+ * Reach out to EDAC, NKN, eBird (and not AKN), and SEAD
+   * NKN: (JWC) 
+   * eBird: (JWC)
+   * SEAD: (jWC)
+ * RK to add to Redmine
+ * Also search etherpad for MN related discussion (Laura)
+   * List of Etherpads: http://epad.dataone.org/_index/
+   * Search all Etherpad http://epad.dataone.org/_index/search.html
+ * (All) transfer informatio from scraps of paper into Redmine
+ * Contact new member nodes
+   * EDAC - Soren is working through a few more items this week, checking in again next week
+   * NKN, 
+   * eBird (and not AKN), and 
+   * SEAD
+   * Dryad - waiting to free up a developer to work through final testing (blocked by work on 1.1 release)
+Agenda:
+ * Status of ToDos from 1/11
+ * Items
+   * MN Call coordination
+   * Status of existing Nodes
+   * Status of prospective nodes
+   * other items
+   * Docs location to put new items: https://docs.dataone.org/member-area/member-nodes - confirmed.
+
+Laura: 2 more MN Description dcuments are about ready to be deployed
+
+Redmine co-learning:
+    Can we group by MNdeplyoment 
+    
+    What are the status fields and are they up to date?
+        AI add "operational"
+    
+Mke: In May in Denver USGS is having a data-managers (?) meeting. Do we want to try to do a MN workshop in or around this meeting? This will include NKN
+
+AI: Work to get DataONE representation in Denver USGS mtg. week of May 20
+    Abstract due
+    Provide
+    
+    
+MN Wranglers RSV prep
+    - See Dave's EAB slides on this issue
+    - Present a strategy
+    - Present a top5-10
+    - Metrics for prioritization <--- think about this next week.
+        how many data sets
+        Funding
+        resources
+        Expected usage
+        Expected science impact
+        meta: metrics should be obtainable early-on on MN proposal process
+        Diversity of collections, Institution Type, etc. represented in DataONE. By:
+            Topic
+            Implementation technology
+            Focus (large vs. small , well curated versue "at risk data", cit sci (publicly collected)..)
+            Agency focuse
+            Geographical focus
+            Geographical location of MN
+            Idea: Identify and seek to fill gaps in the union of collections included in DataONE MN's
+            
+        Expected effort for implementation
+        Relevance to DataONE "vision" (scope)
+    - Identification of MN posisbilities
+    - Description of workflow
+    - Be willing to tolerate some WAG
+    - Include the "principles" discussion inthe epads below.
+
+    Direct access of data from DataONE rather than indirectly
+    
+(Rebecca) There was an Etherpad discussing MN issues:
+    http://epad.dataone.org/2012Apr17-MN-Prioritization ??
+    (jwc) other epads http://epad.dataone.org/20110408-MN-subgroup 
+            http://epad.dataone.org/2010-11-02-MN-BOF ???   
+    
+Mike: Are their operational metrics about MN's?
+    Dave: Experience with arious MN's
+        Hard/esy to work with.
+        
+JWC: There will probably be an metrics/ science impact presentation
+
+Rebecca: are any of the MN's Generic MN's now?
+Dave: All are metacat or Merury now.
+
+Slightly off-topic:
+    It would be nice to have somewher - say public web page informations about DataONe collective metrics
+Bill M. : We did have a mock-up of "DataONE by the numbers" and this might hit that need.
+Rebecca/Dave: 1.1. release will make some of this possible via log integration.
+
+Dave : IS there is "must have by RSV" list of MN's?
+    * Dryad
+    * EDAC
+    also some of the metacat nodes with international representation (i.e. Brazil) Dave: hey are very formal in this partnerships. Current challenge is MOU development.
+    Very low hanging fruit (since RAV is soon)
+    KU could be turned on. Reference spatial data modelling (?)
+    NKN would be good. But I do not know where we are. (May be stuck in politics)
+    NODC would be good, but there are issues. ESRI is looking forbetter justification to continue.
+    * Biota 
+
+* == good possibilities for in place by RSV
+
+Other discussions
+    GLEON
+    Triana
+    
+See https://redmine.dataone.org/rb/master_backlog/mns for a interative view (similar to CCIT sprint views)
+
+
+======================
+2013-01-18:
+Attendees: Rebecca,Dave, Laura
+Regrets: Mike,Amber,Suzie,Bill
+
+
+1/18 ToDos:
+ * Bill: Contact Duraspace
+ * John: External page draft (reviewed and up by RSV - 1.5 weeks)
+   * Still in process: Expected 1/23/2013
+   * Check with amber for preferred Style
+ * Exertnal 
+ * John & Laura: preparation for MN's support call - accepted and closed.
+ * All: ensure Redmine reflects state of contacts and contains contact communications.
+ * Reach out to EDAC, NKN, eBird (and not AKN), and SEAD
+   * NKN: (JWC) 
+   * eBird: (JWC)
+   * SEAD: (jWC) - RK to add to Redmine
+ * SAlso search etherpad for MN related discussion (Laura)
+   * List of Etherpads: http://epad.dataone.org/_index/
+   * Search all Etherpad http://epad.dataone.org/_index/search.html
+ * (All) transfer informatio nfor mscarps of paper into Redmine
+
+
+Agenda:
+ * Status of ToDos from 1/11
+ * Progress Update
+ * New Items
+
+Status of 1/11 ToDos:
+ * Bill: Contact Duraspace (Bill Michnenr)
+ * John: External page draft
+   * Still in process: Expected  1/23/2012
+ * John & Laura: preparation for MN's support call - accepted and closed.
+ * All: ensure Redmine reflects state of contacts and contains contact communications.
+ * Reach out to EDAC, NKN, eBird (and not AKN), and SEAD
+   * EDAC:Dave has contacted Soren - there are some issues with the test environment and Rob Nahf is working on these
+   * NKN: (JWC) 
+   * eBird: (JWC)
+     * Laura is working and refining description form
+     * 
+   * SEAD: (jWC)
+ * Rebecca: Contact Todd re: Dryad MN
+Hi Rebecca, 
+
+The Trello card with current status is here:
+https://trello.com/card/feat-refine-dataone-api/4f9563b87072e3eb5f06951a/9
+
+I just spoke to Ryan and asked him to resolve the issue of the  remaining DataONE API tests with Dave (2 tests fail, but they may not  matter), update this card, and document for us exactly what remains to be done both on Dryad's end and DataONE's.
+
+As you can see from the Trello board, the DataONE API is currently  #2 priority in our development queue.  #1 is fixing a similarly  long-standing issue with the metadata we provide to EZID.  I hesitate to put a time estimate on completing this work, but if all goes smoothly it could be done as early as next week.
+
+Is there more you want to discuss about this issue?  If not, I'd  suggest we simply revisit this once the developers have had a chance to confer.
+
+Todd
+
+Progress Update:
+
+Dryad: (Dave)
+    should happen soon after 1.1 into a test environment
+    looking good for RSV
+    
+EDAC: (Dave)
+    Testing harness issue ,skes it tought for DataONe to veify EDAC. 
+    Continue ntesting next week.
+    possibly available for RSV
+
+MN call:
+    Use GoTo meeting and ePad
+    Build list from ist od MN's 
+    Create Mailing list and add other interested parties
+    Send out Doodle and start it up.
+
+New Items:
+From Amber:
+MN discussion: Relating to the idea of having two different  documents - one for information gathering and housing on the docs site  and one for publishing on the website
+ * The URN field as written received a lot of discussion. It was kept that way because Matt Jones (and CI)strongly felt that in making things user friendly we shouldn't introduce error.  They argued that in any documentation, the official MN name (URN) needs to be used for cross reference.
+ * The form can be edited so that the 'instructions' (areas within  brackets) can be written into the grey fields such that once a MN starts completing the field, the instructions disappear.  This means the help information will be there for MNs completing the form but reduces the need to create a second document for the public website.  If agreed, I can implement.
+ * Any editing of the form questions should also be done by this group (and reviewed by the LT?) at this time and again, I can implement.
+ * Another option might be to create an html form - either google doc or on our website.  Less of a paper trail (which can be a bad thing) but more user-friendly?  At our current scale I don't think this is needed but wanted to put it out there. 
+
+Docs location to put new items: https://docs.dataone.org/member-area/member-nodes - confirmed.
+
+Laura: what happends when a Member nodes leaves?
+    Preservation WG has had a discussion.
+    Answer (provisional)
+        Default: Content remains in the system
+        MN can request content to be marked "archive"
+        Actual content removal is "frowned upon"
+        "content" means registered metadata as well as replicated copies of data.
+        Replication target stops replicating: in the architecture.
+        
+
+======================
+2013-01-11:
+Attendees: John Cobb, Laura, Suzie, Mike, Rebecca, Bill, Amber 
+Regrets: 
+
+ToDos: 
+Bill: Contact Duraspace
+John: External page draft
+John & Laura: preparation for MN's support call
+All: ensure Redmine reflects state of contacts and contains contact communications.
+Reach out to EDAC, NKN, eBird (and not AKN), and SEAD
+Rebecca: Contact Todd re: Dryad MN
+
+Progress: (previous action items) 
+-  Work continues on identifying documentation/communication re: MNs in docs, mule1, repository.  Most of what I see in mule1 and repo is of a more technical nature and not necessarily what a prospective MN wants/needs to see at first.
+-  All currently operational MNs have been contacted to confirm currency/correctness of their MN Description Documents or to submit a Desc Doc.  Responses back from all 10, with 3/10 current/correct as of 1/10/13.(5 had a document of some sort on external web page - 3 of the 5 are current)
+-  John and Laura think that Dave V's Road Map to a Member Node https://redmine.dataone.org/projects/mns/wiki is a great place to start, with few if any changes, in development of a procedure.  There is quite a bit of documentation in this area.  We just need to consolidate and tailor to target audience. 
+
+Agenda items:
++  update progress
+Documentation continuing.
+Some technical information is coming to light. Useful but not first contact information.
+10 operational member nodes.
+All have responded
+3 of 10 have current and correct information on the public web-site
+Examined Dave's roadmap for member nodes (see EAB documents and redmine WIKI.
+another expanded process document (no electronic version) PErhaps a S&G source documents (https://docs.google.com/drawings/d/1VGK80N56wYj9qovBBAgL6d0Xld1mPY6onyQjFwgJu1Q/edit)
+
++  potential member nodes:
+    - Earth Data Analysis Center (EDAC) at UNM - Karl Benedict has questions that aren't being answered so far.  How do we help?
+    (related: email from Soren Scott on building up MN communicaiton - possibly via DUG) Roger is coordinating with EDAC.  Note in redmine who is the developer/coordinator associated with each MN.
+    - Northwest Knowledge Network (NKN)- USGS - Greg Gollberg at UIdaho (link to Climate Data Centers) EAB has endorsed regional climate centers as a good near-term set of candidates. Some internal UIdaho discussions about data sharing policies that need to be resolved. Berrian Moore would like USGS to work with a single architecture rather than let a lot of flowers bloom.
+    Mike: Greg was funded to pilot data management for cliamte centers. Becoming a DataONE MN is part of that effort
+    - SEAD (developer: Kavitha Chandrasekar - will put this in Redmine)
+
++  John's homework - strawman of external web page material - IN PROGRESS
+External facing:
+    A series of question and answers:
+        1. What is DataONE?
+        2. What is a MN?
+        3. What is the value of DataONE for scientists?
+        4. What is the value of DataONE to a prospective MN?
+        5. What is the process to become a member node (answer is Dave's process workflow)
+Also see the DUG packet in the Docs area. IT is a goto poi
+In Process:
+approach: A set of questions and answers
+
++  It has been suggested that we implement regular MN meetings for MN representatives to bring questions/issues to the table so that we may address them in a timely fashion. Should be a virtual meeting on a weekly/biweekly basis, with attendees being John, Laura, MN Technical POCs or their designees.  
+Queue up questions.  Users can eventually help new users solve problems via this meeting (sustainability?).
+Dave: Think about google+ hangouts as well.
+Mike: I'd suggest you just use this 1 meeting (all you will be able to do before the RSV anyway) as "Hey here is what we are talking about doing, help us frame how you want us to do this, what issues you are currently having, etc.... Suzie's comments were right on in that this would show we have some process in place for sustainability, MN supporting each other, etc...
+
+I also wonder Again (I know it has been talked about several times) is a dedicated CCIT full-time MN support person. If MN is a priority, resource it appropriately. I think some of the communication issues is due to our piece mealing of that support function....
+
+Maybe include some far along prospective member nodes.
+
++  LT followup item: Interaction with MN's on ingest to prevent understanding mismatches of uploaded mata/metadata (i.e. the resource map issue occurnace during the DAAC update)
+
+The difficult learned lesson is that once incorporated into the CN, it is hard to back it out. The lesson learned is that we should coordinate before going live. Monday Devleoper's call will also discuss how to make the back-out process easier
+
++ (Bill) We were approached by Michel Kimpton (sp?) they were interested in incorporating DataONE to their offering for turnkey university deployment opportunities. Technical contact is Tim donohue contact <tdonohue>@duraspace.org . This is a good way to expand DataONE market penetration by hooking up with Duraspace, Fedora, ...
+Start with a Conference call. Must have are Kimpton, Dave, V., John Cobb, Tim Donohue, {Bill or Rebecca} AI: Bill M.
+
+RSV expected question: "You are in production one. How are operations going?" We need to frame a story here.
+
+AKN eBird discussion:
+
+snippet from KEvin  Webb and Steve Kelling
+<begin quote>
+The Member Node Description, Name of resource, and Node identifier are pulled from the existing node configuration which is AKN centric (work on the node started in late 2011). If we are re-branding from AKN to eBird, some work on D1’s part is required followed by some reconfiguration on our end. It might be as simple as changes on our end only, but I will defer to D1 how they want to proceed as far as the re-branding is concerned.
+<end quote>
+Dave V: name change okay. Keep ID the same.
+
+
+======================
+2013-01-04:
+Attendees: Suzie,John Cobb, Laura Moyers, Dave, Amber, Rebecca
+Regrets: Mike Frame,Bill
+
+ToDos: 
+- Strawman for external web page (John & Laura)
+- Inform all necessary about using Redmine for tracking MN contacts (John)
+- Rough effort estimations for MN deployment as presented at EAB are available in:
+https://repository.dataone.org/documents/Meetings/20121217_EAB_DC/presentations/20121217_MemberNodeImplementationPlan.pptx
+
+- Get MN Description documents (John et al) Also periodically touch base and revise <https://docs.dataone.org/member-area/member-nodes/completed-mn-description-forms>
+    specifically: AKN, LTER, EDAC, OneShare, USGS, Dryad, PISCO, 
+- Template: MN Delpoyment including tasks expected of every MNDeployment. I.e. implement a node deployment checklist as a template deployment.
+- Modify MN description form to be more general and less changing.
+    proposal: leave the form the same but before publishing in web-site remove site and usage info. slots since these may be changing.
+        remove fields that are nor absoutely needed
+        followup on some fields after deployment, periodically
+        try to automate some fields (size of holdings, ...)
+- Create a pubic page on usage stats.
+
+MN Descriptions:
+ONEShare, UC3Merritt - John Kunze (jak@ucop.edu)
+ESA, SanParks - Matt Jones (jones@nceas.ucsb.edu)
+AKN - Steve Kelling (stk2@cornell.edu)
+
+
+Agenda: ? ad hoc
+
+Comments from Laura Moyers:
+docuemnt review:
+    lookings at Docs and mule. We are getting there
+
+RSV wish list:
+    Cobb: 
+        1) Goldberg: Northwesten Knowledge Network ready - what is the process?
+    Moyers: what would a prospect be looking for in answers. 
+    Goal: "So you want to be a member node" needs to be done.
+
+Workflow:
+merge Mike and Dave's workflow and present on the external page.
+EAB question: who is the actor at each step.
+
+EAB Feedback:
+    We need to work on a priority list for MN's
+        We need a process
+        We need a prioritization
+        We need to mesh with the prospect list
+        
+        With an eye toward
+            being strategic
+            opportunistic
+            best use of DataONE resources
+            diversity of implementation
+            
+        Materials:
+            output of S&G meeting at Shattuck in Berkeley; and
+            conference call output (http://epad.dataone.org/2012Apr17-MN-Prioritization) giving guidance and lists
+            
+        Goal: Have a story to tell.
+        
+        
+Approaches to MN's
+    RSV will come up quickly
+    Needed to have a story for RSV
+    REbecca: Herd cats. Many ongoing conversations are occurring.
+    
+    
+    MN discussions
+    
+    ESRI
+    
+    
+    How much information needs to be in here?
+    
+    REdmine Process:
+        MNDeployed "tracker" is one for each MN
+        Tasks are attached to one or more MNDeployments. Completing all tasks under a MNDeployment should lead to MN complete
+        
+discussion on regular reporting on MN metrics. REcord counts, usage, ...
+
+======================
+2012-12-14:
+Attendees: Bill, Dave, Matt, John C, Amber, Carol, Laura Moyers, Rebecca
+ 
+Matt listed possibilities for MNs in Brasil - 
+Discussion re Biota and EMBRAPA
+
+There ws interest in a in-country CN
+
+Funding: stuck at UNM; will talk to Bob Chadduck at EAB meeting next
+week
+Laura Moyers is on board at UTK & on this call!
+
+D-Space solution for adding new MNs
+Dave's concerns:
+ * Timing is tight due to RSV at end of February
+ * Several hundred new MNs would impact DataONE operations
+Timing is important - need to get in contact with Michele Kimpton and DSpace architect plus show interest in Fedora rewrite at Stanford
+
+Subgroup meet at EAB next week
+
+Next Meeting: January 4, 2013
+
+2012-11-30: Attendees: Dave, John, Rebecca, Amber, Bill, Suzie, 
+
+
+
+- AKN online now or soon
+- ONEShare likely ready next few days
+
+Action items (2012-11-30):
+- EDAC - DataONE needs to contact to move through next steps
+- Need a cheat sheet for redmine, especially for MN tracking
+
+Notes from the meeting are also starting at line 144 in this epad (can be moved here if appropriate)
+
+2012-11-19: Attending: Dave, Amber, Bill, Mike, Rebecca, Suzie, Matt, John 
+
+.. meta:
+
+   :keywords: member node, wrangler, participant, DataONE
+
+AI:
+- plan to have these calls every 2 weeks
+   - on Nov. 30 do a quick review of the highest priority MN's
+   - ensuring we are aware of new MN opportunities
+   - Understand process and impact on CCIT
+- harmonize the spreadsheet at <https://repository.dataone.org/documents/Projects/cicore/operations/source/data/membernodes.xlsx> and the Redmine tasks
+- Next steps:
+    - white paper on the process
+    - (re)collated list of prospective nodes. Preferably in RedMine
+    - evaluate and adjust hte process for working with the nodes.
+    - get infromation on the external website that gives information (so you want ot be a member node)
+- Develop a MN - big brother process where existing MN's can shepaerd prospective MN's
+- EAB meeting preparations, presentation on status and future member nodes.
+
+Agenda
+------
+
+1. Status and role of group, meeting schedule, goals for regular meetings
+
+Members: John Cobb, Amber Budden, Rebecca Koskela, Bill Michener, Suzie Allard, Mike Frame, Matt Jones, Dave Vieglais
+
+Schedule:  Call every two weeks, tacked onto the end of the LT call. Expected duration 10minutes or so.
+First call on the 30th November.
+
+Current Status of the Group - Paperwork to DOE/ORNL in support of MN WG is in process. Estimated Timeline is: 
+
+John has developed a list of Draft Tasks for the group. Will re-circulate to the group.
+
+Detailed task planning for Member node coordination
+
+UT is hosting/interview and is offering a PostMasters (Will begin Dec 10 - Laura Moyers).  
+
+MN Totals - 40 Total by Year 5
+
+2. General process for adding member nodes
+
+John's SoW: https://docs.google.com/open?id=0B2uOOMpSMNgLdVF5YkI5cGhUY00
+
+- Process overview: https://redmine.dataone.org/projects/mns/wiki
+
+- Project in Redmine: https://redmine.dataone.org/projects/mns
+
+ Task: (Dave) Need to investigate simplifying issue entry / update in redmine, and generation of reports on status of MN implementations
+
+
+3. Current list of member target nodes
+
+- https://redmine.dataone.org/projects/mns/issues?query_id=54
+(Amber - can I get authorized for this page?)
+
+Next 4 Member Nodes:
+ * AKN
+ * EDAC
+ * EVOS (?) - policy issue
+ * KU - static spatial layers
+ * Dryad needs testing - sounds ready to go
+
+MF: question about spreadsheet - Tiger Team approach considered?
+JC: yes, he was thinking about this approach - talk with prospective MN about policy issues (navigating the DataONE bureaucracy); also the speed dating approach of potential MNs talking to existing MNs, for example ESA meeting
+
+Strategy: D1 has been opportunistic; how do we decide on the 40 MNs that should be in place at the end of Year 5
+
+
+priority matrix (from 1st 2nd DUG meeting?). Also from a S&G Meeting Discussed this issue. 
+    size
+    alignment with DataONE objectives
+    Data Holdings
+    Available Resources
+    ......
+    
+SA: consider using recommended new MN's from existing MN's
+
+
+MJ: There is some MN's that will take quite a bit of work. Ex. NODC's but they may be important new MN's while some iLTER nodes can almost boot-strap themselves to participate.
+
+Bill: there is some very low hanging fruit that is ready to come on as MN's w/ the new SW stack
+
+MF: It does also depend on what is considered to be the MN? For instnace, in USGS, we have potentially suggested we would have multiple MN.
+
+WM: One criterion was developer support from the MN's such as EDAC and Dryad.
+
+DV: Another criterion - if a MN is able to use an exsiting MN SW-stack implementation (GMN, ...)
+
+MJ/DV: What is a MN comes up with a single record that fronts their entire data collection?
+
+
+Action - align the spreadsheet entries and redmine entries
+
+Priorities:
+
+Top Level MN Web Page is needed - Bullets with links to the details
+  Policy, Technical, Existing MN Stacks, What is required....
+  
+  
+Next steps:
+    Role of this group?
+    
+MJ: There are probably some holes that we need to fill. I (MJ) do outreach as part of what I do, but I miss some areas. For example, I am not at 
+
+SA: I would hope we could create some really thoughtful presentations of the DataONE value proposition.
+
+MF: Perhaps we group member can provide John some suggestions as to what they can contribute, how they should be invovled (I know John started this Discussion with some us)....
+
+Next CALL:
+
+1. Review High Priority MN
+2. Current Status of MN
+3. Identification of New Node Opportunities (Brazil - USP; Taiwan)
+4. Impact on CCIT when New MN is starting to come onboard
+5. Discuss Role of potential "online" MNs - Do we need a MN Support/Self-Help Group - DUG only issue is 1 time per year - needs to be ONGOING
+6. EAB presentation
+
+DV: try to capture issue resolution in Redmine (Lessons Learned)
+
+EAB mtg presentation:
+
+Status from Dave:
+AKN MN will be online shortly - just serving up one record; discussing with them on how to expand on this 
+
+ONEShare will also be online shortly
+
+Discussing Taiwan Forestry Institute next week about becoming a MN
+
+Matt having discussion this week with E...
+Next week Matt and Bill having a workshop about becoming DataONE
+MNs in Brazil
+What about EDAC? Karl's presentation indicates that they have >100K items 
+**Action item for Dave (or someone in CI): contact Soren re: EDAC MN
+
+Has anyone worked with RedMine?
+- May not be a familiar idiom, but is usable
+- Rebecca: Need a quick cheat sheet (JWC: also, an intro to REdmine and a pointer to Redmine features that we do not use but show up on tabs, etc.)
+- How to assign tickets
+- example of a good ticket
+
+Q: Who would be interacting with RedMine
+
+Formalization of the process is needed
+We all need to look at what is in RedMine - check status of tickets; divide them up among ourselves; work on the tickets;
+discuss next call
+
+AI on Redmine:
+    - update list of members for MemberNode task area on Redmine
+    - (JWC) We also need to add "Moyers, Laura B (Laura)" <lmoyers1@utk.edu> a role. (she also needs DataONE LDAP entry)
+    - Re-assign RedMine tasks
+    - Write a Redmine cheatsheet
+    - work the tickets
+    - Define a process of "task nagging"
+**Action item for Dave - add members to the MN project in RedMine
+**Action item for Matt - create mailing list for this group
+
+** Action item for Rebecca - send link of consolidation of policy on docs site to this group
+https://docs.dataone.org/member-area/working-groups/sustainability-and-governance/policy-work
+
+
+

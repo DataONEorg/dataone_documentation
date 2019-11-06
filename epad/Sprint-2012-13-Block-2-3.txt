@@ -1,0 +1,169 @@
+Standup 04/02/2012
+
+Andy
+----
+ * Working on packaging part of the CLI
+   * issues committing and will need to back out some changes
+   * editor issues (pydev plugin for eclipse) FIXED
+   * still working on making the CLI more dynamic
+     * Instead of having the creation of a package be a one line command, the CLI will allow adding, removing, displaying, and renaming the package, the science metadata objects, and the science data objects. 
+ * Matt suggested more dynamic packaging implementations
+ * Mimicking the functionality of DataPackage from the Java side.
+ * Inner methods that do the serialization needs to be implemented.
+ * A working version (1.0.0c5) will be sent to Skye for his testing.  (Andy to provide documentation)
+ * Licensing audit for Python is done (#2530), need to work on Java code (#2529).
+ * Writing documentation for the CLI
+
+
+Roger
+-----
+ * (missing standup because of appointment)
+ * "My update is that I'm working on cleaning up d1_test_utilities_python and adding install instructions for it."
+ * Still working on d1_test_utilities_python.
+ * Have also been working on the documentation for setting up the GMN asynchronous tasks and have been making the authentication between the asynchronous tasks and the GMN service more flexible.
+ * Will be working on GMN in the staging env for the Leadership Team, troubleshooting with Ben/Robert/Chris
+ * Wrapping up loose ends on GMN
+   * Closing tickets, working with Rob
+
+
+Rob
+---
+ * Helping Jim and Giri
+   * clearinghouse MN and DAAC mn are registered with the DEV env
+   * dealing with a minor typo for the urn: node id
+   * Need to address the mapping of DAAC and Clearinghouse identities to D1-recognized identities, and how this affects system metadata creation on those MNs
+   * webtester is still showing failures for the mercury MN
+   * clearinghouse node has schema errors
+   * ORNL DAAC has problems with listObjects()
+   * ornldaac and clearinghouse have objects of two formats, both of which are already known to DEV:
+     * application/octet-stream
+     * FGDC-STD-001.1-1999
+   * let Giri and Jim know that after syncing, there will likely be work needed to get the data parsing working correctly, and then we will work on transitioning to STAGE environment (which leadership team will have access to)
+ * New tests for checking changes to sysmeta on CNs are reflected back to all replicas
+   * Creating test objects on member nodes, wait for sync, then do system metadata changes
+   * Not updating replicas in the test
+ * will be pushing out another MNWebTester - done
+ * Reciewing the MNWebTester, found a few bugs with Roger
+   * working on edge cases for auth with different certs
+   * different behavior with self-signed vs invalid certs (self-signed can get through, revert to public) Is that appropriate?
+     * Robert: don't think that that behavior is correct. Debugging it.
+ * Other cleanup of d1_integration
+   * Can turn on d1_integration on some of the envs like dev
+
+
+Skye
+----
+ * Beginning work on Replication Auditing feature.
+   * confirm that replicaVerified is being indexed properly.
+   * Discussed replica auditing datasource with Chris.
+   * Started implementation of audit datasource, generating audit tasks.
+   * Will be starting audit processing implementation soon...
+     * Friday update:
+       * Worked through implmentation - 90-95% complete. Lots of advice, help from Chris - thanks!
+       * Need to finish implmentation of replication auditing datasource layer (queries)
+       * Need to work on configuration - hz processing client config, etc.
+       * Need to put in test harness. 
+ * Support for one-mercury testing - setting up windows/IE test environment.
+   * Some one-mercury UI testing in windows and IE 9,8,7.
+   * Identified mixed-mode (https/http) issue with IE
+     * Moved resource requests (images, css) to https (dataone.org).
+     * Changed doctype element to skinny doctype - <!doctype html> to prevent IE quirks mode.
+     * Outstanding issue - Google Map widget still requests map layers over http. Reported to Ranjeet.
+ * 4-16-12
+   * Not much progress on replication auditing friday afternoon.
+   * Downloaded jMeter and performed load/stress testing against cn-dev.
+     * 100 concurrent users making 3 requests against 3 UI pages (search, search results, detail view)
+     * Avg 1k/minute requests.  4k/min requests with no detail view sampling.  
+       * Detail view does xsl tranform on science metadata view on server. 
+         * would be nice to move this to client.
+         * May be other factors effecting this view.
+   * Ranjeet sent a fix for the one-mercury map widget to support https on friday afternoon.
+     * Installed and tested fix in various browsers/platforms.  
+     * Moves widget to google maps api v3 which was needed; however map layers cannot be loaded from https from map layer source.
+
+
+Ben
+---
+ * FIXED: cn-dev environment - attempting to listen for and respond to cluster-wide events (members coming and going, the cluster being partitioned and merged, etc). Goal is to merge shared SM map and ensure backing store on all 3 CN stores are up-to-date
+ * Concerned about the RR DNS when a CN does go down. There is no guarantee that RR entry will be disabled "in time" and errors will be returned for any calls that continue to be routed to that particuar server. At this point, the 3-CN-redundancy is just a headache and it's not clear what kind of safety/failover features it will acutally be able to provide. When a CN has ceased participating in the cluster, we need to be sure that once it comes back online it "catches up" with the other nodes. Metacat replication should take care of most of this, but I'm concerned that we've been missing SM records for some of these cases.
+ * RR-DNS shouldn't be considered a high availability solution.  Personally, I think the best approach would be to build some redundancy of the individual CN nodes since they seem to be critical to the proper function of the system.
+   * someone's comment: "agreed - should consider option of running with a single "master" CN with ability to hot swap to others if necessary. Maintaining multi-master appears to be making things less stable sicne there is a continual chance for injection of error as a result of any network glitch"
+ * FIXED: CN-CN replication inconsistencies with EML-defined access control rules. When we have permOrder=denyFirst in EML, the first CN persists it as expected but when it replicates to the other CNs we use the SM default of allowFirst and then when EML comes along there is a permOrder conflict. Somewhat mitigated this by allowing the inconsistent state, but a mix of those permOrders for the same record in Metacat is essentially incomprehensible. https://redmine.dataone.org/issues/2583
+ * ONGOING: MN replication for EML-described data files fails in cases where the EML is replicated to the target MN before the data file. This is an identifier mapping issue for how we track and persist EML-defined access rules for data obejcts. https://redmine.dataone.org/issues/2572
+   * There continues to be one date file exhibiting this behavior in the sandbox environment despite having upgraded the Metacat instances to the latest [fixed] version. "cdonahue.35.1" is the data docid that is referenced by "knb-lter-sbc.40.x" --Still investigating and would like to try loading in cn-dev and or cn-stage env.
+
+
+- 
+
+Robert
+------
+ * cn-stage-ucsb-1 somehow got hosed, after unm and orc updates went fine Nick has fixed. I have not confirmed
+ * no one can log in due to LDAP auth issues I am still unable to login
+ * took a while to uninstall dataone-cn-metacat that was a very old install, maybe other install issues need to look at on cn-stage-ucsb-1
+ * for expediency, we'll change RR DNS to point to cn-stage-orc-1
+   * - Ensure DNS is ok for the participating nodes.
+   * - Update the node registry on cn-stage-orc-1 to refer to the expected nodes
+   * - Ensure the single CN (orc-1) is operating as expected
+   * - Populate the environment with a few hundred records from the KNB. We have close to 200 
+   * - Check the search results (mercury UI)  Skye confirmed all public documents are correctly indexed
+   * be able to retrieve full science data object -- Can not find this via Mercury
+ * Testing  certificate validation issues against CNs. With self-signed cert, curl  fails with 'unknown ca' failure while a test client using Apache  DefaultHttpClient succeeds.  
+ * Will upgrade cn-stage-ucsb-1 when access is re-established.
+
+Chris
+-----
+ * FIXED Working on sandbox concurrency issues with Ben
+ * POSTPONED Evaluated Hazelcast Management Center application
+   * Had trouble connecting to the Sandbox cluster
+     * Could be due to the 2 node limit in the free dev version
+ * DONE Installed Metacat MN stacks on 3 sandbox VMs (mn-sandbox-ucsb-1&2, mn-stage-unm-1)
+   * ready for replication/synchronization
+   * Ben is transferring the KNB database to mn-sandbox-ucsb-1
+     * Had disk space issues, we're asking Nick to up the space to 300GB (ran out at 176GB)
+ * DONE Nick finished the re-image of mn-stage-ucsb-2, so I'll install the MN stack there too
+ * FIXED Worked on MN-->MN replication where GMN was not being authorized to getSystemMetadata() for objects it was supposed to be a replication target for. Changed Metacat to consult the replica list in system metadata, and allow MNs listed as targets to access the system metadata. This change will affect both MN and CN sides of Metacat. Not deployed until after the USGS demos
+ * Will re-install the MN stack on mn-sandbox-ucsb-2 since the underlying VM disks were potentially corrupted during Nick's sysadmin work
+ * Preparation for the USGS workshop. Installing tools locally
+
+Dave
+----
+ * Preparations for workshop
+ * Maintenance issues for redmine (performance). Issue is related to Ruby process running at 50-100% cpu (one cpu out of 4) when viewing tickets. Plenty of RAM available. Could be related to legacy fields from old trac system.
+ * Reviewing CN operations
+   * Considering switching to single master with hot failover to other CNs instead of continuing multi-master.
+   * Also considering operating release with a single CN only
+   * 
+
+A few points raised by Roger:
+ * generateIdentifier() is CNCore, but MNStorage. Is this a mistake? -- No, we do not have an API corresponding to MNStorage on the CNs. So, we use CNCore for Storage functionality like create, registerSystemMetadata, setObsoletedBy.
+ * Returning the correct MIME type for an object. We currently don't have MIME type stored in the object format list
+   * strategy for now: fall back to application/octet-stream
+     * evaluate file extensions to try to set MIME type
+   * long term strategy: get all MIME types for every object format loaded into the format list using the UDFR ontology
+
+Priorities
+----------
+1. Setting up the sandbox to run in single CN mode with cn-sandbox-ucsb-1.dataone.org as the CN. This should be basically as simple as setting up DNS, purging, and repopulating. I think the purge is necessary to ensure that content is consistent - for example, searches through onemercury on the sandbox don't currently provide good links to the full metadata or data.
+ * Chris and Ben will purge all nodes
+ * DNS request is in with Nick/Matt, haven't heard back yet
+ * Will populate mn-stage-ucsb-1 with a variety of EML docs from the KNB datastore
+ * cn-sandbox-ucsb-1 will remain in the cluster
+ * replication should occur to mn-stage-ucsb-3, mn-stage-orc-1
+
+2. Resolving the issue with consistency between the CNs. Needless to say, this is a big deal and a complicated issue. The LT is informed about it, and are OK with evaluating the sandbox in single CN mode while this issue is worked in parallel on the dev environment. It would probably be worth taking a bit of time to talk over the strategy for monitoring + debugging the issue. (If absolutely necessary, then we could go public running the infrastructure on a single CN, but that's not a desirable outcome)
+ * Plan to use the LifecycleService APIs to monitor membership events
+ * Andy suggests that we look into using "haproxy"in front of CNs
+   * then haproxy becomes a single point of failure...  (haproxy is designed to work with a heartbeat monitor for redundancy)
+   * Also issue of traffic running through the proxy instead of directly from the respective cn  (haproxy should only be used for inbound traffic)
+ * Will be looking at traditional metacat replication to see why it's not 'eventually' replicating inconsistent systemetadata
+ * What might be calling map.remove(pid) if anything? We will log these events to monitor entryRemoved() events.
+ * Upgrade to Hazelcast 1.9.4.8
+
+3. Bringing in at least one of the Mercury based MNs to ensure they are operating as expected for a tier 1 MN (Rob Nahf should be on this one)
+ * Plan is to add the Mercury node to the dev env first (by Tues 4/3), than sandbox (Wed 4/4)
+   * Need to register the Mercury MN to the dev env (create a node doc and POST it: Giri & Rob)
+   * Need to register the node contact and verify it (Giri will register)
+
+4. Evaluating the ONEMercury UI on different OS x Browser combinations. I have Chris Allen (web developer at UNM) on this one, coordinating with Ranjeet and Skye. This one may be a huge time sink, this morning I noticed ONEMErcury does not render properly at all on windows / explorer - I am unsure how deep those issues will go into the css + javascript. The sandbox evaluation by the LT will also likely identify a number of bugs, so this item is closely related to #1.
+
+

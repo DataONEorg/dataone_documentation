@@ -1,0 +1,105 @@
+2013-August-09
+
+Attendees: Bill, Carol, Bertram, Dave, Mike, Bruce, John Cobb (late)
+
+Regrets: Suzie, deborah, Bob
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+GoToMeeting Info:
+1.  Please join my meeting, Aug 9, 2013 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/818345552
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial +1 (636) 277-0130
+Access Code: 818-345-552
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 818-345-552
+
+
+Agenda for 2013-08-09
+
+Note: This call will be followed by upcoming calls that address similar issues wrt community engagement.  After these two calls, we will then focus intently on CI and CE activities for the follow-on proposal.
+
+1.  Dave -- CI plans for meeting year 4 and 5 goals, progress, challenges, and group discussion of possible solutions.
+
+Major Project Milestones / Activities, Y5 (CI)
+
+Q1
+- 2013-09-24, CCIT Meeting 
+- 2013-10-21, All hands meeting
+- Proposal writing
+
+Q2
+- Proposal writing
+- Proposal submission
+- 2013-12-??, EAB Meeting
+
+Q3
+- ? CCIT Meeting
+
+Q4
+- Transition period to new award
+
+CI Development Activities (Definite)
+
+Y5 Q1
+
+- DataONE Dashboard
+- Supporting MN deployments
+- Completing loose ends for documentation and other tools
+  - MN deployment docs
+  - ITK developer guide docs, examples
+  - ONEDrive beta release
+  
+- Indexing improvements
+- Ongoing maintenance, bug fixes
+- Design, prototyping for mutability / series identifiers
+- Feasibility evaluation for "SlenderNode"
+- Design, planning for system metadata control transfer
+- Initial design / evaluation of OPeNDAP for MN stack
+- Initial design / evaluation of DSpace for MN stack
+- Initial design / evaluation of iRods for MN stack
+
+
+Y5 Q2
+
+- Supporting MN deployments
+- Ongoing maintenance, bug fixes
+- prototyping, testing for mutability / series identifiers (possible deployment)
+- testing for SlenderNode (assuming feasibility OK)
+- implementation, testing for system metadata control
+- progression on at least one MN software stack
+
+
+Y5 Q3
+
+- Supporting MN deployments
+- Ongoing maintenance, bug fixes
+- Release of at least one MN stack
+
+
+Y5 Q4
+
+- Supporting MN deployments
+- Ongoing maintenance, bug fixes
+- Transition period
+
+
+https://docs.google.com/spreadsheet/ccc?key=0Ai3ryhJR2IgZdDViZ2xubzBQdDVlZkFwbzlfUnJhWlE#gid=0
+
+Potential Evaluation approach for Next MN Stack Development efforts:
+
+1. Content
+2. Breadth of Network/Nodes
+3. What would be willing to join
+4. Resources available to assist with MN Stack deployment
+5. Marketshare that brings to DataONE, supporting sustainability goals of DataONE
+
+
+2.  Group -- round the room
+
+
+

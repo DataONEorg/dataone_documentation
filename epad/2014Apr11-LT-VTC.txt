@@ -1,0 +1,84 @@
+Attendees: Trisha , Suzie, Amber, Carol, Bruce,Rebecca, Matt, bob, John K, Bertram, Viv, Carly, Deborah, Todd
+
+
+Regrets: Mike
+
+
+9am AK/10am PST/11am MST/noon CST/1pm EST
+
+We will also use the epad: http://epad.dataone.org/2014Apr11-LT-VTC 
+
+1.  Please join my meeting, Apr 11, 2014 at 11:00 AM MDT.
+https://www1.gotomeeting.com/join/409199712
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (213) 289-0012
+Access Code: 409-199-712
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 409-199-712
+
+GoToMeeting®
+Online Meetings Made Easy®
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+
+Agenda 11 April 2014
+ * CI Status (Vieglais)
+Good news: tidy project is pretty much complete; a few hiccups but nothing serious
+Heartbleed didn't have a significant impact on DataONE - a few machines were running the newer software 
+Are regenerating new certificates and once complete, all passwords will need to be reset
+
+Crude prototype available from DSpace
+OpenDAP nearing prototype
+Tim Robertson working on a Hadoop implementation
+
+Overall Status: functional; were in read-only mode for a couple of days and then went to read/write but now will swtich back to read-only for the power outage at UNM
+
+4 MNs were vulnerable to Heartbleed - they were notified and quickly fixed things - CN certificate will need to be replaced
+
+ * CE Status (Budden)
+
+DUG Survey: https://www.surveymonkey.com/s/DUG2014
+
+ASSIST/RDAP meeting : on schedule with other DataNets in plenary session (~120 attendees)
+Working on the Internship Program - 11 projects this year - all projects had their 1st choice accept
+Project 3 didn't have many candidates and will not be going forward; Project 4 had many applicants so two were chosen; Project 9 was not able to be funded
+
+Software Carpentry workshop at NESCent supported by DataONE 'sold out' immediately yesterday.  http://nescent.github.io/2014-05-08-datacarpentry/
+
+ * Latest set of questions from NSF (Michener)
+
+
+
+
+ * Around the Room
+
+John Cobb:
+- NSF solicitation of interest: IRNC <http://www.nsf.gov/publications/pub_summ.jsp?WT.z_pims_id=503382&ods_key=nsf14554> - may be useful for DataONE to express their interests and needs for international netowrk connectivity as part of one or more other proposals. I.E. help proposers propose more than Schlepping LHC and SKA-like challenge data.
+- DataONE (and like minded folk) might consider attending NSF Cybersecurity Summit for Large Research Facilities, planned for August 26-28, 2014, in Arlington, Virginia. < http://trustedci.org/summit/> This is a renewal of a conference series that emerged in 2004 after a significant penetration of NSF CI resources. It has been a useful community building and information sharing activity for NSF CI and has been high profile within OCI. I attended a couple and was on the 2009 Program committee. It might be important for DataONE to be present in order to better integrate within OCI's ecosystem.
+- One wonders: Heartbleed impact on DataONE. Given the the pervavise nature of this event's impact, has DataONE done adequate introspection? Our distributed CI bnature makes this an interesting problem. There are several facets to analyze:
+   X.1 Impact Assessment
+        X.1.1 Which DataONe CI components were affected (CN's monitoring sites, ...?) 
+        X.1.1.2 Was LDAP affected?
+        X.1.1.3 Which MNs were affected? How does that affect the rest of DataONE?
+           X.1.1.3.1 Could one vulnerable MN gave compremized credentials of other Mns, DataONE in general, or specific users? 
+           X.1.1.3.2 Could a vulnerable MN have been (ab)used to release datasets without proper Authentication/Authorization? 
+   X.2 Recovery: What, if anything, needs to be done to assure that operations have recovered.
+
+Carol: I'm at an annual International Retreat for those involved in scholarly communications--publishers, librarians, and others. This year in Cambridge. Kevin Ashley of DCC gave a shoutout to Carley's blog. Cliff Lynch is also here.
+
+Bruce: Attended the EU Biodiversity Observation Network meeting last week.  Lots of good discussion
+
+John K:  Getting ready to release Suffix Passthrough (SPT), a feature of ARK identifiers stored in the N2T.net resolver. Basically, SPT permits an ARK registered for one object to behave as if individual ARKs had been registered for any number of objects "beneath" it. In a way each ARK registered in N2T can be thought of as the root of its own "namespace".  Eg, one ARK registration can take care of 10,000 individual components.  More info plus testing at https://confluence.ucop.edu/display/Curation/ARK+Suffix+Passthrough
+
+Carly: Met with BCO-DMO folks at WHOI today. Mentioned semantics proposal put into EarthCube with Mark Schildhauer and others. Also mentioned talking to Matt/Chris about becoming a DataONE member node. Interested in "Tier 1" but too much work right now. Hope to push metadata to D1 alongside marine LTERs if proposal funded.
+
+
+Call
+Send SMS
+Add to Skype
+You'll need Skype CreditFree via Skype
+

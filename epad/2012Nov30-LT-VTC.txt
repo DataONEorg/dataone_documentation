@@ -1,0 +1,196 @@
+Attendees: Rebecca, Suzie, Amber, Bob, Bruce, John C, Todd, Viv, Dave,John K,Mike, Bill 
+
+
+Regrets: Matt Jones, Deborah McGuinness, Bertram
+
+DataONE LT Call:  9am AK/10am PT/11am MT/noon CT/1pm ET
+
+1.  Please join my meeting, Nov 30, 2012 at 11:00 AM MST.
+https://www1.gotomeeting.com/join/391953657
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (510) 443-0604
+Access Code: 391-953-657
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 391-953-657
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+Not at your computer? Click the link to join this meeting from your iPhone®, iPad® or Android® device via the GoToMeeting app.
+
+We will also use the epad: http://epad.dataone.org/2012Nov30-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+
+Agenda for 2012-11-30
+
+1) CI Update (Vieglais)
+- Network outage (planned) for Tuesday morning at UNM - no epad  8:00-12:00(MST) on Tues. Dec.. 4
+- Working through a number of MN memory issues encountered in testing log aggregation and replication services
+- Strategies for resolving "split brain" between CNs. Networks between centers is unreliable and disconnects occur at some times. No impact so far, but risk increases with load (number os users and activity), so need to harden this process
+- ONEDrive refactoring complete to enable demonstrations - Mike would like to know when would be ready for USGS to test; Dave is testing this afternoon and if it's ok, should be ready shortly, he'll verify that it available for both 
+- Morpho probably won't be ready for EAB meeting; as a replacement, Dave is looking through the DataUp tool code - he thinks the EML can be fixed before the EAB
+-1.1 is expected next week
+Dave will be out of the country next week (Taiwan)
+
+2) CE Update (Budden)
+
+A few updates:
+- Heard back from Viv and Mike and Bob cook on whether USGS and ORNL could sign the copyright doc. All is OK> We are starting ot get signatures on it. So the decision from last week stands. Once all signatures are complete, it wil appear on thewebsite and the slideshare
+- ESA preps active becuase deadlines were yesterday. Sessions:
+    -- Data-UP /Morpho Workshop
+    -- Data Management PLanning special session (morning)
+    -- Workshop on data management (morning)
+    -- Workshop session on R Analysis  (afternoon)
+    --- Scott Chamberlain and Sandra Chung (from NEON) are putting together an ignite talk.
+        ONeDrive, One Mercury, Morpho talks
+    - TerraPop talking abotu sharing space at ESA
+- AGU starts on Monday.
+    -- not able ot meet-up with other Datanets
+    -- Talks with ESRI group
+- ESIP workshop activitiy - DMPtool
+- Other news: We met with someone interested in data management - stay tuned.
+
+
+3) Preparations for the EAB meeting 12/17-18 (Koskela)
+
+Pre-meeting reading materials:
+1)     Annual report and most recent quarterly report - ready to go
+2)     Sustainability and governance progress report - most likely won't be ready until meeting
+3)     Data policies - ???
+ Copyright document is ready - others are??
+ Key element: policies that we have in place (formal,informal) for bringing on MN
+ *  workflow
+ *  prioritization
+ Dave - will work on collating drafts
+ Is there a process in place for approval - not that all are aware
+ RK will check PMP
+ 
+Agenda Items:
+
+How do we want to handle the questions by each topic?
+Questions are to be addressed explicitly in the presentations
+
+December 17
+9:00 am – DataONE demos (current and emerging capabilities) – Dave Vieglais and Bruce Wilson
+Demo:
+ * ONEMercury
+ * ONEDrive
+ * R-plugin
+ * DataUp (will ONEShare be working by then since they go hand-in-hand?) Dave:  I think so. is EML working? John K: That works. The UNM cert install is up and we are cleaning up the test data and then today or Monday you should here from Mark the go-ahead to start polling <much celebration>
+
+Q: What is the evidence about the experience and anticipated use and appreciation of DataUp, and does it improve the quality of data and metadata?
+"Feedback from John Kunze and Carley:
+Evidence about experience and anticipated use/appreciation of DataUp:
+
+We collected feedback from beta testers, which included about 20 folks who tested the tool.  In general, they were pleased and had comments that are on the list of proposed dev improvements on BitBucket.
+
+We don't have any evidence of it improving the quality of data/metadata since it hasn't been used extensively."
+
+Q: Are users surprised about the high proportion of metadata available compared to the sources that also provide access to data? Under what conditions do we want to increase the number of sources of actual data available on DataONE?  
+"Yes - the role of metadata is primarily to facilitate discovery and reuse of data. Hence a major goal of development work is to both increase the amount of data available through addition of member nodes and also improving the transparency of association between data and metadata."
+Starting with ONEMercury demonstration - will show the issues - transparency of accessing the data from the search results - need to do a better job of showing the packages
+
+Bill: need to highlight the issue that some agencies/institutions will want an extra step before accessing the data
+
+10:45 am – Future CI plans (6-12 months, mechanisms for prioritization) – Dave Vieglais, Bruce Wilson, and Amber Budden
+Status: will be a presentation drafted by Dave and reviewed by Bruce and Amber
+
+Q: What have we learned about the practical obstacles that member nodes have and are likely to encounter in implementation, and are there steps we can take to minimize the anguish?  Also, what is the projected trajectory of the rate of increase of member nodes and what will control this trajectory?
+Q: Is DataONE taking active steps to improve the quality of ecological data and metadata, or is DataONE's role simply to provide the tools and expect individual scientists, perhaps with the encouragement of professional societies, to take on the responsibility for quality improvement?
+
+Goals through the end of the project:
+- Hardening and progressive feature addition to production infrastructure
+- Progressive integration of semantic capabilities to improve discoverability and reuse of data
+- Provenance tracing to better facilitate determination of the derivation of data and improve reproducibility of analyses
+- Addition of notification and annotation services, so researchers may tag and otherwise annotate data sets to help wit content reuse
+- Ongoing expansion of capacity through addition of additional member nodes
+- Adapting more investigator tools to address all aspects of the data lifecycle - specifics?
+- Integration with high performance computing facilities such as XSEDE to enable seamless transfer of data objects to computation resources, and archive of computational outcomes
+
+[[Add an outline of the schedule and overall dependencies]]
+
+11:15 am – Data and Member Node policy review – Dave Vieglais and Amber Budden
+Status: Brief presentation(DV) & then discussion; Data policy complicated
+Tie in with discussion above about bringing on MNs
+Include the work John C is doing
+
+1:00 pm – DataONE Users Group activities and status – Amber Budden
+Status: in touch with Andrew (both presenting)
+
+Q: DataONE has been relentless in taking its story/capabilities to the user community. What have you learned from these encounters that will make future encounters (even) more effective? How will now having a live website change your approach?
+Q: What are the practical communication mechanisms to give participants in the User Group confidence that you listen to and are responsive to their ideas and recommendations? Would you expect future user groups to involve hundreds of users?
+
+
+2:00 pm – CI and Community Engagement Working Group status – Amber Budden, Dave Vieglais, Bob Cook, Suzie Allard, Stephanie Hampton
+Status: overview of the WGs - Should be able to pull out of the Qtr. reports?(yes + AHM presentations)  Will include Network Analysis.  
+
+
+Q: Originally there was some skepticism that DataONE needed so many working groups, but the current success suggests that the approach was correct. Going forward, do you see a refinement of the domains of working groups and perhaps some consolidation or streamlining?
+
+Can discuss the linkages between the Provenance and EVA WGs:  scientific workflow common to both groups
+Include Linkage between CI and UA - Assessment & UA - specifics to ONESearch, formation of new Tools, etc.  
+
+3:15 pm – 4:30 Sustainability and Governance progress – Patricia Cruse, Bill Michener, Bob Cook, Mike Frame, and Rebecca Koskela
+·       Implications for universities and institutions
+·       Engagement of other disciplines and research sponsors
+Status: sharing Kim Thanos' report (mid-week next week)
+value proposition information should also be included if Kim doesn't include in her report
+Questions for the board:(3-6 questions)
+
+
+Q: Is going private among the sustainability options being considered? What can be learned from the NCEAS experience?
+RK: Do we need something from Stephanie for this? - yes, send her a reminder
+
+4:30 NSF Discussion Items
+
+December 18
+
+8:45 am – Plans for Reverse Site Visit and discussion – Bill Michener and Leadership Team
+Status: short presentation (already have template - RK: to make a handout)
+
+9:45 am – Plans for renewal proposal - Bill Michener and Leadership Team
+Status: drop
+
+10:45 am – Meeting with NSF representatives
+Status: We know Alan Blatecky will be there in the morning but don't know what time
+Board will come up with their suite of questions - make sure there is sufficient time
+add time on Monday for questions
+
+4) Around the room
+
+Deborah (by email): if i was there i would announce the IGNITE talk at AGU next week       on the semantics working group work, which will be given by our postdoc Patrice Seyed - a search for his name does not pull up anything
+
+John: Nothing to add
+
+Bob:  Nothing new to add
+
+Mike: Late because Bill & I just got off OSTP Big Data Presentation. 
+
+Suzie: The IFLA paper  -- 'Academic librarians and data research services: preparation and attitudes'  (Tenopir, Sandusky, Allard & Birch) was one of the few chosen from the conference to be published in the IFLA journal. (IFLA= International Federation of Library Associations).
+
+The ACRL white paper Academic Libraries and Research Data Services: Current Practices and Plans for the Future  (Tenopir, Birch & Allard) is now fully available on the ACRL website. (ACRL=Association of College and Research Libraries).  
+
+I am working with two masters students to do some preliminary network analyses to look at DataONE in a variety of ways including growth of DUG over time, internal relationships, external reach based on member affiliations, and disciplinary mix.  There will be a couple preliminary networks avalable for the EAB meeting (If we decide to present these we can get some feedback  and ideas about what we may want to develop in the future for internal work and reviews).  Thanks to Rebecca and Dave for providing data for this. 
+
+The SCWG is holding a phone meeting on Monday. Among the topics to be covered are the  FAQS. 
+
+Carol Tenopir has been named as an AAAS fellow. 
+
+John K: nothing to add, other than the reported progress on ONEShare: production MN cleanup of test data, cert installation at UNM
+
+Bruce: I will be on travel next week, to a conference on identity and access management.  The fourth (oldest) DataONE server has been moved to the same rack as the other three and physically connected to network and power.  We're waiting for OIT to get VMWare installed, which will then get it into our cluster.  Chris Brumgard and I have resolved some, but not all, of some of the remote access/management challenges we were facing with OIT.  
+
+Bertram (by email);
+
+Quick updates: 
+1. Paolo and I sent Amber material for the Newsletter. I assume all was well.
+2. ProvExplorer work is moving forward (student(s) on board; not sure where paperwork is)
+3. Prov Use-case Demo: moving forward nicely (Yaxing and David Koop making good progress)
+3. Not sure about status of R work (I think Duncan hadn't heard from you)
+4. Apologies re. AHM reimbursement. Land under here... will do this weekend for sure!
+
+

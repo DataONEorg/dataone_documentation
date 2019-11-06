@@ -1,0 +1,189 @@
+DataONE Dashboard Approach
+
+Joint session with CCIT, UA, and SocioCultural Working Groups
+
+Approach:
+1. General Demonstration of overall Dashboard Tool - Chris Jones
+        Capture general comments, issues, and suggestions
+        ~20 Minutes
+
+2. Break into Groups of ~4 people
+        Balance CCIT and UA/SC members
+
+3. Groups focus on needed User Statistics and/or Object Statistics
+        Groups work for 45 Minutes
+          Focus on Priorities, Needs, and develop any Possible wireframe ideas
+
+4. Groups Present back 5-10 Minutes of their findings and recommendations
+
+5. Mike/Chris Write-up Summary and Results of the discussions 
+
+
+Dashboard current URL: 
+https://monitor.dataone.org/dashboard/
+
+
+
+Questions
+---------------
+1. When total data downloads represents just data files downloaded, does that include package downloads for systems that allow downloading a whole package as a time?
+
+2. Do the totals listed include revisions?
+
+3. Who is the primary intended audiance and who benefits?
+"NSF, DataONE MN, Key stakeholders in DataONE, Users/PI themselves"
+
+4. Do numbers include only downloads/activity through DataONE? It is misleading if otherwise. Could it be toggled to allow either view/number for each MN? Have to define what is meant by "in DataONE" for downloads. This is difficult to slice. Downloads through the DataONE API should be differentiated if possible.
+
+5. (RK) Do we have a MN in the UK?  Asking because the map page indicates a red spot there. Chris says it is LTER Europe. Need to have some Q/A before displaying
+
+6.  (RK) Back arrow on Chrome on a Mac when you're in the map view of a specific bubble takes you all the way back to the main dashboard page rather than the map view
+
+7. Feedback on representing Large Coverage (i.e. Global extent) datasets. 
+
+Recommendations
+--------------------------
+1. Graph of uploads needs to fix Y axis label to accurately describe these as 'Total Monthly File Uploads' (or uploads/month)
+2. Consider adding a 'Cumulative' overlay on the uploads and downloads graphs
+3. For views of individual MNs, show a vertical line that demarcates when a MN started its affiliation with DataONE.  Also consider showing a demarcation for the DataONE public release (July 2012).  
+4. Total files number is not equal to data files + MD files; this inequality will make viewers wary of the numbers and the project; be sure to label in a way that the relationships among counts are obvious.  BEW: My opinion is that the main landing page should show either a) just the current data files and metadata files or b) the count of current data files, metadata files, and data packages.  I know data packages carries some concern about data packages as a technical term.  Consider labeling this as "data sets".  I may be a minority opinion, but while "data set" is an ambiguous term, "data package" is a term with almost zero meaning to most people.  There is a huge difference across MN's in what they've defined as "data packages" (how they've broken data up into discrete collections), and so there's the same level of ambiguity, in practice, in terms of the meaning of data package versus data set to anybody outside of CCIT.
+5. Need to get the missing Logs for Data Downloads. 
+6. Browser - History Issue (Chrome on Mac seems to be history going back from Details)
+7. Distinguish 'Missing logs' from '0 objects' in the views.  For example, the 0 for the number of data files for ESA is correct -- there are zero data files for that MN.  But for the ORNL DAAC, the 0 on data downloads is really because we don't have the log data for that MN yet.  
+8. Put a back button (or breadcrumbs) on the detail pages.  For at least some browsers (including Chrome on Mac) it is possible to get into a details page for a MN and the back button in the browser simply repaints the same detail page.  
+9. Review all MN counts as a sanity check; several look wrong, including ESA
+10. Feedback on MAP View - Possible Title Clarification; Separating Global.  
+ * map key should be visible within the window.  should not have to scroll down to see the key.
+
+Break-out - Potentially how to mockup Global Datasets 
+
+11. The total number of downloads is problematic.  Clarity on what this represents is important and there is concern about over-representing what's DataONE's contribution to the downloads for a MN. BEW: I think it is essential to be able to distinguish downloads that came through a DataONE API call, and we currently cannot get that from the log coming in.  In some cases, MN's may wish to only share downloads that come through the DataONE API calls.  Comparing that, in any form, with downloads from the MN that come through all mechanisms is problematic.  
+12. need to make sure that the source of lat/lon is at least synched with the member node list.
+
+12. When at full extent zoom, AK data sets appear differently on two view of the map; likely an artifact of the Google maps viewport that is active, as panning the map causes the areas to update properly
+13. Need to get LAT/Long associated with all MNs so they can properly display on the Map.
+14. Need to differentiate between downloads by supplying MN (where was the Read endpoint) versus downloads by authoritative MN.
+15. Add commas to numeric values to improve readability (4590959 vs. 4,590,959)
+16. BEW: Can we rethink the logging requirement.  What happens if a Tier 1 MN simply declines to share the log records?  Those nodes would be shown as n/a (not available) in the downloads.  We don't need the log data from a Tier 1 MN to be able to handle replication logging.  Logging is simply a means to a metric of overall use. It does not directly affect the key mission area of discovery of data and delivery of data to data users.  It matters to secondary missions of delivering metrics to sponsors and stakeholders and it matters to a secondary mission of enabling data providers (as distinct from MN's) for understanding how thier data gets used.  
+17. Should DataONE create specific DataONE Log with its MN reads
+18. Have a clear statement of the specific users and use cases which the MN dashboard is intended to support.  BEW: from my perspective a key driver is that we needed a means for non-technical people in DataONE to have a clear understanding of how many objects are available at the different nodes, what nodes are actually in production, and how much use is being made of DataONE (which is why I care intensely about differentiating DataONE reads versus reads through other methods).  And from my perspective as a stakeholder in the dashboard (and one of the potential users), I want to be able to see the differences in behavior across member nodes -- this MN has 3000 data files and 4 data sets and this other MN has 3000 data files and 2000 data sets.  
+19. After understanding the use case, then look at this from the perspective of the public reader, including the NSF program manager or propspective DataONE MN manager.  Does the data on the dashboard present an accurate picture of what's really going on.  If the data can be easily mis-interpreted, consider putting the dashboard behind a login and make it a DataONE-internal resource.  Anything that's publicly readable needs to be carefully vetted to ensure accuracy of the data and guard against unintentional mis-interpretation.  As an option, consider just showing the summary table (metadata objects, data objects, and DataONE downloads) as the publicly viewable data and the details are only available to authorized users.  This relates to the concept in a data repository of only showing the QA'd data, but allowing the repository staff and trusted partners) to see the raw data.  Also consider whether people other than DataONE staff and the specific MN staff should be able to see the details of the MN statistics.  
+20. Bug: Different users are seeing different numbers (for example on the number of total downloads).  At the immediate moment, Chris, Suzie, and I are on https://monitor.dataone.org/dashboard/#nodes.  I see 5.356M downloads, Chris has 7.136M downloads showing on the screen, and Suzie has 6.965 for total downloads.  (are they all on the same year tab?) Yes they were all on the same 10 yr view.  Clicking on the different year tab changes the totals because it's tracking age of datasets)
+21. As MN - when data pushed through GMN. Downloads in Total, from Replicas across Network
+22. Maps view - move the legend up on the page; not visible on smaller screens
+23. BEW: my opinion on the map is that the global datasets should be reflected as a total at the top or bottom of the screen or as a completely different symbol on the map.
+24. Idea:  When the map is zoomed down to a smaller area, we know what the zoom level is.  Can we then create a link to a ONEMercury search with this particular bounding box as an extent?  
+
+======================================================================
+Further discussions:  Skye Roseboom, Chris Jones, Andrew Sallans, Amber Budden, Soren Scott, Rob Olendorf, Laura Moyers, Bruce Wilson, Bruce Grant, Chris Eaker
+
+On summary page: 
+ *  Task #4119 Change title to Summary of Member Node Holdings  <---- needs some work
+ *  Task #4119 Change help popups to activate on hover over the large summary boxes
+ * Header boxes:
+   * Task #4119 remove total files box 
+   *  Task #4120 change data downloads from data + metadata to data only
+ * Graph:
+   * Task #4121 For this summary D1 presentation, both "Content" and "Downloads", start the date scale at July 2012
+   * Uploads  
+     * Task #4121 change to cumulative with dual scale, one line for data files, another for metadata (current active only, no revisions or obsoleted)
+     * Task #4121 change button name from "Uploads" to "Content" or something
+     * Task #4121 add events to mark when a new MN comes online to explain possible spikes (not a priority)
+   * Downloads
+     * Task #4121 stop at end of last month; i.e. don't go through current date
+     * Task #4121 add toggle below to choose "since D1" or "include legacy data"
+     * Reads of objects
+     * 
+ * Data table (current active only, no revisions/obsoleted)
+   * Task #4123 no data on this summary page (for many reasons - we don't want to be comparing MNs
+   * Task #4123 list MNs with description with rollover for additional description info
+   * Task #4123 whole row linkable
+   * Task #4123 status column - nice to be green for up, red for not up
+
+On detailed MN page(s):
+ * Task #4122 Title: Summary of "Member Node Name"; somehow want to link to MN desc doc or MN's home URL; originally thought to link to this title, but maybe not
+ * Header boxes
+   * Task #4122 remove total files box
+   * Task #4122 align "summary/maps" buttons with the rest of it
+   * Task #4122 data downloads questions:  data downloaded via DataONE, data downloaded via MN; also the DataONE start date line (before is via MN, after could be DataONE or DataONE plus MN), <--- needs some more clarification
+ * Graph:
+   * For this summary D1 presentation, both "Content" and "Downloads", start the date scale at July 2012
+   * Uploads  
+     * change to cumulative with dual scale, one line for data files, another for metadata (current active only, no revisions or obsoleted)
+     * change button name from "Uploads" to "Content" or something
+   * Downloads
+     * stop at end of last month; i.e. don't go through current date
+     * add toggle below to choose "since D1" or "include legacy data"  <--- further discussion
+ * Task #4124 Data table (current active only, no revisions/obsoleted)   <--- drop the table entirely
+   * remove Name from data table so can add more columns
+   * remove total counts line
+   * change font for total volume to something smaller (similar to table header font)
+   * ensure consistent number formatting (commas)
+   * change data table to record format, i.e. 
+     * data files -        count, volume (size)
+     * metadata files - count, volume (size)
+     * total files -        count, volume (size)  (providing there is sufficient description of what "total" means)
+     * total packages
+     * etc...
+   * Task #4119 if there is a missing value, show "-" (count of records=0)  rather than "0" (sum of records=0)
+   * Task #4125 since this is an informational page, perhaps show MN description; link to MN description document
+
+ * see URL - change .../dashboard/ #nodes/detail/urn:node:KNB to .../dashboard/KNB
+ * MNF: show URL for this summary (does it look ok), show the MN detail so far and ask questions re: summary "uploads" (cumulative?), survey for additional/alternate functionality; see https://monitor.dataone.org/dashboard/#nodes/detail/urn:node:KNB
+ * data services vs data holdings metrics (see BruceG)  
+
+
+{"nodeId" : urn:node:mnStagePISCO, 
+"bytesTotalOneYear" : 3322387, 
+"bytesTotalFiveYear" : 555095,
+ "bytesTotalTenYear" : 787321, 
+ "bytesTotalTwentyYear" : 998930, 
+ "counts":
+   {"2008-10-01T00:00:00Z":21814,
+   "2008-11-01T00:00:00Z":54789,
+   "2008-12-01T00:00:00Z":43002,
+   "2009-01-01T00:00:00Z":59091,
+   "2009-02-01T00:00:00Z":46807,
+   "2009-03-01T00:00:00Z":44953,
+   "2009-04-01T00:00:00Z":86604,
+   "2009-05-01T00:00:00Z":58535"
+}}
+
+OR
+{"nodeId" : urn:node:mnStagePISCO, 
+"format": DATA,
+"counts": 
+    {"2008-10-01T00:00:00Z":21814,
+     "2008-11-01T00:00:00Z":54789,
+     "2008-12-01T00:00:00Z":43002,
+     "2009-01-01T00:00:00Z":59091,
+     "2009-02-01T00:00:00Z":46807,
+     "2009-03-01T00:00:00Z":44953,
+     "2009-04-01T00:00:00Z":86604,
+     "2009-05-01T00:00:00Z":58535},
+ "bytes": 
+     {"2008-10-01T00:00:00Z":21814,
+      "2008-11-01T00:00:00Z":54789,
+      "2008-12-01T00:00:00Z":43002,
+      "2009-01-01T00:00:00Z":59091,
+      "2009-02-01T00:00:00Z":46807,
+      "2009-03-01T00:00:00Z":44953,
+      "2009-04-01T00:00:00Z":86604,
+      "2009-05-01T00:00:00Z":58535
+} }
+
+Option 3
+ {"nodeSummary" : {
+  "nodeId" : urn:node:mnStagePISCO,
+  "formatType" : "DATA",
+  "eventType" : "Download",
+   "data" : { "binned_dates": ["2008-10-01T00:00:00Z", ...],
+     "binned_bytes":[21814, ...],
+     "binned_count",[234, ...],
+   } //end DATA
+   } // data
+  } // end format } //end node
+
+node.format["DATA"].binned_dates
+
+

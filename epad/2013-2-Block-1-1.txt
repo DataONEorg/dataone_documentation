@@ -1,0 +1,410 @@
+Notes for 2013.2-Block.1.1
+--------------------------
+
+CCI 1.1 Release Discussion (bottom of epad)
+
+Dave
+----
+ * 20130123
+   * At EVA meeting in New York
+   * Working with Prov WG
+   * Working on VM access
+     * Dave has Full access to UNM hypervisor
+     * ORC: getting account fixed
+   * Updated Nagios & check_mk configurations
+     * Will add in production node checks
+     * Will work with Skye and others re: monitoring & stats
+   * Finished CCIT draft agenda
+   * TODO: create ticket for populating releases.dataone.org
+ * 20130118
+   * Finally seem to have monitor.dataone.org check_mk sorted out. Need to correct a number of configuration issues. Site is available at: https://monitor.dataone.org/check_mk
+   * Working through numerous issues with UNM access to vmWare
+   * Identified 8 PIDs that are invalid (whitespace), but seem to work fine. #3492
+   * Will follow up with Ranjeet and Giri about ORE document issues
+   * TODO: create RSV ticket for all demos: due date for CCIT
+   * Dryad MN: Ryan is ready to register in a testing env. Will send email on this 
+ * 20130116
+   * Admin work
+   * Initial draft of referencing provenance information in ORE docs using dcterms:provenance
+   * Mutability doc
+ * 20130114
+   * Administrative stuff
+   * Working on CCIT and RSV preparations
+   * /boot was full on cn-sandbox-unm-1. Full of old kernels. Removed a couple old ones to make space
+   * Observation: Must now assume that Java is blocked in all browsers. Consequence for CILogon cert download? Note that http://www.cilogon.org/?skin=dataone no longer works. It does actually, use HTTPS!!
+ * 20130111
+   * Worked with Ranjeet on the DAAC, however new content has the wrong fmtid for OREs
+     * application/octet-stream
+     * we don't have a CN.setFormatId() since it's immutable
+     * Ranjeet will need to update() all the OREs with new sysmeta
+     * edge cases prevent us from allowing changes to system metadata fields
+   * Getting a list of object by mn is not easy
+     * Working on 404s on system metadata calls - tracking down why we get these
+   * Continued work on CCIT meeting and site review
+ * 20130109
+   * Discussion with the provenance group
+     * good roadmap to use the stage2 environment
+     * changes are needed in indexing to add the provenance trace document
+   * Cleaned up statsd metrics monitoring, running on cn-sandbox-unm-1
+     * Basic usage info at: https://repository.dataone.org/software/tools/trunk/statsd2ws/README.txt
+ * 20130107
+   * conference calls on friday
+   * Admin work
+   * presentations for the reverse site visit
+
+Ben
+---
+ * 20130123
+   * Long meeting re: Morpho release schedule and tickets
+     * Aiming for release at the end of February (with TODOs remaining)
+     * Organizing bugs, tasks to work with Jing and Brendan
+   * Will continue to focus on Morpho
+   * Working on CILogon 2.0 upgrade
+ * 20130118
+   * Worked on bugs below for Morpho. fixed
+   * Working with NPN Member Node folks and Bruce for installation
+     * Will get Hudson building Metacat 2.0.5 in Metacat-stable
+   * Planning for Metacat future changes, scheduled meetings next week
+   * For the reverse site visit:
+     * Help with live demo of Morpho
+     * Help with screencast backup of demo
+ * 20130116
+   * DONE reserveIdentifier (cn-dev) fixed. #3399
+   * Working on Morpho bugs uncovered by EVOS group
+     * DONE taxonomic import wizard
+     * DONE creator/contact/party list randomly reorders
+     * slow UI when many data tables (30+) in single data package. eventually OOMemory error.
+   * SANParks issue for Judith
+     * DONE Cannot save EML 2.1.1 package after upgrading Morpho from 1.8 to 1.10. Update: turns out w3.org is unreachable from her server and prevents Metacat from doing schema validation. So it is unrelated to Morpho upgrade. Having her sysadmin people (if there are any) look into it.
+ * 20130114
+   * Will work on reserveIdentifier() bug
+   * Will think about portal session db wrt CN upgrades
+   * Demo/Walk-through of using the ECP client code (Wed 23Jan2013) -- oops, I guess I forgot to do this today!
+ * 20130111
+   * We now have a test identity provider for ou=Account,dc=ecoinformatics,dc=org
+     * Works with ECP (as of 2 minutes ago)
+     * listed in Cilogon test providers (wired up by Terry)
+     * identity provider is configured to release attributes: first, last, email
+   * Will get back to Morpho wrt save() process
+     * Will work with Jing on editing system metadata (issues: no cn, cn delay, etc)
+ * 20130109
+   * Working on Metacat release details, ready to tag 2.0.5
+   * TODO: will change Hudson for a new build in Metacat Stable, D1 CN Metacat
+   * TODO: 3399
+ * 20130107
+   * Identity provider chat with Mark S.
+     * Discussed concerns of which 'entity' would be vouching for identities
+     * > 5000 unafilliated accounts
+     * Dave: DataONE should set up an ECP id service
+     * NCEAS/UCSB should also set up an ECP id service (as did LTER)
+ * 
+Chris B.
+--------
+ * 20130123
+   * Working on VM access for Dave
+   * vSphere issue (network down) is fixed. Was a firewall issue
+   * Not much progress on ONEDrive yet
+   * Working on CN stage VM reboot issue
+   * 
+ * 20130118
+   * Working on cn-stage-orc-1 reboot issue
+     * /dev/mapper link to the LVM
+   * Will work on Ansible next
+ * 20130116
+   * ONEDrive packaging: python dependencies are added to the egg except
+     * lxml, fuse, dokan binaries. working on these now
+     * 1.1.0RC3 version of d1_libclient_python has minor issue
+   * LUNs finished on cn-stage-orc-1 and cn-stage-orc-2, now 4TB on each
+ * 20130114
+   * ONEDrive running as:
+     * python script
+     * as an egg
+     * straight from the egg
+   * Working on dependencies, packaging them into the egg
+   * Looking at stage VM virtual disks
+     * Upgrade the sizes from the NAS, or perhaps make new ones
+ * 20130111
+   * Worked on ONEDrive, made executable Python egg
+   * Now writing an egg-creation tool (for buildout)
+ * 20130109
+   * Fixed ORC VMs that jumped to DHCP IPs, now static IPs
+   * Re: CPU issues, now monitoring CPU usage
+   * Created an Egg for ONEDrive, running that version now
+     * logging may need to change to move log files into a parent directory
+     * TODO: create ONEDrive tickets once Chris creates the ONEDrive story
+ * 20120107
+   * Back in Nashville
+   * Looked at ONEDrive, setup was simple
+     * The D1 types sub module conflicted with the Python types module
+
+Skye
+----
+ * 20130123
+   * Finished up check_mk Nagios monitor work for CN membership
+   * Looking at ONEMercury tickets
+     * Will keep in contact with Rebecca and Amber on tickets
+   * Look at moving ONEMercury to another box after the 1.1 relese
+ * 20130118
+   * TODO: will look into ORNLDAAC pids
+   * Nagios and check_mk work
+     * MembershipMonitor listens to HZ, writes to a file
+     * check_mk shell script (agent) added to monitor the file, pushes to Nagios server
+ * 20130116
+   * Interviews for web administrator position - a few good candidates
+   * Working on monitor.dataone.org - check_mk script for membership monitoring
+   * Looking at the prov-xml schema for indexing work
+ * 20130114
+   * Web administrator interviews
+ * 20130111
+   * Monday: website admin interviews for 3ish hours Monday
+   * d1_cn_monitor installed in all 3 clusters
+     * cn-dev-orc-1 disk is full - catalina logs issue
+     * cn-sandbox-ucsb-1 says os-core is not configured (related to hardware move maybe?)
+   * Working on Nagios monitoring agent for membership, will work on a check_mk script
+   * Looking at Hazelcast timeout exception (while fault-proofing the monitor)
+   * HazelcastInstance API calls not supported from HazelcastClient - a bit of a pain
+ * 20130109
+   * Worked with Robert on hazelcast client configuration, finished today
+   * Moved parameters into the dataone-hazelcast.properties file
+   * Polishing MembershipMonitor. Dealing with hz cluster outage WRT client connections
+     * Working on reconnect strategy (like a backoff timeout)
+     * Reporting client disconnects now
+     * Looking into heartbeat monitor (ie current cluster status every minute)
+     * TODO: Add subtask to #3470
+   * Wrote up a strategy for CN network partition recovery
+
+Chris J.
+-------
+ * 20130123
+   * Meeting with Matt, Ben, Jing, Brendan re: Morpho development
+   * Worked on CN rollback issues
+   * Working on LVM volume groups for production CNs (getting ready for the snapshotting there)
+   * Organizational stuff: redmine tickets for production env
+   * Tried to get back to ONEMercury bugs, but will discuss prioritites with Dave, Matt
+ * 20130118
+   * worked on CN boot problems during rollbacks
+   * TODO: ticket for re-issueing certs from TestCA to TestIntCA
+   * TODO: create ticket for production GMN VMs https://redmine.dataone.org/issues/2877
+ * 20130114
+   * Worked on CN rollback procedures
+     * http://mule1.dataone.org/OperationDocs/coordinating_node_deployment/
+     * Waiting on increased VM virtual disks before doing the rollback to 1.0.4
+   * Added Metacat MN installation notes
+     * http://mule1.dataone.org/OperationDocs/member_node_deployment/
+     * Fairly specific to DataONE replica target deployments
+   * Will be looking at ONEMercury UI tickets
+ * 20130111
+   * Purged and installed cn-stage-umn-2, now at the 1.1 BRANCH from the stage channel
+     * had some issues during sync/create() - turned out to be a httpPort seeting in Metacat
+     * needed to force httpPort = 443, not 80
+   * Installed the Metacat MN stack on mn-demo-9 (was Andy's coordinating node)
+   * Working on CN rollback to LVM snapshot level
+ * 20130109
+   * Preparations for the 1.1 release, redmine ticket reviews
+   * Finished 3 replica target MN installations for production
+     * Caveat: performance on mn-unm-1 is poor, need to figure out what's happening. hung SSH conns, etc.
+     * Caveat: after registering MNs, not all entries replicated across LDAP.  Need to investigate.
+     * TODO: Ask Chris B/Roger about spinning up two VMs with GMN on new ORC hardware
+   * Finished replica installation cheat-sheet documentation, need to fins a home for it.
+   * Coordinated with Skye on membership monitor code. Added tickets.
+   * TODO: Will work on the 1.0.4 rollback/ reinstall in stage
+   * TODO: Create a ONEDrive story
+   * TODO: Revoke urn:node:mnStageORC1, create an new cert for Roger (Dave)
+   * TODO: reassign 3399 to Ben re reserveIdentifier() DONE
+   * TODO: investigate LDAP consistency issues in production
+   * TODO: Provenance WG CN/MN installation DONE
+ * 20130107 
+   * MN installations for production replication targets
+   * Documentation of MN replica target installation conventions
+   * Discussions with Ben re: id provider, Skye, Robert re: CN hz partitioning tests
+   * Add unit test tickets for Jing in libclient for the new Comparator classes
+   * Schedule ONEMercury ticket discussion for Wednesday after standup
+
+Roger
+-----
+ * 20130123
+   * Refining GMN installation procedure
+     * Optimizing config file editing (consolidating edits in the docs)
+     * Created finished config files that can be copied into place, with explanations on params
+   * Working on including config files into the PyPI package
+   * Re: ONEDrive: thinking through search and use of facets
+     * Brainstorming session during CCIT? Will write something up for this
+   * Will work on production GMN installs
+ * 20130118
+   * GMN is installed on mn-stage-orc-1
+     * apche/python environment working fine
+     * gmn account simplified install
+     * will install the client side key/cert
+   * Optimization of ONEDrive
+     * merged query code into less calls
+ * 20130116
+   * d1_client_cli added into the GMN server (pypi dependency)
+     * however, cli doesn't install automatically due to foresite dependency
+     * foresite depends on lxml, which needs a build env to install
+     * for debian and ubuntu, build env only involves a few apt-get calls
+   * Back to installing GMN on the mn-stage-orc-1 VM
+ * 20130114
+   * Moving to Ubuntu 12.04 would be helpful (has Python 2.7)
+     * For now support Python 2.6
+   * GMN is working in a VM, installed via PyPI
+     * ended up re-doing the D1 PiPI releases (naming conventions, password, etc)
+     * recreated the releases with a dataone account, v 1.1, etc.
+     * single pip command to install everything
+     * updating docs to reflect the new installation
+ * 20130111
+   * Working on GMN setup (documentation and installation
+     * Set up VM to test installs
+     * Setup now creates a 'gmn' unix user
+     * Allows us to use the default postgres install in ubuntu
+   * ONEDrive: sharing the ONEDrive mount point in Windows via Samba
+     * Noticing performance issues (Windows is pre-fetching child folders)
+     * GUI information is not available (# objects, etc.)
+ * 20130109
+   * GMN is working on mnStageUNM1 now
+     * modifying instructions to simplify
+     * Investigting distribution of GMN as an egg for use with easy_install
+       * wants to install in site-packages, which isn't standard for web apps.  Look into override.
+     * Relates to versioning of PyXB bindings as a dependency. Seems fragile.
+ * 20130107
+   * GMN on ORC1 installation is on the docket
+   * Will work with Chris, Dave on ONEDrive
+   * Streamlining GMN install
+   * Demo ONEDrive on Friday
+
+Rob
+---
+ * 20130123
+   * Branched d1_integration, and pushed out a new webTester with 1.1 libraries
+   * Talked with Matt, Bruce
+     * will work with Bruce on functionality
+     * Matt will get others involved
+     * Will polish documentation. Non-runnable examples cause build errors =)
+     * Solr search discussion with Skye regarding the 'text' Solr field
+ * 20130118
+   * R client work, tuning for scripted + console use
+     * helper functions for common uses, shortened method names
+   * TODO: Work with Ryan on Dryad MN testing
+   * TODO: EDAC member node issue with the MNtester re: baseURL at /mn: returning 404
+ * 20130114
+   * Finished up R client work
+     * can create an ORE package all at once (using upload date in sysmeta)
+   * Looking at JSON response from a Solr search (rjson package)
+     * wrap with from.json() - may or may not be useful
+     * should implement another method that returns pid list
+   * Will flesh out unit tests for these functions
+   * Demo of the R client on Wednesday
+ * 20130111
+   * Finishing up the Solr query for the R client (to handle the solr response)
+     * may want to use wt=json and parse the json responses instead of XML
+   * Working on packaging and determining if the object is new or already exists
+ * 20120109
+   * Cleaning libclient and r_client code. Consistency of method names.
+   * Added package documentation for the r_client
+   * Finished of algorithm to traverse obsoletes chain, added ObsoletesChain in d1_libclient_java
+   * Started looking at RStudio. Useful.
+   * Bug 3399: regarding reserveId() timing out.  Assigned to Chris
+   * TODO: complete d1_r_client, packaged for release 1.1.1. Will use new libclient features.
+ * 20130107
+   * R client documentation with Karthik
+     * What can he work on?? Things are buried in Java, will chat with Matt
+     * Looking for pure-R functionality (performance using ff, bigmemory? datatable vs dataframe? parsing modules for other types other than EML described data
+   * Ready to be demo'd by the CCIT meeting in early February, released before reverse site visit
+   * Step through of the R client next week, should be v 1.1 (able to use query())
+   * Need to settle on class names (camel case, dot separated, etc.)
+
+Robert
+------
+ * 20130123
+   * Working on VM access at ORC
+     * looks like vSphere access to vCenter is being dropped, must use web app
+   * Working on documentation
+ * 2013018
+   * Updated Java in testing envs
+   * Waiting on rollback in stage
+   * TODO: Will create ticket for ORNLDAAC pid archive script
+ * 20130116
+   * Waiting on stage VM rollback
+   * closed a few tickets, working on updateNodeCapabilities() tickets
+ * 20130114
+   * Looking at tasks re hazelcast dependencies in updateNodeCapabilities()
+   * Documentation
+   * Standing by for 1.1 release
+ * 20130111
+   * Tagged the 1.1 cn stack code
+   * Will install the 1.1 release in stage after the 1.04 rollback
+ * 20130109
+   * Tagged common, libclient for 1.1
+   * Dealing with problems with updateNodeCapabilities(), not a blocker.
+   * TODO: will tag CN components today
+   * Met with Usability and SocioCultural Working groups
+     * Dryad status? We'll see if it will be registered.
+     * Mercury usability status discussion
+     * Metrics discussion
+ * 20130107
+   * Worked with Skye on hazelcast configuration
+     * Keep all variables across envs in properties files
+     * Use Settings class for access, but also programmatically using Hazelcast Config instances
+   * Working on documenting hazelcast experiments
+   * Will also work on tests in the staging env
+   * 
+
+Discussion Topics
+-----------------
+
+ * CCI 1.1 release (https://redmine.dataone.org/issues/3454)
+   * confirm bugs are closed
+     * monitoring tickets go to 1.1.1
+   * reset staging (from 1.0.4 production to 1.1 production)
+   * move network-partition related tickets to 1.1.1
+   * Robert, tags common and libclient at 1.1
+   * Ben will tag Metacat for the CN stack at 2.0.5
+   * Robert will then tag the rest of the CN stack
+   * Rob needs to check on RClient-related libclient changes, may need to back them out of the trunk?
+     * Jing has committed libclient changes (various Comparator classes)
+   * Revert stage env to 1.0.4 release
+   * Upgrade the stage CNs after applying the snapshotting routine
+
+ * ONEDrive work separation
+   * Performance is critical (say, with 1K clients hitting the CNs)
+     * Prefer the Solr service over other REST endpoints
+     * Roger introduced caching prior to December review (cache is shared across components) - ROGER, DONE
+       * Cache has a size limit. No refresh yet.
+     * Minimize the # of queries - ROGER
+     * Optimizing queries
+   * Usability
+     * Drilling into a package
+       * should see a metadata view
+       * should see a data view
+       * now: zooplankton: eml.xml+sysmeta.xml
+       * to be: zooplankton > package > Science Metadata + Science Data
+     * Stable, easily installable
+       * create a Python egg with all dependencies to avoid easy_install and PyPI - CHRIS B
+     * Representing object formats correctly
+     * Properties context menu (rendering previews, etc.)
+     * Customizable filters
+     * Error messages can be quite detailed using d1drive
+     * Saved searches (saved customized filters)
+     * Download as zip (for a collection data package view)
+   * Windows/Dokan refactor
+     * Andy worked on d1_common and d1_libclient installations on Windows
+     * Dokan libraries are difficult installs though
+     * Install via a Python Egg (as above) - CHRIS B
+
+ * Discuss cluster merge strategies
+   * Hazelcast Cluster Partitioning discussion:
+     * http://epad.dataone.org/ClusterPartitionDiscussions
+
+ * ONEMercury UI bug fixes
+   * 3 views:
+     * Search, Results, Detail
+   * JSPs are mostly inline
+     * Search results are hardest to change
+     * Metadata detail view is reasonable
+     * Search Page has custom javascript
+   * Replacing the openlayers map with a Google Map is feasible
+   * 
+
+
+
+
+

@@ -1,0 +1,23 @@
+1) Need samples from of the Scimeta (and XML schema) and  Sysdata from KNB and Dryad
+  a) Mercury injestion needs to know which elements of the Scimeta need to be indexed within Mercury
+  b) extend mercury indexer configuration file to read in the EML (knb) so as to index 
+
+2) Need to create a process to merge the 2 docs into one
+  a) need to know where the Sysmeta data file is located that represents a SciMeta file
+    1) method will receive a fullpath as parameter
+  b) open SysMeta
+  c) create XML Doc from SysMeta
+  d) read the ID of the SciMeta doc from the  SysMeta file
+    1) the Id of the SciMeta datafile in the SysMeta file will provide the filename of the SciMeta file: systemMetadata/identifier
+  e) open file sciMeta using provided ID from SysMeta
+  f) create a XML Document  (assuming wellformed xml) from Scimeta
+  g) grab root element of scimeta
+  h) create new node <mercury>
+  i) attach SysMeta root node to mercury node
+  j) attach mercury element as last child to root elemlent of scimeta document
+  k) save off merged sci - sys meta doc into cn_dev/mercury_inst_datanet directory
+  l) https://repository.dataone.org/software/cicore/trunk/cn-service/cn-prototype/DataONE-CnMergeMetadata
+  m) l) https://repository.dataone.org/software/cicore/trunk/service-api-java
+3) Due date of May 19?
+
+

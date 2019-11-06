@@ -1,0 +1,220 @@
+Notes for 2013.22-Block.3.3 (2013-5-26 to 2013-06-08)
+=====================================================
+
+Discussion on SOLR Index:
+
+  http://epad.dataone.org/search-index-notes
+
+
+GOALS for Block 3 (through 2013-06-22)
+
+See https://docs.google.com/spreadsheet/ccc?key=0AjusEcfJ75HCdEZobUdqMjNJYWtfdUlSbnotdl9RY2c#gid=0
+
+Supporting sysmeta change / update by MN:
+
+1. Identify properties of system metadata that are mutable by member node
+
+2. Define API (internal) for CN to push new values to the object store
+
+3. (later) Implement mechanism for Mn to push sysmeta changes
+
+- simplest approach for now is for CNs to pull changed system metadata, checked changed values, push valid changesto the system metadata store
+
+- Future option is to support MN put(pid, system_metadata)
+
+- Define which member node can update system metadata - should be the authoritative MN
+
+
+Dave
+----
+ * 20130603
+   * Invalid identifiers need to be dealt with
+   * long term schedule outlook
+   * docs - getting back up to speed on mutability
+ * 20130531
+   * Meeting with NSF on big data / metadata
+   * Looking at upgrading Redmine, migrating to new VM
+   * Drafting a local cache for public metadata (several requests for copies of science metadata from dataone)
+ * 20130529
+   * out - meeting with NSF
+
+
+Ben
+---
+ * 20130607
+   * TFRI mn all config'd, pretty much ready for sync in production
+   * Kevin Web - tring to insert large doc in Metacat
+ * 20130605
+   * Getting back on track after time off
+   * 
+ * 20130503
+   * Out today
+ * 20130529
+   * Out this week
+
+Robert
+------
+
+ * 20130607
+   * Working with Chris B on Ansible stuff
+   * Still some issues with SLAPd not shutting down cleanly. will use sigalarm if necessary to force shutdown
+ * 20130605
+   * Woking with Chris on Debian / Ansible config 
+   * Remaining issue seems to be with LDAP not stopping (slapd stop failure)
+   * 
+ * 20130603
+   * preparing Ansible package for Chris B. Issue with UI request by debian. "Seen" files
+   * Reviewing various postinst for packages
+ * 20130531
+   * Working with Chris with Ansible installations in dev
+     * dealing with flag issues - all are not getting set correctly through Ansible after apt-get upgrade
+     * dealing with access permissions for ldap.config back to root
+     * (like openldap installed = false)
+ * 20130529
+   * Debugging dataone-cn-os-core installation
+     * 'URI=""' string issue with LDAP installation and spin up
+   * Successful Ansible test with Chris
+
+Rob
+---
+ * 20130607
+   * Admin stuff
+   * Reviewing libclient tickets
+   * Working on some javadoc improvements, e.g. combining common and libclient into one referece
+ * 20130605
+   * working on libclient release for releases.dataone.org
+   * might need some minor config changes on hudson
+ * 20130603
+   * Working with Chris B. on resource map factory / index_processor redesign
+   * Added some more docs / javadocs
+ * 20130531
+   * Worked on large resources proposal
+     * sent out email, looking for feedback
+   * Worked on d1_auditing to filter on formatType
+   * Will be in touch with Ryan
+     * Waiting for them to register contact subjects into the dev env
+ * 20130529
+   * Revising large data package document
+     * Will be sending out an email to developers@dataone.org
+
+
+Chris B.
+--------
+ * 20130605
+   * Implementation of ORE resource maps
+   * Meet with skye for the javabean hookups
+   * Ansible testing. Still some failures
+ * 20130603
+   * Meet with Rob and discussed his implementation of the ResourceMapFactory
+   * Continuing to work on the ResourceMap implementation, currently waiting on Rob to get back with me /etc/dataone/node.properties
+   * Testing ansible on new package provided by Robert
+ * 20130531
+   * Worked with David on ORC node
+   * Robert and Chris started Ansible upgrade in dev
+     * flags are getting reset, looking into it
+     * initial installation works fine, but upgrades are problematic
+   * Working on the ORE maps in indexing
+     * using a separate branch
+     * using an interface to translate to ResourceMapFactory
+ * 20130529
+   * Worked with Robert on dataone-cn-os-core installation through Ansible
+     * not seeing the 'seen' flag. Fixed.
+   * Met with Skye on indexer work WRT using ORE parsing
+     * working on a test harness, will work with Rob
+   * Will meet with David this week, getting his laptop going
+
+Skye
+----
+ * 20130607
+   * Moving forward with dding attribute search support in index
+   * Installers for jetty / solr 4
+   * messing around with solr cloud config etc
+ * 20130605
+   * ONEDrive discussion with Roger. Will be continuing issues with last name (author)
+   * working on installers for jetty, tomcat, log installer
+   * 
+ * 20130603
+   * Out last week.
+   * Need more discussion on adding search properties to index
+   * SOLR 4 installer for debian - for logging auditing, processing, etc
+   * 
+ * 20130529
+
+
+Roger
+-----
+ * 20130607
+   * Continuing work on onedrive
+   * Updating unit tests, getting back to test driven development mode
+ * 20130605
+   * redid config for onedrive
+   * works now with default, can override defaults to change behavior
+   * adding some docs
+   * looked at index with Skye to compare current state with mockups done by Matt
+   * fixes: autodetect decade, last name for author - able to sort by last name in author hierarchy
+ * 20130603
+   * Initial version of onedrive checked in
+   * Working on the SOLR index design to support controlled hierarchy
+   * Chris B will verify operation on Mac and Linux
+ * 20130531
+   * Shawn Bowers requested a large download of D1 public data
+     * Wrote a script for this, worked out some of the exception handling
+   * Finished up controlled hierarchy in ONEDrive
+     * Still can be refined as the indices
+     * Still using the pid for display, need to address this
+     * Slicing needs to be available for objects (like get(pid, start, end))
+       * causes a performance issue with big files
+     * Will check ONEDrive in today, doing some cleanup
+ * 20130529
+   * Working on bugs in ONEDrive taxonomic hierarchy with Solr queries
+
+
+David
+-----
+ * 20130607
+   * OIT/Bruce/Chris B./me meeting yesterday: discussed improving coordination between D1 and UTK OIT (coordinating patches, upgrades, downtimes, etc).  Bruce is looking into new equipment purchases for near future.
+   * This weekend (6/07-6/08), looking at a potential rebuild on our MDSS VM and defrags on ORC storage devices
+ * 20130605
+   * lots of meetings, training with Chris
+     * OIT talking about how to move to more standardized equipment
+     * patching schedule sync
+ * 20130603
+   * Work laptop setup all but complete: seeing issues w/wireless disconnection that persist through driver upgrades.  Temporary, non-critical, erratic, so not going to devote a ton of time to it (maybe will work on it during other work)
+   * Finishing up documentation on VM creation at UTK
+     * needs reStructured markups
+   * Working with Chris on VM management/ disk management
+     * Couple of fragmented partitions from old VMs: defrag should take care of them, but need to determine good feasible timeframe for defrag and look into potential complications
+     * One old VM still in infrastructure: leaving in place temporarily to use as a walkthrough box to document deletion procedure (not using critical resources)
+   * Will continue with documentation
+ * 20130531
+   * (see 20130603 above: edited w/updates)
+ * 20130529
+
+
+Matt
+----
+ * 20130605
+   * support stuff
+ * 20130603
+   * Working 
+ * 20130531
+   * Talking with Gastil re: LTREB site data storage in KNB or new MN
+     * Lab/investigator oriented
+
+
+Chris
+-----
+ * 
+ * 20130531
+   * Working with David Dias on the PPBIO future node
+     * Matt, Dave : please ping John Cobb and Laura Moyers on this
+     * Metacat replication has changed to use client certs to fix a security hole
+     * working on getting the configuration correct with David
+   * Testing  PISCO Matlab code
+   * Metacat-specific work
+   * Need to create a second LTER nodeid: LTER-PASTA, LTER_PASTA, LTERPASTA?
+ * 20130529
+   * LTER Metacat upgrade to 2.0.7
+   * Matlab work with Mike @ PISCO
+   * Metacat specific work
+

@@ -1,0 +1,61 @@
+USA-NPN (USA National Phenology Network) - DataONE Member Node follow-up meeting
+
+1 August 2013, noon EDT, 11am CDT, 10am MDT, 9am AZ/PDT, 8am AK
+(previous meeting was 24 July 2013, epad: http://epad.dataone.org/MN-NPN-20130724)
+
+1.  Please join my meeting.
+https://www1.gotomeeting.com/join/239961512
+ 
+2.  Use your microphone and speakers (VoIP) - a headset is recommended.  Or, call in using your telephone.
+ 
+Dial +1 (786) 358-5420
+Access Code: 239-961-512
+Audio PIN: Shown after joining the meeting
+ 
+Meeting ID: 239-961-512
+ 
+Attending:  Laura, Lee, Bruce, 
+
+Regrets: 
+
+Redmine ticket: https://redmine.dataone.org/issues/3186
+
+Agenda:
+    Recap last week's meeting:
+        After discussion, we think that NPN wishes to operate at tier 1 and that they are in a position to establish a test system.
+        There was a question about how NPN wishes to publish their data (what data to publish, frequency, DOI creation, metadata creation).  NPN's data is "live", i.e. always being updated (PPSR via Nature's Notebook), so we think we'll have one dataset that's historic wildlife data, others by year.  Also, Alyssa said they'd work on PIDs/DOIs with Bruce.
+        Alyssa indicated that the due date shown on the redmine ticket of 31 Oct 2013 is reasonable.
+        ACTION ITEMS:  
+            John to send "welcome" email to Alyssa, Lee: Complete
+            Laura to check Dave and/or Ben for availability for follow-up meeting: Complete
+            Laura to send MNF info to Alyssa and Lee: Complete
+            Laura to send summary email related to "welcome" letter to all involved: Whoops, hadn't done that.  LM
+
+    What we need to do today - connect Lee with CCIT partner and ensure he has what he needs to move forward
+
+Lee: hoping to talk to someone on technical side; LDAP server is a holdup right now, need some clarification if there is an alternative to LDAP for the authentication scheme to connect to metacat
+
+Bruce:  will send Lee an email with who to contact (Ben Leinfelder, cc: Dave Vieglais and Matt Jones); if it's a quick question can pop it on IRC
+
+Lee:  configuration management, different environments to deploy to (i.e. sandbox, test, staging, production); does NPN need to do this sort of thing on their end (have different environments)?
+
+Bruce:  it is recommended, but NPN wouldn't be the first who didn't set up this way
+
+Lee:  I'd prefer to do it that way (with the separate environments)
+
+Laura:  when in the process do we need to address PIDs/DOIs
+
+Bruce:  now.  For DataONE, uniqueness is important only within DataONE.  From a broader perspective, truly unique DOIs are desirable.  Alyssa/Bruce had spoken earlier about EasyCite and EasyIDs
+
+Lee:  Alyssa and Jake - publish entire data set annually updated (how frequently??)
+Bruce:  preference is that every time data set is updated, it gets a new DOI (immutability)
+Is purpose of DOI to give credit or to improve scientific reproducability?  DataONE's preference is the latter.  We're working on a stream or concept idea for data that is updated frequently.  
+
+Bruce:  versioning essentially introduces a new DOI.
+Lee:  might have a new file/DOI every month/quarter/year (update frequency)
+
+Alyssa and Jake (and others)  need to decide how often to publish/update and what scheme provides the best value to NPN and NPN data users.
+
+(Bruce has been having an IRC conversation with CCIT folks and has sent info to Lee.)
+
+

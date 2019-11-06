@@ -1,0 +1,205 @@
+#persist rst
+
+.. meta::
+   :keywords: provenance, CCIT, infrastructure, resource map
+
+.. sectnum::
+
+Tracking Provenance in DataONE
+==============================
+
+:Document Source: http://epad.dataone.org/201301-provenance-package
+
+:Document Status: Initial draft for comment and edit
+
+:About: Scratch pad for developing the mechanism for linking provenance information to a data package.
+
+:DataONE Prov WG Notes: (requires auth) https://docs.google.com/document/d/1Nxz0bV7gI3kRbeGjXo3Drs0E2ri-aasujI2Ju3px7gQ/edit
+
+
+.. contents::
+   :depth: 2
+
+
+Problem
+-------
+
+Provenance information where available should be associated with the relevant
+objects.
+
+
+Solution
+--------
+
+Storage
+~~~~~~~
+
+Provenance documents will be stored as objects in the DataONE system in a manner
+similar to science metadata and science data objects. Provenance documents will
+have a unique identifier (PID), and will be assigned a formatId of "http://www.w3.org/TR/prov-xml/" (TO BE CONFIRMED).
+
+Provenance documents are to be treated similarly to science metadata objects and resource maps in that they will be harvested and indexed (see Indexing, below) by the coordinating nodes.
+
+
+Cross Referencing
+~~~~~~~~~~~~~~~~~
+
+A provenance document provides information about one or more objects that
+participate in a data package described by an OAI-ORE document. References to
+provenance information for an object will be recorded in the ORE document that
+describes the data package containing the object.
+
+The provenance document is itself an object stored in the DataONE system, hence
+a reference to the provenance document can be created using the PID for the
+provenance document. 
+
+A provenance document will be associated with an object in a data package using the dcterms:provenance predicate, the object for which will be the DataONE REST endpoint to resolve the provenance document. For example, if the provenance document had a PID "provenance_id", the REST URL will be "https://cn.dataone.org/cn/v1/resolve/provenance_id".
+
+
+Example
+.......
+
+A data package with three components: A science metadata document *scimeta_id*
+that describes a science data object *scidata_id*, and a provenance document,
+*provenance_id*, associated with the data object.
+
+
+In N3 notation::
+
+  @prefix cito: <http://purl.org/spar/cito/> .
+  @prefix dc: <http://purl.org/dc/elements/1.1/> .
+  @prefix dcterms: <http://purl.org/dc/terms/> .
+  @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+  @prefix ore: <http://www.openarchives.org/ore/terms/> .
+  @prefix rdfs1: <http://www.w3.org/2001/01/rdf-schema#> .
+
+  <https://cn.dataone.org/cn/v1/resolve/resource_map_id> a <http://www.openarchives.org/ore/terms/ResourceMap>;
+      dc:format "text/rdf+n3";
+      dcterms:created "2011-08-12T12:57:03Z";
+      dcterms:creator <http://foresite-toolkit.googlecode.com/#pythonAgent>;
+      dcterms:identifier "resource_map_id";
+      dcterms:modified "2011-08-12T12:57:03Z";
+      ore:describes <aggregation_id> .
+
+  <aggregation_id> a <http://www.openarchives.org/ore/terms/Aggregation>;
+      dcterms:title "Simple aggregation of science metadata and data";
+      ore:aggregates <https://cn.dataone.org/cn/v1/resolve/scidata_id>,
+          <https://cn.dataone.org/cn/v1/resolve/scimeta_id>,
+          <https://cn.dataone.org/cn/v1/resolve/provenance_id> .
+
+  <http://foresite-toolkit.googlecode.com/#pythonAgent> foaf:mbox "foresite@googlegroups.com";
+      foaf:name "Foresite Toolkit (Python)" .
+
+  <http://www.openarchives.org/ore/terms/Aggregation> rdfs1:isDefinedBy ore:;
+      rdfs1:label "Aggregation" .
+
+  <http://www.openarchives.org/ore/terms/ResourceMap> rdfs1:isDefinedBy ore:;
+      rdfs1:label "ResourceMap" .
+
+  <https://cn.dataone.org/cn/v1/resolve/scidata_id> 
+      dcterms:description "A reference to a science data object using a DataONE identifier";
+      dcterms:identifier "scidata_id";
+      dcterms:provenance <https://cn.dataone.org/cn/v1/resolve/provenance_id>;
+      cito:isDocumentedBy <https://cn.dataone.org/cn/v1/resolve/scimeta_id> .
+
+  <https://cn.dataone.org/cn/v1/resolve/scimeta_id> 
+      dcterms:description "A reference to a science metadata document using a DataONE identifier.";
+      dcterms:identifier "scimeta_id";
+      cito:documents <https://cn.dataone.org/cn/v1/resolve/scidata_id> .
+
+  <https://cn.dataone.org/cn/v1/resolve/provenance_id>
+    dcterms:description "Provenance information for scidata_id";
+    dcterms:identifier "provenance_id".
+    
+    
+In RDF XML::
+
+  <?xml version="1.0"?>
+  <rdf:RDF xmlns:rdfs1="http://www.w3.org/2001/01/rdf-schema#" 
+           xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+           xmlns:cito="http://purl.org/spar/cito/" 
+           xmlns:dcterms="http://purl.org/dc/terms/" 
+           xmlns:ore="http://www.openarchives.org/ore/terms/" 
+           xmlns:dc="http://purl.org/dc/elements/1.1/" 
+           xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <ore:ResourceMap rdf:about="https://cn.dataone.org/cn/v1/resolve/resource_map_id">
+      <dc:format>text/rdf+n3</dc:format>
+      <dcterms:created>2011-08-12T12:57:03Z</dcterms:created>
+      <dcterms:creator rdf:resource="http://foresite-toolkit.googlecode.com/#pythonAgent" 
+                       foaf:mbox="foresite@googlegroups.com" foaf:name="Foresite Toolkit (Python)"/>
+      <dcterms:identifier>resource_map_id</dcterms:identifier>
+      <dcterms:modified>2011-08-12T12:57:03Z</dcterms:modified>
+      <ore:describes>
+        <ore:Aggregation rdf:about="aggregation_id">
+          <dcterms:title>Simple aggregation of science metadata and data</dcterms:title>
+          <ore:aggregates>
+            <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/resolve/scidata_id">
+              <dcterms:description>A reference to a science data object using a 
+              DataONE identifier</dcterms:description>
+              <dcterms:identifier>scidata_id</dcterms:identifier>
+              <dcterms:provenance rdf:resource="https://cn.dataone.org/cn/v1/resolve/provenance_id"/>
+              <cito:isDocumentedBy rdf:resource="https://cn.dataone.org/cn/v1/resolve/scimeta_id"/>
+            </rdf:Description>
+          </ore:aggregates>
+          <ore:aggregates>
+            <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/resolve/scimeta_id">
+              <dcterms:description>A reference to a science metadata document 
+              using a DataONE identifier.</dcterms:description>
+              <dcterms:identifier>scimeta_id</dcterms:identifier>
+              <cito:documents rdf:resource="https://cn.dataone.org/cn/v1/resolve/scidata_id"/>
+            </rdf:Description>
+          </ore:aggregates>
+          <ore:aggregates rdf:resource="https://cn.dataone.org/cn/v1/resolve/provenance_id" 
+           dcterms:description="Provenance information for scidata_id" dcterms:identifier="provenance_id"/>
+        </ore:Aggregation>
+      </ore:describes>
+    </ore:ResourceMap>
+    <rdf:Description rdf:about="http://www.openarchives.org/ore/terms/Aggregation">
+      <rdfs1:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
+      <rdfs1:label>Aggregation</rdfs1:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.openarchives.org/ore/terms/ResourceMap">
+      <rdfs1:isDefinedBy rdf:resource="http://www.openarchives.org/ore/terms/"/>
+      <rdfs1:label>ResourceMap</rdfs1:label>
+    </rdf:Description>
+  </rdf:RDF>
+  
+
+As a graph rendering:
+
+.. image:: https://dl.dropbox.com/u/231460/eg_provgraph.png
+
+
+Indexing
+~~~~~~~~
+
+Provenance information will be indexed in a manner similar to science metadata and resource maps, where the values of selected terms are extracted, transformed / normalized as necessary, and added to the SOLR index on a coordinating node.
+
+Some examples of searches that should be supported include:
+
+Return all provenance traces that::
+
+  contain data that was attributed to "Yaxing"    --> field: wasAttributedTo
+  include the "reGrid" activity                   --> field: activity
+  contain data used by the reGrid activity        --> field: used/activity
+  contain data generated by the reGrid activity   --> field: wasGeneratedBy/activity
+  contain data about 'climate'                    --> field: entity/D1:about
+  contain data attributed to a climate scientist  --> field: entity/prov:role
+
+"Yaxing", "climate scientist" are Subjects, http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html#Types.Subject
+
+Note that mapping subjects between the values used in tools that generate provenance documents and DataONE may be a challenge.
+
+
+Discussion
+----------
+
+Some issues to consider:
+
+- Consistent representation of subjects in generated documents, and maping those to DataONE subjects. This will be a potential problem with other terms requiring consistent representation such as the various activities that may be employed. e.g. is "reGrid" equivalent to "regrid"?
+- Richness of query support. Using a flat index reduces the relationships that can be expressed. Is it sufficient? Do we need to add something like a SPARQL endpoint?
+- Efficiency of indexing needs to be considered, especially since it can not be assumed that a provenance doc will be available on the CN when a resource map that references it is being indexed and vice-versa.
+- The format of the provenance trace, W3C PROV-XML?
+
+
+

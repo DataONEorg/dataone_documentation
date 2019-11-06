@@ -1,0 +1,132 @@
+Attendees: Rebecca,Trisha, Mike, Amber,Bill, Dave V, Stephanie
+
+Regrets: Bruce, Viv, Bob Cook, Matt, Suzie, Hilmar, Bertram,John Kunze, John Cobb, Deborah
+
+Call is one hour earlier this week only because of NSF webinar at our normal time
+
+DataONE LT Call:  8am AK/9am PT/10am MT/11am CT/noon ET
+
+1.  Please join my meeting, Jun 15, 2012 at 9:55 AM MDT.
+https://www1.gotomeeting.com/join/321468201
+
+2.  Use your microphone and speakers (VoIP) - a headset is recommended. Or, call in using your telephone.
+
+Dial  1 (805) 309-0014
+Access Code: 321-468-201
+Audio PIN: Shown after joining the meeting
+
+Meeting ID: 321-468-201
+
+GoToMeeting®
+Online Meetings Made Easy™
+
+We will also use the epad: http://epad.dataone.org/2012Jun15-LT-VTC if participants can get to it.
+ 
+If you have items to add, let me know.
+ 
+Agenda for 2012-06-15
+
+1) CI Update (Dave)
+
+Wednesday evening DataONE went live - the KNB, ESA and SanParks nodes are registered and content is available!!!
+Issues:
+When new KNB node was registered and synchronization began, noticed the KNB node was configured incorrectly (not sufficient memory) so DataONE missed some records; working through these issues now. SanParks came online very nicely.  Did miss a few records and may be related to KNB but also may be a latency issue. ESA - Chrome has a notification of malware when visiting this site so this has implications for DataONE.  If you try to retrieve records discovered through ONEMercury, you will see this warning re: malware.  What to do?
+Make ESA aware of these issues and have them deal with Google directly. DataONE trusts that MNs will not be delivering malware, viruses, etc - may need to scan content in the future.
+USGS included scanning before putting content on the servers but malware may also be added after loading.
+
+[Cobb} this has implications for an updated DataOne cyberseucrity policy. Probably should revisit this after v1.0 release.
+
+Another issue: DataONE has no control over the speed with which a MN comes on line. An example, PISCO has not upgraded to the latest version of metacat so cannot begin registering this MN. They have the largest number of records so would prefer this happens sooner rather than later. Can only encourage them to do this.  Matt and Ben advancing this issue right.
+Mercury MN (DAAC & USGS) is being registered in the sandbox right now and then will go into production. Dryad also coming along.
+Patch is going to be pushed to production this afternoon. Testing on the development environment right now. Patch includes some interfaces for ONEMercury and fixes for the KNB issue.
+
+Don't change public website yet - want the patch installed and the rest of the MNs are registered.
+
+
+2) Member Node Partnership Guidelines (Mike Frame/Amber)
+
+Comments received were:
+
+Dave: The docs look good and I agree with the comments already provided by Matt.  I would however suggest that a couple of additional entries are added to the description form, perhaps under "Content" or "Technical Characteristics and Policies" that related to quality control and content verification. There are two main issues of concern to me:
+
+  1. If there is a process in place that verifies content is as described in the science metadata, and that the science metadata is "sufficiently complete" (which is hard to define)
+  Discussion that this would be difficult for most MNs, including the ones at public release so
+  instead, encourage best practices with respect to metadata
+
+2. Related to 1, is content checked for possible inclusion of malware, viruses, and inappropriate or restricted content? Also add a statement that content may need be removed if compromised content detected
+
+e.g., browse to c using google chrome
+
+
+DataONE is very trusting of MNs to provide good content, and it would be very unpleasant if we were to unintentionally assist with distribution of something that would negatively impact our stake holders.
+
+Bob Cook: 
+
+MN Guidelines
+
+The guidelines look fine.  For the DataONE User Group I'd suggest that you delete the phrase "and/or other forums."  That's not clear, nor is it what we want--we want the MNs to be part of the group of all MNs.
+
+Matt:
+
+The partnership agreement also looks good overall -- I put a few suggested edits inline.  The main substantive change that I propose is to not limit the duration of the agreement to 1 year, which I think causes unnecessary paperwork for all involved.  Instead, I proposed that the agreement would stay in place until revoked in writing by either party, or until a new agreement was mutually agreeable and signed by both DataONE and the MN.  This avoids a lot of running to stand still.
+
+Bill:
+
+Agree with Matt...
+
+"Science metadata is sufficiently complete...."
+
+New wording:
+These Partnership Guidelines will be in effect until they are revoked by either the Member Node or by DataONE, or until they are modified with jointly acceptable revisions by DataONE and the Member Node. Annual review of these guidelines should occur by the Member Node organization and DataONE Leadership in support of any modifications or necessary changes required to these guidelines. 
+No need to create extra work for us – just leave them in effect until either a change is needed or either party notifies the other of withdrawl.    
+
+Is signature necessary? Potential problems would be the involvement of legal groups at the MNs
+Simple email from MN instead?
+Need a primary contact for each MN
+
+Mike will make updates to agreement and distribute. He'll be on vacation so Trisha will shepherd it through to LT approval.
+
+3) Member Node process (Budden)
+
+
+Potential MNs have lots of questions that will need a response before they are able to fill out the MN description document. Matt and Dave will handle these for now.
+
+Need to get all the MN documentation material on the website in the next 10 days.
+May keep the flowchart internal so not to overwhelm potential MNs. 
+
+What's missing - wanted Redmine to track issues coming in re: potential MNs but this
+hasn't been done yet.
+
+Description document
+From Matt: 
+The node description form looks great to me.  The only addition I could see is a field for requested/proposed node identifier (of the form urn:node:XXXX, with a total length of 25 characters, no spaces).  We'll need that to start the registration process, and it needs to be reviewed by DataONE before approval.
+
+From Bob: 
+For description of holdings, besides number of data set and their size (volume),  you may want to include numbers of granules (files) held or perhaps the median and mean number of granules (files) per data set.  At the DAAC our mean is median is about two files per data set, but some data centers might have millions of files per data set.  All data centers should have this information already compiled.
+
+For usage, you may want to give an example, something like "(e.g., annual data product downloads, annual number of users, annual number of data products used in publications)."  When you roll all of these MN descriptions up into a summary, it would be nice to have them providing the same kinds of info.
+
+Where will the MN documents go? Need to have a place on the docs site (separate from the DUG as it is now)
+
+4) Around the room
+
+Bill:  Teaching summit was a huge success and we (25 people) developed 10-12 curricula modules that included a series of 15 minute  lectures folllowed by exercises.  Learning outcomes were defined.  We have the equivalent of a semester long one credit course or a 2-day short course.  Editing and testing will take place through the fall with a late 2012/early 2013 release date.
+
+Amber: In writing content for the 'Data>Cite' section of the website (currently hidden), the question of applying license to DataONE resources came up.  E.g. if the teaching modules are downloaded for re-use are these CC0?  CCBy?  Also, should we get DOIs for these, the BP/STs databases, BP primer etc.
+Met with Skye and Dave to work through some of the ONEMercury interface feedback.  It's looking good :)
+Attended Education Summit, preparing ESA workshops, working on posters and design activities.
+
+Trisha: DMPTool -- we have been approached by Australia and Canada and they would like to expand the tool to meet their needs (ie - include Canadian and Australian funding agencies) ONEShare: we have configured the Merritt storage node at UNM.
+
+Rebecca: Was at second EarthCube charrette in DC this week; getting closer to defining what EarthCube will be.  Also met with Bob Chadduck, Dane Skow, and Irene Lombardo.
+Mimi McClure had surgery last week and will be out the month of July and may be returning
+in August or at least working from home. Also met with Beth Plale (SEAD DataNet) and there will be a follow-on meeting to the DataNet/INTEROP meeting in Washington, DC in October (tenatively 10/2)
+
+Rebecca - I (Deborah) also met with Jim Myers (who is at RPI and is a co-pi on sead) about potential connections between sead and dataone and we will continue to work that angle.  
+
+Steph: Preparing for video contest opening in July, raised $500 through SciFund for prize money. Preparing for ESA workshops, panel and session - need to do all prep before 3 July when I go to Japan and then Siberia - I will be out of touch from 14 July to 4 Aug in Siberia
+
+Dave: Recent interactions with Moorea Biocode Project - very interested in utilizing DataONE services for archive of ocean sampling content that will include physical observations as well as sequence data that will be housed in repositories such as Genbank. They were encouraged to take advantage of the LTER, Merritt, and (future) ONEShare Member Nodes. 
+
+
+

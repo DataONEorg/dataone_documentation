@@ -1,0 +1,86 @@
+Breakout 1.2
+-----------------
+
+What is your vision for cyberinfrastructure for hardware, software, standards, and data for biodiversity sciences?
+
+General orientation discussion
+------------------------------------------
+
+Kelling: produce list of products to be available in 10 years for this community
+
+Is ontology infrastructure?  Consensus is yes.
+
+1) Federation of data
+Just as important: repositories for the large data sets (e.g., GBIF, NASA AMES, ORNL, GAP products)
+    -- those repositories need more than just data availability -- need tools to allow researchers to interact
+    
+2) Hardware to work on the data
+
+3) Tools/software that can work on federated data for e.g., modeling
+
+Use case: Bird distribution predictions at 3km scale for all of US for daily time scales
+    -- run into all 3 of those problems
+        -- ontological -- too much time to rectify data
+        -- hardware -- needed much more hardware to run the simulations (got Teragrid access, via a chaperone to expedite access)
+        
+Guala: can create ontologies, but do they really end up applicable to the science questions being asked?
+
+Kennedy: wants a system that can go to look for data (repository), then ask what tools you want to run on them (by non-scientist?)
+    -- or alternately find a tool (e.g., visualization tools), and then find the data that works with it
+    -- discovery tools (but really visualization) of data products that come from analysis/models and used for exploration
+    -- a lot of what we're doing gets lost
+    
+Guala: some activity is tedious (e.g., NBII metadata clearinghouse) and therefore isn't done regularly, but then the data are not available when needed afterwards
+
+Guala: also concerned with being able to support anything that might come out of DoB -- so what is the essence of DoB in terms of data
+    -- only direction of DoB is that we're 'combining' very heterogeneous data in unpredictable ways
+    
+Brainstorming activity
+---------------------------
+    -- what is your vision for CI for 10 years?
+    
+    1. Develop quality standards for data
+    2. Provide a web-based platform and tools for people to manage data as they collect it (not after the fact) with a side effect that it becomes part of a federated repository system
+    3. Suite of tools that scientists can use to acquire, preserve, discover, analyze, and visualize data and that they be easy to use
+        -- tools that semi-automatically ease the process of metadata generation
+        -- taking the scientist's perspective -- tools aren't user-friendly enough
+        -- e.g., easily annotate and validate tabular columns as e.g., lat/lon, units, etc, ability to add semantic information to data
+        -- capture metadata/annotations from tools at data acquisition time rather than after-the fact by understanding semantics implicit in tools
+    4. Have an agreed upon (potentially virtual) "place" that is actually used by a broad research and user community as a data repository and users can trace that data back to its source
+        -- agrees that (3) is a good approach to get people to use it
+    5. Training for a users within and outside of US in software use for biodiversity research
+    6. Need to be able to integrate from federated repositories
+        -- includes either standard data models or data exchange standards, and tools that can operate on these
+        -- only so much standardization you can do with CI -- divergence of scientific methodology is also an issue
+        -- data discovery tools -- how do we find the data that you want (search is far too imprecise now)
+    7. Good CI will promote a world at large that will understand what biodiversity is and how it is important to their lives
+    8. Lower the bar for users in terms of using all these tools we've been talking about
+        -- Address the usability issues
+    9. Reproducible chain from original data collection through analysis and modeling through  end-data products for any published biodiversity paper
+        -- also be able to repurpose components
+    10. An ontology of everything: assertions about the relationships between pieces of data
+        -- need to be able to find the data -- need to decide on a global identifier approach
+        -- data that is "pre-qualified" for fitness of use (as opposed to raw measurements) with metadata that describes those potential years
+    11. Focus on making the data useful that users are already familiar with (Excel, R); repositories of middleware (e.g., R packages)
+    12. Single virtual web portal/interoperable set of repositories (like DataONE) that can serve as one-stop-shopping for data, tools, and best-practices [similar to (4)]
+    13. Coalescing a community of practice (i.e., AGU-equivalent) for informatics earth science discipline (e.g., ESIP)
+    14. Everything that has to do with biodiversity research (software, data management, analytical tools, GIS, etc.) will be open source
+    15. Incentive for providing metadata
+        -- could be some benefits here from (3)
+        -- review and curation process needs clear incentives
+    16. Cloud-based, federated system for storing and accessing people's data
+    17. A common semantic model of scientific observations that supports semi-automated, ad-hoc data integration that spans the range of biodiversity data, plus the tools for those integration services
+    18. Cyberinfrastructure should allow for feedback/annotation/reviews/ratings of data/models/etc.
+    19. Linked-data web based on IDs
+    
+
+Synthesized topics
+-------------------------
+A. Federated, interoperable data system for global access with Web-2.0 UI that will promote understaning of what biodiversity is and how it is important to their lives {7, 4, 12, 18}
+B. Training and capacity building globally {5, 8} and improved usability of data lifecycle tools
+C. Suite of tools for the whole data lifecycle: acquire, preserve, discover, analyze, and visualize data; ease of use; cross-domain tools {3, 11, 16}
+D. General Ontology
+    -- A common semantic model of scientific observations that supports semi-automated, ad-hoc data integration that spans the range of biodiversity data, plus the tools for those
+E. Ability to replicate analysis from source data fully through to publication {9}
+
+

@@ -1,0 +1,186 @@
+2012 September 2012
+Attendees: Bruce Wilson, Bill Michener, Bob Cook, Kimberley Douglass, Suzie Allard, John Cobb, Mike Frame, Carol Tenopir, Rebecca Koskela
+
+Review of MN prioirities:
+http://mule1.dataone.org/OperationDocs/membernodes.html
+
+Bill: S&G will show and EAB will pound home that the biggest chance for sustainability is with the additional US agencies
+
+USGS Regional Climate science centers  (more details below)
+
+National Oceanographic Data Center
+
+Atmospheric Radiation Measurement
+Carbon Dioxide Information Analysis Center
+
+University of Idaho, NKN  (A USGS Regional science center with a mandate to define CI for all systems)
+Fire Research And Management Exchange System
+
+NOAA national climate data center (Asheville)
+
+USAA- National Phenology Network
+    is also an NSF Research Coordinating Network
+    Note: Bruce has lead on working with USA-NPN on becoming a member node, both from a technical perspective and working with the community engagement efforts).  A proposal has been made to the USA-NPN National Coordinating Office and USA-NPN Advisory Council.  We're working on a more formal evaluation of what it will take to become a MN, and the intent is to document this, both for lessons learned and for more about "what does it take to become a MN?"  
+    
+Mike - Something else to consider is that NPN is affilated with USGS and potential serving of NPN through USGS MN might also be an option to consider...
+
+USGS Climate Science and Wildlife Centers (8 just started in the past year)
+    
+ * Alaska
+ * North Central     Ft. Collins, CO (Jeff Morisette (USGS) and Dennis Ojima CSU)
+ * Northeast
+ * Northwest- Idaho (Northwest Knowledge Network) ---- KEY GROUP to work with first as the "pilot" infrastructure group for USGS Climate Science Center work. They also have a relationship with some DOE organizations with INEL and Bonneville
+ * Pacific Islands
+ * South Central -  Oklahoma (Berrien Moore (OU))
+ * Southeast
+ * Southwest
+
+Bob: Consider EDAAC. Karl Benedict may be favorably disposed
+
+also consider whether to have an ESRI MN or capability.
+
+Metacat MN opportunities
+    With new Metacata version, the hope is to "just flip a switch" and Metacata nodes can become DataONE MN's.
+    This would be good, but i is possible that it may be more copmmlicated than "just a switch flip"
+    Look for a candidate to test this.
+    Perhaps TERN
+    Bruce: Also, we may selectively publish Metacata data. In particular look at vetted datasets.
+    
+    Bill: Also missing is an iRODS and/or a DataSPACe/Dspace/Duraspace MN
+
+How to track the discussion on MN's?
+    CCIT prefers Redmine
+    This may not be a comfrotable information sharing mechanism for the entire DataONE team.
+    This needs some discussin
+    Rebecca: I would like to get assignment on who tracks and follows up on these issues
+
+Bill: Also, in a fashion similar to "what it takes to be a MN" we need a "what it takes to offer a new toolkit item" This would be useful for ESRI
+
+Leadership Team Meeting in ABQ
+"What it takes to add a Tool to the ToolKit" - would be helpful to have this document
+Various proposals that DataONE has written letters for that are building software
+
+For latest version of agenda for EAB meeting see: http://bit.ly/RxaW5K
+Questions for EAB Meeting:
+
+Q: What is the evidence about the experience and anticipated use and appreciation of DataUp, and does it improve the quality of data and metadata?
+Q: Are users surprised about the high proportion of metadata available compared to the sources that also provide access to data? Under what conditions do we want to increase the number of sources of actual data available on DataONE?  
+
+
+Q: What have we learned about the practical obstacles that member nodes have and are likely to encounter in implementation, and are there steps we can take to minimize the anguish?  Also, what is the projected trajectory of the rate of increase of member nodes and what will control this trajectory?
+Q: Is DataONE taking active steps to improve the quality of ecological data and metadata, or is DataONE's role simply to provide the tools and expect individual scientists, perhaps with the encouragement of professional societies, to take on the responsibility for quality improvement?Q: What have we learned about the practical obstacles that member nodes have and are likely to encounter in implementation, and are there steps we can take to minimize the anguish?  Also, what is the projected trajectory of the rate of increase of member nodes and what will control this trajectory?
+
+Q: Is DataONE taking active steps to improve the quality of ecological data and metadata, or is DataONE's role simply to provide the tools and expect individual scientists, perhaps with the encouragement of professional societies, to take on the responsibility for quality improvement?
+
+Q: DataONE has been relentless in taking its story/capabilities to the user community. What have you learned from these encounters that will make future encounters (even) more effective? How will now having a live website change your approach?
+Q: What are the practical communication mechanisms to give participants in the User Group confidence that you listen to and are responsive to their ideas and recommendations? Would you expect future user groups to involve hundreds of users?
+
+Q: Originally there was some skepticism that DataONE needed so many working groups, but the current success suggests that the approach was correct. Going forward, do you see a refinement of the domains of working groups and perhaps some consolidation or streamlining?
+
+Q: Originally there was some skepticism that DataONE needed so many working groups, but the current success suggests that the approach was correct. Going forward, do you see a refinement of the domains of working groups and perhaps some consolidation or streamlining?
+
+Q: Is going private among the sustainability options being considered? What can be learned from the NCEAS experience?
+
+
+Federal Sustainability Options:
+
+NASA - Technology Readiness Level Grant.  BEW:  NASA has an omnibus solicitation (ROSES -- Reserch Opportunities in Space and Earth Sciences).  There are different calls in that solicitation that depend on the Technology Readiness Level of the underlying technologies involved.  There's been some recent emphasis involving a newer concept -- Reuse Readiness Levels.  The Earth Sciences Data Systems Working Group (ESDSWG) is one key place to have involvement with understanding of what NASA is looking for in ROSES calls.  Karl Benedict is well-connected with ESDSWG.  Karen Moe and Steve Berrick are key NASA people in both ESDSWSWG and with the various technology related calls in ROSES.  A.40 ACCESS (Advancing Collaborative Connections for Earth System Science) is one call to watch, as is A.41 MEaSuREs (Making Earth System Data Records for Use in Research Environments)
+Due dates for NASA Research Programs:  http://bit.ly/TBSg5M  
+
+USGS - Potential CDI Grant (should be annouced in late Fall) - Grants up to 200K, involve USGS Staff. We could write one related to DataONE and USGS evolution - include CE, CI work, fund both USGS researchers and DataONE.  Next CDI Meeting is in May 2013... Viv, Mike, Lisa, Richard would be good contacts to get this done. 
+
+Need to do an update presentation at Interagency BioEco Working Group (USGS/NSF Co-lead)... Mike - could setup... 
+
+What about getting meeting with Federal CIO - Todd Parks. I could potentially try to arrange something in that I know a person who is working for him at OSTP right now. (Mike) 
+
+
+
+Karen Moe might be a good contact
+
+
+Todd parks in US CTO office (OSTP) might be a good contact with which to follow-up
+
+
+NIST: Question: Is there an intersection of DataONE with NIST - ask Chris Greer.
+
+NARA: A discussion with Bob Chadduck. Mike: maybe there is a discussion in the context of NBII shutdown and how DataONE might help with project shutdowns and that intersects NARA needs.
+
+
+Closeout Comments from Bob (as attempted to be record by John Cobb)
+
+DataONE closeout comments 20120910:
+
+Datanet today makes a significant contrbituon to CIF21
+
+If you listen to the comment of Allen Blatecky, what he has spook about considerably over the last few years is that CI is both the technology issues but it is not simply the technology development but it reflects a sociology and psychology of a science pull.
+
+If you look at what you have seen today, you will see that DataONE is an exemplar of what is the best for that science infrastructure.
+
+I don't know if you saw but recently we were able to get Bill on video at NSF.
+
+This is part of being able to present in Washington what is best in class.
+
+It is not simply technology push. I've been on some of those in the past and they
+
+DataONE is collaborative and synergistic.
+
+I don't have any specific comments, but if you have any comments I'd be happy to field them.
+
+Bill: Q; Can you discuss the research data alliance in Oct.
+
+Bob: There continues to be a fabulous concern of activity in this area in the US and globally. One of the very positive developments that I see is a series of international meetings in the next coming months, the first being in D in Early Oct.
+
+It will look at the aspects ofdeveloping CI in the context of the science. You will be seeing internationally prominent people. Some of which funded by EU and also south Asia and Australia. They will be coming to look at the aspects of truly relevant exchange of data, technology, and collaboration that would extend over a couple of years. But their participation embodies the investment of multiple national governments. What excites me is the possibility of the emergence of common goals, methods, and visions internationally. This excites me. Previously we have seen US initiatives that have stopped at the national borders. Our efforts have often stopped at the US low tide line.
+
+It will be Oct. 1-3. 
+
+They are opportunities for synergy. Each nation spends their current on their staff, but together we can share a vision on scope
+
+There will be meetings inEurope in November. And Forseeable for the community there is a lot of US and international interest in developing further relationships along this line.
+
+If you look on the web you will se a visionary document authored Chris Groer and Allan Blatecky
+It is available over the CNI website. It lays out a visionmap.
+It is called DataWebForum
+
+In the nature of this , what I also enjoy frankly is the opportunit today is ripe including the DataONE effort and international efforts to take practical advantage of technologies that we have talked about for years. We have demonstrated practical advances but now implementation is possible.
+
+Having been involved in this for years , I take pride in this opportunity.
+
+Last week the NSF undertook re-structuring. The OCI staff office that has been part of the OD is being merged into CISE. What you see in that is that funding for the operational parts of CI has been confirmed. What I have spent the last few days doing is to "just relax". When I worked in the Pentagon they reorg'd faster than the could print org charts. I am not worried. As much as we can project anything, I think we are okay. Just relax
+
+Other developments: There are elements of the NSF data portfolio includes a very rich development environment including DIBBS. It really embodies what you have taken to heart in DataONE. Science involvement is important. you're acute understanding of the nuances of data is important. Understanding the practical aspects of the data is important. But also these increments can be built upon. This is the "building block" notion in that they can be re-used .
+
+Mike's comment apply here when you talk about building on existing work.
+
+The grand-challenge issues still exist What Allan is looking at is still looking at these challenges but building the solutions incrementally. You can't boil the ocean. You need to be strategic in deploying blocks that can build.
+
+One of the challenges that I have to do is to think about building our data portfolio. 
+
+Q:  Mike [I missed the text of the question sorry - jwc]
+A: bob: One of the key parts is collaboration. Tools are useful when they are used. What Bill and REbecca have been good at is in foreseeing the elements that support the scientific enterprise. For example, your analysis of the toolset that would contribute. If you look at some of the other datanets is that some of the things you are doing today are things that do not have to be re-invented
+
+The metaphor of the building block is very powerful.
+
+DataONE has been ver active in the Earthcube initiative. You have the CI contributions that have helped advance the geosciences. I think the days of going into Washington and going to the White House or on the hill and the program manager has to say "I promise you this will be good in 5 years" is over. You need to to be able to show quarterly progress.
+
+continued comment on OCI fold-in
+Bob: The interaction between CI, Data, and science has never ben more fully understand. The aspects of how these things fit and can be leverage for the best return is yet to be seen. But effectively when Dr. Subresh made the announcements last week he said that the challenges and the opportunities have never been better.
+
+I have worked with  NSF for 15 years. Initially the PACI program was in CISE and with the Atkins report OCI was moved out. Now it is back. Also the NSF budget request still has a called-out line item for CI. That is part of law.
+
+I don't lose sleep at night because of where I sit in the org. chart.
+
+Bruce: Have you had a chance to catch up with Lucy Nowell.
+Bob: I have not spoke with her since Summer but we have a long collegial relationship over the time. One of the elements that helps is the issue of synergy.
+The ORNL work with the DAAC's, Rama, Mike Frame. Leveraging investment synergistically. What it really puts a premium on is coordination/collaboration.
+
+
+Also the synergies wit IMLS. Having multiple US agency grant funding contributes to the story
+
+Show collaboration. from multiple agencies. (including in-kind) tells a compelling story.
+
+I had two interests in being here.
+1) To meet folks, especially folks I have not seen.
+2) It forms a documentation of my prescence.
+copy Dane Skow, Irene Lombardo and ??? (I didn't get the name)
+
